@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/common.schema.json",
+  "title": "Shared definitions",
+  "description": "Types reused by every record schema.",
+  "$defs": {
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Lowercase words joined by hyphens. Stable once published."
+    },
+    "isoDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Calendar date, YYYY-MM-DD."
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
+      "description": "Semantic version of the content track."
+    },
+    "usState": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$",
+      "description": "Two-letter USPS code for a state, DC or territory (e.g. NV, AK, HI, PR, GU, AS, MP, VI)."
+    },
+    "reviewStatus": {
+      "type": "string",
+      "enum": [
+        "drafted-from-public-sources",
+        "sent-to-nation",
+        "reviewed-by-nation",
+        "approved-by-nation",
+        "withdrawn-at-request"
+      ],
+      "description": "Where a record stands in consultation with the nation it describes (charter, commitment 4)."
+    },
+    "sensitivity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tribal_review_required": {
+          "type": "boolean",
+          "description": "True when the record touches community-held knowledge that needs the nation's approval before publication, whatever its copyright status."
+        },
+        "local_contexts_notices": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["TK Notice", "BC Notice", "Attribution Incomplete Notice", "Open to Collaboration Notice"] },
+          "uniqueItems": true,
+          "description": "Notices this project applies through the Local Contexts Hub."
+        },
+        "local_contexts_labels": {
+          "type": "array",
+          "items": { "type": "string" },
+          "uniqueItems": true,
+          "description": "Labels applied by the community itself (e.g. 'TK Attribution'). Copied from the Local Contexts Hub; never applied by this project."
+        },
+        "local_contexts_project_url": { "$ref": "#/$defs/url" },
+        "restricted": {
+          "type": "boolean",
+          "description": "True means never publish, export, cache offline, or serve through any API."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/variable.schema.json",
+  "title": "Template variables",
+  "description": "content/variables/<group>.yaml: placeholders used in provisions and forms. The book renders each as its 'model' text; a future template builder substitutes a nation's own value.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["group", "variables"],
+  "properties": {
+    "group": { "type": "string", "pattern": "^[a-z]+$", "description": "First part of the placeholder name, e.g. 'nation'." },
+    "variables": {
+      "type": "object",
+      "propertyNames": { "pattern": "^[a-z_]+$" },
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["description", "model"],
+        "properties": {
+          "description": { "type": "string" },
+          "model": { "type": "string", "description": "Text shown in the model code, e.g. '[Name of Nation]'." },
+          "example": { "type": "string" }
+        }
+      }
+    }
+  }
+}

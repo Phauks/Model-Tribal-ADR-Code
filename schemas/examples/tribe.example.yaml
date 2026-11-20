@@ -1,0 +1,25 @@
+# Example tribe profile using a fictitious nation, to show structure only.
+# Real profiles are created under the charter's consultation process.
+id: example-nation
+names:
+  official: Example Nation of Examplestate
+  self_designation: []
+recognition:
+  - type: federal
+    source: bia-recognized-entities-2026
+states:
+  - state: NV
+    presence: land
+    source: bia-recognized-entities-2026
+justice_institutions:
+  - kind: tribal-court
+    name: Example Nation Tribal Court
+    source: example-nation-court-page
+dispute_resolution_law:
+  - example-nation-peacemaking-code
+review:
+  status: drafted-from-public-sources
+  last_verified: 2026-11-20
+sensitivity:
+  tribal_review_required: false
+  restricted: false
