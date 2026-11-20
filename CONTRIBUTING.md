@@ -1,0 +1,64 @@
+# Contributing
+
+Thank you for helping. This project collects and models dispute resolution
+practices of Native nations, so contributions follow the
+[project charter](docs/charter.md) as well as the technical rules below.
+Please read the charter first.
+
+## Ways to contribute
+
+- **Tribal reviewers, judges, peacemakers and scholars:** comment on drafts.
+  When the website is live, you will be able to comment there without a GitHub
+  account. Until then, open an issue or contact the maintainer.
+- **Authors:** propose essays, commentary or illustrations through a pull
+  request, or send text to the maintainer to submit for you.
+- **Technical contributors:** improve the website, build or tooling through
+  pull requests.
+
+## Rules for content
+
+1. **Cite everything.** Every factual claim needs a source record in
+   `content/sources/` and a citation key in the text. Mark your own analysis as
+   analysis. See [docs/citation-style.md](docs/citation-style.md).
+2. **Archive what you cite.** Each web source needs an archived snapshot link
+   and a retrieval date in its source record.
+3. **Record rights before quoting.** Fill in the `rights` field of the source
+   record before quoting more than a short passage. See the permission
+   statuses in [docs/data-model.md](docs/data-model.md).
+4. **Respect restricted knowledge.** Do not add ceremonial, restricted or
+   community-held knowledge unless the community has approved it in writing.
+   When unsure, mark the record `tribal-review-required` and ask.
+5. **Log your research.** Add a dated session file under `research/sessions/`
+   describing how you found what you added. See
+   [research/README.md](research/README.md).
+
+## Workflow
+
+1. Create a short-lived branch from `main`, named by track and topic:
+   `content/peacemaking-confidentiality`, `site/pwa-manifest`,
+   `pdf/lulu-margins`, `docs/charter-wording`, `research/2026-11-nevada-codes`.
+2. Write commit messages in the
+   [Conventional Commits](https://www.conventionalcommits.org/) form, with a
+   scope naming the track when one applies:
+   - `feat(content): add peacemaking confidentiality provision`
+   - `fix(site): correct footnote anchor links`
+   - `docs: clarify permission statuses`
+3. Sign off each commit (`git commit -s`) to certify, under the
+   [Developer Certificate of Origin](https://developercertificate.org/), that you
+   have the right to submit it under this project's licenses.
+4. Open a pull request against `main` and fill in the template.
+5. Pull requests are squash-merged. The branch is deleted automatically after
+   merge.
+
+Nobody pushes directly to `main`.
+
+## Versions and changelogs
+
+Do not edit `version.txt` or `CHANGELOG.md` files by hand. They are updated by
+a release pull request generated from commit messages (see
+[decision record 0003](docs/decisions/0003-three-version-tracks.md)). Your commit
+message is your changelog entry, so make it clear.
+
+## Code of conduct
+
+Everyone taking part agrees to the [Code of Conduct](CODE_OF_CONDUCT.md).

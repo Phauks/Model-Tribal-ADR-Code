@@ -1,0 +1,20 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+.svelte-kit/
+.wrangler/
+*.pdf
+!content/sources/**/*.pdf
+
+# Local secrets and environment files (secrets live only in Cloudflare)
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+
+# Editor and OS files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
