@@ -1,161 +1,187 @@
 import { error } from '@sveltejs/kit';
+import { emailLink, mapSearchLink, phoneLink, webLink } from '#lib/contact-links.ts';
 import { nations, type CitedFact, type NationRecord } from '#lib/server/content.ts';
-import { Notes } from '#lib/server/markdown.ts';
-import { humanize, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
+import { SourceUses } from '#lib/server/source-uses.ts';
+import { humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
 
 export const entries: EntryGenerator = () => nations().map((record) => ({ id: record.id }));
 
-/** One fact as the page shows it: words, an optional link, and its note numbers. */
+/**
+ * One fact as the page shows it: an optional label, the words, an optional
+ * link and a detail in parentheses. Its source is listed in the page's
+ * Sources section, not beside it.
+ */
 interface FactItem {
+	label?: string;
 	text: string;
 	link?: string;
+	/** Words for screen readers after the link, such as "on Google Maps". */
+	linkHint?: string;
 	detail?: string;
-	notes: number[];
 }
 
-/** A labeled group of facts, tied to the record field a "Report a problem" link names. */
+/** A labeled group of facts. `field` is the record field the group shows. */
 interface FactGroup {
 	field: string;
 	label: string;
 	items: FactItem[];
 }
 
-/**
- * A record's link, only when it is a complete web address. Anything else,
- * such as "www.example.org" or a note typed into the field, is shown as text
- * and never turned into a link.
- */
-function webLink(value: unknown): string | undefined {
-	if (typeof value !== 'string') return undefined;
-	try {
-		const url = new URL(value);
-		return url.protocol === 'https:' || url.protocol === 'http:' ? url.href : undefined;
-	} catch {
-		return undefined;
-	}
-}
-
-function cite(notes: Notes, fact: CitedFact | undefined): number[] {
-	if (!fact?.source) return [];
-	const locator = [fact.locator, fact.as_of ? `as of ${fact.as_of}` : undefined]
-		.filter(Boolean)
-		.join(', ');
-	return [notes.add(fact.source, locator || undefined)];
-}
-
 function group(field: string, label: string, items: FactItem[]): FactGroup[] {
 	return items.length > 0 ? [{ field, label, items }] : [];
 }
 
-function atAGlance(record: NationRecord, notes: Notes): FactGroup[] {
+/** Shows a fact and records its source under the group's label. */
+function cited(sources: SourceUses, section: string, fact: CitedFact, item: FactItem): FactItem {
+	sources.use(fact, section, [item.label, item.text].filter(Boolean).join(': '));
+	return item;
+}
+
+/** A contact as the page shows it, with a link a reader can act on where one makes sense. */
+function contactItem(fact: { kind: string; value: string; label?: string }): FactItem {
+	const detail = fact.label;
+	switch (fact.kind) {
+		case 'website':
+			return { text: fact.value, link: webLink(fact.value), detail };
+		case 'physical-address':
+		case 'mailing-address':
+			return {
+				label: humanize(fact.kind),
+				text: fact.value,
+				link: mapSearchLink(fact.value),
+				linkHint: 'on Google Maps',
+				detail
+			};
+		case 'phone':
+			return { label: 'Phone', text: fact.value, link: phoneLink(fact.value), detail };
+		case 'email-general':
+			return { label: 'Email', text: fact.value, link: emailLink(fact.value), detail };
+		default:
+			// Fax numbers and anything else are shown as text: a fax cannot be dialed from a page.
+			return { label: humanize(fact.kind), text: fact.value, detail };
+	}
+}
+
+function atAGlance(record: NationRecord, sources: SourceUses): FactGroup[] {
+	const statesLabel = 'States with a presence';
 	const stateItems = new Map<string, FactItem>();
 	for (const fact of record.states ?? []) {
 		const existing = stateItems.get(fact.state);
 		const presence = fact.presence ? humanize(fact.presence).toLocaleLowerCase('en-US') : '';
+		sources.use(
+			fact,
+			statesLabel,
+			`${stateName(fact.state)}${presence ? ` (${presence})` : ''}`
+		);
 		if (existing) {
-			existing.notes.push(...cite(notes, fact));
 			if (presence && !existing.detail?.includes(presence)) {
 				existing.detail = [existing.detail, presence].filter(Boolean).join('; ');
 			}
 		} else {
-			stateItems.set(fact.state, {
-				text: stateName(fact.state),
-				detail: presence || undefined,
-				notes: cite(notes, fact)
-			});
+			stateItems.set(fact.state, { text: stateName(fact.state), detail: presence || undefined });
 		}
 	}
 
+	const recognitionLabel = 'Recognition';
+	const contactsLabel = 'Government contacts';
+	const regionLabel = 'Bureau of Indian Affairs region';
+	const languagesLabel = 'Heritage languages';
 	const administration = record.federal_administration;
 	return [
 		...group(
 			'recognition',
-			'Recognition',
-			(record.recognition ?? []).map((fact) => ({
-				text: humanize(fact.type),
-				detail: fact.legal_basis,
-				notes: cite(notes, fact)
-			}))
+			recognitionLabel,
+			(record.recognition ?? []).map((fact) =>
+				cited(sources, recognitionLabel, fact, {
+					text: humanize(fact.type),
+					detail: fact.legal_basis
+				})
+			)
 		),
-		...group('states', 'States with a presence', [...stateItems.values()]),
+		...group('states', statesLabel, [...stateItems.values()]),
 		...group(
 			'contacts',
-			'Government contacts',
-			(record.contacts ?? []).map((fact) => ({
-				text: fact.kind === 'website' ? fact.value : `${humanize(fact.kind)}: ${fact.value}`,
-				link: fact.kind === 'website' ? webLink(fact.value) : undefined,
-				detail: fact.label,
-				notes: cite(notes, fact)
-			}))
+			contactsLabel,
+			(record.contacts ?? []).map((fact) => cited(sources, contactsLabel, fact, contactItem(fact)))
 		),
 		...group(
 			'federal_administration',
-			'Bureau of Indian Affairs region',
+			regionLabel,
 			administration?.bureau_of_indian_affairs_region
 				? [
-						{
+						cited(sources, regionLabel, administration, {
 							text: administration.bureau_of_indian_affairs_region,
-							detail: administration.bureau_of_indian_affairs_agency,
-							notes: cite(notes, administration)
-						}
+							link: `/nations/map#${regionAnchor(administration.bureau_of_indian_affairs_region)}`,
+							detail: administration.bureau_of_indian_affairs_agency
+						})
 					]
 				: []
 		),
 		...group(
 			'languages',
-			'Heritage languages',
+			languagesLabel,
 			(record.languages ?? []).flatMap((fact) =>
-				typeof fact.name === 'string' ? [{ text: fact.name, notes: cite(notes, fact) }] : []
+				typeof fact.name === 'string'
+					? [cited(sources, languagesLabel, fact, { text: fact.name })]
+					: []
 			)
 		)
 	];
 }
 
-function courtsAndDisputeResolution(record: NationRecord, notes: Notes): FactGroup[] {
+function courtsAndDisputeResolution(record: NationRecord, sources: SourceUses): FactGroup[] {
+	const courtsLabel = 'Courts and justice institutions';
+	const forumsLabel = 'Dispute resolution forums';
 	return [
 		...group(
 			'justice_institutions',
-			'Courts and justice institutions',
-			(record.justice_institutions ?? []).map((fact) => ({
-				text: fact.name,
-				link: webLink(fact.link),
-				detail: humanize(fact.kind),
-				notes: cite(notes, fact)
-			}))
+			courtsLabel,
+			(record.justice_institutions ?? []).map((fact) =>
+				cited(sources, courtsLabel, fact, {
+					text: fact.name,
+					link: webLink(fact.link),
+					detail: humanize(fact.kind)
+				})
+			)
 		),
 		...group(
 			'dispute_resolution',
-			'Dispute resolution forums',
-			(record.dispute_resolution?.forums ?? []).map((fact) => ({
-				text: fact.name ?? humanize(fact.kind),
-				link: webLink(fact.link),
-				detail: fact.name ? humanize(fact.kind) : undefined,
-				notes: cite(notes, fact)
-			}))
+			forumsLabel,
+			(record.dispute_resolution?.forums ?? []).map((fact) =>
+				cited(sources, forumsLabel, fact, {
+					text: fact.name ?? humanize(fact.kind),
+					link: webLink(fact.link),
+					detail: fact.name ? humanize(fact.kind) : undefined
+				})
+			)
 		)
 	];
 }
 
-function publishedLaw(record: NationRecord, notes: Notes): FactGroup[] {
+function publishedLaw(record: NationRecord, sources: SourceUses): FactGroup[] {
+	const lawLabel = 'Dispute resolution law';
+	const documentsLabel = 'Where the nation publishes its laws';
 	return [
 		...group(
 			'dispute_resolution_law',
-			'Dispute resolution law',
-			(record.dispute_resolution_law ?? []).map((key) => ({
-				text: 'Published law on dispute resolution',
-				notes: [notes.add(key)]
-			}))
+			lawLabel,
+			(record.dispute_resolution_law ?? []).map((key) => {
+				const text = 'Published law on dispute resolution';
+				sources.add(key, { section: lawLabel, text });
+				return { text };
+			})
 		),
 		...group(
 			'governing_documents',
-			'Where the nation publishes its laws',
-			(record.governing_documents ?? []).map((fact) => ({
-				text: fact.title ?? humanize(fact.kind),
-				link: webLink(fact.link),
-				detail: fact.title ? humanize(fact.kind) : undefined,
-				notes: cite(notes, fact)
-			}))
+			documentsLabel,
+			(record.governing_documents ?? []).map((fact) =>
+				cited(sources, documentsLabel, fact, {
+					text: fact.title ?? humanize(fact.kind),
+					link: webLink(fact.link),
+					detail: fact.title ? humanize(fact.kind) : undefined
+				})
+			)
 		)
 	];
 }
@@ -163,47 +189,45 @@ function publishedLaw(record: NationRecord, notes: Notes): FactGroup[] {
 /**
  * Short sentences generated only from cited facts, never inferred from
  * silence and never comparing one nation with another (site/DESIGN.md,
- * "Nation pages").
+ * "Nation pages"). Each sentence's sources are listed under "Recorded
+ * features" in the Sources section.
  */
-function recordedFeatures(record: NationRecord, notes: Notes): FactItem[] {
+function recordedFeatures(record: NationRecord, sources: SourceUses): FactItem[] {
+	const section = 'Recorded features';
 	const features: FactItem[] = [];
+	const feature = (text: string, facts: CitedFact[]) => {
+		for (const fact of facts) sources.use(fact, section, text);
+		features.push({ text });
+	};
 
 	const peacemaking = [
 		...(record.justice_institutions ?? []),
 		...(record.dispute_resolution?.forums ?? [])
 	].filter((fact) => fact.kind.includes('peacemaking'));
 	if (peacemaking.length > 0) {
-		features.push({
-			text: 'A source records a peacemaking program or forum.',
-			notes: peacemaking.flatMap((fact) => cite(notes, fact))
-		});
+		feature('A source records a peacemaking program or forum.', peacemaking);
 	}
 
 	const appeals = (record.justice_institutions ?? []).filter(
 		(fact) => fact.kind === 'court-of-appeals'
 	);
-	if (appeals.length > 0) {
-		features.push({
-			text: 'A source records a court of appeals.',
-			notes: appeals.flatMap((fact) => cite(notes, fact))
-		});
-	}
+	if (appeals.length > 0) feature('A source records a court of appeals.', appeals);
 
-	if ((record.dispute_resolution_law ?? []).length > 0) {
-		features.push({
-			text: 'The nation has published law on peacemaking, mediation or a related process.',
-			notes: (record.dispute_resolution_law ?? []).map((key) => notes.add(key))
-		});
+	const laws = record.dispute_resolution_law ?? [];
+	if (laws.length > 0) {
+		const text = 'The nation has published law on peacemaking, mediation or a related process.';
+		for (const key of laws) sources.add(key, { section, text });
+		features.push({ text });
 	}
 
 	const states = [...new Set((record.states ?? []).map((fact) => fact.state))];
 	if (states.length > 1) {
-		features.push({
-			text: `Sources record a presence in ${states.length} states and territories: ${states
+		feature(
+			`Sources record a presence in ${states.length} states and territories: ${states
 				.map(stateName)
 				.join(', ')}.`,
-			notes: [...new Set((record.states ?? []).flatMap((fact) => cite(notes, fact)))]
-		});
+			record.states ?? []
+		);
 	}
 
 	return features;
@@ -222,29 +246,63 @@ export const load: PageServerLoad = ({ params }) => {
 		example: record.example === true,
 		officialName: record.names.official,
 		review: { ...status, lastVerified: record.review?.last_verified },
-		withdrawn: record.review?.status === 'withdrawn-at-request',
-		officialNote: [] as number[]
+		withdrawn: record.review?.status === 'withdrawn-at-request'
 	};
 
 	if (page.withdrawn) {
-		return { page, selfDesignations: [], features: [], glance: [], courts: [], law: [], notes: [] };
+		return {
+			page,
+			selfDesignations: [],
+			pronunciations: [],
+			features: [],
+			glance: [],
+			courts: [],
+			law: [],
+			sources: []
+		};
 	}
 
-	const notes = new Notes();
-	const officialNote = record.names.official_source ? [notes.add(record.names.official_source)] : [];
-	const selfDesignations = (record.names.self_designation ?? []).map((fact) => ({
-		name: fact.name,
-		languageTag: fact.language_tag,
-		notes: cite(notes, fact)
-	}));
+	const sources = new SourceUses();
+	if (record.names.official_source) {
+		sources.add(record.names.official_source, {
+			section: 'Name as the recognizing list gives it',
+			text: record.names.official
+		});
+	}
+	const selfDesignations = (record.names.self_designation ?? []).map((fact) => {
+		sources.use(fact, 'The nation’s own name', fact.name);
+		return { name: fact.name, languageTag: fact.language_tag };
+	});
+
+	// Copied only from an authoritative source, never worked out from the
+	// spelling (docs/data-model.md, "Names and languages").
+	const pronunciations = (record.names.pronunciation ?? []).map((fact) => {
+		const recording = webLink(fact.recording);
+		const said = [
+			fact.respelling,
+			fact.phonetic_transcription ? `/${fact.phonetic_transcription}/` : undefined,
+			recording ? 'recording' : undefined
+		]
+			.filter(Boolean)
+			.join(', ');
+		sources.use(fact, 'How to say', `${fact.name}: ${said}`);
+		return {
+			name: fact.name,
+			languageTag: fact.language_tag,
+			respelling: fact.respelling,
+			phoneticTranscription: fact.phonetic_transcription,
+			recording
+		};
+	});
 
 	return {
-		page: { ...page, officialNote },
+		page,
 		selfDesignations,
-		features: recordedFeatures(record, notes),
-		glance: atAGlance(record, notes),
-		courts: courtsAndDisputeResolution(record, notes),
-		law: publishedLaw(record, notes),
-		notes: notes.list
+		pronunciations,
+		features: recordedFeatures(record, sources),
+		glance: atAGlance(record, sources),
+		courts: courtsAndDisputeResolution(record, sources),
+		law: publishedLaw(record, sources),
+		sources: sources.list
 	};
 };

@@ -1,7 +1,9 @@
 /**
  * Reads the plain-text records in the repository (decision record 0004) when
  * the site is built. Every page is prerendered, so this code runs only at
- * build time, in Node, never in the deployed Worker.
+ * build time, in Node, never in the deployed Worker. vite.config.ts also
+ * imports it, to list the content co-authors review, so it must not use
+ * Vite-only imports such as "?raw" (versions.ts has those).
  *
  * Paths are relative to the repository root, one folder above site/, which is
  * where npm runs during development and in Cloudflare Workers Builds (root
@@ -10,9 +12,6 @@
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { parse } from 'yaml';
-import contentVersion from '../../../../content/version.txt?raw';
-import siteVersion from '../../../version.txt?raw';
-import printVersion from '../../../../pdf/version.txt?raw';
 
 export const repositoryRoot = path.resolve(process.cwd(), '..');
 
@@ -40,26 +39,7 @@ function yamlFilesUnder(relativeFolder: string): string[] {
 	return found;
 }
 
-/* Versions ---------------------------------------------------------------- */
-
-export interface TrackVersions {
-	content: string;
-	site: string;
-	print: string;
-}
-
-/**
- * The three version numbers are bundled into the Worker at build time, so
- * pages the Worker renders on request, such as "Page not found", show them
- * without reading files.
- */
-export function trackVersions(): TrackVersions {
-	return {
-		content: contentVersion.trim(),
-		site: siteVersion.trim(),
-		print: printVersion.trim()
-	};
-}
+/* Changelogs -------------------------------------------------------------- */
 
 export function readChangelog(track: 'content' | 'site' | 'pdf'): string {
 	return readText(`${track}/CHANGELOG.md`);
@@ -152,6 +132,13 @@ export interface NationRecord {
 		official_source?: string;
 		self_designation?: (CitedFact & { name: string; language_tag?: string })[];
 		former?: (CitedFact & { name: string })[];
+		pronunciation?: (CitedFact & {
+			name: string;
+			language_tag?: string;
+			respelling?: string;
+			phonetic_transcription?: string;
+			recording?: string;
+		})[];
 	};
 	recognition?: (CitedFact & { type: string; legal_basis?: string })[];
 	states?: (CitedFact & { state: string; presence?: string })[];
@@ -205,4 +192,30 @@ export function nations(): NationRecord[] {
 		);
 	}
 	return nationCache;
+}
+
+/**
+ * Every nation record that is not restricted, including records held back
+ * until the nation approves them, because those are the ones a nation
+ * reviewer must see in the co-author workspace. Used by vite.config.ts.
+ */
+export function nationsForReview(): { id: string; name: string; published: boolean; file: string }[] {
+	return yamlFilesUnder('content/tribes')
+		.map((file) => ({ file, record: readYaml<NationRecord>(file) }))
+		.filter(({ record }) => !record.sensitivity?.restricted)
+		.map(({ file, record }) => ({
+			id: record.id,
+			name: record.names.official,
+			published: isPublishable(record),
+			file
+		}))
+		.sort((first, second) => first.name.localeCompare(second.name, 'en', { sensitivity: 'base' }));
+}
+
+/** Glossary records with the file each comes from. Used by vite.config.ts. */
+export function glossaryForReview(): { id: string; term: string; file: string }[] {
+	return yamlFilesUnder('content/glossary').map((file) => {
+		const record = readYaml<GlossaryRecord>(file);
+		return { id: record.id, term: record.term, file };
+	});
 }

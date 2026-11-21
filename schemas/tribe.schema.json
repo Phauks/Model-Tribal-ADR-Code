@@ -59,6 +59,28 @@
             "properties": { "name": { "type": "string" } },
             "unevaluatedProperties": false
           }
+        },
+        "pronunciation": {
+          "type": "array",
+          "description": "How to say the nation's names, recorded only as an authoritative source publishes it: preferably the nation itself (its website, language program or a recording it published). Never worked out from the spelling. Left out when no such source is found.",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "required": ["name"],
+            "anyOf": [
+              { "required": ["respelling"] },
+              { "required": ["phonetic_transcription"] },
+              { "required": ["recording"] }
+            ],
+            "properties": {
+              "name": { "type": "string", "description": "The name being pronounced, written as the source writes it." },
+              "language_tag": { "$ref": "common.schema.json#/$defs/languageTag", "description": "Language of the name being pronounced, for example en for an English name or nv for a Diné Bizaad name." },
+              "respelling": { "type": "string", "description": "A sound-it-out spelling, copied exactly as the source gives it, for example 'hoe-CHUNK'." },
+              "phonetic_transcription": { "type": "string", "description": "A transcription in the International Phonetic Alphabet or another phonetic system, only when the source gives one, copied exactly." },
+              "recording": { "$ref": "common.schema.json#/$defs/link", "description": "Link to an audio or video recording of the name that the source published." }
+            },
+            "unevaluatedProperties": false
+          }
         }
       }
     },

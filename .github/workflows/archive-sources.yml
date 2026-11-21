@@ -5,9 +5,12 @@
 # slow or failed capture does not block a pull request. Uses no secrets.
 #
 # On a pull request it handles only the source records the pull request adds
-# or changes. Run it by hand to work through older records; each run stops
-# after 'limit' records, waiting about 20 seconds between captures, because
-# anonymous Save Page Now is rate limited.
+# or changes. Run it by hand to work through older records, or name records in
+# 'keys'; each run stops after 'limit' records, waiting about 20 seconds between
+# captures, because anonymous Save Page Now is rate limited. Runs wait for each
+# other (one concurrency group), because parallel runs got their connections
+# refused. GitHub keeps only the newest waiting run, so a pull request whose run
+# was dropped can be caught up by hand.
 name: archive sources
 
 on:
@@ -19,6 +22,13 @@ on:
       limit:
         description: "Most records to capture in this run"
         default: "150"
+      keys:
+        description: "Source record keys to capture, separated by spaces (leave empty for all without a capture)"
+        default: ""
+
+concurrency:
+  group: archive-sources
+  cancel-in-progress: false
 
 permissions:
   contents: read
@@ -48,7 +58,8 @@ jobs:
         if: github.event_name == 'workflow_dispatch'
         env:
           LIMIT: ${{ inputs.limit }}
-        run: python3 scripts/find_archived_copies.py --save --limit "$LIMIT" --report archive-report.json
+          KEYS: ${{ inputs.keys }}
+        run: python3 scripts/find_archived_copies.py --save --limit "$LIMIT" --report archive-report.json $KEYS
       - uses: actions/upload-artifact@v4
         if: always()
         with:
