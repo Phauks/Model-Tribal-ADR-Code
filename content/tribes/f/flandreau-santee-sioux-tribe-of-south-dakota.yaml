@@ -277,89 +277,76 @@ justice_institutions:
   as_of: '2022'
   locator: South Dakota section, entry 'Flandreau Santee Sioux Tribe'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Court may Order other Restorative Sentences
+  database_listings:
+  - title: Court may Order other Restorative Sentences
     citation: 'Flandreau Santee Sioux Tribe Law & Order Code, Volume 1: Title 3: Criminal Code, Section
       3-2-2'
     link: https://fsst-nsn.gov/law-order-code
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/court-may-order-other-restorative-sentences/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative.'
-  - kind: other
-    title: Least Restrictive Alternative Approach to Mental Health Cases
+  - title: Least Restrictive Alternative Approach to Mental Health Cases
     citation: 'Flandreau Santee Sioux Tribe Law & Order Code, Volume 3: Title 7: Mental Health and Involuntrary
       Commitments, Section 2, Subsection 6'
     link: https://fsst-nsn.gov/law-order-code
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/least-restrictive-alternative-approach-to-mental-health-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: .'
-  - kind: other
-    title: Least Restrictive Disposition Options for Juveniles
+  - title: Least Restrictive Disposition Options for Juveniles
     citation: 'Flandreau Santee Sioux Tribe Law & Order Code, Volume 3: Title 5: Juvenile Code, Section
       5-6-5 & Section 5-7-7'
     link: https://fsst-nsn.gov/law-order-code
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Alternative; Community service; Program
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/least-restrictive-disposition-options-for-juveniles/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative;
-      Community service; Program.'
-  - kind: other
-    title: Least Restrictive Treatment Available Alternatives in Inpatient Treatment
+  - title: Least Restrictive Treatment Available Alternatives in Inpatient Treatment
     citation: 'Flandreau Santee Sioux Tribe Law & Order Code, Volume 3: Title 7: Mental Health and Involuntrary
       Commitments, Section 7-1-19'
     link: https://fsst-nsn.gov/law-order-code
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/least-restrictive-treatment-available-alternatives-in-inpatient-treatment/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: .'
-  - kind: other
-    title: Order of Protection Mandated Evaluations & Treatment
+  - title: Order of Protection Mandated Evaluations & Treatment
     citation: 'Flandreau Santee Sioux Tribe Law & Order Code, Volume 3: Title 5: Juvenile Code, Section
       5-4-47'
     link: https://fsst-nsn.gov/law-order-code
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Parenting Classes
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/order-of-protection-mandated-evaluations-treatment/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
-      form of practice: Parenting Classes.'
-  - kind: other
-    title: Treament Condition for Probation
+  - title: Treament Condition for Probation
     citation: 'Flandreau Santee Sioux Tribe Law & Order Code, Volume 1: Title 2: Criminal Procedure, Section
       2-19-19'
     link: https://fsst-nsn.gov/law-order-code
+    practice_area: Tribal Justice
+    phase: Post-adjudication
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treament-condition-for-probation/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
 gaming:
   compacts:
   - state: SD

@@ -286,83 +286,73 @@ justice_institutions:
   as_of: '2022'
   locator: Oklahoma section, entry 'Wyandotte Nation'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Child Abuse and Child Neglect Diversion Program
+  database_listings:
+  - title: Child Abuse and Child Neglect Diversion Program
     citation: Wyandotte Nation Title 9, Section 511
     link: https://wyandotte-nation.org/government/courts/
+    practice_area: Tribal Child Welfare/Family; Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/child-abuse-and-child-neglect-diversion-program-3/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Justice. Database phase: Pre-adjudication. Database form of
-      practice: Restorative justice.'
-  - kind: other
-    title: Deferring Prosecution Requirements for Elder Abuse Cases
+  - title: Deferring Prosecution Requirements for Elder Abuse Cases
     citation: Wyandotte Nation Title 27, Section 403
     link: https://wyandotte-nation.org/government/courts/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/deferring-prosecution-requirements-for-elder-abuse-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Rehabilitative Measures for Controlled Dangerous Substances
+  - title: Rehabilitative Measures for Controlled Dangerous Substances
     citation: Wyandotte Nation Title 10, Section 501
     link: https://wyandotte-nation.org/government/courts/
+    practice_area: Tribal Justice; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/rehabilitative-measures-for-controlled-dangerous-substances/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form
-      of practice: Restorative justice.'
-  - kind: other
-    title: Sentencing Juvenile Offenders for Controlled Dangrous Substances
+  - title: Sentencing Juvenile Offenders for Controlled Dangrous Substances
     citation: Wyandotte Nation Title 10, Section 505
     link: https://wyandotte-nation.org/government/courts/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/sentencing-juvenile-offenders-for-controlled-dangrous-substances/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Treatment Plans for Juvenile Cases
+  - title: Treatment Plans for Juvenile Cases
     citation: Wyandotte Nation Title 9, Section 403
     link: https://wyandotte-nation.org/government/courts/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-plans-for-juvenile-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Violation of a Protective Order by a Juvenile
+  - title: Violation of a Protective Order by a Juvenile
     citation: Wyandotte Nation Title 7, Section 208
     link: https://wyandotte-nation.org/government/courts/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/violation-of-a-protective-order-by-a-juvenile/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
 gaming:
   compacts:
   - state: KS

@@ -24,7 +24,7 @@ import yaml
 
 ROOT = pathlib.Path(".")
 BULK_DATABASE_SOURCE = "national-center-on-restorative-justice-restorative-justice-tribal-laws-database"
-SECTIONS = ["forums", "provisions", "clauses", "training_programs", "published_materials"]
+SECTIONS = ["forums", "provisions", "clauses", "training_programs", "published_materials", "database_listings"]
 
 # Recurring design features, found by keyword in the description,
 # relationship_to_court, enforcement and participation fields of each forum.
@@ -57,9 +57,13 @@ def load_yaml_files(pattern):
 
 
 def evidence_tier(item):
-    """How closely the underlying text was read, from the fact's own note."""
+    """How closely the underlying text was read, from the fact's own note.
+
+    Entries in `database_listings` are bulk database records by definition
+    (decision record 0015); older notes named the tier in words.
+    """
     note = item.get("note") or ""
-    if "Bulk record from the NCORJ" in note:
+    if item.get("verification") == "bulk-import" or "Bulk record from the NCORJ" in note:
         return "bulk_database_record"
     lowered = note.lower()
     if "section title" in lowered or "section headings" in lowered or "section or chapter title" in lowered:
@@ -68,6 +72,8 @@ def evidence_tier(item):
 
 
 def recognition_label(profile):
+    if profile.get("part_of"):
+        return "component-of-" + profile["part_of"]
     kinds = sorted({entry["type"] for entry in profile.get("recognition", [])})
     return "+".join(kinds) or "none"
 
@@ -89,11 +95,8 @@ def as_of_period(item):
     return "2020_or_later"
 
 
-def database_taxonomy(note, label):
-    match = re.search(label + r": (.*?)\.( Database|$)", note)
-    if not match:
-        return []
-    return [value.strip() for value in match.group(1).split(";") if value.strip()]
+def database_taxonomy(value):
+    return [part.strip() for part in (value or "").split(";") if part.strip()]
 
 
 def counter_to_sorted_dictionary(counter):
@@ -106,13 +109,22 @@ def main(output_path):
     method_identifiers = sorted(path.stem for path in ROOT.glob("content/methods/*.yaml"))
 
     with_practice = [profile for profile in profiles if profile.get("dispute_resolution")]
-    federal = [profile for profile in profiles if any(entry["type"] == "federal" for entry in profile.get("recognition", []))]
+    # Component bands (part_of) are counted apart so that a recognized entity is not counted twice.
+    federal = [
+        profile for profile in profiles
+        if any(entry["type"] == "federal" for entry in profile.get("recognition", [])) and not profile.get("part_of")
+    ]
 
     result = {
         "profiles": len(profiles),
         "profiles_with_any_dispute_resolution_record": len(with_practice),
         "federally_recognized_profiles": len(federal),
         "federally_recognized_profiles_with_any_record": sum(1 for profile in federal if profile.get("dispute_resolution")),
+        "component_profiles": sum(1 for profile in profiles if profile.get("part_of")),
+        "component_profiles_with_any_record": sum(1 for profile in with_practice if profile.get("part_of")),
+        "profiles_with_a_record_besides_database_listings": sum(
+            1 for profile in with_practice if any(key != "database_listings" for key in profile["dispute_resolution"])
+        ),
     }
 
     # Coverage by recognition and by Bureau of Indian Affairs region.
@@ -156,8 +168,9 @@ def main(output_path):
     strongest = collections.Counter()
     for profile in with_practice:
         practice = profile["dispute_resolution"]
-        tiers = {evidence_tier(item) for item in practice.get("provisions", [])}
-        if any(practice.get(section) for section in SECTIONS if section != "provisions") or "text_read" in tiers:
+        tiers = {evidence_tier(item) for section in ("provisions", "database_listings") for item in practice.get(section, [])}
+        curated = [section for section in SECTIONS if section not in ("provisions", "database_listings")]
+        if any(practice.get(section) for section in curated) or "text_read" in tiers:
             strongest["has_text_read_or_curated_record"] += 1
         elif tiers == {"bulk_database_record"}:
             strongest["bulk_database_records_only"] += 1
@@ -167,12 +180,12 @@ def main(output_path):
             strongest["bulk_database_records_and_section_titles_only"] += 1
     result["nations_by_strongest_evidence"] = counter_to_sorted_dictionary(strongest)
 
-    # The bulk database's own taxonomy.
+    # The bulk database's own taxonomy, now kept in database_listings.
+    listings = [(profile, item) for profile in with_practice for item in profile["dispute_resolution"].get("database_listings", [])]
     areas, phases = collections.Counter(), collections.Counter()
-    for _, item in provisions:
-        if evidence_tier(item) == "bulk_database_record":
-            areas.update(database_taxonomy(item.get("note", ""), "Database practice area"))
-            phases.update(database_taxonomy(item.get("note", ""), "Database phase"))
+    for _, item in listings:
+        areas.update(database_taxonomy(item.get("practice_area")))
+        phases.update(database_taxonomy(item.get("phase")))
     result["bulk_database_practice_area"] = counter_to_sorted_dictionary(areas)
     result["bulk_database_phase_top"] = dict(list(counter_to_sorted_dictionary(phases).items())[:6])
 

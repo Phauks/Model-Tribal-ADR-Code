@@ -252,57 +252,6 @@ dispute_resolution:
     as_of: 2018-01
     note: Developed by the Indigenous Peacemaking Initiative for the training; not a tribal law.
   provisions:
-  - kind: other
-    title: Abuser Treatment Programs Mandated in Protective Orders
-    citation: Eastern Band of Cherokee Indians Code Sec. 50B-9.
-    link: https://library.municode.com/tribes_and_tribal_nations/eastern_band_of_cherokee_indians/codes/code_of_ordinances
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/abuser-treatment-programs-mandated-in-protective-orders/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Dispositional Alternatives for Juveniles (undisciplines & delinquent)
-    citation: Eastern Band of Cherokee Indians Code Sec. Sec. 7A-53A; and, Sec. Sec. 7A-54.
-    link: https://library.municode.com/tribes_and_tribal_nations/eastern_band_of_cherokee_indians/codes/code_of_ordinances
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dispositional-alternatives-for-juveniles-undisciplines-delinquent/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Purpose of the Cherokee Wellness Court
-    citation: Eastern Band of Cherokee Indians Code Sec. 7C-1; and, Sec. 7C-3.
-    link: https://library.municode.com/tribes_and_tribal_nations/eastern_band_of_cherokee_indians/codes/code_of_ordinances
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-of-the-cherokee-wellness-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court.'
-  - kind: other
-    title: Strengthening Harmony in the Family in Custody Mediations
-    citation: Eastern Band of Cherokee Indians Code Sec.50-14.
-    link: https://library.municode.com/tribes_and_tribal_nations/eastern_band_of_cherokee_indians/codes/code_of_ordinances
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/strengthening-harmony-in-the-family-in-custody-mediations/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
-      form of practice: Restorative practice, Restorative process.'
   - kind: arbitration
     title: Ch. 94 - Arbitration
     citation: Ch. 94 - Arbitration
@@ -323,6 +272,51 @@ dispute_resolution:
     locator: Table of Contents
     note: Identified from section headings in the National Indian Law Library table of contents; the provision
       itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+  database_listings:
+  - title: Abuser Treatment Programs Mandated in Protective Orders
+    citation: Eastern Band of Cherokee Indians Code Sec. 50B-9.
+    link: https://library.municode.com/tribes_and_tribal_nations/eastern_band_of_cherokee_indians/codes/code_of_ordinances
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/abuser-treatment-programs-mandated-in-protective-orders/
+  - title: Dispositional Alternatives for Juveniles (undisciplines & delinquent)
+    citation: Eastern Band of Cherokee Indians Code Sec. Sec. 7A-53A; and, Sec. Sec. 7A-54.
+    link: https://library.municode.com/tribes_and_tribal_nations/eastern_band_of_cherokee_indians/codes/code_of_ordinances
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispositional-alternatives-for-juveniles-undisciplines-delinquent/
+  - title: Purpose of the Cherokee Wellness Court
+    citation: Eastern Band of Cherokee Indians Code Sec. 7C-1; and, Sec. 7C-3.
+    link: https://library.municode.com/tribes_and_tribal_nations/eastern_band_of_cherokee_indians/codes/code_of_ordinances
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative court
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-of-the-cherokee-wellness-court/
+  - title: Strengthening Harmony in the Family in Custody Mediations
+    citation: Eastern Band of Cherokee Indians Code Sec.50-14.
+    link: https://library.municode.com/tribes_and_tribal_nations/eastern_band_of_cherokee_indians/codes/code_of_ordinances
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative practice, Restorative process
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/strengthening-harmony-in-the-family-in-custody-mediations/
 gaming:
   compacts:
   - state: NC

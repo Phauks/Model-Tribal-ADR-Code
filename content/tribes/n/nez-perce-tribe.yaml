@@ -302,30 +302,6 @@ dispute_resolution:
       Nimiipuu language. Peacemakers are unpaid volunteers unless a program funds a stipend. The court's
       guidelines are set out in a Peacemaker Court Handbook (§ 1-8-7).
   provisions:
-  - kind: other
-    title: Available Sentences for All Criminal Offenses
-    citation: N.P.T.R.C. Section 4.10.039
-    link: https://nezperce.org/resources/tribal-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/available-sentences-for-all-criminal-offenses/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Reducing a Sec Offender Registration Period with Intervention and Treatment
-    citation: N.P.T.R.C. Section 4.10.055; and Section 4.10.061
-    link: https://nezperce.org/resources/tribal-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/reducing-a-sec-offender-registration-period-with-intervention-and-treatment/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
   - kind: mediation
     title: '''1-2-3 Mediation and Hearings'
     citation: '''1-2-3 Mediation and Hearings'
@@ -402,6 +378,29 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: Feburary 2019); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Available Sentences for All Criminal Offenses
+    citation: N.P.T.R.C. Section 4.10.039
+    link: https://nezperce.org/resources/tribal-code/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/available-sentences-for-all-criminal-offenses/
+  - title: Reducing a Sec Offender Registration Period with Intervention and Treatment
+    citation: N.P.T.R.C. Section 4.10.055; and Section 4.10.061
+    link: https://nezperce.org/resources/tribal-code/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/reducing-a-sec-offender-registration-period-with-intervention-and-treatment/
 gaming:
   compacts:
   - state: ID

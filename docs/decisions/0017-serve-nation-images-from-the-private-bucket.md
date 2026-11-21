@@ -1,4 +1,4 @@
-# 0015. Serve nations' seals and logos from the private bucket
+# 0017. Serve nations' seals and logos from the private bucket
 
 - **Status:** Accepted
 - **Date:** 2026-11-21

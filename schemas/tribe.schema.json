@@ -59,6 +59,10 @@
       "enum": ["native-nation", "native-hawaiian", "territorial-indigenous-people", "alaska-native-corporation"],
       "description": "What kind of community the record describes. native-nation: a tribal nation, band, pueblo, rancheria, community or Alaska Native village, whatever its recognition. native-hawaiian: the Native Hawaiian community, which has no federally recognized governing entity and is never described with tribal status categories. territorial-indigenous-people: an Indigenous people of a U.S. territory (for example CHamoru, Refaluwasch or Samoan), whose status rests on territorial law. alaska-native-corporation: a corporation formed under the Alaska Native Claims Settlement Act, which is not a government (reserved; not yet populated)."
     },
+    "part_of": {
+      "$ref": "common.schema.json#/$defs/slug",
+      "description": "For a band or other component that the list of recognized entities names only inside another entity's entry (for example the six component reservations of the Minnesota Chippewa Tribe): the id of that entity's profile. The component's own recognition cites the same entry."
+    },
     "names": {
       "type": "object",
       "additionalProperties": false,
@@ -463,6 +467,24 @@
               "kind": { "type": "string", "enum": ["rules", "forms", "guide", "brochure", "other"] },
               "title": { "type": "string" },
               "link": { "$ref": "common.schema.json#/$defs/link" }
+            },
+            "unevaluatedProperties": false
+          }
+        },
+        "database_listings": {
+          "type": "array",
+          "description": "Entries copied in bulk from a database or directory of tribal laws (such as the National Center on Restorative Justice Restorative Justice Tribal Laws Database) without opening the law itself. They are leads for review, not provisions: many concern diversion, treatment or sentencing rather than dispute resolution, and none is counted as a provision until it is read and moved to provisions (decision record 0015).",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "required": ["title"],
+            "properties": {
+              "title": { "type": "string", "description": "Title as the database gives it." },
+              "citation": { "type": "string", "description": "Citation as the database gives it." },
+              "link": { "$ref": "common.schema.json#/$defs/link", "description": "Link to the law as the database gives it." },
+              "practice_area": { "type": "string", "description": "The database's practice area tags, as it writes them." },
+              "phase": { "type": "string", "description": "The database's case phase tags, as it writes them." },
+              "form_of_practice": { "type": "string", "description": "The database's form of practice tags, as it writes them." }
             },
             "unevaluatedProperties": false
           }

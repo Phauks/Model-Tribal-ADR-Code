@@ -112,7 +112,7 @@ to git, because a public history cannot be fully rewritten if a nation later
 asks for removal.
 
 The website serves images from the private source documents bucket (R2), under
-the same paths ([decision record 0015](decisions/0015-serve-nation-images-from-the-private-bucket.md)):
+the same paths ([decision record 0017](decisions/0017-serve-nation-images-from-the-private-bucket.md)):
 
 - The build lists the images whose status allows showing them
   (`site/src/lib/official-images.ts`). Only those are served, at

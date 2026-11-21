@@ -79,6 +79,13 @@ community has availed itself of this opportunity"
 records these sources side by side without resolving the question (project
 choice).
 
+Where the list of recognized entities names bands only inside another
+entity's entry, as it does for the six component reservations of the
+Minnesota Chippewa Tribe, each band has its own profile with `part_of` set to
+that entity's id. Its recognition cites the same entry, and counts of
+recognized entities leave it out so that no entity is counted twice
+([decision record 0016](decisions/0016-component-bands-own-profiles.md)).
+
 ### Every fact is cited
 
 Every value in a profile carries the same citation fields
@@ -148,6 +155,12 @@ how it relates to the Tribal court and how agreements are enforced), specific
 code provisions, dispute resolution clauses and waivers of sovereign immunity
 in commercial and other codes, training programs, and published rules and
 forms. Gaming compact dispute terms are kept with each compact under `gaming`.
+
+Entries copied in bulk from a database of tribal laws, without opening the law
+itself, go in `database_listings`, not `provisions`. They keep the database's
+own tags (`practice_area`, `phase`, `form_of_practice`) as it writes them and
+carry `verification: bulk-import`. A listing becomes a provision only after the
+law is read ([decision record 0015](decisions/0015-database-listings-apart-from-provisions.md)).
 
 The vocabularies for kinds of forum, case types, participation, provisions
 and clauses are open: any lowercase hyphenated term validates, so a method the

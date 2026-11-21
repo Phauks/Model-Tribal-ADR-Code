@@ -246,46 +246,40 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.plpt.nsn.us/judicial/index.html)
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Diversion to Informal Resolution for Child in Need of Care
+  database_listings:
+  - title: Diversion to Informal Resolution for Child in Need of Care
     citation: Pyramid Lake Paiute Tribe 3.6.2120
     link: https://plpt.nsn.us/pyramid-lake-ordinances/
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/diversion-to-informal-resolution-for-child-in-need-of-care/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice; Restorative practice.'
-  - kind: other
-    title: Informal Conference, Mediation, or Conflict Resolution for Juveniles
+  - title: Informal Conference, Mediation, or Conflict Resolution for Juveniles
     citation: Pyramid Lake Paiute Tribe 3.6.900 and 3.6.906
     link: https://plpt.nsn.us/pyramid-lake-ordinances/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-conference-mediation-or-conflict-resolution-for-juveniles/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice; Restorative practice.'
-  - kind: other
-    title: Treatment of Domestic Violence Cases
+  - title: Treatment of Domestic Violence Cases
     citation: Pyramid Lake Paiute Tribe 3.09.200 and 3.09.801
     link: https://plpt.nsn.us/pyramid-lake-ordinances/
+    practice_area: Tribal Child Welfare/Family; Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-of-domestic-violence-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Justice. Database phase: Pre-adjudication. Database form of
-      practice: Restorative justice.'
 gaming:
   compacts:
   - state: NV

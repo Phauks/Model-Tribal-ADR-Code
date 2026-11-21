@@ -1,0 +1,585 @@
+id: white-earth-band
+entity_type: native-nation
+part_of: minnesota-chippewa-tribe
+names:
+  official: White Earth Band
+  official_source: bia-recognized-entities-2026
+  self_designation:
+  - name: White Earth Nation
+    source: whiteearth-home-page
+    confidence: high
+    verification: read-in-full
+    as_of: '2026-11-21'
+    locator: home page title
+    note: The page footer names the White Earth Reservation, and the governing body is the White Earth
+      Reservation Business Committee.
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+  note: 'Named in the notice as one of the six component reservations of the Minnesota Chippewa Tribe,
+    Minnesota, not as a separate entity: Minnesota Chippewa Tribe, Minnesota (Six component reservations:
+    Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band;
+    White Earth Band).'
+states:
+- state: MN
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  verification: inferred
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4595
+  note: 'Census area with land in this state: White Earth Reservation and Off-Reservation Trust Land (code
+    4595). Area matched to the band by name.'
+census_areas:
+- geographic_identifier: '4595'
+  name: White Earth Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  verification: inferred
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4595
+  note: 'Matched by name. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six
+    component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille Lacs,
+    White Earth). Census class code D1.'
+population:
+- count: 9726
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  verification: bulk-import
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4595, field POP100
+  note: 'Census area: White Earth Reservation and Off-Reservation Trust Land (code 4595). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names
+    six component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille
+    Lacs, White Earth).'
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Minnesota Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: inferred
+  as_of: '2026-11-20'
+  locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake);
+    Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
+  note: The Tribal Leaders Directory lists only the Minnesota Chippewa Tribe; the region and agency are
+    taken from its entry.
+governing_documents:
+- kind: law-code
+  title: White Earth Nation
+  year: '2014'
+  link: https://narf.org/nill/codes/white_earth/index.html
+  source: national-indian-law-library-code-codes-white-earth
+  confidence: medium
+  verification: title-only
+  as_of: '2014'
+  locator: page heading
+  note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band of the Minnesota Chippewa
+    Tribe, Minnesota. Table of Contents Updated: August 2014. The National Indian Law Library page gives
+    the table of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: White Earth Nation - Tribal Constitution
+  year: '2013'
+  link: https://narf.org/nill/constitutions/minn_chippewa_white_earth/index.html
+  source: national-indian-law-library-constitution-constitutions-minn-chippewa-white-earth
+  confidence: medium
+  verification: title-only
+  as_of: '2013'
+  locator: page heading
+  note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band of the Minnesota Chippewa
+    Tribe, Minnesota. Ratified: April 4, 2009 Approved: November 19, 2013. The National Indian Law Library
+    page gives the table of contents (and may link to the nation''s own copy); full text is not hosted
+    there.'
+- kind: law-code
+  title: Legal Code
+  link: https://www.whiteearth.com/divisions/judicial-services/codes-ordinances
+  source: national-indian-law-library-minn-chippewa-white-earth
+  confidence: medium
+  verification: title-only
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band of the Minnesota Chippewa
+    Tribe, Minnesota. Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal
+    court''s website . Legal Code.".'
+- kind: law-code
+  title: Resolutions
+  link: https://whiteearth.com/rbc/resolutions
+  source: national-indian-law-library-minn-chippewa-white-earth
+  confidence: medium
+  verification: title-only
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band of the Minnesota Chippewa
+    Tribe, Minnesota. Listed on the National Indian Law Library page under ''Tribal Code'' as: "At band''s
+    website . Resolutions.".'
+- kind: constitution
+  title: Constitution
+  source: national-indian-law-library-minn-chippewa-white-earth
+  confidence: medium
+  verification: title-only
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band of the Minnesota Chippewa
+    Tribe, Minnesota. Listed on the National Indian Law Library page under ''Tribal Constitution'' as:
+    "At Minnesota Chippewa Tribe''s website .". Link check 2026-11-21: the link the source gives (http://www.mnchippewatribe.org/pdf/constitution_revised.pdf)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: White Earth Nation Codes/Resolutions
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  verification: title-only
+  as_of: '2022'
+  locator: Minnesota section, entry 'White Earth Nation'
+  note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band. Title is the link text
+    in the directory; link not re-checked and may be out of date. Link check 2026-11-21: the link the
+    source gives (http://whiteearth.com/community/index.html@page_id=582.html) returned HTTP 404, so it
+    is not recorded.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-minn-chippewa-white-earth
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band of the Minnesota Chippewa
+    Tribe, Minnesota. The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21:
+    the link the source gives (http://www.whiteearth.com/programs/judicial/home) returned HTTP 404, so
+    it is not recorded.'
+- kind: tribal-court
+  name: White Earth Nation Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  verification: bulk-import
+  as_of: '2022'
+  locator: Minnesota section, entry 'White Earth Nation'
+  note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band Link check 2026-11-21:
+    the link the source gives (http://www.whiteearth.com/programs@program_id=3.html) returned HTTP 404,
+    so it is not recorded.'
+dispute_resolution:
+  forums:
+  - kind: restorative-justice
+    name: Peacemaking Circle (White Earth juvenile justice)
+    description: A community-directed process in partnership with the tribal court for reaching consensus
+      on a sentencing plan; the code describes circles as using traditional circle ritual and structure
+      in which community members, elders, victims, the judge, attorneys, police and court workers speak
+      in a shared search for understanding and healing.
+    legal_basis: White Earth Nation Juvenile Justice Code, Chapter 12A, Secs. 3-12-A-1 to 3-12-A-3; definition
+      30
+    case_types:
+    - juvenile
+    - criminal-sentencing
+    participation: voluntary-or-court-referred
+    relationship_to_court: After a guilty plea accepted by the Tribal Court judge, the court refers the
+      offender to the juvenile counselor; the offender may choose not to participate, in which case the
+      matter proceeds through adjudication or sentencing by the judge.
+    enforcement: The circle's consensus sentence agreement is presented to the judge for approval with
+      information on meetings held and community involvement.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/White-Earth-juvenile.justice.code_.pdf
+    source: white-earth-juvenile-justice-code
+    confidence: medium
+    verification: read-in-full
+    as_of: '2025'
+    locator: Chapter 12A; definitions 30 and 36
+    note: 'White Earth is a component band of the Minnesota Chippewa Tribe on the federal list; recorded
+      under minnesota-chippewa-tribe with component_band. The offender and circle members create a social
+      compact. as_of is NARF posting year. Component band: White Earth Band of Ojibwe.'
+  - kind: elders-council
+    name: Panel of Elders
+    description: Twelve elders appointed by the Tribal Council (four from each district) advise the Tribal
+      Court on disputes under White Earth law when a party asks; the Chief Judge presides and assigns
+      one elder to advise in each case. Elders may also serve as jurors, one may sit on the Appellate
+      Panel, and a Band member, including a juvenile, may choose to have a case heard in consultation
+      with an elder in accordance with the Band's traditional values and practices.
+    legal_basis: White Earth Judicial Code, Title 1, Chapter VIII (Sections 1-7); Chapter I Section 1;
+      Chapter VII Section 6(b)
+    case_types:
+    - juvenile
+    - other
+    participation: voluntary
+    relationship_to_court: Part of the White Earth Tribal Court; advises the court on request, and the
+      court may also seek the panel's advice when custom or tradition is in doubt.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/5dcba5f024-1727297538/judicial.code.pdf
+    source: white-earth-judicial-code
+    confidence: medium
+    verification: read-in-full
+    as_of: '1997-11-03'
+    locator: Chapter I § 1; Chapter III § 6; Chapter VII § 6(b); Chapter VIII §§ 1-7
+    note: 'Read by OCR. The chapter applies to all actions within the court''s jurisdiction; only juveniles
+      are named expressly, so other case types are recorded as ''other''. The panel may adopt its own
+      rules of procedure. Adopted by the White Earth Tribal Council on Nov. 3, 1997 (certification). The
+      scanned copy (May 4, 2021) appends a 2021 WERBC resolution adding Chapter 2, § 1(j). Component band:
+      White Earth Band of Ojibwe.'
+  provisions:
+  - kind: peacemaking
+    title: Juvenile Justice Code, Chapter 12A – Peacemaking Circle (White Earth Nation)
+    citation: White Earth Nation Juvenile Justice Code, Chapter 12A
+    summary: Sets the application, scheduling and sentence agreement process for juvenile peacemaking
+      circles after a guilty plea.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/White-Earth-juvenile.justice.code_.pdf
+    source: white-earth-juvenile-justice-code
+    confidence: medium
+    verification: read-in-full
+    as_of: '2025'
+    note: 'Component band: White Earth Band of Ojibwe.'
+  - kind: traditional-dispute-resolution
+    title: Panel of Elders
+    citation: White Earth Judicial Code, Title 1, Chapter VIII
+    summary: Creates a twelve-member Panel of Elders that advises the court on request of a party, may
+      serve on juries and the Appellate Panel, and sets its own procedure.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/5dcba5f024-1727297538/judicial.code.pdf
+    source: white-earth-judicial-code
+    confidence: medium
+    verification: read-in-full
+    as_of: '1997-11-03'
+    note: 'Read by OCR. Adopted by the White Earth Tribal Council on Nov. 3, 1997 (certification, p. 17
+      of the scan). Component band: White Earth Band of Ojibwe.'
+  - kind: traditional-dispute-resolution
+    title: Distribution of Traditional and Cultural Items
+    citation: White Earth Probate Code, Section 3
+    summary: Lets next of kin distribute a decedent's artifacts and finery according to Band custom, with
+      the Tribal Court resolving disputes with the advice of traditional elders from the decedent's community
+      when possible.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/a4ddc5a9ff-1727297541/probate.code.pdf
+    source: white-earth-probate-code
+    confidence: medium
+    verification: read-in-full
+    as_of: '2007'
+    note: 'Section number as shown in the text read; chapter not confirmed. Component band: White Earth
+      Band of Ojibwe.'
+  - kind: other
+    title: SECTION XLI PATRON DISPUTE RESOLUTION
+    citation: SECTION XLI PATRON DISPUTE RESOLUTION
+    link: https://narf.org/nill/codes/white_earth/index.html
+    source: national-indian-law-library-code-codes-white-earth
+    confidence: medium
+    verification: title-only
+    as_of: '2014'
+    locator: Table of Contents, under 'Chapter 8. Probate of Wills'
+    note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band of the Minnesota Chippewa
+      Tribe, Minnesota. Identified from section headings in the National Indian Law Library table of contents
+      (Table of Contents Updated: August 2014); the provision itself was not read. The heading it falls
+      under is taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: White Earth Nation Code of Judicial Conduct
+    citation: White Earth Nation Code of Judicial Conduct
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/White-Earth-judicial.conduct.code_.pdf
+    source: narf-ipi-tribal-peacemaking-laws
+    confidence: medium
+    verification: bulk-import
+    as_of: '2025-09-29'
+    locator: White Earth Nation of Minnesota
+    note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band. Native American Rights
+      Fund description (provision itself not read): Defines and establishes responsibility that judges
+      in tribal court shall promote Ojibwe Justice. The Seven Grandfather Teachings in the code sum up
+      tribal peacemaking, and each is indexed to the canons, thereby pointing the way to incorporating
+      tribal peace-centered values throughout.'
+  - kind: peacemaking
+    title: Juvenile Justice Code, Chapter 12A – Peacemaking Circle
+    citation: Juvenile Justice Code, Chapter 12A – Peacemaking Circle
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/White-Earth-juvenile.justice.code_.pdf
+    source: narf-ipi-youth-family-peacemaking-laws
+    confidence: medium
+    verification: bulk-import
+    as_of: '2025-08-25'
+    locator: White Earth Nation of Minnesota
+    note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band. Native American Rights
+      Fund description (provision itself not read): Provides guiding principles, referral process, procedures,
+      and sentencing agreement guidelines.'
+  - kind: peacemaking
+    title: PEACEMAKING CIRCLE.
+    citation: PEACEMAKING CIRCLE.
+    link: https://narf.org/nill/codes/white_earth/index.html
+    source: national-indian-law-library-code-codes-white-earth
+    confidence: medium
+    verification: title-only
+    as_of: '2014'
+    locator: Table of Contents, under 'CHAPTER VIII. PANEL OF ELDERS'
+    note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band of the Minnesota Chippewa
+      Tribe, Minnesota. Identified from section headings in the National Indian Law Library table of contents
+      (Table of Contents Updated: August 2014); the provision itself was not read. The heading it falls
+      under is taken from the page layout and may be imprecise.'
+  clauses:
+  - context: other
+    kind: arbitration-clause
+    citation: White Earth Tribal Housing Ordinance, Article IX
+    summary: Gives the Housing Authority power to sue and to agree to arbitration.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/f836051d7d-1794247063/tribal-housing-ordinance-revised-june-17-2019.pdf
+    source: white-earth-tribal-housing-ordinance-2019
+    confidence: medium
+    verification: read-in-full
+    as_of: '2019-06-17'
+    locator: Article IX, Sections 1-2
+    note: 'Scanned text with OCR errors; meaning read from the garbled text layer. Component band: White
+      Earth Band of Ojibwe. Context: Tribal housing ordinance (Housing Authority powers).'
+  - context: other
+    kind: waiver-of-sovereign-immunity
+    citation: White Earth Tribal Housing Ordinance, Article IX
+    summary: Lets the Housing Authority grant limited waivers of its immunity and consent to suit in the
+      White Earth Tribal Court, without waiving the Tribe's immunity and with recovery limited to Housing
+      Authority assets.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/f836051d7d-1794247063/tribal-housing-ordinance-revised-june-17-2019.pdf
+    source: white-earth-tribal-housing-ordinance-2019
+    confidence: medium
+    verification: read-in-full
+    as_of: '2019-06-17'
+    locator: Article IX, Sections 1-2
+    note: 'Scanned text with OCR errors; meaning read from the garbled text layer. Component band: White
+      Earth Band of Ojibwe. Context: Tribal housing ordinance (Housing Authority powers).'
+  - context: other
+    kind: waiver-of-sovereign-immunity
+    citation: White Earth Title 23 Utilities Code § 1.11
+    summary: Waives immunity of the utilities Commission and its Executive Director only for Tribal Court
+      review of their final decisions, limited to prospective equitable relief and excluding money damages.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/17cff66928-1727297550/tribal-utilities-code.pdf
+    source: white-earth-title-23-utilities-code
+    confidence: medium
+    verification: read-in-full
+    as_of: 2022-02
+    locator: § 1.11(1)-(3)
+    note: 'Component band: White Earth Band of Ojibwe. Context: Utilities code (regulatory commission
+      review).'
+  database_listings:
+  - title: Alternative Dispute Resolution in Child Welfare
+    citation: White Earth Band of Ojibwe Title IV Child/Family Protection Code. Chapter Six—Child in Need
+      of Protection and/or Services Proceeding. §6.06 Alternative Dispute Resolution.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/550f3b67fa-1727297549/child.family.protection.code.pdf
+    practice_area: Peacemaking; Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Family conference, Family group conference; Peacemaking
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-dispute-resolution-in-child-welfare/
+    note: 'Component band: White Earth Band.'
+  - title: Emphasis on Community-Based Alternatives in Child Welfare
+    citation: White Earth Band of Ojibwe Title IV Child/Family Protection Code. Chapter One—General Provisions.
+      § 1.03 Purposes of Code.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/550f3b67fa-1727297549/child.family.protection.code.pdf
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/emphasis-on-community-based-alternatives-in-child-welfare/
+    note: 'Component band: White Earth Band.'
+  - title: Family Conference in Child Welfare Case Planning
+    citation: White Earth Band of Ojibwe Title IV Child/Family Protection Code. Chapter Six—Case Plans.
+      §7.01 Case Plan Development.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/550f3b67fa-1727297549/child.family.protection.code.pdf
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Family conference, Family group conference
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-conference-in-child-welfare-case-planning/
+    note: 'Component band: White Earth Band.'
+  - title: Family in Need of Services Disposition Alternatives
+    citation: White Earth Band of Ojibwe Juvenile Justice Code. Chapter 20 Family in Need of Services—Hearing
+      and Disposition. Section 3-20-6 Disposition Alternative.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/001c284db9-1727297539/juvenile.justice.code.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: N/A
+    form_of_practice: Restorative justice; Restorative practice, Restorative process
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-in-need-of-services-disposition-alternatives/
+    note: 'Component band: White Earth Band.'
+  - title: Informal Adjustment in Juvenile Initial Proceedings
+    citation: White Earth Band of Ojibwe Juvenile Justice Code. Chapter 11 Alleged Juvenile Offender—Initiation
+      of Proceedings. Section 3-11-2 Informal Adjustment.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/001c284db9-1727297539/juvenile.justice.code.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: N/A
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-adjustment-in-juvenile-initial-proceedings/
+    note: 'Component band: White Earth Band.'
+  - title: Informal Conference in Juvenile Initial Proceedings
+    citation: White Earth Band of Ojibwe Juvenile Justice Code. Chapter 11 Alleged Juvenile Offender—Initiation
+      of Proceedings. Section 3-11-3 Informal Conference.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/001c284db9-1727297539/juvenile.justice.code.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: N/A
+    form_of_practice: Family conference, Family group conference; Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-conference-in-juvenile-initial-proceedings/
+    note: 'Component band: White Earth Band.'
+  - title: Restorative Case Planning in Child Welfare
+    citation: White Earth Band of Ojibwe Title IV Child/Family Protection Code. Chapter Six—Case Plans.
+      §7.02 Case Plan Tasks and Services.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/550f3b67fa-1727297549/child.family.protection.code.pdf
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-case-planning-in-child-welfare/
+    note: 'Component band: White Earth Band.'
+  - title: Restorative Purpose in Juvenile Justice
+    citation: White Earth Band of Ojibwe Juvenile Justice Code. Chapter 1 Short Title, Purpose, and Definitions.
+      Section 3-1-2 Purpose.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/001c284db9-1727297539/juvenile.justice.code.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: N/A
+    form_of_practice: Restorative justice; Restorative practice, Restorative process
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-purpose-in-juvenile-justice-2/
+    note: 'Component band: White Earth Band.'
+  - title: Voluntary Peacemaking Circle for Juvenile Offenders
+    citation: White Earth Band of Ojibwe Juvenile Justice Code. Chapter 12A Peacemaking Circle. Section
+      3-12-A-1, Section 3-12-A-2, & Section 3-12-A-3
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/001c284db9-1727297539/juvenile.justice.code.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: N/A
+    form_of_practice: Peacemaking; Restorative circle, Circle practice; Restorative justice; Restorative
+      practice, Restorative process
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/voluntary-peacemaking-circle-for-juvenile-offenders/
+    note: 'Component band: White Earth Band.'
+gaming:
+  compacts:
+  - state: MN
+    status: approved
+    approved: '1991-11-13'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    verification: bulk-import
+    as_of: '1991-11-13'
+    locator: result page 18 (?page=18), row 22
+    note: 'Listed as: "White Earth Band of Minnesota Chippewa Tribe Tribal Gaming Compact" (Approve);
+      list''s Tribe column: "Minnesota Chippewa Tribe - White Earth Band". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1991.11.13_white_earth_band_of_chippewa_tribal_state_gaming_compact.pdf.
+      Matched on the Tribe column because the title spelling did not match the roster. Compact is with
+      the White Earth Band, a component reservation of the Minnesota Chippewa Tribe; the roster lists
+      only the Minnesota Chippewa Tribe.'
+  - state: MN
+    status: approved
+    approved: '2024-08-14'
+    federal_register_citation: 89 FR 66136
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    verification: bulk-import
+    as_of: '2024-08-14'
+    locator: result page 18 (?page=18), row 24
+    note: 'Listed as: "White Earth Band of Minnesota Chippewa Tribe Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Minnesota Chippewa Tribe - White Earth Band". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.08.14_white_earth_band_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/08/14/2024-18044/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-between-the-white-earth-band-of.
+      Matched on the Tribe column because the title spelling did not match the roster. Compact is with
+      the White Earth Band, a component reservation of the Minnesota Chippewa Tribe; the roster lists
+      only the Minnesota Chippewa Tribe. Federal Register citation converted from the linked document
+      number through the Federal Register API (source federal-register-api-gaming-notices).'
+  ordinances:
+  - approved: '1993-11-08'
+    link: https://www.nigc.gov?wpdmdl=11515&ind=11539
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    verification: inferred
+    as_of: '1993-11-08'
+    locator: table row 307, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 307 lists the nation
+      as "White Earth Band of Minnesota Chippewa Indians". Name matched to roster by spelling variant.
+      Ordinance of the White Earth Band, a component reservation of the Minnesota Chippewa Tribe; the
+      roster lists only the Minnesota Chippewa Tribe.
+  - approved: '1999-12-22'
+    link: https://www.nigc.gov?wpdmdl=11516&ind=11540
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    verification: inferred
+    as_of: '1999-12-22'
+    locator: table row 307, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 307 lists the nation
+      as "White Earth Band of Minnesota Chippewa Indians". Name matched to roster by spelling variant.
+      Ordinance of the White Earth Band, a component reservation of the Minnesota Chippewa Tribe; the
+      roster lists only the Minnesota Chippewa Tribe.
+  - approved: '2006-11-17'
+    link: https://www.nigc.gov?wpdmdl=11517&ind=11541
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    verification: inferred
+    as_of: '2006-11-17'
+    locator: table row 307, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 307 lists the nation
+      as "White Earth Band of Minnesota Chippewa Indians". Name matched to roster by spelling variant.
+      Ordinance of the White Earth Band, a component reservation of the Minnesota Chippewa Tribe; the
+      roster lists only the Minnesota Chippewa Tribe.
+  - approved: '2009-10-23'
+    link: https://www.nigc.gov?wpdmdl=11520&ind=11542
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    verification: inferred
+    as_of: '2009-10-23'
+    locator: table row 307, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 307 lists the nation
+      as "White Earth Band of Minnesota Chippewa Indians". Name matched to roster by spelling variant.
+      Ordinance of the White Earth Band, a component reservation of the Minnesota Chippewa Tribe; the
+      roster lists only the Minnesota Chippewa Tribe.
+  - approved: '2019-08-20'
+    link: https://www.nigc.gov?wpdmdl=11519&ind=11543
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    verification: inferred
+    as_of: '2019-08-20'
+    locator: table row 307, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 307 lists the nation
+      as "White Earth Band of Minnesota Chippewa Indians". Name matched to roster by spelling variant.
+      Ordinance of the White Earth Band, a component reservation of the Minnesota Chippewa Tribe; the
+      roster lists only the Minnesota Chippewa Tribe.
+  - approved: '2026-02-12'
+    link: https://www.nigc.gov?wpdmdl=14195&ind=14196
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    verification: inferred
+    as_of: '2026-02-12'
+    locator: table row 307, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 307 lists the nation
+      as "White Earth Band of Minnesota Chippewa Indians". Name matched to roster by spelling variant.
+      Ordinance of the White Earth Band, a component reservation of the Minnesota Chippewa Tribe; the
+      roster lists only the Minnesota Chippewa Tribe.
+jurisdiction:
+- topic: public-law-280
+  value: concurrent-federal-jurisdiction-accepted
+  detail: 'White Earth Band only: listed by the Tribal Court Clearinghouse as granted United States concurrent
+    jurisdiction under 18 U.S.C. § 1162(d).'
+  source: tribal-court-clearinghouse-public-law-280
+  confidence: medium
+  verification: inferred
+  as_of: '2013'
+  note: Secondary source; the 2016 Office of Tribal Justice compilation (footnote 3) gives June 1, 2013.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Created on 2026-11-21 from records first kept on the Minnesota Chippewa Tribe profile; not yet
+    sent to the band for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

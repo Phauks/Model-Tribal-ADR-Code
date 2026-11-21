@@ -287,70 +287,6 @@ justice_institutions:
   locator: Wisconsin section, entry 'Forest County Potawatomi'
 dispute_resolution:
   provisions:
-  - kind: other
-    title: Court ordered treatment and services for rehabilitation of the family
-    citation: Forest County Potawatomi Children's Code Chapter 3-1, § 3.15
-    link: https://www.fcpotawatomi.com/government/tribal-court/code-of-laws/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/court-ordered-treatment-and-services-for-rehabilitation-of-the-family/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
-      form of practice: rehabilitate.'
-  - kind: other
-    title: Disposition Options for Truancy
-    citation: Forest County Potawatomi Truancy Ordinance Chapter 3-5, § 8
-    link: https://www.fcpotawatomi.com/government/tribal-court/code-of-laws/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/disposition-options-for-truancy/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
-      form of practice: Program.'
-  - kind: other
-    title: reasonably appropriate alternative dispositions requirement
-    citation: Forest County Potawatomi Children's Code Chapter 3-1, § 3.14
-    link: https://www.fcpotawatomi.com/government/tribal-court/code-of-laws/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/reasonably-appropriate-alternative-dispositions-requirement/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Alternative.'
-  - kind: other
-    title: Treatment or Habilitation Plan Evaluation
-    citation: Forest County Potawatomi Children's Code Chapter 3-1, § 9.6, & § 9.14
-    link: https://www.fcpotawatomi.com/government/tribal-court/code-of-laws/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-or-habilitation-plan-evaluation/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: .'
-  - kind: other
-    title: Truancy Prevention Plan
-    citation: Forest County Potawatomi Truancy Ordinance Chapter 3-5, § 6
-    link: https://www.fcpotawatomi.com/government/tribal-court/code-of-laws/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/truancy-prevention-plan/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
-      form of practice: Program.'
   - kind: mediation
     title: 2-5 Mediation (05/09/2015)
     citation: 2-5 Mediation (05/09/2015); Mediators; Appointment, Request, and Assignment of a Mediator;
@@ -372,6 +308,61 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: September 2018); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Court ordered treatment and services for rehabilitation of the family
+    citation: Forest County Potawatomi Children's Code Chapter 3-1, § 3.15
+    link: https://www.fcpotawatomi.com/government/tribal-court/code-of-laws/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: rehabilitate
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-ordered-treatment-and-services-for-rehabilitation-of-the-family/
+  - title: Disposition Options for Truancy
+    citation: Forest County Potawatomi Truancy Ordinance Chapter 3-5, § 8
+    link: https://www.fcpotawatomi.com/government/tribal-court/code-of-laws/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Program
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-options-for-truancy/
+  - title: reasonably appropriate alternative dispositions requirement
+    citation: Forest County Potawatomi Children's Code Chapter 3-1, § 3.14
+    link: https://www.fcpotawatomi.com/government/tribal-court/code-of-laws/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Alternative
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/reasonably-appropriate-alternative-dispositions-requirement/
+  - title: Treatment or Habilitation Plan Evaluation
+    citation: Forest County Potawatomi Children's Code Chapter 3-1, § 9.6, & § 9.14
+    link: https://www.fcpotawatomi.com/government/tribal-court/code-of-laws/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-or-habilitation-plan-evaluation/
+  - title: Truancy Prevention Plan
+    citation: Forest County Potawatomi Truancy Ordinance Chapter 3-5, § 6
+    link: https://www.fcpotawatomi.com/government/tribal-court/code-of-laws/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Program
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/truancy-prevention-plan/
 gaming:
   compacts:
   - state: WI

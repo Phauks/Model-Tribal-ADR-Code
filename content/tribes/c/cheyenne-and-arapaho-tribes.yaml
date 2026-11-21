@@ -301,76 +301,67 @@ justice_institutions:
     no longer reached the court on 2026-11-21; the link is the court''s page on the nation''s own site,
     found in the data gap review (research/reviews/2026-11-21-court-listings.json).'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Child Abuse and Child Neglect Diversion Program
+  database_listings:
+  - title: Child Abuse and Child Neglect Diversion Program
     citation: Cheyenne-Arapaho Tribes of Oklahoma Law and Order Code. Juvenile Procedure Act of 1988.
       Section 511. Child Abuse and Child Neglect Diversion Program.
     link: https://narf.org/nill/codes/cheyaracode/juvenile.html
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/child-abuse-and-child-neglect-diversion-program-4/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Juvenile Diversion by Consent Decree
+  - title: Juvenile Diversion by Consent Decree
     citation: Cheyenne-Arapaho Tribes of Oklahoma Law and Order Code. Juvenile Procedure Act of 1988.
       Section 305 Diversion by Consent Decree.
     link: https://narf.org/nill/codes/cheyaracode/juvenile.html
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/juvenile-diversion-by-consent-decree/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Juvenile Diversion by Contract
+  - title: Juvenile Diversion by Contract
     citation: Cheyenne-Arapaho Tribes of Oklahoma Law and Order Code. Juvenile Procedure Act of 1988.
       Section 303 Diversion by Contract & Section 304 Diversion Contract Inadmissible.
     link: https://narf.org/nill/codes/cheyaracode/juvenile.html
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/juvenile-diversion-by-contract/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Restorative Sentencing
+  - title: Restorative Sentencing
     citation: Cheyenne-Arapaho Tribes of Oklahoma Law and Order Code. Criminal Procedure. Section 403.
       General Sentencing Provisions.
     link: https://narf.org/nill/codes/cheyaracode/criminalprocedure.html
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/restorative-sentencing/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Treatment Plan for Child Welfare Cases
+  - title: Treatment Plan for Child Welfare Cases
     citation: Cheyenne-Arapaho Tribes of Oklahoma Law and Order Code. Juvenile Procedure Act of 1988.
       Section 403. Treatment Plan
     link: https://narf.org/nill/codes/cheyaracode/juvenile.html
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-plan-for-child-welfare-cases-2/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
 gaming:
   compacts:
   - state: OK

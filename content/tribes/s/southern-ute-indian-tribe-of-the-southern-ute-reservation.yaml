@@ -273,58 +273,6 @@ justice_institutions:
 dispute_resolution:
   provisions:
   - kind: other
-    title: Criminal Code Purpose – Rehabilitation & Alternatives
-    citation: SUITC Title 5 § 5-1-101
-    link: https://www.southernute-nsn.gov/government/tribal-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/criminal-code-purpose-rehabilitation-alternatives/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: All phases. Database form of practice: Deferred Prosecution; Diversion;
-      Rehabilitation.'
-  - kind: other
-    title: Drug Offense Diversion & Treatment Policy
-    citation: SUITC Title 5 § 5-15-101(4)
-    link: https://www.southernute-nsn.gov/government/tribal-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/drug-offense-diversion-treatment-policy/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication; Pre-arrest; Sentencing. Database form of practice:
-      Deferred Prosecution; Diversion.'
-  - kind: other
-    title: Informal Conference (Juvenile)
-    citation: SUITC Title 4 § 4-14-110
-    link: https://www.southernute-nsn.gov/government/tribal-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-conference-juvenile/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-filing; Pre-adjudication. Database form of practice:
-      Conflict resolution; Informal hearing.'
-  - kind: other
-    title: Informal Resolution – Dependency/Neglect
-    citation: SUITC Title 6 § 6-6-101
-    link: https://www.southernute-nsn.gov/government/tribal-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-resolution-dependency-neglect/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-petition. Database form of practice: Conflict resolution;
-      Informal hearing; Restorative justice.'
-  - kind: other
     title: 11. Pre-Hearing, Scheduling or Settlement Conference; Stipulations.
     citation: 11. Pre-Hearing, Scheduling or Settlement Conference; Stipulations.
     link: https://www.narf.org/nill/codes/southernute/index.html
@@ -355,6 +303,51 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Most
       recent update received: October 2020); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Criminal Code Purpose – Rehabilitation & Alternatives
+    citation: SUITC Title 5 § 5-1-101
+    link: https://www.southernute-nsn.gov/government/tribal-code/
+    practice_area: Tribal Justice
+    phase: All phases
+    form_of_practice: Deferred Prosecution; Diversion; Rehabilitation
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/criminal-code-purpose-rehabilitation-alternatives/
+  - title: Drug Offense Diversion & Treatment Policy
+    citation: SUITC Title 5 § 5-15-101(4)
+    link: https://www.southernute-nsn.gov/government/tribal-code/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication; Pre-arrest; Sentencing
+    form_of_practice: Deferred Prosecution; Diversion
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/drug-offense-diversion-treatment-policy/
+  - title: Informal Conference (Juvenile)
+    citation: SUITC Title 4 § 4-14-110
+    link: https://www.southernute-nsn.gov/government/tribal-code/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-filing; Pre-adjudication
+    form_of_practice: Conflict resolution; Informal hearing
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-conference-juvenile/
+  - title: Informal Resolution – Dependency/Neglect
+    citation: SUITC Title 6 § 6-6-101
+    link: https://www.southernute-nsn.gov/government/tribal-code/
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-petition
+    form_of_practice: Conflict resolution; Informal hearing; Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-resolution-dependency-neglect/
 gaming:
   compacts:
   - state: CO
