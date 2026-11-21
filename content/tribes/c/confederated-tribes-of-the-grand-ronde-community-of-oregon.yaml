@@ -242,6 +242,106 @@ justice_institutions:
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
+  - kind: peacemaking
+    title: Tribal Court Ordinance (peacemaking provisions)
+    citation: Grand Ronde Tribal Code, Chapter 302 (Tribal Court Ordinance), version dated 2013-10-23
+    summary: Per NARF, provides purpose, authorization and qualifications for peacemaking.
+    source: narf-ipi-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    note: NARF's linked PDF returned 404 on 2026-11-21; text not read.
+  - kind: other
+    title: Family Reunification Agreement (Diversion from Adjudication)
+    citation: Grand Ronde Children and Families Ordinance Chapter 301, Part II(h)(6)
+    link: https://weblink.grandronde.org/WebLink/Browse.aspx?id=5&dbid=0&repo=Grand-Ronde
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-reunification-agreement-diversion-from-adjudication/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Deferred
+      adjudication; Diversion; Family reunification.'
+  - kind: other
+    title: Family Unity Model
+    citation: Grand Ronde Children and Families Ordinance Chapter 301, Part I(e)(9) and Part II(c)(3)
+      and Part II(h)(4)
+    link: https://weblink.grandronde.org/WebLink/Browse.aspx?id=5&dbid=0&repo=Grand-Ronde
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-unity-model/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Family
+      conferencing; Family-centered practice.'
+  - kind: mediation
+    title: Mediation in Guardianship Proceedings
+    citation: Grand Ronde Children and Families Ordinance Chapter 301, Part III(e)
+    link: https://weblink.grandronde.org/WebLink/Browse.aspx?id=5&dbid=0&repo=Grand-Ronde
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/mediation-in-guardianship-proceedings/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: All phases. Database form of practice: Alternative
+      dispute resolution; Mediation.'
+  - kind: mediation
+    title: Mediation in Termination of Parental Rights Cases
+    citation: Grand Ronde Children and Families Ordinance Chapter 301, Part II(m)(4)
+    link: https://weblink.grandronde.org/WebLink/Browse.aspx?id=5&dbid=0&repo=Grand-Ronde
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/mediation-in-termination-of-parental-rights-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: All phases. Database form of practice: Alternative
+      dispute resolution; Mediation.'
+  - kind: peacemaking
+    title: Peacemaker Program – Traditional Community Mediation
+    citation: Chapter 302, Tribal Court Ordinance, Section l)
+    link: https://weblink.grandronde.org/WebLink/Browse.aspx?id=5&dbid=0&repo=Grand-Ronde
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaker-program-traditional-community-mediation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: All phases. Database form of practice: community-based mediation;
+      cultural practice; Healing; Peacemaker; Peacemaking.'
+  - kind: peacemaking
+    title: Peacemaking Panel for Dispute Resolution
+    citation: Chapter 302, Tribal Court Ordinance, Section c)(2)(A)
+    link: https://weblink.grandronde.org/WebLink/Browse.aspx?id=5&dbid=0&repo=Grand-Ronde
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaking-panel-for-dispute-resolution/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: All phases. Database form of practice: Alternative dispute resolution;
+      Mediation; Peacemaking.'
+  - kind: traditional-dispute-resolution
+    title: Tribal Member Review Boards (Community Review of Child Welfare Cases)
+    citation: Grand Ronde Children and Families Ordinance Chapter 301, Part I(k)
+    link: https://weblink.grandronde.org/WebLink/Browse.aspx?id=5&dbid=0&repo=Grand-Ronde
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/tribal-member-review-boards-community-review-of-child-welfare-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: All phases. Database form of practice: Circle process;
+      Community involvement; Review panel.'
   - kind: other
     title: Tribal Court Ordinance Chapter 302
     citation: Tribal Court Ordinance Chapter 302
@@ -252,6 +352,29 @@ dispute_resolution:
     note: 'Native American Rights Fund description (provision itself not read): Provides purpose, authorization,
       and qualifications. Link check 2026-11-21: the link the source gives (https://peacemaking.narf.org/wp-content/uploads/2025/07/Grand-Ronde-Tribal-Court-Ordinance-2013-10-23.pdf)
       returned HTTP 404, so it is not recorded.'
+  forums:
+  - kind: peacemaking
+    name: Peacemaking Panel and Peacemaker Program
+    description: A Peacemaking Panel that may mediate disputes at the parties' request before filing or
+      as assigned by the Chief Judge after suit; the Peacemaker Program provides a nonadversarial way
+      to resolve disputes, reflecting the Tribe's tradition of using respected community members to heal
+      conflicts.
+    legal_basis: Grand Ronde Tribal Code Chapter 302 (Tribal Court Ordinance), Sections (c)(2)(A) and
+      (l)
+    case_types:
+    - civil
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: Parties are not precluded from filing or continuing a court claim if peacemaking
+      is unsuccessful. Peacemakers are tribal members at least 25 years old approved by Tribal Council
+      from the Chief Judge's list; they are volunteers.
+    link: https://weblink.grandronde.org/WebLink/Browse.aspx?id=5&dbid=0&repo=Grand-Ronde
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026'
+    locator: https://ncorj.org/tribal-law/peacemaking-panel-for-dispute-resolution/
+    note: Combines NCORJ records for Chapter 302 sections (c)(2)(A) and (l). No party may be represented
+      by counsel; a spokesperson may assist only as needed to understand the proceedings.
 gaming:
   compacts:
   - state: OR

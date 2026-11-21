@@ -160,6 +160,34 @@ justice_institutions:
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Disposition Alternatives with Preference for Least Restrictive Options
+    citation: CTC Title 37, Section 37.03.120(5) - Juvenile Code
+    link: https://cowlitz.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-alternatives-with-preference-for-least-restrictive-options/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative
+      to incarceration; Restorative justice.'
+  - kind: other
+    title: Juvenile Code Purpose – Rehabilitation Over Punishment
+    citation: CTC Title 37, Section 37.01.030(5)-(7) - Juvenile Code
+    link: https://cowlitz.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/juvenile-code-purpose-rehabilitation-over-punishment/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: All phases. Database form of practice: Rehabilitation;
+      Restorative justice.'
 gaming:
   compacts:
   - state: WA

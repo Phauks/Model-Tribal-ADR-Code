@@ -169,7 +169,231 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemaker Court of the Northern Arapaho Nation
+    description: A department of the Tribal Court intended to give formal support, structure and enforcement
+      to traditional Northern Arapaho methods of resolving disputes through mediation and traditional
+      ways without judges or lawyers.
+    legal_basis: Northern Arapaho Code, Title 7. Peacemaker Code, Sections 101-702
+    case_types:
+    - family
+    - juvenile
+    - civil
+    - commercial
+    - criminal-diversion
+    - criminal-sentencing
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: Established as a department of the Tribal Court; a judge may appoint a peacemaker
+      with the parties' concurrence, and civil or criminal cases may be transferred on stipulation or
+      for good cause, with a stay of court proceedings that the court may lift on breach of a condition.
+    enforcement: Resolved disputes may be approved as judgments or orders of the Tribal Court and are
+      enforceable; if all parties agree, a peacemaker may hear all sides and issue a decision that takes
+      effect as a court judgment when entered, appealable under civil appeal rules.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/N.-Arapaho-Title-7-Peacemaker-Type.pdf
+    source: northern-arapaho-title-7-peacemaker-code
+    confidence: medium
+    as_of: '2016-08-31'
+    locator: Title 7, Sections 101-107, 202, 601-605
+    note: Listed matters (Sec. 104) include marital and family strife, parent-child disputes, minor neighbor
+      disputes, alcohol use by family or neighbors, and minor community business transactions of $1,500
+      or less. Attorneys barred from proceedings (Sec. 106). Criminal transfers limited to cases without
+      injury, with victim consent, or victimless offenses, or as a probation condition (Sec. 603-604).
+      $10 fee for a judgment or protective order (Sec. 309).
+  - kind: arbitration
+    name: Peacemaker decision by consent of the parties
+    description: If parties agree in writing or orally, a peacemaker may hear all sides of a dispute and
+      issue a decision.
+    legal_basis: Northern Arapaho Code, Title 7, Section 202(f)
+    case_types:
+    - civil
+    - family
+    - other
+    participation: voluntary
+    relationship_to_court: The decision is submitted to the Tribal Court for entry as a written judgment.
+    enforcement: Takes the effect of a court judgment once entered; appealable under the Tribal Court's
+      civil appeal rules.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/N.-Arapaho-Title-7-Peacemaker-Type.pdf
+    source: northern-arapaho-title-7-peacemaker-code
+    confidence: medium
+    as_of: '2016-08-31'
+    locator: Section 202(f), 203(a)
+    note: Kind recorded as arbitration because the code allows a binding decision by consent; the code
+      itself calls it a peacemaker decision, not arbitration.
   provisions:
+  - kind: peacemaking
+    title: Title 7. Peacemaker Code
+    citation: Northern Arapaho Code, Title 7
+    summary: Establishes the Peacemaker Court, peacemaker powers and limits, request and transfer procedures,
+      protective orders, and entry and enforcement of peacemaking judgments.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/N.-Arapaho-Title-7-Peacemaker-Type.pdf
+    source: northern-arapaho-title-7-peacemaker-code
+    confidence: medium
+    as_of: '2016-08-31'
+  - kind: other
+    title: Alternative Sentencing Report for Minors
+    citation: NA Code Title 23, Section 502
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-sentencing-report-for-minors/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Court Ordered Treatment for Offenses Against Persons
+    citation: NA Code Title 20, Section 303, Section 309, and Section 311
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-ordered-treatment-for-offenses-against-persons/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Effort to Enforcement to Traditional Methods to Resolving Disputes
+    citation: NA Code Title 7, Section 101, and Section 107
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/effort-to-enforcement-to-traditional-methods-to-resolving-disputes/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative practice,
+      Restorative process.'
+  - kind: other
+    title: Informal Conference with a Peacemaker
+    citation: NA Code Title 7, Section 305
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-conference-with-a-peacemaker/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative practice,
+      Restorative process.'
+  - kind: other
+    title: Limitations of a Peacemaker
+    citation: NA Code Title 7, Section 104, Section 302, and Section 303
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/limitations-of-a-peacemaker/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative practice,
+      Restorative process.'
+  - kind: other
+    title: Misdemeanor Sentencing with Treatment Option
+    citation: NA Code Title 20, Section 103
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/misdemeanor-sentencing-with-treatment-option/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Peacemaker Judgement Process
+    citation: NA Code Title 7, Section 404
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaker-judgement-process/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice;
+      Restorative practice.'
+  - kind: other
+    title: Powers & Duties of Peacemakers
+    citation: NA Code Title 7, Section 202, and Section 204
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/powers-duties-of-peacemakers/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Probation Reasonable Conditions
+    citation: NA Code Title 21, Section 701
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/probation-reasonable-conditions/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Protective Orders in the Peacemaking Process
+    citation: NA Code Title 7, Section 401
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/protective-orders-in-the-peacemaking-process/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Suspension of Sentence Conditions
+    citation: NA Code Title 21, Section 604
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/suspension-of-sentence-conditions/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Transferring from Criminal to Peacemaker Court
+    citation: NA Code Title 7, Section 603
+    link: https://www.northernarapaho.com/170/Tribal-Code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/transferring-from-criminal-to-peacemaker-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court;
+      Restorative justice.'
+  - kind: arbitration
+    title: Title 1. Arbitration
+    citation: Title 1. Arbitration; 103 Written Agreement to Submit Controversy to Arbitration Valid;
+      104 Duty of Court on Application of Party to Arbitrate; 105 When Court to Appoint Arbitrators; 106
+      Power of Arbitrators; 109 Authority of Arbitrators to Issue Subpoenas and Administer Oaths; Service
+      of Subpoenas; Depositions; Compelling Person to Testify; Witness Fees; 110 Award of Arbitrators;
+      112 Expenses and Fees for Arbitrators
+    link: https://www.narf.org/nill/codes/arapaho_wind_river/index.html
+    source: national-indian-law-library-code-index-arapaho-wind-river
+    confidence: medium
+    as_of: 2018-06
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: peacemaking
     title: Title 7, Peacemaker Code
     citation: Title 7, Peacemaker Code

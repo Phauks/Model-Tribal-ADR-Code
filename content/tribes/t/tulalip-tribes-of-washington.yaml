@@ -231,6 +231,160 @@ justice_institutions:
   locator: Washington section, entry 'Tulalip Tribes'
   note: 'Link check 2026-11-21: the link the source gives (http://www.tulaliptribes-nsn.gov/Home/Government/Departments/TribalCourt.aspx)
     returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  forums:
+  - kind: mediation-program
+    name: Mediation Services (Tulalip Tribal Court)
+    description: An out-of-court mediation process, conducted by Volunteers of America at the Tulalip
+      Tribal Courthouse, in which a mediator helps disputants air the dispute and agree on a satisfactory
+      solution.
+    case_types:
+    - civil
+    participation: court-referred
+    relationship_to_court: Arranged through the Tribal Court main line; the page states a $400 fine for
+      failing to appear without 48 hours' notice of cancellation.
+    link: https://www.tulaliptribalcourt-nsn.gov/GeneralCourtInfo/MediationServices
+    source: tulalip-tribal-court-mediation-services
+    confidence: high
+    as_of: '2026-11-21'
+    note: Participation recorded as court-referred because the page describes a no-show fine imposed through
+      the court; the page does not state the legal basis. Case types not enumerated on the page; 'civil'
+      reflects the description of disputants avoiding court.
+  - kind: elders-council
+    name: Tribal Court Elders Panel
+    description: A culturally based program in which tribal elders volunteer on a panel that meets at
+      the court every two weeks with young (18 to 25), first-time, non-violent offenders charged with
+      minor offenses, favoring reparative over punitive justice.
+    case_types:
+    - criminal-diversion
+    participation: voluntary
+    relationship_to_court: Offenders volunteer; on completing one year of panel-imposed requirements their
+      charges are dismissed in court.
+    enforcement: Requirements may include regular appearances, apology letters, community service, treatment,
+      curfews, testing, family history research, spiritual activity, classes and evaluations; completion
+      leads to dismissal.
+    link: https://www.tulaliptribalcourt-nsn.gov/ProgramsAndServices/TribalCourtEldersPanel
+    source: tulalip-tribal-court-elders-panel
+    confidence: high
+    as_of: '2026-11-21'
+  - kind: restorative-justice
+    name: Community Accountability Board (Juvenile Diversion Panel)
+    description: A volunteer community panel, operating since July 2010, that meets monthly with tribal
+      member youths under 18 arrested for minor offenses to hold them accountable and increase awareness
+      of their behavior.
+    case_types:
+    - juvenile
+    - criminal-diversion
+    participation: voluntary
+    relationship_to_court: A juvenile diversion program of the Tribal Court; meets at the Tribal Court.
+    link: https://www.tulaliptribalcourt-nsn.gov/ProgramsAndServices/JuvenileDiversion
+    source: tulalip-tribal-court-juvenile-diversion
+    confidence: high
+    as_of: '2026-11-21'
+    note: Participation as 'voluntary' is not stated explicitly; the page says eligible youth participate.
+      Individual volunteer names on the page are not recorded.
+  provisions:
+  - kind: other
+    title: Amendment to Tulalip Tribal Code 2.25, adding 2.25.200 enacting an Alternative Court Code (Resolution
+      2024-473)
+    citation: Tulalip Tribal Code 2.25.200 (Resolution 2024-473)
+    link: https://tulaliptribes-nsn.gov/Base/File/Reso-2024-473-Amendment-to-Tulalip-Tribal-Code-2-25-Adding-200-Enacting-Alternative-Court-Code-BIA-APPROVA-20241030
+    source: web-search-tulalip-alternative-court-2026-11-21
+    confidence: low
+    as_of: '2024-10-30'
+    note: Known from a search result title only; the file returned 404 and contents were not read.
+  - kind: other
+    title: Alternative Sentencing Program – Holistic Restorative Approach
+    citation: Tulalip Tribal Court Alternative Sentencing Program
+    link: https://www.codepublishing.com/WA/Tulalip/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-sentencing-program-holistic-restorative-approach/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Alternative; cultural healing); Healing;
+      Rehabilitation (therapeutic sentencing; Restorative.'
+  - kind: other
+    title: Community Custody – Rehabilitative Supervision and Healing Focus
+    citation: TTC 2.05 Tribal Court - Community Custody for Felonies, Sex Offenses, Serious Misdemeanors,
+      and Crimes of Addiction
+    link: https://www.codepublishing.com/WA/Tulalip/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-custody-rehabilitative-supervision-and-healing-focus/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Healing; Rehabilitation; reintegration).'
+  - kind: other
+    title: Deferred Prosecution Agreement – Rehabilitation and Treatment
+    citation: TTC 2.25 Criminal Procedures - Deferred Prosecution Agreement
+    link: https://www.codepublishing.com/WA/Tulalip/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferred-prosecution-agreement-rehabilitation-and-treatment/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Counseling (alternative to prosecution);
+      Deferred Prosecution; Diversion; Rehabilitation.'
+  - kind: other
+    title: Elders Panel Diversion Program
+    citation: 'TTC Title 2: Tribal Justice System - Criminal Procedures (Referenced in external documentation)'
+    link: https://www.codepublishing.com/WA/Tulalip/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/elders-panel-diversion-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: . Database form of practice: Alternative; cultural
+      healing); Diversion; Restorative (deferred prosecution.'
+  - kind: other
+    title: Express Rehabilitative and Restorative Goals of Tribal Criminal Law
+    citation: TTC 3.05.010(3) and (4) - Express Rehabilitative and Restorative Goals (cited in Williams
+      v. TTT appellate decision)
+    link: https://www.codepublishing.com/WA/Tulalip/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/express-rehabilitative-and-restorative-goals-of-tribal-criminal-law/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Alternative (statutory policy goals);
+      Rehabilitation; Restorative.'
+  - kind: other
+    title: Family Wellness Court
+    citation: Family Wellness Court (implementation began 2020-2021)
+    link: https://www.codepublishing.com/WA/Tulalip/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-wellness-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: . Database form of practice: Healing; Rehabilitation
+      (family reunification.'
+  - kind: other
+    title: Healing to Wellness Court (Adult Drug Court)
+    citation: Tulalip Healing to Wellness Court Program (operational since 2016/2017)
+    link: https://www.codepublishing.com/WA/Tulalip/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/healing-to-wellness-court-adult-drug-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Diversion; drug treatment); Healing;
+      Rehabilitation (therapeutic court.'
 gaming:
   compacts:
   - state: WA

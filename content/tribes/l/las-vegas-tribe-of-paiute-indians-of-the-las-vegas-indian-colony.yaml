@@ -156,6 +156,21 @@ justice_institutions:
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
     link the source gives (http://www.lvpaiutetribe.com/tribal-court) returned HTTP 404, so it is not
     recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Option for Informal Conference for Juveniles
+    citation: Las Vegas Paiute Tribe Tribal Code 10.30.060 and 10.30.070
+    link: https://lvpaiute.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/option-for-informal-conference-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
 gaming:
   compacts:
   - state: NV

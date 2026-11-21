@@ -232,7 +232,76 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://alabama-coushatta.com/Government/TribalJudicialSystem.aspx)
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemaker Court
+    description: A division of the tribal courts providing a forum for traditional Alabama-Coushatta methods,
+      customs and techniques to resolve disputes informally; peacemakers act as intermediaries and may
+      not decide a matter the parties cannot resolve by agreement.
+    legal_basis: Comprehensive Codes of Justice, Title II – Peacemaker Code, Chapter I, Sec. 101-112
+    case_types:
+    - civil
+    - criminal-sentencing
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: Established as a division of the courts under supervisory control of the Chief
+      Judge of the Trial Division; a trial judge may refer a matter when all parties agree in writing,
+      or parties may file a joint written request with the Clerk without filing a civil action. Tribal
+      Probation may require a defendant to attend for traditional counseling as a probation condition.
+    enforcement: Agreements are presented as proposed consent decrees signed by the parties and approved
+      by the trial court; the resulting judgment may be enforced like any other trial court judgment.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Alabama-Coushatta-Peacemaker-Code.pdf
+    source: alabama-coushatta-title-2-peacemaker-code
+    confidence: medium
+    as_of: '2014-11-24'
+    locator: Title II, Sec. 101-111
+    note: 'Statements in peacemaking are confidential and inadmissible (Sec. 107); attorneys may not participate
+      (Sec. 108); consent may be withdrawn at any time (Sec. 106(B)). Case types: any matter a judge believes
+      suitable, criminal defendants with speedy-trial waiver, probation referrals.'
   provisions:
+  - kind: peacemaking
+    title: Title II – Peacemaker Code
+    citation: Alabama-Coushatta Comprehensive Codes of Justice, Title II, Chapter I, Sec. 101-112
+    summary: Establishes the Peacemaker Court, peacemaker qualifications and role, referral routes, confidentiality,
+      a bar on attorneys, and enforcement of agreements as consent judgments.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Alabama-Coushatta-Peacemaker-Code.pdf
+    source: alabama-coushatta-title-2-peacemaker-code
+    confidence: medium
+    as_of: '2014-11-24'
+    locator: Title II
+  - kind: peacemaking
+    title: Alabama-Coushatta Tribe of Texas Constitution and By Laws (listed by NARF alongside the Peacemaker
+      Code)
+    citation: Constitution and By-Laws
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Alabama-Coushatta-Tribe-of-Texas-Consistition-and-By-Law.pdf
+    source: narf-ipi-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    note: Listed by NARF; the constitution text was not reviewed for its specific peacemaking content.
+  - kind: other
+    title: Healing and Wellness Court
+    citation: Title I - Judicial Code - Chapter 4., Sec. 401-409
+    link: https://www.tribal-institute.org/actt/Current%20Title%20I%20-%20Judicial%20Code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/healing-and-wellness-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court.'
+  - kind: peacemaking
+    title: Peacemaker Court
+    citation: Title II - Peacemaker Code
+    link: https://www.tribal-institute.org/actt/Current%20Title%20II%20-%20Peacemaker%20Code%20Rev%20to%20Sup%2011-24-14.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaker-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
   - kind: peacemaking
     title: Title II, Peacemaker Code
     citation: Title II, Peacemaker Code

@@ -652,7 +652,442 @@ justice_institutions:
     the link the source gives (http://www.whiteearth.com/programs@program_id=3.html) returned HTTP 404,
     so it is not recorded.'
 dispute_resolution:
+  forums:
+  - kind: restorative-justice
+    name: Peacemaking Circle (White Earth juvenile justice)
+    description: A community-directed process in partnership with the tribal court for reaching consensus
+      on a sentencing plan; the code describes circles as using traditional circle ritual and structure
+      in which community members, elders, victims, the judge, attorneys, police and court workers speak
+      in a shared search for understanding and healing.
+    legal_basis: White Earth Nation Juvenile Justice Code, Chapter 12A, Secs. 3-12-A-1 to 3-12-A-3; definition
+      30
+    case_types:
+    - juvenile
+    - criminal-sentencing
+    participation: voluntary-or-court-referred
+    relationship_to_court: After a guilty plea accepted by the Tribal Court judge, the court refers the
+      offender to the juvenile counselor; the offender may choose not to participate, in which case the
+      matter proceeds through adjudication or sentencing by the judge.
+    enforcement: The circle's consensus sentence agreement is presented to the judge for approval with
+      information on meetings held and community involvement.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/White-Earth-juvenile.justice.code_.pdf
+    source: white-earth-juvenile-justice-code
+    confidence: medium
+    as_of: '2025'
+    locator: Chapter 12A; definitions 30 and 36
+    note: 'White Earth is a component band of the Minnesota Chippewa Tribe on the federal list; recorded
+      under minnesota-chippewa-tribe with component_band. The offender and circle members create a social
+      compact. as_of is NARF posting year. Component band: White Earth Band of Ojibwe.'
+  - kind: arbitration
+    name: Peacemaker Tribunal (Leech Lake Band of Ojibwe Tribal Court)
+    description: A tribunal the Chief Judge may establish, as a permanent division or case by case, whose
+      decisions bind the consenting parties; NARF associates the rule with the BaMeNim Anishinaabeg Program.
+    own_term:
+      name: BaMeNim Anishinaabeg
+      language_tag: oj
+      translation: Program name as given by NARF; no gloss published in the sources reviewed.
+    legal_basis: Leech Lake Band of Ojibwe Judicial Code, Title 2, Rules of Procedure, Rule 58
+    case_types:
+    - civil
+    - other
+    participation: voluntary
+    relationship_to_court: Use is voluntary and forecloses further use of the Trial Court except to enforce
+      the tribunal's award or decision; parties must consent in writing and acknowledge they cannot appeal.
+    enforcement: Decisions are summarized in writing in the court file, are not appealable, and may be
+      enforced through the Trial Court.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Leech-Lake-tc_coTITLE02-RulesofProcedure.pdf
+    source: leech-lake-judicial-code-title-2-rules
+    confidence: medium
+    as_of: '2000-11-21'
+    locator: Title 2, Rule 58
+    note: 'Leech Lake is a component band of the Minnesota Chippewa Tribe on the federal list. Kind recorded
+      as arbitration because the rule describes a binding, non-appealable award or decision; the code
+      calls it a Peacemaker Tribunal. Program name ''BaMeNim Anishinaabeg'' comes from NARF''s Tribal
+      Peacemaking Laws page, not the rule itself. Component band: Leech Lake Band of Ojibwe.'
+  - kind: elders-council
+    name: Panel of elders in cultural causes of action
+    description: The Court of Central Jurisdiction enters as its judgment and order a decision made by
+      a panel of elders in a cultural cause of action between Band members; the Court has jurisdiction
+      over causes of action arising from unwritten cultural law.
+    legal_basis: 5 MLBSA §§ 103, 111(c), 114(h); 24 MLBSA §§ 601-603
+    case_types:
+    - other
+    relationship_to_court: Panel decisions are entered by the Court of Central Jurisdiction (the Chief
+      Justice) as a judgment and order.
+    enforcement: Entered as a court judgment and order; for cultural offenses the court may order sanctions
+      consistent with Band traditions, including injunctions, removal, exclusion, community service or
+      fines (24 MLBSA § 603).
+    link: https://mlbo.dev/content/3-government/17-statutes-policies/mltitle05judbranch.pdf
+    source: mille-lacs-title-5-judicial-branch
+    confidence: medium
+    as_of: '2011-06-27'
+    locator: 5 MLBSA §§ 103, 111(c), 114(h)
+    note: 'The statute text read does not say how a case reaches a panel of elders, how elders are chosen,
+      or whether participation is voluntary, so participation is left out. ''Cultural harm'' in 24 MLBSA
+      § 602 concerns conduct that harms the community''s good health or raises fear in the community;
+      ''other'' used for case type. Enforcement detail from Title 24 (source mille-lacs-title-24-judicial-proceedings).
+      Component band: Mille Lacs Band of Ojibwe.'
+  - kind: elders-council
+    name: Panel of Elders
+    description: Twelve elders appointed by the Tribal Council (four from each district) advise the Tribal
+      Court on disputes under White Earth law when a party asks; the Chief Judge presides and assigns
+      one elder to advise in each case. Elders may also serve as jurors, one may sit on the Appellate
+      Panel, and a Band member, including a juvenile, may choose to have a case heard in consultation
+      with an elder in accordance with the Band's traditional values and practices.
+    legal_basis: White Earth Judicial Code, Title 1, Chapter VIII (Sections 1-7); Chapter I Section 1;
+      Chapter VII Section 6(b)
+    case_types:
+    - juvenile
+    - other
+    participation: voluntary
+    relationship_to_court: Part of the White Earth Tribal Court; advises the court on request, and the
+      court may also seek the panel's advice when custom or tradition is in doubt.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/5dcba5f024-1727297538/judicial.code.pdf
+    source: white-earth-judicial-code
+    confidence: medium
+    as_of: '2021-05-04'
+    locator: Chapter I § 1; Chapter III § 6; Chapter VII § 6(b); Chapter VIII §§ 1-7
+    note: 'Read by OCR. The chapter applies to all actions within the court''s jurisdiction; only juveniles
+      are named expressly, so other case types are recorded as ''other''. The panel may adopt its own
+      rules of procedure. as_of is the scan date because no enactment date was found. Component band:
+      White Earth Band of Ojibwe.'
   provisions:
+  - kind: peacemaking
+    title: Juvenile Justice Code, Chapter 12A – Peacemaking Circle (White Earth Nation)
+    citation: White Earth Nation Juvenile Justice Code, Chapter 12A
+    summary: Sets the application, scheduling and sentence agreement process for juvenile peacemaking
+      circles after a guilty plea.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/White-Earth-juvenile.justice.code_.pdf
+    source: white-earth-juvenile-justice-code
+    confidence: medium
+    as_of: '2025'
+    note: 'Component band: White Earth Band of Ojibwe.'
+  - kind: peacemaking
+    title: 'Rule 58: Peacemaker Tribunal'
+    citation: Leech Lake Band of Ojibwe Judicial Code, Title 2, Rule 58
+    summary: Authorizes the Chief Judge to create a voluntary Peacemaker Tribunal whose written, non-appealable
+      decisions bind consenting parties.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Leech-Lake-tc_coTITLE02-RulesofProcedure.pdf
+    source: leech-lake-judicial-code-title-2-rules
+    confidence: medium
+    as_of: '2000-11-21'
+    note: 'Component band: Leech Lake Band of Ojibwe.'
+  - kind: traditional-dispute-resolution
+    title: Cultural causes of action; panel of elders decisions
+    citation: 5 MLBSA § 103
+    summary: Authorizes the Court of Central Jurisdiction to enter a panel of elders' decision in a cultural
+      cause of action between Band members as a judgment and order.
+    link: https://mlbo.dev/content/3-government/17-statutes-policies/mltitle05judbranch.pdf
+    source: mille-lacs-title-5-judicial-branch
+    confidence: medium
+    as_of: '2011-06-27'
+    locator: § 103
+    note: 'Component band: Mille Lacs Band of Ojibwe.'
+  - kind: traditional-dispute-resolution
+    title: Cultural actions
+    citation: 24 MLBSA §§ 601-603
+    summary: Gives any person a cause of action for cultural harm and lets the court impose sanctions
+      consistent with Band traditions, such as injunctions, exclusion, community service or fines.
+    link: https://www.mlbo.dev/content/3-government/17-statutes-policies/title-24_judicial-proceedings_amendents-through-1.23.14.pdf
+    source: mille-lacs-title-24-judicial-proceedings
+    confidence: medium
+    as_of: '2014-01-23'
+    locator: §§ 601-603
+    note: 'Component band: Mille Lacs Band of Ojibwe.'
+  - kind: traditional-dispute-resolution
+    title: Panel of Elders
+    citation: White Earth Judicial Code, Title 1, Chapter VIII
+    summary: Creates a twelve-member Panel of Elders that advises the court on request of a party, may
+      serve on juries and the Appellate Panel, and sets its own procedure.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/5dcba5f024-1727297538/judicial.code.pdf
+    source: white-earth-judicial-code
+    confidence: medium
+    as_of: '2021-05-04'
+    note: 'Read by OCR; enactment date not found. Component band: White Earth Band of Ojibwe.'
+  - kind: traditional-dispute-resolution
+    title: Distribution of Traditional and Cultural Items
+    citation: White Earth Probate Code, Section 3
+    summary: Lets next of kin distribute a decedent's artifacts and finery according to Band custom, with
+      the Tribal Court resolving disputes with the advice of traditional elders from the decedent's community
+      when possible.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/a4ddc5a9ff-1727297541/probate.code.pdf
+    source: white-earth-probate-code
+    confidence: medium
+    as_of: '2007'
+    note: 'Section number as shown in the text read; chapter not confirmed. Component band: White Earth
+      Band of Ojibwe.'
+  - kind: peacemaking
+    title: Alternative Dispute Resolution in Child Welfare
+    citation: White Earth Band of Ojibwe Title IV Child/Family Protection Code. Chapter Six—Child in Need
+      of Protection and/or Services Proceeding. §6.06 Alternative Dispute Resolution.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/550f3b67fa-1727297549/child.family.protection.code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-dispute-resolution-in-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Component band: White
+      Earth Band. Database practice area: Peacemaking; Tribal Child Welfare/Family. Database phase: Pre-adjudication.
+      Database form of practice: Family conference, Family group conference; Peacemaking.'
+  - kind: other
+    title: Emphasis on Community-Based Alternatives in Child Welfare
+    citation: White Earth Band of Ojibwe Title IV Child/Family Protection Code. Chapter One—General Provisions.
+      § 1.03 Purposes of Code.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/550f3b67fa-1727297549/child.family.protection.code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/emphasis-on-community-based-alternatives-in-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Component band: White
+      Earth Band. Database practice area: Tribal Child Welfare/Family. Database phase: Pre-adjudication.
+      Database form of practice: Restorative justice.'
+  - kind: other
+    title: Extended Family Conference in Child Welfare
+    citation: Leech Lake Band of Ojibwe. Title 3 Child Protection Code. 3-20 Placement Preferences. 3-20.C
+      Extended Family Conference.
+    link: https://www.llojibwe.org/court/tcCodes/tc_coTITLE3.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/extended-family-conference-in-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Component band: Leech
+      Lake Band. Database practice area: Tribal Child Welfare/Family. Database phase: Pre-adjudication.
+      Database form of practice: Family conference, Family group conference.'
+  - kind: other
+    title: Family Conference in Child Welfare Case Planning
+    citation: White Earth Band of Ojibwe Title IV Child/Family Protection Code. Chapter Six—Case Plans.
+      §7.01 Case Plan Development.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/550f3b67fa-1727297549/child.family.protection.code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-conference-in-child-welfare-case-planning/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Component band: White
+      Earth Band. Database practice area: Tribal Child Welfare/Family. Database phase: Pre-adjudication.
+      Database form of practice: Family conference, Family group conference.'
+  - kind: other
+    title: Family in Need of Services Disposition Alternatives
+    citation: White Earth Band of Ojibwe Juvenile Justice Code. Chapter 20 Family in Need of Services—Hearing
+      and Disposition. Section 3-20-6 Disposition Alternative.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/001c284db9-1727297539/juvenile.justice.code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-in-need-of-services-disposition-alternatives/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Component band: White
+      Earth Band. Database practice area: Tribal Juvenile/Youth Justice. Database phase: N/A. Database
+      form of practice: Restorative justice; Restorative practice, Restorative process.'
+  - kind: other
+    title: Family Services Treatment Plan for Parents
+    citation: 8 MLBS § 3163
+    link: https://millelacsband.com/government/tribal-register/constitution-and-band-statutes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-services-treatment-plan-for-parents/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Component band: Mille
+      Lacs Band. Database practice area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database
+      phase: Post-adjudication. Database form of practice: Restorative practice, Restorative process.'
+  - kind: other
+    title: Inadmissibility of Statements made in Informal Hearings
+    citation: 8 MLBS § 124
+    link: https://millelacsband.com/government/tribal-register/constitution-and-band-statutes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/inadmissibility-of-statements-made-in-informal-hearings/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Component band: Mille
+      Lacs Band. Database practice area: Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication.
+      Database form of practice: Restorative justice.'
+  - kind: other
+    title: Informal Adjustment Conference in Juvenile Initial Proceedings
+    citation: 'Leech Lake Band of Ojibwe Judicial Code. Title 4: Juvenile Justice Code. 4-9 Juvenile Offender—Initiation
+      of Proceedings. 4-9.B. Informal Adjustment.'
+    link: https://www.llojibwe.org/court/tcCodes/tc_coTitle4_juvenile12-10.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-adjustment-conference-in-juvenile-initial-proceedings/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Component band: Leech
+      Lake Band. Database practice area: Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication.
+      Database form of practice: Family conference, Family group conference; Restorative justice.'
+  - kind: other
+    title: Informal Adjustment in Juvenile Initial Proceedings
+    citation: White Earth Band of Ojibwe Juvenile Justice Code. Chapter 11 Alleged Juvenile Offender—Initiation
+      of Proceedings. Section 3-11-2 Informal Adjustment.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/001c284db9-1727297539/juvenile.justice.code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-adjustment-in-juvenile-initial-proceedings/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Component band: White
+      Earth Band. Database practice area: Tribal Juvenile/Youth Justice. Database phase: N/A. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Informal Conference in Juvenile Initial Proceedings
+    citation: White Earth Band of Ojibwe Juvenile Justice Code. Chapter 11 Alleged Juvenile Offender—Initiation
+      of Proceedings. Section 3-11-3 Informal Conference.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/001c284db9-1727297539/juvenile.justice.code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-conference-in-juvenile-initial-proceedings/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Component band: White
+      Earth Band. Database practice area: Tribal Juvenile/Youth Justice. Database phase: N/A. Database
+      form of practice: Family conference, Family group conference; Restorative justice.'
+  - kind: other
+    title: Informal Hearing for Juveniles
+    citation: 8 MLBS § 121
+    link: https://millelacsband.com/government/tribal-register/constitution-and-band-statutes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-hearing-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Component band: Mille
+      Lacs Band. Database practice area: Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication.
+      Database form of practice: Restorative practice, Restorative process.'
+  - kind: other
+    title: Pre-Dispositional Hearing for Juvenile Cases
+    citation: 8 MLBS § 136 AND 8 MLBS § 140
+    link: https://millelacsband.com/government/tribal-register/constitution-and-band-statutes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/pre-dispositional-hearing-for-juvenile-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Component band: Mille
+      Lacs Band. Database practice area: Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication.
+      Database form of practice: Restorative justice.'
+  - kind: other
+    title: Puepose of The Child Protection Statute
+    citation: 8 MLBS § 3102
+    link: https://millelacsband.com/government/tribal-register/constitution-and-band-statutes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/puepose-of-the-child-protection-statute/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Component band: Mille
+      Lacs Band. Database practice area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database
+      phase: Pre-adjudication. Database form of practice: Restorative practice, Restorative process.'
+  - kind: other
+    title: Restorative Case Planning in Child Welfare
+    citation: White Earth Band of Ojibwe Title IV Child/Family Protection Code. Chapter Six—Case Plans.
+      §7.02 Case Plan Tasks and Services.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/550f3b67fa-1727297549/child.family.protection.code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-case-planning-in-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Component band: White
+      Earth Band. Database practice area: Tribal Child Welfare/Family. Database phase: Pre-adjudication.
+      Database form of practice: Restorative justice.'
+  - kind: other
+    title: Restorative Outcomes in Dispositional Hearings
+    citation: 'Leech Lake Band of Ojibwe Judicial Code. Title 4: Juvenile Justice Code. 4-13 Juvenile
+      Offender—Disposition Proceedings. 4-13.E. Outcome of Disposition Hearing.'
+    link: https://www.llojibwe.org/court/tcCodes/tc_coTitle4_juvenile12-10.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-outcomes-in-dispositional-hearings/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Component band: Leech
+      Lake Band. Database practice area: Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication.
+      Database form of practice: Restorative justice.'
+  - kind: other
+    title: Restorative Purpose in Child Welfare
+    citation: Leech Lake Band of Ojibwe Judicial Code. Title 3 Child Protection Code. 3-1 Short Title,
+      Purpose, and Definitions. 3-1.B Purpose
+    link: https://www.llojibwe.org/court/tcCodes/tc_coTITLE3.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-purpose-in-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Component band: Leech
+      Lake Band. Database practice area: Tribal Child Welfare/Family. Database phase: Pre-adjudication.
+      Database form of practice: Restorative justice.'
+  - kind: other
+    title: Restorative Purpose in Juvenile Justice
+    citation: White Earth Band of Ojibwe Juvenile Justice Code. Chapter 1 Short Title, Purpose, and Definitions.
+      Section 3-1-2 Purpose.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/001c284db9-1727297539/juvenile.justice.code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-purpose-in-juvenile-justice-2/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Component band: White
+      Earth Band. Database practice area: Tribal Juvenile/Youth Justice. Database phase: N/A. Database
+      form of practice: Restorative justice; Restorative practice, Restorative process.'
+  - kind: other
+    title: Restorative Purpose in Juvenile Justice
+    citation: 'Leech Lake Band of Ojibwe Judicial Code. Title 4: Juvenile Justice Code. 4-1 Short Title,
+      Purpose, and Definitions. 4-1.B. Purpose.'
+    link: https://www.llojibwe.org/court/tcCodes/tc_coTitle4_juvenile12-10.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-purpose-in-juvenile-justice/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Component band: Leech
+      Lake Band. Database practice area: Tribal Juvenile/Youth Justice. Database phase: N/A. Database
+      form of practice: Restorative justice; Restorative practice, Restorative process.'
+  - kind: peacemaking
+    title: Voluntary Peacemaking Circle for Juvenile Offenders
+    citation: White Earth Band of Ojibwe Juvenile Justice Code. Chapter 12A Peacemaking Circle. Section
+      3-12-A-1, Section 3-12-A-2, & Section 3-12-A-3
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/001c284db9-1727297539/juvenile.justice.code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/voluntary-peacemaking-circle-for-juvenile-offenders/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Component band: White
+      Earth Band. Database practice area: Tribal Juvenile/Youth Justice. Database phase: N/A. Database
+      form of practice: Peacemaking; Restorative circle, Circle practice; Restorative justice; Restorative
+      practice, Restorative process.'
+  - kind: other
+    title: SECTION XLI PATRON DISPUTE RESOLUTION
+    citation: SECTION XLI PATRON DISPUTE RESOLUTION
+    link: https://www.narf.org/nill/codes/white_earth/index.html
+    source: national-indian-law-library-code-index-white-earth
+    confidence: medium
+    as_of: 2014-08
+    note: 'Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title. Component band:
+      White Earth Band.'
   - kind: peacemaking
     title: 'Title 2: Judicial Code – Rules of Procedure, Part VIII – Other Matters, Rule 58: Peacemaker
       Tribunal'
@@ -726,6 +1161,43 @@ dispute_resolution:
       Tribe, Minnesota. Identified from section headings in the National Indian Law Library table of contents
       (Table of Contents Updated: August 2014); the provision itself was not read. The heading it falls
       under is taken from the page layout and may be imprecise.'
+  clauses:
+  - context: other
+    kind: arbitration-clause
+    citation: White Earth Tribal Housing Ordinance, Article IX
+    summary: Gives the Housing Authority power to sue and to agree to arbitration.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/f836051d7d-1794247063/tribal-housing-ordinance-revised-june-17-2019.pdf
+    source: white-earth-tribal-housing-ordinance-2019
+    confidence: medium
+    as_of: '2019-06-17'
+    locator: Article IX, Sections 1-2
+    note: 'Scanned text with OCR errors; meaning read from the garbled text layer. Component band: White
+      Earth Band of Ojibwe. Context: Tribal housing ordinance (Housing Authority powers).'
+  - context: other
+    kind: waiver-of-sovereign-immunity
+    citation: White Earth Tribal Housing Ordinance, Article IX
+    summary: Lets the Housing Authority grant limited waivers of its immunity and consent to suit in the
+      White Earth Tribal Court, without waiving the Tribe's immunity and with recovery limited to Housing
+      Authority assets.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/f836051d7d-1794247063/tribal-housing-ordinance-revised-june-17-2019.pdf
+    source: white-earth-tribal-housing-ordinance-2019
+    confidence: medium
+    as_of: '2019-06-17'
+    locator: Article IX, Sections 1-2
+    note: 'Scanned text with OCR errors; meaning read from the garbled text layer. Component band: White
+      Earth Band of Ojibwe. Context: Tribal housing ordinance (Housing Authority powers).'
+  - context: other
+    kind: waiver-of-sovereign-immunity
+    citation: White Earth Title 23 Utilities Code § 1.11
+    summary: Waives immunity of the utilities Commission and its Executive Director only for Tribal Court
+      review of their final decisions, limited to prospective equitable relief and excluding money damages.
+    link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/17cff66928-1727297550/tribal-utilities-code.pdf
+    source: white-earth-title-23-utilities-code
+    confidence: medium
+    as_of: 2022-02
+    locator: § 1.11(1)-(3)
+    note: 'Component band: White Earth Band of Ojibwe. Context: Utilities code (regulatory commission
+      review).'
 gaming:
   compacts:
   - state: MN

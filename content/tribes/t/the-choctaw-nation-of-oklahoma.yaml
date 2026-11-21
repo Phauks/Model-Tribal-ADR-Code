@@ -207,7 +207,166 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.choctawnation.com/government/tribal-court/)
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemakers of the District Court (Choctaw Nation Peacemaking Act)
+    description: Peacemakers form a division of the District Court operating under the customs and traditions
+      of the Choctaw people, providing a forum for traditional Choctaw methods of peacemaking to resolve
+      disputes fairly, informally and inexpensively.
+    legal_basis: Choctaw Nation Peacemaking Act, Sections 1-11 and following
+    case_types:
+    - civil
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: The District Court assigns and supervises peacemakers; matters come by written
+      request, a party's motion for referral, a joint motion, or the court's own motion with all parties'
+      consent, and unresolved matters return to the District Court.
+    enforcement: A signed agreement and proposed dismissal order are endorsed by the District Court and
+      filed as a final, non-appealable order.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Choctaw-Nation-Peacemaking-Act.pdf
+    source: choctaw-nation-peacemaking-act
+    confidence: high
+    as_of: 2022-04
+    locator: Sections 2, 4, 6-11
+    note: Peacemakers must be familiar with Choctaw history, customs and traditions and may consult tribal
+      elders (Sec. 3, 7). Attorneys may participate only at the peacemaker's discretion (Sec. 11(C)).
+      as_of is the NARF posting year; enactment date not shown. Confidence high because the same file
+      is published on the nation's own website (upload date used as as_of).
+  training_programs:
+  - name: Advanced peacemaker training for community members, tribal officials and staff (September 19-20,
+      2017, Durant)
+    provider: Indigenous Peacemaking Initiative (Native American Rights Fund), with the Choctaw Nation
+      of Oklahoma
+    link: https://peacemaking.narf.org/2017/08/training-choctaw-nation-of-oklahoma-september-2017/
+    source: narf-ipi-news-choctaw-training-2017
+    confidence: medium
+    as_of: 2017-09
+    note: Read from excerpts on NARF news listing pages.
+  - name: Peacemaking training for the Choctaw Nation Judicial Branch (October 3-4, 2022, Durant)
+    provider: Indigenous Peacemaking Initiative (Native American Rights Fund)
+    link: https://peacemaking.narf.org/2022/10/peacemaking-training-for-the-choctaw-nation/
+    source: narf-ipi-news-choctaw-training-2022
+    confidence: medium
+    as_of: 2022-10
   provisions:
+  - kind: other
+    title: Alternative Dispute Resolution & Family Group Conferencing
+    citation: 'Title 45: Children and Juvenile Code'
+    link: https://ncorj.org/tribal-law/alternative-dispute-resolution-family-group-conferencing/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-dispute-resolution-family-group-conferencing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Conflict resolution.'
+  - kind: other
+    title: Alternative Problem-Solving Court Program for Child Support
+    citation: CRIMES AND PUNISHMENT
+    link: https://ncorj.org/tribal-law/alternative-problem-solving-court-program-for-child-support/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-problem-solving-court-program-for-child-support/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Alternative;
+      Program.'
+  - kind: other
+    title: Choctaw Nation Healing to Wellness Court Program
+    citation: Choctaw Nation Criminal Procedure Code
+    link: https://ncorj.org/tribal-law/choctaw-nation-healing-to-wellness-court-program/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/choctaw-nation-healing-to-wellness-court-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication; Pre-adjudication. Database form of practice:
+      Healing to Wellness Court.'
+  - kind: peacemaking
+    title: Choctaw Nation Peacemaking Act
+    citation: Choctaw Nation Peacemaking Act
+    link: https://www.choctawnation.com/wp-content/uploads/2022/04/peacemaking-act.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/choctaw-nation-peacemaking-act/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
+  - kind: other
+    title: Community -Based Programs in Juvenlie Justice
+    citation: Choctaw Nation Juvenile Code
+    link: https://www.choctawnation.com/wp-content/uploads/2022/04/juvenile-code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-based-programs-in-juvenlie-justice/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: N/A. Database form of practice: Alternative; Diversion;
+      Program.'
+  - kind: other
+    title: Deferral of Delinquency Proceedings
+    citation: Choctaw Nation Juvenile Code
+    link: https://www.choctawnation.com/wp-content/uploads/2022/04/juvenile-code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferral-of-delinquency-proceedings/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Diversion; Program.'
+  - kind: other
+    title: Diversion for Children-In-Need-Of-Supervision
+    citation: Choctaw Nation Juvenile Code
+    link: https://www.choctawnation.com/wp-content/uploads/2022/04/juvenile-code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-for-children-in-need-of-supervision/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Diversion.'
+  - kind: other
+    title: Section 1-4-504. Alternative Dispute Resolution
+    citation: Section 1-4-504. Alternative Dispute Resolution
+    link: https://www.narf.org/nill/codes/choctaw/index.html
+    source: national-indian-law-library-code-index-choctaw
+    confidence: medium
+    as_of: 2018-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: Article XII. Oversight, Dispute Resolution, Enforcement
+    citation: Article XII. Oversight, Dispute Resolution, Enforcement
+    link: https://www.narf.org/nill/codes/choctaw/index.html
+    source: national-indian-law-library-code-index-choctaw
+    confidence: medium
+    as_of: 2018-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: mediation
+    title: Section 107.2. Appointment of guardian ad litem--Referral to mediation or counseling--Definitions--False
+      accusations of child abuse or neglect
+    citation: Section 107.2. Appointment of guardian ad litem--Referral to mediation or counseling--Definitions--False
+      accusations of child abuse or neglect
+    link: https://www.narf.org/nill/codes/choctaw/index.html
+    source: national-indian-law-library-code-index-choctaw
+    confidence: medium
+    as_of: 2018-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: peacemaking
     title: Choctaw Nation Peacemaking Act
     citation: Choctaw Nation Peacemaking Act

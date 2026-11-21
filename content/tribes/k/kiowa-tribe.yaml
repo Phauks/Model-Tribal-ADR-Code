@@ -237,6 +237,82 @@ justice_institutions:
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
+dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemakers of the District Court (Kiowa Tribe Peacemaking Act)
+    description: The Act authorizes the District Court of the Kiowa Tribe to use peacemakers and provides
+      for use of Kiowa Tribe traditions and customs, referral of existing actions, agreements and proposed
+      orders, and enforcement of orders.
+    legal_basis: Kiowa Tribe Peacemaking Act, Sections 1-18
+    case_types:
+    - civil
+    - other
+    participation: voluntary-or-court-referred
+    link: https://www.kiowatribe.org/sites/default/files/2023-03/Kiowa%20Tribe%20-%20KCC%20Code%20of%20Law.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026'
+    locator: https://ncorj.org/tribal-law/kiowa-tribe-peacemaking-act/
+    note: Details from the Act's table of contents and opening section as quoted by NCORJ; the structure
+      parallels the Choctaw Nation and Chickasaw Nation acts.
+  provisions:
+  - kind: peacemaking
+    title: Kiowa Tribe Peacemaking Act
+    citation: Kiowa Tribe Peacemaking Act, Sections 1-18
+    link: https://www.kiowatribe.org/sites/default/files/2023-03/Kiowa%20Tribe%20-%20KCC%20Code%20of%20Law.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026'
+    locator: https://ncorj.org/tribal-law/kiowa-tribe-peacemaking-act/
+  - kind: peacemaking
+    title: Kiowa Tribe Peacemaking Act
+    citation: KIOWA TRIBE PEACEMAKING ACT
+    link: https://www.kiowatribe.org/sites/default/files/2023-03/Kiowa%20Tribe%20-%20KCC%20Code%20of%20Law.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/kiowa-tribe-peacemaking-act/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
+  - kind: other
+    title: Treatment in Lieu of Imprisonment or Fines
+    citation: KIOWA CODE. TITLE Ill CRIMINAL CODE.
+    link: https://www.kiowatribe.org/sites/default/files/2023-03/Kiowa%20Tribe%20-%20KCC%20Code%20of%20Law.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-imprisonment-or-fines/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
+  - kind: other
+    title: Treatment in Lieu of Jail Sentence for Intoxication
+    citation: OFFENSES
+    link: https://ncorj.org/tribal-law/treatment-in-lieu-of-jail-sentence-for-intoxication/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-jail-sentence-for-intoxication/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
+  - kind: other
+    title: Treatment in Lieu of Jail Sentence for Possession
+    citation: OFFENSES
+    link: https://ncorj.org/tribal-law/treatment-in-lieu-of-jail-sentence-for-possession/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-jail-sentence-for-possession/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
 gaming:
   compacts:
   - state: OK

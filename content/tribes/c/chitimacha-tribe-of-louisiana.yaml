@@ -209,7 +209,120 @@ justice_institutions:
   as_of: '2022'
   locator: Louisiana section, entry 'Sovereign Nation of the Chitimacha'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Chitimacha Peacemaker Court
+    description: Part of the Chitimacha Tribal Court System, intended to give formal support, structure
+      and enforcement to traditional methods of resolving disputes through mediation, restorative justice
+      and traditional ways.
+    legal_basis: Chitimacha Comprehensive Codes of Justice, Title I-A, Secs. 101-603
+    case_types:
+    - family
+    - civil
+    - commercial
+    - criminal-diversion
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: Supervised by the Chief Judge of the Tribal Court; a judge appoints a peacemaker
+      on request, and civil or criminal cases may be transferred only with the written consent of all
+      parties.
+    enforcement: Agreements may be presented as a draft judgment for the Tribal Court's approval; the
+      resulting judgment is enforced like any other Tribal Court judgment.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/CCCJ-Title-IA-Chitimacha-Peacemaker-Court.pdf
+    source: chitimacha-title-1a-peacemaker-court
+    confidence: medium
+    as_of: '1990-08-14'
+    locator: Title I-A, Secs. 101-103, 302, 403-406, 601-603
+    note: Listed matters include marital and family strife, extended family disputes, minor neighbor disputes,
+      alcohol use, and minor community business transactions of $3,000 or less (Sec. 103). Attorneys barred
+      except as witnesses or parties. Parties pay a reasonable sum set by the court for peacemaker compensation
+      (Sec. 306). The court may have amended the title since 1990; the NARF copy shows the 1989-1990 dates.
+  - kind: arbitration
+    name: Agreed arbitration by a peacemaker
+    description: Peacemakers may decide a disputed matter only if all parties agree in writing or before
+      the Tribal Court.
+    legal_basis: Chitimacha Comprehensive Codes of Justice, Title I-A, Sec. 203 (Limitations; Peacemakers
+      Not Judges; Agreed Arbitration)
+    case_types:
+    - civil
+    - family
+    - other
+    participation: voluntary
+    relationship_to_court: The decision is entered by the Tribal Court.
+    enforcement: Has the effect of a court judgment when entered by the Tribal Court.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/CCCJ-Title-IA-Chitimacha-Peacemaker-Court.pdf
+    source: chitimacha-title-1a-peacemaker-court
+    confidence: medium
+    as_of: '1990-08-14'
+    locator: Sec. 203
   provisions:
+  - kind: peacemaking
+    title: Title I-A – Peacemaker Court
+    citation: Chitimacha Comprehensive Codes of Justice, Title I-A
+    summary: Establishes the Peacemaker Court, its subject matter, peacemaker qualifications and powers,
+      consent-based transfer, protective orders and enforcement of peacemaking judgments.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/CCCJ-Title-IA-Chitimacha-Peacemaker-Court.pdf
+    source: chitimacha-title-1a-peacemaker-court
+    confidence: medium
+    as_of: '1990-08-14'
+  - kind: peacemaking
+    title: Chitimacha Peacemaker Court
+    citation: TITLE I-A – CHITIMACHA PEACEMAKER COURT
+    link: https://www.chitimacha.gov/sites/default/files/CCCJ%20Title%20IA%20-%20Chitimacha%20Peacemaker%20Court.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/chitimacha-peacemaker-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
+  - kind: other
+    title: Diversion Before Trial
+    citation: Chitimacha Comprehensive Codes of Justice TITLE II - CRIMINAL PROCEDURE
+    link: https://www.chitimacha.gov/sites/default/files/Title%20II%20-%20Criminal%20Procedure.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-before-trial/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Diversion.'
+  - kind: other
+    title: Diversion for Deliquent Children
+    citation: Chitimacha Comprehensive Codes of Justice TITLE V - CHILD WELFARE CODE
+    link: https://www.chitimacha.gov/sites/default/files/Title%20V%20-%20Child%20Welfare%20Code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-for-deliquent-children/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Diversion.'
+  - kind: other
+    title: Informal Resolution in Child Welfare Cases
+    citation: Chitimacha Comprehensive Codes of Justice TITLE V - CHILD WELFARE CODE
+    link: https://www.chitimacha.gov/sites/default/files/Title%20V%20-%20Child%20Welfare%20Code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-resolution-in-child-welfare-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Alternative;
+      Restorative.'
+  - kind: mediation
+    title: Sec. 625. Mediation and Alternative Justice Prohibited
+    citation: Sec. 625. Mediation and Alternative Justice Prohibited
+    link: https://www.narf.org/nill/codes/chitimachacode/index.html
+    source: national-indian-law-library-code-index-chitimachacode
+    confidence: medium
+    as_of: 2022-06
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: peacemaking
     title: Title 1-A – Peacemaker Court
     citation: Title 1-A – Peacemaker Court

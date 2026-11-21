@@ -205,7 +205,238 @@ justice_institutions:
   as_of: '2022'
   locator: Connecticut section, entry 'Mashantucket (Western) Pequot Tribal Nation'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemakers (Peacemakers Council)
+    description: A forum of Elders and other Tribal Members who volunteer as mediators for disputes arising
+      on Tribal Lands; Peacemakers act by consensus decision, do not decide fault or liability and cannot
+      coerce an agreement.
+    legal_basis: 1 M.P.T.L. ch. 4, §§ 1-11 (originally established by TCR102693-01)
+    case_types:
+    - civil
+    - employment
+    - other
+    participation: voluntary
+    relationship_to_court: 'Parties must consent in writing; matters may come by direct mediation request,
+      by resolution of the Tribal Council or Elders Council, or by referral from the Tribal Court or the
+      Mashantucket Employment Rights Office with both parties'' consent. Excluded: appeals from Council,
+      Elders Council or court decisions (unless specifically referred), grievances, vendor contract disputes
+      with the Tribe, and appeals from certain committees and programs.'
+    enforcement: Parties sign a written Agreement acknowledging it may be enforced in Tribal Court; an
+      action to enforce a referred agreement must be filed within thirty days of the breach becoming known.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Mashantucket-Title-1-Judiciary.pdf
+    source: mashantucket-title-1-judiciary
+    confidence: medium
+    as_of: '2017-06-22'
+    locator: 1 M.P.T.L. ch. 4 §§ 1, 2, 3, 6, 10, 11
+    note: Proceedings are confidential and participants sign non-disclosure agreements (§ 6). Filing a
+      mediation request stays limitation periods for administrative or court actions (§ 10).
   provisions:
+  - kind: mediation
+    title: Chapter 4 – Peacemakers
+    citation: 1 M.P.T.L. ch. 4
+    summary: Defines the Peacemakers' mediation jurisdiction, membership, confidentiality, referral and
+      mediation procedure, and court enforcement of signed agreements.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Mashantucket-Title-1-Judiciary.pdf
+    source: mashantucket-title-1-judiciary
+    confidence: medium
+    as_of: '2017-06-22'
+  - kind: other
+    title: Alternatives to Sentencing and Prosecution Policies
+    citation: 2 M.P.T.L. ch. 6 § 1
+    link: https://law.mptn-nsn.gov/tribal-laws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternatives-to-sentencing-and-prosecution-policies/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Confidentiality of the PTI Program
+    citation: 2 M.P.T.L. ch. 7 Guid. 4
+    link: https://law.mptn-nsn.gov/tribal-laws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/confidentiality-of-the-pti-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice;
+      Restorative practice.'
+  - kind: other
+    title: Continuing Jurisdiction over Supervision Factors
+    citation: 5 M.P.T.L. ch. 3 § 7
+    link: https://law.mptn-nsn.gov/tribal-laws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/continuing-jurisdiction-over-supervision-factors/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative justice; Restorative practice.'
+  - kind: other
+    title: Court Considers Rehabilitation Services for Children
+    citation: 5 M.P.T.L. ch. 3 § 5
+    link: https://law.mptn-nsn.gov/tribal-laws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-considers-rehabilitation-services-for-children/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice; Restorative practice.'
+  - kind: other
+    title: Court Determined Services and Treatment for a Child
+    citation: 5 M.P.T.L. ch. 3 § 6
+    link: https://law.mptn-nsn.gov/tribal-laws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-determined-services-and-treatment-for-a-child/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative justice; Restorative practice.'
+  - kind: other
+    title: Least Restricive Setting for Child Placement
+    citation: 5 M.P.T.L. ch. 3 § 8
+    link: https://law.mptn-nsn.gov/tribal-laws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/least-restricive-setting-for-child-placement/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative justice; Restorative practice.'
+  - kind: other
+    title: Neetskehheau-Pomushaonk Program (Healing Journey Program)
+    citation: 2 M.P.T.L. ch. 1 § 5 and 2 M.P.T.L. ch. 6 § 3
+    link: https://law.mptn-nsn.gov/tribal-laws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/neetskehheau-pomushaonk-program-healing-journey-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court.'
+  - kind: other
+    title: Pre-Trial Intervention Program Eligibility
+    citation: 2 M.P.T.L. ch. 7 Guid. 1 and 2 M.P.T.L. ch. 7 Guid. 2
+    link: https://law.mptn-nsn.gov/tribal-laws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/pre-trial-intervention-program-eligibility/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice;
+      Restorative practice.'
+  - kind: other
+    title: Tribal Elders Rehabilitation Commission
+    citation: 2 M.P.T.L. ch. 6 § 2 and 2 M.P.T.L. ch. 6 § 3
+    link: https://law.mptn-nsn.gov/tribal-laws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/tribal-elders-rehabilitation-commission/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice;
+      Restorative practice.'
+  - kind: other
+    title: Truancy Prevention Program
+    citation: 18 M.P.T.L. § 6
+    link: https://law.mptn-nsn.gov/tribal-laws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/truancy-prevention-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: peacemaking
+    title: CHAPTER 4. PEACEMAKERS COUNCIL
+    citation: CHAPTER 4. PEACEMAKERS COUNCIL; 8. Procedure to File a Mediation; 9. Assignment of Peacemakers;
+      10. Peacemaking Mediation Process; 11. Success of Peacemaking Mediation Process; 12. Failure of
+      the Peacemakers Mediation Process; 16. Powers of Peacemakers; 17. Protection of Peacemakers
+    link: https://www.narf.org/nill/codes/mashantucket_pequot/index.html
+    source: national-indian-law-library-code-index-mashantucket-pequot
+    confidence: medium
+    as_of: 2015-08
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: 7. Conciliation Period
+    citation: 7. Conciliation Period
+    link: https://www.narf.org/nill/codes/mashantucket_pequot/index.html
+    source: national-indian-law-library-code-index-mashantucket-pequot
+    confidence: medium
+    as_of: 2015-08
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: arbitration
+    title: TITLE 10. ARBITRATION
+    citation: TITLE 10. ARBITRATION
+    link: https://www.narf.org/nill/codes/mashantucket_pequot/index.html
+    source: national-indian-law-library-code-index-mashantucket-pequot
+    confidence: medium
+    as_of: 2015-08
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: arbitration
+    title: 2. Agreements to Arbitrate are Enforceable
+    citation: 2. Agreements to Arbitrate are Enforceable; 4. Stay of Proceedings and Order to Proceed
+      with Arbitration; 8. Arbitration Award Not Appealable; 7. Dispute Resolution for Prohibited Practices
+      Questions; 7. Dispute Resolution for Prohibited Practices Questions
+    link: https://www.narf.org/nill/codes/mashantucket_pequot/index.html
+    source: national-indian-law-library-code-index-mashantucket-pequot
+    confidence: medium
+    as_of: 2015-08
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: mediation
+    title: 5. Establishment of Mediation Panel
+    citation: 5. Establishment of Mediation Panel; 3. Establishment of Mediation Panel
+    link: https://www.narf.org/nill/codes/mashantucket_pequot/index.html
+    source: national-indian-law-library-code-index-mashantucket-pequot
+    confidence: medium
+    as_of: 2015-08
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: arbitration
+    title: 11. Arbitration
+    citation: 11. Arbitration
+    link: https://www.narf.org/nill/codes/mashantucket_pequot/index.html
+    source: national-indian-law-library-code-index-mashantucket-pequot
+    confidence: medium
+    as_of: 2015-08
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: mediation
+    title: 9. Claim Procedures; Investigations; Mediation
+    citation: 9. Claim Procedures; Investigations; Mediation; 9. Claim Procedures; Investigations; Hearings,
+      Mediation
+    link: https://www.narf.org/nill/codes/mashantucket_pequot/index.html
+    source: national-indian-law-library-code-index-mashantucket-pequot
+    confidence: medium
+    as_of: 2015-08
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: peacemaking
     title: Title 1 – Judiciary, Chapter 4 – Peacemakers Council
     citation: Title 1 – Judiciary, Chapter 4 – Peacemakers Council

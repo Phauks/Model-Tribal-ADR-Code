@@ -209,7 +209,193 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (https://www.lrboi-nsn.gov/index.php/government/tribal-court)
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemaking (Children's Court)
+    own_term:
+      name: Odenaang Enjinoojimoying
+      language_tag: otw
+      translation: A Place of Healing Many Hearts (title of the Peacemaking Guidelines)
+    description: Peacemaking created in the Juvenile Code to provide a traditional conflict resolution
+      process to children, youth and families, with a vision of resolution and healing.
+    legal_basis: 'Little River Band Juvenile Code (Ordinance #99-900-02), Sections 4.01(b), 4.02, 6, 7.01,
+      8'
+    case_types:
+    - juvenile
+    - family
+    participation: court-referred
+    relationship_to_court: A juvenile's first status offense before the Children's Court is referred to
+      the Peacemakers immediately; other cases come through the Case Intake Team (which includes a Peacemaker)
+      or by Tribal Court referral, and cases go to court for adjudication if rejected or after nine months.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Title-900-02-Juvenile-Code-2011.pdf
+    source: little-river-900-02-juvenile-code-2011
+    confidence: medium
+    as_of: '2011-07-27'
+    locator: Sections 4.01(b), 4.02(a)-(f), 6.01, 7.01, 8.01-8.02
+    note: Language tag otw assigned because the Band is Odawa (Ottawa); the code does not name the language.
+      Participation recorded as court-referred because first status offenses are referred automatically
+      by the code.
+  - kind: peacemaking
+    name: Peacemaking program of the Tribal Court (guidelines)
+    own_term:
+      name: Odenaang Enjinoojimoying
+      language_tag: otw
+      translation: A Place of Healing Many Hearts
+    description: Tribal Court peacemaking program for children, youth, adult tribal members and tribal
+      employees; peacemakers guide the process, and participants develop and sign an agreement. A request
+      may be made in the traditional way, by offering tobacco or another of the medicines named in the
+      guidelines, or formally by court order or personal request.
+    legal_basis: Peacemaking Guidelines adopted by the Chief Judge and Associate Judge under the Juvenile
+      Code
+    case_types:
+    - juvenile
+    - family
+    - civil
+    - employment
+    participation: voluntary-or-court-referred
+    relationship_to_court: Cases may be referred by tribal courts, state courts, other federally recognized
+      or historic tribes, or agencies, or come by personal request; cases the program declines go back
+      to the Case Intake Team.
+    enforcement: The agreement is described as a binding contract; if participants do not follow it, the
+      Tribal Court enforces it by court order.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Peacemaking-Guidelines-2008.pdf
+    source: little-river-peacemaking-guidelines-2008
+    confidence: medium
+    as_of: '2008'
+    locator: Sections 4, 6.01-6.09, 8.01(2g), 8.05
+    note: Read from OCR of a scanned document. 'employment' reflects the guidelines' eligibility of tribal
+      employees; 'civil' reflects adult civil cases pending before the court. Language tag otw assigned
+      because the Band is Odawa; the guidelines do not name the language.
   provisions:
+  - kind: peacemaking
+    title: Juvenile Code – Peacemaking
+    citation: 'Little River Band Juvenile Code, Ordinance #99-900-02, Section 8'
+    summary: Creates peacemaking for children, youth and families, directs the judiciary to issue Peacemaking
+      Guidelines, and lists the cases peacemakers may hear.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Title-900-02-Juvenile-Code-2011.pdf
+    source: little-river-900-02-juvenile-code-2011
+    confidence: medium
+    as_of: '2011-07-27'
+  - kind: other
+    title: Alternative Permanent Placement Plans
+    citation: 'Little River Band of Ottawa Indians Ordinance #98-900-01: 20.04'
+    link: https://www.lrboi-nsn.gov/government/tribal-code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-permanent-placement-plans/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice; Restorative practice.'
+  - kind: other
+    title: Case Plan with Dispositional Alternatives for Minors
+    citation: 'Little River Band of Ottawa Indians Ordinance #98-900-01: 18.02; 18.03; and, 18.04.'
+    link: https://www.lrboi-nsn.gov/government/tribal-code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/case-plan-with-dispositional-alternatives-for-minors/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice; Restorative practice.'
+  - kind: other
+    title: Domestic Violence Program
+    citation: 'Little River Band of Ottawa Indians Ordinance #04-400-05: 4.03; 4.06; and, 8.06.'
+    link: https://www.lrboi-nsn.gov/government/tribal-code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/domestic-violence-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice;
+      Restorative practice.'
+  - kind: other
+    title: Informal Adjustment Conference for Minors
+    citation: 'Little River Band of Ottawa Indians Ordinance #98-900-01: 13.05.'
+    link: https://www.lrboi-nsn.gov/government/tribal-code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-adjustment-conference-for-minors/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice; Restorative practice.'
+  - kind: other
+    title: Least Restrictive Aternative Apporach to Elder Protection Orders
+    citation: 'Little River Band of Ottawa Indians Ordinance #11-900-03: 10.1; and, 10.03'
+    link: https://www.lrboi-nsn.gov/government/tribal-code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/least-restrictive-aternative-apporach-to-elder-protection-orders/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Family; Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice; Restorative practice.'
+  - kind: other
+    title: Purpose and Intent of the Children’s Protection Code
+    citation: 'Little River Band of Ottawa Indians Ordinance #98-900-01: 2.01'
+    link: https://www.lrboi-nsn.gov/government/tribal-code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-and-intent-of-the-childrens-protection-code/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice; Restorative practice.'
+  - kind: other
+    title: Rehabilitative Measures Penalty in Sentencing
+    citation: 'Little River Band of Ottawa Indians Ordinance #03-300-03: 8-03'
+    link: https://www.lrboi-nsn.gov/government/tribal-code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/rehabilitative-measures-penalty-in-sentencing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
+  - kind: other
+    title: Treatment and Counseling for Substance Abuse Perpetrators
+    citation: 'Little River Band of Ottawa Indians Ordinance #04-400-05: 5:01; 5.02; and, 5:05'
+    link: https://www.lrboi-nsn.gov/government/tribal-code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-and-counseling-for-substance-abuse-perpetrators/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
+  - kind: arbitration
+    title: Title 02 - Arbitration Ordinance
+    citation: Title 02 - Arbitration Ordinance
+    link: https://www.narf.org/nill/codes/little_river_band/index.html
+    source: national-indian-law-library-code-index-little-river-band
+    confidence: medium
+    as_of: 2018-11
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: arbitration
+    title: '* Arbitration Ordinance (Commercial Court)'
+    citation: '* Arbitration Ordinance (Commercial Court)'
+    link: https://www.narf.org/nill/codes/little_river_band/index.html
+    source: national-indian-law-library-code-index-little-river-band
+    confidence: medium
+    as_of: 2018-11
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: peacemaking
     title: Appendix 1 – Peacemaking Guidelines
     citation: Appendix 1 – Peacemaking Guidelines
@@ -242,6 +428,57 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: November 2018); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
+  published_materials:
+  - kind: guide
+    title: Appendix 1 – Peacemaking Guidelines (Odenaang Enjinoojimoying), 2008
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Peacemaking-Guidelines-2008.pdf
+    source: narf-ipi-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2008'
+    note: NARF says the guidelines provide authorization, philosophical background, referral standards
+      (including an option for traditional request), procedure, qualifications, standards of conduct,
+      and forms.
+  - kind: forms
+    title: 'Odenaang Enjinoojimoying forms: intake (adult and youth), notice, peacemaking agreement, compliance,
+      confidentiality agreement, follow-up questionnaire, community service log, contact log (appendices
+      to the 2008 Guidelines)'
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Peacemaking-Guidelines-2008.pdf
+    source: little-river-peacemaking-guidelines-2008
+    confidence: medium
+    as_of: '2008'
+    locator: Table of contents, appendices
+  training_programs:
+  - name: Peacemaker certification (program operation, introduction to Anishinaabe culture, dispute resolution
+      techniques; observation and a training session)
+    provider: Little River Band Peacemaking Department
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Peacemaking-Guidelines-2008.pdf
+    source: little-river-peacemaking-guidelines-2008
+    confidence: medium
+    as_of: '2008'
+    locator: Section 12.04
+  clauses:
+  - context: commercial-code
+    kind: arbitration-clause
+    citation: 'Arbitration Code, Ordinance # 01-300-02, Sections 1, 4, 8-10'
+    summary: Makes written agreements to arbitrate contract claims valid and enforceable in Tribal Court,
+      with no appeal from orders enforcing an agreement or award, and creates a Tribal Commercial Court
+      division to hear matters under the Arbitration Code and the Tribal Uniform Commercial Code.
+    link: https://lrboi-nsn.gov/sites/default/files/pages/Title-300-02.pdf
+    source: little-river-arbitration-code-01-300-02
+    confidence: medium
+    as_of: '2001-06-18'
+    locator: Sections 1.01, 4.01-4.02, 9.01, 10.03
+  - context: commercial-code
+    kind: waiver-of-sovereign-immunity
+    citation: 'Arbitration Code, Ordinance # 01-300-02, Sections 4.03, 10.02'
+    summary: A Band contract to arbitrate must be approved by a Tribal Council resolution specifically
+      waiving immunity to arbitrate, to have the agreement enforced and to have the award enforced; the
+      Council may by resolution waive Tribal Court jurisdiction or give another venue priority.
+    link: https://lrboi-nsn.gov/sites/default/files/pages/Title-300-02.pdf
+    source: little-river-arbitration-code-01-300-02
+    confidence: medium
+    as_of: '2001-06-18'
+    locator: Sections 4.03(a)-(c), 10.02
 gaming:
   compacts:
   - state: MI

@@ -235,7 +235,250 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.choctaw.org/government/court/index.html)
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Choctaw Itti-kāna-ikbi Court (Choctaw Peacemaker Court)
+    own_term:
+      name: Itti-kāna-ikbi
+      language_tag: cho
+      translation: peacemaker (the code uses the term for the Choctaw Peacemaker Court and its peacemakers;
+        spelling fixed by Tribal Council Resolution 42-81(A))
+    description: A division of the Tribal Court providing a forum for traditional Choctaw methods of peacemaking
+      to resolve disputes fairly, informally and inexpensively, supervised by the Senior Itti-kāna-ikbi.
+    legal_basis: Choctaw Tribal Code, Title XXIV, Chapter 1, §§ 24-1-1 to 24-1-17
+    case_types:
+    - civil
+    - criminal-diversion
+    - juvenile
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: Has original jurisdiction over cases filed by joint petition of all parties
+      and over matters referred by the Choctaw Criminal, Civil or Youth Court; a referred case moves to
+      the Itti-kāna-ikbi Court's docket and returns to the referring court if no agreed resolution is
+      possible.
+    enforcement: A signed agreement and proposed dismissal order are reviewed by the Itti-kāna-ikbi Judge
+      and entered; the code provides for enforcement of judgments (§ 24-1-12). The court may compel attendance
+      and seek contempt.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Miss-Choctaw-Title-24-Choctaw-Peacemaker-Code.pdf
+    source: mississippi-choctaw-title-24-peacemaker-code
+    confidence: high
+    as_of: 2024-02
+    locator: §§ 24-1-1, 24-1-2, 24-1-3, 24-1-4, 24-1-5, 24-1-10 to 24-1-12
+    note: Peacemakers on the roster are called Itti-kāna-ikbi aliha (as printed); they are selected from
+      the Choctaw community and approved by the Tribal Council. Case types reflect referral from criminal,
+      civil and youth courts. Language tag cho (Choctaw). as_of is NARF posting year. Confidence high
+      because the same file is published on the nation's own website (upload date used as as_of).
   provisions:
+  - kind: peacemaking
+    title: Title XXIV – Choctaw Peacemaker Code (Choctaw Itti-kāna-ikbi Code)
+    citation: Choctaw Tribal Code, Title XXIV, Chapter 1
+    summary: Creates the Itti-kāna-ikbi Court, sets its jurisdiction, peacemaker roster, use of tribal
+      traditions, procedures, form and enforcement of agreements.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Miss-Choctaw-Title-24-Choctaw-Peacemaker-Code.pdf
+    source: mississippi-choctaw-title-24-peacemaker-code
+    confidence: high
+    as_of: 2024-02
+    note: Confidence high because the same file is published on the nation's own website (upload date
+      used as as_of).
+  - kind: other
+    title: Alternative Response Procedure for Minor in Need of Care Proceedings
+    citation: Choctaw Rules Title XI, §11-4-2 AND §11-4-3
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-response-procedure-for-minor-in-need-of-care-proceedings/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative practice, Restorative process.'
+  - kind: other
+    title: Conditions for Release and Probation for Crimes Involving Domestic Violence
+    citation: Choctaw Rules Title III, §3-10-3 AND §3-10-12 AND §3-10-18
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/conditions-for-release-and-probation-for-crimes-involving-domestic-violence/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Deferring Criminal Prosecution in a Vlnerable Adult Abuse Case
+    citation: Choctaw Rules Title XXXI, §31-1-16
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferring-criminal-prosecution-in-a-vlnerable-adult-abuse-case/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Dispostional Options for Youth Court
+    citation: Choctaw Rules Title XI, §11-3-16
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispostional-options-for-youth-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Electronic Hearing and Disposition Alternatives for Minor in Need or Care Proceedings
+    citation: Choctaw Rules Title XI, §11-4-13
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/electronic-hearing-and-disposition-alternatives-for-minor-in-need-or-care-proceedings/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Informal Conferences for Juvenile Cases
+    citation: Choctaw Rules Title XI, §11-3-2 AND §11-3-3
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-conferences-for-juvenile-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      practice, Restorative process.'
+  - kind: other
+    title: Program for Batterers for Juvenile Offenders
+    citation: Choctaw Rules Title III, §3-10-21
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/program-for-batterers-for-juvenile-offenders/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Purpose and Authority of Youth Court
+    citation: Choctaw Rules Title XI, §11-1-1 AND §11-1-6
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-and-authority-of-youth-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Purpose of Codes for Crimes Involving Domestic Violence
+    citation: Choctaw Rules Title III, §3-10-1 AND §3-10-20
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-of-codes-for-crimes-involving-domestic-violence/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Referral of Domestic Violence Cases to Peacemaker Court
+    citation: Choctaw Rules Title III, §3-10-15
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/referral-of-domestic-violence-cases-to-peacemaker-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court;
+      Restorative justice.'
+  - kind: other
+    title: Requiring Defendant to Pay Abused Person Monetary Compesation for Treatment
+    citation: Choctaw Rules Title XXIII, §23-1-7
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/requiring-defendant-to-pay-abused-person-monetary-compesation-for-treatment/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative practice, Restorative process.'
+  - kind: other
+    title: Substance Abuse and Rehabilitation Treatment for Repeat Inoxication/Impairment Offenses
+    citation: Choctaw Rules Title III, §3‐6-21
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/substance-abuse-and-rehabilitation-treatment-for-repeat-inoxication-impairment-offenses/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Transfer to Peace Maker Court for Alternative Disposition
+    citation: Choctaw Rules Title II, §2‐1-11
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/transfer-to-peace-maker-court-for-alternative-disposition/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Transfering a Juvenine to Peacemaker Court
+    citation: Choctaw Rules Title XI, §11-2-7 AND §11-3-1
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/transfering-a-juvenine-to-peacemaker-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      court; Restorative justice.'
+  - kind: other
+    title: Treatment Program for Parole
+    citation: Choctaw Rules Title II, §2‐1-22
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-program-for-parole/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: SECTION 10. DISPUTE RESOLUTION
+    citation: SECTION 10. DISPUTE RESOLUTION
+    link: https://www.narf.org/nill/codes/mississippichoctaw/index.html
+    source: national-indian-law-library-code-index-mississippichoctaw
+    confidence: medium
+    as_of: 2015-02
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: peacemaking
     title: Title XXIV – Choctaw Peacemaker Code, Chapter 1
     citation: Title XXIV – Choctaw Peacemaker Code, Chapter 1

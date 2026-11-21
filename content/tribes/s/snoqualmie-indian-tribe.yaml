@@ -187,7 +187,37 @@ justice_institutions:
   as_of: '2022'
   locator: Washington section, entry 'Snoqualmie Tribe'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemaker Court
+    description: Part of the judicial branch alongside the Tribal Court and Court of Appeals, with original
+      jurisdiction over disputes involving minor civil matters between Snoqualmie tribal members and the
+      application of tribal customs and traditions to tribal life.
+    legal_basis: Snoqualmie Judiciary Act 3.1, Sections 4.0, 5.0(c), 7.4
+    case_types:
+    - civil
+    - other
+    relationship_to_court: One of three components of the judicial branch; the section on the Peacemaker
+      Court's operation (7.4) is marked Reserved in the copy reviewed.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Snoqualmie-act3-1.pdf
+    source: snoqualmie-judiciary-act-3-1
+    confidence: medium
+    as_of: '2025'
+    locator: Sections 4.0, 5.0(c), 7.4
+    note: Read from OCR. The Act notes the Tribe contracts with the Northwest Intertribal Court System
+      for judges. as_of is NARF posting year; whether the Peacemaker Court is operating was not verified.
   provisions:
+  - kind: arbitration
+    title: 'Chapter 3: Arbitration Act'
+    citation: 'Chapter 3: Arbitration Act; SECTION 5.0 - ENFORCEABILITY OF AGREEMENTS TO ARBITRATE; SECTION
+      7.0 - STAY OF PROCEEDINGS IN TRIBAL COURT AND ORDER TO PROCEED WITH ARBITRATION; SECTION 11.0 -
+      ARBITRATION AWARD NOT APPEALABLE'
+    link: https://www.narf.org/nill/codes/snoqualmie/index.html
+    source: national-indian-law-library-code-index-snoqualmie
+    confidence: medium
+    as_of: 2017-06
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: peacemaking
     title: Judiciary Act 3.1, Section 7.4 – Peacemaker Court
     citation: Judiciary Act 3.1, Section 7.4 – Peacemaker Court

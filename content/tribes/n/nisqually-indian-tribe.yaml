@@ -223,7 +223,163 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.nisqually-nsn.gov/index.php/administration/tribal-services/judicial-services/tribal-court/)
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
+  forums:
+  - kind: family-or-talking-circle
+    name: Peacemaker Conference (Youth Code)
+    description: An informal conference in youth proceedings, conducted according to a process established
+      by the Court, aimed at a written agreed disposition such as a Family Preservation Plan.
+    legal_basis: Nisqually Tribal Code, Title 50 – Youth, Sections 50.20.01 to 50.20.06
+    case_types:
+    - child-welfare
+    - juvenile
+    - family
+    participation: voluntary-or-court-referred
+    relationship_to_court: After a preliminary hearing any party may request a conference or the Court
+      may provisionally transfer a case on its own motion; if no agreement is reached, a fact-finding
+      hearing follows. Parties may also reach agreement outside a conference and present it to the Court.
+    enforcement: Written agreement for a fixed period signed by the child, parents or guardian, child
+      advocate and the Tribe; Nisqually Children and Family Services monitors compliance; parties may
+      present a draft order to formalize the agreement as a court order.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Nisqually-Title_50_Youth_Code.pdf
+    source: nisqually-title-50-youth-code
+    confidence: high
+    as_of: '2023-06-08'
+    locator: Sections 50.20.01-50.20.06
   provisions:
+  - kind: peacemaking
+    title: Peacemaker Conference
+    citation: Nisqually Tribal Code, Title 50, Section 50.20
+    summary: Provides for Peacemaker Conferences in youth cases, with notice, informal procedure, written
+      agreements, monitoring and formalization as court orders.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Nisqually-Title_50_Youth_Code.pdf
+    source: nisqually-title-50-youth-code
+    confidence: high
+    as_of: '2023-06-08'
+  - kind: other
+    title: Alternative Dispositions for Juvenile Offenders
+    citation: Nisqually Tribal Code. Title 50 Youth. Chapter 50.39 Court Proceedings. Section 50.39.06
+      Predisposition Report, 50.39.07 Disposition Hearing, 50.39.08 Disposition Alternatives, & 50.39.09
+      Modification of Disposition Order.
+    link: https://www.nisqually-nsn.gov/files/1616/9446/2537/Title_50_Youth_Code_Amendments_enacted_8.17.2023_-_clean_version_-_final.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-dispositions-for-juvenile-offenders/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Deferred Court Procedures for Alcohol and Drug Offenses for Juveniles
+    citation: Nisqually Tribal Code. Title 50 Youth. Chapter 50.39 Court Proceedings. Section 50.39.10
+      Deferred Court Procedures for Alcohol and Drug Offenses.
+    link: https://www.nisqually-nsn.gov/files/1616/9446/2537/Title_50_Youth_Code_Amendments_enacted_8.17.2023_-_clean_version_-_final.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferred-court-procedures-for-alcohol-and-drug-offenses-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: .'
+  - kind: other
+    title: Deferred Penalty for Juvenile Curfew
+    citation: Nisqually Tribal Code. Title 50 Youth. Chapter 50.28 Juvenile Curfew. Section 50.28.06 Penalties
+      for Children Ages Twelve to Seventeen.
+    link: https://www.nisqually-nsn.gov/files/1616/9446/2537/Title_50_Youth_Code_Amendments_enacted_8.17.2023_-_clean_version_-_final.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferred-penalty-for-juvenile-curfew/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Family Conference and Proection Plans in Elder Abuse Cases
+    citation: Nisqually Tribal Code. Title 51 Nisqually Elder Abuse Code. Chapter 51.08 Agreed Voluntary
+      Protective Services and Family Conference. Section 51.08.01 Agreed Voluntary Protective Services
+      and Family Conference.
+    link: https://www.nisqually-nsn.gov/files/9416/4557/0524/TITLE_51-ELDER_ABUSE_CODE-WITH_TABLE_OF_CONTENTS.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-conference-and-proection-plans-in-elder-abuse-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Family conference,
+      Family group conference; Restorative justice.'
+  - kind: other
+    title: Family Preservation Plan for Child In Need Of Care
+    citation: Nisqually Tribal Code. Title 50 Youth. Chapter 50.07 Committee Meetings. Section 50.07.07
+      Family Preservation Plan.
+    link: https://www.nisqually-nsn.gov/files/1616/9446/2537/Title_50_Youth_Code_Amendments_enacted_8.17.2023_-_clean_version_-_final.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-preservation-plan-for-child-in-need-of-care-2/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Mediation of Disputes in Juvenile Justice
+    citation: Nisqually Tribal Code. Title 50 Youth. Chapter 50.40 Mediation of Disputes.
+    link: https://www.nisqually-nsn.gov/files/1616/9446/2537/Title_50_Youth_Code_Amendments_enacted_8.17.2023_-_clean_version_-_final.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/mediation-of-disputes-in-juvenile-justice/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice; Restorative practice, Restorative process.'
+  - kind: peacemaking
+    title: Peacemaker Conference for Child Welfare
+    citation: Nisqually Tribal Code. Title 50 Youth. Chapter 50.20 Peacemaker Conference.
+    link: https://www.nisqually-nsn.gov/files/1616/9446/2537/Title_50_Youth_Code_Amendments_enacted_8.17.2023_-_clean_version_-_final.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaker-conference-for-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
+  - kind: arbitration
+    title: 8.50.290 Arbitration Agreements
+    citation: 8.50.290 Arbitration Agreements
+    link: https://www.narf.org/nill/codes/nisqually/index.html
+    source: national-indian-law-library-code-index-nisqually
+    confidence: medium
+    as_of: 2016-05
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: mediation
+    title: 24.19 MEDIATION OF DISPUTES
+    citation: 24.19 MEDIATION OF DISPUTES; 24.19.01 Request for Mediation; 24.19.02 Mediator
+    link: https://www.narf.org/nill/codes/nisqually/index.html
+    source: national-indian-law-library-code-index-nisqually
+    confidence: medium
+    as_of: 2016-05
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: mediation
+    title: 50.27.03 Mediator
+    citation: 50.27.03 Mediator; 50.33 MEDIATION OF DISPUTES; 50.33.01 Request for Mediation; 50.33.02
+      Mediator; 50.33.03 Time of Mediation Hearing; 50.33.04 Mediation Hearing; 50.33.05 Results of Mediation
+      Hearing
+    link: https://www.narf.org/nill/codes/nisqually/index.html
+    source: national-indian-law-library-code-index-nisqually
+    confidence: medium
+    as_of: 2016-05
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: other
     title: Title 50 – Youth
     citation: Title 50 – Youth

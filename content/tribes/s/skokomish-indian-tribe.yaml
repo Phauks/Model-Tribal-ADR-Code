@@ -207,7 +207,108 @@ justice_institutions:
   as_of: '2022'
   locator: Washington section, entry 'Skokomish Indian Tribe'
 dispute_resolution:
+  forums:
+  - kind: traditional-forum
+    name: Tribal traditional peacemaking forum (Traditional Peacekeeping)
+    description: On the Tribal Court's recommendation, a case involving a class D offense may be referred
+      to a tribal traditional peacemaking forum for adjudication.
+    legal_basis: Skokomish Tribal Code 9.11.030 (Traditional Peacekeeping)
+    case_types:
+    - criminal-diversion
+    - criminal-sentencing
+    participation: court-referred
+    relationship_to_court: The forum submits a case report to the Tribal Court and all parties detailing
+      action taken, restrictions and conditions.
+    enforcement: Failure to comply with requirements in the case report may be treated as a violation
+      of a court order.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Skokomish-STC-9.11.pdf
+    source: skokomish-stc-9-11-sentencing
+    confidence: medium
+    as_of: '2017-07-05'
+    locator: S.T.C. 9.11.030
+    note: Sentencing policy (9.11.010) favors restitution to the victim and community.
   provisions:
+  - kind: traditional-dispute-resolution
+    title: Traditional Peacekeeping
+    citation: Skokomish Tribal Code 9.11.030
+    summary: Allows referral of class D offense cases to a tribal traditional peacemaking forum, whose
+      case report conditions are enforceable as court orders.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Skokomish-STC-9.11.pdf
+    source: skokomish-stc-9-11-sentencing
+    confidence: medium
+    as_of: '2017-07-05'
+  - kind: other
+    title: Family Group Conference
+    citation: S.T.C. 3.03.095
+    link: http://skokomish.org/skokomish-codes-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-group-conference/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: . Database form of practice: Alternative; Family conferencing.'
+  - kind: other
+    title: Juvenile Alternative Sentencing
+    citation: S.T.C. 9.12.050
+    link: http://skokomish.org/skokomish-codes-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/juvenile-alternative-sentencing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: . Database form of practice: Alternative; Rehabilitation;
+      Restorative justice.'
+  - kind: other
+    title: Purpose Statement – Restorative Justice Framework
+    citation: S.T.C. 3.03.002
+    link: http://skokomish.org/skokomish-codes-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-statement-restorative-justice-framework/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: . Database form of practice: Restorative justice.'
+  - kind: other
+    title: Restitution-Based Sentencing Policy
+    citation: S.T.C. 9.11.010
+    link: http://skokomish.org/skokomish-codes-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restitution-based-sentencing-policy/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Alternative; Restitution; Restorative
+      justice.'
+  - kind: peacemaking
+    title: Traditional Peacemaking Forum
+    citation: S.T.C. 9.11.030
+    link: http://skokomish.org/skokomish-codes-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/traditional-peacemaking-forum/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Alternative; Peacemaking.'
+  - kind: other
+    title: FAMILY GROUP CONFERENCE
+    citation: FAMILY GROUP CONFERENCE; 3.03.095 Family Group Conference; PATRON DISPUTE RESOLUTION; 4.02.118
+      Patron Dispute Resolution
+    link: https://www.narf.org/nill/codes/skokomish/index.html
+    source: national-indian-law-library-code-index-skokomish
+    confidence: medium
+    as_of: 2018-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: other
     title: 'Title 9 – Skokomish Criminal Code, S.T.C. 9.11: Sentencing, Sentencing Guidelines'
     citation: 'Title 9 – Skokomish Criminal Code, S.T.C. 9.11: Sentencing, Sentencing Guidelines'

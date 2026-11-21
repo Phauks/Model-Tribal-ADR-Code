@@ -204,6 +204,73 @@ justice_institutions:
   confidence: medium
   as_of: '2022'
   locator: Montana section, entry 'Chippewa Cree Tribe of Rocky Boy Montana'
+dispute_resolution:
+  forums:
+  - kind: family-or-talking-circle
+    name: Traditional Circle sessions (child support and paternity)
+    description: The domestic relations code refers to Traditional Circle sessions or stipulation conferences
+      coordinated by the Child Support Program, in which in-kind support values may be stipulated.
+    legal_basis: Chippewa Cree Domestic Relations Code, Chapter 6 (Child Support), 6.6
+    case_types:
+    - family
+    participation: voluntary
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026'
+    locator: https://ncorj.org/tribal-law/traditional-circles-for-child-support/
+    note: NCORJ also lists a related record on traditional circles for paternity cases. Participation
+      recorded as voluntary because values are 'stipulated'; the excerpt does not otherwise state it.
+  provisions:
+  - kind: other
+    title: Alternative Sentencing in Drug Misdemeanor Offenses
+    citation: CRIMINAL OFFENSES
+    link: https://ncorj.org/tribal-law/alternative-sentencing-in-drug-misdemeanor-offenses/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-sentencing-in-drug-misdemeanor-offenses/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: alternatives; Rehabilitation.'
+  - kind: peacemaking
+    title: Traditional Circles for Child Support
+    citation: DOMESTIC RELATIONS
+    link: https://ncorj.org/tribal-law/traditional-circles-for-child-support/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/traditional-circles-for-child-support/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Circle;
+      Peacemaking.'
+  - kind: peacemaking
+    title: Traditional Circles for Paternity Cases
+    citation: DOMESTIC RELATIONS
+    link: https://ncorj.org/tribal-law/traditional-circles-for-paternity-cases/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/traditional-circles-for-paternity-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Circle;
+      Peacemaking.'
+  - kind: other
+    title: Treatment as Disposition in Informal Proceedings for Youth
+    citation: Children’s Protection Code
+    link: https://ncorj.org/tribal-law/treatment-as-disposition-in-informal-proceedings-for-youth/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-as-disposition-in-informal-proceedings-for-youth/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: .'
 gaming:
   compacts:
   - state: MT

@@ -209,6 +209,21 @@ justice_institutions:
   locator: Oklahoma section, entry 'Iowa Tribe of Oklahoma'
   note: 'Link check 2026-11-21: the link the source gives (http://bahkhoje.com/government/tribal-court/)
     returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Restorative Sentencing Policy – Restitution, Reconciliation, and Restoration
+    citation: Title 5, Section 403
+    link: https://iowanation.org/government/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-sentencing-policy-restitution-reconciliation-and-restoration/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Alternative sentencing; Deferred Prosecution;
+      Probation; Reconciliation; Restitution; Restore.'
 gaming:
   compacts:
   - state: OK

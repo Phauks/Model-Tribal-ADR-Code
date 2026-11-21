@@ -209,7 +209,109 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.nezperce.org/official/tribalcourt.htm)
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemaker Court
+    description: A voluntary forum, sitting as a panel of three Peacemakers, for traditional, non-adversarial
+      Nez Perce methods of dispute and conflict resolution as an alternative to the Tribal Court, specialty
+      courts and court-imposed sanctions; it does not ascribe fault and uses dialogue to reach consensus-based
+      solutions.
+    legal_basis: Nez Perce Tribal Code §§ 1-8-1 to 1-8-11
+    case_types:
+    - criminal-diversion
+    - juvenile
+    - civil
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: 'Hears matters on order of a Tribal Court judge or specialty court official:
+      adult criminal matters excluding listed serious and violent offenses, any juvenile delinquency matter,
+      and civil matters other than contract disputes where all parties agree; in criminal and juvenile
+      matters the prosecutor, defendant and victim must agree. Peacemakers report regularly to the referring
+      court.'
+    enforcement: Agreements may be confirmed as a Tribal Court or specialty court judgment or order and
+      enforced like other orders; agreements from minor disputes heard at the parties' own request outside
+      court are not enforceable in court.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Nez-Perce-2024-09-24-Title-1-VAWA-update.pdf
+    source: nez-perce-title-1-chapter-1-8-peacemaker-court
+    confidence: high
+    as_of: '2024-09-24'
+    locator: §§ 1-8-1, 1-8-2, 1-8-6, 1-8-8, 1-8-10, 1-8-11
+    note: The code provides that peacemakers may suggest participation in Nez Perce activities and practices,
+      naming as examples sweat lodge ceremonies, traditional drumming or dancing, and instruction in the
+      Nimiipuu language. Peacemakers are unpaid volunteers unless a program funds a stipend. The court's
+      guidelines are set out in a Peacemaker Court Handbook (§ 1-8-7).
   provisions:
+  - kind: other
+    title: Available Sentences for All Criminal Offenses
+    citation: N.P.T.R.C. Section 4.10.039
+    link: https://nezperce.org/resources/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/available-sentences-for-all-criminal-offenses/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Reducing a Sec Offender Registration Period with Intervention and Treatment
+    citation: N.P.T.R.C. Section 4.10.055; and Section 4.10.061
+    link: https://nezperce.org/resources/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/reducing-a-sec-offender-registration-period-with-intervention-and-treatment/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: mediation
+    title: '''1-2-3 Mediation and Hearings'
+    citation: '''1-2-3 Mediation and Hearings'
+    link: https://www.narf.org/nill/codes/nez_perce/index.html
+    source: national-indian-law-library-code-index-nez-perce
+    confidence: medium
+    as_of: '2019'
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: mediation
+    title: 'CHAPTER 1-3: ALTERNATIVE DISPUTE RESOLUTION'
+    citation: 'CHAPTER 1-3: ALTERNATIVE DISPUTE RESOLUTION; ''1-3-2 Matters Subject to Mediation; ''1-3-4
+      Certification and Compensation of Mediators; ''1-3-5 Selection of Mediator for Individual Cases;
+      ''1-3-8 Petition to Terminate Mediation'
+    link: https://www.narf.org/nill/codes/nez_perce/index.html
+    source: national-indian-law-library-code-index-nez-perce
+    confidence: medium
+    as_of: '2019'
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: '''6-2-23 Dispute Resolution Process'
+    citation: '''6-2-23 Dispute Resolution Process'
+    link: https://www.narf.org/nill/codes/nez_perce/index.html
+    source: national-indian-law-library-code-index-nez-perce
+    confidence: medium
+    as_of: '2019'
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: '''9-5-13 Conciliation; Contesting Violations; Hearing'
+    citation: '''9-5-13 Conciliation; Contesting Violations; Hearing'
+    link: https://www.narf.org/nill/codes/nez_perce/index.html
+    source: national-indian-law-library-code-index-nez-perce
+    confidence: medium
+    as_of: '2019'
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: arbitration
+    title: §11-9-4 Attorney Fees And Other Arbitration Costs
+    citation: §11-9-4 Attorney Fees And Other Arbitration Costs
+    link: https://www.narf.org/nill/codes/nez_perce/index.html
+    source: national-indian-law-library-code-index-nez-perce
+    confidence: medium
+    as_of: '2019'
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: peacemaking
     title: Chapter 1-8 – Peacemaker Court
     citation: Chapter 1-8 – Peacemaker Court

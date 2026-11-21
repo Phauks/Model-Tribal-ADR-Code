@@ -156,6 +156,32 @@ justice_institutions:
   note: 'The page gives a contact for a tribal court without a fuller name. Review 2026-11-21: the link
     the source gives (https://narf.org/nill/tribes/www.itcn.org/Tribes.html) is malformed or is not a
     page about this item, so it is not recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Alternatives to Pleas for Criminal Offenses
+    citation: WIC 4-01-130
+    link: https://winnemuccaindiancolony.org
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternatives-to-pleas-for-criminal-offenses/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Sentencing for Criminal Offenses
+    citation: WIC 4-01-170
+    link: https://winnemuccaindiancolony.org
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-for-criminal-offenses/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
 jurisdiction:
 - topic: public-law-280
   value: retroceded

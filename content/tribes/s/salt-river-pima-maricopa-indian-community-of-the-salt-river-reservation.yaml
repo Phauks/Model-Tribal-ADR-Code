@@ -246,7 +246,74 @@ justice_institutions:
   as_of: '2022'
   locator: Arizona section, entry 'Salt River Pima-Maricopa Indian Community'
 dispute_resolution:
+  forums:
+  - kind: family-or-talking-circle
+    name: Family group conferencing / extended family hearing (juvenile)
+    description: Uses the extended families of the Community to help the juvenile court resolve juvenile
+      offender, incorrigibility and dependency problems by applying the customs and traditions of the
+      Pima and Maricopa peoples; the court may appoint a Community member qualified to act as a tribal
+      elder to conduct the hearing.
+    legal_basis: Salt River Pima-Maricopa Indian Community Code, § 11-31
+    case_types:
+    - juvenile
+    - child-welfare
+    participation: court-referred
+    relationship_to_court: The appointed elder makes written disposition recommendations to the court,
+      which seeks to incorporate the extended family in its order.
+    link: https://srpmic-nsn.gov/government/ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026'
+    locator: https://ncorj.org/tribal-law/family-group-conferencing-peacemaking-juvenile-justice/
   provisions:
+  - kind: other
+    title: Diversion/Informal Adjustment – Juvenile Offenses
+    citation: STBC 11-130
+    link: https://srpmic-nsn.gov/government/ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-informal-adjustment-juvenile-offenses/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-Adjudication Diversion. Database form of practice:
+      Alternative to Prosecution; Deferred Prosecution; Diversion; Informal hearing.'
+  - kind: peacemaking
+    title: Family Group Conferencing/Peacemaking – Juvenile Justice
+    citation: STBC 11-31
+    link: https://srpmic-nsn.gov/government/ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-group-conferencing-peacemaking-juvenile-justice/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: . Database form of practice: Alternative; Circle;
+      Family conferencing; Peacemaking.'
+  - kind: other
+    title: Probation with Rehabilitative Conditions
+    citation: STBC 8-6(b)
+    link: https://srpmic-nsn.gov/government/ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/probation-with-rehabilitative-conditions/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-Conviction Sentencing. Database form of practice: Counseling;
+      Probation; Rehabilitation.'
+  - kind: other
+    title: DIVISION 2. DISPUTE RESOLUTION; APPEAL AND SETTLEMENT
+    citation: DIVISION 2. DISPUTE RESOLUTION; APPEAL AND SETTLEMENT
+    link: https://www.narf.org/nill/codes/salt-river/index.html
+    source: national-indian-law-library-code-index-salt-river
+    confidence: medium
+    as_of: 2019-04
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: other
     title: DISPUTE RESOLUTION; APPEAL AND SETTLEMENT
     citation: DISPUTE RESOLUTION; APPEAL AND SETTLEMENT

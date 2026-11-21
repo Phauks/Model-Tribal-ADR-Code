@@ -185,7 +185,213 @@ justice_institutions:
   as_of: '2022'
   locator: Michigan section, entry 'Grand Traverse Band of Ottawa and Chippewa Indians'
 dispute_resolution:
+  forums:
+  - kind: restorative-justice
+    name: Juvenile diversion conference with the Peacemaker coordinator
+    description: The Tribal prosecutor, with the concurrence of the juvenile probation officer and the
+      Peacemaker coordinator, may divert a juvenile instead of filing a juvenile offender petition, holding
+      an informal conference with the juvenile and parents or guardians on alternatives.
+    legal_basis: Grand Traverse Band Tribal Code, Title 10, Chapter 4, Sec. 415 (Diversion)
+    case_types:
+    - juvenile
+    - criminal-diversion
+    participation: voluntary
+    relationship_to_court: Occurs before a petition is filed; if positive results are not achieved after
+      30 days, the probation officer may recommend filing a petition.
+    enforcement: Conference findings and the agreed disposition are set out in writing and monitored by
+      the juvenile probation officer; dispositions must conclude within six months unless extended by
+      agreement; statements are inadmissible at a later trial.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/GTB-Juvenile-Code-Diversion.pdf
+    source: grand-traverse-band-title-10-juvenile-code-415
+    confidence: medium
+    as_of: '1999-10-01'
+    locator: Title 10, Sec. 415(a)-(g)
+    note: Parents or guardians must voluntarily consent after an explanation of rights; the prosecutor
+      cannot compel involuntary action.
+  - kind: peacemaking
+    name: Peacemaking (Tribal Court)
+    description: The Tribal Court uses peacemaking to mediate cases where dispute resolution is preferred
+      over an adversarial approach; the Honoring Nations report says it has helped resolve contentious
+      issues while keeping community ties. The court's current staff list includes a peacemaker and program
+      director position.
+    relationship_to_court: Used by the Tribal Court as part of its handling of disputes.
+    link: https://nnigovernance.arizona.edu/grand-traverse-band-tribal-court
+    source: nni-honoring-nations-gtb-tribal-court
+    confidence: medium
+    as_of: '2000'
+    note: Secondary source (Honoring Nations 1999 report). The staff position is from the Band's Tribal
+      Court web page (https://gtbindians.org/tribal_court.asp, read 2026-11-21); no staff names recorded.
+      Case types for peacemaking are not stated, so none are recorded.
   provisions:
+  - kind: peacemaking
+    title: Juvenile Code – Diversion
+    citation: Grand Traverse Band Tribal Code, Title 10, Chapter 4, Sec. 415
+    summary: Authorizes pre-petition juvenile diversion conferences involving the prosecutor, juvenile
+      probation officer and Peacemaker coordinator, with written agreed dispositions.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/GTB-Juvenile-Code-Diversion.pdf
+    source: grand-traverse-band-title-10-juvenile-code-415
+    confidence: medium
+    as_of: '1999-10-01'
+  - kind: other
+    title: Alcohol or Substance Abuse Treatment Program
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 16 § 107
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alcohol-or-substance-abuse-treatment-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Program; Substance.'
+  - kind: other
+    title: Alternative Sentencing Options
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 16 § 106
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-sentencing-options/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Delayed Sentencing;
+      Rehabilitation.'
+  - kind: peacemaking
+    title: Anishinaabek Family Services Informal Preventative Intervention & Case Service Plan
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 10 § 117, § 122.
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/anishinaabek-family-services-informal-preventative-intervention-case-service-plan/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Peacemaking; Program.'
+  - kind: other
+    title: Confidentiality of Substance Abuse by Pregnant Woman
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 10 § 113
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/confidentiality-of-substance-abuse-by-pregnant-woman/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Substance.'
+  - kind: other
+    title: Disposition Alternatives for Juvenile Offenders
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 10 § 420
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-alternatives-for-juvenile-offenders/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative;
+      Restorative.'
+  - kind: other
+    title: Domestic Violence Perpetrator Programs, Treatment and Drig Court
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 16 § 311, § 354
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/domestic-violence-perpetrator-programs-treatment-and-drig-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Drug; Program; Rehabilitation.'
+  - kind: other
+    title: Informal Hearing Diversion Process for Juveniles
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 10 § 415
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-hearing-diversion-process-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Diversion; Informal hearing.'
+  - kind: other
+    title: Offenses Against the Family Rehabilitation Program
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 16 § 107
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/offenses-against-the-family-rehabilitation-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Program; Rehabilitation.'
+  - kind: other
+    title: Reaonable Alternative Approach by Court
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 16 § 358, § 503
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/reaonable-alternative-approach-by-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Alternative.'
+  - kind: other
+    title: Reasonable Alternative Dispositions for Juvenile Probation
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 10 § 418, § 420
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/reasonable-alternative-dispositions-for-juvenile-probation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative;
+      Program.'
+  - kind: other
+    title: Religious and Traditional Healing Considerations by the Court for Children
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 10 § 126
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/religious-and-traditional-healing-considerations-by-the-court-for-children/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Healing.'
+  - kind: other
+    title: Treatment for Sustance Abuse by Pregnant Woman
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 10 § 110, § 113.
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-for-sustance-abuse-by-pregnant-woman/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Program;
+      Substance.'
+  - kind: arbitration
+    title: Ch. 4. Grand Traverse Band Arbitration Code
+    citation: Ch. 4. Grand Traverse Band Arbitration Code
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-indian-law-library-code-index-grand-traverse
+    confidence: medium
+    as_of: '2026-11-21'
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title. No date on the
+      index; as_of is the access date.
   - kind: peacemaking
     title: Title 10. Children, Families and Elders, Chapter 4. Juvenile Code Revisited, Sec. 415. Diversion
     citation: Title 10. Children, Families and Elders, Chapter 4. Juvenile Code Revisited, Sec. 415. Diversion

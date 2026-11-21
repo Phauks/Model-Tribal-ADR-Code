@@ -226,7 +226,184 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Keex’ Kwaan Peacemaking Court (Standing Peacemaking Panels and Peacemaking Circles)
+    own_term:
+      name: Keex’ Kwaan
+      language_tag: tli
+      translation: Kake (the code uses it as the Tribe's own name for Kake, Alaska)
+    description: 'The Tribe''s court, in which its judicial powers are vested, organized as peacemaking:
+      a standing pool of at least twelve peacemakers (Council members and resident citizens) sitting in
+      panels of three, Peacemaking Circles led by a Keeper of the Circle recognized by the Council, a
+      Court of Appeals, and other courts the Council may create. The code applies written tribal laws
+      and Keex’ Kwaan cultural values and traditions, and states that the ancestors formed the clan of
+      Guwakaan, the Deer People, as the process of peacemaking, which no moiety claims.'
+    legal_basis: Keex’ Kwaan Judicial Peacemaking Code, Chapter 1, Sections 1-12 (under Article V of the
+      OVK Constitution)
+    case_types:
+    - family
+    - civil
+    - criminal-sentencing
+    - juvenile
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: The peacemaking court is the Tribe's judiciary; a review team of peacemakers
+      decides whether to take a petition and whether to use a circle or a panel.
+    enforcement: Panels decide by consensus when possible and otherwise by majority vote; circles decide
+      by consensus written as Consensus Agreements of the court, with set follow-up; if a circle cannot
+      reach consensus the case goes to a panel.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Kake-judical_peacemaking_code.pdf
+    source: kake-keex-kwaan-judicial-peacemaking-code
+    confidence: medium
+    as_of: '2025'
+    locator: Chapter 1, Sections 1, 2, 3, 7, 8, 9
+    note: Read from OCR of a scanned copy. Peacemakers may consult Elders and Council members (Section
+      9). NARF notes the code includes a Peacemaker Appellate Court and a Circle Peacemaking flow chart.
+      as_of is NARF posting year.
+  - kind: restorative-justice
+    name: Kake Youth Circle Peacemaking (Kake Youth Community Restorative Peacemaking)
+    description: Part of the OVK Tribal Court system, encouraging responsible choices among youth, involving
+      them in decisions about peers' problems, and producing Consensus Agreements designed to help and
+      heal victims, wrongdoers and the Village; options include community service, restitution, apologies,
+      essays, events, counseling by professionals, Elders or peers, talking circles and traditional activities.
+    legal_basis: Keex’ Kwaan Judicial Peacemaking Code, Chapter 4, Sections 1-13
+    case_types:
+    - juvenile
+    participation: court-referred
+    relationship_to_court: Established by the OVK Council as part of the Tribal Court system, with a youth
+      coordinator, youth panel and mentors.
+    enforcement: Consensus agreements with proof-of-compliance provisions and consequences for failure
+      to comply (Section 12); appeals under Section 13.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Kake-judical_peacemaking_code.pdf
+    source: kake-keex-kwaan-judicial-peacemaking-code
+    confidence: medium
+    as_of: '2025'
+    locator: Chapter 4, Sections 1, 2, 11, 12
+    note: Participation recorded as court-referred because the chapter is part of the court system; voluntariness
+      was not confirmed in the pages read.
+  published_materials:
+  - kind: guide
+    title: Kake Peacemaking Handbook (2005)
+    link: https://peacemaking.narf.org/wp-content/uploads/2016/09/2005kake_peacemaking_handbook.pdf
+    source: narf-ipi-other-tribal-materials
+    confidence: medium
+    as_of: '2005'
   provisions:
+  - kind: other
+    title: Appealing the Kake Youth Circle Peacemaking
+    citation: Keex' Kwaan Judicial Peacemaking Code Chapter 4, Section 13
+    link: https://kake-nsn.gov/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/appealing-the-kake-youth-circle-peacemaking/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Counseling as Part of Protective Orders
+    citation: Keex' Kwaan Domestic Relations Code Chapter 6, Section 7
+    link: https://kake-nsn.gov/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/counseling-as-part-of-protective-orders/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Creative Sentencing Options for Juveniles
+    citation: Keex' Kwaan Judicial Peacemaking Code Chapter 4, Section 11
+    link: https://kake-nsn.gov/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/creative-sentencing-options-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice; Restorative practice.'
+  - kind: other
+    title: Kake Youth Circle Peacemaking
+    citation: Keex' Kwaan Judicial Peacemaking Code Chapter 4, Section 1 & Section 2 & Section 3
+    link: https://kake-nsn.gov/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/kake-youth-circle-peacemaking/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice; Restorative practice.'
+  - kind: other
+    title: Notice of Circle Hearings for Juveniles
+    citation: Keex' Kwaan Judicial Peacemaking Code Chapter 4, Section 7
+    link: https://kake-nsn.gov/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/notice-of-circle-hearings-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Options for Orders and Sentences
+    citation: Keex' Kwaan Judicial Peacemaking Code Chapter 2, Section 18
+    link: https://kake-nsn.gov/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/options-for-orders-and-sentences/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Procedures for Peacemaking Circles
+    citation: Keex' Kwaan Judicial Peacemaking Code Chapter 2, Section 18
+    link: https://kake-nsn.gov/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/procedures-for-peacemaking-circles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Process of the Kake Youth Circle Peacemaking
+    citation: Keex' Kwaan Judicial Peacemaking Code Chapter 4, Section 8
+    link: https://kake-nsn.gov/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/process-of-the-kake-youth-circle-peacemaking/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice; Restorative practice.'
+  - kind: other
+    title: Purpose of the Keex’ Kwaan Peacemaking Court
+    citation: Keex' Kwaan Judicial Peacemaking Code Chapter 1, Section 1
+    link: https://kake-nsn.gov/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-of-the-keex-kwaan-peacemaking-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
   - kind: peacemaking
     title: Keex’ Kwaan Judicial Peacemaking Code
     citation: Keex’ Kwaan Judicial Peacemaking Code

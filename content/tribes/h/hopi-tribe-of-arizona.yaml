@@ -207,6 +207,101 @@ justice_institutions:
   as_of: '2022'
   locator: Arizona section, entry 'Hopi Tribe'
   note: 'Link check 2026-11-21: the site did not respond.'
+dispute_resolution:
+  forums:
+  - kind: traditional-forum
+    name: Village authority over family disputes
+    description: The Constitution reserves to each village the power to adjust family disputes and regulate
+      family relations of village members, along with appointing guardians, regulating inheritance and
+      assigning farming land; each village decides how it is organized, and a village that has not chosen
+      another form is considered to be under traditional Hopi organization.
+    legal_basis: Constitution of the Hopi Tribe, Article III, Sections 2-3
+    case_types:
+    - family
+    - probate
+    - property-or-land
+    relationship_to_court: A power reserved to the villages, separate from the courts the Tribal Council
+      may set up under Article VI.
+    link: https://narf.org/nill/constitutions/hopi/hopi_const_1993.pdf
+    source: hopi-constitution-nill
+    confidence: medium
+    as_of: '1993-12-07'
+    locator: Article III, Sections 2(a)-(d) and 3
+    note: The Constitution states the reserved powers; it does not describe how individual villages carry
+      them out, so no procedure, participation or enforcement is recorded.
+  - kind: other
+    name: Tribal Council hearing of disputes between villages
+    description: When villages dispute any matter, the Kikmongwi of a village party may ask the Chairman
+      to call a special Council meeting; the Council hears representatives and witnesses, decides in a
+      closed meeting by majority vote, and keeps a record of the evidence and its reasons.
+    legal_basis: Constitution of the Hopi Tribe, Article VIII
+    case_types:
+    - intergovernmental
+    participation: voluntary
+    enforcement: A village party that considers the decision unjust may, within ten days, seek review
+      by the Secretary of the Interior.
+    link: https://narf.org/nill/constitutions/hopi/hopi_const_1993.pdf
+    source: hopi-constitution-nill
+    confidence: medium
+    as_of: '1993-12-07'
+    locator: Article VIII, Sections 1-3
+    note: Participation recorded as voluntary because the text says a village party 'may' ask for the
+      meeting. Secretarial review is as stated in the constitution text read.
+  provisions:
+  - kind: traditional-dispute-resolution
+    title: Powers reserved to the villages
+    citation: Hopi Constitution, Article III, Section 2
+    summary: Reserves to the individual villages the powers to appoint guardians, adjust family disputes,
+      regulate inheritance and assign farming land.
+    link: https://narf.org/nill/constitutions/hopi/hopi_const_1993.pdf
+    source: hopi-constitution-nill
+    confidence: medium
+    as_of: '1993-12-07'
+  - kind: other
+    title: Disputes Between Villages
+    citation: Hopi Constitution, Article VIII
+    summary: Sets a Tribal Council hearing and decision procedure for disputes between villages, with
+      review by the Secretary of the Interior on a village's request.
+    link: https://narf.org/nill/constitutions/hopi/hopi_const_1993.pdf
+    source: hopi-constitution-nill
+    confidence: medium
+    as_of: '1993-12-07'
+  - kind: other
+    title: Alcohol Rehabilitation Program in Lieu of Jail Sentence for Intoxication
+    citation: 3.15.4 INTOXICATION.
+    link: https://ncorj.org/tribal-law/alcohol-rehabilitation-program-in-lieu-of-jail-sentence-for-intoxication/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alcohol-rehabilitation-program-in-lieu-of-jail-sentence-for-intoxication/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
+  - kind: other
+    title: Alcohol Rehabilitation Program in Lieu of Jail Sentence for Possession
+    citation: 3.15.1 USE OR POSSESSION OFFENSES.
+    link: https://ncorj.org/tribal-law/alcohol-rehabilitation-program-in-lieu-of-jail-sentence-for-possession/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alcohol-rehabilitation-program-in-lieu-of-jail-sentence-for-possession/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
+  - kind: other
+    title: Possibility of Diversion as Penalty
+    citation: 3.4.4 OTHER CRIMINAL PENALTIES.
+    link: https://ncorj.org/tribal-law/possibility-of-diversion-as-penalty/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/possibility-of-diversion-as-penalty/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative; Diversion.'
 gaming:
   compacts:
   - state: AZ

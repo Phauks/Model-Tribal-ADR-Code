@@ -187,7 +187,91 @@ justice_institutions:
   as_of: '2022'
   locator: Oregon section, entry 'Confederated Tribes of Siletz Indians'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Siletz Community Law Court
+    own_term:
+      name: Gwe-shvt-naga
+      language_tag: und
+      romanized: GWAY-SHUT-NAH-GAH (pronunciation as printed)
+      translation: in between he, she, or it walks (title for the peacemaker)
+    description: Part of the Tribal Court system giving formal support, structure and enforcement to traditional
+      Siletz methods of resolving disputes through mediation and traditional ways; peacemakers are titled
+      Gwe-shvt-naga.
+    legal_basis: Siletz Tribal Code § 3.300 and following (Siletz Community Law Court)
+    case_types:
+    - family
+    - civil
+    - commercial
+    - criminal-diversion
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: The Community Law Court Judge supervises the peacemakers; civil and criminal
+      actions may be transferred from Tribal Court where all parties consent in writing.
+    enforcement: Judgments may be enforced as any Tribal Court judgment; they may not be appealed, but
+      a party may move to modify for a $30 fee.
+    link: https://ctsi.nsn.us/wp-content/uploads/2025/06/Siletz-Community-Law-Court-06-20-2025.pdf
+    source: siletz-code-3-300-community-law-court-2025
+    confidence: high
+    as_of: '2025-06-20'
+    locator: § 3.300, 3.301, 3.302, 3.319, 3.320, 3.325-3.326
+    note: Language of the term is not named in the source, so language_tag is 'und'. Listed matters include
+      marital disputes and family strife, extended family disputes, minor neighbor disputes, alcohol use,
+      and minor community business transactions of $2,500 or less. Peacemakers must be enrolled Siletz
+      members certified by Tribal Council. Attorneys barred. Updated from the 2005 version on NARF (peacemaking.narf.org/wp-content/uploads/2025/07/Siletz-Comm-Law-Court-09-16-2005.pdf);
+      the 2005 text said the court was not yet authorized for divorce, separation or annulment, and that
+      sentence does not appear in the 2025 text read.
+  - kind: arbitration
+    name: Agreed arbitration by Gwe-shvt-naga/Peacemaker
+    description: Peacemakers may decide a disputed matter only if all parties agree in writing or before
+      the Tribal Court.
+    legal_basis: Siletz Tribal Code § 3.305 (Limitations; Gwe-shvt-naga/Peacemakers Not Judges; Agreed
+      Arbitration)
+    case_types:
+    - civil
+    - family
+    - other
+    participation: voluntary
+    relationship_to_court: Decision is entered by the Siletz Community Law Court Judge.
+    enforcement: Has the effect of a court judgment when entered.
+    link: https://ctsi.nsn.us/wp-content/uploads/2025/06/Siletz-Community-Law-Court-06-20-2025.pdf
+    source: siletz-code-3-300-community-law-court-2025
+    confidence: high
+    as_of: '2025-06-20'
+    locator: § 3.305
   provisions:
+  - kind: peacemaking
+    title: Siletz Community Law Court
+    citation: Siletz Tribal Code § 3.300 and following
+    summary: Establishes the Community Law Court and Gwe-shvt-naga/Peacemakers, subject matter, consent-based
+      transfer, judgments and their enforcement.
+    link: https://ctsi.nsn.us/wp-content/uploads/2025/06/Siletz-Community-Law-Court-06-20-2025.pdf
+    source: siletz-code-3-300-community-law-court-2025
+    confidence: high
+    as_of: '2025-06-20'
+  - kind: arbitration
+    title: Dispute Resolution; Mediation; Request for Arbitration or Mediation; Discovery; Conduct of
+      Hearing; Burden of Proof; Law to Apply; Effect of Request for Hearing; Severability; Sovereign Immunity.
+    citation: Dispute Resolution; Mediation; Request for Arbitration or Mediation; Discovery; Conduct
+      of Hearing; Burden of Proof; Law to Apply; Effect of Request for Hearing; Severability; Sovereign
+      Immunity.
+    link: https://www.narf.org/nill/codes/confederated_siletz/index.html
+    source: national-indian-law-library-code-index-confederated-siletz
+    confidence: medium
+    as_of: 2015-03
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: mediation
+    title: '2 COURT PERSONNEL: Judicial Officers; Chief Judge; Associate Judges; Pro-Tem Judges; Mediators;
+      Removal of Judges; Court Clerk; Legal Interns; Court Interpreters; Tribal Bar.'
+    citation: '2 COURT PERSONNEL: Judicial Officers; Chief Judge; Associate Judges; Pro-Tem Judges; Mediators;
+      Removal of Judges; Court Clerk; Legal Interns; Court Interpreters; Tribal Bar.'
+    link: https://www.narf.org/nill/codes/confederated_siletz/index.html
+    source: national-indian-law-library-code-index-confederated-siletz
+    confidence: medium
+    as_of: 2015-03
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: traditional-dispute-resolution
     title: Siletz Tribal Code Sec. 3.300
     citation: Siletz Tribal Code Sec. 3.300

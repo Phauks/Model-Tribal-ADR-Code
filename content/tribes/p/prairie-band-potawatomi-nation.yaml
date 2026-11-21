@@ -210,7 +210,115 @@ justice_institutions:
   as_of: '2022'
   locator: Kansas section, entry 'Prairie Band of Potawatomi Nation'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemakers Circle
+    description: A separate mediating branch established in the constitution's Dispute Resolution System;
+      peacemakers are selected by the Nation's members at a General Council meeting and are responsible
+      for mediating disputes voluntarily submitted by the parties.
+    legal_basis: Constitution of the Prairie Band Potawatomi Nation, Article VI (Dispute Resolution System),
+      Sections 1-3
+    case_types:
+    - civil
+    - other
+    participation: voluntary
+    relationship_to_court: Established alongside, and separate from, the Judicial Council (District Court,
+      Court of Appeals and Employment Disputes Tribunal); procedures are to be defined by Nation law.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Prarie-Band-Constitution.pdf
+    source: prairie-band-potawatomi-constitution-2007
+    confidence: medium
+    as_of: '2007-12-06'
+    locator: Article VI, Sections 1-3
+    note: NARF's summary adds that the provision covers foreclosure of further District Court proceedings
+      and an attorney ban; those details were not located in the Article VI text reviewed and may be in
+      implementing law.
+  - kind: employment-tribunal
+    name: Employment Disputes Tribunal
+    description: A five-magistrate tribunal within the Judicial Council responsible for deciding all government
+      employment related disputes; two magistrates are appointed by the Tribal Council, two by the Nation's
+      employees, and one by the other four.
+    legal_basis: Constitution of the Prairie Band Potawatomi Nation, Article VI, Sections 1-3
+    case_types:
+    - employment
+    participation: required
+    relationship_to_court: Part of the Judicial Council; the District Court's powers exclude government
+      employment related disputes, which go to the Tribunal.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Prarie-Band-Constitution.pdf
+    source: prairie-band-potawatomi-constitution-2007
+    confidence: medium
+    as_of: '2007-12-06'
+    locator: Article VI
+    note: 'Coined kind ''employment-tribunal'': an adjudicative forum with jointly appointed members,
+      not a consensual process.'
   provisions:
+  - kind: peacemaking
+    title: Article VI – Dispute Resolution System
+    citation: Constitution of the Prairie Band Potawatomi Nation, Art. VI
+    summary: Establishes the Judicial Council (District Court, Court of Appeals, Employment Disputes Tribunal)
+      and a separate Peacemakers Circle to mediate disputes voluntarily submitted.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Prarie-Band-Constitution.pdf
+    source: prairie-band-potawatomi-constitution-2007
+    confidence: medium
+    as_of: '2007-12-06'
+  - kind: other
+    title: Disposition Options for Juvenile Offenders
+    citation: Potawatomi Law and Order Code 27-6-13 and 27-6-15
+    link: https://www.codepublishing.com/KS/Potawatomi/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-options-for-juvenile-offenders/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Peacemaker Circles
+    citation: Potawatomi Law and Order Code 2-1-1 and 2-5-1
+    link: https://www.codepublishing.com/KS/Potawatomi/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaker-circles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative practice,
+      Restorative process.'
+  - kind: other
+    title: Sentencing Policy of the Nation
+    citation: Potawatomi Law and Order Code 16-4-3
+    link: https://www.codepublishing.com/KS/Potawatomi/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-policy-of-the-nation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Sex Offender Treatment Program for Sentence Reduction
+    citation: Potawatomi Law and Order Code 15-11-21
+    link: https://www.codepublishing.com/KS/Potawatomi/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sex-offender-treatment-program-for-sentence-reduction/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: mediation
+    title: 3-3 MEDIATION
+    citation: 3-3 MEDIATION
+    link: https://www.narf.org/nill/codes/prairie_band_potawatomi/index.html
+    source: national-indian-law-library-code-index-prairie-band-potawatomi
+    confidence: medium
+    as_of: 2019-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: peacemaking
     title: Constitution of the Prairie Band of Potawatomi Nation, Article VI – Dispute Resolution System
     citation: Constitution of the Prairie Band of Potawatomi Nation, Article VI – Dispute Resolution System

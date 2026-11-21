@@ -210,6 +210,85 @@ justice_institutions:
   locator: Massachusetts section, entry 'Mashpee Wampanoag Tribe'
   note: 'Link check 2026-11-21: the site did not respond.'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemaker Court
+    description: A vehicle for parties to reach consensual solutions by talking things out, described
+      by the Tribe as the Mashpee Wampanoag Tribal way of resolving conflicts, predating the court system;
+      it need not determine fault.
+    legal_basis: 'Chapter 3: Operation of Peacemaker Court, Sections 1-3 and following'
+    case_types:
+    - family
+    - civil
+    - commercial
+    - other
+    participation: voluntary
+    relationship_to_court: The Chief Judge appoints peacemakers (two, one male and one female) for civil
+      matters within District Court jurisdiction; peacemaking is not allowed in criminal matters, and
+      peacemakers report results to the District Court or Chief Judge.
+    enforcement: An agreement reached by the parties is reduced to writing, signed, and is a final decision
+      without appeal.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Mashpee-Chapter-3-OPERATION-OF-PEACEMAKER-COURT.pdf
+    source: mashpee-chapter-3-peacemaker-court
+    confidence: medium
+    as_of: '2025'
+    locator: Chapter 3, Sections 1, 2(a)-(f), 3
+    note: Eligible matters include family and other relationships, community relations among neighbors,
+      and civil matters involving personal, community or economic relationships. Parties are asked to
+      participate without attorneys. Peacemakers may involve service providers including traditional healers
+      and leaders, with consent. The Tribe's own pages link a brochure, a participant's guide and an intake
+      form; see the material facts. as_of is NARF posting year.
+  - kind: peacemaking
+    name: Peacemakers Court (brochure description)
+    own_term:
+      name: Wunahtyâhe8âôk
+      language_tag: wam
+      translation: Peacemaking (as glossed in the brochure)
+    description: The brochure lists ideal cases as family disputes (spouses, parents and children, extended
+      families), community disputes (nuisance, trespass, disorderly conduct, disturbing the peace), financial
+      disputes (personal debts, breach of contract) and individual land-use and access disputes. Sessions
+      include one male and one female peacemaker, no lawyers, voluntary participation, and a binding resolution
+      agreed by all parties. Guiding principles are given in English and Wampanoag.
+    case_types:
+    - family
+    - civil
+    - commercial
+    - property-or-land
+    - other
+    participation: voluntary
+    relationship_to_court: Part of the Tribal Judiciary; the Chief Judge of the Supreme Court supervises
+      the Peacemakers Court and the appointed peacemakers.
+    enforcement: The final decision is agreed upon by all parties and described as binding.
+    link: https://www.mashpeewampanoagtribe-nsn.gov/s/PM-Brochure-updated1.pdf
+    source: mashpee-peacemakers-court-brochure
+    confidence: medium
+    as_of: '2015'
+    note: The numeral 8 is part of the Wampanoag spelling as printed and is kept exactly. Language tag
+      wam (Wampanoag) assigned because the brochure gives Wampanoag terms beside English; the brochure
+      does not name the language. Supervision detail from the Tribe's About Peacemakers Court page. Peacemaker
+      names printed in the brochure are not recorded.
+  published_materials:
+  - kind: brochure
+    title: Peacemakers Court Brochure
+    link: https://www.mashpeewampanoagtribe-nsn.gov/s/PM-Brochure-updated1.pdf
+    source: mashpee-peacemakers-court-brochure
+    confidence: medium
+    as_of: '2015'
+  - kind: guide
+    title: A Participant's Guide to Peacemaking
+    link: https://www.mashpeewampanoagtribe-nsn.gov/s/Participants-Guide-to-Peacemaking-final.pdf
+    source: mashpee-peacemakers-court-pages
+    confidence: low
+    as_of: '2026-11-21'
+    note: Link listed on the Tribe's Peacemakers Court page; the guide itself was not opened. Page undated.
+  - kind: rules
+    title: Operation of Peacemaker Court (rules)
+    link: https://www.mashpeewampanoagtribe-nsn.gov/s/OPERATION-OF-PEACEMAKER-COURT.pdf
+    source: mashpee-peacemakers-court-pages
+    confidence: low
+    as_of: '2026-11-21'
+    note: Link listed on the Tribe's Peacemakers Court page; the NARF copy of Chapter 3 was read (source
+      mashpee-chapter-3-peacemaker-court). Page undated.
   provisions:
   - kind: peacemaking
     title: 'Chapter 3: Operation of Peacemaker Court'

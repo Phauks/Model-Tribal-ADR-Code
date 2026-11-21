@@ -226,7 +226,199 @@ justice_institutions:
   as_of: '2022'
   locator: Wisconsin section, entry 'Ho-Chunk Nation'
 dispute_resolution:
+  forums:
+  - kind: elders-council
+    name: Traditional Court
+    description: A court of Ho-Chunk elders for traditional dispute resolution within the Judiciary; per
+      the Judiciary's page it provides knowledge of custom, traditions and Ho-Chunk core values to members
+      referred by court processes, through social services programming, or by self-referral.
+    legal_basis: 1 HCC § 1 (Judiciary Establishment and Organization Act), Sections 3(c) and 13
+    case_types:
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: Part of the Ho-Chunk Judiciary, established to assist the Judiciary whenever
+      possible with cases or controversies involving Tribal members; a Traditional Court representative
+      also sits on the Healing to Wellness Court and Family Wellness Court treatment teams.
+    link: https://ho-chunknation.com/government/judicial-branch/courts/traditional-court-2/
+    source: ho-chunk-1-hcc-1-judiciary-act
+    confidence: high
+    as_of: '2017-06-05'
+    locator: 1 HCC § 1, Sections 3(c), 3(d)-(e), 13
+    note: Case types are not enumerated in the sources reviewed. Referral routes are from the Judiciary's
+      Traditional Court web page (accessed 2026-11-21).
+  - kind: peacemaking
+    name: Peacemaking Circle (custody and placement)
+    description: The court may refer a custody and placement case to the Peacemaking Circle when it believes
+      the parties would benefit; the circle is completely voluntary and both parties must agree before
+      transfer.
+    legal_basis: 4 HCC § 18 (Custody and Placement Ordinance), Section 9
+    case_types:
+    - family
+    participation: voluntary-or-court-referred
+    relationship_to_court: The court must consider domestic abuse issues when deciding whether referral
+      is appropriate.
+    link: https://ho-chunknation.com/wp-content/uploads/2024/01/01.23.24-4-HCC-18-Custody-and-Placement-Ordinance-1.23.24-1.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026'
+    locator: https://ncorj.org/tribal-law/peacemaking-circles-for-child-welfare/
   provisions:
+  - kind: traditional-dispute-resolution
+    title: Traditional Dispute Resolution
+    citation: 1 HCC § 1, Section 13
+    summary: Directs the Judiciary to provide for the establishment, operation and funding of the Traditional
+      Court to assist with resolving cases involving Tribal members.
+    link: https://ho-chunknation.com/wp-content/uploads/2025/02/06.05.17-1HCC1-Judiciary-Est-Org-Act.Technical-Correction-1.pdf
+    source: ho-chunk-1-hcc-1-judiciary-act
+    confidence: high
+    as_of: '2017-06-05'
+  - kind: other
+    title: Considering Alternatives to Incarceration in Bifurcated Sentences
+    citation: SECTION 973 – SENTENCING
+    link: https://ncorj.org/tribal-law/considering-alternatives-to-incarceration-in-bifurcated-sentences/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/considering-alternatives-to-incarceration-in-bifurcated-sentences/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: N/A. Database form of practice: Alternative.'
+  - kind: other
+    title: Domestic Abuse Treatment Program In Lieu of Fines for Stalking
+    citation: HO-CHUNK NATION CODE (HCC) CODE SECTION 5 – DOMESTIC ABUSE ACT OF 2000
+    link: https://ncorj.org/tribal-law/domestic-abuse-treatment-program-in-lieu-of-fines-for-stalking/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/domestic-abuse-treatment-program-in-lieu-of-fines-for-stalking/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative; Program;
+      Rehabilitation.'
+  - kind: other
+    title: Domestic Abuse Treatment Program
+    citation: HO-CHUNK NATION CODE (HCC) CODE SECTION 5 – DOMESTIC ABUSE ACT OF 2000
+    link: https://ncorj.org/tribal-law/domestic-abuse-treatment-program/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/domestic-abuse-treatment-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Program; Rehabilitation.'
+  - kind: other
+    title: Ho-Chunk Nation Family Healing to Wellness Court
+    citation: HO-CHUNK NATION CODE (HCC) ELDER WELFARE SECTION 16 – FAMILY WELLNESS COURT CODE
+    link: https://ncorj.org/tribal-law/ho-chunk-nation-family-healing-to-wellness-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/ho-chunk-nation-family-healing-to-wellness-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Ho-Chunk Nation Healing to Wellness Court
+    citation: HO-CHUNK NATION CODE (HCC) ELDER WELFARE SECTION 15 – HEALING TO WELLNESS COURT CODE
+    link: https://ncorj.org/tribal-law/ho-chunk-nation-healing-to-wellness-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/ho-chunk-nation-healing-to-wellness-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Informal Agreements in Child Welfare
+    citation: SECTION 3 – HOOCAK NATION CHILDREN AND FAMILY ACT
+    link: https://ncorj.org/tribal-law/informal-agreements-in-child-welfare/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-agreements-in-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Restorative justice.'
+  - kind: peacemaking
+    title: Peacemaking Circles for Child Welfare
+    citation: SECTION 18 – CUSTODY AND PLACEMENT ORDINANCE
+    link: https://ncorj.org/tribal-law/peacemaking-circles-for-child-welfare/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaking-circles-for-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Circle;
+      Peacemaking.'
+  - kind: other
+    title: Preventative and Community Purposes of Hoocak Nation Children and Family Act
+    citation: GENERAL PROVISIONS, POLICIES AND DEFINITIONS,
+    link: https://ncorj.org/tribal-law/preventative-and-community-purposes-of-hoocak-nation-children-and-family-act/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/preventative-and-community-purposes-of-hoocak-nation-children-and-family-act/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: N/A. Database form of practice: Alternative; Restorative
+      justice.'
+  - kind: other
+    title: Rehabilitation Intent in Substance Use Convictions
+    citation: SECTION 961 – CONTROLLED SUBSTANCES ACT
+    link: https://ncorj.org/tribal-law/rehabilitation-intent-in-substance-use-convictions/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/rehabilitation-intent-in-substance-use-convictions/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
+  - kind: other
+    title: Sentence to Alternative to Incarceration Program
+    citation: SECTION 973 – SENTENCING
+    link: https://ncorj.org/tribal-law/sentence-to-alternative-to-incarceration-program/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentence-to-alternative-to-incarceration-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative; Restorative
+      justice.'
+  - kind: other
+    title: Voluntary Domestic Abuse Treatment for Orders of Protection
+    citation: HO-CHUNK NATION CODE (HCC) CODE SECTION 5 – DOMESTIC ABUSE ACT OF 2000
+    link: https://ncorj.org/tribal-law/voluntary-domestic-abuse-treatment-for-orders-of-protection/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/voluntary-domestic-abuse-treatment-for-orders-of-protection/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Program; Rehabilitation.'
+  - kind: arbitration
+    title: 13. Arbitration Ordinance
+    citation: 13. Arbitration Ordinance
+    link: https://www.narf.org/nill/codes/hochunkcode/index.html
+    source: national-indian-law-library-code-index-hochunkcode
+    confidence: medium
+    as_of: 2019-04
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: arbitration
     title: Arbitration Ordinance
     citation: Arbitration Ordinance
@@ -240,6 +432,18 @@ dispute_resolution:
       of amendments. Disclaimer: Although every effort is made to present current and accurate information,
       if you need an official version of the tribe’s laws, please contact the tribe.); the provision itself
       was not read. The heading it falls under is taken from the page layout and may be imprecise.'
+  clauses:
+  - context: commercial-code
+    kind: arbitration-clause
+    citation: 2 HCC § 13 (Arbitration Ordinance)
+    summary: Makes written agreements to arbitrate enforceable, provides for confirmation of awards by
+      the Tribal Forum with no appeal, and allows actions against the Nation or its entities only where
+      the instrument explicitly waives immunity; the ordinance itself waives no immunity.
+    link: https://ho-chunknation.com/wp-content/uploads/2019/10/2HCC13-Arbitration-Ordinance-12.28.04.pdf
+    source: ho-chunk-2-hcc-13-arbitration
+    confidence: medium
+    as_of: '2004-12-28'
+    locator: §§ 2-3, 8-10, 12-13
 gaming:
   compacts:
   - state: WI

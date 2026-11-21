@@ -168,6 +168,33 @@ justice_institutions:
   locator: New Mexico section, entry 'Pueblo of San Ildefonso'
   note: 'Link check 2026-11-21: the link the source gives (http://sanipueblo.org/tribal-courts.aspx) returned
     HTTP 404, so it is not recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Judge Diverts to Treatment or Rehabilitation Center
+    citation: S.I.C. 8.2.1.020, and 8.2.1.120
+    link: https://law.sanipueblo.org
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/judge-diverts-to-treatment-or-rehabilitation-center/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Substance Abuse Treatment for Elder Abuse Cases
+    citation: S.I.C. 10.1.7.050
+    link: https://law.sanipueblo.org
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/substance-abuse-treatment-for-elder-abuse-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Justice. Database phase: Post-adjudication. Database form of
+      practice: Restorative justice.'
 gaming:
   compacts:
   - state: NM

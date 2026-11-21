@@ -174,7 +174,116 @@ justice_institutions:
   as_of: '2022'
   locator: New York section, entry 'Oneida Indian Nation'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemaker Court of the Oneida Indian Nation (Peacemakers division of the Trial Court)
+    description: The Trial Court includes a Peacemakers division; peacemaking is to be encouraged in all
+      cases and is governed by the Peacemaking Rules in effect from time to time. Peacemakers are persons
+      with experience in peacemaking, arbitration or mediation. The Peacemaking Rules establish the Peacemaker
+      Court as part of the Nation Court System to give formal support, structure and enforcement to traditional
+      Oneida Indian Nation methods of resolving disputes; peacemaking uses Nation religious or other traditional
+      ways of mediation and problem-solving.
+    legal_basis: Oneida Indian Nation Ordinance O-97-02, preamble, Article 8 (Peacemaking) and Article
+      12(1)(g); Oneida Indian Nation Peacemaking Rules 1-18
+    case_types:
+    - civil
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: The Chief Judge of the Trial Court appoints a peacemaker in any matter deemed
+      appropriate or where a party requests peacemaking.
+    enforcement: Peacemakers may decide a matter only if all parties agree in writing, and such a decision
+      has the effect of a court judgment when entered by the Nation Court; peacemakers may request contempt
+      for persons who ignore subpoenas.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-NY-OneidaNationCourt.pdf
+    source: oneida-indian-nation-ordinance-o-97-02
+    confidence: medium
+    as_of: '1997-05-01'
+    locator: Articles 8 and 12
+    note: Peacemaking Rules read from OCR of a scanned copy dated 5/1/97 (source oneida-indian-nation-peacemaking-rules-1997);
+      attorneys are barred unless witnesses or parties (Rule 3). The ordinance also refers to a Claims
+      Commission established by Ordinance O-94-02A.
   provisions:
+  - kind: peacemaking
+    title: Ordinance O-97-02, Article 8 – Peacemaking
+    citation: Oneida Indian Nation Ordinance O-97-02, Art. 8
+    summary: Directs that peacemaking be encouraged in all cases before the Oneida Nation Court under
+      the Peacemaking Rules.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-NY-OneidaNationCourt.pdf
+    source: oneida-indian-nation-ordinance-o-97-02
+    confidence: medium
+    as_of: '1997-05-01'
+  - kind: other
+    title: Disposition Alternatives for Juveniles
+    citation: 'Onedia Indian Nation Juvenile Justice Code: Rule 401'
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-alternatives-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Diversion Program for Alcohol and Drug Related Offenses
+    citation: 'Onedia Indian Nation Rules of Criminal Procedure: Rule 803'
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-program-for-alcohol-and-drug-related-offenses/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Diversion to Peacemaker Process (Juveniles)
+    citation: 'Onedia Indian Nation Juvenile Justice Code: Rule 301'
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-to-peacemaker-process-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Drug Education or Training Program Disposition Option
+    citation: 'Onedia Indian Nation Rules of Criminal Procedure: Rule 704'
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/drug-education-or-training-program-disposition-option/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Factors to Consider when Granting Diversion
+    citation: 'Onedia Indian Nation Rules of Criminal Procedure: Rule 804'
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/factors-to-consider-when-granting-diversion/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Sentencing Goal is to Restore the Victim and the Nation
+    citation: 'Onedia Indian Nation Rules of Criminal Procedure: Rule 702'
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-goal-is-to-restore-the-victim-and-the-nation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
   - kind: peacemaking
     title: Oneida Indian Nation Peacemaking Rules
     citation: Oneida Indian Nation Peacemaking Rules
@@ -197,6 +306,13 @@ dispute_resolution:
     note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
       referral procedures, civil process authority, standards of conduct, and authority to use Nation
       religious and traditional ways.'
+  published_materials:
+  - kind: rules
+    title: Oneida Indian Nation Peacemaking Rules
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-NY-rulesofpeacemaking-document.pdf
+    source: narf-ipi-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
 gaming:
   compacts:
   - state: NY

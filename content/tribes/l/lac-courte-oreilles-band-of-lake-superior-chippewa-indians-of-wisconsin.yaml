@@ -175,6 +175,75 @@ justice_institutions:
   confidence: medium
   as_of: '2022'
   locator: Wisconsin section, entry 'Lac Courte Oreilles Band of Ojibwe'
+dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemaking in child-in-need-of-care matters
+    description: The Child Welfare Director and affected parties (including a child 12 or older) may,
+      by mutual consent, petition the Children's Court to institute peacemaking, conducted under rules
+      set by peacemakers appointed by the Tribal Court.
+    legal_basis: LCO Code DMR.1.3.120 (Informal Disposition)
+    case_types:
+    - child-welfare
+    participation: voluntary
+    relationship_to_court: Occurs at the direction of the Children's Court; formal proceedings may be
+      instituted at any time the Child Welfare Director deems appropriate.
+    link: https://law.lco-nsn.gov
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026'
+    locator: https://ncorj.org/tribal-law/informal-disposition-and-peacemaking/
+  clauses:
+  - context: other
+    kind: waiver-of-sovereign-immunity
+    citation: LCO Tribal Code of Law TCT.1.3.030
+    summary: Allows limited waivers of immunity only by express Tribal Governing Board resolution or motion,
+      including a waiver in an employment agreement to enforce its terms in tribal court, and requires
+      each waiver to be specific as to duration, grantee, transaction, assets, court and applicable law.
+    link: https://narf.org/nill/triballaw/us/nsn/lco/council/code/TCT.1.3.030
+    source: lco-tct-1-3-030-nill
+    confidence: medium
+    as_of: '2016'
+    locator: TCT.1.3.030(b)-(e)
+    note: 'Context: Sovereign immunity code; waiver may be granted in employment agreements.'
+  provisions:
+  - kind: other
+    title: AODA Dispositional Hearing – Treatment and Culturally Appropriate Services
+    citation: DMR.1.10.090
+    link: https://law.lco-nsn.gov
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/aoda-dispositional-hearing-treatment-and-culturally-appropriate-services/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Rehabilitation.'
+  - kind: peacemaking
+    title: Informal Disposition and Peacemaking
+    citation: DMR.1.3.120
+    link: https://law.lco-nsn.gov
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-disposition-and-peacemaking/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication (informal). Database form of practice:
+      Peacemaking.'
+  - kind: other
+    title: Truancy Disposition – Counseling and Community Service
+    citation: GNC.5.3.020
+    link: https://law.lco-nsn.gov
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/truancy-disposition-counseling-and-community-service/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
 gaming:
   compacts:
   - state: WI

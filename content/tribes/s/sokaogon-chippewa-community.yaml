@@ -162,7 +162,44 @@ justice_institutions:
   as_of: '2022'
   locator: Wisconsin section, entry 'Sokaogon Chippewa (Mole Lake) Community'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Traditional Peacemaking Court
+    description: A branch of the Tribal Court giving formal support, structure and enforcement to traditional
+      Chippewa methods of resolving disputes through mediation and traditional ways; composed of one or
+      more Tribal Judges serving separately as Peacemakers, who must certify training in peacemaking or
+      mediation.
+    legal_basis: Sokaogon Chippewa Community Code, Chapter 1, Sections 1.1.8 to 1.1.12
+    case_types:
+    - civil
+    - criminal-diversion
+    - criminal-sentencing
+    - juvenile
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: Has original jurisdiction when all parties agree and request peacemaking, and
+      over juvenile delinquency and educational neglect cases as provided in other codes; judges may refer
+      civil or criminal cases where all parties agree, except hunting and fishing, traffic, and Children
+      in Need of Protective Services cases. The Tribal Court keeps jurisdiction over referred cases.
+    enforcement: Any agreement reached through peacemaking has the effect of a court judgment when entered
+      by the Tribal Court; peacemakers may decide a matter only with all parties' written consent.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Sokaogon-Chippewa-Community-Chapter-1-Tribal-Governance-Final-8-30-2011.pdf
+    source: sokaogon-chapter-1-tribal-governance-2011
+    confidence: medium
+    as_of: '2011-08-30'
+    locator: Sections 1.1.8(A)-(J), 1.1.9, 1.1.10(A)-(G)
+    note: Requesting parties pay $25 each ($50 total) to the clerk for the Peacemaking Court. Proceedings
+      are confidential and statements privileged. Crime victims are treated as parties for transfer purposes.
   provisions:
+  - kind: peacemaking
+    title: Traditional Peacemaking Court
+    citation: Sokaogon Chippewa Community Code, Chapter 1, Sections 1.1.8-1.1.12
+    summary: Establishes the Traditional Peacemaking Court, its jurisdiction, powers, confidentiality,
+      fees, transfers from Tribal Court and juvenile jurisdiction.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Sokaogon-Chippewa-Community-Chapter-1-Tribal-Governance-Final-8-30-2011.pdf
+    source: sokaogon-chapter-1-tribal-governance-2011
+    confidence: medium
+    as_of: '2011-08-30'
   - kind: other
     title: Ch. 1 – Tribal Governance
     citation: Ch. 1 – Tribal Governance

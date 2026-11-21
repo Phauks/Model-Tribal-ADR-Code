@@ -203,7 +203,123 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.isletapueblo.com/tribal-court.html)
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Pueblo of Isleta Peacemaking Program
+    description: A permanent program within the Tribal Court, following a pilot project, giving parties
+      a chance to resolve legal disputes informally with neutral peacemakers using traditional Pueblo
+      methods of conflict resolution, and offering prevention and intervention sessions for at-risk youth.
+    legal_basis: Tribal Council Resolution No. 2020-028; Pueblo of Isleta Tribal Court Peacemaking Program
+      Rules 1-6
+    case_types:
+    - civil
+    - juvenile
+    - criminal-diversion
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: Any dispute within the judicial branch's jurisdiction may be referred by agreement
+      of the parties (signed request and court order) or by the court on its own initiative; pre-prosecution
+      criminal referrals are allowed, but Major Crimes Act offenses are excluded. Two or more peacemakers
+      are designated per case and no attorney or advocate may attend.
+    enforcement: A signed peacemaking agreement binds the parties; the court reviews it and either incorporates
+      the settlement into a court order or returns the case to the docket. No appeal is allowed, but a
+      party may move to enforce the agreement. Failure to attend may draw a fine of up to $100.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Isleta-Pueblo-Resolution-for-Peacemaking-Program-and-Rules.pdf
+    source: isleta-resolution-2020-028-peacemaking
+    confidence: high
+    as_of: '2020-06-11'
+    locator: Resolution 2020-028; Rules 1, 2, 3, 4, 5(b)-(f), 6
+    note: Peacemakers must be enrolled members who understand Pueblo customs and traditions, are contracted
+      by the Chief Judge with concurrence of sitting peacemakers, must complete peacemaker training, and
+      are paid $25 per session hour. Statements are confidential and inadmissible.
   provisions:
+  - kind: peacemaking
+    title: Resolution Establishing Pueblo of Isleta Peacemaking Program and Peacemaking Program Rules
+    citation: Pueblo of Isleta Resolution No. 2020-028; Tribal Court Peacemaking Program Rules 1-6
+    summary: Makes the Tribal Court's peacemaking pilot permanent and sets rules on eligible cases, peacemaker
+      qualifications and pay, referral, confidential sessions, binding agreements and enforcement.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Isleta-Pueblo-Resolution-for-Peacemaking-Program-and-Rules.pdf
+    source: isleta-resolution-2020-028-peacemaking
+    confidence: high
+    as_of: '2020-06-11'
+  - kind: other
+    title: Alternative Programs for Parents Charged with Neglect
+    citation: Pueblo of Isleta Law and Order Code 31-06-15
+    link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-programs-for-parents-charged-with-neglect/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Justice. Database phase: Pre-adjudication. Database form of
+      practice: Restorative justice.'
+  - kind: other
+    title: Attendance Review Conference for Truancy
+    citation: Pueblo of Isleta Law and Order Code 31-04-06
+    link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/attendance-review-conference-for-truancy/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice; Restorative practice.'
+  - kind: other
+    title: Dispositional Hearings for Truancy Cases
+    citation: Pueblo of Isleta Law and Order Code 31-04-11
+    link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispositional-hearings-for-truancy-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Dispositional Options for Familes in Need
+    citation: Pueblo of Isleta Law and Order Code 31-05-09
+    link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispositional-options-for-familes-in-need/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Diversion Program for Juvenile Delinquency
+    citation: Pueblo of Isleta Law and Order Code 31-03-10 and 31-03-11
+    link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-program-for-juvenile-delinquency/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Purpose and Goals with Juvenile Delinquency
+    citation: Pueblo of Isleta Law and Order Code 31-03-02
+    link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-and-goals-with-juvenile-delinquency/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
   - kind: peacemaking
     title: Resolution Establishing Pueblo of Isleta Peacemaking Program
     citation: Resolution Establishing Pueblo of Isleta Peacemaking Program
@@ -215,6 +331,16 @@ dispute_resolution:
     note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
       purpose, list of cases subject to peacemaking (and exceptions), peacemaker guidelines and requirements,
       procedures, and confidentiality.'
+  training_programs:
+  - name: Peacemaker training required before placement on the roster of trained peacemakers
+    provider: Pueblo of Isleta Tribal Court
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Isleta-Pueblo-Resolution-for-Peacemaking-Program-and-Rules.pdf
+    source: isleta-resolution-2020-028-peacemaking
+    confidence: high
+    as_of: '2020-06-11'
+    locator: Rule 3(d)-(f)
+    note: The rules require training and pay a flat fee for meeting or training attendance; the training
+      curriculum is not described.
 gaming:
   compacts:
   - state: NM

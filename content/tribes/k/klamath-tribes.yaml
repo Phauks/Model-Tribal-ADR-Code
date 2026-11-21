@@ -214,7 +214,141 @@ justice_institutions:
   as_of: '2022'
   locator: Oregon section, entry 'Klamath Tribes'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Klamath Tribes Peacemaker Court
+    description: Part of the Tribal Court system providing a non-adversarial alternative using culturally
+      appropriate mediation to reach conciliatory results rather than court-imposed sanctions, and giving
+      formal support, structure and enforcement to traditional Tribal methods of resolving disputes.
+    legal_basis: Klamath Tribal Code, Title 2, Chapter 18 (Klamath Peacemaker Ordinance), 18.01-18.15;
+      Tribal Court Ordinance, Title 2, Chapter 11
+    case_types:
+    - civil
+    - juvenile
+    - other
+    participation: voluntary
+    relationship_to_court: Persons with a dispute, parties to any Tribal Court case, and juveniles in
+      Tribal or state court Juvenile Matters are eligible; all parties must consent before transfer, and
+      participation is entirely voluntary.
+    enforcement: A written Resolution signed by the parties and peacemaker becomes an order and judgment
+      of the Tribal Court when the parties so intend and the Chief Judge signs it.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Klamath-Title_2_Chapter_18_-_The_Klamath_Peacemaker_Ordinance.pdf
+    source: klamath-title-2-chapter-18-peacemaker-ordinance
+    confidence: medium
+    as_of: '2008-11-15'
+    locator: 18.01-18.06, 18.12
+    note: Read from OCR. The court keeps a roster of at least three contracted peacemakers. Additional
+      procedures for juvenile matters are in 18.12.
   provisions:
+  - kind: peacemaking
+    title: The Klamath Peacemaker Ordinance
+    citation: Klamath Tribal Code, Title 2, Chapter 18
+    summary: Establishes a voluntary Peacemaker Court with philosophy, peacemaker roster and qualifications,
+      confidentiality, process, juvenile procedures and court entry of resolutions.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Klamath-Title_2_Chapter_18_-_The_Klamath_Peacemaker_Ordinance.pdf
+    source: klamath-title-2-chapter-18-peacemaker-ordinance
+    confidence: medium
+    as_of: '2008-11-15'
+  - kind: other
+    title: Disposition Options for Child in Need of Supervision or Delinquent Child
+    citation: Klamath Tribal Code. Title 2 Tribal Court/Law and Order Code. Chapter 15 Juvenile Ordinance.
+      15.39 Disposition of a Child in Need of Supervision or Delinquent Child.
+    link: https://ktj-live-8df4857580a04c80b1ece864d3d589-cd4fbe8.divio-media.com/documents/Title_2_Chapter_15_-_Juvenile_Ordinance.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-options-for-child-in-need-of-supervision-or-delinquent-child/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Disposition Options for Neglected or Abused Child
+    citation: Klamath Tribal Code. Title 2 Tribal Court/Law and Order Code. Chapter 15 Juvenile Ordinance.
+      15.38 Disposition of a Neglected or Abused Child.
+    link: https://ktj-live-8df4857580a04c80b1ece864d3d589-cd4fbe8.divio-media.com/documents/Title_2_Chapter_15_-_Juvenile_Ordinance.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-options-for-neglected-or-abused-child/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: peacemaking
+    title: Establishing Peacemaker Court
+    citation: Klamath Tribal Code. Title 2 Tribal Court/Law and Order Code. Chapter 11 Tribal Court Ordinance.
+      Section 11.13 Klamath Peacemaker Court.
+    link: https://ktj-live-8df4857580a04c80b1ece864d3d589-cd4fbe8.divio-media.com/documents/Title_2_Chapter_11_-_Tribal_Court_Ordinance_v2.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/establishing-peacemaker-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
+  - kind: other
+    title: Informal Conference for Juvenile Justice
+    citation: Klamath Tribal Code. Title 2 Tribal Court/Law and Order Code. Chapter 15 Juvenile Ordinance.
+      Section 15.09 Preliminary Inquiry; Informal Conference.
+    link: https://ktj-live-8df4857580a04c80b1ece864d3d589-cd4fbe8.divio-media.com/documents/Title_2_Chapter_15_-_Juvenile_Ordinance.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-conference-for-juvenile-justice/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Family
+      conference, Family group conference.'
+  - kind: peacemaking
+    title: Peacemaker Court Ordinance
+    citation: Klamath Tribal Code. Title 2 Tribal Court/Law and Order Code. Chapter 18 The Klamath Peacemaker
+      Ordinance.
+    link: https://ktj-live-8df4857580a04c80b1ece864d3d589-cd4fbe8.divio-media.com/documents/Title_2_Chapter_18_-_The_Klamath_Peacemaker_Ordinance.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaker-court-ordinance/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of
+      practice: Peacemaking.'
+  - kind: other
+    title: Treatment for Domestic Violence
+    citation: Klamath Tribal Code. Title 4 Domestic Relations. Chapter 31 Domestic Violence Ordinance.
+      Section 31.910 Additional Court Rules in a Domestic Violence Proceeding.
+    link: https://ktj-live-8df4857580a04c80b1ece864d3d589-cd4fbe8.divio-media.com/documents/Title_4_Chapter_31_-_Domestic_Violence_Ordinance.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-for-domestic-violence/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: 36.11 Dispute Resolution.
+    citation: 36.11 Dispute Resolution.
+    link: https://www.narf.org/nill/codes/klamath/index.html
+    source: national-indian-law-library-code-index-klamath
+    confidence: medium
+    as_of: 2015-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: traditional-dispute-resolution
+    title: 45.63 Dispute Resolution betwen Management Contractor or Tribes and Customers.
+    citation: 45.63 Dispute Resolution betwen Management Contractor or Tribes and Customers.
+    link: https://www.narf.org/nill/codes/klamath/index.html
+    source: national-indian-law-library-code-index-klamath
+    confidence: medium
+    as_of: 2015-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: peacemaking
     title: Title 2 – Tribal Court/Law and Order Code, Chapter 18 – The Klamath Peacemaker Ordinance
     citation: Title 2 – Tribal Court/Law and Order Code, Chapter 18 – The Klamath Peacemaker Ordinance

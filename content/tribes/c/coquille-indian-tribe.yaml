@@ -197,7 +197,129 @@ justice_institutions:
   as_of: '2022'
   locator: Oregon section, entry 'Coquille Indian Tribe'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacegiving Program
+    own_term:
+      name: Peacegiving
+      language_tag: en
+      translation: English term used by the Tribe; facilitators are called Peacegivers
+    description: A program under supervision of the Chief Judge in which Peacegivers resolve disputes
+      using restorative justice principles and traditional Tribal dispute resolution and community integration
+      values and practices.
+    legal_basis: Coquille Tribal Ordinance Chapter 655 (Peacegiving Procedures), 655.010-655.900
+    case_types:
+    - juvenile
+    - civil
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: With the parties' consent the Tribal Court may transfer any case or dispute;
+      the code also provides that cases involving a juvenile party may be transferred with or without
+      consent.
+    enforcement: Agreements must be in writing and have no legal force until approved by the Tribal Court;
+      confidentiality breaches may be treated as contempt.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Coquille-655-Peacegiving.pdf
+    source: coquille-ordinance-655-peacegiving
+    confidence: medium
+    as_of: '2005-04-23'
+    locator: 655.050, 655.070, 655.110, 655.200, 655.700
+    note: Section 655.110(2) as printed names the Tribal Council as the body that may transfer juvenile
+      cases without consent. Ordinance states it does not waive sovereign immunity (655.800).
   provisions:
+  - kind: peacemaking
+    title: Chapter 655 – Peacegiving
+    citation: Coquille Tribal Ordinance Chapter 655
+    summary: Establishes the Peacegiving program, Peacegiver qualifications and duties, transfer of cases,
+      confidentiality and court approval of agreements.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Coquille-655-Peacegiving.pdf
+    source: coquille-ordinance-655-peacegiving
+    confidence: medium
+    as_of: '2005-04-23'
+  - kind: other
+    title: Court Authority Over Remedial Services for Parents and Children
+    citation: CITC 641.550
+    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-authority-over-remedial-services-for-parents-and-children/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: N/A. Database form of practice: Counseling; Rehabilitation.'
+  - kind: other
+    title: 'Dependency Code Purpose: Family Preservation and Rehabilitation'
+    citation: CITC 641.010(2)
+    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dependency-code-purpose-family-preservation-and-rehabilitation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: N/A. Database form of practice: Rehabilitation; Restorative
+      practice.'
+  - kind: other
+    title: Informal Resolution in Juvenile Dependency Cases
+    citation: CITC 641.400
+    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-resolution-in-juvenile-dependency-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Conflict resolution; Informal resolution.'
+  - kind: mediation
+    title: Mediation Encouraged in Termination of Parental Rights
+    citation: CITC 642.420
+    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/mediation-encouraged-in-termination-of-parental-rights/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: N/A. Database form of practice: Alternative; Conflict
+      resolution; Mediation.'
+  - kind: peacemaking
+    title: Peacegiving Process
+    citation: CITC 655 Peacegiving
+    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacegiving-process/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: N/A. Database form of practice: Peacemaking.'
+  - kind: other
+    title: Remedial Efforts and Rehabilitation Programs
+    citation: CITC 641.510
+    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/remedial-efforts-and-rehabilitation-programs/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: N/A. Database form of practice: Rehabilitation; Remedial
+      services.'
+  - kind: mediation
+    title: 642.420 Mediation Encouraged
+    citation: 642.420 Mediation Encouraged
+    link: https://www.narf.org/nill/codes/coquillecode/index.html
+    source: national-indian-law-library-code-index-coquillecode
+    confidence: medium
+    as_of: 2014-11
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: peacemaking
     title: Ordinance Chapter 655 – Peacegiving
     citation: Ordinance Chapter 655 – Peacegiving

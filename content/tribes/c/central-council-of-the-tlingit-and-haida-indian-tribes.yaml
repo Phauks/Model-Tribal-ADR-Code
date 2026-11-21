@@ -194,6 +194,56 @@ justice_institutions:
   locator: Alaska section, entry 'Central Council Tlingit & Haida Indian Tribes of Alaska'
   note: 'Link check 2026-11-21: the link the source gives (http://www.ccthita.org/government/judicial/index.html)
     returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  forums:
+  - kind: restorative-justice
+    name: Tribal youth court (youth wellness court program), Juneau
+    description: Planned opt-in program for youth tribal members in Southeast Alaska, described as an
+      alternative to the regular justice system and built on tribal mentorship and tradition.
+    case_types:
+    - juvenile
+    participation: voluntary
+    link: http://www.ktoo.org/2016/08/31/tlingit-haida-tribal-youth-court-could-launch-in-a-few-weeks/
+    source: ktoo-tlingit-haida-youth-court-2016
+    confidence: low
+    as_of: '2016-08-31'
+    note: News report of a program expected to launch within weeks; the launch is not confirmed in the
+      source. Read through a fetch-and-summarize tool.
+  - kind: elders-council
+    name: Court of Elders
+    description: A body of two to six citizens of the Tlingit & Haida communities, including elder village
+      tribal citizens, appointed for a particular matter to resolve disputes by traditional methods and
+      answer questions of customary law. It gives written advisory opinions on questions certified by
+      the Tribal Court and, on the parties' joint written request, may hear and mediate disputes among
+      citizens using traditional law and custom; it may seek advice from sources knowledgeable on Tlingit
+      and Haida clan custom.
+    legal_basis: Title 06 Tribal Courts, Chapter 04 (Secs. 06.04.001-06.04.004); Sec. 06.01.003(I)
+    case_types:
+    - other
+    participation: voluntary
+    relationship_to_court: Part of the judicial system with the Supreme Court and Trial Court; the Tribal
+      Court certifies customary-law questions to it, and it hears only disputes not governed by tribal
+      law and not otherwise within the Tribal Court's jurisdiction. No attorneys or lay advocates.
+    enforcement: Its written decision or agreement is filed by the Tribal Court Clerk and treated as a
+      final judgment, with no appeal.
+    link: https://tlingitandhaida.gov/wp-content/uploads/Title-06-Tribal-Courts-Enacted-2022.03.01.pdf
+    source: ccthita-title-06-tribal-courts-2022
+    confidence: high
+    as_of: '2022-03-01'
+    locator: Secs. 06.01.001, 06.01.003(I), 06.01.009(A)(4), 06.04.001-06.04.004
+    note: Members are appointed by the President of Tlingit & Haida; no names recorded. Case types not
+      listed in the code, so 'other' is used.
+  provisions:
+  - kind: traditional-dispute-resolution
+    title: Court of Elders
+    citation: Tlingit & Haida Title 06, Chapter 04, Secs. 06.04.001-06.04.004
+    summary: Sets up a Court of Elders that issues advisory opinions on customary law certified by the
+      Tribal Court and may, by joint consent, mediate disputes among citizens, with its decisions filed
+      as final, unappealable judgments.
+    link: https://tlingitandhaida.gov/wp-content/uploads/Title-06-Tribal-Courts-Enacted-2022.03.01.pdf
+    source: ccthita-title-06-tribal-courts-2022
+    confidence: high
+    as_of: '2022-03-01'
 gaming:
   ordinances:
   - approved: '2016-05-13'

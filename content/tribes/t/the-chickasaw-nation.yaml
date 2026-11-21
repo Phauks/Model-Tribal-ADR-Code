@@ -227,7 +227,219 @@ justice_institutions:
   as_of: '2022'
   locator: Oklahoma section, entry 'Chickasaw Nation'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Chickasaw Nation Peacemaking Court
+    description: A division of the District Court operating under the customary and traditional law of
+      the Nation, providing a forum for traditional Chickasaw methods of peacemaking to resolve disputes
+      in a fair, informal and inexpensive manner.
+    legal_basis: Chickasaw Nation Code, Title 5, Chapter 14 (Peacemaking Court Act of 2003), Sections
+      5-1401.1 to 5-1401.17; Constitution Amendment V
+    case_types:
+    - civil
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: Hears matters referred by the District Court with the agreement of the parties,
+      on a written request, a joint motion, or the court's own motion with all parties' consent; unresolved
+      matters return to the District Court, and matters under special domestic violence criminal jurisdiction
+      are excluded.
+    enforcement: A signed written agreement and proposed dismissal order are reviewed and endorsed by
+      the District Court as a final, non-appealable order, enforceable like other District Court orders.
+    own_term:
+      name: Nanna alphi’sa ishtaa-asha ikbi
+      language_tag: cic
+      translation: Printed in parentheses under the chapter heading Chickasaw Nation Peacemaking Court;
+        no separate gloss is given.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/The-Chickasaw-Nation-Title-5-5.16.2025.pdf
+    source: chickasaw-title-5-courts-and-procedures
+    confidence: high
+    as_of: '2025-05-16'
+    locator: Title 5, Chapter 14, Sections 5-1401.2, 5-1401.4, 5-1401.9, 5-1401.10, 5-1401.12
+    note: Peacemakers are selected by the Supreme Court and kept on a roster; rules of civil and criminal
+      procedure and evidence do not apply; counsel may not participate; statements are inadmissible; a
+      60-day limit before referral back. Peacemakers may use tribal cultural teachings and consult elders
+      (Sec. 5-1401.5).
+  - kind: settlement-conference
+    name: Settlement conference (civil procedure)
+    description: In civil actions the court may order a settlement conference on its own motion or a party's
+      request, presided over by a judge, court advocate or peacemaker; a judge may also assign a case
+      on the pretrial docket to the Peacemaking Court.
+    legal_basis: Chickasaw Nation Code, Title 5, Section 5-202.22 (Pretrial Proceedings), subsections
+      A and L
+    case_types:
+    - civil
+    participation: court-referred
+    relationship_to_court: Part of the District Court's pretrial procedure.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/The-Chickasaw-Nation-Title-5-5.16.2025.pdf
+    source: chickasaw-title-5-courts-and-procedures
+    confidence: high
+    as_of: '2025-05-16'
+    locator: Section 5-202.22(A), (L)
   provisions:
+  - kind: peacemaking
+    title: Peacemaking Court Act of 2003
+    citation: Chickasaw Nation Code, Title 5, Chapter 14, Sections 5-1401.1 to 5-1401.17
+    summary: Creates the Peacemaking Court within the District Court and sets peacemaker qualifications,
+      referral procedures, form of agreements, enforcement and confidentiality.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/The-Chickasaw-Nation-Title-5-5.16.2025.pdf
+    source: chickasaw-title-5-courts-and-procedures
+    confidence: high
+    as_of: '2025-05-16'
+  - kind: other
+    title: Alternative Penalties
+    citation: '"5. COURTS AND PROCEDURES"'
+    link: https://ncorj.org/tribal-law/alternative-penalties/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-penalties/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
+  - kind: other
+    title: Alternatives to Incarceration in Sentencing Considerations
+    citation: '"5. COURTS AND PROCEDURES"'
+    link: https://ncorj.org/tribal-law/alternatives-to-incarceration-in-sentencing-considerations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternatives-to-incarceration-in-sentencing-considerations/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
+  - kind: other
+    title: Chickasaw Nation Healing to Wellness Court for Truancy
+    citation: '"5. COURTS AND PROCEDURES" ARTICLE B CHICKASAW NATION HEALING TO WELNESS COURT'
+    link: https://ncorj.org/tribal-law/chickasaw-nation-healing-to-wellness-court-for-truancy/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/chickasaw-nation-healing-to-wellness-court-for-truancy/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: .'
+  - kind: other
+    title: Chickasaw Nation Healing to Wellness Court
+    citation: '"5. COURTS AND PROCEDURES" ARTICLE B CHICKASAW NATION HEALING TO WELNESS COURT'
+    link: https://ncorj.org/tribal-law/chickasaw-nation-healing-to-wellness-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/chickasaw-nation-healing-to-wellness-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: .'
+  - kind: peacemaking
+    title: Chickasaw Nation Peacemaking Court
+    citation: CHICKASAW NATION CODE "5. COURTS AND PROCEDURES" CHAPTER 14 CHICKASAW NATION PEACEMAKING
+      COURT (Nanna alphi’sa ishtaa-asha ikbi)
+    link: https://ncorj.org/tribal-law/chickasaw-nation-peacemaking-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/chickasaw-nation-peacemaking-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
+  - kind: peacemaking
+    title: Peacemaker for Pretrial Conferences
+    citation: '"5. COURTS AND PROCEDURES"'
+    link: https://ncorj.org/tribal-law/peacemaker-for-pretrial-conferences/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaker-for-pretrial-conferences/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
+  - kind: peacemaking
+    title: Peacemaking in Open Adoption Cases
+    citation: '"6. DOMESTIC RELATIONS AND FAMILIES"'
+    link: https://ncorj.org/tribal-law/peacemaking-in-open-adoption-cases/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaking-in-open-adoption-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
+  - kind: other
+    title: Restoration and Rehabilitation in Delinquency Disposition Hearings
+    citation: '"6. DOMESTIC RELATIONS AND FAMILIES"'
+    link: https://ncorj.org/tribal-law/restoration-and-rehabilitation-in-delinquency-disposition-hearings/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restoration-and-rehabilitation-in-delinquency-disposition-hearings/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Rehabilitation;
+      Restorative justice.'
+  - kind: other
+    title: Restorative Intent in Sentencing
+    citation: '"5. COURTS AND PROCEDURES"'
+    link: https://ncorj.org/tribal-law/restorative-intent-in-sentencing/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-intent-in-sentencing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Restorative Treatment Plan in Delinquency
+    citation: '"6. DOMESTIC RELATIONS AND FAMILIES"'
+    link: https://ncorj.org/tribal-law/restorative-treatment-plan-in-delinquency/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-treatment-plan-in-delinquency/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Rehabilitation;
+      Restorative justice.'
+  - kind: other
+    title: Victim Impact Panel and Treatment for Driving Under the Influence
+    citation: 17. OFFENSES AND PENALTIES
+    link: https://ncorj.org/tribal-law/victim-impact-panel-and-treatment-for-driving-under-the-influence/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/victim-impact-panel-and-treatment-for-driving-under-the-influence/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Rehabilitation.'
+  - kind: arbitration
+    title: Section 3-3605 Arbitration or Mediation Authorized
+    citation: Section 3-3605 Arbitration or Mediation Authorized
+    link: https://www.narf.org/nill/codes/chickasaw/index.html
+    source: national-indian-law-library-code-index-chickasaw
+    confidence: medium
+    as_of: 2018-09
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: mediation
+    title: Section 6-101.37 Best Interest of Child Considered in Awarding Custody or Appointing Guardian
+      - Joint Custody - Plan - Mediation
+    citation: Section 6-101.37 Best Interest of Child Considered in Awarding Custody or Appointing Guardian
+      - Joint Custody - Plan - Mediation
+    link: https://www.narf.org/nill/codes/chickasaw/index.html
+    source: national-indian-law-library-code-index-chickasaw
+    confidence: medium
+    as_of: 2018-09
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: peacemaking
     title: Title 5, Courts & Procedures, Chapter 14 – Chickasaw Nation Peacemaking Court
     citation: Title 5, Courts & Procedures, Chapter 14 – Chickasaw Nation Peacemaking Court
@@ -274,6 +486,13 @@ dispute_resolution:
     locator: Table of Contents, under 'TITLE 6. DOMESTIC RELATIONS AND FAMILIES:'
     note: Identified from section headings in the National Indian Law Library table of contents; the provision
       itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+  published_materials:
+  - kind: guide
+    title: 'Peacemaking: A Way of Life (presentation with Peacemaking Court forms, rules and procedures)'
+    link: https://peacemaking.narf.org/wp-content/uploads/2018/09/peacemaking-way-life.pdf
+    source: narf-ipi-other-tribal-materials
+    confidence: medium
+    as_of: '2025-10-15'
 gaming:
   compacts:
   - state: OK

@@ -221,7 +221,104 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.hoplandtribe.com/tribal-court) returned
     HTTP 404, so it is not recorded.'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemaker conference (Peace Making Roster)
+    description: An optional, consent-based way of resolving disputes in which a peacemaker from a roster
+      of tribal members mediates before or instead of trial; peacemakers conduct informal conferences
+      and encourage an agreement acceptable to all parties.
+    legal_basis: Hopland Tribal Code, Title 12, Chapter 12-1, Sections 12-1.20.020 and 12-1.100.010 to
+      12-1.100.070
+    case_types:
+    - civil
+    - other
+    participation: voluntary
+    relationship_to_court: Parties file a request with the Court Clerk and the judge refers the case to
+      a rostered peacemaker if no party objects; no lawsuit need be pending, and parties may continue
+      in Tribal Court if peacemaking fails.
+    enforcement: A written settlement signed by the parties and the peacemaker is an enforceable agreement;
+      if a lawsuit is pending it is filed and treated as the final judgment.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Hopland-Title-12-Tribal-Court.pdf
+    source: hopland-title-12-tribal-court
+    confidence: medium
+    as_of: '2025'
+    locator: Sections 12-1.20.020, 12-1.100.020-070
+    note: Roster kept by Tribal Council with advice of the Chief Judge and Culture Committee; peacemakers
+      must be tribal members at least 50 years old. Counsel not allowed; a party may have a Big Talker
+      (a non-lawyer tribal member or relative) only as needed to understand the proceedings. Discussions
+      are confidential. as_of is NARF posting year.
+  - kind: other
+    name: Presentation of claims to Tribal Council (Tribal Claims Ordinance)
+    description: Claims for money or damages against the Tribe or its business enterprises, including
+      employee wage claims, must be presented to and acted on by the Tribal Council before suit.
+    legal_basis: Hopland Tribal Code, Title 12, Chapter 12-4, Sections 12-4.10 to 12-4.150
+    case_types:
+    - employment
+    - commercial
+    - civil
+    participation: required
+    relationship_to_court: A prerequisite to filing suit.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Hopland-Title-12-Tribal-Court.pdf
+    source: hopland-title-12-tribal-court
+    confidence: medium
+    as_of: '2025'
+    locator: Sections 12-4.10, 12-4.20
   provisions:
+  - kind: peacemaking
+    title: Tribal Court Ordinance – Peacemakers
+    citation: Hopland Tribal Code, Title 12, Chapter 12-1, Section 12-1.100
+    summary: Creates a Peacemaker roster and sets qualifications, duties, request procedure, representation
+      rules and enforceability of settlements.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Hopland-Title-12-Tribal-Court.pdf
+    source: hopland-title-12-tribal-court
+    confidence: medium
+    as_of: '2025'
+  - kind: arbitration
+    title: Validity and Enforceability of Arbitration Agreements
+    citation: Hopland Tribal Code, Title 12, Chapter 12-3 (Ordinance No. 02-17-07)
+    summary: Gives the Tribal Court authority to determine validity of arbitration agreements, compel
+      or enjoin arbitration, appoint arbitrators, and confirm, correct or vacate awards.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Hopland-Title-12-Tribal-Court.pdf
+    source: hopland-title-12-tribal-court
+    confidence: medium
+    as_of: '2025'
+    locator: Sections 12-3.10 to 12-3.160
+  - kind: other
+    title: Community Service for Elders in Lieu of Fines
+    citation: Hopland Tribe Law and Order Ordinance, Chapter 11 Penalties
+    link: https://ncorj.org/tribal-law/community-service-for-elders-in-lieu-of-fines/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-service-for-elders-in-lieu-of-fines/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Community Service or Treatment in Lieu of Fines
+    citation: Hopland Tribe Law and Order Ordinance, Chapter 11 Penalties
+    link: https://ncorj.org/tribal-law/community-service-or-treatment-in-lieu-of-fines/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-service-or-treatment-in-lieu-of-fines/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
+  - kind: other
+    title: Referral for Treatment in Lieu of Fines
+    citation: Hopland Tribe Law and Order Ordinance, Chapter 11 Penalties
+    link: https://ncorj.org/tribal-law/referral-for-treatment-in-lieu-of-fines/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/referral-for-treatment-in-lieu-of-fines/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
   - kind: peacemaking
     title: Title 12, Chapter 12-1 – Tribal Court Ordinance
     citation: Title 12, Chapter 12-1 – Tribal Court Ordinance

@@ -283,7 +283,104 @@ justice_institutions:
   note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
     whether it currently operates was not checked.
 dispute_resolution:
+  forums:
+  - kind: restorative-justice
+    name: Youth Reclamation Program – The Peacemaker Program
+    description: A program to incorporate tribal culture and tradition in the Tribe's response to youth
+      delinquency, using traditional peacemaking methods and restorative justice focused on restitution
+      and healing; a Healing Circle develops a Healing Strategy that is supervised to completion.
+    legal_basis: Pit River Tribe, Title 8, Chapter 15, Sections 101-404 (under Article VI, sec. (1) of
+      the Pit River Constitution)
+    case_types:
+    - juvenile
+    - criminal-diversion
+    participation: voluntary-or-court-referred
+    relationship_to_court: An alternative to formal adjudication in tribal or state court; entry by petition
+      of the prosecutor, child welfare coordinator or law enforcement, by application of family or community
+      members, or by transfer from another jurisdiction with consent. Pending adjudication is stayed during
+      participation.
+    enforcement: Failure to complete the program may lead to full prosecution or return of the child to
+      the transferring jurisdiction; sanctions for non-compliance may be given.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Pit-River-Title-8-%E2%80%93-Chapter-15-Youth-Reclamation-Program-%E2%80%93-The-Peacemaker-Program.pdf
+    source: pit-river-title-8-chapter-15-peacemaker-program
+    confidence: medium
+    as_of: '2011-08-17'
+    locator: Sections 101-102, 201-202, 301-304, 404
+    note: Peacemakers may be chosen by the tribal council, a court or judge, or elected by members; the
+      clerk keeps a list.
   provisions:
+  - kind: peacemaking
+    title: Chapter 15 – Youth Reclamation Program – The Peacemaker Program
+    citation: Pit River Tribe, Title 8 Family/Children’s Code, Chapter 15
+    summary: Establishes a youth Peacemaker Program using Healing Circles and Healing Strategies as an
+      alternative to adjudication.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Pit-River-Title-8-%E2%80%93-Chapter-15-Youth-Reclamation-Program-%E2%80%93-The-Peacemaker-Program.pdf
+    source: pit-river-title-8-chapter-15-peacemaker-program
+    confidence: medium
+    as_of: '2011-08-17'
+  - kind: other
+    title: Court-Ordered Services and Treatment for Family
+    citation: Pit River Family/Children's Code, Title 8, Ch. 11, § 309(C)(2)
+    link: https://www.narf.org/nill/codes/pitrivercode/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-ordered-services-and-treatment-for-family/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: .'
+  - kind: other
+    title: Indian Child Welfare Committee Informal Adjustment Conference
+    citation: Pit River Family/Children's Code, Title 8, Ch. 1, § 116
+    link: https://www.narf.org/nill/codes/pitrivercode/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/indian-child-welfare-committee-informal-adjustment-conference/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Informal hearing.'
+  - kind: peacemaking
+    title: Peacemaker Program for Tribal Youth
+    citation: Chapter 15. Youth Reclamation Program - The Peacemaker Program
+    link: https://ncorj.org/tribal-law/peacemaker-program-for-tribal-youth/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaker-program-for-tribal-youth/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking;
+      Restorative justice.'
+  - kind: other
+    title: Truancy Court Remedies Including Assessment and Counseling
+    citation: Pit River Family/Children's Code, Title 8, Ch. 13, § 305(D)
+    link: https://www.narf.org/nill/codes/pitrivercode/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/truancy-court-remedies-including-assessment-and-counseling/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
+  - kind: other
+    title: Truancy Intervention Plan with Family Meeting
+    citation: Pit River Family/Children's Code, Title 8, Ch. 13, § 304(A)(2)
+    link: https://www.narf.org/nill/codes/pitrivercode/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/truancy-intervention-plan-with-family-meeting/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Conflict resolution; Program.'
   - kind: peacemaking
     title: 'Title 8 – Chapter 15: Youth Reclamation Program – The Peacemaker Program'
     citation: 'Title 8 – Chapter 15: Youth Reclamation Program – The Peacemaker Program'

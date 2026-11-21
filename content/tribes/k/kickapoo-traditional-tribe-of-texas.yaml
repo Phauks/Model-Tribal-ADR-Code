@@ -208,7 +208,250 @@ justice_institutions:
   as_of: '2022'
   locator: Texas section, entry 'Kickapoo Traditional Tribe of Texas'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemaker System
+    description: Part of the Tribal Court System but independent from Tribal Court judges, providing formal
+      support, structure and enforcement to traditional Kickapoo methods of resolving disputes through
+      mediation and traditional ways; Kickapoo customs and traditions are its guiding principles.
+    legal_basis: Kickapoo Traditional Tribe of Texas Code, Chapter 4 – The Peacemaker System, Sections
+      4.1-4.64; Chapter 1, Sec. 1.7
+    case_types:
+    - civil
+    - criminal-diversion
+    - criminal-sentencing
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: Any individual may request peacemaking through the court or by contacting a
+      certified peacemaker directly; civil or criminal actions may be referred where all parties agree,
+      and the Tribal Court may require peacemaking as a probation condition. The system cannot compel
+      attendance.
+    enforcement: A Tribal Court judgment on Peacemaker System proceedings may be enforced as any other
+      Tribal Court judgment; peacemakers may decide a matter only with all parties' written consent, and
+      such a decision takes effect as a court judgment when entered.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/KTTT-Ch-4-Peacemaking.pdf
+    source: kickapoo-traditional-tribe-texas-chapter-4-peacemaker-system
+    confidence: medium
+    as_of: '2025'
+    locator: Sections 4.1-4.3, 4.22, 4.30, 4.35, 4.60-4.64
+    note: Peacemakers must be Kickapoo members over 25, certified by the Traditional Council; attorneys
+      may not serve or participate. Each party pays $20 toward peacemaker compensation. Peacemakers may
+      also serve entities other than the Tribal Court (Sec. 4.3(D)). as_of is NARF posting year.
   provisions:
+  - kind: peacemaking
+    title: Chapter 4 – The Peacemaker System
+    citation: Kickapoo Traditional Tribe of Texas Code, Chapter 4; Chapter 1, Sec. 1.7
+    summary: Establishes the Peacemaker System, peacemaker qualifications and certification by the Traditional
+      Council, procedures, protective orders, complaints and transfers from Tribal Court.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/KTTT-Ch-4-Peacemaking.pdf
+    source: kickapoo-traditional-tribe-texas-chapter-4-peacemaker-system
+    confidence: medium
+    as_of: '2025'
+  - kind: peacemaking
+    title: Agreed Disposition as Court Order (Youth Cases)
+    citation: KTTT Tribal Code § 8.12
+    link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/agreed-disposition-as-court-order-youth-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Peacemaking.'
+  - kind: other
+    title: Alternative Sentencing (Curfew/Loitering Violations)
+    citation: KTTT Tribal Code § 14.6(F)
+    link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-sentencing-curfew-loitering-violations/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative
+      to incarceration.'
+  - kind: peacemaking
+    title: Child Protective Board Mediation Panel Hearings
+    citation: KTTT Tribal Code § 8.11
+    link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/child-protective-board-mediation-panel-hearings/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Alternative to formal hearing; Pre-adjudication. Database
+      form of practice: Informal hearing; Peacemaking.'
+  - kind: peacemaking
+    title: Child Protective Board Mediation (Youth in Need of Care)
+    citation: KTTT Tribal Code § 8.5(B)(4)
+    link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/child-protective-board-mediation-youth-in-need-of-care/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication (preliminary inquiry stage). Database
+      form of practice: Peacemaking.'
+  - kind: peacemaking
+    title: Civil Matters Referral to Peacemaker System
+    citation: KTTT Tribal Code § 4.62
+    link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/civil-matters-referral-to-peacemaker-system/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Any phase. Database form of practice: Peacemaking.'
+  - kind: peacemaking
+    title: Criminal Matters Referral to Peacemaker System
+    citation: KTTT Tribal Code § 4.63
+    link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/criminal-matters-referral-to-peacemaker-system/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication (probation); Pre-adjudication. Database form of
+      practice: Peacemaking.'
+  - kind: peacemaking
+    title: Criminal Probation Condition – Peacemaker Counseling
+    citation: KTTT Tribal Code § 4.64
+    link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/criminal-probation-condition-peacemaker-counseling/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication (probation). Database form of practice: Peacemaking;
+      Rehabilitation.'
+  - kind: other
+    title: Dispositional Alternative – Substance Abuse Treatment Program
+    citation: KTTT Tribal Code § 8.9(I)(7)
+    link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispositional-alternative-substance-abuse-treatment-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication (disposition). Database form of
+      practice: Rehabilitation.'
+  - kind: peacemaking
+    title: Establishment of Peacemaker System
+    citation: KTTT Tribal Code §§ 4.1-4.2
+    link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/establishment-of-peacemaker-system/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: All phases. Database form of practice: Peacemaking.'
+  - kind: peacemaking
+    title: Mandatory Referral to Peacemaker System (Civil)
+    citation: KTTT Tribal Code § 4.65 (4.56)
+    link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/mandatory-referral-to-peacemaker-system-civil/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Any phase. Database form of practice: Peacemaking.'
+  - kind: peacemaking
+    title: Peacemakers
+    citation: "\uFEFFKTTT Tribal Code §§ 4.20-4.24"
+    link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemakers/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
+  - kind: peacemaking
+    title: Procedure for Peacemaking
+    citation: "\uFEFFKTTT Tribal Code §§ 4.30-4.37"
+    link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/procedure-for-peacemaking/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
+  - kind: peacemaking
+    title: Truancy – Peacemaker Referral Requirement
+    citation: KTTT Tribal Code § 13.11(E)
+    link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/truancy-peacemaker-referral-requirement/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication (mandatory pre-court step). Database
+      form of practice: Peacemaking.'
+  - kind: other
+    title: Youth Court Authority – Diversion and Rehabilitation Programs
+    citation: KTTT Tribal Code § 7.6(F)(1)
+    link: https://kickapootexas.org/wp-content/uploads/2017/05/KTTT-Ch-1-17-Tribal-Codes.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/youth-court-authority-diversion-and-rehabilitation-programs/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: All phases. Database form of practice: Diversion;
+      Rehabilitation.'
+  - kind: mediation
+    title: Section 8.11. Child Protective Board Mediation Panel Hearings
+    citation: Section 8.11. Child Protective Board Mediation Panel Hearings
+    link: https://www.narf.org/nill/codes/kickapoo_texas/index.html
+    source: national-indian-law-library-code-index-kickapoo-texas
+    confidence: medium
+    as_of: 2019-03
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: arbitration
+    title: 'CHAPTER 26. ARBITRATION PRDINACNE:'
+    citation: CHAPTER 26. ARBITRATION PRDINACNE:; Section 3. Agreements to Arbitrate are Enforceable;
+      Section 5. Stay of Proceedings in Tribal Court and Order to Proceed with Arbitration; Section 9.
+      Arbitration Award not Appealable
+    link: https://www.narf.org/nill/codes/kickapoo_texas/index.html
+    source: national-indian-law-library-code-index-kickapoo-texas
+    confidence: medium
+    as_of: 2019-03
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: Section 11. Patron Dispute Resolution
+    citation: Section 11. Patron Dispute Resolution
+    link: https://www.narf.org/nill/codes/kickapoo_texas/index.html
+    source: national-indian-law-library-code-index-kickapoo-texas
+    confidence: medium
+    as_of: 2019-03
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: peacemaking
     title: 'Chapter 1, Sec. 1.7: Peacemaker Program and Chapter 4 – The Peacemaker System'
     citation: 'Chapter 1, Sec. 1.7: Peacemaker Program and Chapter 4 – The Peacemaker System'

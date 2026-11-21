@@ -258,6 +258,66 @@ justice_institutions:
   confidence: medium
   as_of: '2022'
   locator: Alaska section, entry 'Sitka Tribe of Alaska'
+dispute_resolution:
+  forums:
+  - kind: traditional-forum
+    name: Traditional Tlingit law in children's cases
+    description: Tribal Court judges may apply traditional Tlingit law by referring to written or oral
+      accounts of traditional Tlingit life, interviewing Elders or Culture Bearers, or calling on the
+      Haa Dachxanx’i Yan Jeeis (For Our Grandchildren) Committee or the Tribe's Cultural Resources Committee.
+    own_term:
+      name: Haa Dachxanx’i Yan Jeeis
+      language_tag: tli
+      translation: For Our Grandchildren (committee name as glossed in the code)
+    legal_basis: Sitka Tribe Children's Code, Chapter VII, § 7.01
+    case_types:
+    - child-welfare
+    - family
+    participation: court-referred
+    relationship_to_court: Traditional sources may give persuasive recommendations, but only the Presiding
+      Judge enters a final order or judgment.
+    link: https://sitkatribe.org/our-government/governance-documents/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026'
+    locator: https://ncorj.org/tribal-law/traditional-tlingit-law-in-childrens-cases/
+  provisions:
+  - kind: traditional-dispute-resolution
+    title: Problem Solving (alternative and traditional tools for dispute resolution)
+    citation: Sitka Tribe Children's Code § 2.08
+    summary: Allows the Presiding Judge to order alternative and traditional dispute resolution tools
+      for all or part of a children's case, mindful of safety where there is evidence of domestic violence.
+    link: https://sitkatribe.org/our-government/governance-documents/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026'
+    locator: https://ncorj.org/tribal-law/alternative-and-traditional-dispute-resolution/
+  - kind: other
+    title: Alternative and Traditional Dispute Resolution
+    citation: Sitka Tribe Children's Code § 2.08
+    link: https://sitkatribe.org/our-government/governance-documents/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-and-traditional-dispute-resolution/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Any phase. Database form of practice: Alternative dispute
+      resolution; Problem solving.'
+  - kind: peacemaking
+    title: Traditional Tlingit Law in Children’s Cases
+    citation: Sitka Tribe Children's Code § 7.01
+    link: https://sitkatribe.org/our-government/governance-documents/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/traditional-tlingit-law-in-childrens-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Any phase. Database form of practice: Cultural practices;
+      Healing; Peacemaking.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

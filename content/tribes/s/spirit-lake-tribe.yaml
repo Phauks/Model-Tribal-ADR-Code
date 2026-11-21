@@ -216,7 +216,115 @@ justice_institutions:
   as_of: '2022'
   locator: North Dakota section, entry 'Spirit Lake Tribe'
 dispute_resolution:
+  forums:
+  - kind: traditional-forum
+    name: 'Wodakota: Traditional Court'
+    own_term:
+      name: Wodakota
+      language_tag: dak
+      translation: The code describes the Wodakota way as the Dakota way of balance in dealings with oneself,
+        the Creator and relatives; no single-word gloss is given.
+    description: Part of the Tribal Court system providing a non-adversarial, culturally appropriate mediation
+      alternative to court-imposed sanctions; uses Peacemaking Circles drawing on elders, spiritual leaders
+      and community members, and produces written peacemaking compacts.
+    legal_basis: Spirit Lake Law and Order Code, Title 21, §§ 21-1-101 to 21-1-110 and following
+    case_types:
+    - juvenile
+    - civil
+    - criminal-sentencing
+    - other
+    participation: voluntary
+    relationship_to_court: Cases may come informally, formally, by memorandum of agreement, or voluntarily;
+      informal and formal matters remain under Tribal Court jurisdiction. All persons involved must consent
+      through a memorandum of agreement. The court also offers peacemaking to community programs, schools
+      and agencies under memoranda of agreement.
+    enforcement: A peacemaking compact signed by the parties and peacemaker becomes an order and judgment
+      of the Tribal Court when the parties so intend and the Chief Judge signs it; peacemakers monitor
+      compliance.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Spirit-Lake-Title-21-WODAKOTA.pdf
+    source: spirit-lake-title-21-wodakota
+    confidence: medium
+    as_of: '2014-03-24'
+    locator: §§ 21-1-101, 21-1-104, 21-1-107(9)-(10), 21-1-108, 21-1-109, 21-1-110
+    note: The Title incorporates a tribal prayer adopted by elders, in English and Dakota, as a guideline
+      (§ 21-1-105), and lists Dakota values with Dakota terms (§ 21-1-106); these are not reproduced here.
+      Peacemaking Circles also serve as an alternative sentencing route for youth offenders. Language
+      tag dak (Dakota).
   provisions:
+  - kind: other
+    title: Domestic Abuse – Mandatory Counseling and Traditional Healing
+    citation: Title 3, § 3-7-430(G)
+    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/domestic-abuse-mandatory-counseling-and-traditional-healing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Healing.'
+  - kind: other
+    title: Informal Adjustments for Juveniles
+    citation: Title 23, §§ 23-6-111 to 23-6-114
+    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-adjustments-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Conflict resolution; Informal hearing.'
+  - kind: other
+    title: Juvenile Diversion Agreements
+    citation: Title 23, §§ 23-6-108 to 23-6-110
+    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/juvenile-diversion-agreements/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Diversion;
+      Program.'
+  - kind: other
+    title: Suspended Sentences with Rehabilitative and Restorative Conditions
+    citation: Title 3, § 3-6-107(F)
+    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/suspended-sentences-with-rehabilitative-and-restorative-conditions/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Rehabilitation; Restitution.'
+  - kind: peacemaking
+    title: Traditional Court
+    citation: 'SPIRIT LAKE LAW AND ORDER CODE Title 21: WODAKOTA: TRADITIONAL COURT ORDINANCE'
+    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/traditional-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
+  - kind: other
+    title: Traditional Restitution and Custom Law Recognition
+    citation: Title 3, § 3-7-020(OO), (ZZ)
+    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/traditional-restitution-and-custom-law-recognition/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
   - kind: traditional-dispute-resolution
     title: 'Title 21: Wodakota: Traditional Court Ordinance'
     citation: 'Title 21: Wodakota: Traditional Court Ordinance'

@@ -231,7 +231,55 @@ justice_institutions:
   as_of: '2022'
   locator: Indiana section, entry 'Pokagon Band of Potawatomi Indians'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Native Justice Community Conflict and Dispute Resolution Forum
+    description: 'Native Justice, which the Band says is commonly referred to as peacemaking, uses talking
+      circles and circle keepers to bring people in a dispute to common ground; circle keepers facilitate
+      but do not decide, and participants set their own solution and consequences. The program has three
+      strands: Native Justice for Court, the Community Conflict and Dispute Resolution Forum, and Community
+      Education and Awareness.'
+    case_types:
+    - civil
+    participation: voluntary
+    relationship_to_court: Citizens may use the forum for civil disputes before coming to court; the court
+      continues to handle criminal cases and encourages use of the forum for civil disputes.
+    enforcement: Participants design the consequences if standards they set are not met.
+    link: https://www.pokagonband-nsn.gov/government/tribal-courts/native-justice/
+    source: pokagon-native-justice-page
+    confidence: high
+    as_of: '2026-11-21'
+    note: The page says the process uses ceremonial traditions; no further detail is recorded.
+  published_materials:
+  - kind: guide
+    title: Native Justice Resources (list of resources)
+    link: https://www.pokagonband-nsn.gov/wp-content/uploads/2023/04/Native-Justice-Resources.pdf
+    source: pokagon-native-justice-page
+    confidence: high
+    as_of: 2023-04
+  training_programs:
+  - name: Peacemaking training at the Pokagon Band (Dowagiac, Michigan, June 2019)
+    provider: Indigenous Peacemaking Initiative (Native American Rights Fund)
+    link: https://peacemaking.narf.org/2019/06/photos-pokagon-pm-training-2019/
+    source: narf-ipi-news-pokagon-training-2019
+    confidence: medium
+    as_of: 2019-06
+    note: NARF news listing also describes a June 2018 joint Pokagon Band and NARF workshop combining
+      basket weaving and peacemaking principles.
   provisions:
+  - kind: other
+    title: Purpose of the Child Protection Code
+    citation: P.B.P.I. Child Protection Code Sec. 1
+    link: https://www.pokagonband-nsn.gov/government/codes-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-of-the-child-protection-code/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      practice, Restorative process.'
   - kind: arbitration
     title: Arbitration Ordinance -- 1.
     citation: Arbitration Ordinance -- 1.; Agreements to arbitrate are enforceable.; Stay of proceedings

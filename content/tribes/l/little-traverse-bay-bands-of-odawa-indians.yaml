@@ -227,7 +227,179 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.ltbbodawa-nsn.gov/Tribal%20Court/TribaCourtStart.html)
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Mnodaawin
+    own_term:
+      name: Mnodaawin
+      language_tag: otw
+      translation: Odawa peacemaking (as glossed in the rule)
+    description: The Odawa peacemaking program to which Tribal Court cases may be transferred.
+    legal_basis: Little Traverse Bay Bands Rules of Civil Procedure, Rule XXIX (Mnodaawin)
+    case_types:
+    - civil
+    - other
+    participation: voluntary
+    relationship_to_court: A party may request transfer of a Tribal Court case at any time on evidence
+      that all parties voluntarily consent and the Mnodaawin program has affirmed it can accept the case.
+    enforcement: Parties must consent to be bound by any agreement reached in Mnodaawin.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-Traverse-Civil-Rules-of-Procedure-Amended-August-2015.pdf
+    source: little-traverse-civil-rules-2015
+    confidence: medium
+    as_of: 2015-08
+    locator: Rule XXIX
+    note: Language tag otw (Ottawa/Odawa) assigned because the rule glosses the term as Odawa peacemaking.
+  - kind: mediation-program
+    name: Court-ordered mediation in child protection
+    description: After finding probable cause at a preliminary hearing the court may order custodians
+      to participate in mediation; statements are not part of the record or used against them, except
+      new abuse or neglect allegations, which are reported.
+    legal_basis: Waganakising Odawak Tribal Code of Law (WOTCL) 5.118(J)
+    case_types:
+    - child-welfare
+    participation: required
+    relationship_to_court: Ordered by the court within child protection proceedings.
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026'
+    locator: https://ncorj.org/tribal-law/court-ordered-mediation-in-child-protection/
+  - kind: peacemaking
+    name: Peacemaking in child protection cases
+    description: In lieu of mediation, parties may request peacemaking, a voluntary and confidential process
+      using cultural approaches to dispute resolution; statements cannot be used in court except new abuse
+      or neglect allegations, which are reported.
+    legal_basis: Waganakising Odawak Tribal Code of Law (WOTCL) 5.118(K)
+    case_types:
+    - child-welfare
+    participation: voluntary
+    relationship_to_court: Available as an alternative to court-ordered mediation within child protection
+      proceedings.
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026'
+    locator: https://ncorj.org/tribal-law/peacemaking-in-child-protection-cases/
+  - kind: family-or-talking-circle
+    name: Mnodaawin Peacemaking Circles (juvenile)
+    own_term:
+      name: Mnodaawin
+      language_tag: otw
+    description: Tribal Court alternative to the usual judicial process, first offered for juvenile cases
+      such as truancy, curfew, incorrigibility and minor offenses. Trained facilitators lead circles of
+      the juvenile, parents, family, elders and community members (the victim may take part or be represented)
+      until they reach a written consensus agreement signed by all, followed by monitoring circles over
+      several months. The page says the Tribal Court plans similar processes for civil disputes.
+    case_types:
+    - juvenile
+    participation: voluntary
+    relationship_to_court: Used in place of going before the judge; available only where the juvenile
+      admits wrongdoing and the juvenile and a parent or guardian agree.
+    enforcement: Follow-up circles over several months monitor compliance with the signed agreement.
+    link: https://ltbbodawa-nsn.gov/judicial-branch/peacemaking/
+    source: ltbb-judicial-branch-peacemaking-page
+    confidence: low
+    as_of: '2026-11-21'
+    note: Official page but undated (as_of is the access date), so confidence is low under the contract;
+      it reads as a program description from the program's start. Agreements may include school, community
+      service, cultural activities, counseling and restitution commitments. Contact person on the page
+      not recorded.
   provisions:
+  - kind: peacemaking
+    title: 'Rule XXIX: Mnodaawin'
+    citation: Little Traverse Bay Bands Rules of Civil Procedure, Rule XXIX
+    summary: Allows a party to request transfer of a Tribal Court case to Mnodaawin on all parties' voluntary
+      consent to participate and be bound and the program's acceptance.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-Traverse-Civil-Rules-of-Procedure-Amended-August-2015.pdf
+    source: little-traverse-civil-rules-2015
+    confidence: medium
+    as_of: 2015-08
+  - kind: mediation
+    title: Court Ordered Mediation in Child Protection
+    citation: WOTCL 5.118(J) - Court Ordered Mediation
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-ordered-mediation-in-child-protection/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Alternative
+      dispute resolution - Mediation.'
+  - kind: other
+    title: Delayed/Deferred Sentencing – Opportunity for Rehabilitation
+    citation: WOTCL 9.106(B)(5) - Delayed/Deferred Sentencing
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/delayed-deferred-sentencing-opportunity-for-rehabilitation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Deferred sentencing;
+      Rehabilitation.'
+  - kind: other
+    title: Family Preservation Court (Therapeutic/Problem-Solving Court)
+    citation: WOTCL 5.119 - Family Preservation Court
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-preservation-court-therapeutic-problem-solving-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication; Pre-adjudication. Database form
+      of practice: Collaborative approach; Family conferencing.'
+  - kind: other
+    title: Family Strengthening Plan in FPC Cases
+    citation: WOTCL 5.120 - Family Strengthening Plan
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-strengthening-plan-in-fpc-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication; Pre-adjudication. Database form
+      of practice: Family conferencing; service plan.'
+  - kind: peacemaking
+    title: Peacemaking in Child Protection Cases
+    citation: WOTCL 5.118(K) - Peacemaking
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaking-in-child-protection-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
+  - kind: other
+    title: Sentencing Philosophy – Rehabilitation and Healing Over Incarceration
+    citation: WOTCL 9.106(A) - Sentencing Considerations
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-philosophy-rehabilitation-and-healing-over-incarceration/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication/Sentencing. Database form of practice: Alternatives
+      to incarceration; Healing; Rehabilitation; Restorative justice.'
+  - kind: other
+    title: 7.412 PATRON DISPUTE RESOLUTION
+    citation: 7.412 PATRON DISPUTE RESOLUTION
+    link: https://www.narf.org/nill/codes/ltraverse/index.html
+    source: national-indian-law-library-code-index-ltraverse
+    confidence: medium
+    as_of: 2024-03
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
   - kind: traditional-dispute-resolution
     title: 'Chapter 3 – Rules of Civil Procedure, Rule XXIX: Mnodaawin'
     citation: 'Chapter 3 – Rules of Civil Procedure, Rule XXIX: Mnodaawin'
@@ -262,6 +434,93 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: March 2024); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
+  clauses:
+  - context: other
+    kind: arbitration-clause
+    citation: 18.278 (Waganakising Odawak statute, as listed by NILL)
+    summary: Statute title states that it authorizes a bank loan or related swap and adopts law governing
+      arbitration of disputes related to the loan, along with law on security interests.
+    link: https://www.narf.org/nill/codes/ltraverse/index.html
+    source: national-indian-law-library-code-index-ltraverse
+    confidence: medium
+    as_of: 2024-03
+    note: 'From the statute title in the National Indian Law Library table of contents; the statute text
+      was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.278 AUTHORIZING
+      SWAP DOCUMENTS AND RELATED DOCUMENTS FROM WELLS FARGO BANK, NATIONAL ASSOCIATION, AUTHORIZING TRIBAL
+      APPROPRIATIONS FOR PAYMENTS OF THE SWAP OBLIGATIONS, AFFIRMING ADOPTION OF LAW GOVERNING THE ARBITRATION
+      OF DISPUTES RELATED TO THE LOAN (INCLUDING THE SWAP), AND LAW REGARDING SECURITY INTERESTS AND ADDRESSING
+      RELATED MATTERS.'
+  - context: other
+    kind: arbitration-clause
+    citation: 18.400(7.20)(a) (Waganakising Odawak statute, as listed by NILL)
+    summary: Statute title states that it authorizes a bank loan or related swap and adopts law governing
+      arbitration of disputes related to the loan, along with law on security interests.
+    link: https://www.narf.org/nill/codes/ltraverse/index.html
+    source: national-indian-law-library-code-index-ltraverse
+    confidence: medium
+    as_of: 2024-03
+    note: 'From the statute title in the National Indian Law Library table of contents; the statute text
+      was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.400(7.20)(a)
+      AUTHORIZING LOAN FROM PNC BANK, NATIONAL ASSOCIATION, AND RELATED DOCUMENTS, AUTHORIZING TRIBAL
+      APPROPRIATIONS FOR PAYMENTS OF THE LOAN, ADOPTING LAW GOVERNING THE ARBITRATION OF DISPUTES RELATED
+      TO THE LOAN, ADOPTING LAW REGARDING SECURITY INTERESTS AND ADDRESSING RELATED MATTERS.'
+  - context: other
+    kind: waiver-of-sovereign-immunity
+    citation: 18.400(6.23)(a) (Waganakising Odawak statute, as listed by NILL)
+    summary: Statute title states a limited waiver of the Bands' sovereign immunity to authorize arbitration
+      with a named company.
+    link: https://www.narf.org/nill/codes/ltraverse/index.html
+    source: national-indian-law-library-code-index-ltraverse
+    confidence: medium
+    as_of: 2024-03
+    note: 'From the statute title in the National Indian Law Library table of contents; the statute text
+      was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.400(6.23)(a)
+      LIMITED WAIVER OF SOVEREIGN IMMUNITY OF THE LITTLE TRAVERSE BAY BANDS OF ODAWA INDIANS TO AUTHORIZE
+      ARBITRATION WITH DROPBOX.'
+  - context: other
+    kind: arbitration-clause
+    citation: 18.507 (Waganakising Odawak statute, as listed by NILL)
+    summary: Statute title states that it authorizes a bank loan or related swap and adopts law governing
+      arbitration of disputes related to the loan, along with law on security interests.
+    link: https://www.narf.org/nill/codes/ltraverse/index.html
+    source: national-indian-law-library-code-index-ltraverse
+    confidence: medium
+    as_of: 2024-03
+    note: 'From the statute title in the National Indian Law Library table of contents; the statute text
+      was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.507 AUTHORIZING
+      LOAN FROM WELLS FARGO BANK, NATIONAL ASSOCIATION AND RELATED DOCUMENTS, AUTHORIZING TRIBAL APPROPRIATIONS
+      FOR PAYMENTS OF THE LOAN, ADOPTING LAW GOVERNING THE ARBITRATION OF DISPUTES RELATED TO THE LOAN,
+      ADOPTING LAW REGARDING SECURITY INTERESTS AND ADDRESSING RELATED MATTERS.'
+  - context: other
+    kind: arbitration-clause
+    citation: 18.511(3.17)(a) (Waganakising Odawak statute, as listed by NILL)
+    summary: Statute title states that it authorizes a bank loan or related swap and adopts law governing
+      arbitration of disputes related to the loan, along with law on security interests.
+    link: https://www.narf.org/nill/codes/ltraverse/index.html
+    source: national-indian-law-library-code-index-ltraverse
+    confidence: medium
+    as_of: 2024-03
+    note: 'From the statute title in the National Indian Law Library table of contents; the statute text
+      was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.511(3.17)(a)
+      AUTHORIZING REFINANCING LOAN FROM WELLS FARGO BANK, NATIONAL ASSOCIATION AND RELATED DOCUMENTS,
+      AUTHORIZING TRIBAL APPROPRIATIONS FOR PAYMENTS OF THE LOAN, REAFFIRMING AND RE-ADOPTING LAW GOVERNING
+      THE ARBITRATION OF DISPUTES RELATED TO THE LOAN, REAFFIRMING AND RE-ADOPTING LAW REGARDING SECURITY
+      INTERESTS AND ADDRESSING RELATED MATTERS.'
+  - context: other
+    kind: arbitration-clause
+    citation: 18.528(1.22)(a) (Waganakising Odawak statute, as listed by NILL)
+    summary: Statute title states that it authorizes a bank loan or related swap and adopts law governing
+      arbitration of disputes related to the loan, along with law on security interests.
+    link: https://www.narf.org/nill/codes/ltraverse/index.html
+    source: national-indian-law-library-code-index-ltraverse
+    confidence: medium
+    as_of: 2024-03
+    note: 'From the statute title in the National Indian Law Library table of contents; the statute text
+      was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.528(1.22)(a)
+      AUTHORIZING FIRST AMENDMENT TO LOAN AGREEMENT FROM PNC BANK, NATIONAL ASSOCIATION, AND RELATED DOCUMENTS,
+      AUTHORIZING TRIBAL APPROPRIATIONS FOR PAYMENTS OF THE LOAN, CONFIRMING ADOPTION OF LAW GOVERNING
+      THE ARBITRATION OF DISPUTES RELATED TO THE LOAN, CONFIRMING ADOPTION OF LAW REGARDING SECURITY INTERESTS
+      AND ADDRESSING RELATED MATTERS.'
 gaming:
   compacts:
   - state: MI

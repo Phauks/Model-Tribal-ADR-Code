@@ -136,6 +136,47 @@ justice_institutions:
   locator: Washington section, entry 'Stillaguamish Tribe of Indians'
   note: 'Link check 2026-11-21: the link the source gives (http://www.stillaguamish.com/courtsjustice.asp)
     returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Juvenile Sentencing Alternatives
+    citation: Stillaguamish Law and Order Code § 5.20.025
+    link: https://www.stillaguamish.com/wp-content/uploads/2022/04/Revised-Law-Order-Code-of-the-Stillaguamish-Tribe-4-7-2022.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/juvenile-sentencing-alternatives/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication/Sentencing. Database form of practice:
+      Alternative; Rehabilitation; Restorative justice.'
+  - kind: other
+    title: Sentencing Guidelines – Traditional Remedies and Rehabilitation
+    citation: Stillaguamish Law and Order Code § 4.65.005
+    link: https://www.stillaguamish.com/wp-content/uploads/2022/04/Revised-Law-Order-Code-of-the-Stillaguamish-Tribe-4-7-2022.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-guidelines-traditional-remedies-and-rehabilitation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication/Sentencing. Database form of practice: Rehabilitation;
+      Restorative justice.'
+  - kind: other
+    title: Truancy – Community Service and Treatment Alternatives
+    citation: Stillaguamish Law and Order Code § 8.15.050
+    link: https://www.stillaguamish.com/wp-content/uploads/2022/04/Revised-Law-Order-Code-of-the-Stillaguamish-Tribe-4-7-2022.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/truancy-community-service-and-treatment-alternatives/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication/Sentencing. Database form of practice:
+      Alternative; Program.'
 gaming:
   compacts:
   - state: WA

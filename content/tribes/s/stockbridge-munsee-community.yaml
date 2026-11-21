@@ -223,7 +223,248 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.mohican.com/tribalcourt/) returned
     HTTP 404, so it is not recorded.'
 dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemaker System
+    description: Part of the Tribal Court System but independent from Tribal Court judges, giving formal
+      support, structure and enforcement to traditional Mohican methods of resolving disputes through
+      mediation and traditional ways, under stated guiding principles including voluntary participation
+      and community health.
+    legal_basis: Stockbridge-Munsee Tribal Code, Chapter TCT.04 (Peacemaker Ordinance), Sections TCT.04.01
+      to TCT.04.31
+    case_types:
+    - civil
+    - criminal-diversion
+    - criminal-sentencing
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: Civil actions may be referred by written stipulation of all parties and criminal
+      matters on consent under listed conditions; a trial judge may also order parties in a civil case
+      to spend at least one hour in a peacemaking session.
+    enforcement: Agreements may be confirmed as Tribal Court judgments and enforced as any other judgment;
+      peacemakers may decide a matter only on all parties' written agreement (agreed arbitration).
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Stockbridge-Munsee-TCT.04-Peacemaker-Ordinance.pdf
+    source: stockbridge-munsee-tct-04-peacemaker-ordinance
+    confidence: medium
+    as_of: '2025'
+    locator: Sections TCT.04.01-04.06, 04.14, 04.19-04.22, 04.28-04.31
+    note: Peacemakers on the roll are tribal members over 35; parties may choose a non-member by agreement.
+      Parties pay $20 each for peacemaker compensation. Attorneys barred except as witnesses or parties.
+      as_of is NARF posting year.
   provisions:
+  - kind: peacemaking
+    title: Chapter TCT.04 – Peacemaker Ordinance
+    citation: Stockbridge-Munsee Tribal Code, Title TCT, Chapter TCT.04
+    summary: Establishes the Peacemaker System with guiding principles, peacemaker qualifications and
+      powers, procedures, judgments, transfers and a one-hour mandatory civil peacemaking session option.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Stockbridge-Munsee-TCT.04-Peacemaker-Ordinance.pdf
+    source: stockbridge-munsee-tct-04-peacemaker-ordinance
+    confidence: medium
+    as_of: '2025'
+  - kind: peacemaking
+    title: Employee Rights Ordinance – peacemaking for employee disputes
+    citation: Stockbridge-Munsee Tribal Law, Chapter 53, Section 53.5(H)
+    summary: Permits peacemaking for employee disputes, to be conducted under the Tribal Peacemaker Ordinance.
+    link: https://narf.org/nill/codes/stockbridge/53employee10.pdf
+    source: stockbridge-munsee-chapter-53-employee-rights
+    confidence: medium
+    as_of: '2010-08-17'
+    locator: Section 53.5(H)
+  - kind: other
+    title: Alternative Sentences for Juvenile Curfew/Hitchhiking Violations
+    citation: YAE.07.06(g) - Alternative Sentences
+    link: https://law.mohican.com
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-sentences-for-juvenile-curfew-hitchhiking-violations/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: . Database form of practice: Alternative sentencing;
+      Restorative justice.'
+  - kind: other
+    title: Community-Based Treatment and Services (Youth in Need of Care Disposition)
+    citation: YAE.01.02(a)(9)-(10); YAE.02.16(i) - Community-Based Services
+    link: https://law.mohican.com
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-based-treatment-and-services-youth-in-need-of-care-disposition/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: . Database form of practice: Community-based programs;
+      Rehabilitation.'
+  - kind: peacemaking
+    title: Criminal Probation Condition – Peacemaker System
+    citation: TCT.04.30
+    link: https://law.mohican.com
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/criminal-probation-condition-peacemaker-system/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative sentencing;
+      Peacemaking; Probation.'
+  - kind: peacemaking
+    title: Establishment of Peacemaker System
+    citation: TCT.04.02
+    link: https://law.mohican.com
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/establishment-of-peacemaker-system-2/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication; Pre-adjudication. Database form of practice:
+      Peacemaking.'
+  - kind: other
+    title: Healing to Wellness Court Integration with Child Welfare Cases
+    citation: TCT.06.04(e)
+    link: https://law.mohican.com
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/healing-to-wellness-court-integration-with-child-welfare-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Family
+      conferencing; Healing.'
+  - kind: other
+    title: Healing to Wellness Court – Program Elements with Treatment and Incentives
+    citation: TCT.06.06
+    link: https://law.mohican.com
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/healing-to-wellness-court-program-elements-with-treatment-and-incentives/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication; Pre-adjudication. Database form of practice:
+      Alternative; Rehabilitation.'
+  - kind: other
+    title: Healing to Wellness Court – Purpose and Authority
+    citation: TCT.06.01
+    link: https://law.mohican.com
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/healing-to-wellness-court-purpose-and-authority/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication; Pre-adjudication. Database form of practice:
+      Alternative; Diversion; Healing.'
+  - kind: other
+    title: Healing to Wellness Court – Voluntary Participation and Deferred Sentencing
+    citation: TCT.06.04(c)-(d)
+    link: https://law.mohican.com
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/healing-to-wellness-court-voluntary-participation-and-deferred-sentencing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Deferred Prosecution;
+      Diversion; Healing.'
+  - kind: peacemaking
+    title: Informal Disposition and Peacemaking for Youth in Need of Care
+    citation: YAE.02.09 - Informal Disposition
+    link: https://law.mohican.com
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-disposition-and-peacemaking-for-youth-in-need-of-care/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Informal
+      disposition; Peacemaking.'
+  - kind: peacemaking
+    title: Mandatory Referral to Peacemaker System (Civil Cases)
+    citation: TCT.04.31
+    link: https://law.mohican.com
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/mandatory-referral-to-peacemaker-system-civil-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Mandatory referral;
+      Peacemaking.'
+  - kind: peacemaking
+    title: Peacemaker Ordinance – Purpose & Construction with Guiding Principles
+    citation: TCT.04.01
+    link: https://law.mohican.com
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaker-ordinance-purpose-construction-with-guiding-principles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication; Pre-adjudication. Database form of practice:
+      Peacemaking; Restorative justice.'
+  - kind: peacemaking
+    title: Peacemaker Subject Matter and Personal Jurisdiction – Voluntary Participation
+    citation: TCT.04.03
+    link: https://law.mohican.com
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaker-subject-matter-and-personal-jurisdiction-voluntary-participation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication; Pre-adjudication. Database form of practice:
+      Peacemaking.'
+  - kind: peacemaking
+    title: Peacemaker System Budget
+    citation: TCT.01.04(b)
+    link: https://law.mohican.com
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaker-system-budget/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication; Pre-adjudication. Database form of practice:
+      Peacemaker.'
+  - kind: peacemaking
+    title: Powers of Peacemakers
+    citation: TCT.04.05
+    link: https://law.mohican.com
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/powers-of-peacemakers/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication; Pre-adjudication. Database form of practice:
+      Healing; Peacemaking.'
+  - kind: peacemaking
+    title: Transfer of Criminal Matters to Peacemaker System
+    citation: TCT.04.29
+    link: https://law.mohican.com
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/transfer-of-criminal-matters-to-peacemaker-system/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication; Pre-adjudication. Database form of practice:
+      Diversion; Peacemaking; Restorative justice.'
   - kind: peacemaking
     title: Title TCT, Chapter TCT.04 – Peacemaker Ordinance
     citation: Title TCT, Chapter TCT.04 – Peacemaker Ordinance
@@ -235,6 +476,28 @@ dispute_resolution:
     note: 'Native American Rights Fund description (provision itself not read): Provides authorization
       and guiding principles, qualifications, procedures, authority of Tribal Court to limit, referral
       standards, and standards of conduct, authority to use traditional ways and instruct on tribal teachings.'
+  clauses:
+  - context: employment-code
+    kind: mediation-clause
+    citation: Stockbridge-Munsee Tribal Law, Chapter 53, Section 53.4(1)-(2)
+    summary: Employment issues other than the enumerated employee rights must go through the internal
+      dispute resolution process, which may be a grievance process or an employee mediation panel under
+      the Employment Manual, and that process must be exhausted before a Tribal Court appeal.
+    link: https://narf.org/nill/codes/stockbridge/53employee10.pdf
+    source: stockbridge-munsee-chapter-53-employee-rights
+    confidence: medium
+    as_of: '2010-08-17'
+    locator: Section 53.4
+  - context: employment-code
+    kind: waiver-of-sovereign-immunity
+    citation: Stockbridge-Munsee Tribal Law, Chapter 53, Section 53.5(G)
+    summary: Provides a limited waiver of immunity for timely claims under the enumerated employee rights,
+      limited to the non-monetary remedies listed in the ordinance such as reinstatement.
+    link: https://narf.org/nill/codes/stockbridge/53employee10.pdf
+    source: stockbridge-munsee-chapter-53-employee-rights
+    confidence: medium
+    as_of: '2010-08-17'
+    locator: Section 53.5(F)-(G)
 gaming:
   compacts:
   - state: NY
