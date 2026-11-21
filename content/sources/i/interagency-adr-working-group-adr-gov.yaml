@@ -1,0 +1,46 @@
+key: interagency-adr-working-group-adr-gov
+kind: web-page
+citation:
+  type: webpage
+  title: Legislation and Interagency ADR Working Group
+  container-title: ADR.gov (Interagency ADR Working Group)
+  author:
+  - literal: Interagency Alternative Dispute Resolution Working Group
+  URL: https://adr.gov/?p=26881
+  accessed:
+    date-parts: [[2026, 11, 21]]
+original_link: https://adr.gov/?p=26881
+retrieved: 2026-11-21
+archives: []
+history:
+  status: live
+  last_checked: 2026-11-21
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  redistribution: true
+jurisdictions:
+- level: federal
+topics: [agency-program, interagency-adr-working-group, confidentiality]
+annotation: >-
+  The Interagency ADR Working Group's site states that the group "was established
+  by Presidential Memorandum dated May 1, 1998" to "assist federal agencies in developing
+  and implementing ADR programs," that "The President appointed the Attorney General
+  as the leader of the Interagency Working Group," and that its members are agency
+  ADR professionals; the page links reports to the President, legislation, executive
+  actions, and confidentiality guidance. (project analysis) The portal is the federal
+  clearinghouse for agency ADR policy and reports and is where DOJ's archived ADR
+  page now points (see doj-odr-fy2011-budget). Read through WebFetch only (direct
+  connection failed), so quotes are as returned by that tool and should be re-checked.
+access:
+  open: true
+  pull_from: [free-web]
+  note: >-
+    adr.gov was unreachable by direct HTTPS from this environment; page read through
+    a fetch tool. Re-open in a browser to confirm wording.
+found_in:
+- 2026-11-21-united-states-dispute-resolution
+notes: >-
+  Read on the original page. Wayback capture pending: none found through the Internet
+  Archive availability service on 2026-11-21; web.archive.org was not reachable to
+  make a new capture.
