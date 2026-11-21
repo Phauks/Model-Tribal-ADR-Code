@@ -1,5 +1,5 @@
 ---
-title: "Model codes and dispute resolution frameworks: a comparative analysis"
+title: "Comparing model codes and dispute frameworks"
 part: i
 status: draft
 review_status: drafted-from-public-sources
@@ -7,7 +7,7 @@ updated: 2026-11-21
 research_session: 2026-11-21-comparative-model-codes
 ---
 
-# Model codes and dispute resolution frameworks: a comparative analysis
+# Comparing model codes and dispute frameworks
 
 This essay compares the existing models a drafter of a model Tribal
 [[adr]] code can learn from. It covers four groups: the uniform acts of the
@@ -305,7 +305,7 @@ jurisdictions have enacted it
 disqualification rule assumes a supply of lawyers; where few lawyers practice
 in a nation's court, the rule may limit who can take part (project analysis).
 
-## 2. Models written for Native nations, and nations' own arbitration laws
+## 2. Model laws for nations and Tribal ordinances
 
 ### 2.1 No intertribal model ADR code was found
 
@@ -348,9 +348,7 @@ in their records: written agreements to arbitrate are enforceable, the
 Tribal court confirms awards with limited or no appeal, and claims against
 the nation proceed only where a separate instrument waives immunity
 (`research/analyses/2026-11-21-dispute-resolution-practice.md`, section 4;
-[@ho-chunk-2-hcc-13-arbitration]; [@pascua-yaqui-7-pytc-6-arbitration];
-[@little-river-arbitration-code-01-300-02];
-[@jamestown-title-2-arbitration]).
+[@ho-chunk-2-hcc-13-arbitration; @pascua-yaqui-7-pytc-6-arbitration; @little-river-arbitration-code-01-300-02; @jamestown-title-2-arbitration]).
 
 The Ho-Chunk Nation's ordinance, read for this essay, shows the shape in
 full. A written agreement to arbitrate a future or existing dispute is valid,
@@ -401,8 +399,7 @@ the same.
   to or are referred to peacemaking), and directs it to conform its
   procedures to Navajo concepts such as K'é and clanship, under a plan of
   operation approved by the Judiciary Committee of the Navajo Nation Council
-  [@navajo-title-7-courts-and-procedures, 7 N.N.C. §§ 409-411, 413];
-  [@navajo-peacemaking-plan-of-operations]. The Initiative's collection of
+  [@navajo-title-7-courts-and-procedures, 7 N.N.C. §§ 409-411, 413; @navajo-peacemaking-plan-of-operations]. The Initiative's collection of
   enacted laws shows many nations doing the same in their own codes
   [@narf-ipi-tribal-peacemaking-laws].
 - **Its grounding is self-government and culture.** The Initiative reads
@@ -475,7 +472,7 @@ Potawatomi Nation v. Oklahoma, the Tenth Circuit held that clause invalid
 under Hall Street Associates, and because de novo review was "a material
 aspect of the parties' agreement to engage in binding arbitration," it held
 the obligation to arbitrate unenforceable and directed that the Nation's
-award be vacated [@citizen-potawatomi-nation-v-oklahoma-2018, slip op. at 2-3, 30]; [@hall-street-associates-v-mattel-2008].
+award be vacated [@citizen-potawatomi-nation-v-oklahoma-2018, slip op. at 2-3, 30; @hall-street-associates-v-mattel-2008].
 
 In the project's view, the lesson for any intergovernmental clause is that a
 negotiated review route the governing arbitration law does not allow can
@@ -720,10 +717,7 @@ The frameworks use four consent models.
 4. **Required first steps before a binding stage** (Nisg̱a'a stages, the
    land management framework's initial mediation meeting, the Specific
    Claims Tribunal's negotiation gate, and the Native Title Act's six
-   months) [@nisgaa-final-agreement-chapter-19-dispute-resolution, para. 13];
-   [@framework-agreement-first-nation-land-management-2022, cl. 43.2];
-   [@canada-specific-claims-tribunal-act-2008, s 16(1)];
-   [@alrc-2026-report-144-future-acts-summary, para. 37].
+   months) [@nisgaa-final-agreement-chapter-19-dispute-resolution, para. 13; @framework-agreement-first-nation-land-management-2022, cl. 43.2; @canada-specific-claims-tribunal-act-2008, s 16(1); @alrc-2026-report-144-future-acts-summary, para. 37].
 
 *Question for the outline:* which consent model fits each kind of dispute a
 nation might cover (between citizens, with outsiders, with other
@@ -739,8 +733,7 @@ after a legality check (Māori Land Court), and agreements left to contract
 law (the mediation act). Outside the nation, enforcement depends on comity
 and on how other courts treat Tribal judgments [@wilson-v-marchington-1997],
 and on optional uniform-act provisions that treat nations as states
-[@uniform-law-commission-family-law-arbitration-act-2016, § 2(11)];
-[@uniform-law-commission-child-custody-jurisdiction-enforcement-act-104].
+[@uniform-law-commission-family-law-arbitration-act-2016, § 2(11); @uniform-law-commission-child-custody-jurisdiction-enforcement-act-104].
 
 *Question for the outline:* whether an agreement or award should become a
 Tribal court judgment by default, and what record the court needs so that
@@ -750,8 +743,7 @@ other courts can recognize it.
 
 The uniform acts split confidentiality into an evidentiary privilege, which
 the law grants, and general secrecy, which the parties must agree to
-[@uniform-law-commission-mediation-act, §§ 4, 8];
-[@uniform-law-commission-collaborative-law-rules-act, § 16]. The Māori Land
+[@uniform-law-commission-mediation-act, §§ 4, 8; @uniform-law-commission-collaborative-law-rules-act, § 16]. The Māori Land
 Court provision makes confidentiality a statutory duty of the mediator and
 participants [@nz-te-ture-whenua-maori-amendment-act-2020-part-3a, s 98O(5)]. The arbitration sources and the intergovernmental agreements say
 little about it.
@@ -768,11 +760,7 @@ statutory vacatur (the arbitration acts; the Federal Arbitration Act
 [@usc-9-9-11]) and narrow judicial review (land management framework,
 Specific Claims Tribunal) to a negotiated de novo review that a court struck
 down with the whole clause (Oklahoma)
-[@ho-chunk-2-hcc-13-arbitration, § 9];
-[@uniform-law-commission-arbitration-act-2000, §§ 23, 28];
-[@framework-agreement-first-nation-land-management-2022, cl. 47.5];
-[@canada-specific-claims-tribunal-act-2008, s 34];
-[@citizen-potawatomi-nation-v-oklahoma-2018].
+[@ho-chunk-2-hcc-13-arbitration, § 9; @uniform-law-commission-arbitration-act-2000, §§ 23, 28; @framework-agreement-first-nation-land-management-2022, cl. 47.5; @canada-specific-claims-tribunal-act-2008, s 34; @citizen-potawatomi-nation-v-oklahoma-2018].
 
 *Question for the outline:* whether review belongs in the nation's courts,
 inside the process (for example an appellate panel), or nowhere, and how
@@ -786,9 +774,7 @@ brackets. The models that start from a nation's own authority are the
 nations' own codes, the Framework Agreement's requirement that each nation
 establish its own forum, and the international texts that ask for "due
 consideration" or recognition of Indigenous law
-[@framework-agreement-first-nation-land-management-2022, cl. 5.2(h)];
-[@un-general-assembly-2007-declaration-rights-indigenous-peoples, art. 40];
-[@oas-2016-american-declaration-rights-indigenous-peoples, art. XXII(2)].
+[@framework-agreement-first-nation-land-management-2022, cl. 5.2(h); @un-general-assembly-2007-declaration-rights-indigenous-peoples, art. 40; @oas-2016-american-declaration-rights-indigenous-peoples, art. XXII(2)].
 Immunity is the sovereignty question that runs through every binding
 process: an arbitration clause can itself be a waiver
 [@c-and-l-enterprises-v-citizen-band-potawatomi-2001], and compact templates
