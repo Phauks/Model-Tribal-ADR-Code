@@ -26,3 +26,9 @@ it quotes, for example
 An analysis describes what the sources document, never what a nation
 practices, and labels its own reasoning as project analysis. Re-run the script
 named in the analysis to reproduce its counts.
+
+## Reviews
+
+Reviews of the project's own data, done to help the lead author's review, are
+kept in [`reviews/`](reviews/README.md). They record findings and suggested
+actions; they never change a record by themselves.
