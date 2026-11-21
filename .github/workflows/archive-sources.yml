@@ -1,0 +1,57 @@
+# Asks the Wayback Machine to capture source records' original links that
+# have no archived copy yet (an empty 'archives' list), and reports the
+# capture links. It never edits records: copy the links from the job log or
+# the report artifact into the records in a commit. Not a required check; a
+# slow or failed capture does not block a pull request. Uses no secrets.
+#
+# On a pull request it handles only the source records the pull request adds
+# or changes. Run it by hand to work through older records; each run stops
+# after 'limit' records, waiting about 20 seconds between captures, because
+# anonymous Save Page Now is rate limited.
+name: archive sources
+
+on:
+  pull_request:
+    paths:
+      - "content/sources/**"
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Most records to capture in this run"
+        default: "150"
+
+permissions:
+  contents: read
+
+jobs:
+  archive:
+    name: Wayback captures
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -r scripts/requirements.txt
+      - name: Capture the sources this pull request changes
+        if: github.event_name == 'pull_request'
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          keys=$(git diff --name-only --diff-filter=AM "$BASE"...HEAD -- 'content/sources/*/*.yaml' | xargs -r -n1 basename | sed 's/\.yaml$//')
+          if [ -z "$keys" ]; then echo "No changed source records."; exit 0; fi
+          python3 scripts/find_archived_copies.py --save --limit 150 --report archive-report.json $keys
+      - name: Capture older sources
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          LIMIT: ${{ inputs.limit }}
+        run: python3 scripts/find_archived_copies.py --save --limit "$LIMIT" --report archive-report.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: archive-report
+          path: archive-report.json
+          if-no-files-found: ignore
