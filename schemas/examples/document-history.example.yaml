@@ -1,0 +1,105 @@
+# Example document history using the fictitious nation from tribe.example.yaml,
+# to show structure only. Every version cites the source record of its own text;
+# that source names the version back in its document_version field.
+id: example-nation-constitution
+kind: constitution
+title: Constitution of the Example Nation of Examplestate
+nations: [example-nation]
+jurisdictions:
+  - level: tribal
+    tribe: example-nation
+summary: >-
+  The nation's constitution as adopted in 1936, revised in full in 1985 and
+  amended in 2010. The 2010 amendment added a peacemaking court beside the
+  Tribal court.
+versions:
+  - id: 1936-original
+    label: 1936 constitution
+    event: original
+    status: superseded
+    dates:
+      adopted: '1936-05-02'
+      approved: '1936-06-15'
+      ended: '1985-09-01'
+    approval:
+      authority: secretary-of-the-interior
+      action: approved
+    source: example-nation-constitution-1936
+    confidence: medium
+    verification: read-in-full
+    locator: Article VII
+    clauses:
+      - topic: judicial-power
+        locator: Article VII
+        summary: The tribal council hears disputes among members and may appoint a judge.
+        verification: read-in-full
+        reviewer: project author
+  - id: 1985-revision
+    label: 1985 revised constitution
+    event: revision
+    status: in-effect
+    supersedes: [1936-original]
+    dates:
+      adopted: '1985-06-20'
+      approved: '1985-09-01'
+      effective: '1985-09-01'
+    approval:
+      authority: secretary-of-the-interior
+      action: approved
+      source: example-federal-register-1985-approval
+    source: example-nation-constitution-1985
+    confidence: high
+    verification: read-in-full
+    capture:
+      path: research/captures/constitutions/example-nation/1985.pdf
+      sha256: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  # placeholder: the hash of an empty file
+      pages: 24
+    clauses:
+      - topic: judicial-power
+        locator: Article IX, sections 1-3
+        summary: Vests judicial power in a Tribal court separate from the council, with an appellate panel.
+        verification: read-in-full
+        reviewer: project author
+    changes:
+      - topic: judicial-power
+        compared_with: 1936-original
+        change: changed
+        summary: Moves the power to hear disputes from the council to a separate Tribal court and adds appeals.
+        locator_before: Article VII
+        locator_after: Article IX
+        verification: read-in-full
+        reviewer: project author
+  - id: 2010-amendment
+    label: Amendment I (2010)
+    event: amendment
+    status: in-effect
+    amends: [1985-revision]
+    dates:
+      adopted: '2010-04-10'
+      effective: '2010-04-10'
+    approval:
+      authority: secretary-of-the-interior
+      action: not-required
+    source: example-nation-constitution-amendment-2010
+    confidence: high
+    verification: read-in-full
+    clauses:
+      - topic: peacemaking
+        locator: Article IX, section 4 (added)
+        summary: Creates a peacemaking court that hears cases the parties agree to bring to it.
+        methods: [peacemaking]
+        verification: read-in-full
+        reviewer: project author
+    changes:
+      - topic: judicial-power
+        compared_with: 1985-revision
+        change: unchanged
+        summary: Sections 1-3 of Article IX are not amended.
+        verification: read-in-full
+      - topic: peacemaking
+        compared_with: 1985-revision
+        change: added
+        summary: Adds a peacemaking court beside the Tribal court.
+        locator_after: Article IX, section 4
+        verification: read-in-full
+found_in: [2026-11-20-example]

@@ -1,0 +1,212 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/document-history.schema.json",
+  "title": "Document history",
+  "description": "One document over time and every version of it: a constitution and its amendments, a gaming compact and its amendments, extensions and replacements, a code or court rules and their revisions, or any other source that changes. Each version cites its own source record, which holds its citation and archived copies. Stored as content/documents/<first letter of id, or _other>/<id>.yaml (decision record 0018).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "kind", "title", "versions", "found_in"],
+  "properties": {
+    "id": {
+      "$ref": "common.schema.json#/$defs/slug",
+      "description": "Must equal the file name. Name the document, not a version, e.g. ak-chin-indian-community-arizona-gaming-compact or example-nation-constitution."
+    },
+    "kind": {
+      "$ref": "common.schema.json#/$defs/slug",
+      "description": "Open vocabulary (any lowercase hyphenated term). Suggested: constitution, law-code, code-title (one title or chapter of a code), ordinance, gaming-compact, gaming-ordinance, secretarial-procedures (Class III procedures under 25 C.F.R. part 291), court-rules, intergovernmental-agreement, statute, regulation, corporate-charter, articles-of-association, model-law, uniform-act, book, report, web-page, other."
+    },
+    "title": {
+      "type": "string",
+      "description": "The name the document goes by across its versions, e.g. 'Ak-Chin Indian Community–State of Arizona Gaming Compact'. A version's own title, if different, is in its source record."
+    },
+    "nations": {
+      "type": "array",
+      "description": "Tribe profile ids of the nations whose document this is or that are parties to it.",
+      "items": { "$ref": "common.schema.json#/$defs/slug" },
+      "uniqueItems": true
+    },
+    "states": {
+      "type": "array",
+      "description": "States or territories that are parties to the document, such as the state party to a compact.",
+      "items": { "$ref": "common.schema.json#/$defs/stateCode" },
+      "uniqueItems": true
+    },
+    "jurisdictions": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/jurisdiction" }
+    },
+    "summary": {
+      "type": "string",
+      "description": "Markdown. One or two neutral sentences on what the document is and how its versions relate. The project's own judgments are labeled (project analysis)."
+    },
+    "versions": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Every known version, oldest first. A version is any text that took effect, was proposed, or was published as the document at some time: the original, each amendment, a restatement, a replacement, an extension, a new edition. Versions that were found listed but not yet read are still recorded, with verification saying so.",
+      "items": { "$ref": "#/$defs/version" }
+    },
+    "related": {
+      "type": "array",
+      "description": "Other document histories this one depends on or that depend on it, such as the gaming ordinance a compact requires.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["document", "relation"],
+        "properties": {
+          "document": { "$ref": "common.schema.json#/$defs/slug", "description": "Id of another record in content/documents/." },
+          "relation": {
+            "type": "string",
+            "enum": ["part-of", "has-part", "implements", "implemented-by", "replaced-by", "replaces", "related"],
+            "description": "How the other document relates to this one. replaced-by and replaces are for a document that took the place of another under a different name, such as Secretarial Procedures issued where no compact was reached."
+          },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "sensitivity": { "$ref": "common.schema.json#/$defs/sensitivity" },
+    "found_in": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Research session ids (file names without .md) that built or updated this history.",
+      "items": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9-]+$" }
+    },
+    "notes": { "type": "string" }
+  },
+  "$defs": {
+    "version": {
+      "type": "object",
+      "$ref": "common.schema.json#/$defs/cited",
+      "description": "One version. Its citation fields describe the version itself: `source` is the source record of this version's text (with its Indigo Book citation and archived copies), and `verification` says how closely that text was checked. The source record names this version back in its document_version field.",
+      "required": ["id", "event", "status", "dates"],
+      "properties": {
+        "id": {
+          "$ref": "common.schema.json#/$defs/slug",
+          "description": "Unique within the record and stable once published. Suggested form: the year and the event, e.g. 1993-original, 2009-amendment, 2021-restatement."
+        },
+        "label": {
+          "type": "string",
+          "description": "How readers know this version, e.g. '2003 compact' or 'Agreement to Amend Compact (2008)'."
+        },
+        "event": {
+          "type": "string",
+          "enum": ["original", "amendment", "revision", "restatement", "replacement", "extension", "renewal", "edition", "repeal", "expiration", "disapproval", "withdrawal", "other"],
+          "description": "What this version did. original: the first known text. amendment: changes some provisions of an earlier text, which stays in effect as amended. revision: a new text of the whole document adopted by the same process, such as a revised constitution. restatement: a full text that amends and restates an earlier one (an 'amended and restated' compact). replacement: a new instrument that takes the place of an earlier one. extension and renewal: continue an earlier text's term. edition: a new publication or compilation of the same law, such as a recodified code or a court's reissued rules. repeal and expiration: the document, or a version, ends. disapproval: a reviewing authority refused it. withdrawal: a party withdrew it before it took effect."
+        },
+        "status": {
+          "type": "string",
+          "enum": ["in-effect", "superseded", "expired", "repealed", "terminated", "disapproved", "withdrawn", "proposed", "unknown"],
+          "description": "Whether this version is in effect as of the record's last check. An earlier text that an amendment changed stays in-effect, as amended; a text that a restatement, replacement or revision took the place of is superseded. unknown: the sources found do not say."
+        },
+        "dates": {
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "description": "Each date the sources give, as a year, year and month, or full date. Record only dates a source states; leave out the rest.",
+          "properties": {
+            "signed": { "$ref": "common.schema.json#/$defs/partialDate", "description": "Executed by the parties or officers." },
+            "adopted": { "$ref": "common.schema.json#/$defs/partialDate", "description": "Adopted or ratified by the enacting body or the voters, such as a council resolution or a secretarial election." },
+            "submitted": { "$ref": "common.schema.json#/$defs/partialDate", "description": "Submitted for a required approval, such as to the Secretary of the Interior." },
+            "approved": { "$ref": "common.schema.json#/$defs/partialDate", "description": "Approved, or deemed approved, by an authority whose approval it needs (see approval)." },
+            "published": { "$ref": "common.schema.json#/$defs/partialDate", "description": "Published as required, such as notice of approval in the Federal Register." },
+            "effective": { "$ref": "common.schema.json#/$defs/partialDate", "description": "Took effect." },
+            "listed": { "$ref": "common.schema.json#/$defs/partialDate", "description": "A date an official list or index gives for the document without saying which event it marks. Used only until a source says what the date is." },
+            "ended": { "$ref": "common.schema.json#/$defs/partialDate", "description": "Stopped being in effect: superseded, expired, repealed or terminated." }
+          }
+        },
+        "approval": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["authority", "action"],
+          "description": "The action of an authority whose approval the version needs, such as the Secretary of the Interior under 25 U.S.C. § 2710(d)(8) for a compact or under 25 U.S.C. § 5123 for a constitution adopted in a secretarial election.",
+          "properties": {
+            "authority": {
+              "$ref": "common.schema.json#/$defs/slug",
+              "description": "Open vocabulary. Suggested: secretary-of-the-interior, national-indian-gaming-commission, state-legislature, governor, tribal-council, voters."
+            },
+            "action": {
+              "type": "string",
+              "enum": ["approved", "deemed-approved", "disapproved", "not-required", "pending"],
+              "description": "deemed-approved: considered approved because the authority did not act in time, as 25 U.S.C. § 2710(d)(8)(C) provides for compacts."
+            },
+            "source": {
+              "$ref": "common.schema.json#/$defs/slug",
+              "description": "Source record of the approval or its notice, such as a Federal Register notice."
+            },
+            "locator": { "type": "string" }
+          }
+        },
+        "amends": {
+          "type": "array",
+          "description": "Ids of the versions in this record that this version amends, extends or renews; they stay in effect as changed.",
+          "items": { "$ref": "common.schema.json#/$defs/slug" },
+          "uniqueItems": true
+        },
+        "supersedes": {
+          "type": "array",
+          "description": "Ids of the versions in this record that this version takes the place of. Each of them should be superseded once this version is in effect.",
+          "items": { "$ref": "common.schema.json#/$defs/slug" },
+          "uniqueItems": true
+        },
+        "capture": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "sha256"],
+          "description": "The project's private copy of this version, kept with the project's working files and never committed or published. Its source record's archives hold the public archived copies.",
+          "properties": {
+            "path": { "type": "string", "description": "Path under the project's working files, e.g. research/captures/gaming/compacts/arizona/<file>.pdf." },
+            "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$", "description": "SHA-256 of the copy, in lowercase hexadecimal." },
+            "pages": { "type": "integer", "minimum": 1 }
+          }
+        },
+        "clauses": {
+          "type": "array",
+          "description": "Key clauses as this version states them. A version that only amends other provisions records here only what it says about a topic itself; whether the topic changed goes in changes.",
+          "items": { "$ref": "#/$defs/clause" }
+        },
+        "changes": {
+          "type": "array",
+          "description": "How each tracked topic differs from an earlier version. Every topic recorded in the clauses of this version or of a version it amends or supersedes needs one entry here (scripts/lint_records.py, check clause-change), even if the answer is unchanged or not-compared.",
+          "items": { "$ref": "#/$defs/change" }
+        }
+      },
+      "unevaluatedProperties": false
+    },
+    "clause": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["topic", "summary", "verification"],
+      "properties": {
+        "topic": {
+          "$ref": "common.schema.json#/$defs/slug",
+          "description": "Open vocabulary. Suggested: dispute-resolution, judicial-power, peacemaking, sovereign-immunity, renegotiation, term, revenue-sharing, amendment-procedure, election-disputes, removal-and-recall, patron-disputes, membership."
+        },
+        "locator": { "type": "string", "description": "Article, section or paragraph." },
+        "summary": { "type": "string", "description": "One or two neutral sentences on what the clause provides. Not a quotation unless the source's rights allow it." },
+        "methods": { "$ref": "common.schema.json#/$defs/methodIds" },
+        "verification": { "$ref": "common.schema.json#/$defs/verification" },
+        "reviewer": { "type": "string", "description": "Who read the clause, e.g. 'project author' or 'small model, first pass'." },
+        "note": { "type": "string" }
+      }
+    },
+    "change": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["topic", "compared_with", "change", "verification"],
+      "properties": {
+        "topic": { "$ref": "common.schema.json#/$defs/slug" },
+        "compared_with": { "$ref": "common.schema.json#/$defs/slug", "description": "Id of the earlier version in this record that this one was compared with." },
+        "change": {
+          "type": "string",
+          "enum": ["added", "removed", "changed", "reworded", "renumbered", "unchanged", "not-compared"],
+          "description": "changed: what the clause provides is different. reworded: the words differ but the process and its effect do not, as when a party's name or a cross-reference is updated. renumbered: moved to a different section without other change. unchanged: compared and found the same, or the version leaves the topic out and says it amends nothing else. not-compared: the comparison has not been made yet."
+        },
+        "summary": { "type": "string", "description": "What changed, in neutral words. Required in practice for added, removed, changed and reworded." },
+        "locator_before": { "type": "string" },
+        "locator_after": { "type": "string" },
+        "verification": { "$ref": "common.schema.json#/$defs/verification" },
+        "reviewer": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    }
+  }
+}

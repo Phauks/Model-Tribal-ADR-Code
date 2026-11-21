@@ -15,6 +15,7 @@ and makes each edition reproducible
 │   ├── forms/               Fill-in forms with placeholders             CC0
 │   ├── tribes/              One profile per nation or community         CC BY
 │   ├── sources/             One record per cited source                 CC BY
+│   ├── documents/           One version history per changing document   CC BY
 │   ├── glossary/            One entry per defined term or acronym       CC BY
 │   ├── methods/             One record per dispute resolution method    CC BY
 │   ├── bibliographies/      Annotated reading lists                     CC BY

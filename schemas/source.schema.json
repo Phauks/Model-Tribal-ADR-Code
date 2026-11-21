@@ -69,7 +69,7 @@
     },
     "history": {
       "type": "object",
-      "description": "Change history from the Internet Archive and scheduled re-checks.",
+      "description": "Changes to the web page or file at the source's address, from the Internet Archive and scheduled re-checks. Versions of the document itself (an amendment, a revised constitution, a new edition of a code) are recorded in content/documents/ instead, and the source names its version in document_version (decision record 0018).",
       "additionalProperties": false,
       "properties": {
         "first_seen": { "$ref": "common.schema.json#/$defs/calendarDate" },
@@ -91,6 +91,10 @@
           }
         }
       }
+    },
+    "document_version": {
+      "$ref": "common.schema.json#/$defs/documentVersion",
+      "description": "When this source is one version of a document that changes over time (a compact, an amendment, a constitution, an edition of a code or court rules), the document history record and the version it is. The version names this source in turn; scripts/lint_records.py checks that the two agree (decision record 0018)."
     },
     "shares_link_with": {
       "type": "array",
