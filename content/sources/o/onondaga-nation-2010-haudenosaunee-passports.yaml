@@ -18,7 +18,10 @@ citation:
       - 21
 original_link: https://www.onondaganation.org/news/2010/the-haudenosaunee-confederacy-sovereignty-citizenship-and-passports/
 retrieved: '2026-11-21'
-archives: []
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20260208072842/https://www.onondaganation.org/news/2010/the-haudenosaunee-confederacy-sovereignty-citizenship-and-passports/
+  captured: '2026-02-08'
 history:
   status: live
   last_checked: '2026-11-21'
@@ -43,5 +46,4 @@ access:
   - free-web
 found_in:
 - 2026-11-21-canada-dispute-resolution
-notes: Wayback capture pending (web.archive.org is not reachable from the research environment; the shared
-  archive workflow fills this field).
+notes: Existing Wayback capture found by scripts/find_archived_copies.py.

@@ -13,7 +13,10 @@ citation:
       - 21
 original_link: https://blackfootconfederacy.ca/
 retrieved: '2026-11-21'
-archives: []
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20261008091143/https://blackfootconfederacy.ca/
+  captured: '2026-10-08'
 history:
   status: live
   last_checked: '2026-11-21'
@@ -42,5 +45,4 @@ access:
   - free-web
 found_in:
 - 2026-11-21-canada-dispute-resolution
-notes: Wayback capture pending (web.archive.org is not reachable from the research environment; the shared
-  archive workflow fills this field).
+notes: Existing Wayback capture found by scripts/find_archived_copies.py.

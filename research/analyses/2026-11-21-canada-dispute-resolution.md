@@ -182,8 +182,8 @@ instrument with application in Canadian law."[^undrip-act]
 
 | Question | United States | Canada |
 | --- | --- | --- |
-| Constitutional anchor | Federal power over Indian affairs; no general recognition of Native nations' rights in the constitutional text (project summary) | s. 35(1) recognizes and affirms existing Aboriginal and treaty rights; s. 91(24) federal power[^const-1982][^const-1867] |
-| Who is covered | Federally recognized Tribes as political entities | First Nations, Inuit and Métis; Métis and non-status Indians are "Indians" under s. 91(24)[^const-1982][^daniels] |
+| Constitutional anchor | Congress's power to regulate commerce "with the Indian Tribes" (U.S. Const. art. I, § 8, cl. 3); no clause recognizing Native nations' rights (project analysis) | s. 35(1) recognizes and affirms existing Aboriginal and treaty rights; s. 91(24) federal power[^const-1982][^const-1867] |
+| Who is covered | Federally recognized Tribes; federal Indian classifications treated as political, not racial[^mancari] | First Nations, Inuit and Métis; Métis and non-status Indians are "Indians" under s. 91(24)[^const-1982][^daniels] |
 | The Crown or federal duty | General trust responsibility[^bia-trust] | Honour of the Crown always at stake; fiduciary duty only over specific interests under Crown control[^haida] |
 | Status and membership | Nation decides its own membership[^santa-clara] | Federal registration decides status; bands may control membership and set up a review mechanism[^indian-act-14][^indian-act-10] |
 | Treaties | Congress ended treaty-making with Tribes in 1871[^act-1871] | Historic treaties plus modern treaties and self-government agreements still being negotiated (section 5) |
@@ -411,7 +411,7 @@ For review; about 230 words. Citations as in the sections above.
   Queen*, [1984] 2 S.C.R. 335; the Sept. 1, 2026 N.D.N.Y. decision in the
   "Jay Treaty students" case (name and docket). The Supreme Court of Canada
   site served bot checks during this session. These are listed in the
-  project's Westlaw list, section 10.
+  project's Westlaw list, section 12.
 - **Not reached:** the Independent Assessment Process final report (host
   blocked automated downloads); the Indian Claims Commission's mediation
   record; Nunavut Agreement article 38, Yukon Umbrella Final Agreement
@@ -425,7 +425,9 @@ For review; about 230 words. Citations as in the sections above.
   dispute or cooperation arrangements for Coast Salish, Tlingit, Gwich'in,
   Inuit, Passamaquoddy and Peskotomuhkati, Mi'kmaq or Dakota and Lakota
   nations.
-- **Unarchived:** every source here still needs a Wayback copy.
+- **Unarchived:** 28 of the 36 web sources already had a Wayback copy. Eight
+  still need one (listed in the Westlaw list, section 12), and the *Daniels*
+  record needs its page address.
 - **Dataset idea (not done):** the project's profiles have no field for a
   nation's relatives across the border. That would be a schema change for
   the data threads to consider.
@@ -437,7 +439,7 @@ For review; about 230 words. Citations as in the sections above.
 [^glossary-first-nations]: Glossary record `first-nations` ([content/glossary/first-nations.yaml](../../content/glossary/first-nations.yaml)).
 [^cirnac-terms]: Crown-Indigenous Relations and Northern Affairs Canada, *Indigenous peoples and communities* (modified June 13, 2024), [rcaanc-cirnac.gc.ca](https://www.rcaanc-cirnac.gc.ca/eng/1100100013785/1529102490303) (accessed Nov. 21, 2026) ("The Canadian Constitution recognizes 3 groups of Indigenous peoples: First Nations Inuit Métis"). Source record: `cirnac-indigenous-peoples-and-communities`.
 [^jay]: Treaty of Amity, Commerce and Navigation, Gr. Brit.-U.S., art. III, Nov. 19, 1794, 8 Stat. 116, [Avalon Project](https://avalon.law.yale.edu/18th_century/jay.asp) (accessed Nov. 21, 2026). Source record: `jay-treaty-1794`.
-[^usc-1359]: 8 U.S.C. § 1359, [law.cornell.edu](https://www.law.cornell.edu/uscode/text/8/1359) (accessed Nov. 21, 2026). Source record: `usc-8-1359`.
+[^usc-1359]: 8 U.S.C. § 1359, [law.cornell.edu](https://www.law.cornell.edu/uscode/text/8/1359) (accessed Nov. 21, 2026). Source record: `united-states-code-8-1359` (added by the Mexico research thread).
 [^cfr-289-2]: 8 C.F.R. § 289.2, [law.cornell.edu](https://www.law.cornell.edu/cfr/text/8/289.2) (accessed Nov. 21, 2026). Source record: `cfr-8-289-2`.
 [^irpa-19]: Immigration and Refugee Protection Act, S.C. 2001, c. 27, s. 19(1) (Can.), [laws-lois.justice.gc.ca](https://laws-lois.justice.gc.ca/eng/acts/I-2.5/section-19.html) (accessed Nov. 21, 2026). Source record: `canada-immigration-and-refugee-protection-act-s19`.
 [^desautel]: R. v. Desautel, 2021 SCC 17, [2021] 1 S.C.R. 533, paras. 11, 23, 86-87 (Can.), [decisions.scc-csc.ca](https://decisions.scc-csc.ca/scc-csc/scc-csc/en/item/18836/index.do) (accessed Nov. 21, 2026). Source record: `r-v-desautel-2021`.
@@ -453,6 +455,7 @@ For review; about 230 words. Citations as in the sections above.
 [^indian-act-10]: Indian Act, R.S.C. 1985, c. I-5, s. 10(1)-(2) (Can.). Source record: `canada-indian-act`.
 [^indian-act-14]: Indian Act, R.S.C. 1985, c. I-5, ss. 14.2(7), 14.3 (Can.). Source record: `canada-indian-act`.
 [^indian-act-81]: Indian Act, R.S.C. 1985, c. I-5, s. 81(1) (Can.). Source record: `canada-indian-act`.
+[^mancari]: Morton v. Mancari, 417 U.S. 535, 554 (1974) (preference granted "as members of quasi-sovereign tribal entities"). Source record: `morton-v-mancari`.
 [^santa-clara]: Santa Clara Pueblo v. Martinez, 436 U.S. 49, 72 n.32 (1978). Source record: `santa-clara-pueblo-v-martinez`.
 [^act-1871]: Act of Mar. 3, 1871, ch. 120, § 1, 16 Stat. 544, 566. Source record: `indian-appropriation-act-1871`.
 [^bia-trust]: U.S. Dep't of the Interior, Indian Affairs, *What is the federal Indian trust responsibility?* (July 18, 2017), [bia.gov](https://www.bia.gov/faqs/what-federal-indian-trust-responsibility) (accessed Nov. 21, 2026) (quoting Seminole Nation v. United States, 316 U.S. 286 (1942)). Source record: `bia-faq-federal-indian-trust-responsibility`.

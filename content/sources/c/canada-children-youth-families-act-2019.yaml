@@ -19,7 +19,10 @@ citation:
       - 21
 original_link: https://laws-lois.justice.gc.ca/eng/acts/F-11.73/FullText.html
 retrieved: '2026-11-21'
-archives: []
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20260722114615/https://laws-lois.justice.gc.ca/eng/acts/f-11.73/fulltext.html
+  captured: '2026-07-22'
 history:
   status: live
   last_checked: '2026-11-21'
@@ -46,5 +49,4 @@ access:
   - free-web
 found_in:
 - 2026-11-21-canada-dispute-resolution
-notes: Assent date not checked against the annual statute. Wayback capture pending (web.archive.org is
-  not reachable from the research environment; the shared archive workflow fills this field).
+notes: Assent date not checked against the annual statute. Existing Wayback capture found by scripts/find_archived_copies.py.

@@ -21,7 +21,10 @@ citation:
       - 21
 original_link: https://decisions.scc-csc.ca/scc-csc/scc-csc/en/12888/1/document.do
 retrieved: '2026-11-21'
-archives: []
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20251119100957/https://decisions.scc-csc.ca/scc-csc/scc-csc/en/12888/1/document.do
+  captured: '2025-11-19'
 history:
   status: live
   last_checked: '2026-11-21'
@@ -45,5 +48,4 @@ access:
   - free-web
 found_in:
 - 2026-11-21-canada-dispute-resolution
-notes: Wayback capture pending (web.archive.org is not reachable from the research environment; the shared
-  archive workflow fills this field).
+notes: Existing Wayback capture found by scripts/find_archived_copies.py.

@@ -14,7 +14,10 @@ citation:
       - 21
 original_link: https://justice.gc.ca/eng/rp-pr/jr/gladue/p4.html
 retrieved: '2026-11-21'
-archives: []
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20260928091056/https://www.justice.gc.ca/eng/rp-pr/jr/gladue/p4.html
+  captured: '2026-09-28'
 history:
   status: live
   last_checked: '2026-11-21'
@@ -43,6 +46,4 @@ access:
   - free-web
 found_in:
 - 2026-11-21-canada-dispute-resolution
-notes: Only section 4 was read (modified Jan. 19, 2023); authors and publication year not recorded. Wayback
-  capture pending (web.archive.org is not reachable from the research environment; the shared archive
-  workflow fills this field).
+notes: Only section 4 was read (modified Jan. 19, 2023); authors and publication year not recorded. Existing Wayback capture found by scripts/find_archived_copies.py.

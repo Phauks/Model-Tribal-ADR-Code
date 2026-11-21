@@ -19,7 +19,10 @@ citation:
       - 21
 original_link: https://laws-lois.justice.gc.ca/eng/acts/I-2.5/section-19.html
 retrieved: '2026-11-21'
-archives: []
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20231025022921/https://laws-lois.justice.gc.ca/eng/acts/I-2.5/section-19.html
+  captured: '2023-10-25'
 history:
   status: live
   last_checked: '2026-11-21'
@@ -45,5 +48,4 @@ access:
 found_in:
 - 2026-11-21-canada-dispute-resolution
 notes: Read in the consolidation current to Oct. 29, 2026; only s. 19 was read. Assent date from memory
-  of the Act; check against the annual statute before print. Wayback capture pending (web.archive.org
-  is not reachable from the research environment; the shared archive workflow fills this field).
+  of the Act; check against the annual statute before print. Existing Wayback capture found by scripts/find_archived_copies.py.

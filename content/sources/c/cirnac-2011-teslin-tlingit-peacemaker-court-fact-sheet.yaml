@@ -17,7 +17,10 @@ citation:
       - 21
 original_link: https://www.rcaanc-cirnac.gc.ca/eng/1314319377339/1542826109844
 retrieved: '2026-11-21'
-archives: []
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20260611162019/https://www.rcaanc-cirnac.gc.ca/eng/1314319377339/1542826109844
+  captured: '2026-06-11'
 history:
   status: live
   last_checked: '2026-11-21'
@@ -53,6 +56,4 @@ access:
   - free-web
 found_in:
 - 2026-11-21-canada-dispute-resolution
-notes: Fact sheet dated July 2011 (page modified Aug. 25, 2011); later status of Stage Two not confirmed.
-  Wayback capture pending (web.archive.org is not reachable from the research environment; the shared
-  archive workflow fills this field).
+notes: Fact sheet dated July 2011 (page modified Aug. 25, 2011); later status of Stage Two not confirmed. Existing Wayback capture found by scripts/find_archived_copies.py.

@@ -19,7 +19,10 @@ citation:
       - 21
 original_link: https://laws-lois.justice.gc.ca/eng/acts/U-2.2/FullText.html
 retrieved: '2026-11-21'
-archives: []
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20261108034238/https://www.laws-lois.justice.gc.ca/eng/acts/u-2.2/FullText.html
+  captured: '2026-11-08'
 history:
   status: live
   last_checked: '2026-11-21'
@@ -42,5 +45,4 @@ access:
   - free-web
 found_in:
 - 2026-11-21-canada-dispute-resolution
-notes: Assent date not checked against the annual statute. Wayback capture pending (web.archive.org
-  is not reachable from the research environment; the shared archive workflow fills this field).
+notes: Assent date not checked against the annual statute. Existing Wayback capture found by scripts/find_archived_copies.py.

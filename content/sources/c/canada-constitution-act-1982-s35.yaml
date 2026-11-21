@@ -19,7 +19,10 @@ citation:
       - 21
 original_link: https://laws-lois.justice.gc.ca/eng/const/FullText.html
 retrieved: '2026-11-21'
-archives: []
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20261025080224/https://laws-lois.justice.gc.ca/eng/const/FullText.html
+  captured: '2026-10-25'
 history:
   status: live
   last_checked: '2026-11-21'
@@ -42,7 +45,8 @@ access:
   open: true
   pull_from:
   - free-web
+shares_link_with:
+- canada-constitution-act-1867-s91-24
 found_in:
 - 2026-11-21-canada-dispute-resolution
-notes: Read in the consolidated Constitution Acts on the Justice Laws site. Wayback capture pending (web.archive.org
-  is not reachable from the research environment; the shared archive workflow fills this field).
+notes: Read in the consolidated Constitution Acts on the Justice Laws site. Existing Wayback capture found by scripts/find_archived_copies.py.

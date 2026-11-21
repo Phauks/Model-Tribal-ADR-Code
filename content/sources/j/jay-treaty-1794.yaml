@@ -19,7 +19,10 @@ citation:
       - 21
 original_link: https://avalon.law.yale.edu/18th_century/jay.asp
 retrieved: '2026-11-21'
-archives: []
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20261020230822/https://avalon.law.yale.edu/18th_century/jay.asp
+  captured: '2026-10-20'
 history:
   status: live
   last_checked: '2026-11-21'
@@ -46,5 +49,4 @@ access:
 found_in:
 - 2026-11-21-canada-dispute-resolution
 notes: Read in the Avalon Project transcription (Yale Law School); the Statutes at Large page was not
-  checked. Wayback capture pending (web.archive.org is not reachable from the research environment; the
-  shared archive workflow fills this field).
+  checked. Existing Wayback capture found by scripts/find_archived_copies.py.

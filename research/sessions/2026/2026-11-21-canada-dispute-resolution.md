@@ -19,9 +19,10 @@ tools:
     Blackfoot Confederacy, paragraph numbers in Desautel, Haida and Ipeelee,
     Truth and Reconciliation Commission Calls 42 and 50, Indian Act s. 10),
     and re-checked every quotation in the analysis note against the saved
-    pages by script (77 of 79 matched; the other two were checked by hand:
-    Call 50, whose PDF text is interleaved across columns, and a Santa Clara
-    Pueblo quotation taken from the project's case digest).
+    pages by script (77 of 80 matched; the other three were checked by hand:
+    Call 50, whose PDF text is interleaved across columns, a Santa Clara
+    Pueblo quotation taken from the project's case digest, and the words of
+    the Indian Commerce Clause).
 - kind: web-search
   name: Web search
 - kind: page-fetch
@@ -93,7 +94,6 @@ sources_added:
 - r-v-ipeelee-2012
 - rabbitskin-v-big-river-first-nation-2025
 - truth-and-reconciliation-commission-2015-calls-to-action
-- usc-8-1359
 limits: >-
   Written for a sidebar, not a survey of Canadian Indigenous law. Not read:
   Mitchell v. M.N.R., R. v. Gladue, R. v. Powley, Guerin, the Sept. 1, 2026
@@ -106,7 +106,7 @@ limits: >-
   cross-border dispute arrangements for Coast Salish, Tlingit, Gwich'in,
   Inuit, Passamaquoddy and Peskotomuhkati, Mi'kmaq or Dakota and Lakota
   nations. Ceremonial and spiritual content was deliberately not recorded.
-  No source has a Wayback copy yet.
+  Eight web sources have no Wayback copy yet (28 of 36 already had one).
 ---
 
 # Dispute resolution among First Nations, Inuit and Métis in Canada

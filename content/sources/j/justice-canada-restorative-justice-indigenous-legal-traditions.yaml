@@ -13,7 +13,10 @@ citation:
       - 21
 original_link: https://canada.justice.gc.ca/eng/rp-pr/jr/rjilt-jrtja/p6.html
 retrieved: '2026-11-21'
-archives: []
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20220916030948/https://canada.justice.gc.ca/eng/rp-pr/jr/rjilt-jrtja/p6.html
+  captured: '2022-09-16'
 history:
   status: live
   last_checked: '2026-11-21'
@@ -40,5 +43,4 @@ access:
 found_in:
 - 2026-11-21-canada-dispute-resolution
 notes: One web page of the report was read (modified Jan. 20, 2023); authors and publication year not
-  recorded. Wayback capture pending (web.archive.org is not reachable from the research environment; the
-  shared archive workflow fills this field).
+  recorded. Existing Wayback capture found by scripts/find_archived_copies.py.

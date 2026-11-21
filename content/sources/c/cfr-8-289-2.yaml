@@ -15,7 +15,10 @@ citation:
       - 21
 original_link: https://www.law.cornell.edu/cfr/text/8/289.2
 retrieved: '2026-11-21'
-archives: []
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20251016154229/https://www.law.cornell.edu/cfr/text/8/289.2
+  captured: '2025-10-16'
 history:
   status: live
   last_checked: '2026-11-21'
@@ -38,6 +41,4 @@ access:
   - free-web
 found_in:
 - 2026-11-21-canada-dispute-resolution
-notes: Read on the Legal Information Institute copy of the e-CFR; the eCFR itself was not checked. Wayback
-  capture pending (web.archive.org is not reachable from the research environment; the shared archive
-  workflow fills this field).
+notes: Read on the Legal Information Institute copy of the e-CFR; the eCFR itself was not checked. Existing Wayback capture found by scripts/find_archived_copies.py.

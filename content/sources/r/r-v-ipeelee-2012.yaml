@@ -21,7 +21,10 @@ citation:
       - 21
 original_link: https://decisions.scc-csc.ca/scc-csc/scr/en/6178/1/document.do
 retrieved: '2026-11-21'
-archives: []
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20260215151837/https://decisions.scc-csc.ca/scc-csc/scr/en/6178/1/document.do
+  captured: '2026-02-15'
 history:
   status: live
   last_checked: '2026-11-21'
@@ -49,5 +52,4 @@ access:
 found_in:
 - 2026-11-21-canada-dispute-resolution
 notes: Read in the S.C.R. volume PDF ([2012] 1 S.C.R.); its text layer has OCR errors (para. 59 reads
-  "recouse"), so quote para. 59 only from a clean copy. Wayback capture pending (web.archive.org is not
-  reachable from the research environment; the shared archive workflow fills this field).
+  "recouse"), so quote para. 59 only from a clean copy. Existing Wayback capture found by scripts/find_archived_copies.py.

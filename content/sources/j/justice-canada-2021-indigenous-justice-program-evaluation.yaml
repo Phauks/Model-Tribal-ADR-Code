@@ -16,7 +16,10 @@ citation:
       - 21
 original_link: https://canada.justice.gc.ca/eng/rp-pr/cp-pm/eval/rep-rap/2021/indigenous-autochtone/results-resultats.html
 retrieved: '2026-11-21'
-archives: []
+archives:
+- service: wayback
+  link: https://web.archive.org/web/20251015055601/https://canada.justice.gc.ca/eng/rp-pr/cp-pm/eval/rep-rap/2021/indigenous-autochtone/results-resultats.html
+  captured: '2025-10-15'
 history:
   status: live
   last_checked: '2026-11-21'
@@ -48,6 +51,4 @@ access:
   - free-web
 found_in:
 - 2026-11-21-canada-dispute-resolution
-notes: Only the "Results at a glance" page was read (modified Mar. 31, 2022). Wayback capture pending
-  (web.archive.org is not reachable from the research environment; the shared archive workflow fills this
-  field).
+notes: Only the "Results at a glance" page was read (modified Mar. 31, 2022). Existing Wayback capture found by scripts/find_archived_copies.py.
