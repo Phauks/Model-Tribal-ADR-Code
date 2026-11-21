@@ -72,6 +72,8 @@ def evidence_tier(item):
 
 
 def recognition_label(profile):
+    if profile.get("part_of"):
+        return "component-of-" + profile["part_of"]
     kinds = sorted({entry["type"] for entry in profile.get("recognition", [])})
     return "+".join(kinds) or "none"
 
@@ -107,13 +109,19 @@ def main(output_path):
     method_identifiers = sorted(path.stem for path in ROOT.glob("content/methods/*.yaml"))
 
     with_practice = [profile for profile in profiles if profile.get("dispute_resolution")]
-    federal = [profile for profile in profiles if any(entry["type"] == "federal" for entry in profile.get("recognition", []))]
+    # Component bands (part_of) are counted apart so that a recognized entity is not counted twice.
+    federal = [
+        profile for profile in profiles
+        if any(entry["type"] == "federal" for entry in profile.get("recognition", [])) and not profile.get("part_of")
+    ]
 
     result = {
         "profiles": len(profiles),
         "profiles_with_any_dispute_resolution_record": len(with_practice),
         "federally_recognized_profiles": len(federal),
         "federally_recognized_profiles_with_any_record": sum(1 for profile in federal if profile.get("dispute_resolution")),
+        "component_profiles": sum(1 for profile in profiles if profile.get("part_of")),
+        "component_profiles_with_any_record": sum(1 for profile in with_practice if profile.get("part_of")),
         "profiles_with_a_record_besides_database_listings": sum(
             1 for profile in with_practice if any(key != "database_listings" for key in profile["dispute_resolution"])
         ),

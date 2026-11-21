@@ -59,6 +59,10 @@
       "enum": ["native-nation", "native-hawaiian", "territorial-indigenous-people", "alaska-native-corporation"],
       "description": "What kind of community the record describes. native-nation: a tribal nation, band, pueblo, rancheria, community or Alaska Native village, whatever its recognition. native-hawaiian: the Native Hawaiian community, which has no federally recognized governing entity and is never described with tribal status categories. territorial-indigenous-people: an Indigenous people of a U.S. territory (for example CHamoru, Refaluwasch or Samoan), whose status rests on territorial law. alaska-native-corporation: a corporation formed under the Alaska Native Claims Settlement Act, which is not a government (reserved; not yet populated)."
     },
+    "part_of": {
+      "$ref": "common.schema.json#/$defs/slug",
+      "description": "For a band or other component that the list of recognized entities names only inside another entity's entry (for example the six component reservations of the Minnesota Chippewa Tribe): the id of that entity's profile. The component's own recognition cites the same entry."
+    },
     "names": {
       "type": "object",
       "additionalProperties": false,

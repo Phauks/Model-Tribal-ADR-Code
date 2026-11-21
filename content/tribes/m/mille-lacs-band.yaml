@@ -1,0 +1,313 @@
+id: mille-lacs-band
+entity_type: native-nation
+part_of: minnesota-chippewa-tribe
+names:
+  official: Mille Lacs Band
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+  note: 'Named in the notice as one of the six component reservations of the Minnesota Chippewa Tribe,
+    Minnesota, not as a separate entity: Minnesota Chippewa Tribe, Minnesota (Six component reservations:
+    Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band;
+    White Earth Band).'
+states:
+- state: MN
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  verification: inferred
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2270
+  note: 'Census area with land in this state: Mille Lacs Reservation and Off-Reservation Trust Land (code
+    2270). Area matched to the band by name.'
+census_areas:
+- geographic_identifier: '2270'
+  name: Mille Lacs Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  verification: inferred
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2270
+  note: 'Matched by name. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six
+    component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille Lacs,
+    White Earth). Census class code D1.'
+population:
+- count: 4767
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  verification: bulk-import
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2270, field POP100
+  note: 'Census area: Mille Lacs Reservation and Off-Reservation Trust Land (code 2270). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names
+    six component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille
+    Lacs, White Earth).'
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Minnesota Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: inferred
+  as_of: '2026-11-20'
+  locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake);
+    Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
+  note: The Tribal Leaders Directory lists only the Minnesota Chippewa Tribe; the region and agency are
+    taken from its entry.
+governing_documents:
+- kind: law-code
+  title: Mille Lacs Band Statutes Annotated
+  year: '2015'
+  link: https://narf.org/nill/codes/mille_lacs_band/index.html
+  source: national-indian-law-library-code-codes-mille-lacs-band
+  confidence: medium
+  verification: title-only
+  as_of: '2015'
+  locator: page heading
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Mille Lacs Band of the Minnesota Chippewa
+    Tribe, Minnesota. Table of Contents Updated: July 2015. The National Indian Law Library page gives
+    the table of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://millelacsband.com/government/tribal-register/constitution-and-band-statutes
+  source: national-indian-law-library-minn-chippewa-mille-lacs
+  confidence: medium
+  verification: title-only
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Mille Lacs Band of the Minnesota Chippewa
+    Tribe, Minnesota. Listed on the National Indian Law Library page under ''Tribal Code'' as: "At band''s
+    website .".'
+- kind: corporate-charter
+  title: Charter Mille Lacs Band of Chippewa Indians 1939
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/millefnl.html
+  source: university-of-oklahoma-indian-reorganization-act-millefnl
+  confidence: medium
+  verification: title-only
+  as_of: '1936'
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Mille Lacs Band. Historical text as originally
+    approved; the nation may have amended or replaced it since.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://millelacsband.com/government/judicial
+  source: national-indian-law-library-minn-chippewa-mille-lacs
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Mille Lacs Band of the Minnesota Chippewa
+    Tribe, Minnesota. The page gives a contact for a tribal court without a fuller name.'
+- kind: tribal-court
+  name: Mille Lacs Band of Ojibwe Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  verification: bulk-import
+  as_of: '2022'
+  locator: Minnesota section, entry 'Mille Lacs Band of Ojibwe Tribe'
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Mille Lacs Band Link check 2026-11-21:
+    the link the source gives (http://circle.red/mlbo/tribal-court/) returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  forums:
+  - kind: elders-council
+    name: Panel of elders in cultural causes of action
+    description: The Court of Central Jurisdiction enters as its judgment and order a decision made by
+      a panel of elders in a cultural cause of action between Band members; the Court has jurisdiction
+      over causes of action arising from unwritten cultural law.
+    legal_basis: 5 MLBSA §§ 103, 111(c), 114(h); 24 MLBSA §§ 601-603
+    case_types:
+    - other
+    relationship_to_court: Panel decisions are entered by the Court of Central Jurisdiction (the Chief
+      Justice) as a judgment and order.
+    enforcement: Entered as a court judgment and order; for cultural offenses the court may order sanctions
+      consistent with Band traditions, including injunctions, removal, exclusion, community service or
+      fines (24 MLBSA § 603).
+    link: https://mlbo.dev/content/3-government/17-statutes-policies/mltitle05judbranch.pdf
+    source: mille-lacs-title-5-judicial-branch
+    confidence: medium
+    verification: read-in-full
+    as_of: '2011-06-27'
+    locator: 5 MLBSA §§ 103, 111(c), 114(h)
+    note: 'The statute text read does not say how a case reaches a panel of elders, how elders are chosen,
+      or whether participation is voluntary, so participation is left out. ''Cultural harm'' in 24 MLBSA
+      § 602 concerns conduct that harms the community''s good health or raises fear in the community;
+      ''other'' used for case type. Enforcement detail from Title 24 (source mille-lacs-title-24-judicial-proceedings).
+      Component band: Mille Lacs Band of Ojibwe.'
+  provisions:
+  - kind: traditional-dispute-resolution
+    title: Cultural causes of action; panel of elders decisions
+    citation: 5 MLBSA § 103
+    summary: Authorizes the Court of Central Jurisdiction to enter a panel of elders' decision in a cultural
+      cause of action between Band members as a judgment and order.
+    link: https://mlbo.dev/content/3-government/17-statutes-policies/mltitle05judbranch.pdf
+    source: mille-lacs-title-5-judicial-branch
+    confidence: medium
+    as_of: '2011-06-27'
+    locator: § 103
+    note: 'Component band: Mille Lacs Band of Ojibwe.'
+  - kind: traditional-dispute-resolution
+    title: Cultural actions
+    citation: 24 MLBSA §§ 601-603
+    summary: Gives any person a cause of action for cultural harm and lets the court impose sanctions
+      consistent with Band traditions, such as injunctions, exclusion, community service or fines.
+    link: https://www.mlbo.dev/content/3-government/17-statutes-policies/title-24_judicial-proceedings_amendents-through-1.23.14.pdf
+    source: mille-lacs-title-24-judicial-proceedings
+    confidence: medium
+    as_of: '2014-01-23'
+    locator: §§ 601-603
+    note: 'Component band: Mille Lacs Band of Ojibwe.'
+  database_listings:
+  - title: Family Services Treatment Plan for Parents
+    citation: 8 MLBS § 3163
+    link: https://millelacsband.com/government/tribal-register/constitution-and-band-statutes
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative practice, Restorative process
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-services-treatment-plan-for-parents/
+    note: 'Component band: Mille Lacs Band.'
+  - title: Inadmissibility of Statements made in Informal Hearings
+    citation: 8 MLBS § 124
+    link: https://millelacsband.com/government/tribal-register/constitution-and-band-statutes
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/inadmissibility-of-statements-made-in-informal-hearings/
+    note: 'Component band: Mille Lacs Band.'
+  - title: Informal Hearing for Juveniles
+    citation: 8 MLBS § 121
+    link: https://millelacsband.com/government/tribal-register/constitution-and-band-statutes
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative practice, Restorative process
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-hearing-for-juveniles/
+    note: 'Component band: Mille Lacs Band.'
+  - title: Pre-Dispositional Hearing for Juvenile Cases
+    citation: 8 MLBS § 136 AND 8 MLBS § 140
+    link: https://millelacsband.com/government/tribal-register/constitution-and-band-statutes
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/pre-dispositional-hearing-for-juvenile-cases/
+    note: 'Component band: Mille Lacs Band.'
+  - title: Puepose of The Child Protection Statute
+    citation: 8 MLBS § 3102
+    link: https://millelacsband.com/government/tribal-register/constitution-and-band-statutes
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative practice, Restorative process
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/puepose-of-the-child-protection-statute/
+    note: 'Component band: Mille Lacs Band.'
+gaming:
+  compacts:
+  - state: MN
+    status: approved
+    approved: '2024-08-22'
+    federal_register_citation: 89 FR 67958
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    verification: bulk-import
+    as_of: '2024-08-22'
+    locator: result page 18 (?page=18), row 1
+    note: 'Listed as: "Mille Lacs Band of Minnesota Chippewa Tribe Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Minnesota Chippewa Tribe - Mille Lacs Band". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.08.22_mille_lacs_band_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/08/22/2024-18835/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-between-the-mille-lacs-band-of.
+      Matched on the Tribe column because the title spelling did not match the roster. Compact is with
+      the Mille Lacs Band, a component reservation of the Minnesota Chippewa Tribe; the roster lists only
+      the Minnesota Chippewa Tribe. Federal Register citation converted from the linked document number
+      through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: MN
+    status: approved
+    approved: '1990-06-29'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    verification: bulk-import
+    as_of: '1990-06-29'
+    locator: result page 18 (?page=18), row 2
+    note: 'Listed as: "Mille Lacs Band of Minnesota Chippewa Tribes Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Minnesota Chippewa Tribe - Mille Lacs Band". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1990.06.29_mille_lacs_band_of_chippewa_indians_tribal_state_gaming_compact.pdf.
+      Matched on the Tribe column because the title spelling did not match the roster. Compact is with
+      the Mille Lacs Band, a component reservation of the Minnesota Chippewa Tribe; the roster lists only
+      the Minnesota Chippewa Tribe.'
+  ordinances:
+  - approved: '1995-05-26'
+    link: https://www.nigc.gov?wpdmdl=10296&ind=10311
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    verification: inferred
+    as_of: '1995-05-26'
+    locator: table row 154, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 154 lists the nation
+      as "Mille Lacs Band of Minnesota". Name matched to roster by spelling variant. Ordinance of the
+      Mille Lacs Band, a component reservation of the Minnesota Chippewa Tribe; the roster lists only
+      the Minnesota Chippewa Tribe.
+  - approved: '2003-09-05'
+    link: https://www.nigc.gov?wpdmdl=10297&ind=10312
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    verification: inferred
+    as_of: '2003-09-05'
+    locator: table row 154, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 154 lists the nation
+      as "Mille Lacs Band of Minnesota". Name matched to roster by spelling variant. Ordinance of the
+      Mille Lacs Band, a component reservation of the Minnesota Chippewa Tribe; the roster lists only
+      the Minnesota Chippewa Tribe.
+  - approved: '2024-02-22'
+    link: https://www.nigc.gov?wpdmdl=10298&ind=10313
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    verification: inferred
+    as_of: '2024-02-22'
+    locator: table row 154, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 154 lists the nation
+      as "Mille Lacs Band of Minnesota". Name matched to roster by spelling variant. Ordinance of the
+      Mille Lacs Band, a component reservation of the Minnesota Chippewa Tribe; the roster lists only
+      the Minnesota Chippewa Tribe.
+jurisdiction:
+- topic: public-law-280
+  value: concurrent-federal-jurisdiction-accepted
+  detail: 'Mille Lacs Band only: the Deputy Attorney General granted the Mille Lacs Band of Ojibwe request
+    for United States assumption of concurrent federal criminal jurisdiction under 18 U.S.C. § 1162(d),
+    effective January 1, 2017 (81 FR 4335).'
+  source: federal-register-2016-mille-lacs-concurrent-federal-jurisdiction
+  confidence: high
+  verification: inferred
+  as_of: '2017-01-01'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Created on 2026-11-21 from records first kept on the Minnesota Chippewa Tribe profile; not yet
+    sent to the band for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

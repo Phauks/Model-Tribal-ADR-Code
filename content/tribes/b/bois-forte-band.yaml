@@ -1,0 +1,198 @@
+id: bois-forte-band
+entity_type: native-nation
+part_of: minnesota-chippewa-tribe
+names:
+  official: Bois Forte Band (Nett Lake)
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+  note: 'Named in the notice as one of the six component reservations of the Minnesota Chippewa Tribe,
+    Minnesota, not as a separate entity: Minnesota Chippewa Tribe, Minnesota (Six component reservations:
+    Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band;
+    White Earth Band).'
+states:
+- state: MN
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  verification: inferred
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0335
+  note: 'Census area with land in this state: Bois Forte Reservation and Off-Reservation Trust Land (code
+    0335). Area matched to the band by name.'
+census_areas:
+- geographic_identifier: '0335'
+  name: Bois Forte Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  verification: inferred
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0335
+  note: 'Matched by name. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six
+    component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille Lacs,
+    White Earth). Census class code D1.'
+population:
+- count: 984
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  verification: bulk-import
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0335, field POP100
+  note: 'Census area: Bois Forte Reservation and Off-Reservation Trust Land (code 0335). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names
+    six component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille
+    Lacs, White Earth).'
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Minnesota Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: inferred
+  as_of: '2026-11-20'
+  locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake);
+    Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
+  note: The Tribal Leaders Directory lists only the Minnesota Chippewa Tribe; the region and agency are
+    taken from its entry.
+governing_documents:
+- kind: constitution
+  title: Minnesota Chippewa Tribe Constitution and Bylaws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  verification: title-only
+  as_of: '2022'
+  locator: Minnesota section, entry 'Bois Forte Band of Chippewa'
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Bois Forte Band. Title is the link text
+    in the directory; link not re-checked and may be out of date. Link check 2026-11-21: the link the
+    source gives (http://www.mnchippewatribe.org/pdf/constitution_revised.pdf) returned HTTP 404, so it
+    is not recorded.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-minn-chiippewa-bois-forte
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://boisforte.com/divisions/judicial.htm) returned HTTP 404, so it is not
+    recorded.'
+- kind: tribal-court
+  name: Bois Forte Band of Chippewa Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  verification: bulk-import
+  as_of: '2022'
+  locator: Minnesota section, entry 'Bois Forte Band of Chippewa'
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Bois Forte Band Link check 2026-11-21:
+    the link the source gives (http://www.boisforte.com/divisions/judicial.htm) returned HTTP 404, so
+    it is not recorded.'
+gaming:
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    verification: inferred
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Bois Forte Band of Minnesota
+      Chippewa Tribe". Facilities as machine-extracted from the report text (verify): Fortune Bay Casino.
+      Listed band is a component reservation of the Minnesota Chippewa Tribe; the roster lists only the
+      Minnesota Chippewa Tribe. Name extracted from the PDF by the page-fetch tool and matched to the
+      roster.'
+  compacts:
+  - state: MN
+    status: approved
+    approved: '2024-09-20'
+    federal_register_citation: 89 FR 77170
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    verification: bulk-import
+    as_of: '2024-09-20'
+    locator: result page 17 (?page=17), row 1
+    note: 'Listed as: "Bois Forte Band of Minnesota Chippew Tribe (Nett Lake) Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Minnesota Chippewa Tribe - Bois Forte Band (Nett Lake)". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.09.20_bois_forte_band_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/09/20/2024-21609/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-between-the-bois-forte-band-of.
+      Matched on the Tribe column because the title spelling did not match the roster. Compact is with
+      the Bois Forte Band, a component reservation of the Minnesota Chippewa Tribe; the roster lists only
+      the Minnesota Chippewa Tribe. Federal Register citation converted from the linked document number
+      through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: MN
+    status: approved
+    approved: '1990-04-02'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    verification: bulk-import
+    as_of: '1990-04-02'
+    locator: result page 17 (?page=17), row 2
+    note: 'Listed as: "Bois Forte Band of Minnesota Chippewa Tribe (Nett Lake) Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Minnesota Chippewa Tribe - Bois Forte Band (Nett Lake)". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1990.04.02_bois_forte_band_of_chippewa_indians_tribal_state_gaming.pdf.
+      Matched on the Tribe column because the title spelling did not match the roster. Compact is with
+      the Bois Forte Band, a component reservation of the Minnesota Chippewa Tribe; the roster lists only
+      the Minnesota Chippewa Tribe.'
+  - state: MN
+    status: approved
+    approved: '1991-10-03'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    verification: bulk-import
+    as_of: '1991-10-03'
+    locator: result page 17 (?page=17), row 3
+    note: 'Listed as: "Bois Forte Band of Minnesota Chippewa Tribe (Nett Lake) Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Minnesota Chippewa Tribe - Bois Forte Band (Nett Lake)". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1991.10.03_bois_forte_band_of_chippewa_indians_tribal_state_gaming_compact.pdf.
+      Matched on the Tribe column because the title spelling did not match the roster. Compact is with
+      the Bois Forte Band, a component reservation of the Minnesota Chippewa Tribe; the roster lists only
+      the Minnesota Chippewa Tribe.'
+  ordinances:
+  - approved: '1993-12-10'
+    link: https://www.nigc.gov?wpdmdl=3432&ind=3434
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    verification: inferred
+    as_of: '1993-12-10'
+    locator: table row 22, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 22 lists the nation
+      as "Bois Forte Band of Minnesota Chippewa Tribe". Name matched to roster by spelling variant. Ordinance
+      of the Bois Forte Band, a component reservation of the Minnesota Chippewa Tribe; the roster lists
+      only the Minnesota Chippewa Tribe.
+  - approved: '2004-03-10'
+    link: https://www.nigc.gov?wpdmdl=3433&ind=3435
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    verification: inferred
+    as_of: '2004-03-10'
+    locator: table row 22, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 22 lists the nation
+      as "Bois Forte Band of Minnesota Chippewa Tribe". Name matched to roster by spelling variant. Ordinance
+      of the Bois Forte Band, a component reservation of the Minnesota Chippewa Tribe; the roster lists
+      only the Minnesota Chippewa Tribe.
+jurisdiction:
+- topic: public-law-280
+  value: retroceded
+  detail: 'Bois Forte Band (Nett Lake) only: Interior accepted retrocession of all criminal jurisdiction
+    exercised by Minnesota over the Bois Forte Indian Reservation at Nett Lake. Other component reservations
+    of the Minnesota Chippewa Tribe are not covered. (40 FR 4026)'
+  source: federal-register-1975-bois-forte-retrocession
+  confidence: medium
+  verification: inferred
+  as_of: '1975-01-27'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Created on 2026-11-21 from records first kept on the Minnesota Chippewa Tribe profile; not yet
+    sent to the band for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

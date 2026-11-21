@@ -84,6 +84,9 @@ Gate 1 is passed when Trevor has:
    to 5).
 5. **Decided how bands inside one profile are counted**, starting with the
    Minnesota Chippewa Tribe profile (review queue item 7).
+   *Decided Nov. 21, 2026: each of the six component bands has its own
+   profile, linked by `part_of`
+   ([decision record 0016](decisions/0016-component-bands-own-profiles.md)).*
 6. **Accepted or set aside the proposed method records** (32 at the merge of
    pull request #5), so every forum kind maps to a method or stays "other" for
    a stated reason.

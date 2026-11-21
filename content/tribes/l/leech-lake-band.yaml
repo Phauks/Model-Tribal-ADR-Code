@@ -1,0 +1,331 @@
+id: leech-lake-band
+entity_type: native-nation
+part_of: minnesota-chippewa-tribe
+names:
+  official: Leech Lake Band
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  verification: bulk-import
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+  note: 'Named in the notice as one of the six component reservations of the Minnesota Chippewa Tribe,
+    Minnesota, not as a separate entity: Minnesota Chippewa Tribe, Minnesota (Six component reservations:
+    Bois Forte Band (Nett Lake); Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band;
+    White Earth Band).'
+states:
+- state: MN
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  verification: inferred
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1940
+  note: 'Census area with land in this state: Leech Lake Reservation and Off-Reservation Trust Land (code
+    1940). Area matched to the band by name.'
+census_areas:
+- geographic_identifier: '1940'
+  name: Leech Lake Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  verification: inferred
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1940
+  note: 'Matched by name. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six
+    component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille Lacs,
+    White Earth). Census class code D1.'
+population:
+- count: 11388
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  verification: bulk-import
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1940, field POP100
+  note: 'Census area: Leech Lake Reservation and Off-Reservation Trust Land (code 1940). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names
+    six component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille
+    Lacs, White Earth).'
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Minnesota Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  verification: inferred
+  as_of: '2026-11-20'
+  locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake);
+    Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
+  note: The Tribal Leaders Directory lists only the Minnesota Chippewa Tribe; the region and agency are
+    taken from its entry.
+governing_documents:
+- kind: law-code
+  title: Minnesota Chippewa Tribe - Leech Lake Band
+  year: '2014'
+  link: https://narf.org/nill/codes/MN_chippewa_leech_lake/index.html
+  source: national-indian-law-library-code-codes-mn-chippewa-leech-lake
+  confidence: medium
+  verification: title-only
+  as_of: '2014'
+  locator: page heading
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Leech Lake Band of the Minnesota Chippewa
+    Tribe, Minnesota. Table of Contents Updated: October 2014. The National Indian Law Library page gives
+    the table of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.llojibwe.org/
+  source: national-indian-law-library-minn-chippewa-leech-lake
+  confidence: medium
+  verification: title-only
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Leech Lake Band of the Minnesota Chippewa
+    Tribe, Minnesota. Listed on the National Indian Law Library page under ''Tribal Code'' as: "At band''s
+    website . See Administration tab --> Tribal Court --> Court Codes.".'
+- kind: law-code
+  title: Leech Lake Tribal Court Codes
+  link: http://www.llojibwe.org/court/tcCodes.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  verification: title-only
+  as_of: '2022'
+  locator: Minnesota section, entry 'Leech Lake Band of Ojibwe'
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Leech Lake Band. Title is the link text
+    in the directory; link not re-checked and may be out of date.'
+justice_institutions:
+- kind: peacemaking-program
+  name: Peacemaker Tribunal (BaMeNim Anishinaabeg Program), Leech Lake Band
+  source: narf-ipi-tribal-peacemaking-laws
+  confidence: medium
+  verification: title-only
+  as_of: '2025-09-29'
+  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked.
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-minn-chippewa-leech-lake
+  confidence: medium
+  verification: bulk-import
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Leech Lake Band of the Minnesota Chippewa
+    Tribe, Minnesota. The page gives a contact for a tribal court without a fuller name.'
+- kind: tribal-court
+  name: Leech Lake Tribal Court
+  link: http://www.llojibwe.org/court/court.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  verification: bulk-import
+  as_of: '2022'
+  locator: Minnesota section, entry 'Leech Lake Band of Ojibwe'
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Leech Lake Band'
+dispute_resolution:
+  forums:
+  - kind: arbitration
+    name: Peacemaker Tribunal (Leech Lake Band of Ojibwe Tribal Court)
+    description: A tribunal the Chief Judge may establish, as a permanent division or case by case, whose
+      decisions bind the consenting parties; NARF associates the rule with the BaMeNim Anishinaabeg Program.
+    own_term:
+      name: BaMeNim Anishinaabeg
+      language_tag: oj
+      translation: Program name as given by NARF; no gloss published in the sources reviewed.
+    legal_basis: Leech Lake Band of Ojibwe Judicial Code, Title 2, Rules of Procedure, Rule 58
+    case_types:
+    - civil
+    - other
+    participation: voluntary
+    relationship_to_court: Use is voluntary and forecloses further use of the Trial Court except to enforce
+      the tribunal's award or decision; parties must consent in writing and acknowledge they cannot appeal.
+    enforcement: Decisions are summarized in writing in the court file, are not appealable, and may be
+      enforced through the Trial Court.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Leech-Lake-tc_coTITLE02-RulesofProcedure.pdf
+    source: leech-lake-judicial-code-title-2-rules
+    confidence: medium
+    verification: inferred
+    as_of: '2000-11-21'
+    locator: Title 2, Rule 58
+    note: 'Leech Lake is a component band of the Minnesota Chippewa Tribe on the federal list. Kind recorded
+      as arbitration because the rule describes a binding, non-appealable award or decision; the code
+      calls it a Peacemaker Tribunal. Program name ''BaMeNim Anishinaabeg'' comes from NARF''s Tribal
+      Peacemaking Laws page, not the rule itself. Component band: Leech Lake Band of Ojibwe.'
+  provisions:
+  - kind: peacemaking
+    title: 'Rule 58: Peacemaker Tribunal'
+    citation: Leech Lake Band of Ojibwe Judicial Code, Title 2, Rule 58
+    summary: Authorizes the Chief Judge to create a voluntary Peacemaker Tribunal whose written, non-appealable
+      decisions bind consenting parties.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Leech-Lake-tc_coTITLE02-RulesofProcedure.pdf
+    source: leech-lake-judicial-code-title-2-rules
+    confidence: medium
+    as_of: '2000-11-21'
+    note: 'Component band: Leech Lake Band of Ojibwe.'
+  - kind: peacemaking
+    title: 'Title 2: Judicial Code – Rules of Procedure, Part VIII – Other Matters, Rule 58: Peacemaker
+      Tribunal'
+    citation: 'Title 2: Judicial Code – Rules of Procedure, Part VIII – Other Matters, Rule 58: Peacemaker
+      Tribunal'
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Leech-Lake-tc_coTITLE02-RulesofProcedure.pdf
+    source: narf-ipi-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Leech Lake Band of Ojibwe, Minnesota
+    note: 'Component reservation of the Minnesota Chippewa Tribe: Leech Lake Band. Native American Rights
+      Fund description (provision itself not read): Provides authorization and procedures: BaMeNim Anishinaabeg
+      Program'
+  - kind: peacemaking
+    title: Rule 58 Peacemaker Tribunal
+    citation: Rule 58 Peacemaker Tribunal
+    link: https://narf.org/nill/codes/MN_chippewa_leech_lake/index.html
+    source: national-indian-law-library-code-codes-mn-chippewa-leech-lake
+    confidence: medium
+    as_of: '2014'
+    locator: Table of Contents, under 'Part 9 Other Matters'
+    note: 'Component reservation of the Minnesota Chippewa Tribe: Leech Lake Band of the Minnesota Chippewa
+      Tribe, Minnesota. Identified from section headings in the National Indian Law Library table of contents
+      (Table of Contents Updated: October 2014); the provision itself was not read. The heading it falls
+      under is taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Extended Family Conference in Child Welfare
+    citation: Leech Lake Band of Ojibwe. Title 3 Child Protection Code. 3-20 Placement Preferences. 3-20.C
+      Extended Family Conference.
+    link: https://www.llojibwe.org/court/tcCodes/tc_coTITLE3.pdf
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Family conference, Family group conference
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/extended-family-conference-in-child-welfare/
+    note: 'Component band: Leech Lake Band.'
+  - title: Informal Adjustment Conference in Juvenile Initial Proceedings
+    citation: 'Leech Lake Band of Ojibwe Judicial Code. Title 4: Juvenile Justice Code. 4-9 Juvenile Offender—Initiation
+      of Proceedings. 4-9.B. Informal Adjustment.'
+    link: https://www.llojibwe.org/court/tcCodes/tc_coTitle4_juvenile12-10.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Family conference, Family group conference; Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-adjustment-conference-in-juvenile-initial-proceedings/
+    note: 'Component band: Leech Lake Band.'
+  - title: Restorative Outcomes in Dispositional Hearings
+    citation: 'Leech Lake Band of Ojibwe Judicial Code. Title 4: Juvenile Justice Code. 4-13 Juvenile
+      Offender—Disposition Proceedings. 4-13.E. Outcome of Disposition Hearing.'
+    link: https://www.llojibwe.org/court/tcCodes/tc_coTitle4_juvenile12-10.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-outcomes-in-dispositional-hearings/
+    note: 'Component band: Leech Lake Band.'
+  - title: Restorative Purpose in Child Welfare
+    citation: Leech Lake Band of Ojibwe Judicial Code. Title 3 Child Protection Code. 3-1 Short Title,
+      Purpose, and Definitions. 3-1.B Purpose
+    link: https://www.llojibwe.org/court/tcCodes/tc_coTITLE3.pdf
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-purpose-in-child-welfare/
+    note: 'Component band: Leech Lake Band.'
+  - title: Restorative Purpose in Juvenile Justice
+    citation: 'Leech Lake Band of Ojibwe Judicial Code. Title 4: Juvenile Justice Code. 4-1 Short Title,
+      Purpose, and Definitions. 4-1.B. Purpose.'
+    link: https://www.llojibwe.org/court/tcCodes/tc_coTitle4_juvenile12-10.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: N/A
+    form_of_practice: Restorative justice; Restorative practice, Restorative process
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-purpose-in-juvenile-justice/
+    note: 'Component band: Leech Lake Band.'
+gaming:
+  compacts:
+  - state: MN
+    status: approved
+    approved: '1990-08-20'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    verification: bulk-import
+    as_of: '1990-08-20'
+    locator: result page 17 (?page=17), row 9
+    note: 'Listed as: "Leech Lake Band of Minnesota Chippewa Tribe Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Minnesota Chippewa Tribe - Leech Lake Band". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1990.08.20_leech_lake_band_tribal_state_gaming_compact.pdf.
+      Matched on the Tribe column because the title spelling did not match the roster. Compact is with
+      the Leech Lake Band, a component reservation of the Minnesota Chippewa Tribe; the roster lists only
+      the Minnesota Chippewa Tribe.'
+  - state: MN
+    status: approved
+    approved: '2023-12-22'
+    federal_register_citation: 88 FR 88639
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    verification: bulk-import
+    as_of: '2023-12-22'
+    locator: result page 17 (?page=17), row 11
+    note: 'Listed as: "Leech Lake Band of Minnesota Chippewa Tribe Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Minnesota Chippewa Tribe - Leech Lake Band". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2023.12.22_leech_lake_band_of_chippewa_indians_tribal_state_gaming_compact_blackjack.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2023/12/22/2023-28230/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-between-minnesota-chippewa.
+      Matched on the Tribe column because the title spelling did not match the roster. Compact is with
+      the Leech Lake Band, a component reservation of the Minnesota Chippewa Tribe; the roster lists only
+      the Minnesota Chippewa Tribe. Federal Register citation converted from the linked document number
+      through the Federal Register API (source federal-register-api-gaming-notices).'
+  ordinances:
+  - approved: '1993-12-10'
+    link: https://www.nigc.gov?wpdmdl=10144&ind=10163
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    verification: inferred
+    as_of: '1993-12-10'
+    locator: table row 133, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 133 lists the nation
+      as "Leech Lake Band of Ojibwe (Formally called – Leech Lake Band of Minnesota Chippewa Tribe)".
+      Name matched to roster by spelling variant. Ordinance of the Leech Lake Band, a component reservation
+      of the Minnesota Chippewa Tribe; the roster lists only the Minnesota Chippewa Tribe.
+  - approved: '2004-02-24'
+    link: https://www.nigc.gov?wpdmdl=10145&ind=10164
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    verification: inferred
+    as_of: '2004-02-24'
+    locator: table row 133, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 133 lists the nation
+      as "Leech Lake Band of Ojibwe (Formally called – Leech Lake Band of Minnesota Chippewa Tribe)".
+      Name matched to roster by spelling variant. Ordinance of the Leech Lake Band, a component reservation
+      of the Minnesota Chippewa Tribe; the roster lists only the Minnesota Chippewa Tribe.
+  - approved: '2023-05-22'
+    link: https://www.nigc.gov?wpdmdl=10158&ind=10165
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    verification: inferred
+    as_of: '2023-05-22'
+    locator: table row 133, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 133 lists the nation
+      as "Leech Lake Band of Ojibwe (Formally called – Leech Lake Band of Minnesota Chippewa Tribe)".
+      Name matched to roster by spelling variant. Ordinance of the Leech Lake Band, a component reservation
+      of the Minnesota Chippewa Tribe; the roster lists only the Minnesota Chippewa Tribe.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Created on 2026-11-21 from records first kept on the Minnesota Chippewa Tribe profile; not yet
+    sent to the band for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false
