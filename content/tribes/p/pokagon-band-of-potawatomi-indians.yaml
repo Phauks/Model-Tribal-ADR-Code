@@ -319,19 +319,6 @@ dispute_resolution:
     note: NARF news listing also describes a June 2018 joint Pokagon Band and NARF workshop combining
       basket weaving and peacemaking principles.
   provisions:
-  - kind: other
-    title: Purpose of the Child Protection Code
-    citation: P.B.P.I. Child Protection Code Sec. 1
-    link: https://www.pokagonband-nsn.gov/government/codes-and-ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-of-the-child-protection-code/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      practice, Restorative process.'
   - kind: arbitration
     title: Arbitration Ordinance -- 1.
     citation: Arbitration Ordinance -- 1.; Agreements to arbitrate are enforceable.; Stay of proceedings
@@ -344,6 +331,18 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Received:
       July 2012); the provision itself was not read. The heading it falls under is taken from the page
       layout and may be imprecise.'
+  database_listings:
+  - title: Purpose of the Child Protection Code
+    citation: P.B.P.I. Child Protection Code Sec. 1
+    link: https://www.pokagonband-nsn.gov/government/codes-and-ordinances/
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative practice, Restorative process
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-of-the-child-protection-code/
 gaming:
   compacts:
   - state: IN

@@ -174,19 +174,18 @@ justice_institutions:
   as_of: '2022'
   locator: California section, entry 'Sycuan Band of the Kumeyaay Nation'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Treatment as Penalty Alternative
+  database_listings:
+  - title: Treatment as Penalty Alternative
     citation: Peace and Safety Code. Chapter 2. Civil Violation Penalties. Section 2001 Civil Penalties.
     link: https://ncorj.org/tribal-law/treatment-as-penalty-alternative-2/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-as-penalty-alternative-2/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
 gaming:
   compacts:
   - state: CA

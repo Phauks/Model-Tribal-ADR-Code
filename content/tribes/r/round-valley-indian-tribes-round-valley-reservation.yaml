@@ -203,31 +203,29 @@ justice_institutions:
     longer reached the court on 2026-11-21; the link is the court''s page on the nation''s own site, found
     in the data gap review (research/reviews/2026-11-21-court-listings.json).'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: General Penalties for Criminal Offenses
+  database_listings:
+  - title: General Penalties for Criminal Offenses
     citation: R.V.I.T. Law and Order Code 13.01 & 13.03
     link: https://rvit.org/government/documents-forms
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/general-penalties-for-criminal-offenses/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Referring a Defendant for Treatment
+  - title: Referring a Defendant for Treatment
     citation: R.V.I.T. Law and Order Code 13.04
     link: https://rvit.org/government/documents-forms
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/referring-a-defendant-for-treatment/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
 gaming:
   ordinances:
   - approved: '1996-07-25'

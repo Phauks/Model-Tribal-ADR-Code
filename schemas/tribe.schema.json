@@ -466,6 +466,24 @@
             },
             "unevaluatedProperties": false
           }
+        },
+        "database_listings": {
+          "type": "array",
+          "description": "Entries copied in bulk from a database or directory of tribal laws (such as the National Center on Restorative Justice Restorative Justice Tribal Laws Database) without opening the law itself. They are leads for review, not provisions: many concern diversion, treatment or sentencing rather than dispute resolution, and none is counted as a provision until it is read and moved to provisions (decision record 0015).",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "required": ["title"],
+            "properties": {
+              "title": { "type": "string", "description": "Title as the database gives it." },
+              "citation": { "type": "string", "description": "Citation as the database gives it." },
+              "link": { "$ref": "common.schema.json#/$defs/link", "description": "Link to the law as the database gives it." },
+              "practice_area": { "type": "string", "description": "The database's practice area tags, as it writes them." },
+              "phase": { "type": "string", "description": "The database's case phase tags, as it writes them." },
+              "form_of_practice": { "type": "string", "description": "The database's form of practice tags, as it writes them." }
+            },
+            "unevaluatedProperties": false
+          }
         }
       }
     },

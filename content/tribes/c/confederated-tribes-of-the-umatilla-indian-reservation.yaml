@@ -318,58 +318,6 @@ justice_institutions:
   locator: Oregon section, entry 'Confederated Tribes of the Umatilla Indian Reservation'
 dispute_resolution:
   provisions:
-  - kind: other
-    title: Community Accountability Board Diversion
-    citation: Juvenile Code § 4.05; § 8.04
-    link: https://ctuir.org/departments/office-of-legal-counsel/codesstatuteslaws/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/community-accountability-board-diversion/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Community
-      accountability; Diversion; Restorative justice.'
-  - kind: other
-    title: Disposition Goals – Rehabilitation and Least Restrictive Alternative
-    citation: Juvenile Code § 8.09; § 8.11
-    link: https://ctuir.org/departments/office-of-legal-counsel/codesstatuteslaws/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/disposition-goals-rehabilitation-and-least-restrictive-alternative/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative
-      to incarceration; Rehabilitation; Restorative practice.'
-  - kind: other
-    title: Informal Adjustment Conferences (Minor-In-Need-Of-Care)
-    citation: Juvenile Code § 11.02
-    link: https://ctuir.org/departments/office-of-legal-counsel/codesstatuteslaws/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-adjustment-conferences-minor-in-need-of-care/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Diversion;
-      Informal adjustment; Restorative practice.'
-  - kind: other
-    title: Informal Diversion Conferences (Juvenile Offenders)
-    citation: Juvenile Code § 8.02
-    link: https://ctuir.org/departments/office-of-legal-counsel/codesstatuteslaws/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-diversion-conferences-juvenile-offenders/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Diversion;
-      Informal adjustment; Restorative justice.'
   - kind: mediation
     title: Section 5.01. Mediation
     citation: Section 5.01. Mediation
@@ -443,6 +391,51 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: October 2014); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Community Accountability Board Diversion
+    citation: Juvenile Code § 4.05; § 8.04
+    link: https://ctuir.org/departments/office-of-legal-counsel/codesstatuteslaws/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Community accountability; Diversion; Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-accountability-board-diversion/
+  - title: Disposition Goals – Rehabilitation and Least Restrictive Alternative
+    citation: Juvenile Code § 8.09; § 8.11
+    link: https://ctuir.org/departments/office-of-legal-counsel/codesstatuteslaws/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Alternative to incarceration; Rehabilitation; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-goals-rehabilitation-and-least-restrictive-alternative/
+  - title: Informal Adjustment Conferences (Minor-In-Need-Of-Care)
+    citation: Juvenile Code § 11.02
+    link: https://ctuir.org/departments/office-of-legal-counsel/codesstatuteslaws/
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Diversion; Informal adjustment; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-adjustment-conferences-minor-in-need-of-care/
+  - title: Informal Diversion Conferences (Juvenile Offenders)
+    citation: Juvenile Code § 8.02
+    link: https://ctuir.org/departments/office-of-legal-counsel/codesstatuteslaws/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Diversion; Informal adjustment; Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-diversion-conferences-juvenile-offenders/
 gaming:
   compacts:
   - state: OR

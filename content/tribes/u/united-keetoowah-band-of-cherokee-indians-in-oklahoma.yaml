@@ -299,19 +299,18 @@ justice_institutions:
   as_of: '2022'
   locator: Oklahoma section, entry 'United Keetoowah Band of Cherokee Indians in Oklahoma'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Restorative Sentencing Policy – Restitution and Reconciliation
+  database_listings:
+  - title: Restorative Sentencing Policy – Restitution and Reconciliation
     citation: Criminal Procedure Act of 2022 § 403(a)
     link: https://www.ukb-nsn.gov/ukbtribalcourt
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/restorative-sentencing-policy-restitution-and-reconciliation/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
 gaming:
   compacts:
   - state: OK

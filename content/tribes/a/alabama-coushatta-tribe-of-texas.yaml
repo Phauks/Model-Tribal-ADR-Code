@@ -347,30 +347,6 @@ dispute_resolution:
     confidence: medium
     as_of: '2025-09-29'
     note: Listed by NARF; the constitution text was not reviewed for its specific peacemaking content.
-  - kind: other
-    title: Healing and Wellness Court
-    citation: Title I - Judicial Code - Chapter 4., Sec. 401-409
-    link: https://www.tribal-institute.org/actt/Current%20Title%20I%20-%20Judicial%20Code.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/healing-and-wellness-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court.'
-  - kind: peacemaking
-    title: Peacemaker Court
-    citation: Title II - Peacemaker Code
-    link: https://www.tribal-institute.org/actt/Current%20Title%20II%20-%20Peacemaker%20Code%20Rev%20to%20Sup%2011-24-14.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/peacemaker-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
   - kind: peacemaking
     title: Title II, Peacemaker Code
     citation: Title II, Peacemaker Code
@@ -382,6 +358,29 @@ dispute_resolution:
     note: 'Native American Rights Fund description (provision itself not read): Provides purpose, authorization,
       qualifications, an attorney ban, confidentiality of statements made in peacemaking, and referral
       procedures.'
+  database_listings:
+  - title: Healing and Wellness Court
+    citation: Title I - Judicial Code - Chapter 4., Sec. 401-409
+    link: https://www.tribal-institute.org/actt/Current%20Title%20I%20-%20Judicial%20Code.pdf
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative court
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/healing-and-wellness-court/
+  - title: Peacemaker Court
+    citation: Title II - Peacemaker Code
+    link: https://www.tribal-institute.org/actt/Current%20Title%20II%20-%20Peacemaker%20Code%20Rev%20to%20Sup%2011-24-14.pdf
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Peacemaking
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaker-court/
 gaming:
   ordinances:
   - approved: '2015-10-08'

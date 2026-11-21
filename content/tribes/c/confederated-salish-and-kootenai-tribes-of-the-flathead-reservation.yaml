@@ -395,94 +395,84 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.cskt.org/gov/court.htm) returned
     HTTP 404, so it is not recorded.'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Dispositional Alternatives for Youth Court I
+  database_listings:
+  - title: Dispositional Alternatives for Youth Court I
     citation: Salish and Kootenai Tribes, Codified. 3-3-805. Dispositional Alternatives.
     link: https://ncorj.org/tribal-law/dispositional-alternatives-for-youth-court-i/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Alternative
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/dispositional-alternatives-for-youth-court-i/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
-  - kind: other
-    title: Dispositional Alternatives for Youth Offender Disposition Proceedings (Youth Court II)
+  - title: Dispositional Alternatives for Youth Offender Disposition Proceedings (Youth Court II)
     citation: Salish and Kootenai Tribes, Codified. 3-3-926. Disposition alternatives
     link: https://ncorj.org/tribal-law/dispositional-alternatives-for-youth-offender-disposition-proceedings-youth-court-ii/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Alternative
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/dispositional-alternatives-for-youth-offender-disposition-proceedings-youth-court-ii/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
-  - kind: other
-    title: Informal Adjustment Conference for Child Welfare
+  - title: Informal Adjustment Conference for Child Welfare
     citation: Codified. 3-2-404. Informal Adjustment Conference.
     link: https://ncorj.org/tribal-law/informal-adjustment-conference-for-child-welfare/
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Alternative; Family conference
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-adjustment-conference-for-child-welfare/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Alternative;
-      Family conference.'
-  - kind: other
-    title: Informal Adjustment Conference for Juveniles
+  - title: Informal Adjustment Conference for Juveniles
     citation: Codified. 3-3-903. Informal Adjustment Conference.
     link: https://ncorj.org/tribal-law/informal-adjustment-conference-for-juveniles/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Alternative; Family conference
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-adjustment-conference-for-juveniles/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Alternative;
-      Family conference.'
-  - kind: other
-    title: Rehabilitation and Treatment as Diversion
+  - title: Rehabilitation and Treatment as Diversion
     citation: Salish and Kootenai Tribes, Codified. 2–2–810. Pretrial diversion.
     link: https://ncorj.org/tribal-law/rehabilitation-and-treatment-as-diversion/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Diversion; Rehabilitation
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/rehabilitation-and-treatment-as-diversion/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Diversion; Rehabilitation.'
-  - kind: other
-    title: Restorative Purpose of Probation
+  - title: Restorative Purpose of Probation
     citation: Laws of the Confederated Codified. Part 2 - Probation 2–3–201. Declaration of purpose and
       policy.
     link: https://ncorj.org/tribal-law/restorative-purpose-of-probation/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Rehabilitation; Restorative
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/restorative-purpose-of-probation/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Rehabilitation; Restorative.'
-  - kind: other
-    title: Service Treatment Plans for Child Welfare Cases
+  - title: Service Treatment Plans for Child Welfare Cases
     citation: Salish and Kootenai Tribes, Codified. 3-2-610. Service Treatment Plans.
     link: https://ncorj.org/tribal-law/service-treatment-plans-for-child-welfare-cases/
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/service-treatment-plans-for-child-welfare-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: .'
 gaming:
   compacts:
   - state: MT

@@ -1,0 +1,419 @@
+{
+  "profiles": 948,
+  "profiles_with_any_dispute_resolution_record": 184,
+  "federally_recognized_profiles": 575,
+  "federally_recognized_profiles_with_any_record": 184,
+  "profiles_with_a_record_besides_database_listings": 104,
+  "coverage_by_recognition": {
+    "federal": {
+      "profiles": 560,
+      "with_record": 179
+    },
+    "unrecognized": {
+      "profiles": 280,
+      "with_record": 0
+    },
+    "state+unrecognized": {
+      "profiles": 47,
+      "with_record": 0
+    },
+    "petitioning": {
+      "profiles": 18,
+      "with_record": 0
+    },
+    "state": {
+      "profiles": 17,
+      "with_record": 0
+    },
+    "federal+state": {
+      "profiles": 15,
+      "with_record": 5
+    },
+    "petitioning+state+unrecognized": {
+      "profiles": 3,
+      "with_record": 0
+    },
+    "petitioning+unrecognized": {
+      "profiles": 3,
+      "with_record": 0
+    },
+    "territorial-law": {
+      "profiles": 3,
+      "with_record": 0
+    },
+    "congressional-special-relationship+state": {
+      "profiles": 1,
+      "with_record": 0
+    },
+    "petitioning+state": {
+      "profiles": 1,
+      "with_record": 0
+    }
+  },
+  "coverage_by_bureau_region": {
+    "Alaska": {
+      "federally_recognized": 224,
+      "with_any_record": 8,
+      "with_forum": 4
+    },
+    "Eastern": {
+      "federally_recognized": 35,
+      "with_any_record": 12,
+      "with_forum": 5
+    },
+    "Eastern Oklahoma": {
+      "federally_recognized": 20,
+      "with_any_record": 11,
+      "with_forum": 2
+    },
+    "Great Plains": {
+      "federally_recognized": 16,
+      "with_any_record": 12,
+      "with_forum": 2
+    },
+    "Midwest": {
+      "federally_recognized": 30,
+      "with_any_record": 26,
+      "with_forum": 11
+    },
+    "Navajo": {
+      "federally_recognized": 1,
+      "with_any_record": 1,
+      "with_forum": 1
+    },
+    "Northwest": {
+      "federally_recognized": 45,
+      "with_any_record": 37,
+      "with_forum": 13
+    },
+    "Pacific": {
+      "federally_recognized": 105,
+      "with_any_record": 24,
+      "with_forum": 6
+    },
+    "Rocky Mountain": {
+      "federally_recognized": 9,
+      "with_any_record": 8,
+      "with_forum": 2
+    },
+    "Southern Plains": {
+      "federally_recognized": 24,
+      "with_any_record": 14,
+      "with_forum": 4
+    },
+    "Southwest": {
+      "federally_recognized": 24,
+      "with_any_record": 10,
+      "with_forum": 1
+    },
+    "Western": {
+      "federally_recognized": 42,
+      "with_any_record": 21,
+      "with_forum": 3
+    }
+  },
+  "sections": {
+    "forums": {
+      "items": 77,
+      "nations": 54,
+      "kinds": {
+        "peacemaking": 42,
+        "elders-council": 6,
+        "restorative-justice": 6,
+        "mediation": 5,
+        "arbitration": 4,
+        "customary-dispute-resolution": 4,
+        "family-group-conference": 3,
+        "circle-process": 2,
+        "council-hearing": 2,
+        "administrative-adjudication": 1,
+        "other": 1,
+        "settlement-conference": 1
+      },
+      "confidence": {
+        "medium": 60,
+        "high": 16,
+        "low": 1
+      },
+      "as_of_period": {
+        "2020_or_later": 46,
+        "2010_to_2019": 15,
+        "2000_to_2009": 9,
+        "before_2000": 7
+      }
+    },
+    "provisions": {
+      "items": 323,
+      "nations": 96,
+      "kinds": {
+        "peacemaking": 107,
+        "other": 84,
+        "arbitration": 69,
+        "mediation": 44,
+        "traditional-dispute-resolution": 19
+      },
+      "confidence": {
+        "medium": 313,
+        "high": 9,
+        "low": 1
+      },
+      "as_of_period": {
+        "2010_to_2019": 181,
+        "2020_or_later": 115,
+        "2000_to_2009": 20,
+        "before_2000": 7
+      }
+    },
+    "clauses": {
+      "items": 18,
+      "nations": 9,
+      "kinds": {
+        "arbitration-clause": 10,
+        "waiver-of-sovereign-immunity": 7,
+        "mediation-clause": 1
+      },
+      "confidence": {
+        "medium": 18
+      },
+      "as_of_period": {
+        "2010_to_2019": 8,
+        "2020_or_later": 7,
+        "2000_to_2009": 3
+      }
+    },
+    "training_programs": {
+      "items": 9,
+      "nations": 8,
+      "kinds": {
+        "None": 9
+      },
+      "confidence": {
+        "medium": 8,
+        "high": 1
+      },
+      "as_of_period": {
+        "2010_to_2019": 4,
+        "2020_or_later": 4,
+        "2000_to_2009": 1
+      }
+    },
+    "published_materials": {
+      "items": 14,
+      "nations": 8,
+      "kinds": {
+        "guide": 6,
+        "rules": 4,
+        "brochure": 2,
+        "forms": 2
+      },
+      "confidence": {
+        "medium": 9,
+        "low": 3,
+        "high": 2
+      },
+      "as_of_period": {
+        "2020_or_later": 8,
+        "2000_to_2009": 3,
+        "2010_to_2019": 3
+      }
+    },
+    "database_listings": {
+      "items": 938,
+      "nations": 165,
+      "kinds": {
+        "None": 938
+      },
+      "confidence": {
+        "medium": 938
+      },
+      "as_of_period": {
+        "2020_or_later": 938
+      }
+    }
+  },
+  "provisions_by_evidence_tier": {
+    "section_title_only": 225,
+    "text_read": 98
+  },
+  "provisions_by_evidence_tier_and_kind": {
+    "section_title_only/other": 73,
+    "section_title_only/arbitration": 68,
+    "text_read/peacemaking": 66,
+    "section_title_only/peacemaking": 41,
+    "section_title_only/mediation": 39,
+    "text_read/traditional-dispute-resolution": 15,
+    "text_read/other": 11,
+    "text_read/mediation": 5,
+    "section_title_only/traditional-dispute-resolution": 4,
+    "text_read/arbitration": 1
+  },
+  "provisions_with_summary": 48,
+  "nations_by_strongest_evidence": {
+    "bulk_database_records_only": 80,
+    "has_text_read_or_curated_record": 59,
+    "bulk_database_records_and_section_titles_only": 34,
+    "section_titles_only": 11
+  },
+  "bulk_database_practice_area": {
+    "Tribal Justice": 409,
+    "Tribal Juvenile/Youth Justice": 358,
+    "Tribal Child Welfare/Family": 285,
+    "Tribal Criminal Justice": 6,
+    "Family": 4,
+    "Peacemaking": 2,
+    "Tribal Court General": 2,
+    "Tribal Civil Justice": 1
+  },
+  "bulk_database_phase_top": {
+    "Pre-adjudication": 454,
+    "Post-adjudication": 375,
+    "N/A": 26,
+    "All phases": 15,
+    "Post-adjudication/Sentencing": 11,
+    "Post-Conviction Sentencing": 5
+  },
+  "forums": {
+    "nations_by_kind": {
+      "peacemaking": 38,
+      "restorative-justice": 6,
+      "elders-council": 5,
+      "mediation": 5,
+      "arbitration": 4,
+      "customary-dispute-resolution": 4,
+      "family-group-conference": 3,
+      "circle-process": 2,
+      "council-hearing": 2,
+      "other": 1,
+      "administrative-adjudication": 1,
+      "settlement-conference": 1
+    },
+    "from_bulk_database": 15,
+    "with_own_term": 17,
+    "with_legal_basis": 68,
+    "with_enforcement_recorded": 46,
+    "participation": {
+      "voluntary-or-court-referred": 30,
+      "voluntary": 24,
+      "court-referred": 10,
+      "required": 7,
+      "None": 6
+    },
+    "case_types": {
+      "civil": 46,
+      "other": 45,
+      "juvenile": 27,
+      "family": 24,
+      "criminal-diversion": 15,
+      "child-welfare": 11,
+      "criminal-sentencing": 11,
+      "commercial": 6,
+      "employment": 4,
+      "probate": 3,
+      "property-or-land": 2,
+      "intergovernmental": 1
+    },
+    "features": {
+      "agreement_entered_or_enforced_by_court": {
+        "forums": 33,
+        "nations": 28
+      },
+      "consent_of_parties_required_for_referral_or_transfer": {
+        "forums": 45,
+        "nations": 36
+      },
+      "case_returns_to_court_if_unresolved": {
+        "forums": 19,
+        "nations": 18
+      },
+      "sanction_for_failure_to_attend_or_comply": {
+        "forums": 11,
+        "nations": 10
+      },
+      "neutral_may_decide_only_with_consent": {
+        "forums": 8,
+        "nations": 7
+      },
+      "no_appeal_from_agreement_or_decision": {
+        "forums": 7,
+        "nations": 7
+      },
+      "domestic_violence_addressed": {
+        "forums": 5,
+        "nations": 5
+      },
+      "confidentiality": {
+        "forums": 4,
+        "nations": 4
+      },
+      "attorneys_excluded": {
+        "forums": 2,
+        "nations": 2
+      }
+    }
+  },
+  "clauses_by_kind_and_context": {
+    "arbitration-clause/other": 6,
+    "arbitration-clause/commercial-code": 4,
+    "waiver-of-sovereign-immunity/other": 4,
+    "waiver-of-sovereign-immunity/commercial-code": 2,
+    "mediation-clause/employment-code": 1,
+    "waiver-of-sovereign-immunity/employment-code": 1
+  },
+  "gaming_compacts": {
+    "compact_records": 1468,
+    "with_dispute_resolution_summary": 286,
+    "nations_with_summary": 276,
+    "distinct_summary_texts": 28,
+    "read_from_the_nations_own_compact": 30,
+    "taken_from_a_state_model_compact": 160,
+    "states": {
+      "CA": 80,
+      "OK": 36,
+      "WA": 29,
+      "AZ": 22,
+      "NM": 19,
+      "MI": 12,
+      "WI": 11,
+      "NV": 10,
+      "OR": 9,
+      "SD": 9,
+      "MT": 7,
+      "MN": 6,
+      "KS": 5,
+      "ND": 5,
+      "IA": 4,
+      "ID": 4,
+      "LA": 3,
+      "NY": 3,
+      "CO": 2,
+      "NC": 2,
+      "CT": 1,
+      "FL": 1,
+      "IN": 1,
+      "MA": 1,
+      "MS": 1,
+      "NE": 1,
+      "RI": 1,
+      "WY": 1
+    },
+    "terms_in_distinct_texts": {
+      "notice_and_meeting_or_negotiation": 20,
+      "arbitration": 26,
+      "mediation": 16,
+      "federal_court": 12,
+      "state_court": 2,
+      "sovereign_immunity_or_waiver": 6,
+      "american_arbitration_association_rules": 14
+    }
+  },
+  "review_flags": {
+    "provisions_repeating_a_title_within_one_profile": 19,
+    "urls_with_more_than_one_source_record": 4,
+    "source_records_without_an_archived_copy": 2206,
+    "source_records": 2351,
+    "method_records_found": 33,
+    "record_kinds_without_a_method_record": [
+      "traditional-dispute-resolution"
+    ]
+  }
+}

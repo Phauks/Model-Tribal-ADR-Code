@@ -198,58 +198,6 @@ justice_institutions:
   locator: Louisiana section, entry 'Coushatta Tribe of Louisiana'
 dispute_resolution:
   provisions:
-  - kind: other
-    title: Assistance for Intoxicated Persons – Non-Criminal Intervention
-    citation: Title V, Section 3 - Alcoholism and Drug Abuse Treatment
-    link: https://www.narf.org/nill/codes/coushatta/index.html
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/assistance-for-intoxicated-persons-non-criminal-intervention/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Alternative to incarceration;
-      Restorative justice.'
-  - kind: other
-    title: Disposition Hearing with Rehabilitative Focus for Juveniles
-    citation: Title VI, Chapter 3, Section 7 - Juveniles
-    link: https://www.narf.org/nill/codes/coushatta/index.html
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/disposition-hearing-with-rehabilitative-focus-for-juveniles/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Rehabilitation;
-      Restorative practice.'
-  - kind: other
-    title: Diversion Program for First-Time Juvenile Misdemeanor Offenders
-    citation: Title VI, Chapter 3, Section 2(d)(2) - Juveniles
-    link: https://www.narf.org/nill/codes/coushatta/index.html
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-program-for-first-time-juvenile-misdemeanor-offenders/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Diversion;
-      Restorative justice.'
-  - kind: other
-    title: Informal Resolution for Abandoned/Neglected/Abused Children and Status Offenders
-    citation: Title VI, Chapter 3, Section 2(d)(1) - Juveniles
-    link: https://www.narf.org/nill/codes/coushatta/index.html
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-resolution-for-abandoned-neglected-abused-children-and-status-offenders/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Informal hearing; Restorative justice.'
   - kind: arbitration
     title: Resolution 2000-46 - 11/7/00 - Resolution Establishing an Arbitration Code
     citation: Resolution 2000-46 - 11/7/00 - Resolution Establishing an Arbitration Code
@@ -261,6 +209,51 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Approved:
       1998; Last amended: 2004); the provision itself was not read. The heading it falls under is taken
       from the page layout and may be imprecise.'
+  database_listings:
+  - title: Assistance for Intoxicated Persons – Non-Criminal Intervention
+    citation: Title V, Section 3 - Alcoholism and Drug Abuse Treatment
+    link: https://www.narf.org/nill/codes/coushatta/index.html
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Alternative to incarceration; Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/assistance-for-intoxicated-persons-non-criminal-intervention/
+  - title: Disposition Hearing with Rehabilitative Focus for Juveniles
+    citation: Title VI, Chapter 3, Section 7 - Juveniles
+    link: https://www.narf.org/nill/codes/coushatta/index.html
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Rehabilitation; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-hearing-with-rehabilitative-focus-for-juveniles/
+  - title: Diversion Program for First-Time Juvenile Misdemeanor Offenders
+    citation: Title VI, Chapter 3, Section 2(d)(2) - Juveniles
+    link: https://www.narf.org/nill/codes/coushatta/index.html
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Diversion; Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-program-for-first-time-juvenile-misdemeanor-offenders/
+  - title: Informal Resolution for Abandoned/Neglected/Abused Children and Status Offenders
+    citation: Title VI, Chapter 3, Section 2(d)(1) - Juveniles
+    link: https://www.narf.org/nill/codes/coushatta/index.html
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Informal hearing; Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-resolution-for-abandoned-neglected-abused-children-and-status-offenders/
 gaming:
   compacts:
   - state: LA

@@ -223,101 +223,89 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.hohtribe.com/?page_id=43) returned
     HTTP 404, so it is not recorded.'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Alternative Sentencing
+  database_listings:
+  - title: Alternative Sentencing
     citation: Hoh Tribal Code. Title 2 Tribal Court. Chapter 4.01 Youth Code. § 2.03.270 Alternative Sentencing.
     link: https://hohtribe-nsn.org/wp-content/uploads/2024/10/2.03-Criminal-Procedure-FINAL-10-02-2024.pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/alternative-sentencing-2/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Deferred Prosecution for Treatment (Domestic Violence)
+  - title: Deferred Prosecution for Treatment (Domestic Violence)
     citation: Hoh Tribal Code. Title 4 Family Relations. Chapter 4.02 Domestic Violence & Anti-Harrassment
       Ordinance. § 4.02.100 Special Court Rules for Domestic Violence Crimes.
     link: https://hohtribe-nsn.org/wp-content/uploads/2024/10/4.02-DV-Anti-Harassment-Ord-FINAL-10-02-2024.pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/deferred-prosecution-for-treatment-domestic-violence/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Dispositional Alternatives for Youths In Need of Care
+  - title: Dispositional Alternatives for Youths In Need of Care
     citation: Hoh Tribal Code. Title 4 Family Relations. Chapter 4.01 Youth Code. § 4.01.220 Disposition
     link: https://hohtribe-nsn.org/wp-content/uploads/2025/03/Hoh-Tribal-Code-Title-4-Chapter-4.01-Youth-Code.pdf
+    practice_area: Tribal Child Welfare/Family
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/dispositional-alternatives-for-youths-in-need-of-care/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Elder and Vulnerable Adult Protection Family Group Conference and Safety Plan
+  - title: Elder and Vulnerable Adult Protection Family Group Conference and Safety Plan
     citation: Hoh Tribal Code. Title 4 Family Relations. Chapter 4.06 Elder and Vulnerable Adult Protection.
       § 4.06.150 Preventative Measures & § 4.06.180 Elder or Vulnerable Adult Protection Plan and Services.
     link: https://hohtribe-nsn.org/wp-content/uploads/2024/09/4.06-Elder-and-Vulnerable-Adult-Protection-Ordinance.pdf
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Family conference, Family group conference; Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/elder-and-vulnerable-adult-protection-family-group-conference-and-safety-plan-2/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Family conference,
-      Family group conference; Restorative justice.'
-  - kind: other
-    title: Family Group Conference
+  - title: Family Group Conference
     citation: Hoh Tribal Code. Title 4 Family Relations. Chapter 4.01 Youth Code. § 4.01.230 Family Group
       Conference.
     link: https://hohtribe-nsn.org/wp-content/uploads/2025/03/Hoh-Tribal-Code-Title-4-Chapter-4.01-Youth-Code.pdf
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Family conference, Family group conference; Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/family-group-conference-2/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Family
-      conference, Family group conference; Restorative justice.'
-  - kind: other
-    title: Treatment in Lieu of Confinement (Domestic Violence)
+  - title: Treatment in Lieu of Confinement (Domestic Violence)
     citation: Hoh Tribal Code. Title 4 Family Relations. Chapter 4.02 Domestic Violence & Anti-Harrassment
       Ordinance. § 4.02.060 Criminal Remedy – Crime of Domestic Violence.
     link: https://hohtribe-nsn.org/wp-content/uploads/2024/10/4.02-DV-Anti-Harassment-Ord-FINAL-10-02-2024.pdf
+    practice_area: Tribal Justice; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-confinement-domestic-violence/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form
-      of practice: Restorative justice.'
-  - kind: other
-    title: Treatment in Lieu of Confinement (Stalking)
+  - title: Treatment in Lieu of Confinement (Stalking)
     citation: Hoh Tribal Code. Title 4 Family Relations. Chapter 4.02 Domestic Violence & Anti-Harrassment
       Ordinance. § 4.02.070 Criminal Remedy – Crime of Stalking.
     link: https://hohtribe-nsn.org/wp-content/uploads/2024/10/4.02-DV-Anti-Harassment-Ord-FINAL-10-02-2024.pdf
+    practice_area: Tribal Justice; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-confinement-stalking/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form
-      of practice: Restorative justice.'
 gaming:
   compacts:
   - state: WA

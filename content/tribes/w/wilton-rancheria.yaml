@@ -229,42 +229,39 @@ dispute_resolution:
     confidence: medium
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/traditional-court-peacemaking-court-establishment/
-  - kind: peacemaking
-    title: Traditional Court/Peacemaking Court , Establishment
+  database_listings:
+  - title: Traditional Court/Peacemaking Court , Establishment
     citation: TRIBAL COURT. Chapter 1, Tribal Court. Article V Traditional Court.
     link: https://ncorj.org/tribal-law/traditional-court-peacemaking-court-establishment/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Peacemaking
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/traditional-court-peacemaking-court-establishment/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
-  - kind: peacemaking
-    title: Traditional Court/Peacemaking Court, Rules of Procedure
+  - title: Traditional Court/Peacemaking Court, Rules of Procedure
     citation: RULES OF PROCEDURE FOR THE TRADITIONAL COURT
     link: https://ncorj.org/tribal-law/traditional-court-peacemaking-court-rules-of-procedure/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Peacemaking
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/traditional-court-peacemaking-court-rules-of-procedure/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
-  - kind: other
-    title: Wellness Plan as Remedy for Protection Orders
+  - title: Wellness Plan as Remedy for Protection Orders
     citation: FAMILY PROTECTION ACT OF 2023.
     link: https://ncorj.org/tribal-law/wellness-plan-as-remedy-for-protection-orders/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/wellness-plan-as-remedy-for-protection-orders/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
 gaming:
   compacts:
   - state: CA

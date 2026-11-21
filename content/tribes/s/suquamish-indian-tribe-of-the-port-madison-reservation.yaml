@@ -228,95 +228,84 @@ justice_institutions:
   as_of: '2022'
   locator: Washington section, entry 'Suquamish Tribe'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Deferred Prosecution for First-Time Nonviolent Offenses
+  database_listings:
+  - title: Deferred Prosecution for First-Time Nonviolent Offenses
     citation: STC 7.31.1
     link: https://suquamish.nsn.us/home/government/suquamish-tribal-code/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Deferred Prosecution; Diversion
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/deferred-prosecution-for-first-time-nonviolent-offenses/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Deferred Prosecution;
-      Diversion.'
-  - kind: other
-    title: Deferred Prosecution for Substance Abuse Treatment
+  - title: Deferred Prosecution for Substance Abuse Treatment
     citation: STC 7.31.2
     link: https://suquamish.nsn.us/home/government/suquamish-tribal-code/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Deferred Prosecution
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/deferred-prosecution-for-substance-abuse-treatment/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Deferred Prosecution.'
-  - kind: other
-    title: Domestic Violence Perpetrator Treatment (Court-Ordered)
+  - title: Domestic Violence Perpetrator Treatment (Court-Ordered)
     citation: STC 7.28.14(a)(5)
     link: https://suquamish.nsn.us/home/government/suquamish-tribal-code/
+    practice_area: Tribal Justice
+    phase: Sentencing/Post-conviction
+    form_of_practice: Rehabilitation
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/domestic-violence-perpetrator-treatment-court-ordered/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Sentencing/Post-conviction. Database form of practice: Rehabilitation.'
-  - kind: other
-    title: Truancy Alternative Resolution – Tribal Custom
+  - title: Truancy Alternative Resolution – Tribal Custom
     citation: STC 8.8.4(f)
     link: https://suquamish.nsn.us/home/government/suquamish-tribal-code/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Alternative; Conflict resolution
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/truancy-alternative-resolution-tribal-custom/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Alternative;
-      Conflict resolution.'
-  - kind: other
-    title: Truancy Remedies – Educational and Cultural Alternatives
+  - title: Truancy Remedies – Educational and Cultural Alternatives
     citation: STC 8.8.7
     link: https://suquamish.nsn.us/home/government/suquamish-tribal-code/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Alternative; Healing
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/truancy-remedies-educational-and-cultural-alternatives/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative;
-      Healing.'
-  - kind: other
-    title: Youth Diversion Program
+  - title: Youth Diversion Program
     citation: STC 8.6.11
     link: https://suquamish.nsn.us/home/government/suquamish-tribal-code/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Diversion
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/youth-diversion-program/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Diversion.'
-  - kind: other
-    title: Youth Offender Sentencing – Healing and Cultural Programs
+  - title: Youth Offender Sentencing – Healing and Cultural Programs
     citation: STC 8.6.12
     link: https://suquamish.nsn.us/home/government/suquamish-tribal-code/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Sentencing
+    form_of_practice: Cultural Programs; Healing
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/youth-offender-sentencing-healing-and-cultural-programs/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Sentencing. Database form of practice: Cultural Programs;
-      Healing.'
 gaming:
   compacts:
   - state: WA

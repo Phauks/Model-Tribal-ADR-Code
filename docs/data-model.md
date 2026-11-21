@@ -149,6 +149,12 @@ code provisions, dispute resolution clauses and waivers of sovereign immunity
 in commercial and other codes, training programs, and published rules and
 forms. Gaming compact dispute terms are kept with each compact under `gaming`.
 
+Entries copied in bulk from a database of tribal laws, without opening the law
+itself, go in `database_listings`, not `provisions`. They keep the database's
+own tags (`practice_area`, `phase`, `form_of_practice`) as it writes them and
+carry `verification: bulk-import`. A listing becomes a provision only after the
+law is read ([decision record 0015](decisions/0015-database-listings-apart-from-provisions.md)).
+
 The vocabularies for kinds of forum, case types, participation, provisions
 and clauses are open: any lowercase hyphenated term validates, so a method the
 project has not anticipated can be recorded in its own terms. The schema lists

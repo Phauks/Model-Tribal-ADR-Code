@@ -328,46 +328,40 @@ justice_institutions:
   as_of: '2022'
   locator: Nebraska section, entry 'Winnebago Tribe of Nebraska'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Child Abuse and Child Neglect Diversion Progam
+  database_listings:
+  - title: Child Abuse and Child Neglect Diversion Progam
     citation: Winnebago Tribal Code Title 4; 4-511
     link: https://winnebagotribe.com/tribal-court/
+    practice_area: Tribal Child Welfare/Family; Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/child-abuse-and-child-neglect-diversion-progam/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Justice. Database phase: Pre-adjudication. Database form of
-      practice: Restorative justice.'
-  - kind: other
-    title: Dispositions for Child-in-need-of-supervision
+  - title: Dispositions for Child-in-need-of-supervision
     citation: Winnebago Tribal Code Title 4; 4-411
     link: https://winnebagotribe.com/tribal-court/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/dispositions-for-child-in-need-of-supervision/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Prohibited Diversion for Domestic or Family Violence
+  - title: Prohibited Diversion for Domestic or Family Violence
     citation: Winnebago Tribal Code Title 12; 12-218
     link: https://winnebagotribe.com/tribal-court/
+    practice_area: Tribal Child Welfare/Family; Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/prohibited-diversion-for-domestic-or-family-violence/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Justice. Database phase: Pre-adjudication. Database form of
-      practice: Restorative justice.'
 gaming:
   compacts:
   - state: IA

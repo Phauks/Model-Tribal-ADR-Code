@@ -224,59 +224,51 @@ dispute_resolution:
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/forum-for-traditional-dispute-resolution-with-elders/
     note: The provision directs establishment of the forum; whether it is operating was not verified.
-  provisions:
-  - kind: traditional-dispute-resolution
-    title: Forum for Traditional Dispute Resolution with Elders
+  database_listings:
+  - title: Forum for Traditional Dispute Resolution with Elders
     citation: Title I, Chapter 1, Section 19
     link: https://www.narf.org/nill/codes/santee_sioux_nation/index.html
+    practice_area: Tribal Justice
+    phase: Post-adjudication; Pre-adjudication
+    form_of_practice: Alternative resolution; Elders
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/forum-for-traditional-dispute-resolution-with-elders/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication; Pre-adjudication. Database form of practice:
-      Alternative resolution; Elders.'
-  - kind: other
-    title: Informal Adjustment and Diversion for Juvenile Offenders
+  - title: Informal Adjustment and Diversion for Juvenile Offenders
     citation: Title V, Chapter 11, Sections 2-3
     link: https://www.narf.org/nill/codes/santee_sioux_nation/index.html
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Alternative resolution; Diversion; Informal adjustment
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-adjustment-and-diversion-for-juvenile-offenders/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Alternative
-      resolution; Diversion; Informal adjustment.'
-  - kind: other
-    title: Informal Hearing and Adjustment for Family in Need of Services
+  - title: Informal Hearing and Adjustment for Family in Need of Services
     citation: Title V, Chapter 19, Sections 1-4
     link: https://www.narf.org/nill/codes/santee_sioux_nation/index.html
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Alternative resolution; Diversion; Informal hearing
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-hearing-and-adjustment-for-family-in-need-of-services/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Alternative resolution; Diversion; Informal hearing.'
-  - kind: other
-    title: Pre-Trial Conference for Traditional Dispute Resolution
+  - title: Pre-Trial Conference for Traditional Dispute Resolution
     citation: Title I, Chapter 1, Section 11
     link: https://www.narf.org/nill/codes/santee_sioux_nation/index.html
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Alternative resolution; Informal hearing
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/pre-trial-conference-for-traditional-dispute-resolution/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Alternative resolution;
-      Informal hearing.'
 gaming:
   ordinances:
   - approved: '1996-02-22'

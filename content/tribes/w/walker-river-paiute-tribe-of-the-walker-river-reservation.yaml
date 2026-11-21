@@ -260,32 +260,29 @@ justice_institutions:
   note: The listed link (http://www.wrpt.us/court.htm) no longer reached the court on 2026-11-21; the
     link is the court's page on the nation's own site, found in the data gap review (research/reviews/2026-11-21-court-listings.json).
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Criminal Sentencing
+  database_listings:
+  - title: Criminal Sentencing
     citation: WRLOC 4-70-110 and 4-70-120
     link: https://www.wrpt.org/law-order/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/criminal-sentencing/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Informal Conference for Juvenile Delinquency
+  - title: Informal Conference for Juvenile Delinquency
     citation: WRLOC 10-30-060 and 10-30-070
     link: https://www.wrpt.org/law-order/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-conference-for-juvenile-delinquency/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
 gaming:
   compacts:
   - state: NV

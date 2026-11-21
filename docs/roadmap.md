@@ -71,6 +71,9 @@ Gate 1 is passed when Trevor has:
 1. **Decided the scope question for the bulk records**: whether diversion,
    treatment and restorative sentencing provisions belong in the dispute
    resolution data, a separate field, or neither (analysis, section 5).
+   *Decided Nov. 21, 2026: a separate field,
+   `dispute_resolution.database_listings`
+   ([decision record 0015](decisions/0015-database-listings-apart-from-provisions.md)).*
 2. **Triaged the bulk records** in line with that decision: kept, relabeled or
    dropped. Sampling is acceptable if the sample and its result are recorded.
 3. **Confirmed the text-read tier** for every record a draft is likely to rely

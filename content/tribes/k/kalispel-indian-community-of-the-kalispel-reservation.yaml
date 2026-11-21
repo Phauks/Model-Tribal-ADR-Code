@@ -321,72 +321,6 @@ dispute_resolution:
     source: kalispel-law-and-order-code-chapter-3-civil-actions
     confidence: medium
     as_of: '2025-04-09'
-  - kind: other
-    title: Elder and Vulnerable Adult Protection Family Group Conference and Safety Plan
-    citation: 'The Law and Order Code of the Kalispel Tribe of Indians. Chapter 27 Elder and Vulnerable
-      Adult Code. Section 27-6: Availability og Alternative Proceedings. 27-6.01 Preventative Measures.'
-    link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Law-and-Order-Code-4.9.2025.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/elder-and-vulnerable-adult-protection-family-group-conference-and-safety-plan/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Family conference,
-      Family group conference; Restorative justice.'
-  - kind: other
-    title: Family Protection Plan in Youth In Need Of Care Cases
-    citation: 'The Law and Order Code of the Kalispel Tribe of Indians. Chapter 7 Kalispel Youth Code.
-      Section 7-23: Disposition Order.'
-    link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Law-and-Order-Code-4.9.2025.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/family-protection-plan-in-youth-in-need-of-care-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Treatment for Elder and Vulnerable Adult Protection Order
-    citation: 'The Law and Order Code of the Kalispel Tribe of Indians. Chapter 27 Elder and Vulnerable
-      Adult Code. Section 27-12: Elder and Vulnerable Adult Protection Order. 27-12.07 Order of Protection.'
-    link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Law-and-Order-Code-4.9.2025.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-for-elder-and-vulnerable-adult-protection-order/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Treatment for Protection Orders for Domestic Relations
-    citation: 'The Law and Order Code of the Kalispel Tribe of Indians. Chapter 8 Domestic Relations.
-      Section 8-6: Orders of Protection. 8-6.08 Order of Protection - Temporary & Permanent.'
-    link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Law-and-Order-Code-4.9.2025.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-for-protection-orders-for-domestic-relations/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Treatment for Public Intoxication
-    citation: The Law and Order Code of the Kalispel Tribe of Indians. Chapter 9 Criminal Offenses.
-    link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Law-and-Order-Code-4.9.2025.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-for-public-intoxication/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
   - kind: arbitration
     title: CHAPTER 22 � ARBITRATION CODE
     citation: 'CHAPTER 22 � ARBITRATION CODE; SECTION 22-2: AGREMENTS TO ARBITRATE AND ENFORCEABLE; 22-2.01
@@ -464,6 +398,66 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Elder and Vulnerable Adult Protection Family Group Conference and Safety Plan
+    citation: 'The Law and Order Code of the Kalispel Tribe of Indians. Chapter 27 Elder and Vulnerable
+      Adult Code. Section 27-6: Availability og Alternative Proceedings. 27-6.01 Preventative Measures.'
+    link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Law-and-Order-Code-4.9.2025.pdf
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Family conference, Family group conference; Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/elder-and-vulnerable-adult-protection-family-group-conference-and-safety-plan/
+  - title: Family Protection Plan in Youth In Need Of Care Cases
+    citation: 'The Law and Order Code of the Kalispel Tribe of Indians. Chapter 7 Kalispel Youth Code.
+      Section 7-23: Disposition Order.'
+    link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Law-and-Order-Code-4.9.2025.pdf
+    practice_area: Tribal Child Welfare/Family
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-protection-plan-in-youth-in-need-of-care-cases/
+  - title: Treatment for Elder and Vulnerable Adult Protection Order
+    citation: 'The Law and Order Code of the Kalispel Tribe of Indians. Chapter 27 Elder and Vulnerable
+      Adult Code. Section 27-12: Elder and Vulnerable Adult Protection Order. 27-12.07 Order of Protection.'
+    link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Law-and-Order-Code-4.9.2025.pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-for-elder-and-vulnerable-adult-protection-order/
+  - title: Treatment for Protection Orders for Domestic Relations
+    citation: 'The Law and Order Code of the Kalispel Tribe of Indians. Chapter 8 Domestic Relations.
+      Section 8-6: Orders of Protection. 8-6.08 Order of Protection - Temporary & Permanent.'
+    link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Law-and-Order-Code-4.9.2025.pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-for-protection-orders-for-domestic-relations/
+  - title: Treatment for Public Intoxication
+    citation: The Law and Order Code of the Kalispel Tribe of Indians. Chapter 9 Criminal Offenses.
+    link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Law-and-Order-Code-4.9.2025.pdf
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-for-public-intoxication/
 gaming:
   compacts:
   - state: WA
