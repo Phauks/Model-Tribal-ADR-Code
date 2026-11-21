@@ -100,6 +100,7 @@ Nations: Peoria Tribe of Indians of Oklahoma (successor to the Illinois Confeder
 
 **Later treatment.**
 - Still cited as the root of the "discovery" doctrine and of Native title as a right of occupancy; it has not been overruled. Its reasoning was relied on for the holding in Tee-Hit-Ton (1955) that unrecognized Native title is not compensable property. [@tee-hit-ton-indians-v-united-states]
+- KeyCite, checked on Westlaw on 2026-11-20: yellow flag; its three negative citing references all distinguish it, including Alliance to Save the Mattaponi (Va. 2005). [@johnson-v-mintosh]
 
 **Why it matters here (project analysis).** Foundational to how U.S. law describes Native land title and the limits it places on nations' power to sell land; useful background for any commentary on property-related disputes and on why federal law, not state law, governs Native title.
 
@@ -109,7 +110,7 @@ Nations: Peoria Tribe of Indians of Oklahoma (successor to the Illinois Confeder
 
 ### Cherokee Nation v. Georgia (1831)
 
-*30 U.S. (5 Pet.) 1 (1831)* [@cherokee-nation-v-georgia]. Supreme Court of the United States; opinion by Marshall, C.J.; 4-2 (Johnson and Baldwin, JJ., concurring separately; Thompson, J., joined by Story, J., dissenting).
+*30 U.S. (5 Pet.) 1 (1831)* [@cherokee-nation-v-georgia]. Supreme Court of the United States; opinion by Marshall, C.J.; Johnson and Baldwin, JJ., concurring separately; Thompson, J., joined by Story, J., dissenting. The report does not mention Duvall, J., so the vote count is not given here.
 Nations: Cherokee Nation; Eastern Band of Cherokee Indians; United Keetoowah Band of Cherokee Indians in Oklahoma.
 
 **Question.** Is the Cherokee Nation a "foreign State" that may bring an original action in the Supreme Court against Georgia?
@@ -126,6 +127,7 @@ Nations: Cherokee Nation; Eastern Band of Cherokee Indians; United Keetoowah Ban
 
 **Later treatment.**
 - The "domestic dependent nations" language is quoted throughout modern decisions, e.g., Michigan v. Bay Mills Indian Community (2014). [@michigan-v-bay-mills-indian-community]
+- KeyCite, checked on Westlaw on 2026-11-20: yellow flag; eight negative citing references, two declining to extend it and six distinguishing it. [@cherokee-nation-v-georgia]
 
 **Why it matters here (project analysis).** Source of the "domestic dependent nations" and trust ("ward") framing that still shapes federal-court access for Native nations and the trust relationship; relevant to commentary on which forums are open to nations as litigants.
 
@@ -151,6 +153,7 @@ Nations: Cherokee Nation; Eastern Band of Cherokee Indians; United Keetoowah Ban
 **Later treatment.**
 - Williams v. Lee (1959) calls it one of Marshall's "most courageous and eloquent opinions" while noting that later cases modified its rule against any state jurisdiction in Indian country. [@williams-v-lee]
 - Oklahoma v. Castro-Huerta (2022) states that the Worcester view that Indian country was separate from the State was later abandoned; the dissent disputes this reading. [@oklahoma-v-castro-huerta]
+- KeyCite, checked on Westlaw on 2026-11-20: red-striped flag, "Abrogation Recognized by Oklahoma v. Castro-Huerta" (2022). [@worcester-v-georgia]
 
 **Why it matters here (project analysis).** The core statement of inherent Native sovereignty and of the federal-Tribal relationship excluding state law; the starting point for any model code provision asserting a nation's territorial jurisdiction and its own dispute-resolution forums.
 
@@ -175,8 +178,9 @@ Nations: Rosebud Sioux Tribe (Sicangu Lakota Oyate); Crow Dog and Spotted Tail w
 
 **Later treatment.**
 - Congress responded with section 9 of the Indian Appropriation Act of March 3, 1885 (the Major Crimes Act), which United States v. Kagama (1886) upheld and described as following the Crow Dog decision. [@united-states-v-kagama]
+- KeyCite, checked on Westlaw on 2026-11-20: yellow flag; most negative citing references say it was superseded by statute, which fits the Major Crimes Act. [@ex-parte-crow-dog]
 
-**Why it matters here (project analysis).** Recognizes a nation's own (in that case restorative, compensation-based) process for resolving even a homicide as law the federal courts must respect absent clear congressional action; a key historical anchor for commentary on traditional and restorative dispute resolution.
+**Why it matters here (project analysis).** Recognizes a nation's own process for resolving even a homicide as law the federal courts must respect absent clear congressional action; a key historical anchor for commentary on traditional and restorative dispute resolution.
 
 *Topics:* criminal-jurisdiction, self-governance, dispute-resolution, tribal-courts.
 
@@ -194,6 +198,7 @@ Nations: Rosebud Sioux Tribe (Sicangu Lakota Oyate); Crow Dog and Spotted Tail w
 
 **Later treatment.**
 - Congress later conferred citizenship by statute in the Indian Citizenship Act of 1924 [@indian-citizenship-act-1924]; the current codification (8 U.S.C. § 1401(b)) is not verified here.
+- KeyCite, checked on Westlaw on 2026-11-20: yellow flag; the first negative citing reference reads "Superseded by Statute as Stated in State v. Trump" (W.D. Wash. 2025). [@elk-v-wilkins]
 
 **Why it matters here (project analysis).** Background for the dual political status of citizens of Native nations, which affects who may be parties before Tribal forums and how membership-based jurisdiction is framed.
 
@@ -257,7 +262,8 @@ Nations: Kiowa Tribe; Comanche Nation, Oklahoma; Apache Tribe of Oklahoma.
 > “When, therefore, treaties were entered into between the United States and a tribe of Indians it was never doubted that the power to abrogate existed in Congress” [@lone-wolf-v-hitchcock, p. 566]
 
 **Later treatment.**
-- Lead to check, not verified in this research: Its view that congressional Indian-affairs judgments are unreviewable political questions was later limited (e.g., United States v. Sioux Nation, 448 U.S. 371 (1980), and Delaware Tribal Business Committee v. Weeks, 430 U.S. 73 (1977)); those opinions were not opened.
+- Lead to check, not verified in this research: Its view that congressional Indian-affairs judgments are unreviewable political questions was later limited (e.g., United States v. Sioux Nation, 448 U.S. 371 (1980), and Delaware Tribal Business Committee v. Weeks, 430 U.S. 73 (1977)); those opinions were not opened, and KeyCite does not list either as negative treatment.
+- KeyCite, checked on Westlaw on 2026-11-20: yellow flag; "abrogation recognized" by Littlewolf v. Lujan, 877 F.2d 1058 (D.C. Cir. 1989), and Pueblo of Jemez v. United States (D.N.M. 2020). [@lone-wolf-v-hitchcock]
 - Haaland v. Brackeen (2023) still cites Lone Wolf for the breadth of congressional power, and separate opinions in that case criticize it. [@haaland-v-brackeen]
 
 **Why it matters here (project analysis).** The high-water mark of "plenary power"; commentary on treaty-based dispute provisions and on the stability of agreements with the United States should account for Congress's asserted power to abrogate treaties.
@@ -771,18 +777,20 @@ Nations: Citizen Potawatomi Nation.
 
 ### Sokaogon Gaming Enterprise Corp. v. Tushie-Montgomery Associates, Inc. (1996)
 
-*86 F.3d 656 (7th Cir. 1996)* [@sokaogon-gaming-enterprise-corporation-v-tushie-montgomery-associates]. United States Court of Appeals for the Seventh Circuit; opinion by Posner, C.J.; not verified.
+*86 F.3d 656 (7th Cir. 1996)* [@sokaogon-gaming-enterprise-corporation-v-tushie-montgomery-associates]. United States Court of Appeals for the Seventh Circuit; argued Apr. 2, decided June 5, 1996; opinion by Posner, C.J., for a unanimous panel (Ripple and Manion, JJ.).
 Nations: Sokaogon Chippewa Community (Mole Lake Band of Lake Superior Chippewa).
 
 **Question.** Did a Tribal gaming enterprise waive its sovereign immunity by agreeing to an arbitration clause in an architect's contract?
 
-**Holding.** Reported holding, not yet checked against the official reporter: yes; the court held that the enterprise waived its immunity in the arbitration clause and reversed the partial summary judgment for the Tribe. The First Circuit in Ninigret cites it as finding waiver at 86 F.3d at 659-60.
+**Holding.** Yes. The court held that the enterprise waived its immunity in the arbitration clause and reversed the partial summary judgment for the Tribe; it did not decide whether bringing the suit was also a waiver. The First Circuit in Ninigret cites it as finding waiver at 86 F.3d at 659-60.
 
 **In the court's words.**
 
-> “It waived it in the arbitration clause.” (86 F.3d at 661 (page from an unofficial online copy; not verified)) [@sokaogon-gaming-enterprise-corporation-v-tushie-montgomery-associates]
+> “It waived it in the arbitration clause.” (86 F.3d at 661) [@sokaogon-gaming-enterprise-corporation-v-tushie-montgomery-associates]
 
-**Later treatment.** Cited in Ninigret Development Corp. (1st Cir. 2000) as finding waiver, 86 F.3d at 659-60. [@ninigret-development-corporation-v-narragansett-indian-wetuomuck-housing-authority]
+**Later treatment.**
+- Cited in Ninigret Development Corp. (1st Cir. 2000) as finding waiver, 86 F.3d at 659-60. [@ninigret-development-corporation-v-narragansett-indian-wetuomuck-housing-authority]
+- KeyCite, checked on Westlaw on 2026-11-20: yellow flag; six negative citing references, all distinguishing it. [@sokaogon-gaming-enterprise-corporation-v-tushie-montgomery-associates]
 
 **Why it matters here (project analysis).** An early, influential holding (by Judge Posner) that an ordinary arbitration clause can waive Tribal immunity; useful background for C & L Enterprises.
 
@@ -934,11 +942,11 @@ Nations: Northway Village.
 
 **In the court's words.**
 
-> “We hold that Alaska Native tribes, by virtue of their inherent powers as sovereign nations, do possess that authority.” (982 P.2d 738 (P.2d page not verified)) [@john-v-baker]
+> “[W]e hold that Alaska Native tribes, by virtue of their inherent powers as sovereign nations, do possess that authority.” [@john-v-baker, pp. 748-749]
 
-> “We therefore hold that, as a general rule, our courts should respect tribal court decisions under the comity doctrine.” (982 P.2d 738 (P.2d page not verified)) [@john-v-baker]
+> “We therefore hold that, as a general rule, our courts should respect tribal court decisions under the comity doctrine.” [@john-v-baker, p. 763]
 
-**Later treatment.** Not checked. Leads (unverified): John v. Baker II (Alaska 2001) on the comity remand, and State v. Central Council of Tlingit & Haida Indian Tribes of Alaska (Alaska 2016) on Tribal child-support jurisdiction. (leads only; not verified in this research)
+**Later treatment.** KeyCite, checked on Westlaw on 2026-11-20: yellow flag, "Declined to Extend by Starr v. George" (Alaska 2008) [@john-v-baker]. Leads (unverified): John v. Baker II (Alaska 2001) on the comity remand, and State v. Central Council of Tlingit & Haida Indian Tribes of Alaska (Alaska 2016) on Tribal child-support jurisdiction. (leads only; not verified in this research)
 
 **Why it matters here (project analysis).** The leading authority that Alaska Native Tribal forums operate on membership-based jurisdiction even without Indian country, and that state courts extend comity to them; essential for any Alaska chapter of the model code.
 
@@ -1090,13 +1098,13 @@ Nations: Hopland Band of Pomo Indians.
 
 **Question.** Did the Tribe waive sovereign immunity from a state-court suit by signing an architect's contract with an arbitration clause and choice of law?
 
-**Holding.** Yes. The court held that by entering into the contract containing the arbitration clause, the Tribe clearly and explicitly waived its sovereign immunity, and it reversed the dismissal and remanded.
+**Holding.** Yes. The court held that by entering into the contract containing the arbitration clause, the Tribe clearly and explicitly waived its sovereign immunity, and it reversed the dismissal and remanded. The reasoning also relies on the Tribal council's resolutions: the council authorized the chairperson to sign, knew the arbitration and California-law terms, and approved the contract by resolution.
 
 **In the court's words.**
 
-> “entered into a contract with Smith that clearly and explicitly waived the Tribe's sovereign immunity” (95 Cal. App. 4th at 12 (page marker as shown in an unofficial online copy; not verified)) [@smith-v-hopland-band-of-pomo-indians]
+> “entered into a contract with Smith that clearly and explicitly waived the Tribe's sovereign immunity” [@smith-v-hopland-band-of-pomo-indians, p. 12]
 
-> “We hold only that the Tribe waived its sovereign immunity by entering into a contract containing the arbitration clause.” (95 Cal. App. 4th 1, footnote 11 (page not verified)) [@smith-v-hopland-band-of-pomo-indians]
+> “We hold only that the Tribe waived its sovereign immunity by entering into a contract containing the arbitration clause.” [@smith-v-hopland-band-of-pomo-indians, n. 11]
 
 **Why it matters here (project analysis).** A state appellate application of C & L-type reasoning; shows how state courts read arbitration clauses in Tribal contracts, relevant to model clauses specifying the enforcing forum.
 
