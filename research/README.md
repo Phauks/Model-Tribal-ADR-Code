@@ -23,7 +23,8 @@ topic.
 `pull-lists/` holds dated lists of what to pull or check in subscription
 databases such as Westlaw (citator checks, treatises, law review articles)
 after a research session. Each item names the source record to update, and
-an item is removed once its check is recorded in that record.
+an item is removed once its check is recorded in that record. Since 2026-11-21 new items go in the project's single Westlaw list, kept
+with the project's working files; the dated lists here point to it.
 
 ## Analyses
 
