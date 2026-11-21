@@ -576,7 +576,6 @@ what to pull.
 - [@usc-9-401-402]: Free on LII. Pull 9 U.S.C.A. §§ 401–402 and Pub. L. 117-90 on Westlaw.
 - [@southland-corp-v-keating-1984]: LII text lacks U.S. page breaks; pull Southland Corp. v. Keating, 465 U.S. 1 (1984) on Westlaw for pinpoints.
 - [@hall-street-associates-v-mattel-2008]: Pull Hall Street Assocs., L.L.C. v. Mattel, Inc., 552 U.S. 576 (2008) on Westlaw for pinpoints.
-- [@epic-systems-v-lewis-2018]: U.S. Reports page not verified here (LII shows slip opinion). Confirm the final U.S. Reports cite (believed 584 U.S. 497) and S. Ct. cite on Westlaw before publishing.
 - [@smith-v-spizzirri-2024]: Confirm 601 U.S. 472 (2024) on Westlaw; LII and supremecourt.gov show slip-opinion form.
 - [@usc-28-651]: Free on LII. Pull 28 U.S.C.A. § 651 and the legislative history of Pub. L. 105-315 on Westlaw.
 - [@usc-28-652]: Free on LII. Pull 28 U.S.C.A. § 652 on Westlaw.
@@ -627,7 +626,6 @@ needs a primary source before the book relies on it.
 - Whether Nevada's foreign judgments statutes (NRS 17.330 to 17.400) reach
   Tribal court judgments; no Nevada statute or rule on Tribal civil money
   judgments was found.
-- The U.S. Reports page for Epic Systems v. Lewis [@epic-systems-v-lewis-2018].
 - The final, approved text of the 2005 Model Standards of Conduct for
   Mediators [@aba-aaa-acr-2005-model-standards-of-conduct-for-mediators].
 - The current text of A.S.C.A. § 43.0302, read here only as quoted by the
