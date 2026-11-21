@@ -33,7 +33,7 @@
 	</p>
 </div>
 
-<nav aria-label="Glossary letters" class="letters">
+<nav aria-label="Glossary letters" class="letters no-print">
 	<ul>
 		{#each alphabet as letter (letter)}
 			<li>
