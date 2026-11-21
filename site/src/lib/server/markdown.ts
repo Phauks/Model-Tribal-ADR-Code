@@ -5,11 +5,11 @@
  *   [[id]] and [[id|shown text]]   a link to a glossary entry
  *   [@key] and [@key, p. 3]        a citation of a source record
  *
- * Citations become numbered notes collected in a Notes object, which the page
- * prints at the end, each linked to its source.
+ * Citations become numbered markers linked to the page's Sources section; a
+ * CitationCollector numbers them and records what each source supports.
  */
 import { marked } from 'marked';
-import { glossary, sources, type SourceRecord } from './content.ts';
+import { glossary, type SourceRecord } from './content.ts';
 
 export function escapeHtml(text: string): string {
 	return text
@@ -20,7 +20,11 @@ export function escapeHtml(text: string): string {
 }
 
 /** A short citation in the project's style, as HTML. */
-export function formatSource(source: SourceRecord | undefined, key: string, locator?: string): string {
+export function formatSource(
+	source: SourceRecord | undefined,
+	key: string,
+	locator?: string
+): string {
 	if (!source) {
 		return `${escapeHtml(key)}${locator ? `, ${escapeHtml(locator)}` : ''}`;
 	}
@@ -48,25 +52,14 @@ export function formatSource(source: SourceRecord | undefined, key: string, loca
 	return text;
 }
 
-export interface Note {
-	number: number;
-	key: string;
-	html: string;
-}
-
-/** Numbered notes for one page. The same source and locator reuse one number. */
-export class Notes {
-	readonly list: Note[] = [];
-
-	add(key: string, locator?: string): number {
-		const existing = this.list.find(
-			(note) => note.key === key && note.html === formatSource(sources().get(key), key, locator)
-		);
-		if (existing) return existing.number;
-		const number = this.list.length + 1;
-		this.list.push({ number, key, html: formatSource(sources().get(key), key, locator) });
-		return number;
-	}
+/**
+ * Collects the citations on one page. add() records a citation and returns
+ * the number of the source entry its marker points to, and markerTarget()
+ * gives the address of that entry on the page.
+ */
+export interface CitationCollector {
+	add(key: string, locator?: string): number;
+	markerTarget(number: number): string;
 }
 
 const termLinkPattern = /\[\[([a-z0-9-]+)(?:\|([^\]]+))?\]\]/g;
@@ -84,22 +77,43 @@ function resolveTermLinks(markdown: string): string {
 	});
 }
 
-function resolveCitations(markdown: string, notes: Notes): string {
+function resolveCitations(markdown: string, citations: CitationCollector): string {
 	return markdown.replace(citationPattern, (_whole, inside: string) => {
 		const markers = inside.split(';').map((part) => {
 			const match = part.trim().match(/^@([a-z0-9-]+)(?:,\s*(.+))?$/);
 			if (!match) return escapeHtml(part);
-			const number = notes.add(match[1], match[2]?.trim());
-			return `<a href="#note-${number}" class="note-marker" aria-label="Note ${number}">${number}</a>`;
+			const number = citations.add(match[1], match[2]?.trim());
+			return `<a href="${citations.markerTarget(number)}" class="note-marker" aria-label="Source ${number}">${number}</a>`;
 		});
 		return `<sup>${markers.join(', ')}</sup>`;
 	});
 }
 
 /** Markdown with term links and citations, as block HTML. */
-export function renderMarkdown(markdown: string, notes: Notes): string {
-	const prepared = resolveCitations(resolveTermLinks(markdown.normalize('NFC')), notes);
+export function renderMarkdown(markdown: string, citations: CitationCollector): string {
+	const prepared = resolveCitations(resolveTermLinks(markdown.normalize('NFC')), citations);
 	return marked.parse(prepared, { async: false });
+}
+
+/**
+ * Markdown as plain text with no citations: each term link becomes its words,
+ * and emphasis and other Markdown marks are dropped. Used for short summaries,
+ * such as the text of a glossary hover card.
+ */
+export function plainText(markdown: string): string {
+	const entries = new Map(glossary().map((entry) => [entry.id, entry]));
+	return markdown
+		.normalize('NFC')
+		.replace(citationPattern, '')
+		.replace(
+			termLinkPattern,
+			(_whole, id: string, shownText?: string) => shownText ?? entries.get(id)?.term ?? id
+		)
+		.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+		.replace(/[*_`]/g, '')
+		.replace(/\s+/g, ' ')
+		.replace(/\s+([.,;:)])/g, '$1')
+		.trim();
 }
 
 /**

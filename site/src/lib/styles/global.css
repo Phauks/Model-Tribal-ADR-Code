@@ -431,6 +431,16 @@ sup {
 	padding-left: var(--space-5);
 }
 
+/* Long web addresses in citations break anywhere rather than widen the page. */
+.notes a {
+	overflow-wrap: anywhere;
+}
+
+/* Small capitals, as the Indigo Book sets the names of authors and of books in citations. */
+.small-capitals {
+	font-variant: small-caps;
+}
+
 .report-link {
 	font-size: var(--font-size-small);
 }

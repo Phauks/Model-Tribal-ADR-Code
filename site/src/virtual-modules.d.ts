@@ -23,6 +23,11 @@ declare module 'virtual:nation-images' {
 	export const nationImages: import('#lib/official-images.ts').ServableImage[];
 }
 
+declare module 'virtual:source-citations' {
+	/** The full citation, as HTML in the project's Indigo Book style, of each source the glossary cites, by key. */
+	export const sourceCitations: Record<string, string>;
+}
+
 declare module 'virtual:build' {
 	/** The git commit the site was built from, or empty when built on a computer. */
 	export const buildCommit: string;

@@ -1,16 +1,20 @@
 <script lang="ts">
 	// The Sources section at the end of a nation page: each source once, with
 	// every fact on the page it supports, so each fact stays traceable without
-	// a citation beside it (src/lib/server/source-uses.ts).
+	// a citation beside it (src/lib/server/source-uses.ts). The glossary pages
+	// use it too, with each entry in place of a fact.
 	import type { SourceEntry } from '#lib/server/source-uses.ts';
 
-	let { sources }: { sources: SourceEntry[] } = $props();
+	let {
+		sources,
+		introduction = 'Each source below is followed by the facts on this page that come from it.'
+	}: { sources: SourceEntry[]; introduction?: string } = $props();
 </script>
 
 {#if sources.length > 0}
 	<section class="notes" aria-labelledby="sources-heading">
 		<h2 id="sources-heading">Sources</h2>
-		<p>Each source below is followed by the facts on this page that come from it.</p>
+		<p>{introduction}</p>
 		<ol>
 			{#each sources as source (source.key)}
 				<li id="source-{source.number}">

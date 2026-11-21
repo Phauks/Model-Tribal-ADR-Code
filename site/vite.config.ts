@@ -5,7 +5,14 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig, type Plugin } from 'vite';
 import { designTokensToCss } from './src/lib/design-tokens.ts';
 import { buildMapGeometry } from './src/lib/map-geometry.ts';
-import { glossaryForReview, nationsForReview, servableImages } from './src/lib/server/content.ts';
+import { fullCitations } from './src/lib/server/citations.ts';
+import {
+	glossary,
+	glossaryForReview,
+	nationsForReview,
+	servableImages,
+	sources
+} from './src/lib/server/content.ts';
 
 const designTokensPath = fileURLToPath(new URL('./design-tokens.json', import.meta.url));
 const designTokensModule = 'virtual:design-tokens.css';
@@ -118,6 +125,38 @@ function nationImages(): Plugin {
 	};
 }
 
+const sourceCitationsModule = 'virtual:source-citations';
+const resolvedSourceCitationsModule = `\0${sourceCitationsModule}`;
+
+/**
+ * The full citation, in the project's Indigo Book style, of every source the
+ * glossary cites, formatted with citeproc-js while the site is built
+ * (src/lib/server/citations.ts). Only the finished text is bundled, never the
+ * citation processor.
+ */
+function sourceCitations(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:source-citations',
+		resolveId(identifier) {
+			return identifier === sourceCitationsModule ? resolvedSourceCitationsModule : undefined;
+		},
+		load(identifier) {
+			if (identifier !== resolvedSourceCitationsModule) return undefined;
+			const keys = new Set<string>();
+			for (const entry of glossary()) {
+				for (const key of entry.sources ?? []) keys.add(key);
+				const prose = `${entry.definition} ${entry.usage_note ?? ''}`;
+				for (const match of prose.matchAll(/@([a-z0-9-]+)/g)) keys.add(match[1]);
+			}
+			const records = [...keys].flatMap((key) => {
+				const record = sources().get(key);
+				return record ? [record] : [];
+			});
+			return `export const sourceCitations = ${JSON.stringify(fullCitations(records))};`;
+		}
+	};
+}
+
 const buildModule = 'virtual:build';
 const resolvedBuildModule = `\0${buildModule}`;
 
@@ -146,6 +185,7 @@ export default defineConfig({
 		mapGeometry(),
 		reviewSubjects(),
 		nationImages(),
+		sourceCitations(),
 		buildInformation(),
 		sveltekit({
 			compilerOptions: {
