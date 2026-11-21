@@ -8,6 +8,7 @@ Checks:
   - every [@key] and every glossary 'sources' entry names a source record
   - every [[id]], 'see_also', 'use_instead' and 'redirect_to' names a glossary entry
   - every 'found_in' names a research session
+  - every source a tribe profile cites names a source record
 
 Run from the repository root:  python3 scripts/validate_records.py
 Requires the packages in scripts/requirements.txt.
@@ -70,6 +71,22 @@ def dates_as_text(value):
     return value
 
 
+def cited_source_keys(value):
+    """Every source key a tribe profile cites: each fact's 'source', the official name's
+    'official_source', and the keys listed in 'dispute_resolution_law'."""
+    if isinstance(value, dict):
+        for field, item in value.items():
+            if field in ("source", "official_source") and isinstance(item, str):
+                yield item
+            elif field == "dispute_resolution_law":
+                yield from item
+            else:
+                yield from cited_source_keys(item)
+    elif isinstance(value, list):
+        for item in value:
+            yield from cited_source_keys(item)
+
+
 def main() -> int:
     errors: list[str] = []
     registry = Registry()
@@ -126,6 +143,13 @@ def main() -> int:
         for key in record.get("sources", []):
             if key not in sources:
                 errors.append(f"{path}: sources names a missing source record '{key}'")
+
+    for path, record in records.get("tribe.schema.json", []):
+        if record.get("id") != path.stem:
+            errors.append(f"{path}: id does not match the file name")
+        for key in sorted(set(cited_source_keys(record))):
+            if key not in sources:
+                errors.append(f"{path}: cites a missing source record '{key}'")
 
     text_files = list(ROOT.glob("content/**/*.md")) + list(ROOT.glob("content/glossary/*.yaml"))
     for path in sorted(text_files):

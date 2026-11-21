@@ -1,68 +1,237 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/tribe.schema.json",
-  "title": "Tribe profile",
-  "description": "One Native nation or community: names, recognition, state presence, justice institutions and published dispute-resolution law. Stored as content/tribes/<id>.yaml. Every fact cites a source key.",
+  "title": "Native nation or community profile",
+  "description": "One Native nation, Alaska Native entity, Native Hawaiian community or Indigenous people of a U.S. territory: names, legal status, state presence, population, official contacts, government, justice institutions, published law, gaming, jurisdiction and consultation history. Stored as content/tribes/<id>.yaml. Every fact cites a source key and a confidence level; a field with no supporting source is left out.",
   "type": "object",
   "additionalProperties": false,
-  "required": ["id", "names", "recognition", "states", "review"],
+  "required": ["id", "entity_type", "names", "recognition", "states", "review"],
+  "$defs": {
+    "citedFact": { "$ref": "common.schema.json#/$defs/cited" }
+  },
   "properties": {
     "id": { "$ref": "common.schema.json#/$defs/slug" },
+    "entity_type": {
+      "type": "string",
+      "enum": ["native-nation", "native-hawaiian", "territorial-indigenous-people", "alaska-native-corporation"],
+      "description": "What kind of community the record describes. native-nation: a tribal nation, band, pueblo, rancheria, community or Alaska Native village, whatever its recognition. native-hawaiian: the Native Hawaiian community, which has no federally recognized governing entity and is never described with tribal status categories. territorial-indigenous-people: an Indigenous people of a U.S. territory (for example CHamoru, Refaluwasch or Samoan), whose status rests on territorial law. alaska-native-corporation: a corporation formed under the Alaska Native Claims Settlement Act, which is not a government (reserved; not yet populated)."
+    },
     "names": {
       "type": "object",
       "additionalProperties": false,
       "required": ["official"],
       "properties": {
-        "official": { "type": "string", "description": "Name as it appears in the recognizing authority." },
+        "official": { "type": "string", "description": "Name as it appears in the recognizing authority, or as the cited source gives it when there is none." },
+        "official_source": { "$ref": "common.schema.json#/$defs/slug", "description": "Source key for the official name." },
         "self_designation": {
           "type": "array",
-          "items": { "type": "string" },
-          "description": "Names the nation uses for itself, including in its own language, as the nation publishes them."
+          "description": "Names the nation uses for itself, including in its own language, exactly as the nation publishes them (never transliterated into ASCII).",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "required": ["name"],
+            "properties": {
+              "name": { "type": "string" },
+              "language_tag": { "$ref": "common.schema.json#/$defs/languageTag" },
+              "romanized": { "type": "string", "description": "A Latin-script form, only when the source gives one." }
+            },
+            "unevaluatedProperties": false
+          }
         },
-        "former": { "type": "array", "items": { "type": "string" } }
+        "alternate": {
+          "type": "array",
+          "description": "Other current names, including 'also known as' names in the federal list.",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "required": ["name"],
+            "properties": { "name": { "type": "string" } },
+            "unevaluatedProperties": false
+          }
+        },
+        "former": {
+          "type": "array",
+          "description": "Earlier names, including 'previously listed as' names in the federal list.",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "required": ["name"],
+            "properties": { "name": { "type": "string" } },
+            "unevaluatedProperties": false
+          }
+        }
       }
     },
     "recognition": {
       "type": "array",
       "minItems": 1,
+      "description": "Every legal status the community holds, each with its legal basis.",
       "items": {
         "type": "object",
-        "additionalProperties": false,
-        "required": ["type", "source"],
+        "$ref": "#/$defs/citedFact",
+        "required": ["type"],
         "properties": {
-          "type": { "type": "string", "enum": ["federal", "state", "unrecognized", "petitioning"] },
-          "state": { "$ref": "common.schema.json#/$defs/stateCode", "description": "For state recognition: which state." },
-          "source": { "$ref": "common.schema.json#/$defs/slug", "description": "Source key of the recognizing authority (e.g. the BIA list notice)." },
-          "since": { "$ref": "common.schema.json#/$defs/calendarDate" }
-        }
+          "type": {
+            "type": "string",
+            "enum": ["federal", "state", "petitioning", "unrecognized", "congressional-special-relationship", "territorial-law"],
+            "description": "federal: on the Bureau of Indian Affairs list of recognized entities. state: recognized by a state. petitioning: has a pending petition for federal acknowledgment. unrecognized: no current recognition (for example a denied, withdrawn or inactive petition). congressional-special-relationship: Congress recognizes a special political and trust relationship with the people but no governing entity (Native Hawaiians). territorial-law: status rests on a territory's constitution or statutes."
+          },
+          "state": { "$ref": "common.schema.json#/$defs/stateCode", "description": "For state or territorial status: which state or territory." },
+          "legal_basis": { "type": "string", "description": "Citation of the law, regulation, notice or resolution that confers or describes the status." },
+          "since": { "$ref": "common.schema.json#/$defs/partialDate" },
+          "petition_number": { "type": "string", "description": "Federal acknowledgment petition number, as the Office of Federal Acknowledgment lists it." },
+          "petition_stage": { "type": "string", "description": "Stage of the petition, worded as the source words it." }
+        },
+        "unevaluatedProperties": false
       }
     },
     "states": {
       "type": "array",
       "minItems": 1,
-      "description": "States where the nation has a presence. Drives the map; no boundaries are drawn.",
+      "description": "States and territories where the community has a presence. Drives the map; no boundaries are drawn.",
       "items": {
         "type": "object",
-        "additionalProperties": false,
-        "required": ["state", "source"],
+        "$ref": "#/$defs/citedFact",
+        "required": ["state"],
         "properties": {
           "state": { "$ref": "common.schema.json#/$defs/stateCode" },
-          "presence": { "type": "string", "enum": ["land", "government-office", "service-area", "other"] },
-          "source": { "$ref": "common.schema.json#/$defs/slug" }
-        }
+          "presence": { "type": "string", "enum": ["land", "government-office", "service-area", "other"] }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "census_areas": {
+      "type": "array",
+      "description": "Census Bureau American Indian, Alaska Native and Native Hawaiian areas linked to the community. Census area codes are not identifiers of nations: one area can hold several nations, and nations without a land base have none, so each link is a matched fact with its own source and confidence.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["geographic_identifier", "name"],
+        "properties": {
+          "geographic_identifier": { "type": "string", "pattern": "^[0-9A-Z]{4,10}$", "description": "Census GEOID of the area, for example the four-digit American Indian area code." },
+          "name": { "type": "string", "description": "Area name as the Census Bureau gives it." },
+          "area_type": { "type": "string", "description": "Census area type as given, for example reservation, off-reservation trust land, Oklahoma tribal statistical area or Alaska Native village statistical area." },
+          "vintage": { "type": "string", "pattern": "^[0-9]{4}$", "description": "Census vintage of the area definition." }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "population": {
+      "type": "array",
+      "description": "Population or citizenship figures. Different kinds measure different things and are never added together.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["count", "kind", "as_of"],
+        "properties": {
+          "count": { "type": "integer", "minimum": 0 },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "citizens",
+              "tribal-population-estimate",
+              "census-american-indian-alaska-native-alone",
+              "census-american-indian-alaska-native-alone-or-in-combination",
+              "census-native-hawaiian-alone-or-in-combination",
+              "census-ethnic-origin",
+              "service-area-population",
+              "resident-population",
+              "other"
+            ],
+            "description": "citizens: the nation's own count of its citizens (or enrolled members, where that is the nation's word). resident-population: everyone living in an area, Native or not. census-*: self-identification in a census, not citizenship."
+          }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "contacts": {
+      "type": "array",
+      "description": "Official, publicly published contact points of the government or office only. Never the names, personal email addresses or personal telephone numbers of officials or other people.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["kind", "value"],
+        "properties": {
+          "kind": { "type": "string", "enum": ["website", "physical-address", "mailing-address", "phone", "fax", "email-general"] },
+          "value": { "type": "string" },
+          "label": { "type": "string", "description": "Which office, for example 'Tribal government headquarters'." }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "languages": {
+      "type": "array",
+      "description": "Heritage languages, as the nation or an authoritative source names them.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string" },
+          "language_tag": { "$ref": "common.schema.json#/$defs/languageTag" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "federal_administration": {
+      "type": "object",
+      "$ref": "#/$defs/citedFact",
+      "description": "The Bureau of Indian Affairs region and agency that serve the nation.",
+      "properties": {
+        "bureau_of_indian_affairs_region": { "type": "string" },
+        "bureau_of_indian_affairs_agency": { "type": "string" }
+      },
+      "unevaluatedProperties": false
+    },
+    "government_structure": {
+      "type": "array",
+      "description": "The legal form of the government, only where a source states it.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["kind"],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": ["indian-reorganization-act", "oklahoma-indian-welfare-act", "alaska-indian-reorganization-act", "written-constitution-other", "traditional", "other"],
+            "description": "indian-reorganization-act: constitution adopted under 25 U.S.C. § 5123. oklahoma-indian-welfare-act: under 25 U.S.C. § 5203. alaska-indian-reorganization-act: under the 1936 Alaska amendment, 25 U.S.C. § 5119. written-constitution-other: a written constitution adopted outside those Acts. traditional: a traditional form of government."
+          },
+          "detail": { "type": "string" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "governing_documents": {
+      "type": "array",
+      "description": "Where the nation's constitution, codes and court rules are published. Linked, not reproduced (see data-model.md on tribal legal texts).",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["kind", "title"],
+        "properties": {
+          "kind": { "type": "string", "enum": ["constitution", "law-code", "court-rules", "articles-of-association", "corporate-charter", "other"] },
+          "title": { "type": "string" },
+          "link": { "$ref": "common.schema.json#/$defs/link" },
+          "year": { "$ref": "common.schema.json#/$defs/partialDate" }
+        },
+        "unevaluatedProperties": false
       }
     },
     "justice_institutions": {
       "type": "array",
       "items": {
         "type": "object",
-        "additionalProperties": false,
-        "required": ["kind", "name", "source"],
+        "$ref": "#/$defs/citedFact",
+        "required": ["kind", "name"],
         "properties": {
-          "kind": { "type": "string", "enum": ["tribal-court", "peacemaking-program", "court-of-appeals", "healing-to-wellness-court", "elders-council", "other"] },
+          "kind": {
+            "$ref": "common.schema.json#/$defs/slug",
+            "description": "Open vocabulary (any lowercase hyphenated term). Suggested: tribal-court, court-of-appeals, peacemaking-program, traditional-forum, healing-to-wellness-court, court-of-indian-offenses (a court operated under 25 C.F.R. Part 11, often called a CFR court), elders-council, other."
+          },
           "name": { "type": "string" },
-          "source": { "$ref": "common.schema.json#/$defs/slug" }
-        }
+          "link": { "$ref": "common.schema.json#/$defs/link" }
+        },
+        "unevaluatedProperties": false
       }
     },
     "dispute_resolution_law": {
@@ -70,6 +239,250 @@
       "description": "Source keys of the nation's published laws on peacemaking, mediation, arbitration or related processes.",
       "items": { "$ref": "common.schema.json#/$defs/slug" },
       "uniqueItems": true
+    },
+    "dispute_resolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "How the nation resolves disputes outside, alongside or within its courts, recorded only where a source documents it (never inferred from silence). Traditional or ceremonial details are recorded only as far as the nation itself has made them public (charter, commitment 5).",
+      "properties": {
+        "forums": {
+          "type": "array",
+          "description": "Each dispute resolution forum or program the nation offers.",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "required": ["kind"],
+            "properties": {
+              "kind": {
+                "$ref": "common.schema.json#/$defs/slug",
+                "description": "Kind of method, from an open vocabulary: any lowercase hyphenated term is accepted, so methods not yet listed still validate. Use one of these where it fits: peacemaking, traditional-forum, mediation-program, arbitration, family-or-talking-circle, elders-council, restorative-justice, settlement-conference, family-group-conference, sentencing-circle, healing-circle, negotiation-assistance, ombudsperson, other. A kind that becomes common gets a glossary record (content/glossary/<kind>.yaml) rather than a schema change."
+              },
+              "own_term": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["name"],
+                "description": "The nation's own name for the method, exactly as the nation writes it.",
+                "properties": {
+                  "name": { "type": "string" },
+                  "language_tag": { "$ref": "common.schema.json#/$defs/languageTag" },
+                  "romanized": { "type": "string" },
+                  "translation": { "type": "string", "description": "An English rendering, only when the source gives one." }
+                }
+              },
+              "description": { "type": "string", "description": "What the method is and how it works, in neutral words drawn from the source." },
+              "name": { "type": "string", "description": "The forum's name as the nation gives it." },
+              "legal_basis": { "type": "string", "description": "Code, constitution, court rule or resolution that sets up the forum, cited as the nation publishes it." },
+              "case_types": {
+                "type": "array",
+                "uniqueItems": true,
+                "description": "Kinds of matters the forum hears, from an open vocabulary (any lowercase hyphenated term). Suggested: family, child-welfare, juvenile, civil, criminal-diversion, criminal-sentencing, probate, property-or-land, housing, gaming, employment, commercial, elections, intergovernmental, other.",
+                "items": { "$ref": "common.schema.json#/$defs/slug" }
+              },
+              "participation": {
+                "$ref": "common.schema.json#/$defs/slug",
+                "description": "How cases arrive, from an open vocabulary. Suggested: voluntary, court-referred, voluntary-or-court-referred, required, other."
+              },
+              "relationship_to_court": { "type": "string", "description": "How the forum relates to the Tribal court, in one or two neutral sentences from the source." },
+              "enforcement": { "type": "string", "description": "How agreements or decisions are given effect, for example entered as a court order." },
+              "link": { "$ref": "common.schema.json#/$defs/link" }
+            },
+            "unevaluatedProperties": false
+          }
+        },
+        "provisions": {
+          "type": "array",
+          "description": "Specific published provisions on peacemaking, mediation, arbitration or traditional dispute resolution.",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "required": ["kind", "title"],
+            "properties": {
+              "kind": { "$ref": "common.schema.json#/$defs/slug", "description": "Open vocabulary (any lowercase hyphenated term). Suggested: peacemaking, mediation, arbitration, traditional-dispute-resolution, other." },
+              "title": { "type": "string" },
+              "citation": { "type": "string", "description": "Title, chapter and section as the nation publishes them." },
+              "link": { "$ref": "common.schema.json#/$defs/link" },
+              "summary": { "type": "string", "description": "One neutral sentence, written only after reading the provision." }
+            },
+            "unevaluatedProperties": false
+          }
+        },
+        "clauses": {
+          "type": "array",
+          "description": "Dispute resolution terms in agreements and commercial law: arbitration or mediation clauses, choice of forum, and limited waivers of sovereign immunity.",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "required": ["context", "kind"],
+            "properties": {
+              "context": { "$ref": "common.schema.json#/$defs/slug", "description": "Open vocabulary (any lowercase hyphenated term). Suggested: gaming-compact, commercial-code, secured-transactions-code, employment-code, intergovernmental-agreement, business-charter, other." },
+              "kind": { "$ref": "common.schema.json#/$defs/slug", "description": "Open vocabulary (any lowercase hyphenated term). Suggested: arbitration-clause, mediation-clause, meet-and-confer, choice-of-forum, waiver-of-sovereign-immunity, other." },
+              "citation": { "type": "string" },
+              "summary": { "type": "string", "description": "One neutral sentence." },
+              "link": { "$ref": "common.schema.json#/$defs/link" }
+            },
+            "unevaluatedProperties": false
+          }
+        },
+        "training_programs": {
+          "type": "array",
+          "description": "Programs that train or certify peacemakers, mediators or arbitrators for the nation's forums.",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "required": ["name"],
+            "properties": {
+              "name": { "type": "string" },
+              "provider": { "type": "string" },
+              "link": { "$ref": "common.schema.json#/$defs/link" }
+            },
+            "unevaluatedProperties": false
+          }
+        },
+        "published_materials": {
+          "type": "array",
+          "description": "Published rules, forms and guides for the nation's dispute resolution forums. Linked, not reproduced.",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "required": ["kind", "title"],
+            "properties": {
+              "kind": { "type": "string", "enum": ["rules", "forms", "guide", "brochure", "other"] },
+              "title": { "type": "string" },
+              "link": { "$ref": "common.schema.json#/$defs/link" }
+            },
+            "unevaluatedProperties": false
+          }
+        }
+      }
+    },
+    "gaming": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Gaming under the Indian Gaming Regulatory Act (25 U.S.C. §§ 2701-2721).",
+      "properties": {
+        "operates_gaming": {
+          "type": "object",
+          "$ref": "#/$defs/citedFact",
+          "required": ["value"],
+          "properties": { "value": { "type": "boolean" } },
+          "unevaluatedProperties": false
+        },
+        "ordinances": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "properties": {
+              "approved": { "$ref": "common.schema.json#/$defs/partialDate" },
+              "link": { "$ref": "common.schema.json#/$defs/link" }
+            },
+            "unevaluatedProperties": false
+          }
+        },
+        "compacts": {
+          "type": "array",
+          "description": "Class III tribal-state compacts.",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "required": ["state", "status"],
+            "properties": {
+              "state": { "$ref": "common.schema.json#/$defs/stateCode" },
+              "status": { "type": "string", "enum": ["in-effect", "approved", "deemed-approved", "expired", "none"] },
+              "approved": { "$ref": "common.schema.json#/$defs/partialDate" },
+              "federal_register_citation": { "type": "string" },
+              "dispute_resolution_summary": { "type": "string", "description": "One neutral sentence on how the compact resolves disputes between the nation and the state." },
+              "dispute_resolution_locator": { "type": "string", "description": "Section of the compact." }
+            },
+            "unevaluatedProperties": false
+          }
+        },
+        "entities": {
+          "type": "array",
+          "description": "The nation's gaming regulator and gaming enterprises.",
+          "items": {
+            "type": "object",
+            "$ref": "#/$defs/citedFact",
+            "required": ["name", "kind"],
+            "properties": {
+              "name": { "type": "string" },
+              "kind": { "type": "string", "enum": ["gaming-commission", "gaming-enterprise", "gaming-authority", "other"] }
+            },
+            "unevaluatedProperties": false
+          }
+        }
+      }
+    },
+    "jurisdiction": {
+      "type": "array",
+      "description": "Jurisdictional facts that shape how disputes reach tribal, state or federal forums.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["topic", "value"],
+        "properties": {
+          "topic": {
+            "type": "string",
+            "enum": [
+              "public-law-280",
+              "violence-against-women-act-special-tribal-criminal-jurisdiction",
+              "tribal-law-and-order-act-enhanced-sentencing",
+              "indian-child-welfare-act",
+              "other"
+            ]
+          },
+          "value": { "type": "string", "description": "Short value as defined for the topic in docs/data-model.md, for example mandatory-state, optional-state, excepted, retroceded, exercising, implementing or designated-agent-listed." },
+          "detail": { "type": "string" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "memberships": {
+      "type": "array",
+      "description": "Intertribal organizations the nation belongs to, as the organization publishes its membership.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["organization"],
+        "properties": { "organization": { "type": "string" } },
+        "unevaluatedProperties": false
+      }
+    },
+    "related_entities": {
+      "type": "array",
+      "description": "Organizations related to the community that are not the community's government, for example an Alaska Native regional corporation or a state agency serving Native Hawaiians.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["name", "relation"],
+        "properties": {
+          "name": { "type": "string" },
+          "relation": { "type": "string" },
+          "link": { "$ref": "common.schema.json#/$defs/link" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "consultation": {
+      "type": "array",
+      "description": "Dated history of this project's contact with the nation about the record, including corrections and redaction or withdrawal requests (charter, commitments 4 and 6). Name offices or roles, never individuals.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["date", "event"],
+        "properties": {
+          "date": { "$ref": "common.schema.json#/$defs/calendarDate" },
+          "event": {
+            "type": "string",
+            "enum": ["contacted", "followed-up", "response-received", "correction-requested", "correction-made", "redaction-requested", "redaction-completed", "withdrawal-requested", "withdrawal-completed", "approval-received", "declined-to-review"]
+          },
+          "channel": { "type": "string", "enum": ["email", "postal-mail", "phone", "in-person", "web-form", "other"] },
+          "with": { "type": "string", "description": "Office or role, for example 'Office of the Tribal Secretary'." },
+          "fields": { "type": "array", "items": { "type": "string" }, "description": "Fields a correction or redaction concerns." },
+          "note": { "type": "string" },
+          "evidence_private": { "type": "boolean", "description": "True when a copy of the correspondence is kept privately outside the repository." }
+        }
+      }
     },
     "review": {
       "type": "object",
