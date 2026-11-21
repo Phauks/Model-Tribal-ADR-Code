@@ -23,11 +23,22 @@ and makes each edition reproducible
 │   └── CHANGELOG.md
 ├── site/                    Website code (version + changelog)          MIT
 ├── pdf/                     Print build for Lulu (version + changelog)  MIT
+│   ├── book.yaml            Book size, paper, title page details        MIT
+│   ├── book-sizes.yaml      Every eligible size and its layout rules    MIT
+│   ├── pipeline/            Content to Typst, citations, page geometry  MIT
+│   ├── typst/               The page template                           MIT
+│   ├── styles/              Citation style and locale                   CC BY-SA
+│   ├── fonts/               Embedded fonts                              OFL
+│   ├── tools/               PDF checks against Lulu's rules             MIT
+│   └── tests/               Tests and the typesetting specimen          MIT
 ├── schemas/                 JSON Schemas for every record type          MIT
 ├── scripts/                 Checks run on every pull request            MIT
 │   └── examples/            One valid example per schema
 ├── research/
-│   └── sessions/YYYY/       One dated file per research session         CC BY
+│   ├── sessions/YYYY/       One dated file per research session         CC BY
+│   ├── raw/YYYY-MM-DD/      Cited facts before they become records      CC BY
+│   ├── analyses/            Dated analyses of the records               CC BY
+│   └── outreach/            One record per organization to ask for help CC BY
 ├── docs/
 │   ├── charter.md           Project charter
 │   ├── data-model.md        Record types and fields
@@ -35,6 +46,7 @@ and makes each edition reproducible
 │   ├── terminology.md       How terms are chosen, defined and linked
 │   ├── style-guide.md       Tone and writing standards
 │   ├── requests.md          Correction, restriction, removal and contribution flow
+│   ├── roadmap.md           Order of work and review gates toward drafting
 │   ├── repository-layout.md This file
 │   └── decisions/           Numbered decision records
 ├── LICENSES/                Full license texts
@@ -70,6 +82,7 @@ or removed record leaves a redirect entry instead.
 | Method | `content/methods/<id>.yaml` | `content/methods/mediation.yaml` |
 | Bibliography | `content/bibliographies/<slug>.md` | `content/bibliographies/united-states-dispute-resolution.md` |
 | Research session | `research/sessions/<yyyy>/<yyyy-mm-dd>-<topic>.md` | `research/sessions/2026/2026-11-20-foundational-scan.md` |
+| Outreach organization | `research/outreach/<id>.yaml` | `research/outreach/native-american-rights-fund.yaml` |
 
 Tribe profiles and source records sit in a subfolder named for the first
 letter of their id or key (`content/tribes/n/`, `content/sources/u/`). An id or

@@ -1,0 +1,76 @@
+id: local-contexts
+name: Local Contexts
+also_known_as:
+- Local Contexts Hub
+- Traditional Knowledge (TK) Labels
+- Biocultural (BC) Labels and Notices
+category: data-governance-organization
+scope: national
+relevance:
+  text: Local Contexts provides Traditional Knowledge and Biocultural Labels and Notices and a Hub through
+    which Indigenous communities and institutions apply them to collections and data. Its site publishes
+    mission and governance information, Hub support materials, and dispute procedures for Label use.
+  sources:
+  - home
+  - about
+  - governance
+  - frequently-asked-questions
+  - dispute
+possible_roles:
+- advice
+- sources-and-data
+contacts:
+- kind: web-page
+  value: https://localcontexts.org/support/frequently-asked-questions/
+  label: Support / FAQ
+  sources:
+  - frequently-asked-questions
+- kind: web-page
+  value: https://localcontexts.org/events/info-and-hub-demo-sessions/
+  label: Information and Hub demo sessions
+  sources:
+  - sessions
+sources:
+- id: home
+  title: Grounding Indigenous Rights (Local Contexts home)
+  publisher: Local Contexts
+  link: https://localcontexts.org/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Organization's site
+- id: about
+  title: About Local Contexts
+  publisher: Local Contexts
+  link: https://localcontexts.org/about/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: About page
+- id: governance
+  title: Mission & Governance
+  publisher: Local Contexts
+  link: https://localcontexts.org/governance/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Mission and governance page
+- id: frequently-asked-questions
+  title: Frequently Asked Questions
+  publisher: Local Contexts
+  link: https://localcontexts.org/support/frequently-asked-questions/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Support FAQ
+- id: dispute
+  title: Dispute Procedures
+  publisher: Local Contexts
+  link: https://localcontexts.org/?p=8225
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Dispute procedures page
+- id: sessions
+  title: Information Sessions
+  publisher: Local Contexts
+  link: https://localcontexts.org/events/info-and-hub-demo-sessions/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Information and Hub demo sessions
+checked: '2026-11-21'

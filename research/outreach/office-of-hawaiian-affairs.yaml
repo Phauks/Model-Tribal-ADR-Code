@@ -1,0 +1,56 @@
+id: office-of-hawaiian-affairs
+name: Office of Hawaiian Affairs
+also_known_as:
+- OHA
+category: state-agency
+location:
+  city: Honolulu
+  state: HI
+scope: regional
+relevance:
+  text: The Office of Hawaiian Affairs (OHA) was created in 1978 through the Hawaiʻi State Constitutional
+    Convention as a public trust to better the conditions of Native Hawaiians and the broader Hawaiian
+    community, and in 1979 the Legislature made it a semi-autonomous self-governing body. It advocates
+    for Native Hawaiian well-being and operates separately from the state executive branch.
+  sources:
+  - history
+possible_roles:
+- consultation
+- sources-and-data
+- distribution
+- funding
+contacts:
+- kind: telephone
+  value: (808) 594-1835
+  label: Main office
+  sources:
+  - history
+  - organizer
+- kind: mailing-address
+  value: '560 N. Nimitz Hwy #200, Honolulu, HI 96817'
+  label: Main office
+  sources:
+  - history
+  - organizer
+- kind: web-page
+  value: https://www.oha.org/offices/
+  label: Office locations
+  sources:
+  - organizer
+sources:
+- id: history
+  title: History
+  publisher: Office of Hawaiian Affairs
+  link: https://www.oha.org/about/abouthistory/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: 1978 creation, semi-autonomous status (1979), body corporate separate from Executive branch,
+    address, phone
+- id: organizer
+  title: OHA organizer page (footer contact)
+  publisher: Office of Hawaiian Affairs
+  link: https://www.oha.org/organizer/oha/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Main office address, phone, office locations link
+checked: '2026-11-21'

@@ -1,0 +1,68 @@
+id: southwestern-association-for-indian-arts
+name: Southwestern Association for Indian Arts
+also_known_as:
+- SWAIA
+- Santa Fe Indian Market
+category: native-arts-organization
+location:
+  city: Santa Fe
+  state: NM
+scope: national
+relevance:
+  text: The Southwestern Association for Indian Arts (SWAIA) produces the Santa Fe Indian Market, which
+    it calls the world's largest Native American art market; the market marked its 104th year in August
+    2026. It runs a juried artist application process (a 2026 call was posted through EntryThingy) and
+    publishes artist resources, so it has long experience running fair, juried Native art selection (project
+    analysis).
+  sources:
+  - events
+  - kunc-news-2026
+  - call-2026
+  - resources
+possible_roles:
+- advice
+- art
+- distribution
+contacts:
+- kind: web-page
+  value: https://www.swaia.org/info
+  label: Info page
+  sources:
+  - information
+sources:
+- id: information
+  title: SWAIA info
+  publisher: Southwestern Association for Indian Arts
+  link: https://www.swaia.org/info
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Info/contact page
+- id: events
+  title: The World's Largest Native American Art Market
+  publisher: Southwestern Association for Indian Arts
+  link: https://swaia.org/2024-events/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Santa Fe Indian Market described as the world's largest Native American art market
+- id: kunc-news-2026
+  title: Santa Fe Indian Market returns for its 104th year celebrating Native art and fashion
+  publisher: KUNC
+  link: https://www.kunc.org/2026-08-12/santa-fe-indian-market-returns-for-its-104th-year-celebrating-native-art-and-fashion
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: 104th market in August 2026
+- id: call-2026
+  title: 'External Call: SWAIA Santa Fe Indian Market 2026'
+  publisher: EntryThingy
+  link: https://app.entrythingy.com/calls/external/swaia-santa-fe-indian-market-2026/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Artist application call for 2026
+- id: resources
+  title: SWAIA artist resources
+  publisher: Southwestern Association for Indian Arts
+  link: https://www.swaia.org/resources
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Artist resources page
+checked: '2026-11-21'

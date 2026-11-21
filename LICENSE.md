@@ -11,6 +11,8 @@ has different users with different needs. The reasons for each choice are in
 | Data: glossary, method records, tribe profiles, source records, bibliographies, comparative tables, research logs | `content/glossary/`, `content/methods/`, `content/tribes/`, `content/sources/`, `content/bibliographies/`, `research/` | CC BY 4.0 | [LICENSES/CC-BY-4.0.txt](LICENSES/CC-BY-4.0.txt) |
 | Website, build and tooling code, schemas | `site/`, `pdf/`, `schemas/`, scripts | MIT License | [LICENSES/MIT.txt](LICENSES/MIT.txt) |
 | Project documentation | `docs/`, root documents | CC BY 4.0 | [LICENSES/CC-BY-4.0.txt](LICENSES/CC-BY-4.0.txt) |
+| Citation style and locale (third-party, modified) | `pdf/styles/*.csl`, `pdf/styles/*.xml` | CC BY-SA 3.0, the license of the originals ([pdf/styles/README.md](pdf/styles/README.md)) | [LICENSES/CC-BY-SA-3.0.txt](LICENSES/CC-BY-SA-3.0.txt) |
+| Fonts (third-party, unmodified) | `pdf/fonts/` | SIL Open Font License 1.1 ([pdf/fonts/README.md](pdf/fonts/README.md)) | [LICENSES/OFL-1.1.txt](LICENSES/OFL-1.1.txt) |
 
 ## Material these licenses do not cover
 

@@ -1,0 +1,424 @@
+/*
+ * Site-wide styles. Every color, size and space is a custom property from
+ * site/design-tokens.json (see src/lib/design-tokens.ts); this file names no
+ * color of its own, so a palette change touches only the tokens file.
+ * Layout and components follow site/DESIGN.md, sections 6 to 9.
+ */
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: var(--font-family-reading);
+	font-size: 100%;
+	line-height: var(--font-line-height-reading);
+	color: var(--color-ink);
+	background: var(--color-paper);
+	scroll-padding-top: var(--space-6);
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+body {
+	margin: 0;
+	font-size: var(--font-size-body);
+	background: var(--color-paper);
+	color: var(--color-ink);
+	overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	line-height: var(--font-line-height-heading);
+	font-weight: var(--font-weight-bold);
+	margin: var(--space-6) 0 var(--space-3);
+}
+
+h1 {
+	font-size: var(--font-size-heading-1);
+	margin-top: var(--space-5);
+}
+
+h2 {
+	font-size: var(--font-size-heading-2);
+}
+
+h3 {
+	font-size: var(--font-size-heading-3);
+}
+
+p,
+ul,
+ol,
+dl {
+	margin: 0 0 var(--space-4);
+}
+
+/* Links are always underlined; color is never the only cue (DESIGN.md, section 7). */
+a {
+	color: var(--color-link);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.18em;
+}
+
+a:visited {
+	color: var(--color-link-visited);
+}
+
+a:hover {
+	text-decoration-thickness: 3px;
+}
+
+/* Defined terms: dotted underline (DESIGN.md, section 2). */
+a.term-link {
+	text-decoration-style: dotted;
+	text-decoration-thickness: 2px;
+}
+
+/*
+ * Yellow focus with an ink ring (DESIGN.md, section 9). Text on the yellow
+ * fill is the darkest token of each theme: ink in light, paper in dark.
+ */
+:root {
+	--focus-text: var(--color-ink);
+}
+
+@media (prefers-color-scheme: dark) {
+	:root:not([data-theme='light']) {
+		--focus-text: var(--color-paper);
+	}
+}
+
+:root[data-theme='dark'] {
+	--focus-text: var(--color-paper);
+}
+
+:focus-visible,
+a:focus-visible,
+a:visited:focus-visible {
+	outline: 3px solid var(--color-focus-ring);
+	outline-offset: 0;
+	background-color: var(--color-focus);
+	color: var(--focus-text);
+	box-shadow: 0 0 0 3px var(--color-focus);
+	text-decoration: none;
+}
+
+.visually-hidden {
+	position: absolute !important;
+	width: 1px !important;
+	height: 1px !important;
+	margin: -1px !important;
+	padding: 0 !important;
+	overflow: hidden !important;
+	clip-path: inset(50%) !important;
+	white-space: nowrap !important;
+	border: 0 !important;
+}
+
+.page-width {
+	max-width: var(--layout-page-width);
+	margin: 0 auto;
+	padding: 0 var(--space-4);
+}
+
+.reading {
+	max-width: var(--layout-measure);
+}
+
+.lead {
+	font-size: var(--font-size-lead);
+	line-height: 1.45;
+}
+
+.muted {
+	color: var(--color-ink-muted);
+}
+
+.small {
+	font-size: var(--font-size-small);
+}
+
+/* Notices: one style for status (DESIGN.md, section 6). */
+.notice {
+	background: var(--color-notice-background);
+	border-left: 6px solid var(--color-link);
+	border-radius: var(--radius-control);
+	padding: var(--space-3) var(--space-4);
+	margin: var(--space-4) 0;
+	max-width: var(--layout-measure);
+}
+
+.notice > :last-child {
+	margin-bottom: 0;
+}
+
+/* Panels: outlined or filled, one per purpose. */
+.panel {
+	border: 1px solid var(--color-line);
+	border-radius: var(--radius-panel);
+	padding: var(--space-4) var(--space-5);
+	margin: var(--space-5) 0;
+}
+
+.panel-filled {
+	background: var(--color-surface);
+	border-color: var(--color-surface);
+}
+
+.panel > :first-child {
+	margin-top: 0;
+}
+
+.panel > :last-child {
+	margin-bottom: 0;
+}
+
+/* Art reserved for commissioned Native artists (DESIGN.md, section 6). */
+.art-reserved {
+	display: grid;
+	place-items: center;
+	min-height: 10rem;
+	padding: var(--space-5);
+	border: 2px dashed var(--color-control-border);
+	border-radius: var(--radius-panel);
+	background: var(--color-art-reserved);
+	color: var(--color-ink-muted);
+	text-align: center;
+	font-size: var(--font-size-small);
+}
+
+/* Summary list: label and value pairs (DESIGN.md, section 6). */
+.summary-list {
+	display: grid;
+	grid-template-columns: minmax(8rem, 14rem) 1fr;
+	gap: 0;
+	margin: 0 0 var(--space-5);
+	border-top: 1px solid var(--color-line);
+}
+
+.summary-list > div {
+	display: contents;
+}
+
+.summary-list dt,
+.summary-list dd {
+	margin: 0;
+	padding: var(--space-3) var(--space-3) var(--space-3) 0;
+	border-bottom: 1px solid var(--color-line);
+}
+
+.summary-list dt {
+	font-weight: var(--font-weight-semibold);
+}
+
+.summary-list dd > ul {
+	margin: 0;
+	padding-left: var(--space-5);
+}
+
+@media (max-width: 40rem) {
+	.summary-list {
+		grid-template-columns: 1fr;
+	}
+
+	.summary-list dt {
+		border-bottom: 0;
+		padding-bottom: 0;
+	}
+}
+
+/* Simple tables until the table library is chosen. Wide tables scroll in their own box. */
+.table-scroll {
+	overflow-x: auto;
+	margin: 0 0 var(--space-5);
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	font-size: var(--font-size-small);
+}
+
+th,
+td {
+	text-align: left;
+	vertical-align: top;
+	padding: var(--space-2) var(--space-3);
+	border-bottom: 1px solid var(--color-line);
+}
+
+th {
+	background: var(--color-surface);
+	font-weight: var(--font-weight-semibold);
+}
+
+/* Buttons and form controls. */
+.button {
+	display: inline-flex;
+	align-items: center;
+	min-height: var(--layout-target-minimum);
+	padding: var(--space-2) var(--space-4);
+	border: 2px solid var(--color-action);
+	border-radius: var(--radius-control);
+	background: var(--color-action);
+	color: var(--color-action-text);
+	font: inherit;
+	font-weight: var(--font-weight-semibold);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.button:visited {
+	color: var(--color-action-text);
+}
+
+.button-quiet {
+	background: transparent;
+	color: var(--color-ink);
+	border-color: var(--color-control-border);
+}
+
+.button-quiet:visited {
+	color: var(--color-ink);
+}
+
+select {
+	font: inherit;
+	font-size: var(--font-size-small);
+	min-height: var(--layout-target-minimum);
+	padding: 0 var(--space-2);
+	border: 2px solid var(--color-control-border);
+	border-radius: var(--radius-control);
+	background: var(--color-paper);
+	color: var(--color-ink);
+}
+
+/* Form fields (request form and co-author workspace). Labels sit above
+   their fields; hints and errors sit between the label and the field. */
+.field {
+	margin: 0 0 var(--space-4);
+	max-width: var(--layout-measure);
+}
+
+.field > label,
+fieldset > legend:not(:has(h2, h3)) {
+	display: block;
+	font-weight: var(--font-weight-semibold);
+	margin-bottom: var(--space-1);
+}
+
+.hint {
+	color: var(--color-ink-muted);
+	font-size: var(--font-size-small);
+	font-weight: normal;
+	margin: 0 0 var(--space-2);
+}
+
+input[type='text'],
+input[type='email'],
+input[type='search'],
+textarea {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	font: inherit;
+	min-height: var(--layout-target-minimum);
+	padding: var(--space-2);
+	border: 2px solid var(--color-control-border);
+	border-radius: var(--radius-control);
+	background: var(--color-paper);
+	color: var(--color-ink);
+}
+
+input.short {
+	max-width: 16rem;
+}
+
+input[type='file'] {
+	font: inherit;
+	font-size: var(--font-size-small);
+}
+
+input[aria-invalid='true'],
+textarea[aria-invalid='true'],
+select[aria-invalid='true'] {
+	border-color: var(--color-danger);
+}
+
+.field-error {
+	color: var(--color-danger);
+	font-weight: var(--font-weight-semibold);
+	margin: 0 0 var(--space-2);
+}
+
+.notice-problem {
+	border-left-color: var(--color-danger);
+}
+
+button.button {
+	font-size: inherit;
+}
+
+/* Status chips: words first, color second. */
+.chip {
+	display: inline-block;
+	padding: 0 var(--space-2);
+	border: 1px solid var(--color-control-border);
+	border-radius: var(--radius-control);
+	font-size: var(--font-size-small);
+	color: var(--color-ink-muted);
+}
+
+/* Citations and notes. */
+sup {
+	line-height: 0;
+}
+
+.note-marker {
+	padding: 0 0.1em;
+}
+
+.notes {
+	font-size: var(--font-size-small);
+	border-top: 1px solid var(--color-line);
+	margin-top: var(--space-6);
+	padding-top: var(--space-3);
+}
+
+.notes ol {
+	padding-left: var(--space-5);
+}
+
+.report-link {
+	font-size: var(--font-size-small);
+	white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation: none !important;
+		transition: none !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+@media print {
+	.no-print,
+	.skip-link {
+		display: none !important;
+	}
+
+	a[href^='http']::after {
+		content: ' (' attr(href) ')';
+		font-size: 0.85em;
+		word-break: break-all;
+	}
+}

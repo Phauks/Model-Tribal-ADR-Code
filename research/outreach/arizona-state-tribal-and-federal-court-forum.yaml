@@ -1,0 +1,49 @@
+id: arizona-state-tribal-and-federal-court-forum
+name: Arizona State, Tribal and Federal Court Forum
+also_known_as:
+- STFCF
+category: state-agency
+location:
+  city: Phoenix
+  state: AZ
+scope: regional
+relevance:
+  text: The Arizona State, Tribal and Federal Court Forum was established in 1994 under Arizona Code of
+    Judicial Administration section 1-801 to promote collaboration among state, tribal and federal courts.
+    Its goals include fostering mutual understanding across legal systems and improving the quality of
+    justice in overlapping jurisdictions. It also runs a Southwest Cross-Jurisdictional Webinar Series.
+  sources:
+  - forum
+  - webinars
+possible_roles:
+- reviewer
+- event-or-presentation
+- distribution
+contacts:
+- kind: mailing-address
+  value: Arizona Supreme Court, Administrative Office of the Courts, 1501 W. Washington St., Suite 410,
+    Phoenix, AZ 85007
+  label: Forum staff
+  sources:
+  - forum
+- kind: web-page
+  value: https://www.azcourts.gov/stfcf
+  label: Forum page
+  sources:
+  - forum
+sources:
+- id: forum
+  title: Arizona State, Tribal and Federal Court Forum
+  publisher: Arizona Judicial Branch
+  link: https://www.azcourts.gov/stfcf
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Establishment 1994 under ACJA 1-801, purpose, membership, staff address
+- id: webinars
+  title: Southwest Cross Jurisdictional Webinar Series
+  publisher: Arizona Judicial Branch
+  link: https://www.azcourts.gov/stfcf/Southwest_Cross-Jurisdictional_Webinar_Series
+  accessed: '2026-11-21'
+  verification: search-result-only
+  supports: Existence of the webinar series
+checked: '2026-11-21'

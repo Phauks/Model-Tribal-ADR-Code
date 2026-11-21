@@ -1,0 +1,38 @@
+id: confederated-tribes-of-siletz-indians-of-oregon
+name: Confederated Tribes of Siletz Indians of Oregon
+category: native-nation
+tribe_profile: confederated-tribes-of-siletz-indians-of-oregon
+location:
+  state: OR
+scope: local
+relevance:
+  text: 'Federally recognized Native nation whose government office the Bureau of Indian Affairs lists
+    in Oregon. Dispute resolution forums named in its law or court materials include: Siletz Community
+    Law Court; Agreed arbitration by Gwe-shvt-naga/Peacemaker.'
+  sources:
+  - bureau-of-indian-affairs-tribal-leaders-directory
+  - siletz-code-3-300-community-law-court-2025
+possible_roles:
+- consultation
+- reviewer
+- sources-and-data
+contacts: []
+sources:
+- id: bureau-of-indian-affairs-tribal-leaders-directory
+  title: Tribal Leaders Directory (data service)
+  publisher: Bureau of Indian Affairs
+  link: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: State of the nation's government office. The office contacts are in the Tribe profile, which
+    was built from this data service.
+- id: siletz-code-3-300-community-law-court-2025
+  title: Siletz Community Law Court, Siletz Tribal Code § 3.300 (adopted 9/21/01, amended 6/20/2025)
+  publisher: Confederated Tribes of Siletz Indians
+  link: https://ctsi.nsn.us/wp-content/uploads/2025/06/Siletz-Community-Law-Court-06-20-2025.pdf
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Dispute resolution forum named in the nation's law or court materials.
+checked: '2026-11-21'
+notes: Government office contacts are in the nation's Tribe profile. Approach through the government office
+  and ask whether the court, peacemaking program or legal department is the right point of contact.

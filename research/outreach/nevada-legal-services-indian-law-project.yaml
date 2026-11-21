@@ -1,0 +1,62 @@
+id: nevada-legal-services-indian-law-project
+name: Indian Law Project, Nevada Legal Services
+also_known_as:
+- ILP
+- Nevada Legal Services Indian Law Project
+category: native-legal-organization
+location:
+  city: Reno
+  state: NV
+scope: state
+relevance:
+  text: The Indian Law Project has given free legal help to Nevada tribes and tribal members since 1974
+    and is described as the only Nevada legal aid program that specializes in tribal law. It represents
+    tribal members in tribal and state courts and can act as in-house counsel for eligible tribes on matters
+    including tribal code development. Its staff appear regularly in Nevada tribal courts and know their
+    codes and community norms.
+  sources:
+  - indian-law-project
+  - nevada-lawyer-indian-law-project-article
+possible_roles:
+- reviewer
+- advice
+- consultation
+contacts:
+- kind: telephone
+  value: (775) 284-3491
+  label: Reno office (ILP is based in Reno)
+  sources:
+  - nevada-legal-services-contact
+- kind: mailing-address
+  value: 449 South Virginia Street, 3rd Floor, Reno, NV 89501
+  label: Reno office
+  sources:
+  - nevada-legal-services-contact
+- kind: web-page
+  value: https://nevadalegalservices.org/contact/
+  label: Contact page
+  sources:
+  - nevada-legal-services-contact
+sources:
+- id: indian-law-project
+  title: Indian Law Project
+  publisher: Nevada Legal Services
+  link: https://nevadalegalservices.org/what-we-do/indian-law-project/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Services, Reno base, tribal code development.
+- id: nevada-legal-services-contact
+  title: Contact
+  publisher: Nevada Legal Services
+  link: https://nevadalegalservices.org/contact/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Office addresses and phones.
+- id: nevada-lawyer-indian-law-project-article
+  title: Serving Nevada's Tribal Communities (Nevada Lawyer, Feb. 2024)
+  publisher: State Bar of Nevada
+  link: https://nvbar.org/wp-content/uploads/NevadaLawyer_February2024_IndianLawProject.pdf
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Since 1974; only Nevada legal aid program specializing in tribal law; tribal court practice.
+checked: '2026-11-21'

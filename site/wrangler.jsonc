@@ -1,0 +1,57 @@
+// Cloudflare Worker that serves the website.
+//
+// Workers Builds deploys it from the GitHub repository (root directory:
+// site, build command: npm ci && npm run build, deploy command:
+// npx wrangler deploy). No secret is stored in GitHub (decision record 0006).
+//
+// There is no "main" or "assets" setting here: @sveltejs/adapter-cloudflare
+// sets the Worker entry and the static assets directory when it builds, and
+// points Wrangler at the generated configuration.
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "model-tribal-adr-code",
+	"compatibility_date": "2026-11-20",
+	"workers_dev": true,
+	"preview_urls": true,
+	"observability": {
+		"enabled": true
+	},
+	// Code refers to these resources only by their binding names ("database"
+	// and "sourceDocuments"). The resource names below can change, for
+	// example when the project is renamed, without changing any code.
+	//
+	// Database for sign-in, co-author roles, reviews and requests from
+	// nations. Its tables are created by the files in migrations/
+	// (COLLABORATION.md, "Database"). A database identifier is not a secret.
+	"d1_databases": [
+		{
+			"binding": "database",
+			"database_name": "model-tribal-adr-code",
+			"database_id": "2386ebd3-cea2-4ca1-9fff-0772fcd8bc6b",
+			"migrations_dir": "migrations"
+		}
+	],
+	// Private bucket for copies of source documents. Not public: nothing in
+	// it is served unless the Worker chooses to serve it. Files sent with a
+	// request are kept under requests/ and shown only to signed-in editors.
+	"r2_buckets": [
+		{
+			"binding": "sourceDocuments",
+			"bucket_name": "model-tribal-adr-code-sources"
+		}
+	],
+	// Limits how often one address can send the request form: five a minute
+	// is plenty for a person and slows down automated spam, without asking
+	// anyone to make an account or solve a puzzle (docs/requests.md).
+	"ratelimits": [
+		{
+			"name": "requestFormLimit",
+			"namespace_id": "1001",
+			"simple": { "limit": 5, "period": 60 }
+		}
+	]
+	// Secrets, set in the Cloudflare dashboard (Worker > Settings > Variables
+	// and Secrets), never in this file or in GitHub: AUTH0_DOMAIN,
+	// AUTH0_CLIENT_ID, AUTH0_CLIENT_SECRET, SESSION_SECRET and
+	// LEAD_AUTHOR_EMAIL. See COLLABORATION.md, "Setting up sign-in".
+}

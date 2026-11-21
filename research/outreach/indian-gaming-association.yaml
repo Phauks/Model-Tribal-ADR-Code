@@ -1,0 +1,61 @@
+id: indian-gaming-association
+name: Indian Gaming Association
+also_known_as:
+- National Indian Gaming Association
+- NIGA
+- IGA
+category: intertribal-organization
+location:
+  city: Washington
+  state: DC
+scope: national
+relevance:
+  text: The Indian Gaming Association is a Washington, DC-based association whose website covers Indian
+    gaming news and legal matters. Gaming compacts and enterprise disputes are a possible application
+    area for a model tribal alternative dispute resolution code (project analysis), but the association's
+    own role in dispute resolution was not confirmed in this research.
+  sources:
+  - contact
+  - legal
+possible_roles:
+- distribution
+- consultation
+contacts:
+- kind: contact-form
+  value: https://indiangaming.org/contact/
+  label: Contact form
+  sources:
+  - contact
+- kind: email
+  value: support@indiangaming.org
+  label: General support inbox
+  sources:
+  - contact
+- kind: telephone
+  value: 202.546.7711
+  label: Main office
+  sources:
+  - contact
+- kind: mailing-address
+  value: 224 2nd Street SE, Washington DC 20003
+  label: Main office
+  sources:
+  - contact
+sources:
+- id: contact
+  title: Contact Us | Indian Gaming Association
+  publisher: Indian Gaming Association
+  link: https://indiangaming.org/contact/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Name as used on site, address, phone, support email, contact form
+- id: legal
+  title: Legal
+  publisher: Indian Gaming Association
+  link: https://indiangaming.org/legal/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Existence of a legal section on the site
+checked: '2026-11-21'
+notes: Also known as the National Indian Gaming Association. Its own role in dispute resolution was not
+  confirmed.

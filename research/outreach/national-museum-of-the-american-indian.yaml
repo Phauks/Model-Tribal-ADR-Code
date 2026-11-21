@@ -1,0 +1,63 @@
+id: national-museum-of-the-american-indian
+name: Smithsonian National Museum of the American Indian
+also_known_as:
+- NMAI
+category: museum
+location:
+  city: Washington
+  state: DC
+scope: national
+relevance:
+  text: The National Museum of the American Indian is the Smithsonian’s museum of Native peoples. It has
+    a Community Engagement office and fellowship programs, the most plausible public paths for an outside
+    project (project analysis).
+  sources:
+  - community
+  - fellowships
+possible_roles:
+- advice
+- distribution
+contacts:
+- kind: web-page
+  value: https://americanindian.si.edu/about/contact
+  label: Contact Us
+  sources:
+  - contact
+- kind: web-page
+  value: https://americanindian.si.edu/about/community-engagement
+  label: Community Engagement
+  sources:
+  - community
+sources:
+- id: contact
+  title: Contact Us
+  publisher: Smithsonian National Museum of the American Indian
+  link: https://americanindian.si.edu/about/contact
+  accessed: '2026-11-21'
+  verification: search-result-only
+  supports: Contact page
+- id: community
+  title: Community Engagement
+  publisher: Smithsonian National Museum of the American Indian
+  link: https://americanindian.si.edu/about/community-engagement
+  accessed: '2026-11-21'
+  verification: search-result-only
+  supports: Community Engagement office
+- id: fellowships
+  title: Fellowships
+  publisher: Smithsonian National Museum of the American Indian
+  link: https://americanindian.si.edu/about/fellowships
+  accessed: '2026-11-21'
+  verification: search-result-only
+  supports: Fellowship programs
+- id: washington-guide
+  title: NMAI-DC visitor guide (PDF)
+  publisher: Smithsonian National Museum of the American Indian
+  link: https://americanindian.si.edu/sites/1/files/pdf/visit/NMAI_DC_English.pdf
+  accessed: '2026-11-21'
+  verification: search-result-only
+  supports: DC location (4th Street and Independence Avenue SW)
+checked: '2026-11-21'
+notes: Smithsonian pages blocked automated reading, so this record rests on search results.
+notes_sources:
+- washington-guide

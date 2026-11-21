@@ -1,0 +1,72 @@
+id: sealaska-heritage-institute
+name: Sealaska Heritage Institute
+also_known_as:
+- SHI
+category: native-arts-organization
+location:
+  city: Juneau
+  state: AK
+scope: regional
+relevance:
+  text: Sealaska Heritage Institute in Juneau runs juried art shows (winners announced for 2026) and an
+    arts department focused on Northwest Coast art. It ran an art contest for the Celebration 2026 design,
+    a close model for a book cover art contest (project analysis).
+  sources:
+  - juried-2026
+  - arts-department
+  - celebration-contest
+possible_roles:
+- advice
+- art
+- distribution
+contacts:
+- kind: web-page
+  value: https://sealaskaheritage.org/contact-shi/
+  label: SHI contact details page
+  sources:
+  - contact
+- kind: email
+  value: heritage@sealaskaheritage.com
+  label: General office
+  sources:
+  - contact
+- kind: telephone
+  value: (907) 463-4844
+  label: General office
+  sources:
+  - contact
+- kind: mailing-address
+  value: 105 Heritage Way, Suite 201, Juneau, AK 99801
+  label: General office
+  sources:
+  - contact
+sources:
+- id: contact
+  title: SHI's Contact Details
+  publisher: Sealaska Heritage Institute
+  link: https://sealaskaheritage.org/contact-shi/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Contact page
+- id: juried-2026
+  title: SHI announces winners of 2026 Juried Art Shows
+  publisher: Sealaska Heritage Institute
+  link: https://sealaskaheritage.org/shi-announces-winners-of-2026-juried-art-shows/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: 2026 juried art shows
+- id: arts-department
+  title: SHI's Arts Department
+  publisher: Sealaska Heritage Institute
+  link: https://sealaskaheritage.org/shi-arts-department/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Arts department
+- id: celebration-contest
+  title: SHI opens art contest for Celebration 2026 design
+  publisher: Sealaska Heritage Institute
+  link: https://sealaskaheritage.org/shi-opens-art-contest-for-celebration-2026-design/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Design contest for Celebration 2026
+checked: '2026-11-21'
