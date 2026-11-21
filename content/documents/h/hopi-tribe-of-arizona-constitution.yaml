@@ -1,0 +1,210 @@
+id: hopi-tribe-of-arizona-constitution
+kind: constitution
+title: Constitution of the Hopi Tribe of Arizona
+nations:
+- hopi-tribe-of-arizona
+jurisdictions:
+- level: tribal
+  tribe: hopi-tribe-of-arizona
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 5 dated versions, from 1936-09-30
+  to 2017. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: CONSTITUTION AND BY-LAWS (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-09-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-hopicons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/hopi-tribe-of-arizona/ea1acb1b895e7f0b.html
+    sha256: ea1acb1b895e7f0b1219f151683a1eeb7a5ee18e3dd7ee77f9e34388867e2755
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article VIII (DISPUTES BETWEEN VILLAGES)
+    summary: Article headed "DISPUTES BETWEEN VILLAGES"; found by its heading and not yet read.
+    verification: title-only
+- id: 1936-text-2
+  label: Constitution and By-laws of the Hopi Tribe of Arizona as amended through Amendment III, FEB 14
+    1590 (as printed)
+  event: edition
+  status: superseded
+  dates:
+    approved: '1936-12-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1936-text
+  source: constitution-hopi-tribe-of-arizona-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/hopi-tribe-of-arizona/1059a9c30d347f87.pdf
+    sha256: 1059a9c30d347f8793fe66407739cb75f974864c720b5f08cb0dadceb0af8af0
+    pages: 21
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article VIII (Disputes Between Villages)
+    summary: Article headed "Disputes Between Villages"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (Vacancies and Removal from Office, shall be amended as)
+    summary: Article headed "Vacancies and Removal from Office, shall be amended as"; found by its heading
+      and not yet read.
+    verification: title-only
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.26, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.07, by script); not yet read side by side.
+- id: 1993-text
+  label: Constitution and By-laws of the Hopi Tribe as amended through Amendment No. X (Proposed Amendment
+    G), DEC 3D 1993
+  event: edition
+  status: superseded
+  dates:
+    listed: '1993'
+  supersedes:
+  - 1936-text-2
+  source: constitution-hopi-tribe-of-arizona-1993-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/hopi-tribe-of-arizona/6309112a8188c235.pdf
+    sha256: 6309112a8188c235b35b02a1189c80497bd45230c55630135228feeb415f5650
+    pages: 43
+  note: The text also prints approved 1936-12-19, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article VIII (DISPUTES BETWEEN VILLAGES)
+    summary: Article headed "DISPUTES BETWEEN VILLAGES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article 7 (Vacancies and &emQval)
+    summary: Article headed "Vacancies and &emQval"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1936-text-2
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.17, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1936-text-2
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.10, by script); not yet read side by side.
+- id: 1993-text-2
+  label: Constitution and By-laws of the Hopi Tribe as amended through Amendment E, 1993-12-07
+  event: edition
+  status: superseded
+  dates:
+    listed: '1993-12-07'
+  supersedes:
+  - 1993-text
+  source: hopi-constitution-nill
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/hopi-tribe-of-arizona/b4bf9bc00bf9cf52.pdf
+    sha256: b4bf9bc00bf9cf52d856091bab4f77f4ea81961cff16dc5ec78559e232890015
+    pages: 35
+  note: The text also prints approved 1936-12-19, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1993-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 2017-text
+  label: Constitution and By-Laws of the Hopi Tribe as amended through 2017 Secretarial election (date
+    unclear in OCR; ballot deadline May 25, 2017)
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2017'
+  supersedes:
+  - 1993-text-2
+  source: constitution-hopi-tribe-of-arizona-2017-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/hopi-tribe-of-arizona/7b171cbc1a044f54.pdf
+    sha256: 7b171cbc1a044f542546ce31235e8123fc6e8af5f3b4faf2544fab04915e01f0
+    pages: 70
+  note: The text also prints approved 1936-12-19, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
+    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII ((i) Toprovide by ordinance for removal or exclusion from the jurisdiction of
+      any)
+    summary: Article headed "(i) Toprovide by ordinance for removal or exclusion from the jurisdiction
+      of any non-members whose"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article VIII (DISPUTES BETWEEN VILLAGES)
+    summary: Lets the Tribal Council hear disputes between villages at a special meeting requested by
+      a village's Kikmongwi, then decide by majority vote.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - council-hearing
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-text-2
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1993-text-2
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

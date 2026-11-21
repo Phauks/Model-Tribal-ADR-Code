@@ -1,0 +1,131 @@
+id: sac-and-fox-nation-constitution
+kind: constitution
+title: Constitution of the Sac & Fox Nation, Oklahoma
+nations:
+- sac-and-fox-nation
+jurisdictions:
+- level: tribal
+  tribe: sac-and-fox-nation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1937-10-27
+  to 2004-08-20. Versions are only those found; others may exist.'
+versions:
+- id: 1937-text
+  label: CONSTITUTION AND BY-LAWS (1937)
+  event: original
+  status: superseded
+  dates:
+    approved: '1937-10-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-s-fcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/sac-and-fox-nation/2e6aee47303971df.html
+    sha256: 2e6aee47303971dff4dac7cdf9c755326f513229127efcb9ff46d66be27370e1
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VIII (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+- id: 1991-text
+  label: CONSTITUTION OF THE SAC AND FOX NATION as amended through Amendment III, 1991-12-28
+  event: edition
+  status: superseded
+  dates:
+    listed: '1991-12-28'
+  supersedes:
+  - 1937-text
+  source: constitution-sac-and-fox-nation-1991-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/sac-and-fox-nation/d1a7cb805e619d07.pdf
+    sha256: d1a7cb805e619d07d003451406899ec62678783655d53b7349f7839838435c46
+    pages: 14
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    superseded because a later dated text was found (project inference). Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article IV (GRIEVANCE COMMITTEE)
+    summary: Article headed "GRIEVANCE COMMITTEE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article V (COURTS)
+    summary: Article headed "COURTS"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1937-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: dispute-resolution
+    compared_with: 1937-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1937-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+- id: 2004-text
+  label: CONSTITUTION OF THE SAC AND FOX NATION as amended through Proposed Amendment A, designated Amendment
+    No. VI (OCR unclear), 2004-08-20
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2004-08-20'
+  supersedes:
+  - 1991-text
+  source: constitution-sac-and-fox-nation-2004-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/sac-and-fox-nation/c8d3259c7c1e23cc.pdf
+    sha256: c8d3259c7c1e23ccef71c966eb22a427ce5a58f5e3a5ef52762764aee5b4aca7
+    pages: 27
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21; a later
+    amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article Iv (GRIEVANCE COMMITTEE _)
+    summary: Vests the judicial power of the Nation in a Supreme Court of five Justices and inferior courts
+      set up by tribal law.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article Iv (GRIEVANCE COMMITTEE _)
+    summary: Creates a Grievance Committee that hears complaints of misconduct by Business Committee members
+      and calls Governing Council meetings to act on them.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - council-hearing
+  changes:
+  - topic: judicial-power
+    compared_with: 1991-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.56, by script); not yet read side by side.
+  - topic: dispute-resolution
+    compared_with: 1991-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.16, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

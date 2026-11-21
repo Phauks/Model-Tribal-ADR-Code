@@ -1,0 +1,72 @@
+id: quileute-tribe-of-the-quileute-reservation-constitution
+kind: constitution
+title: Constitution of the Quileute Tribe of the Quileute Reservation
+nations:
+- quileute-tribe-of-the-quileute-reservation
+jurisdictions:
+- level: tribal
+  tribe: quileute-tribe-of-the-quileute-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1936-09-12
+  to 2026-09-17. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: CONSTITUTION AND BY-LAWS OF (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-09-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-quilcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/quileute-tribe-of-the-quileute-reservation/d951a0231d4a3932.html
+    sha256: d951a0231d4a3932ecfb80761a0698fa6f2060092166c2356e464d02ab682d0d
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (ELECTIONS FOR THE TRIBAL COUNCIL)
+    summary: Article headed "ELECTIONS FOR THE TRIBAL COUNCIL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 2026-text
+  label: CONSTITUTION AND BY-LAWS OF THE QUILEUTE TRIBE OF THE QUILEUTE RESERVATION as amended through
+    Amendment VI, 2026-09-17
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '2026-09-17'
+  supersedes:
+  - 1936-text
+  source: constitution-quileute-tribe-of-the-quileute-reservation-2026-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/quileute-tribe-of-the-quileute-reservation/f0f046241b059d50.pdf
+    sha256: f0f046241b059d5066d16838f797e39178d8675c2c7c1acfeb4ab516e3d76e7a
+    pages: 24
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  changes:
+  - topic: election-disputes
+    compared_with: 1936-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

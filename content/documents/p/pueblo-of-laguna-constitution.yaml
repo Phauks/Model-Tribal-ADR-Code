@@ -1,0 +1,92 @@
+id: pueblo-of-laguna-constitution
+kind: constitution
+title: Constitution of the Pueblo of Laguna, New Mexico
+nations:
+- pueblo-of-laguna
+jurisdictions:
+- level: tribal
+  tribe: pueblo-of-laguna
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1949-07-07
+  to 1958-05-29. Versions are only those found; others may exist.'
+versions:
+- id: 1949-text
+  label: CONSTITUTION AND BY-LAWS (1949)
+  event: original
+  status: superseded
+  dates:
+    approved: '1949-07-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-nmpuebcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/pueblo-of-laguna/17e614251c1f813b.html
+    sha256: 17e614251c1f813b79cc09b11ff77ad1736e1165fc24c8cd41435881d1172204
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: judicial-power
+    locator: Article V (JUDICIAL SYSTEM)
+    summary: Article headed "JUDICIAL SYSTEM"; found by its heading and not yet read.
+    verification: title-only
+- id: 1958-text
+  label: Constitution and Bylaws of the Pueblo of Laguna (1958)
+  event: edition
+  status: unknown
+  dates:
+    approved: '1958-05-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1949-text
+  source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/pueblo-of-laguna/2fcb1793e4885581.html
+    sha256: 2fcb1793e4885581b85c81cd34ae3a737accf7039c4c0687751c04bf5ec35954
+  note: The text also prints adopted 1949-12-05, which belong to the earlier text it compiles. Dates read
+    by rule from the certificates on the library page.
+  clauses:
+  - topic: judicial-power
+    locator: Article V (JUDICIAL SYSTEM)
+    summary: Vests the Pueblo's judicial power in a Pueblo Court whose judges are appointed by the Council.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article V (JUDICIAL SYSTEM)
+    summary: Gives the Pueblo Court jurisdiction over disputes among Indians, and first sends village
+      disputes to a Staff Officer who gives advice to settle them.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - conciliation
+  - topic: removal-and-recall
+    locator: Article IX (VACANCIES AND REMOVAL)
+    summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1949-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.11, by script); not yet read side by side.
+  - topic: dispute-resolution
+    compared_with: 1949-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1949-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

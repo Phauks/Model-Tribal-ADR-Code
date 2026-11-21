@@ -1,0 +1,176 @@
+id: minnesota-chippewa-tribe-constitution
+kind: constitution
+title: Constitution of the Minnesota Chippewa Tribe, Minnesota
+nations:
+- minnesota-chippewa-tribe
+jurisdictions:
+- level: tribal
+  tribe: minnesota-chippewa-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 5 dated versions, from 1936-06-20
+  to 2006-01-05. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: CONSTITUTION AND BYLAWS OF THE (1936)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1936-06-20'
+  source: university-of-oklahoma-indian-reorganization-act-mnchipcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/minnesota-chippewa-tribe/db6c2a09833933b3.html
+    sha256: db6c2a09833933b337c0771f1e35977d3c9dcfc5a16c14b90e81753422303c43
+  note: 'The text prints an approval date (1936-05-22) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Dates read from another copy of the same text: adopted 1936-06-20. Dates
+    read by rule from the certificates on the library page.'
+  clauses:
+  - topic: removal-and-recall
+    locator: Article XV (VACANCIES IN TRIBAL EXECUTIVE COMMITTEE)
+    summary: Article headed "VACANCIES IN TRIBAL EXECUTIVE COMMITTEE"; found by its heading and not yet
+      read.
+    verification: title-only
+- id: 1964-text
+  label: REVISED CONSTITUTION AND BYLAWS OF THE MINNESOTA CHIPPEWA TRIBE, MINNESOTA (1964)
+  event: revision
+  status: superseded
+  dates:
+    adopted: '1963-11-23'
+    approved: '1964-03-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1936-text
+  source: constitution-minnesota-chippewa-tribe-1964-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/minnesota-chippewa-tribe/dec72eaf4d056c77.pdf
+    sha256: dec72eaf4d056c77024655a32cc3068ab7b8b45822111f9e856c6584e51dafe0
+    pages: 12
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 1972-text
+  label: REVISED CONSTITUTION AND BYLAWS OF THE MINNESOTA CHIPPEWA TRIBE, MINNESOTA as amended through
+    Amendment II, 1972-09-08
+  event: edition
+  status: superseded
+  dates:
+    listed: '1972-09-08'
+  supersedes:
+  - 1964-text
+  source: constitution-minnesota-chippewa-tribe-1972-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/minnesota-chippewa-tribe/09902b7cb392d533.pdf
+    sha256: 09902b7cb392d53323e1a517938c0294480b6d2965475a8e321d937bf03da65d
+    pages: 23
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    superseded because a later dated text was found (project inference). Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article X (VACANCIES AND REMOVAL)
+    summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1964-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 1972-text-2
+  label: Revised Constitution and Bylaws of the Minnesota Chippewa Tribe, Minnesota as amended through
+    Amendment II, 1972-11-06
+  event: edition
+  status: superseded
+  dates:
+    listed: '1972-11-06'
+  supersedes:
+  - 1972-text
+  source: national-indian-law-library-constitution-constitutions-minn-chippewa
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/minnesota-chippewa-tribe/6713f641d0a8ec88.html
+    sha256: 6713f641d0a8ec88230b349bbc4fdb22f40df1311cfd8645ec84cb8d0544333e
+  note: The text also prints adopted 1963-11-23, approved 1964-03-03, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Marked superseded because a later dated text was found (project inference). Type and dates read from
+    the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (TRIBAL ELECTIONS)
+    summary: Article headed "TRIBAL ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (VACANCIES AND REMOVAL)
+    summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1972-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1972-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.88, by script); not yet read side by side.
+- id: 2006-text
+  label: MCT Constitution (Revised Constitution and Bylaws of the Minnesota Chippewa Tribe) as amended
+    through Amendment IV, 2006-01-05
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2006-01-05'
+  supersedes:
+  - 1972-text-2
+  source: constitution-minnesota-chippewa-tribe-2006-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/minnesota-chippewa-tribe/444fb3e73984bbfc.html
+    sha256: 444fb3e73984bbfc8196b6b6633cc464c84f8ea219f997e2dd499d1bde9e7f85
+  note: The text also prints adopted 1963-11-23, approved 1964-03-03, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (Tribal Elections)
+    summary: Makes each reservation business committee the sole judge of its voters' qualifications, and
+      requires a uniform election ordinance covering election procedures.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article X (Vacancies and Removal)
+    summary: Article headed "Vacancies and Removal"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1972-text-2
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.69, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1972-text-2
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.88, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

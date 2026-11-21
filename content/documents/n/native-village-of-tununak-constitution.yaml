@@ -1,0 +1,70 @@
+id: native-village-of-tununak-constitution
+kind: constitution
+title: Constitution of the Native Village of Tununak
+nations:
+- native-village-of-tununak
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-tununak
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1939-05-23
+  to 1947-01-29. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF TUNUNAK (1939)
+  event: original
+  status: superseded
+  dates:
+    approved: '1939-05-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-native-village-of-tununak-1939-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-tununak/579c94d5f96b954a.pdf
+    sha256: 579c94d5f96b954ad1a3ee15ec69751798505c70136590a0d9305dadf1a5f165
+    pages: 6
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1939-text-2
+  label: CONSTITUTION AND BY-LAWS (1939)
+  event: edition
+  status: superseded
+  dates:
+    listed: '1939-05-23'
+  supersedes:
+  - 1939-text
+  source: university-of-oklahoma-indian-reorganization-act-tunucons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/native-village-of-tununak/d974753fe48f67d7.html
+    sha256: d974753fe48f67d7c474a0958a4d80129b8393a84c6a5624635c0ba5a31ac076
+  note: The text also prints approved 1939-05-23, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Dates read by rule from the certificates on the
+    library page.
+- id: 1947-text
+  label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF TUNUNAK (1947)
+  event: edition
+  status: unknown
+  dates:
+    adopted: '1947-01-29'
+  supersedes:
+  - 1939-text-2
+  source: constitution-native-village-of-tununak-1947-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-tununak/6d411c20e5f05fd2.pdf
+    sha256: 6d411c20e5f05fd2aa2f19ee43564533dc068ec3878599d866ea456824788a3c
+    pages: 5
+  note: The text prints an approval date (1939-05-23) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

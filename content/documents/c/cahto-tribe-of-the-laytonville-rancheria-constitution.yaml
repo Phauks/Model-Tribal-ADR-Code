@@ -1,0 +1,89 @@
+id: cahto-tribe-of-the-laytonville-rancheria-constitution
+kind: constitution
+title: Constitution of the Cahto Tribe of the Laytonville Rancheria
+nations:
+- cahto-tribe-of-the-laytonville-rancheria
+jurisdictions:
+- level: tribal
+  tribe: cahto-tribe-of-the-laytonville-rancheria
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1971-02-18
+  to 2006-01-28. Versions are only those found; others may exist.'
+versions:
+- id: 1971-text
+  label: ARTICLES OF ASSOCIATION OF THE LAYTONVILLE RANCHERIA as amended through Amendment I, 1971-02-18
+  event: edition
+  status: superseded
+  dates:
+    listed: '1971-02-18'
+  source: constitution-cahto-tribe-of-the-laytonville-rancheria-1971-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/cahto-tribe-of-the-laytonville-rancheria/38a59ab2be15d923.pdf
+    sha256: 38a59ab2be15d923f65a16d2a4b1a4471e201575ae57a6152bd0c670c8336d32
+    pages: 9
+  note: The text also prints approved 1957-07-21, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES AND RECALL)
+    summary: Article headed "VACANCIES AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+- id: 2006-text
+  label: ARTICLES OF ASSOCIATION OF THE CAHTO TRIBE OF THE LAYTONVILLE RANCHERIA (2006)
+  event: edition
+  status: unknown
+  dates:
+    adopted: '2006-01-28'
+    approved: '2006-02-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1971-text
+  source: constitution-cahto-tribe-of-the-laytonville-rancheria-2006-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/cahto-tribe-of-the-laytonville-rancheria/4eb157d3eb6b3a23.pdf
+    sha256: 4eb157d3eb6b3a237419ae2bcf3f06d9698ea5ce093aab406ea6e69ca35fc692
+    pages: 11
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: election-disputes
+    locator: Article VI (VOTING RIGHTS AND ELECTIONS)
+    summary: Article headed "VOTING RIGHTS AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES AND RECALL)
+    summary: Article headed "VACANCIES AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article IX (GENERAL POWERS)
+    summary: Reserves to the General Council the power to waive the Tribe's immunity from lawsuits.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: election-disputes
+    compared_with: 1971-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1971-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.34, by script); not yet read side by side.
+  - topic: sovereign-immunity
+    compared_with: 1971-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,50 @@
+id: seneca-nation-of-indians-constitution
+kind: constitution
+title: Constitution of the Seneca Nation of Indians
+nations:
+- seneca-nation-of-indians
+jurisdictions:
+- level: tribal
+  tribe: seneca-nation-of-indians
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1898-11-15
+  to 2026-03-24. Versions are only those found; others may exist.'
+versions:
+- id: 1898-text
+  label: SENECA NATION OF INDIANS CONSTITUTION (1898)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1898-11-15'
+  source: constitution-seneca-nation-of-indians-1898-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/seneca-nation-of-indians/344f678b3ae6a815.pdf
+    sha256: 344f678b3ae6a8153d422aab0184eef9108d5839b9ab22a9bbad955075dbeb82
+    pages: 6
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 2026-text
+  label: CONSTITUTION OF THE SENECA NATION OF INDIANS OF 1848, AS AMENDED (effective March 24, 2026) as
+    amended through Amended, effective 2026-03-24
+  event: edition
+  status: in-effect
+  dates:
+    effective: '2026-03-24'
+  supersedes:
+  - 1898-text
+  source: constitution-seneca-nation-of-indians-2026-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/seneca-nation-of-indians/eb27d4ee77b8e641.pdf
+    sha256: eb27d4ee77b8e64101725ba0dec1955d29761c29bf7d2b00296caab7ad8187b8
+    pages: 8
+  note: The text also prints adopted 1898-11-15, which belong to the earlier text it compiles. Marked
+    in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21; a later
+    amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

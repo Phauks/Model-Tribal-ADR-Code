@@ -1,0 +1,76 @@
+id: pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-constitution
+kind: constitution
+title: Constitution of the Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation, Nevada
+nations:
+- pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation
+jurisdictions:
+- level: tribal
+  tribe: pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1935-11-20
+  to 1936-01-15. Versions are only those found; others may exist.'
+versions:
+- id: 1935-text
+  label: CONSTITUTION AND BY- LAWS (1935)
+  event: original
+  status: superseded
+  dates:
+    approved: '1935-11-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-pyrcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation/3f2f718f67d0274d.html
+    sha256: 3f2f718f67d0274d3c10e80a62ed637a62d0f4da5ac8f80f8405b3e3569704d6
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article V (TRIBAL COURT (JUDICIAL CODE))
+    summary: Article headed "TRIBAL COURT (JUDICIAL CODE)"; found by its heading and not yet read.
+    verification: title-only
+- id: 1936-text
+  label: CONSTITUTION AND BY-LAWS OF THE PYRAMID LAKE PAIUTE TRIBE OF NEVADA as amended through Amendment
+    VIII, date not legible
+  event: edition
+  status: in-effect
+  dates:
+    approved: '1936-01-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1935-text
+  source: constitution-pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation-1936-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation/58efe7e4c8040dfb.pdf
+    sha256: 58efe7e4c8040dfbace4071830c9448a64fcbc6d23b86f2880baa716d9501e5a
+    pages: 21
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  changes:
+  - topic: judicial-power
+    compared_with: 1935-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1935-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

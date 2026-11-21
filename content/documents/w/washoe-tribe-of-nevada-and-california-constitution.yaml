@@ -1,0 +1,155 @@
+id: washoe-tribe-of-nevada-and-california-constitution
+kind: constitution
+title: Constitution of the Washoe Tribe of Nevada & California
+nations:
+- washoe-tribe-of-nevada-and-california
+jurisdictions:
+- level: tribal
+  tribe: washoe-tribe-of-nevada-and-california
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1935-11-22
+  to 1990-06-23. Versions are only those found; others may exist.'
+versions:
+- id: 1935-text
+  label: CONSTITUTION AND BY-LAWS (1935)
+  event: original
+  status: superseded
+  dates:
+    approved: '1935-11-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-washcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/washoe-tribe-of-nevada-and-california/7149450088cbfed4.html
+    sha256: 7149450088cbfed4c15f81ae73154a5f7fb321298dd951a45ebe52a9d809baa1
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (NOMINATIONS AND ELECTIONS)
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1979-amendment
+  label: Amended Constitution and Bylaws of the Washoe Tribe of Nevada and California (amendments) as
+    amended through Amendment III, 1979
+  event: amendment
+  status: unknown
+  dates:
+    listed: '1979'
+  amends:
+  - 1935-text
+  source: constitution-washoe-tribe-of-nevada-and-california-1979-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/washoe-tribe-of-nevada-and-california/36fcf451716a2cff.pdf
+    sha256: 36fcf451716a2cff7b451c6135c2c605dc9ae1b8848497e6331181ece9c326f2
+    pages: 20
+  note: The text also prints approved 1969-10-13, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (NOMINATIONS & ELECTIONS)
+    summary: Article headed "NOMINATIONS & ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES & REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES & REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article IX (REFERENDUM, INITIATIVE & RECALL)
+    summary: Article headed "REFERENDUM, INITIATIVE & RECALL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1935-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1935-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+- id: 1990-text
+  label: CONSTITUTION AND BYLAWS OF THE WASHOE TRIBE OF NEVADA AND CALIFORNIA (1990)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1990-06-23'
+  supersedes:
+  - 1935-text
+  source: constitution-washoe-tribe-of-nevada-and-california-1990-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/washoe-tribe-of-nevada-and-california/792fab2f9b093fe0.pdf
+    sha256: 792fab2f9b093fe0724ad0f61288f89f1073fd49a9322941f15a3064797c9655
+    pages: 14
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL ¥ROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL ¥ROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article IX (~ REFERENDUM, INITIATIVE AND RECALL)
+    summary: Article headed "~ REFERENDUM, INITIATIVE AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1935-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+  - topic: removal-and-recall
+    compared_with: 1935-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.10, by script); not yet read side by side.
+- id: 1990-text-2
+  label: Constitution and Bylaws of the Washoe Tribe of Nevada and California (1990)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1990-06-23'
+  supersedes:
+  - 1990-text
+  source: constitution-washoe-tribe-of-nevada-and-california-1990-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/washoe-tribe-of-nevada-and-california/f5c5faf80d5c81dc.pdf
+    sha256: f5c5faf80d5c81dc7520c400a81e0d7c7a6285278fb2b719049124ab3d66586e
+    pages: 15
+  note: The text also prints adopted 1990-06-23, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article IX (REFERENDUM. INITIATIVE AND RECALL)
+    summary: Article headed "REFERENDUM. INITIATIVE AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1990-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.66, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

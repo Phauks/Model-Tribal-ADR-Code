@@ -83,3 +83,24 @@ The documents they download stay private, outside the repository.
 | `gaming/check_quotes.py` | Fetches each cited page and marks whether each quotation appears on it word for word | `curl`, `pdftotext` |
 | `gaming/build_context.py` | Merges the checked context research into `research/gaming/compact-context.*` and adds source records for its cases, regulations and rules | `scripts/requirements.txt`, `curl` |
 | `gaming/clause_evidence.py` | `gather` cuts clause sections from the governing documents for reviewers; `check` checks their quotations against the text; `merge` writes `research/gaming/compact-clauses.*` | Python 3 standard library and the saved text |
+
+## Constitutions
+
+Run by hand, in this order, never in continuous integration. They build the
+catalog in [`research/constitutions/`](../research/constitutions/README.md)
+and the constitution version histories in `content/documents/`. The documents
+they download stay private, outside the repository; the work files (JSON
+between steps) go in a scratch folder.
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `constitutions/collect_seeds.py` | Lists each federal profile's governing-document links and official websites | `scripts/requirements.txt` |
+| `constitutions/fetch_documents.py` | Fetches those links and crawls each nation's site for constitution links (one request a second per host), saving each document and its text | `pip install requests beautifulsoup4 lxml`, `pdftotext` |
+| `constitutions/find_more_versions.py` | `listed` adds the Tribal Law and Policy Institute list and looks up dead links in the Wayback Machine; `versions` lists earlier captures of known links | `requests` |
+| `constitutions/fetch_archive_collection.py` | Downloads the Bureau of Indian Affairs constitution files on the Internet Archive and matches each file name to a nation | `requests` |
+| `constitutions/combine_found.py` | Joins the fetched lists into one | Python 3 standard library |
+| `constitutions/read_documents.py` | Reads each document (optical character recognition for scans), splits it into articles and tags articles by topic | `pdftotext`, `pdftoppm`, `tesseract` |
+| `constitutions/review_batches.py` | `split` writes batches for AI reviewers to classify (skipping those already answered); `merge` joins the answers | Python 3 standard library |
+| `constitutions/summarize_articles.py` | `split` writes the tagged articles of each newest text for AI reviewers to confirm and summarize; `merge` joins the answers | `scripts/requirements.txt` and `requests` |
+| `constitutions/build_catalog.py` | Classifies, groups copies, orders versions and writes the catalog, history records and source records | `scripts/requirements.txt` and `requests` |
+| `constitutions/name_versions_in_profiles.py` | Adds `document_version` beside profile facts that cite a superseded or undated version | `scripts/requirements.txt` |

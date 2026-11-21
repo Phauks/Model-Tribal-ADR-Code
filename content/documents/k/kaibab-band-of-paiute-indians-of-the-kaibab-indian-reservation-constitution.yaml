@@ -1,0 +1,111 @@
+id: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-constitution
+kind: constitution
+title: Constitution of the Kaibab Band of Paiute Indians of the Kaibab Indian Reservation, Arizona
+nations:
+- kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation
+jurisdictions:
+- level: tribal
+  tribe: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1987-06-20
+  to 1994-08-13. Versions are only those found; others may exist.'
+versions:
+- id: 1987-text
+  label: Constitution of the Kaibab Band of Paiute Indians of the Kaibab Indian Reservation, Arizona (1987)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1987-06-20'
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1987-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation/cb1135e09bf4545d.pdf
+    sha256: cb1135e09bf4545dfe4fb370183040b1ae6654f90618adf60b1645ff752aca7d
+    pages: 18
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article X (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XI (VACANCIES, REMOVAL AND FORFEITURE FROM OFFIC)
+    summary: Article headed "VACANCIES, REMOVAL AND FORFEITURE FROM OFFIC"; found by its heading and not
+      yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article Xni (JUDICIAL BRANCH OF GOVERNMENT)
+    summary: Article headed "JUDICIAL BRANCH OF GOVERNMENT"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XV (SOVEREIGN IMMUNITY)
+    summary: Article headed "SOVEREIGN IMMUNITY"; found by its heading and not yet read.
+    verification: title-only
+- id: 1994-text
+  label: CONSTITUTION OF THE KAIBAB BAND OF PAIUTE INDIANS OF THE KAIBAB INDIAN RESERVATION, ARIZONA as
+    amended through Amendment I, 1994-08-13
+  event: edition
+  status: in-effect
+  dates:
+    listed: '1994-08-13'
+  supersedes:
+  - 1987-text
+  source: constitution-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1994-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation/81da45c00c66d6a9.pdf
+    sha256: 81da45c00c66d6a9163759007b806bb2658a5b0fd7f62132ecf69add8be90d73
+    pages: 22
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21; a later
+    amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article X (ELECTION)
+    summary: Lets candidates refused by the election committee appeal to the tribal court within five
+      working days, and makes that court's decision final.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article XI (VACANCIES, REMOVAL AND FORFEITURE FROM OFFICE)
+    summary: Article headed "VACANCIES, REMOVAL AND FORFEITURE FROM OFFICE"; found by its heading and
+      not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XI (JUDICIAL BRANCH OF GOVERNMENT)
+    summary: Establishes a tribal judiciary with a trial court and an appellate court, vesting the band's
+      judicial power in them.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: sovereign-immunity
+    locator: Article XV (SOVEREIGN IMMUNITY)
+    summary: Article headed "SOVEREIGN IMMUNITY"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1987-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.18, by script); not yet read side by side.
+  - topic: election-disputes
+    compared_with: 1987-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.34, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1987-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.40, by script); not yet read side by side.
+  - topic: sovereign-immunity
+    compared_with: 1987-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.02, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

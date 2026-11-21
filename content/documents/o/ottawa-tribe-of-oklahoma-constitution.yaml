@@ -1,0 +1,209 @@
+id: ottawa-tribe-of-oklahoma-constitution
+kind: constitution
+title: Constitution of the Ottawa Tribe of Oklahoma
+nations:
+- ottawa-tribe-of-oklahoma
+jurisdictions:
+- level: tribal
+  tribe: ottawa-tribe-of-oklahoma
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1938-10-10
+  to 1980-12-19. Versions are only those found; others may exist.'
+versions:
+- id: 1938-text
+  label: CONSTITUTION AND BY-LAWS (1938)
+  event: original
+  status: superseded
+  dates:
+    approved: '1938-10-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-otcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/ottawa-tribe-of-oklahoma/af37d87be13ec88f.html
+    sha256: af37d87be13ec88f5742c600f9bc4f472e7422a3c0ca6f3675ba20b8359e153e
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IX (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+- id: 1980-text
+  label: Constitution and Bylaws of the Ottawa Tribe of Oklahoma (1980)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1980-12-19'
+  supersedes:
+  - 1938-text
+  source: constitution-ottawa-tribe-of-oklahoma-1980-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/ottawa-tribe-of-oklahoma/dd88e9f0d63d5e7a.pdf
+    sha256: dd88e9f0d63d5e7a44d2e14c3f6beaa1687363b39785d941f1f04c518d915d32
+    pages: 13
+  note: The text prints an approval date (1979-10-15) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article VII (GRIEVANCE COMMITTEE)
+    summary: Establishes a five-member grievance committee, elected by the Ottawa Council, that shall
+      resolve grievances.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article X (ensure that the individuals rights of tribal members which have)
+    summary: Has the grievance committee hear and investigate complaints and disputes, with final decisions
+      made by the Ottawa Council.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - fact-finding
+    - council-hearing
+  - topic: dispute-resolution
+    locator: Article VIII (ELECTIONS)
+    summary: Requires the election ordinance to set a procedure for handling protests and resolving election
+      disputes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article VIII (ELECTIONS)
+    summary: Requires the election ordinance to set a procedure for handling protests and resolving election
+      disputes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article IX (REMOVAL RECALL AND FORFEITURE)
+    summary: Lets charges against an official be heard by the grievance committee, which decides whether
+      the accused is cleared or removed from office.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL RECALL AND FORFEITURE)
+    summary: Article headed "REMOVAL RECALL AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1938-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1938-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1938-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.01, by script); not yet read side by side.
+- id: 1980-text-2
+  label: CONSTITUTION AND BYLAWS OF THE OTTAWA TRIBE OF OKLAHOMA (1980)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1980-12-19'
+  supersedes:
+  - 1980-text
+  source: constitution-ottawa-tribe-of-oklahoma-1980-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/ottawa-tribe-of-oklahoma/f48aa5fd13706146.pdf
+    sha256: f48aa5fd13706146a7fccccf583139fe541a59a91203c68b7b20ad9ec19c57c1
+    pages: 13
+  note: The text prints an approval date (1979-10-15) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1980-12-19, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article VII (GRIEVANCE COMMITTEE)
+    summary: Creates a five-member grievance committee to resolve tribal members' grievances about tribal
+      officials and hear related complaints.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - administrative-adjudication
+  - topic: dispute-resolution
+    locator: Article X (ensure that the individuals rights of tribal members which have)
+    summary: Lets the grievance committee investigate officer misconduct and hear rights and constitutional
+      disputes, with the Ottawa Council making final decisions.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - administrative-adjudication
+  - topic: dispute-resolution
+    locator: Article VIII (ELECTIONS)
+    summary: Requires the election ordinance to set a procedure for handling protests and resolving election
+      disputes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article VIII (ELECTIONS)
+    summary: Requires the election ordinance to set a procedure for handling protests and resolving election
+      disputes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article IX (REMOVAL, RECALL AND FORFEITURE)
+    summary: Lets each body remove its members for cause, and has the grievance committee investigate
+      and hear charges against officials before deciding whether they are cleared or removed.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - administrative-adjudication
+    - fact-finding
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL, RECALL AND FORFEITURE)
+    summary: Article headed "REMOVAL, RECALL AND FORFEITURE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article I (DUTIES OF OFFICERS)
+    summary: Lets a member refused access to council records ask the grievance committee to order that
+      access be provided.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - administrative-adjudication
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1980-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.53, by script); not yet read side by side.
+  - topic: election-disputes
+    compared_with: 1980-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.89, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1980-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.58, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

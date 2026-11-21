@@ -1,0 +1,77 @@
+id: swinomish-indian-tribal-community-constitution
+kind: constitution
+title: Constitution of the Swinomish Indian Tribal Community
+nations:
+- swinomish-indian-tribal-community
+jurisdictions:
+- level: tribal
+  tribe: swinomish-indian-tribal-community
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1935-10-21
+  to 2017-05-23. Versions are only those found; others may exist.'
+versions:
+- id: 1935-text
+  label: CONSTITUTION AND BY-LAWS (1935)
+  event: original
+  status: superseded
+  dates:
+    approved: '1935-10-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-swincons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/swinomish-indian-tribal-community/492c3347e321da6f.html
+    sha256: 492c3347e321da6f1b1e0132c37904969d22126cda461b0844f9bca2e9f945fe
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 2017-text
+  label: CONSTITUTION AND BY-LAWS FOR THE SWINOMISH INDIAN TRIBAL COMMUNITY as amended through Amend.
+    XVI through XLIV, 2017-05-23 (Secretary approval 2017-07-07)
+  event: edition
+  status: unknown
+  dates:
+    listed: '2017-05-23'
+  supersedes:
+  - 1935-text
+  source: constitution-swinomish-indian-tribal-community-2017-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/swinomish-indian-tribal-community/fefb0079b14f834e.pdf
+    sha256: fefb0079b14f834edf1140aa65feae42ae8bb972bda782c4553ed5acf86e6c95
+    pages: 17
+  note: The text also prints adopted 1935-11-16, approved 1936-01-27, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article IV (ELECTION AND NOMINATION FOR THE SENATE)
+    summary: Lets the Senate hear appeals of the secretary's rulings on candidate petitions and eligibility,
+      with the Senate's ruling final.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - council-hearing
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1935-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1935-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

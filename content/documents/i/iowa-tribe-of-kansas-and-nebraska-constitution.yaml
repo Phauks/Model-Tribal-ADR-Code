@@ -1,0 +1,172 @@
+id: iowa-tribe-of-kansas-and-nebraska-constitution
+kind: constitution
+title: Constitution of the Iowa Tribe of Kansas and Nebraska
+nations:
+- iowa-tribe-of-kansas-and-nebraska
+jurisdictions:
+- level: tribal
+  tribe: iowa-tribe-of-kansas-and-nebraska
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 4 dated versions, from 1936-12-18
+  to 2013. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: CONSTITUTION AND BY-LAWS (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-12-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-iowacons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/iowa-tribe-of-kansas-and-nebraska/a0c11519b9cc83e6.html
+    sha256: a0c11519b9cc83e69ab1e67242a1d38f0f94fa71fe9f25d32716f9cf97c2c797
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1973-text
+  label: Constitution and Bylaws of the Iowa Tribe of Kansas and Nebraska (1973)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1973-08-30'
+  supersedes:
+  - 1936-text
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1973-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/iowa-tribe-of-kansas-and-nebraska/942545d754ac222c.pdf
+    sha256: 942545d754ac222cb81994c11b56af0acd68272c590956d2f59495fa6aaa94ad
+    pages: 50
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL, RECALL, REFERENDUM AND FILLING VACANCIES)
+    summary: Article headed "REMOVAL, RECALL, REFERENDUM AND FILLING VACANCIES"; found by its heading
+      and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article VII (CONFLICTS OF INTEREST)
+    summary: Article headed "CONFLICTS OF INTEREST"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article IX (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL, RECALL, REFERENDUM AND FILLING VACANCIES)
+    summary: Article headed "REMOVAL, RECALL, REFERENDUM AND FILLING VACANCIES"; found by its heading
+      and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article VII (CONFLICTS OF INTEREST)
+    summary: Article headed "CONFLICTS OF INTEREST"; found by its heading and not yet read.
+    verification: title-only
+  - topic: election-disputes
+    locator: Article IX (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1936-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1936-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+- id: 1980-text
+  label: Constitution and Bylaws of the Iowa Tribe of Kansas and Nebraska as amended through as amended
+    August 27, 1980
+  event: edition
+  status: superseded
+  dates:
+    listed: '1980'
+  supersedes:
+  - 1973-text
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-1980-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/iowa-tribe-of-kansas-and-nebraska/d50a99ad9786e44a.pdf
+    sha256: d50a99ad9786e44a3c96088ce8195a44d1722970c244fbe64411c7bd7b95dd52
+    pages: 12
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    superseded because a later dated text was found (project inference). Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL, RECALL, REFERENDUM AND FILLING VACANCIES)
+    summary: Article headed "REMOVAL, RECALL, REFERENDUM AND FILLING VACANCIES"; found by its heading
+      and not yet read.
+    verification: title-only
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1973-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: election-disputes
+    compared_with: 1973-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1973-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 2013-text
+  label: CONSTITUTION AND BYLAWS OF IOWA TRIBE OF KANSAS AND NEBRASKA as amended through As amended September
+    28, 2013
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2013'
+  supersedes:
+  - 1980-text
+  source: constitution-iowa-tribe-of-kansas-and-nebraska-2013-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/iowa-tribe-of-kansas-and-nebraska/d1453c5522c0a92a.pdf
+    sha256: d1453c5522c0a92ac8c380132a7ef30fbccca427e264b8d48daa40bc8692b23a
+    pages: 12
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21; a later
+    amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL, RECALL, REFERENDUM AND FILLING VACANCIES)
+    summary: Article headed "REMOVAL, RECALL, REFERENDUM AND FILLING VACANCIES"; found by its heading
+      and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article IX (section 5. Vacancies in appointive positions shall be filled by appointment of
+      t)
+    summary: Article headed "section 5. Vacancies in appointive positions shall be filled by appointment
+      of the Executive"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1980-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

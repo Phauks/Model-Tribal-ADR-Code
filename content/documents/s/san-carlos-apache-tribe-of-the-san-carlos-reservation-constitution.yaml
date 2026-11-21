@@ -1,0 +1,83 @@
+id: san-carlos-apache-tribe-of-the-san-carlos-reservation-constitution
+kind: constitution
+title: Constitution of the San Carlos Apache Tribe of the San Carlos Reservation, Arizona
+nations:
+- san-carlos-apache-tribe-of-the-san-carlos-reservation
+jurisdictions:
+- level: tribal
+  tribe: san-carlos-apache-tribe-of-the-san-carlos-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1947-11-14
+  to 1953-12-15. Versions are only those found; others may exist.'
+versions:
+- id: 1947-text
+  label: AMENDED CONSTITUTIONS AND BYLAWS OF THE SAN CARLOS APACHE TRIBE OF ARIZONA as amended through
+    Amendment III, 1947-11-14
+  event: edition
+  status: superseded
+  dates:
+    listed: '1947-11-14'
+  source: constitution-san-carlos-apache-tribe-of-the-san-carlos-reservation-1947-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/san-carlos-apache-tribe-of-the-san-carlos-reservation/eb071e3941d57718.pdf
+    sha256: eb071e3941d57718bc212b2ad65c51a7d20f4d9eed8e63dc7903d9a265df743a
+    pages: 26
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    superseded because a later dated text was found (project inference). Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article VIII (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+- id: 1953-text
+  label: CONSTITUTION AND BYLAWS (1953)
+  event: edition
+  status: unknown
+  dates:
+    approved: '1953-12-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1947-text
+  source: university-of-oklahoma-indian-reorganization-act-amsancarcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/san-carlos-apache-tribe-of-the-san-carlos-reservation/012e886131ee20ce.html
+    sha256: 012e886131ee20cef5f15468c80411b2d7ff2c5b5cf0db2ca12c8cad385e7070
+  note: Dates read by rule from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL FROM OFFICE)
+    summary: Article headed "REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article V (LAW AND ORDER)
+    summary: Gives a tribal court jurisdiction over disputes between Indians on the reservation and, by
+      stipulation, certain disputes with non-Indians.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1947-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1947-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+  - topic: removal-and-recall
+    compared_with: 1947-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

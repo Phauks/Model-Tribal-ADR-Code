@@ -1,0 +1,97 @@
+id: native-village-of-stevens-constitution
+kind: constitution
+title: Constitution of the Native Village of Stevens
+nations:
+- native-village-of-stevens
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-stevens
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1939-12-30
+  to 1990-06-25. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: CONSTITUTION AND BY-LAWS (1939)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1939-12-30'
+  source: university-of-oklahoma-indian-reorganization-act-stevcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/native-village-of-stevens/73fc19d857a18e13.html
+    sha256: 73fc19d857a18e13095fc7bc1e4f4d8609b4b9ca842f3d303f48d5d376c194c1
+  note: 'The text prints an approval date (1939-05-15) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Dates read from another copy of the same text: adopted 1939-12-30. Dates
+    read by rule from the certificates on the library page.'
+- id: 1990-text
+  label: CONSTITUTION OF STEVENS VILLAGE (1990)
+  event: revision
+  status: superseded
+  dates:
+    adopted: '1990-06-25'
+  supersedes:
+  - 1939-text
+  source: constitution-native-village-of-stevens-1990-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/algaaciq-native-village/0885a1b2e5658c85.pdf
+    sha256: 0885a1b2e5658c85ccb5084876403e56d8b27fa5475c3d980d368408843ba00d
+    pages: 12
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article VIII (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article IX (INITIATIVE. REFERENDUM AND RECALL)
+    summary: Article headed "INITIATIVE. REFERENDUM AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1939-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1939-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+- id: 1990-text-2
+  label: Stevens, Native Village of_1990-08-09 Constitution (1990)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1990-06-25'
+  supersedes:
+  - 1990-text
+  source: constitution-native-village-of-stevens-1990-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-stevens/0b3df50bf0df135a.pdf
+    sha256: 0b3df50bf0df135a4ae9db6474d536697c1a1eead66264d8c0d54b3a72c834c8
+    pages: 12
+  note: The text also prints adopted 1990-06-25, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  changes:
+  - topic: election-disputes
+    compared_with: 1990-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: removal-and-recall
+    compared_with: 1990-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

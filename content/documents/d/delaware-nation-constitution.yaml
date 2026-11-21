@@ -1,0 +1,71 @@
+id: delaware-nation-constitution
+kind: constitution
+title: Constitution of the Delaware Nation, Oklahoma
+nations:
+- delaware-nation
+jurisdictions:
+- level: tribal
+  tribe: delaware-nation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 2008
+  to 2019-03-16. Versions are only those found; others may exist.'
+versions:
+- id: 2008-text
+  label: DELAWARE TRIBE OF INDIANS CONSTITUTION AND BYLAWS as amended through Amended and approved by
+    referendum vote, November 2008 (day unreadable in OCR)
+  event: edition
+  status: superseded
+  dates:
+    listed: '2008'
+  source: constitution-delaware-nation-2008-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/delaware-nation/3cab2e5c8c388d9e.pdf
+    sha256: 3cab2e5c8c388d9e29235702608f1f90388137bf8c9ea8bee1ace1af8bb3991d
+    pages: 10
+  note: The text also prints adopted 1982-11-06, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (Vacancy)
+    summary: Article headed "Vacancy"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article X (Recall / Removal from Office)
+    summary: Article headed "Recall / Removal from Office"; found by its heading and not yet read.
+    verification: title-only
+- id: 2019-text
+  label: Constitution of the Delaware Nation as amended through Amendment XIII, 2019-03-16
+  event: revision
+  status: in-effect
+  dates:
+    listed: '2019-03-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: not-required
+  supersedes:
+  - 2008-text
+  source: constitution-delaware-nation-2019-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/delaware-nation/f093fae9a9a9725e.pdf
+    sha256: f093fae9a9a9725e35f2f06f4a6cae56b27c23ac862cf63bab0e84fac984a569
+    pages: 12
+  note: The text also prints adopted 1973-04-21, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
+    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 2008-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

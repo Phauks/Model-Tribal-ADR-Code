@@ -1,0 +1,52 @@
+id: manchester-band-of-pomo-indians-of-the-manchester-rancheria-constitution
+kind: constitution
+title: Constitution of the Manchester Band of Pomo Indians of the Manchester Rancheria, California
+nations:
+- manchester-band-of-pomo-indians-of-the-manchester-rancheria
+jurisdictions:
+- level: tribal
+  tribe: manchester-band-of-pomo-indians-of-the-manchester-rancheria
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1939-03-22
+  to 1981. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: CONSTITUTION AND BYLAWS OF THE (1939)
+  event: original
+  status: superseded
+  dates:
+    approved: '1939-03-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-manpomocons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/manchester-band-of-pomo-indians-of-the-manchester-rancheria/9921e97554d36f09.html
+    sha256: 9921e97554d36f09bb8eb4269bc9b789d30322e57cec3a7ecb2de33bf5534d00
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1981-text
+  label: CONSTITUTION AND BYLAWS OF THE MANCHESTER BAND OF POMO INDIANS OF THE MANCHESTER RANCHERIA CALIFORNIA
+    as amended through Amendment V, 1981
+  event: edition
+  status: unknown
+  dates:
+    listed: '1981'
+  supersedes:
+  - 1939-text
+  source: constitution-manchester-band-of-pomo-indians-of-the-manchester-rancheria-1981-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/manchester-band-of-pomo-indians-of-the-manchester-rancheria/f75b6b9489d96f61.pdf
+    sha256: f75b6b9489d96f61c4654d75d30159f94b7df03856f4baf2dd217b17bfd3c9c1
+    pages: 18
+  note: The text also prints approved 1936-03-11, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,85 @@
+id: pascua-yaqui-tribe-of-arizona-constitution
+kind: constitution
+title: Constitution of the Pascua Yaqui Tribe of Arizona
+nations:
+- pascua-yaqui-tribe-of-arizona
+jurisdictions:
+- level: tribal
+  tribe: pascua-yaqui-tribe-of-arizona
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1988-01-26
+  to 2015. Versions are only those found; others may exist.'
+versions:
+- id: 1988-text
+  label: CONSTITUTION OF THE PASCUA YAQUI TRIBE (1988)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1988-01-26'
+    approved: '1988-02-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-pascua-yaqui-tribe-of-arizona-1988-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/pascua-yaqui-tribe-of-arizona/a60d834a80d796b1.pdf
+    sha256: a60d834a80d796b16ffef76c73150cfe938c590b2b2a3caab88167a30ec43063
+    pages: 13
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article X (REMOVAL, RECALL AND RESIGNATION FROM OFFICE)
+    summary: Article headed "REMOVAL, RECALL AND RESIGNATION FROM OFFICE"; found by its heading and not
+      yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XI (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XXIV (SOVEREIGN IMMUNITY)
+    summary: Article headed "SOVEREIGN IMMUNITY"; found by its heading and not yet read.
+    verification: title-only
+- id: 2015-text
+  label: Constitution of the Pascua Yaqui Tribe as amended through Amendment III, adopted July 14, 2015
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2015'
+  supersedes:
+  - 1988-text
+  source: constitution-pascua-yaqui-tribe-of-arizona-2015-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/pascua-yaqui-tribe-of-arizona/1d6e3fb1e90c67fe.pdf
+    sha256: 1d6e3fb1e90c67fee028d6de88aec12dc87cf55b4bee9bae3cb7aaae4d7d25d9
+    pages: 14
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21; a later
+    amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article X (Removal, Recall and Resignation from Office)
+    summary: Article headed "Removal, Recall and Resignation from Office"; found by its heading and not
+      yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1988-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+  - topic: sovereign-immunity
+    compared_with: 1988-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

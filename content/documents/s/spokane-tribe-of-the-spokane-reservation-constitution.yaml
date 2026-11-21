@@ -1,0 +1,79 @@
+id: spokane-tribe-of-the-spokane-reservation-constitution
+kind: constitution
+title: Constitution of the Spokane Tribe of the Spokane Reservation
+nations:
+- spokane-tribe-of-the-spokane-reservation
+jurisdictions:
+- level: tribal
+  tribe: spokane-tribe-of-the-spokane-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1951-05-12
+  to 2021. Versions are only those found; others may exist.'
+versions:
+- id: 1951-text
+  label: CONSTITUTION AND BYLAWS (1951)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1951-05-12'
+  source: university-of-oklahoma-indian-reorganization-act-spokcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/spokane-tribe-of-the-spokane-reservation/09c68ad301c9b1a2.html
+    sha256: 09c68ad301c9b1a2208e11728e680e2c9a06948f6c9ed36e2ad6eff0894a2df4
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 2020-text
+  label: CONSTITUTION OF THE SPOKANE TRIBE-SPOKANE RESERVATION as amended through Article VI, Sec. 4,
+    Initiative, 2020-10-24
+  event: edition
+  status: superseded
+  dates:
+    listed: '2020-10-24'
+  supersedes:
+  - 1951-text
+  source: constitution-spokane-tribe-of-the-spokane-reservation-2020-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/spokane-tribe-of-the-spokane-reservation/2cfaaab907601b20.pdf
+    sha256: 2cfaaab907601b201a64df415da3c8c1f762d591934cc7ab18c1dbc08c004d60
+    pages: 10
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    superseded because a later dated text was found (project inference). Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1951-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 2021-text
+  label: CONSTITUTION OF THE SPOKANE TRIBE-SPOKANE RESERVATION as amended through Article X, Sec. 4, Referendum
+    2021-003, 2021-06-12
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2021'
+  supersedes:
+  - 2020-text
+  source: constitution-spokane-tribe-of-the-spokane-reservation-2021-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/spokane-tribe-of-the-spokane-reservation/24bc088361b41893.pdf
+    sha256: 24bc088361b418938e42297f50a1fcffed273fee81b5394a08d1b2667b3bcadb
+    pages: 10
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21; a later
+    amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

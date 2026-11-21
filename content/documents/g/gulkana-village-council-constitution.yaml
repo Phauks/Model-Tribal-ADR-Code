@@ -1,0 +1,51 @@
+id: gulkana-village-council-constitution
+kind: constitution
+title: Constitution of the Gulkana Village Council
+nations:
+- gulkana-village-council
+jurisdictions:
+- level: tribal
+  tribe: gulkana-village-council
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 2001-03-31
+  to 2023-10-23. Versions are only those found; others may exist.'
+versions:
+- id: 2001-text
+  label: TRADITIONAL CONSTITUTION OF THE NATIVE VILLAGE OF GULKANA (2001)
+  event: original
+  status: superseded
+  dates:
+    adopted: '2001-03-31'
+  source: constitution-gulkana-village-council-2001-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/gulkana-village-council/9c3d3f77c6843ace.pdf
+    sha256: 9c3d3f77c6843ace2919a1821f5d6854cd3100b4877e0c92a7d580565519e592
+    pages: 10
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 2023-text
+  label: TRADITIONAL CONSTITUTION OF THE GULKANA VILLAGE COUNCIL as amended through Amended, 2023-10-23
+    (page header)
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2023-10-23'
+  supersedes:
+  - 2001-text
+  source: constitution-gulkana-village-council-2023-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/gulkana-village-council/dc48979c1446006d.pdf
+    sha256: dc48979c1446006d99be8fc2b60e7817c12b2eb7bfd90f546f62e528c6835a35
+    pages: 10
+  note: The text also prints adopted 2001-03-21, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
+    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

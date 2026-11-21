@@ -1,0 +1,76 @@
+id: hannahville-indian-community-constitution
+kind: constitution
+title: Constitution of the Hannahville Indian Community, Michigan
+nations:
+- hannahville-indian-community
+jurisdictions:
+- level: tribal
+  tribe: hannahville-indian-community
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1936-05-29
+  to 2020. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: CONSTITUTION AND BYLAWS OF THE (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-05-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-hancons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/hannahville-indian-community/9a5ae4a137cd2de2.html
+    sha256: 9a5ae4a137cd2de217d78759e4a7d74ea835a9f5d764ae02eb2adc6997e3370d
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1936-text-2
+  label: Constitution and Bylaws of the Hannahville Indian Community, Michigan (1936)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1936-06-27'
+    approved: '1936-07-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1936-text
+  source: constitution-hannahville-indian-community-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/hannahville-indian-community/c4f9b97a3816bc43.pdf
+    sha256: c4f9b97a3816bc4381113ce21fe7b1bd6bd5346dd25d21d1c8cd48a179029b6f
+    pages: 7
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 2020-text
+  label: CONSTITUTION AND BYLAWS OF THE HANNAHVILLE INDIAN COMMUNITY as amended through Amended April
+    15, 2020, approved May 6, 2020
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2020'
+  supersedes:
+  - 1936-text-2
+  source: constitution-hannahville-indian-community-2020-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/hannahville-indian-community/d1f9fdb70cc661aa.pdf
+    sha256: d1f9fdb70cc661aa6545e2709cd2f1e762cb3232ad9e9ad828b2a77701fce3fe
+    pages: 8
+  note: The text also prints approved 1936-07-23, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
+    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

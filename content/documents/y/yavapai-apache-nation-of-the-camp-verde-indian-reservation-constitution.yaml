@@ -1,0 +1,57 @@
+id: yavapai-apache-nation-of-the-camp-verde-indian-reservation-constitution
+kind: constitution
+title: Constitution of the Yavapai-Apache Nation of the Camp Verde Indian Reservation, Arizona
+nations:
+- yavapai-apache-nation-of-the-camp-verde-indian-reservation
+jurisdictions:
+- level: tribal
+  tribe: yavapai-apache-nation-of-the-camp-verde-indian-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1947-05-09
+  to 1992-03-07. Versions are only those found; others may exist.'
+versions:
+- id: 1947-text
+  label: CONSTITUTION AND BY-LAWS OF THE (1947)
+  event: original
+  status: superseded
+  dates:
+    approved: '1947-05-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-yavcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/yavapai-apache-nation-of-the-camp-verde-indian-reservation/75837617ea1b4aec.html
+    sha256: 75837617ea1b4aecb366192ec2e1bd13426397e5a2f98b90f70f5b3489b40744
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1992-text
+  label: Constitution of the Yavapai-Apache Nation (1992)
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '1992-03-07'
+    approved: '1992-04-13'
+    effective: '1992-04-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1947-text
+  source: constitution-yavapai-apache-nation-of-the-camp-verde-indian-reservation-1992-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/yavapai-apache-nation-of-the-camp-verde-indian-reservation/4f1fb930debb02ff.pdf
+    sha256: 4f1fb930debb02ff2bd9544db4400b34d0af42ecc4a0d387eca6238bebffc95f
+    pages: 22
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

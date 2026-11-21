@@ -1,0 +1,85 @@
+id: yomba-shoshone-tribe-of-the-yomba-reservation-constitution
+kind: constitution
+title: Constitution of the Yomba Shoshone Tribe of the Yomba Reservation, Nevada
+nations:
+- yomba-shoshone-tribe-of-the-yomba-reservation
+jurisdictions:
+- level: tribal
+  tribe: yomba-shoshone-tribe-of-the-yomba-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1939-12-20
+  to 2014. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: CONSTITUTION AND BY-LAWS (1939)
+  event: original
+  status: superseded
+  dates:
+    approved: '1939-12-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-yomba
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/yomba-shoshone-tribe-of-the-yomba-reservation/e9dbc11c7b871b91.html
+    sha256: e9dbc11c7b871b915eda325143e9fe987c78dd610da3f5f13fe0244b94f30719
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (NOMINATIONS AND ELECTIONS)
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 2014-text
+  label: Constitution of the Yomba Shoshone Tribe of the Yomba Reservation, Nevada as amended through
+    Amended August 4, 2014 (no amendment number given)
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2014'
+  supersedes:
+  - 1939-text
+  source: constitution-yomba-shoshone-tribe-of-the-yomba-reservation-2014-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/yomba-shoshone-tribe-of-the-yomba-reservation/f90bc71bb4172b06.pdf
+    sha256: f90bc71bb4172b06e84aa4d12ef08b353a3c91711f9bb222c851ca5d7205895f
+    pages: 10
+  note: The text also prints approved 1939-12-20, effective 1939-12-22, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (Nominations and Elections)
+    summary: Makes the Tribal Council the sole judge of its members' qualifications, and the Council or
+      election board certifies election results.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article V (Vacancies and Removal from Office)
+    summary: Article headed "Vacancies and Removal from Office"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1939-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.17, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1939-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.33, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

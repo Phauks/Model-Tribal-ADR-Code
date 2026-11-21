@@ -1,0 +1,51 @@
+id: shageluk-native-village-constitution
+kind: constitution
+title: Constitution of the Shageluk Native Village
+nations:
+- shageluk-native-village
+jurisdictions:
+- level: tribal
+  tribe: shageluk-native-village
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1949-08-19
+  to 1949-11-01. Versions are only those found; others may exist.'
+versions:
+- id: 1949-text
+  label: CONSTITUTION AND BY-LAWS (1949)
+  event: original
+  status: superseded
+  dates:
+    approved: '1949-08-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-shagcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/shageluk-native-village/537f04c0bcbdcf0a.html
+    sha256: 537f04c0bcbdcf0a64b0979b55a78efab95c02cbed94a5c1f16750d5c9218c46
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1949-text-2
+  label: CONSTITUTION AND BY-LAWS OF THE SHAGELUK NATIVE VILLAGE, ALASKA (1949)
+  event: edition
+  status: unknown
+  dates:
+    adopted: '1949-11-01'
+  supersedes:
+  - 1949-text
+  source: constitution-shageluk-native-village-1949-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/shageluk-native-village/ebfda8ef13c5f4d6.pdf
+    sha256: ebfda8ef13c5f4d64ea8bd2e8c4dc2927bd11d4bd84310bb8b41d46a007d868d
+    pages: 5
+  note: The text prints an approval date (1949-08-19) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,51 @@
+id: native-village-of-barrow-inupiat-traditional-government-constitution
+kind: constitution
+title: Constitution of the Native Village of Barrow Inupiat Traditional Government
+nations:
+- native-village-of-barrow-inupiat-traditional-government
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-barrow-inupiat-traditional-government
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1939-05-23
+  to 1940-03-21. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: Constitution and By-Laws of the Native Village of Barrow (1939)
+  event: original
+  status: superseded
+  dates:
+    approved: '1939-05-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-barcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/native-village-of-barrow-inupiat-traditional-government/349eb71a89b9fa9f.html
+    sha256: 349eb71a89b9fa9f775055bc20e87ccc2d60aac71e97ee43b240b9b719f8a981
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1940-text
+  label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF BARROW (1940)
+  event: edition
+  status: unknown
+  dates:
+    adopted: '1940-03-21'
+  supersedes:
+  - 1939-text
+  source: constitution-native-village-of-barrow-inupiat-traditional-government-1940-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-barrow-inupiat-traditional-government/ee10b4d4a129154a.pdf
+    sha256: ee10b4d4a129154af440e4efd64009c2fc71112eb305ef6ee49dcb572f2401f5
+    pages: 5
+  note: The text prints an approval date (1939-05-23) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

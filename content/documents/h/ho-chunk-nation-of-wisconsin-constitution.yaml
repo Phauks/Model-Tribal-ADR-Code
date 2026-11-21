@@ -1,0 +1,131 @@
+id: ho-chunk-nation-of-wisconsin-constitution
+kind: constitution
+title: Constitution of the Ho-Chunk Nation of Wisconsin
+nations:
+- ho-chunk-nation-of-wisconsin
+jurisdictions:
+- level: tribal
+  tribe: ho-chunk-nation-of-wisconsin
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1963-01-19
+  to 1994-09-17. Versions are only those found; others may exist.'
+versions:
+- id: 1963-text
+  label: Constitution and Bylaws of the Wisconsin Winnebago Tribe (including Amendments I and II) as amended
+    through Amendment II, date not in the text seen
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1963-01-19'
+    approved: '1963-03-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-ho-chunk-nation-of-wisconsin-1963-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/ho-chunk-nation-of-wisconsin/b705f9f6cce89729.pdf
+    sha256: b705f9f6cce89729e6040c667343d8ed9d322bd6ac3a0ea487bb89d371100681
+    pages: 14
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL FROM OFFICE)
+    summary: Article headed "REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VII (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+- id: 1994-text
+  label: Constitution of the Ho-Chunk Nation (1994)
+  event: revision
+  status: unknown
+  dates:
+    adopted: '1994-09-17'
+    approved: '1994-11-01'
+    effective: '1994-11-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1963-text
+  source: constitution-ho-chunk-nation-of-wisconsin-1994-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/ho-chunk-nation-of-wisconsin/2e5d63f2b169e97c.pdf
+    sha256: 2e5d63f2b169e97cd57283d8171ae1f03b2d9024d75f0baa2b2b4495ea4bd07a
+    pages: 19
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: judicial-power
+    locator: Article XIII (including those which reverse decisions of the Judiciary interpreting this)
+    summary: Lets the General Council reverse Judiciary decisions that interpret the Constitution, and
+      sets its meeting and quorum rules.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article VI (EXECUTIVE)
+    summary: Establishes a Supreme Court and a Trial Court, plus lower or special-jurisdiction forums
+      the Legislature may create.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article VI (EXECUTIVE)
+    summary: Allows the Legislature to create special-jurisdiction forums for traditional dispute resolution.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - customary-dispute-resolution
+  - topic: peacemaking
+    locator: Article VI (EXECUTIVE)
+    summary: Allows the Legislature to create special-jurisdiction forums for traditional dispute resolution.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - customary-dispute-resolution
+  - topic: removal-and-recall
+    locator: Article IX (REMOVAL, RECALL AND VACANCIES)
+    summary: Article headed "REMOVAL, RECALL AND VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: sovereign-immunity
+    locator: Article XI (STATUTES AND RESOLUTIONS)
+    summary: Makes the Nation immune from suit unless the Legislature expressly waives immunity, and allows
+      equitable suits against officials who exceed their duties.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1963-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: dispute-resolution
+    compared_with: 1963-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: peacemaking
+    compared_with: 1963-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1963-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.03, by script); not yet read side by side.
+  - topic: sovereign-immunity
+    compared_with: 1963-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

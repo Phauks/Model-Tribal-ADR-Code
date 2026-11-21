@@ -1,0 +1,51 @@
+id: nome-eskimo-community-constitution
+kind: constitution
+title: Constitution of the Nome Eskimo Community
+nations:
+- nome-eskimo-community
+jurisdictions:
+- level: tribal
+  tribe: nome-eskimo-community
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1939-11-23
+  to 1939-11-23. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: CONSTITUTION AND BY-LAWS OF THE NOME ESKIMO COMMUNITY (1939)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1939-11-23'
+  source: constitution-nome-eskimo-community-1939-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/nome-eskimo-community/9e8750098d11fec5.pdf
+    sha256: 9e8750098d11fec539ceb0dd2e29b3974140ffb971f74f963559d4effdcbfa0c
+    pages: 6
+  note: The text prints an approval date (1939-09-09) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1939-text-2
+  label: Constitution and By-Laws of the Nome Eskimo Community, Alaska (1939)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1939-11-23'
+  supersedes:
+  - 1939-text
+  source: constitution-nome-eskimo-community-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/nome-eskimo-community/e965b41797d4e223.html
+    sha256: e965b41797d4e22376747866ba8aa4bf14793e3237e27cc2a87db8a633015266
+  note: The text prints an approval date (1939-09-09) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1939-11-23, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

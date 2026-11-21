@@ -1,0 +1,107 @@
+id: lower-sioux-indian-community-in-the-state-of-minnesota-constitution
+kind: constitution
+title: Constitution of the Lower Sioux Indian Community in the State of Minnesota
+nations:
+- lower-sioux-indian-community-in-the-state-of-minnesota
+jurisdictions:
+- level: tribal
+  tribe: lower-sioux-indian-community-in-the-state-of-minnesota
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1936-04-23
+  to 2007. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: CONSTITUTION AND BYLAWS OF THE (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-04-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-minnsiouxcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/lower-sioux-indian-community-in-the-state-of-minnesota/ea68cefec7363558.html
+    sha256: ea68cefec7363558dd836c006529fce1dd543d9c751fab97635c65f44510fc5c
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (REMOVAL)
+    summary: Article headed "REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XI (COURT OF DOMESTIC RELATIONS)
+    summary: Article headed "COURT OF DOMESTIC RELATIONS"; found by its heading and not yet read.
+    verification: title-only
+- id: 1977-text
+  label: CONSTITUTION AND BYLAWS OF THE LOWER SIOUX INDIAN COMMUNITY IN MINNESOTA as amended through Amendment
+    I, 1977-06-20
+  event: edition
+  status: superseded
+  dates:
+    listed: '1977-06-20'
+  supersedes:
+  - 1936-text
+  source: constitution-lower-sioux-indian-community-in-the-state-of-minnesota-1977-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/lower-sioux-indian-community-in-the-state-of-minnesota/38e3392134036f2d.pdf
+    sha256: 38e3392134036f2d3af52bed81ce4fbb9240f9ce2a3d64b0d8df3bc99ff9afbb
+    pages: 14
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    superseded because a later dated text was found (project inference). Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article Tl (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1936-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+  - topic: election-disputes
+    compared_with: 1936-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+- id: 2007-text
+  label: CONSTITUTION OF THE LOWER SIOUX INDIAN COMMUNITY IN MINNESOTA as amended through As Amended Through
+    September 19, 2007
+  event: edition
+  status: unknown
+  dates:
+    listed: '2007'
+  supersedes:
+  - 1977-text
+  source: constitution-lower-sioux-indian-community-in-the-state-of-minnesota-2007-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/lower-sioux-indian-community-in-the-state-of-minnesota/80b939923739e8de.pdf
+    sha256: 80b939923739e8de59a1b865d7482223fe5b4967c4bb294068d3b5ac16011511
+    pages: 14
+  note: The text also prints approved 1998-11-23, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  changes:
+  - topic: election-disputes
+    compared_with: 1977-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

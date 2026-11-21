@@ -1,0 +1,223 @@
+id: alabama-coushatta-tribe-of-texas-constitution
+kind: constitution
+title: Constitution of the Alabama-Coushatta Tribe of Texas
+nations:
+- alabama-coushatta-tribe-of-texas
+jurisdictions:
+- level: tribal
+  tribe: alabama-coushatta-tribe-of-texas
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 5 dated versions, from 1938-06-15
+  to 2023. Versions are only those found; others may exist.'
+versions:
+- id: 1938-text
+  label: CONSTITUTION AND BY-LAWS (1938)
+  event: original
+  status: superseded
+  dates:
+    approved: '1938-06-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-consalacous
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/alabama-coushatta-tribe-of-texas/735d1a2ff9957f27.pdf
+    sha256: 735d1a2ff9957f271e5a7ebfabebe487ea5755002700a11426c84ab6ce97674d
+    pages: 11
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1938-text-2
+  label: CONSTITUTION AND BY-LAWS OF THE ALABAMA AND COUSHATTA TRIBES OF TEXAS (1938)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1938-07-22'
+    approved: '1938-08-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1938-text
+  source: constitution-alabama-coushatta-tribe-of-texas-1938-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/alabama-coushatta-tribe-of-texas/ff1a558762b1c03b.pdf
+    sha256: ff1a558762b1c03b534f9ab8d447af3a77f9f6410afb868a6170a7ae577a4470
+    pages: 12
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1990-text
+  label: CONSTITUTION AND BY LAWS OF THE ALABAMA-COUSHATTA TRIBES OF TEXAS as amended through Amendment
+    No. 1, 1990-06-20
+  event: edition
+  status: superseded
+  dates:
+    listed: '1990-06-20'
+  supersedes:
+  - 1938-text-2
+  source: constitution-alabama-coushatta-tribe-of-texas-1990-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/alabama-coushatta-tribe-of-texas/a926331737707d22.pdf
+    sha256: a926331737707d223a7ef9493db887dc0923bae76f29d2c204fcc623ea37f4fa
+    pages: 15
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    superseded because a later dated text was found (project inference). Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (REMOVAL)
+    summary: Article headed "REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1938-text-2
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+- id: 2016-text
+  label: Constitution and By Laws as amended through Amendment XXIII (incorporated; publication dated
+    January 2016, date of the amendment not stated)
+  event: edition
+  status: superseded
+  dates:
+    listed: '2016'
+  supersedes:
+  - 1990-text
+  source: constitution-alabama-coushatta-tribe-of-texas-2016-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/alabama-coushatta-tribe-of-texas/9c9f956b8d22ea8a.pdf
+    sha256: 9c9f956b8d22ea8a9d615d54c860f474ed71dce82e3719978e7f4c5d937a86a2
+    pages: 19
+  note: The text also prints adopted 1971-06-16, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked superseded because
+    a later dated text was found (project inference). Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article XIII (TRIBAL COURT SYSTEM)
+    summary: Article headed "TRIBAL COURT SYSTEM"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: 'Article XV (RECALL: DISMISSAL FROM OFFICE BY ELIGIBLE VOTERS OF THE)'
+    summary: 'Article headed "RECALL: DISMISSAL FROM OFFICE BY ELIGIBLE VOTERS OF THE"; found by its heading
+      and not yet read.'
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XIII (JUDICIAL BRANCH OF TRIBAL GOVERNMENT, pursuant to the addition of ARTICLE IV
+      – T)
+    summary: Article headed "JUDICIAL BRANCH OF TRIBAL GOVERNMENT, pursuant to the addition of ARTICLE
+      IV – TRIBAL CHIEFS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: 'Article XV (RECALL: DISMISSAL FROM OFFICE BY ELIGIBLE VOTERS OF THE TRIBE)'
+    summary: 'Article headed "RECALL: DISMISSAL FROM OFFICE BY ELIGIBLE VOTERS OF THE TRIBE"; found by
+      its heading and not yet read.'
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1990-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1990-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.01, by script); not yet read side by side.
+- id: 2023-text
+  label: Constitution and By-Laws as amended through Amendment XXIII (incorporated; publication dated
+    July 2023, date of the amendment not stated)
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2023'
+  supersedes:
+  - 2016-text
+  source: constitution-alabama-coushatta-tribe-of-texas-2023-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/alabama-coushatta-tribe-of-texas/a2f3017fe0508907.pdf
+    sha256: a2f3017fe0508907aa98c9755f290e9be1de3046f5d54ff61ccd3ebbee9297f3
+    pages: 25
+  note: The text also prints adopted 1971-06-16, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
+    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article XIII (TRIBAL COURT SYSTEM)
+    summary: Article headed "TRIBAL COURT SYSTEM"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article XIII (JUDICIAL BRANCH OF TRIBAL GOVERNMENT, pursuant to the addition of ARTICLE IV
+      – T)
+    summary: Establishes a Tribal Court and a Court of Appeals, whose judges the Tribal Council appoints,
+      with the appeals court reviewing Tribal Court decisions.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article XIII (JUDICIAL BRANCH OF TRIBAL GOVERNMENT, pursuant to the addition of ARTICLE IV
+      – T)
+    summary: Creates a Peacemaker Court of limited jurisdiction whose Peacemakers mediate disputes using
+      tribal customs and traditions.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - mediation
+    - peacemaking
+  - topic: peacemaking
+    locator: Article XIII (JUDICIAL BRANCH OF TRIBAL GOVERNMENT, pursuant to the addition of ARTICLE IV
+      – T)
+    summary: Creates a Peacemaker Court whose Peacemakers resolve disputes toward mutual agreement through
+      tribal customs and traditions.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - peacemaking
+  - topic: sovereign-immunity
+    locator: Article XIII (JUDICIAL BRANCH OF TRIBAL GOVERNMENT, pursuant to the addition of ARTICLE IV
+      – T)
+    summary: Only the Tribal Council, by written resolution, may waive the Tribe's sovereign immunity;
+      courts cannot abrogate it.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 2016-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.18, by script); not yet read side by side.
+  - topic: dispute-resolution
+    compared_with: 2016-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: peacemaking
+    compared_with: 2016-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 2016-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+  - topic: sovereign-immunity
+    compared_with: 2016-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

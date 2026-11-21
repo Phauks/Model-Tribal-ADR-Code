@@ -1,0 +1,64 @@
+id: sokaogon-chippewa-community-constitution
+kind: constitution
+title: Constitution of the Sokaogon Chippewa Community, Wisconsin
+nations:
+- sokaogon-chippewa-community
+jurisdictions:
+- level: tribal
+  tribe: sokaogon-chippewa-community
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1938-10-08
+  to 1973. Versions are only those found; others may exist.'
+versions:
+- id: 1938-text
+  label: CONSTITUTION AND BY-LAWS OF THE SOKAOGON CHIPPEWA COMMUNITY (1938)
+  event: original
+  status: unknown
+  dates:
+    adopted: '1938-10-08'
+    approved: '1938-11-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-sokaogon-chippewa-community-1938-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/sokaogon-chippewa-community/aca896e407ced81b.pdf
+    sha256: aca896e407ced81b05e364003d44257acd195ba64bfffe27a2fe375c61ac68bd
+    pages: 7
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (Vacancies and Removal)
+    summary: Article headed "Vacancies and Removal"; found by its heading and not yet read.
+    verification: title-only
+- id: 1973-amendment
+  label: AMENDMENT - CONSTITUTION AND BYLAWS of the SOKAOGON CHIPPEWA COMMUNITY, WISCONSIN as amended
+    through Amendment III, 1973
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '1973'
+  amends:
+  - 1938-text
+  source: constitution-sokaogon-chippewa-community-1973-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/sokaogon-chippewa-community/f02461758c6fc079.pdf
+    sha256: f02461758c6fc079096a2b77ea67645f58f7ec1a6bf3a6ee3dcc8c49e44f3efa
+    pages: 9
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1938-text
+    change: not-compared
+    verification: inferred
+    note: An amendment changes only what it names; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

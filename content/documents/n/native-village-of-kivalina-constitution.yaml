@@ -1,0 +1,51 @@
+id: native-village-of-kivalina-constitution
+kind: constitution
+title: Constitution of the Native Village of Kivalina
+nations:
+- native-village-of-kivalina
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-kivalina
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1939-05-23
+  to 1940-02-07. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: CONSTITUTION AND BY-LAWS (1939)
+  event: original
+  status: superseded
+  dates:
+    approved: '1939-05-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-kivacons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/native-village-of-kivalina/5a8fa3a25d87baa1.html
+    sha256: 5a8fa3a25d87baa1511275d257e881188ae3d581282994d590041133fe05939a
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1940-text
+  label: CONSTITUTION AND BY-LAWS (1940)
+  event: edition
+  status: unknown
+  dates:
+    adopted: '1940-02-07'
+  supersedes:
+  - 1939-text
+  source: constitution-native-village-of-kivalina-1940-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-kivalina/841be7e5879f7090.pdf
+    sha256: 841be7e5879f709074ccdfb6e30c8fc30aaa40707a8302903fda0ecda21ecd37
+    pages: 6
+  note: The text prints an approval date (1939-05-23) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

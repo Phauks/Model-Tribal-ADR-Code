@@ -1,0 +1,100 @@
+id: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-constitution
+kind: constitution
+title: Constitution of the Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin
+nations:
+- red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin
+jurisdictions:
+- level: tribal
+  tribe: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1936-03-18
+  to 1991-01-28. Versions are only those found; others may exist.'
+versions:
+- id: 1936-text
+  label: CONSTITUTION AND BYLAWS OF THE (1936)
+  event: original
+  status: superseded
+  dates:
+    approved: '1936-03-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-rccons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin/8679b080737bb8e9.html
+    sha256: 8679b080737bb8e98623cd4703a4cf23d660be1a172588f90b1c84b7637807f0
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1936-text-2
+  label: CONSTITUTION AND BYLAWS OF THE RED CLIFF BAND OF LAKE SUPERIOR CHIPPEWA INDIANS WISCONSIN (1936)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1936-04-18'
+    approved: '1936-06-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1936-text
+  source: constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1936-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin/2f82cd792c7a9cbb.pdf
+    sha256: 2f82cd792c7a9cbb151a564460186d47b37316ffe14436907304ca85e3482af1
+    pages: 12
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (Vacancies and Removal From Office)
+    summary: Article headed "Vacancies and Removal From Office"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1936-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+- id: 1991-text
+  label: CHAPTER 1 - CONSTITUTION AND BYLAWS (1991)
+  event: revision
+  status: in-effect
+  dates:
+    adopted: '1991-01-28'
+    approved: '1991-02-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1936-text-2
+  source: constitution-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1991-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin/2e914aba9e9a135c.pdf
+    sha256: 2e914aba9e9a135cf156d151580894eef608e174320b2b308abbce35f43d75d0
+    pages: 14
+  note: 'Marked in effect because it is the newest dated text found, on the nation''s own site, on 2026-11-21;
+    a later amendment may not be posted. Dates read from another copy of the same text: approved 1991-02-15.
+    Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.'
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1936-text-2
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

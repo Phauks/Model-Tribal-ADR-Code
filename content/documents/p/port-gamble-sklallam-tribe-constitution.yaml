@@ -1,0 +1,65 @@
+id: port-gamble-sklallam-tribe-constitution
+kind: constitution
+title: Constitution of the Port Gamble S'Klallam Tribe
+nations:
+- port-gamble-sklallam-tribe
+jurisdictions:
+- level: tribal
+  tribe: port-gamble-sklallam-tribe
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1947-06-06
+  to 2024-05-15. Versions are only those found; others may exist.'
+versions:
+- id: 1947-text
+  label: CONSTITUTION AND BY-LAWS (1947)
+  event: original
+  status: superseded
+  dates:
+    approved: '1947-06-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-pgcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/port-gamble-sklallam-tribe/0ee5472bd2a6ed74.html
+    sha256: 0ee5472bd2a6ed74692f569c1553795e0891d5d781c98e33344ff373ba58e4e2
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 2024-text
+  label: Constitution of the Port Gamble S’Klallam Tribe as amended through Election amendment, May 15,
+    2024
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '2024-05-15'
+  supersedes:
+  - 1947-text
+  source: constitution-port-gamble-sklallam-tribe-2024-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/port-gamble-sklallam-tribe/a262618c757091a2.pdf
+    sha256: a262618c757091a264530c1cec337af9888a05e38c8a3b27c4fb9e7fe175109a
+    pages: 8
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  clauses:
+  - topic: judicial-power
+    locator: Article V (JUDICIAL POWER)
+    summary: Begins to vest the Tribe's judicial power in a Port Gamble S'Klallam body; the text is cut
+      off in that sentence.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  changes:
+  - topic: judicial-power
+    compared_with: 1947-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

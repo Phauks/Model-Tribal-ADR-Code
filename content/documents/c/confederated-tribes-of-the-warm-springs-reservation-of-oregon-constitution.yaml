@@ -1,0 +1,160 @@
+id: confederated-tribes-of-the-warm-springs-reservation-of-oregon-constitution
+kind: constitution
+title: Constitution of the Confederated Tribes of the Warm Springs Reservation of Oregon
+nations:
+- confederated-tribes-of-the-warm-springs-reservation-of-oregon
+jurisdictions:
+- level: tribal
+  tribe: confederated-tribes-of-the-warm-springs-reservation-of-oregon
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 7 dated versions, from 1937-12-18
+  to 1992-07-13. Versions are only those found; others may exist.'
+versions:
+- id: 1938-text
+  label: CONSTITUTION AND BYLAWS OF THE CONFEDERATED TRIBES OF THE WARM SPRINGS RESERVATION OF OREGON
+    (including amendments) (1938)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1937-12-18'
+    approved: '1938-02-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1938-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/confederated-tribes-of-the-warm-springs-reservation-of-oregon/3349fed69e0916a8.pdf
+    sha256: 3349fed69e0916a8e0975dd129a4273f50646e8671b58e4458ce4d9568328800
+    pages: 16
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1940-text
+  label: CONSTITUTION AND BY-LAWS (1940)
+  event: edition
+  status: superseded
+  dates:
+    approved: '1940-01-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1938-text
+  source: university-of-oklahoma-indian-reorganization-act-warmcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/confederated-tribes-of-the-warm-springs-reservation-of-oregon/28ef25004d5521b0.html
+    sha256: 28ef25004d5521b076f008bedc96a4129616ec277b010782b8f9ba7430086986
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1973-text
+  label: CONSTITUTION AND BYLAWS OF THE CONFEDERATED TRIBES OF THE WARM SPRINGS RESERVATION OF OREGON
+    (including amendments) as amended through Amendment XII, 1973
+  event: edition
+  status: superseded
+  dates:
+    listed: '1973'
+  supersedes:
+  - 1940-text
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1973-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/confederated-tribes-of-the-warm-springs-reservation-of-oregon/88531dceed8f7e77.pdf
+    sha256: 88531dceed8f7e77a1d0d5423e85a4bdb526690cde655f915ab08e50804687dc
+    pages: 37
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    superseded because a later dated text was found (project inference). Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+- id: 1973-amendment
+  label: Amendment IX and Amendment X to the Constitution and Bylaws of the Confederated Tribes of the
+    Warm Springs Reservation as amended through Amendment X, 1973-05-22
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '1973-05-22'
+  amends:
+  - 1973-text
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1973-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/confederated-tribes-of-the-warm-springs-reservation-of-oregon/38450f853f586a1f.pdf
+    sha256: 38450f853f586a1f48bed0898a1f2c8cee165f75458fa7ec75238e2f5ddf9dd3
+    pages: 5
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+- id: 1990-amendment
+  label: Constitution Amendment No. XIII, Confederated Tribes of the Warm Springs Reservation of Oregon
+    as amended through Amendment XIII, 1990-03-06
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '1990-03-06'
+    approved: '1990-03-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  amends:
+  - 1973-text
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1990-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/confederated-tribes-of-the-warm-springs-reservation-of-oregon/142f803077582bf2.pdf
+    sha256: 142f803077582bf24e0804db848a61c34a4371e8c42c9f414c71dcbfed6922cf
+    pages: 12
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+- id: 1992-text
+  label: Constitution and By-Laws of the Confederated Tribes of Warm Springs Reservation of Oregon as
+    amended through Amended January 24, 1992
+  event: edition
+  status: in-effect
+  dates:
+    listed: '1992'
+  supersedes:
+  - 1973-text
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1992-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/confederated-tribes-of-the-warm-springs-reservation-of-oregon/5784aa38dc7d3c10.pdf
+    sha256: 5784aa38dc7d3c10139e7d3bcf7c44bfa914d554c1fa6dde6252d760510011e3
+    pages: 27
+  note: The text also prints approved 1938-02-14, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
+    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+- id: 1992-amendment
+  label: Constitution Amendment No. XIV, Constitution and Bylaws of the Confederated Tribes of the Warm
+    Springs Reservation of Oregon as amended through Amendment XIV, 1992-07-13
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '1992-07-13'
+    approved: '1992-07-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  amends:
+  - 1992-text
+  source: constitution-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1992-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/confederated-tribes-of-the-warm-springs-reservation-of-oregon/a8b2c5014de84961.pdf
+    sha256: a8b2c5014de849617a6625175234a73eca7efae7aa19936fe4d3f1c0f2090004
+    pages: 10
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

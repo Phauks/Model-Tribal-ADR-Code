@@ -1,0 +1,92 @@
+id: winnemucca-indian-colony-of-nevada-constitution
+kind: constitution
+title: Constitution of the Winnemucca Indian Colony of Nevada
+nations:
+- winnemucca-indian-colony-of-nevada
+jurisdictions:
+- level: tribal
+  tribe: winnemucca-indian-colony-of-nevada
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1970
+  to 1971-03-05. Versions are only those found; others may exist.'
+versions:
+- id: 1971-text
+  label: Constitution and Bylaws of the Winnemucca Indian Colony (1971)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1970'
+    approved: '1971-03-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: constitution-winnemucca-indian-colony-of-nevada-1971-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/winnemucca-indian-colony-of-nevada/ab51dbba182ce4ad.pdf
+    sha256: ab51dbba182ce4ad8948e01c2d2a5a5f3c621a507ac9972d95d4894e4a931f7b
+    pages: 10
+  note: Marked superseded because a later dated text was found (project inference). Type and dates read
+    from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (NOMINATIONS AND ELECTIONS)
+    summary: Article headed "NOMINATIONS AND ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES, REMOVAL AND RECALL)
+    summary: Article headed "VACANCIES, REMOVAL AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+- id: 1971-text-2
+  label: CONSTITUTION AND BYLAWS OF THE WINNEMUCCA INDIAN COLONY NEVADA (1971)
+  event: edition
+  status: in-effect
+  dates:
+    listed: '1971-03-05'
+  supersedes:
+  - 1971-text
+  source: constitution-winnemucca-indian-colony-of-nevada-1971-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/winnemucca-indian-colony-of-nevada/cd1e9820e952d1fc.pdf
+    sha256: cd1e9820e952d1fcfb4b01f63c5775a0a7089f371afd8ca0d472fba3bc239e54
+    pages: 11
+  note: The text also prints adopted 1970, approved 1971-03-05, which belong to the earlier text it compiles.
+    The date recorded as listed is that of the latest amendment the text says it includes. Marked in effect
+    because it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment
+    may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (NOMINATIONS AND ELECTIONS)
+    summary: Requires the election ordinance, set by an election board the council appoints, to include
+      provisions for resolving election disputes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article IV (NOMINATIONS AND ELECTIONS)
+    summary: Requires the election ordinance, set by an election board the council appoints, to include
+      provisions for resolving election disputes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: election-disputes
+    compared_with: 1971-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.20, by script); not yet read side by side.
+  - topic: removal-and-recall
+    compared_with: 1971-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.18, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

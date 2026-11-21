@@ -1,0 +1,122 @@
+id: gila-river-indian-community-of-the-gila-river-indian-reservation-constitution
+kind: constitution
+title: Constitution of the Gila River Indian Community of the Gila River Indian Reservation, Arizona
+nations:
+- gila-river-indian-community-of-the-gila-river-indian-reservation
+jurisdictions:
+- level: tribal
+  tribe: gila-river-indian-community-of-the-gila-river-indian-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1946-03-02
+  to 1974-01-28. Versions are only those found; others may exist.'
+versions:
+- id: 1946-text
+  label: CONSTITUTION AND BYLAWS (1946)
+  event: original
+  status: superseded
+  dates:
+    approved: '1946-03-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-gilapmcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/gila-river-indian-community-of-the-gila-river-indian-reservation/2445fee1df3b8cd0.html
+    sha256: 2445fee1df3b8cd0c95b810e3f0f671ab0593a49d178405ee2b458cb77fa35eb
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IV (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+- id: 1960-text
+  label: CONSTITUTION AND BYLAWS (1960)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1960-01-22'
+  supersedes:
+  - 1946-text
+  source: university-of-oklahoma-indian-reorganization-act-gilacons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/gila-river-indian-community-of-the-gila-river-indian-reservation/376a7cb6a62e8ed3.html
+    sha256: 376a7cb6a62e8ed3d0b5a62d4dd9afbd0eed7ce665e68c029f1356466459568b
+  note: The text prints an approval date (1959-12-04) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Dates read by rule from the certificates on the library page.
+  clauses:
+  - topic: judicial-power
+    locator: Article VIII (TENURE OF OFFICE)
+    summary: Sets three-year terms for the Chief Judge and Associate Judges, who are elected from the
+      Community-at-large.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: judicial-power
+    locator: Article IX (VACANCIES)
+    summary: Requires the Council to hold a special election to fill a vacancy in the office of Chief
+      Judge or Associate Judge.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article IX (VACANCIES)
+    summary: Article headed "VACANCIES"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article XII (REMOVAL FROM OFFICE)
+    summary: Article headed "REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1946-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1946-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.22, by script); not yet read side by side.
+- id: 1974-text
+  label: CONSTITUTION AND BYLAWS OF THE GILA RIVER INDIAN COMMUNITY OF ARIZONA as amended through Amendment
+    II, 1974-01-28
+  event: revision
+  status: unknown
+  dates:
+    listed: '1974-01-28'
+  supersedes:
+  - 1960-text
+  source: constitution-gila-river-indian-community-of-the-gila-river-indian-reservation-1974-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/gila-river-indian-community-of-the-gila-river-indian-reservation/696cb53cf0454306.pdf
+    sha256: 696cb53cf045430642528f4b76eaa8cc5d3cdf889fd6b3986ef00e4d2a359a33
+    pages: 17
+  note: The text also prints adopted 1900-01-22, approved 1930-03-17, which belong to the earlier text
+    it compiles. The date recorded as listed is that of the latest amendment the text says it includes.
+    Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IX (Vacancies)
+    summary: Article headed "Vacancies"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1960-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+  - topic: removal-and-recall
+    compared_with: 1960-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.43, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,63 @@
+id: paiute-indian-tribe-of-utah-constitution
+kind: constitution
+title: Constitution of the Paiute Indian Tribe of Utah
+nations:
+- paiute-indian-tribe-of-utah
+jurisdictions:
+- level: tribal
+  tribe: paiute-indian-tribe-of-utah
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1940-01-05
+  to 1942-08-07. Versions are only those found; others may exist.'
+versions:
+- id: 1940-text
+  label: CONSTITUTION AND BY-LAWS (1940)
+  event: original
+  status: superseded
+  dates:
+    approved: '1940-01-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-shivcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/paiute-indian-tribe-of-utah/1157945e06464f9b.html
+    sha256: 1157945e06464f9bb4c51ca36b3889e57863db8c7f2c368dcf4b0015aec0c3df
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IV (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1942-text
+  label: CONSTITUTION AND BY-LAWS (1942)
+  event: edition
+  status: unknown
+  dates:
+    approved: '1942-08-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1940-text
+  source: university-of-oklahoma-indian-reorganization-act-kancons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/paiute-indian-tribe-of-utah/c03448b5d12ee4fd.html
+    sha256: c03448b5d12ee4fd33cb61aaab06e957b407f0382f9a910595415c0187cd9e0e
+  note: Dates read by rule from the certificates on the library page.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1940-text
+    change: removed
+    verification: inferred
+    note: A word match found an article on this topic in the earlier text and none in this one.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

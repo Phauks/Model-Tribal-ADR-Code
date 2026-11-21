@@ -1,0 +1,142 @@
+id: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-constitution
+kind: constitution
+title: Constitution of the Sac & Fox Nation of Missouri in Kansas and Nebraska
+nations:
+- sac-and-fox-nation-of-missouri-in-kansas-and-nebraska
+jurisdictions:
+- level: tribal
+  tribe: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1943-06-22
+  to 1990-07-20. Versions are only those found; others may exist.'
+versions:
+- id: 1943-text
+  label: CONSTITUTION AND BY-LAWS OF THE (1943)
+  event: original
+  status: superseded
+  dates:
+    approved: '1943-06-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-sfcons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/sac-and-fox-nation-of-missouri-in-kansas-and-nebraska/12767c1cd1df2b48.html
+    sha256: 12767c1cd1df2b48fcd4cd21c7a8b653667430bfee554c48ae8f1b9226fcf00e
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article IV (VACANCIES AND REMOVAL)
+    summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+- id: 1990-text
+  label: CONSTITUTION OF THE SAC AND FOX NATION OF MISSOURI IN KANSAS AND NEBRASKA (1990)
+  event: edition
+  status: unknown
+  dates:
+    adopted: '1990-07-20'
+  supersedes:
+  - 1943-text
+  source: constitution-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-1990-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/sac-and-fox-nation/3767dbdc638e4749.pdf
+    sha256: 3767dbdc638e474950cb0cb5c15e40d24a8c0fcd05401b08e035c654d94dd809
+    pages: 44
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  clauses:
+  - topic: judicial-power
+    locator: Article V (POWERS OF THE TRIBAL COUNCIL)
+    summary: Allows the Council to establish a Tribal Court, approved by referendum of the General Council,
+      to decide internal civil disputes and lawful criminal matters, keeping executive and judicial powers
+      separate.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article V (POWERS OF THE TRIBAL COUNCIL)
+    summary: Provides that the election ordinance handles election disputes, and lets a Tribal Court,
+      if established, decide internal civil disputes and lawful criminal matters.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article V (POWERS OF THE TRIBAL COUNCIL)
+    summary: States that the Council's election ordinance provides for handling election disputes, alongside
+      an objective election committee and petition validity review.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article VI (RECALL, VACANCIES, AND REMOVAL)
+    summary: Article headed "RECALL, VACANCIES, AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article VII (GRIEVANCE COMMITTEE)
+    summary: Empowers the Grievance Committee, elected by the General Council from Council nominees, to
+      settle disputes not within a court's jurisdiction.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - administrative-adjudication
+  - topic: dispute-resolution
+    locator: Article V (* Section l(i) of this Constitution concerning procedures and issues)
+    summary: Makes Grievance Committee decisions on disputes final for the Nation by majority vote, after
+      notice and a hearing, and provides for appeals to the committee within ten days.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - administrative-adjudication
+  - topic: removal-and-recall
+    locator: Article IV (RECALL, VACANCIES AND REMOVAL)
+    summary: Article headed "RECALL, VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: judicial-power
+    locator: Article VI (POWERS OF THE TRIBAL COUNCIL)
+    summary: Lets the Tribal Council enact codes to govern the administration of justice through tribal
+      courts, subject to Secretarial approval.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: dispute-resolution
+    locator: Article VI (POWERS OF THE TRIBAL COUNCIL)
+    summary: Lets the Tribal Council establish a tribal court empowered to decide internal civil disputes,
+      subject to a General Council referendum.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: election-disputes
+    locator: Article VI (POWERS OF THE TRIBAL COUNCIL)
+    summary: Requires the Tribal Council to enact an election ordinance that provides for handling election
+      disputes.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+  - topic: removal-and-recall
+    locator: Article IV (VACANCIES AND REMOVAL)
+    summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: judicial-power
+    compared_with: 1943-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: dispute-resolution
+    compared_with: 1943-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: election-disputes
+    compared_with: 1943-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1943-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.17, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,51 @@
+id: native-village-of-unalakleet-constitution
+kind: constitution
+title: Constitution of the Native Village of Unalakleet
+nations:
+- native-village-of-unalakleet
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-unalakleet
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1939-12-30
+  to 1939-12-30. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: CONSTITUTION AND BY-LAWS (1939)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1939-12-30'
+  source: university-of-oklahoma-indian-reorganization-act-unacons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/native-village-of-unalakleet/69042af98e34b3c0.html
+    sha256: 69042af98e34b3c00b77c4fcbb90d216b4962ecdebe24d4619c667a4450724d8
+  note: 'The text prints an approval date (1939-08-15) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Dates read from another copy of the same text: adopted 1939-12-30. Dates
+    read by rule from the certificates on the library page.'
+- id: 1939-text-2
+  label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF UNALAKLEET (1939)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1939-12-30'
+  supersedes:
+  - 1939-text
+  source: constitution-native-village-of-unalakleet-1939-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-unalakleet/8a9901c7e72bd153.pdf
+    sha256: 8a9901c7e72bd1538c8364dc9192622d2fa980d5a557d814f6ee2aed1193fe71
+    pages: 5
+  note: The text prints an approval date (1939-08-15) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1939-12-30, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

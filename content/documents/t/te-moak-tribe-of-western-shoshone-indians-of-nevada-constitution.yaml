@@ -1,0 +1,68 @@
+id: te-moak-tribe-of-western-shoshone-indians-of-nevada-constitution
+kind: constitution
+title: Constitution of the Te-Moak Tribe of Western Shoshone Indians of Nevada
+nations:
+- te-moak-tribe-of-western-shoshone-indians-of-nevada
+jurisdictions:
+- level: tribal
+  tribe: te-moak-tribe-of-western-shoshone-indians-of-nevada
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1938-05-03
+  to 1982-08-17. Versions are only those found; others may exist.'
+versions:
+- id: 1938-text
+  label: CONSTITUTION AND BY-LAWS (1938)
+  event: original
+  status: superseded
+  dates:
+    approved: '1938-05-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-tecons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/te-moak-tribe-of-western-shoshone-indians-of-nevada/5b1ad04b19dae1c3.html
+    sha256: 5b1ad04b19dae1c3ccadbf4b38069f9d56ad8755aabd96f1df49da0e0efaaa8b
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES AND REMOVAL FROM OFFICE)
+    summary: Article headed "VACANCIES AND REMOVAL FROM OFFICE"; found by its heading and not yet read.
+    verification: title-only
+- id: 1982-text
+  label: CONSTITUTION OF THE TE-MOAK TRIBE OF WESTERN SHOSHONE INDIANS OF NEVADA (1982)
+  event: edition
+  status: in-effect
+  dates:
+    adopted: '1982-08-17'
+    approved: '1982-08-26'
+    effective: '1982-08-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1938-text
+  source: constitution-te-moak-tribe-of-western-shoshone-indians-of-nevada-1982-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/te-moak-tribe-of-western-shoshone-indians-of-nevada/ad1574f9cb2f11b1.pdf
+    sha256: ad1574f9cb2f11b1a232bd82ae93465c6eeee8049b4a78ef5a2bf4b881ce6c58
+    pages: 15
+  note: Marked in effect because it is the newest dated text found, on the nation's own site, on 2026-11-21;
+    a later amendment may not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku),
+    not yet checked by the lead author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1938-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

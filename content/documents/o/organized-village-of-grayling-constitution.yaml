@@ -1,0 +1,49 @@
+id: organized-village-of-grayling-constitution
+kind: constitution
+title: Constitution of the Organized Village of Grayling
+nations:
+- organized-village-of-grayling
+jurisdictions:
+- level: tribal
+  tribe: organized-village-of-grayling
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1948-09-10
+  to 1964-06-06. Versions are only those found; others may exist.'
+versions:
+- id: 1948-text
+  label: CONSTITUTION AND BY-LAWS (1948)
+  event: original
+  status: unknown
+  dates:
+    adopted: '1948-09-10'
+  source: university-of-oklahoma-indian-reorganization-act-holicons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/organized-village-of-grayling/52e2b4bb53e17f57.html
+    sha256: 52e2b4bb53e17f574224da1d8a02ee4bbaf46b67890e7f0c69bb969c00954ace
+  note: 'The text prints an approval date (1948-05-17) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Dates read from another copy of the same text: adopted
+    1948-09-10. Dates read by rule from the certificates on the library page.'
+- id: 1964-amendment
+  label: Amendment I to the Constitution and Bylaws of the Organized Village of Holikachuk, Alaska as
+    amended through Amendment I (Corporate Charter), 1964-06-06
+  event: amendment
+  status: unknown
+  dates:
+    adopted: '1964-06-06'
+  amends:
+  - 1948-text
+  source: constitution-organized-village-of-grayling-1964-amendment
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/organized-village-of-grayling/0be27f741f96f94c.pdf
+    sha256: 0be27f741f96f94c852199bd153f47afbc16882a29a3dfe901824e82975ae8ac
+    pages: 4
+  note: The text prints an approval date (1964-04-16) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

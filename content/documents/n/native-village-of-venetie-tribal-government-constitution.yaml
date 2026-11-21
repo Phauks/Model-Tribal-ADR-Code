@@ -1,0 +1,72 @@
+id: native-village-of-venetie-tribal-government-constitution
+kind: constitution
+title: Constitution of the Native Village of Venetie Tribal Government
+nations:
+- native-village-of-venetie-tribal-government
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-venetie-tribal-government
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 3 dated versions, from 1939-05-15
+  to 1940-01-25. Versions are only those found; others may exist.'
+versions:
+- id: 1939-text
+  label: CONSTITUTION AND BY-LAWS (1939)
+  event: original
+  status: superseded
+  dates:
+    approved: '1939-05-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-vencons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/native-village-of-venetie-tribal-government/33e1e9b8189c1738.html
+    sha256: 33e1e9b8189c1738a3f94b2fac57a7817add098c7af4240f869dd29b2ad056b8
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+- id: 1940-text
+  label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF VENETIE (1940)
+  event: edition
+  status: superseded
+  dates:
+    adopted: '1940-01-25'
+  supersedes:
+  - 1939-text
+  source: constitution-native-village-of-venetie-tribal-government-1940-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-venetie-tribal-government/9afc19cf74567632.pdf
+    sha256: 9afc19cf74567632f4bb0b0b034ada3e5076248253cfc8949a9e25b120d07ad8
+    pages: 5
+  note: The text prints an approval date (1939-05-15) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1940-text-2
+  label: CONSTITUTION AND BY-LAWS OF THE NATIVE VILLAGE OF VENETIE (1940)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1940-01-25'
+  supersedes:
+  - 1940-text
+  source: constitution-native-village-of-venetie-tribal-government-1940-text-2
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-venetie-tribal-government/ae91fdfa9a3dcd3c.pdf
+    sha256: ae91fdfa9a3dcd3ce3599e5b80cc29ba96a4d6dfaa8cd3bc3a11f8b6c13f23e4
+    pages: 6
+  note: The text prints an approval date (1939-05-15) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1940-01-25, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

@@ -1,0 +1,100 @@
+id: mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-constitution
+kind: constitution
+title: Constitution of the Mesa Grande Band of Diegueno Mission Indians of the Mesa Grande Reservation,
+  California
+nations:
+- mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation
+jurisdictions:
+- level: tribal
+  tribe: mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1972-06-11
+  to 2023-12-10. Versions are only those found; others may exist.'
+versions:
+- id: 1972-text
+  label: ARTICLES OF ASSOCIATION OF THE MESA GRANDE BAND OF MISSION INDIANS, CALIFORNIA as amended through
+    Amendment No. 1, 1972-06-11
+  event: edition
+  status: superseded
+  dates:
+    listed: '1972-06-11'
+  source: constitution-mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-1972-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation/30b1260150f8504c.pdf
+    sha256: 30b1260150f8504c4daca99faae774f421f5e316f83c22cf8ded6c086c639925
+    pages: 11
+  note: The date recorded as listed is that of the latest amendment the text says it includes. Marked
+    superseded because a later dated text was found (project inference). Type and dates read from the
+    text by an AI reviewer (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: dispute-resolution
+    locator: Article V (GRIEVANCE- BOA RD)
+    summary: Article headed "GRIEVANCE- BOA RD"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES A ND RE CALL)
+    summary: Article headed "VACANCIES A ND RE CALL"; found by its heading and not yet read.
+    verification: title-only
+  - topic: removal-and-recall
+    locator: Article VX (VACANCIES AND RECALL, shall be amended by adding a new)
+    summary: Article headed "VACANCIES AND RECALL, shall be amended by adding a new"; found by its heading
+      and not yet read.
+    verification: title-only
+- id: 2023-text
+  label: Articles of Association as amended through Amendment XVII, 2023-12-10
+  event: edition
+  status: in-effect
+  dates:
+    listed: '2023-12-10'
+  supersedes:
+  - 1972-text
+  source: constitution-mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation-2023-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation/fd0cdff9b81727b3.pdf
+    sha256: fd0cdff9b81727b33ce6656ec422aba517c567e1145d8ed4930ccf9d1e5caa5e
+    pages: 8
+  note: The text also prints adopted 1971-02-03, which belong to the earlier text it compiles. The date
+    recorded as listed is that of the latest amendment the text says it includes. Marked in effect because
+    it is the newest dated text found, on the nation's own site, on 2026-11-21; a later amendment may
+    not be posted. Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked
+    by the lead author.
+  clauses:
+  - topic: election-disputes
+    locator: Article IV (ELECTIONS)
+    summary: Article headed "ELECTIONS"; found by its heading and not yet read.
+    verification: title-only
+  - topic: dispute-resolution
+    locator: Article V (GRIEVANCE BOARD)
+    summary: Establishes a three-member Grievance Board that reviews complaints of council misconduct
+      and may move them to a grievance hearing.
+    verification: read-in-full
+    reviewer: AI reviewer (Claude Haiku), not yet checked by the lead author
+    methods:
+    - council-hearing
+  - topic: removal-and-recall
+    locator: Article VI (VACANCIES AND RECALL)
+    summary: Article headed "VACANCIES AND RECALL"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1972-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.04, by script); not yet read side by side.
+  - topic: election-disputes
+    compared_with: 1972-text
+    change: added
+    verification: inferred
+    note: A word match found an article on this topic in this text and none in the earlier one.
+  - topic: removal-and-recall
+    compared_with: 1972-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.17, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

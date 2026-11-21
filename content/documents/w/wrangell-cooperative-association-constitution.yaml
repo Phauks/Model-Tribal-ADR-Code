@@ -1,0 +1,67 @@
+id: wrangell-cooperative-association-constitution
+kind: constitution
+title: Constitution of the Wrangell Cooperative Association
+nations:
+- wrangell-cooperative-association
+jurisdictions:
+- level: tribal
+  tribe: wrangell-cooperative-association
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1947-02-27
+  to 1950-12-28. Versions are only those found; others may exist.'
+versions:
+- id: 1947-text
+  label: Constitution and By-Laws of the Wrangell Cooperative Association (1947)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1947-02-27'
+  source: constitution-wrangell-cooperative-association-1947-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/wrangell-cooperative-association/182a1bc934ad2166.pdf
+    sha256: 182a1bc934ad2166c65f7b3568c5865315b69c38a022acf5e728bbbc2fd160ab
+    pages: 9
+  note: The text prints an approval date (1942-04-30) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (Removal of Officers)
+    summary: Article headed "Removal of Officers"; found by its heading and not yet read.
+    verification: title-only
+- id: 1950-text
+  label: CONSTITUTION AND BY-LAWS (1950)
+  event: edition
+  status: unknown
+  dates:
+    approved: '1950-12-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1947-text
+  source: university-of-oklahoma-indian-reorganization-act-wrancons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/wrangell-cooperative-association/8e55e674edefb8a6.html
+    sha256: 8e55e674edefb8a6d69f1a88cfd886fd4e8ffc84c30f9e46c8bc8777b5c1b19a
+  note: Dates read by rule from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (REMOVAL OF OFFICERS)
+    summary: Article headed "REMOVAL OF OFFICERS"; found by its heading and not yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1947-text
+    change: not-compared
+    verification: inferred
+    note: The article texts differ (word-run overlap 0.86, by script); not yet read side by side.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

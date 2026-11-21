@@ -1,0 +1,51 @@
+id: native-village-of-koyuk-constitution
+kind: constitution
+title: Constitution of the Native Village of Koyuk
+nations:
+- native-village-of-koyuk
+jurisdictions:
+- level: tribal
+  tribe: native-village-of-koyuk
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1946-08-16
+  to 1946-08-16. Versions are only those found; others may exist.'
+versions:
+- id: 1946-text
+  label: CONSTITUTION AND BY-LAWS (1946)
+  event: original
+  status: superseded
+  dates:
+    adopted: '1946-08-16'
+  source: constitution-native-village-of-koyuk-1946-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/native-village-of-koyuk/2beb527793151f5f.pdf
+    sha256: 2beb527793151f5fd8e41b33ce07715dc474de49bd9c855b03046633e491cba9
+    pages: 8
+  note: The text prints an approval date (1946-07-23) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Marked superseded because a later dated text was
+    found (project inference). Type and dates read from the text by an AI reviewer (Claude Haiku), not
+    yet checked by the lead author.
+- id: 1946-text-2
+  label: CONSTITUTION AND BY-LAWS (1946)
+  event: edition
+  status: unknown
+  dates:
+    listed: '1946-08-16'
+  supersedes:
+  - 1946-text
+  source: university-of-oklahoma-indian-reorganization-act-koyukcon
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/native-village-of-koyuk/cfee148971a65f59.html
+    sha256: cfee148971a65f59eeb125e296cb381f581e96813f344df0e77b2fbbab44258a
+  note: 'The text prints an approval date (1946-07-23) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. The text also prints adopted 1946-08-16, which belong
+    to the earlier text it compiles. The date recorded as listed is that of the latest amendment the text
+    says it includes. Dates read from another copy of the same text: adopted 1946-08-16. Dates read by
+    rule from the certificates on the library page.'
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

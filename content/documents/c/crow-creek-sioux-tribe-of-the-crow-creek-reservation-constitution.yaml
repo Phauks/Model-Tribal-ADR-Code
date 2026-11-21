@@ -1,0 +1,65 @@
+id: crow-creek-sioux-tribe-of-the-crow-creek-reservation-constitution
+kind: constitution
+title: Constitution of the Crow Creek Sioux Tribe of the Crow Creek Reservation, South Dakota
+nations:
+- crow-creek-sioux-tribe-of-the-crow-creek-reservation
+jurisdictions:
+- level: tribal
+  tribe: crow-creek-sioux-tribe-of-the-crow-creek-reservation
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1948-12-08
+  to 1949-04-26. Versions are only those found; others may exist.'
+versions:
+- id: 1948-text
+  label: CONSTITUTION AND BYLAWS (1948)
+  event: original
+  status: superseded
+  dates:
+    approved: '1948-12-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-crowcscons
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/crow-creek-sioux-tribe-of-the-crow-creek-reservation/c707804b8ddf02d4.html
+    sha256: c707804b8ddf02d411d8d77e6fb7129c06f40e01737849bdbffd25ea4f1035be
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article V (VACANCIES AND REMOVAL)
+    summary: Article headed "VACANCIES AND REMOVAL"; found by its heading and not yet read.
+    verification: title-only
+- id: 1949-text
+  label: CONSTITUTION AND BY-LAWS OF THE CROW CREEK SIOUX TRIBE OF FORT THOMPSON, SOUTH DAKOTA (1949)
+  event: edition
+  status: unknown
+  dates:
+    approved: '1949-04-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  supersedes:
+  - 1948-text
+  source: constitution-crow-creek-sioux-tribe-of-the-crow-creek-reservation-1949-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/crow-creek-sioux-tribe-of-the-crow-creek-reservation/0bc2be0280384280.pdf
+    sha256: 0bc2be0280384280672b476e34f6e88f64f0458eb7fb8a7d637186caddfaa253
+    pages: 24
+  note: Type and dates read from the text by an AI reviewer (Claude Haiku), not yet checked by the lead
+    author.
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1948-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.

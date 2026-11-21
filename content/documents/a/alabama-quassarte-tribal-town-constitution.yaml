@@ -1,0 +1,70 @@
+id: alabama-quassarte-tribal-town-constitution
+kind: constitution
+title: Constitution of the Alabama-Quassarte Tribal Town
+nations:
+- alabama-quassarte-tribal-town
+jurisdictions:
+- level: tribal
+  tribe: alabama-quassarte-tribal-town
+summary: 'Texts of the nation''s constitution found online on 2026-11-21: 2 dated versions, from 1938-11-17
+  to 1939-01-10. Versions are only those found; others may exist.'
+versions:
+- id: 1938-text
+  label: CONSTITUTION AND BY-LAWS (1938)
+  event: original
+  status: superseded
+  dates:
+    approved: '1938-11-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    locator: approval certificate
+  source: university-of-oklahoma-indian-reorganization-act-alaquassarte
+  confidence: medium
+  verification: inferred
+  capture:
+    path: research/captures/constitutions/alabama-quassarte-tribal-town/55d7c86b6b107cb4.pdf
+    sha256: 55d7c86b6b107cb4bf1472b375004cf63dc3a4765b12a221dde96efc3cca48e4
+    pages: 6
+  note: Marked superseded because a later dated text was found (project inference). Dates read by rule
+    from the certificates on the library page.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (Revoval FROM OFFICE AND FILLING VACANCIES)
+    summary: Article headed "Revoval FROM OFFICE AND FILLING VACANCIES"; found by its heading and not
+      yet read.
+    verification: title-only
+- id: 1939-text
+  label: CONSTITUTION AND BY-LAWS OF THE ALABAMA-QUASSARTE TRIBAL TOWN (1939)
+  event: edition
+  status: unknown
+  dates:
+    adopted: '1939-01-10'
+  supersedes:
+  - 1938-text
+  source: constitution-alabama-quassarte-tribal-town-1939-text
+  confidence: medium
+  verification: read-in-full
+  capture:
+    path: research/captures/constitutions/alabama-quassarte-tribal-town/51b9e77ba5a4ce0e.pdf
+    sha256: 51b9e77ba5a4ce0e5a0d988f76cb68c35c64b0cf3de60eb0724a6b06eb3ff04d
+    pages: 7
+  note: The text prints an approval date (1938-11-17) before the adoption date; it may be the approval
+    to hold the election, so it is left out of dates. Type and dates read from the text by an AI reviewer
+    (Claude Haiku), not yet checked by the lead author.
+  clauses:
+  - topic: removal-and-recall
+    locator: Article VII (Removal From Office and Filling Vacancies)
+    summary: Article headed "Removal From Office and Filling Vacancies"; found by its heading and not
+      yet read.
+    verification: title-only
+  changes:
+  - topic: removal-and-recall
+    compared_with: 1938-text
+    change: not-compared
+    verification: inferred
+    note: The script could not split one of the two texts into articles; compare by hand.
+found_in:
+- 2026-11-21-constitutions
+notes: Built by scripts/constitutions/build_catalog.py from research/constitutions/documents.json. Statuses,
+  events and changes are project inferences from the texts found; see the catalog README.
