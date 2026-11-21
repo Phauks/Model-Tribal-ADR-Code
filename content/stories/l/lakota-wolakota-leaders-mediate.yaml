@@ -1,0 +1,61 @@
+id: lakota-wolakota-leaders-mediate
+title: 'Wolakota: Code of Behavior'
+titles_in_language:
+- text: Wolakota
+  language: lkt
+  source: rosebud-sioux-tribe-of-the-rosebud-india-history-culture
+nations:
+- rosebud-sioux-tribe-of-the-rosebud-indian-reservation
+- standing-rock-sioux-tribe-of-north-and-south-dakota
+kind: teaching
+length: short
+summary: A Lakota code of behavior that two nations publish, which teaches that leaders seek compromise between
+  irreconcilable forces, do not take sides, and mediate for the good of the people, and that respect keeps the people
+  in harmony.
+methods:
+- mediation
+- customary-dispute-resolution
+topics:
+- leadership
+- respect
+tellings:
+- id: rosebud-history-culture
+  source: rosebud-sioux-tribe-of-the-rosebud-india-history-culture
+  published_by: Rosebud Sioux Tribe
+  authority: nation-government
+  verification: read-in-full
+  permitted_uses: &id001
+    level: reference-only
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: &id002
+    level: nation-review-first
+- id: standing-rock-handout
+  source: standing-rock-wolakota-information-for-participants
+  as_of: 2024-06
+  published_by: Standing Rock Sioux Tribe
+  authority: nation-government
+  verification: read-in-full
+  permitted_uses: *id001
+  access: *id002
+access: *id002
+anthology:
+  candidate: true
+  reason: Short, complete, published by two nations, and directly about the mediator's role (project analysis).
+  telling: rosebud-history-culture
+  permission_from:
+  - holder: Rosebud Sioux Tribe
+    for: both
+    nation: rosebud-sioux-tribe-of-the-rosebud-indian-reservation
+  - holder: Standing Rock Sioux Tribe
+    for: both
+    nation: standing-rock-sioux-tribe-of-north-and-south-dakota
+  status: not-asked
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories

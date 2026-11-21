@@ -1,0 +1,38 @@
+id: coeur-dalene-1858-treaty-of-friendship
+title: Treaty of Friendship, September 17, 1858
+nations:
+- coeur-dalene-tribe
+kind: historical-account
+length: paragraph
+summary: The Tribe's timeline describes a treaty negotiated with the United States after the Battle of Steptoe,
+  framed as a peaceful resolution of the conflict.
+methods:
+- negotiation
+topics:
+- peace-between-nations
+- treaties
+tellings:
+- id: cdatribe-timeline
+  source: cdatribe-nsn-home
+  locator: home page timeline
+  published_by: Coeur d'Alene Tribe
+  authority: nation-government
+  verification: read-in-full
+  permitted_uses:
+    level: reference-only
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: &id001
+    level: nation-review-first
+access: *id001
+anthology:
+  candidate: false
+  reason: A timeline entry; cite it (project analysis).
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories

@@ -1,0 +1,59 @@
+id: omaha-umonhon-oglala-peace
+title: Dancing the Way to Peace (the Umonhon and Oglala peace of 1791-1792)
+titles_in_language:
+- text: Umonhon
+  language: oma
+  source: othrp-2019-dancing-for-peace
+nations:
+- omaha-tribe-of-nebraska
+kind: historical-account
+length: book
+summary: A history by the Omaha Tribal Historical Research Project of the Umonhon (Omaha) Nation's relations and
+  treaties with other nations, opening with the peace the Umonhon and the Oglala made in 1791-1792, as recorded
+  in a winter count.
+methods:
+- customary-dispute-resolution
+topics:
+- peace-between-nations
+- treaties
+- winter-count
+tellings:
+- id: othrp-2019
+  source: othrp-2019-dancing-for-peace
+  locator: Part 1, 'Dancing the Way to Peace 1493-1872'
+  as_of: '2019'
+  published_by: Omaha Tribal Historical Research Project, Inc.
+  authority: native-organization
+  verification: read-in-full
+  permitted_uses:
+    level: reference-only
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: &id001
+    level: nation-review-first
+protocols:
+- kind: sacred
+  statement: The book has a section on keepers or advisors of the sacred.
+  source: othrp-2019-dancing-for-peace
+  how_the_project_follows_it: Nothing from that section is recorded or described.
+access: *id001
+anthology:
+  candidate: true
+  reason: A Native-run history of a peace between two nations, posted on the Tribe's own site (project analysis).
+  telling: othrp-2019
+  permission_from:
+  - holder: Omaha Tribal Historical Research Project, Inc.
+    for: copyright
+    nation: omaha-tribe-of-nebraska
+  - holder: Omaha Tribe of Nebraska, Tribal Council
+    for: cultural-authority
+    nation: omaha-tribe-of-nebraska
+  status: not-asked
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories

@@ -16,6 +16,7 @@ and makes each edition reproducible
 │   ├── tribes/              One profile per nation or community         CC BY
 │   ├── sources/             One record per cited source                 CC BY
 │   ├── documents/           One version history per changing document   CC BY
+│   ├── stories/             One record per story: tellings, credit, no text CC BY
 │   ├── glossary/            One entry per defined term or acronym       CC BY
 │   ├── methods/             One record per dispute resolution method    CC BY
 │   ├── bibliographies/      Annotated reading lists                     CC BY
