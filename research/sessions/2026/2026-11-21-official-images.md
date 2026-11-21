@@ -355,8 +355,8 @@ How each signal is detected and what it does is set out in docs/official-images.
 - Trademark symbols: a registered trademark symbol is printed on two chosen images (Muckleshoot Indian
   Tribe; Mississippi Band of Choctaw Indians).
 - USPTO Native American Tribal Insignia database: 184 of the 185 entries were matched to 93 profiles.
-  89000952 (Fond du Lac Band of Lake Superior Chippewa) was added once the band got its own profile; it
-  has no chosen image yet, so its design was not compared. The other five Minnesota Chippewa Tribe bands
+  89000952 (Fond du Lac Band of Lake Superior Chippewa) was added once the band got its own profile (see
+  "Minnesota Chippewa Tribe bands" below). The other five Minnesota Chippewa Tribe bands
   (Bois Forte, Grand Portage, Leech Lake, Mille Lacs, White Earth) have no entries of their own; the
   tribe's own filing, 89001051, stays on its profile. 89003098 (a Gabrieleno San Gabriel Band filing)
   still has no profile. For the 74 nations with both a chosen image and entries, each entry was compared by eye: 60
@@ -369,6 +369,27 @@ How each signal is detected and what it does is set out in docs/official-images.
 Result: 270 images show no restriction, 1 may be shown on conditions (the Little Traverse Bay Bands
 Emblem), 1 needs checking (Oneida Nation logo) and 88 are restricted, 57 of them only because the nation
 filed the same or a similar design in the USPTO database.
+
+## Minnesota Chippewa Tribe bands
+
+The six component bands of the Minnesota Chippewa Tribe got their own profiles after the first
+collection. Each profile now lists the band's website (the home page already cited for its own name),
+and the same crawler and signal rules were run on those six sites alone.
+
+- Bois Forte, Grand Portage, Mille Lacs, White Earth and Fond du Lac: one logo each was chosen. The
+  Mille Lacs image is the band's emblem drawn on a pennant that the site uses as page decoration; the
+  site names the file mlbo-flag.svg, but nothing on the site says it is the band's flag, so it is
+  recorded as a logo.
+- Leech Lake: the band's seal appears only inside the site's header artwork, not as an image of its
+  own, and the only standalone image is a 16-pixel site icon. No image was chosen.
+- Signals: Bois Forte and White Earth show a general copyright line, which does not block reuse. No
+  site has terms that limit reuse of images; the Leech Lake legal page lists the legal department's
+  staff, and the Mille Lacs media protocol is guidance for employees. The Fond du Lac logo is the same
+  design as USPTO entry 89000952, so it is restricted under the database rule.
+
+Result for the six bands: 4 images show no restriction, 1 is restricted (Fond du Lac) and 1 band has
+no image (Leech Lake). Across the collection: 365 nations, 274 with no restriction found, 1 on
+conditions, 1 needing checking and 89 restricted, 58 of them only because of a USPTO database entry.
 
 ## Other findings
 

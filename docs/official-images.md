@@ -33,7 +33,8 @@ an image is or is not shown.
   the private copy.
 
 The first collection (research session `2026-11-21-official-images`) chose
-images for 360 of the 545 nations with a listed website.
+images for 360 of the 545 nations with a listed website. A later run on the
+Minnesota Chippewa Tribe's six component bands added five more.
 
 ## How "can't reuse" is detected
 

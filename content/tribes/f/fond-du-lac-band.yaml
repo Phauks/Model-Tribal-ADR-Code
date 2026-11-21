@@ -69,12 +69,44 @@ population:
     the nation''s citizens. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names
     six component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille
     Lacs, White Earth).'
+contacts:
+- kind: website
+  value: https://www.fdlband.org/
+  label: Band government website
+  source: fdlband-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-21'
+  locator: home page
+official_images:
+- kind: logo
+  alternative_text: navigation logo
+  image_link: https://cms3.revize.com/revize/fonddulac/_assets_/images/logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 7d4e1e29135f1264058586b3fb33bcc4fa0a57e11266d037ed4a01071eff87a7
+  private_copy: nation-images/fond-du-lac-band/logo-7d4e1e29135f.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89000952&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89000952'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2003-11-25).
+  source: fdlband-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 tribal_insignia_database_entries:
 - serial_number: '89000952'
   wordmark: NAH-GAH-CHI-WA-NONG RESERVATION ESTABLISHED BY TREATY OF 1854 FOND DU LAC
   filed: '2003-11-25'
   record_link: https://tsdr.uspto.gov/#caseNumber=89000952&caseType=SERIAL_NO&searchType=statusSearch
-  design_compared: not-compared
+  design_compared: same-design
   private_copy: nation-images/fond-du-lac-band/insignia-database-89000952.png
   source: uspto-native-american-tribal-insignia-database
   confidence: high
