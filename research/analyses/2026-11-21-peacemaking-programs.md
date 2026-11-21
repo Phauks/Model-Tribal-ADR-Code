@@ -39,9 +39,8 @@ and recorded peacemaking forums on 37 nations' profiles.[^narf-laws][^analysis]
 Section 2 of the dispute resolution practice analysis counted structural
 features in those records: placement in the court, consent to enter, return
 to court, and agreements entered as judgments.[^analysis] This note builds on
-that work. It does not re-read the codes. A separate thread is parsing the
-full text of the codes, and its peacemaking provisions will be added in a
-follow-up.
+that work. It does not re-read the codes itself; section 2.1 summarizes a separate
+pass over the full code texts.
 
 What was missing was the operating picture: who the peacemakers are, how
 cases arrive, what happens to agreements, how many cases programs handle, and
@@ -88,6 +87,60 @@ analysis):
 - **Finality.** Oneida, Choctaw and Prairie Band Potawatomi give agreements
   the force of a court order, and Choctaw and Prairie Band bar appeal. Several
   program pages say nothing about enforcement at all.[^oneida][^choctaw-act][^pbpn]
+
+### 2.1 What the code texts add
+
+A second thread read the full texts of the peacemaking codes already in the
+dataset and tagged each peacemaking provision with a design feature. It found
+580 provisions from 39 nations.[^code-pass] These are machine readings, checked
+by script against the text and sampled by a second reviewer, but not yet
+reviewed by the lead author, so the counts are a guide only. Quotations from
+that pass stay private under the project's link-only rule for Tribal law; this
+note uses counts and paraphrase.
+
+| Feature | Provisions | Nations |
+| --- | --- | --- |
+| Placement of the forum (court division or separate) | 138 | 37 |
+| How a case enters (consent, referral, request) | 132 | 32 |
+| Return to court when no agreement is reached | 90 | 27 |
+| How peacemakers are selected | 77 | 24 |
+| Agreement entered as a judgment or order | 47 | 20 |
+| Peacemaker qualifications or training | 37 | 22 |
+| Confidentiality | 32 | 19 |
+| Matters covered | 29 | 18 |
+| Fees or compensation | 27 | 15 |
+| Appeal, review, or removal of a peacemaker | 18 | 13 |
+| Peacemaker decides only with all parties' consent | 17 | 11 |
+| Matters excluded | 14 | 8 |
+| Participation of non-members | 7 | 6 |
+
+A provision can carry several tags, and 127 provisions had none. Twenty-one
+passages had ceremonial or spiritual content and were listed without quotation
+or summary.[^code-pass]
+
+Patterns the code texts show (project analysis, from the machine summaries):
+
+- **A shared drafting family.** Several codes use nearly the same rule: a
+  peacemaker mediates by traditional methods and may decide a disputed matter
+  only if every party agrees to that authority, usually in writing. It appears
+  in the Kickapoo Traditional Tribe of Texas, Northern Arapaho, Sokaogon
+  Chippewa, Spirit Lake and Stockbridge-Munsee codes, and the
+  Alabama-Coushatta and Choctaw Nation of Oklahoma codes bar a peacemaker from
+  deciding a matter the parties cannot settle.[^consent-family] The likeness
+  suggests a common model, which this note has not traced.
+- **A way out of peacemaking.** The Northern Arapaho, Pit River and Kickapoo
+  codes let a party, witness or participant ask the Tribal Court to end or
+  limit peacemaking for harassment or similar conduct.[^way-out]
+- **Who pays.** The Siletz, Kickapoo, Sokaogon and Stockbridge-Munsee codes
+  set a small fee paid by the parties to compensate the peacemaker, while the
+  Coquille code makes Peacegivers unpaid volunteers.[^fees]
+- **No appeal, but a way to adjust.** The Siletz code bars appeal of a
+  Community Law Court judgment but lets a party move to modify it, and the
+  Mashpee ordinance makes an agreement final without appeal.[^no-appeal]
+- **Reaching beyond members.** The Nez Perce code lets its Peacemaker Court
+  serve people outside the Tribal Court's jurisdiction on minor matters, and
+  the Chitimacha code lets parties choose, with court approval, a peacemaker
+  who is not a Tribal member.[^beyond-members]
 
 ## 3. Program notes by region
 
@@ -353,8 +406,8 @@ of agreements) without defining peacemaking itself.[^roadmap]
 - **Version history:** the Coos amendment and the Navajo Plan's 2013
   amendment are candidates for document-history records once the format in
   pull request #47 is merged.
-- **Codes:** the code-parsing thread will supply peacemaking provisions from
-  the full code texts; a follow-up will fold them into section 2.
+- **Codes:** the code-parsing pass is summarized in section 2.1; its
+  provisions need the lead author's review before any is cited in commentary.
 - **Consultation:** every program described here belongs to a nation that
   can correct or remove it (charter; requests process). Before any of this
   appears in commentary, the nations named should be asked.
@@ -416,3 +469,9 @@ of agreements) without defining peacemaking itself.[^roadmap]
 [^melton]: Ada Pecos Melton, *Indigenous Justice Systems and Tribal Society*, 79 Judicature (No. 3, Nov.-Dec. 1995). Source record: `melton-indigenous-justice-systems-and-tribal-society-1995`.
 [^valencia]: Gloria Valencia-Weber, *Tribal Courts: Custom and Innovative Law*, 24 N.M. L. Rev. 225 (1994). Source record: `valencia-weber-1994-tribal-courts-custom-innovative-law`.
 [^nielsen-zion]: *Navajo Nation Peacemaking: Living Traditional Justice* (Marianne O. Nielsen & James W. Zion eds., 2005). Source record: `nielsen-zion-2005-navajo-nation-peacemaking`.
+[^code-pass]: Peacemaking provisions from the full texts of Tribal codes, court rules and ordinances (machine reading, Nov. 21, 2026; kept with the project's private working files, not published, because Tribal law is link-only). Counts computed for this note.
+[^consent-family]: Kickapoo Traditional Tribe of Texas Code ch. 4, §§ 4.3, 4.22 (2005); Northern Arapaho Code tit. 7, §§ 105(b), 203 (2016); Sokaogon Chippewa Community Code ch. 1, § 1.1.8(G) (2011); Spirit Lake Law and Order Code tit. 21, § 21-1-110(8), (10) (2014); Stockbridge-Munsee Tribal Code ch. TCT.04, § TCT.04.06; Alabama-Coushatta Comprehensive Codes of Justice tit. II, ch. I, § 105(A) (2014); Choctaw Nation Peacemaking Act § 5. Source records: `kickapoo-traditional-tribe-texas-chapter-4-peacemaker-system`, `northern-arapaho-title-7-peacemaker-code`, `sokaogon-chapter-1-tribal-governance-2011`, `spirit-lake-title-21-wodakota`, `stockbridge-munsee-tct-04-peacemaker-ordinance`, `alabama-coushatta-title-2-peacemaker-code`, `choctaw-nation-peacemaking-act`.
+[^way-out]: Northern Arapaho Code tit. 7, §§ 401-402 (2016); Pit River Tribe, Title 8 Family/Children's Code ch. 15; Kickapoo Traditional Tribe of Texas Code ch. 4, § 4.40 (2005). Source records: `northern-arapaho-title-7-peacemaker-code`, `pit-river-title-8-chapter-15-peacemaker-program`, `kickapoo-traditional-tribe-texas-chapter-4-peacemaker-system`.
+[^fees]: Siletz Tribal Code § 3.314 (amended 2025); Kickapoo Traditional Tribe of Texas Code ch. 4, § 4.35 (2005); Sokaogon Chippewa Community Code ch. 1, § 1.1.9(B)(1) (2011); Stockbridge-Munsee Tribal Code ch. TCT.04, § TCT.04.14; Coquille Tribal Ordinance ch. 655, § 655.300 (2005). Source records: `siletz-code-3-300-community-law-court-2025`, `kickapoo-traditional-tribe-texas-chapter-4-peacemaker-system`, `sokaogon-chapter-1-tribal-governance-2011`, `stockbridge-munsee-tct-04-peacemaker-ordinance`, `coquille-ordinance-655-peacegiving`.
+[^no-appeal]: Siletz Tribal Code § 3.320 (amended 2025); Mashpee Wampanoag Tribe Ordinance ch. 3, § 2(f). Source records: `siletz-code-3-300-community-law-court-2025`, `mashpee-chapter-3-peacemaker-court`.
+[^beyond-members]: Nez Perce Tribal Code tit. 1, ch. 1-8, § 1-8-11 (2019); Chitimacha Comprehensive Codes of Justice tit. I-A, § 201(d). Source records: `nez-perce-title-1-chapter-1-8-peacemaker-court`, `chitimacha-title-1a-peacemaker-court`.
