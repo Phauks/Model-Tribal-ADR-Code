@@ -88,6 +88,7 @@ Every value in a profile carries the same citation fields
 | --- | --- |
 | `source` | Key of the source record the value comes from |
 | `confidence` | `high`, `medium` or `low`, defined below |
+| `verification` | How closely the value was checked: `read-in-full`, `title-only`, `bulk-import` or `inferred`, defined below. Required on every new or changed fact |
 | `as_of` | When the value was true or published: a year, year and month, or full date |
 | `locator` | Where in the source: page, section, table or row |
 | `note` | Anything a reader needs to weigh the value, such as a name match or a conflict |
@@ -101,6 +102,24 @@ Confidence levels (project choice):
   five years, or a value that needed names matched between sources.
 - **low**: a single unofficial source, an undated source, conflicting sources
   (explained in the note), or a search-result snippet.
+
+Verification levels (project choice, decision record 0014). Confidence says
+how good the source is; verification says how closely the value was checked
+against it, so a high-confidence list can still be a bulk import:
+
+- **read-in-full**: the part of the document that states the value was read.
+- **title-only**: only a title, link text, heading or table-of-contents line
+  was seen; the document itself was not opened.
+- **bulk-import**: copied from a row of a list, directory, database or data
+  table without opening the underlying document.
+- **inferred**: derived rather than stated: matched to the nation by name,
+  assigned by a rule (such as a state's Public Law 280 status), or taken from
+  another nation's document.
+
+When two apply, record the weaker one (inferred, then title-only, then
+bulk-import). Facts recorded before Nov. 21, 2026 have no level yet;
+`scripts/coverage_report.py` guesses theirs from their notes until they are
+reviewed.
 
 A value no source supports is left out. An empty field means "not found", not
 "none".

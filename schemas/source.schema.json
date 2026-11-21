@@ -92,6 +92,12 @@
         }
       }
     },
+    "shares_link_with": {
+      "type": "array",
+      "description": "Keys of other source records at the same address that are different documents, such as several statutes on one chapter page or a case that quotes a statute. Without it, two records at one address (ignoring the scheme, 'www.', a trailing slash or an index page) are treated as duplicates by scripts/lint_records.py.",
+      "items": { "$ref": "common.schema.json#/$defs/slug" },
+      "uniqueItems": true
+    },
     "citator": {
       "type": "object",
       "description": "Negative-treatment check for cases and statutes (e.g. KeyCite).",

@@ -1,6 +1,6 @@
 # Example profile using a fictitious nation, to show structure only.
 # Real profiles are created under the charter's consultation process.
-# Every fact carries a source key and a confidence level (common.schema.json#/$defs/cited).
+# Every fact carries a source key, a confidence level and a verification level (common.schema.json#/$defs/cited).
 id: example-nation
 entity_type: native-nation
 names:
@@ -11,6 +11,7 @@ names:
       language_tag: xx-example
       source: example-nation-about-page
       confidence: high
+      verification: read-in-full
       as_of: '2026'
   pronunciation:
     - name: Example Nation
@@ -23,6 +24,7 @@ names:
     - name: Example Band of Examplestate Indians
       source: bia-recognized-entities-2026
       confidence: high
+      verification: bulk-import
       as_of: '2026-01-30'
       note: Listed in the notice as a previous name.
 recognition:
@@ -30,6 +32,7 @@ recognition:
     legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104
     source: bia-recognized-entities-2026
     confidence: high
+    verification: bulk-import
     as_of: '2026-01-30'
     locator: 91 Fed. Reg. 4104
 states:
@@ -37,12 +40,14 @@ states:
     presence: government-office
     source: bia-tribal-leaders-directory-2026
     confidence: high
+    verification: bulk-import
     as_of: '2026-11-20'
 population:
   - count: 1234
     kind: citizens
     source: example-nation-about-page
     confidence: high
+    verification: read-in-full
     as_of: '2025'
 contacts:
   - kind: website
@@ -50,12 +55,14 @@ contacts:
     label: Tribal government office
     source: bia-tribal-leaders-directory-2026
     confidence: high
+    verification: bulk-import
     as_of: '2026-11-20'
 justice_institutions:
   - kind: tribal-court
     name: Example Nation Tribal Court
     source: example-nation-court-page
     confidence: high
+    verification: read-in-full
 dispute_resolution_law:
   - example-nation-peacemaking-code
 review:

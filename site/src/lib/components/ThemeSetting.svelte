@@ -2,13 +2,16 @@
 	// Theme button (site/DESIGN.md, section 8). It shows a sun while the light
 	// theme is in use and a moon while the dark theme is in use; pressing it
 	// switches to the other theme. Until the reader presses it, the device's
-	// setting decides. The choice is kept on this device only. The inline
+	// setting decides. The Settings dialog offers the same choice plus "Match
+	// this device", and this button follows it. The choice is kept on this
+	// device only. The inline
 	// script in app.html applies a stored choice before the first paint, and
 	// the icons are swapped by CSS, so the right icon shows before this script
 	// runs.
 	import { onMount } from 'svelte';
 	import Moon from '@lucide/svelte/icons/moon';
 	import Sun from '@lucide/svelte/icons/sun';
+	import { saveTheme } from '#lib/reading-settings.ts';
 
 	type Theme = 'light' | 'dark';
 
@@ -28,24 +31,25 @@
 			current = themeInUse();
 		};
 		deviceSetting.addEventListener('change', follow);
-		return () => deviceSetting.removeEventListener('change', follow);
+		// Follow a theme chosen in the Settings dialog.
+		const observer = new MutationObserver(follow);
+		observer.observe(document.documentElement, { attributeFilter: ['data-theme'] });
+		return () => {
+			deviceSetting.removeEventListener('change', follow);
+			observer.disconnect();
+		};
 	});
 
 	function switchTheme() {
 		const next: Theme = themeInUse() === 'dark' ? 'light' : 'dark';
-		document.documentElement.dataset.theme = next;
+		saveTheme(next);
 		current = next;
-		try {
-			localStorage.setItem('theme', next);
-		} catch {
-			// Storage can be blocked; the choice then lasts for this page only.
-		}
 	}
 
 	const label = $derived(current === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
 </script>
 
-<button class="theme-button" type="button" aria-label={label} title={label} onclick={switchTheme}>
+<button class="theme-button needs-scripts" type="button" aria-label={label} title={label} onclick={switchTheme}>
 	<span class="sun"><Sun size={24} /></span>
 	<span class="moon"><Moon size={24} /></span>
 </button>

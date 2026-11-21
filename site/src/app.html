@@ -5,11 +5,22 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="text-scale" content="scale" />
 		<script>
-			// Apply the reader's theme choice before the page paints (site/DESIGN.md, section 8).
-			try {
-				var theme = localStorage.getItem('theme');
-				if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
-			} catch (error) {}
+			// Apply the reader's settings before the page paints, so nothing jumps
+			// (site/DESIGN.md, sections 6 and 8). The keys and names match
+			// src/lib/reading-settings.ts; global.css ignores values it does not know.
+			(function () {
+				var root = document.documentElement;
+				root.dataset.scripts = 'on';
+				try {
+					var theme = localStorage.getItem('theme');
+					if (theme === 'light' || theme === 'dark') root.dataset.theme = theme;
+					var settings = JSON.parse(localStorage.getItem('reading-settings') || '{}');
+					['textSize', 'font', 'textSpacing', 'contrast'].forEach(function (name) {
+						var value = settings && settings[name];
+						if (typeof value === 'string' && /^[a-z-]+$/.test(value)) root.dataset[name] = value;
+					});
+				} catch (error) {}
+			})();
 		</script>
 		%sveltekit.head%
 	</head>

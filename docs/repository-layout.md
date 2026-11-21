@@ -38,7 +38,8 @@ and makes each edition reproducible
 │   ├── sessions/YYYY/       One dated file per research session         CC BY
 │   ├── raw/YYYY-MM-DD/      Cited facts before they become records      CC BY
 │   ├── analyses/            Dated analyses of the records               CC BY
-│   └── outreach/            One record per organization to ask for help CC BY
+│   ├── outreach/            One record per organization to ask for help CC BY
+│   └── reviews/             Dated reviews of records against sources    CC BY
 ├── docs/
 │   ├── charter.md           Project charter
 │   ├── data-model.md        Record types and fields
