@@ -1,0 +1,42 @@
+id: las-vegas-indian-center
+name: Las Vegas Indian Center
+also_known_as:
+- LVIC
+category: intertribal-organization
+location:
+  city: Las Vegas
+  state: NV
+scope: local
+relevance:
+  text: The Las Vegas Indian Center is a nonprofit that serves Indigenous people in Las Vegas through
+    employment programs, housing support, voter education and digital equity work for urban Native communities.
+  sources:
+  - american-indian-alliance-resources
+possible_roles:
+- consultation
+- distribution
+contacts:
+- kind: web-page
+  value: https://lvindiancenter.org
+  label: Website (as linked by UNLV AIA)
+  sources:
+  - american-indian-alliance-resources
+sources:
+- id: american-indian-alliance-resources
+  title: AIA Community Resources
+  publisher: UNLV
+  link: https://www.unlv.edu/aia/community-resources
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Description of LVIC and website link.
+- id: search-listings
+  title: Las Vegas Indian Center search results
+  publisher: various
+  link: https://www.causeiq.com/organizations/las-vegas-indian-center,237458273/
+  accessed: '2026-11-21'
+  verification: search-result-only
+  supports: Nonprofit appears in 2025-2026 directories.
+checked: '2026-11-21'
+notes: Its website did not respond during research, so its address and telephone are not confirmed.
+notes_sources:
+- search-listings

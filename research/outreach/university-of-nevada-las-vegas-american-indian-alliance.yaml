@@ -1,0 +1,59 @@
+id: university-of-nevada-las-vegas-american-indian-alliance
+name: UNLV American Indian Alliance
+also_known_as:
+- AIA
+category: university-center
+location:
+  city: Las Vegas
+  state: NV
+scope: local
+relevance:
+  text: The American Indian Alliance is made up of Native faculty, staff and team members across UNLV
+    and works to increase recruitment, retention and success of Native people at UNLV, including support
+    for Native American studies and Tribal community partnerships. Its community resources page lists
+    Nevada Native organizations such as the Nevada Department of Native American Affairs, the Inter-Tribal
+    Council of Nevada, the Las Vegas Indian Center and IndigenousAF.
+  sources:
+  - american-indian-alliance-home
+  - american-indian-alliance-resources
+possible_roles:
+- consultation
+- advice
+- distribution
+- event-or-presentation
+contacts:
+- kind: email
+  value: aia@unlv.edu
+  label: AIA general inbox
+  sources:
+  - american-indian-alliance-contact
+- kind: mailing-address
+  value: University of Nevada, Las Vegas, 4505 S. Maryland Pkwy., Las Vegas, NV 89154
+  label: University address
+  sources:
+  - american-indian-alliance-contact
+sources:
+- id: american-indian-alliance-home
+  title: American Indian Alliance
+  publisher: UNLV
+  link: https://www.unlv.edu/aia
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Composition and mission.
+- id: american-indian-alliance-contact
+  title: AIA Contact
+  publisher: UNLV
+  link: https://unlv.edu/aia/contact
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: aia@unlv.edu.
+- id: american-indian-alliance-resources
+  title: AIA Community Resources
+  publisher: UNLV
+  link: https://www.unlv.edu/aia/community-resources
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Lists DNAA, ITCN, LVIC, IndigenousAF and others.
+checked: '2026-11-21'
+notes: An affinity group of Native faculty and staff, not a student services office; no separate Native
+  student services office was found at UNLV.

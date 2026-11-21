@@ -17,3 +17,5 @@ uses a fictitious nation on purpose.
 | `method.schema.json` | `content/methods/*.yaml` |
 | `variable.schema.json` | `content/variables/*.yaml` |
 | `research-session.schema.json` | Front matter of `research/sessions/**/*.md` |
+| `outreach-organization.schema.json` | `research/outreach/*.yaml` |
+| `outreach-plan.schema.json` | The private outreach plan, kept outside git (decision record 0012) |

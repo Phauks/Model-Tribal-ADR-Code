@@ -1,0 +1,46 @@
+id: mashpee-wampanoag-tribe
+name: Mashpee Wampanoag Tribe
+category: native-nation
+tribe_profile: mashpee-wampanoag-tribe
+location:
+  state: MA
+scope: local
+relevance:
+  text: 'Federally recognized Native nation whose government office the Bureau of Indian Affairs lists
+    in Massachusetts. Dispute resolution forums named in its law or court materials include: Peacemaker
+    Court; Peacemakers Court (brochure description).'
+  sources:
+  - bureau-of-indian-affairs-tribal-leaders-directory
+  - mashpee-chapter-3-peacemaker-court
+  - mashpee-peacemakers-court-brochure
+possible_roles:
+- consultation
+- reviewer
+- sources-and-data
+contacts: []
+sources:
+- id: bureau-of-indian-affairs-tribal-leaders-directory
+  title: Tribal Leaders Directory (data service)
+  publisher: Bureau of Indian Affairs
+  link: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: State of the nation's government office. The office contacts are in the Tribe profile, which
+    was built from this data service.
+- id: mashpee-chapter-3-peacemaker-court
+  title: 'Chapter 3: Operation of Peacemaker Court'
+  publisher: Indigenous Peacemaking Initiative (Native American Rights Fund) document library
+  link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Mashpee-Chapter-3-OPERATION-OF-PEACEMAKER-COURT.pdf
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Dispute resolution forum named in the nation's law or court materials.
+- id: mashpee-peacemakers-court-brochure
+  title: Mashpee Wampanoag Peacemakers Court brochure (Wunahtyâhe8âôk / Peacemaking)
+  publisher: Mashpee Wampanoag Tribe Tribal Court
+  link: https://www.mashpeewampanoagtribe-nsn.gov/s/PM-Brochure-updated1.pdf
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Dispute resolution forum named in the nation's law or court materials.
+checked: '2026-11-21'
+notes: Government office contacts are in the nation's Tribe profile. Approach through the government office
+  and ask whether the court, peacemaking program or legal department is the right point of contact.

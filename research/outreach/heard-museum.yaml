@@ -1,0 +1,79 @@
+id: heard-museum
+name: Heard Museum
+also_known_as:
+- Heard Museum Guild Indian Fair & Market
+category: museum
+location:
+  city: Phoenix
+  state: AZ
+scope: national
+relevance:
+  text: The Heard Museum in Phoenix hosts the annual Heard Museum Guild Indian Fair & Market, whose Best
+    of Show juried competition recognizes Native artists, and it publishes entry guidelines and classifications
+    for that competition.
+  sources:
+  - fair
+  - juried-competition-guidelines
+  - classifications
+possible_roles:
+- advice
+- art
+- distribution
+contacts:
+- kind: web-page
+  value: https://heard.org/contact-us/
+  label: Contact page
+  sources:
+  - contact
+- kind: web-page
+  value: https://heard.org/fair-artists/
+  label: Indian Fair + Market Artist Services
+  sources:
+  - artist-services
+- kind: telephone
+  value: 602.252.8840
+  label: General office
+  sources:
+  - contact
+- kind: mailing-address
+  value: 2301 N. Central Ave, Phoenix, AZ 85004
+  label: General office
+  sources:
+  - contact
+sources:
+- id: contact
+  title: Contact Us - Heard Museum
+  publisher: Heard Museum
+  link: https://heard.org/contact-us/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Contact page
+- id: fair
+  title: 68th Annual Indian Fair & Market
+  publisher: Heard Museum
+  link: https://heard.org/fair/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: 68th annual Fair
+- id: juried-competition-guidelines
+  title: 2025 JC Entry Guidelines (PDF)
+  publisher: Heard Museum
+  link: https://heard.org/wp-content/uploads/2024/07/2025-JC-Entry-Guidelines.pdf
+  accessed: '2026-11-21'
+  verification: search-result-only
+  supports: Juried competition entry guidelines
+- id: classifications
+  title: Classifications 2025 (PDF)
+  publisher: Heard Museum
+  link: https://heard.org/wp-content/uploads/2024/07/Classifications-2025.pdf
+  accessed: '2026-11-21'
+  verification: search-result-only
+  supports: Competition classifications
+- id: artist-services
+  title: Indian Fair + Market Artist Services
+  publisher: Heard Museum
+  link: https://heard.org/fair-artists/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Artist services page
+checked: '2026-11-21'

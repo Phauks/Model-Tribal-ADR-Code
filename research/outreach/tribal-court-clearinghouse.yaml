@@ -1,0 +1,38 @@
+id: tribal-court-clearinghouse
+name: Tribal Court Clearinghouse
+also_known_as:
+- tribal-institute.org
+part_of: tribal-law-and-policy-institute
+category: law-library
+scope: national
+relevance:
+  text: The Tribal Court Clearinghouse, published as a public service by the Tribal Law and Policy Institute
+    since June 1997, is a resource for tribal justice systems covering tribal, state and federal law.
+    It lists the Institute’s Legal Code Development Series and has a page on traditional law resources.
+  sources:
+  - tribal-court-clearinghouse-home
+  - traditional
+possible_roles:
+- sources-and-data
+contacts:
+- kind: web-page
+  value: https://tribal-institute.org/
+  label: Clearinghouse home (contact via TLPI)
+  sources:
+  - tribal-court-clearinghouse-home
+sources:
+- id: tribal-court-clearinghouse-home
+  title: Tribal Court Clearinghouse
+  publisher: Tribal Law and Policy Institute
+  link: https://tribal-institute.org/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Purpose, 1997 founding, published by TLPI, Legal Code Development Series listing
+- id: traditional
+  title: Traditional Law Resources
+  publisher: Tribal Law and Policy Institute
+  link: https://www.tribal-institute.org/lists/traditional.htm
+  accessed: '2026-11-21'
+  verification: search-result-only
+  supports: Existence of a traditional law resources page
+checked: '2026-11-21'

@@ -1,0 +1,52 @@
+id: university-of-nevada-las-vegas-special-collections-and-archives
+name: UNLV Libraries Special Collections and Archives
+also_known_as:
+- UNLV Special Collections
+category: university-center
+location:
+  city: Las Vegas
+  state: NV
+scope: state
+relevance:
+  text: Special Collections and Archives supports research on Las Vegas, Southern Nevada and gaming, and
+    offers up to 30 minutes of free research help by phone or email. It publishes a statement on harmful
+    language in archival description and invites feedback.
+  sources:
+  - special-collections-and-archives-unit
+  - special-collections-and-archives-using
+possible_roles:
+- sources-and-data
+- art
+contacts:
+- kind: email
+  value: special.collections@unlv.edu
+  label: Special Collections general inbox
+  sources:
+  - special-collections-and-archives-unit
+- kind: telephone
+  value: 702-895-2234
+  label: Special Collections
+  sources:
+  - special-collections-and-archives-unit
+- kind: mailing-address
+  value: Special Collections and Archives, University of Nevada, Las Vegas, Box 457010, 4505 S. Maryland
+    Pkwy., Las Vegas, NV 89154-7010
+  label: Mailing address (Lied Library, third floor)
+  sources:
+  - special-collections-and-archives-unit
+sources:
+- id: special-collections-and-archives-unit
+  title: Special Collections and Archives (unit directory)
+  publisher: UNLV
+  link: https://www.unlv.edu/unit/special-collections-and-archives
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Mission, email, phone, mailing address.
+- id: special-collections-and-archives-using
+  title: Using Special Collections
+  publisher: UNLV University Libraries
+  link: https://www.library.unlv.edu/sca/using-special-collections
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: 30 minutes free research help; harmful-language statement.
+checked: '2026-11-21'

@@ -1,0 +1,43 @@
+id: pepperdine-straus-institute-for-dispute-resolution
+name: Straus Institute for Dispute Resolution, Pepperdine University Caruso School of Law
+also_known_as:
+- Straus Institute
+category: university-center
+location:
+  city: Malibu
+  state: CA
+scope: national
+relevance:
+  text: The Straus Institute calls itself one of the world's leading educational programs in dispute resolution
+    and offers a certificate, a Master of Dispute Resolution and an LL.M. in Dispute Resolution, plus
+    professional training.
+  sources:
+  - about
+possible_roles:
+- reviewer
+- advice
+contacts:
+- kind: telephone
+  value: 310.506.4655
+  label: Institute line
+  sources:
+  - about
+- kind: email
+  value: strausadmissions@pepperdine.edu
+  label: Institute admissions inbox
+  sources:
+  - about
+- kind: mailing-address
+  value: 24255 Pacific Coast Highway, Malibu, CA 90263
+  label: Pepperdine Caruso School of Law
+  sources:
+  - about
+sources:
+- id: about
+  title: About Straus
+  publisher: Pepperdine Caruso School of Law
+  link: https://law.pepperdine.edu/straus/about/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Name, description, degree programs, contacts.
+checked: '2026-11-21'

@@ -37,7 +37,8 @@ and makes each edition reproducible
 ├── research/
 │   ├── sessions/YYYY/       One dated file per research session         CC BY
 │   ├── raw/YYYY-MM-DD/      Cited facts before they become records      CC BY
-│   └── analyses/            Dated analyses of the records               CC BY
+│   ├── analyses/            Dated analyses of the records               CC BY
+│   └── outreach/            One record per organization to ask for help CC BY
 ├── docs/
 │   ├── charter.md           Project charter
 │   ├── data-model.md        Record types and fields
@@ -81,6 +82,7 @@ or removed record leaves a redirect entry instead.
 | Method | `content/methods/<id>.yaml` | `content/methods/mediation.yaml` |
 | Bibliography | `content/bibliographies/<slug>.md` | `content/bibliographies/united-states-dispute-resolution.md` |
 | Research session | `research/sessions/<yyyy>/<yyyy-mm-dd>-<topic>.md` | `research/sessions/2026/2026-11-20-foundational-scan.md` |
+| Outreach organization | `research/outreach/<id>.yaml` | `research/outreach/native-american-rights-fund.yaml` |
 
 Tribe profiles and source records sit in a subfolder named for the first
 letter of their id or key (`content/tribes/n/`, `content/sources/u/`). An id or

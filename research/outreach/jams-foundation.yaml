@@ -1,0 +1,37 @@
+id: jams-foundation
+name: JAMS Foundation
+category: foundation
+location:
+  city: San Francisco
+  state: CA
+scope: national
+relevance:
+  text: The JAMS Foundation calls itself the world's largest private funder of conflict prevention and
+    dispute resolution initiatives and is funded by JAMS neutrals and staff. Its programs include major
+    dispute resolution initiatives, community mediation mini-grants with the National Association for
+    Community Mediation, the JAMS Foundation/Association for Conflict Resolution Initiative for Students
+    and Youth, and the Weinstein JAMS International Fellowship.
+  sources:
+  - foundation
+possible_roles:
+- funding
+contacts:
+- kind: contact-form
+  value: https://www.jamsadr.com/foundation-contact
+  label: Foundation contact form
+  sources:
+  - foundation
+- kind: mailing-address
+  value: JAMS Foundation, Two Embarcadero Center, Suite 1500, San Francisco, CA 94111
+  label: Foundation
+  sources:
+  - foundation
+sources:
+- id: foundation
+  title: JAMS Foundation
+  publisher: JAMS
+  link: https://jamsadr.com/jamsfoundation
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Description, programs, managing director, address, contact form.
+checked: '2026-11-21'

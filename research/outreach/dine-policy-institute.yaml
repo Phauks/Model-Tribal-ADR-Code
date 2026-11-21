@@ -1,0 +1,52 @@
+id: dine-policy-institute
+name: Diné Policy Institute
+also_known_as:
+- DPI
+part_of: dine-college
+category: university-center
+location:
+  city: Tsaile
+  state: AZ
+scope: regional
+relevance:
+  text: The Diné Policy Institute is a research institute of Diné College that works to mesh Western research
+    practices with traditional Navajo values and Natural, Traditional, Customary and Common laws (as in
+    Navajo Nation Council resolution CN-69-02) to advise Navajo Nation lawmakers. It researches Navajo
+    politics and governmental reform, among other topics. Its work on Diné Fundamental Law in policy is
+    directly relevant to commentary on Navajo peacemaking (project analysis).
+  sources:
+  - institutes
+  - about
+possible_roles:
+- reviewer
+- consultation
+- sources-and-data
+contacts:
+- kind: telephone
+  value: (928) 724-6600
+  label: Diné College main line
+  sources:
+  - bachelor-of-arts-law-source
+sources:
+- id: institutes
+  title: About Diné College Institutes and Grant Programs
+  publisher: Diné College
+  link: https://www.dinecollege.edu/about_dc/institutes-and-grant-programs
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: DPI mission and reference to Natural, Traditional, Customary and Common laws (CN-69-02)
+- id: about
+  title: About Diné Policy Institute
+  publisher: Diné College
+  link: https://www.dinecollege.edu/?p=706
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: 'Research areas: Navajo politics, government reform, natural resources, development'
+- id: bachelor-of-arts-law-source
+  title: Bachelors of Arts in Navajo Nation Law
+  publisher: Diné College
+  link: https://www.dinecollege.edu/ba-in-navajo-nation-law/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: College main phone
+checked: '2026-11-21'

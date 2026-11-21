@@ -1,0 +1,49 @@
+id: national-native-american-bar-association
+name: National Native American Bar Association
+also_known_as:
+- NNABA
+category: bar-association
+location:
+  city: Tempe
+  state: AZ
+scope: national
+relevance:
+  text: The National Native American Bar Association (NNABA) began in 1973 as the American Indian Lawyers
+    Association and took its current name in 1980; it strives for justice and effective legal representation
+    for all American Indigenous peoples. It holds an annual meeting (a 2026 meeting page is posted) and
+    has committees including an Intellectual and Cultural Property Committee.
+  sources:
+  - mission
+  - home
+possible_roles:
+- reviewer
+- distribution
+- event-or-presentation
+- student-assistance
+contacts:
+- kind: mailing-address
+  value: PO Box 11145, Tempe, AZ 85284
+  label: Mailing address
+  sources:
+  - home
+- kind: web-page
+  value: https://www.nativeamericanbar.org/contact-us/
+  label: Contact Us page
+  sources:
+  - home
+sources:
+- id: home
+  title: National Native American Bar Association (home)
+  publisher: National Native American Bar Association
+  link: https://nativeamericanbar.org/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Mailing address, Contact Us link, committees, 2026 annual meeting link, NNABA Foundation
+- id: mission
+  title: The Mission of NNABA
+  publisher: National Native American Bar Association
+  link: https://www.nativeamericanbar.org/the-mission-of-nnaba/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Mission statement, founding 1973, renamed 1980
+checked: '2026-11-21'

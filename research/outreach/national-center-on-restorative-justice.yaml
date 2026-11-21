@@ -1,0 +1,51 @@
+id: national-center-on-restorative-justice
+name: National Center on Restorative Justice
+also_known_as:
+- NCORJ
+category: university-center
+location:
+  state: VT
+scope: national
+relevance:
+  text: The National Center on Restorative Justice, led by Vermont Law and Graduate School with the University
+    of Vermont and the University of San Diego and funded by the Bureau of Justice Assistance, works to
+    improve criminal justice policy through restorative methods. It maintains a Restorative Justice Tribal
+    Laws Database of restorative practices codified in tribal law, with about 940 entries including peacemaker
+    processes, last updated in January 2026. The database is a direct source of comparative tribal code
+    provisions for the model alternative dispute resolution code (project analysis).
+  sources:
+  - mission
+  - tribal-database
+possible_roles:
+- sources-and-data
+- reviewer
+- consultation
+contacts:
+- kind: contact-form
+  value: https://ncorj.org/about/contact/
+  label: Contact page
+  sources:
+  - about
+sources:
+- id: mission
+  title: Mission, History and Partners
+  publisher: National Center on Restorative Justice
+  link: https://ncorj.org/about/mission-history-partners/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Mission, Vermont Law and Graduate School lead, partners, BJA funding history
+- id: tribal-database
+  title: Restorative Justice Tribal Laws Database
+  publisher: National Center on Restorative Justice
+  link: https://ncorj.org/tribal-laws/?sf_paged=2
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Database scope, about 940 results, peacemaker processes, January 2026 update, raw-data requests
+- id: about
+  title: About NCORJ
+  publisher: National Center on Restorative Justice
+  link: https://ncorj.org/about/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Contact page and form links
+checked: '2026-11-21'

@@ -1,0 +1,48 @@
+id: national-congress-of-american-indians
+name: National Congress of American Indians
+also_known_as:
+- NCAI
+category: native-policy-organization
+location:
+  city: Washington
+  state: DC
+scope: national
+relevance:
+  text: Founded in November 1944, the National Congress of American Indians (NCAI) serves as a forum for
+    unified policy development among tribal governments. Its stated purposes include protecting and advancing
+    tribal governance and treaty rights and educating the public about American Indian and Alaska Native
+    tribes.
+  sources:
+  - about
+possible_roles:
+- distribution
+- event-or-presentation
+- consultation
+- advice
+contacts:
+- kind: email
+  value: contact@ncai.org
+  label: General website contact (questions and feedback)
+  sources:
+  - contact
+- kind: web-page
+  value: https://www.ncai.org/contact
+  label: Contact page
+  sources:
+  - contact
+sources:
+- id: about
+  title: About NCAI
+  publisher: National Congress of American Indians
+  link: https://www.ncai.org/about-ncai
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Founding (1944, Denver), mission and purposes
+- id: contact
+  title: Contact
+  publisher: National Congress of American Indians
+  link: https://www.ncai.org/contact
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: contact@ncai.org (website questions/feedback), NCAIPress@ncai.org
+checked: '2026-11-21'
