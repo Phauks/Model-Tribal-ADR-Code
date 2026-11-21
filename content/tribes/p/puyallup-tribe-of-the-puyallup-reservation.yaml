@@ -262,12 +262,14 @@ justice_institutions:
     link the source gives (http://www.puyallup-tribe.com/court/) returned HTTP 404, so it is not recorded.'
 - kind: tribal-court
   name: Puyallup Tribal Court
-  link: http://www.puyallup-tribe.com/ourtribe/
+  link: https://www.puyalluptribe-nsn.gov/member-services/tribal-justice-safety/tribal-courts/puyallup-tribal-laws/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Puyallup Tribe of Indians'
+  note: The listed link (http://www.puyallup-tribe.com/ourtribe/) no longer reached the court on 2026-11-21;
+    the link is the court's page on the nation's own site, found in the data gap review (research/reviews/2026-11-21-court-listings.json).
 dispute_resolution:
   provisions:
   - kind: other

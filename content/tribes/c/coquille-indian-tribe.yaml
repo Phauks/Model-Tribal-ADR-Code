@@ -249,12 +249,14 @@ justice_institutions:
     recorded.'
 - kind: tribal-court
   name: Coquille Indian Tribal Court
-  link: http://52.27.76.203/?page_id=1733
+  link: https://www.coquilletribe.org/our-people/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Oregon section, entry 'Coquille Indian Tribe'
+  note: The listed link (http://52.27.76.203/?page_id=1733) no longer reached the court on 2026-11-21;
+    the link is the court's page on the nation's own site, found in the data gap review (research/reviews/2026-11-21-court-listings.json).
 dispute_resolution:
   forums:
   - kind: peacemaking
@@ -565,16 +567,17 @@ gaming:
       meet within 30 days; if unresolved within 90 days either party may sue in the United States District
       Court for the District of Oregon (or a state court if federal jurisdiction is declined), and other
       dispute resolution methods remain available by mutual agreement.
-    dispute_resolution_locator: Section 17 (Dispute Resolution)
-    source: compact-or-confederated-tribes-of-the-grand-ronde-c-2023
-    confidence: medium
-    verification: inferred
-    as_of: '2023-02-08'
-    locator: Section 17 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 2023 Confederated Tribes
-      of the Grand Ronde Community compact; other Oregon compacts were not checked. Status copied from
-      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
-      Gaming list (2020-05-20).
+    dispute_resolution_locator: SECTION 16. DISPUTE RESOLUTION.
+    source: compact-or-coquille-indian-tribe-2000
+    confidence: high
+    verification: read-in-full
+    as_of: '2000-12-06'
+    locator: SECTION 16. DISPUTE RESOLUTION.
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-or-confederated-tribes-of-the-grand-ronde-c-2023 without reading; two reviewers found
+      the clause the same in substance (research/reviews/2026-11-21-compact-clauses.json, item 41). Status
+      copied from this nation's most recent approved or deemed-approved entry for this state in the Office
+      of Indian Gaming list (2020-05-20).
   ordinances:
   - approved: '1995-04-28'
     link: https://www.nigc.gov?wpdmdl=9669&ind=9681

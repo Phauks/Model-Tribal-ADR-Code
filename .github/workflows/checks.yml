@@ -92,6 +92,10 @@ jobs:
         run: npm run build
       - name: Check the built pages, manifest and service worker
         run: npm run check:built-site
+      - name: Install Chromium for the accessibility check
+        run: npx playwright install --with-deps chromium
+      - name: Accessibility check (axe-core, every page, both themes)
+        run: npm run check:accessibility
 
   print:
     name: Print build

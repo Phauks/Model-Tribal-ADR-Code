@@ -30,7 +30,14 @@ npm test                  # unit tests (Vitest), including the database code
 npm run check:colors      # no color is written anywhere but design-tokens.json
 npm run build
 npm run check:built-site  # every page has a language, a title, one h1 and a skip link
+npm run check:accessibility  # axe-core on every built page, light and dark themes
 ```
+
+The accessibility check opens each page in Chromium through Playwright. Install
+the browser once with `npx playwright install chromium`, or set `CHROMIUM_PATH`
+to a Chromium that is already installed. Pass `--pages /,/nations/map` to check
+only some pages. It covers the prerendered pages; the request form and sign-in
+pages are answered by the Worker and are checked by hand.
 
 ## How it is deployed
 

@@ -28,6 +28,15 @@
 		return values[name] ?? fallback;
 	}
 
+	/**
+	 * Moves focus to the error summary when the form comes back with problems,
+	 * so keyboard and screen reader users start from the list of what to fix
+	 * (WCAG 3.3.1, following the GOV.UK error summary pattern).
+	 */
+	function focusOnArrival(node: HTMLElement) {
+		node.focus();
+	}
+
 	/** Links each field to its error message, for screen readers. */
 	function describedBy(name: string, hint = false): string | undefined {
 		const ids = [hint ? `${name}-hint` : '', errors[name] ? `${name}-error` : ''].filter(Boolean);
@@ -84,7 +93,7 @@
 			<div class="notice notice-problem" role="alert"><p>{problem}</p></div>
 		{/if}
 		{#if errorCount > 0}
-			<div class="notice notice-problem" role="alert" tabindex="-1">
+			<div class="notice notice-problem" role="alert" tabindex="-1" {@attach focusOnArrival}>
 				<p>
 					<strong>Please check {errorCount === 1 ? 'one answer' : `${errorCount} answers`}.</strong> The
 					messages are next to the questions below.

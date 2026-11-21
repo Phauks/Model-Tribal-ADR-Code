@@ -232,13 +232,15 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Lummi Tribal Court
-  link: http://www.lummi-nsn.org/website/dept_pages/law_order/courts.shtml
+  link: https://www.lummi-nsn.gov/node/Website.php?PageID=442
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Lummi Nation'
-  note: 'Link check 2026-11-21: the site did not respond.'
+  note: 'Link check 2026-11-21: the site did not respond. The listed link (http://www.lummi-nsn.org/website/dept_pages/law_order/courts.shtml)
+    no longer reached the court on 2026-11-21; the link is the court''s page on the nation''s own site,
+    found in the data gap review (research/reviews/2026-11-21-court-listings.json).'
 dispute_resolution:
   provisions:
   - kind: other

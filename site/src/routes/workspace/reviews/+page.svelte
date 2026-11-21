@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
 	import { decisionLabels, subjectKindLabels, subjectKinds } from '#lib/permissions.ts';
 	import type { PageProps } from './$types';
 
@@ -50,7 +51,7 @@
 {#if data.subjects.length === 0}
 	<p>{searching ? 'Nothing matches.' : 'No reviews recorded yet. Search above to find a record.'}</p>
 {:else}
-	<div class="table-scroll" role="region" aria-label="Table: content to review" tabindex="-1">
+	<div class="table-scroll" role="region" aria-label="Table: content to review" {@attach keyboardScroll}>
 		<table>
 			<thead>
 				<tr><th scope="col">Name</th><th scope="col">Kind</th><th scope="col">Latest review</th></tr>

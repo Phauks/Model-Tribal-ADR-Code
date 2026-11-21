@@ -190,20 +190,26 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Judicial Facility
-  link: http://www.ysletadelsurpueblo.org/html_pages.sstg?id=14&amp;sub1=80
+  link: https://www.ysletadelsurpueblo.org/tribal-services/department-of-tribal-court-records
   source: national-indian-law-library-ysleta-pueblo
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
+  note: The listed link (http://www.ysletadelsurpueblo.org/html_pages.sstg?id=14&amp;sub1=80) no longer
+    reached the court on 2026-11-21; the link is the court's page on the nation's own site, found in the
+    data gap review (research/reviews/2026-11-21-court-listings.json).
 - kind: tribal-court
   name: Ysleta Del Sur Pueblo Tribal Court
-  link: http://www.ysletadelsurpueblo.org/html_pages.sstg?id=14&amp;sub1=188
+  link: https://www.ysletadelsurpueblo.org/tribal-services/department-of-tribal-court-records
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Texas section, entry 'Ysleta del Sur Pueblo'
+  note: The listed link (http://www.ysletadelsurpueblo.org/html_pages.sstg?id=14&amp;sub1=188) no longer
+    reached the court on 2026-11-21; the link is the court's page on the nation's own site, found in the
+    data gap review (research/reviews/2026-11-21-court-listings.json).
 dispute_resolution:
   provisions:
   - kind: other

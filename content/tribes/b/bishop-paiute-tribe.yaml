@@ -215,21 +215,26 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: https://www.bishoppaiutetribe.com/tribal-court/
+  link: https://bishoppaiute.net/tribal-court/
   source: national-indian-law-library-bishop-paiute
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: The page gives a contact for a tribal court without a fuller name. The listed link (https://www.bishoppaiutetribe.com/tribal-court/)
+    no longer reached the court on 2026-11-21; the link is the court's page on the nation's own site,
+    found in the data gap review (research/reviews/2026-11-21-court-listings.json).
 - kind: tribal-court
   name: Bishop Paiute Tribal Court
-  link: http://www.bishoppaiutetribe.com/tribal-court.html
+  link: https://bishoppaiute.net/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'Bishop Paiute Tribe'
+  note: The listed link (http://www.bishoppaiutetribe.com/tribal-court.html) no longer reached the court
+    on 2026-11-21; the link is the court's page on the nation's own site, found in the data gap review
+    (research/reviews/2026-11-21-court-listings.json).
 dispute_resolution:
   provisions:
   - kind: other

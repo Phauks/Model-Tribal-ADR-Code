@@ -279,12 +279,15 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Kalispel Tribal Court
-  link: http://www.kalispeltribe.com/government/tribal-court
+  link: https://kalispeltribalcourt.org/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Kalispel Tribe of Indians'
+  note: The listed link (http://www.kalispeltribe.com/government/tribal-court) no longer reached the court
+    on 2026-11-21; the link is the court's page on the nation's own site, found in the data gap review
+    (research/reviews/2026-11-21-court-listings.json).
 dispute_resolution:
   forums:
   - kind: other

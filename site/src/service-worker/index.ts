@@ -126,9 +126,30 @@ async function respond(request: Request): Promise<Response> {
 	});
 }
 
+/** Pages answered by the Worker for one person: always from the network. */
+async function networkOnly(request: Request): Promise<Response> {
+	try {
+		return await fetch(request);
+	} catch {
+		const fallback = await (await caches.open(cacheName)).match(offlinePage);
+		return (
+			fallback ??
+			new Response('Offline. This page needs a connection.', {
+				status: 503,
+				headers: { 'content-type': 'text/plain; charset=utf-8' }
+			})
+		);
+	}
+}
+
 self.addEventListener('fetch', (event) => {
 	const url = new URL(event.request.url);
 	if (event.request.method !== 'GET' || url.origin !== self.location.origin) return;
-	if (isNeverCached(url.pathname)) return;
+	if (isNeverCached(url.pathname)) {
+		// Never saved, but a page opened offline still gets the site's own
+		// offline page rather than the browser's error page.
+		if (event.request.mode === 'navigate') event.respondWith(networkOnly(event.request));
+		return;
+	}
 	event.respondWith(respond(event.request));
 });

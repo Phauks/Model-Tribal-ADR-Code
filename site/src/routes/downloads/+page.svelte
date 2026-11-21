@@ -55,5 +55,8 @@
 		align-items: center;
 		gap: var(--space-2);
 		margin-top: 0;
+		/* At the largest text size in a wide font, a long word breaks rather
+		   than widening the page (WCAG 1.4.10). */
+		overflow-wrap: anywhere;
 	}
 </style>

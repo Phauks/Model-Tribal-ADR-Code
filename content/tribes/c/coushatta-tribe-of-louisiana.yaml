@@ -379,14 +379,16 @@ gaming:
       period with a meeting within 10 days (45 days in all unless extended), then mandatory mediation
       under American Arbitration Association commercial mediation rules, and then binding arbitration
       under American Arbitration Association rules limited to the issues in the mediator's summary report.
-    dispute_resolution_locator: Section 14(D) (Dispute Resolution)
-    source: compact-la-tunica-biloxi-indian-tribe-2019
-    confidence: medium
-    verification: inferred
-    as_of: '2019-12-27'
-    locator: Section 14(D) (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 2019 Tunica-Biloxi Indian
-      Tribe compact; the Coushatta, Chitimacha and Jena Band compacts were not checked. Status copied
+    dispute_resolution_locator: 'SECTION 14: DISPUTE RESOLUTION, paragraph printed as (0) [i.e. (D)],
+      item (3)'
+    source: compact-la-coushatta-tribe-of-louisiana-2001
+    confidence: high
+    verification: read-in-full
+    as_of: '2001-09-25'
+    locator: 'SECTION 14: DISPUTE RESOLUTION, paragraph printed as (0) [i.e. (D)], item (3)'
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-la-tunica-biloxi-indian-tribe-2019 without reading; two reviewers found the clause
+      the same in substance (research/reviews/2026-11-21-compact-clauses.json, item 42). Status copied
       from this nation's most recent approved or deemed-approved entry for this state in the Office of
       Indian Gaming list (2024-01-29).
   ordinances:

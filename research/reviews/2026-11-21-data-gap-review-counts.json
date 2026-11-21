@@ -1,0 +1,63 @@
+{
+ "name_joins": {
+  "pairs": 3778,
+  "facts": 4309,
+  "by_match_and_verdict": {
+   "review / same": 1991,
+   "exact / same": 1752,
+   "review / unsure": 25,
+   "review / different": 10
+  }
+ },
+ "compact_clauses": {
+  "items": 256,
+  "by_verdict": {
+   "differs": 127,
+   "same": 124,
+   "cannot-tell": 5
+  },
+  "by_verdict_and_confidence": {
+   "same / high": 109,
+   "differs / high": 100,
+   "differs / medium": 27,
+   "same / medium": 15,
+   "cannot-tell / high": 3,
+   "cannot-tell / medium": 2
+  },
+  "passes_agree": {
+   "True": 188,
+   "False": 68
+  }
+ },
+ "court_listings": {
+  "items": 690,
+  "by_verdict": {
+   "confirmed": 278,
+   "not-found": 170,
+   "cannot-tell": 158,
+   "link-dead-court-found": 47,
+   "confirmed-other-name": 37
+  },
+  "by_source_and_verdict": {
+   "national-indian-law-library-* / confirmed": 156,
+   "tribal-law-policy-institute-justice-systems / confirmed": 122,
+   "national-indian-law-library-* / not-found": 92,
+   "national-indian-law-library-* / cannot-tell": 90,
+   "tribal-law-policy-institute-justice-systems / not-found": 78,
+   "tribal-law-policy-institute-justice-systems / cannot-tell": 68,
+   "tribal-law-policy-institute-justice-systems / link-dead-court-found": 32,
+   "national-indian-law-library-* / confirmed-other-name": 23,
+   "national-indian-law-library-* / link-dead-court-found": 15,
+   "tribal-law-policy-institute-justice-systems / confirmed-other-name": 14
+  }
+ },
+ "verification_levels": {
+  "groups": 869,
+  "facts_by_level": {
+   "read-in-full": 689,
+   "title-only": 445,
+   "bulk-import": 732,
+   "inferred": 441
+  }
+ }
+}

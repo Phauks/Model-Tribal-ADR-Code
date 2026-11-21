@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
 	import { roleDescriptions, roleLabels, roles } from '#lib/permissions.ts';
 	import type { PageProps } from './$types';
 
@@ -40,7 +41,7 @@
 </dl>
 
 <h2>Everyone on the list</h2>
-<div class="table-scroll" role="region" aria-label="Table: people" tabindex="-1">
+<div class="table-scroll" role="region" aria-label="Table: people" {@attach keyboardScroll}>
 	<table>
 		<thead>
 			<tr>

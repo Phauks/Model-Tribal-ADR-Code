@@ -466,15 +466,17 @@ gaming:
       written notice, the complaining party may then make a written demand, a refused demand goes to mediation
       under American Arbitration Association commercial mediation rules, and issues left in the mediator's
       summary report go to binding arbitration under American Arbitration Association rules.
-    dispute_resolution_locator: Section 20 (Binding Dispute Resolution for Non-Material Breach)
-    source: compact-ia-ponca-tribe-of-nebraska-2021
-    confidence: medium
-    verification: inferred
-    as_of: '2021-03-05'
-    locator: Section 20 (Binding Dispute Resolution for Non-Material Breach)
-    note: state model compact; nation-specific text not checked. Read from the 2021 Ponca Tribe of Nebraska
-      compact with Iowa; other Iowa compacts were not checked. Status copied from this nation's most recent
-      approved or deemed-approved entry for this state in the Office of Indian Gaming list (2007-03-19).
+    dispute_resolution_locator: 20. BINDING DISPUTE RESOLUTION FOR NON-MATERIAL BREACH
+    source: compact-ia-omaha-tribe-of-nebraska-2007
+    confidence: high
+    verification: read-in-full
+    as_of: '2007-03-19'
+    locator: 20. BINDING DISPUTE RESOLUTION FOR NON-MATERIAL BREACH
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-ia-ponca-tribe-of-nebraska-2021 without reading; two reviewers found the clause the
+      same in substance (research/reviews/2026-11-21-compact-clauses.json, item 130). Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2007-03-19).
   - state: NE
     status: approved
     approved: '1991-01-08'

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -41,7 +42,7 @@
 	<section aria-labelledby="group-{group.entityType}">
 		<h2 id="group-{group.entityType}">{group.label}</h2>
 		<p class="small muted">{group.rows.length.toLocaleString('en-US')} pages</p>
-		<div class="table-scroll" role="region" aria-label="Table: {group.label}" tabindex="-1">
+		<div class="table-scroll" role="region" aria-label="Table: {group.label}" {@attach keyboardScroll}>
 			<table>
 				<thead>
 					<tr>

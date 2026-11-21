@@ -266,16 +266,17 @@ gaming:
       may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
       binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
       Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
-    dispute_resolution_locator: Section 7 (Dispute Resolution)
-    source: compact-nm-pueblo-of-santa-ana-2016
-    confidence: medium
-    verification: inferred
-    as_of: '2016-12-30'
-    locator: Section 7 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
-      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
-      Status copied from this nation's most recent approved or deemed-approved entry for this state in
-      the Office of Indian Gaming list (2015-12-29).
+    dispute_resolution_locator: SECTION 7. Dispute Resolution.
+    source: compact-nm-pueblo-of-nambe-new-mexico-2015
+    confidence: high
+    verification: read-in-full
+    as_of: '2015-12-29'
+    locator: SECTION 7. Dispute Resolution.
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-nm-pueblo-of-santa-ana-2016 without reading; two reviewers found the clause the same
+      in substance (research/reviews/2026-11-21-compact-clauses.json, item 153). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2015-12-29).
   ordinances:
   - approved: '2005-07-06'
     link: https://www.nigc.gov?wpdmdl=10751&ind=10771

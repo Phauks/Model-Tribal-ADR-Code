@@ -277,14 +277,15 @@ gaming:
       dispute is not resolved within 60 days either party may pursue binding arbitration before a three-member
       panel selected by the American Arbitration Association, with no judicial review of the decision
       (disputes under Article 6 follow that article's own procedure).
-    dispute_resolution_locator: Article 21 (Dispute Resolution)
-    source: compact-id-coeur-dalene-tribe-1993
-    confidence: medium
-    verification: inferred
-    as_of: '1993-02-12'
-    locator: Article 21 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 1993 Coeur d'Alene Tribe
-      compact; later Idaho compacts and amendments (2003, 2008) were not checked. Status copied from this
+    dispute_resolution_locator: ARTICLE 21. DISPUTE RESOLUTION
+    source: compact-id-kootenai-tribe-of-idaho-1993
+    confidence: high
+    verification: read-in-full
+    as_of: '1993-11-10'
+    locator: ARTICLE 21. DISPUTE RESOLUTION
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-id-coeur-dalene-tribe-1993 without reading; two reviewers found the clause the same
+      in substance (research/reviews/2026-11-21-compact-clauses.json, item 94). Status copied from this
       nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
       list (2003-01-08).
   ordinances:
