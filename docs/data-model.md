@@ -53,13 +53,24 @@ what the record is (project design).
 | `entity_type` | Used for | Status recorded as |
 | --- | --- | --- |
 | `native-nation` | Tribal nations, bands, pueblos, rancherias, communities and Alaska Native villages, whatever their recognition | `federal`, `state`, `petitioning` or `unrecognized` |
-| `native-hawaiian` | The Native Hawaiian community, which has no federally recognized governing entity | `congressional-special-relationship`, and Hawaiʻi state law as `state` |
+| `native-hawaiian` | The Native Hawaiian community, which has no government in a formal government-to-government relationship with the United States | `congressional-special-relationship`, and Hawaiʻi state law as `state` |
 | `territorial-indigenous-people` | Indigenous peoples of U.S. territories, such as CHamoru, Refaluwasch and Samoan people | `territorial-law` |
 | `alaska-native-corporation` | Corporations formed under the Alaska Native Claims Settlement Act, which are not governments | Reserved; not yet used |
 
 Native Hawaiians are never described with Tribal status categories. The
 federal and state laws that describe their status are cited in their own
-`recognition` entries.
+`recognition` entries. The Department of the Interior's 2016 rule sets a
+procedure for reestablishing a government-to-government relationship and says
+Native Hawaiians would not be added to the list of federally recognized
+tribes, while also taking the view that Congress has treated the community as
+an Indian tribe for constitutional purposes
+([81 Fed. Reg. 71278](https://www.govinfo.gov/content/pkg/FR-2016-10-14/pdf/2016-23720.pdf)).
+No government has been reestablished under it; the Justice Department's
+Office of Legal Counsel wrote in December 2025 that "no Native Hawaiian
+community has availed itself of this opportunity"
+([slip opinion](https://www.justice.gov/media/1421576/dl)). The profile
+records these sources side by side without resolving the question (project
+choice).
 
 ### Every fact is cited
 
