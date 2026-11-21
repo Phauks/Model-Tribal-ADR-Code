@@ -102,8 +102,10 @@ fed the "Model text, not law in force" notice in section 6.
 
 ### Main menu
 
-The code, Peacemaking, Nations, Glossary, Sources, About, and a Contribute
-button. Search, the theme setting and the offline state sit beside them. The
+The code, Peacemaking, Nations, Glossary, Sources, Downloads, About, and a
+Contribute button. Search, a "Sign in" link (it reads "Workspace" once a
+co-author has signed in), the theme setting and the offline state sit beside
+them. Nobody needs to sign in to read the site or to make a request. The
 footer of every page carries "Request a correction or removal," the requests
 log, the licenses and the three version numbers
 ([requests.md](../docs/requests.md#where-the-request-starts)).
@@ -136,8 +138,10 @@ published ([repository layout, identifiers](../docs/repository-layout.md#identif
 | Changelog and requests log | `/changelog`, `/changelog/requests` |
 | Request form | `/requests` |
 | Read offline | `/offline` |
+| Downloads: the book as PDF and EPUB, and data exports | `/downloads` (empty until the first edition) |
 | Settings | `/settings` |
-| Later: sign-in, review queue, template builder, maintainer view, data | `/sign-in`, `/review`, `/templates`, `/admin/requests`, `/data` |
+| Sign-in and the co-author workspace ([COLLABORATION.md](COLLABORATION.md)) | `/sign-in`, `/workspace` |
+| Later: template builder, data | `/templates`, `/data` |
 
 ## 5. Page templates
 
@@ -152,7 +156,8 @@ published ([repository layout, identifiers](../docs/repository-layout.md#identif
 | Source record | Text and margin | Citation, original link, archived copies, change history, quotation basis, what cites it |
 | Changelog | One column with tabs | Content, Website, Print and Requests log; each version's entries; comparison of a section between versions |
 | Request | One question per page | Start page; what would you like to do; which material; how can we reply; details; credit (contribute only); check your request; request sent. Adding a missing nation branches to: which nation; which government source names it (kind, citation or upload); how can we reply; who is making this request (statement); check your request; request sent; and later a written decision with reasons and buttons to apply again or ask for reconsideration ([requests.md](../docs/requests.md#adding-a-nation-that-is-missing)) |
-| Read offline | One column | Install the site; save the code, the profiles or both; PDF and EPUB downloads; what is saved and as of when |
+| Read offline | One column | Install the site; save the code, the profiles or both; what is saved and as of when |
+| Downloads | One column | Each download with its format, version, date and size; until the first edition, an empty state saying what will appear |
 
 ### Nation pages
 
@@ -173,8 +178,8 @@ its fixed sections on each nation's page:
    nation, reviewed by the nation, approved by the nation), what that means,
    and "Is this about your nation? Make a request."
 3. What is distinctive here (below).
-4. At a glance: recognition, states with a presence, government contacts,
-   federal region.
+4. At a glance: a small map of the states with a presence, then recognition,
+   states with a presence, government contacts, federal region.
 5. Courts and dispute resolution: each forum with its kind, source and date.
 6. Published dispute resolution law: linked, not reproduced, until the nation
    permits more ([data model, permission statuses](../docs/data-model.md#permission-statuses)).
@@ -197,6 +202,23 @@ its fixed sections on each nation's page:
   never inferred from silence, and features describe the one nation without
   comparing it with others
   ([style guide, section 1](../docs/style-guide.md#1-voice-and-tone)).
+
+**Layout.** On screens at least 64 rem wide (1,024 px at the default text
+size) the page has two columns: the text, held to the reading measure, and
+beside it "At a glance" with its map, like a reference work's fact box. On
+narrower screens the parts stack in the order above, so the map sits under
+the "At a glance" heading (project choice, Nov. 21, 2026).
+
+**Map of states.** "At a glance" opens with a small map that shades the
+states and territories where the record's cited `states` facts place the
+nation, with each shaded state's postal code printed on it, so color is not
+the only cue. It draws no nation's land
+([decision record 0007](../docs/decisions/0007-map-shows-state-presence.md)),
+and its caption says so. It does not outline the nation's Bureau of Indian
+Affairs region: the Navajo Region's outline follows the Navajo Nation's land,
+so on that nation's page it would draw the nation's land; the region is named
+under "At a glance" and links to the regions map instead (project choice). A
+page whose record lists no state has no map.
 
 **Reporting a problem.** One "Report a problem" link sits at the top of each
 nation page, under the names, and opens the request form with the record
@@ -233,9 +255,14 @@ size, because the book's trim size is not yet decided (project choice).
 
 ## 6. Components
 
-**Masthead.** Wordmark and edition, main menu, Contribute, then the theme
-button and the Settings button at the right end. Menu items are at least
-44 px tall. The current section is marked with
+**Masthead.** Wordmark and edition, main menu, Contribute, then a "Sign in"
+link, the theme button and the Settings button at the right end. Pages are
+built ahead of time, so the sign-in link cannot ask the server who is signed
+in; after a co-author signs in, the Worker sets a cookie that says only
+"signed in," and the link then reads "Workspace." Without scripts it stays
+"Sign in," which still works. Until Auth0 is set up, `/sign-in` says that
+sign-in is not available yet ([COLLABORATION.md](COLLABORATION.md)). Menu
+items are at least 44 px tall. The current section is marked with
 `aria-current="page"` and a 3 px underline.
 
 **Icons.** All icons come from Lucide,[^lucide-license] chosen on Nov. 21,
@@ -453,8 +480,11 @@ uses 400, 600 and 700 only.
 
 - **Scale:** 1.25 from an 18 px body: 16, 18, 22.4, 28, 35 and 44 px.
 - **Line height:** 1.6 for reading, 1.25 for headings.
-- **Measure:** at most 68 characters, inside the 45 to 90 character range
-  Practical Typography recommends.[^butterick]
+- **Measure:** at most 58ch, inside the 45 to 90 character range Practical
+  Typography recommends.[^butterick] A `ch` is the width of the digit zero,
+  which in Atkinson Hyperlegible Next is about 1.5 times an average letter, so
+  58ch holds about 86 characters of English text (measured in Chromium at
+  18 px, Nov. 21, 2026). The earlier 68ch held about 101, past the range.
 - **Case:** sentence case for every heading and label
   ([style guide, section 6](../docs/style-guide.md#6-mechanics)); no text in
   all capitals.
@@ -485,8 +515,18 @@ uses 400, 600 and 700 only.
 ### Space, radius and layout
 
 An eight-step space scale from 4 px to 72 px; 6 px corners on controls and
-10 px on panels; a 1,240 px page width; a 44 px minimum target. All values
-are in [design-tokens.json](design-tokens.json).
+10 px on panels; a 44 px minimum target. All values are in
+[design-tokens.json](design-tokens.json).
+
+The page uses the whole width of the screen, with a gutter that grows from
+16 px on a phone to 48 px on a wide screen. Until Nov. 21, 2026 it was held
+to 1,240 px and centered, which left wide empty margins on large screens;
+Trevor asked for them to go. The trade-off (project choice): running text
+stays at the reading measure, because long lines are harder to read and to
+track back to the start of the next line,[^butterick] while tables, maps,
+panels of contents, the masthead and the footer use the full width. Where a
+page has more than text, such as a nation's page, a second column beside the
+text uses the space; the `side-column` token (40 rem) caps it.
 
 ## 8. Themes
 
@@ -575,7 +615,11 @@ accessibility statement is published at `/about/accessibility`.
   2026-11-21 to draw the official outlines even though the Navajo Region's
   follows the Navajo Nation's land. `src/lib/map-geometry.ts` projects the
   shapes once, in `vite.config.ts`, so the browser gets SVG paths and no map
-  library. The grayscale print version for the book is not built yet.
+  library. The grayscale print version for the book is not built yet. Each
+nation's page also draws a small map of its states (see
+[Nation pages](#nation-pages)) from the same shapes, simplified to 5 percent
+of their points and whole map units so that it adds about 14 KB, before
+compression, to each of the 980 pages.
 
 ## 12. Words in the interface
 

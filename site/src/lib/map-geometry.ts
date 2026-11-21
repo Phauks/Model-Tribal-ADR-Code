@@ -22,6 +22,7 @@ import { readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { geoPath, type GeoProjection } from 'd3-geo';
 import { feature, mesh } from 'topojson-client';
+import { presimplify, quantile, simplify, sphericalTriangleArea } from 'topojson-simplify';
 import type { Feature, FeatureCollection, Geometry, MultiPolygon, Polygon } from 'geojson';
 import type { GeometryCollection, Topology } from 'topojson-specification';
 
@@ -74,6 +75,8 @@ export interface StateShape {
 	path: string;
 	/** Where a small place's marker sits, and the line from the place to it. */
 	marker?: { x: number; y: number; fromX: number; fromY: number };
+	/** Where the state's label sits: the center of its largest piece (small map only). */
+	center?: { x: number; y: number };
 }
 
 export interface RegionShape {
@@ -93,7 +96,20 @@ export interface MapGeometry {
 	regionBorders: string;
 	/** Where the region boundaries came from and when (geography/bureau-of-indian-affairs-regions.json). */
 	regionSource: { source: string; retrieved: string };
+	/**
+	 * The same states, simplified and rounded to whole map units for the small
+	 * map on every nation's page, which is drawn into 980 pages and so must be
+	 * light. Shared borders stay shared, so no gaps open between states.
+	 */
+	smallStates: StateShape[];
 }
+
+/**
+ * Share of the outline points kept for the small map. A project choice,
+ * checked by eye at the size the nation pages draw the map: about 14 KB of
+ * path data for every state and territory, where the full map uses 169 KB.
+ */
+const smallMapDetail = 0.05;
 
 const round = (pathData: string | null): string =>
 	(pathData ?? '').replace(/(\d+\.\d{1})\d+/g, '$1');
@@ -155,15 +171,27 @@ export async function buildMapGeometry(regionsFile: string): Promise<MapGeometry
 	);
 	const path = geoPath(projection);
 
-	const stateShapes: StateShape[] = states.map((state) => {
+	const shapeOf = (state: Feature, draw: (shape: Feature) => string): StateShape => {
 		const code = postalCodeByCensusCode[String(state.id)];
-		const shape: StateShape = { code, path: round(path(state)) };
+		const shape: StateShape = { code, path: draw(state) };
 		const offset = markerOffsets[code];
 		if (offset) {
-			const [fromX, fromY] = path.centroid(state);
+			const [fromX, fromY] = path.centroid(state).map(Math.round);
 			shape.marker = { x: fromX + offset[0], y: fromY + offset[1], fromX, fromY };
 		}
 		return shape;
+	};
+	const stateShapes = states.map((state) => shapeOf(state, (shape) => round(path(shape))));
+
+	const weighted = presimplify(atlas, sphericalTriangleArea);
+	const simplified = simplify(weighted, quantile(weighted, smallMapDetail)) as typeof atlas;
+	const wholeUnits = geoPath(projection).digits(0);
+	const smallStates = (
+		feature(simplified, simplified.objects.states) as FeatureCollection<Polygon | MultiPolygon>
+	).features.map((state) => {
+		const shape = shapeOf(state, (piece) => wholeUnits(piece) ?? '');
+		const [x, y] = path.centroid(largestPiece(state, (piece) => path.area(piece))).map(Math.round);
+		return { ...shape, center: { x, y } };
 	});
 
 	const regions = (
@@ -189,6 +217,7 @@ export async function buildMapGeometry(regionsFile: string): Promise<MapGeometry
 		regionSource: {
 			source: regionsTopology.metadata.source,
 			retrieved: regionsTopology.metadata.retrieved
-		}
+		},
+		smallStates
 	};
 }

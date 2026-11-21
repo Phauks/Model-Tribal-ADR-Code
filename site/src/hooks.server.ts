@@ -8,6 +8,7 @@ import type { Handle } from '@sveltejs/kit/hooks';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { activePersonBySubject } from '#lib/server/people.ts';
 import { signInClient, signInSettings } from '#lib/server/sign-in.ts';
+import { clearSignedIn, markSignedIn } from '#lib/server/signed-in-hint.ts';
 
 /** Pages that show private information and must never be cached or framed. */
 const privatePrefixes = ['/workspace', '/sign-in', '/sign-out', '/requests'];
@@ -28,6 +29,9 @@ export const handle: Handle = async ({ event, resolve }) => {
 				event.locals.person = await activePersonBySubject(environment.database, user.sub);
 			}
 		}
+		// Keep the masthead's "Workspace" or "Sign in" link in step with the session.
+		if (event.locals.person) markSignedIn(event.cookies);
+		else clearSignedIn(event.cookies);
 	}
 
 	const response = await resolve(event);

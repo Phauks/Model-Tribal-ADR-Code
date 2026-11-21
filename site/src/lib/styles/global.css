@@ -121,10 +121,15 @@ a:visited:focus-visible {
 	border: 0 !important;
 }
 
+/*
+ * The page uses the whole width of the screen, with a gutter that grows from
+ * 16 px on a phone to 48 px on a wide screen. Only running text is held to a
+ * readable line length, by .reading and --layout-measure; tables, maps, the
+ * masthead and the footer use the full width (site/DESIGN.md, section 7,
+ * "Space, radius and layout").
+ */
 .page-width {
-	max-width: var(--layout-page-width);
-	margin: 0 auto;
-	padding: 0 var(--space-4);
+	padding: 0 clamp(var(--space-4), 3vw, var(--space-7));
 }
 
 .reading {

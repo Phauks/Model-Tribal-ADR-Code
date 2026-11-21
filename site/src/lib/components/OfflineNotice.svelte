@@ -18,9 +18,11 @@
 </script>
 
 {#if offline}
-	<div class="notice page-width" role="note">
-		<p>
-			You are offline. Showing the copy saved on this device, content version {contentVersion}.
-		</p>
+	<div class="page-width">
+		<div class="notice" role="note">
+			<p>
+				You are offline. Showing the copy saved on this device, content version {contentVersion}.
+			</p>
+		</div>
 	</div>
 {/if}

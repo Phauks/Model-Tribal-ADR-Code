@@ -2,6 +2,7 @@ import { redirect } from '@sveltejs/kit';
 import { workerEnvironment } from '#lib/server/environment.ts';
 import { matchSignIn } from '#lib/server/people.ts';
 import { safeReturnPath, signInClient, signInSettings } from '#lib/server/sign-in.ts';
+import { markSignedIn } from '#lib/server/signed-in-hint.ts';
 import { refusalCookie, type RefusalReason } from '../refused/reasons.ts';
 import type { RequestHandler } from './$types';
 
@@ -55,5 +56,6 @@ export const GET: RequestHandler = async ({ url, cookies }) => {
 		environment.LEAD_AUTHOR_EMAIL
 	);
 	if (match.outcome !== 'signed-in') return refuse(match.outcome, true);
+	markSignedIn(cookies);
 	redirect(303, returnTo);
 };

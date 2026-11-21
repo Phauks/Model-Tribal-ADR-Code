@@ -448,16 +448,17 @@
     "$type": "dimension",
     "measure": {
       "$value": {
-        "value": 68,
+        "value": 58,
         "unit": "ch"
       },
-      "$description": "Longest reading line."
+      "$description": "Longest reading line. In Atkinson Hyperlegible Next a ch (the width of a zero) is about 1.5 times an average letter, so 58ch holds about 86 characters of English text (measured in Chromium at 18 px)."
     },
-    "page-width": {
+    "side-column": {
       "$value": {
-        "value": 1240,
-        "unit": "px"
-      }
+        "value": 40,
+        "unit": "rem"
+      },
+      "$description": "Widest column beside the text on wide screens, such as At a glance and its map on a nation's page."
     },
     "target-minimum": {
       "$value": {
