@@ -123,7 +123,17 @@ print and ebook builds read the file from the bucket by that path.
 5. Access is checked again on every named save and at least once a minute
    while edits arrive, so a removed or lowered grant takes effect during a
    session, not only at the next sign-in (OWASP, *Authorization Cheat Sheet*,
-   as cited by the permissions work).
+   as cited by the permissions work). When a grant changes, the room is also
+   told at once and drops or downgrades that person's connection.
+
+The checks use the permission tiers from pull request #63: the Worker calls
+`requireDocumentLevel(event, database, subject, minimum)` before handing over
+a connection; the room uses the pure `documentAccess(person, subject,
+grants)` for its later checks; and `onAccessChanged(listener)` in
+`site/src/lib/server/access.ts`, which fires when a grant is set or ended,
+tells the room about a change. A grant for a whole kind (all essays) also
+covers a draft of an essay that has no file yet; its subject identifier is the
+planned file id.
 
 The proposed library is `y-partyserver`, maintained by Cloudflare in the
 PartyKit repository (ISC license). Its `YServer` "is a class that extends
