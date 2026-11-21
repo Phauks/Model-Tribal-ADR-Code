@@ -1,0 +1,108 @@
+id: twenty-nine-palms-band-of-mission-indians-of-california-california-gaming-compact
+kind: gaming-compact
+title: Twenty-Nine Palms Band of Mission Indians of California–State of California Gaming Compact
+nations:
+- twenty-nine-palms-band-of-mission-indians-of-california
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Twenty-Nine Palms Band of Mission Indians of California and the State of California
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Twenty-Nine Palms Band of
+  Mission Indians of California and the State of California as of Nov. 21, 2026: 1 original and 1 replacement. The
+  order, the kind of each event and which version is in effect are inferred from the list (project analysis); clause
+  summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-twenty-nine-palms-band-of-mission-indians-of-california-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2000.05.16 Twenty Nine Palms Band of Mission
+      Indians Tribal State Gaming Compact.pdf
+    sha256: 6e20f5a0a226aef977f387c95428e671074435e80a4e818a372483378328ef94
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 Voluntary Resolution; Reference to Other Means of Resolution (Secs. 9.2-9.3 also)
+    summary: Disputes first go through written notice and a good-faith meet-and-confer, then either party may seek
+      AAA Commercial Rules arbitration with a binding award (neither party must agree to arbitrate), and otherwise
+      may sue in the U.S. District Court where the Tribe's Gaming Facility is located and the Ninth Circuit, or
+      in a state court if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.0 AMENDMENTS; RENEGOTIATIONS (Secs. 12.1-12.3)
+    summary: The compact may be amended at any time by mutual written agreement, and the Tribe may request renegotiation
+      in writing to add Class III games other than those authorized, but not within 12 months of the effective date,
+      with talks to be scheduled within 30 days; the excerpt does not say what happens if talks fail.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2018-replacement
+  label: 2018 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  dates:
+    listed: '2018-12-27'
+    published: '2018-12-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2018-28135
+    locator: 83 Fed. Reg. 66741 (Dec. 27, 2018)
+  source: compact-ca-twenty-nine-palms-band-of-mission-indians-of-california-2018-12-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2018.12.27 Twenty Nine palms deemed approved
+      compact.pdf
+    sha256: 7cba8815814bb91d0e70967f2de4966fe0a3a944b2a57885c440886ad6b1ab17
+    pages: 141
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 13.1. Voluntary Resolution; Court Resolution.
+    summary: Disputes first go through written notice, a written response within fifteen days and a meet-and-confer
+      within thirty days; either party may then seek JAMS arbitration (neither is required to agree to it), and
+      unresolved disputes may go to the U.S. District Court or, lacking federal jurisdiction, a state court.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: Sec. 15.2. Negotiations for a New Compact.
+    summary: The compact may be amended by mutual written agreement; either party may request talks on an extension
+      or new compact no sooner than 18 months before the termination date, and the Native nation may require the
+      State to negotiate within 45 days on changed market conditions or newly authorized Class III games.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

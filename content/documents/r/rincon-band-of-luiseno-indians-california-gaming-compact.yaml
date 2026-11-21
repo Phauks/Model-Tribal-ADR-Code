@@ -1,0 +1,79 @@
+id: rincon-band-of-luiseno-indians-california-gaming-compact
+kind: gaming-compact
+title: Rincon Band of Luiseno Indians–State of California Gaming Compact
+nations:
+- rincon-band-of-luiseno-indians
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Rincon Band of Luiseno Indians and the State of California under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Rincon Band of Luiseno Indians
+  and the State of California as of Nov. 21, 2026: 1 disapproved compact and 1 original. The order, the kind of
+  each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1999-disapproval
+  label: 1999 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '1999-01-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-ca-rincon-band-of-luiseno-indians-1999-01-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 1999.01.22 Rincon Band of Luiseno Mission Indians
+      DISAPPROVAL LETTER_0.pdf
+    sha256: ea6f62f38838a7922b156ce784006fcb706ac4a6f4f66219297cd4b8b77288d0
+    pages: 1
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-rincon-band-of-luiseno-indians-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2000.05.16 Rincon Band fo Luiseno Mission Indians
+      Tribal State Gaming Compact_0.pdf
+    sha256: 2c6a36fb57a8ee00d562a4192fa71f70aefc2d0a167e58e5f44c4da021a1e7ed
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.0. DISPUTE RESOLUTION PROVISIONS; Sec. 9.2. Arbitration Rules.
+    summary: After written notice and a meet-and-confer within 10 days, either party may seek arbitration under
+      AAA Commercial Rules with a binding award, and disputes not resolved that way may go to the U.S. District
+      Court, the Ninth Circuit, or a state court.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.0. AMENDMENTS; RENEGOTIATIONS.
+    summary: The compact may be amended by mutual written agreement, and the Rincon Band may request renegotiation
+      to offer other forms of Class III gaming after 12 months, with a schedule set within 30 days under IGRA's
+      good-faith standards.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+related:
+- document: rincon-band-of-luiseno-indians-california-secretarial-procedures
+  relation: replaced-by
+  note: Secretarial Procedures issued under 25 U.S.C. § 2710(d)(7)(B)(vii) took the place of the compact (research/gaming/secretarial-procedures.csv).
+found_in:
+- 2026-11-21-gaming-compact-histories

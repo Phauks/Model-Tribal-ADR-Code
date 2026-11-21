@@ -1,0 +1,130 @@
+id: the-chickasaw-nation-oklahoma-gaming-compact
+kind: gaming-compact
+title: The Chickasaw Nation–State of Oklahoma Gaming Compact
+nations:
+- the-chickasaw-nation
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for The Chickasaw Nation and the State of Oklahoma under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for The Chickasaw Nation and
+  the State of Oklahoma as of Nov. 21, 2026: 1 original and 2 amendments. The order, the kind of each event and
+  which version is in effect are inferred from the list (project analysis); clause summaries and comparisons are
+  a small model''s reading of excerpts.'
+versions:
+- id: 2005-original
+  label: 2005 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2005-02-08'
+    published: '2005-02-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-05-2428
+    locator: 70 Fed. Reg. 6725 (Feb. 8, 2005)
+  source: compact-ok-the-chickasaw-nation-2005
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2005.02.08 Chickasaw Nation Tribal State Gaming
+      Compact.pdf
+    sha256: d0b7b3f9fd9871bfcb7f7feeff1facf547b1454745472be4dd1d281c587be792
+    pages: 46
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION, paragraphs 1 to 3
+    summary: The asserting party serves written notice and representatives meet within thirty days; either party
+      may then refer the dispute to arbitration under AAA rules before one arbitrator, and either party may seek
+      de novo review of the award in federal district court, with the parties waiving immunity for those limited
+      purposes.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, B
+    summary: Within 180 days before the term or any renewal expires, either the Nation or the State acting through
+      its Governor may request renegotiation of subsections A and E of Part 11.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 2005-amendment
+  label: 2005 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2005-original
+  dates:
+    listed: '2005-07-28'
+    published: '2005-07-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-05-14966
+    locator: 70 Fed. Reg. 43702 (July 28, 2005)
+  source: compact-ok-the-chickasaw-nation-2005-07-28
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2005.07.28 Chickasaw Nation Tribal State Gaming
+      Compact.pdf
+    sha256: 675ec2b47ed96e1ef1cb1c9f7f0a5d166caebdf69fbcdf9e59b1abff61a5d3f7
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2005-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2005-original
+    change: not-compared
+    verification: inferred
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2005-original
+  dates:
+    listed: '2018-08-17'
+    published: '2018-08-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-17729
+    locator: 83 Fed. Reg. 41101 (Aug. 17, 2018)
+  source: compact-ok-the-chickasaw-nation-2018-08-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2018.08.17 Chickasaw Nation Tribal Gaming Compact
+      Supplement.pdf
+    sha256: 01fd77ebe71936c77708e1f9a6dc827cefd0a62852e0692540c3eda39de87c78
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2005-original
+    change: unchanged
+    summary: The 2018 supplement's three parts (title, terms and authority) do not amend Part 12 of the 2005 compact,
+      and its Part 2.C says the table-game operations are treated as subject to the Compact's terms for all purposes,
+      so the earlier Part 12 arbitration process continues to govern.
+    locator_before: Part 12, para. 2
+    locator_after: Part 2.C
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2005-original
+    change: unchanged
+    summary: The supplement does not amend Part 15 of the 2005 compact, and by Part 2.C its operations remain subject
+      to the Compact's terms, so the earlier Part 15.B renegotiation right for Part 11 subsections A and E continues
+      to apply.
+    locator_before: Part 15.B
+    locator_after: Part 2.C
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

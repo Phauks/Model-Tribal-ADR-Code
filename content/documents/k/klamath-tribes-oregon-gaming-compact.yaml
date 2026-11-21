@@ -1,0 +1,608 @@
+id: klamath-tribes-oregon-gaming-compact
+kind: gaming-compact
+title: Klamath Tribes–State of Oregon Gaming Compact
+nations:
+- klamath-tribes
+states:
+- OR
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Klamath Tribes and the State of Oregon under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Klamath Tribes and the State
+  of Oregon as of Nov. 21, 2026: 1 original, 11 amendments and 1 restatement. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1995-02-24'
+    published: '1995-02-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-4587
+    locator: 60 Fed. Reg. 10472 (Feb. 24, 1995)
+  source: compact-or-klamath-tribes-1995-02-24
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1995.02.24 Klamath Tribes Tribal State Gaming Compact.pdf
+    sha256: d5b362559431cc9fcea3ac23a2f86090fa78660f7621f30bc8c7490d2283b91d
+    pages: 49
+  clauses:
+  - topic: dispute-resolution
+    locator: B. Procedure for Resolving Disputes Concerning Operational Decisions.
+    summary: For operational decisions the State gives written notice, the parties meet and confer within fifteen
+      days, and either party may start non-binding arbitration within forty-five days through U.S. Arbitration and
+      Mediation of Oregon, with arbitration binding only if both parties agree.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: C. Automatic Amendment
+    summary: A type of Class III game is removed from the compact when a state statute, constitution amendment,
+      or court decision criminally prohibits it, and the affected provisions become void.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1996-amendment
+  label: 1996 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1996-06-17'
+    published: '1996-06-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-96-15295
+    locator: 61 Fed. Reg. 30635 (June 17, 1996)
+  source: compact-or-klamath-tribes-1996-06-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1996.06.17 Klamath Tribes Tribal State Gaming Compact_0.pdf
+    sha256: 99643a8c08a1abcd0fe8f0dcb2a0cbc7c92a64cc914504adf80a0f837df8a4b2
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment I amends only Section 13.F and states that, except as specifically provided, it does not
+      supersede the original compact's provisions, so the earlier dispute procedure appears to remain in force.
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment I amends only Section 13.F and does not amend Section 12, so the earlier amendment clause
+      still governs.
+    locator_before: '12'
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 1997-amendment
+  label: 1997 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1997-01-07'
+    published: '1997-01-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-97-245
+    locator: 62 Fed. Reg. 996 (Jan. 7, 1997)
+  source: compact-or-klamath-tribes-1997-01-07
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1997.01.07 Klamath Tribes Tribal State Gaming Compact.pdf
+    sha256: 232f4b9e31897db5664bfb29401275a659e60d05320450e292df01b9a03b23e2
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment II does not list the dispute procedure among the provisions it amends and states that it
+      does not supersede the original compact, so the earlier procedure appears to remain in force.
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment II amends only Section 13.F (as amended by Amendment I), so the earlier Section 12 amendment
+      clause still governs.
+    locator_before: '12'
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 1997-amendment-2
+  label: 1997 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1997-05-20'
+    published: '1997-05-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-97-13201
+    locator: 62 Fed. Reg. 27619 (May 20, 1997)
+  source: compact-or-klamath-tribes-1997-05-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1997.05.20 Klamath Tribes Tribal State Gaming Compact.pdf
+    sha256: 941af269e612d546c961f064b49551aed59ee2b6c93f44d65f5161e35e46c8b5
+    pages: 17
+  clauses:
+  - topic: renegotiation
+    locator: Paragraph X of Amendment III
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and while a compact amendment is under negotiation the Native nation may replace blackjack
+      tables with video lottery terminals.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment III's dispute-related text concerns player complaints about house-banked blackjack, not the
+      process between the Nation and the State; the earlier operational-decision procedure is not among the provisions
+      amended.
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later dispute excerpt is a blackjack player-complaint requirement, which
+      does not match the topic. The ''unchanged'' call is a judgment from the list of amended provisions.'
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: The amendment amends Sections 7.B.6, 7.A.8.a, Appendix A.I, Section 4.E and Section 9.B.1 and does
+      not amend Section 12, so the earlier amendment clause still governs.
+    locator_before: '12'
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later dispute excerpt is a blackjack player-complaint requirement, which
+      does not match the topic. The ''unchanged'' call is a judgment from the list of amended provisions.'
+- id: 1998-amendment
+  label: 1998 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1998-02-27'
+    published: '1998-02-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-5070
+    locator: 63 Fed. Reg. 10036 (Feb. 27, 1998)
+  source: compact-or-klamath-tribes-1998-02-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant1998.02.27 Klamath Tribes Tribal State Gaming Compact_0.pdf
+    sha256: e2b6b9a4e24a77f411c5c658d8416486c1f9950cf059c1ac6a5be99e621df8b3
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Paragraph X of Amendment III (extension)
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and while a compact amendment is under negotiation the Native nation may replace blackjack
+      tables with video lottery terminals. The amendment is effective as an extension upon execution and submission
+      to the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment IV extends the expiry of Amendment III's blackjack provisions and does not list the dispute
+      procedure among the provisions it amends, so the earlier procedure appears to remain in force.
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later text is partly garbled by OCR, so no later quotation is given
+      for the renegotiation topic.'
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment IV amends only the expiry paragraph of Amendment III and does not list Section 12 among the
+      provisions amended, so the earlier amendment clause still governs.
+    locator_before: '12'
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later text is partly garbled by OCR, so no later quotation is given
+      for the renegotiation topic.'
+- id: 1998-amendment-2
+  label: 1998 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1998-06-01'
+    published: '1998-06-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-14384
+    locator: 63 Fed. Reg. 29746 (June 1, 1998)
+  source: compact-or-klamath-tribes-1998-06-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1998.06.01 Klamath Tribes Tribal State Gaming Compact.pdf
+    sha256: ecb63c8a76403d5eca2f7affb1a41197b516f1545385d0c5be2d16d5946af5bd
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Paragraph I of Amendment IV (as amended by Amendment V)
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and while a compact amendment is under negotiation the Native nation may replace blackjack
+      tables with video lottery terminals.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment V extends the expiry of Amendment IV's blackjack provisions and does not list the dispute
+      procedure among the provisions it amends, so the earlier procedure appears to remain in force.
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment V amends only the expiry paragraph of Amendment IV and does not list Section 12 among the
+      provisions amended, so the earlier amendment clause still governs.
+    locator_before: '12'
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1999-06-01'
+    published: '1999-06-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-13729
+    locator: 64 Fed. Reg. 29334 (June 1, 1999)
+  source: compact-or-klamath-tribes-1999-06-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1999.06.01 Klamath Tribes Tribal State Gaming Compact.pdf
+    sha256: 5e06ba1603aa7681e3c780f868a451f4124e90dca4d43bf087b1a7ffe2514083
+    pages: 6
+  clauses:
+  - topic: renegotiation
+    locator: Paragraph I of Amendment V (as amended by Amendment VI)
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and while a compact amendment is under negotiation the Native nation may replace blackjack
+      tables with video lottery terminals.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment VI amends Section 10 (state assessment of costs) and does not list the dispute procedure
+      or Section 16, so the earlier procedure appears to remain in force.
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: Amendment VI amends only part of Section 10, which is outside the dispute
+      and amendment clauses.'
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment VI amends Subsections A, B and C of Section 10 and an expiry paragraph; it does not list
+      Section 12, so the earlier amendment clause still governs.
+    locator_before: '12'
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: Amendment VI amends only part of Section 10, which is outside the dispute
+      and amendment clauses.'
+- id: 2000-amendment
+  label: 2000 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '2000-05-31'
+    published: '2000-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-13496
+    locator: 65 Fed. Reg. 34727 (May 31, 2000)
+  source: compact-or-klamath-tribes-2000-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2000.05.31 Klamath Tribes Tribal State Gaming Compact.pdf
+    sha256: ced6b77e4d826eda3deec4ef362ddf98b20572350f1ee1549b120444440af665
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Paragraph I of Amendment V (as amended by Amendment VII)
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and while a compact amendment is under negotiation the Native nation may replace blackjack
+      tables with video lottery terminals.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment VII extends the expiry of Amendments V and VI and does not list the dispute procedure among
+      the provisions it amends, so the earlier procedure appears to remain in force.
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment VII amends only the expiry paragraph of Amendment V and does not list Section 12 among the
+      provisions amended, so the earlier amendment clause still governs.
+    locator_before: '12'
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2002-amendment
+  label: 2002 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '2002-02-19'
+    published: '2002-02-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-02-3861
+    locator: 67 Fed. Reg. 7393 (Feb. 19, 2002)
+  source: compact-or-klamath-tribes-2002-02-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2002.02.19 Klamath Tribes Tribal State Gaming Compact.pdf
+    sha256: 1fdd177d8fc445fce775100beb12bb8fe2eaffd78913bccd200e42e8eb2233f1
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Paragraph I of Amendment VII (as amended by Amendment VIII)
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and while a compact amendment is under negotiation the Native nation may replace blackjack
+      tables with video lottery terminals.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment VIII extends the expiry of Amendments V, VI and VII and does not list the dispute procedure
+      among the provisions it amends, so the earlier procedure appears to remain in force.
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment VIII amends only the expiry paragraph of Amendment VII and does not list Section 12 among
+      the provisions amended, so the earlier amendment clause still governs.
+    locator_before: '12'
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2002-restatement
+  label: 2002 amended and restated compact
+  event: restatement
+  status: in-effect
+  supersedes:
+  - 1995-original
+  - 1996-amendment
+  - 1997-amendment
+  - 1997-amendment-2
+  - 1998-amendment
+  - 1998-amendment-2
+  - 1999-amendment
+  - 2000-amendment
+  - 2002-amendment
+  dates:
+    listed: '2002-09-17'
+    published: '2002-09-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-02-23596
+    locator: 67 Fed. Reg. 58633 (Sept. 17, 2002)
+  source: compact-or-klamath-tribes-2002-09-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2002.09.17 Klamath Tribes Tribal State Gaming Compact.pdf
+    sha256: 9774c40f87ba55501e21bb0cac70f90916a32e5c6700d5a4d0ff8139d966a277
+    pages: 57
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 11, B. Procedure for Resolving Disputes Concerning Operational Decisions.
+    summary: After written notice, the parties meet and confer within 15 days; either party may then start non-binding
+      arbitration from a list supplied by U.S. Arbitration and Mediation of Oregon (binding only by later agreement),
+      and then may sue in the U.S. District Court for the District of Oregon.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: SECTION 12. EFFECTIVE DATE; TERMINATION; AMENDMENTS, subsection D. Amendments
+    summary: The compact cannot be amended for three years after its effective date unless a listed condition occurs,
+      such as another state compact expanding gaming or a state law expansion, or the parties agree in writing;
+      either party may then request negotiations and the compact stays in effect meanwhile.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: changed
+    summary: In the later compact the expedited procedure in Section 6.B.5 now has the State send its notice to
+      the Tribal Gaming Regulatory Commission with the specific action it believes necessary, makes the Tribes follow
+      the State's recommendation unless the Commission finds it would harm gaming integrity, and allows a federal
+      court action if the concern is not resolved informally within ten days. The earlier compact let the State
+      sue in the District of Oregon if not resolved informally after a five-day conference, with no recommendation
+      step. The 6.B.1-4 steps (15-day meeting, non-binding arbitration) and Section 16 (30-day meeting, 90 days,
+      then court) are the same.
+    locator_before: 6.B.5; 16.A
+    locator_after: 6.B.5; 16.A
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: changed
+    summary: The later compact's amendment limit lists a one-year trigger and written agreement of the parties,
+      and no longer lists the fee-to-trust trigger or the Appendices A, B and C rule trigger that appeared in the
+      earlier Section 12.D.1.
+    locator_before: '12'
+    locator_after: '12'
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2008-amendment
+  label: 2008 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2002-restatement
+  dates:
+    listed: '2008-03-17'
+    published: '2008-03-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e8-5198
+    locator: 73 Fed. Reg. 14267 (Mar. 17, 2008)
+  source: compact-or-klamath-tribes-2008-03-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2008.03.17 Klamath Tribes Tribal State Gaming Compact.pdf
+    sha256: 033dedb1f91271ba38ac647700538d0dddf8394c6e174a7ae23cb2b6c3ff0e11
+    pages: 5
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2002-restatement
+    change: unchanged
+    summary: Amendment I amends only Section 10.A and states that its terms do not supersede the original compact,
+      so the earlier dispute procedure appears to remain in force.
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2002-restatement
+    change: unchanged
+    summary: Amendment I amends only Section 10.A and does not list Section 12, so the earlier amendment clause
+      still governs.
+    locator_before: '12'
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2016-amendment
+  label: 2016 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2002-restatement
+  dates:
+    listed: '2016-07-06'
+    published: '2016-07-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2016-15976
+    locator: 81 Fed. Reg. 44039 (July 6, 2016)
+  source: compact-or-klamath-tribes-2016-07-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2016.07.06 Klamath Tribes Amended & Restated Gaming
+      Compact.pdf
+    sha256: 4d7651c8604ca1bb5f0360a81f6e1bc0e4fc4b7c52dd5e39a80057df7d2087fb
+    pages: 62
+  clauses:
+  - topic: dispute-resolution
+    locator: B. Procedure for Resolving Disputes Concerning Operational Decisions. (section number not shown in
+      excerpt)
+    summary: After written notice and a meet-and-confer within 15 days, either party may start non-binding arbitration
+      within 45 days (binding only if both agree), using a list from U.S. Arbitration and Mediation of Oregon, and
+      may then sue in the U.S. District Court for the District of Oregon.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2002-restatement
+    change: reworded
+    summary: The later restated compact's dispute procedure has the same steps as the 2002 text, with differences
+      in numbering and wording only.
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later renegotiation excerpt is a federal analysis of the amended restated
+      compact, so it does not show the renegotiation clause. The Section 16 forum reference is in the later text.'
+  - topic: renegotiation
+    compared_with: 2002-restatement
+    change: not-compared
+    verification: inferred
+- id: 2019-amendment
+  label: 2019 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2002-restatement
+  dates:
+    listed: '2019-04-16'
+    published: '2019-04-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2019-07472
+    locator: 84 Fed. Reg. 15629 (Apr. 16, 2019)
+  source: compact-or-klamath-tribes-2019-04-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant.2019.04.16 Klamath Tribes Deemed Approved Gaming
+      Compact.pdf
+    sha256: ea94bacc84ed56ee5ae0fb4bd4303e33ee9efff05e2e72b233118a43acbcafe5
+    pages: 5
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2002-restatement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2002-restatement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

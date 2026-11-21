@@ -1,0 +1,262 @@
+id: stockbridge-munsee-community-wisconsin-gaming-compact
+kind: gaming-compact
+title: Stockbridge Munsee Community, Wisconsin–State of Wisconsin Gaming Compact
+nations:
+- stockbridge-munsee-community
+states:
+- WI
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Stockbridge Munsee Community, Wisconsin and the State of Wisconsin under 25
+    U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Stockbridge Munsee Community,
+  Wisconsin and the State of Wisconsin as of Nov. 21, 2026: 1 original and 4 amendments. The order, the kind of
+  each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1992-04-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-wi-stockbridge-munsee-community-1992-04-23
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 04.23.1992 Stockbridge Munsee Community Tribal
+      State Gaming Compact.pdf
+    sha256: 44689ad3475e2c577bb7b086608bc20e91f7671427258a6ddcb9b7c7714e062a
+    pages: 46
+  clauses:
+  - topic: dispute-resolution
+    locator: XX.II (OCR heading) Dispute Resolution, A and B
+    summary: A party alleging noncompliance serves written notice, the parties meet within thirty days, and if unresolved
+      within ninety days either party may pursue any remedy otherwise available; mediation or arbitration is used
+      only by mutual agreement.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: XXX. Amendment
+    summary: The compact may be amended only by prior written agreement of both the State and the Stockbridge-Munsee
+      Community, and the excerpt shows no unilateral reopening.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1998-amendment
+  label: 1998 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '1998-10-02'
+    published: '1998-10-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-26492
+    locator: 63 Fed. Reg. 53093 (Oct. 2, 1998)
+  source: compact-wi-stockbridge-munsee-community-1998-10-02
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1998.10.02 Stockbridge Munsee Community Tribal
+      State Gaming Compact.pdf
+    sha256: 5ed65089876b3090c89f57f244e0f8b7372cbc33f546a31daeea6e2ee54766e6
+    pages: 8
+  clauses:
+  - topic: renegotiation
+    locator: Recitals (Section XXX reference)
+    summary: The compact may be amended upon written agreement of both parties under its Section XXX, and this amendment
+      sets a five-year renewal to February 13, 2004.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 1998 amendments list five changes (term renewal, Section V.A, and new Sections XXXII to XXXIV)
+      and do not amend the 1992 dispute article, which provides notice, a 30-day meeting, a 90-day period, and then
+      any remedy otherwise available.
+    locator_before: XXII (A.2)
+    locator_after: Amendment items 1-5
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The Section XXXIV text is cut partway through, and the earlier amendment
+      clause (Section XXX) is cited in the recital but not shown in the excerpts. The earlier dispute article is
+      labeled XX.II in the OCR, which is read here as Section XXII.'
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: added
+    summary: The 1998 amendments create a new Section XXXIV under which, if a part of the amendments is disapproved
+      or held unenforceable, either party may demand renegotiation of the affected portion; if no solution is reached
+      within 30 days of a court's holding, either party may serve a notice of nonrenewal during the following 60
+      days, and the compact expires 180 days after service.
+    locator_after: XXXIV
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The Section XXXIV text is cut partway through, and the earlier amendment
+      clause (Section XXX) is cited in the recital but not shown in the excerpts. The earlier dispute article is
+      labeled XX.II in the OCR, which is read here as Section XXII.'
+- id: 2003-amendment
+  label: 2003 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2003-12-09'
+    published: '2003-12-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-03-30504
+    locator: 68 Fed. Reg. 68649 (Dec. 9, 2003)
+  source: compact-wi-stockbridge-munsee-community-2003-12-09
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2003.12.09 Stockbridge Munsee Community Tribal
+      State Gaming Compact.pdf
+    sha256: 3ed95d033d8e7928fb34313d22e770c40867f3f56590b739214154ed5fcd5bf1
+    pages: 27
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XXII, Dispute Resolution, A to E
+    summary: After written notice and at least thirty days, the party may choose mediation (non-binding), arbitration
+      at a neutral location under the Federal Arbitration Act with a 180-day schedule, or federal court; the parties
+      grant each other a limited waiver of immunity for arbitration and suit.
+    methods:
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Recitals and paragraphs 2 to 3 (Section IV.E as replaced)
+    summary: The 2003 Amendment is made under Section XXX of the 1992 compact as amended in 1998; the Section IV
+      game list is expanded, and games the State later allows elsewhere in Wisconsin are deemed included under Section
+      IV.E.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: The later compact deletes the earlier Section XXII and provides that either party, 30 days after written
+      notice, may choose mediation, arbitration (completed within 180 days under the Federal Rules of Civil Procedure)
+      or federal court, with a limited sovereign immunity waiver; the earlier compact provided notice, a meeting
+      within 30 days, and after 90 days any remedy otherwise available, with mediation or arbitration only by mutual
+      agreement.
+    locator_before: XXII.A-B
+    locator_after: Amendment para 12 (replaces XXII)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2009-amendment
+  label: 2009 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2009-08-19'
+    published: '2009-08-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e9-19887
+    locator: 74 Fed. Reg. 41930 (Aug. 19, 2009)
+  source: compact-wi-stockbridge-munsee-community-2009-08-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2009.08.19 Stockbridge Munsee Community Tribal
+      State Gaming Compact.pdf
+    sha256: 181732f98262e4fab6a43a9c7a4723c06dfb12afabfaafff5f5b505e30edf5a6
+    pages: 1
+  clauses:
+  - topic: renegotiation
+    locator: Recitals (Section XXX reference)
+    summary: The compact may be amended by written amendment at any time upon mutual agreement under its Section
+      XXX; this 2009 amendment changes only the financing exception in Section VII(A)(4)(i).
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 2009 amendment changes only Section VII(A)(4)(i) on facility financing, so the dispute article
+      is not among the provisions amended; the dispute process in force is the Section XXII text as changed by the
+      2003 amendment, not the 1992 text quoted here.
+    locator_before: XXII (A.2)
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier excerpts are the 1992 compact text, but the 2009 amendment is
+      to the compact as amended in 1998 and 2003, and the 2003 amendment rewrote the dispute article. The "unchanged"
+      answers therefore refer to the in-force text, which is not in the file.'
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 2009 amendment says that Section XXX allows written amendments at any time by mutual agreement
+      and changes only Section VII(A)(4)(i), so the renegotiation terms are not amended; the 1992 text quoted here
+      is not the version in force after 1998 and 2003.
+    locator_before: XXX
+    locator_after: Recital; VII(A)(4)(i) (only amended item)
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier excerpts are the 1992 compact text, but the 2009 amendment is
+      to the compact as amended in 1998 and 2003, and the 2003 amendment rewrote the dispute article. The "unchanged"
+      answers therefore refer to the in-force text, which is not in the file.'
+- id: 2024-amendment
+  label: 2024 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2024-10-16'
+    published: '2024-10-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2024-23787
+    locator: 89 Fed. Reg. 83514 (Oct. 16, 2024)
+  source: compact-wi-stockbridge-munsee-community-2024-10-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508_compliant_2024.10.16_stockbridge-munsee_community_tribal_state_gaming_compact.pdf
+    sha256: 21d8a800dec8b3a71db356fdf9fbbc71f74c78fa465281fb393a24639894491a
+    pages: 20
+  clauses:
+  - topic: renegotiation
+    locator: Amendment preamble, paragraph beginning 'The State of Wisconsin'
+    summary: The compact is amended by written agreement of the Tribe and State, and the 2024 Amendment changes
+      definitions, authorized games, wagering accounts, notices, revenue credits and internal control standards.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

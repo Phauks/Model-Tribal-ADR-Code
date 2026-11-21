@@ -1,0 +1,172 @@
+id: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-wisconsin-gaming-compact
+kind: gaming-compact
+title: Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation, Wisconsin–State
+  of Wisconsin Gaming Compact
+nations:
+- bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation
+states:
+- WI
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River
+    Reservation, Wisconsin and the State of Wisconsin under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Bad River Band of the Lake
+  Superior Tribe of Chippewa Indians of the Bad River Reservation, Wisconsin and the State of Wisconsin as of Nov.
+  21, 2026: 1 original and 2 amendments. The order, the kind of each event and which version is in effect are inferred
+  from the list (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1992-04-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-wi-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1992-04-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1992.04.03  Bad River Band of Lake Superior
+      Chippewa Indians Gaming Compact.pdf
+    sha256: 15a8124c3b3cbc9267f0da07b716dd9967b0525971d41ffd9c6935e437102caa
+    pages: 44
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XXII. Dispute Resolution, A and C
+    summary: A party alleging noncompliance serves written notice, the parties meet within thirty days, and if the
+      dispute is unresolved within ninety days of notice either party may pursue any remedy otherwise available;
+      mediation or arbitration is used only by mutual agreement.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section XXX. Amendment
+    summary: The compact may not be modified, amended or altered without the prior written agreement of both the
+      State and the Bad River Band, so no unilateral reopening is provided in the excerpt.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 1998-amendment
+  label: 1998 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '1998-08-21'
+    published: '1998-08-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-22493
+    locator: 63 Fed. Reg. 44920 (Aug. 21, 1998)
+  source: compact-wi-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-1998-08-21
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1998.08.21 Bad River Gaming Compact.pdf
+    sha256: 9bb0fb1fd3dd56681d71fc96115864b449145bd267c921a4c927ee0fba5469c9
+    pages: 9
+  clauses:
+  - topic: renegotiation
+    locator: Section XXXIII. Additional Benefits to Tribe (added by amendment)
+    summary: A new Section XXXIII provides that if the State and another Wisconsin tribe amend or adopt a compact
+      on more favorable terms, the Bad River Band may receive the more favorable benefits; the excerpt ends before
+      the mechanism is stated.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: changed
+    summary: 'The 1998 amendments keep the written-agreement amendment rule of Section XXX, but add meet-and-discuss
+      obligations: the parties must meet to discuss reducing the Section XXXII payment if a later agreement adversely
+      affects the nation''s revenues or if a new State tax is imposed, and on the nation''s request must meet to
+      negotiate incorporation of more favorable terms from other Wisconsin compacts.'
+    locator_before: Section XXX
+    locator_after: Sections XXXII.B, XXXII.F, XXXIII (items 3-4)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The amendment''s visible text stops in the middle of new Section XXXIII,
+      so later items in the amendment are not shown. The earlier Section XXII and XXIII quotations are from the
+      1992 compact text in the excerpts. The 1998 amendment recites that it is made under Section XXX and renews
+      the term to December 12, 2003 under Section XXV.B. The Interior letter says the amendment was received June
+      26, 1998 and dated June 11, 1998, and the listed date is 1998-08-21. The OCR text says ''Section XXX'' with
+      the recital, and the earlier compact is titled ''Gaming Compact of 1991'' while listed as 1992-04-03.'
+- id: 2003-amendment
+  label: 2003 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2003-07-22'
+    published: '2003-07-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-03-18631
+    locator: 68 Fed. Reg. 43366 (July 22, 2003)
+  source: compact-wi-bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation-2003-07-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2003.07.22 Bad River DEEMED APPROVED Gaming
+      Compact.pdf
+    sha256: 0bbdd6bcfe88172b40c66fc84f7492394e182d77c04732d81fe3097a405d44a9
+    pages: 24
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XXII (Dispute Resolution), subsections C to E
+    summary: Disputes go first to written notice and negotiation with the Governor's and Tribe's representatives
+      meeting within ten days, then non-binding mediation after at least two sessions, then arbitration at a neutral
+      location if mediation fails.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section XXX.A and XXX.C (Amendment and Periodic Enhancement of Compact Provisions)
+    summary: The compact can be changed only by written agreement of both parties, and either party may propose
+      amendments in the 30 days before each fifth anniversary of July 1, 2004, or the Governor or Tribe may do so
+      before the 25th anniversary, with good faith negotiation and disputes resolved under Section XXII.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: The earlier compact provides written notice and a meeting within 30 days, after which either party
+      could pursue any otherwise available remedy once 90 days passed, with mediation or arbitration only by mutual
+      agreement; the later compact provides negotiation within ten days, then at least two sessions of non-binding
+      mediation, then binding arbitration before a single arbitrator with federal court enforcement under the Federal
+      Arbitration Act, and adds a separate appeal of internal-control-standard disputes to a three-member arbitration
+      panel.
+    locator_before: Section XXII.A-C
+    locator_after: Section XXII.C-G; Section XXXVII.D
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: changed
+    summary: 'The 2003 Amendment #2 keeps the prior written agreement rule of Section XXX and adds a periodic amendment
+      process: either party may propose amendments within 30 days before each fifth anniversary of July 1, 2004,
+      and the State (through the Governor, as directed by legislation) or the nation may propose amendments to any
+      provision within 30 days before each twenty-fifth anniversary, with good faith negotiations and disputes over
+      that duty resolved under Section XXII; the earlier Section XXX had no periodic process.'
+    locator_before: Section XXX
+    locator_after: Section XXX.A-C
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

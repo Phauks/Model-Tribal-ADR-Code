@@ -1,0 +1,119 @@
+id: southern-ute-indian-tribe-of-the-southern-ute-reservation-colorado-gaming-compact
+kind: gaming-compact
+title: Southern Ute Indian Tribe of the Southern Ute Reservation, Colorado–State of Colorado Gaming Compact
+nations:
+- southern-ute-indian-tribe-of-the-southern-ute-reservation
+states:
+- CO
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Southern Ute Indian Tribe of the Southern Ute Reservation, Colorado and the
+    State of Colorado under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Southern Ute Indian Tribe
+  of the Southern Ute Reservation, Colorado and the State of Colorado as of Nov. 21, 2026: 1 original and 1 replacement.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1992-10-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-co-southern-ute-indian-tribe-of-the-southern-ute-reservation-1992-10-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/colorado/508_compliant_1992.10.08_southern_ute_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: 80a496a9c57d8a2246a06ee3c8e3b175d112f1891ee49de636c554439548741d
+    pages: 38
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 15(d)(i) (Amendment)
+    summary: If the State and the Tribe do not agree on an amendment within the 180-day negotiation period and neither
+      elects other remedies, each submits a last-best-offer proposal to a mediator appointed jointly by the Tribal
+      Chairman and the Governor, and other remedies available under IGRA apply thereafter.
+    methods:
+    - negotiation
+    - mediation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 15(d)(i); Section 4(e) (Reopener)
+    summary: The compact may be amended by written agreement of both parties with Secretary approval; either party
+      may request negotiations by notice, which carry a 180-day negotiating period that the parties may extend,
+      and Section 4(e) requires the parties to meet within 18 months of tribal gaming to discuss changes to Section
+      4.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1995-replacement
+  label: 1995 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1992-original
+  dates:
+    listed: '1995-08-21'
+    published: '1995-08-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-20651
+    locator: 60 Fed. Reg. 43512 (Aug. 21, 1995)
+  source: compact-co-southern-ute-indian-tribe-of-the-souther-1995
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/colorado/508_compliant_1995.08.21_southern_ute_tribal_state_gaming_compact.pdf
+    sha256: 857e974a83d00d5281e500b721ecf248a7cc22c248f142d717a0cd37bd252e56
+    pages: 36
+  clauses:
+  - topic: dispute-resolution
+    locator: Arbitration provision, subsection (d) (section heading not in excerpt).
+    summary: 'The excerpt begins mid-provision with the arbitration procedure: the parties'' arbitrators proceed
+      under AAA commercial arbitration rules, the panel declares the parties'' rights and may enjoin violating conduct,
+      and both parties agree to be bound by the panel''s decision; the notice and negotiation steps before arbitration
+      are not in the excerpt.'
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15. AMENDMENTS, DURATION AND EFFECTIVE DATE, subsection (d)(i).
+    summary: The compact may be amended by written agreement of both parties and Secretary approval; either party
+      may request negotiations by notice, with 180 days to negotiate, then submission of last best offers to a jointly
+      appointed mediator, and if no consent within 45 days the Secretary prescribes procedures.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: The earlier compact already provides in Section 12 a 20-day period to resolve a dispute informally,
+      then arbitration by a three-arbitrator AAA panel that declares the parties' rights and can enjoin violations,
+      by which the Tribe and State agree to be bound. The later compact keeps that and adds a step in which the
+      parties first try to agree on a single arbitrator, with the three-arbitrator AAA panel used only if they cannot
+      agree, and a scheduling conference on discovery.
+    locator_before: Sec. 12(a)-(d)
+    locator_after: Sec. 12(a)-(d)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: reworded
+    summary: Section 15(d) on amendments by written agreement, approval by the Secretary, a request to negotiate,
+      and a 180-day negotiation period appears in both compacts with the same effect; the later Section 15(e) adds
+      a commitment to assess economic and social impacts and to negotiate, with the sentence cut off in the excerpt.
+    locator_before: 15(d)
+    locator_after: 15(d)
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

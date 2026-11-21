@@ -1,0 +1,92 @@
+id: absentee-shawnee-tribe-of-indians-of-oklahoma-oklahoma-gaming-compact
+kind: gaming-compact
+title: Absentee-Shawnee Tribe of Indians of Oklahoma–State of Oklahoma Gaming Compact
+nations:
+- absentee-shawnee-tribe-of-indians-of-oklahoma
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Absentee-Shawnee Tribe of Indians of Oklahoma and the State of Oklahoma under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Absentee-Shawnee Tribe of
+  Indians of Oklahoma and the State of Oklahoma as of Nov. 21, 2026: 1 original and 1 amendment. The order, the
+  kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2005-original
+  label: 2005 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2005-01-27'
+    published: '2005-01-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-05-1468
+    locator: 70 Fed. Reg. 3942 (Jan. 27, 2005)
+  source: compact-ok-absentee-shawnee-tribe-of-indians-of-okl-2005
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508_compliant_2005.01.27_absentee_shawnee_tribe_of_indians_tribal_state_gaming_compact.pdf
+    sha256: 2f243db6e3b3380e792d7389bf42c0ec7e35b12cd8ac1cae3cb8d81c0b90b1c2
+    pages: 61
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION
+    summary: A party gives written notice, representatives meet within thirty days, and either party may then refer
+      the dispute to AAA arbitration; arbitration awards are subject to de novo review by a federal district court.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, subsection B
+    summary: Within 180 days before the term or any renewal expires, either the Tribe or the State, acting through
+      its Governor, may request renegotiation of subsections A and E of Part 11.
+    verification: read-in-full
+    reviewer: small model, first pass
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2005-original
+  dates:
+    listed: '2018-08-17'
+    published: '2018-08-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-17729
+    locator: 83 Fed. Reg. 41101 (Aug. 17, 2018)
+  source: compact-ok-absentee-shawnee-tribe-of-indians-of-oklahoma-2018-08-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2018.08.17 Absentee  Shawnee Compact Amendment.pdf
+    sha256: 4eb09f2b365a6a0b7ed38c99c38be2697eed3b2f25718d3fdbf5a8586ab40de7
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2005-original
+    change: unchanged
+    summary: The 2018 supplement does not amend the dispute resolution provisions; its Part 2.c treats the table
+      games as subject to the compact's terms, including for enforcement, so the earlier Part 12 process still governs.
+    locator_before: Part 12
+    locator_after: Part 2.c
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2005-original
+    change: unchanged
+    summary: The supplement does not amend the duration and negotiation provisions; it states it is governed in
+      accord with the Compact, so the earlier Part 15 still governs.
+    locator_before: Part 15.B
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

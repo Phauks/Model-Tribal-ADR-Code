@@ -1,0 +1,109 @@
+id: moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-nevada-gaming-compact
+kind: gaming-compact
+title: Moapa Band of Paiute Indians of the Moapa River Indian Reservation, Nevada–State of Nevada Gaming Compact
+nations:
+- moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation
+states:
+- NV
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Moapa Band of Paiute Indians of the Moapa River Indian Reservation, Nevada
+    and the State of Nevada under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Moapa Band of Paiute Indians
+  of the Moapa River Indian Reservation, Nevada and the State of Nevada as of Nov. 21, 2026: 1 original and 1 replacement.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1994-original
+  label: 1994 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1994-12-22'
+    published: '1994-12-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-94-31375
+    locator: 59 Fed. Reg. 0 (Dec. 22, 1994)
+  source: compact-nv-moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-1994-12-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/nevada/508_compliant_1994.12.22_moapa_band_of_paiute_indians_tribal_state_gaming_compact.pdf
+    sha256: e180d66fb264c13ce3170198eea94d9a7287bc67342902e53b7a6283cd694069
+    pages: 14
+  clauses:
+  - topic: dispute-resolution
+    locator: XI. DEFAULT AND TERMINATION, 1. Default
+    summary: After a written default notice, the party in default has ninety days to correct; if not, the parties
+      meet within thirty days, and if still unresolved either party may pursue any lawful remedy, including a federal
+      action under 25 U.S.C. 2710(d)(7)(A); the parties may also agree in writing to mediation or arbitration.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: XII. AMENDMENTS
+    summary: The agreement may be amended only with both parties' consent by signed written instrument; the parties
+      must negotiate in good faith if applicable law changes, and must negotiate an amendment or separate compact
+      if the Native nation wants to expand beyond the authorized gaming.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 2000-replacement
+  label: 2000 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1994-original
+  dates:
+    listed: '2000-01-07'
+    published: '2000-01-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-324
+    locator: 65 Fed. Reg. 1167 (Jan. 7, 2000)
+  source: compact-nv-moapa-band-of-paiute-indians-of-the-moapa-river-indian-reservation-2000-01-07
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/nevada/508_compliant_2000.01.07_moapa_band_of_paiute_tribal_state_gaming_compact.pdf
+    sha256: d68f2770a4b7c5136fbeb0b1d730a5c6615affe131659e462f4d70e65154803f
+    pages: 15
+  clauses:
+  - topic: dispute-resolution
+    locator: XI. DEFAULT AND TERMINATION, paragraph 1.
+    summary: After written notice of a substantial default the other party has ninety days to cure, the parties
+      meet within thirty days, and if the dispute is still unresolved within thirty days after that either party
+      may pursue any lawful remedy, including an IGRA section 11(d)(7)(A) action; mediation or arbitration is available
+      only by mutual written agreement.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: XII. AMENDMENTS; XIII. RESERVATION OF RIGHTS.
+    summary: The agreement may be amended only with the consent of both parties by signed written instrument; if
+      applicable law changes the parties negotiate in good faith, and the Native nation reserves its IGRA right
+      to sue in federal court if the State does not negotiate in good faith on a broader compact.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1994-original
+    change: unchanged
+    summary: The later compact keeps Section VIII (the Tribe has jurisdiction over patron disputes, with optional
+      State technical assistance on slot machines) and Section XI.1 on default (written notice, a 90-day cure period,
+      a meeting within 30 days, then any lawful remedy, with mediation or arbitration only by mutual written agreement)
+      in the same terms.
+    locator_before: XI.1
+    locator_after: XI.1
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1994-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

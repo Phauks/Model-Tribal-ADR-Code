@@ -1,0 +1,58 @@
+id: pokagon-band-of-potawatomi-indians-indiana-gaming-compact
+kind: gaming-compact
+title: Pokagon Band of Potawatomi Indians, Michigan and Indiana–State of Indiana Gaming Compact
+nations:
+- pokagon-band-of-potawatomi-indians
+states:
+- IN
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Pokagon Band of Potawatomi Indians, Michigan and Indiana and the State of Indiana
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Pokagon Band of Potawatomi
+  Indians, Michigan and Indiana and the State of Indiana as of Nov. 21, 2026: 1 original. The order, the kind of
+  each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2021-original
+  label: 2021 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2021-07-02'
+    published: '2021-07-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2021-14217
+    locator: 86 Fed. Reg. 35328 (July 2, 2021)
+  source: compact-in-pokagon-band-of-potawatomi-indians-2021
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/indiana/508 Compliant 2020.07.02 Pokagon Band of Potawatomi Tribal State
+      Gaming Compact.pdf
+    sha256: 6b2473eef85d43f76fb63368994d6bb8b6d784a002b64fb2d8eb7ba170239d01
+    pages: 39
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution, subsections (B) to (D)
+    summary: Disputes go through written notice and a 30-day meeting, then after 90 days either party may sue in
+      United States District Court, and binding arbitration under the AAA Commercial Rules applies only if both
+      parties consent in writing.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 16. Amendments
+    summary: Either party may propose an amendment by notice, the receiving party must respond within 45 days, and
+      agreed amendments require Indiana General Assembly ratification and Secretary of the Interior approval; renewal
+      and successor-compact negotiation are handled under Section 12, which is not in the excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,86 @@
+id: pokagon-band-of-potawatomi-indians-michigan-gaming-compact
+kind: gaming-compact
+title: Pokagon Band of Potawatomi Indians, Michigan and Indiana–State of Michigan Gaming Compact
+nations:
+- pokagon-band-of-potawatomi-indians
+states:
+- MI
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Pokagon Band of Potawatomi Indians, Michigan and Indiana and the State of Michigan
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Pokagon Band of Potawatomi
+  Indians, Michigan and Indiana and the State of Michigan as of Nov. 21, 2026: 1 original and 1 amendment. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1999-original
+  label: 1999 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1999-02-18'
+    published: '1999-02-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-4005
+    locator: 64 Fed. Reg. 8111 (Feb. 18, 1999)
+  source: compact-mi-pokagon-band-of-potawatomi-indians-michi-1999
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/michigan/508_compliant_1999.02.18_pokagon_band_of_potawatomi_tribal_state_gaming_compact.pdf
+    sha256: bf7906835911e7052e593f9392049652b92e8b1f8dd0aa82fd90b244132d563c
+    pages: 24
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution, (A)
+    summary: A party alleging breach serves written notice and the parties meet within thirty days; if unresolved
+      within ninety days the State may serve a notice to cease the game, and the Native nation may stop it or invoke
+      arbitration under American Arbitration Association commercial rules before a three-attorney panel, while the
+      Native nation may itself invoke arbitration over its own allegations; other remedies remain available.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 16. Amendment.
+    summary: 'The compact may be amended by mutual agreement: either party proposes an amendment by written notice,
+      and the receiving party must respond within thirty days; either party may also give written notice of a right
+      to renegotiate one year before the twenty-year term and each later five-year period ends.'
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 2008-amendment
+  label: 2008 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1999-original
+  dates:
+    listed: '2008-10-23'
+    published: '2008-10-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-e8-25208
+    locator: 73 Fed. Reg. 63193 (Oct. 23, 2008)
+  source: compact-mi-pokagon-band-of-potawatomi-indians-2008-10-23
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/michigan/508_compliant_2008.10.23_pokagon_band_of_potowatomi_indians_tribal_state_gaming_compact.pdf
+    sha256: d3eef341d2f7b214bc9730806134e6767dcca5f330ba29b8492b59a5526864ea
+    pages: 8
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1999-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1999-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

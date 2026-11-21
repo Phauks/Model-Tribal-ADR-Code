@@ -1,0 +1,55 @@
+id: match-e-be-nash-she-wish-band-of-pottawatomi-michigan-gaming-compact
+kind: gaming-compact
+title: Match-E-Be-Nash-She-Wish Band of Pottawatomi–State of Michigan Gaming Compact
+nations:
+- match-e-be-nash-she-wish-band-of-pottawatomi
+states:
+- MI
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Match-E-Be-Nash-She-Wish Band of Pottawatomi and the State of Michigan under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Match-E-Be-Nash-She-Wish
+  Band of Pottawatomi and the State of Michigan as of Nov. 21, 2026: 1 original. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 2009-original
+  label: 2009 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2009-04-22'
+    published: '2009-04-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-e9-9260
+    locator: 74 Fed. Reg. 18397 (Apr. 22, 2009)
+  source: compact-mi-match-e-be-nash-she-wish-band-of-pottawa-2009
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/michigan/508_compliant_2009.04.22_match-e-be-nash-she-wish_band_of_pottawatomi_indians_tribal_state_gaming_compact.pdf
+    sha256: 9baf04e979db5099b8c1b8667494857c1a854f222e118dbdea013f4cefdef045
+    pages: 26
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 7(A), Dispute Resolution
+    summary: Section 7 requires written notice, a meeting within thirty days, a ninety-day period, and then arbitration
+      under the American Arbitration Association Commercial Arbitration Rules before a three-attorney panel, with
+      each party bearing its own costs.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Section 11(B)-(C), Binding Effect, Duration, and Severability
+    summary: Either party may serve written notice of its right to renegotiate at least one year before the twenty-year
+      term expires and before each later five-year period, and the compact stays in effect pending IGRA remedies
+      if talks fail.
+    verification: read-in-full
+    reviewer: small model, first pass
+found_in:
+- 2026-11-21-gaming-compact-histories

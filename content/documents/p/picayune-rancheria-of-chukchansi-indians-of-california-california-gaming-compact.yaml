@@ -1,0 +1,224 @@
+id: picayune-rancheria-of-chukchansi-indians-of-california-california-gaming-compact
+kind: gaming-compact
+title: Picayune Rancheria of Chukchansi Indians of California–State of California Gaming Compact
+nations:
+- picayune-rancheria-of-chukchansi-indians-of-california
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Picayune Rancheria of Chukchansi Indians of California and the State of California
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Picayune Rancheria of Chukchansi
+  Indians of California and the State of California as of Nov. 21, 2026: 1 original, 1 disapproved compact, 4 extensions
+  and 1 amendment. The order, the kind of each event and which version is in effect are inferred from the list (project
+  analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-picayune-rancheria-of-chukchansi-indians-of-california-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2000.05.16_picayune_rancheria_tribal_state_gaming_compact_1.pdf
+    sha256: 24443e8be93a1ac7c8259b19dfa6893ec701b007387e1cf19d6f272aebd80638
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.0. DISPUTE RESOLUTION PROVISIONS; Sec. 9.2. Arbitration Rules.
+    summary: After written notice and a meet-and-confer within 10 days, either party may seek arbitration under
+      AAA Commercial Rules with a binding award, and disputes not resolved that way may go to the U.S. District
+      Court, the Ninth Circuit, or a state court.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.0. AMENDMENTS; RENEGOTIATIONS.
+    summary: The compact may be amended by mutual written agreement, and the Picayune Rancheria may request renegotiation
+      to offer other forms of Class III gaming after 12 months, with a schedule set within 30 days under IGRA's
+      good-faith standards.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2021-disapproval
+  label: 2021 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2021-11-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-ca-picayune-rancheria-of-chukchansi-indians-of-california-2021-11-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2021.11.05 Letter to Picayune Rancheria of
+      Chukchansi Indians.pdf
+    sha256: f2bdeaaa6d47cfcd36822c0427a6d0259388f94d622e39d4788117293c6966dc
+    pages: 13
+- id: 2022-extension
+  label: 2022 extension
+  event: extension
+  status: in-effect
+  amends:
+  - 2000-original
+  dates:
+    listed: '2022-06-30'
+    published: '2022-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-14054
+    locator: 87 Fed. Reg. 39115 (June 30, 2022)
+  source: compact-ca-picayune-rancheria-of-chukchansi-indians-of-california-2022-06-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2022.06.30_picayune_rancheria_of_chukchansi_indians_tribal_state_gaming_compact.pdf
+    sha256: da81cea729093d6ffc63d4bb9b1740d39523832afa42d689280a82c9e7067643
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2023-extension
+  label: 2023 extension
+  event: extension
+  status: in-effect
+  amends:
+  - 2000-original
+  dates:
+    listed: '2023-12-15'
+    published: '2023-12-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-27539
+    locator: 88 Fed. Reg. 86924 (Dec. 15, 2023)
+  source: compact-ca-picayune-rancheria-of-chukchansi-indians-of-california-2023-12-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2023.12.15_picayune_rancheria_of_chukchansi_indians_tribal_state_gaming_compact.pdf
+    sha256: 233edccc8441e0311cb136e80f810fe84ccf3010136fa4d1e37da25298b3f9bf
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2025-extension
+  label: 2025 extension
+  event: extension
+  status: in-effect
+  amends:
+  - 2000-original
+  dates:
+    listed: '2025-02-20'
+    published: '2025-02-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2025-02848
+    locator: 90 Fed. Reg. 9973 (Feb. 20, 2025)
+  source: compact-ca-picayune-rancheria-of-chukchansi-indians-of-california-2025-02-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2025.02.20_picayune_rancheria_of_chukchansi_indians_tribal_state_gaming_compact_third_amendment).pdf
+    sha256: 6efb3bb5204001b4cd2af080cc0b9e6d88cd5d5b0cfd52a661543520bf178098
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2026-amendment
+  label: 2026 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2000-original
+  dates:
+    listed: '2026-01-26'
+    published: '2026-01-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2026-01391
+    locator: 91 Fed. Reg. 3213 (Jan. 26, 2026)
+  source: compact-ca-picayune-rancheria-of-chukchansi-indians-of-california-2026-01-26
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/fourth_amendment_to_picayune_and_ca_compact.pdf
+    sha256: 4de3acde226d2e67664226d71bc7fb9274503344224e98d758fcbc62c3184559
+    pages: 14
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2026-extension
+  label: 2026 extension
+  event: extension
+  status: in-effect
+  amends:
+  - 2000-original
+  dates:
+    listed: '2026-11-18'
+    published: '2026-11-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2026-23404
+    locator: 91 Fed. Reg. 74187 (Nov. 18, 2026)
+  source: compact-ca-picayune-rancheria-of-chukchansi-indians-of-california-2026-11-18
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/picayune_rancheria_fifth_amendment_compact_extension_508.pdf
+    sha256: 210717d002d5e2cd4dff7a09728665641fc12f0ee5c6eb156566d0a17f9ee562
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

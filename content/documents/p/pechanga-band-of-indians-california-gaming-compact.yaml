@@ -1,0 +1,155 @@
+id: pechanga-band-of-indians-california-gaming-compact
+kind: gaming-compact
+title: Pechanga Band of Indians–State of California Gaming Compact
+nations:
+- pechanga-band-of-indians
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Pechanga Band of Indians and the State of California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Pechanga Band of Indians
+  and the State of California as of Nov. 21, 2026: 1 original, 1 amendment and 1 replacement. The order, the kind
+  of each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-pechanga-band-of-indians-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2000.05.16_pechanga_band_of_luiseno_mission_indians_tribal_state_gaming_compact.pdf
+    sha256: 85bb85a4e156916c897d3ceeb5d0431b46c95a38707cde7a6bc601d333069b6e
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 and Sec. 9.2
+    summary: The compact provides for written notice, a good-faith meeting within 10 days and, if unresolved after
+      30 days, optional arbitration under the AAA Commercial Arbitration Rules with a binding award; otherwise the
+      dispute may go to the U.S. District Court where the gaming facility is located and the Ninth Circuit Court
+      of Appeals, or to state courts if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Sec. 12.1 to Sec. 12.3
+    summary: The compact may be amended by mutual written agreement, and the Pechanga Band may request renegotiation
+      in writing for Class III games other than those authorized, but not within 12 months of the effective date;
+      talks are to be scheduled within 30 days under IGRA good-faith standards.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2007-12-19'
+    published: '2007-12-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-e7-24565
+    locator: 72 Fed. Reg. 71939 (Dec. 19, 2007)
+  source: compact-ca-pechanga-band-of-indians-2007-12-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2007.12.19_pechanga_band_of_luiseno_indians_tribal_state_gaming_compact.pdf
+    sha256: 5262fe442b42c860607642020d8a368cb6443b1eddd30bbde87763f3633cbd5e
+    pages: 46
+  clauses:
+  - topic: renegotiation
+    locator: Sec. 10.2(d)(v)
+    summary: Once the Tribe establishes a tribal court system, it may notify the State that it seeks to renegotiate
+      in good faith the claims subdivision, and the State must then negotiate in good faith; the excerpt does not
+      show other renegotiation terms.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2016-replacement
+  label: 2016 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  - 2007-amendment
+  dates:
+    listed: '2016-12-05'
+    published: '2016-12-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2016-29076
+    locator: 81 Fed. Reg. 87585 (Dec. 5, 2016)
+  source: compact-ca-pechanga-band-of-indians-2016-12-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2016.12.05_pechanga_band_of_luiseno_mission_indians_tribal_state_gaming_compact.pdf
+    sha256: c9b8c609816d12b88c4de8922b6ef72ef818f72502d656cf06c7dc0e01308d80
+    pages: 143
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 11.8. Arbitration.
+    summary: Disputes over project agreements with the County or Caltrans that are not settled within 55 days go
+      to binding JAMS arbitration, and the award becomes that intergovernmental agreement; the excerpt does not
+      include the general dispute section 13.0 that the compact cross-references.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS. Sec. 15.1 to 15.3.
+    summary: The compact may be amended by mutual written agreement during its term, and either party may request
+      negotiations to extend it or for a new compact no sooner than 18 months before termination, with a negotiation
+      schedule to be set within 45 days.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: changed
+    summary: The 2016 compact replaces the earlier Section 12.2 renegotiation right for other forms of Class III
+      gaming with a right to request amendment by mutual written agreement (Section 15.1) and to request negotiations
+      for an extension or a new Class III compact no sooner than 18 months before termination (Section 15.2), with
+      a one-year automatic extension if no agreement is reached, and it gives 45 days rather than 30 days to set
+      a negotiation schedule (Section 15.3).
+    locator_before: 12.1-12.4
+    locator_after: 15.1-15.3
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later Section 13.0 (the compact''s dispute provisions, referenced in
+      its health and safety clauses) is not in the excerpts, so the dispute comparison is incomplete. The earlier
+      Section 12.4 termination right has no visible counterpart in the later excerpts.'
+found_in:
+- 2026-11-21-gaming-compact-histories

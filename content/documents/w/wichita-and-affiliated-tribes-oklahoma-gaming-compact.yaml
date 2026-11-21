@@ -1,0 +1,103 @@
+id: wichita-and-affiliated-tribes-oklahoma-gaming-compact
+kind: gaming-compact
+title: Wichita and Affiliated Tribes , Oklahoma–State of Oklahoma Gaming Compact
+nations:
+- wichita-and-affiliated-tribes
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Wichita and Affiliated Tribes , Oklahoma and the State of Oklahoma under 25
+    U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Wichita and Affiliated Tribes
+  , Oklahoma and the State of Oklahoma as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each
+  event and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 2006-original
+  label: 2006 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2006-09-12'
+    published: '2006-09-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-e6-15027
+    locator: 71 Fed. Reg. 53706 (Sept. 12, 2006)
+  source: compact-ok-wichita-and-affiliated-tribes-oklahoma-2006
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508_compliant_2006.09.12_wichita_affiliated_tribes_tribal_state_gaming_compact.pdf
+    sha256: c18921c7c3aadcf0db122cc00dd67463b1e5c6cc2b4ffe0c4c1504ce90f34941
+    pages: 27
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION, paragraphs 1-3
+    summary: Representatives meet within thirty days of written notice; then either party may refer the dispute
+      to American Arbitration Association arbitration, with federal district court review of the award de novo.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, subsection B
+    summary: The compact can be reopened only at the end of its term or a renewal, when either the Wichita and Affiliated
+      Tribes or the State, acting through its Governor, may request renegotiation of Parts 11A and 11E within 180
+      days.
+    verification: read-in-full
+    reviewer: small model, first pass
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2006-original
+  dates:
+    listed: '2018-08-17'
+    published: '2018-08-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-17729
+    locator: 83 Fed. Reg. 41101 (Aug. 17, 2018)
+  source: compact-ok-wichita-and-affiliated-tribes-2018-08-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2018.08.17 Wichita and Affiliated Tribes compact
+      amendments.pdf
+    sha256: 0e37c17a4a205c8db37644ac89e3580e34aec297df2747a92b619fd143d91189
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2006-original
+    change: unchanged
+    summary: The 2018 Model Tribal Gaming Supplement has no dispute clause of its own. It says its operation is
+      treated as subject to the Compact for enforcement and exclusivity, so the 2006 Part 12 procedures (notice,
+      meeting, AAA arbitration limited to enforcement, federal court review) apply without change.
+    locator_before: Part 12, paragraph 2
+    locator_after: Part 2.C
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: This is a Model Tribal Gaming Supplement, not a replacement or amendment
+      of the 2006 Compact text, and it is approved by Interior letter of 9 August 2018. The 2018 excerpts are only
+      the letter and the supplement; neither shows a change to Parts 12 or 15 of the Compact.'
+  - topic: renegotiation
+    compared_with: 2006-original
+    change: unchanged
+    summary: The 2006 Part 15.B renegotiation window (180 days after expiration or renewal, for Part 11 subsections
+      A and E) is not amended by the 2018 Supplement, which only adds a non-house-banked table games covered game
+      and is governed by the existing Compact.
+    locator_before: Part 15.B
+    locator_after: Supplement preamble
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: This is a Model Tribal Gaming Supplement, not a replacement or amendment
+      of the 2006 Compact text, and it is approved by Interior letter of 9 August 2018. The 2018 excerpts are only
+      the letter and the supplement; neither shows a change to Parts 12 or 15 of the Compact.'
+found_in:
+- 2026-11-21-gaming-compact-histories

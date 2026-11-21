@@ -1,0 +1,393 @@
+id: jamestown-sklallam-tribe-washington-gaming-compact
+kind: gaming-compact
+title: Jamestown S'Klallam Tribe–State of Washington Gaming Compact
+nations:
+- jamestown-sklallam-tribe
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Jamestown S'Klallam Tribe and the State of Washington under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Jamestown S''Klallam Tribe
+  and the State of Washington as of Nov. 21, 2026: 1 original, 6 amendments and 1 replacement. The order, the kind
+  of each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1993-original
+  label: 1993 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1993-05-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-wa-jamestown-sklallam-tribe-1993-05-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_1993.05.03_jamestown_s_klallam_tribe_tribal_state_gaming_compact.pdf
+    sha256: 6357957234afad2712b749760751e9e59417121b84d82798597214cab9a8abbc
+    pages: 67
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XII (Dispute Resolution), B.4
+    summary: Disputes go through written notice and a meet-and-confer within ten days, then the parties may resolve
+      the dispute by JAMS arbitration (JAMS final and unappealable), with remedies otherwise preserved.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section XV.C (Amendment and Modification)
+    summary: The terms may be amended or modified by written agreement of both parties, and the Tribe may request
+      negotiations for Class III activities not permitted by the compact but later permitted by the State.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1995-amendment
+  label: 1995 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1993-original
+  dates:
+    listed: '1995-03-22'
+    published: '1995-03-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-6968
+    locator: 60 Fed. Reg. 15194 (Mar. 22, 1995)
+  source: compact-wa-jamestown-sklallam-tribe-1995-03-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1995.03.22 Jamestown S'Klallam Tribe Tribal
+      State Gaming Compact.pdf
+    sha256: 9fa5a62896c3b825c38e1982245c23a342f95cb1e17d68e403e2c855809e4a4d
+    pages: 4
+  clauses:
+  - topic: dispute-resolution
+    locator: Amendment, Section III(B) Conditions
+    summary: Disputes over whether phase-two conditions are met go through the dispute resolution procedures in
+      Section XII of the compact, and the Tribe may not expand gaming stations while that dispute is pending.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Amendment, Section 2 (Amendments - Contractual)(a)
+    summary: Listed Section III subsections are not subject to renegotiation or amendment for thirty-six months
+      unless a listed event occurs, such as a change in State law, a qualifying court decision, or another tribe
+      obtaining greater terms by compact.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 1995 amendment does not replace Section XII; it sends disputes over the phase-two conditions to
+      the procedures in Section XII, so the 1993 Section XII (agency meet-and-confer, then JAMS arbitration where
+      the compact provides for it, with court remedies preserved) still governs.
+    locator_before: XII.B.1
+    locator_after: III(B)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The amendment replaces only part of Section XV(I)(2) and refers to XV(I)(2)(c)
+      and XV(C) without quoting them, so the full 1993 text of those subsections is needed to confirm the change.
+      The 1993 excerpt cuts off within Section XV(I)(2). The moratorium''s OCR text is garbled in places, so the
+      quotation uses the clean words only.'
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: changed
+    summary: The 1995 amendment replaces Section XV(I)(2)(a) with a 36-month moratorium from the amendment date
+      on renegotiating or amending the scope provisions III(A), III(C)(3)(e), (f) and (g), subject to four exceptions
+      (changes in state law, court decisions, and greater gaming by tribes east or west of the Cascades), and provides
+      that the mutual-agreement renegotiation routes in XV(I)(1), XV(I)(2)(c) and XV(C) may not be used during that
+      period; the 1993 Section XV(I)(1) allowed amendment at any time by mutual written agreement.
+    locator_before: XV(I)(1)
+    locator_after: XV(I)(2)(a)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The amendment replaces only part of Section XV(I)(2) and refers to XV(I)(2)(c)
+      and XV(C) without quoting them, so the full 1993 text of those subsections is needed to confirm the change.
+      The 1993 excerpt cuts off within Section XV(I)(2). The moratorium''s OCR text is garbled in places, so the
+      quotation uses the clean words only.'
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1993-original
+  dates:
+    listed: '1999-01-28'
+    published: '1999-01-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-1935
+    locator: 64 Fed. Reg. 4459 (Jan. 28, 1999)
+  source: compact-wa-jamestown-sklallam-tribe-1999-01-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1999.01.28 Jamestown S'Klallam Tribe Tribal
+      State Gaming Compact.pdf
+    sha256: fac3e7e6c25581b994cf88ed0311f609fba66fec6e137904cf0350b07d7131ae
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: unchanged
+    summary: The Third Amendment changes only Section IV.A.1(a) (adding Tribal Lottery Systems) and adds Appendix
+      X; it does not list the dispute provisions, so the 1993 Section XII still governs.
+    locator_before: XII.B.1
+    locator_after: '2'
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: Appendix X (added by this Third Amendment) is incorporated as part of the
+      Compact, so any dispute or amendment terms inside it are not in the excerpts. The Secretary''s approval letter
+      (January 14, 1999) refers to a Section 14.2 charitable donation provision and a Section 14.4.2 in the amendment,
+      but the amendment text in the excerpts contains neither; check whether the file has the complete amendment.'
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The Third Amendment states that it amends Section IV.A.1(a) and adds Appendix X, and does not mention
+      the amendment or renegotiation provisions, so the 1993 Section XV(I) still governs.
+    locator_before: XV(I)(1)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: Appendix X (added by this Third Amendment) is incorporated as part of the
+      Compact, so any dispute or amendment terms inside it are not in the excerpts. The Secretary''s approval letter
+      (January 14, 1999) refers to a Section 14.2 charitable donation provision and a Section 14.4.2 in the amendment,
+      but the amendment text in the excerpts contains neither; check whether the file has the complete amendment.'
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1993-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-jamestown-sklallam-tribe-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2007.05.31 Jamestown S'Klallam Tribe State
+      Gaming Compact.pdf
+    sha256: 32021f1966bf2a92f4c2959b2b6449d2235f9de0eae62b7e36ec13e4dcc2ca06
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: unchanged
+    summary: The Fourth Amendment adds Appendix X2 as a fully enforceable part of the Compact and recognizes the
+      Tribal Lottery Systems it describes; it does not list the dispute provisions, so the 1993 Section XII still
+      governs, though Appendix X2 itself is not in the excerpts and may contain its own terms.
+    locator_before: XII.B.1
+    locator_after: '1'
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: Appendix X2 (and Appendix X in the 1999 Third Amendment) is incorporated
+      as an enforceable part of the Compact, so any dispute or amendment terms inside those appendices are not in
+      the excerpts and could change the answer. The Secretary''s letter dated May 17, 2007 refers to a Fourth Amendment
+      executed March 30, 2007.'
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The Fourth Amendment does not mention the amendment or renegotiation provisions, so the 1993 Section
+      XV(I) still governs.
+    locator_before: XV(I)(1)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: Appendix X2 (and Appendix X in the 1999 Third Amendment) is incorporated
+      as an enforceable part of the Compact, so any dispute or amendment terms inside those appendices are not in
+      the excerpts and could change the answer. The Secretary''s letter dated May 17, 2007 refers to a Fourth Amendment
+      executed March 30, 2007.'
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1993-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-13712
+    locator: 80 Fed. Reg. 31918 (June 4, 2015)
+  source: compact-wa-jamestown-sklallam-tribe-2015-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2015.06.04 Jamestown S'Klallam Tribe Tribal
+      State Gaming Compact.pdf
+    sha256: 6b7add00dd5dc3ed4e8f660e47d026cc890374e60353cb9626422f27571d4a6f
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The Fifth Amendment lists the sections it adds or amends (Section III.C(k), Appendix X2 Sections 12.1,
+      13.4 and 14.4-14.5, and an Addendum) and does not list Section XV, so the 1993 Section XV(I) still governs.
+    locator_before: XV(I)(1)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: This Fifth Amendment has parallel terms (same Appendix X2 sections) to the
+      2015 Hoh Third Amendment in batch 029 item 0, but the text is not identical. The Appendix X2 Section 13.5
+      dispute provisions it refers to are not in the excerpts. The 2015 excerpts under the dispute heading are empty,
+      so the later dispute language is taken from the amendment''s own text.'
+- id: 2017-replacement
+  label: 2017 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1993-original
+  - 1995-amendment
+  - 1999-amendment
+  - 2007-amendment
+  - 2015-amendment
+  dates:
+    listed: '2017-10-20'
+    published: '2017-10-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2017-22852
+    locator: 82 Fed. Reg. 48846 (Oct. 20, 2017)
+  source: compact-wa-jamestown-sklallam-tribe-2017-10-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2017.10.20_jamestown_s'kallam_tribe_tribal_state_gaming_compact.pdf
+    sha256: b84bb103b630d151774ccd9dbd90c558e89283eb3576406e3de6e78b340e8762
+    pages: 180
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XIV (Dispute Resolution), B(3)(d)
+    summary: Disputes go through written notice and a meet-and-confer within twenty business days, then optional
+      formal mediation, then standard arbitration by mutual agreement with a decision within one year of the request;
+      judicial resolution remains available if mediation does not resolve the dispute.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: changed
+    summary: The later compact provides written notice, a meet and confer within 20 business days, optional formal
+      mediation by agreement, judicial resolution if a party is dissatisfied, and arbitration only by mutual agreement
+      (alternating sites, decision within one year, subject to judicial review). The 1993 compact provided notice,
+      a meeting within 10 days, and after 20 more days arbitration through JAMS by agreement or the Section XIII
+      remedies.
+    locator_before: XII.A-B
+    locator_after: XIV.B(1)-(3)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2017-replacement
+  dates:
+    listed: '2021-12-28'
+    published: '2021-12-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-28214
+    locator: 86 Fed. Reg. 73800 (Dec. 28, 2021)
+  source: compact-wa-jamestown-sklallam-tribe-2021-12-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2021.12.28_jamestown_s_klallam_tribe_tribal_state_gaming_compact.pdf
+    sha256: 907eb4280aebd0f9e919b183a251d3b7e097c9c18302e2cb8a0ec8f98d91a377
+    pages: 24
+  clauses:
+  - topic: dispute-resolution
+    locator: Appendix S, Section 5.3.6
+    summary: For sports wagering certification, the Tribal and State Gaming Agencies meet and confer on the State
+      Gaming Agency's concerns, and the Tribal Gaming Agency may revoke its approval if it finds the certification
+      was erroneous.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2017-replacement
+    change: unchanged
+    summary: The Seventh Amendment lists its changes (Compact Sections II, III.G, IV.A, XII.D, a digital-wallet
+      clause, a start-up costs fee and a new Appendix S for sports wagering) and does not list Section XIV, so the
+      2017 dispute process appears to still govern; the excerpts under the dispute heading are Appendix S sports-wagering
+      text.
+    locator_before: XIV.B(3)(a)
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The excerpts for the amendment end before its full list of amended sections,
+      and the Appendix S text may contain its own dispute or amendment terms that are not in the excerpts. The 2017
+      excerpts that are the earlier side are the replacement compact''s dispute article, which is shown in full
+      only in part.'
+- id: 2023-amendment
+  label: 2023 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2017-replacement
+  dates:
+    listed: '2023-09-25'
+    published: '2023-09-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-20969
+    locator: 88 Fed. Reg. 66500 (Sept. 27, 2023)
+  source: compact-wa-jamestown-sklallam-tribe-2023-09-25
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2023.09.27_jamestown_s_klallam_tribe_tribal_state_gaming_compact.pdf
+    sha256: 8b2097ceb7beddfa1b09c64199c2c82b12da7e8bdfe4b666cf87b8cfdd0adc4e
+    pages: 21
+  clauses:
+  - topic: dispute-resolution
+    locator: Compact Section XII.B(2) Tribal Jurisdiction (as amended, item 4)
+    summary: Civil disputes arising from the conduct of gaming under the Gaming Code may be heard in the Northwest
+      Intertribal Court, the Jamestown S'Klallam Tribal Court, or an administrative forum; the excerpt does not
+      describe steps between the nation and the State.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2017-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,55 @@
+id: ramona-band-of-cahuilla-california-gaming-compact
+kind: gaming-compact
+title: Ramona Band of Cahuilla, California–State of California Gaming Compact
+nations:
+- ramona-band-of-cahuilla
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Ramona Band of Cahuilla, California and the State of California under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Ramona Band of Cahuilla,
+  California and the State of California as of Nov. 21, 2026: 1 original. The order, the kind of each event and
+  which version is in effect are inferred from the list (project analysis); clause summaries and comparisons are
+  a small model''s reading of excerpts.'
+versions:
+- id: 2014-original
+  label: 2014 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2014-01-17'
+    published: '2014-01-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2014-00887
+    locator: 79 Fed. Reg. 3241 (Jan. 17, 2014)
+  source: compact-ca-ramona-band-of-cahuilla-2014-01-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2014.01.17 Ramona Band of Cahuilla Tribal State
+      Gaming Compact_0.pdf
+    sha256: 7240e02664d85d4f73e8bbac49fbf2aa154f597b78efe213c17a930587d01f27
+    pages: 105
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.6. Arbitration.
+    summary: Under section 9.6, a demanded arbitration before a single JAMS arbitrator selects between the parties'
+      proposed tribal gaming regulations, and review of the arbitrator's order is waived.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS. Sec. 15.1 to 15.3.
+    summary: The compact may be amended by mutual written agreement during its term, and either party may request
+      negotiations to extend it or for a new compact no sooner than 18 months before termination.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+found_in:
+- 2026-11-21-gaming-compact-histories

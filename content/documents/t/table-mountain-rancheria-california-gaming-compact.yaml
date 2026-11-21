@@ -1,0 +1,251 @@
+id: table-mountain-rancheria-california-gaming-compact
+kind: gaming-compact
+title: Table Mountain Rancheria–State of California Gaming Compact
+nations:
+- table-mountain-rancheria
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Table Mountain Rancheria and the State of California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Table Mountain Rancheria
+  and the State of California as of Nov. 21, 2026: 1 disapproved compact, 1 original, 2 replacements and 2 extensions.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1998-disapproval
+  label: 1998 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '1998-10-07'
+    published: '1998-12-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+    source: federal-register-98-33798
+    locator: 63 Fed. Reg. 70792 (Dec. 22, 1998)
+  source: compact-ca-table-mountain-rancheria-1998-10-07
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 1998.10.07 Table Mountain Rancheria Disapproval.pdf
+    sha256: c58424dbf1d864eeeafb55a99f6763bea1773b6defe13071c959620d0fbb681e
+    pages: 1
+- id: 1998-original
+  label: 1998 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1998-12-22'
+    published: '1998-12-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-33798
+    locator: 63 Fed. Reg. 70792 (Dec. 22, 1998)
+  source: compact-ca-table-mountain-rancheria-1998-12-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_1998.12.22_table_mountain_rancheria_tribal_state_gaming_compact.pdf
+    sha256: e40373265e8fa188b3d468c6e09fa9d83e759a7f23739609efb8bb2e0b81e00e
+    pages: 143
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 8.3.3 (designation disputes); Sec. 2.7 (arbitral tribunal reference)
+    summary: 'The excerpt shows narrow dispute rules: the State may challenge trade-secret or personal-information
+      designations through binding AAA Commercial Rules arbitration, and workers'' compensation disputes go to the
+      Workers'' Compensation Appeals Board and California courts; if a Tribal court action is declined, Section
+      2.7 refers the matter to an arbitral tribunal under subsection 17.2.10.'
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 2.5 (Amendments); Sec. 2.7
+    summary: Either party may request good-faith negotiations to amend the compact after IGRA changes or a state
+      law changes the permitted Class III gaming types, and the other party must then negotiate in good faith; Section
+      2.7 requires the Governor to negotiate a new compact after certain renewal or termination notices, and the
+      excerpt does not state a time limit for talks or what happens if they fail.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2000-replacement
+  label: 2000 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1998-original
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-table-mountain-rancheria-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2000.05.16 Table Mountain Rancheria Tribal
+      State Gaming Compact.pdf
+    sha256: d278f62992e8f715c66c451e5fa4c11e22fdecfeca51ebb3dab9630f7dfe9c54
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 Voluntary Resolution; Reference to Other Means of Resolution (Secs. 9.2-9.3 also)
+    summary: Disputes first go through written notice and a good-faith meet-and-confer, then either party may seek
+      AAA Commercial Rules arbitration with a binding award (neither party must agree to arbitrate), and otherwise
+      may sue in the U.S. District Court where the Tribe's Gaming Facility is located and the Ninth Circuit, or
+      in a state court if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.0 AMENDMENTS; RENEGOTIATIONS (Secs. 12.1-12.3)
+    summary: The compact may be amended at any time by mutual written agreement, and the Tribe may request renegotiation
+      in writing to add Class III games other than those authorized, but not within 12 months of the effective date,
+      with talks to be scheduled within 30 days; the excerpt does not say what happens if talks fail.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1998-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1998-original
+    change: changed
+    summary: The 1998 compact's Section 2.5 lets either party request good-faith negotiations to amend the compact
+      when IGRA or a state law on Class III gaming changes, whereas the 2000 replacement's Section 12.0 provides
+      for amendment by mutual written agreement and renegotiation at the Tribe's request for other forms of Class
+      III gaming after a 12-month bar, with process standards in Section 12.3; the replacement's own Section 2 is
+      not in the excerpts.
+    locator_before: '2.5'
+    locator_after: Sec. 12.2
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier dispute excerpts are sub-clauses (Section 8.3.3 trade-secret
+      arbitration and Section 13.1.1.2 workers'' compensation disputes), not the 1998 compact''s general dispute
+      section. The earlier renegotiation excerpts include Sections 2.4 to 2.7 (termination, amendment on change
+      in law, and duty to negotiate after termination), which the replacement''s excerpts do not match, and the
+      replacement''s Section 2 is not visible.'
+- id: 2022-extension
+  label: 2022 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-replacement
+  dates:
+    listed: '2022-06-30'
+    published: '2022-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-14054
+    locator: 87 Fed. Reg. 39115 (June 30, 2022)
+  source: compact-ca-table-mountain-rancheria-2022-06-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2022.06.30_table_mountain_rancheria_tribal_state_gaming_comapct.pdf
+    sha256: ce68647654bc1d22e4e19b6d2ca1aef1cbdccadb8730135eaa72a79671a9a940
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+- id: 2024-extension
+  label: 2024 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-replacement
+  dates:
+    listed: '2024-07-01'
+    published: '2024-07-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2024-14350
+    locator: 89 Fed. Reg. 54496 (July 1, 2024)
+  source: compact-ca-table-mountain-rancheria-2024-07-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2024.07.01_table_mountain_rancheria_tribal_state_gaming_compact.pdf
+    sha256: bda290c46807bad9142b4c8a2b578bce8710df6419fb0fc93728cdab1caa9f50
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+- id: 2024-replacement
+  label: 2024 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-replacement
+  - 2022-extension
+  - 2024-extension
+  dates:
+    listed: '2024-12-26'
+    published: '2024-12-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2024-30744
+    locator: 89 Fed. Reg. 105090 (Dec. 26, 2024)
+  source: compact-ca-table-mountain-rancheria-2024
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2024.12.26_table_mountain_rancheria_tribal_state_gaming_compact_redacted.pdf
+    sha256: caa2c221ef14a447d57a45650dfc757c2d98ac49429be91de7bf8d040de5d125
+    pages: 133
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 13.1. Voluntary Resolution; Court Resolution.
+    summary: After written notice and a meet-and-confer, disputes under the compact may be resolved in the U.S.
+      District Court where the Table Mountain Rancheria's gaming facility is located or, if that court lacks jurisdiction,
+      in a state court in the County.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: changed
+    summary: The earlier compact provided notice, a meeting within 10 days, voluntary AAA arbitration 30 days after
+      the first meeting with a binding decision, then federal or state court. The later compact provides a written
+      response within 15 days, a meeting within 30 days, and then federal or state court, with no arbitration step,
+      and limits remedies to those in Section 13.3(a)(ii) and bars damages and attorney fees.
+    locator_before: Sec. 9.1-9.2
+    locator_after: Sec. 13.1-13.2
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

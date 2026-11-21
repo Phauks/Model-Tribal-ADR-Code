@@ -1,0 +1,266 @@
+id: lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin-wisconsin-gaming-compact
+kind: gaming-compact
+title: Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin–State of Wisconsin Gaming Compact
+nations:
+- lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin
+states:
+- WI
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin and
+    the State of Wisconsin under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Lac Courte Oreilles Band
+  of Lake Superior Chippewa Indians of Wisconsin and the State of Wisconsin as of Nov. 21, 2026: 1 original and
+  4 amendments. The order, the kind of each event and which version is in effect are inferred from the list (project
+  analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1992-04-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+  source: compact-wi-lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin-1992-04-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1992.04.20 Lac Courte Oreilles Gaming Compact.pdf
+    sha256: 21d1673559d8f49d4dd12b78c77480f134e65b564a7f854b16fcf864435d16b3
+    pages: 42
+  clauses:
+  - topic: dispute-resolution
+    locator: XXII. Dispute Resolution, A to C
+    summary: A party alleging noncompliance serves written notice, the parties meet within thirty days, and if unresolved
+      within ninety days either party may pursue any remedy otherwise available; the State may also compel the Tribe
+      to follow its Gaming Code through this procedure.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: XXX. Amendment
+    summary: The compact may not be modified, amended or otherwise altered without the prior written agreement of
+      both the State and the Lac Courte Oreilles Band.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1998-amendment
+  label: 1998 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '1998-04-20'
+    published: '1998-04-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-10261
+    locator: 63 Fed. Reg. 19508 (Apr. 20, 1998)
+  source: compact-wi-lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin-1998-04-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508_compliant_1998.04.20_lac_courte_oreilles_tribal_state_gaming_compact.pdf
+    sha256: 016ee78d208df22eb84acc3118ad4c928ea7497debe5559ff2ac3cc6d0430bc3
+    pages: 6
+  clauses:
+  - topic: renegotiation
+    locator: Recitals (Section XXX reference)
+    summary: The Lac Courte Oreilles compact may be amended upon the written agreement of both parties under its
+      Section XXX, and this amendment renews the term for five years to August 16, 2003.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 1998 amendments add Sections XXXIV and XXXV and do not refer to the dispute article (Section XXII),
+      so the earlier dispute article appears to remain in force.
+    locator_before: XXII
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later text is an 8,000-character excerpt of the amendment, which lists
+      several numbered changes. The ''unchanged'' call for the dispute topic is based on the absence of any reference
+      to Section XXII.'
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: added
+    summary: The later amendments add Section XXXV, which lets either party demand renegotiation of the February
+      1998 amendments if the Secretary of the Interior disapproves them or a court holds them unenforceable, then
+      allows a notice of nonrenewal after 30 days of failed talks and sixty days' window, with expiry 180 days after
+      notice; the earlier Section XXX required both parties' written agreement for any amendment.
+    locator_before: XXX
+    locator_after: XXXV
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later text is an 8,000-character excerpt of the amendment, which lists
+      several numbered changes. The ''unchanged'' call for the dispute topic is based on the absence of any reference
+      to Section XXII.'
+- id: 2003-amendment
+  label: 2003 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2003-04-08'
+    published: '2003-04-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-8561
+    locator: 68 Fed. Reg. 17072 (Apr. 8, 2003)
+  source: compact-wi-lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin-2003-04-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2003.04.08 Lac Courte Oreilles Gaming Compact.pdf
+    sha256: 27f06251f79de5b23f0f40008e9d7ddec763476e527304c7220a39a34046c3ad
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Recitals
+    summary: The compact may be amended upon the written agreement of both parties under its Section XXX, and this
+      amendment sets a renewed term under Section XXV.B.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 2003 amendment renews the term under Section XXV.B and does not list the dispute article, so the
+      earlier dispute article appears to remain in force.
+    locator_before: XXII
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: unchanged
+    summary: The amendment cites Section XXX as the basis for amending by written agreement and does not amend Section
+      XXX, so the earlier amendment clause still governs.
+    locator_before: XXX
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2003-amendment-2
+  label: 2003 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2003-07-22'
+    published: '2003-07-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-03-18631
+    locator: 68 Fed. Reg. 43366 (July 22, 2003)
+  source: compact-wi-lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin-2003-07-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508_compliant_2003.07.22_lac_courte_oreilles_tribal_state_gaming_compact.pdf
+    sha256: d5d8de2fdec8d9511d07aa9b4f5ae64f72c9c6af425866007f31f815cff43f93
+    pages: 23
+  clauses:
+  - topic: dispute-resolution
+    locator: 'Section XXII (Dispute Resolution), and Amendment #2 paragraph on Section XXXVII.D'
+    summary: Written notice is followed by a meeting of the Governor's and Tribe's representatives within ten days,
+      then non-binding mediation, then arbitration in which the panel's decision is final and non-appealable.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section XXX.A and XXX.B (Amendment and Periodic Enhancement of Compact Provisions)
+    summary: The compact can be changed only by written agreement of both parties, and either party may propose
+      amendments in the 30 days before each fifth anniversary of July 1, 2004, or the Governor or Tribe may do so
+      before the 25th anniversary, with good faith negotiation and disputes resolved under Section XXII.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: The 2003 compact replaces Section XXII with written notice and a response within 7 days, a negotiation
+      session within 10 days, mandatory non-binding mediation (at least two sessions), and then binding arbitration
+      before a single arbitrator under the Federal Rules of Civil Procedure and Evidence, with federal court for
+      certain listed sections after Section XXII A-D steps. The 1992 compact provided written notice, a meeting
+      within 30 days, and after 90 days any available remedy, with mediation or arbitration only by mutual agreement.
+    locator_before: XXII.A-C
+    locator_after: XXII.C-F
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: changed
+    summary: 'The 2003 amendment restates Section XXX to add a periodic amendment process: the State or the Tribe
+      may propose amendments in set windows around 2004 anniversaries (the Governor, under a Wisconsin session law,
+      may propose at the 25-year point), with good-faith negotiation and disputes over that duty sent to Section
+      XXII; the 1992 text allowed changes only by written agreement of both parties.'
+    locator_before: XXX
+    locator_after: XXX.B
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2022-09-20'
+    published: '2022-09-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-20319
+    locator: 87 Fed. Reg. 57507 (Sept. 20, 2022)
+  source: compact-wi-lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin-2022-09-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508_comp_liant_2022.09.20_lac_courte_oreilles_band_fo_lake_superior_chippewa_indians_tribal_state_gaming_compact.pdf
+    sha256: 157f99cf5c9de2438c4daa811bcf35a63e3c9cddb8ff939d6d0fe1eff4e3ac95
+    pages: 13
+  clauses:
+  - topic: dispute-resolution
+    locator: Third Amendment, paragraph 16 (Section XXXVII.D)
+    summary: Disputes under the data reporting and event wagering arbitration track are heard by a three-member
+      panel in Madison, one member chosen by the Tribe, one by the Department and a third by the two, and the panel's
+      decision is final and non-appealable.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: 'The 2022 Third Amendment adds a process for one kind of dispute: objections to minimum internal control
+      standards go to a meeting within 30 days and then binding arbitration before a three-member panel in Madison
+      (including a certified public accountant), and good-faith negotiation disputes over event wagering standards
+      are sent to the compact''s dispute resolution section. The 1992 compact already had a dispute clause of written
+      notice, a meeting within 30 days, and after 90 days any available remedy, with mediation or arbitration only
+      by mutual agreement.'
+    locator_before: XXII.A-C
+    locator_after: XXXVII paras. 1-4
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

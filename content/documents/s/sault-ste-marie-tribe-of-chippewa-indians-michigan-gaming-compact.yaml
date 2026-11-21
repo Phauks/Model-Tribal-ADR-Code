@@ -1,0 +1,55 @@
+id: sault-ste-marie-tribe-of-chippewa-indians-michigan-gaming-compact
+kind: gaming-compact
+title: Sault Ste. Marie Tribe of Chippewa Indians, Michigan–State of Michigan Gaming Compact
+nations:
+- sault-ste-marie-tribe-of-chippewa-indians
+states:
+- MI
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Sault Ste. Marie Tribe of Chippewa Indians, Michigan and the State of Michigan
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Sault Ste. Marie Tribe of
+  Chippewa Indians, Michigan and the State of Michigan as of Nov. 21, 2026: 1 original. The order, the kind of each
+  event and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1993-original
+  label: 1993 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1993-11-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mi-sault-ste-marie-tribe-of-chippewa-indian-1993
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/michigan/508_compliant_1993.11.30_sault_ste_marie_tribe_of_chippewa_indians_tribal_state_gaming_compact.pdf
+    sha256: db108cada3cbeb95ca75fc76b52074978724edb3cceee007d4384923cb3cc9fb
+    pages: 18
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution, (A) and (B)
+    summary: The party asserting noncompliance serves written notice and representatives meet within thirty days;
+      if the State's allegation is unresolved after ninety days it may serve a notice to cease, and the Tribe may
+      stop or invoke arbitration (the Tribe may invoke arbitration on its own allegations after ninety days) before
+      a three-attorney panel under AAA Commercial Arbitration rules, with each party bearing its own costs; other
+      available remedies are preserved.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 12. Binding Effect, Duration, and Severability, (B) and (C); SECTION 14. Entire Agreement
+    summary: Either party may serve written notice of its right to renegotiate at least one year before the twenty-year
+      term expires and before each later five-year period, the Tribe may request negotiation of a successor compact
+      under IGRA, and the compact stays in force pending IGRA remedies; Section 14 requires any change to be in
+      a writing signed by both.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+found_in:
+- 2026-11-21-gaming-compact-histories

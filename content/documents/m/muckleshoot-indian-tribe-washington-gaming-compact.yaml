@@ -1,0 +1,418 @@
+id: muckleshoot-indian-tribe-washington-gaming-compact
+kind: gaming-compact
+title: Muckleshoot Indian Tribe–State of Washington Gaming Compact
+nations:
+- muckleshoot-indian-tribe
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Muckleshoot Indian Tribe and the State of Washington under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Muckleshoot Indian Tribe
+  and the State of Washington as of Nov. 21, 2026: 1 original and 7 amendments. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1993-original
+  label: 1993 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1993-05-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-wa-muckleshoot-indian-tribe-1993-05-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1993.05.06 Muckleshoot Indian Tribe Gaming
+      Compact.pdf
+    sha256: 78a3f3113692daad4379308f4c67472e9de511e2ac819dd086be010782da874c
+    pages: 57
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XII.C (Dispute Resolution), items 1-6
+    summary: Disputes go through written notice and a meet-and-confer within ten days; if unresolved within twenty
+      days, a party may seek resolution by AAA commercial arbitration at alternating sites, and the arbitrator's
+      decision is final and unappealable; other remedies are preserved.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section XV.D.4 and D.5
+    summary: Either party may request renegotiation after twenty-four months from the opening of the gaming facility,
+      on written notice, with negotiations starting within thirty days; the original terms stay in effect until
+      agreed, and a State-requested renegotiation that fails goes to Section XII.C, which is mandatory and binding.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1995-amendment
+  label: 1995 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '1995-08-21'
+    published: '1995-08-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-20652
+    locator: 60 Fed. Reg. 43512 (Aug. 21, 1995)
+  source: compact-wa-muckleshoot-indian-tribe-1995-08-21
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1995.08.21 Muckleshoot Indian Tribe Tribal
+      State Gaming Compact Amdt I.pdf
+    sha256: caee086c9776a2cb3783dfc6d91f3a0e4fddcaa6669bce05978972a3bc87e349
+    pages: 7
+  clauses:
+  - topic: dispute-resolution
+    locator: Amendment, Section III.H.2 and Section XII.C
+    summary: Disputes over the phase-two conditions go to Section XII.C of the compact, and while the dispute is
+      pending the Tribe may not expand gaming stations, hours or wager limits; the text of Section XII.C is not
+      in the excerpt.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section XV.D.2(a) (Moratorium)
+    summary: Subsections III.D, G, H and I cannot be renegotiated or amended for thirty-six months from the date
+      the State signs, unless a listed event occurs, such as a change in State law, a qualifying court decision,
+      or another tribe obtaining greater terms by compact.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: changed
+    summary: The 1995 amendment adds a 36-month moratorium on renegotiating Sections III.D, G, H and I, with exceptions
+      that keep the earlier state-law and court-decision triggers and add a third exception for another tribe west
+      of the Cascades; the excerpt cuts off before the rest of Section XV.D.
+    locator_before: XV.D.2
+    locator_after: XV.D.2
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later excerpts for the amendment are cut off (the whole-text capture
+      ends at about 8,600 characters), so XV.D.3 to XV.D.6, including the 24-month either-party renegotiation clause,
+      cannot be confirmed. The XV.D text appears under a dispute-heading excerpt and the renegotiation excerpts
+      are the cover and Section III pages. The earlier excerpts are from the 1993 compact text. The XII.C no-expansion
+      sentence is a new rule tied to the III.H.2 dispute, not a change to the dispute steps.'
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '1999-01-28'
+    published: '1999-01-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-1929
+    locator: 64 Fed. Reg. 4459 (Jan. 28, 1999)
+  source: compact-wa-muckleshoot-indian-tribe-1999-01-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_1999.01.28_muckleshoot_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: c48ea2940fec88dadaa2fe39a8b02c622b73db733507e88cbc915723d8c80c44
+    pages: 54
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 16. DISPUTE RESOLUTION.
+    summary: Disputes are resolved under any dispute provisions in the Appendix or, if there are none, under the
+      binding arbitration provisions of the Compact; the excerpt does not name an arbitration body or rules.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15. MORATORIUM
+    summary: The Tribe agrees not to seek an amendment on gambling devices for three years from execution of the
+      Amendment, except if state or federal law is amended, a court decision permits such devices, or another Washington
+      tribe obtains them.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 1999 Second Amendment adds Appendix X (tribal lottery systems) without amending Section XII.C.
+      Appendix Section 16 only routes disputes under the appendix to any procedures the appendix makes applicable,
+      or otherwise to the compact's binding arbitration provisions. The 1993 clause (written notice, a meeting within
+      10 days, then AAA arbitration after 20 days, final and unappealable) stays in place.
+    locator_before: XII.C
+    locator_after: Appendix X Sec. 16; 10.3
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The Second Amendment amends only Section III.A and adds Appendix X, and Section XV.D is not among the
+      provisions it amends, so the earlier renegotiation clause still governs.
+    locator_before: XV.D.2
+    locator_after: III.A
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2002-amendment
+  label: 2002 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '2002-02-19'
+    published: '2002-02-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-02-3858
+    locator: 67 Fed. Reg. 7393 (Feb. 19, 2002)
+  source: compact-wa-muckleshoot-indian-tribe-2002-02-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2002.02.19  Muckleshoot Indian Tribe Tribal
+      State Gaming Compact Amdt III.pdf
+    sha256: da3606d52f452d89f202449074366f639f5229c78c60f862203c579f793ac0e1
+    pages: 18
+  clauses:
+  - topic: renegotiation
+    locator: 9. Section XV, D. Amendments/Renegotiations
+    summary: Amendments may be made at any time by mutual written agreement, and Subsections III.D., G., H. and
+      I. are not subject to renegotiation for 36 months from the amendment's signature unless listed events occur
+      (state law change, court decision, or another tribe's expanded gaming).
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-muckleshoot-indian-tribe-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2007.05.31 Muckleshoot Indian Tribe Tribal
+      State Gaming Compact.pdf
+    sha256: f029ca94b864ba68e02569a23c91042ee2f19a72a93f9c1e39cc6b083ba108b7
+    pages: 55
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 17. DISPUTE RESOLUTION
+    summary: Disputes under Appendix X2 are resolved under any dispute provisions in the Appendix or otherwise under
+      the Dispute Resolution provisions of the Compact, which the excerpt does not reproduce.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15.2 Post-Moratorium
+    summary: After the moratorium in Section 15.1 expires, the Tribe may seek an amendment on listed grounds, including
+      a change in federal or state law, a final court decision, or another Washington tribe obtaining materially
+      different equipment or higher wagers, subject to good-faith negotiation.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 2007 Fourth Amendment adds Appendix X2 (tribal lottery systems) without amending Section XII.C.
+      Appendix Section 17 only routes disputes under the appendix to its own provisions or otherwise to the compact's
+      Dispute Resolution provisions. The 1993 clause (written notice, a meeting within 10 days, then AAA arbitration
+      after 20 days) stays in place.
+    locator_before: XII.C
+    locator_after: Appendix X2 Sec. 17
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The Fourth Amendment's list of changes covers only the new Appendix X2 and the recognition of Tribal
+      Lottery Systems under Section III, and Section XV.D is not among them, so the earlier renegotiation clause
+      still governs.
+    locator_before: XV.D.2
+    locator_after: Section III
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2019-amendment
+  label: 2019 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '2019-04-16'
+    published: '2019-04-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2019-07473
+    locator: 84 Fed. Reg. 15630 (Apr. 16, 2019)
+  source: compact-wa-muckleshoot-indian-tribe-2019-04-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2019.04.16_muckleshoot_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: 5f40b3eaa16ad8ab3ed3918d17a77dad611695b32e4d3436c2b2eca4e3b3c182
+    pages: 5
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4. Dispute Resolution
+    summary: The State and Tribe must meet and attempt to resolve disputes over the Addendum terms, and if they
+      cannot reach agreement either party may use the dispute resolution provisions of the Compact, which the excerpt
+      does not reproduce.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: changed
+    summary: 'The 2019 Fifth Amendment''s addendum adds a step for disputes over its terms, such as the number of
+      player terminals: the State and Tribe must meet and attempt to resolve the dispute not later than 30 days
+      before an increased allocation takes effect, and then either may use the compact''s dispute resolution provisions.
+      The 1993 Section XII.C (notice, a meeting within 10 days, then AAA arbitration) is not amended.'
+    locator_before: XII.C
+    locator_after: Addendum Sec. 4.1-4.2
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The Fifth Amendment's list of changes (new Section III.N, Appendix X2 Sections 12.1, 13.4, 14.4 and
+      14.5, and an incorporated Addendum) is complete in the excerpt and does not include Section XV.D, so the earlier
+      renegotiation clause still governs.
+    locator_before: XV.D.2
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '2021-09-15'
+    published: '2021-09-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-19844
+    locator: 86 Fed. Reg. 51370 (Sept. 15, 2021)
+  source: compact-wa-muckleshoot-indian-tribe-2021-09-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2021.09.15 Muckleshoot Indian Tribe Tribal
+      State Gaming Compact.pdf
+    sha256: e0e1e7c27908fb06fe55fa4311e8eb94a58d8ec2a944f9e2efb9b41d030c259d
+    pages: 24
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+- id: 2021-amendment-2
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '2021-12-27'
+    published: '2021-12-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-27976
+    locator: 86 Fed. Reg. 73313 (Dec. 27, 2021)
+  source: compact-wa-muckleshoot-indian-tribe-2021-12-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2021.12.20 Muckleshoot Indian Tribe Tribal
+      State Gaming Compact.pdf
+    sha256: eecb214864f03c7458c0e78ecc188925cb97a9e044b50f8dc63ed3de769f1ce0
+    pages: 238
+  clauses:
+  - topic: dispute-resolution
+    locator: Section C. Dispute Resolution, items 1 to 6
+    summary: Either party gives written notice, the parties meet and confer within ten days, and if unresolved either
+      party may seek arbitration under AAA Commercial Rules, whose decision is final and unappealable; mediation
+      is available only by mutual agreement.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Section XV.D (Amendments/Renegotiations), items 1 to 4
+    summary: Either Muckleshoot or the State may request renegotiation when circumstances merit it, negotiations
+      begin within thirty days, and current terms stay in effect until the parties agree; the compact is also amended
+      if the State gives another tribe more gaming rights.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: unchanged
+    summary: 'The later compact''s Section XII.C has the same six dispute steps as the earlier compact: written
+      notice, meet and confer within ten days, AAA commercial arbitration within twenty days of the first meeting,
+      a hearing within fourteen days of naming the arbitrator, a final decision, and a savings clause.'
+    locator_before: XII.C
+    locator_after: XII.C
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: changed
+    summary: The later compact's Section XV.D is a single either-party renegotiation right for any provision, without
+      the earlier contractual triggers, the 24-month waiting period, or the mandatory binding fallback to Section
+      XII.C, and it adds an automatic amendment when the State gives another tribe broader terms.
+    locator_before: XV.D
+    locator_after: XV.D.1
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

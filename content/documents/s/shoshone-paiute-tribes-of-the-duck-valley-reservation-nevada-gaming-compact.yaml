@@ -1,0 +1,55 @@
+id: shoshone-paiute-tribes-of-the-duck-valley-reservation-nevada-gaming-compact
+kind: gaming-compact
+title: Shoshone-Paiute Tribes of the Duck Valley Reservation, Nevada–State of Nevada Gaming Compact
+nations:
+- shoshone-paiute-tribes-of-the-duck-valley-reservation
+states:
+- NV
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Shoshone-Paiute Tribes of the Duck Valley Reservation, Nevada and the State
+    of Nevada under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Shoshone-Paiute Tribes of
+  the Duck Valley Reservation, Nevada and the State of Nevada as of Nov. 21, 2026: 1 original. The order, the kind
+  of each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2010-original
+  label: 2010 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2010-07-06'
+    published: '2010-07-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2010-16214
+    locator: 75 Fed. Reg. 38834 (July 6, 2010)
+  source: compact-nv-shoshone-paiute-tribes-of-the-duck-valley-reservation-2010-07-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/nevada/508_compliant_2010.07.06_shoshone-pauite_tribes_tribal_state_gaming_compact.pdf
+    sha256: e078a4934994f5285c15946373447ad249dfd3e0fe7fad49e0f9c4452b9c1ff4
+    pages: 40
+  clauses:
+  - topic: dispute-resolution
+    locator: ARTICLE XIV. DEFAULT AND TERMINATION, 1. Default; ARTICLE IV. LIMITED WAIVER OF SOVEREIGN IMMUNITY
+    summary: Disputes under the compact are to be resolved in a federal court of competent jurisdiction under the
+      limited waiver in Article IV; for substantial and continuing default, the alleging party gives written notice
+      demanding cure within sixty days, the parties then meet within thirty days, and if unresolved thirty days
+      after meeting either party may pursue any lawful remedy including an action under 25 U.S.C. 2710(d)(7)(A),
+      with mediation or arbitration only by mutual written agreement.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: ARTICLE XV. AMENDMENTS
+    summary: The compact may be amended only with the consent of both parties by written instrument signed by both;
+      if applicable law changes substantially the parties agree to negotiate in good faith to amend it.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+found_in:
+- 2026-11-21-gaming-compact-histories

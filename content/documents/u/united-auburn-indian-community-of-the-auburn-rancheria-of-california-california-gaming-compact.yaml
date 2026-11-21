@@ -1,0 +1,229 @@
+id: united-auburn-indian-community-of-the-auburn-rancheria-of-california-california-gaming-compact
+kind: gaming-compact
+title: United Auburn Indian Community of the Auburn Rancheria of California–State of California Gaming Compact
+nations:
+- united-auburn-indian-community-of-the-auburn-rancheria-of-california
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for United Auburn Indian Community of the Auburn Rancheria of California and the
+    State of California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for United Auburn Indian Community
+  of the Auburn Rancheria of California and the State of California as of Nov. 21, 2026: 1 original, 1 amendment
+  and 2 replacements. The order, the kind of each event and which version is in effect are inferred from the list
+  (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-united-auburn-indian-community-of-the-auburn-rancheria-of-california-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2000.05.16 United Auburn Indian Community Tribal
+      State Gaming Compact.pdf
+    sha256: c790179c285956ba969e8cf269926ab337e537beaf49545fe54f3f0a26bfe36e
+    pages: 63
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 Voluntary Resolution; Reference to Other Means of Resolution (Secs. 9.2-9.3 also)
+    summary: Disputes first go through written notice and a good-faith meet-and-confer, then either party may seek
+      AAA Commercial Rules arbitration with a binding award (neither party must agree to arbitrate), and otherwise
+      may sue in the U.S. District Court where the Tribe's Gaming Facility is located and the Ninth Circuit, or
+      in a state court if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.0 AMENDMENTS; RENEGOTIATIONS (Secs. 12.1-12.3)
+    summary: The compact may be amended at any time by mutual written agreement, and the Tribe may request renegotiation
+      in writing to add Class III games other than those authorized, but not within 12 months of the effective date,
+      with talks to be scheduled within 30 days; the excerpt does not say what happens if talks fail.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2004-amendment
+  label: 2004 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2004-09-02'
+    published: '2004-09-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-04-20000
+    locator: 69 Fed. Reg. 53733 (Sept. 2, 2004)
+  source: compact-ca-united-auburn-indian-community-of-the-auburn-rancheria-of-california-2004-09-02
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2004.09.02_united_auburn_indian_community_tribal_state_gaming_compact.pdf
+    sha256: e7a3df12df36b880ef611cb795caf90d938e7f517b48fdc5b6168679d6afbe34
+    pages: 51
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 10.8.9 (Arbitration)
+    summary: If no County agreement on off-reservation project mitigation is reached within 55 days of the Final
+      TEIR, any party may demand binding arbitration before a single arbitrator under AAA Commercial Rules, limited
+      to choosing one party's last best offer, and the Tribe waives sovereign immunity for the arbitrator's jurisdiction
+      and enforcement.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2015-replacement
+  label: 2015 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 2000-original
+  - 2004-amendment
+  dates:
+    listed: '2015-12-23'
+    published: '2015-12-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2015-32347
+    locator: 80 Fed. Reg. 79926 (Dec. 23, 2015)
+  source: compact-ca-united-auburn-indian-community-of-the-auburn-rancheria-of-california-2015-12-23
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2015.12.23_united_auburn_indian_community_tribal_state_gaming_compact_0.pdf
+    sha256: 0b1af16bd642ab0adb0d80df01fcd66bca22202c5769c1fb2c92d9f5e56718b9
+    pages: 86
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 (steps (a)-(e)); Sec. 9.2 Arbitration Rules
+    summary: Disputes go through written notice, a 15-day written response, a meeting and negotiation within 30
+      days, then either party may seek AAA Commercial Rules arbitration (binding award, but neither party must agree
+      to arbitrate), and otherwise may sue in the U.S. District Court in the facility's district or a state court
+      in the county.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.1 (Amendment by Agreement); Sec. 12.2 (Negotiations for a New Compact); Sec. 12.3
+    summary: The compact may be amended at any time by mutual written agreement with each party's written consent,
+      and either party may request negotiations to extend the term or enter a new compact no sooner than 18 months
+      before termination; requests are answered with a negotiation schedule within 45 days if all parties agree
+      in writing to negotiate.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: changed
+    summary: The later compact adds a written response within 15 days and sets the meeting at 30 days after notice
+      (the earlier required a meeting within 10 days), and provides court proceedings in the federal district where
+      the Gaming Facility is located or a state court in the County, with the Section 9.4(a)(2) remedies as the
+      sole remedies and no damages or attorney fees. Voluntary arbitration 30 days after the first meeting is retained,
+      but the earlier reference to failure to negotiate in good faith claims and the Ninth Circuit is gone.
+    locator_before: Sec. 9.1(b)-(d)
+    locator_after: Sec. 9.1(b)-(f)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: changed
+    summary: The 2015 replacement drops the earlier Section 12.2 right to seek renegotiation to add other Class
+      III games, adds a path to a new compact with an automatic one-year extension (Section 12.2), and lets the
+      Tribe continue under the compact at reduced rates after negotiations if exclusivity is lost (Section 12.4),
+      where the earlier Section 12.4 allowed termination only.
+    locator_before: '12.2'
+    locator_after: 12.2, 12.4
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2018-replacement
+  label: 2018 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2015-replacement
+  dates:
+    listed: '2018-01-22'
+    published: '2018-01-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2018-01058
+    locator: 83 Fed. Reg. 3015 (Jan. 22, 2018)
+  source: compact-ca-united-auburn-indian-community-of-the-auburn-rancheria-of-california-2018-01-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2018.01.22_united_auburn_indian_community_tribal_state_gaming_compact.pdf
+    sha256: 642440e67ee43d506b7899bca9255e4442a507938475cd64b2810972c253a74c
+    pages: 120
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 13.1. Voluntary Resolution; Reference to Other Means of Resolution.
+    summary: Disputes go first through written notice, a written response within fifteen days and a meet-and-confer
+      within thirty days; either party may then seek arbitration before a JAMS arbitrator (neither is required to
+      agree), and unresolved disputes may go to the U.S. District Court or a state court of competent jurisdiction.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: Sec. 15.2. Negotiations for a New Compact.
+    summary: The compact may be amended by mutual written agreement; either party may request talks on an extension
+      or new compact no sooner than 18 months before the termination date, and Sec. 15.4 allows a request to amend
+      if the Native nation loses exclusivity over Gaming Devices.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2015-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2015-replacement
+    change: changed
+    summary: The 2018 compact keeps the 2015 amendment, new-compact negotiation, and loss-of-exclusivity provisions
+      in substance (renumbered 15.1 to 15.4) but adds an automatic two-year extension while both parties are negotiating
+      toward a new or amended compact, where the 2015 Section 12.2 provided a one-year extension.
+    locator_before: 12.1-12.4
+    locator_after: 15.1-15.4
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2018 dispute excerpt begins with the tail of a sentence cross-referring
+      to Section 13.0 ''dispute resolution provisions'', whose text is not in the excerpts, so the State-Tribe process
+      must be read in full. The 2018 excerpt cross-references the term provision as Section 14.2.1, where the 2015
+      text cross-references Section 11.2.1. The 2018 Section 11.9 arbitration is a County-Tribe process and the
+      earlier excerpts do not show a comparable Section 11.9.'
+found_in:
+- 2026-11-21-gaming-compact-histories

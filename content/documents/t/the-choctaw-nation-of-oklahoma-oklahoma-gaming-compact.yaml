@@ -1,0 +1,97 @@
+id: the-choctaw-nation-of-oklahoma-oklahoma-gaming-compact
+kind: gaming-compact
+title: The Choctaw Nation of Oklahoma–State of Oklahoma Gaming Compact
+nations:
+- the-choctaw-nation-of-oklahoma
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for The Choctaw Nation of Oklahoma and the State of Oklahoma under 25 U.S.C. §
+    2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for The Choctaw Nation of Oklahoma
+  and the State of Oklahoma as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event and
+  which version is in effect are inferred from the list (project analysis); clause summaries and comparisons are
+  a small model''s reading of excerpts.'
+versions:
+- id: 2005-original
+  label: 2005 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2005-02-09'
+    published: '2005-02-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-05-2462
+    locator: 70 Fed. Reg. 6903 (Feb. 9, 2005)
+  source: compact-ok-the-choctaw-nation-of-oklahoma-2005
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2005.02.09 Choctaw Nation Deemed Approved Compact.pdf
+    sha256: c54f08c247419209c1f06d8969ae4ba61a73a4b239b510e37d8016faaa9b44f4
+    pages: 52
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION
+    summary: Either party gives written notice and representatives meet within thirty days; either party may then
+      refer the dispute to AAA arbitration, with awards subject to enforcement or de novo review by a federal district
+      court.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, subsection B
+    summary: Within 180 days before the term or any renewal expires, either the Tribe or the State, acting through
+      its Governor, may request renegotiation of subsections A and E of Part 11.
+    verification: read-in-full
+    reviewer: small model, first pass
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2005-original
+  dates:
+    listed: '2018-08-17'
+    published: '2018-08-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-17728
+    locator: 83 Fed. Reg. 41102 (Aug. 17, 2018)
+  source: compact-ok-the-choctaw-nation-of-oklahoma-2018-08-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2018.08.17 Choctaw Nation of Oklahoma Compact
+      amendment.pdf
+    sha256: 21a7fb22cd6be01d5351addd9a97abf8f1601167616d23a2d541d562e6ef4948
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2005-original
+    change: unchanged
+    summary: The 2018 supplement's three parts (title, terms and authority) do not amend Part 12 of the 2005 compact,
+      and its Part 2.C says the table-game operations are treated as subject to the Compact's terms for all purposes,
+      so the earlier Part 12 arbitration process continues to govern.
+    locator_before: Part 12, para. 2
+    locator_after: Part 2.C
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2005-original
+    change: unchanged
+    summary: The supplement does not amend Part 15 of the 2005 compact, and by Part 2.C its operations remain subject
+      to the Compact's terms, so the earlier Part 15.B renegotiation right for Part 11 subsections A and E continues
+      to apply.
+    locator_before: Part 15.B
+    locator_after: Part 2.C
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

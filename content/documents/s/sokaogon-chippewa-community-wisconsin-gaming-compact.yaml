@@ -1,0 +1,274 @@
+id: sokaogon-chippewa-community-wisconsin-gaming-compact
+kind: gaming-compact
+title: Sokaogon Chippewa Community, Wisconsin–State of Wisconsin Gaming Compact
+nations:
+- sokaogon-chippewa-community
+states:
+- WI
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Sokaogon Chippewa Community, Wisconsin and the State of Wisconsin under 25
+    U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Sokaogon Chippewa Community,
+  Wisconsin and the State of Wisconsin as of Nov. 21, 2026: 1 original and 4 amendments. The order, the kind of
+  each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1992-02-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-wi-sokaogon-chippewa-community-1992-02-13
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1992.02.13 Sokaogan Chippewa Community Tribal
+      State Gaming Compact.pdf
+    sha256: b919e8e3861b8e8d19bae3ed41053d4ce04ac388373a97c6f2e0f2e14e3dbe9e
+    pages: 46
+  clauses:
+  - topic: dispute-resolution
+    locator: XXII. Dispute Resolution, A to C
+    summary: A party alleging noncompliance serves written notice, the State and Sokaogon Chippewa Community meet
+      within thirty days, and if unresolved within ninety days either party may pursue any remedy otherwise available;
+      mediation or arbitration is used only by mutual agreement.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1998-amendment
+  label: 1998 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '1998-04-20'
+    published: '1998-04-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-10260
+    locator: 63 Fed. Reg. 19508 (Apr. 20, 1998)
+  source: compact-wi-sokaogon-chippewa-community-1998-04-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1998.04.20  Sokaogon Chippewa Community Tribal
+      State Gaming Compact.pdf
+    sha256: 02e6016f5c28afeb17d0a5cedea22613cc49612a99c303c140217c9bd613490e
+    pages: 5
+  clauses:
+  - topic: renegotiation
+    locator: Recitals (Section XXX reference)
+    summary: The Sokaogon compact may be amended upon the written agreement of both parties under its Section XXX,
+      and this amendment sets a five-year renewal to August 22, 2003.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: added
+    summary: The 1998 amendment creates Section XXXIII, under which the parties must meet on the Tribe's request
+      to negotiate more favorable terms from other Wisconsin compacts, and Section XXXV, under which a court ruling
+      against the amendments triggers a 30-day renegotiation period followed by a notice of nonrenewal that takes
+      effect 180 days later; the earlier compact's amendment clause (Section XXX) is cited but its text is not shown.
+    locator_after: XXXIII; XXXV
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 1998 document is an amendment that renews the term to August 22, 2003
+      and creates Sections XXXII to XXXV. The file cuts off during the seventh numbered item, so later amendment
+      items are not visible. The earlier excerpts show Section XXII but not the Section XXX amendment clause.'
+- id: 2003-amendment
+  label: 2003 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2003-07-03'
+    published: '2003-07-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-03-16825
+    locator: 68 Fed. Reg. 39964 (July 3, 2003)
+  source: compact-wi-sokaogon-chippewa-community-2003-07-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2003.07.03 Sokaogan Chippewa Community Tribal
+      State Gaming Compact.pdf
+    sha256: 0f56322f7308ab05a7149f78f62630933a4b8cd6193148a847fbcf640c2dab7d
+    pages: 28
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XXII. DISPUTE RESOLUTION, subsections C (Negotiation), D (Mediation) and DI (Arbitration, as
+      printed)
+    summary: The compact provides for written notice with a response within seven days, a negotiation session within
+      ten days, non-binding mediation with a mediator, and then arbitration before a single arbitrator if the dispute
+      remains unresolved.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section XXX. AMENDMENT AND PERIODIC ENHANCEMENT OF COMPACT PROVISIONS, subsections A-B
+    summary: The compact may be amended by written agreement of both parties, and either party may propose amendments
+      in the thirty days before each fifth or twenty-fifth anniversary of July 1, 2004, with good faith negotiation
+      and disputes resolved under Section XXII.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: The 1992 compact provides written notice, a meeting within 30 days, and, after 90 days, any remedy
+      otherwise available. The 2003 amendment deletes that Section XXII and provides negotiation (a meeting within
+      ten days of notice), mandatory non-binding mediation of at least two sessions, then arbitration on either
+      party's demand before a single arbitrator that binds the parties, with court actions in federal district court
+      for listed sections.
+    locator_before: Sec. XXII.A
+    locator_after: Sec. XXII.A-G
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: added
+    summary: The 2003 amendment adds reopeners at the fifth and twenty-fifth anniversaries of July 1, 2004, under
+      which either party (and for the twenty-fifth, the State by the Governor or legislative enactment) may propose
+      amendments and the parties must negotiate in good faith, with disputes over that duty sent to Section XXII;
+      the earlier compact's amendment clause (Article XXX) is cited but not shown.
+    locator_after: not clearly printed (reopener text sits just before amendment item 31)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2014-amendment
+  label: 2014 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2014-06-09'
+    published: '2014-06-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2014-13284
+    locator: 79 Fed. Reg. 32975 (June 9, 2014)
+  source: compact-wi-sokaogon-chippewa-community-2014-06-09
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2014.06.09 Sokaogon Chippewa Tribal State Gaming
+      Compact.pdf
+    sha256: 56e6bf1580150a55d1de2f1f0f59f7dd09ae14967b5be9c17a8486dbcb9be1ee
+    pages: 2
+  clauses:
+  - topic: renegotiation
+    locator: WHEREAS clause (referring to Section XXX); amendment of Section XXXII.A.5
+    summary: The compact allows written amendments at any time upon mutual agreement, and this 2013 amendment deletes
+      the Forest and Langlade County limitation from the local government payment provision.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 2013 amendment states that it amends only Section XXXII.A.5, so Section XXII is not among the provisions
+      amended and the existing dispute process still governs; the Section XXII text shown in the earlier 1992 excerpt
+      is not the text in force after the 2003 amendment in this batch.
+    locator_before: XXII
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The file does not show the 1992 compact text that was in force when this
+      amendment was signed (the 2003 amendment in this batch rewrote Section XXII, so the dispute process in force
+      may differ from the 1992 excerpt quoted here). The 2013 amendment is unchanged in its other sections by its
+      own terms. The Department of the Interior letter approves it and the page shows a DRAFT header in the excerpt.'
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 2013 amendment changes only Section XXXII.A.5 (a county reference in the local-government payment),
+      so the amendment clause and reopeners are not amended; the recital restates that Section XXX allows written
+      amendments by mutual agreement.
+    locator_after: XXX (recital); XXXII.A.5 (amended)
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The file does not show the 1992 compact text that was in force when this
+      amendment was signed (the 2003 amendment in this batch rewrote Section XXII, so the dispute process in force
+      may differ from the 1992 excerpt quoted here). The 2013 amendment is unchanged in its other sections by its
+      own terms. The Department of the Interior letter approves it and the page shows a DRAFT header in the excerpt.'
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2022-11-17'
+    published: '2022-11-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-25038
+    locator: 87 Fed. Reg. 69040 (Nov. 17, 2022)
+  source: compact-wi-sokaogon-chippewa-community-2022-11-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508_compliant_202.11.17_sokaogon_chippewa_community_tribal_state_gaming_compact.pdf
+    sha256: 313ee58e53167e2bd851379b7b8771e1f06eb359fe7eae9619d270a1ce8f9099
+    pages: 13
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XXXVII, paragraphs 3-4 (arbitration), as printed; cross-reference to Section XXIII (Dispute
+      Resolution)
+    summary: Under Section XXXVII as printed, a three-member arbitration panel sitting in Madison, Wisconsin, with
+      one arbitrator chosen by the Tribe, one by the Department and one by the other two, decides the dispute, and
+      its decision is final and non-appealable.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Opening recitals of the Third Amendment
+    summary: The compact may be amended by written agreement of the Tribe and State, and this Third Amendment, executed
+      by both parties as of the last signature date, adds event wagering and technical updates.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: The 1992 compact provides notice, a 30-day meeting, then any available remedy after 90 days, with arbitration
+      only by mutual agreement. The 2022 Third Amendment renumbers Section XXII to XXIII and adds, for objections
+      to minimum internal control standards, a meeting and then a demand by either the Native nation or the Division
+      for binding arbitration before a three-member panel in Madison, Wisconsin; the amendment does not itself restate
+      the general dispute section.
+    locator_before: Sec. XXII
+    locator_after: Sec. XXXVII (MICS objections); renumbering of XXII to XXIII
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

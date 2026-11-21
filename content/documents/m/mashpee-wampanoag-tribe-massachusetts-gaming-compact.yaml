@@ -1,0 +1,70 @@
+id: mashpee-wampanoag-tribe-massachusetts-gaming-compact
+kind: gaming-compact
+title: Mashpee Wampanoag Tribe–State of Massachusetts Gaming Compact
+nations:
+- mashpee-wampanoag-tribe
+states:
+- MA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Mashpee Wampanoag Tribe and the State of Massachusetts under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Mashpee Wampanoag Tribe and
+  the State of Massachusetts as of Nov. 21, 2026: 1 disapproved compact and 1 original. The order, the kind of each
+  event and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 2012-disapproval
+  label: 2012 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2012-10-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-ma-mashpee-wampanoag-tribe-2012-10-12
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/massachusetts/508_compliant_2012.10.12_mashpee_wampanoag_tribe_disapproval_letter.pdf
+    sha256: 264d99246c14be429399d181225a99c901a4d85b6bebeac7a45b18c22cbdc5c7
+    pages: 98
+- id: 2014-original
+  label: 2014 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2014-02-03'
+    published: '2014-02-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2014-02183
+    locator: 79 Fed. Reg. 6213 (Feb. 3, 2014)
+  source: compact-ma-mashpee-wampanoag-tribe-2014
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/massachusetts/508_compliant_2014.02.03_mashpee_wampanoag_tribal_state_gaming_compact.pdf
+    sha256: 37fc991fbfab982a387b9b8070382dbdcd272bfab757eac0cc0cd690c4b2a23f
+    pages: 58
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 21. Dispute Resolution, subparts 21.1 to 21.8
+    summary: After written notice and a 30-day meeting, a dispute may go to AAA arbitration, and the arbitrators'
+      decision is final, binding and non-appealable, enforceable in the United States District Court for the District
+      of Massachusetts or, if federal jurisdiction is lacking, in State court.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Part 23. Amendments and Modifications, subpart 23.1
+    summary: The compact may be modified or amended by written agreement of both parties, subject to approval by
+      the General Court and by the Secretary of the Interior where required by law; subpart 23.2 governs requests
+      to amend and is not fully in the excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,59 @@
+id: ponca-tribe-of-nebraska-iowa-gaming-compact
+kind: gaming-compact
+title: Ponca Tribe of Nebraska–State of Iowa Gaming Compact
+nations:
+- ponca-tribe-of-nebraska
+states:
+- IA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Ponca Tribe of Nebraska and the State of Iowa under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Ponca Tribe of Nebraska and
+  the State of Iowa as of Nov. 21, 2026: 1 original. The order, the kind of each event and which version is in effect
+  are inferred from the list (project analysis); clause summaries and comparisons are a small model''s reading of
+  excerpts.'
+versions:
+- id: 2021-original
+  label: 2021 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2021-03-05'
+    published: '2021-03-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2021-04499
+    locator: 86 Fed. Reg. 12965 (Mar. 5, 2021)
+  source: compact-ia-ponca-tribe-of-nebraska-2021
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/iowa/508 Compliant 2021.03.05 Ponca Tribe Tribal State Gaming Compact_0.pdf
+    sha256: 88944dd5b42cacec5b03932f370f5af690cc053ce17e3d0679f2b7bb0ca72311
+    pages: 58
+  clauses:
+  - topic: dispute-resolution
+    locator: 20. BINDING DISPUTE RESOLUTION FOR NON-MATERIAL BREACH
+    summary: For a non-material breach, the party asserting it gives written notice, the parties meet and confer
+      within 15 days, and if unresolved the complaining party may demand a cure within 10 days; if the demand is
+      rejected or ignored, the parties go to AAA Commercial Mediation and then binding arbitration under AAA rules
+      before one or three arbitrators, with the non-prevailing party paying arbitration costs.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: 19. AMENDMENTS AND WAIVERS; 31. RENEGOTIATION
+    summary: The terms may be amended only by written agreement of the parties, effective when the Secretary approves;
+      appendices and the technical standards of Sections 2 and 8 may be amended by agreement without Secretary approval;
+      renegotiations under Section 41 are conducted in good faith as a request to negotiate a compact under the
+      Act.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+found_in:
+- 2026-11-21-gaming-compact-histories

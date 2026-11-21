@@ -1,0 +1,268 @@
+id: shakopee-mdewakanton-sioux-community-of-minnesota-minnesota-video-games-of-chance-compact
+kind: gaming-compact
+title: Shakopee Mdewakanton Sioux Community of Minnesota–State of Minnesota Video Games of Chance Compact
+nations:
+- shakopee-mdewakanton-sioux-community-of-minnesota
+states:
+- MN
+jurisdictions:
+- level: multiple
+  note: Class III video games of chance compact for Shakopee Mdewakanton Sioux Community of Minnesota and the State
+    of Minnesota under 25 U.S.C. § 2710(d).
+summary: 'The Class III video games of chance compact documents the Office of Indian Gaming lists for Shakopee Mdewakanton
+  Sioux Community of Minnesota and the State of Minnesota as of Nov. 21, 2026: 1 original, 1 replacement and 4 amendments.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1990-original
+  label: 1990 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1990-04-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mn-shakopee-mdewakanton-sioux-community-of-minnesota-1990-04-02
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_1990.04.02_shakopee_mdewakanton_sioux_community_tribal_state_gaming_compact.pdf
+    sha256: 18e84c5016e5534369dc24a0843a4d03428a678c5b82e263e101b6d3319fd46e
+    pages: 18
+  clauses:
+  - topic: renegotiation
+    locator: Section 2.2 Renegotiation
+    summary: Either the State or the Community may request in writing, by certified mail, negotiations to amend,
+      replace or repeal the compact; the parties have 180 days to negotiate before IGRA procedures and remedies
+      apply, and the compact stays in effect meanwhile.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 1991-replacement
+  label: 1991 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1990-original
+  dates:
+    listed: '1991-10-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mn-shakopee-mdewakanton-sioux-community-of-minnesota-1991-10-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_1991.10.03_shakopee_mdewakanton_indian_community_tribal_state_gaming_compact.pdf
+    sha256: 17453788b8a019e5928d3f765aaf10cccd8938cb42476a028a09162bfd0dc946
+    pages: 18
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 10 (Effect of Breach)
+    summary: If a tribal government bound by the consent judgment breaches it or the compact, the State directs
+      legal action at that government only; the excerpt describes no notice, negotiation or arbitration steps.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 2.2 Renegotiation
+    summary: The State or the Community may request negotiations to amend, replace or repeal the compact, which
+      stays in effect meanwhile; the parties have 180 days to negotiate, after which IGRA procedures apply.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1990-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1990-original
+    change: changed
+    summary: The 1991 replacement keeps the Section 2.2 procedure (a written request by certified mail, 180 days
+      to negotiate, then IGRA procedures). It adds Section 2.2(2), under which the nation may not request negotiations
+      to amend, replace or repeal Section 2.3(1) and (2) and waives that right. It also adds Section 2.3, under
+      which the nation waives any right to request a compact for a Class III game the State permits only in conjunction
+      with a private social bet.
+    locator_before: '2.2'
+    locator_after: 2.2(2), 2.3
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 1990 text of Section 2.2 is partly garbled in the excerpt, so no earlier
+      quotation is given. The 1991 Section 2.2 and 2.3 are visible.'
+- id: 2002-amendment
+  label: 2002 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-replacement
+  dates:
+    listed: '2002-09-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mn-shakopee-mdewakanton-sioux-community-of-minnesota-2002-09-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/idc-038311.pdf
+    sha256: d1e2250942826af36e04ca7d33e79fc3cf107d7c88de7e0eb2bd0ebf958ca01a
+    pages: 8
+  clauses:
+  - topic: renegotiation
+    locator: Section 6.12 (as cited in the amendment preamble)
+    summary: The amendment is made under Section 6.12 of the compact and is limited to permitting cashless ticket
+      devices; the excerpt does not show request or time-limit terms.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-replacement
+    change: unchanged
+    summary: The 1991 compact's Section 2.2 (renegotiation, including the limit in 2.2(2) on requests to amend Section
+      2.3) is not among the sections amended. The 2002 second amendment is 'for the express and limited purpose'
+      of permitting cashless ticket devices, amending Sections 6.9(6), 6.9(9), 6.9(11) and 6.9(16) and adding 6.9(17).
+      Section 2.2 is therefore unchanged.
+    locator_before: 2.2(2)
+    locator_after: Amendment paras. 1-5
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-replacement
+  dates:
+    listed: '2021-07-02'
+    published: '2021-07-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-14218
+    locator: 86 Fed. Reg. 35326 (July 2, 2021)
+  source: compact-mn-shakopee-mdewakanton-sioux-community-of-minnesota-2021-07-02
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_2021.07.02_shakopee_mdewakanton_sioux_community_tribal_state_gaming_compact.pdf
+    sha256: 1198b8ed3b35921e9774a05884768a76bec9e5ae475e8bed57d0d90a7eb7276f
+    pages: 1
+  clauses:
+  - topic: renegotiation
+    locator: Section 6.12 (as cited in the amendment preamble)
+    summary: The amendment is made under Section 6.12 of the compact by the State and the Community, and the excerpt
+      does not show request or time-limit terms.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-replacement
+    change: unchanged
+    summary: The 2021 Third Amendment is limited to the technical standards for partitioned hard drives, replacing
+      the logic-control-components subsection of Section 6.14(5). It does not list Section 2.2 or 2.3 as amended,
+      so the renegotiation terms are unchanged.
+    locator_before: 2.2(2)
+    locator_after: Section 6.14(5)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-replacement
+  dates:
+    listed: '2022-04-12'
+    published: '2022-04-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-07753
+    locator: 87 Fed. Reg. 21668 (Apr. 12, 2022)
+  source: compact-mn-shakopee-mdewakanton-sioux-community-of-minnesota-2022-04-12
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_2022.04.12_shakopee_mdewakanton_sioux_tribal_state_gaming_compact.pdf
+    sha256: b9c0364dbcdaaee0a23ecbe2da0b6236c66bd086fb1ad8235ba75f1051d84753
+    pages: 5
+  clauses:
+  - topic: renegotiation
+    locator: Section 6.12 (as cited in the amendment preamble)
+    summary: The amendment is made under Section 6.12 of the compact by the State and the Community to allow cashless
+      wagering beyond current ticketing technology; the excerpt does not show request or time-limit terms.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-replacement
+    change: unchanged
+    summary: The 2022 amendment is limited to cashless wagering on the video-games technology, and it amends Section
+      6.9(6) as previously amended. It does not list Section 2.2 or 2.3 as amended, so the renegotiation terms are
+      unchanged.
+    locator_before: 2.2(2)
+    locator_after: Section 6.9(6)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2022-amendment-2
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-replacement
+  dates:
+    listed: '2022-08-02'
+    published: '2022-08-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-16517
+    locator: 87 Fed. Reg. 47229 (Aug. 2, 2022)
+  source: compact-mn-shakopee-mdewakanton-sioux-community-of-minnesota-2022-08-02
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_2022.08.02_shakopee_mdewakanton_sioux_community_tribal_state_gaming_compact.pdf
+    sha256: 6c04a0d487bb6d6a8686761acdb3500a8d455693cca8daf77f2eebae01901586
+    pages: 2
+  clauses:
+  - topic: renegotiation
+    locator: Section 6.12 (as cited in the amendment preamble)
+    summary: The amendment is made under Section 6.12 of the compact by the State and the Community, and the excerpt
+      does not show request or time-limit terms.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-replacement
+    change: unchanged
+    summary: The 2022 amendment is limited to Section 6.10(2) (percentage payout software requirements), to allow
+      a full payback option and change the minimum requirements for top awards. It does not list Section 2.2 or
+      2.3 as amended, so the renegotiation terms are unchanged.
+    locator_before: 2.2(2)
+    locator_after: Section 6.10(2)
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

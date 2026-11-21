@@ -1,0 +1,215 @@
+id: tule-river-indian-tribe-of-the-tule-river-reservation-california-gaming-compact
+kind: gaming-compact
+title: Tule River Indian Tribe of the Tule River Reservation, California–State of California Gaming Compact
+nations:
+- tule-river-indian-tribe-of-the-tule-river-reservation
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Tule River Indian Tribe of the Tule River Reservation, California and the State
+    of California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Tule River Indian Tribe of
+  the Tule River Reservation, California and the State of California as of Nov. 21, 2026: 1 original, 2 replacements
+  and 1 restatement. The order, the kind of each event and which version is in effect are inferred from the list
+  (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-tule-river-indian-tribe-of-the-tule-river-reservation-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2000.05.16_tule_river_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: ce53eb7f9c39d60954f8921565190c9694dddcddbc3687e63d90c4289cddb334
+    pages: 61
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 Voluntary Resolution; Reference to Other Means of Resolution (Secs. 9.2-9.3 also)
+    summary: Disputes first go through written notice and a good-faith meet-and-confer, then either party may seek
+      AAA Commercial Rules arbitration with a binding award (neither party must agree to arbitrate), and otherwise
+      may sue in the U.S. District Court where the Tribe's Gaming Facility is located and the Ninth Circuit, or
+      in a state court if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.0 AMENDMENTS; RENEGOTIATIONS (Secs. 12.1-12.4)
+    summary: The compact may be amended at any time by mutual written agreement, and the Tribe may request renegotiation
+      in writing to add Class III games other than those authorized, but not within 12 months of the effective date,
+      with talks to be scheduled within 30 days; the excerpt does not say what happens if talks fail.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2018-replacement
+  label: 2018 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 2000-original
+  dates:
+    listed: '2018-01-22'
+    published: '2018-01-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2018-01058
+    locator: 83 Fed. Reg. 3015 (Jan. 22, 2018)
+  source: compact-ca-tule-river-indian-tribe-of-the-tule-river-reservation-2018-01-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2018.01.22_tule_river_indian_tribe_tribl_state_gaming_compact.pdf
+    sha256: 976029b62e7cd1e7919505483909a740752eeec2e7f5d5d45e33dd05a2e6d254
+    pages: 150
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 4.6(a)(2) (refers to Sec. 13.2)
+    summary: Section 4.6(a)(2) refers exclusivity-reduction disputes to arbitration under Sec. 13.2, and Sec. 13
+      (dispute resolution, with arbitration rules and a limited waiver of sovereign immunity) is cross-referenced
+      elsewhere, but the body of Section 13 is not in the excerpt.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 5.2, subdivision (f); Sec. 4.6(a)
+    summary: Either party may request reopening of the section 5.2(a) payment amounts when the Revenue Sharing Trust
+      Fund or Tribal Nation Grant Fund balance is out of line with needs, and the other party may decline; if the
+      exclusivity right is abrogated, the Tribe may terminate or continue at a reduced rate after negotiations that
+      begin within 30 days of a written request, with any unresolved amount decided by arbitration under section
+      13.2.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2020-replacement
+  label: 2020 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 2018-replacement
+  dates:
+    listed: '2020-12-11'
+    published: '2020-12-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2020-27221
+    locator: 85 Fed. Reg. 80142 (Dec. 11, 2020)
+  source: compact-ca-tule-river-indian-tribe-of-the-tule-river-reservation-2020-12-11
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2020.12.11_tule_river_indian_tribe_tribal_state_gaming_compact_0.pdf
+    sha256: a0c5b8c9789c6291afd3a6fbb89854cbffe5d07dc323da77c96d5574b9d835a6
+    pages: 157
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 11.8. Arbitration.
+    summary: For disputes over off-reservation project intergovernmental agreements, if none is reached within 75
+      days of the Final TEIR, any party may demand binding JAMS arbitration, where the arbitrator may award only
+      one party's last best offer; the general dispute procedure is not in the excerpt.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 15.4 to 15.6 (table of contents only)
+    summary: The table of contents lists renegotiation entitlements for changed market conditions (Sec. 15.4), state
+      authorization of new Class III gaming (Sec. 15.5), and Sec. 15.6 on requests to amend or negotiate a new compact;
+      the text of those sections is not in the excerpt.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2018-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2018-replacement
+    change: changed
+    summary: 'The 2020 compact''s table of contents lists two renegotiation entitlements that the 2018 table of
+      contents does not: Section 15.4 (changed market conditions) and Section 15.5 (state authorization of new forms
+      of Class III gaming), alongside the requests-to-amend provision in Section 15.6. The text of those sections
+      is not excerpted, so their terms cannot be compared, and the 2018 Section 5.2(f) reopening right is not shown
+      in the 2020 excerpts.'
+    locator_before: Sec. 5.2(f)
+    locator_after: Table of contents, Sec. 15.4 and 15.5
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2020 excerpts are mostly table of contents and Section 11.8 and 12 text,
+      so the body of Sections 13 and 15 is not visible. The 2020 dispute excerpt starts in Section 6.4, which is
+      mis-cut. The 2018 table of contents adds an arbitration rule entry for Section 13.2 and the 2020 table of
+      contents does not show the same entries, so check both full documents before relying on the dispute row. The
+      2020 compact refers to the 2000 compact in several places.'
+- id: 2024-restatement
+  label: 2024 amended and restated compact
+  event: restatement
+  status: in-effect
+  supersedes:
+  - 2020-replacement
+  dates:
+    listed: '2024-12-26'
+    published: '2024-12-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2024-30744
+    locator: 89 Fed. Reg. 105090 (Dec. 26, 2024)
+  source: compact-ca-tule-river-indian-tribe-of-the-tule-river-reservation-2024-12-26
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/2024.12.26_corrected_508_compliant_tule_river_compact.pdf
+    sha256: 0503e9e1a567d0403059aac93ff907b3112a5858928f6bca533979247b6e51cb
+    pages: 142
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 13.1. Voluntary Resolution; Court Resolution.
+    summary: After written notice, a 15-day response and a meet-and-confer within 30 days, either party may seek
+      JAMS arbitration under Sec. 13.2; unresolved disputes may otherwise go to the United States District Court
+      where the Native nation's Gaming Facility is located or, if that court lacks jurisdiction, to a state court
+      in the county.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2020-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2020-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

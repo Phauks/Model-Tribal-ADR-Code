@@ -1,0 +1,55 @@
+id: iowa-tribe-of-oklahoma-oklahoma-off-track-wagering-compact
+kind: gaming-compact
+title: Iowa Tribe of Oklahoma–State of Oklahoma Off-Track Wagering Compact
+nations:
+- iowa-tribe-of-oklahoma
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III off-track wagering compact for Iowa Tribe of Oklahoma and the State of Oklahoma under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III off-track wagering compact documents the Office of Indian Gaming lists for Iowa Tribe of
+  Oklahoma and the State of Oklahoma as of Nov. 21, 2026: 1 original. The order, the kind of each event and which
+  version is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small
+  model''s reading of excerpts.'
+versions:
+- id: 1997-original
+  label: 1997 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1997-02-05'
+    published: '1997-02-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-97-2824
+    locator: 62 Fed. Reg. 5483 (Feb. 5, 1997)
+  source: compact-ok-iowa-tribe-of-oklahoma-1997-02-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 1997.02.05 Iowa Tribe Off Track Wagering Compact.pdf
+    sha256: 7546c09bc56d9d77db34e260281d35d425441309879c643a7950423448f7cd1c
+    pages: 41
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 14. DISPUTE RESOLUTION
+    summary: The compact provides for written notice, a meeting within 30 days, non-binding arbitration after 60
+      days with a third arbitrator named by the American Arbitration Association if the two named arbitrators cannot
+      agree, and a declaratory judgment action in the United States District Court for the Western District of Oklahoma.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: SECTION 18. AMENDMENTS
+    summary: Either party may request negotiations to amend or modify the compact, which stays in effect during
+      talks; the parties have 180 days to negotiate, after which the Act's procedures apply, and amendments require
+      Secretary approval.
+    verification: read-in-full
+    reviewer: small model, older version
+found_in:
+- 2026-11-21-gaming-compact-histories

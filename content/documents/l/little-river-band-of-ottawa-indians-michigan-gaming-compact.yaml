@@ -1,0 +1,105 @@
+id: little-river-band-of-ottawa-indians-michigan-gaming-compact
+kind: gaming-compact
+title: Little River Band of Ottawa Indians, Michigan–State of Michigan Gaming Compact
+nations:
+- little-river-band-of-ottawa-indians
+states:
+- MI
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Little River Band of Ottawa Indians, Michigan and the State of Michigan under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Little River Band of Ottawa
+  Indians, Michigan and the State of Michigan as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind
+  of each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1999-original
+  label: 1999 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1999-02-18'
+    published: '1999-02-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-4005
+    locator: 64 Fed. Reg. 8111 (Feb. 18, 1999)
+  source: compact-mi-little-river-band-of-ottawa-indians-1999
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/michigan/508_compliant_1999.02.18_little_river_band_of_ottawa_indians_tribal_state_gaming_compact.pdf
+    sha256: aabe241b4227dee86940e88e40320500034aac01d31b76366c9ac9ce85b26fac
+    pages: 24
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution, paragraph (A)
+    summary: Disputes start with written notice and a 30-day meeting; if the State's claim is not resolved within
+      90 days, the State may serve notice to stop the disputed games, and the Tribe may stop them or invoke arbitration
+      under the AAA Commercial Arbitration rules while the games continue; the excerpt does not say whether the
+      award binds.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 16. Amendment
+    summary: The compact may be amended by mutual agreement under Section 16, with proposals sent to the Governor
+      or the Tribe under notice provisions, and either party may serve notice of its right to renegotiate one year
+      before the 20-year term ends and each later five-year period.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2008-amendment
+  label: 2008 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1999-original
+  dates:
+    listed: '2008-04-21'
+    published: '2008-04-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-e8-8494
+    locator: 73 Fed. Reg. 21361 (Apr. 21, 2008)
+  source: compact-mi-little-river-band-of-ottawa-indians-2008-04-21
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/michigan/508_compliant_2008.04.21_little_river_band_of_ottawa_indians_tribal_state_gaming_compact.pdf
+    sha256: 984a389f8be0f6e195ccaa4197b341d7f714168d248c4b1a3b9d6c4ab9011f02
+    pages: 8
+  clauses:
+  - topic: renegotiation
+    locator: Section 12(B), as amended
+    summary: Either party may serve written notice of its right to renegotiate one year before the compact's expiration
+      and each later five-year period, and the parties agree IGRA's successor-compact provisions apply.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1999-original
+    change: unchanged
+    summary: The 2008 amendment changes Sections 3, 4(M)(5), 12 and 17 and states that all other provisions remain
+      in force, so Section 7 (dispute resolution, with notice, a 30-day meeting, a 90-day period and arbitration)
+      is not amended.
+    locator_before: 7(A)
+    locator_after: Sections 3, 4(M)(5), 12, 17
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2008 amendment was deemed approved by operation of law after the 45-day
+      period; the Secretary''s letter raises concerns about the new Section 17, which is not a dispute or renegotiation
+      provision.'
+  - topic: renegotiation
+    compared_with: 1999-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

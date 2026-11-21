@@ -1,0 +1,73 @@
+id: prairie-band-potawatomi-nation-kansas-gaming-compact
+kind: gaming-compact
+title: Prairie Band Potawatomi Nation–State of Kansas Gaming Compact
+nations:
+- prairie-band-potawatomi-nation
+states:
+- KS
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Prairie Band Potawatomi Nation and the State of Kansas under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Prairie Band Potawatomi Nation
+  and the State of Kansas as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event and
+  which version is in effect are inferred from the list (project analysis); clause summaries and comparisons are
+  a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1995-07-06'
+    published: '1995-07-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-16598
+    locator: 60 Fed. Reg. 35320 (July 6, 1995)
+  source: compact-ks-prairie-band-potawatomi-nation-1995
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/kansas/508_compliant_1995.07.06_prairie_band_of_potawatomi_nation_tribal_state_gaming_compact.pdf
+    sha256: 0592779e2f4562d81afc38571fd70df79efaef1eedb24bc85ffaf61487ddb690
+    pages: 147
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 31(C) and (D) Enforcement; Expenses of Dispute Resolution
+    summary: Settlements and arbitration decisions are enforced by judicial resolution in the United States District
+      Court for Kansas if a party does not implement them voluntarily or refuses to arbitrate, and the losing party
+      pays the expenses of dispute resolution unless the parties agree otherwise.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2023-amendment
+  label: 2023 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2023-07-18'
+    published: '2023-07-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2023-15139
+    locator: 88 Fed. Reg. 45909 (July 18, 2023)
+  source: compact-ks-prairie-band-potawatomi-nation-2023-07-18
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/kansas/508_compliant_2023.07.18_prairie_band_potawatomi_nation_tribal_state_gamigncompact.pdf
+    sha256: 85715558e892f62722a7f715fd541c109dfda86f7ded540a0b40336c0567b278
+    pages: 6
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

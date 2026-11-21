@@ -1,0 +1,85 @@
+id: fort-sill-chiricahua-warm-springs-apache-tribe-oklahoma-gaming-compact
+kind: gaming-compact
+title: Fort Sill--Chiricahua--Warm Springs--Apache Tribe–State of Oklahoma Gaming Compact
+nations:
+- fort-sill-chiricahua-warm-springs-apache-tribe
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Fort Sill--Chiricahua--Warm Springs--Apache Tribe and the State of Oklahoma
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Fort Sill--Chiricahua--Warm
+  Springs--Apache Tribe and the State of Oklahoma as of Nov. 21, 2026: 1 original and 1 amendment. The order, the
+  kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2007-original
+  label: 2007 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2007-04-02'
+    published: '2007-04-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-5955
+    locator: 72 Fed. Reg. 15720 (Apr. 2, 2007)
+  source: compact-ok-fort-sill-chiricahua-warm-springs-apache-2007
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508_compliant_2007.04.02_fort_sill_apache_tribe_tribal_state_gaming_compact.pdf
+    sha256: 672b4a5ab3bb05902509076b63cba76f2dedb943fc821862f2b457f09375c4c0
+    pages: 60
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION, paragraphs 1 to 3
+    summary: The asserting party serves written notice and representatives meet within thirty days; either party
+      may then refer the dispute to arbitration under AAA rules before one arbitrator, and either party may seek
+      de novo review of the award in federal district court, with the parties waiving immunity for those limited
+      purposes.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, B
+    summary: Within 180 days before the term or any renewal expires, either the Tribe or the State acting through
+      its Governor may request renegotiation of subsections A and E of Part 11.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2007-original
+  dates:
+    listed: '2018-08-17'
+    published: '2018-08-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-17728
+    locator: 83 Fed. Reg. 41102 (Aug. 17, 2018)
+  source: compact-ok-fort-sill-chiricahua-warm-springs-apache-tribe-2018-08-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2018.08.17 Fort Sill Compact amendment.pdf
+    sha256: ba77bdf0abfb02e6a90c5bd14662cabd6024d2e1ec1969c02d860636f971a5d2
+    pages: 12
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2007-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2007-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

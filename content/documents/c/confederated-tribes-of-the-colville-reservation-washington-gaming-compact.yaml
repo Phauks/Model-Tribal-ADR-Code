@@ -1,0 +1,237 @@
+id: confederated-tribes-of-the-colville-reservation-washington-gaming-compact
+kind: gaming-compact
+title: Confederated Tribes of the Colville Reservation–State of Washington Gaming Compact
+nations:
+- confederated-tribes-of-the-colville-reservation
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Confederated Tribes of the Colville Reservation and the State of Washington
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Confederated Tribes of the
+  Colville Reservation and the State of Washington as of Nov. 21, 2026: 1 original and 3 amendments. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2003-original
+  label: 2003 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2003-01-08'
+    published: '2003-01-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-339
+    locator: 68 Fed. Reg. 1068 (Jan. 8, 2003)
+  source: compact-wa-confederated-tribes-of-the-colville-reservation-2003-01-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2003.01.08_confederated_tribes_of_the_colville_reservation_tribal_state_gaming_compact.pdf
+    sha256: c68f073feca7925c16fe80b500622591949b01c267c99845752ceee61d98b426
+    pages: 116
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XII.C (Arbitration), paragraph 4
+    summary: Disputes go through notice, a meet-and-confer, and mediation; if mediation fails the parties may elect
+      arbitration under AAA commercial rules, where the arbitrator's decision is final and non-appealable, and either
+      party may then sue in a United States district court to compel, confirm or vacate an award.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section XV.D (Adjustments/Renegotiations)
+    summary: The compact may be amended by mutual written agreement, and it is amended automatically if State law
+      expands gaming, a court decision or federal legislation authorizes unauthorized gaming, or a settlement confirms
+      electronic gambling devices are subject to negotiation.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2003-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-confederated-tribes-of-the-colville-reservation-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2007.05.31_confederated_tribes_of_the_colville_reservation_tribal_state_gaming_compact_0.pdf
+    sha256: c3bb4f782d779c3d8a2fe870e3e09c024c1b3800a7a5eddb4b66d54c1440363b
+    pages: 55
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 17. DISPUTE RESOLUTION
+    summary: Disputes under Appendix X2 are resolved under any dispute provision made specifically applicable in
+      the Appendix, otherwise under the compact's dispute provisions, which are not in the excerpt.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Appendix X2 Section 15.2 (Post-Moratorium)
+    summary: After a moratorium on gambling device amendments expires, the Tribe may seek an amendment when federal
+      or State law authorizes new devices, a court decision permits them, or another tribe obtains materially different
+      devices or higher wagers, with negotiations subject to the compact's dispute provisions.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-original
+    change: changed
+    summary: 'The earlier compact (Section XII) provides written notice, a meeting within ten business days, mediation
+      at the parties'' option, and arbitration only by the parties'' choice after mediation, with judicial resolution
+      available if dissatisfied; the 2007 First Amendment leaves that clause in place and adds Appendix X2 terms:
+      a routing rule sending appendix disputes to appendix-specific provisions and otherwise to the compact''s dispute
+      resolution provisions, and a regulatory fee dispute step with escrow of the disputed amount before arbitration.'
+    locator_before: Section XII (A)-(C)
+    locator_after: Appendix X2, Section 17; Section 13.5
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2003-original
+    change: unchanged
+    summary: The First Amendment lists three changes (adding Appendix X2, a condition on Sections 14.1 and 14.2
+      of Appendix X2, and recognizing Tribal Lottery Systems under Section III) and does not list Section XV, so
+      the earlier Section XV.D clauses still govern.
+    locator_before: XV.D.1
+    locator_after: Amendment, paragraph 1
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2003-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-13712
+    locator: 80 Fed. Reg. 31918 (June 4, 2015)
+  source: compact-wa-confederated-tribes-of-the-colville-reservation-2015-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2015.06.04_confederated_tribes_of_the_colville_reservation_tribal_state_gaming_compact.pdf
+    sha256: d98f4b8b8538296108a92a6884877941cc3ef0e0e2ec2919e68ce13afac1422f
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4 (Dispute Resolution), 4.1-4.2
+    summary: The parties meet and attempt to resolve a dispute about Player Terminal allocation not later than 30
+      days before the increase takes effect; if no resolution is reached, either or both parties may use the dispute
+      resolution provisions of the compact (not in the excerpt).
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-original
+    change: changed
+    summary: The earlier compact (Section XII) provides written notice, a meeting within ten business days, mediation
+      at the parties' option, and arbitration only by the parties' choice after mediation, with judicial resolution
+      available; the 2015 amendment leaves that clause in place and adds a meet-and-confer step (30 days) for disputes
+      over the State's revised cost allocation model and a requirement to meet at least 30 days before a terminal
+      allocation increase takes effect, each followed by the compact's existing dispute resolution provisions.
+    locator_before: Section XII (A)-(C)
+    locator_after: Appendix X2 Section 13.4.5; Addendum Section 4 (4.1-4.2)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2003-original
+    change: unchanged
+    summary: The Second Amendment's five numbered changes add Section III.N, amend Appendix X2 Sections 12.1, 13.4
+      and 14.4-14.5, and incorporate the Addendum; none lists Section XV, so the earlier Section XV.D clauses still
+      govern.
+    locator_before: XV.D.1
+    locator_after: Second Amendment, recitals and paragraphs 1-5
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2003-original
+  dates:
+    listed: '2021-09-15'
+    published: '2021-09-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-19842
+    locator: 86 Fed. Reg. 51373 (Sept. 15, 2021)
+  source: compact-wa-confederated-tribes-of-the-colville-reservation-2021-09-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2021.09.15_confederated_tribes_of_the_colville_reservation_tribal_state_gamign_compact.pdf
+    sha256: 6e276b6d6a46a6649456ef3a5d539b3684bdfc747f67a6f7f2f9833511ac3095
+    pages: 23
+  clauses:
+  - topic: dispute-resolution
+    locator: Appendix S, Section 5.3.6 Approval of Certification; Revocation
+    summary: For sports wagering certifications, the Tribal and State gaming agencies meet and confer on the State
+      agency's concerns; the excerpt describes no further dispute steps.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-original
+    change: unchanged
+    summary: The Third Amendment lists eight changes (Sections II, III, IX, and new Appendix S, plus a digital wallet
+      term and a start-up costs fee) and does not list Section XII, so the earlier arbitration clause still governs;
+      the later excerpt contains Appendix S certification text, not a dispute clause.
+    locator_before: XII.C.1
+    locator_after: Appendix S, Section 5.3.6
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The Third Amendment adds Appendix S (Sports Wagering) and amends Compact
+      Sections II, III, and IX. The later excerpt labeled dispute resolution is Appendix S certification text that
+      contains a meet-and-confer step between the gaming agencies; it is not a dispute clause, and the excerpts
+      do not show whether Appendix S has its own dispute article. The unchanged finding for disputes therefore depends
+      on the amendment not touching Section XII, which the amendment''s list shows. The later excerpt numbers the
+      eight changes, and the Digital Wallet and Start-Up Costs items are items 7 and 8.'
+  - topic: renegotiation
+    compared_with: 2003-original
+    change: unchanged
+    summary: The Third Amendment's eight numbered changes do not list Section XV, so the earlier Section XV.D.1
+      amendment clause still governs; the amendment recites that the parties entered negotiations for further amendments
+      at the Tribes' request.
+    locator_before: XV.D.1
+    locator_after: Third Amendment, Introduction
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The Third Amendment adds Appendix S (Sports Wagering) and amends Compact
+      Sections II, III, and IX. The later excerpt labeled dispute resolution is Appendix S certification text that
+      contains a meet-and-confer step between the gaming agencies; it is not a dispute clause, and the excerpts
+      do not show whether Appendix S has its own dispute article. The unchanged finding for disputes therefore depends
+      on the amendment not touching Section XII, which the amendment''s list shows. The later excerpt numbers the
+      eight changes, and the Digital Wallet and Start-Up Costs items are items 7 and 8.'
+found_in:
+- 2026-11-21-gaming-compact-histories

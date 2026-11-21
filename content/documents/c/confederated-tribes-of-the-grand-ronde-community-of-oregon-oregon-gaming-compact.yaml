@@ -1,0 +1,548 @@
+id: confederated-tribes-of-the-grand-ronde-community-of-oregon-oregon-gaming-compact
+kind: gaming-compact
+title: Confederated Tribes of the Grand Ronde Community of Oregon–State of Oregon Gaming Compact
+nations:
+- confederated-tribes-of-the-grand-ronde-community-of-oregon
+states:
+- OR
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Confederated Tribes of the Grand Ronde Community of Oregon and the State of
+    Oregon under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Confederated Tribes of the
+  Grand Ronde Community of Oregon and the State of Oregon as of Nov. 21, 2026: 1 original, 6 amendments and 3 restatements.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1994-original
+  label: 1994 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1994-06-17'
+    published: '1994-06-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-94-14788
+    locator: 59 Fed. Reg. 0 (June 17, 1994)
+  source: compact-or-confederated-tribes-of-the-grand-ronde-community-of-oregon-1994-06-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1994.06.17 Confederated Tribes of the Grand Ronde
+      Tribal State Gaming Compact_0.pdf
+    sha256: ea671dc3471ea5ca18e7d8494036706494b355232423a9ff757a7bc7d5b455ee
+    pages: 45
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 15 Dispute Resolution, paragraphs A and B
+    summary: Either party may give written notice, the parties meet within 30 days, and if the dispute is not resolved
+      within 90 days either party may sue in the United States District Court for the District of Oregon, or in
+      a State court if the federal court declines jurisdiction; no arbitration step is provided.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section 11.D Amendments
+    summary: The compact may be amended only if one of the listed conditions occurs, such as three years after its
+      effective date or a state statute or constitution expanding Class III gaming, and the Native nation may not
+      renegotiate forms of gaming already authorized unless the State consents.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 1995-amendment
+  label: 1995 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1994-original
+  dates:
+    listed: '1995-12-14'
+    published: '1995-12-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-30466
+    locator: 60 Fed. Reg. 64175 (Dec. 14, 1995)
+  source: compact-or-confederated-tribes-of-the-grand-ronde-community-of-oregon-1995-12-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1995.12.14 Confederated Tribes of the Grand Ronde
+      Community Tribal State Gaming Compact 1995.pdf
+    sha256: 93ddf981b5b9077d6c27f5289c00a8cfcab635270e9f521143e7448828cdf66c
+    pages: 13
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1994-original
+    change: unchanged
+    summary: Amendment II amends Sections 4 and 6 (and 6.A and 6.B subsections) and states that it does not supersede
+      the original compact or Amendment I except as provided; Section 15 is not among the amended provisions, so
+      the earlier Section 15 dispute procedure still governs. The later excerpt labeled dispute resolution is a
+      blackjack internal-controls item in Section 4, not a compact dispute clause.
+    locator_before: 15.A.2
+    locator_after: Section 4 (blackjack), item e
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later excerpt for the dispute item is a blackjack internal-controls
+      requirement that happens to contain the words dispute resolution; it does not change the compact''s dispute
+      process. The amendment''s listed changes are to Section 4 (blackjack, and a new subsection E), Section 6 (licensing),
+      and an appendix; the excerpt is partial, so the full list may be incomplete. The approval letter in the file
+      says the amendment takes effect when notice of approval is published in the Federal Register.'
+  - topic: renegotiation
+    compared_with: 1994-original
+    change: unchanged
+    summary: Amendment II does not list Section 11, which contains the amendment and renegotiation clauses, so the
+      earlier Section 11.D clauses still govern; the amendment's preamble states that it does not supersede the
+      original compact or Amendment I except as specifically provided.
+    locator_before: 11.D.1
+    locator_after: Amendment II, preamble
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later excerpt for the dispute item is a blackjack internal-controls
+      requirement that happens to contain the words dispute resolution; it does not change the compact''s dispute
+      process. The amendment''s listed changes are to Section 4 (blackjack, and a new subsection E), Section 6 (licensing),
+      and an appendix; the excerpt is partial, so the full list may be incomplete. The approval letter in the file
+      says the amendment takes effect when notice of approval is published in the Federal Register.'
+- id: 1996-amendment
+  label: 1996 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1994-original
+  dates:
+    listed: '1996-08-20'
+    published: '1996-08-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-96-21213
+    locator: 61 Fed. Reg. 43067 (Aug. 20, 1996)
+  source: compact-or-confederated-tribes-of-the-grand-ronde-community-of-oregon-1996-08-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1996.08.20 Confederated Tribes of Grand Ronde Tribal
+      State Gaming Compact.pdf
+    sha256: e1776ac1018a1e99c572082a3973913889bf45a2004a652610d1d6c702370cf4
+    pages: 13
+  clauses:
+  - topic: dispute-resolution
+    locator: Procedure for Resolving Disputes Concerning Operational Decisions, subsection b (section number not
+      printed in the excerpt)
+    summary: Written notice is served, the parties meet and confer within 15 days, either party may begin non-binding
+      arbitration within 45 days (binding only if both parties agree), and an action may be brought in the United
+      States District Court for the District of Oregon; the State may use expedited procedures for immediate threats.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1994-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1994-original
+    change: unchanged
+    summary: Amendment III lists changes to Section 4 (house-banked blackjack and video terminal limits) and to
+      Amendment II, and does not list Section 11, so the earlier Section 11.D amendment clause still governs.
+    locator_before: 11.D.1
+    locator_after: Amendment III, preamble
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The Amendment III text includes a dispute procedure with its own page footers,
+      and the excerpt does not show whether that procedure is new or restates text already in the 1994 compact''s
+      Section 6. Amendment III''s listed changes are time-limited (the blackjack terms are tied to a period that
+      the amendment sets out), so the excerpt''s wording on expiration should be checked in the full text. The renegotiation
+      finding depends on Amendment III not listing Section 11, which the excerpt supports.'
+- id: 1997-restatement
+  label: 1997 amended and restated compact
+  event: restatement
+  status: superseded
+  supersedes:
+  - 1994-original
+  - 1995-amendment
+  - 1996-amendment
+  dates:
+    listed: '1997-03-11'
+    published: '1997-03-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-97-5886
+    locator: 62 Fed. Reg. 11219 (Mar. 11, 1997)
+  source: compact-or-confederated-tribes-of-the-grand-ronde-community-of-oregon-1997-03-11
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1997.03.11 Confederated Tribes of the  Grande Ronde
+      Community Tribal State Gaming Compact.pdf
+    sha256: fe9317deeea6f9cf02b5f181a47b6a7528f43cfc342f34740b441dd96d39ec8d
+    pages: 44
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 6, subsection B, Procedure for Resolving Disputes Concerning Operational Decisions
+    summary: The State may give written notice of an operational concern, the parties meet and confer within 15
+      days, either party may start non-binding arbitration within 45 days, and an action may be brought in the United
+      States District Court for the District of Oregon if the concern is not resolved; the State may use expedited
+      procedures for immediate threats.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section 12.D.3 Amendments
+    summary: Either the State or the Native nation may, by written request sent by certified mail, request negotiations
+      to amend, replace or repeal the compact when a listed condition occurs; the compact remains in effect during
+      negotiations, and a Native nation request is treated under the Act with a 100-day period instead of 180 days.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1994-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1994-original
+    change: changed
+    summary: The 1997 replacement's Section 12.D.1.b shortens the period before an amendment condition applies from
+      three years after the effective date to one year after the amended and restated compact is approved by the
+      Secretary of the Interior; the other listed conditions in 12.D.1 appear the same, and 12.D.2 is worded to
+      limit the Tribe's ability to renegotiate forms of gaming authorized by Section 4 unless the State consents.
+    locator_before: 11.D.1.b
+    locator_after: 12.D.1.b
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The replacement text is partly cut in the excerpts: the 1994 Section 11.D.2
+      is not fully shown, so the comparison of 12.D.2 is limited to the later text. The later general dispute route
+      is cited to Section 16, which is not in the excerpts. The earlier Section 15 and the later operational-decisions
+      procedure are different processes, and the 1994 Section 6 should be checked in the full compact for an existing
+      operational-decisions procedure.'
+- id: 2001-amendment
+  label: 2001 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1997-restatement
+  dates:
+    listed: '2001-10-09'
+    published: '2001-10-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-25131
+    locator: 66 Fed. Reg. 51453 (Oct. 9, 2001)
+  source: compact-or-confederated-tribes-of-the-grand-ronde-community-of-oregon-2001-10-09
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2001.10.09 Confederated Tribes of Grand Ronde Community
+      Tribal State Gaming Compact.pdf
+    sha256: 15b1e4ea1e89a9d22edcdb7308e8f41a7e6d0a47e8ae5db13793542505cfe160
+    pages: 21
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-restatement
+    change: unchanged
+    summary: Amendment I's listed changes are to Section 3 definitions and Section 10 (State cost assessment), and
+      the excerpts show no change to Section 12 or to the dispute procedure, so the 1997 Section 6.B operational-decisions
+      procedure and the general dispute provisions still govern; the later excerpt for this item has no dispute
+      text.
+    locator_before: 6.B.2
+    locator_after: Amendment I, preamble
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The Amendment I text is partly garbled OCR, and the preamble refers to making
+      other amendments, so the excerpt may not show every amended provision. The later excerpt labeled dispute resolution
+      is empty. The unchanged findings rest on the listed changes shown in the excerpt and the amendment''s non-supersession
+      sentence.'
+  - topic: renegotiation
+    compared_with: 1997-restatement
+    change: unchanged
+    summary: Amendment I does not list Section 12, which contains the amendment and renegotiation clauses, so the
+      1997 Section 12.D clauses still govern; the preamble says the amendment removes sports bookmaking, authorizes
+      additional video lottery terminals, and makes other amendments.
+    locator_before: 12.D.1
+    locator_after: Amendment I, preamble
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The Amendment I text is partly garbled OCR, and the preamble refers to making
+      other amendments, so the excerpt may not show every amended provision. The later excerpt labeled dispute resolution
+      is empty. The unchanged findings rest on the listed changes shown in the excerpt and the amendment''s non-supersession
+      sentence.'
+- id: 2006-restatement
+  label: 2006 amended and restated compact
+  event: restatement
+  status: superseded
+  supersedes:
+  - 1997-restatement
+  - 2001-amendment
+  dates:
+    listed: '2006-07-14'
+    published: '2006-07-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e6-11139
+    locator: 71 Fed. Reg. 40147 (July 14, 2006)
+  source: compact-or-confederated-tribes-of-the-grand-ronde-community-of-oregon-2006-07-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2006.07.14 Confederated Tribes of the Grand Ronde
+      Community Tribal State Gaming Compact.pdf
+    sha256: 032b50e8c71ee6f8d5039a8317f3196778b61175a10e0206d2d0552a1dd17a09
+    pages: 51
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 6, subsection B, Procedure for Resolving Disputes Concerning Operational Decisions
+    summary: The State may give written notice of an operational concern, the parties meet and confer within 15
+      days, either party may start non-binding arbitration within 45 days, and an action may be brought in the United
+      States District Court for the District of Oregon under section 17; the arbitration is binding only if both
+      parties agree.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section 13.D.3 Amendments
+    summary: Either the State or the Native nation may, by written request sent by certified mail, request negotiations
+      to amend, replace or repeal the compact when a listed condition occurs; the compact remains in effect during
+      negotiations, a Native nation request is treated under the Act with a 100-day period, and a State request
+      obligates the Native nation to negotiate to the same extent.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-restatement
+    change: reworded
+    summary: 'The process is the same in both: operational-decision disputes go through written notice, a meeting
+      within 15 days, non-binding arbitration (binding by agreement), federal court, and an expedited procedure,
+      and the general clause keeps notice, a 30-day meeting and a District of Oregon action after 90 days; the later
+      compact renumbers the general clause from Section 16 to 17, drops the words ''or any other requirement of
+      this section'' from the operational-decision trigger, and replaces the example threat to patron physical safety
+      with an immediate threat to public health or safety.'
+    locator_before: Section 6.B; Section 16
+    locator_after: Section 6.B; Section 17
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1997-restatement
+    change: changed
+    summary: 'The 2006 Section 13 keeps the amendment conditions and termination clause but changes three points:
+      the 180-day IGRA negotiation period is set at 100 days, a State-initiated request requires the Tribe to negotiate
+      to the same extent it would require of the State, and a material-breach termination also requires the non-breaching
+      party to have given written notice of termination; the other differences are renumbering.'
+    locator_before: 12.D.3
+    locator_after: 13(D)(3)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2012-amendment
+  label: 2012 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2006-restatement
+  dates:
+    listed: '2012-12-28'
+    published: '2012-12-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2012-31177
+    locator: 77 Fed. Reg. 76514 (Dec. 28, 2012)
+  source: compact-or-confederated-tribes-of-the-grand-ronde-community-of-oregon-2012-12-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2012.12.28 Confederated Tribes of the Grand Ronde
+      Community Tribal State Gaming Compact 2012.pdf
+    sha256: 02e5498ef4560e946abfcc6a341236cb64d03fe632cf962a8785229bd60c89f4
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2006-restatement
+    change: unchanged
+    summary: Amendment I revises the Video Lottery Terminal definition in Section 3(V), Section 4(D), and Section
+      12(C) (highway contribution provisions) and states that its terms do not supersede the existing Compact except
+      as specifically provided, so the 2006 Section 6(B) dispute procedure still governs; the later excerpt for
+      this item has no dispute text.
+    locator_before: 6.B.2
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2006-restatement
+    change: unchanged
+    summary: Amendment I does not list Section 13, which contains the amendment and renegotiation clauses, so the
+      2006 Section 13.D clauses still govern; the amendment's recitals describe the video lottery terminal definition,
+      the terminal count, and a highway cost contribution cap and bypass credit.
+    locator_before: 13.D.1.a
+    locator_after: Amendment I, recitals
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2017-amendment
+  label: 2017 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2006-restatement
+  dates:
+    listed: '2017-12-13'
+    published: '2017-12-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2017-26816
+    locator: 82 Fed. Reg. 58651 (Dec. 13, 2017)
+  source: compact-or-confederated-tribes-of-the-grand-ronde-community-of-oregon-2017-12-13
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2017.12.13  Grand Ronde Compact Amendment II.pdf
+    sha256: 71f849e98132668f56586975bc399b88152de7c7f124ddced8e0761c723074a2
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2006-restatement
+    change: unchanged
+    summary: Amendment II revises Sections 3(V), 4(B)(6), 4(E)(6) and 5(A), and states that its terms do not supersede
+      the existing Compact except as specifically provided, so the 2006 Section 6(B) dispute procedure still governs;
+      the later excerpt for this item has no dispute text.
+    locator_before: 6.B.2
+    locator_after: Amendment II, preamble
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2006-restatement
+    change: unchanged
+    summary: Amendment II does not list Section 13, which contains the amendment and renegotiation clauses, so the
+      2006 Section 13.D clauses still govern; the amendment deletes a law-enforcement cooperation paragraph in Section
+      4(E)(6) and revises the video lottery terminal definition and Section 5(A).
+    locator_before: 13.D.1.a
+    locator_after: Amendment II, recitals
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2019-amendment
+  label: 2019 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2006-restatement
+  dates:
+    listed: '2019-12-27'
+    published: '2019-12-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2019-27986
+    locator: 84 Fed. Reg. 71448 (Dec. 27, 2019)
+  source: compact-or-confederated-tribes-of-the-grand-ronde-community-of-oregon-2019-12-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant. 2019.12.27 Grande Ronde - Oregon Class III Gaming
+      Compact Amendment III.pdf
+    sha256: a6afcb8c5edd461bff19556ecda569038b5fc84a6f617cfcf42c82a01e0d3eee
+    pages: 10
+  clauses:
+  - topic: dispute-resolution
+    locator: Amendment III, paragraph 3 (immediate-threat examples under the expedited dispute procedure)
+    summary: The excerpt amends the list of immediate-threat examples that allow the State to act under the expedited
+      dispute procedure, adding a malfunction of the mobile gaming geofence; the other steps of the dispute procedure
+      are not in the excerpt.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2006-restatement
+    change: changed
+    summary: The expedited procedure for immediate threats to the gaming operation (written notice, Tribal Gaming
+      Commission action on the State's recommendation, conference within five days, federal court after ten days)
+      is untouched except that the later amendment adds a seventh example of an immediate threat, a malfunction
+      of the mobile gaming geofence allowing wagering outside the Gaming Facility; the general dispute clause is
+      not amended.
+    locator_before: Section 6(B)(5)(d)
+    locator_after: Amendment III, Section 6(B)(5)(d)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2006-restatement
+    change: not-compared
+    verification: inferred
+- id: 2023-restatement
+  label: 2023 amended and restated compact
+  event: restatement
+  status: in-effect
+  supersedes:
+  - 2006-restatement
+  - 2012-amendment
+  - 2017-amendment
+  - 2019-amendment
+  dates:
+    listed: '2023-02-08'
+    published: '2023-02-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-02624
+    locator: 88 Fed. Reg. 8306 (Feb. 8, 2023)
+  source: compact-or-confederated-tribes-of-the-grand-ronde-c-2023
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508_compliant_2023.02.08_confederated_tribes_of_the_grand_ronde_community_tribal_state_gaming_compact.pdf
+    sha256: 49c90122ac8ce058e3e15c66380df5b5750dd6dbec9350d2e99df78dd179b4fb
+    pages: 125
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 17. DISPUTE RESOLUTION, A.1 and A.2; SECTION 6. B. Procedure for Resolving Disputes Concerning
+      Operational Decisions
+    summary: Either party may give written notice of noncompliance and the parties meet within thirty days; if unresolved
+      after ninety days either party may sue in the U.S. District Court for the District of Oregon or, if that court
+      declines jurisdiction, a state court; separately, Sec. 6(B) provides notice, meet-and-confer within 15 days
+      and non-binding arbitration (binding only if both parties agree) for disputes about operational decisions.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 13. D. Amendments, subsections 1 and 2
+    summary: The compact may be amended only on specified conditions (another tribal-state compact, one year after
+      Secretarial approval, State expansion of Class III gaming, or physical calamity); either party may request
+      negotiations in writing by certified mail, the 180-day IGRA negotiation period becomes 100 days, and the compact
+      stays in effect until replaced.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2006-restatement
+    change: changed
+    summary: 'The later compact keeps the same steps in both places (operational decisions: notice, meeting within
+      15 days, non-binding arbitration binding by agreement, federal court, expedited procedure; general clause:
+      notice, 30-day meeting, District of Oregon action after 90 days with state-court fallback) and adds a seventh
+      example of an immediate threat that can trigger the expedited procedure, a malfunction of the mobile gaming
+      geofence allowing wagering outside the Gaming Facility.'
+    locator_before: Section 6(B); Section 17
+    locator_after: Section 6(B)(5)(d); Section 17
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2006-restatement
+    change: changed
+    summary: The replacement compact adds to subsection 13(D)(1) a ground for negotiating a new location after a
+      natural occurrence or physical calamity, allows the one-year period to be shortened by agreement, and drops
+      the earlier 13(D)(2) bar on renegotiating section 4 gaming terms without State consent.
+    locator_before: 13(D)(2)
+    locator_after: 13(D)(1)(d)
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

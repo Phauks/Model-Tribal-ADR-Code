@@ -1,0 +1,53 @@
+id: caddo-nation-of-oklahoma-oklahoma-gaming-compact
+kind: gaming-compact
+title: Caddo Nation of Oklahoma–State of Oklahoma Gaming Compact
+nations:
+- caddo-nation-of-oklahoma
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Caddo Nation of Oklahoma and the State of Oklahoma under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Caddo Nation of Oklahoma
+  and the State of Oklahoma as of Nov. 21, 2026: 1 original. The order, the kind of each event and which version
+  is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small model''s
+  reading of excerpts.'
+versions:
+- id: 2006-original
+  label: 2006 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2006-09-12'
+    published: '2006-09-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e6-15031
+    locator: 71 Fed. Reg. 53706 (Sept. 12, 2006)
+  source: compact-ok-caddo-nation-of-oklahoma-2006
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2006.09.12 Caddo Nation Tribal State Gaming Compact.pdf
+    sha256: 4d98fbab79e01e1a5c2b25965f0a43fd8233c4cfef9c394ab0e475a3e3dd3f2f
+    pages: 61
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION
+    summary: Either party gives written notice and representatives meet within thirty days; either party may then
+      refer the dispute to AAA arbitration, with awards subject to enforcement or de novo review by a federal district
+      court.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, subsection B
+    summary: Within 180 days before the term or any renewal expires, either the Tribe or the State, acting through
+      its Governor, may request renegotiation of subsections A and E of Part 11.
+    verification: read-in-full
+    reviewer: small model, first pass
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,368 @@
+id: oglala-sioux-tribe-south-dakota-gaming-compact
+kind: gaming-compact
+title: Oglala Sioux Tribe–State of South Dakota Gaming Compact
+nations:
+- oglala-sioux-tribe
+states:
+- SD
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Oglala Sioux Tribe and the State of South Dakota under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Oglala Sioux Tribe and the
+  State of South Dakota as of Nov. 21, 2026: 1 original, 2 amendments, 6 extensions and 1 replacement. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1993-original
+  label: 1993 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1993-10-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-sd-oglala-sioux-tribe-1993-10-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 1993.10.28 Oglala Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 679a268ea5094dc134297c90f5eabe919eadabe074e78ed8f0f3ae7ce560ca8b
+    pages: 20
+  clauses:
+  - topic: dispute-resolution
+    locator: 7.5 Arbitration of Disagreements
+    summary: Disagreements over suitability determinations go to a three-member arbitration board, in which one
+      member is chosen by each commission and the third is jointly selected, and either party may appeal the arbitration
+      decision to federal district court if permitted by law.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2001-amendment
+  label: 2001 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1993-original
+  dates:
+    listed: '2001-02-27'
+    published: '2001-02-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-4742
+    locator: 66 Fed. Reg. 12542 (Feb. 27, 2001)
+  source: compact-sd-oglala-sioux-tribe-2001-02-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2001.02.27 Oglala Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 565924f550ecc25655ed4e275a79751544fe361f46c94a081bf533ed36505852
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Amendment preamble (Extension, Amendment and Renewal)
+    summary: The parties extended the existing compact through February 15, 2001 and agreed to a two-year renewal
+      of the amended compact under the normal duration procedures in Section 10.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 2001 amendment replaces Sections 5, 6, 8.8 to 8.23, 8.9 and 11.3 and adds a Section 12, and does
+      not list Section 7.5, so the earlier three-member binding arbitration of suitability disagreements (with appeal
+      to federal district court if permitted by law) still governs.
+    locator_before: '7.5'
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier excerpts include only Section 7.5 and fragments of Section 8,
+      and the 2001 excerpt is a partial amendment text, so confirm the full list of replaced sections. The 2001
+      amendment also states that the Secretary read Section 12 as not prohibiting voter education or non-partisan
+      activities.'
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+- id: 2010-extension
+  label: 2010 extension
+  event: extension
+  status: superseded
+  amends:
+  - 1993-original
+  dates:
+    listed: '2010-09-14'
+    published: '2010-09-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2010-22784
+    locator: 75 Fed. Reg. 55823 (Sept. 14, 2010)
+  source: compact-sd-oglala-sioux-tribe-2010-09-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2010.09.14 Oglala Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: be00e18a544142b9ee89ec22b0ad4e5753b47e67ebc4deb750de000de622dfd3
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+- id: 2011-extension
+  label: 2011 extension
+  event: extension
+  status: superseded
+  amends:
+  - 1993-original
+  dates:
+    listed: '2011-02-14'
+    published: '2011-02-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2011-3179
+    locator: 76 Fed. Reg. 8375 (Feb. 14, 2011)
+  source: compact-sd-oglala-sioux-tribe-2011-02-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2011.02.14 Oglala Sioux Tribe Tribal State
+      Gaming Compact_0.pdf
+    sha256: 308e22b21c2b45f40f90b93d6d59e6262820ef1c567b147e772d89aa54e12952
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+- id: 2011-extension-2
+  label: 2011 extension
+  event: extension
+  status: superseded
+  amends:
+  - 1993-original
+  dates:
+    listed: '2011-08-10'
+    published: '2011-08-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2011-20273
+    locator: 76 Fed. Reg. 49505 (Aug. 10, 2011)
+  source: compact-sd-oglala-sioux-tribe-2011-08-10
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2011.08.10 Oglala Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 1149541609b3462fa407e54de56459a358499e79edd450b34dca2e4322ad9fb4
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+- id: 2012-extension
+  label: 2012 extension
+  event: extension
+  status: superseded
+  amends:
+  - 1993-original
+  dates:
+    listed: '2012-07-31'
+    published: '2012-07-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2012-18676
+    locator: 77 Fed. Reg. 45371 (July 31, 2012)
+  source: compact-sd-oglala-sioux-tribe-2012-07-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508_compliant_2012.07.31_oglala_sioux_tribe_tribal_state_gaming_compact_1.pdf
+    sha256: 38267bb561901ea9b04b4e332fb248870f5cb0339d9083242e6d14a83a6cfcb9
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+- id: 2013-extension
+  label: 2013 extension
+  event: extension
+  status: superseded
+  amends:
+  - 1993-original
+  dates:
+    listed: '2013-02-15'
+    published: '2013-02-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2013-03614
+    locator: 78 Fed. Reg. 11221 (Feb. 15, 2013)
+  source: compact-sd-oglala-sioux-tribe-2013-02-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2013.02.15 Oglala Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 90f255dc2dae6fa60aa56df225a95e6d16b7080b800ab630f765c7afabbb6dd4
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+- id: 2015-replacement
+  label: 2015 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1993-original
+  - 2001-amendment
+  - 2010-extension
+  - 2011-extension
+  - 2011-extension-2
+  - 2012-extension
+  - 2013-extension
+  dates:
+    listed: '2015-02-03'
+    published: '2015-02-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-01982
+    locator: 80 Fed. Reg. 5781 (Feb. 3, 2015)
+  source: compact-sd-oglala-sioux-tribe-2015-02-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2015.02.03 Oglala Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 7301033c4b3d7e3f0d6e4ee780395ece39b829e06ca0dd6a176d2698a6e686dc
+    pages: 15
+  clauses:
+  - topic: dispute-resolution
+    locator: 7.5 Arbitration of Disagreements
+    summary: Disagreements over the State's suitability determination go to a three-person binding Arbitration Board,
+      initiated by a notice to the South Dakota Commission on Gaming, and either party may appeal the decision to
+      federal district court if permitted by law.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: 10. DURATION., 10.2 Review, Notice and Extension
+    summary: The terms are subject to review at ten-year intervals; either party may give written certified-mail
+      notice of provisions needing review, the parties negotiate in good faith for 180 days, and if unresolved the
+      compact terminates unless the parties agree otherwise.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: changed
+    summary: 'The 2015 compact keeps the three-member binding Arbitration Board for suitability disagreements and
+      the option to appeal to federal district court if permitted by law, but changes how it is formed and run:
+      the board members are the chairs of the State and Tribal gaming commissions (or designees) plus a third jointly
+      selected gaming-regulation expert whose pay is split, the parties are the two commissions, arbitration starts
+      by filing a Notice with the South Dakota Commission on Gaming, and hearings are open unless the board closes
+      them. The 1993 compact had one member chosen by each commission plus one jointly chosen, appointed to three-year
+      terms. The general clause allowing either party to sue in federal district court is unchanged.'
+    locator_before: 7.5; 8.29
+    locator_after: 7.5; 8.12(2); 12.2
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+- id: 2016-extension
+  label: 2016 extension
+  event: extension
+  status: in-effect
+  amends:
+  - 2015-replacement
+  dates:
+    listed: '2016-04-22'
+    published: '2016-04-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2016-09328
+    locator: 81 Fed. Reg. 23746 (Apr. 22, 2016)
+  source: compact-sd-oglala-sioux-tribe-2016-04-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2016.04.22 Oglala Sioux Compact Extension.pdf
+    sha256: b6444f35e25b55aa2615504d733edb0d1475be28c33ae6d27d4c478bdf6a01cc
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2015-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2015-replacement
+    change: not-compared
+    verification: inferred
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2015-replacement
+  dates:
+    listed: '2022-04-14'
+    published: '2022-04-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-07965
+    locator: 87 Fed. Reg. 22229 (Apr. 14, 2022)
+  source: compact-sd-oglala-sioux-tribe-2022-04-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508_compliant_2022.04.14_oglala_sioux_tribe_tribal_state_gaming_compact.pdf
+    sha256: 0130b0fa4f5b3fd44a60712faae0d09a669b5f39f7aa8ef37cf9c319e1d556b2
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Amended Section 3.1
+    summary: New Class III games authorized by state law may be added only by written amendment to the compact,
+      a separate agreement, or authorization by the South Dakota Commission on Gaming.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2015-replacement
+    change: unchanged
+    summary: The 2022 amendment rewrites only Sections 3.1, 8.4 and 8.5, so Section 7.5 (three-member binding arbitration
+      of suitability disagreements, with appeal to federal district court if permitted by law) appears to still
+      govern; the amendment does not say so expressly and no 2022 dispute text is in the excerpts.
+    locator_before: '7.5'
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2022 document is an amendment to the 2015 compact as amended in 2016.
+      Its excerpt contains the amended Sections 3.1, 8.4 and 8.5 and the Interior approval letter (April 8, 2022),
+      which also says the amendment authorizes sports wagering. The 2015 excerpt does not show Section 3.1, so the
+      earlier text of that provision is known only from the letter.'
+  - topic: renegotiation
+    compared_with: 2015-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

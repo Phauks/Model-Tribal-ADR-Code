@@ -1,0 +1,89 @@
+id: white-earth-band-minnesota-blackjack-compact
+kind: gaming-compact
+title: White Earth Band–State of Minnesota Blackjack Compact
+nations:
+- white-earth-band
+states:
+- MN
+jurisdictions:
+- level: multiple
+  note: Class III blackjack compact for White Earth Band and the State of Minnesota under 25 U.S.C. § 2710(d).
+summary: 'The Class III blackjack compact documents the Office of Indian Gaming lists for White Earth Band and the
+  State of Minnesota as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event and which
+  version is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small
+  model''s reading of excerpts.'
+versions:
+- id: 1991-original
+  label: 1991 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1991-10-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mn-white-earth-band-1991-10-03
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no profile cites this list row.'
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_1991.10.03_white_earth_band_of_chippewa_tribal_state_gaming_compact.pdf
+    sha256: e982b6668eadedfb664c4d23816774dd4d1f758070d99d9a85b35a1ee8d944f6
+    pages: 17
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 10 (Effect of Breach)
+    summary: If a tribal government bound by the consent judgment breaches it or the compact, the State directs
+      legal action at that government only; the excerpt describes no notice, negotiation or arbitration steps.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 2.2 Renegotiation
+    summary: Either the State or the Band may request in writing negotiations to amend, replace or repeal the compact,
+      which stays in effect meanwhile; the parties have 180 days to negotiate, after which IGRA procedures apply.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2024-amendment
+  label: 2024 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2024-08-14'
+    published: '2024-08-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2024-18044
+    locator: 89 Fed. Reg. 66136 (Aug. 14, 2024)
+  source: compact-mn-white-earth-band-2024-08-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_2024.08.14_white_earth_band_tribal_state_gaming_compact.pdf
+    sha256: 10545e8818ab6794741004c18a6ebd10a256294366f245581bad5c27d4cd3a61
+    pages: 7
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4.2, Violations by the Band of this Addendum (Section 4.0 Enforcement and Disputes)
+    summary: The Department of Public Safety gives the Band an Alleged Violation Notice, the Band's Gaming Commission
+      has thirty days to investigate and order corrective action, and if the Band disputes a violation the parties
+      meet within fifteen days before either party may pursue remedies under the IGRA.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

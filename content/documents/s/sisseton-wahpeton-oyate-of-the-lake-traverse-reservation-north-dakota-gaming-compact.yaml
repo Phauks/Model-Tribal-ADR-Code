@@ -1,0 +1,345 @@
+id: sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-north-dakota-gaming-compact
+kind: gaming-compact
+title: Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South Dakota–State of North Dakota Gaming Compact
+nations:
+- sisseton-wahpeton-oyate-of-the-lake-traverse-reservation
+states:
+- ND
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South Dakota and
+    the State of North Dakota under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Sisseton-Wahpeton Oyate of
+  the Lake Traverse Reservation, South Dakota and the State of North Dakota as of Nov. 21, 2026: 1 original, 3 amendments
+  and 2 replacements. The order, the kind of each event and which version is in effect are inferred from the list
+  (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1993-original
+  label: 1993 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1993-02-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-nd-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-1993-02-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-dakota/508_compliant_1993.02.03_sisseton_wahpeton_oyate_tribal_state_gaming_compact.pdf
+    sha256: 70e62c963ada6c1892252f398a01f05dd62ea6774da9842aea454c59262c850e
+    pages: 25
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 15(a)-(c), Dispute Resolution
+    summary: Written notice is followed by a thirty-day meeting; if unresolved after ninety days the State may serve
+      a notice to cease gaming, and the Tribe may then stop the activity or invoke arbitration under AAA rules with
+      a three-arbitrator panel, while either party may otherwise pursue any available remedy, including an action
+      in the United States District Court for North Dakota.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section 2.2, Renegotiation
+    summary: The State or the Tribe may request negotiation to amend, replace or repeal the compact by written request
+      sent by certified mail; the compact stays in effect during renegotiation, and the renegotiation period is
+      180 days under the Indian Gaming Regulatory Act.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 1994-amendment
+  label: 1994 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1993-original
+  dates:
+    listed: '1994-07-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-nd-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-1994-07-13
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-dakota/508_compliant_1994.07.13_sisseton_wahpeton_oyate_tribal_state_gaming_compact.pdf
+    sha256: 8082297a858824dbdb4f326d40d8c5dbfe1ba7cbe2da1100af06c5a7f36cf4d3
+    pages: 21
+  clauses:
+  - topic: dispute-resolution
+    locator: Addendum Section XV, Dispute Resolution
+    summary: Disputes under the addendum are handled through the dispute resolution procedures in Article XXVII
+      of the compact, which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Addendum Section XVI, Term of Addendum
+    summary: The addendum may be terminated or amended only by mutual consent of the parties with approval of the
+      United States Secretary of the Interior.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+- id: 1997-amendment
+  label: 1997 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1993-original
+  dates:
+    listed: '1997-07-24'
+    published: '1997-07-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-97-19430
+    locator: 62 Fed. Reg. 39859 (July 24, 1997)
+  source: compact-nd-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-1997-07-24
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-dakota/508_compliant_1997.07.24_sisseton_wahpeton_oyate_tribal_state_gaming_compact.pdf
+    sha256: ba8d664a61bcfb59850812f1f1512982291a06324162e88e1bebc413511a3487
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Amended Section 2.3.4, Successor Compact
+    summary: After written notice of non-renewal, the Tribe may ask the State to begin negotiations for a successor
+      compact, and the State must then negotiate in good faith; the amendment does not change the mid-term amendment
+      procedure in Section 2.2.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: unchanged
+    summary: Amendment No. 1 says it amends section 2.3 of the compact and nothing else, so Section 15, the dispute
+      clause, is not amended and the 1993 text still governs.
+    locator_before: Section 15
+    locator_after: section 2.3
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: changed
+    summary: 'Section 2.2 is not amended, so requests to renegotiate still follow it: a written request by certified
+      mail and a 180-day renegotiation term. The amendment replaces Section 2.3 with a new 2.3.4, under which, after
+      written notice of non-renewal, the nation may ask the State to enter negotiations for a successor compact,
+      and the State must negotiate in good faith. That is a new route to reopen the compact.'
+    locator_before: Section 2.2
+    locator_after: 2.3.4
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 1999-replacement
+  label: 1999 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1993-original
+  - 1994-amendment
+  - 1997-amendment
+  dates:
+    listed: '1999-11-23'
+    published: '1999-11-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-30553
+    locator: 64 Fed. Reg. 65722 (Nov. 23, 1999)
+  source: compact-nd-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-1999-11-23
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-dakota/508_compliant_1999.11.23_sisseton_wahpeton_oyate_tribal_state_gaming_compact.pdf
+    sha256: d5cbe169fdf64e37eee95c198d36b98bb2f570b96343c459725d6187fb558a68
+    pages: 40
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XXVIII, Dispute Resolution (28.1-28.5)
+    summary: A party alleging noncompliance gives written notice and the parties meet within thirty days; if unresolved
+      after ninety days either party may pursue arbitration under AAA rules, an action in the United States District
+      Court for North Dakota, or any other available remedy, and the State may serve a notice to cease gaming that
+      the Tribe may stop or contest through these procedures.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section XXXIV, Amendment
+    summary: The State or the Tribe may at any time request amendment or negotiations, both parties must negotiate
+      in good faith and reach a determination within ninety days, and amendments take effect only when both parties
+      agree and, if necessary, the Secretary approves; Section XXI also allows technical standards to be modified
+      by mutual agreement.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: changed
+    summary: The 1993 compact provides notice and a 30-day meeting, then after 90 days only a State cease-gaming
+      notice (to which the Tribe may respond by invoking AAA arbitration with a three-arbitrator panel) or a Tribe-invoked
+      arbitration, with any other available remedy including federal court. The 1999 compact provides that after
+      90 days either party may pursue any available remedy, listing arbitration, an action in the federal district
+      court in North Dakota, or any other remedy, keeps the State cease notice and Tribe-invoked arbitration, and
+      adds that either party may sue in federal court to enforce an arbitration determination.
+    locator_before: Section 15(a)-(c)
+    locator_after: Article XXVIII, 28.1-28.5
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: changed
+    summary: Under the 1999 replacement, Article XXXIV lets either party request amendment or negotiations at any
+      time on proper notice, requires good-faith negotiation with a determination within 90 days, and says amendments
+      take effect only when both parties agree and, if necessary, the Secretary of the Interior approves them. The
+      1993 Section 2.2 instead required a written request by certified mail to the Governor and set a 180-day term,
+      and kept the compact in effect until renegotiated. The 1999 excerpts do not show a counterpart to 1993 Section
+      2.3.
+    locator_before: Section 2.2
+    locator_after: XXXIV
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2013-replacement
+  label: 2013 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1999-replacement
+  dates:
+    listed: '2013-03-21'
+    published: '2013-03-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2013-06446
+    locator: 78 Fed. Reg. 17427 (Mar. 21, 2013)
+  source: compact-nd-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation-2013-03-21
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-dakota/508_compliant_2013.03.21_sisseton_wahpeton_sioux_tribal_state_gaming_compact.pdf
+    sha256: 23dffc6d84f9b5e3eb1bcaea24203c8d94759d27c9534ea50821f0c8abda2f25
+    pages: 31
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 28.1-28.5, Dispute Resolution
+    summary: A party alleging noncompliance gives written notice and the parties meet within thirty days; if unresolved
+      after ninety days either party may pursue arbitration under AAA rules (arbitrators picked by the State, the
+      Tribe and then a third), an action in the United States District Court for North Dakota, or any other available
+      remedy, and the State may serve a notice to cease gaming that the Tribe may stop or contest through these
+      procedures.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section XXXIV, Amendment
+    summary: The State or the Tribe may at any time request amendment or negotiations, both parties must negotiate
+      in good faith and reach a determination within ninety days, and amendments take effect only when both parties
+      agree and, if necessary, the Secretary approves; Section XXI also allows technical standards to be modified
+      by mutual agreement.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1999-replacement
+    change: unchanged
+    summary: 'The 2013 replacement''s Article XXVIII repeats the 1999 text: a notice step, a 30-day meeting, a 90-day
+      period, the same listed remedies, the State''s cease-notice step, arbitration, and court enforcement of arbitration
+      decisions in Section 28.5.'
+    locator_before: 28.1 B
+    locator_after: 28.1 B
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1999-replacement
+    change: reworded
+    summary: Article XXXIV (amendment on request, a 90-day determination, and Secretarial approval) reads the same
+      in both documents. Article XXI changes only the name of the attorney general's office in the mutual-agreement
+      mechanism for modifying technical standards, from 'North Dakota Attorney General' to 'North Dakota Office
+      of Attorney General'. The process and its effect are the same.
+    locator_before: XXI
+    locator_after: XXI
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2013-replacement
+  dates:
+    listed: '2022-12-19'
+    published: '2022-12-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-27471
+    locator: 87 Fed. Reg. 77633 (Dec. 19, 2022)
+  source: compact-nd-sisseton-wahpeton-oyate-of-the-lake-trav-2022
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-dakota/508_compliant_2022.12.19_sisseton-wahpeton_oyate_tribal_state_gaming_compact.pdf
+    sha256: 1334018a1732b0cdccefceec218cc30a5bf36dac08c3745434d5280cd93eaea6
+    pages: 27
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XXVIII, 28.1 and 28.2, Dispute Resolution
+    summary: Written notice and a thirty-day meeting come first; after ninety days unresolved the parties try mediation
+      administered by the American Arbitration Association, and after mediation or 180 days a limited waiver of
+      immunity permits an action in the United States District Court for the District of North Dakota.
+    methods:
+    - negotiation
+    - mediation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section XXXIV, Amendment
+    summary: Either party may request amendment with notice, the parties must negotiate in good faith and reach
+      a determination within ninety days, and amendments apply only when both parties agree and, if needed, the
+      Secretary approves.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2013-replacement
+    change: changed
+    summary: The 2013 compact provides notice, a 30-day meeting, and after 90 days any available remedy including
+      arbitration (Tribe-invoked arbitration under 28.3-28.4) or federal court, with court enforcement of arbitration
+      awards. The 2022 compact keeps the notice and meeting, then after 90 days requires mediation first (AAA Commercial
+      Mediation Procedures in Bismarck); after mediation fails or 180 days, each party gives a limited immunity
+      waiver for a federal court action in North Dakota. The arbitration subsections 28.3 to 28.5 are not in the
+      later text.
+    locator_before: Sec. 28.1-28.5
+    locator_after: Sec. 28.1 A.a-b, 28.2
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2013-replacement
+    change: changed
+    summary: Article XXXIV (amendment on request and a 90-day determination) is unchanged in wording. Article XXIII
+      adds that if the Sisseton-Wahpeton Oyate offers new games using new technologies, such as mobile or online
+      gaming, the parties will cooperate in good faith to negotiate procedures and protocols. The approval letter
+      says the amendment waives the State's Eleventh Amendment immunity if the parties negotiate a successor compact,
+      so that IGRA's good-faith negotiation provisions can be enforced. The excerpts do not contain the text of
+      that waiver.
+    locator_before: XXXIV
+    locator_after: XXIII
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

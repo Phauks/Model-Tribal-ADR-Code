@@ -1,0 +1,300 @@
+id: lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-wisconsin-gaming-compact
+kind: gaming-compact
+title: Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation of Wisconsin–State
+  of Wisconsin Gaming Compact
+nations:
+- lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin
+states:
+- WI
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau
+    Reservation of Wisconsin and the State of Wisconsin under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Lac du Flambeau Band of Lake
+  Superior Chippewa Indians of the Lac du Flambeau Reservation of Wisconsin and the State of Wisconsin as of Nov.
+  21, 2026: 1 original and 6 amendments. The order, the kind of each event and which version is in effect are inferred
+  from the list (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1992-07-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-wi-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-1992-07-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508_compliant_1992.07.01_lac_du_flambeau_band_of_lake_superior_chippewa_indians_mediated_gaming_compact.pdf
+    sha256: 0cb639e904ed606ab24e6b7112dc1bed265d4957fae3ebc0c0c565eca267c788
+    pages: 44
+  clauses:
+  - topic: dispute-resolution
+    locator: 'XXII. DISPUTE RESOLUTION (OCR: ''ZXII. DISPU''rE USOLU''rIOR''), A and C; XXIII. SOVEREIGN IMMUNITY;
+      COMPACT ENFORCEMENT, C'
+    summary: A party alleging noncompliance serves written notice, the parties meet within thirty days, and if unresolved
+      after ninety days either party may pursue any otherwise available remedy; the parties may by mutual agreement
+      use mediation or arbitration but neither is obliged to, and Section XXIII also allows suit in federal court
+      against officials for prospective declaratory or injunctive relief.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: 'XXIX. AMENDMENT (OCR: ''XU. AHENDHD''l''.''); XXV. DURATION, E'
+    summary: The compact may be modified only with the prior written agreement of the State and the Tribe; if either
+      party gives notice of nonrenewal, the Tribe may request negotiation of a successor compact under IGRA and
+      the State must negotiate in good faith.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '1999-03-26'
+    published: '1999-03-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-7514
+    locator: 64 Fed. Reg. 14746 (Mar. 26, 1999)
+  source: compact-wi-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-1999-03-26
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1999.03.26  Lac du Flambeau Gaming Compact.pdf
+    sha256: 1527b557b775d1e6660b03f4fcde38c1b975564543d3e436c700573f02c51def
+    pages: 8
+  clauses:
+  - topic: renegotiation
+    locator: Recitals of the 1999 Amendments (Section XXX)
+    summary: The compact may be amended only by written agreement of both parties (Section XXX), and the 1999 amendments
+      were executed under that provision.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2009-amendment
+  label: 2009 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2009-06-17'
+    published: '2009-06-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e9-14260
+    locator: 74 Fed. Reg. 28723 (June 17, 2009)
+  source: compact-wi-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2009-06-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2009.06.17  Lac du Flambeau Gaming Compact Amendments.pdf
+    sha256: dee70747fc0eb5f98730566742f542d1de9c07a252bd9645796a6909ccbe07b5
+    pages: 26
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XXII (Dispute Resolution), subsections C and D
+    summary: After written notice and negotiation with the Governor's and Tribe's representatives meeting within
+      ten days, either party may demand arbitration, with arbitrators appointed by the parties or by the American
+      Arbitration Association, and the parties are bound by the award.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Recitals (Section XXX) and Article XXXVII (paragraph 41)
+    summary: The compact may be amended only by written agreement of both parties, and the amendment sets the process
+      for the Governor to concur in a competing off-reservation gaming determination, which requires tribal notice
+      within 60 days and arbitration if negotiations are not concluded.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2017-amendment
+  label: 2017 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2017-07-18'
+    published: '2017-07-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2017-15010
+    locator: 82 Fed. Reg. 32866 (July 18, 2017)
+  source: compact-wi-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2017-07-18
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2017.07.18 Lac du Flambeau Compact Amendment.pdf
+    sha256: 6fca4f68002b988714156919dd8b99b9d038610f83a8a8c1adcfcfbef1389a1d
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 2017 amendment only replaces Section XXXI.A.3 (the payment to the State) and does not amend any
+      dispute provision, so the earlier dispute clause still governs.
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 2017 amendment replaces only Section XXXI.A.3 and does not amend any renegotiation provision, so
+      the earlier renegotiation clause still governs.
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2020-amendment
+  label: 2020 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2020-07-23'
+    published: '2020-07-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2020-15974
+    locator: 85 Fed. Reg. 44545 (July 23, 2020)
+  source: compact-wi-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2020-07-23
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2020.07.23 Lac Du Flambeau Tribal State Compact
+      Amendment_0.pdf
+    sha256: 1bf85bfb70a333da73e686f384347bdc0b264733d8967531a2b1e01cced35310
+    pages: 4
+  clauses:
+  - topic: renegotiation
+    locator: Recitals (Section XXX)
+    summary: The compact may be amended upon mutual agreement of the parties under Section XXX, and this 2020 amendment
+      was executed under that provision.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 2020 amendment does not amend the dispute clause; it uses the Compact's existing Dispute Resolution
+      procedures, so the State may start an arbitration over Qualifying Expenditures under those procedures.
+    locator_after: XXXI.A.5.b.5
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 2020 amendment recites that Section XXX allows amendment upon mutual agreement and does not list
+      Section XXX among the provisions it amends, so the earlier amendment clause still governs.
+    locator_after: XXX
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2024-amendment
+  label: 2024 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2024-04-09'
+    published: '2024-04-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2024-07507
+    locator: 89 Fed. Reg. 24853 (Apr. 9, 2024)
+  source: compact-wi-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2024-04-09
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508_compliant_2024.04.09_lac_du_flambeau_band_fo_lake_superior_chippewa_indians_tribal_state_gaming_compact.pdf
+    sha256: 94565c0ef05d8e327ed178dd916155b2c2f3ff279dc6cfb202d9f61190e69075
+    pages: 14
+  clauses:
+  - topic: renegotiation
+    locator: Recitals (Section XXX)
+    summary: The compact may be amended upon mutual agreement of the parties under Section XXX, and these 2024 amendments
+      were executed under that provision.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2026-amendment
+  label: 2026 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2026-03-10'
+    published: '2026-03-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2026-04667
+    locator: 91 Fed. Reg. 11560 (Mar. 10, 2026)
+  source: compact-wi-lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin-2026-03-10
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/lac_du_flambeau_and_wisconsin_compact_amendment.pdf
+    sha256: 9587c0e20e69294c1781794f6758d12207b9a6850da0529b8f91ccfa1fe7abfe
+    pages: 7
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 2025 amendment sets out its full list of changes (Sections III, XII, XXIV.B, XXXI.A.4 and XXXI.C)
+      and does not amend any dispute provision, so the earlier dispute clause still governs.
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 2025 amendment recites that Section XXX allows amendment upon written agreement of both parties,
+      and does not list Section XXX among the provisions it amends, so the earlier amendment clause still governs.
+    locator_after: XXX
+    verification: inferred
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

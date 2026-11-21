@@ -1,0 +1,178 @@
+id: st-croix-chippewa-indians-of-wisconsin-wisconsin-gaming-compact
+kind: gaming-compact
+title: St. Croix Chippewa Indians of Wisconsin–State of Wisconsin Gaming Compact
+nations:
+- st-croix-chippewa-indians-of-wisconsin
+states:
+- WI
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for St. Croix Chippewa Indians of Wisconsin and the State of Wisconsin under 25
+    U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for St. Croix Chippewa Indians
+  of Wisconsin and the State of Wisconsin as of Nov. 21, 2026: 1 original and 3 amendments. The order, the kind
+  of each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1992-03-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-wi-st-croix-chippewa-indians-of-wisconsin-1992-03-10
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1992.03.10 St Croix Chippewa Tribal State Gaming
+      Compact Compact.pdf
+    sha256: 0c55dd34916aeb80754ff30be9ac2d72313d77d68ff8495841890cb3fba9fbbf
+    pages: 45
+  clauses:
+  - topic: renegotiation
+    locator: Reopener paragraphs 2 and 3, and subsection G (section heading not in excerpt)
+    summary: Upon the Tribe's notice to add a game, the compact is reopened to amend it; if the parties do not agree
+      within 40 days the Tribe must stop operating that game. After August 31, 1992 the parties meet annually on
+      the Tribe's written request to consider additional games or a Blackjack location, and the compact may be amended
+      only by prior written agreement.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1998-amendment
+  label: 1998 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '1998-08-21'
+    published: '1998-08-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-22494
+    locator: 63 Fed. Reg. 44921 (Aug. 21, 1998)
+  source: compact-wi-st-croix-chippewa-indians-of-wisconsin-1998-08-21
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1998.08.21 St Croix Gaming Tribal State Gaming
+      Compact.pdf
+    sha256: 92d31fa7540846be9b67224a6e6032ee4163161a922dd7a3575726555283ef19
+    pages: 7
+  clauses:
+  - topic: renegotiation
+    locator: Recitals (Section XXX reference) and Section XXXII discussion clause
+    summary: The St. Croix compact may be amended upon written agreement of both parties under its Section XXX,
+      and the amendment records that the parties will discuss modification if the State enacts a law imposing new
+      charges.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: added
+    summary: The 1998 amendments create a new Section XXXIV under which, if the Secretary disapproves part of the
+      June 1998 amendments, either party may demand renegotiation of the affected portion, and if no solution is
+      reached within 60 days of the Secretary's action either party may serve a notice of nonrenewal, with the compact
+      expiring 180 days after service; the earlier compact's game reopener is shown in the excerpt but is not among
+      the amended items.
+    locator_before: game reopener (F.2 as numbered in excerpt)
+    locator_after: XXXIV
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 1998 document is an amendment that renews the term to December 19, 2003
+      and creates Sections XV.I and XXXII to XXXIV. The file cuts off partway through the Section XXXIV text, and
+      the earlier amendment clause (Section XXX) is cited but not shown.'
+- id: 2003-amendment
+  label: 2003 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2003-09-16'
+    published: '2003-09-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-03-23578
+    locator: 68 Fed. Reg. 54243 (Sept. 16, 2003)
+  source: compact-wi-st-croix-chippewa-indians-of-wisconsin-2003-09-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant  2003.09.16 St Croix Deemed Approved Tribal
+      State Gaming Compact.pdf
+    sha256: 38b418e5f3fed0d6406b8bcbfdcce72e0a0fa28a40d50296d433c04072636bcd
+    pages: 25
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XXII. DISPUTE RESOLUTION, subsections A (Negotiation), B (Mediation) and C (Arbitration)
+    summary: The compact provides for written notice and a meeting of the Governor's and Tribe's representatives
+      within twenty days, optional non-binding mediation, and then arbitration by a three-member panel under the
+      compact's rules for the listed articles.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Article XXX, Amendment and Periodic Enhancement of Compact Revisions, subsections A-B
+    summary: The compact may be amended by written agreement of both parties, and either party may propose regulatory
+      amendments in the thirty days before each fifth anniversary of July 1, 2004 (with the Governor for the twenty-fifth
+      anniversary cycle), with good faith negotiations and disputes resolved under Article XXII.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2022-04-25'
+    published: '2022-04-25'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-08736
+    locator: 87 Fed. Reg. 24339 (Apr. 25, 2022)
+  source: compact-wi-st-croix-chippewa-indians-of-wisconsin-2022-04-25
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508_compliant_2022.04.25_st._croix_chippewa_indians_tribal_state_gamign_compact.pdf
+    sha256: 5133f747ec37d65802ae3c0a1dc7220b0e7f29f07e41988f0ab99ff47bb39539
+    pages: 10
+  clauses:
+  - topic: renegotiation
+    locator: Opening paragraph of the Third Amendment (unnumbered)
+    summary: The compact is amended by written agreement of the Tribe and State, and this Third Amendment was executed
+      as of the last signature date and approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

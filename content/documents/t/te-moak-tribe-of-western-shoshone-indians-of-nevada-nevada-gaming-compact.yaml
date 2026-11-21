@@ -1,0 +1,54 @@
+id: te-moak-tribe-of-western-shoshone-indians-of-nevada-nevada-gaming-compact
+kind: gaming-compact
+title: Te-Moak Tribe of Western Shoshone Indians of Nevada–State of Nevada Gaming Compact
+nations:
+- te-moak-tribe-of-western-shoshone-indians-of-nevada
+states:
+- NV
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Te-Moak Tribe of Western Shoshone Indians of Nevada and the State of Nevada
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Te-Moak Tribe of Western
+  Shoshone Indians of Nevada and the State of Nevada as of Nov. 21, 2026: 1 original. The order, the kind of each
+  event and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 2014-original
+  label: 2014 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2014-10-23'
+    published: '2014-10-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2014-25296
+    locator: 79 Fed. Reg. 63437 (Oct. 23, 2014)
+  source: nevada-te-moak-tribe-gaming-compact-2014
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/nevada/508_compliant_2014.10.23_te-moak_tribe_of_western_shoshone_indians_tribal_state_gaming_compact.pdf
+    sha256: 12bf70f4ccd3155eddc8111a257d11bb9aad50aadea8e84489ea905bcf3a409e
+    pages: 40
+  clauses:
+  - topic: dispute-resolution
+    locator: ARTICLE XIII DEFAULT AND TERMINATION, 1. Default
+    summary: After written notice of a default the party has ninety days to correct; if not, the parties meet within
+      thirty days, and if still unresolved either party may pursue a remedy under Article X (a declaratory or injunctive
+      action in federal court with venue in Washoe County, Nevada); the parties may also agree in writing to mediation
+      or arbitration.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: ARTICLE XIV AMENDMENTS
+    summary: The compact may be amended only with both parties' consent by signed written instrument; the parties
+      must negotiate in good faith if applicable law changes, and the term may be extended by mutual agreement.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+found_in:
+- 2026-11-21-gaming-compact-histories

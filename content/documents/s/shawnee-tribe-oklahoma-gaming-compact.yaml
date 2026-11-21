@@ -1,0 +1,92 @@
+id: shawnee-tribe-oklahoma-gaming-compact
+kind: gaming-compact
+title: Shawnee Tribe–State of Oklahoma Gaming Compact
+nations:
+- shawnee-tribe
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Shawnee Tribe and the State of Oklahoma under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Shawnee Tribe and the State
+  of Oklahoma as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event and which version
+  is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small model''s
+  reading of excerpts.'
+versions:
+- id: 2018-original
+  label: 2018 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2018-06-08'
+    published: '2018-06-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-12343
+    locator: 83 Fed. Reg. 26706 (June 8, 2018)
+  source: compact-ok-shawnee-tribe-2018-06-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2018.06.08 Shawnee Compact.pdf
+    sha256: edf6d6dab7ed7934a4293693373b20a47b4d20e4bc322915fcf0cc9854410948
+    pages: 37
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION
+    summary: A party asserting noncompliance serves written notice and the parties' representatives meet within
+      thirty days; either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before one arbitrator, remedies are limited to enforcement of the compact, and either party may seek
+      de novo review of the award in federal district court.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, B.
+    summary: Within 180 days before the term or any renewal expires, either the Native nation or the State, through
+      its Governor, may request to renegotiate the payment terms in subsections A and E of Part 11; the Native nation
+      may also change standards by written notice after amendments to the State-Tribal Gaming Act.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 2019-amendment
+  label: 2019 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2018-original
+  dates:
+    listed: '2019-05-08'
+    published: '2019-05-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2019-09468
+    locator: 84 Fed. Reg. 20162 (May 8, 2019)
+  source: compact-ok-shawnee-tribe-2019-05-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant.03.11.2019 Shawnee tribe Compact Amendment.pdf
+    sha256: e6038aaf7e216355ebae8e11006446d0e1350a9dffb4c5100ad8d44637618d3e
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2018-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2018-original
+    change: unchanged
+    summary: The 2019 Non-House-Banked Table Games Supplement adds one covered game with a 10 percent fee, and it
+      says the games are governed by the 2018 compact's enforcement and exclusivity terms. It does not amend Part
+      15 (duration and renegotiation, including the 180-day window to ask to renegotiate Part 11 subsections A and
+      E), so that clause still governs.
+    locator_before: Part 15.B
+    locator_after: Part 2.C
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

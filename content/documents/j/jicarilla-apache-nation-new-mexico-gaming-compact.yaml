@@ -1,0 +1,210 @@
+id: jicarilla-apache-nation-new-mexico-gaming-compact
+kind: gaming-compact
+title: Jicarilla Apache Nation, New Mexico–State of New Mexico Gaming Compact
+nations:
+- jicarilla-apache-nation
+states:
+- NM
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Jicarilla Apache Nation, New Mexico and the State of New Mexico under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Jicarilla Apache Nation,
+  New Mexico and the State of New Mexico as of Nov. 21, 2026: 1 original and 3 replacements. The order, the kind
+  of each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1995-03-22'
+    published: '1995-03-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-6966
+    locator: 60 Fed. Reg. 15194 (Mar. 22, 1995)
+  source: compact-nm-jicarilla-apache-nation-1995-03-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_1995.03.22_jicarilla_apache_nation_tribal_state_gaming_compact.pdf
+    sha256: 8b02cf1529e08e4bd250bc9cf2a9fcddb5b4212e5741da599869c14e64e8e3f2
+    pages: 41
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraph A(1)-(2)
+    summary: The compact provides for written notice, a meeting of State and Native nation representatives within
+      thirty days, and a ninety-day period before a notice to cease disputed gaming may be served; the excerpt ends
+      before the arbitration and court steps.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1997-replacement
+  label: 1997 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1995-original
+  dates:
+    listed: '1997-11-05'
+    published: '1997-11-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-97-29300
+    locator: 62 Fed. Reg. 59878 (Nov. 5, 1997)
+  source: compact-nm-jicarilla-apache-nation-1997-11-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_1997.11.05_jicarilla_apache_nation_tribal_state_gaming_compact.pdf
+    sha256: e34007aa04a89988cff08108495d88ecc133ca68a2a411fc6b0d833f6697ff31
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraphs A(1)-(5)
+    summary: The compact provides for written notice and a response period, then arbitration under the Commercial
+      Arbitration Rules of the American Arbitration Association with attorney arbitrators, and the results are enforceable
+      by an action for injunctive relief in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 11. Binding Effect and Duration., paragraphs B-D
+    summary: Either party may request reopening of negotiations at any time while the compact is in effect, and
+      a written notice before the end of each term may request renegotiation; no change is required, and any amendment
+      needs approval by the Native nation, the State and the Secretary of the Interior and publication in the Federal
+      Register.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+- id: 2002-replacement
+  label: 2002 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1997-replacement
+  dates:
+    listed: '2002-01-15'
+    published: '2002-01-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-02-904
+    locator: 67 Fed. Reg. 1981 (Jan. 15, 2002)
+  source: compact-nm-jicarilla-apache-nation-2002-01-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2002.01.15_jicarilla_apache_nation_tribal_state_gaming_compact.pdf
+    sha256: 30647215c0aff746a039978e83ea9e65cd6640f599ed078e7f2efc6128a4e076
+    pages: 26
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraphs A(1)-A(5)
+    summary: The compact provides for written notice, a twenty-day period, and a notice to cease disputed games,
+      after which the responding party may stop the games or invoke arbitration before attorney arbitrators, with
+      the American Arbitration Association choosing any unchosen third arbitrator, and the results are final and
+      binding and enforceable in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: SECTION 14. Entire Agreement.
+    summary: The compact provides that any amendment must be signed by the Native nation and the State and approved
+      by the Secretary of the Interior, and must also be approved by the Native nation, the Governor and the State
+      Legislature; the excerpt sets no reopening trigger or time limit.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-replacement
+    change: changed
+    summary: 'The 2002 compact shortens the periods in Section 7: a complaining party may serve a notice to cease
+      the game after 20 days (earlier 90 days), and the responding party must stop or invoke arbitration within
+      10 days (earlier 30 days). It also drops the earlier required meeting of State and Tribe representatives within
+      30 days of the notice, adds discovery and open-or-closed hearing rules for the three-attorney AAA arbitration,
+      bars the arbitrators from ruling on the compact''s validity, and states that results are final and binding.'
+    locator_before: 7.A.1-5
+    locator_after: 7.A.1-5
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1997-replacement
+    change: not-compared
+    verification: inferred
+- id: 2015-replacement
+  label: 2015 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2002-replacement
+  dates:
+    listed: '2015-06-22'
+    published: '2015-06-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2015-15207
+    locator: 80 Fed. Reg. 35668 (June 22, 2015)
+  source: compact-nm-jicarilla-apache-nation-new-mexico-2015
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2015.06.22_jicarilla_apache_nation_tribal_state_gaming_compact.pdf
+    sha256: 15ef74e777a553e795d86dd90168ab4a9a396769df0ab6041372baeb15243e34
+    pages: 47
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution.
+    summary: After written notice and a twenty-day period, the complaining party may issue a notice to cease the
+      disputed activity, and either side may invoke arbitration before a three-member panel with the American Arbitration
+      Association appointing a third arbitrator if needed; the arbitration result is final and binding and enforceable
+      in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: SECTION 14. Entire Agreement.
+    summary: The compact may be amended only by a written instrument signed by the Native nation and the State and
+      approved by the Secretary of the Interior, with approval of the Native nation, the Governor and the State
+      Legislature; the excerpt sets no reopening trigger or time limit.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2002-replacement
+    change: changed
+    summary: The 2015 compact keeps the 20-day notice period, the 10-day response and three-attorney arbitration,
+      and adds a two-year window to start the procedure (and a two-year window for the State to raise pre-effective-date
+      payment breaches), allows a single arbitrator by written agreement, sets 30-day periods for choosing arbitrators
+      (a non-responding party is bound to proceed with the other's single arbitrator), and lengthens the third-arbitrator
+      period from 10 to 30 days.
+    locator_before: 7.A.1-5
+    locator_after: 7.A.1-4
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2002-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,91 @@
+id: bois-forte-band-minnesota-blackjack-compact
+kind: gaming-compact
+title: Bois Forte Band (Nett Lake)–State of Minnesota Blackjack Compact
+nations:
+- bois-forte-band
+states:
+- MN
+jurisdictions:
+- level: multiple
+  note: Class III blackjack compact for Bois Forte Band (Nett Lake) and the State of Minnesota under 25 U.S.C. §
+    2710(d).
+summary: 'The Class III blackjack compact documents the Office of Indian Gaming lists for Bois Forte Band (Nett
+  Lake) and the State of Minnesota as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each
+  event and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1991-original
+  label: 1991 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1991-10-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mn-bois-forte-band-1991-10-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_1991.10.03_bois_forte_band_of_chippewa_indians_tribal_state_gaming_compact.pdf
+    sha256: 82753fbf15c7d560f0fef122ce25bb053e535cd54342e8627bb44f2de6c102b4
+    pages: 20
+  clauses:
+  - topic: renegotiation
+    locator: Section 2.2 Renegotiation
+    summary: Either the State or the Band may request in writing, by certified mail, negotiations to amend, replace
+      or repeal the compact; the parties have 180 days to negotiate before IGRA procedures and remedies apply, and
+      the compact stays in effect meanwhile.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 2024-amendment
+  label: 2024 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2024-09-20'
+    published: '2024-09-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2024-21609
+    locator: 89 Fed. Reg. 77170 (Sept. 20, 2024)
+  source: compact-mn-bois-forte-band-2024-09-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_2024.09.20_bois_forte_band_tribal_state_gaming_compact.pdf
+    sha256: 90a43ffed779d067c197cf56e7e6c9c8556949a2f1090eab02a018156db72e05
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4.2, Violations by the Band of this Addendum (Section 4.0 Enforcement and Disputes)
+    summary: The Department of Public Safety gives the Band an Alleged Violation Notice, the Band has thirty days
+      to investigate and order corrective action, and if the Band disputes a violation the parties meet within fifteen
+      days before either party may pursue remedies under the IGRA.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: unchanged
+    summary: The addendum does not restate or alter the renegotiation terms. Its recitals rely on Sections 2.2 and
+      2.3 of the 1991 compact, which let the parties negotiate an amendment for games the State permits for charitable,
+      commercial or governmental purposes, and its Section 1.1 leaves the compact's other terms unchanged.
+    locator_before: Section 2.2
+    locator_after: WHEREAS recitals (Sections 2.2 and 2.3 of the Compact)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2024 addendum''s Section 4.0 dispute text is visible, but the 1991 compact''s
+      dispute text is not in the excerpts, so the dispute finding is not-compared. The renegotiation finding rests
+      on the recitals and Section 1.1, because the addendum does not restate Sections 2.2 and 2.3.'
+found_in:
+- 2026-11-21-gaming-compact-histories

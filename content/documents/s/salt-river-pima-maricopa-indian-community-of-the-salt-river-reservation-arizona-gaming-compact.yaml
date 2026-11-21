@@ -1,0 +1,290 @@
+id: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-arizona-gaming-compact
+kind: gaming-compact
+title: Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona–State of Arizona Gaming
+  Compact
+nations:
+- salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation
+states:
+- AZ
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona
+    and the State of Arizona under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Salt River Pima-Maricopa
+  Indian Community of the Salt River Reservation, Arizona and the State of Arizona as of Nov. 21, 2026: 1 original,
+  1 replacement, 2 amendments and 1 restatement. The order, the kind of each event and which version is in effect
+  are inferred from the list (project analysis); clause summaries and comparisons are a small model''s reading of
+  excerpts.'
+versions:
+- id: 1998-original
+  label: 1998 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1998-09-18'
+    published: '1998-09-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-25035
+    locator: 63 Fed. Reg. 49923 (Sept. 18, 1998)
+  source: compact-az-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-1998-09-18
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliance_1998.09.18_salt_river_pima-maricopa_indian_community_tribal_state_gaming_compact.pdf
+    sha256: 47db21d9952c3da276fbc2f99013f5c1cb37e4dc5db1390dc1cfc290c7d55469
+    pages: 102
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 15, subsections (b)-(g) (heading not printed in the excerpt body)
+    summary: The compact provides for written notice, a meeting within ten days, and arbitration in Arizona if the
+      dispute is not resolved within thirty days, with one agreed arbitrator or a panel of three whose third member
+      the American Arbitration Association appoints if the two cannot agree; the majority decision is final, binding
+      and unappealable, and U.S. District Courts have jurisdiction over actions to enjoin class III gaming in violation
+      of the compact.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 17. AMENDMENTS
+    summary: Amendments must be in writing and signed by both parties, and the excerpt shows no separate request
+      right, trigger or time limit for reopening the compact.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2003-replacement
+  label: 2003 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1998-original
+  dates:
+    listed: '2003-02-05'
+    published: '2003-02-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-2787
+    locator: 68 Fed. Reg. 5912 (Feb. 5, 2003)
+  source: compact-az-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2003-02-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2003.02.05_salt_river_pima-maricopa_tribal_state_gaming_compact.pdf
+    sha256: 35fdff9a60a6b0bc7eae3d26efc50a37689c6318ff356a67f46edc4151cbd550
+    pages: 61
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 3(d)(4), State Gaming Agency denial of transfer
+    summary: A denied transfer of gaming device operating rights may be disputed under Section 15, but the excerpt
+      does not include the Section 15 steps.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 17. AMENDMENTS, subsections (a)-(c)
+    summary: Either party may propose amendments to listed regulatory provisions, and failed good-faith negotiations
+      go to mediation under Section 15(b) before the parties document any amendment; any provision may also be amended
+      at any time by mutual agreement in a signed writing.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1998-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1998-original
+    change: changed
+    summary: The 1998 compact's Section 17 requires amendments to be in writing and signed by both parties and has
+      no proposal procedure. The 2003 compact's Section 17 keeps the writing-and-signature rule in Section 17(c)
+      and adds a process under which either party may propose amendments within 180 days on listed regulatory topics,
+      with good-faith negotiations within 90 days and, if those fail, mediation under Section 15(b).
+    locator_before: Sec. 17
+    locator_after: Sec. 17(a)-(c)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2003 compact''s effective date depends on other Arizona tribes'' new
+      compacts (Section 2(vv)), and its Section 15 dispute text is not in the excerpts. The earlier excerpt includes
+      the Section 15 dispute text. The comparison of general dispute procedures should be rechecked against the
+      full 2003 compact.'
+- id: 2013-amendment
+  label: 2013 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2003-replacement
+  dates:
+    listed: '2013-06-04'
+    published: '2013-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2013-13262
+    locator: 78 Fed. Reg. 33435 (June 4, 2013)
+  source: compact-az-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2013-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2013.06.04_salt_river_pima-maricopa_tribal_state_gaming_compact.pdf
+    sha256: b48fceb1dbdae006da075781e3efbea4ef7c8c7fa54014092a98d9441bc141f0
+    pages: 16
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-replacement
+    change: unchanged
+    summary: The 2013 Agreement to Amend lists the provisions it amends (Sections 2(n), 3(d), 3(d)(8), 3(m), 4(d),
+      5(i) and (n), 6(g), 7(g) and 12(e)), and Section 15 (dispute resolution) is not among them, so the 2003 dispute
+      process still governs. The 2003 Section 15 text is not in the excerpts, so this rests on the amendment's list.
+    locator_before: Sec. 15 (text not in excerpts)
+    locator_after: Agreement, paragraph 1
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2003-replacement
+    change: unchanged
+    summary: Section 17 (amendments) is not among the provisions listed as amended; the Agreement cites Section
+      17(c) as the basis for the amendment and includes its own clause allowing the parties to renegotiate provisions
+      of the Agreement under the Compact, so the 2003 Section 17 amendment provisions still govern.
+    locator_before: Sec. 17(c)
+    locator_after: Agreement, paragraph 10
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2021-restatement
+  label: 2021 amended and restated compact
+  event: restatement
+  status: in-effect
+  supersedes:
+  - 2003-replacement
+  - 2013-amendment
+  dates:
+    listed: '2021-05-24'
+    published: '2021-05-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-10877
+    locator: 86 Fed. Reg. 27889 (May 24, 2021)
+  source: compact-az-salt-river-pima-maricopa-indian-communit-2021
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508 Compliant 2021.05.24 Salt River Pima Maricopa Indian Community
+      Tribal State Gaming Compact_0.pdf
+    sha256: 2bf612d1bcf311565d846730de7147fee31ac178c5f62901bc2d77e23f7438d5
+    pages: 80
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 3(b)(3)(B)-(C)
+    summary: For appendix disputes, either party may request a new or modified appendix in writing, and if no agreement
+      is reached within 180 days either may initiate Section 15 dispute resolution, where an arbitration under Section
+      15(c) is conducted before a single neutral arbitrator selected by CPR in a last best offer format; the general
+      Section 15 procedure is not in the excerpt.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 3(b)(3) and SECTION 17. AMENDMENTS
+    summary: Either Salt River Pima-Maricopa Indian Community or the State Gaming Agency may request in writing
+      to negotiate a new or modified appendix, and after 180 days without agreement either may initiate Section
+      15 dispute resolution; compact amendments must be in writing, signed by both parties, and approved or deemed
+      approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2003-replacement
+    change: changed
+    summary: The 2003 compact's Section 17 requires amendments to be in writing and signed by both parties. The
+      2021 Section 17 keeps that rule and adds that an amendment must also be approved or deemed approved by operation
+      of law by the Secretary of the Interior where the Act requires, and it authorizes amendments that would give
+      other named tribes access to additional revenue in exchange for transfer or forbearance of rights under the
+      2021 Compact. The 2021 Section 3(b)(3) adds a procedure for requests to negotiate new or modified appendices,
+      which the 2003 excerpt does not show.
+    locator_before: Sec. 17
+    locator_after: Sec. 17; Sec. 3(b)(3)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later document is the 2021 replacement compact for the Salt River Pima-Maricopa
+      Indian Community, which the excerpts show as a 508-compliant compact. The 2021 text is an OCR scan with some
+      garbled words, and the 2003 dispute text is not in the excerpts. The 2021 Section 15 text should be checked
+      directly before relying on the dispute comparison.'
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2021-restatement
+  dates:
+    listed: '2022-06-14'
+    published: '2022-06-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-12743
+    locator: 87 Fed. Reg. 35992 (June 14, 2022)
+  source: compact-az-salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation-2022-06-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2022.06.14_salt_river_pima-maricopa_indian_community_tribal_state_gaming_compact.pdf
+    sha256: 2f5945edb19d39a38c9dbceaee88f7c31256ab871178ddaba5b1033c43cd4fb4
+    pages: 20
+  clauses:
+  - topic: dispute-resolution
+    locator: Paragraph 12
+    summary: Disputes under the Agreement go to the dispute resolution provisions of Section 15 of the Compact,
+      which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Paragraph 10
+    summary: The Compact is amended under its Section 17, which the excerpt does not reproduce, and this Agreement
+      itself may be changed only by a written document signed by both parties.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2021-restatement
+    change: unchanged
+    summary: The 2022 amendment lists 13 provisions it amends, none of them Section 15, and says no other provision
+      of the Compact is amended, so the 2021 dispute process still governs. The 2021 Section 15 text itself is not
+      in the excerpts.
+    locator_before: '15'
+    locator_after: Agreement para. 4
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2021 Section 15 and Section 17 texts are only partly visible in the
+      earlier excerpts. The unchanged finding rests on the amendment''s paragraph 1 list of 13 amended provisions;
+      the attachments themselves (strike-out and bold markup) are not in the excerpt. The later excerpt is the amendment
+      letter and agreement only.'
+  - topic: renegotiation
+    compared_with: 2021-restatement
+    change: unchanged
+    summary: Section 17 (amendment by mutual agreement) and the appendix-negotiation process in Section 3(b)(3)
+      are not among the provisions the 2022 amendment lists as amended, so the 2021 renegotiation terms still govern.
+    locator_before: '17'
+    locator_after: Agreement para. 4
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2021 Section 15 and Section 17 texts are only partly visible in the
+      earlier excerpts. The unchanged finding rests on the amendment''s paragraph 1 list of 13 amended provisions;
+      the attachments themselves (strike-out and bold markup) are not in the excerpt. The later excerpt is the amendment
+      letter and agreement only.'
+found_in:
+- 2026-11-21-gaming-compact-histories

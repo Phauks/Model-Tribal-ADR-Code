@@ -1,0 +1,274 @@
+id: confederated-tribes-and-bands-of-the-yakama-nation-washington-gaming-compact
+kind: gaming-compact
+title: Confederated Tribes and Bands of the Yakama Nation–State of Washington Gaming Compact
+nations:
+- confederated-tribes-and-bands-of-the-yakama-nation
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Confederated Tribes and Bands of the Yakama Nation and the State of Washington
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Confederated Tribes and Bands
+  of the Yakama Nation and the State of Washington as of Nov. 21, 2026: 1 original and 4 amendments. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1996-original
+  label: 1996 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1996-08-02'
+    published: '1996-08-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-96-19679
+    locator: 61 Fed. Reg. 40429 (Aug. 2, 1996)
+  source: compact-wa-confederated-tribes-and-bands-of-the-yakama-nation-1996-08-02
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_1996.08.02_confederated_tribes_and_bands_of_the_yakama_nation_tribal_state_gaming_compact.pdf
+    sha256: 9664bd4e77734f519b8c4039bcd71dbcfccfa11a4916d25b9041c55c2eb297a1
+    pages: 73
+  clauses:
+  - topic: renegotiation
+    locator: SECTION XV.D (Adjustments/Renegotiations), D.1
+    summary: The compact may be amended by mutual written agreement; the parties must adjust terms after a change
+      in State law, a qualifying court decision or federal legislation, and some scope terms are locked for thirty-six
+      months.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1996-original
+  dates:
+    listed: '1999-01-28'
+    published: '1999-01-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-1934
+    locator: 64 Fed. Reg. 4461 (Jan. 28, 1999)
+  source: compact-wa-confederated-tribes-and-bands-of-the-yakama-nation-1999-01-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1999.01.28 Confederated Tribes and Bands of
+      the Yakama Nation Tribal State Gaming Compact.pdf
+    sha256: 40d20e699cc6c3298f577617754349ef77299134880c47637d9b325ded4537ca
+    pages: 54
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 16. DISPUTE RESOLUTION
+    summary: Disputes under the Appendix follow any dispute provisions made specifically applicable in the Appendix,
+      and otherwise go to the binding arbitration provisions of the compact.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15. MORATORIUM, 15.1
+    summary: The Tribe agrees to seek no amendment on gambling devices for three years from execution, except where
+      listed events occur, such as a change in federal or state law or a court decision.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1996-original
+    change: changed
+    summary: The earlier compact (Section XII.C) provides written notice, a meeting within ten days, and AAA arbitration
+      after 20 days, with a final and unappealable decision; the 1999 amendment leaves that clause in place and
+      adds an Appendix X routing rule that disputes under the appendix go to any appendix-specific dispute provisions,
+      otherwise to the compact's binding arbitration, plus a regulatory fee dispute step requiring payment of the
+      undisputed amount and escrow of the disputed amount before arbitration.
+    locator_before: Section XII.C
+    locator_after: Appendix X, Section 16; Section 13.5
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1996-original
+    change: unchanged
+    summary: The amendment amends Section III(A) and adds Appendix X, and does not change Section XV, so the Section
+      XV.D adjustment and renegotiation terms still govern, including the 36-month limit on renegotiating Section
+      III E, H, I and J.
+    locator_before: XV.D.1
+    locator_after: 1-2
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1996-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-confederated-tribes-and-bands-of-the-yakama-nation-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2007.05.31_confederated_tribes_and_bands_of_the_yakama_nation_tribal_state_gaming_compact.pdf
+    sha256: 546aa83498cd70cc268e670199675c4d43aa086198f90bcacf10c4e55614c9e1
+    pages: 55
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 17. DISPUTE RESOLUTION
+    summary: Disputes under the Appendix are resolved under any dispute provisions made applicable in the Appendix,
+      and otherwise under the Compact's dispute provisions, which are not reproduced in the excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15.2 Post-Moratorium (Appendix X2)
+    summary: After the moratorium expires, the Yakama Nation may seek an amendment when law or a court permits new
+      devices or another Washington tribe obtains materially different devices or higher wagers, subject to good
+      faith negotiation with the State.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1996-original
+    change: changed
+    summary: 'The earlier compact (Section XII.C) provides written notice, a meeting within ten days, and AAA arbitration
+      after 20 days with a final and unappealable decision; the 2007 Second Amendment leaves that clause in place
+      and adds Appendix X2 terms: a routing rule sending appendix disputes to any appendix-specific provisions and
+      otherwise to the compact''s dispute resolution provisions, and a regulatory fee dispute step with payment
+      of the undisputed amount, escrow of the rest, then binding arbitration.'
+    locator_before: Section XII.C
+    locator_after: Appendix X2, Section 17; Section 13.5
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1996-original
+    change: unchanged
+    summary: The Second Amendment does not change Section XV; it adds Appendix X2 and recognizes the lottery systems
+      under Section III, so the Section XV.D terms still govern, including the 36-month limit on renegotiating Section
+      III E, H, I and J.
+    locator_before: XV.D.1
+    locator_after: '2'
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1996-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-13712
+    locator: 80 Fed. Reg. 31918 (June 4, 2015)
+  source: compact-wa-confederated-tribes-and-bands-of-the-yakama-nation-2015-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2015.06.04_confederated_tribes_and_band_of_the_yakama_nation_tribal_state_gaming_compact.pdf
+    sha256: 1e8700eaeccdde39b9e03243030d813a7482f1fd9c4e8c5ba14cda79de7b9766
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4. Dispute Resolution (4.1 and 4.2)
+    summary: Disputes over the addendum terms, including the number of player terminals, must meet and attempt to
+      resolve at least 30 days before the increased allocation; if no resolution is reached, either party may use
+      the Compact's dispute provisions.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1996-original
+    change: changed
+    summary: The earlier compact (Section XII.C) provides written notice, a meeting within ten days, and AAA arbitration
+      after 20 days with a final and unappealable decision; the 2015 Third Amendment leaves that clause in place
+      and adds, for disputes about its terminal-allocation addendum, a requirement to meet and confer at least 30
+      days before the increase takes effect, after which either party may use the compact's dispute resolution provisions.
+    locator_before: Section XII.C
+    locator_after: Appendix X2 Addendum, Section 4 (4.1-4.2)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1996-original
+    change: not-compared
+    verification: inferred
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1996-original
+  dates:
+    listed: '2022-11-25'
+    published: '2022-11-25'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-25634
+    locator: 87 Fed. Reg. 72505 (Nov. 25, 2022)
+  source: compact-wa-confederated-tribes-and-bands-of-the-yakama-nation-2022-11-25
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2022.11.17_confederated_tribes_and_bands_of_the_yakama_nation_gaming_compact_4th_amendment.pdf
+    sha256: 9eb472a25a9d723df7c278a7c0cd3a88f48091b83d69de0e6831a6a93e44b1b2
+    pages: 47
+  clauses:
+  - topic: dispute-resolution
+    locator: Appendix S, Section 5.3.6 Approval of Certification; Revocation
+    summary: For sports wagering certifications, the Tribal and State gaming agencies meet and confer on the State
+      agency's concerns; the excerpt describes no further dispute steps.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Most Favored Nation Amendments, Memorandum of Incorporation (preamble)
+    summary: The Most Favored Nations memorandum amends the compact automatically when the Secretary approves a
+      compact with another Washington tribe that expands its terms; modifications requiring formal amendment or
+      renegotiation are addressed separately.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1996-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1996-original
+    change: changed
+    summary: The Fourth Amendment's Most Favored Nation amendments add a second gaming facility under Section III.E
+      and state that the Nation may ask to renegotiate the location and number of facilities after January 1, 1998,
+      where the 1996 compact barred renegotiating Section III E, H, I and J for 36 months from the compact date,
+      subject to listed exceptions.
+    locator_before: XV.D.3
+    locator_after: MFN amendments, Section 1(1)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The Fourth Amendment''s text is garbled in places (OCR strike-through and
+      insertion marks), so check the quoted wording and the MFN amendment text against the original. The MFN clause
+      in Section XV(D)(8) is cited but not shown in the excerpt, and the MFN amendments also refer to later amendments
+      in 1998, 2007 and 2015.'
+found_in:
+- 2026-11-21-gaming-compact-histories

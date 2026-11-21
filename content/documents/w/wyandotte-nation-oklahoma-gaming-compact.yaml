@@ -1,0 +1,85 @@
+id: wyandotte-nation-oklahoma-gaming-compact
+kind: gaming-compact
+title: Wyandotte Nation–State of Oklahoma Gaming Compact
+nations:
+- wyandotte-nation
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Wyandotte Nation and the State of Oklahoma under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Wyandotte Nation and the
+  State of Oklahoma as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event and which
+  version is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small
+  model''s reading of excerpts.'
+versions:
+- id: 2005-original
+  label: 2005 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2005-12-22'
+    published: '2005-12-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-e5-7698
+    locator: 70 Fed. Reg. 76067 (Dec. 22, 2005)
+  source: compact-ok-wyandotte-nation-2005-12-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508_compliant_2005.12.22_wyandotte_nation_tribal_state_gaming_compact.pdf
+    sha256: 0cb7e889d77481a0e33cb368ecb116ea3a3746af5779a86681ef4a3497de1b13
+    pages: 38
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION
+    summary: A party asserting noncompliance serves written notice and the parties' representatives meet within
+      thirty days; either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before one arbitrator, remedies are limited to enforcement of the compact, and either party may seek
+      de novo review of the award in federal district court.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, B.
+    summary: Within 180 days before the term or any renewal expires, either the Native nation or the State, through
+      its Governor, may request to renegotiate the payment terms in subsections A and E of Part 11; the excerpt
+      shows no general amendment procedure.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2005-original
+  dates:
+    listed: '2018-08-17'
+    published: '2018-08-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-17729
+    locator: 83 Fed. Reg. 41101 (Aug. 17, 2018)
+  source: compact-ok-wyandotte-nation-2018-08-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2018.08.17 Wyandotte compact amendment.pdf
+    sha256: c4ab4a1100a1aab6411d9d4126982abbf384aed36ff376d03efabd56e073804e
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2005-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2005-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

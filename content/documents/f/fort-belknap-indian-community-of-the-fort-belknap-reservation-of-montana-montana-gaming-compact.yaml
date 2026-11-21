@@ -1,0 +1,52 @@
+id: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-montana-gaming-compact
+kind: gaming-compact
+title: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana–State of Montana Gaming Compact
+nations:
+- fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana
+states:
+- MT
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Fort Belknap Indian Community of the Fort Belknap Reservation of Montana and
+    the State of Montana under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Fort Belknap Indian Community
+  of the Fort Belknap Reservation of Montana and the State of Montana as of Nov. 21, 2026: 1 original. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2007-original
+  label: 2007 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2007-12-10'
+    published: '2007-12-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-e7-23885
+    locator: 72 Fed. Reg. 69706 (Dec. 10, 2007)
+  source: compact-mt-fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana-2007-12-10
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2007.12.10_fort_belknap_indian_community_tribal_state_gaming_compact.pdf
+    sha256: 036b7f5511e13716d846a9ddbe697bbc4fa0f03bbfa89182a5fa8c6fff5e7e8a
+    pages: 11
+  clauses:
+  - topic: dispute-resolution
+    locator: XII. DEFAULT AND TERMINATION, A. Default by Tribe
+    summary: 'The compact has no negotiation, arbitration or court process for disputes; its only mechanism is default:
+      a party in failure may be terminated by the other after ninety days written notice if the breach is not agreed
+      to be remedied and is not in fact remedied, and either party may terminate on 120 days notice.'
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: XIII. AMENDMENTS
+    summary: The agreement may be amended only with the prior consent of the parties by signed written instrument;
+      the parties must negotiate in good faith if IGRA or state law changes, and the Native nation may notify the
+      State that it wants additional Class III games.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+found_in:
+- 2026-11-21-gaming-compact-histories

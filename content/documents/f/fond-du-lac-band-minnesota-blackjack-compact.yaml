@@ -1,0 +1,46 @@
+id: fond-du-lac-band-minnesota-blackjack-compact
+kind: gaming-compact
+title: Fond du Lac Band–State of Minnesota Blackjack Compact
+nations:
+- fond-du-lac-band
+states:
+- MN
+jurisdictions:
+- level: multiple
+  note: Class III blackjack compact for Fond du Lac Band and the State of Minnesota under 25 U.S.C. § 2710(d).
+summary: 'The Class III blackjack compact documents the Office of Indian Gaming lists for Fond du Lac Band and the
+  State of Minnesota as of Nov. 21, 2026: 1 amendment. The order, the kind of each event and which version is in
+  effect are inferred from the list (project analysis); clause summaries and comparisons are a small model''s reading
+  of excerpts.'
+versions:
+- id: 2024-amendment
+  label: 2024 amendment
+  event: amendment
+  status: in-effect
+  dates:
+    listed: '2024-10-17'
+    published: '2024-10-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2024-23989
+    locator: 89 Fed. Reg. 83698 (Oct. 17, 2024)
+  source: compact-mn-fond-du-lac-band-2024-10-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_com[pliant_2024.10.17_fond_du_lac_band_tribal_state_gaming_compact.pdf
+    sha256: c8d6cefcaec3a05ba6a59789810a27663d46600126b2f0310f02c544e44be5af
+    pages: 5
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4.2(c), Violations of this Addendum (Section 4.0 Enforcement and Disputes)
+    summary: The Department of Public Safety notifies the Band of a violation, the Band has seven days to investigate
+      and correct it, the Commissioner may issue a Corrective Action Order, and if the Band disputes a finding the
+      parties meet within seven days before either party may pursue remedies under the IGRA or state law.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+found_in:
+- 2026-11-21-gaming-compact-histories

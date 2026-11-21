@@ -1,0 +1,397 @@
+id: yankton-sioux-tribe-of-south-dakota-south-dakota-gaming-compact
+kind: gaming-compact
+title: Yankton Sioux Tribe of South Dakota–State of South Dakota Gaming Compact
+nations:
+- yankton-sioux-tribe-of-south-dakota
+states:
+- SD
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Yankton Sioux Tribe of South Dakota and the State of South Dakota under 25
+    U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Yankton Sioux Tribe of South
+  Dakota and the State of South Dakota as of Nov. 21, 2026: 1 original, 2 disapproved compacts, 2 amendments and
+  6 extensions. The order, the kind of each event and which version is in effect are inferred from the list (project
+  analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1991-original
+  label: 1991 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1991-06-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-sd-yankton-sioux-tribe-of-south-dakota-1991-06-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 1991.06.19 Yankton Sioux Tribe Tribal State
+      Gaming Compact 1991.pdf
+    sha256: 1ae4ad0df256bc64d38b0c07a68e31cb892cc048ed4ed7ec0735afdbda91f947
+    pages: 16
+  clauses:
+  - topic: dispute-resolution
+    locator: 13.1 (under 13. General Provisions)
+    summary: The excerpt provides no notice, negotiation or arbitration steps; either party may commence an action
+      in federal district court to resolve disputes over the compact's interpretation.
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: 12. Duration
+    summary: Either party may give written notice of provisions requiring review or amendment 180 days before the
+      two-year period expires; the parties then have 180 days to negotiate, and if unresolved the compact terminates.
+    verification: read-in-full
+    reviewer: small model, first pass
+- id: 1999-disapproval
+  label: 1999 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '1999-03-26'
+    published: '1999-03-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+    source: federal-register-99-7514
+    locator: 64 Fed. Reg. 14746 (Mar. 26, 1999)
+  source: compact-sd-yankton-sioux-tribe-of-south-dakota-1999-03-26
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 1999.03.26 Yankton Sioux Tribe Disapproval
+      Letter.pdf
+    sha256: 3c2495ffd2d965931243f73fc3c6e06bc4caf386b445ab3c68a2d80af75ba43d
+    pages: 1
+- id: 1999-disapproval-2
+  label: 1999 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '1999-06-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-sd-yankton-sioux-tribe-of-south-dakota-1999-06-11
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 1999.06.11 Yankton Sioux Tribe Disapproval
+      Letter.pdf
+    sha256: 5985d4bb01e06a11ef383e6cb8056b73dfb4fca57f6b64a515b71b8879fad44d
+    pages: 2
+- id: 2001-amendment
+  label: 2001 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2001-05-04'
+    published: '2001-05-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-11419
+    locator: 66 Fed. Reg. 22594 (May 4, 2001)
+  source: compact-sd-yankton-sioux-tribe-of-south-dakota-2001-05-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2001.05.04 Yankton Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 9d0743d546e639e8757ab0dcde773a5160ccee6d07ee51b6b2435c47e1611b28
+    pages: 10
+  clauses:
+  - topic: dispute-resolution
+    locator: 7.1 Arbitration procedures
+    summary: Disputes over the State's suitability determination on gaming applicants go to binding arbitration
+      under American Arbitration Association rules, with an appeal to federal court if law permits; Section 13.1
+      separately allows federal court actions over compact interpretation.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: 12. Duration
+    summary: The compact is subject to four-year review; either party may give written notice 180 days before the
+      period ends, the parties then negotiate for 180 days, and the compact terminates if the issues remain unresolved.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: changed
+    summary: The 1991 Section 3 allows the Tribe to operate other gaming authorized by State law after signing 'upon
+      written amendment of this agreement.' The 2001 Section 3.3 keeps the written-amendment route but drops the
+      'after the date of the signing of this Compact' limit. The 1991 excerpts show no general amendment or renegotiation
+      article, so only this other-gaming amendment route is compared.
+    locator_before: Section 3
+    locator_after: Section 3.3
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2001 document is an Amended Gaming Compact, approved by Interior letter
+      of May 2001, with a full restated text rather than a list of amended sections. The 1991 excerpts include a
+      Federal Register notice and the Interior approval letter of June 1991, which are not compact clauses.'
+- id: 2013-extension
+  label: 2013 extension
+  event: extension
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2013-09-05'
+    published: '2013-09-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2013-21644
+    locator: 78 Fed. Reg. 54670 (Sept. 5, 2013)
+  source: compact-sd-yankton-sioux-tribe-of-south-dakota-2013-09-05
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508_compliant_2013.09.05_yankton_sioux_tribe_tribal_state_gaming_compact.pdf
+    sha256: 3982b23235a97d03261000b1c6db1a10d76fdedc04523fea277028cf387fd26f
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+- id: 2013-extension-2
+  label: 2013 extension
+  event: extension
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2013-12-26'
+    published: '2013-12-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2013-30915
+    locator: 78 Fed. Reg. 78377 (Dec. 26, 2013)
+  source: compact-sd-yankton-sioux-tribe-of-south-dakota-2013-12-26
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2013.12.26 Yankton Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: bd7b3812bb2e977fe60df5c2706db4ed55dab29f66103890e3a40b8fbd137b32
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+- id: 2014-extension
+  label: 2014 extension
+  event: extension
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2014-05-16'
+    published: '2014-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2014-11323
+    locator: 79 Fed. Reg. 28538 (May 16, 2014)
+  source: compact-sd-yankton-sioux-tribe-of-south-dakota-2014-05-16
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2014.05.16 Yankton Sioux Tribal State Gaming
+      Compact.pdf
+    sha256: 0fdf31c1172254412e39a8293e9cde336d4721b6f050ab2fc23e7255208dd220
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+- id: 2014-extension-2
+  label: 2014 extension
+  event: extension
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2014-11-14'
+    published: '2014-11-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2014-27004
+    locator: 79 Fed. Reg. 68291 (Nov. 14, 2014)
+  source: compact-sd-yankton-sioux-tribe-of-south-dakota-2014-11-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2014.11.14 Yankton Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 56311e4f353eadada9730624d2e4761bc5bc2378dd4b654fc2cc686ada2643ed
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+- id: 2015-extension
+  label: 2015 extension
+  event: extension
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-13715
+    locator: 80 Fed. Reg. 31918 (June 4, 2015)
+  source: compact-sd-yankton-sioux-tribe-of-south-dakota-2015-06-04
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2015.06.04 Yankton Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: e9b049ab6339d5ccc931be007ec8514fea9bdb3e486f9c18dcc8f5140675e085
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+- id: 2015-extension-2
+  label: 2015 extension
+  event: extension
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2015-11-24'
+    published: '2015-11-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-29911
+    locator: 80 Fed. Reg. 73208 (Nov. 24, 2015)
+  source: compact-sd-yankton-sioux-tribe-of-south-dakota-2015-11-24
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508_compliant_2015.11.24_yankton_sioux_tribe_tribal_state_gaming_compact.pdf
+    sha256: 465af6eacdc6ecd3d976a28050ef91aa2000c863618477f7450aec213d4ae06f
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+- id: 2016-amendment
+  label: 2016 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2016-10-31'
+    published: '2016-10-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2016-26253
+    locator: 81 Fed. Reg. 75427 (Oct. 31, 2016)
+  source: compact-sd-yankton-sioux-tribe-of-south-dakota-2016
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2016.10.31 Yankton Sioux  Compact.pdf
+    sha256: 8088edb4f2ff91d69008e65215aa3f100ad85dbb00b88a61f15e4c915e9631f0
+    pages: 12
+  clauses:
+  - topic: dispute-resolution
+    locator: 14.1 (under 14. General Provisions)
+    summary: Either party may commence an action in federal district court to resolve a dispute over the interpretation
+      of the compact; the excerpt shows no notice, negotiation or arbitration step.
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: 12. Duration
+    summary: The compact is subject to review at four-year intervals; either party may give written notice before
+      the period ends, the parties then have 180 days to negotiate, and the compact terminates if the issues remain
+      unresolved.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: reworded
+    summary: The closest dispute-type clause in both excerpts is the violation-reporting and disciplinary escalation
+      clause. In 1991 it is Section 4.3, and it refers to the 'State/Tribal Compact'. In the 2016 amended compact
+      it is Section 4.4, with the same five-day addressing period and escalation, and the reference is changed to
+      'this compact'. The 2016 excerpts stop at Section 4.4, so any arbitration or suitability procedure elsewhere
+      in the compact is not visible and is not compared.
+    locator_before: Section 4.3 (Disciplinary action for misconduct by licensees)
+    locator_after: Section 4.4 (Disciplinary Action for Misconduct by Licensees)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2016 document is an Amended Gaming Compact, approved by Interior letter
+      with a Federal Register notice to follow. Its excerpt is cut off at Section 4.4, so later sections, including
+      any dispute or amendment article, cannot be checked. The 1991 excerpts include the Federal Register notice
+      and the Interior approval letter, which are not compact clauses.'
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: changed
+    summary: The 1991 Section 3 lets the Tribe operate other gaming authorized by State law after signing, upon
+      written amendment of the agreement. The 2016 Section 3.4 keeps the written-amendment route but drops the 'after
+      the date of the signing of this Compact' limit. The 2016 Section 3.3 separately allows craps, keno and roulette
+      at the Fort Randall Casino on notice, with no amendment needed. The 1991 excerpts show no general amendment
+      or renegotiation article, so only the other-gaming route is compared.
+    locator_before: Section 3
+    locator_after: Section 3.4
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2016 document is an Amended Gaming Compact, approved by Interior letter
+      with a Federal Register notice to follow. Its excerpt is cut off at Section 4.4, so later sections, including
+      any dispute or amendment article, cannot be checked. The 1991 excerpts include the Federal Register notice
+      and the Interior approval letter, which are not compact clauses.'
+found_in:
+- 2026-11-21-gaming-compact-histories

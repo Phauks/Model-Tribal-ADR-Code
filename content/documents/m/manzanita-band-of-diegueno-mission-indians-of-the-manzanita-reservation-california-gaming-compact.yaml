@@ -1,0 +1,57 @@
+id: manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-california-gaming-compact
+kind: gaming-compact
+title: Manzanita Band of Diegueno Mission Indians of the Manzanita Reservation, California–State of California Gaming
+  Compact
+nations:
+- manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Manzanita Band of Diegueno Mission Indians of the Manzanita Reservation, California
+    and the State of California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Manzanita Band of Diegueno
+  Mission Indians of the Manzanita Reservation, California and the State of California as of Nov. 21, 2026: 1 original.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-manzanita-band-of-diegueno-mission-indians-of-the-manzanita-reservation-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2000.05.16 Manzanita Band of Diegueno Mission
+      Indians Tribal State Gaming Compact.pdf
+    sha256: 4df690b2a51169bd8ef6b892105225c86c6e1f7cf7a2172f74c1c4e959c7917c
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.0. DISPUTE RESOLUTION PROVISIONS. Sec. 9.1 and Sec. 9.2.
+    summary: Disputes go through written notice, a meeting within ten days and thirty days of negotiation, then
+      binding arbitration under the AAA Commercial Arbitration Rules, with federal or state court available to enforce.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.0. AMENDMENTS; RENEGOTIATIONS. Sec. 12.1 and Sec. 12.2.
+    summary: The compact may be amended by mutual written agreement, and the Tribe may request renegotiation for
+      forms of Class III gaming not authorized, after twelve months.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+found_in:
+- 2026-11-21-gaming-compact-histories

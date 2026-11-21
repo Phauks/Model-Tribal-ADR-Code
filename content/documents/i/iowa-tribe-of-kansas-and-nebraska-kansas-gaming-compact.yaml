@@ -1,0 +1,74 @@
+id: iowa-tribe-of-kansas-and-nebraska-kansas-gaming-compact
+kind: gaming-compact
+title: Iowa Tribe of Kansas and Nebraska–State of Kansas Gaming Compact
+nations:
+- iowa-tribe-of-kansas-and-nebraska
+states:
+- KS
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Iowa Tribe of Kansas and Nebraska and the State of Kansas under 25 U.S.C. §
+    2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Iowa Tribe of Kansas and
+  Nebraska and the State of Kansas as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each
+  event and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1995-07-06'
+    published: '1995-07-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-16599
+    locator: 60 Fed. Reg. 35320 (July 6, 1995)
+  source: compact-ks-iowa-tribe-of-kansas-and-nebraska-1995-07-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/kansas/508_compliant_1995.07.06_iowa_tribe_of_kansas_nebraska_tribal_state_gaming_compact.pdf
+    sha256: 90c06e9312a9838643b0d76664f17a9d81f92d17ad22d28b4190b0390006f49a
+    pages: 153
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 31(B) Arbitration
+    summary: Arbitration is started by written notice under Section 30, each side names a nominee, and the American
+      Arbitration Society names a third arbitrator if the two cannot agree; the excerpt does not say whether awards
+      are binding.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2026-amendment
+  label: 2026 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2026-02-06'
+    published: '2026-02-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2026-02379
+    locator: 91 Fed. Reg. 5509 (Feb. 6, 2026)
+  source: compact-ks-iowa-tribe-of-kansas-and-nebraska-2026-02-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/kansas/iowa_tribe_of_kansas_and_nebraska-kansas_gaming_compact.pdf
+    sha256: 36efb9c8bd28716f978785ea97c65c7d2753c05d16a15753a09ce121b433301c
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

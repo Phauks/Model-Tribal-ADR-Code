@@ -1,0 +1,315 @@
+id: skokomish-indian-tribe-washington-gaming-compact
+kind: gaming-compact
+title: Skokomish Indian Tribe–State of Washington Gaming Compact
+nations:
+- skokomish-indian-tribe
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Skokomish Indian Tribe and the State of Washington under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Skokomish Indian Tribe and
+  the State of Washington as of Nov. 21, 2026: 1 original and 5 amendments. The order, the kind of each event and
+  which version is in effect are inferred from the list (project analysis); clause summaries and comparisons are
+  a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1995-09-06'
+    published: '1995-09-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-22046
+    locator: 60 Fed. Reg. 46490 (Sept. 6, 1995)
+  source: compact-wa-skokomish-indian-tribe-1995-09-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1995.09.06 Skokomish Indian Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 2510985d5c9a2c6316de76d53025c5593ec0d96dafa895a112740812c48e323d
+    pages: 83
+  clauses:
+  - topic: dispute-resolution
+    locator: XII.B.3.b Mandatory binding arbitration (Dispute Resolution Methods)
+    summary: The compact provides for written notice, meet-and-confer negotiation within ten days, then mediation,
+      then arbitration under JAMS policies of Seattle, Washington, with mandatory binding arbitration only where
+      the compact specifically refers to Section XII.B.3.b, and court relief for breach in federal district court.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: XV.D Amendments/Renegotiations (2), (3), (4)
+    summary: The compact provides that the parties shall renegotiate the scope of Class III gaming on written request
+      by the Tribe when state law or a court decision expands gaming, or when the Tribe wishes to offer other Class
+      III games, and that the terms remain in effect pending resolution.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '1999-05-14'
+    published: '1999-05-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-12228
+    locator: 64 Fed. Reg. 26435 (May 14, 1999)
+  source: compact-wa-skokomish-indian-tribe-1999-05-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1999.05.14 Skokomish Indian Tribe Tribal State  Gaming
+      Compact.pdf
+    sha256: 7bf672bfdd8a911eb39e88de372f9032e974fe4091ac443c1f13cdc091e160f3
+    pages: 53
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 16. DISPUTE RESOLUTION (Appendix X)
+    summary: Disputes under Appendix X are resolved under any dispute provisions specifically made applicable in
+      the Appendix, and otherwise under the binding arbitration provisions of the compact.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15. MORATORIUM, 15.1 Three year moratorium
+    summary: The Appendix bars the Tribe from seeking an amendment on gambling devices for three years after execution,
+      subject to exceptions such as changes in federal or state law, court decisions, and other tribes obtaining
+      comparable devices.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: The First Amendment amends Section III and adds Appendix X, not the dispute section; the earlier Section
+      XII.B (negotiation, mediation, then JAMS arbitration, binding where a provision references XII.B.3.b) continues.
+      New Appendix X, Section 16 sends disputes under the appendix to any dispute provisions made applicable in
+      it or otherwise to the Compact's binding arbitration provisions.
+    locator_before: Sec. XII.B.3
+    locator_after: Appendix X, Sec. 16
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: The recital says the amendment changes Section III and adds Appendix X. Section XV.D, the renegotiation
+      and amendment clause, is not listed, so it still governs. The new Section III.A items are within Section III,
+      so renegotiation requests about the scope of Class III gaming would apply to them.
+    locator_before: Section XV.D
+    locator_after: Recitals
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-skokomish-indian-tribe-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2007.05.31 Skokomish Indian Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: d7f56d8269446bba43a9a1f6b9e8fd526ccb5a5ba54091997db8e1180dda758d
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: The 2007 Second Amendment adds Appendix X2 and says Tribal Lottery Systems under it are authorized
+      activities under Section III. It does not list Section XII, so the compact's Section XII.B dispute process
+      still governs. The text of Appendix X2, which is incorporated in full, is attached to the amendment and is
+      not in the excerpts, so any dispute clause inside it cannot be checked.
+    locator_before: XII.B.3.b
+    locator_after: Paragraph 1
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2007 amendment is short and its operative text is visible, but Appendix
+      X2 is attached and its text is not in the excerpts. The pair''s earlier side is the 1995 compact, which skips
+      the 1999 First Amendment that added Appendix X. The amendment''s recitals confirm that. The recital date of
+      May 25, 1995 differs from the pair''s 1995-09-06 date.'
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: The amendment's operative paragraphs add Appendix X2 and recognize its activities under Section III.
+      Section XV.D, the renegotiation and amendment clause, is not listed as amended, so it still governs.
+    locator_before: Section XV.D
+    locator_after: Paragraph 1
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2007 amendment is short and its operative text is visible, but Appendix
+      X2 is attached and its text is not in the excerpts. The pair''s earlier side is the 1995 compact, which skips
+      the 1999 First Amendment that added Appendix X. The amendment''s recitals confirm that. The recital date of
+      May 25, 1995 differs from the pair''s 1995-09-06 date.'
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-13712
+    locator: 80 Fed. Reg. 31918 (June 4, 2015)
+  source: compact-wa-skokomish-indian-tribe-2015-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2015.06.04 Skokomish Indian Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 5a469668241e801a31b7a5587a65bccebcdcffdc7efeeebb3bb9f6d3fe620b0c
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4. Dispute Resolution, 4.1 and 4.2
+    summary: If a dispute arises over the addendum terms, including the number of Player Terminals Available for
+      Lease, the State and Tribe must meet and attempt to resolve it at least 30 days before the increased allocation
+      takes effect, and if that fails either party may use the compact's dispute resolution provisions.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: changed
+    summary: 'The Third Amendment''s optional Addendum adds a step for disputes over the Player Terminal allocation:
+      the State and Native nation must meet and attempt to resolve the dispute at least 30 days before the increased
+      allocation takes effect, after which either or both may use the Compact''s dispute resolution provisions.
+      The earlier compact''s Section XII.B (negotiation, mediation, JAMS arbitration) continues unamended.'
+    locator_before: Sec. XII.B.3
+    locator_after: Addendum Sec. 4.1-4.2
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: The amendment's listed changes are Section III.S, Appendix X2 Sections 12.1, 13.4, 14.4 and 14.5, and
+      the Addendum. Section XV.D is not listed, so the earlier renegotiation clause still governs.
+    locator_before: Section XV.D
+    locator_after: Paragraph 1
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2016-amendment
+  label: 2016 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2016-07-18'
+    published: '2016-07-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2016-16919
+    locator: 81 Fed. Reg. 46700 (July 18, 2016)
+  source: compact-wa-skokomish-indian-tribe-2016-07-18
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2016.07.18 Skokomish Compact Approval.pdf
+    sha256: dcecc22772d848f1d5c53da54b41a212a1651359c57675ab6e07bc92049dc084
+    pages: 12
+  clauses:
+  - topic: dispute-resolution
+    locator: A. Scope of Class III Gaming, item 22 (Nevada table games)
+    summary: If a dispute arises over a Nevada-style table game, the game may not be used until the dispute is resolved
+      under Section XII.B.3.b's final and unappealable arbitration provisions.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+- id: 2020-amendment
+  label: 2020 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2020-12-11'
+    published: '2020-12-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2020-27219
+    locator: 85 Fed. Reg. 80139 (Dec. 11, 2020)
+  source: compact-wa-skokomish-indian-tribe-2020-12-11
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2020.12.11 Skokomish Indian Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: ccf912feec71eef71f18571be0ec7074b33da98d67769113d2df7bbe324d2cb1
+    pages: 216
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XIII.B (Dispute Resolution Alternatives)
+    summary: Either party gives written notice, the parties meet and confer within twenty business days, then may
+      seek mediation by agreement; if dissatisfied either may seek judicial resolution, and arbitration occurs only
+      by mutual agreement with an award within one year.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: changed
+    summary: The 1995 compact provides a 10-day meet-and-confer, mediation, and arbitration before JAMS that either
+      party may seek, mandatory and binding for provisions referencing Section XII.B.3.b and otherwise reviewable
+      de novo in federal court. The 2020 restated compact provides a meet-and-confer within 20 business days, mediation
+      and arbitration only by mutual agreement, and an arbitrator's decision that is final for the non-judicial
+      phase but subject to judicial review, with judicial resolution available if mediation is unsatisfactory.
+    locator_before: Sec. XII.B.1-3
+    locator_after: Art. XIII.B(1)-(3)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

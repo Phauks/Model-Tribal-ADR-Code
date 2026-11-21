@@ -1,0 +1,157 @@
+id: agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-california-gaming-compact
+kind: gaming-compact
+title: Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation, California–State of California
+  Gaming Compact
+nations:
+- agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation,
+    California and the State of California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Agua Caliente Band of Cahuilla
+  Indians of the Agua Caliente Indian Reservation, California and the State of California as of Nov. 21, 2026: 1
+  original, 1 amendment and 1 replacement. The order, the kind of each event and which version is in effect are
+  inferred from the list (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2000.05.16_agua_caliente_band_of_cahuilla_indians_tribal_state_gaming_compact_0.pdf
+    sha256: aa721937d8e340c24c425ab62c9c291fbdd6825bf1d1ccac2a4ef27da8ec777e
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.0 (dispute resolution), Sec. 9.2 Arbitration Rules
+    summary: If a dispute is not resolved within 30 calendar days after the first meeting, either party may seek
+      arbitration under the American Arbitration Association Commercial Rules, the arbitrator's written decision
+      is binding and judgment may be entered in any federal or state court, and alternative dispute resolution is
+      to be explored before judicial process.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.0 AMENDMENTS; RENEGOTIATIONS, Sec. 12.1 to 12.3
+    summary: The compact may be amended at any time by mutual written agreement of both parties, and the Band may
+      request renegotiation to add other forms of Class III gaming, with negotiations to begin within 30 days of
+      the request and no such request allowed for 12 months after the effective date; the excerpt does not show
+      what happens if talks fail.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2007-12-19'
+    published: '2007-12-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-e7-24563
+    locator: 72 Fed. Reg. 71939 (Dec. 19, 2007)
+  source: compact-ca-agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-2007-12-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2007.12.19_agua_caliente_band_of_cahuilla_indians_tribal_state_gaming_compact.pdf
+    sha256: 72625944088d349ce9b9fa8b120a341bf35062a30a9ce8f43f5e6c0bd085a33c
+    pages: 37
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2016-replacement
+  label: 2016 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  - 2007-amendment
+  dates:
+    listed: '2016-10-31'
+    published: '2016-10-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2016-26256
+    locator: 81 Fed. Reg. 75427 (Oct. 31, 2016)
+  source: compact-ca-agua-caliente-band-of-cahuilla-indians-of-the-agua-caliente-indian-reservation-2016-10-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2016.10.31_agua_caliente_band_of_cahuilla_indians_tribal_state_gaming_compact_0.pdf
+    sha256: c8d7566f8693029c2378e5c196eb54747fdf80a58c74d515be872c7bde884f17
+    pages: 150
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1 Voluntary Resolution; Court Resolution and Sec.
+      13.2 Arbitration Rules
+    summary: Disputes under the compact begin with a written notice, a written response within 15 days and a meet-and-confer
+      within 30 days; if unresolved either party may seek arbitration before JAMS, but neither party is required
+      to agree to arbitrate, and unresolved disputes may be brought in the federal district court for the district
+      of the Gaming Facility or, if that court lacks jurisdiction, a state court of competent jurisdiction in the
+      county. Sec. 13.4 limits remedies to injunctive relief, specific performance and declaratory relief.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS, Sec. 15.1 to Sec. 15.3
+    summary: Sec. 15.1 permits amendment at any time by mutual written agreement if each party voluntarily consents
+      to the negotiations in writing, Sec. 15.2 lets either party request negotiation of an extension or new compact
+      no sooner than 18 months before the termination date, and Sec. 15.3 requires written requests and a schedule
+      for negotiations; Sec. 5.3 also lets the Tribe request reopening of negotiations on the credit provision once
+      carry-forward credits are exhausted.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: changed
+    summary: The later compact allows either party to request negotiations to extend the term or for a new compact
+      no sooner than 18 months before the termination date, extends the compact one calendar year if no agreement
+      is reached, and requires written agreement of all parties before negotiations begin; the earlier compact allowed
+      the nation to request renegotiation for new Class III games after 12 months, with negotiation governed by
+      IGRA and enforceable in federal court.
+    locator_before: Sec. 12.1-12.3
+    locator_after: Sec. 15.1-15.3
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The excerpts contain no general dispute provision for the later compact
+      (Section 9.0 of the earlier compact is not matched), so the excerpts cannot show whether one exists. The earlier
+      Section 12.4 termination right and the later termination date in Section 14.2 are not in the excerpts. The
+      later renegotiation text (Sec. 15.2) provides an automatic one-year extension; the earlier compact does not
+      show an equivalent. Earlier excerpts are the same as in the 2007 pair above.'
+found_in:
+- 2026-11-21-gaming-compact-histories

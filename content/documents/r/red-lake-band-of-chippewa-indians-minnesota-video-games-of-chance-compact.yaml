@@ -1,0 +1,45 @@
+id: red-lake-band-of-chippewa-indians-minnesota-video-games-of-chance-compact
+kind: gaming-compact
+title: Red Lake Band of Chippewa Indians, Minnesota–State of Minnesota Video Games of Chance Compact
+nations:
+- red-lake-band-of-chippewa-indians
+states:
+- MN
+jurisdictions:
+- level: multiple
+  note: Class III video games of chance compact for Red Lake Band of Chippewa Indians, Minnesota and the State of
+    Minnesota under 25 U.S.C. § 2710(d).
+summary: 'The Class III video games of chance compact documents the Office of Indian Gaming lists for Red Lake Band
+  of Chippewa Indians, Minnesota and the State of Minnesota as of Nov. 21, 2026: 1 amendment. The order, the kind
+  of each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2009-amendment
+  label: 2009 amendment
+  event: amendment
+  status: in-effect
+  dates:
+    listed: '2009-04-22'
+    published: '2009-04-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e9-9263
+    locator: 74 Fed. Reg. 18397 (Apr. 22, 2009)
+  source: compact-mn-red-lake-band-of-chippewa-indians-2009-04-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_2009.04.22_red_lake_band_of_chippewa_indians_tribal_state_gaming_compact.pdf
+    sha256: cce040812c0be7dd81605b442e316d0f871f0ed4451c08fab56c21e4672e351f
+    pages: 6
+  clauses:
+  - topic: renegotiation
+    locator: Section 6.12 (as cited in the amendment recitals)
+    summary: The amendment is made under Section 6.12 of the compact, which permits amendments to the hardware and
+      software of Sections 6.09 and 6.10; the excerpt shows no request or time-limit terms.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+found_in:
+- 2026-11-21-gaming-compact-histories

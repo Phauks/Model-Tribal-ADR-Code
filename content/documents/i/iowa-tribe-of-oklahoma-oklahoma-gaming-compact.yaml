@@ -1,0 +1,101 @@
+id: iowa-tribe-of-oklahoma-oklahoma-gaming-compact
+kind: gaming-compact
+title: Iowa Tribe of Oklahoma–State of Oklahoma Gaming Compact
+nations:
+- iowa-tribe-of-oklahoma
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Iowa Tribe of Oklahoma and the State of Oklahoma under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Iowa Tribe of Oklahoma and
+  the State of Oklahoma as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event and which
+  version is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small
+  model''s reading of excerpts.'
+versions:
+- id: 2005-original
+  label: 2005 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2005-06-01'
+    published: '2005-06-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-05-10877
+    locator: 70 Fed. Reg. 31499 (June 1, 2005)
+  source: compact-ok-iowa-tribe-of-oklahoma-2005-06-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2005.06.01 Iowa Tribe Tribal State Gaming Compact.pdf
+    sha256: c5a8439f11c8a5a221ddb609c980b68c9596c2be2fca7234e0da47549bfa2072
+    pages: 37
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION
+    summary: A party asserting noncompliance serves written notice and the parties' representatives meet within
+      thirty days; either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before one arbitrator, remedies are limited to enforcement of the compact, and either party may seek
+      de novo review of the award in federal district court.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, B.
+    summary: Within 180 days before the term or any renewal expires, either the Native nation or the State, through
+      its Governor, may request to renegotiate the payment terms in subsections A and E of Part 11; the excerpt
+      shows no general amendment procedure.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2005-original
+  dates:
+    listed: '2018-08-17'
+    published: '2018-08-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-17729
+    locator: 83 Fed. Reg. 41101 (Aug. 17, 2018)
+  source: compact-ok-iowa-tribe-of-oklahoma-2018-08-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2018.08.17 Iowa Tribe compact amendment.pdf
+    sha256: adf36122a528e7475fb4dce35ea30911a9320cc54eec514e6145a0ca0cffc9eb
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2005-original
+    change: unchanged
+    summary: The 2018 supplement adds a non-house-banked table games term and says the games are treated as conducted
+      under the Compact for enforcement and exclusivity; it does not list any compact provision as amended, so the
+      2005 dispute provisions appear to still govern. The 2005 dispute text is not in the excerpts.
+    locator_after: Part 2.C
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The supplement is a short model-compact supplement approved under IGRA 2710(d)(8)
+      and effective on Federal Register notice. Because neither the earlier dispute nor the earlier amendment text
+      is in the excerpts, the ''unchanged'' answers rely on the supplement''s silence and its reference to the Compact,
+      not on a visible clause.'
+  - topic: renegotiation
+    compared_with: 2005-original
+    change: unchanged
+    summary: The 2018 supplement does not state that it amends any compact provision on amendment or renegotiation,
+      so the 2005 provisions appear to still govern. The 2005 amendment text is not in the excerpts.
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The supplement is a short model-compact supplement approved under IGRA 2710(d)(8)
+      and effective on Federal Register notice. Because neither the earlier dispute nor the earlier amendment text
+      is in the excerpts, the ''unchanged'' answers rely on the supplement''s silence and its reference to the Compact,
+      not on a visible clause.'
+found_in:
+- 2026-11-21-gaming-compact-histories

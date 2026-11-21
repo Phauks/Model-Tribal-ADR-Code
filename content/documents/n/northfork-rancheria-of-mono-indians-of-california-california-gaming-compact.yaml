@@ -1,0 +1,60 @@
+id: northfork-rancheria-of-mono-indians-of-california-california-gaming-compact
+kind: gaming-compact
+title: Northfork Rancheria of Mono Indians of California–State of California Gaming Compact
+nations:
+- northfork-rancheria-of-mono-indians-of-california
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Northfork Rancheria of Mono Indians of California and the State of California
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Northfork Rancheria of Mono
+  Indians of California and the State of California as of Nov. 21, 2026: 1 original. The order, the kind of each
+  event and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 2013-original
+  label: 2013 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2013-10-22'
+    published: '2013-10-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2013-24350
+    locator: 78 Fed. Reg. 62649 (Oct. 22, 2013)
+  source: compact-ca-northfork-rancheria-of-mono-indians-of-california-2013-10-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2013.10.22 Northfork Rancheria of Mono Indians
+      Tribal State Gaming Compact.pdf
+    sha256: f467ada17ead7e52d9a3696f4edd6b9ac17b819748644a03955422dd16009834
+    pages: 119
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.7 (excerpt begins at Sec. 9.6 text)
+    summary: Disputes over which regulation to adopt go to a single retired-judge JAMS arbitrator under Comprehensive
+      Arbitration Rules, whose order takes effect on issuance with review waived; the general Section 13 dispute
+      clause is not in the excerpt.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS. Sec. 15.1 and Sec. 15.2.
+    summary: The compact may be amended by mutual written agreement, and no sooner than eighteen months before termination
+      the parties may negotiate an extension or new compact.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+related:
+- document: northfork-rancheria-of-mono-indians-of-california-california-secretarial-procedures
+  relation: replaced-by
+  note: Secretarial Procedures issued under 25 U.S.C. § 2710(d)(7)(B)(vii) took the place of the compact (research/gaming/secretarial-procedures.csv).
+found_in:
+- 2026-11-21-gaming-compact-histories

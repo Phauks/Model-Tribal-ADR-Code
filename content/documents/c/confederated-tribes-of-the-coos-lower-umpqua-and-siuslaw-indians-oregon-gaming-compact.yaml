@@ -1,0 +1,279 @@
+id: confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-oregon-gaming-compact
+kind: gaming-compact
+title: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians–State of Oregon Gaming Compact
+nations:
+- confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians
+states:
+- OR
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians and the State
+    of Oregon under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Confederated Tribes of the
+  Coos, Lower Umpqua and Siuslaw Indians and the State of Oregon as of Nov. 21, 2026: 1 original, 1 replacement
+  and 3 amendments. The order, the kind of each event and which version is in effect are inferred from the list
+  (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1995-02-16'
+    published: '1995-02-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-3840
+    locator: 60 Fed. Reg. 9258 (Feb. 16, 1995)
+  source: compact-or-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-1995-02-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1995.02.16 Confederated Tribes of the Coos, Lower
+      Umpqua and Siuslaw Indians 1995.pdf
+    sha256: 606e4e94475f54bca75b3786d4e4be5cd3d6758cf4ffe2a44273ab9ac376e984
+    pages: 35
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 15 Dispute Resolution, paragraphs A and B
+    summary: Either party may give written notice, the parties meet within 30 days, and if the dispute is not resolved
+      within 90 days either party may sue in the United States District Court for the District of Oregon, or in
+      a State court if the federal court declines jurisdiction; no arbitration step is provided.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section 11.D.3 Amendments
+    summary: Either the State or the Native nation may by appropriate and lawful means request negotiations to amend,
+      replace or repeal the compact when a listed event occurs; the compact remains in effect during negotiations,
+      and a Tribes request is treated under the Act with a 100-day period instead of 180 days.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2003-replacement
+  label: 2003 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1995-original
+  dates:
+    listed: '2003-03-07'
+    published: '2003-03-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-5342
+    locator: 68 Fed. Reg. 11123 (Mar. 7, 2003)
+  source: compact-or-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2003-03-07
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2003.03.07 Confederated Tribes of Coos, Lower Umpqua
+      & Siuslaw Tribal State Gaming Compact.pdf
+    sha256: 10b03823ab664d05fe6bdf467728f054cdeddfa75855c4737fd7f7eb1bb7098b
+    pages: 62
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 6, subsection B (Procedure for Resolving Disputes Concerning Operational Decisions), paragraphs
+      1-4
+    summary: The State may give written notice of operational concerns, the parties meet and confer within fifteen
+      days, either party may seek non-binding arbitration within forty-five days, and the matter may then go to
+      the United States District Court for the District of Oregon; an expedited procedure applies to immediate threats.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Section 12, subsection D
+    summary: The compact may be amended once one year has passed since Interior approval, when the Tribes enter
+      a joint operation with another tribe, when the State expands Class III gaming by statute or constitution,
+      or when the State enters a compact with another tribe; the excerpt does not give the request steps.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: changed
+    summary: The earlier compact provides notice, a meeting within 30 days, and a District of Oregon action (state
+      court if federal declines) after 90 days; the later compact keeps that clause, adds a Tribes' waiver of immunity
+      for state court suits, and adds a procedure for the State's concerns about operational decisions (meet and
+      confer within 15 days, then non-binding arbitration that is binding only by agreement, then federal court)
+      and an expedited procedure with a federal court action if unresolved within ten days of notice.
+    locator_before: Section 15
+    locator_after: Section 6.B; Section 16
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: changed
+    summary: The later Section 12.D.1 lists the conditions for amendment with a one-year period after Secretary
+      approval where the earlier Section 11.D.1 used three years after the effective date; the later list also differs
+      in order and content from the earlier list, and the later Section 12.D.2 and 12.D.3 are cut off in the excerpt.
+    locator_before: 11.D.1.b-c
+    locator_after: 12.D.1.a
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2008-amendment
+  label: 2008 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2003-replacement
+  dates:
+    listed: '2008-03-17'
+    published: '2008-03-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e8-5198
+    locator: 73 Fed. Reg. 14267 (Mar. 17, 2008)
+  source: compact-or-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2008-03-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508_compliant_2008.03.17_confederated_tribes_of_the_coos,_lower_umpqua_and_siuslaw_indians_tribal_state_gaming_compact.pdf
+    sha256: 4c3a7f59ff203c7f689aed3f414f9f4a841cf91c1c2ab2f3485c9d7d97d5a98b
+    pages: 5
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-replacement
+    change: unchanged
+    summary: Amendment I revises Section 4.E.3 and Section 10.A and states that its terms do not supersede the original
+      Compact except as specifically provided, so the 2003 Section 6(B) operational-decision dispute procedure still
+      governs; the later excerpt for this item has no dispute text.
+    locator_before: 6.B.2
+    locator_after: Amendment I, preamble
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The amendment text is partly garbled OCR, especially in Section I (Section
+      4.E.3), so the revised table-games wording cannot be quoted reliably. The later excerpt labeled dispute resolution
+      is empty; the unchanged finding rests on the amendment''s preamble and its two listed revisions. The earlier
+      2003 compact''s Section 6(B) procedure is the operational-decision dispute process, and its general dispute
+      clause (Section 16) is not in the excerpts. The OSP payment methodology moves into a memorandum of understanding
+      under the amendment''s terms, which the excerpt says can be amended without amending the Compact.'
+  - topic: renegotiation
+    compared_with: 2003-replacement
+    change: unchanged
+    summary: Amendment I does not list Section 12, which contains the amendment and renegotiation clauses, so the
+      2003 Section 12.D clauses still govern; the amendment deletes a Table Games authorization-expiration provision
+      in Section 4.E.3 and revises the Oregon State Police payment provisions in Section 10.A.
+    locator_before: 12.D.1.a
+    locator_after: Amendment I, preamble
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The amendment text is partly garbled OCR, especially in Section I (Section
+      4.E.3), so the revised table-games wording cannot be quoted reliably. The later excerpt labeled dispute resolution
+      is empty; the unchanged finding rests on the amendment''s preamble and its two listed revisions. The earlier
+      2003 compact''s Section 6(B) procedure is the operational-decision dispute process, and its general dispute
+      clause (Section 16) is not in the excerpts. The OSP payment methodology moves into a memorandum of understanding
+      under the amendment''s terms, which the excerpt says can be amended without amending the Compact.'
+- id: 2019-amendment
+  label: 2019 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2003-replacement
+  dates:
+    listed: '2019-04-16'
+    published: '2019-04-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2019-07472
+    locator: 84 Fed. Reg. 15629 (Apr. 16, 2019)
+  source: compact-or-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2019-04-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2019.04.16 Confederated Tribes of Coos, Lower Umpqua
+      and Siuslaw Indians Tribal State Gaming  Compact.pdf
+    sha256: 7bf63944f81c2114b7f003f45c61800414115255c235c6937f44550126e24c01
+    pages: 7
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-replacement
+    change: unchanged
+    summary: Amendment II revises Sections 3(W), 4(B)(7), 4(C), 4(D)(1), 4(E)(2) and 7(A) and states that it does
+      not supersede the original Compact except as specifically provided, so the 2003 Section 6(B) dispute procedure
+      still governs; the later excerpt for this item has no dispute text.
+    locator_before: 6.B.2
+    locator_after: Amendment II, preamble
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The file''s earlier document is the 2003 compact; the amendment recites
+      a 2008 Amendment I, which is not part of this earlier document, so comparisons here run against the 2003 text
+      only. The amendment text is partly garbled OCR, including the Section 3(W) definition, so only the preamble
+      is quoted for the later side. The later excerpt labeled dispute resolution is empty. The amendment''s revision
+      list does not name Section 6 or Section 12 in the text shown, but the excerpt is partial and ends at the access-to-records
+      item.'
+  - topic: renegotiation
+    compared_with: 2003-replacement
+    change: unchanged
+    summary: The listed revisions in Amendment II do not include Section 12, which contains the amendment and renegotiation
+      clauses, so the 2003 Section 12.D clauses still govern; the amendment updates the Video Lottery Terminal definition,
+      procedures for new terminals, the facility location, wager limits, licensing, and the extension-of-credit
+      definition.
+    locator_before: 12.D.1.a
+    locator_after: Amendment II, preamble
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The file''s earlier document is the 2003 compact; the amendment recites
+      a 2008 Amendment I, which is not part of this earlier document, so comparisons here run against the 2003 text
+      only. The amendment text is partly garbled OCR, including the Section 3(W) definition, so only the preamble
+      is quoted for the later side. The later excerpt labeled dispute resolution is empty. The amendment''s revision
+      list does not name Section 6 or Section 12 in the text shown, but the excerpt is partial and ends at the access-to-records
+      item.'
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2003-replacement
+  dates:
+    listed: '2021-08-20'
+    published: '2021-08-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-17860
+    locator: 86 Fed. Reg. 46867 (Aug. 20, 2021)
+  source: compact-or-confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians-2021-08-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508_compliant_2021.07.13_confederated_tribes_of_the_coos_lower_umpqua_siuslaw_indians_tribal_state_gaming_compact.pdf
+    sha256: 257397550f2992cb8d221c3a1ed4129f64da9fc87a1957bc2262dccc9c52f443
+    pages: 13
+  clauses:
+  - topic: renegotiation
+    locator: Section 4, subsection A (as revised by Amendment IV)
+    summary: Section 4(A) says that changes needed to reflect agreements between the parties must follow the amendment
+      procedure in Section 12(D), which the excerpt does not reproduce.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-replacement
+    change: unchanged
+    summary: Amendment IV revises Sections 3 and 4 to authorize sports pool and renumbers the definitions, and does
+      not list Section 6, so the 2003 Section 6(B) operational-decision dispute procedure still governs; the later
+      excerpt for this item has no dispute text.
+    locator_before: 6.B.2
+    locator_after: Amendment IV, preamble
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2003-replacement
+    change: unchanged
+    summary: Amendment IV does not list Section 12, which contains the amendment and renegotiation clauses, so the
+      2003 Section 12.D clauses still govern; the preamble describes earlier amendments I to III, which are not
+      part of the earlier document in this pair.
+    locator_before: 12.D.1.a
+    locator_after: Amendment IV, preamble
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

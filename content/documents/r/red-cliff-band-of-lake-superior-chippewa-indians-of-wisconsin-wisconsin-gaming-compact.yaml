@@ -1,0 +1,286 @@
+id: red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-wisconsin-gaming-compact
+kind: gaming-compact
+title: Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin–State of Wisconsin Gaming Compact
+nations:
+- red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin
+states:
+- WI
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin and the State
+    of Wisconsin under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Red Cliff Band of Lake Superior
+  Chippewa Indians of Wisconsin and the State of Wisconsin as of Nov. 21, 2026: 1 original and 4 amendments. The
+  order, the kind of each event and which version is in effect are inferred from the list (project analysis); clause
+  summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1992-03-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-wi-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1992-03-10
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1992.03.10 Red Cliff Band of Lake Superior Chippewa
+      Indians Tribal State Gaming Compact.pdf
+    sha256: 7a983c55ee69ef7d58e379017efea2264a2b8f61b320228da73c0f30a63d1d65
+    pages: 45
+  clauses:
+  - topic: dispute-resolution
+    locator: XXII. Dispute Resolution, A to C
+    summary: A party asserting noncompliance serves written notice, the parties meet within thirty days, and if
+      unresolved within ninety days either party may pursue any remedy otherwise available; mediation or arbitration
+      is used only by mutual agreement.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: XXX. Amendment
+    summary: The compact may be amended only by prior written agreement of both the State and the Red Cliff Band,
+      and the excerpt shows no unilateral reopening.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1998-amendment
+  label: 1998 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '1998-12-22'
+    published: '1998-12-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-33799
+    locator: 63 Fed. Reg. 70792 (Dec. 22, 1998)
+  source: compact-wi-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1998-12-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1998.12.22 Red Cliff Band of Lake Superior Chippewa
+      Indians Tribal State Gaming Compact.pdf
+    sha256: 9ac12bc253e5489f14a6f9b6fd897ef2e66239b4b116a2d49567d68a4f0f4f25
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Recitals (Section XXX reference)
+    summary: The Red Cliff compact may be amended upon written agreement of both parties under its Section XXX,
+      and this amendment changes the term to allow continued negotiation toward a full extension.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 1998 amendment changes only Section XXV.A (the term), so the earlier Section XXII dispute procedure
+      still governs.
+    locator_before: XXII.A.2
+    locator_after: XXV.A (only provision amended)
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 1998 amendment changes only Section XXV.A (the term), and Section XXX, which requires the prior
+      written agreement of both parties for any change, is not amended, so the earlier amendment clause still governs.
+    locator_before: XXX
+    locator_after: XXV.A
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '1999-03-11'
+    published: '1999-03-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-6065
+    locator: 64 Fed. Reg. 12176 (Mar. 11, 1999)
+  source: compact-wi-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-1999-03-11
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1999.03.11 Red Cliff Band of Lake Superior Chippewa
+      Indians Tribal State Gaming Compact.pdf
+    sha256: 529e7addb12d90e475661450c1873c129fffb8de57a0d9c43d8d6ad5b37b575a
+    pages: 8
+  clauses:
+  - topic: renegotiation
+    locator: Recitals (Section XXX reference)
+    summary: The Red Cliff compact may be amended upon the written agreement of both parties under its Section XXX,
+      and this amendment renews the term for five years to January 15, 2004.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 1999 amendments set out five numbered changes (term renewal, Section V.A age limit, new payment
+      and benefit sections, and a renegotiation section), none of which amends Section XXII, so the earlier dispute
+      procedure still governs.
+    locator_before: XXII.A.2
+    locator_after: Amendments 1-5 (none amends XXII)
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later excerpt is cut off in the middle of new Section XXXIV(A), so the
+      rest of that renegotiation provision, including its time limits and what happens if talks fail, is not visible.
+      The amendments also renew the term by five years to January 15, 2004 under Section XXV.B and create a payment
+      section (XXXII) and a benefits section (XXXIII) that the excerpts only partly show.'
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: changed
+    summary: 'The 1999 amendments add a new Section XXXIV: if the Secretary of the Interior disapproves the January
+      1999 amendments in whole or in part, either party may demand renegotiation of the affected portion, the parties
+      must meet within a period and seek a revision, and a further period follows if no agreement is reached; the
+      earlier Section XXX (amendment only by prior written agreement of both parties) is not amended.'
+    locator_before: XXX
+    locator_after: XXXIV(A)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later excerpt is cut off in the middle of new Section XXXIV(A), so the
+      rest of that renegotiation provision, including its time limits and what happens if talks fail, is not visible.
+      The amendments also renew the term by five years to January 15, 2004 under Section XXV.B and create a payment
+      section (XXXII) and a benefits section (XXXIII) that the excerpts only partly show.'
+- id: 2003-amendment
+  label: 2003 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2003-09-16'
+    published: '2003-09-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-03-23578
+    locator: 68 Fed. Reg. 54243 (Sept. 16, 2003)
+  source: compact-wi-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-2003-09-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2003.09.16 Red Cliff Band of Lake Superior Chippewa
+      Indians Tribal State Gaming Compact.pdf
+    sha256: ab6c8f779b571c45e12380738b21e859604c9c6c209b8dd8d5a5e11cf2f0cb74
+    pages: 23
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XXII. DISPUTE RESOLUTION, subsections C (Negotiation), D (Mediation) and E (Arbitration)
+    summary: The compact provides for written notice and a negotiation session within ten days, then non-binding
+      mediation with a mediator, and then arbitration before a single arbitrator if the dispute is not resolved,
+      held at a neutral location.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section XXX. AMENDMENT AND PERIODIC ENHANCEMENT OF COMPACT PROVISIONS, subsections A-C
+    summary: The compact may be amended by written agreement of the State and the Tribe, and either party may propose
+      regulatory amendments in the thirty days before each fifth anniversary of July 1, 2004, with good faith negotiations;
+      if no agreement is reached, Dispute Resolution applies.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: The later compact replaces the earlier Section XXII process (written notice, a meeting within 30 days,
+      then any available remedy after 90 days) with negotiation within ten days, mandatory non-binding mediation
+      of at least two sessions, then binding arbitration before a single arbitrator, with court actions in federal
+      district court for listed sections.
+    locator_before: Sec. XXII.A
+    locator_after: Sec. XXII.C-F
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: changed
+    summary: 'The 2003 amendment rewrites Section XXX to add a periodic amendment process: within the thirty days
+      before each fifth anniversary of July 1, 2004, either the State or the Tribe may propose amendments, the parties
+      must negotiate in good faith, and disputes over the duty to negotiate go to Section XXII; the earlier Section
+      XXX required the prior written agreement of both parties for any change.'
+    locator_before: XXX
+    locator_after: XXX.A, XXX.C
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2010-amendment
+  label: 2010 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2010-11-08'
+    published: '2010-11-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2010-28187
+    locator: 75 Fed. Reg. 68618 (Nov. 8, 2010)
+  source: compact-wi-red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin-2010-11-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2010.11.08 Red Cliff Band of Lake Superior Chippewa
+      Indians Tribal State Gaming Compact Amendment.pdf
+    sha256: 8610bcdefe42af2d1385b95c95be830f6872cdd49089a5f54b39cf5b031900b7
+    pages: 2
+  clauses:
+  - topic: renegotiation
+    locator: WHEREAS clause (referring to Section XXX); amendment of Section VII(A)(6)
+    summary: The compact allows the parties to enter into written amendments at any time upon mutual agreement,
+      and this 2010 amendment adds Indian tribal governments to the financing exception in Section VII(A)(6).
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 2010 amendment changes only Section VII(A)(6), so the Section XXII dispute procedure of the compact
+      still governs; the 1992 Section XXII in the earlier excerpt is the text this pair compares, and the excerpt
+      does not show the 1999 or 2003 amendments that changed the compact in between.
+    locator_before: XXII.A.2
+    locator_after: VII(A)(6) (only provision amended)
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 1999 Amendment #1 and 2003 Amendment #2 changed Section XXX and Section
+      XXII, and those changes are not part of this pair''s earlier document, so the 2010 amendment''s ''unchanged''
+      status is relative to the 1992 text. Counsel should compare against the 2003 text (XXX.C periodic amendment
+      process; XXII negotiation, mediation and arbitration) to see what governs now.'
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 2010 amendment changes only Section VII(A)(6) and does not amend Section XXX, which its recital
+      describes as allowing written amendments at any time upon mutual agreement; the earlier Section XXX requires
+      the prior written agreement of both parties, which is substantively the same rule.
+    locator_before: XXX
+    locator_after: Recitals (Section XXX)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 1999 Amendment #1 and 2003 Amendment #2 changed Section XXX and Section
+      XXII, and those changes are not part of this pair''s earlier document, so the 2010 amendment''s ''unchanged''
+      status is relative to the 1992 text. Counsel should compare against the 2003 text (XXX.C periodic amendment
+      process; XXII negotiation, mediation and arbitration) to see what governs now.'
+found_in:
+- 2026-11-21-gaming-compact-histories

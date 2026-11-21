@@ -1,0 +1,307 @@
+id: suquamish-indian-tribe-of-the-port-madison-reservation-washington-gaming-compact
+kind: gaming-compact
+title: Suquamish Indian Tribe of the Port Madison Reservation–State of Washington Gaming Compact
+nations:
+- suquamish-indian-tribe-of-the-port-madison-reservation
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Suquamish Indian Tribe of the Port Madison Reservation and the State of Washington
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Suquamish Indian Tribe of
+  the Port Madison Reservation and the State of Washington as of Nov. 21, 2026: 1 original and 7 amendments. The
+  order, the kind of each event and which version is in effect are inferred from the list (project analysis); clause
+  summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1995-03-31'
+    published: '1995-03-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-7941
+    locator: 60 Fed. Reg. 16764 (Mar. 31, 1995)
+  source: compact-wa-suquamish-indian-tribe-of-the-port-madison-reservation-1995-03-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_1995.03.31_suquamish_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: 3e8513fa624cbba1f765ba76483574c35a3c6fff4613cb8dc934b3c921530ba4
+    pages: 108
+  clauses:
+  - topic: renegotiation
+    locator: XV.D Adjustments/Renegotiations (1) to (3)
+    summary: The compact allows adjustment by mutual written agreement, and requires adjustment on the Tribe's written
+      request when state law or a court decision expands gaming or federal legislation authorizes gaming not authorized
+      when the compact was executed; scope provisions in Section III F, I, J and K are not subject to renegotiation
+      for thirty-six months.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '1999-01-28'
+    published: '1999-01-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-1930
+    locator: 64 Fed. Reg. 4460 (Jan. 28, 1999)
+  source: compact-wa-suquamish-indian-tribe-of-the-port-madison-reservation-1999-01-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1999.01.28 Suquamish Indian Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 5de71d4093dc81b5ed3de93f07aaa550be4fd9808d909d7fb8c64b1d4c1a92dd
+    pages: 4
+  changes:
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-suquamish-indian-tribe-of-the-port-madison-reservation-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2007.05.31_suquamish_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: a1d6f228ce15a54b82eddae9eb1d187be66b91648a292dfc7529b81f72e45331
+    pages: 3
+  changes:
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-13712
+    locator: 80 Fed. Reg. 31918 (June 4, 2015)
+  source: compact-wa-suquamish-indian-tribe-of-the-port-madison-reservation-2015-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2015.06.04 Suquamish Indian Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: cacd8ef03eec68ab354bf800b7bc245bdc4dfca1bf2eb4dc04beec3ee38fec7f
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4. Dispute Resolution, 4.1 and 4.2
+    summary: If a dispute arises over the addendum terms, including the number of Player Terminals Available for
+      Lease, the State and Tribe must meet and attempt resolution at least 30 days before the increased allocation
+      takes effect, and if that fails either party may use the compact's dispute provisions.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: changed
+    summary: 'The earlier compact already had a dispute clause: written notice, a meeting within 10 days, and AAA
+      arbitration if unresolved 20 days after the first meeting. The later addendum adds a step for disputes over
+      its terms (such as Player Terminals Available for Lease): the parties meet at least 30 days before the increased
+      allocation takes effect, and if that fails either party may use the compact''s dispute resolution provisions.'
+    locator_before: Sec. XII.C
+    locator_after: Addendum Section 4 (4.1-4.2)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2021-09-01'
+    published: '2021-09-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-18823
+    locator: 86 Fed. Reg. 49049 (Sept. 1, 2021)
+  source: compact-wa-suquamish-indian-tribe-of-the-port-madison-reservation-2021-09-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/2021.09.01_suquamish_indian_tribe_state_gaming_compact_scrivener_s_error_corrected_2023.10.27.pdf
+    sha256: 1e3572c3fa61ab1636d02ceef9de85e8dbefae30a8981997fb93a2747133b506
+    pages: 43
+  clauses:
+  - topic: dispute-resolution
+    locator: 'Appendix S, Section 5.3.6 Approval of Certification: Revocation'
+    summary: For sports wagering system certifications, the Tribal and State Gaming Agencies meet and confer on
+      the State's concerns and the Tribal Gaming Agency may revoke its own approval; the excerpts contain no general
+      dispute clause.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+- id: 2021-amendment-2
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2021-09-01'
+    published: '2021-09-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-18823
+    locator: 86 Fed. Reg. 49049 (Sept. 1, 2021)
+  source: compact-wa-suquamish-indian-tribe-of-the-port-madison-reservation-2021-09-01-2
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no profile cites this list row.'
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2021.09.01_suquamish_indian_tribe_state_gaming_compact.pdf
+    sha256: c3aeb3122676bb7d6676158071f5750a67c4a56ecf6af9eb1a87e44b8a3c9442
+    pages: 43
+  clauses:
+  - topic: dispute-resolution
+    locator: 'Appendix S, Section 5.3.6 Approval of Certification: Revocation'
+    summary: For sports wagering system certifications, the Tribal and State Gaming Agencies meet and confer on
+      the State's concerns and the Tribal Gaming Agency may revoke its own approval; the excerpts contain no general
+      dispute clause.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+- id: 2023-amendment
+  label: 2023 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2023-09-27'
+    published: '2023-09-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-20973
+    locator: 88 Fed. Reg. 66499 (Sept. 27, 2023)
+  source: compact-wa-suquamish-indian-tribe-of-the-port-madison-reservation-2023-09-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2023.09.27_suquamish_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: 7467726dffd34e17010ff05c209747dccd25d8fccb73e8de310fa1cde24a11b8
+    pages: 12
+  changes:
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: The 1995 compact bars renegotiation or amendment of the scope-of-gaming provisions for 36 months. The
+      2023 Sixth Amendment adds Electronic Table Games under Section III.A by mutual amendment, and its visible
+      text does not amend the 36-month limit.
+    locator_before: Sections III F, I, J, K (scope of gaming)
+    locator_after: Amendment items 1-3 (not renegotiation)
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The Sixth Amendment excerpt is cut before its full numbered list. The earlier
+      renegotiation clause is quoted from the 1995 text, which sits in the earlier renegotiation field.'
+- id: 2024-amendment
+  label: 2024 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2024-04-23'
+    published: '2024-04-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2024-08661
+    locator: 89 Fed. Reg. 30389 (Apr. 23, 2024)
+  source: compact-wa-suquamish-indian-tribe-of-the-port-madison-reservation-2024-04-23
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2024.04_suquamish_indian_tribe_of_the_port_madison_reservation_tribal_state_gaming_compact.pdf
+    sha256: c641fb65fd1e0c4dcd4ea1cdefcb1a0fd9e8ee22e033e7d5dfe88cfc6b54a396
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Memorandum of Incorporation, preamble (Compact Section XV(D)(8))
+    summary: The compact is amended automatically under its most-favored-nation section XV(D)(8) when the Secretary
+      approves a compact with another western Washington tribe that changes gaming scope or expands terms, and modifications
+      needing formal amendment or renegotiation are addressed separately.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: The 2024 MFN amendment is made under Section XV(D)(8) and states that modifications requiring formal
+      amendment or renegotiation will be addressed separately. It does not amend the 36-month renegotiation limit
+      in the 1995 text, which the excerpt shows only in the earlier record.
+    locator_before: Sections III F, I, J, K (scope of gaming)
+    locator_after: MOI text (Most Favored Nations)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The MFN amendment adds an automatic amendment mechanism tied to other Washington
+      tribes, which relates to renegotiation but is not a change to the renegotiation article as shown. The 1995
+      dispute article is not in the earlier excerpt.'
+found_in:
+- 2026-11-21-gaming-compact-histories

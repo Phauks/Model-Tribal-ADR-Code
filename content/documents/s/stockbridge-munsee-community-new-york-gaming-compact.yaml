@@ -1,0 +1,35 @@
+id: stockbridge-munsee-community-new-york-gaming-compact
+kind: gaming-compact
+title: Stockbridge Munsee Community, Wisconsin–State of New York Gaming Compact
+nations:
+- stockbridge-munsee-community
+states:
+- NY
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Stockbridge Munsee Community, Wisconsin and the State of New York under 25
+    U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Stockbridge Munsee Community,
+  Wisconsin and the State of New York as of Nov. 21, 2026: 1 disapproved compact. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 2011-disapproval
+  label: 2011 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2011-02-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-ny-stockbridge-munsee-community-2011-02-18
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-york/508 Compliant 2011.02.18 Stockbridge Munsee DISAPPROVED Gaming
+      Compact.pdf
+    sha256: 7dceff1b88211cf25922e39d0046552318bac437ac5c25f19e3db2b94add9228
+    pages: 68
+found_in:
+- 2026-11-21-gaming-compact-histories

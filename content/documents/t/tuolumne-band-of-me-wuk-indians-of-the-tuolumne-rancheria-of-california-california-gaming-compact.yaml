@@ -1,0 +1,124 @@
+id: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-california-gaming-compact
+kind: gaming-compact
+title: Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of California–State of California Gaming Compact
+nations:
+- tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of California and
+    the State of California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Tuolumne Band of Me-Wuk Indians
+  of the Tuolumne Rancheria of California and the State of California as of Nov. 21, 2026: 1 original and 1 replacement.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2000.05.16_tuolumne_band_of_me-wuk_indians_tribal_state_gaming_compact_0.pdf
+    sha256: db0db1c45aa20e349ed3e274505756dfeea87dbb3ba5a2e16d5fb82e827c25d7
+    pages: 62
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 Voluntary Resolution; Reference to Other Means of Resolution (Secs. 9.2-9.3 also)
+    summary: Disputes first go through written notice and a good-faith meet-and-confer, then either party may seek
+      AAA Commercial Rules arbitration with a binding award (neither party must agree to arbitrate), and otherwise
+      may sue in the U.S. District Court where the Tribe's Gaming Facility is located and the Ninth Circuit, or
+      in a state court if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.0 AMENDMENTS; RENEGOTIATIONS (Secs. 12.1-12.3)
+    summary: The compact may be amended at any time by mutual written agreement, and the Tribe may request renegotiation
+      in writing to add Class III games other than those authorized, but not within 12 months of the effective date,
+      with talks to be scheduled within 30 days; the excerpt does not say what happens if talks fail.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2018-replacement
+  label: 2018 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  dates:
+    listed: '2018-01-22'
+    published: '2018-01-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2018-01058
+    locator: 83 Fed. Reg. 3015 (Jan. 22, 2018)
+  source: compact-ca-tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california-2018-01-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2018.01.22_tuolumne_band_of_me-wuk_indians_tribal_state_gaming_compact.pdf
+    sha256: 88ba0387a899ba658b42349b72d249b7ecb6559ea31740cc546e803744db9147
+    pages: 149
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1 Voluntary Resolution; Court Resolution and Sec.
+      13.2 Arbitration Rules
+    summary: Disputes under the compact begin with a written notice, a written response within 15 days and a meet-and-confer
+      within 30 days; if unresolved either party may seek arbitration before JAMS, but neither party is required
+      to agree to arbitrate, and unresolved disputes may be brought in the federal district court for the district
+      of the Gaming Facility or, if that court lacks jurisdiction, a state court of competent jurisdiction in the
+      county.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS, Sec. 15.1 to Sec. 15.4
+    summary: Sec. 15.1 permits amendment at any time by mutual written agreement if each party voluntarily consents
+      to the negotiations in writing, Sec. 15.2 lets either party request negotiation of an extension or new compact
+      no sooner than 18 months before the termination date, and Sec. 15.3 requires written requests and a schedule
+      for negotiations. Sec. 15.4 requires the State to negotiate in good faith within 45 days of the Tribe's written
+      request where changed market conditions materially and adversely affect the Tribe's Gaming Operation and make
+      its obligations unduly onerous, if the Tribe supplies adequate information.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: changed
+    summary: The later compact adds a right for the Tribe to require State negotiations within 45 days over changed
+      market conditions, sets an 18-month window and automatic extensions for negotiating a new compact, and sets
+      a 45-day schedule for requests; the earlier compact's visible trigger was a Tribal request to offer Class
+      III games other than those authorized, which the later excerpts do not show.
+    locator_before: 12.1-12.3
+    locator_after: 15.1-15.4
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later excerpts under the dispute heading are patron-complaint provisions
+      (tribal gaming agency decision, tribal court or claims commission, JAMS appeal), not the state-tribe clause
+      in earlier Sec. 9.0. The later compact''s state-tribe dispute section is not in the excerpts, so the full
+      later text should be checked. The later compact''s 15.2 extends the term automatically if negotiations are
+      ongoing.'
+found_in:
+- 2026-11-21-gaming-compact-histories

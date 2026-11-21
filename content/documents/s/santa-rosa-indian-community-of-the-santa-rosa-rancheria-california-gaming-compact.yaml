@@ -1,0 +1,183 @@
+id: santa-rosa-indian-community-of-the-santa-rosa-rancheria-california-gaming-compact
+kind: gaming-compact
+title: Santa Rosa Indian Community of the Santa Rosa Rancheria, California–State of California Gaming Compact
+nations:
+- santa-rosa-indian-community-of-the-santa-rosa-rancheria
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Santa Rosa Indian Community of the Santa Rosa Rancheria, California and the
+    State of California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Santa Rosa Indian Community
+  of the Santa Rosa Rancheria, California and the State of California as of Nov. 21, 2026: 1 original, 2 disapproved
+  compacts, 1 extension and 1 replacement. The order, the kind of each event and which version is in effect are
+  inferred from the list (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-santa-rosa-indian-community-of-the-santa-rosa-rancheria-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2000.05.16 Santa Rosa Tribal State Gaming Compact.pdf
+    sha256: 6cf2c535f2000968696a53bb2f979f5d03157bde2c9b9e98e9723ca66ff68801
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 and Sec. 9.2
+    summary: Disputes start with written notice and a meet-and-confer within 10 days, then either party may seek
+      arbitration under the AAA Commercial Arbitration Rules if the dispute is unresolved within 30 days of the
+      first meeting, with a binding award once submitted; unresolved disputes may go to the U.S. District Court
+      and Ninth Circuit, or to state courts if the federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Sec. 12.1 to Sec. 12.3
+    summary: The compact may be amended at any time by mutual written agreement, and the Tribe may request renegotiation
+      in writing to offer Class III games not authorized in the compact, but not within 12 months of the effective
+      date; the parties set a negotiation schedule within 30 days of the request, under IGRA good-faith standards
+      enforceable in federal court.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2021-disapproval
+  label: 2021 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2021-11-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-ca-santa-rosa-indian-community-of-the-santa-rosa-rancheria-2021-11-23
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2021.11.23 Santa Rosa Tribal State Gaming Compact_0.pdf
+    sha256: f63a606ac56d2cf44812ea8a48d50d02836d2776ef24b667d701235beba4be89
+    pages: 142
+- id: 2022-extension
+  label: 2022 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2022-06-30'
+    published: '2022-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-14054
+    locator: 87 Fed. Reg. 39115 (June 30, 2022)
+  source: compact-ca-santa-rosa-indian-community-of-the-santa-rosa-rancheria-2022-06-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2022.06.30_santa_rosa_indian_community_tribal_state_gaming_compact.pdf
+    sha256: 46e32db3922a77a773654dcecc18ce1e0103571384d2726c88783055b70b55a0
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2022-disapproval
+  label: 2022 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2022-07-22'
+    published: '2022-11-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+    source: federal-register-2022-25617
+    locator: 87 Fed. Reg. 71666 (Nov. 23, 2022)
+  source: compact-ca-santa-rosa-indian-community-of-the-santa-rosa-rancheria-2022-07-22
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: Federal Register notice published 124 days from the listed date.'
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2022.07.22_santa_rosa_indian_community_disapproval_letter_tribe.pdf
+    sha256: 59921f4a69ce71b769b63d682675face90e4479079ceb0cc0d69951b4be35e48
+    pages: 13
+- id: 2022-replacement
+  label: 2022 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  - 2022-extension
+  dates:
+    listed: '2022-11-23'
+    published: '2022-11-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-25617
+    locator: 87 Fed. Reg. 71666 (Nov. 23, 2022)
+  source: compact-ca-santa-rosa-indian-community-of-the-santa-2022
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2022.11.17_santa_rosa_indian_community_tribal_state_gaming_compact.pdf
+    sha256: a68b0cea01e18bda1015ec98a03ca12e78d03703b5cfe6141e667e6464129c10
+    pages: 140
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 13.1. Voluntary Resolution; Court Resolution; Sec. 13.3; Sec. 13.5. Judicial Remedies for Material
+      Breach
+    summary: The parties give written notice, respond within 15 days and meet and confer within 30 days; unresolved
+      disputes may be heard in the U.S. District Court for the district of the gaming facility or, if it lacks jurisdiction,
+      in a state court in the County, with remedies limited to injunctive relief, specific performance and declaratory
+      relief, and an action for declaration of material breach and possible termination is available after the dispute
+      process.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: Sec. 15.0. AMENDMENTS; RENEGOTIATIONS, Sec. 15.1 to 15.4
+    summary: The compact may be amended at any time by mutual written agreement; either party may request negotiations
+      no sooner than eighteen months before the termination date, the State must negotiate on request within 45
+      days on changed market conditions, and the parties must negotiate replacements after a court-ordered change-in-law
+      invalidity.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: changed
+    summary: The earlier compact provides written notice, a meet-and-confer within 10 days, and, after 30 days,
+      optional arbitration under AAA rules (neither party required to agree) with a binding decision, then federal
+      court. The later compact provides written notice, a 15-day written response and a 30-day meet-and-confer,
+      then resolution in federal or state court with no arbitration step, limits the parties to the remedies in
+      its Section 13.4(a)(ii), and bars damages and attorney fees in such actions.
+    locator_before: Sec. 9.1-9.2
+    locator_after: Sec. 13.1(a)-(e)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

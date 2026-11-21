@@ -1,0 +1,161 @@
+id: tonkawa-tribe-of-indians-of-oklahoma-oklahoma-gaming-compact
+kind: gaming-compact
+title: Tonkawa Tribe of Indians of Oklahoma–State of Oklahoma Gaming Compact
+nations:
+- tonkawa-tribe-of-indians-of-oklahoma
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Tonkawa Tribe of Indians of Oklahoma and the State of Oklahoma under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Tonkawa Tribe of Indians
+  of Oklahoma and the State of Oklahoma as of Nov. 21, 2026: 1 original, 1 replacement and 1 amendment. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1994-original
+  label: 1994 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1994-11-09'
+    published: '1994-11-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-94-27728
+    locator: 59 Fed. Reg. 0 (Nov. 9, 1994)
+  source: compact-ok-tonkawa-tribe-of-indians-of-oklahoma-1994-11-09
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 1994.11.09 Tonkawa Indian Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 353a0df6520496b110d6705687e29f66549be19c49383efffded15ebdb660167
+    pages: 83
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 14 Dispute Resolution, paragraphs (A) to (C)
+    summary: Notice is served, the Governor and the Tonkawa Tribal Chief meet within 30 days, unresolved disputes
+      may go to non-binding arbitration with the American Arbitration Association naming any third arbitrator, and
+      either party may sue for breach in the United States District Court for the Western District of Oklahoma.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 19 Amendments
+    summary: Either the State or the Tonkawa Tribe may request negotiations to amend or modify the compact; it stays
+      in effect during a 180-day negotiation period, after which the remedies in the Act apply, and any amendment
+      must be in writing and approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2005-replacement
+  label: 2005 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1994-original
+  dates:
+    listed: '2005-04-06'
+    published: '2005-04-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-05-6722
+    locator: 70 Fed. Reg. 17461 (Apr. 6, 2005)
+  source: compact-ok-tonkawa-tribe-of-indians-of-oklahoma-2005
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508_compliant_2005.04.06_tonkawa_tribe_of_indians_tribal_state_gaming_comapct.pdf
+    sha256: 8f4776f89e8aeb96f66f39231454e32e183adf64b0318719a810fed39a081e98
+    pages: 27
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION, paragraphs 1-3
+    summary: Written notice and a meeting of representatives within thirty days come first, then either party may
+      refer the dispute to American Arbitration Association arbitration, with federal district court review of the
+      award de novo.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, subsection B
+    summary: The compact can be reopened only at the end of its term or a renewal, when either the Tonkawa Tribe
+      or the State, acting through its Governor, may request renegotiation of Parts 11A and 11E within 180 days.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1994-original
+    change: changed
+    summary: The later compact provides a 30-day meeting, then referral by either party to one AAA arbitrator, with
+      remedies limited to enforcing the compact and de novo federal district court review of any award. The earlier
+      compact provided a 30-day meeting, non-binding arbitration after 60 days with each party naming an arbitrator,
+      then a suit for breach in the Western District of Oklahoma.
+    locator_before: Section 14(A)-(C)
+    locator_after: Part 12, paras 1-3
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1994-original
+    change: changed
+    summary: The 1994 Section 19 lets either party request negotiations to amend the compact at any time, and says
+      such requests are served under Section 17 and that the compact stays in effect during negotiations, whereas
+      the 2005 Part 15.B allows a request to renegotiate only the terms of Part 11 subsections A and E, made within
+      180 days after the term or a renewal expires.
+    locator_before: Section 19
+    locator_after: Part 15.B
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2005-replacement
+  dates:
+    listed: '2018-08-27'
+    published: '2018-08-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-18424
+    locator: 83 Fed. Reg. 43704 (Aug. 27, 2018)
+  source: compact-ok-tonkawa-tribe-of-indians-of-oklahoma-2018-08-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2018.08.27 Tonkawa Tribe 2018 Compact Amendment.pdf
+    sha256: e9dae07287f5d07d6d9c3db6dd312d018d74b5b4a502439ec7828368cdc7db2b
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2005-replacement
+    change: unchanged
+    summary: The 2018 supplement's three parts (title, terms and authority) do not amend Part 12 of the 2005 compact,
+      and its Part 2.C says the table-game operations are treated as subject to the Compact's terms for all purposes,
+      so the earlier Part 12 arbitration process continues to govern.
+    locator_before: Part 12, para. 2
+    locator_after: Part 2.C
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2005-replacement
+    change: unchanged
+    summary: The supplement does not amend Part 15 of the 2005 compact, and by Part 2.C its operations remain subject
+      to the Compact's terms, so the earlier Part 15.B renegotiation right for Part 11 subsections A and E continues
+      to apply.
+    locator_before: Part 15.B
+    locator_after: Part 2.C
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

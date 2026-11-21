@@ -1,0 +1,170 @@
+id: pulikla-tribe-of-yurok-people-california-gaming-compact
+kind: gaming-compact
+title: Pulikla Tribe of Yurok People–State of California Gaming Compact
+nations:
+- pulikla-tribe-of-yurok-people
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Pulikla Tribe of Yurok People and the State of California under 25 U.S.C. §
+    2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Pulikla Tribe of Yurok People
+  and the State of California as of Nov. 21, 2026: 1 original, 2 extensions and 1 replacement. The order, the kind
+  of each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-pulikla-tribe-of-yurok-people-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2000.05.16 Resighini Rancheria Tribal State
+      Gaming Compact_0.pdf
+    sha256: 381912d16ef142f24732881560a6e8b9d2410bb16272b9db5625cafd3b2329f6
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 and Sec. 9.2
+    summary: Disputes start with written notice and a meet-and-confer within 10 days, then either party may seek
+      arbitration under the AAA Commercial Arbitration Rules if the dispute is unresolved within 30 days of the
+      first meeting, with a binding award once submitted; unresolved disputes may go to the U.S. District Court
+      and Ninth Circuit, or to state courts if the federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Sec. 12.1 to Sec. 12.3
+    summary: The compact may be amended at any time by mutual written agreement, and the Tribe may request renegotiation
+      in writing to offer Class III games not authorized in the compact, but not within 12 months of the effective
+      date; the parties set a negotiation schedule within 30 days of the request, under IGRA good-faith standards
+      enforceable in federal court.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2022-extension
+  label: 2022 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2022-06-30'
+    published: '2022-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-14054
+    locator: 87 Fed. Reg. 39115 (June 30, 2022)
+  source: compact-ca-pulikla-tribe-of-yurok-people-2022-06-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2022.06.30_resighini_rancheria_tribal_state_gaming_compact.pdf
+    sha256: bd620fb8978ea607eebee3377f7a47a31862ef10779fe821f90525c82704b61c
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2023-extension
+  label: 2023 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2023-12-28'
+    published: '2023-12-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-28711
+    locator: 88 Fed. Reg. 89723 (Dec. 28, 2023)
+  source: compact-ca-pulikla-tribe-of-yurok-people-2023-12-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2023.12.28_resighini_rancheria_tribal_state_gaming_compact.pdf
+    sha256: 25175a97e5f6ac82bc80f40ec849ab1789e9caad48dcb54c5d3a01a880ebba30
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2024-replacement
+  label: 2024 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  - 2022-extension
+  - 2023-extension
+  dates:
+    listed: '2024-01-23'
+    published: '2024-01-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2024-01231
+    locator: 89 Fed. Reg. 4333 (Jan. 23, 2024)
+  source: compact-ca-pulikla-tribe-of-yurok-people-2024
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2024.01.23_resighini_rancheria_tribal_state_gaming_compact.pdf
+    sha256: 75eb0b397244498bc14318d691c682cf683dabd4833e5fc5ed7976e1436b8d4c
+    pages: 123
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS; Sec. 13.1. Voluntary Resolution; Court Resolution.
+    summary: After written notice, a written response within 15 days, and a meet-and-confer within 30 days, unresolved
+      disputes may be resolved in the U.S. District Court where the Resighini Rancheria's gaming facility is located
+      or, if that court lacks jurisdiction, in a state court in the County.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: changed
+    summary: The later compact provides notice, a written response within 15 days, a meet-and-confer within 30 days
+      of the notice, then court resolution in the federal district court where the gaming facility is located or
+      in state court, with the remedies in Section 13.3 as the sole remedies for issues arising out of the compact.
+      The earlier compact provided notice, a meeting within 10 days, and, if unresolved 30 days after the first
+      meeting, optional arbitration under AAA rules (neither party required to agree) with a binding decision, plus
+      court resolution.
+    locator_before: Section 9.1-9.4
+    locator_after: Sections 13.1-13.4
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

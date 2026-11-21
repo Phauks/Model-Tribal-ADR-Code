@@ -1,0 +1,328 @@
+id: northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-montana-gaming-compact
+kind: gaming-compact
+title: Northern Cheyenne Tribe of the Northern Cheyenne Indian Reservation, Montana–State of Montana Gaming Compact
+nations:
+- northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation
+states:
+- MT
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Northern Cheyenne Tribe of the Northern Cheyenne Indian Reservation, Montana
+    and the State of Montana under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Northern Cheyenne Tribe of
+  the Northern Cheyenne Indian Reservation, Montana and the State of Montana as of Nov. 21, 2026: 1 original, 3
+  replacements, 4 amendments and 1 extension. The order, the kind of each event and which version is in effect are
+  inferred from the list (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1993-original
+  label: 1993 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1993-05-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mt-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1993-05-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_1993.05.03_northern_cheyenne_tribe_tribal_state_gaming_compact.pdf
+    sha256: 531ea4950040bf292ba4fee01f9a95623553ed2b4ac3ed8ff7b2e9a6e4be40f4
+    pages: 34
+  clauses:
+  - topic: renegotiation
+    locator: Article X.B (Amendments) and Article IX.D (Continuing Duty to Bargain)
+    summary: The Agreement may be amended only with the consent of both parties by written instrument; a change
+      in IGRA or state law triggers good faith negotiations to amend it, and after default or voluntary termination
+      the State must negotiate in good faith upon an IGRA Section 11(d) request.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 1993-replacement
+  label: 1993 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1993-original
+  dates:
+    listed: '1993-12-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mt-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1993-12-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_1993.12.27_northern_cheyenne_tribe_tribal_state_gaming_compact.pdf
+    sha256: e02cea539177fc5eeff67c4488e7f9c93f4fa8a66eaadf569dd7722791ad2cc5
+    pages: 32
+  changes:
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+- id: 1998-amendment
+  label: 1998 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1993-replacement
+  dates:
+    listed: '1998-05-08'
+    published: '1998-05-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-12261
+    locator: 63 Fed. Reg. 25518 (May 8, 1998)
+  source: compact-mt-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1998-05-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_1998.05.08_northern_cheyenne_tribe_tribal_state_gaming_compact.pdf
+    sha256: 91d910f889ead5630e7e558a15831526e6ed6e7deae61df5fab55354d2b7ebe0
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Fifth Renewal, Agreement paragraph (no section number printed)
+    summary: The Tribe may request up to two times during the extended term that Montana consider proposed changes,
+      and Montana will engage in good faith negotiations on each such request; the Agreement stays in force until
+      a revised or new compact is executed.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: renegotiation
+    compared_with: 1993-replacement
+    change: not-compared
+    verification: inferred
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1993-replacement
+  dates:
+    listed: '1999-09-01'
+    published: '1999-09-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-22705
+    locator: 64 Fed. Reg. 47858 (Sept. 1, 1999)
+  source: compact-mt-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-1999-09-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_1999.09.01_northern_cheyenne_tribe_tribal_state_gaming_compact.pdf
+    sha256: cb91d191318d4bc78dd2f9bd6d9cc5bffb11e8055e0ea450d0bf426d57b08392
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Sixth Renewal, Recitals and Agreement paragraph (no section number printed)
+    summary: The Tribe may continue to attempt to negotiate proposed changes to the Agreement, and Montana will
+      engage in good faith negotiations on those changes; the Agreement stays in force until a revised or new compact
+      is executed.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: renegotiation
+    compared_with: 1993-replacement
+    change: not-compared
+    verification: inferred
+- id: 2000-extension
+  label: 2000 extension
+  event: extension
+  status: superseded
+  amends:
+  - 1993-replacement
+  dates:
+    listed: '2000-06-08'
+    published: '2000-06-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-14504
+    locator: 65 Fed. Reg. 36461 (June 8, 2000)
+  source: compact-mt-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-2000-06-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2000.06.08_northern_cheyenne_tribe_tribal_state_gaming_compact.pdf
+    sha256: 6b005cbbae20ed92447f966aec1f31d53d23104a4181b1920eb46bbc86dcafc8
+    pages: 3
+- id: 2002-amendment
+  label: 2002 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1993-replacement
+  dates:
+    listed: '2002-05-31'
+    published: '2002-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-02-13650
+    locator: 67 Fed. Reg. 38145 (May 31, 2002)
+  source: compact-mt-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-2002-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2002.05.31_northern_cheyenne_tribe_tribal_state_gaming_compact.pdf
+    sha256: 8888241b8fe7ce63d357387111cbabb14bcd3fed1906d091ede3a9ccd5f80d90
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Eighth Renewal, Agreement paragraph (no section number printed)
+    summary: The Tribe may continue to attempt to negotiate proposed changes to the Agreement, and Montana will
+      engage in good-faith negotiations on those changes; the Agreement stays in force until a revised or new compact
+      is executed.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: renegotiation
+    compared_with: 1993-replacement
+    change: not-compared
+    verification: inferred
+- id: 2002-replacement
+  label: 2002 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1993-replacement
+  - 1998-amendment
+  - 1999-amendment
+  - 2000-extension
+  - 2002-amendment
+  dates:
+    listed: '2002-08-05'
+    published: '2002-08-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-02-19641
+    locator: 67 Fed. Reg. 50689 (Aug. 5, 2002)
+  source: compact-mt-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-2002-08-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2002.08.05_northern_cheyenne_tribe_tribal_state_gaming_compact.pdf
+    sha256: 41f89dda07e09fae1bc301637eefac3c54ed4479b6ac96e2bb6d818337f52af8
+    pages: 38
+  clauses:
+  - topic: dispute-resolution
+    locator: IX. DEFAULT AND TERMINATION, B. Default by State
+    summary: 'The agreement has no negotiation, arbitration or court process for disputes; its only mechanism is
+      default: a party in substantial and continuing failure may be terminated by the other after ninety days written
+      notice and a failure to cure within ninety days.'
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: X. MISCELLANEOUS TERMS, B. Amendments
+    summary: The agreement may be amended only with both parties' consent by signed written instrument; the parties
+      must negotiate in good faith if IGRA or state law changes, and the Native nation may notify the State that
+      it wants additional Class III games.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1993-replacement
+    change: not-compared
+    verification: inferred
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2002-replacement
+  dates:
+    listed: '2007-04-30'
+    published: '2007-04-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-e7-8134
+    locator: 72 Fed. Reg. 21284 (Apr. 30, 2007)
+  source: compact-mt-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-2007-04-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2007.04.30_northern_cheyenne_tribe_tribal_state_gaming_compact.pdf
+    sha256: e4985a8dfe109d575a9e0c67d3c849d248d91d7e5d5b3a8fda55fa922d172732
+    pages: 4
+  clauses:
+  - topic: renegotiation
+    locator: Recitals; Section X.B, Amendments, as amended
+    summary: The parties extend the existing agreement while they negotiate a new Class III compact, and amend it
+      only with the consent of both parties in writing; after a change in IGRA or state law they negotiate in good
+      faith.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2002-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2002-replacement
+    change: changed
+    summary: The 2007 extension rewrites Section X.B so that, after a change in law that would prohibit the gaming,
+      the Northern Cheyenne may continue the gaming for at least one year unless a court finds it illegal, instead
+      of the 2002 negotiated reasonable period; the good-faith negotiation duty after IGRA or state-law changes
+      is kept, and the term is extended to June 3, 2017.
+    locator_before: X.B
+    locator_after: X.B
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2013-replacement
+  label: 2013 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2002-replacement
+  - 2007-amendment
+  dates:
+    listed: '2013-03-21'
+    published: '2013-03-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2013-06444
+    locator: 78 Fed. Reg. 17427 (Mar. 21, 2013)
+  source: compact-mt-northern-cheyenne-tribe-of-the-northern-cheyenne-indian-reservation-2013-03-21
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2013.03.21_northern_cheyenne_tribe_tribal_state_gaming_compact.pdf
+    sha256: b5e7a06e4206498f61e42e6bacb5b52d169f6e9e1aefc309d72afb2ed99ca0e4
+    pages: 12
+  clauses:
+  - topic: dispute-resolution
+    locator: Section IX.A and IX.B, Default by Tribe and Default by State
+    summary: Written notice of default with a ninety-day cure period comes first, after which the non-defaulting
+      party may terminate the agreement; the excerpt names no other step.
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Section X.B, Amendments
+    summary: The agreement may be amended only with the consent of both parties in writing; after a change in IGRA
+      or state law the parties negotiate in good faith, and if a change would prohibit gaming the Tribe may continue
+      such gaming for at least one year.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2002-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2002-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

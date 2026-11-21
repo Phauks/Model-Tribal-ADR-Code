@@ -1,0 +1,219 @@
+id: otoe-missouria-tribe-of-indians-oklahoma-gaming-compact
+kind: gaming-compact
+title: Otoe-Missouria Tribe of Indians, Oklahoma–State of Oklahoma Gaming Compact
+nations:
+- otoe-missouria-tribe-of-indians
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Otoe-Missouria Tribe of Indians, Oklahoma and the State of Oklahoma under 25
+    U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Otoe-Missouria Tribe of Indians,
+  Oklahoma and the State of Oklahoma as of Nov. 21, 2026: 1 original, 2 replacements and 1 amendment. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1997-original
+  label: 1997 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1997-03-11'
+    published: '1997-03-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-97-5885
+    locator: 62 Fed. Reg. 11219 (Mar. 11, 1997)
+  source: compact-ok-otoe-missouria-tribe-of-indians-1997-03-11
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508_compliant_1997.03.11_otoe-missouria_tribe_tribal_state_gaming_compact.pdf
+    sha256: efba66392cf5b67a5454af57c3fc965e8f2d18ad6c9722024d627651964cf0b1
+    pages: 41
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 15. DISPUTE RESOLUTION, (b) Non-Binding Arbitration
+    summary: The compact provides for written notice, a Governor and Tribal Chief meeting within 30 days, non-binding
+      arbitration after 30 days with an arbitrator named by the American Arbitration Association if needed, and
+      a declaratory judgment action in the United States District Court for the Northern District of Oklahoma.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 20. AMENDMENTS
+    summary: Either the State or the Tribe may request negotiations to amend the compact, which stays in effect
+      meanwhile; the parties have 180 days to negotiate, after which Act procedures apply, and amendments must be
+      approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2005-replacement
+  label: 2005 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1997-original
+  dates:
+    listed: '2005-06-23'
+    published: '2005-06-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-05-12400
+    locator: 70 Fed. Reg. 36407 (June 23, 2005)
+  source: compact-ok-otoe-missouria-tribe-of-indians-2005-06-23
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2005.06.23 Otoe Missouria Tribe of Indians Tribal
+      State Gaming Compact.pdf
+    sha256: 000eda07c146da1ad208bda3d21a8ee7836e2ce17a9afed1ea98d894bef5b268
+    pages: 25
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION
+    summary: The compact provides for written notice, a meeting within 30 days, arbitration under American Arbitration
+      Association rules with one arbitrator chosen from an AAA list if the parties cannot agree, and de novo review
+      of any award in federal district court.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, B.
+    summary: Either Otoe-Missouria or the State, acting through its Governor, may request renegotiation of Part
+      11 subsections A and E within 180 days of expiration of the term or any renewal, and the compact stays in
+      effect until expiration or mutual termination.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-original
+    change: changed
+    summary: The later compact provides a notice and a 30-day meeting of the Native nation's and State's representatives,
+      then either party may refer any dispute to arbitration before a single AAA-listed arbitrator, with remedies
+      limited to enforcing the compact and de novo review of any award in federal district court. The earlier compact
+      had the same notice and 30-day meeting, then non-binding arbitration with a three-member panel (one named
+      by each party, third by the two or the AAA) and a declaratory-judgment action in the Northern District of
+      Oklahoma, and said the steps did not prevent seeking immediate judicial relief.
+    locator_before: Section 15(a)-(c)
+    locator_after: Part 12, paragraphs 1-3
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1997-original
+    change: changed
+    summary: The 2005 compact's Part 15 lets either party request renegotiation of Part 11 subsections A and E within
+      180 days before a fifteen-year renewal term ends, where the 1997 Section 20 let either party request negotiations
+      to amend the compact, with the compact remaining in effect for 180 days and any amendment approved by the
+      Secretary.
+    locator_before: '20'
+    locator_after: Part 15(B)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2005-replacement
+  dates:
+    listed: '2018-08-27'
+    published: '2018-08-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-18424
+    locator: 83 Fed. Reg. 43704 (Aug. 27, 2018)
+  source: compact-ok-otoe-missouria-tribe-of-indians-2018-08-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2018.08.27 Otoe Missouria 2018 Compact Amendment.pdf
+    sha256: 5f10baa385a4e981aa7bd6d89fda0285773be612dad8f2121890a2a5dc66546b
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2005-replacement
+    change: unchanged
+    summary: The 2018 Non-house-Banked Table Games Supplement states that it is to be governed in accord with the
+      2005 compact and does not amend Part 12, so the 2005 dispute process still governs.
+    locator_before: Part 12
+    locator_after: Preamble
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2005-replacement
+    change: unchanged
+    summary: The 2018 supplement does not amend Part 15, so the 2005 renegotiation request (within 180 days before
+      the end of a term, to renegotiate Part 11 subsections A and E) still governs.
+    locator_before: Part 15(B)
+    locator_after: Preamble
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2020-replacement
+  label: 2020 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2005-replacement
+  - 2018-amendment
+  dates:
+    listed: '2020-06-29'
+    published: '2020-06-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2020-13886
+    locator: 85 Fed. Reg. 38919 (June 29, 2020)
+  source: compact-ok-otoe-missouria-tribe-of-indians-2020-06-29
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2020.06.29 Otoe Missouria Tribe Gaming Compact.pdf
+    sha256: bc65caa33c8eeea03d36b86ab0dda5b714e5bf2983e78a22dfd2f0ccf910599f
+    pages: 30
+  clauses:
+  - topic: dispute-resolution
+    locator: 'PART6: DISPUTE RESOLUTION - THE TRIBE AND THE STATE, subsection B'
+    summary: Disputes between the Tribe and the State go first to mediation with a mutually agreeable mediator,
+      and if mediation fails, or injunctive relief to prevent irreparable harm is sought, the dispute is litigated
+      in federal court with limited waivers of sovereign immunity; arbitration is not provided for in the excerpt.
+    methods:
+    - mediation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: 'PART 13: ADDITIONAL TERMS & CONDITIONS, subsection A'
+    summary: The Compact may be amended only by a writing executed by all Parties; the excerpt sets no renegotiation
+      request right, deadline or trigger.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2005-replacement
+    change: changed
+    summary: 'The later compact provides a two-step process for disputes between the Native nation and the State:
+      mediation first (unless irreparable harm requires injunctive relief filed directly in federal court), then
+      litigation in federal court with limited waivers of sovereign immunity, and gives the Governor exclusive authority
+      to settle for the State. The earlier compact provided notice, a 30-day meeting, then AAA arbitration with
+      a single arbitrator and de novo review of the award in federal district court.'
+    locator_before: Part 12
+    locator_after: Part 6(B)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2005-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

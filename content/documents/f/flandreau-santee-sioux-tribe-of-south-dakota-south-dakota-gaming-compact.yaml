@@ -1,0 +1,282 @@
+id: flandreau-santee-sioux-tribe-of-south-dakota-south-dakota-gaming-compact
+kind: gaming-compact
+title: Flandreau Santee Sioux Tribe of South Dakota–State of South Dakota Gaming Compact
+nations:
+- flandreau-santee-sioux-tribe-of-south-dakota
+states:
+- SD
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Flandreau Santee Sioux Tribe of South Dakota and the State of South Dakota
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Flandreau Santee Sioux Tribe
+  of South Dakota and the State of South Dakota as of Nov. 21, 2026: 1 original, 3 replacements, 1 amendment and
+  2 extensions. The order, the kind of each event and which version is in effect are inferred from the list (project
+  analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1990-original
+  label: 1990 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1990-08-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-sd-flandreau-santee-sioux-tribe-of-south-dakota-1990-08-02
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 1990.08.02 Flandreau Santee Sioux Tribe Tribal
+      State Gaming Compact.pdf
+    sha256: 63daad266b66d0149a2df5585bb9b9b6ad6bb7b7f15ed62bc650e18272c2019f
+    pages: 14
+  clauses:
+  - topic: dispute-resolution
+    locator: 12. General Provisions, 12.1
+    summary: Either party may commence an action in federal district court to resolve a dispute over the compact's
+      interpretation; the excerpt shows no notice, negotiation or arbitration step before suit.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: 11. Duration
+    summary: The terms are subject to review at three-year intervals; either party may give notice of provisions
+      needing review 180 days before the anniversary, the parties have 180 days to negotiate, and if unresolved
+      the compact terminates.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2000-replacement
+  label: 2000 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1990-original
+  dates:
+    listed: '2000-03-13'
+    published: '2000-03-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-6009
+    locator: 65 Fed. Reg. 13303 (Mar. 13, 2000)
+  source: compact-sd-flandreau-santee-sioux-tribe-of-south-dakota-2000-03-13
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2000.03.13 Flandreau Santee Sioux Tribe Tribal
+      State Gaming Compact_0.pdf
+    sha256: 483ec0a7c309bfcfccf772f8d8886abe818ccc2370734d0957877da1243f22fa
+    pages: 19
+  clauses:
+  - topic: dispute-resolution
+    locator: 12. General Provisions, 12.2
+    summary: Either party may commence an action in federal district court to resolve a dispute over the compact's
+      interpretation; the excerpt shows no notice, negotiation or arbitration step before suit.
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: 11. Duration
+    summary: Either party may give notice of provisions needing review within a window from one year before to 180
+      days before each three-year anniversary, the parties have 180 days to negotiate (extendable by up to 180 days),
+      and the compact terminates if unresolved.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1990-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1990-original
+    change: not-compared
+    verification: inferred
+- id: 2004-amendment
+  label: 2004 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2000-replacement
+  dates:
+    listed: '2004-12-20'
+    published: '2004-12-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-04-27711
+    locator: 69 Fed. Reg. 76005 (Dec. 20, 2004)
+  source: compact-sd-flandreau-santee-sioux-tribe-of-south-dakota-2004-12-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2004.12.20 Flandreau Santee Sioux Tribe Tribal
+      State Gaming Compact.pdf
+    sha256: 82486ecd7de487ba671f6a38510638487eaf1df9eec804bc55dc096bd355a86f
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+- id: 2011-replacement
+  label: 2011 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 2000-replacement
+  - 2004-amendment
+  dates:
+    listed: '2011-09-13'
+    published: '2011-09-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2011-23389
+    locator: 76 Fed. Reg. 56466 (Sept. 13, 2011)
+  source: compact-sd-flandreau-santee-sioux-tribe-of-south-dakota-2011-09-13
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2011.09.13 Flandreau Santee Sioux Tribe Tribal
+      State Gaming Compact_0.pdf
+    sha256: 22ed224476429f96101fb98d26f3f0dc7db7425ba8cf1b24ebfdd999479cc42b
+    pages: 13
+  clauses:
+  - topic: dispute-resolution
+    locator: 14. GENERAL PROVISIONS, 14.1
+    summary: Either party may bring an action in federal district court to resolve a dispute over interpretation
+      of the compact or the parties' rights and duties; separate binding arbitration applies only to licensing suitability
+      disputes (Section 8) and patron insurance recovery disputes (Section 13(D)).
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: 12. DURATION
+    summary: Compact terms are reviewed every two years; either party may give written notice within 180 days before
+      the period ends, the parties negotiate in good faith for up to 180 days after expiry, and the compact then
+      terminates unless the parties agree otherwise.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+- id: 2016-extension
+  label: 2016 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2011-replacement
+  dates:
+    listed: '2016-04-04'
+    published: '2016-04-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2016-07632
+    locator: 81 Fed. Reg. 19236 (Apr. 4, 2016)
+  source: compact-sd-flandreau-santee-sioux-tribe-of-south-dakota-2016-04-04
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2016.04.04  Flandreau Santee Sioux Ext.pdf
+    sha256: abe57c070a12a428b6fb06b603481b3670e675ecb779b6273bdb1be769450093
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2011-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2011-replacement
+    change: not-compared
+    verification: inferred
+- id: 2016-replacement
+  label: 2016 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2011-replacement
+  - 2016-extension
+  dates:
+    listed: '2016-09-21'
+    published: '2016-09-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2016-22649
+    locator: 81 Fed. Reg. 64935 (Sept. 21, 2016)
+  source: compact-sd-flandreau-santee-sioux-tribe-of-south-dakota-2016-09-21
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2016.09.21 Flandreau Santee Sioux.pdf
+    sha256: cac66351900e6d9447e571d1daefb6a1f7eb9dd38e123173ef39382397c453ec
+    pages: 13
+  clauses:
+  - topic: dispute-resolution
+    locator: 14. GENERAL PROVISIONS, 14.1
+    summary: Either party may bring an action in federal district court to resolve a dispute over interpretation
+      of the compact or the parties' rights and duties; a three-person binding arbitration board handles contested
+      non-compliance findings on gaming devices, with appeal to federal district court if permitted by law, and
+      patron insurance recovery disputes go to binding arbitration.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: 12. DURATION
+    summary: Compact terms are reviewed every ten years; either party may give written notice within 180 days before
+      the period ends, the parties negotiate for 180 days after expiry, and the compact then terminates unless the
+      parties agree otherwise.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2011-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2011-replacement
+    change: not-compared
+    verification: inferred
+- id: 2026-extension
+  label: 2026 extension
+  event: extension
+  status: in-effect
+  amends:
+  - 2016-replacement
+  dates:
+    listed: '2026-10-21'
+    published: '2026-10-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2026-21475
+    locator: 91 Fed. Reg. 66580 (Oct. 21, 2026)
+  source: compact-sd-flandreau-santee-sioux-tribe-of-south-dakota-2026-10-21
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/flandreau_compact_508.pdf
+    sha256: 0b3d9e418b97cbaca0e84e350604d383493c5a756ab42aade609dbcc6648881f
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2016-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2016-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

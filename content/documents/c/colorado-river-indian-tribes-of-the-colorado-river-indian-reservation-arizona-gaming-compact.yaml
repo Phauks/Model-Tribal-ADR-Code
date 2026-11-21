@@ -1,0 +1,214 @@
+id: colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-arizona-gaming-compact
+kind: gaming-compact
+title: Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California–State of Arizona
+  Gaming Compact
+nations:
+- colorado-river-indian-tribes-of-the-colorado-river-indian-reservation
+states:
+- AZ
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona
+    and California and the State of Arizona under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Colorado River Indian Tribes
+  of the Colorado River Indian Reservation, Arizona and California and the State of Arizona as of Nov. 21, 2026:
+  1 original, 2 amendments and 1 restatement. The order, the kind of each event and which version is in effect are
+  inferred from the list (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2003-original
+  label: 2003 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2003-07-03'
+    published: '2003-07-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-16826
+    locator: 68 Fed. Reg. 39964 (July 3, 2003)
+  source: compact-az-colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-2003-07-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2003.07.03.colorado_river_indian_tribes_tribal_state_gaming_compact.pdf
+    sha256: 3200614a2caa9bbada6e7b3e53456b8b005dd40d7a408cf69f50c826fb9b3ac9
+    pages: 60
+  clauses:
+  - topic: renegotiation
+    locator: SECTION 17. AMENDMENTS, subsections (a)-(c)
+    summary: Within 180 days after the Effective Date either party may propose amendments to listed regulatory provisions;
+      the parties then negotiate in good faith for 90 days and, failing agreement, mediate under Section 15(b),
+      while other provisions may be amended by written mutual agreement signed by both parties.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2009-amendment
+  label: 2009 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2003-original
+  dates:
+    listed: '2009-03-25'
+    published: '2009-03-25'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e9-6585
+    locator: 74 Fed. Reg. 12889 (Mar. 25, 2009)
+  source: compact-az-colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-2009-03-25
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2009.03.25.colorado_river_indiantribal_gaming_compact_0.pdf
+    sha256: 18ac078a3af84ba75c4bfa2c7a932381a882cf9bd5375839f1924a0d7c459070
+    pages: 15
+  clauses:
+  - topic: renegotiation
+    locator: AGREEMENT, paragraph 10
+    summary: The parties may renegotiate provisions of the agreement under the compact, and the agreement may be
+      amended only in a writing signed by the parties.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: renegotiation
+    compared_with: 2003-original
+    change: unchanged
+    summary: The 2009 amendment does not list Section 17 among the provisions it amends, and paragraph 4 says no
+      other provisions are amended, so the 2003 Section 17 amendment process still governs.
+    locator_before: 17(a)
+    locator_after: '4'
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2021-restatement
+  label: 2021 amended and restated compact
+  event: restatement
+  status: in-effect
+  supersedes:
+  - 2003-original
+  - 2009-amendment
+  dates:
+    listed: '2021-05-24'
+    published: '2021-05-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-10877
+    locator: 86 Fed. Reg. 27889 (May 24, 2021)
+  source: compact-az-colorado-river-indian-tribes-of-the-colo-2021
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508 Compliant 2021.05.24 Colorado River Indian Tribes Tribal
+      State Gaming Compact.pdf
+    sha256: 3fd588815b65100fb21da95f8da75a55436556e2657dac11fb914db07e9969cc
+    pages: 80
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 3(b)(3)(B)-(C)
+    summary: For appendix disputes, either party may request a new or modified appendix in writing, and if no agreement
+      is reached within 180 days either may initiate Section 15 dispute resolution, where an arbitration under Section
+      15(c) is conducted before a single neutral arbitrator selected by CPR in a last best offer format; the general
+      Section 15 procedure is not in the excerpt.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 3(b)(3) and SECTION 17. AMENDMENTS
+    summary: Either Colorado River Indian Tribes or the State Gaming Agency may request in writing to negotiate
+      a new or modified appendix, and after 180 days without agreement either may initiate Section 15 dispute resolution;
+      compact amendments must be in writing, signed by both parties, and approved or deemed approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2003-original
+    change: changed
+    summary: The 2021 compact drops the 2003 Section 17(a) reopener for regulatory amendments and instead provides
+      a request-to-negotiate process for appendices in Section 3(b)(3), which can go to Section 15 dispute resolution
+      after 180 days, with an optional single-neutral, last-best-offer arbitration selected through CPR; Section
+      17 now provides for amendment by mutual agreement with Secretary approval where required.
+    locator_before: 17(a)
+    locator_after: 3(b)(3), 17
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2021 Section 15 is not in the excerpts, so the dispute comparison cannot
+      be made. The 2003 Section 17(b) mediation refers to Section 15(b), which is not shown either. The 2021 Section
+      17 names the Governor''s authority to agree to amendments consistent with Title 5, Chapter 6 of the Arizona
+      Revised Statutes.'
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2021-restatement
+  dates:
+    listed: '2022-06-14'
+    published: '2022-06-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-12743
+    locator: 87 Fed. Reg. 35992 (June 14, 2022)
+  source: compact-az-colorado-river-indian-tribes-of-the-colorado-river-indian-reservation-2022-06-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2022.06.14_colorado_river_indian_tribes_tribal_state_gaming_compact.pdf
+    sha256: 160e711a9c96f1385a20949a44fb0e4ff493b198cc9714723d6a43de66f0e09e
+    pages: 20
+  clauses:
+  - topic: dispute-resolution
+    locator: Paragraph 12
+    summary: Disputes under the Agreement go to the dispute resolution provisions of Section 15 of the Compact,
+      which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Paragraph 10
+    summary: The Compact is amended under its Section 17, which the excerpt does not reproduce, and this Agreement
+      itself may be changed only by a written document signed by both parties.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2021-restatement
+    change: unchanged
+    summary: The 2022 amendment lists thirteen provisions it amends, none of them Section 15, and paragraph 4 says
+      no other provisions are amended, so the 2021 Section 15 still governs; the excerpt ends before the paragraph
+      that refers to Section 15.
+    locator_before: '15'
+    locator_after: 1, 4
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The excerpt is cut off in paragraph 7, so paragraphs 8 to 12 (including
+      any dispute cross-reference) are not visible. The 2022 amendment amends the same thirteen provisions as the
+      Cocopah 2022 amendment, and the Interior letter approves it under 25 U.S.C. 2710(d)(8). The Section 15 and
+      Section 17 texts of the 2021 compact are not in the excerpts.'
+  - topic: renegotiation
+    compared_with: 2021-restatement
+    change: unchanged
+    summary: The 2022 amendment does not list Section 17 among the provisions it amends, and paragraph 4 says no
+      other provisions are amended, so the 2021 Section 17 amendment terms still govern.
+    locator_before: '17'
+    locator_after: '4'
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The excerpt is cut off in paragraph 7, so paragraphs 8 to 12 (including
+      any dispute cross-reference) are not visible. The 2022 amendment amends the same thirteen provisions as the
+      Cocopah 2022 amendment, and the Interior letter approves it under 25 U.S.C. 2710(d)(8). The Section 15 and
+      Section 17 texts of the 2021 compact are not in the excerpts.'
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,183 @@
+id: manchester-band-of-pomo-indians-of-the-manchester-rancheria-california-gaming-compact
+kind: gaming-compact
+title: Manchester Band of Pomo Indians of the Manchester Rancheria, California–State of California Gaming Compact
+nations:
+- manchester-band-of-pomo-indians-of-the-manchester-rancheria
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Manchester Band of Pomo Indians of the Manchester Rancheria, California and
+    the State of California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Manchester Band of Pomo Indians
+  of the Manchester Rancheria, California and the State of California as of Nov. 21, 2026: 1 original, 2 extensions
+  and 1 replacement. The order, the kind of each event and which version is in effect are inferred from the list
+  (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-manchester-band-of-pomo-indians-of-the-manchester-rancheria-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2000.05.16 Manchester Band of Pomo Indians
+      Tribal State Gaming Compact.pdf
+    sha256: 1a7ce047b940f7f6dc2a52f581b4b40b7bccaa476b0590e98ba7a36d8503a820
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 and Sec. 9.2
+    summary: The compact provides for written notice, a good-faith meeting within 10 days and, if unresolved after
+      30 days, optional arbitration under the AAA Commercial Arbitration Rules with a binding award; otherwise the
+      dispute may go to the U.S. District Court where the gaming facility is located and the Ninth Circuit Court
+      of Appeals, or to state courts if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Sec. 12.1 to Sec. 12.3
+    summary: The compact may be amended by mutual written agreement, and the Manchester Band may request renegotiation
+      in writing for Class III games other than those authorized, but not within 12 months of the effective date;
+      talks are to be scheduled within 30 days under IGRA good-faith standards.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2022-extension
+  label: 2022 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2022-06-30'
+    published: '2022-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-14054
+    locator: 87 Fed. Reg. 39115 (June 30, 2022)
+  source: compact-ca-manchester-band-of-pomo-indians-of-the-manchester-rancheria-2022-06-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2022.06.30_manchester_band_of_pomo_indians_tribal_state_gaming_compact.pdf
+    sha256: 1374ec01b4352d228bd9de424bebb834f4db132c8b64777c078704a56b74beb3
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2023-extension
+  label: 2023 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2023-12-28'
+    published: '2023-12-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-28711
+    locator: 88 Fed. Reg. 89723 (Dec. 28, 2023)
+  source: compact-ca-manchester-band-of-pomo-indians-of-the-manchester-rancheria-2023-12-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2023.12.28_manchester_band_of_pomo_indians_of_the_manchester_rancheria_tribal_state_gaming_compact.pdf
+    sha256: f21423b016a2c51737af3e5bdd55e2f943ac99278333280199d7a769d8d74c53
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2024-replacement
+  label: 2024 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  - 2022-extension
+  - 2023-extension
+  dates:
+    listed: '2024-01-23'
+    published: '2024-01-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2024-01231
+    locator: 89 Fed. Reg. 4333 (Jan. 23, 2024)
+  source: compact-ca-manchester-band-of-pomo-indians-of-the-manchester-rancheria-2024-01-23
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2024.01.23_manchester_band_of_pomo_indians_of_the_manchester_rancheria_tribal_state_gaming_compact.pdf
+    sha256: d7b105769f5a3fd3f0478424bf8069eef9d78678a191a9168f4857dc0b8794d0
+    pages: 123
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS. Sec. 13.1 (d)
+    summary: Disputes go through written notice, a written response within fifteen days, a meet and confer within
+      thirty days of negotiation, and then may be resolved in the United States District Court or, if that court
+      lacks jurisdiction, a state court, without binding arbitration.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Table of Contents, Sec. 15.4 and Sec. 15.5
+    summary: The table of contents lists entitlements to renegotiate on changed market conditions and on new forms
+      of Class III gaming; the operative text is not in the excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: changed
+    summary: The 2024 compact provides written notice, a written response within 15 days, a meet and confer within
+      30 days, and then court action in federal district court (or state court if federal court lacks jurisdiction),
+      with the Section 13.3 remedies as the sole remedies and no damages or attorney fees; arbitration is no longer
+      in the clause. The 2000 compact provided written notice, a meet and confer within 10 days, and after 30 more
+      days optional AAA arbitration (neither party required to agree), then federal or state court.
+    locator_before: 9.1-9.4
+    locator_after: 13.1-13.4
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: changed
+    summary: The 2024 table of contents lists renegotiation entitlements for changed market conditions (Section
+      15.4) and for State authorization of new forms of Class III gaming (Section 15.5), plus requests to amend
+      or negotiate a new compact (Section 15.6); the 2000 compact's visible text gives a single right to seek renegotiation
+      for new forms of gaming (Section 12.2), after a 12-month bar, and no market-conditions right. The body of
+      2024 Sections 15.4 to 15.6 is not in the excerpts.
+    locator_before: 12.1, 12.2
+    locator_after: 15.4, 15.5, 15.6 (table of contents)
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

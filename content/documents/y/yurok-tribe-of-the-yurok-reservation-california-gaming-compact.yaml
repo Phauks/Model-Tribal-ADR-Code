@@ -1,0 +1,139 @@
+id: yurok-tribe-of-the-yurok-reservation-california-gaming-compact
+kind: gaming-compact
+title: Yurok Tribe of the Yurok Reservation, California–State of California Gaming Compact
+nations:
+- yurok-tribe-of-the-yurok-reservation
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Yurok Tribe of the Yurok Reservation, California and the State of California
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Yurok Tribe of the Yurok
+  Reservation, California and the State of California as of Nov. 21, 2026: 1 original, 1 amendment and 1 extension.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2007-original
+  label: 2007 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2007-11-02'
+    published: '2007-11-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-e7-21624
+    locator: 72 Fed. Reg. 62264 (Nov. 2, 2007)
+  source: compact-ca-yurok-tribe-of-the-yurok-reservation-2007-11-02
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2007.11.02_yurok_tribe_tribal_state_gaming_compact.pdf
+    sha256: 39ed3628909c7d42729d5d51915426118f680f622a0cdfc3a06bcb84df59044f
+    pages: 88
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 11.8.8. Arbitration.
+    summary: If no agreement with Del Norte County and the State is reached within 55 days after the Final TEIR,
+      any party may demand binding arbitration before a single arbitrator under the AAA Commercial Rules, choosing
+      between last offers; the award is binding, review is waived, and it becomes part of the intergovernmental
+      agreement. This applies to Project agreements, and the general dispute section is not in the excerpt.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 15.1. Amendment by Agreement.
+    summary: The compact may be amended by mutual written agreement; requests to amend or renegotiate must be in
+      writing to the Tribal Chairperson or the Governor, the parties set a negotiation schedule within 90 days,
+      and both must negotiate in good faith.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2016-amendment
+  label: 2016 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2007-original
+  dates:
+    listed: '2016-10-31'
+    published: '2016-10-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2016-26251
+    locator: 81 Fed. Reg. 75427 (Oct. 31, 2016)
+  source: compact-ca-yurok-tribe-of-the-yurok-reservation-2016-10-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2016.10.31 Yurok Tribe 2016 Compact Packet.pdf
+    sha256: 002651291970fd260fc10eb0f049999106a43af5354e0ebfdd0d0177a6a44ce1
+    pages: 5
+  clauses:
+  - topic: renegotiation
+    locator: Preamble of the First Amendment (citing section 15.1 of the 2006 Compact).
+    summary: The First Amendment states it is entered into under IGRA and section 15.1 of the 2006 Compact; the
+      text of section 15.1 is not in the excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2007-original
+    change: unchanged
+    summary: The earlier compact already has Section 13.0 (written notice, a 15-day response, a meeting within 30
+      days, voluntary arbitration, then court). The later amendment replaces only Section 12.5(a) on workers' compensation
+      and does not amend Section 13.0, so the process for disputes between the Native nation and the state is the
+      same.
+    locator_before: Sec. 13.0-13.2
+    locator_after: First Amendment (Section 12.5(a) only)
+    verification: inferred
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2007-original
+    change: unchanged
+    summary: The 2007 Section 15.1 allows amendment by mutual written agreement, and Section 15.2 governs requests
+      to amend or renegotiate. The 2016 First Amendment is made under the 2006 Compact's Section 15.1 and amends
+      only Section 12.5(a), so Section 15.1 is not changed by it.
+    locator_before: Sec. 15.1 (Amendment by Agreement)
+    locator_after: Recital (WHEREAS clauses)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2026-extension
+  label: 2026 extension
+  event: extension
+  status: in-effect
+  amends:
+  - 2007-original
+  dates:
+    listed: '2026-07-07'
+    published: '2026-07-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2026-13701
+    locator: 91 Fed. Reg. 41655 (July 7, 2026)
+  source: compact-ca-yurok-tribe-of-the-yurok-reservation-2026-07-07
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/2026.06.04_yurok_compact_extension_508_compliant.pdf
+    sha256: ba6d5f067ca472be490576f512682b7970943b0b448ba6c0c17503608ebdfaa4
+    pages: 11
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2007-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2007-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

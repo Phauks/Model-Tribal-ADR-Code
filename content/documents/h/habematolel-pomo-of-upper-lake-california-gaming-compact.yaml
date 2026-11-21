@@ -1,0 +1,131 @@
+id: habematolel-pomo-of-upper-lake-california-gaming-compact
+kind: gaming-compact
+title: Habematolel Pomo of Upper Lake, California–State of California Gaming Compact
+nations:
+- habematolel-pomo-of-upper-lake
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Habematolel Pomo of Upper Lake, California and the State of California under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Habematolel Pomo of Upper
+  Lake, California and the State of California as of Nov. 21, 2026: 1 disapproved compact, 1 original and 1 amendment.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2010-disapproval
+  label: 2010 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2010-08-17'
+    published: '2010-11-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+    source: federal-register-2010-28187
+    locator: 75 Fed. Reg. 68618 (Nov. 8, 2010)
+  source: compact-ca-habematolel-pomo-of-upper-lake-2010-08-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2010.08.17 Habematolel Pomo of Upper Lake Disapproval
+      Letter and Compact.pdf
+    sha256: 30f3f5c9188f7279e34904171897b63cd573fcf34c1727211e52a929a1d47f1b
+    pages: 97
+- id: 2011-original
+  label: 2011 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2011-08-10'
+    published: '2011-08-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2011-20316
+    locator: 76 Fed. Reg. 49505 (Aug. 10, 2011)
+  source: compact-ca-habematolel-pomo-of-upper-lake-2011-08-10
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/2011.08.10 Habematolel Pomo of Upper Lake.pdf
+    sha256: f7634c536376d02663dbc6c08e39f8bf09a7a711b6d313a79921178b18b845ae
+    pages: 117
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.6
+    summary: Under Section 9.6, disputes over regulations proceed, when demanded, before a single retired-judge
+      arbitrator under the JAMS Comprehensive Arbitration Rules (or closest equivalent), who selects one party's
+      proposed regulation in an order with review waived, and the Tribe waives sovereign immunity for arbitral enforcement;
+      patron disputes under Section 10.0 go to binding arbitration before a retired judge.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 15.1 to Sec. 15.3
+    summary: Amendments require mutual written agreement during the compact term; either party may request negotiations
+      to extend the term or enter a new class III compact no sooner than 18 months before the termination date,
+      requests go in writing with a schedule set within 45 days, and absent agreement the compact extends one calendar
+      year.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2011-original
+  dates:
+    listed: '2018-12-27'
+    published: '2018-12-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2018-28135
+    locator: 83 Fed. Reg. 66741 (Dec. 27, 2018)
+  source: compact-ca-habematolel-pomo-of-upper-lake-2018-12-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_12.27.2018_habematolel_band_of_upper_lake_tribal_state_gaming_compact.pdf
+    sha256: 2e2c053b6a883303afdc7e0a5e77e2dfc99f2294267f36ce79e5402774467244
+    pages: 23
+  clauses:
+  - topic: renegotiation
+    locator: Preamble (recital referring to Section 15.1 of the 2011 Compact)
+    summary: The amendment recites that the 2011 Compact may be amended upon the written agreement of both parties
+      under its section 15.1.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2011-original
+    change: unchanged
+    summary: The 2018 amendment repeals and replaces Section 3.1(c), Section 12.6(a) and Section 18.3 and adds Section
+      18.8, and does not list the arbitration provisions of Section 9. The 2011 Section 9.6 JAMS arbitration therefore
+      still applies.
+    locator_before: '9.6'
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2018 excerpt also includes a labor mediation and report procedure that
+      the amendment''s listed changes do not explain. It is not compared here and a lawyer should check it against
+      the 2011 compact''s labor provisions.'
+  - topic: renegotiation
+    compared_with: 2011-original
+    change: unchanged
+    summary: The 2018 amendment does not list Section 15 (amendments and renegotiation). The 2011 Section 15.1 amendment-by-agreement
+      rule therefore still governs.
+    locator_before: '15.1'
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2018 excerpt also includes a labor mediation and report procedure that
+      the amendment''s listed changes do not explain. It is not compared here and a lawyer should check it against
+      the 2011 compact''s labor provisions.'
+found_in:
+- 2026-11-21-gaming-compact-histories

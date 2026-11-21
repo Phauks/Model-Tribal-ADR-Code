@@ -1,0 +1,241 @@
+id: navajo-nation-arizona-gaming-compact
+kind: gaming-compact
+title: Navajo Nation, Arizona, New Mexico, & Utah–State of Arizona Gaming Compact
+nations:
+- navajo-nation
+states:
+- AZ
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Navajo Nation, Arizona, New Mexico, & Utah and the State of Arizona under 25
+    U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Navajo Nation, Arizona, New
+  Mexico, & Utah and the State of Arizona as of Nov. 21, 2026: 1 original, 2 amendments and 1 restatement. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2003-original
+  label: 2003 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2003-02-05'
+    published: '2003-02-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-2787
+    locator: 68 Fed. Reg. 5912 (Feb. 5, 2003)
+  source: compact-az-navajo-nation-2003-02-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_complaint_2003.02.05_navajo_nation_gaming_compact.pdf
+    sha256: a30fb3a39a5ee7aa4ad963797c2329c58a12fbba56392278e28a1922f1516a72
+    pages: 60
+  clauses:
+  - topic: renegotiation
+    locator: SECTION 17. AMENDMENTS, subsections (a)-(c)
+    summary: Within 180 days after the Effective Date either party may propose amendments to listed regulatory provisions;
+      the parties then negotiate in good faith for 90 days and, failing agreement, mediate under Section 15(b),
+      while other provisions may be amended by written mutual agreement signed by both parties.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2009-amendment
+  label: 2009 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2003-original
+  dates:
+    listed: '2009-03-25'
+    published: '2009-03-25'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e9-6585
+    locator: 74 Fed. Reg. 12889 (Mar. 25, 2009)
+  source: compact-az-navajo-nation-2009-03-25
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2009.03.25_navajo_nation_tribal_state_gaming_compact_0.pdf
+    sha256: 6ffc53d06df759a7b6477057833fe26107fe8339715e4af98f4e90efdd86c3ed
+    pages: 14
+  clauses:
+  - topic: dispute-resolution
+    locator: Attachment 7, Section 7(g) Compact Compliance Review
+    summary: Under the amended compliance-review procedure the parties meet and attempt in good faith to resolve
+      compliance issues, and unresolved disputes are noticed under Section 15 of the compact, whose procedure is
+      not in the excerpt.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-original
+    change: unchanged
+    summary: The 2008 Agreement amends nine listed provisions and paragraph 4 says no other provision of the Compact
+      is amended; paragraph 11 keeps the Compact's Section 15 dispute provisions in force. The earlier Section 15
+      text is not in the excerpts.
+    locator_after: Agreement paragraph 11
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier excerpts for this compact do not show Section 15 (the dispute
+      provisions), although Section 17(b) and the Agreement refer to it. The dispute excerpts shown under the earlier
+      compact are definitions and Section 3(g) and 12 text. The later excerpts show only the Agreement and attachments
+      1 and 6, cut off partway through attachment 6; the renegotiation later-side excerpt is empty. Several words
+      in the earlier 17(b) text are garbled by OCR (for example ''re eipt''), so the earlier quotation was chosen
+      from clean text. The Agreement was approved by the Interior Department on February 23, 2009 and is dated December
+      19, 2008.'
+  - topic: renegotiation
+    compared_with: 2003-original
+    change: unchanged
+    summary: Section 17 is not among the nine provisions the Agreement amends, and paragraph 4 says no other provision
+      is amended, so the earlier amendment and mediation process still governs; paragraph 10 only lets the parties
+      renegotiate the Agreement itself under the Compact.
+    locator_before: 17(b)
+    locator_after: Agreement paragraph 4
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier excerpts for this compact do not show Section 15 (the dispute
+      provisions), although Section 17(b) and the Agreement refer to it. The dispute excerpts shown under the earlier
+      compact are definitions and Section 3(g) and 12 text. The later excerpts show only the Agreement and attachments
+      1 and 6, cut off partway through attachment 6; the renegotiation later-side excerpt is empty. Several words
+      in the earlier 17(b) text are garbled by OCR (for example ''re eipt''), so the earlier quotation was chosen
+      from clean text. The Agreement was approved by the Interior Department on February 23, 2009 and is dated December
+      19, 2008.'
+- id: 2021-restatement
+  label: 2021 amended and restated compact
+  event: restatement
+  status: in-effect
+  supersedes:
+  - 2003-original
+  - 2009-amendment
+  dates:
+    listed: '2021-05-24'
+    published: '2021-05-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-10877
+    locator: 86 Fed. Reg. 27889 (May 24, 2021)
+  source: compact-az-navajo-nation-arizona-new-mexico-utah-2021
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508 Compliant 2021.05.24 Navajo Nation Tribal State Gaming Compact.pdf
+    sha256: 5333360e825172cfcd9bef6bafd0244837c8a63219c56a50b5e62031ce67a2dc
+    pages: 80
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 3(b)(3)(B)-(C)
+    summary: For appendix disputes, either party may request a new or modified appendix in writing, and if no agreement
+      is reached within 180 days either may initiate Section 15 dispute resolution, where an arbitration under Section
+      15(c) is conducted before a single neutral arbitrator selected by CPR in a last best offer format; the general
+      Section 15 procedure is not in the excerpt.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 3(b)(3) and SECTION 17. AMENDMENTS
+    summary: Either Navajo Nation or the State Gaming Agency may request in writing to negotiate a new or modified
+      appendix, and after 180 days without agreement either may initiate Section 15 dispute resolution; compact
+      amendments must be in writing, signed by both parties, and approved or deemed approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2003-original
+    change: changed
+    summary: The 2021 compact replaces the 2003 Section 17 proposal-and-mediation process with a 180-day process
+      for negotiating new or modified appendices, followed by Section 15 dispute resolution if no agreement is reached,
+      and Section 17 now only states that the compact can be amended by written mutual agreement.
+    locator_before: 17(a)
+    locator_after: 3(b)(3)(B)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: This is a replacement compact (2021), not an amendment. The earlier excerpts
+      for dispute resolution are definitions and Section 3(g) text, not the 2003 Section 15, and the later dispute
+      excerpts are definitions and Section 3(d) text. The later Section 17 says any amendment must be in writing,
+      signed and approved, and it adds that the Governor may agree to amendments that let other tribes access revenue
+      for transferring or forbearing their rights. The Section 3(b)(3)(A) rule that a modified appendix is not an
+      amendment of the compact is a new provision that the 2003 excerpts do not show.'
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2021-restatement
+  dates:
+    listed: '2022-06-14'
+    published: '2022-06-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-12743
+    locator: 87 Fed. Reg. 35992 (June 14, 2022)
+  source: compact-az-navajo-nation-2022-06-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2022.06.14_navajo_nation_tribal_state_gaming_compact.pdf
+    sha256: 7eaf963de4e680ef0c7da59d530bf933dcab248b6efcf0f66b7faf0fbed1bc7e
+    pages: 20
+  clauses:
+  - topic: dispute-resolution
+    locator: Paragraph 12
+    summary: Disputes under the Agreement go to the dispute resolution provisions of Section 15 of the Compact,
+      which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Paragraph 10
+    summary: The Compact is amended under its Section 17, which the excerpt does not reproduce, and this Agreement
+      itself may be changed only by a written document signed by both parties.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2021-restatement
+    change: unchanged
+    summary: The 2022 Agreement amends 13 listed provisions and paragraph 4 says no other provision is amended,
+      so Section 15 still governs; paragraph 12 of the Agreement sends disputes under the Agreement to that section.
+      The 2021 Section 15 text is not in the excerpts.
+    locator_after: Agreement paragraph 12
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier excerpts are the 2021 compact text, and the dispute excerpts
+      shown for it are definitions and Section 3(d) text, so the 2021 Section 15 is not visible. The Interior approval
+      letter (June 9, 2022) says the amendment settles Yavapai-Prescott Indian Tribe litigation over the 2021 compact
+      and adds changes that let that tribe join the compact. The Agreement''s signature and approval blocks are
+      partly garbled in the extracted text.'
+  - topic: renegotiation
+    compared_with: 2021-restatement
+    change: unchanged
+    summary: Section 17 is not among the 13 provisions the 2022 Agreement amends, and paragraph 4 says no other
+      provision is amended, so the 2021 amendment clause still governs.
+    locator_before: '17'
+    locator_after: Agreement paragraph 4
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier excerpts are the 2021 compact text, and the dispute excerpts
+      shown for it are definitions and Section 3(d) text, so the 2021 Section 15 is not visible. The Interior approval
+      letter (June 9, 2022) says the amendment settles Yavapai-Prescott Indian Tribe litigation over the 2021 compact
+      and adds changes that let that tribe join the compact. The Agreement''s signature and approval blocks are
+      partly garbled in the extracted text.'
+found_in:
+- 2026-11-21-gaming-compact-histories

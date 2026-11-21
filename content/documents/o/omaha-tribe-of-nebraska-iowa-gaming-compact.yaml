@@ -1,0 +1,193 @@
+id: omaha-tribe-of-nebraska-iowa-gaming-compact
+kind: gaming-compact
+title: Omaha Tribe of Nebraska–State of Iowa Gaming Compact
+nations:
+- omaha-tribe-of-nebraska
+states:
+- IA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Omaha Tribe of Nebraska and the State of Iowa under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Omaha Tribe of Nebraska and
+  the State of Iowa as of Nov. 21, 2026: 1 original and 2 replacements. The order, the kind of each event and which
+  version is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small
+  model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1992-02-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-ia-omaha-tribe-of-nebraska-1992-02-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/iowa/508_compliant_1992.02.28_omaha_tribe_tribal_state_gaming_compact.pdf
+    sha256: d12abf4e8c409d47316f93652cad68c15b5518546dfff85268e83672a3c0fc59
+    pages: 51
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 20.1 (Breach by Tribe and Dispute Resolution); Sec. 20.2; Sec. 20.3
+    summary: Before suspending the compact or seeking other remedies for a material breach by the Tribe, the State's
+      Director must give written notice with at least 30 days to cure; the Tribe may seek any remedy at law or equity
+      against the State after its own 30-day notice, and the parties may use non-exclusive alternatives such as
+      arbitration or mediation, binding or not.
+    methods:
+    - arbitration
+    - mediation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 19 (Amendments and Waivers); Sec. 30 (Renegotiation)
+    summary: The compact may be modified only by written agreement of the parties with Secretary approval, and renegotiations
+      of the duration section and negotiations for additional individual Class III games are conducted in good faith
+      as requests to negotiate a compact under the Act; the excerpt does not state a time limit for talks.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1999-replacement
+  label: 1999 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1992-original
+  dates:
+    listed: '1999-02-08'
+    published: '1999-02-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-2912
+    locator: 64 Fed. Reg. 6112 (Feb. 8, 1999)
+  source: compact-ia-omaha-tribe-of-nebraska-1999-02-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/iowa/508_compliant_1999.02.08_omaha_tribe_tribal_state_gaming_compact.pdf
+    sha256: e55a1f0a9c0e81b31407ebf4dd51e87517a45c085a5e632ec27ee18d2cbc52f8
+    pages: 156
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 21.1 (Breach by Tribe); Sec. 21.2 (Breach by State); Sec. 21.3 (Non-Exclusiveness)
+    summary: If the State fails to comply, the Tribe may seek any legal or equitable remedy after written notice
+      to the Director with at least 30 days to cure; the State may suspend the compact or seek other legal remedies
+      after its own notice; and Section 21.3 allows non-exclusive alternatives such as arbitration or mediation,
+      binding or not, by agreement.
+    methods:
+    - arbitration
+    - mediation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 20 (Amendments and Waivers); Sec. 31 (Renegotiation)
+    summary: The compact may be modified only by written agreement of the parties with Secretary approval; renegotiations
+      under the duration section and negotiations for additional individual Class III games are conducted in good
+      faith as requests to negotiate a compact under the Act; the excerpt does not state a time limit.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: renumbered
+    summary: The State-breach remedy (now Section 21.2) and the non-exclusiveness provision (now Section 21.3) read
+      the same as the 1992 Sections 20.2 and 20.3 apart from the section numbers; the Omaha-breach provision (Section
+      20.1 in 1992) is not in the 1999 excerpt, so it cannot be fully compared.
+    locator_before: '20.3'
+    locator_after: '21.3'
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: Both excerpts are OCR-garbled in places, so quotations were taken from the
+      cleanest passages. The 1999 excerpt begins at Section 21.2, so the Omaha-breach clause (21.1) and its suspension
+      and revocation terms are not compared.'
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: reworded
+    summary: The 1999 compact keeps the same good-faith renegotiation provision, now numbered Section 31 and cross-referring
+      to Section 35 where the 1992 text cross-referred to Section 34; the amendment and waiver clause, which requires
+      written agreement and Secretary approval, is now Section 20 instead of Section 19 and reads the same in the
+      excerpts.
+    locator_before: '30'
+    locator_after: '31'
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: Both excerpts are OCR-garbled in places, so quotations were taken from the
+      cleanest passages. The 1999 excerpt begins at Section 21.2, so the Omaha-breach clause (21.1) and its suspension
+      and revocation terms are not compared.'
+- id: 2007-replacement
+  label: 2007 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1999-replacement
+  dates:
+    listed: '2007-03-19'
+    published: '2007-03-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-4904
+    locator: 72 Fed. Reg. 12813 (Mar. 19, 2007)
+  source: compact-ia-omaha-tribe-of-nebraska-2007
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/iowa/508_compliant_2007.03.19_omaha_tribe_tribal_state_gaming_gaming_compact.pdf
+    sha256: 33c8a3d71b473cb2e7f8a78cb8e6e01bae039f5c0a2972c7df695b944fa5511f
+    pages: 47
+  clauses:
+  - topic: dispute-resolution
+    locator: 20. BINDING DISPUTE RESOLUTION FOR NON-MATERIAL BREACH
+    summary: For a non-material breach, the party asserting it gives written notice, the parties meet and confer
+      within 15 days, and if unresolved the complaining party may demand a cure within 10 days; if the demand is
+      rejected or ignored, the parties go to AAA Commercial Mediation and then binding arbitration under AAA rules
+      before one or three arbitrators, with the non-prevailing party paying arbitration costs.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: 19. AMENDMENTS AND WAIVERS; 31. RENEGOTIATION
+    summary: The terms may be amended only by written agreement of the parties, effective when the Secretary approves;
+      appendices and the technical standards of Sections 2 and 8 may be amended by agreement without Secretary approval;
+      renegotiations under Section 41 are conducted in good faith as a request to negotiate a compact under the
+      Act.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1999-replacement
+    change: changed
+    summary: The later compact adds Section 20, a binding process for non-material breaches (written notice, a 15-day
+      meet-and-confer, a 10-day response to a demand, American Arbitration Association mediation, then binding arbitration
+      with the non-prevailing party paying costs), and lets either party invoke it for material breaches in place
+      of a 30-day cure-and-terminate notice. The earlier compact let the Director seek any remedy or the Native
+      nation seek any remedy at law or equity after a 30-day notice and cure period, with arbitration or mediation
+      only by mutual agreement.
+    locator_before: Section 21.1-21.3
+    locator_after: Sections 20 and 21
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1999-replacement
+    change: changed
+    summary: The 2007 compact's Section 19 lets the parties change appendices and the technical standards in Sections
+      2 and 8 without Secretary approval, where the 1999 compact required written agreement and Secretary approval
+      for any amendment; the good-faith renegotiation clause is now Section 31 and cross-refers to Section 41 instead
+      of Section 35.
+    locator_before: '20'
+    locator_after: '19'
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

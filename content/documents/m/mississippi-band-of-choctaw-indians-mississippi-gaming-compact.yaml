@@ -1,0 +1,150 @@
+id: mississippi-band-of-choctaw-indians-mississippi-gaming-compact
+kind: gaming-compact
+title: Mississippi Band of Choctaw Indians–State of Mississippi Gaming Compact
+nations:
+- mississippi-band-of-choctaw-indians
+states:
+- MS
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Mississippi Band of Choctaw Indians and the State of Mississippi under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Mississippi Band of Choctaw
+  Indians and the State of Mississippi as of Nov. 21, 2026: 1 original and 2 amendments. The order, the kind of
+  each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1993-original
+  label: 1993 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1993-01-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-ms-mississippi-band-of-choctaw-indians-1993
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/mississippi/508_compliant_1993.01.29_mississippi_choctaw_band_of_indians_tribal_state_gaming_compact.pdf
+    sha256: ba98302ad79ae7b9d872c524c71e5fa3876b486bc629add3f4f5bbbd70284239
+    pages: 120
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 10. DISPUTE RESOLUTION (10.1 to 10.2(4)); SECTION 19. JUDICIAL ENFORCEMENT
+    summary: After written notice, the Governor and the Tribal Chief meet within 30 days; if the dispute is unresolved
+      within 90 days, arbitration decides it, with a third arbitrator appointed by the American Arbitration Association
+      if needed, and the decision is final and non-reviewable; enforcement suits go to the United States District
+      Court, then to state courts if federal jurisdiction is lacking.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 16. AMENDMENTS
+    summary: The State or the Tribe may request negotiations to amend, replace or repeal the compact, which stays
+      in effect meanwhile; the parties have 180 days to negotiate, after which IGRA procedures apply, and any amendment
+      must be approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1994-amendment
+  label: 1994 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '1994-11-09'
+    published: '1994-11-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-94-27729
+    locator: 59 Fed. Reg. 0 (Nov. 9, 1994)
+  source: compact-ms-mississippi-band-of-choctaw-indians-1994-11-09
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/mississippi/508_compliant_1994.11.09_mississippi_band_of_choctaw_indians_tribal_state_gaming_compact.pdf
+    sha256: 5e500fbc4c1de7f12122a1824061ad6d20a6f7706cc67d5be92b5e198d16bef3
+    pages: 5
+  clauses:
+  - topic: renegotiation
+    locator: Section 16 (as cited in the amendment recitals)
+    summary: The Tribe requested technical amendments under Section 16 of the compact, and the Governor agreed to
+      them; the excerpt does not show time limits or what happens if talks fail.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 1994 amendment recites that it makes technical amendments to Sections 6.3, 8.3, 8.8 and the slot
+      game provisions and does not list Section 10 among them, so the 1993 arbitration process still applies.
+    locator_before: Section 10
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 1994 amendment recites Section 16 and states that its substituted language is subject to the terms
+      of Section 16; it does not list Section 16 among the sections amended, so the amendment procedure is unchanged.
+    locator_before: Section 16
+    locator_after: Recitals
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 1996-amendment
+  label: 1996 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '1996-07-15'
+    published: '1996-07-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-96-17944
+    locator: 61 Fed. Reg. 36892 (July 15, 1996)
+  source: compact-ms-mississippi-band-of-choctaw-indians-1996-07-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/mississippi/508_compliant_1996.07.15_mississippi_choctaw_band_of_choctaw_indians_tribal_state_gaming_compact.pdf
+    sha256: f19fc5f5cc036be6189e89484f20c71207992ce885f09be5e534133c2833b016
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Section 16 (as cited in Amendment No. 2 recitals)
+    summary: The Tribe requested the amendment under the compact's Section 16 request-for-renegotiation procedure,
+      and the Secretary approved it; the excerpt does not show time limits or what happens if talks fail.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 1996 Amendment II recites that it amends only Section 7.6(2) on Class III net revenues and does
+      not list Section 10, so the 1993 arbitration process still applies.
+    locator_before: Section 10
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 1996 amendment recites that the Compact allows requests for renegotiation at Section 16 and changes
+      only Section 7.6(2); Section 16 is not listed among the amended provisions, so the amendment and renegotiation
+      terms still apply.
+    locator_before: Section 16
+    locator_after: Recitals
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

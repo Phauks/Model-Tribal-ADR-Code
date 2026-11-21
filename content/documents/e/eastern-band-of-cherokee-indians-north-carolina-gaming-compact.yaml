@@ -1,0 +1,222 @@
+id: eastern-band-of-cherokee-indians-north-carolina-gaming-compact
+kind: gaming-compact
+title: Eastern Band of Cherokee Indians–State of North Carolina Gaming Compact
+nations:
+- eastern-band-of-cherokee-indians
+states:
+- NC
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Eastern Band of Cherokee Indians and the State of North Carolina under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Eastern Band of Cherokee
+  Indians and the State of North Carolina as of Nov. 21, 2026: 1 original, 3 amendments and 1 replacement. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1994-original
+  label: 1994 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1994-10-03'
+    published: '1994-10-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-94-24337
+    locator: 59 Fed. Reg. 0 (Oct. 3, 1994)
+  source: compact-nc-eastern-band-of-cherokee-indians-1994-10-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-carolina/508_compliant_1994.10.03_eastern_band_of_cherokee_tribal_state_gaming_compact.pdf
+    sha256: f1b5301ab56dfce6b875d130822267ee3a995a199febe40939d274f9d10d9fd7
+    pages: 22
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 10(A)-(C), Dispute Resolution
+    summary: A party alleging noncompliance gives written notice and the parties meet within thirty days; if unresolved
+      after ninety days either party may pursue any available remedy, alternative methods such as mediation or arbitration
+      are available only by mutual agreement, and either party may sue in federal district court.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1996-amendment
+  label: 1996 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1994-original
+  dates:
+    listed: '1996-07-09'
+    published: '1996-07-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-96-17429
+    locator: 61 Fed. Reg. 36078 (July 9, 1996)
+  source: compact-nc-eastern-band-of-cherokee-indians-1996-07-09
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-carolina/508_compliant_1996.07.09_eastern_band_of_cherokee_tribal_state_gaming_compact.pdf
+    sha256: 1f97a03e770a01d0034f9ea965ba99e308abe6443b3f3b6c0e010df940eb34ee
+    pages: 6
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1994-original
+    change: unchanged
+    summary: The 1996 amendment lists changes to Sections 5(D), 6(O), 6(J), 8(B) and 13(A), none of which is Section
+      10 (dispute resolution), so the earlier Section 10 procedure is not amended.
+    locator_before: 10(A)-(B)
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 1996 amendment also changes commissioner terms in Section 6(O) and gaming
+      provisions in Section 5. The earlier renegotiation excerpts are video gaming machine rules, not a renegotiation
+      clause.'
+- id: 2001-amendment
+  label: 2001 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1994-original
+  dates:
+    listed: '2001-01-17'
+    published: '2001-01-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-1260
+    locator: 66 Fed. Reg. 4038 (Jan. 17, 2001)
+  source: compact-nc-eastern-band-of-cherokee-indians-2001-01-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-carolina/508_compliant_2001.01.17_eastern_band_of_cherokee_tribal_state_gaming_compact.pdf
+    sha256: b0975f9546f0d8bc5814c69e3dc5fcd4af851caa5d381dcbe616c6bb5c66ee46
+    pages: 14
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1994-original
+    change: unchanged
+    summary: The second amendment amends Sections 3(B), 3(E), 3(H), 5 and 6(A), and states that except as amended,
+      all other terms of the compact remain in full force and effect, so the Section 10 dispute procedure is not
+      amended.
+    locator_before: 10(A)-(B)
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier renegotiation excerpts are video gaming machine rules, not a
+      renegotiation clause. The second amendment is dated November 14, 2000 and is approved by the Interior letter
+      of December 28, 2000.'
+- id: 2012-replacement
+  label: 2012 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1994-original
+  - 1996-amendment
+  - 2001-amendment
+  dates:
+    listed: '2012-08-13'
+    published: '2012-08-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2012-19726
+    locator: 77 Fed. Reg. 48167 (Aug. 13, 2012)
+  source: compact-nc-eastern-band-of-cherokee-indians-2012-08-13
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-carolina/508_compliant_2012.08.13_eastern_band_of_cherokee_indians_tribal_state_gaming_compact.pdf
+    sha256: fd0a22d2624a948a72a1ee363b93eecd6f4422d9b79cf0bb8949afa786e05109
+    pages: 33
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 11, Dispute Resolution, paragraphs (A), (B) and (C)
+    summary: The State gives written notice, the Tribe responds within twenty days, the parties meet within thirty
+      days, and if unresolved within ninety days either party may pursue any available remedy, including an action
+      in federal district court; mediation or arbitration only by mutual agreement.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1994-original
+    change: renumbered
+    summary: The dispute procedure carries over with the same text (notice, 20-day response and 30-day meet-and-confer,
+      then 90 days before any remedy, and an action in federal district court) and moves from Section 10 to Section
+      11 in the 2012 compact; the excerpts show no substantive change.
+    locator_before: 10(B)(2)
+    locator_after: 11(B)(2)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier compact is the 1994 version and the later one is the 2012 First
+      Amended & Restated compact, in which the dispute section is Section 11. Section 11(C) (action in federal district
+      court) is also unchanged in substance.'
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2012-replacement
+  dates:
+    listed: '2021-03-02'
+    published: '2021-03-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-04254
+    locator: 86 Fed. Reg. 12204 (Mar. 2, 2021)
+  source: compact-nc-eastern-band-of-cherokee-indians-2021-03-02
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-carolina/508 Compliant 2021.03.02 Eastern Band Cherokee Tribal
+      State Gaming Compact Amendment.pdf
+    sha256: 9958bbfe2577c75f9ab8a1c60e97d1d55b79521a9e31d4d10d6c668f8fa0b111
+    pages: 38
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 13, Dispute Resolution, paragraphs (A), (B) and (C)
+    summary: The State gives written notice, the Tribe responds within twenty days, the parties meet within thirty
+      days, and if unresolved within ninety days either party may pursue any available remedy, including an action
+      in federal district court; mediation or arbitration only by mutual agreement.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 12, Amendments
+    summary: The terms may be modified only by written agreement and enactment under Sections 4(B) and 15, and either
+      party may request re-negotiation based on a change in federal or State law that alters gaming permitted under
+      North Carolina law.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2012-replacement
+    change: renumbered
+    summary: The dispute procedure text is the same as in the 2012 compact (Section 11 is renumbered Section 13),
+      including the meet-and-confer period, the 90-day period and the federal district court action; the only other
+      changes are numbering and OCR errors.
+    locator_before: 11(B)(2)
+    locator_after: 13(B)(2)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later document is the Second Amended and Restated compact, approved
+      by letter of February 25, 2021, that replaces the 2012 First Amended and Restated compact. Its dispute text
+      repeats the earlier version with renumbered sections.'
+  - topic: renegotiation
+    compared_with: 2012-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

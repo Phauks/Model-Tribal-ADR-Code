@@ -1,0 +1,56 @@
+id: pueblo-of-san-ildefonso-new-mexico-gaming-compact
+kind: gaming-compact
+title: Pueblo of San Ildefonso, New Mexico–State of New Mexico Gaming Compact
+nations:
+- pueblo-of-san-ildefonso
+states:
+- NM
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Pueblo of San Ildefonso, New Mexico and the State of New Mexico under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Pueblo of San Ildefonso,
+  New Mexico and the State of New Mexico as of Nov. 21, 2026: 1 original. The order, the kind of each event and
+  which version is in effect are inferred from the list (project analysis); clause summaries and comparisons are
+  a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1995-06-12'
+    published: '1995-06-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-14355
+    locator: 60 Fed. Reg. 31042 (June 12, 1995)
+  source: compact-nm-pueblo-of-san-ildefonso-1995-06-12
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_1995.06.12_pueblo_of_san_ildefonso_tribal_state_gaming_compact.pdf
+    sha256: 0b1905611b00a6f02cb624f3b17d6bd5fb93e99fc5be9edefb9edf1fb53346a3
+    pages: 34
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution.
+    summary: Written notice is followed by a thirty-day meeting of State and Pueblo representatives, and if the
+      dispute is not resolved within ninety days the complaining party may serve a notice to cease the disputed
+      conduct; the excerpt is cut off before any arbitration or court step.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 11. Binding Effect and Duration, paragraphs B and D.
+    summary: Either party may request reopening of negotiations on any provision by written notice at any time while
+      the compact is in effect, and any amendment takes effect only when approved in writing by the Pueblo, the
+      State and the Secretary of the Interior and published in the Federal Register.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+found_in:
+- 2026-11-21-gaming-compact-histories

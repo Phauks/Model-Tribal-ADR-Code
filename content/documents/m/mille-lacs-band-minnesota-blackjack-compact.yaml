@@ -1,0 +1,81 @@
+id: mille-lacs-band-minnesota-blackjack-compact
+kind: gaming-compact
+title: Mille Lacs Band–State of Minnesota Blackjack Compact
+nations:
+- mille-lacs-band
+states:
+- MN
+jurisdictions:
+- level: multiple
+  note: Class III blackjack compact for Mille Lacs Band and the State of Minnesota under 25 U.S.C. § 2710(d).
+summary: 'The Class III blackjack compact documents the Office of Indian Gaming lists for Mille Lacs Band and the
+  State of Minnesota as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event and which
+  version is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small
+  model''s reading of excerpts.'
+versions:
+- id: 1991-original
+  label: 1991 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1991-10-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mn-mille-lacs-band-1991-10-03
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no profile cites this list row.'
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_1991.10.03_mille_lacs_band_of_chippewa_indians_tribal_state_gaming_compact.pdf
+    sha256: 3703ef9b1993c25f1e9bce3965ef8150d06cace0643652af6a4a6014fccdda17
+    pages: 20
+  clauses:
+  - topic: renegotiation
+    locator: Section 2.2 Renegotiation
+    summary: Either the State or the Band may request in writing, by certified mail, negotiations to amend, replace
+      or repeal the compact; the parties have 180 days to negotiate before IGRA procedures and remedies apply, and
+      the compact stays in effect meanwhile.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 2024-amendment
+  label: 2024 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2024-08-22'
+    published: '2024-08-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2024-18835
+    locator: 89 Fed. Reg. 67958 (Aug. 22, 2024)
+  source: compact-mn-mille-lacs-band-2024-08-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_2024.08.22_mille_lacs_band_tribal_state_gaming_compact.pdf
+    sha256: ed1dc4bd887369550f108257ba633a4cc3789401764c2844b21deb86a4cfed5c
+    pages: 5
+  changes:
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: unchanged
+    summary: The 2024 addendum does not amend Sections 2.2 or 2.3 of the 1991 compact; it recites that those sections
+      allow negotiation of a compact or amendment for other forms of gaming and relies on that route, so the earlier
+      provisions still govern.
+    locator_before: '2.2'
+    locator_after: Recitals
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The addendum lists no provisions it amends and does not mention Sections
+      2.2 or 2.3 except in its recitals, so the ''unchanged'' call depends on reading the addendum as leaving them
+      in place. The addendum''s Section 2.4 defines the compact as ''in effect ... or as amended thereafter.'' The
+      compact is dated May 9, 1991 in the addendum''s recitals, while the earlier document is listed as 1991-10-03.
+      The approval letter states the addendum takes effect on Federal Register publication. The 1991 Section 7 (amendment
+      of blackjack standards) is in the earlier excerpts but has no counterpart in the addendum, which does not
+      amend it.'
+found_in:
+- 2026-11-21-gaming-compact-histories

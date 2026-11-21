@@ -1,0 +1,83 @@
+id: upper-sioux-community-minnesota-blackjack-compact
+kind: gaming-compact
+title: Upper Sioux Community, Minnesota–State of Minnesota Blackjack Compact
+nations:
+- upper-sioux-community
+states:
+- MN
+jurisdictions:
+- level: multiple
+  note: Class III blackjack compact for Upper Sioux Community, Minnesota and the State of Minnesota under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III blackjack compact documents the Office of Indian Gaming lists for Upper Sioux Community,
+  Minnesota and the State of Minnesota as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each
+  event and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1991-original
+  label: 1991 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1991-10-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mn-upper-sioux-community-1991-10-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_1991.10.03_upper_sioux_community_tribal_state_gaming_compact.pdf
+    sha256: ce2799c8e82769f819e486ef5bef4d8277db352dcab82848f190886ebf5714e5
+    pages: 18
+  clauses:
+  - topic: renegotiation
+    locator: Section 2.2 Renegotiation
+    summary: Either the State or the Community may request in writing, by certified mail, negotiations to amend,
+      replace or repeal the compact; the parties have 180 days to negotiate before IGRA procedures and remedies
+      apply, and the compact stays in effect meanwhile.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 2024-amendment
+  label: 2024 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2024-09-05'
+    published: '2024-09-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2024-19946
+    locator: 89 Fed. Reg. 72419 (Sept. 5, 2024)
+  source: compact-mn-upper-sioux-community-2024-09-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_2024.09.05_upper_sioux_community_tribal_state_gaming_compact.pdf
+    sha256: f15ccb9937c66f1979a780ce876c2a2df80b2aed50bd5f6efb453c9eae706bef
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: 4.0 Enforcement and Disputes, Section 4.2(a) to (c)
+    summary: The Department of Public Safety serves an Alleged Violation Notice and the Gaming Commission has 30
+      days to investigate and order corrective action; if the Community disputes a violation, the parties meet within
+      15 days, and if no resolution is reached each party may pursue remedies under the IGRA.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

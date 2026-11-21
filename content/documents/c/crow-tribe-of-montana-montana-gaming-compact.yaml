@@ -1,0 +1,273 @@
+id: crow-tribe-of-montana-montana-gaming-compact
+kind: gaming-compact
+title: Crow Tribe of Montana–State of Montana Gaming Compact
+nations:
+- crow-tribe-of-montana
+states:
+- MT
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Crow Tribe of Montana and the State of Montana under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Crow Tribe of Montana and
+  the State of Montana as of Nov. 21, 2026: 1 original, 4 amendments and 1 extension. The order, the kind of each
+  event and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1998-original
+  label: 1998 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1998-06-12'
+    published: '1998-06-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-15717
+    locator: 63 Fed. Reg. 32240 (June 12, 1998)
+  source: compact-mt-crow-tribe-of-montana-1998-06-12
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_1998.06.12_crow_tribe_tribal_state_gaming_compact.pdf
+    sha256: 5bfe46b58949433918bdb9544cee4cb28abbddf2719b50ee8f83231198c041cb
+    pages: 40
+  clauses:
+  - topic: dispute-resolution
+    locator: X. DEFAULT AND TERMINATION, A. Default by Tribe
+    summary: 'The agreement has no negotiation, arbitration or court process for disputes; its only mechanism is
+      default: a party in substantial and continuing failure may be terminated by the other after ninety days written
+      notice and a failure to cure within ninety days.'
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: XI. MISCELLANEOUS TERMS, B. Amendments
+    summary: The agreement may be amended only with both parties' consent by signed written instrument; the parties
+      must negotiate in good faith if IGRA or state law changes, including a reasonable wind-down period if a change
+      in law prohibits authorized gaming.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 2003-amendment
+  label: 2003 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1998-original
+  dates:
+    listed: '2003-02-27'
+    published: '2003-02-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-4657
+    locator: 68 Fed. Reg. 9095 (Feb. 27, 2003)
+  source: compact-mt-crow-tribe-of-montana-2003-02-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2003.02.27_crow_tribetribal_state_gaming_compact.pdf
+    sha256: ff222ffc66380fce090e77c3fedb39ba19eb1c43cccc608e80590b5615f1d80e
+    pages: 4
+  clauses:
+  - topic: renegotiation
+    locator: Recitals and amendment paragraph citing Article XI.B
+    summary: The parties extended the agreement so they can negotiate in good faith without a lapse in gaming, and
+      the agreement may be amended in writing with the consent of both parties under Article XI.B.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1998-original
+    change: unchanged
+    summary: The third amendment amends only Section XI.A (term) and Appendix A, and states that other than as expressly
+      amended, the original Agreement remains in full force and effect, so the earlier dispute provisions are not
+      amended. The earlier dispute text is not in the excerpts.
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The third amendment''s 2003 approval letter is in the excerpt. The earlier
+      dispute clause is not in the excerpts, so the unchanged dispute answer relies on the amendment''s own statement
+      that the original Agreement otherwise remains in force.'
+  - topic: renegotiation
+    compared_with: 1998-original
+    change: changed
+    summary: The third amendment extends the term of the Agreement to March 19, 2004 for good-faith negotiations
+      without any lapse in gaming. The amendment clause in Article XI.B (written amendment with consent of both
+      parties, and good-faith renegotiation on a change in law) is not among the amended provisions.
+    locator_before: XI.B
+    locator_after: XI.A
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The third amendment''s 2003 approval letter is in the excerpt. The earlier
+      dispute clause is not in the excerpts, so the unchanged dispute answer relies on the amendment''s own statement
+      that the original Agreement otherwise remains in force.'
+- id: 2004-extension
+  label: 2004 extension
+  event: extension
+  status: in-effect
+  amends:
+  - 1998-original
+  dates:
+    listed: '2004-04-30'
+    published: '2004-04-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-04-9886
+    locator: 69 Fed. Reg. 23809 (Apr. 30, 2004)
+  source: compact-mt-crow-tribe-of-montana-2004-04-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2004.04.30_crow_tribe_tribal_state_gaming_compact.pdf
+    sha256: 15f56890bbc7f70d9d1c76d5e563e46c5d3bde4a0a14c5174857a44f49e62ca4
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1998-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1998-original
+    change: not-compared
+    verification: inferred
+- id: 2008-amendment
+  label: 2008 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1998-original
+  dates:
+    listed: '2008-09-09'
+    published: '2008-09-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e8-20923
+    locator: 73 Fed. Reg. 52409 (Sept. 9, 2008)
+  source: compact-mt-crow-tribe-of-montana-2008-09-09
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2008.09.09_crow_tribe_tribal_state_gaming_compact.pdf
+    sha256: 04a9893358941bc4685ba361d510ee2c74f835adc8f072a13ffdcb56737f98fa
+    pages: 4
+  clauses:
+  - topic: renegotiation
+    locator: Paragraph 1, amending Section XI.A; reference to Article XI.B
+    summary: The parties extend the agreement to July 1, 2010, or until a revised or new compact is executed, and
+      the amendment is made in writing with the consent of both parties under Article XI.B.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1998-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1998-original
+    change: changed
+    summary: The Sixth Amendment extends the term of the Agreement to July 1, 2010, or until a revised or new compact
+      is executed. The amendment clause in Article XI.B (amendment in writing with consent of both parties) is not
+      among the amended provisions and is unchanged.
+    locator_before: XI.B
+    locator_after: XI.A
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier dispute text is absent from the excerpts. The later excerpt
+      is the Sixth Amendment and extension, together with the Interior approval letter.'
+- id: 2009-amendment
+  label: 2009 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1998-original
+  dates:
+    listed: '2009-04-22'
+    published: '2009-04-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e9-9258
+    locator: 74 Fed. Reg. 18398 (Apr. 22, 2009)
+  source: compact-mt-crow-tribe-of-montana-2009-04-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2009.04.22_crow_tribe_tribal_state_gaming_compact.pdf
+    sha256: 86dc7e4fa39867355d0a7ae42000d3f395e12eb97bd7d1c4cb142d7ec1613077
+    pages: 4
+  clauses:
+  - topic: renegotiation
+    locator: Opening paragraph, citing Article XI.B
+    summary: The agreement may be amended in writing with the consent of both parties under Article XI.B, and this
+      seventh amendment is made under that provision.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1998-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1998-original
+    change: unchanged
+    summary: The Seventh Amendment amends only Sections VI(E), VI(F) and adds VI(G) and VI(H), so the Article XI.B
+      amendment and renegotiation clause is not amended and the earlier clause still governs.
+    locator_before: XI.B
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier dispute text is absent from the excerpts. The Interior approval
+      letter for the Seventh Amendment is in the excerpt.'
+- id: 2014-amendment
+  label: 2014 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1998-original
+  dates:
+    listed: '2014-02-07'
+    published: '2014-02-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2014-02594
+    locator: 79 Fed. Reg. 7474 (Feb. 7, 2014)
+  source: compact-mt-crow-tribe-of-montana-2014-02-07
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_2014.02.07_crow_tribe_tribal_state_gaming_compact.pdf
+    sha256: d79b0f0f98244da0c0a9dea84e91086d3d0163e2b95a6bcec80028f10b4e76cc
+    pages: 7
+  clauses:
+  - topic: renegotiation
+    locator: Amendment item 7, amending Section XI(D), Expansion of Class III Gaming
+    summary: The compact may be amended by written agreement under Article XI.B, and the amended expansion clause
+      requires State notice within 30 days when State law allows additional Class III games.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1998-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1998-original
+    change: changed
+    summary: The Eighth Amendment rewrites Section XI(D) on expansion of Class III gaming. The earlier clause deemed
+      the Agreement amended to permit additional Class III games once the State authorized them; the later clause
+      requires the State to notify the Tribe in writing within 30 days and amends Section V to allow the additional
+      games. The amendment adds Section XII, requiring good-faith negotiations on a new compact within one year
+      after the amendment's effective date, and sets the term in Section XI(A) at fifteen years or until a new compact
+      is executed.
+    locator_before: XI.D
+    locator_after: XI(D); XII
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later excerpt is the Eighth Amendment with the Interior approval letter.
+      The Interior letter cites Section 11 of IGRA. The earlier dispute text is absent from the excerpts.'
+found_in:
+- 2026-11-21-gaming-compact-histories

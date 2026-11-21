@@ -1,0 +1,71 @@
+id: united-keetoowah-band-of-cherokee-indians-in-oklahoma-oklahoma-gaming-compact
+kind: gaming-compact
+title: United Keetoowah Band of Cherokee Indians in Oklahoma–State of Oklahoma Gaming Compact
+nations:
+- united-keetoowah-band-of-cherokee-indians-in-oklahoma
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for United Keetoowah Band of Cherokee Indians in Oklahoma and the State of Oklahoma
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for United Keetoowah Band of
+  Cherokee Indians in Oklahoma and the State of Oklahoma as of Nov. 21, 2026: 1 extension and 1 original. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2020-extension
+  label: 2020 extension
+  event: extension
+  status: in-effect
+  dates:
+    listed: '2020-06-17'
+    published: '2020-06-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2020-13062
+    locator: 85 Fed. Reg. 36609 (June 17, 2020)
+  source: compact-ok-united-keetoowah-band-of-cherokee-indians-in-oklahoma-2020-06-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508_compliant_2020.06.17_united_keetoowah_band_tribal_state_gaming_compact.pdf
+    sha256: 72506c2cb35dc868451735bf438430cb7e9778e0b5b64f4193a3acc879cfca42
+    pages: 26
+- id: 2020-original
+  label: 2020 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2020-09-08'
+    published: '2020-09-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2020-19707
+    locator: 85 Fed. Reg. 55472 (Sept. 8, 2020)
+  source: compact-ok-united-keetoowah-band-of-cherokee-indians-in-oklahoma-2020-09-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant  United Keetoowah Band Compact July 1, 2020.pdf
+    sha256: dd1063d002f036081819ea6e4a31233f6ebbda4676860aa114dbc9b1ad21706d
+    pages: 26
+  clauses:
+  - topic: dispute-resolution
+    locator: 'PART 6: DISPUTE RESOLUTION -THE TRIBE AND THE STATE, subsection B'
+    summary: Disputes first go to mediation with a mutually agreed mediator, then to federal court if mediation
+      fails or injunctive relief is sought, with limited waivers of immunity for that purpose.
+    methods:
+    - mediation
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: 'PART 13: ADDITIONAL TERMS & CONDITIONS, subsection A'
+    summary: The compact may be amended only by a writing executed by all parties, and new covered games may be
+      authorized through an amendment agreed by the parties.
+    verification: read-in-full
+    reviewer: small model, first pass
+found_in:
+- 2026-11-21-gaming-compact-histories

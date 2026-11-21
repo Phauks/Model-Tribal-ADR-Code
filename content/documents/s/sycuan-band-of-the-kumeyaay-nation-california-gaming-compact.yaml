@@ -1,0 +1,265 @@
+id: sycuan-band-of-the-kumeyaay-nation-california-gaming-compact
+kind: gaming-compact
+title: Sycuan Band of the Kumeyaay Nation–State of California Gaming Compact
+nations:
+- sycuan-band-of-the-kumeyaay-nation
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Sycuan Band of the Kumeyaay Nation and the State of California under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Sycuan Band of the Kumeyaay
+  Nation and the State of California as of Nov. 21, 2026: 1 original, 2 replacements and 2 amendments. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1998-original
+  label: 1998 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1998-10-22'
+    published: '1998-10-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-28314
+    locator: 63 Fed. Reg. 56660 (Oct. 22, 1998)
+  source: compact-ca-sycuan-band-of-the-kumeyaay-nation-1998-10-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 1998.10.22 Sycuan Band of Kumeyaay Nation Tribal
+      State Gaming Compact.pdf
+    sha256: 2008e9d30cbdd7cc58b30958d897223de85d103ace08623bcf0926a91b24070b
+    pages: 147
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 8.3.3 (designation disputes); Sec. 13.1.1.2 (workers' compensation)
+    summary: 'The excerpt shows only narrow dispute rules: the State may challenge the Tribe''s trade-secret or
+      personal-information designations through binding AAA Commercial Rules arbitration, and workers'' compensation
+      disputes go to the Workers'' Compensation Appeals Board and California courts for enforcement; the general
+      dispute procedure is not in the excerpt.'
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2000-replacement
+  label: 2000 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1998-original
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-sycuan-band-of-the-kumeyaay-nation-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2000.05.16 Sycuan Band of Kumeyaay Nation Tribal
+      State Gaming Compact.pdf
+    sha256: f61f8ab610795a9c004f6c2a81625394a28ec67cf499b6b2de5de909d0072f7a
+    pages: 63
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 Voluntary Resolution; Reference to Other Means of Resolution (Secs. 9.2-9.3 also)
+    summary: Disputes first go through written notice and a good-faith meet-and-confer, then either party may seek
+      AAA Commercial Rules arbitration with a binding award (neither party must agree to arbitrate), and otherwise
+      may sue in the U.S. District Court where the Tribe's Gaming Facility is located and the Ninth Circuit, or
+      in a state court if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.0 AMENDMENTS; RENEGOTIATIONS (Secs. 12.1-12.3)
+    summary: The compact may be amended at any time by mutual written agreement, and the Tribe may request renegotiation
+      in writing to add Class III games other than those authorized, but not within 12 months of the effective date,
+      with talks to be scheduled within 30 days; the excerpt does not say what happens if talks fail.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1998-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1998-original
+    change: not-compared
+    verification: inferred
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2000-replacement
+  dates:
+    listed: '2007-12-19'
+    published: '2007-12-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-e7-24564
+    locator: 72 Fed. Reg. 71940 (Dec. 19, 2007)
+  source: compact-ca-sycuan-band-of-the-kumeyaay-nation-2007-12-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2007.12.19 Sycuan Band of Kumeyaay Nation Tribal
+      State Gaming Compact.pdf
+    sha256: 23674dbc65d3bdb27d1fc30aa2b13605e6fad71f6c8a9af0224dd6934c7086da
+    pages: 33
+  clauses:
+  - topic: dispute-resolution
+    locator: Subdivision (C), tort liability arbitration (section 10.2 subdivision (d) as referenced in the amendment)
+    summary: For tort claims covered by the amendment, the Tribe consents to binding arbitration before a single
+      retired judge under JAMS rules, with an optional JAMS appeal, after an optional Tribal Dispute Resolution
+      Process; actions to enforce go to federal court or, if it declines, California courts in San Diego County.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 11.2.1(a) (repealed and replaced)
+    summary: Either the State or the Tribe may request good-faith negotiations to extend or modify the Amended Compact
+      or enter a new compact no later than July 1, 2028, and the parties must schedule a meeting within 30 calendar
+      days of such a request.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+- id: 2015-replacement
+  label: 2015 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-replacement
+  - 2007-amendment
+  dates:
+    listed: '2015-12-23'
+    published: '2015-12-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2015-32347
+    locator: 80 Fed. Reg. 79926 (Dec. 23, 2015)
+  source: compact-ca-sycuan-band-of-the-kumeyaay-nation-2015-12-23
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2015.12.23_sycuan_band_of_the_kumeyaay_nation_tribal_state_gaming_compact.pdf
+    sha256: bf16af34ed45d46d18c92dee2b9e3d49dc76fecb4134a0f984d759672729bada
+    pages: 235
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1 Voluntary Resolution; Court Resolution and Sec.
+      13.2 Arbitration Rules
+    summary: Disputes under the compact begin with a written notice, a written response within 15 days and a meet-and-confer
+      within 30 days; if unresolved either party may seek arbitration before JAMS, but neither party is required
+      to agree to arbitrate, and unresolved disputes may be brought in the federal district court for the district
+      of the Gaming Facility or, if that court lacks jurisdiction, a state court of competent jurisdiction in the
+      county. Under Sec. 13.2 each party bears its own costs and the arbitrator may not award costs or attorney
+      fees to a prevailing party.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS, Sec. 15.1 to Sec. 15.3; Sec. 5.3
+    summary: Sec. 15.1 permits amendment at any time by mutual written agreement if each party voluntarily consents
+      to the negotiations in writing, Sec. 15.2 lets either party request negotiation of an extension or new compact
+      no sooner than 18 months before the termination date, and Sec. 15.3 requires written requests and a schedule
+      for negotiations; Sec. 5.3 also lets the Tribe request reopening of negotiations on the credit provisions
+      once carry-forward credits are exhausted.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: changed
+    summary: The later compact's Section 15.0 provides that amendment requires mutual written agreement, with each
+      party consenting in writing to negotiations; it adds a request process for a new compact that may begin no
+      sooner than 18 months before termination, with an automatic two-year extension while negotiations are ongoing,
+      and it does not carry forward the earlier Section 12.2 right for the Tribe to seek renegotiation to add other
+      forms of Class III gaming.
+    locator_before: Sec. 12.2
+    locator_after: Sec. 15.2
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The replacement compact''s dispute section is not in the excerpts, so the
+      dispute row cannot be compared. Section 15.0 appears complete in the excerpts (15.1 to 15.3). Whether the
+      later compact provides for other Class III games elsewhere (for example in its scope sections, which are not
+      compared here) is outside this item.'
+- id: 2026-amendment
+  label: 2026 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2015-replacement
+  dates:
+    listed: '2026-02-06'
+    published: '2026-02-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2026-02378
+    locator: 91 Fed. Reg. 5508 (Feb. 6, 2026)
+  source: compact-ca-sycuan-band-of-the-kumeyaay-nation-2026-02-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/first_amendment_to_sycuan_compact_0.pdf
+    sha256: 6738560431073132634e20b5466350fdd6cf85b6e9afd71a8e9918e92638a5c6
+    pages: 13
+  clauses:
+  - topic: renegotiation
+    locator: V. AMENDMENTS; RENEGOTIATIONS. A. Section 15.3 (repealed and replaced).
+    summary: Amended Section 15.3 provides that if the State authorizes a new form of Class III gaming, the Sycuan
+      Band may request good-faith negotiations under IGRA to add it, and may adopt a uniform statewide amendment
+      if one is developed.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2015-replacement
+    change: changed
+    summary: The later document does not amend Section 13.0 (notice, meeting, voluntary arbitration, then court),
+      but adds covenants that, to December 31, 2060, bar either party from starting or joining any action, proceeding,
+      arbitration or lawsuit challenging the new definitions unless mutually agreed, and bar the Native nation from
+      doing so over the special distribution and revenue sharing fund provisions; the earlier compact had no such
+      limit.
+    locator_before: Sec. 13.0-13.2 (unamended)
+    locator_after: First Amendment, I.D (new covenant after Sec. 2.30) and II.A (new Sec. 4.7)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2015-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

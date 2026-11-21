@@ -1,0 +1,106 @@
+id: eastern-shoshone-tribe-of-the-wind-river-reservation-wyoming-gaming-compact
+kind: gaming-compact
+title: Eastern Shoshone Tribe of the Wind River Reservation, Wyoming–State of Wyoming Gaming Compact
+nations:
+- eastern-shoshone-tribe-of-the-wind-river-reservation
+states:
+- WY
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Eastern Shoshone Tribe of the Wind River Reservation, Wyoming and the State
+    of Wyoming under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Eastern Shoshone Tribe of
+  the Wind River Reservation, Wyoming and the State of Wyoming as of Nov. 21, 2026: 1 original and 1 replacement.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2006-original
+  label: 2006 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2006-07-14'
+    published: '2006-07-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e6-11138
+    locator: 71 Fed. Reg. 40147 (July 14, 2006)
+  source: compact-wy-eastern-shoshone-tribe-of-the-wind-river-reservation-2006-07-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wyoming/508 Compliant 2006.07.14 Eastern Shoshone Gaming Compact.pdf
+    sha256: e199aeaa0c9f70af3ff6639aeabca68d84ace83fdbebc97e162e936f4a072cb6
+    pages: 15
+  clauses:
+  - topic: dispute-resolution
+    locator: III. C. Resolution of Gaming Disputes; X. RESERVATION OF RIGHTS, D. Interpretation of Compact
+    summary: The compact provides only that patron gaming disputes are resolved under the Eastern Shoshone Gaming
+      Code, tribal law and regulations; no procedure for disputes between the Tribe and the State appears, and the
+      compact's construction, interpretation and enforcement are governed by Wyoming and federal law.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: XI AMENDMENTS
+    summary: The Tribe submits a written request to the State to amend the compact, and any substantive or material
+      amendment requires approval by the Secretary or the NIGC under IGRA.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 2016-replacement
+  label: 2016 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2006-original
+  dates:
+    listed: '2016-08-22'
+    published: '2016-08-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2016-19877
+    locator: 81 Fed. Reg. 56693 (Aug. 22, 2016)
+  source: compact-wy-eastern-shoshone-tribe-of-the-wind-river-2016
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wyoming/508 Compliant 2016.08.22 Eastern Shoshone Tribal State Gaming
+      Compact.pdf
+    sha256: 9434c3f07ef40195eadd12c987a2342e9cd64ae3819eca459031f8939060bfbb
+    pages: 13
+  clauses:
+  - topic: dispute-resolution
+    locator: VII. TERM (substantial breach paragraphs); X. RESERVATION OF RIGHTS
+    summary: For a substantial breach, the compact provides written notice and thirty days to correct before the
+      State or the Tribe may terminate, and it preserves judicial and other remedies available under IGRA.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: XI. AMENDMENTS
+    summary: The Tribe submits a written request to the State to amend the compact, and amendments that are substantive
+      or material must be approved by the Secretary of the Interior or the NIGC under IGRA.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2006-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2006-original
+    change: unchanged
+    summary: 'The amendment clause (Article XI in the 2006 compact and Article XI in the 2016 compact) is the same:
+      a written request to the State, and Secretarial or NIGC approval for substantive amendments. Neither version
+      shows a renegotiation trigger in the excerpts.'
+    locator_before: XI
+    locator_after: XI
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2016 document is a replacement titled Class III Gaming Compact (Second).
+      The 2006 compact''s gaming code amendment text (E) is a separate provision and is not an amendment clause
+      of the compact.'
+found_in:
+- 2026-11-21-gaming-compact-histories

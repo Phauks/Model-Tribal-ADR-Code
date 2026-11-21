@@ -1,0 +1,159 @@
+id: nez-perce-tribe-idaho-gaming-compact
+kind: gaming-compact
+title: Nez Perce Tribe–State of Idaho Gaming Compact
+nations:
+- nez-perce-tribe
+states:
+- ID
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Nez Perce Tribe and the State of Idaho under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Nez Perce Tribe and the State
+  of Idaho as of Nov. 21, 2026: 1 original, 1 amendment and 1 replacement. The order, the kind of each event and
+  which version is in effect are inferred from the list (project analysis); clause summaries and comparisons are
+  a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1995-11-14'
+    published: '1995-11-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-28036
+    locator: 60 Fed. Reg. 57246 (Nov. 14, 1995)
+  source: compact-id-nez-perce-tribe-1995-11-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/idaho/508_compliant_1995.11.14_nez_perce_tribe_tribal_state_gaming_compact.pdf
+    sha256: 4a987fb5386b6cda80a4cb22410ed08d2301abe40db14412629369c49d35fc00
+    pages: 25
+  clauses:
+  - topic: dispute-resolution
+    locator: ARTICLE 21. DISPUTE RESOLUTION, 21.1-21.2.
+    summary: After written notice, the State and the Native nation meet within 10 working days; if the dispute is
+      unresolved within 60 days after notice, either party may pursue binding arbitration before three AAA-selected
+      arbitrators (or a single arbitrator by written agreement), who must decide within 120 days with no judicial
+      review.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: ARTICLE 29. DURATION AND RENEGOTIATION
+    summary: Either party may request negotiations to amend or replace the compact by appropriate and lawful means;
+      requests must be in writing and sent by certified mail to the Governor or the Tribal Chairman, and the compact
+      stays in effect during renegotiation.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2003-amendment
+  label: 2003 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '2003-01-08'
+    published: '2003-01-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-341
+    locator: 68 Fed. Reg. 1068 (Jan. 8, 2003)
+  source: compact-id-nez-perce-tribe-2003-01-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/idaho/508_compliant_2003.01.08_nez_perce_tribe_tribal_state_gaming_compact.pdf
+    sha256: 60db570b5bb6d4189abedbcf65d917eb1a96c88c5e7e59cd3145d2010392d349
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: The 2002 Addendum adds only a new Article 6.4 and does not amend Article 21, so the earlier dispute
+      process still governs; Article 6.4 opens with 'notwithstanding any other provision', which the excerpts do
+      not resolve against Article 21.
+    locator_before: '21.2'
+    locator_after: Article 6.4.1
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The file lists the Addendum as 2003-01-08; the Interior letter is dated
+      December 19, 2002 and approves an addendum received November 7, 2002. The Addendum''s Article 6.4 (tribal
+      video gaming machines, a limit of the January 1, 2002 count plus 25% for ten years, 5% of net gaming income
+      for education, and no gaming outside Indian lands) uses ''notwithstanding any other provision'' language,
+      which may reach the dispute and renegotiation articles; the excerpts do not show how that is resolved. The
+      earlier Article 21 text begins ''Except as provided in Article 6'', so Article 6 already has a carve-out role.'
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: The Addendum says it amends the compact only by adding Article 6.4, so Article 29 on renegotiation
+      is not amended and the earlier request-and-renegotiate clause still governs.
+    locator_before: '29'
+    locator_after: Article 6.4
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The file lists the Addendum as 2003-01-08; the Interior letter is dated
+      December 19, 2002 and approves an addendum received November 7, 2002. The Addendum''s Article 6.4 (tribal
+      video gaming machines, a limit of the January 1, 2002 count plus 25% for ten years, 5% of net gaming income
+      for education, and no gaming outside Indian lands) uses ''notwithstanding any other provision'' language,
+      which may reach the dispute and renegotiation articles; the excerpts do not show how that is resolved. The
+      earlier Article 21 text begins ''Except as provided in Article 6'', so Article 6 already has a carve-out role.'
+- id: 2008-replacement
+  label: 2008 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1995-original
+  - 2003-amendment
+  dates:
+    listed: '2008-10-07'
+    published: '2008-10-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-e8-23710
+    locator: 73 Fed. Reg. 58617 (Oct. 7, 2008)
+  source: compact-id-nez-perce-tribe-2008-10-07
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/idaho/508_compliant_2008.10.07_nez_perce_tribe_tribal_state_gaming_compact.pdf
+    sha256: 77428aab4d7ceb61540f5baa696f2c15183940ae0163d04757df15bd7d66749a
+    pages: 5
+  clauses:
+  - topic: renegotiation
+    locator: ARTICLE 12. ENTIRE AGREEMENT
+    summary: The compact may be amended at any time by mutual written consent signed by each party; no reopening
+      triggers or deadlines are stated.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: removed
+    summary: The 2008 compact, which covers only operation of the Idaho State Lottery on the reservation, has no
+      dispute resolution article (Articles 1 to 12 and Exhibit A contain none). The 1995 compact's Article 21 provided
+      written notice, a meeting within 10 working days, and after 60 days binding arbitration before a three-member
+      AAA-selected panel, with no judicial review.
+    locator_before: 21.1-21.3
+    verification: inferred
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: removed
+    summary: The 2008 compact has no article letting either party request renegotiation; Article 12 allows amendment
+      only by mutual written consent, and Article 10 allows termination on sixty days' written notice.
+    locator_before: '29'
+    locator_after: '12'
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

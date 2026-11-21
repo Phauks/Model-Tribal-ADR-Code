@@ -1,0 +1,104 @@
+id: seneca-nation-of-indians-new-york-gaming-compact
+kind: gaming-compact
+title: Seneca Nation of Indians–State of New York Gaming Compact
+nations:
+- seneca-nation-of-indians
+states:
+- NY
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Seneca Nation of Indians and the State of New York under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Seneca Nation of Indians
+  and the State of New York as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event and
+  which version is in effect are inferred from the list (project analysis); clause summaries and comparisons are
+  a small model''s reading of excerpts.'
+versions:
+- id: 2002-original
+  label: 2002 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2002-12-09'
+    published: '2002-12-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-02-30967
+    locator: 67 Fed. Reg. 72968 (Dec. 9, 2002)
+  source: compact-ny-seneca-nation-of-indians-2002
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-york/508_compliant_2002.12.09_seneca_nation_of_indians_tribal_state_gaming_compact_0.pdf
+    sha256: 14fdcdd94c15af94cd608f0721a48f44648eed1a44092cb304b5502bcfb4459e
+    pages: 1126
+  clauses:
+  - topic: dispute-resolution
+    locator: 14. PARTY DISPUTE RESOLUTION, (b) Negotiation; (c) Method of dispute resolution
+    summary: Either party gives written notice of a claim, the parties meet within fourteen days and negotiate in
+      good faith, and if not resolved within thirty days after the meeting either party may submit the dispute to
+      binding arbitration before three arbitrators under American Arbitration Association rules, with monetary damages
+      excluded and enforcement only in the U.S. District Court for the Western District of New York.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: 16. AMENDMENT AND MODIFICATION, (a) Amendment and modification
+    summary: The compact and appendices may be amended by written agreement; either party may request an amendment
+      in writing, the parties must meet within thirty days and negotiate in good faith, and a request by the Native
+      nation is treated as a request to negotiate under 25 U.S.C. 2710(d) without terminating the compact on impasse;
+      some appendix amendments occur automatically when new games are authorized.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 2023-amendment
+  label: 2023 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2002-original
+  dates:
+    listed: '2023-12-22'
+    published: '2023-12-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-28295
+    locator: 88 Fed. Reg. 88640 (Dec. 22, 2023)
+  source: compact-ny-seneca-nation-of-indians-2023-12-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-york/508_compliant_2023.22.01_seneca_nation_tribal_state_gaming_compact.pdf
+    sha256: 21f3007f189c591c5877fc7da45744f8b1d511721b5d160557fa430810d91d1e
+    pages: 4
+  clauses:
+  - topic: renegotiation
+    locator: Opening letter from the Assistant Secretary, Indian Affairs (first page)
+    summary: The extension lets the Nation and the State continue negotiating an amended or new class III gaming
+      compact; the excerpt does not give the procedure for failed talks.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2002-original
+    change: unchanged
+    summary: The 2022 amendment (the Nation-State Extension Agreement) extends the term and addresses the State
+      contribution. It does not list Paragraph 14 (Party Dispute Resolution) as amended, but it applies that process,
+      with an arbitral decision, to escrowed funds if an extension is opted out of or secretarial procedures are
+      finalized. The 2002 Paragraph 14 text is not in the excerpts, so the comparison is limited.
+    locator_before: '14'
+    locator_after: Extension Agreement para. (1)
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2002 compact''s Paragraphs 14 and 16 are shown only as table-of-contents
+      entries, not text. The later excerpt''s dispute section is the Extension Agreement''s escrow provisions, which
+      rely on the compact''s Party Dispute Resolution process.'
+  - topic: renegotiation
+    compared_with: 2002-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

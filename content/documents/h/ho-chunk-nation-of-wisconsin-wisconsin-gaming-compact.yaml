@@ -1,0 +1,251 @@
+id: ho-chunk-nation-of-wisconsin-wisconsin-gaming-compact
+kind: gaming-compact
+title: Ho-Chunk Nation of Wisconsin–State of Wisconsin Gaming Compact
+nations:
+- ho-chunk-nation-of-wisconsin
+states:
+- WI
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Ho-Chunk Nation of Wisconsin and the State of Wisconsin under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Ho-Chunk Nation of Wisconsin
+  and the State of Wisconsin as of Nov. 21, 2026: 1 original and 4 amendments. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1992-08-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-wi-ho-chunk-nation-of-wisconsin-1992-08-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1992.08.05 Wisconsin Winnebago Tribe Gaming
+      Compact 1992.pdf
+    sha256: dbb00fdf99ada8f63b922d36bf0380ea0d74587945813b1d9139585065f9015c
+    pages: 49
+  clauses:
+  - topic: dispute-resolution
+    locator: XXIII. Dispute Resolution, A and B
+    summary: The party asserting noncompliance serves written notice, the parties meet within thirty days, and if
+      the dispute is unresolved within ninety days either party may pursue any available remedy; mediation or arbitration
+      is used only by mutual agreement.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '1999-02-01'
+    published: '1999-02-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-2278
+    locator: 64 Fed. Reg. 4890 (Feb. 1, 1999)
+  source: compact-wi-ho-chunk-nation-of-wisconsin-1999-02-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1999.02.01 Ho Chunk Nation Gaming Compact.pdf
+    sha256: 1dce342f8cf8abb41a07be06ac4c24569ab953be654c31c777d6c2f6fe520eaa
+    pages: 6
+  clauses:
+  - topic: renegotiation
+    locator: Recitals and closing paragraph (Section XXXIV reference)
+    summary: The compact may be amended upon written agreement of both parties under its Section XXXII, and the
+      parties agree to discuss modifying the compact if the State enacts a law imposing a new tax or charge on Class
+      III revenue.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 1999 amendment changes Sections XXVI.B, V.A, XV.H.2, XVI.B.1, XXVII.B, XXXIV, XXXV and XXXVI as
+      numbered in the document, and does not list Section XXIII (Dispute Resolution), so the 1992 process still
+      governs. The text of item 8 is cut off in the excerpt.
+    locator_before: XXIII.A.2
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The amendment is numbered in items 1 to 8, and item 8 (Section XXXVI) is
+      cut off at the end of the excerpt. The 1992 Sections XXVI and XXXII are not in the excerpts.'
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2003-amendment
+  label: 2003 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2003-07-03'
+    published: '2003-07-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-03-16824
+    locator: 68 Fed. Reg. 39964 (July 3, 2003)
+  source: compact-wi-ho-chunk-nation-of-wisconsin-2003-07-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2003.07.03 Ho Chunk Nation Gaming Compact.DEEMED
+      APPROVED.pdf
+    sha256: 2b527f760e1011838ec030b4bf9dfa7c7f498df32aef994858aae6d98ac772af
+    pages: 15
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XXIII. Dispute Resolution, A and B
+    summary: A party serves notice of violation, the parties meet and confer, and if unresolved either party may
+      demand binding arbitration, with the award confirmed in the U.S. District Court for the Western District of
+      Wisconsin under the Federal Arbitration Act.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Recitals
+    summary: The compact may be amended upon written agreement of both parties under its Section XXXII, and the
+      Second Amendment itself changes the compact only by that written agreement.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: The 2003 Second Amendment replaces the dispute section with written notice of violation, a meet and
+      confer of up to ten days, then binding arbitration before an arbitrator from an agreed list under the Federal
+      Rules of Civil Procedure and Evidence, with court actions in the Western District of Wisconsin and direct
+      federal court suits for temporary injunctive relief. The 1992 compact provided written notice, a meeting within
+      30 days, and after 90 days any available remedy, with mediation or arbitration only by mutual agreement.
+    locator_before: XXIII.A-B
+    locator_after: XXIII.A-C (as replaced by para. 11)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2008-amendment
+  label: 2008 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2008-12-12'
+    published: '2008-12-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e8-29420
+    locator: 73 Fed. Reg. 75764 (Dec. 12, 2008)
+  source: compact-wi-ho-chunk-nation-of-wisconsin-2008-12-12
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508_compliant_2008.12.12_ho_chunk_nation_tribal_state_gaming_compact.pdf
+    sha256: 04043075c74a6a053f4adf3dcea9eb318937823481c52008af1ec6eb369906d7
+    pages: 13
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XXIII.D (Last, Best Offer Format), item 1, as amended
+    summary: Under Section XXIII.D and the intermediate extension clause, Ho-Chunk Nation fee disputes go to last-best-offer
+      arbitration, with each party proposing three arbitrators within seven days, and the arbitrator's decision
+      binding on the parties; the excerpt is OCR-garbled in part.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section XXXII, item 3 (deleted language)
+    summary: The Third Amendment deletes Section XXXII language that let either party request renegotiation of the
+      fee the Nation pays the State, with unresolved talks going to a single arbitrator.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: 'The 2008 amendment, which presupposes a Section XXIII with an arbitration step that the 1992 text
+      lacks, adds a last best offer arbitration format when the compact requires it or the parties agree: each party
+      proposes three arbitrator candidates within 7 days, the Western District of Wisconsin court or JAMS appoints
+      if they cannot agree, and the arbitrator picks one party''s final offer within 120 days. The 1992 compact
+      provided notice, a meeting within 30 days, and after 90 days any available remedy, with mediation or arbitration
+      only by mutual agreement.'
+    locator_before: XXIII.A-B
+    locator_after: XXIII.D (as amended para. 1)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2025-amendment
+  label: 2025 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2025-01-08'
+    published: '2025-01-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2025-00121
+    locator: 90 Fed. Reg. 1539 (Jan. 8, 2025)
+  source: compact-wi-ho-chunk-nation-of-wisconsin-2025-01-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508_compliant_2025.01.08_ho-chunk_nation_tribal_state_gaming_compact.pdf
+    sha256: d9e2c496c691e3bfeb20a34e67cad7db11b83fa4113e32b674390ea4031c833a
+    pages: 20
+  clauses:
+  - topic: dispute-resolution
+    locator: Amendment paragraph 3 (referring to Section XXIV, Dispute Resolution)
+    summary: Disputes over proposed internal control standards not tied to event wagering go to a single arbitrator
+      sitting in Madison under AAA rules (but not administered by the AAA), who must choose one party's proposal
+      within 30 days.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: 'The 2025 amendment keeps a dispute section (renumbered XXIV) and reopens it with ''Except as otherwise
+      provided in this Compact'', and adds a separate arbitration process for proposed MICS amendments not tied
+      to event or remote wagering (Madison, single arbitrator who is a CPA, AAA-type rules, written decision in
+      30 days choosing one party''s proposal). The 1992 compact already had a dispute clause: notice, a meeting
+      within 30 days, and after 90 days any available remedy, with mediation or arbitration only by mutual agreement.'
+    locator_before: XXIII.A-B
+    locator_after: XXIV (renumbered); XXXIV MICS para. 3
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+found_in:
+- 2026-11-21-gaming-compact-histories

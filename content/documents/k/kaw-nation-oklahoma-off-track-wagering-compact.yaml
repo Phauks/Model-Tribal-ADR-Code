@@ -1,0 +1,94 @@
+id: kaw-nation-oklahoma-off-track-wagering-compact
+kind: gaming-compact
+title: Kaw Nation, Oklahoma–State of Oklahoma Off-Track Wagering Compact
+nations:
+- kaw-nation
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III off-track wagering compact for Kaw Nation, Oklahoma and the State of Oklahoma under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III off-track wagering compact documents the Office of Indian Gaming lists for Kaw Nation, Oklahoma
+  and the State of Oklahoma as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event and
+  which version is in effect are inferred from the list (project analysis); clause summaries and comparisons are
+  a small model''s reading of excerpts.'
+versions:
+- id: 2001-original
+  label: 2001 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2001-06-07'
+    published: '2001-06-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-14307
+    locator: 66 Fed. Reg. 30748 (June 7, 2001)
+  source: compact-ok-kaw-nation-2001-06-07
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2001.06.07 Kaw Nation Tribal State Gaming Compact.pdf
+    sha256: 464181ebadbc3536d8ebbc1f32c97884e2fb4d79cf7cb4ed31b26faf5190c624
+    pages: 35
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 15 DISPUTE RESOLUTION
+    summary: The compact provides for written notice, a meeting within 30 days, non-binding arbitration after 60
+      days with an arbitrator named by the American Arbitration Association if the two named arbitrators cannot
+      agree, and an action for breach in the United States District Court for the Western District of Oklahoma.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: SECTION 19. AMENDMENTS
+    summary: Either party may request negotiations to amend or modify the compact, which stays in effect during
+      talks; the parties have 180 days to negotiate, after which the Act's procedures apply, and amendments must
+      be approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2001-original
+  dates:
+    listed: '2018-12-27'
+    published: '2018-12-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2018-28134
+    locator: 83 Fed. Reg. 66742 (Dec. 27, 2018)
+  source: compact-ok-kaw-nation-2018-12-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2018.12.27 Kaw signed deemed approved compact.pdf
+    sha256: de27540abaf1044fe2d02b4f50622ee11e6863699cc7edd12bf1b6cc5f5f835d
+    pages: 6
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-original
+    change: unchanged
+    summary: The 2018 modification amends only Appendix B (adds the Braman Casino off-track wagering site) and states
+      that the original compact otherwise applies on the same terms, so Section 15 (Dispute Resolution) is not amended
+      and the 2001 Section 15 still governs.
+    locator_before: '15'
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2001-original
+    change: unchanged
+    summary: The 2018 modification does not amend Section 19 (Amendments); it changes only Appendix B, so the 2001
+      Section 19 on requests to negotiate, the 180-day period and Secretarial approval still governs.
+    locator_before: '19'
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

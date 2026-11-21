@@ -1,0 +1,945 @@
+id: rosebud-sioux-tribe-of-the-rosebud-indian-reservation-south-dakota-gaming-compact
+kind: gaming-compact
+title: Rosebud Sioux Tribe of the Rosebud Indian Reservation, South Dakota–State of South Dakota Gaming Compact
+nations:
+- rosebud-sioux-tribe-of-the-rosebud-indian-reservation
+states:
+- SD
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Rosebud Sioux Tribe of the Rosebud Indian Reservation, South Dakota and the
+    State of South Dakota under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Rosebud Sioux Tribe of the
+  Rosebud Indian Reservation, South Dakota and the State of South Dakota as of Nov. 21, 2026: 1 original, 2 replacements
+  and 29 extensions. The order, the kind of each event and which version is in effect are inferred from the list
+  (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1993-original
+  label: 1993 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1993-04-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-1993-04-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 1993.04.14 Rosebud Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: f112ff75041f056492d9e7f2df2fb5ec0d39e0737bc8bfaec58b0234ef21a753
+    pages: 15
+  clauses:
+  - topic: renegotiation
+    locator: 10. Duration
+    summary: Either party may give notice of provisions needing review or amendment at least 180 days before a two-year
+      expiration, the parties must then make good faith efforts to resolve them, and if they cannot the compact
+      terminates and IGRA procedures apply.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2001-replacement
+  label: 2001 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1993-original
+  dates:
+    listed: '2001-07-12'
+    published: '2001-07-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-17490
+    locator: 66 Fed. Reg. 36589 (July 12, 2001)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2001-07-12
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2001.07.12 Rosebud Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: d3755ce36a5f4755ca286be7b789cd9e8d7620666cec88600ec2d60311498e58
+    pages: 14
+  clauses:
+  - topic: dispute-resolution
+    locator: Paragraph 8 (suitability arbitration)
+    summary: Disputes over an applicant's suitability go to an Arbitration Board, which decides suitability in the
+      public interest, and either party may appeal that decision to federal district court if permitted by law.
+    methods:
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+- id: 2010-extension
+  label: 2010 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2010-10-05'
+    published: '2010-10-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2010-25003
+    locator: 75 Fed. Reg. 61511 (Oct. 5, 2010)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2010-10-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2010.10.05 Rosebud Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 1b2f02086685b4ce9976cbc3879a68ec34fc000ce8f55ffbe2e350e5d5cf0a7c
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2011-extension
+  label: 2011 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2011-06-08'
+    published: '2011-06-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2011-14045
+    locator: 76 Fed. Reg. 33341 (June 8, 2011)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2011-06-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2011.06.08 Rosebud Sioux Tribe Tribl State
+      Gaming Compact.pdf
+    sha256: 1a400768a54cedcc477dd9e6b0c027db7d44859d2a8935a1546555ea39dcc4fa
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2011-extension-2
+  label: 2011 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2011-08-24'
+    published: '2011-08-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2011-21652
+    locator: 76 Fed. Reg. 52968 (Aug. 24, 2011)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2011-08-24
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2011.08.24 Rosebud Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: c301ada2bbc6827e46ed0f9a35196b5c6d24f11f44c552850cb528076753ee43
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2012-extension
+  label: 2012 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2012-07-23'
+    published: '2012-07-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2012-17829
+    locator: 77 Fed. Reg. 43110 (July 23, 2012)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2012-07-23
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2012.07.23 Rosebud Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 51eeb4b3da7e3b54f3f4414a8d07ac2d6d9352910cae5da33f66ce5a4607e8ff
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2012-extension-2
+  label: 2012 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2012-09-28'
+    published: '2012-09-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2012-23978
+    locator: 77 Fed. Reg. 59641 (Sept. 28, 2012)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2012-09-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2012.09.28 Rosebud Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 8de96335addbb13a4aabb0dcf8a0091267b4a4d867474e44fcaa0dda3ec1cecd
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2013-extension
+  label: 2013 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2013-03-12'
+    published: '2013-03-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2013-05596
+    locator: 78 Fed. Reg. 15738 (Mar. 12, 2013)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2013-03-12
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2013.03.12 Rosebud Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 6e57f424af7514453c70737987263baf9dcfc80deea1e843b8fe9ea72a7fdcf3
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2013-extension-2
+  label: 2013 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2013-10-22'
+    published: '2013-10-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2013-24349
+    locator: 78 Fed. Reg. 62650 (Oct. 22, 2013)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2013-10-22
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2013.10.22 Rosebud Sioux Tribe Tribal State
+      Gaming Compact 2013.pdf
+    sha256: 6169e4822e30bc859c0061cefac737e50d7945bd9393f9e409c186cc4ccf6adf
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2014-extension
+  label: 2014 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2014-09-15'
+    published: '2014-09-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2014-21931
+    locator: 79 Fed. Reg. 55011 (Sept. 15, 2014)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2014-09-15
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2014.09.15 Rosebud Sioux Tribe Tribal State
+      Gaming Compact 2014_0.pdf
+    sha256: acf4ed05517636094b46c983096800bc190c9c3aca4a311b901e6c263984054d
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2015-extension
+  label: 2015 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2015-04-23'
+    published: '2015-04-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-09541
+    locator: 80 Fed. Reg. 22740 (Apr. 23, 2015)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2015-04-23
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2015.04.23 Rosebud Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: e3b66ba0852c4f21e7bc2906735e2858e326c1eb8ffb7c57d508014bfba3962e
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2015-extension-2
+  label: 2015 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2015-10-05'
+    published: '2015-10-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-25307
+    locator: 80 Fed. Reg. 60171 (Oct. 5, 2015)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2015-10-05
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2015.10.05 Rosebud Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: b324932bec7f5abb926d6dd5fb2031af3a118c980c9c1029b09dd7ae50d08ba7
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2016-extension
+  label: 2016 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2016-03-10'
+    published: '2016-03-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2016-05397
+    locator: 81 Fed. Reg. 12746 (Mar. 10, 2016)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2016-03-10
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2106.03.10  Rosebud Sioux Tribe Compact  Ext.pdf
+    sha256: 461f49bf5b13aba215500093fa7171bd5cb0da03f33407a8abbf77d1c9d26a74
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2016-extension-2
+  label: 2016 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2016-09-26'
+    published: '2016-09-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2016-23214
+    locator: 81 Fed. Reg. 66077 (Sept. 26, 2016)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2016-09-26
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2016.09.26  Rosebud Sioux Tribe Compact Ext.pdf
+    sha256: 583e1ede4203c2e46b9a4d3494099f577628da5fdf98cedabe5f6f2180362f32
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2017-extension
+  label: 2017 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2017-03-23'
+    published: '2017-03-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2017-05814
+    locator: 82 Fed. Reg. 14912 (Mar. 23, 2017)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2017-03-23
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508_compliant_2017.03.23_rosebud_sioux_tribe_compact_extension.pdf
+    sha256: 2c7b458ef7744e91512e10714e9e574826ffb7e5b36a6d7861d339faacf3296a
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2017-extension-2
+  label: 2017 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2017-07-26'
+    published: '2017-07-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2017-15640
+    locator: 82 Fed. Reg. 34688 (July 26, 2017)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2017-07-26
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2017.07.26 Rosebud Sioux Tribe Compact Extension.pdf
+    sha256: ae05852efca6a14218a450bc431ea2b2227a862a3b46a9cfa2e8b9c481f3e9d7
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2018-extension
+  label: 2018 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2018-02-14'
+    published: '2018-02-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-03072
+    locator: 83 Fed. Reg. 6613 (Feb. 14, 2018)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2018-02-14
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2018.02.14 Rosebud Sioux Tribe Extension.pdf
+    sha256: 4eec23405a85603f4d06b4c8e369f821ef01758859fc2992cb1283434c28e7c6
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2018-extension-2
+  label: 2018 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2018-08-15'
+    published: '2018-08-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-17550
+    locator: 83 Fed. Reg. 40549 (Aug. 15, 2018)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2018-08-15
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508_compliant_2018.08.15_rosebud_tribal_state_gaming_compact_extension.pdf
+    sha256: 7b27b41de8b6098994d2cee2cd9fc2bc6a3999786d532030fe68bc3be37df8be
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2019-extension
+  label: 2019 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2019-04-16'
+    published: '2019-04-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2019-07489
+    locator: 84 Fed. Reg. 15634 (Apr. 16, 2019)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2019-04-16
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2019.04.16 Rosebud Sioux Tribal State Gaming
+      Compact Extension.pdf
+    sha256: 5e6f167fa37e7056d70229c318aebb97fa1f8f5ed5ee4ea5ab1394b0246cfde4
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2019-extension-2
+  label: 2019 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2019-08-05'
+    published: '2019-08-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2019-16692
+    locator: 84 Fed. Reg. 38040 (Aug. 5, 2019)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2019-08-05
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2019.08.05  Rosebud Tribal State Gaming Compact
+      Extension.pdf
+    sha256: 491183b43e693721823ef1624b989eb9df78112e90d8009c791c55a87cd6d54b
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2020-extension
+  label: 2020 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2020-04-01'
+    published: '2020-04-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2020-06712
+    locator: 85 Fed. Reg. 18268 (Apr. 1, 2020)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2020-04-01
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2020.04.01 Rosebud Sioux Extension.pdf
+    sha256: 7fcfbf218f57b06c6aa88b45f92030465ea46632569e8fa32dc659ef6ca568ea
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2020-extension-2
+  label: 2020 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2020-04-30'
+    published: '2020-04-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2020-09243
+    locator: 85 Fed. Reg. 24004 (Apr. 30, 2020)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2020-04-30
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant  04.30.2020 Rosebud Sioux Compact Extension._0.pdf
+    sha256: 37a7cce40078001e2166abdd3110fdc6d7925258552c442d38cb22961dc1681a
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2020-extension-3
+  label: 2020 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2019-12-27'
+    published: '2020-07-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2020-15975
+    locator: 85 Fed. Reg. 44546 (July 23, 2020)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2019-12-27
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: Federal Register notice published 209 days from the listed date; no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2019.12.27 Rosebud Sioux - South Dakota Gaming
+      Compact Extension.pdf
+    sha256: dcd960a78e6f54697a40a0d8f8185b70343c3956ff98d943980c23387c8eb220
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2020-extension-4
+  label: 2020 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2020-07-23'
+    published: '2020-07-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2020-15975
+    locator: 85 Fed. Reg. 44546 (July 23, 2020)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2020-07-23
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2020.07.23 Rosebud Sioux Tribal State Gaming
+      Compact Extension.pdf
+    sha256: 51bbab31102a1864e1e3275e5bfba1839969e6647136b4fec00d4190f28fbe7b
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2020-extension-5
+  label: 2020 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2020-10-28'
+    published: '2020-10-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2020-23844
+    locator: 85 Fed. Reg. 68360 (Oct. 28, 2020)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2020-10-28
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2020.10.28 Rosebud Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 75b90c6b13ded761636bd99cb74ed9db801585e4b4c6f1c0855da59eb52cd66a
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2021-extension
+  label: 2021 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2021-01-15'
+    published: '2021-01-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-00778
+    locator: 86 Fed. Reg. 4113 (Jan. 15, 2021)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2021-01-15
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2021.01.15 Rosebud Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: a13801d2f52f68c0cdd903daeeaf8cbd0a593f1b1b83147970760761dfe18653
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2021-extension-2
+  label: 2021 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2021-04-29'
+    published: '2021-04-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-08950
+    locator: 86 Fed. Reg. 22701 (Apr. 29, 2021)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2021-04-29
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508 Compliant 2021.04.29  Rosebud Sioux Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: f2219607edd91b4d5b7fea69cc24cf98df26992c4e7143de0bd86671199d5932
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2021-extension-3
+  label: 2021 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2021-09-07'
+    published: '2021-09-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-19337
+    locator: 86 Fed. Reg. 50153 (Sept. 7, 2021)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2021-09-07
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508_compliant_2021.09.07_rosebud_sioux_tribe_tribal_state_gaming_compact.pdf
+    sha256: 27a7cacf8be8174a1083f30019b9d58537bd77659a9efdf86713a23c6600fff2
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2022-extension
+  label: 2022 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2022-04-15'
+    published: '2022-04-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-08078
+    locator: 87 Fed. Reg. 22573 (Apr. 15, 2022)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2022-04-15
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508_compliant_2022.04.15_rosebud_sioux_tribe_tribal_state_gaming_compact.pdf
+    sha256: fa2ede741f7e5b233aed4759965bd4153202161bdfed4dce8ddca577d861056f
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2022-extension-2
+  label: 2022 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2022-11-09'
+    published: '2022-11-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-24446
+    locator: 87 Fed. Reg. 67711 (Nov. 9, 2022)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2022-11-09
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508_compliant_2022.11.09_rosebud_sioux_tribe_tribal_state_gaming_compac.pdf
+    sha256: f6ce701213c0be51c3284f3f10d9e92975e21f07f14e17887ade786bdf573e74
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2023-extension
+  label: 2023 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2023-04-17'
+    published: '2023-04-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-07990
+    locator: 88 Fed. Reg. 23453 (Apr. 17, 2023)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2023-04-17
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508_compliant_2023.04.17_rosebud_sioux_tribe_tribal_state_gaming_compact.pdf
+    sha256: afe1f07f2f87ba4fb3bd0b8ff82760ed89b271335608a019e36ab168208d210c
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2024-replacement
+  label: 2024 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2001-replacement
+  - 2010-extension
+  - 2011-extension
+  - 2011-extension-2
+  - 2012-extension
+  - 2012-extension-2
+  - 2013-extension
+  - 2013-extension-2
+  - 2014-extension
+  - 2015-extension
+  - 2015-extension-2
+  - 2016-extension
+  - 2016-extension-2
+  - 2017-extension
+  - 2017-extension-2
+  - 2018-extension
+  - 2018-extension-2
+  - 2019-extension
+  - 2019-extension-2
+  - 2020-extension
+  - 2020-extension-2
+  - 2020-extension-3
+  - 2020-extension-4
+  - 2020-extension-5
+  - 2021-extension
+  - 2021-extension-2
+  - 2021-extension-3
+  - 2022-extension
+  - 2022-extension-2
+  - 2023-extension
+  dates:
+    listed: '2024-03-15'
+    published: '2024-03-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2024-05558
+    locator: 89 Fed. Reg. 18963 (Mar. 15, 2024)
+  source: compact-sd-rosebud-sioux-tribe-of-the-rosebud-indian-reservation-2024-03-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/south-dakota/508_compliant_2024.03.15_rosebud_sioux_tribe_tribal_state_gaming_compact.pdf
+    sha256: 9d4668bcec4c0c2f9ad7be52abcdb83e3bcabfd658b5e5c40b5ea32f1067b2d6
+    pages: 20
+  clauses:
+  - topic: renegotiation
+    locator: 10. Duration, 10.2 Review, Notice, and Extension; 10.3; 10.4
+    summary: The compact is reviewed every ten years; either party may give written notice in the 180 days before
+      expiry, after which all terms are subject to negotiation, the parties have 180 days to negotiate under IGRA
+      remedies, and the compact then terminates unless the parties agree otherwise.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

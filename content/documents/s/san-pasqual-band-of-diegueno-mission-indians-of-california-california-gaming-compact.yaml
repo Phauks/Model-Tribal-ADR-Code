@@ -1,0 +1,97 @@
+id: san-pasqual-band-of-diegueno-mission-indians-of-california-california-gaming-compact
+kind: gaming-compact
+title: San Pasqual Band of Diegueno Mission Indians of California–State of California Gaming Compact
+nations:
+- san-pasqual-band-of-diegueno-mission-indians-of-california
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for San Pasqual Band of Diegueno Mission Indians of California and the State of
+    California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for San Pasqual Band of Diegueno
+  Mission Indians of California and the State of California as of Nov. 21, 2026: 1 original and 1 replacement. The
+  order, the kind of each event and which version is in effect are inferred from the list (project analysis); clause
+  summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-san-pasqual-band-of-diegueno-mission-indians-of-california-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2000.05.16 San Pasqual Band of Diegueno Mission
+      Indians Tribal State Gaming Compact.pdf
+    sha256: 040c83e05003ed9d37f6d1752fc86e33ea2dfa0f07eb5ad6f122d687a31174bc
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 and Sec. 9.2
+    summary: Disputes start with written notice and a meet-and-confer within 10 days, then either party may seek
+      arbitration under the AAA Commercial Arbitration Rules if the dispute is unresolved within 30 days of the
+      first meeting, with a binding award once submitted; unresolved disputes may go to the U.S. District Court
+      and Ninth Circuit, or to state courts if the federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Sec. 12.1 to Sec. 12.3
+    summary: The compact may be amended at any time by mutual written agreement, and the Tribe may request renegotiation
+      in writing to offer Class III games not authorized in the compact, but not within 12 months of the effective
+      date; the parties set a negotiation schedule within 30 days of the request, under IGRA good-faith standards
+      enforceable in federal court.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2018-replacement
+  label: 2018 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  dates:
+    listed: '2018-12-27'
+    published: '2018-12-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2018-28135
+    locator: 83 Fed. Reg. 66741 (Dec. 27, 2018)
+  source: compact-ca-san-pasqual-band-of-diegueno-mission-indians-of-california-2018-12-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2018.12.27_san_pasqual_band_of_mission_indians_tribal_state_gaming_compact.pdf
+    sha256: 27221e85779418bb98d3cbb724cbd114661cfeb99533d0ee49375ffaaa3747b5
+    pages: 195
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 4.3(b)(2) Special Distribution Fund (cross-reference to SECTION 13.0)
+    summary: The text file contains only the table of contents entry for Sec. 13.0 (voluntary resolution, arbitration
+      rules, limited waiver of sovereign immunity, termination); the body text that survives says an objection to
+      the State's pro rata cost share is resolved under the Sec. 13.0 dispute resolution provisions, and payment
+      is a condition precedent to invoking them.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

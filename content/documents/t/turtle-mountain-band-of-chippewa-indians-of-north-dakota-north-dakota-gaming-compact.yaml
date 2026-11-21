@@ -1,0 +1,276 @@
+id: turtle-mountain-band-of-chippewa-indians-of-north-dakota-north-dakota-gaming-compact
+kind: gaming-compact
+title: Turtle Mountain Band of Chippewa Indians of North Dakota–State of North Dakota Gaming Compact
+nations:
+- turtle-mountain-band-of-chippewa-indians-of-north-dakota
+states:
+- ND
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Turtle Mountain Band of Chippewa Indians of North Dakota and the State of North
+    Dakota under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Turtle Mountain Band of Chippewa
+  Indians of North Dakota and the State of North Dakota as of Nov. 21, 2026: 1 original, 2 amendments and 2 replacements.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1992-12-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-nd-turtle-mountain-band-of-chippewa-indians-of-north-dakota-1992-12-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-dakota/508_compliant_1992.12.03_turtle_mountain_band_tribal_state_gaming_compact.pdf
+    sha256: 30a0cb3a31d38419e61864c9be46c9b34893e921653648d92cddff0f0918da1f
+    pages: 37
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 10.2, Availability of Dispute Resolution Procedures
+    summary: If the State disqualifies an individual and the Tribe disagrees, the Tribe may pursue dispute resolution
+      under Section XXVII of the compact, which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section XXII, Amendments to Regulatory and Technical Standards
+    summary: Section XXII allows the technical and regulatory standards for electronic games to be modified by mutual
+      agreement of the North Dakota Attorney General and the Tribal Council upon written recommendation; the excerpt
+      shows no general amendment or renegotiation clause.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1993-amendment
+  label: 1993 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '1993-07-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-nd-turtle-mountain-band-of-chippewa-indians-of-north-dakota-1993-07-29
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-dakota/508_compliant_1993.07.29_turtle_mountain_band_of_chippewa_indians_tribal_state_gaming_compact.pdf
+    sha256: 6331755ffcd44db70f116b2c531b5d6dfcc427c8dac66af160765482e2bc6d78
+    pages: 23
+  clauses:
+  - topic: dispute-resolution
+    locator: Addendum Section XV, Dispute Resolution
+    summary: Disputes under the addendum are handled through the dispute resolution procedures in Article XXVII
+      of the compact, which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Addendum Section XVI, Term of Addendum
+    summary: The addendum may be terminated or amended only by mutual consent of the parties with approval of the
+      United States Secretary of the Interior.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 1999-replacement
+  label: 1999 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1992-original
+  - 1993-amendment
+  dates:
+    listed: '1999-11-12'
+    published: '1999-11-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-29548
+    locator: 64 Fed. Reg. 61658 (Nov. 12, 1999)
+  source: compact-nd-turtle-mountain-band-of-chippewa-indians-of-north-dakota-1999-11-12
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-dakota/508_compliant_1999.11.12_turtle_mountain_band_of_chippewa_indians_tribal_state_gaming_compact.pdf
+    sha256: cd029bf291551a9a8642c6e5b59663139a27a30f1f0a4ac13fd30626c96c679f
+    pages: 40
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XXVIII, Dispute Resolution (28.1-28.5)
+    summary: A party alleging noncompliance gives written notice and the parties meet within thirty days; if unresolved
+      after ninety days either party may pursue arbitration under AAA rules, an action in the United States District
+      Court for North Dakota, or any other available remedy, and the State may serve a notice to cease gaming that
+      the Tribe may stop or contest through these procedures.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section XXXIV, Amendment
+    summary: The State or the Tribe may at any time request amendment or negotiations, both parties must negotiate
+      in good faith and reach a determination within ninety days, and amendments take effect only when both parties
+      agree and, if necessary, the Secretary approves; Section XXI also allows technical standards to be modified
+      by mutual agreement.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: changed
+    summary: The later compact keeps the technical-standards amendment route but lets the Tribal Council's Chairperson
+      join the Attorney General's agreement and updates the cross-referenced sections; its Article XXXIV also provides
+      that either party may request amendment and that good-faith negotiation should reach a determination within
+      90 days, which the earlier excerpts do not show.
+    locator_before: XXII
+    locator_after: XXI, XXXIV
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier 1992 compact excerpts show Article XXII (technical standards)
+      and Section 10.2, but not the earlier dispute article XXVII. The later compact renumbers the technical-standards
+      article (XXII to XXI) and its cross-references (20.6 and 20.7 to 20.5 and 20.6), and the later Article XXXIV
+      has a 90-day determination step. The later excerpts show that the Tribe may invoke arbitration as specified
+      in Article XXVIII after 90 days of unresolved notice, and that the State may serve a notice to cease gaming.'
+- id: 2013-replacement
+  label: 2013 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1999-replacement
+  dates:
+    listed: '2013-03-21'
+    published: '2013-03-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2013-06446
+    locator: 78 Fed. Reg. 17427 (Mar. 21, 2013)
+  source: compact-nd-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2013-03-21
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-dakota/508_compliant_2013.03.21_turtle_mountain_band_of_chippewa_indians_tribal_state_gaming_compact.pdf
+    sha256: ea935c9ef00f8095d9e2760604864147bb67f2bbd4e75b3cae983ac89a172069
+    pages: 31
+  clauses:
+  - topic: dispute-resolution
+    locator: 28.1 (heading printed as 'XA7VIII. DISPUTE RESOLUTION.')
+    summary: The compact provides for written notice, a thirty-day meeting, and a ninety-day period, after which
+      either party may pursue arbitration under American Arbitration Association rules or an action in the United
+      States District Court for the District of North Dakota.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: XXXIV. AMENDMENT.
+    summary: Either the State or the Native nation may at any time request amendment or negotiations, the parties
+      must negotiate in good faith and reach a determination within ninety days, and amendments apply only when
+      both agree and, if necessary, the Secretary of the Interior approves.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1999-replacement
+    change: unchanged
+    summary: 'The 2013 Article XXVIII is the same as the 1999 Article XXVIII: written notice, a meeting within 30
+      days, 90 days without resolution, then arbitration under AAA rules or an action in the U.S. District Court
+      for North Dakota.'
+    locator_before: XXVIII
+    locator_after: XXVIII
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1999-replacement
+    change: reworded
+    summary: The 2013 compact keeps the same technical-standards amendment process in Article XXI and the same general
+      amendment article XXXIV, changing only the name of the Attorney General's office in Article XXI.
+    locator_before: XXI, XXXIV
+    locator_after: XXI, XXXIV
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2013-replacement
+  dates:
+    listed: '2022-12-19'
+    published: '2022-12-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-27471
+    locator: 87 Fed. Reg. 77633 (Dec. 19, 2022)
+  source: compact-nd-turtle-mountain-band-of-chippewa-indians-of-north-dakota-2022-12-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-dakota/508_compliant_2022.12.19_turtle_mountain_band_of_chippewa_tribal_state_gaming_compact.pdf
+    sha256: c934e38bd7e19374cbb9325521092788471eb904a5ff012a16636c9fcdf9e189
+    pages: 27
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XXVIII, 28.1 and 28.2, Dispute Resolution
+    summary: Written notice and a thirty-day meeting come first; after ninety days unresolved the parties try mediation
+      administered by the American Arbitration Association, and after mediation or 180 days each party gives a limited
+      waiver of immunity for an action in the United States District Court for the District of North Dakota.
+    methods:
+    - negotiation
+    - mediation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section XXXIV, Amendment
+    summary: Either party may request amendment with notice, the parties must negotiate in good faith and reach
+      a determination within ninety days, and amendments apply only when both parties agree and, if needed, the
+      Secretary approves.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2013-replacement
+    change: changed
+    summary: The later compact provides notice and a 30-day meeting, then mediation (AAA Commercial Mediation Procedures
+      in Bismarck, if no mediator is agreed) if unresolved after 90 days, then a limited waiver of immunity for
+      an action in the District of North Dakota after mediation fails or 180 days pass. The earlier compact went
+      from the 30-day meeting, after 90 days, to any available remedy including three-arbitrator AAA arbitration
+      or federal court; the later text has no arbitration provision.
+    locator_before: XXVIII, 28.1(A)-(B), 28.3-28.5
+    locator_after: XXVIII, 28.1(A)(a)-(b), 28.2
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2013-replacement
+    change: changed
+    summary: The 2022 compact adds a duty to negotiate in good faith procedures for new games such as mobile or
+      online gaming (Article XXIII), while the technical-standards amendment article (XXI) and the general amendment
+      article (XXXIV, 90-day determination) read the same as in the 2013 compact.
+    locator_before: XXI, XXXIV
+    locator_after: XXIII, XXI, XXXIV
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,449 @@
+id: forest-county-potawatomi-community-wisconsin-gaming-compact
+kind: gaming-compact
+title: Forest County Potawatomi Community, Wisconsin–State of Wisconsin Gaming Compact
+nations:
+- forest-county-potawatomi-community
+states:
+- WI
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Forest County Potawatomi Community, Wisconsin and the State of Wisconsin under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Forest County Potawatomi
+  Community, Wisconsin and the State of Wisconsin as of Nov. 21, 2026: 1 original, 5 amendments, 1 replacement and
+  2 disapproved compacts. The order, the kind of each event and which version is in effect are inferred from the
+  list (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1992-08-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-wi-forest-county-potawatomi-community-1992-08-10
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1992.08.10 Forest County Potawatomi Gaming Compact.pdf
+    sha256: f3cbff6f3a0f4aef0cfa71191a6193c2c6ed0faabcd748394faa02aea47bf63b
+    pages: 44
+  clauses:
+  - topic: dispute-resolution
+    locator: XXII. Dispute Resolution, A and B
+    summary: Forest County Potawatomi and the State give written notice of noncompliance, meet within thirty days,
+      and if unresolved within ninety days either party may pursue any remedy otherwise available; mediation or
+      arbitration is used only by mutual agreement.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: XXX. Amendment
+    summary: The compact may be modified or amended only by prior written agreement of both the State and Forest
+      County Potawatomi, so the excerpt provides no unilateral reopening.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '1999-02-01'
+    published: '1999-02-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-2278
+    locator: 64 Fed. Reg. 4890 (Feb. 1, 1999)
+  source: compact-wi-forest-county-potawatomi-community-1999-02-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1999.02.01 Forest County Potawatomi Compact
+      Amendment_0.pdf
+    sha256: 02da9ce711df8af1c492a615abd835d0984a2348c601ab927bd91384e65fd4b8
+    pages: 8
+  clauses:
+  - topic: renegotiation
+    locator: Recitals and paragraph 1
+    summary: Forest County Potawatomi and the State may amend the 1992 compact by written agreement under its Section
+      XXX, and the parties agree to discuss extending the duration and removing limits on Menomonee Valley games
+      once City and County approval resolutions are delivered.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 1999 amendments list changes to Sections V.A, XV.H, XVI.B.1, and new Sections XV.I and XXXI to
+      XXXIV (the term renewal refers to Section XXV.B). Section XXII (dispute resolution) is not among them, so
+      the earlier dispute procedure still applies.
+    locator_before: XXII.A(2)
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: changed
+    summary: 'The earlier compact allowed amendment only by prior written agreement of both parties (Section XXX).
+      The 1999 amendments add Section XXXIII: if the Secretary of the Interior disapproves the amendments in whole
+      or part, either party may serve a demand for renegotiation of the affected portion and the parties must meet
+      to negotiate revisions. Section XXXII also provides for additional benefits to the Tribe if other compacts
+      receive more favorable terms.'
+    locator_before: XXX
+    locator_after: XXXIII
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2003-amendment
+  label: 2003 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '2003-05-08'
+    published: '2003-05-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-03-11390
+    locator: 68 Fed. Reg. 24754 (May 8, 2003)
+  source: compact-wi-forest-county-potawatomi-community-2003-05-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2003.05.08 Forest County Potawatomi Gaming Compact.pdf
+    sha256: 2f0c1b9449edbc0183b618077d31e8c0bea44bdaf6b9df6cac298ca56f0d7c50
+    pages: 19
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XXII. Dispute Resolution, A and item 6 (Last Best Offer Format)
+    summary: Either party may demand binding arbitration under CPR rules, with a last-best-offer format and a 180-day
+      schedule, and binding arbitration is the sole method for listed compact sections unless the parties agree
+      in writing to negotiation, mediation under XXII.C, or court under XXII.D.
+    methods:
+    - arbitration
+    - mediation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section XXX. Amendment and Periodic Enhancement of Compact Provisions, A to D
+    summary: Under Section XXX.B to D, either party may propose enhancement amendments within 90 days after the
+      2003 Amendments, negotiations start within 15 days, mediation follows after 60 days of talks, unresolved proposals
+      go to last-best-offer arbitration, and periodic amendment reviews occur every five years.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: The earlier compact provides written notice and a meeting within 30 days, after which either party
+      may pursue any otherwise available remedy once 90 days have passed, with mediation or arbitration only by
+      mutual agreement; the later amendments replace Section XXII so that either party may demand binding arbitration
+      (CPR rules, last-best-offer format, award final and unappealable except under 9 U.S.C. § 10) and, unless the
+      parties agree to negotiation, mediation or court, binding arbitration is the sole method for disputes under
+      the listed compact sections, with court resolution reserved for specified sections (Wisconsin Circuit Court
+      or Western District of Wisconsin) and optional negotiation and mediation steps.
+    locator_before: Section XXII.A-B
+    locator_after: Section XXII.A-E
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: changed
+    summary: 'The 2003 amendments keep the prior-written-agreement rule in Section XXX.A and add Section XXX.B:
+      within 90 days after the 2003 Amendments, either party may propose amendments to enhance listed provisions,
+      including remedies and oversight, with disputes over State objections to internal control standards resolved
+      by binding arbitration.'
+    locator_before: XXX
+    locator_after: XXX.B
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2003-amendment-2
+  label: 2003 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '2003-09-08'
+    published: '2003-09-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-03-22788
+    locator: 68 Fed. Reg. 52953 (Sept. 8, 2003)
+  source: compact-wi-forest-county-potawatomi-community-2003-09-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2003.09.08.Forest County Potawatomi.DEEMED APPROVED.09082003.pdf
+    sha256: c81d2620bb1602b3c5ba4648b6ede82d4c4dd89ec88141b3e29ecca40535b3c0
+    pages: 9
+  clauses:
+  - topic: dispute-resolution
+    locator: Technical Amendment, item I. Last Best Offer Arbitration of Compact Amendments
+    summary: A disputed finding that a party failed to negotiate in good faith is resolved by last-best-offer arbitration
+      by the tribunal, if the party fails to agree within 30 days after the tribunal's determination.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Recitals
+    summary: The Technical Amendment recites that the 1992 compact reserved the parties' right to amend its terms
+      later, and the excerpt is cut off before the mechanism is stated.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: The 2003 Technical Amendment, which builds on a procedure in the Section XXII arbitration framework
+      (a tribunal, awards and last best offer arbitration) not found in the 1992 text, adds last best offer arbitration
+      of compact amendments when a tribunal finds a party failed to negotiate in good faith, and lets a dispute
+      dismissed from court for lack of a sovereign immunity waiver be treated as an arbitrable XXII.A dispute. The
+      earlier compact provided written notice, a meeting within 30 days, and after 90 days any available remedy,
+      with mediation or arbitration only by mutual agreement.
+    locator_before: XXII.A-B
+    locator_after: XXII.A (new para. 10), XXII.D
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: changed
+    summary: The Technical Amendment adds that if a tribunal finds a party failed to negotiate in good faith on
+      an amendment, and the dispute is not resolved within 30 days, the other party may ask the tribunal to resolve
+      it by last-best-offer arbitration, with the selected offer to be agreed under Section XXX and subject to Secretarial
+      review.
+    locator_before: XXX
+    locator_after: XXII (new I)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2006-replacement
+  label: 2006 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1992-original
+  - 1999-amendment
+  - 2003-amendment
+  - 2003-amendment-2
+  dates:
+    listed: '2006-01-31'
+    published: '2006-01-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-e6-1197
+    locator: 71 Fed. Reg. 5068 (Jan. 31, 2006)
+  source: compact-wi-forest-county-potawatomi-community-2006-01-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2006.01.31.Forest County Potawatomi Gaming Compact.DEEMED
+      APPROVED.pdf
+    sha256: 7076979aa2a97a47db4c15965cfa0d4fd354ef878ed61b4dee4692ea98a93783
+    pages: 24
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XXII.A (Arbitration)
+    summary: Disputes are resolved by arbitration under CPR rules unless the parties choose negotiation, mediation
+      or court (Section XXII.D), with a last-best-offer format when the parties agree.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: 2005 Amendment, paragraph 10 (last best offer arbitration of compact amendments)
+    summary: If a party fails to negotiate in good faith over a compact amendment, the other party may ask the tribunal
+      to decide, and the tribunal resolves the dispute by last best offer arbitration, with the chosen amendment
+      subject to Secretary review.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: The later compact provides that any claim or dispute arising out of the compact is resolved by binding
+      arbitration under CPR rules (last, best offer format unless opted out, final and unappealable except on 9
+      U.S.C. § 10 grounds), unless the parties agreed to negotiation, mediation or court. The earlier compact provided
+      written notice, a meeting within 30 days, and after 90 days any available remedy, with mediation or arbitration
+      only by mutual agreement.
+    locator_before: XXII.A-B
+    locator_after: XXII.A-D
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: changed
+    summary: The 2005 Amendment incorporated into the 2006 compact keeps the prior-written-agreement rule in Section
+      XXX.A and adds last-best-offer arbitration of compact amendments for failure to negotiate in good faith, with
+      a 30-day period after a tribunal finding. Section XXXIII.A also provides that if a court finds a party lacked
+      authority to agree to the duration provision, the Tribe receives a refund and the parties must negotiate in
+      good faith.
+    locator_before: XXX.A
+    locator_after: 10 (last best offer); XXXIII.A
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2015-disapproval
+  label: 2015 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2015-01-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-wi-forest-county-potawatomi-community-2015-01-09
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2015.01.09 Forest County Potawatomi Tribal State
+      Gaming Compact Amendment and Disapproval Letter.pdf
+    sha256: f4e72d919892faf181048c4571cd6f0eace2c943610a8f8afa3b05e44c8423fb
+    pages: 14
+- id: 2019-amendment
+  label: 2019 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2006-replacement
+  dates:
+    listed: '2019-04-16'
+    published: '2019-04-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2019-07490
+    locator: 84 Fed. Reg. 15630 (Apr. 16, 2019)
+  source: compact-wi-forest-county-potawatomi-community-2019-04-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 04.16.2019 Forest County Potawatomi Community
+      Compact Amendment.1.pdf
+    sha256: 8d8d8126e5d46ebc4f4f3e01d031b13a7532b284ff7c32d3e5f6508b00cda832
+    pages: 6
+  clauses:
+  - topic: renegotiation
+    locator: New Section XX.XVII (text refers to Section XXXVII), subsection D.6.b
+    summary: After a Federal Register notice, either the Tribe or the State may propose an adjustment to the Anticipated
+      Baseline Net Revenues after the first fiscal year a new facility operates, limited to the current or next
+      fiscal year, and the excerpt is cut off before what happens if they do not agree.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2006-replacement
+    change: changed
+    summary: The 2019 amendment deletes Section XXII.A.11 (the last best offer arbitration of a substitute compact
+      amendment tied to a Secretarial determination) and adds a rule sending disputes over the new revenue-loss
+      payment adjustment to Section XXII, with the payment adjustment applied pending resolution. The rest of the
+      2006 dispute clause is not amended.
+    locator_before: XXII.A.11
+    locator_after: Amendment para. 2; XXXVII.F.4
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2006-replacement
+    change: not-compared
+    verification: inferred
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2006-replacement
+  dates:
+    listed: '2022-04-12'
+    published: '2022-04-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-07754
+    locator: 87 Fed. Reg. 21667 (Apr. 12, 2022)
+  source: compact-wi-forest-county-potawatomi-community-2022-04-12
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508_compliant_2022.04.12_forest_county_potawatomi_tribal_state_gaming_compact.pdf
+    sha256: 71cdd4bfc63425d68ae789be0f8ecbd21751914b27243edf09b879d50e0a9377
+    pages: 10
+  clauses:
+  - topic: dispute-resolution
+    locator: Amendment paragraph 11, new Section K.2 (Amendments to Rules of Play and Minimum Internal Control Standards)
+    summary: Disputes over minimum internal control standards and rules of play for event wagering are resolved
+      by arbitration under Section XXXIV.D, with the arbitrator applying a standard tied to what the State and other
+      Wisconsin tribes have agreed, and the compact's general dispute clause is not in the excerpt.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Amendment paragraph 11, new Section K.2
+    summary: Minimum internal control standards for event wagering and remote wagering change only by mutual agreement,
+      and the Tribe may propose changes at any time, with the State required to negotiate in good faith within 30
+      days of receipt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2006-replacement
+    change: changed
+    summary: The 2022 amendment adds that disputes over minimum internal control standards and rules of play for
+      event and remote wagering are arbitrated under Section XXXIV.D, except XXXIV.D.3, with the arbitrator deciding
+      whether the proposed controls are substantially the same as those agreed to by the State and other Wisconsin
+      tribes. The general Section XXII dispute clause of the 2006 compact is not amended.
+    locator_before: XXII.A
+    locator_after: Amendment para. 11 (XXXIV.E)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2006-replacement
+    change: changed
+    summary: The 2022 amendment adds a new subsection on amendments to rules of play and minimum internal control
+      standards. For event and remote wagering controls, amendments are made only by mutual agreement, the Tribe
+      may propose amendments at any time, and the parties must negotiate in good faith within thirty days of the
+      State's receipt of the proposed controls. It also extends the term of the compact.
+    locator_before: 10 (last best offer)
+    locator_after: K.2 (new)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2025-disapproval
+  label: 2025 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2025-04-17'
+    published: '2025-04-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+    source: federal-register-2025-06606
+    locator: 90 Fed. Reg. 16171 (Apr. 17, 2025)
+  source: compact-wi-forest-county-potawatomi-community-2025-04-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508_compliant_2025.04.17_forest_county_potawatomi_community_tribal_state_gaming_compact.pdf
+    sha256: 5da83f6cc943ac7e99679bac94506d66923fee102d2dc3783318aedab6f8f176
+    pages: 8
+found_in:
+- 2026-11-21-gaming-compact-histories

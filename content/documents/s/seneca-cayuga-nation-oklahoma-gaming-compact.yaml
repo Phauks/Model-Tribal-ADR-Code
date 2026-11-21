@@ -1,0 +1,58 @@
+id: seneca-cayuga-nation-oklahoma-gaming-compact
+kind: gaming-compact
+title: Seneca-Cayuga Nation–State of Oklahoma Gaming Compact
+nations:
+- seneca-cayuga-nation
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Seneca-Cayuga Nation and the State of Oklahoma under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Seneca-Cayuga Nation and
+  the State of Oklahoma as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event and which
+  version is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small
+  model''s reading of excerpts.'
+versions:
+- id: 2005-original
+  label: 2005 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2005-03-07'
+    published: '2005-03-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-05-4366
+    locator: 70 Fed. Reg. 11027 (Mar. 7, 2005)
+  source: compact-ok-seneca-cayuga-nation-2005-03-07
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/idc1-025212.pdf
+    sha256: 1e1b27217d3ce8852a65ebf4f0859c4206833e4f66b710ba2b86b3bc7cfa5373
+    pages: 38
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2005-original
+  dates:
+    listed: '2018-08-17'
+    published: '2018-08-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-17729
+    locator: 83 Fed. Reg. 41101 (Aug. 17, 2018)
+  source: compact-ok-seneca-cayuga-nation-2018-08-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2018.08.17 Seneca Cayuga compact amendment.pdf
+    sha256: 2d9f513c2d17d064fc3a8a719869684edffa19eb52a86e6a6397d61f4b93df5a
+    pages: 3
+found_in:
+- 2026-11-21-gaming-compact-histories

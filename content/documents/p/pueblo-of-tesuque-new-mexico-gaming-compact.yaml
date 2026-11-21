@@ -1,0 +1,162 @@
+id: pueblo-of-tesuque-new-mexico-gaming-compact
+kind: gaming-compact
+title: Pueblo of Tesuque, New Mexico–State of New Mexico Gaming Compact
+nations:
+- pueblo-of-tesuque
+states:
+- NM
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Pueblo of Tesuque, New Mexico and the State of New Mexico under 25 U.S.C. §
+    2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Pueblo of Tesuque, New Mexico
+  and the State of New Mexico as of Nov. 21, 2026: 1 original and 3 replacements. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1995-03-22'
+    published: '1995-03-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-6966
+    locator: 60 Fed. Reg. 15194 (Mar. 22, 1995)
+  source: compact-nm-pueblo-of-tesuque-1995-03-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_1995.03.22_pueblo_of_tesuque_tribal_state_gaming_compact.pdf
+    sha256: b9d6d6e18fb9973310c49bdc1ad43fc208acaa2a6a212ad8b2788e06112bf78b
+    pages: 2
+- id: 2001-replacement
+  label: 2001 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1995-original
+  dates:
+    listed: '2001-12-14'
+    published: '2001-12-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-30907
+    locator: 66 Fed. Reg. 64856 (Dec. 14, 2001)
+  source: compact-nm-pueblo-of-tesuque-2001-12-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2001.12.14_pueblo_of_tesuque_tribal_state_gaming_compact.pdf
+    sha256: 120ea9b7fd0906a68ec7cdec5adf34a9a752265b1ce4b0b0205b3ecd165668f6
+    pages: 46
+- id: 2007-replacement
+  label: 2007 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 2001-replacement
+  dates:
+    listed: '2007-07-05'
+    published: '2007-07-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-12904
+    locator: 72 Fed. Reg. 36717 (July 5, 2007)
+  source: compact-nm-pueblo-of-tesuque-2007-07-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2007.07.05_pueblo_of_tesuque_tribal_state_gaming_compact.pdf
+    sha256: 997da180c0e91a9dcb38b1799f1a30750546eafbf2d8a4ea67b5b9e0d20443f3
+    pages: 26
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraphs A(1) to A(5)
+    summary: The compact provides written notice, a 20-day wait, a notice to cease disputed games with an option
+      to arbitrate, arbitration by New Mexico attorneys with a third chosen by the American Arbitration Association,
+      and results enforceable by injunctive relief in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: SECTION 14. Entire Agreement.
+    summary: The compact provides that it may not be amended without express approval of the Tribe, the Governor
+      and the State Legislature, and that changes must be in writing, signed by the Tribe and the State and approved
+      by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2015-replacement
+  label: 2015 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2007-replacement
+  dates:
+    listed: '2015-10-23'
+    published: '2015-10-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2015-27082
+    locator: 80 Fed. Reg. 64443 (Oct. 23, 2015)
+  source: compact-nm-pueblo-of-tesuque-new-mexico-2015
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2015.10.23_pueblo_of_tesuque_tribal_state_gaming_compact.pdf
+    sha256: 3439e00ba25f6ae59498c8d8d21bd5d986661ae7664897afe18131d5f5607cb7
+    pages: 46
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution.
+    summary: After written notice and a twenty-day period, the complaining party may issue a notice to cease the
+      disputed activity, and either side may invoke arbitration before a three-member panel with the American Arbitration
+      Association appointing a third arbitrator if needed; the arbitration result is final and binding and enforceable
+      in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: SECTION 14. Entire Agreement.
+    summary: The compact may be amended only by a written instrument signed by the Native nation and the State and
+      approved by the Secretary of the Interior, with approval of the Native nation, the Governor and the State
+      Legislature; the excerpt sets no reopening trigger or time limit.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2007-replacement
+    change: changed
+    summary: The later compact provides a two-year limit for invoking the procedure (counted from discovery, with
+      a two-year window for the State to raise pre-compact payment breaches), allows the parties to agree to one
+      arbitrator, and if the responding party does not select its arbitrator within 30 days has the case proceed
+      before the first-selected arbitrator; it also sets 30 days from the responding party's selection for the third
+      arbitrator. The earlier text already had 30-day deadlines and a three-member panel; the 20-day step and binding
+      results are the same.
+    locator_before: Section 7(A)(3)
+    locator_after: Section 7(A), 7(A)(3)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2007-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories
