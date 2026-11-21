@@ -1,112 +1,401 @@
 {
-  "$description": "Design tokens for the Model Tribal ADR Code website. Format: Design Tokens Community Group draft (https://www.designtokens.org/tr/drafts/format/). The build turns these into CSS custom properties named --<group>-<token>, for example --color-paper. Names are spelled out (docs/style-guide.md, section 7). See site/DESIGN.md for how each token is used.",
+  "$description": "Design tokens for the Model Tribal ADR Code website. Format: Design Tokens Community Group draft (https://www.designtokens.org/tr/drafts/format/). The build turns these into CSS custom properties named --<group>-<token>, for example --color-paper. Names are spelled out (docs/style-guide.md, section 7). See site/DESIGN.md for how each token is used. Palette of Nov. 21, 2026: deep teal and burnt orange, chosen by the lead author; it carries no tribal symbolism and is a placeholder until commissioned Native art can inform it.",
   "color": {
     "$type": "color",
     "light": {
-      "paper": { "$value": "#FFFFFF", "$description": "Page background." },
-      "surface": { "$value": "#F2F4F6", "$description": "Panels, rails, table headers, footer." },
-      "surface-raised": { "$value": "#FFFFFF", "$description": "Hover cards and popovers, with a shadow." },
-      "ink": { "$value": "#1A2027", "$description": "Body text. 16.4:1 on paper." },
-      "ink-muted": { "$value": "#4B5662", "$description": "Secondary text. 7.5:1 on paper, 6.8:1 on surface." },
-      "line": { "$value": "#D3D9DF", "$description": "Decorative dividers only. Never the only boundary of a control." },
-      "control-border": { "$value": "#66717D", "$description": "Borders of inputs and quiet buttons. 5.0:1 on paper (non-text minimum is 3:1)." },
-      "link": { "$value": "#1F4FA3", "$description": "Links, always underlined. 7.8:1 on paper." },
-      "link-visited": { "$value": "#5A3D8C", "$description": "Visited links. 8.5:1 on paper." },
-      "action": { "$value": "#1F4FA3", "$description": "Primary button fill." },
-      "action-text": { "$value": "#FFFFFF", "$description": "Text on a primary button. 7.8:1 on action." },
-      "track-alternative-dispute-resolution": { "$value": "#1F4FA3", "$description": "Section numbers and labels in the ADR track. Always paired with the words." },
-      "track-peacemaking": { "$value": "#1C6B47", "$description": "Section numbers, labels and the top rule in the peacemaking track. 6.5:1 on paper." },
-      "placeholder-background": { "$value": "#FFF0B3", "$description": "Fill-in template placeholders such as [Name of Nation]. Ink on it is 14.4:1." },
-      "placeholder-rule": { "$value": "#8A6A00", "$description": "Underline of a placeholder. 4.4:1 on its fill, 5.1:1 on paper." },
-      "focus": { "$value": "#FFD34D", "$description": "Keyboard focus fill." },
-      "focus-ring": { "$value": "#1A2027", "$description": "Keyboard focus outline, 3 px." },
-      "danger": { "$value": "#B42318", "$description": "Errors only. 6.6:1 on paper." },
-      "notice-background": { "$value": "#EAF1FB", "$description": "Status notices: draft, model text, offline as of a date." },
-      "art-reserved": { "$value": "#E6EAEE", "$description": "Empty space reserved for commissioned art." },
-      "map-class-0": { "$value": "#F2F4F6", "$description": "Map: no nation recorded. Tiles also print their count." },
-      "map-class-1": { "$value": "#D6E2F5", "$description": "Map: 1 to 4 nations." },
-      "map-class-2": { "$value": "#9DB8E6", "$description": "Map: 5 to 19 nations." },
-      "map-class-3": { "$value": "#3F69B4", "$description": "Map: 20 to 99 nations. White text 5.4:1." },
-      "map-class-4": { "$value": "#1F4FA3", "$description": "Map: 100 or more nations. White text 7.8:1." }
+      "paper": {
+        "$value": "#FFFAF5",
+        "$description": "Page background."
+      },
+      "surface": {
+        "$value": "#F6EEE6",
+        "$description": "Panels, rails, table headers, footer."
+      },
+      "surface-raised": {
+        "$value": "#FFFFFF",
+        "$description": "Hover cards and popovers, with a shadow."
+      },
+      "ink": {
+        "$value": "#22201E",
+        "$description": "Body text. 15.7:1 on paper."
+      },
+      "ink-muted": {
+        "$value": "#5A524C",
+        "$description": "Secondary text. 7.4:1 on paper."
+      },
+      "line": {
+        "$value": "#E4D8CC",
+        "$description": "Decorative dividers only."
+      },
+      "control-border": {
+        "$value": "#7A6F66",
+        "$description": "Borders of inputs and quiet buttons (non-text minimum 3:1). 4.7:1 on paper."
+      },
+      "link": {
+        "$value": "#1A6D76",
+        "$description": "Links, always underlined. 5.8:1 on paper."
+      },
+      "link-visited": {
+        "$value": "#6B3F7A",
+        "$description": "Visited links. 7.7:1 on paper."
+      },
+      "action": {
+        "$value": "#B4461A",
+        "$description": "Primary button fill."
+      },
+      "action-text": {
+        "$value": "#FFFFFF",
+        "$description": "Text on a primary button. 5.5:1 on action."
+      },
+      "band": {
+        "$value": "#0F4C54",
+        "$description": "Masthead band behind the site name and main menu."
+      },
+      "band-text": {
+        "$value": "#FFFFFF",
+        "$description": "Text on the band. 9.6:1 on band."
+      },
+      "track-alternative-dispute-resolution": {
+        "$value": "#B4461A",
+        "$description": "Section numbers and labels in the ADR track. Always paired with the words. 5.3:1 on paper."
+      },
+      "track-peacemaking": {
+        "$value": "#1A6D76",
+        "$description": "Section numbers, labels and the top rule in the peacemaking track. Always paired with the words. 5.8:1 on paper."
+      },
+      "placeholder-background": {
+        "$value": "#FFF0B3",
+        "$description": "Fill-in template placeholders such as [Name of Nation]. Ink on it 14.2:1."
+      },
+      "placeholder-rule": {
+        "$value": "#8A6A00",
+        "$description": "Underline of a placeholder."
+      },
+      "focus": {
+        "$value": "#FFD34D",
+        "$description": "Keyboard focus fill."
+      },
+      "focus-ring": {
+        "$value": "#22201E",
+        "$description": "Keyboard focus outline, 3 px."
+      },
+      "danger": {
+        "$value": "#9C1C10",
+        "$description": "Errors only. 7.8:1 on paper."
+      },
+      "notice-background": {
+        "$value": "#E6F3F4",
+        "$description": "Status notices."
+      },
+      "art-reserved": {
+        "$value": "#F1E6DC",
+        "$description": "Empty space reserved for commissioned art."
+      },
+      "map-class-0": {
+        "$value": "#F6EEE6",
+        "$description": "Map: no nation recorded. Tiles also print their count."
+      },
+      "map-class-1": {
+        "$value": "#D3ECEE",
+        "$description": "Map: 1 to 4 nations."
+      },
+      "map-class-2": {
+        "$value": "#4FA3AC",
+        "$description": "Map: 5 to 19 nations."
+      },
+      "map-class-3": {
+        "$value": "#1A6D76",
+        "$description": "Map: 20 to 99 nations."
+      },
+      "map-class-4": {
+        "$value": "#0F4C54",
+        "$description": "Map: 100 or more nations."
+      }
     },
     "dark": {
-      "paper": { "$value": "#121619" },
-      "surface": { "$value": "#1A2026" },
-      "surface-raised": { "$value": "#222A31" },
-      "ink": { "$value": "#E9EDF0", "$description": "15.5:1 on paper." },
-      "ink-muted": { "$value": "#A7B1BA", "$description": "8.4:1 on paper, 7.5:1 on surface." },
-      "line": { "$value": "#323A42" },
-      "control-border": { "$value": "#8A949E", "$description": "5.9:1 on paper." },
-      "link": { "$value": "#8CB4FF", "$description": "8.7:1 on paper." },
-      "link-visited": { "$value": "#C3A8F0", "$description": "8.8:1 on paper." },
-      "action": { "$value": "#8CB4FF" },
-      "action-text": { "$value": "#0D1A33" },
-      "track-alternative-dispute-resolution": { "$value": "#8CB4FF" },
-      "track-peacemaking": { "$value": "#6CCB9C", "$description": "9.2:1 on paper." },
-      "placeholder-background": { "$value": "#4A3B00", "$description": "Ink on it is 9.3:1." },
-      "placeholder-rule": { "$value": "#E0B83A" },
-      "focus": { "$value": "#FFD34D" },
-      "focus-ring": { "$value": "#FFD34D" },
-      "danger": { "$value": "#FF8A80", "$description": "8.0:1 on paper." },
-      "notice-background": { "$value": "#1B2A40" },
-      "art-reserved": { "$value": "#20272E" },
-      "map-class-0": { "$value": "#1A2026" },
-      "map-class-1": { "$value": "#22344F" },
-      "map-class-2": { "$value": "#2F5590" },
-      "map-class-3": { "$value": "#6D9BEA" },
-      "map-class-4": { "$value": "#B8D0FF" }
+      "paper": {
+        "$value": "#0F1E21",
+        "$description": "Page background."
+      },
+      "surface": {
+        "$value": "#16292D",
+        "$description": "Panels, rails, table headers, footer."
+      },
+      "surface-raised": {
+        "$value": "#1D3438",
+        "$description": "Hover cards and popovers, with a shadow."
+      },
+      "ink": {
+        "$value": "#F3EFEA",
+        "$description": "Body text. 14.9:1 on paper."
+      },
+      "ink-muted": {
+        "$value": "#B9C4C4",
+        "$description": "Secondary text. 9.6:1 on paper."
+      },
+      "line": {
+        "$value": "#2A4045",
+        "$description": "Decorative dividers only."
+      },
+      "control-border": {
+        "$value": "#7F9599",
+        "$description": "Borders of inputs and quiet buttons (non-text minimum 3:1). 5.4:1 on paper."
+      },
+      "link": {
+        "$value": "#6CCAD3",
+        "$description": "Links, always underlined. 9.0:1 on paper."
+      },
+      "link-visited": {
+        "$value": "#D7B3E6",
+        "$description": "Visited links. 9.3:1 on paper."
+      },
+      "action": {
+        "$value": "#FF9A66",
+        "$description": "Primary button fill."
+      },
+      "action-text": {
+        "$value": "#2A1206",
+        "$description": "Text on a primary button. 8.5:1 on action."
+      },
+      "band": {
+        "$value": "#0A3237",
+        "$description": "Masthead band behind the site name and main menu."
+      },
+      "band-text": {
+        "$value": "#F3EFEA",
+        "$description": "Text on the band. 12.0:1 on band."
+      },
+      "track-alternative-dispute-resolution": {
+        "$value": "#FF9A66",
+        "$description": "Section numbers and labels in the ADR track. Always paired with the words. 8.2:1 on paper."
+      },
+      "track-peacemaking": {
+        "$value": "#6CCAD3",
+        "$description": "Section numbers, labels and the top rule in the peacemaking track. Always paired with the words. 9.0:1 on paper."
+      },
+      "placeholder-background": {
+        "$value": "#4A3B00",
+        "$description": "Fill-in template placeholders such as [Name of Nation]. Ink on it 9.6:1."
+      },
+      "placeholder-rule": {
+        "$value": "#E0B83A",
+        "$description": "Underline of a placeholder."
+      },
+      "focus": {
+        "$value": "#FFD34D",
+        "$description": "Keyboard focus fill."
+      },
+      "focus-ring": {
+        "$value": "#FFD34D",
+        "$description": "Keyboard focus outline, 3 px."
+      },
+      "danger": {
+        "$value": "#FF8A80",
+        "$description": "Errors only. 7.5:1 on paper."
+      },
+      "notice-background": {
+        "$value": "#173B40",
+        "$description": "Status notices."
+      },
+      "art-reserved": {
+        "$value": "#1A2F33",
+        "$description": "Empty space reserved for commissioned art."
+      },
+      "map-class-0": {
+        "$value": "#16292D",
+        "$description": "Map: no nation recorded. Tiles also print their count."
+      },
+      "map-class-1": {
+        "$value": "#1F4A50",
+        "$description": "Map: 1 to 4 nations."
+      },
+      "map-class-2": {
+        "$value": "#2C6F77",
+        "$description": "Map: 5 to 19 nations."
+      },
+      "map-class-3": {
+        "$value": "#6CCAD3",
+        "$description": "Map: 20 to 99 nations."
+      },
+      "map-class-4": {
+        "$value": "#B5E8EC",
+        "$description": "Map: 100 or more nations."
+      }
     }
   },
   "font": {
     "family": {
       "$type": "fontFamily",
       "reading": {
-        "$value": ["Atkinson Hyperlegible Next", "Noto Sans", "Noto Sans Cherokee", "Noto Sans Osage", "Noto Sans Canadian Aboriginal", "system-ui", "sans-serif"],
+        "$value": [
+          "Atkinson Hyperlegible Next",
+          "Noto Sans",
+          "Noto Sans Cherokee",
+          "Noto Sans Osage",
+          "Noto Sans Canadian Aboriginal",
+          "system-ui",
+          "sans-serif"
+        ],
         "$description": "One family for everything. Noto fonts load only for the characters Atkinson Hyperlegible Next lacks, through unicode-range."
       }
     },
     "weight": {
       "$type": "fontWeight",
-      "regular": { "$value": 400 },
-      "semibold": { "$value": 600 },
-      "bold": { "$value": 700 }
+      "regular": {
+        "$value": 400
+      },
+      "semibold": {
+        "$value": 600
+      },
+      "bold": {
+        "$value": 700
+      }
     },
     "size": {
       "$type": "dimension",
-      "small": { "$value": { "value": 1, "unit": "rem" }, "$description": "16 px. Notes, captions, hints." },
-      "body": { "$value": { "value": 1.125, "unit": "rem" }, "$description": "18 px. Reading text." },
-      "lead": { "$value": { "value": 1.4, "unit": "rem" } },
-      "heading-3": { "$value": { "value": 1.4, "unit": "rem" } },
-      "heading-2": { "$value": { "value": 1.75, "unit": "rem" } },
-      "heading-1": { "$value": { "value": 2.2, "unit": "rem" } },
-      "display": { "$value": { "value": 2.75, "unit": "rem" }, "$description": "Section numbers and page titles." }
+      "small": {
+        "$value": {
+          "value": 1,
+          "unit": "rem"
+        },
+        "$description": "16 px. Notes, captions, hints."
+      },
+      "body": {
+        "$value": {
+          "value": 1.125,
+          "unit": "rem"
+        },
+        "$description": "18 px. Reading text."
+      },
+      "lead": {
+        "$value": {
+          "value": 1.4,
+          "unit": "rem"
+        }
+      },
+      "heading-3": {
+        "$value": {
+          "value": 1.4,
+          "unit": "rem"
+        }
+      },
+      "heading-2": {
+        "$value": {
+          "value": 1.75,
+          "unit": "rem"
+        }
+      },
+      "heading-1": {
+        "$value": {
+          "value": 2.2,
+          "unit": "rem"
+        }
+      },
+      "display": {
+        "$value": {
+          "value": 2.75,
+          "unit": "rem"
+        },
+        "$description": "Section numbers and page titles."
+      }
     },
     "line-height": {
       "$type": "number",
-      "reading": { "$value": 1.6 },
-      "heading": { "$value": 1.25 }
+      "reading": {
+        "$value": 1.6
+      },
+      "heading": {
+        "$value": 1.25
+      }
     }
   },
   "space": {
     "$type": "dimension",
-    "1": { "$value": { "value": 0.25, "unit": "rem" } },
-    "2": { "$value": { "value": 0.5, "unit": "rem" } },
-    "3": { "$value": { "value": 0.75, "unit": "rem" } },
-    "4": { "$value": { "value": 1, "unit": "rem" } },
-    "5": { "$value": { "value": 1.5, "unit": "rem" } },
-    "6": { "$value": { "value": 2, "unit": "rem" } },
-    "7": { "$value": { "value": 3, "unit": "rem" } },
-    "8": { "$value": { "value": 4.5, "unit": "rem" } }
+    "1": {
+      "$value": {
+        "value": 0.25,
+        "unit": "rem"
+      }
+    },
+    "2": {
+      "$value": {
+        "value": 0.5,
+        "unit": "rem"
+      }
+    },
+    "3": {
+      "$value": {
+        "value": 0.75,
+        "unit": "rem"
+      }
+    },
+    "4": {
+      "$value": {
+        "value": 1,
+        "unit": "rem"
+      }
+    },
+    "5": {
+      "$value": {
+        "value": 1.5,
+        "unit": "rem"
+      }
+    },
+    "6": {
+      "$value": {
+        "value": 2,
+        "unit": "rem"
+      }
+    },
+    "7": {
+      "$value": {
+        "value": 3,
+        "unit": "rem"
+      }
+    },
+    "8": {
+      "$value": {
+        "value": 4.5,
+        "unit": "rem"
+      }
+    }
   },
   "radius": {
     "$type": "dimension",
-    "control": { "$value": { "value": 6, "unit": "px" } },
-    "panel": { "$value": { "value": 10, "unit": "px" } }
+    "control": {
+      "$value": {
+        "value": 6,
+        "unit": "px"
+      }
+    },
+    "panel": {
+      "$value": {
+        "value": 10,
+        "unit": "px"
+      }
+    }
   },
   "layout": {
     "$type": "dimension",
-    "measure": { "$value": { "value": 68, "unit": "ch" }, "$description": "Longest reading line." },
-    "page-width": { "$value": { "value": 1240, "unit": "px" } },
-    "target-minimum": { "$value": { "value": 44, "unit": "px" }, "$description": "Smallest size of a button or menu item. WCAG 2.2 requires 24 px; the project uses 44 px." }
+    "measure": {
+      "$value": {
+        "value": 68,
+        "unit": "ch"
+      },
+      "$description": "Longest reading line."
+    },
+    "page-width": {
+      "$value": {
+        "value": 1240,
+        "unit": "px"
+      }
+    },
+    "target-minimum": {
+      "$value": {
+        "value": 44,
+        "unit": "px"
+      },
+      "$description": "Smallest size of a button or menu item. WCAG 2.2 requires 24 px; the project uses 44 px."
+    }
   }
 }
