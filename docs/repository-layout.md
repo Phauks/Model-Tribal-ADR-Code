@@ -25,7 +25,9 @@ and makes each edition reproducible
 ├── scripts/                 Checks run on every pull request            MIT
 │   └── examples/            One valid example per schema
 ├── research/
-│   └── sessions/YYYY/       One dated file per research session         CC BY
+│   ├── sessions/YYYY/       One dated file per research session         CC BY
+│   ├── raw/YYYY-MM-DD/      Cited facts before they become records      CC BY
+│   └── analyses/            Dated analyses of the records               CC BY
 ├── docs/
 │   ├── charter.md           Project charter
 │   ├── data-model.md        Record types and fields
@@ -33,6 +35,7 @@ and makes each edition reproducible
 │   ├── terminology.md       How terms are chosen, defined and linked
 │   ├── style-guide.md       Tone and writing standards
 │   ├── requests.md          Correction, restriction, removal and contribution flow
+│   ├── roadmap.md           Order of work and review gates toward drafting
 │   ├── repository-layout.md This file
 │   └── decisions/           Numbered decision records
 ├── LICENSES/                Full license texts

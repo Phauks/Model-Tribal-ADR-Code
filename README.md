@@ -24,6 +24,7 @@ first; no reading content or website code exists yet.
 | [Terminology](docs/terminology.md) | Which words the project uses for Native nations and people, and how terms are linked |
 | [Style guide](docs/style-guide.md) | Tone, writing, drafting and file standards |
 | [Requests from nations](docs/requests.md) | How a nation corrects, restricts, removes or contributes material |
+| [Roadmap](docs/roadmap.md) | The order of work and the review gates before any provision is drafted |
 | [Decision records](docs/decisions/) | Why key choices were made |
 | [Contributing](CONTRIBUTING.md) | How to propose changes |
 | [Licenses](LICENSE.md) | Which license covers which material |
