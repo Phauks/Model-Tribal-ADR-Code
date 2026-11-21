@@ -1,6 +1,7 @@
 /**
  * Reading settings (site/DESIGN.md, section 6, "Settings"): text size, font,
- * text spacing, text alignment, theme and contrast. They are kept on the reader's device in
+ * text spacing, text alignment, theme, contrast, how notes and source links
+ * show, and glossary cards. They are kept on the reader's device in
  * local storage, so they work offline and are never sent to the server.
  *
  * Each setting other than the theme becomes a data attribute on the root
@@ -24,6 +25,9 @@ export const fonts = ['atkinson-hyperlegible-next', 'serif', 'opendyslexic', 'de
 export const textSpacings = ['standard', 'wide'] as const;
 export const textAlignments = ['left', 'justified'] as const;
 export const contrasts = ['standard', 'more'] as const;
+export const noteDisplays = ['end', 'inline'] as const;
+export const sourceLinkChoices = ['both', 'original', 'archived'] as const;
+export const glossaryCardChoices = ['on', 'off'] as const;
 export const themes = ['device', 'light', 'dark'] as const;
 
 export type TextSize = (typeof textSizes)[number];
@@ -31,6 +35,9 @@ export type Font = (typeof fonts)[number];
 export type TextSpacing = (typeof textSpacings)[number];
 export type TextAlignment = (typeof textAlignments)[number];
 export type Contrast = (typeof contrasts)[number];
+export type NoteDisplay = (typeof noteDisplays)[number];
+export type SourceLinks = (typeof sourceLinkChoices)[number];
+export type GlossaryCards = (typeof glossaryCardChoices)[number];
 export type Theme = (typeof themes)[number];
 
 /** The settings stored under settingsStorageKey. Each name is also the root element's dataset name. */
@@ -40,6 +47,9 @@ export interface ReadingSettings {
 	textSpacing: TextSpacing;
 	textAlignment: TextAlignment;
 	contrast: Contrast;
+	noteDisplay: NoteDisplay;
+	sourceLinks: SourceLinks;
+	glossaryCards: GlossaryCards;
 }
 
 export const settingNames = [
@@ -47,7 +57,10 @@ export const settingNames = [
 	'font',
 	'textSpacing',
 	'textAlignment',
-	'contrast'
+	'contrast',
+	'noteDisplay',
+	'sourceLinks',
+	'glossaryCards'
 ] as const;
 
 export const defaultSettings: ReadingSettings = {
@@ -55,7 +68,10 @@ export const defaultSettings: ReadingSettings = {
 	font: 'atkinson-hyperlegible-next',
 	textSpacing: 'standard',
 	textAlignment: 'left',
-	contrast: 'standard'
+	contrast: 'standard',
+	noteDisplay: 'end',
+	sourceLinks: 'both',
+	glossaryCards: 'on'
 };
 
 const allowedValues: { [Name in keyof ReadingSettings]: readonly ReadingSettings[Name][] } = {
@@ -63,7 +79,10 @@ const allowedValues: { [Name in keyof ReadingSettings]: readonly ReadingSettings
 	font: fonts,
 	textSpacing: textSpacings,
 	textAlignment: textAlignments,
-	contrast: contrasts
+	contrast: contrasts,
+	noteDisplay: noteDisplays,
+	sourceLinks: sourceLinkChoices,
+	glossaryCards: glossaryCardChoices
 };
 
 export interface Choice<Value extends string> {
@@ -113,6 +132,30 @@ export const themeChoices: Choice<Theme>[] = [
 export const contrastChoices: Choice<Contrast>[] = [
 	{ value: 'standard', label: 'Standard' },
 	{ value: 'more', label: 'More contrast', hint: 'Gray text as dark as the main text, and darker dividing lines' }
+];
+
+export const noteDisplayChoices: Choice<NoteDisplay>[] = [
+	{ value: 'end', label: 'Go to the notes at the end of the page' },
+	{ value: 'inline', label: 'Show the note under the paragraph' }
+];
+
+export const sourceLinkOptions: Choice<SourceLinks>[] = [
+	{ value: 'both', label: 'Original page and archived copy' },
+	{ value: 'original', label: 'Original page only' },
+	{
+		value: 'archived',
+		label: 'Archived copy, where there is one',
+		hint: 'An archived copy still opens when the original page has moved or gone'
+	}
+];
+
+export const glossaryCardOptions: Choice<GlossaryCards>[] = [
+	{
+		value: 'on',
+		label: 'Show a short definition',
+		hint: 'When you point at a defined term, or move to it with the keyboard'
+	},
+	{ value: 'off', label: 'Off', hint: 'Defined terms are still links to their glossary entries' }
 ];
 
 function isAllowed<Name extends keyof ReadingSettings>(

@@ -1,3 +1,7 @@
+<script lang="ts">
+	import OfflineSaving from '#lib/components/OfflineSaving.svelte';
+</script>
+
 <svelte:head>
 	<title>Read offline · Model Tribal ADR Code</title>
 </svelte:head>
@@ -23,8 +27,10 @@
 		device yet. Connect to the internet and open it once to save it. The request form and co-author
 		sign-in are never saved, because they need a connection to send anything.
 	</p>
+	<h2>Save more now</h2>
+	<OfflineSaving headingLevel={3} />
 	<p class="muted">
-		Choosing which parts to save will be added in a later version. The PDF and the ebook will be on
+		The same choices are under Settings, in "Saved for offline." The PDF and the ebook will be on
 		the <a href="/downloads">Downloads</a> page.
 	</p>
 </div>

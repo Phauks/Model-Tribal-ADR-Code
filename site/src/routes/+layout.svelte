@@ -30,6 +30,9 @@
 	import SiteHeader from '#lib/components/SiteHeader.svelte';
 	import SiteFooter from '#lib/components/SiteFooter.svelte';
 	import OfflineNotice from '#lib/components/OfflineNotice.svelte';
+	import UpdateNotice from '#lib/components/UpdateNotice.svelte';
+	import InlineNotes from '#lib/components/InlineNotes.svelte';
+	import GlossaryCards from '#lib/components/GlossaryCards.svelte';
 	import type { LayoutProps } from './$types';
 
 	let { children, data }: LayoutProps = $props();
@@ -47,7 +50,10 @@
 
 <SiteHeader contentVersion={data.versions.content} />
 <OfflineNotice contentVersion={data.versions.content} />
+<UpdateNotice versions={data.versions} />
 <main id="main-content" class="page-width" tabindex="-1">
 	{@render children()}
 </main>
 <SiteFooter versions={data.versions} />
+<InlineNotes />
+<GlossaryCards />

@@ -15,7 +15,16 @@
 					var theme = localStorage.getItem('theme');
 					if (theme === 'light' || theme === 'dark') root.dataset.theme = theme;
 					var settings = JSON.parse(localStorage.getItem('reading-settings') || '{}');
-					['textSize', 'font', 'textSpacing', 'textAlignment', 'contrast'].forEach(function (name) {
+					[
+						'textSize',
+						'font',
+						'textSpacing',
+						'textAlignment',
+						'contrast',
+						'noteDisplay',
+						'sourceLinks',
+						'glossaryCards'
+					].forEach(function (name) {
 						var value = settings && settings[name];
 						if (typeof value === 'string' && /^[a-z-]+$/.test(value)) root.dataset[name] = value;
 					});
