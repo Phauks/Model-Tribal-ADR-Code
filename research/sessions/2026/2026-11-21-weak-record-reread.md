@@ -66,6 +66,15 @@ Tribe.
 - Tulalip Tribes of Washington: the Alternative Court Code amendment cites
   Resolution 2024-473 (new source) with its date (Oct. 4, 2024).
 
+## Superseded source
+
+The source record `web-search-tulalip-alternative-court-2026-11-21`, a search
+result whose link had returned 404, is removed. It shared its address with the
+new Resolution 2024-473 record, which now carries the Tulalip provision.
+
+Each changed fact now states `verification: read-in-full`, as decision record
+0014 requires.
+
 ## Removed
 
 The Yakutat Tlingit Tribe training record cited a Native American Rights Fund
