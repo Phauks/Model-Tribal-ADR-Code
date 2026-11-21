@@ -18,6 +18,26 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Scotts Valley Band of Pomo Indians of California
+population:
+- count: 195
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3300 (Scotts Valley Band of Pomo Indians of California  alone or in
+    any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Scotts Valley Band of Pomo Indians of California ' (race
+    code 6139) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 263
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Scotts Valley Band of Pomo Indians', PDF page 8, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.scottsvalley-nsn.gov/

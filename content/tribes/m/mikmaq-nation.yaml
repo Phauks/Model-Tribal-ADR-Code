@@ -18,6 +18,17 @@ recognition:
   confidence: high
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: Legislative recognition (as stated in the Office of Federal Acknowledgment list)
+  petition_number: '103'
+  petition_stage: Letter of Intent to Petition 11/29/1985; Legislative Recognition 11/26/1991
+  since: '1991-11-26'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '1991-11-26'
+  locator: 'Petitioner #103'
+  note: 'Petitioner name: Aroostook Band of Micmacs; the roster lists Mi''kmaq Nation as previously listed
+    as Aroostook Band of Micmacs.'
 states:
 - state: ME
   presence: government-office
@@ -25,6 +36,61 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Mi'kmaq Nation (previously listed as Aroostook Band of Micmacs)
+- state: ME
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0115
+  note: 'Census area with land in this state: Aroostook Band of Micmac Trust Land (code 0115). Area matched
+    to the nation by name.'
+census_areas:
+- geographic_identifier: '0115'
+  name: Aroostook Band of Micmac Trust Land
+  area_type: Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0115
+  note: Matched by name. Census area keeps the former name Aroostook Band of Micmacs; the 2026 list gives
+    Mi'kmaq Nation (previously listed as Aroostook Band of Micmacs). Census class code D3.
+population:
+- count: 1500
+  kind: citizens
+  source: mikmaq-nation-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"The majority of the 1,500 + members of the Mi''kmaq Nation live within Aroostook County"; undated
+    statement on the official site; as_of is the access date'
+- count: 202
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0115, field POP100
+  note: 'Census area: Aroostook Band of Micmac Trust Land (code 0115). Everyone counted as living in the
+    area in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    Census area keeps the former name Aroostook Band of Micmacs; the 2026 list gives Mi''kmaq Nation (previously
+    listed as Aroostook Band of Micmacs).'
+- count: 285
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2852 (Aroostook Band of Micmacs alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Aroostook Band of Micmacs' (race code 5960) alone or
+    in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 1684
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Mi'Kmaq Nation (Aroostook)', PDF page 4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://micmac-nsn.gov/
@@ -61,6 +127,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Mi'kmaq Nation (previously listed as Aroostook Band of Micmacs)
+languages:
+- name: Micmac
+  language_tag: mic
+  source: mikmaq-nation-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"The Micmac language is an Algonquin one"'
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office

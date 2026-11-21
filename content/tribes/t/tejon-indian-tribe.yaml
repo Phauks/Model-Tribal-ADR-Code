@@ -2,6 +2,12 @@ id: tejon-indian-tribe
 entity_type: native-nation
 names:
   official: Tejon Indian Tribe
+  alternate:
+  - name: Kitanemuk
+    source: tejon-indian-tribe-who-we-are-today
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"they were known as the Kitanemuk people"'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -11,6 +17,17 @@ recognition:
   confidence: high
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  legal_basis: Status confirmed by the Assistant Secretary - Indian Affairs (as stated in the Office of
+    Federal Acknowledgment list)
+  petition_number: '230'
+  petition_stage: Letter of Intent to Petition 10/27/2000; Status confirmed by Assistant Secretary - Indian
+    Affairs 12/30/2011
+  since: '2011-12-30'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2011-12-30'
+  locator: 'Petitioner #230'
 states:
 - state: CA
   presence: government-office
@@ -18,6 +35,40 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Tejon Indian Tribe
+population:
+- count: 1250
+  kind: citizens
+  source: tejon-indian-tribe-who-we-are-today
+  confidence: high
+  as_of: 2022-01
+  note: '"As of January 2022, there are 1,250 members enrolled"; home page gives 1,205 for the same date
+    (conflict)'
+- count: 911
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3357 (Tejon Indian Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Tejon Indian Tribe' (race code 6434) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 1250
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Tejon Indian Tribe', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 211
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 89, row T49300 'Tejon Indian Tribe'
+  note: Column 4, population information from other sources (2010), as given by Indian Affairs; not described
+    further in the report. Report published 2014-01-16; row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.tejonindiantribe.com/
@@ -54,6 +105,12 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Tejon Indian Tribe
+languages:
+- name: Kitanemuk (Kitanemuic)
+  source: tejon-indian-tribe-who-we-are-today
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"the reclamation of the Kitanemuk language. The language itself is called Kitanemuic"'
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

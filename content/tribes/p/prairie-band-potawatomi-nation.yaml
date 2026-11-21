@@ -18,6 +18,68 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Prairie Band Potawatomi Nation
+- state: KS
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2980
+  note: 'Census area with land in this state: Prairie Band of Potawatomi Nation Reservation (code 2980).
+    Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2980'
+  name: Prairie Band of Potawatomi Nation Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2980
+  note: Matched by name. Census class code D2.
+population:
+- count: 4570
+  kind: citizens
+  source: prairie-band-potawatomi-nation-pbpn-member-services-the-official-hub-of
+  confidence: medium
+  as_of: '2019-07-26'
+  note: 'news article dated 7/26/2019: "The Nation’s membership currently stands at approximately 4,570
+    living members, with about 800 residing on the common land"'
+- count: 1529
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2980, field POP100
+  note: 'Census area: Prairie Band of Potawatomi Nation Reservation (code 2980). Everyone counted as living
+    in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s
+    citizens.'
+- count: 2957
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3230 (Prairie Band Potawatomi Nation alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Prairie Band Potawatomi Nation' (race code 6159) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 4841
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Prairie Band Potawatomi Nation', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 733
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 86, row T39200 'Prairie Band of Potawatomi Nation'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
 contacts:
 - kind: website
   value: https://www.pbpindiantribe.com/
@@ -54,6 +116,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Prairie Band Potawatomi Nation
+languages:
+- name: Potawatomi
+  language_tag: pot
+  source: prairie-band-potawatomi-nation-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Language and Culture Department revitalization of the Potawatomi language
 federal_administration:
   bureau_of_indian_affairs_region: Southern Plains
   bureau_of_indian_affairs_agency: Horton Agency

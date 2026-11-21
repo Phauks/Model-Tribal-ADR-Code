@@ -11,6 +11,31 @@ recognition:
   confidence: high
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: Public Law 115-121, title V
+  petition_number: '161'
+  petition_stage: Letter of Intent to Petition 07/11/1995
+  since: '2018-01-29'
+  source: public-law-115-121
+  confidence: high
+  as_of: '2018-01-29'
+  locator: 'Petitioner #161'
+  note: 'Also see source(s): ofa-list-of-petitioners-by-state-2008.'
+- type: state
+  state: VA
+  legal_basis: Listed by the Secretary of the Commonwealth among the 11 Virginia Indian tribes the Commonwealth
+    recognizes (also federally recognized)
+  source: virginia-report-status-of-indian-tribes-2025
+  confidence: high
+  as_of: '2025-12-30'
+- type: state
+  state: VA
+  legal_basis: Virginia General Assembly joint resolution, 1989
+  source: virginiaplaces-state-recognition
+  confidence: medium
+  as_of: '1989'
+  note: Year from a secondary source; resolution number not confirmed from the legislature's own record
+    except where stated.
 states:
 - state: VA
   presence: government-office
@@ -18,6 +43,32 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Monacan Indian Nation
+population:
+- count: 3200
+  kind: citizens
+  source: monacan-indian-nation-about-us-html
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"With over 3,200 citizens"; history page says "over 2,000 people" (older text); undated statement
+    on the official site; as_of is the access date'
+- count: 2034
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3135 (Monacan Indian Nation alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Monacan Indian Nation' (race code 5986) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+- count: 2801
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Monacan Indian Nation', PDF page 4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.monacannation.gov/

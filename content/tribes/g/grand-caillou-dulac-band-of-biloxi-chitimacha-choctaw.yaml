@@ -1,0 +1,73 @@
+id: grand-caillou-dulac-band-of-biloxi-chitimacha-choctaw
+entity_type: native-nation
+names:
+  official: Grand Caillou/Dulac Band of Biloxi-Chitimacha-Choctaw
+  alternate:
+  - name: Grand Caillou/Dulac Band
+    source: louisiana-revised-statutes-46-2305
+    confidence: high
+    as_of: '2018'
+    locator: R.S. 46:2305(B)
+  - name: Grand Caillou/Dulac Band of Biloxi Chitimacha Choctaw
+    source: louisiana-governor-federally-and-state-recognized-tribes
+    confidence: high
+    as_of: '2026'
+  official_source: louisiana-governor-federally-and-state-recognized-tribes
+recognition:
+- type: state
+  state: LA
+  legal_basis: Listed as a state recognized tribe by the Louisiana Governor's Office of Indian Affairs
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+  note: Louisiana recognized tribes by legislative concurrent resolutions; the individual resolutions
+    were not retrieved.
+- type: state
+  state: LA
+  legal_basis: Louisiana Revised Statutes 46:2305(B) (Acts 2018, No. 102), Native American Commission
+    membership, listed as 'Grand Caillou/Dulac Band'
+  source: louisiana-revised-statutes-46-2305
+  confidence: high
+  as_of: '2018'
+  locator: R.S. 46:2305(B)
+  note: The statute gives the tribe a seat on the Native American Commission; it does not itself confer
+    recognition.
+- type: state
+  state: LA
+  legal_basis: Louisiana Senate Concurrent Resolution No. 105 (2004 Regular Session); earlier Senate Concurrent
+    Resolution No. 124 (1990) as members of the United Houma Nation
+  source: louisiana-senate-concurrent-resolution-105-2004
+  confidence: medium
+  as_of: '2004'
+  note: Enrolled text only 'reacknowledges the Indian ancestry' of members for education and health benefit
+    purposes, narrower than the introduced 'formally recognizes' wording. A 2022 resolution to reaffirm
+    recognition (Senate Concurrent Resolution No. 54) stayed pending in committee.
+states:
+- state: LA
+  presence: other
+  source: louisiana-governor-indian-affairs
+  confidence: high
+  as_of: '2026'
+  locator: Regional map
+  note: Located in Terrebonne Parish per the Office of Indian Affairs regional map.
+contacts:
+- kind: mailing-address
+  value: 5414 Shrimpers Row, Houma, LA 70363
+  label: Contact address listed by the Louisiana Governor's Office of Indian Affairs
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: medium
+  as_of: '2026'
+  note: Listed under the leader's name; recorded as the tribe's contact address.
+- kind: website
+  value: http://www.gcdbcc.org
+  label: Official website
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

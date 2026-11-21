@@ -1,0 +1,77 @@
+id: choctaw-apache-tribe-of-ebarb
+entity_type: native-nation
+names:
+  official: Choctaw-Apache Tribe of Ebarb
+  alternate:
+  - name: Choctaw-Apache Community of Ebarb, Inc.
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    note: Name used for this group in the cited source; matched to this record by name and state.
+  official_source: ofa-list-of-petitioners-by-state-2013
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '37'
+  petition_stage: Letter of Intent to Petition 07/02/1978
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  locator: 'Petitioner #37'
+  note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
+    Additional Resources page says groups on the 2013 list may no longer be active petitioners under the
+    current regulations.
+- type: state
+  state: LA
+  legal_basis: Listed as a state recognized tribe by the Louisiana Governor's Office of Indian Affairs
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+  note: Louisiana recognized tribes by legislative concurrent resolutions; the individual resolutions
+    were not retrieved.
+- type: state
+  state: LA
+  legal_basis: Louisiana Revised Statutes 46:2305(B) (Acts 2018, No. 102), Native American Commission
+    membership, listed as 'Choctaw-Apache Tribe of Ebarb'
+  source: louisiana-revised-statutes-46-2305
+  confidence: high
+  as_of: '2018'
+  locator: R.S. 46:2305(B)
+  note: The statute gives the tribe a seat on the Native American Commission; it does not itself confer
+    recognition.
+states:
+- state: LA
+  presence: other
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+- state: LA
+  presence: other
+  source: louisiana-governor-indian-affairs
+  confidence: high
+  as_of: '2026'
+  locator: Regional map
+  note: Located in Sabine Parish per the Office of Indian Affairs regional map.
+contacts:
+- kind: mailing-address
+  value: 35 Lonnie Road, Zwolle, LA 71486
+  label: Contact address listed by the Louisiana Governor's Office of Indian Affairs
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: medium
+  as_of: '2026'
+  note: Listed under the leader's name; recorded as the tribe's contact address.
+- kind: website
+  value: https://choctawapachetribeebarb.org/
+  label: Official website
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

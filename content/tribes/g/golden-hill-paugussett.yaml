@@ -1,0 +1,73 @@
+id: golden-hill-paugussett
+entity_type: native-nation
+names:
+  official: Golden Hill Paugussett
+  former:
+  - name: Golden Hill
+    source: connecticut-olr-report-2026-r-0029
+    confidence: medium
+    as_of: '2026'
+    note: Added 1974 as the Golden Hill tribe; renamed Golden Hill Paugussett in 1981 per the report.
+  alternate:
+  - name: Golden Hill Paugussett Tribal Nation
+    source: connecticut-deep-tribal-affairs
+    confidence: medium
+    as_of: '2026'
+    note: Name used in the title of the linked state education page.
+  - name: Golden Hill Paugussett Tribe
+    source: federal-register-04-13871
+    confidence: medium
+    as_of: '2004-06-21'
+    note: Name used for this group in the cited source; matched to this record by name and state.
+  official_source: federal-register-04-13871
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 61 FR 50501 (1996-09-26); 69 FR 34388 (2004-06-21)
+  petition_number: '81'
+  petition_stage: Denied (Petitions Resolved page); Letter of Intent to Petition 04/13/1982; Declined
+    Acknowledgment effective 3/18/2005 69 FR 34388
+  source: federal-register-04-13871
+  confidence: high
+  as_of: '2004-06-21'
+  locator: 'Petitioner #81'
+  note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
+    Letter of Intent to Petition 04/13/1982; Declined Acknowledgment effective 3/18/2005 69 FR 34388.
+    Other Federal Register history: Proposed Finding Against Federal Acknowledgment of the Golden Hill
+    Paugussett Tribe, 60 FR 30430 (1995-06-08); Proposed Finding Against Federal Acknowledgment of the
+    Golden Hill Paugussett Tribe, 68 FR 4507 (2003-01-29).'
+- type: state
+  state: CT
+  legal_basis: Connecticut General Statutes Section 47-59a(b) (Public Act 89-368), naming 'the Golden
+    Hill Paugussett'
+  source: connecticut-general-statutes-47-59a
+  confidence: high
+  as_of: '2020'
+  locator: Section 47-59a(b)
+- type: state
+  state: CT
+  legal_basis: Described as a State recognized tribe by the Connecticut Department of Energy and Environmental
+    Protection
+  source: connecticut-deep-tribal-affairs
+  confidence: high
+  as_of: '2026'
+states:
+- state: CT
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+- state: CT
+  presence: land
+  source: connecticut-deep-tribal-affairs
+  confidence: high
+  as_of: '2026'
+  note: Two reservations, in Trumbull and Colchester.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

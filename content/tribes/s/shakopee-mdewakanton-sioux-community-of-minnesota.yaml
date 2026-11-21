@@ -18,6 +18,77 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Shakopee Mdewakanton Sioux Community of Minnesota
+- state: MN
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3680
+  note: 'Census area with land in this state: Shakopee Mdewakanton Sioux Community and Off-Reservation
+    Trust Land (code 3680). Area matched to the nation by name.'
+- state: SD
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3680
+  note: 'Census area with land in this state: Shakopee Mdewakanton Sioux Community and Off-Reservation
+    Trust Land (code 3680). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '3680'
+  name: Shakopee Mdewakanton Sioux Community and Off-Reservation Trust Land
+  area_type: Community and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3680
+  note: Matched by name. Census class code D1.
+population:
+- count: 480
+  kind: citizens
+  source: shakopee-mdewakanton-sioux-community-of-tribaltraining-shakopee-mdewakanton-html
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"Citizenship: 480 enrolled members"; Minnesota Department of Transportation Tribal-State Relations
+    Training nation profile (state agency); undated'
+- count: 779
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3680, field POP100
+  note: 'Census area: Shakopee Mdewakanton Sioux Community and Off-Reservation Trust Land (code 3680).
+    Everyone counted as living in the area in the 2020 Census, of any race or tribal affiliation; this
+    is not a count of the nation''s citizens.'
+- count: 436
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3309 (Shakopee Mdewakanton Sioux Community of Minnesota alone or in
+    any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Shakopee Mdewakanton Sioux Community of Minnesota' (race
+    code 6309) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 391
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Shakopee Mdewakanton Sioux Community', PDF page 5, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 1293
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 87, row T45500 'Shakopee Mdewakanton Sioux Community of Minnesota'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
 contacts:
 - kind: website
   value: https://shakopeedakota.org/
@@ -54,6 +125,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Shakopee Mdewakanton Sioux Community of Minnesota
+languages:
+- name: Dakota
+  language_tag: dak
+  source: shakopee-mdewakanton-sioux-community-of-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"The Dakota language is critically endangered" (SMSC language program)'
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Midwest Regional Office

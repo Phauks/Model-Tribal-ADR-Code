@@ -1,0 +1,68 @@
+id: powhatan-renape-nation
+entity_type: native-nation
+names:
+  official: Powhatan Renape Nation
+  alternate:
+  - name: Powhatan Renape Indians
+    source: new-jersey-commission-american-indian-affairs-about
+    confidence: high
+    as_of: '2026'
+  official_source: ofa-list-of-petitioners-by-state-2013
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '171'
+  petition_stage: Letter of Intent to Petition 04/12/96
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  locator: 'Petitioner #171'
+  note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
+    Additional Resources page says groups on the 2013 list may no longer be active petitioners under the
+    current regulations.
+- type: state
+  state: NJ
+  legal_basis: New Jersey concurrent legislative resolution (1980), acknowledged in a 2019 settlement
+    agreement with the New Jersey Attorney General
+  source: new-jersey-powhatan-settlement-agreement
+  confidence: high
+  as_of: 2019-03
+  locator: Paragraph 1
+  note: 'Agreement: New Jersey has ''formally recognized the Tribe as an American Indian Tribe since 1980''
+    through processes including ''a concurrent legislative resolution, state statutes ... state official
+    communications''. Resolution number not retrieved.'
+- type: state
+  state: NJ
+  legal_basis: New Jersey Attorney General settlement announcement, 2019-03-18
+  source: new-jersey-attorney-general-2019-03-18
+  confidence: high
+  as_of: '2019-03-18'
+- type: state
+  state: NJ
+  legal_basis: New Jersey Statutes 52:16A-53 (L.1995, c.295; 2001, c.417), commission seats for the 'Powhatan
+    Renape Nation'
+  source: new-jersey-statutes-52-16a-53
+  confidence: high
+  as_of: '2001'
+  note: The statute provides seats on the Commission on American Indian Affairs; the Attorney General
+    calls these the three 'New Jersey tribes of American Indians' referenced in 1990s statutes.
+states:
+- state: NJ
+  presence: other
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+- state: NJ
+  presence: other
+  source: new-jersey-attorney-general-2019-03-18
+  confidence: high
+  as_of: '2019-03-18'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

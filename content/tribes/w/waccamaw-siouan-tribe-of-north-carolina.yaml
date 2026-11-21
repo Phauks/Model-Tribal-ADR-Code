@@ -1,0 +1,84 @@
+id: waccamaw-siouan-tribe-of-north-carolina
+entity_type: native-nation
+names:
+  official: Waccamaw Siouan Tribe of North Carolina
+  alternate:
+  - name: Waccamaw Siouan Tribe
+    source: north-carolina-tribal-communities-2026
+    confidence: high
+    as_of: '2026'
+  former:
+  - name: Waccamassus
+    source: north-carolina-tribal-communities-2026
+    confidence: medium
+    as_of: '2026'
+    note: Source says the Waccamaw were historically known as the Waccamassus.
+  official_source: north-carolina-general-statutes-chapter-71a
+recognition:
+- type: state
+  state: NC
+  legal_basis: North Carolina General Statutes Section 71A-4 (1977, 2nd Sess., c. 1193, s. 1)
+  since: '1971-07-20'
+  source: north-carolina-general-statutes-chapter-71a
+  confidence: high
+  as_of: '2026'
+  locator: Section 71A-4
+  note: Statute says the tribe is designated and officially recognized 'from and after' this date.
+- type: state
+  state: NC
+  legal_basis: Listed among North Carolina tribal communities by the North Carolina Commission of Indian
+    Affairs
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+states:
+- state: NC
+  presence: government-office
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+population:
+- count: 2000
+  kind: citizens
+  source: north-carolina-tribal-communities-2026
+  confidence: low
+  as_of: '2026'
+  note: 'Source: ''more than 2,000 citizens''; count is a floor.'
+contacts:
+- kind: mailing-address
+  value: PO Box 69 Bolton, NC 28423
+  label: Tribal mailing address
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: physical-address
+  value: 7239 Old Lake Rd Bolton, NC 28423
+  label: Tribal physical address
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: phone
+  value: 910-665-8778
+  label: Tribal office phone
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: email-general
+  value: siouan@aol.com
+  label: Tribal email
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: website
+  value: https://www.waccamaw-siouan.org
+  label: Official website
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

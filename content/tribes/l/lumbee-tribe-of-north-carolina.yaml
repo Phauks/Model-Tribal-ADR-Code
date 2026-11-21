@@ -15,6 +15,31 @@ recognition:
   locator: 91 Fed. Reg. 4104
   note: The notice states that the Act sets conditions on eligibility for federal services, including
     verification of the roll and a delay in services until the third fiscal year after enactment.
+- type: federal
+  legal_basis: Public Law 119-60, section 8803 (National Defense Authorization Act for Fiscal Year 2026),
+    as stated in 91 FR 4102
+  petition_number: '65'
+  petition_stage: Letter of Intent to Petition 01/07/1980; determined ineligible to petition (Solicitor
+    opinion of 10/23/1989)
+  since: '2025-12-18'
+  source: bia-recognized-entities-2026
+  confidence: medium
+  as_of: '2025-12-18'
+  locator: 'Petitioner #65'
+  note: 'Petitioner names on the 2013 list: Lumbee Regional Development Association Inc. / Lumbee Tribe
+    of Cheraw Indians; matched to the roster Lumbee Tribe of North Carolina by name. Also see source(s):
+    ofa-list-of-petitioners-by-state-2013.'
+- type: state
+  state: NC
+  legal_basis: North Carolina General Statutes Section 71A-3 (1953, c. 874; 1977, 2nd Sess., c. 1193;
+    2003-54; 2019-162)
+  since: '1953-04-20'
+  source: north-carolina-general-statutes-chapter-71a
+  confidence: high
+  as_of: '2026'
+  locator: Section 71A-3
+  note: State recognition predates federal recognition; the Commission page says the Lumbee became federally
+    recognized with the Lumbee Fairness Act in 2025.
 states:
 - state: NC
   presence: government-office
@@ -22,6 +47,54 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Lumbee Tribe of North Carolina
+- state: NC
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 9815
+  note: 'Census area with land in this state: Lumbee SDTSA (code 9815). Statistical area only (not a land
+    holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '9815'
+  name: Lumbee SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US9815
+  note: Matched by name. Lumbee State Designated Tribal Statistical Area, defined for the state-recognized
+    Lumbee before federal recognition; it is a statistical area, not land. Census class code D9.
+population:
+- count: 510711
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US9815, field POP100
+  note: 'Census area: Lumbee SDTSA (code 9815). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. The area is a Census
+    statistical area, not a land holding. Lumbee State Designated Tribal Statistical Area, defined for
+    the state-recognized Lumbee before federal recognition; it is a statistical area, not land.'
+- count: 79424
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3095 (Lumbee Tribe of North Carolina alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Lumbee Tribe of North Carolina' (race code 5922) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 62610
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Lumbee Tribe of North Carolina', PDF page 4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.lumbeetribe.com/

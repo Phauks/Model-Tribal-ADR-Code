@@ -2,6 +2,15 @@ id: penobscot-nation
 entity_type: native-nation
 names:
   official: Penobscot Nation
+  self_designation:
+  - name: Panawahpskek
+    language_tag: aaq
+    source: passamaquoddy-tribe-doe-sites-maine-gov-doe-files-inline-fil
+    confidence: medium
+    as_of: 2024-09
+    note: '"Panawahpskek (Penobscot) Nation"; "The name Penobscot comes from panawahpskek, ''the place
+      of the white rocks''"; Maine Department of Education, "Wabanaki Studies: About Wabanaki Nations",
+      updated September 2024 (state agency)'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -18,6 +27,52 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Penobscot Nation
+- state: ME
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2760
+  note: 'Census area with land in this state: Penobscot Reservation and Off-Reservation Trust Land (code
+    2760). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2760'
+  name: Penobscot Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2760
+  note: Matched by name. Census class code D1.
+population:
+- count: 379
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2760, field POP100
+  note: 'Census area: Penobscot Reservation and Off-Reservation Trust Land (code 2760). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 6103
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3199 (Penobscot Nation alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Penobscot Nation' (race code 6090) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 2367
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Penobscot Nation', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.penobscotnation.org/

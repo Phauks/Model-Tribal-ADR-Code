@@ -1,0 +1,86 @@
+id: sappony
+entity_type: native-nation
+names:
+  official: Sappony
+  former:
+  - name: Indians of Person County
+    source: north-carolina-general-statutes-chapter-71a
+    confidence: high
+    as_of: '2026'
+    locator: Section 71A-7
+  alternate:
+  - name: Sappony Indians of Person County
+    source: alabama-indian-affairs-commission-state-recognized-tribes-compilation
+    confidence: low
+    as_of: '2001'
+  official_source: north-carolina-general-statutes-chapter-71a
+recognition:
+- type: state
+  state: NC
+  legal_basis: North Carolina General Statutes Section 71A-7 (1997-147, s. 1; 2003-87, s. 1); Chapter
+    22 of the Public-Local Laws of 1913
+  since: '1913-02-03'
+  source: north-carolina-general-statutes-chapter-71a
+  confidence: high
+  as_of: '2026'
+  locator: Section 71A-7
+  note: Statute says the tribe is designated and officially recognized 'from and after' this date.
+- type: state
+  state: NC
+  legal_basis: Listed among North Carolina tribal communities by the North Carolina Commission of Indian
+    Affairs
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+states:
+- state: NC
+  presence: government-office
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- state: VA
+  presence: government-office
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+  note: Physical address in Virgilina, Virginia; source says part of the High Plains community is in Halifax
+    County, Virginia.
+population:
+- count: 850
+  kind: citizens
+  source: north-carolina-tribal-communities-2026
+  confidence: medium
+  as_of: '2026'
+  note: 'Source: ''the tribe''s 850 members''.'
+contacts:
+- kind: mailing-address
+  value: PO Box 3268 Roxboro, NC 27574
+  label: Tribal mailing address
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: physical-address
+  value: 4218 Virgilina Rd. Virgilina, VA 24598
+  label: Tribal physical address
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: phone
+  value: 434-585-3352
+  label: Tribal phone
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: website
+  value: https://www.sappony.org
+  label: Official website
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

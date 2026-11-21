@@ -18,6 +18,52 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas
+- state: KS
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1770
+  note: 'Census area with land in this state: Kickapoo (KS) Reservation (code 1770). Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '1770'
+  name: Kickapoo (KS) Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1770
+  note: Matched by name. Census class code D2.
+population:
+- count: 3849
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1770, field POP100
+  note: 'Census area: Kickapoo (KS) Reservation (code 1770). Everyone counted as living in the area in
+    the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 856
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3058 (Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas
+    alone or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Kickapoo Tribe of Indians of the Kickapoo Reservation
+    in Kansas' (race code 5888) alone or in combination with other tribes or races in the 2020 Census;
+    self-identification, not enrollment. Includes noise added for disclosure avoidance. Census label exact
+    name match.
+- count: 1654
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Kickapoo Tribe of Kansas', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.ktik-nsn.gov/

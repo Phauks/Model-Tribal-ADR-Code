@@ -21,6 +21,182 @@ states:
   as_of: '2026-11-20'
   locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake);
     Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
+- state: MN
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0335, 1125, 1355, 1940, 2270, 2285,
+    4595
+  note: 'Census area with land in this state: Bois Forte Reservation and Off-Reservation Trust Land (code
+    0335); Fond du Lac Reservation and Off-Reservation Trust Land (code 1125); Grand Portage Reservation
+    and Off-Reservation Trust Land (code 1355); Leech Lake Reservation and Off-Reservation Trust Land
+    (code 1940); Mille Lacs Reservation and Off-Reservation Trust Land (code 2270); Minnesota Chippewa
+    Trust Land (code 2285); White Earth Reservation and Off-Reservation Trust Land (code 4595). Area matched
+    to the nation by name.'
+- state: WI
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1125
+  note: 'Census area with land in this state: Fond du Lac Reservation and Off-Reservation Trust Land (code
+    1125). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '0335'
+  name: Bois Forte Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0335
+  note: 'Matched by name. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six
+    component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille Lacs,
+    White Earth). Census class code D1.'
+- geographic_identifier: '1125'
+  name: Fond du Lac Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1125
+  note: 'Matched by name. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six
+    component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille Lacs,
+    White Earth). Census class code D1.'
+- geographic_identifier: '1355'
+  name: Grand Portage Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1355
+  note: 'Matched by name. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six
+    component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille Lacs,
+    White Earth). Census class code D1.'
+- geographic_identifier: '1940'
+  name: Leech Lake Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1940
+  note: 'Matched by name. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six
+    component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille Lacs,
+    White Earth). Census class code D1.'
+- geographic_identifier: '2270'
+  name: Mille Lacs Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2270
+  note: 'Matched by name. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six
+    component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille Lacs,
+    White Earth). Census class code D1.'
+- geographic_identifier: '2285'
+  name: Minnesota Chippewa Trust Land
+  area_type: Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2285
+  note: 'Matched by name. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six
+    component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille Lacs,
+    White Earth). Census class code D3.'
+- geographic_identifier: '4595'
+  name: White Earth Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4595
+  note: 'Matched by name. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six
+    component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille Lacs,
+    White Earth). Census class code D1.'
+population:
+- count: 984
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0335, field POP100
+  note: 'Census area: Bois Forte Reservation and Off-Reservation Trust Land (code 0335). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names
+    six component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille
+    Lacs, White Earth).'
+- count: 4184
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1125, field POP100
+  note: 'Census area: Fond du Lac Reservation and Off-Reservation Trust Land (code 1125). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names
+    six component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille
+    Lacs, White Earth).'
+- count: 618
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1355, field POP100
+  note: 'Census area: Grand Portage Reservation and Off-Reservation Trust Land (code 1355). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names
+    six component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille
+    Lacs, White Earth).'
+- count: 11388
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1940, field POP100
+  note: 'Census area: Leech Lake Reservation and Off-Reservation Trust Land (code 1940). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names
+    six component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille
+    Lacs, White Earth).'
+- count: 4767
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2270, field POP100
+  note: 'Census area: Mille Lacs Reservation and Off-Reservation Trust Land (code 2270). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names
+    six component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille
+    Lacs, White Earth).'
+- count: 8
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2285, field POP100
+  note: 'Census area: Minnesota Chippewa Trust Land (code 2285). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six component reservations:
+    Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille Lacs, White Earth).'
+- count: 9726
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4595, field POP100
+  note: 'Census area: White Earth Reservation and Off-Reservation Trust Land (code 4595). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names
+    six component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille
+    Lacs, White Earth).'
 contacts:
 - kind: website
   value: https://mnchippewatribe.org/

@@ -1,0 +1,64 @@
+id: four-winds-cherokee-tribe
+entity_type: native-nation
+names:
+  official: Four-Winds Cherokee Tribe
+  alternate:
+  - name: Four Winds Cherokee
+    source: louisiana-governor-federally-and-state-recognized-tribes
+    confidence: high
+    as_of: '2026'
+  - name: Four Winds Tribe, Louisiana Cherokee Confederacy
+    source: louisiana-house-concurrent-resolution-137-four-winds
+    confidence: medium
+    as_of: '2026'
+  official_source: louisiana-governor-federally-and-state-recognized-tribes
+recognition:
+- type: state
+  state: LA
+  legal_basis: Listed as a state recognized tribe by the Louisiana Governor's Office of Indian Affairs
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+  note: Louisiana recognized tribes by legislative concurrent resolutions; the individual resolutions
+    were not retrieved.
+- type: state
+  state: LA
+  legal_basis: Louisiana Revised Statutes 46:2305(B) (Acts 2018, No. 102), Native American Commission
+    membership, listed as 'Four-Winds Cherokee Tribe'
+  source: louisiana-revised-statutes-46-2305
+  confidence: high
+  as_of: '2018'
+  locator: R.S. 46:2305(B)
+  note: The statute gives the tribe a seat on the Native American Commission; it does not itself confer
+    recognition.
+- type: state
+  state: LA
+  legal_basis: Louisiana House Concurrent Resolution No. 137 (duplicate of Senate Concurrent Resolution
+    No. 32)
+  source: louisiana-house-concurrent-resolution-137-four-winds
+  confidence: medium
+  as_of: '2026'
+  note: Titled 'To recognize the Four Winds Tribe, Louisiana Cherokee Confederacy, as an Indian tribe.'
+    Session year not visible in the retrieved page.
+states:
+- state: LA
+  presence: other
+  source: louisiana-governor-indian-affairs
+  confidence: high
+  as_of: '2026'
+  locator: Regional map
+  note: Located in Allen Parish per the Office of Indian Affairs regional map.
+contacts:
+- kind: mailing-address
+  value: 101 East 6th Ave., P.O. Box 836, Oakdale, LA 71463
+  label: Contact address listed by the Louisiana Governor's Office of Indian Affairs
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

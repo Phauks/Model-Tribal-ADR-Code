@@ -2,6 +2,15 @@ id: passamaquoddy-tribe
 entity_type: native-nation
 names:
   official: Passamaquoddy Tribe
+  self_designation:
+  - name: Peskotomuhkati
+    language_tag: pqm
+    source: passamaquoddy-tribe-doe-sites-maine-gov-doe-files-inline-fil
+    confidence: medium
+    as_of: 2024-09
+    note: '"Peskotomuhkati (Passamaquoddy) Tribe"; "The name Passamaquoddy comes from pestomuhkatiyik,
+      meaning ''people of the pollock-spearing place.''"; Maine Department of Education, "Wabanaki Studies:
+      About Wabanaki Nations", updated September 2024 (state agency)'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -18,6 +27,106 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Passamaquoddy Tribe
+- state: ME
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1575, 2695, 2850
+  note: 'Census area with land in this state: Indian Township Reservation (code 1575); Passamaquoddy Trust
+    Land (code 2695); Pleasant Point Reservation (code 2850). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1575'
+  name: Indian Township Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1575
+  note: Matched by name. Indian Township Reservation is one of the two Passamaquoddy reservations. Census
+    class code D2.
+- geographic_identifier: '2695'
+  name: Passamaquoddy Trust Land
+  area_type: Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2695
+  note: Matched by name. Census class code D3.
+- geographic_identifier: '2850'
+  name: Pleasant Point Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2850
+  note: Matched by name. Pleasant Point Reservation (Sipayik) is one of the two Passamaquoddy reservations.
+    Census class code D2.
+population:
+- count: 3369
+  kind: citizens
+  source: passamaquoddy-tribe-page-id-14
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"A total of 3,369 tribal members are listed on the tribal census rolls with 1,364 on the Indian
+    Township census and 2,005 listed on Pleasant Point census"; undated statement on the official site;
+    as_of is the access date'
+- count: 760
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1575, field POP100
+  note: 'Census area: Indian Township Reservation (code 1575). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    Indian Township Reservation is one of the two Passamaquoddy reservations.'
+- count: 4
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2695, field POP100
+  note: 'Census area: Passamaquoddy Trust Land (code 2695). Everyone counted as living in the area in
+    the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 692
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2850, field POP100
+  note: 'Census area: Pleasant Point Reservation (code 2850). Everyone counted as living in the area in
+    the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    Pleasant Point Reservation (Sipayik) is one of the two Passamaquoddy reservations.'
+- count: 5306
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3190 (Passamaquoddy Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Passamaquoddy Tribe' (race code 6081) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+contacts:
+- kind: website
+  value: https://www.passamaquoddy.com/
+  label: Passamaquoddy Tribe at Indian Township (Motahkomikuk)
+  source: passamaquoddy-tribe-doe-sites-maine-gov-doe-files-inline-fil
+  confidence: high
+  as_of: 2024-09
+  note: 'BIA directory lists no website; Maine Department of Education, "Wabanaki Studies: About Wabanaki
+    Nations", updated September 2024 (state agency) links this site; site confirmed reachable'
+- kind: website
+  value: https://wabanaki.com/
+  label: Passamaquoddy Tribe at Sipayik (Pleasant Point) tribal government
+  source: passamaquoddy-tribe-doe-sites-maine-gov-doe-files-inline-fil
+  confidence: high
+  as_of: 2024-09
+  note: 'BIA directory lists no website; Maine Department of Education, "Wabanaki Studies: About Wabanaki
+    Nations", updated September 2024 (state agency) links this site; page title "Sipayik Tribal Government"'
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office

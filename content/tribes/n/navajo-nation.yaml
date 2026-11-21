@@ -1,0 +1,140 @@
+id: navajo-nation
+entity_type: native-nation
+names:
+  official: Navajo Nation, Arizona, New Mexico, & Utah
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: AZ
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Navajo Nation, Arizona, New Mexico, & Utah
+- state: AZ
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2430
+  note: 'Census area with land in this state: Navajo Nation Reservation and Off-Reservation Trust Land
+    (code 2430). Area matched to the nation by name.'
+- state: NM
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2430
+  note: 'Census area with land in this state: Navajo Nation Reservation and Off-Reservation Trust Land
+    (code 2430). Area matched to the nation by name.'
+- state: UT
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2430
+  note: 'Census area with land in this state: Navajo Nation Reservation and Off-Reservation Trust Land
+    (code 2430). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2430'
+  name: Navajo Nation Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2430
+  note: Matched by name. Census class code D1.
+population:
+- count: 427414
+  kind: citizens
+  source: navajo-nation-arizona-new-mexico-and-uta-260608-navajo-nation-enrollment-continue
+  confidence: high
+  as_of: '2026-06-01'
+  note: 'Office of the President and Vice President news release dated 2026-06-08: "reaching 427,414 enrolled
+    citizens as of June 1, 2026"; page read through the WebFetch tool because the site blocked the plain
+    HTTP client'
+- count: 165158
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2430, field POP100
+  note: 'Census area: Navajo Nation Reservation and Off-Reservation Trust Land (code 2430). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 423412
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3152 (Navajo Nation alone or in any combination), GEOID 0100000US (United
+    States)
+  note: People in the United States who reported 'Navajo Nation' (race code 5999) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 277840
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Navajo Nation', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.navajo-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Navajo Nation, Arizona, New Mexico, & Utah
+- kind: physical-address
+  value: 100 Parkway, Window Rock, AZ 86515
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Navajo Nation, Arizona, New Mexico, & Utah
+- kind: mailing-address
+  value: P.O. Box 7440, Window Rock, AZ 86515
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Navajo Nation, Arizona, New Mexico, & Utah
+- kind: phone
+  value: (928) 871-7000
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Navajo Nation, Arizona, New Mexico, & Utah
+- kind: fax
+  value: (928) 871-4025
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Navajo Nation, Arizona, New Mexico, & Utah
+federal_administration:
+  bureau_of_indian_affairs_region: Navajo
+  bureau_of_indian_affairs_agency: Navajo Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Navajo Nation, Arizona, New Mexico, & Utah
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

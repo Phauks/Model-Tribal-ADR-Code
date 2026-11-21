@@ -18,6 +18,85 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Oglala Sioux Tribe
+- state: NE
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2810
+  note: 'Census area with land in this state: Pine Ridge Reservation (code 2810). Area matched to the
+    nation by name.'
+- state: SD
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2810
+  note: 'Census area with land in this state: Pine Ridge Reservation (code 2810). Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '2810'
+  name: Pine Ridge Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2810
+  note: Matched by name. Pine Ridge Reservation is the reservation of the Oglala Sioux Tribe; matched
+    by reservation name. Census class code D2.
+population:
+- count: 52000
+  kind: citizens
+  source: oglala-sioux-tribe-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"The Oglala Sioux Tribe maintains a membership of more than 52,000 enrolled tribal members";
+    oglala.gov appears to be an Oglala Sioux Tribe site (headquarters address 107 West Main Street, Pine
+    Ridge); undated statement on the official site; as_of is the access date'
+- count: 46855
+  kind: citizens
+  source: oglala-sioux-tribe-tribes-oglala-sioux-tribe-aspx
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"Estimated Tribal Enrollment: 46,855"; South Dakota Department of Tribal Relations tribe profile
+    (state agency); figure undated, page links a 2019 statistical profile'
+- count: 18850
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2810, field POP100
+  note: 'Census area: Pine Ridge Reservation (code 2810). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Pine
+    Ridge Reservation is the reservation of the Oglala Sioux Tribe; matched by reservation name.'
+- count: 35507
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3171 (Oglala Sioux Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Oglala Sioux Tribe' (race code 6304) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 51460
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Denver, row 'Oglala Sioux Tribe', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 32152
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 84, row T34800 'Oglala Sioux Tribe of the Pine Ridge Reservation'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
 contacts:
 - kind: website
   value: https://oglalalakotanation.net/

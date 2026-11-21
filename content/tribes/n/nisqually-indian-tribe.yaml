@@ -2,6 +2,13 @@ id: nisqually-indian-tribe
 entity_type: native-nation
 names:
   official: Nisqually Indian Tribe
+  self_designation:
+  - name: Squalli-absch
+    language_tag: lut
+    source: nisqually-indian-tribe-home
+    confidence: medium
+    as_of: '2026-11-21'
+    note: '"the Squalli-absch (ancestors of the modern Nisqually Indian Tribe)"'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -18,6 +25,58 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Nisqually Indian Tribe
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2460
+  note: 'Census area with land in this state: Nisqually Reservation (code 2460). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '2460'
+  name: Nisqually Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2460
+  note: Matched by name. Census class code D2.
+population:
+- count: 650
+  kind: citizens
+  source: nisqually-indian-tribe-heritage
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"Today, our tribe has more than 650 enrolled members"; same page cites a 2005 service-area population
+    of 5,719; undated statement on the official site; as_of is the access date'
+- count: 639
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2460, field POP100
+  note: 'Census area: Nisqually Reservation (code 2460). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 1288
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3157 (Nisqually Indian Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Nisqually Indian Tribe' (race code 6195) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+- count: 833
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Nisqually Indian Tribe', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.nisqually-nsn.gov/

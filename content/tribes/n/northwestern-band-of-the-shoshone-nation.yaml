@@ -2,6 +2,14 @@ id: northwestern-band-of-the-shoshone-nation
 entity_type: native-nation
 names:
   official: Northwestern Band of the Shoshone Nation
+  self_designation:
+  - name: Newe
+    language_tag: shh
+    source: northwestern-band-of-the-shoshone-nation-about
+    confidence: medium
+    as_of: '2026-11-21'
+    note: '"The Shoshone, Paiute, Bannock and Ute people are related, and call themselves Newe or Neme
+      (the People)"; general statement about Shoshone peoples'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -18,6 +26,58 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Northwestern Band of the Shoshone Nation
+- state: UT
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2505
+  note: 'Census area with land in this state: Northwestern Shoshone Reservation (code 2505). Area matched
+    to the nation by name.'
+census_areas:
+- geographic_identifier: '2505'
+  name: Northwestern Shoshone Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2505
+  note: Matched by name. Census class code D2.
+population:
+- count: 454
+  kind: citizens
+  source: northwestern-band-of-the-shoshone-nation-about-history
+  confidence: medium
+  as_of: 1995-01
+  note: '"In January 1995, tribal enrollment ... numbered 454 members"; old figure'
+- count: 0
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2505, field POP100
+  note: 'Census area: Northwestern Shoshone Reservation (code 2505). Everyone counted as living in the
+    area in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 306
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3166 (Northwestern Band of the Shoshone Nation alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Northwestern Band of the Shoshone Nation' (race code
+    6289) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 466
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Denver, row 'Northwestern Band of the Shoshone Nation', PDF page 5, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://nwbshoshone.com/

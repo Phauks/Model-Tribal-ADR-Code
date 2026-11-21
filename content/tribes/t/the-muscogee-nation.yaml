@@ -19,6 +19,87 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: The Muscogee (Creek) Nation
+- state: OK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5620, 5915
+  note: 'Census area with land in this state: Creek OTSA (code 5620); Creek/Seminole joint-use OTSA (code
+    5915). Statistical area only (not a land holding), so presence is recorded as other. Area matched
+    to the nation by name.'
+census_areas:
+- geographic_identifier: '5620'
+  name: Creek OTSA
+  area_type: Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5620
+  note: Matched by name. Census class code D6.
+- geographic_identifier: '5915'
+  name: Creek/Seminole joint-use OTSA
+  area_type: joint-use Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5915
+  note: 'Matched by name. Shared with: The Seminole Nation of Oklahoma. Census class code D0.'
+population:
+- count: 103926
+  kind: citizens
+  source: the-muscogee-nation-citizenship
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'site counter: "103926 MUSCOGEE CITIZENS"'
+- count: 813184
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5620, field POP100
+  note: 'Census area: Creek OTSA (code 5620). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. The area is a Census
+    statistical area, not a land holding.'
+- count: 1900
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5915, field POP100
+  note: 'Census area: Creek/Seminole joint-use OTSA (code 5915). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    The area is a Census statistical area, not a land holding. The area is shared with: The Seminole Nation
+    of Oklahoma; the same count applies to the whole area.'
+- count: 121581
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3145 (The Muscogee (Creek) Nation alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'The Muscogee (Creek) Nation' (race code 5735) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 72169
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Muscogee (Creek) Nation', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 68879
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 81, row T23200 'Muscogee (Creek) Nation'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
 contacts:
 - kind: website
   value: https://www.muscogeenation.com/
@@ -55,6 +136,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: The Muscogee (Creek) Nation
+languages:
+- name: Mvskoke
+  language_tag: mus
+  source: the-muscogee-nation-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Mvskoke Language Program
 federal_administration:
   bureau_of_indian_affairs_region: Eastern Oklahoma
   bureau_of_indian_affairs_agency: Okmulgee Agency

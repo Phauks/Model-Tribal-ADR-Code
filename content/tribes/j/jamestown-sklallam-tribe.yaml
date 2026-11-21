@@ -11,6 +11,16 @@ recognition:
   confidence: high
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: 25 C.F.R. Part 83; final determination 45 FR 81890
+  petition_number: '19'
+  petition_stage: Acknowledged through 25 CFR 83 (eff. 2/10/81)
+  since: '1981-02-10'
+  source: ofa-status-summary-2013
+  confidence: medium
+  as_of: '1981-02-10'
+  locator: 'Petitioner #19'
+  note: 'Petitioner name: Jamestown Clallam. Also see source(s): ofa-list-of-petitioners-by-state-2008.'
 states:
 - state: WA
   presence: government-office
@@ -18,6 +28,52 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Jamestown S'Klallam Tribe
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1655
+  note: 'Census area with land in this state: Jamestown S''Klallam Reservation and Off-Reservation Trust
+    Land (code 1655). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1655'
+  name: Jamestown S'Klallam Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1655
+  note: Matched by name. Census class code D1.
+population:
+- count: 36
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1655, field POP100
+  note: 'Census area: Jamestown S''Klallam Reservation and Off-Reservation Trust Land (code 1655). Everyone
+    counted as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a
+    count of the nation''s citizens.'
+- count: 902
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3040 (Jamestown S'Klallam Tribe alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Jamestown S'Klallam Tribe' (race code 6225) alone or
+    in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 577
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Jamestown S'Klallam Tribe', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://jamestowntribe.org/

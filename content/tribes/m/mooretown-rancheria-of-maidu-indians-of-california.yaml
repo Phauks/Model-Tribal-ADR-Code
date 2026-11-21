@@ -18,6 +18,53 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Mooretown Rancheria of Maidu Indians of California
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2340
+  note: 'Census area with land in this state: Mooretown Rancheria and Off-Reservation Trust Land (code
+    2340). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2340'
+  name: Mooretown Rancheria and Off-Reservation Trust Land
+  area_type: Rancheria and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2340
+  note: Matched by name. Census class code D1.
+population:
+- count: 197
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2340, field POP100
+  note: 'Census area: Mooretown Rancheria and Off-Reservation Trust Land (code 2340). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 308
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3139 (Mooretown Rancheria of Maidu Indians alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Mooretown Rancheria of Maidu Indians' (race code 5931)
+    alone or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 1132
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Mooretown Rancheria of Maidu Indians', PDF page 7, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.mooretownrancheria-nsn.gov/
@@ -54,6 +101,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Mooretown Rancheria of Maidu Indians of California
+languages:
+- name: Concow-Maidu
+  language_tag: mjd
+  source: mooretown-rancheria-of-maidu-indians-of-tribal-history-index-html
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'tribal members survey: desire to learn the Concow-Maidu language'
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

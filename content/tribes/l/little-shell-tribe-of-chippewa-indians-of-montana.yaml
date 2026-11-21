@@ -11,6 +11,18 @@ recognition:
   confidence: high
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: Public Law 116-92, section 2870; earlier 25 C.F.R. Part 83 final determination against
+    acknowledgment 74 FR 56861 (2009-11-03)
+  petition_number: '31'
+  petition_stage: Letter of Intent to Petition 04/28/1978; Declined Acknowledgment on 10/27/2009, 74 FR
+    56861; Before IBIA
+  since: '2019-12-20'
+  source: public-law-116-92-section-2870
+  confidence: high
+  as_of: '2019-12-20'
+  locator: 'Petitioner #31'
+  note: 'Also see source(s): federal-register-e9-26373.'
 states:
 - state: MT
   presence: government-office
@@ -18,6 +30,26 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Little Shell Tribe of Chippewa Indians of Montana
+population:
+- count: 3576
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3083 (Little Shell Tribe of Chippewa Indians of Montana alone or in
+    any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Little Shell Tribe of Chippewa Indians of Montana' (race
+    code 5662) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 5375
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Denver, row 'Little Shell Tribe of Chippewa Indians', PDF page 5, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://montanalittleshelltribe.org/

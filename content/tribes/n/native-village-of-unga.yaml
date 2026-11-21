@@ -36,6 +36,16 @@ population:
   locator: ALASKA row "Unga", Enrollment column
   note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
     tribe to the Department of Housing and Urban Development); row name matched to the roster by the researcher.
+- count: 151
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2743 (Native Village of Unga  alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Native Village of Unga ' (race code 5162) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
 contacts:
 - kind: physical-address
   value: 508 Red Cove Road, Sand Point, AK 99661

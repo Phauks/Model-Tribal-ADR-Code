@@ -20,6 +20,54 @@ states:
   as_of: '2026-11-20'
   locator: 'Capitan Grande Band of Diegueno Mission Indians of California: Barona Group of Capitan Grande
     Band of Mission Indians of the Barona Reservation, California'
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0155
+  note: 'Census area with land in this state: Barona Reservation and Off-Reservation Trust Land (code
+    0155). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '0155'
+  name: Barona Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0155
+  note: Matched by name. Census class code D1.
+population:
+- count: 756
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0155, field POP100
+  note: 'Census area: Barona Reservation and Off-Reservation Trust Land (code 0155). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 620
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2861 (Barona Group of Capitan Grande Band alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Barona Group of Capitan Grande Band' (race code 5772)
+    alone or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 507
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 75, row T02400 'Barona Group of Capitan Grande Band of Mission Indians
+    of the Barona Reservation'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
 contacts:
 - kind: website
   value: https://www.barona-nsn.gov/

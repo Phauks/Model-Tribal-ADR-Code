@@ -2,6 +2,15 @@ id: miccosukee-tribe-of-indians
 entity_type: native-nation
 names:
   official: Miccosukee Tribe of Indians
+  self_designation:
+  - name: Elaposhneechałe
+    language_tag: mik
+    source: miccosukee-tribe-of-indians-miccosukee-tribe-history
+    confidence: medium
+    as_of: '2026-11-21'
+    note: elders identify past Tribal Towns as inhabited by "the Elaposhneechałe, or 'speakers of our
+      language'"; used for ancestral towns, not necessarily the present tribe; page read through the WebFetch
+      tool because the site blocked the plain HTTP client
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -18,6 +27,60 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Miccosukee Tribe of Indians
+- state: FL
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2240
+  note: 'Census area with land in this state: Miccosukee Reservation and Off-Reservation Trust Land (code
+    2240). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2240'
+  name: Miccosukee Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2240
+  note: Matched by name. Census class code D1.
+population:
+- count: 535
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2240, field POP100
+  note: 'Census area: Miccosukee Reservation and Off-Reservation Trust Land (code 2240). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 448
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3121 (Miccosukee Tribe of Indians of Florida alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Miccosukee Tribe of Indians of Florida' (race code 5957)
+    alone or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 400
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Miccosukee Tribe', PDF page 4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 589
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 81, row T22200 'Miccosukee Tribe of Indians of Florida'
+  note: Column 4, population information from other sources (2010), as given by Indian Affairs; not described
+    further in the report. Report published 2014-01-16; row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://miccosukee.com/miccosukee-tribe-history/
@@ -54,6 +117,14 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Miccosukee Tribe of Indians
+languages:
+- name: Elaponke
+  language_tag: mik
+  source: miccosukee-tribe-of-indians-miccosukee-tribe-history
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"The Elaponke-speaking people comprise today’s Miccosukee Tribe of Indians of Florida"; page
+    read through the WebFetch tool because the site blocked the plain HTTP client'
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office

@@ -2,6 +2,13 @@ id: sac-and-fox-nation
 entity_type: native-nation
 names:
   official: Sac & Fox Nation, Oklahoma
+  self_designation:
+  - name: Thâkîwa
+    language_tag: sac
+    source: sac-and-fox-nation-talk-sauk-sauk-language-videos
+    confidence: low
+    as_of: '2026-11-21'
+    note: appears in language material "Thâkîwa Myeh – Sauk Street", where Thâkîwa renders "Sauk"
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -18,6 +25,68 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Sac & Fox Nation, Oklahoma
+- state: OK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5820
+  note: 'Census area with land in this state: Sac and Fox OTSA (code 5820). Statistical area only (not
+    a land holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '5820'
+  name: Sac and Fox OTSA
+  area_type: Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5820
+  note: Matched by name. Census class code D6.
+population:
+- count: 4000
+  kind: citizens
+  source: sac-and-fox-nation-about-council
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"currently has an enrollment of over 4,000 people"; undated statement on the official site; as_of
+    is the access date'
+- count: 58358
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5820, field POP100
+  note: 'Census area: Sac and Fox OTSA (code 5820). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. The area
+    is a Census statistical area, not a land holding.'
+- count: 1332
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3274 (Sac and Fox Nation, Oklahoma alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Sac and Fox Nation, Oklahoma' (race code 6231) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 3949
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Sac and Fox Nation, Oklahoma', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 3793
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 87, row T43100 'Sac & Fox Nation'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
 contacts:
 - kind: website
   value: https://www.sacandfoxnation-nsn.gov/
@@ -54,6 +123,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Sac & Fox Nation, Oklahoma
+languages:
+- name: Sauk
+  language_tag: sac
+  source: sac-and-fox-nation-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'site language program: "strengthen the Sauk language"'
 federal_administration:
   bureau_of_indian_affairs_region: Southern Plains
   bureau_of_indian_affairs_agency: Southern Plains Regional Office

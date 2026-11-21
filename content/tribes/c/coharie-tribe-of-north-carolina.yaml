@@ -1,0 +1,70 @@
+id: coharie-tribe-of-north-carolina
+entity_type: native-nation
+names:
+  official: Coharie Tribe of North Carolina
+  alternate:
+  - name: Coharie Indian Tribe
+    source: north-carolina-tribal-communities-2026
+    confidence: high
+    as_of: '2026'
+  - name: Coharie Tribe
+    source: north-carolina-tribal-communities-2026
+    confidence: high
+    as_of: '2026'
+  official_source: north-carolina-general-statutes-chapter-71a
+recognition:
+- type: state
+  state: NC
+  legal_basis: North Carolina General Statutes Section 71A-6 (1977, 2nd Sess., c. 1193, s. 1)
+  since: '1971-07-20'
+  source: north-carolina-general-statutes-chapter-71a
+  confidence: high
+  as_of: '2026'
+  locator: Section 71A-6
+  note: Statute says the tribe is designated and officially recognized 'from and after' this date.
+- type: state
+  state: NC
+  legal_basis: Listed among North Carolina tribal communities by the North Carolina Commission of Indian
+    Affairs
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+states:
+- state: NC
+  presence: government-office
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+population:
+- count: 2700
+  kind: citizens
+  source: north-carolina-tribal-communities-2026
+  confidence: medium
+  as_of: '2026'
+  note: 'Source: ''approximately 2,700 members''.'
+contacts:
+- kind: physical-address
+  value: 7531 N U.S. Hwy 421, Clinton, NC 28328
+  label: Tribal address
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: phone
+  value: 910-564-6909
+  label: Tribal office phone
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: website
+  value: https://www.coharietribe.org
+  label: Official website
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

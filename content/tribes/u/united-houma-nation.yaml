@@ -1,0 +1,77 @@
+id: united-houma-nation
+entity_type: native-nation
+names:
+  official: United Houma Nation
+  alternate:
+  - name: United Houma Nation, Inc.
+    source: ofa-petitions-in-process
+    confidence: medium
+    as_of: '2026-11-21'
+    note: Name used for this group in the cited source; matched to this record by name and state.
+  official_source: ofa-petitions-in-process
+recognition:
+- type: petitioning
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '056'
+  petition_stage: Awaiting Supplement
+  source: ofa-petitions-in-process
+  confidence: high
+  as_of: '2026-11-21'
+  locator: Current Petitions Status table, row 56; detail page https://www.bia.gov/as-ia/ofa/petitions-in-process/united-houma-nation-inc
+  note: 'Office of Federal Acknowledgment list entry #56 (2013 edition): United Houma Nation, Inc. - Letter
+    of Intent to Petition 07/10/1979.'
+- type: state
+  state: LA
+  legal_basis: Listed as a state recognized tribe by the Louisiana Governor's Office of Indian Affairs
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+  note: Louisiana recognized tribes by legislative concurrent resolutions; the individual resolutions
+    were not retrieved.
+- type: state
+  state: LA
+  legal_basis: Louisiana Revised Statutes 46:2305(B) (Acts 2018, No. 102), Native American Commission
+    membership, listed as 'United Houma Nation'
+  source: louisiana-revised-statutes-46-2305
+  confidence: high
+  as_of: '2018'
+  locator: R.S. 46:2305(B)
+  note: The statute gives the tribe a seat on the Native American Commission; it does not itself confer
+    recognition.
+states:
+- state: LA
+  presence: other
+  source: ofa-petitions-in-process
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+- state: LA
+  presence: other
+  source: louisiana-governor-indian-affairs
+  confidence: high
+  as_of: '2026'
+  locator: Regional map
+  note: Located in Terrebonne, Lafourche, Jefferson, St. Mary, Plaquemines, and St. Bernard Parishes per
+    the Office of Indian Affairs regional map.
+contacts:
+- kind: mailing-address
+  value: 400 Monarch Dr., Houma, LA 70364
+  label: Contact address listed by the Louisiana Governor's Office of Indian Affairs
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: medium
+  as_of: '2026'
+  note: Listed under the leader's name; recorded as the tribe's contact address.
+- kind: website
+  value: https://unitedhoumanation.org/
+  label: Official website
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

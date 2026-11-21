@@ -19,6 +19,57 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Native Village of Venetie Tribal Government (Arctic Village and Village of Venetie)
+- state: AK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 6140, 7725
+  note: 'Census area with land in this state: Arctic Village ANVSA (code 6140); Venetie ANVSA (code 7725).
+    Statistical area only (not a land holding), so presence is recorded as other. Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '6140'
+  name: Arctic Village ANVSA
+  area_type: Alaska Native Village Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US6140
+  note: Matched by name. The 2026 list entry is Native Village of Venetie Tribal Government (Arctic Village
+    and Village of Venetie). Census class code E1.
+- geographic_identifier: '7725'
+  name: Venetie ANVSA
+  area_type: Alaska Native Village Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US7725
+  note: Matched by name. The 2026 list entry is Native Village of Venetie Tribal Government (Arctic Village
+    and Village of Venetie). Census class code E1.
+population:
+- count: 151
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US6140, field POP100
+  note: 'Census area: Arctic Village ANVSA (code 6140). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. The
+    area is a Census statistical area, not a land holding. The 2026 list entry is Native Village of Venetie
+    Tribal Government (Arctic Village and Village of Venetie).'
+- count: 205
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US7725, field POP100
+  note: 'Census area: Venetie ANVSA (code 7725). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. The area is a Census
+    statistical area, not a land holding. The 2026 list entry is Native Village of Venetie Tribal Government
+    (Arctic Village and Village of Venetie).'
 contacts:
 - kind: physical-address
   value: 110 Woodyard Road, Venetie, AK 99781

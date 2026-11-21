@@ -43,6 +43,16 @@ population:
   locator: '"Who We Are": "representing over 38,000 Tlingit and Haida citizens worldwide"'
   note: Stated as "over 38,000"; the page meta description says "over 37,000". The FY 2025 Indian Housing
     Block Grant table lists 25,949.
+- count: 3003
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2590 (Central Council of the Tlingit and Haida Indian Tribes alone
+    or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Central Council of the Tlingit and Haida Indian Tribes'
+    (race code 5321) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
 contacts:
 - kind: website
   value: https://tlingitandhaida.gov/

@@ -1,0 +1,40 @@
+id: piro-manso-tiwa-indian-tribe-of-the-pueblo-of-san-juan-guadalupe
+entity_type: native-nation
+names:
+  official: Piro/Manso/Tiwa Indian Tribe of the Pueblo of San Juan Guadalupe
+  alternate:
+  - name: Piro/Manso/Tiwa Indian Tribe of the Pueblo of San Juan de Guadalupe
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    locator: 'Petitioner #5'
+    note: Name as printed on the older Office of Federal Acknowledgment list.
+  official_source: ofa-petitions-in-process
+recognition:
+- type: petitioning
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '005'
+  petition_stage: Awaiting Petitioner Response to Phase I TA Review
+  source: ofa-petitions-in-process
+  confidence: high
+  as_of: '2026-11-21'
+  locator: Current Petitions Status table, row 5; detail page https://www.bia.gov/as-ia/ofa/petitions-in-process/piromansotiwa-indian-tribe-pueblo-san-juan-guadalupe
+  note: 'Federal Register history: Receipt of Documented Petitions for Federal Acknowledgment of American
+    Indian Tribes, 80 FR 74123 (2015-11-27). Office of Federal Acknowledgment list entry #5 (2013 edition):
+    Piro/Manso/Tiwa Indian Tribe of the Pueblo of San Juan de Guadalupe - Letter of Intent to Petition
+    01/18/1971.'
+states:
+- state: NM
+  presence: other
+  source: ofa-petitions-in-process
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

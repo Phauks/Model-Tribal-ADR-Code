@@ -9,6 +9,15 @@ names:
     as_of: '2026-01-30'
     locator: 91 Fed. Reg. 4105
     note: Listed in the notice as a previous name.
+  self_designation:
+  - name: Yuhaaviatam
+    language_tag: ser
+    source: yuhaaviatam-of-san-manuel-nation-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"We are the people of the pines" given as the meaning; Serrano tag applied by researcher (site
+      text read does not name the language); page read through the WebFetch tool because the site blocked
+      the plain HTTP client'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -26,6 +35,53 @@ states:
   as_of: '2026-11-20'
   locator: Yuhaaviatam of San Manuel Nation (previously listed as San Manuel Band of Mission Indians,
     California)
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3445
+  note: 'Census area with land in this state: San Manuel Reservation and Off-Reservation Trust Land (code
+    3445). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '3445'
+  name: San Manuel Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3445
+  note: Matched by name. Census class code D1.
+population:
+- count: 137
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3445, field POP100
+  note: 'Census area: San Manuel Reservation and Off-Reservation Trust Land (code 3445). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 165
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3287 (San Manuel Band of Mission Indians, California alone or in any
+    combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'San Manuel Band of Mission Indians, California' (race
+    code 6260) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 178
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Yuhaaviatam of San Manuel Nation (San Manuel)', PDF page 8,
+    Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.sanmanuel-nsn.gov/

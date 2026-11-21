@@ -2,6 +2,14 @@ id: santo-domingo-pueblo
 entity_type: native-nation
 names:
   official: Santo Domingo Pueblo
+  self_designation:
+  - name: Kewa
+    language_tag: kee
+    source: santo-domingo-pueblo-our-history
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"Santo Domingo Pueblo (also known as Kewa; Santo Domingo was the name given by the Spanish
+      in 1600)"'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -18,6 +26,69 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Santo Domingo Pueblo
+- state: NM
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3585
+  note: 'Census area with land in this state: Santo Domingo Pueblo (code 3585). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '3585'
+  name: Santo Domingo Pueblo
+  area_type: Pueblo
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3585
+  note: Matched by name. Census class code D2.
+population:
+- count: 5000
+  kind: citizens
+  source: santo-domingo-pueblo-home
+  confidence: low
+  as_of: '2026-11-21'
+  note: 'home page: "the 5,000 members"; history page: "more than 4,500 Santo Domingo members" (citing
+    a federal census); census page: "As of May 2025 our current enrolled Tribal count is 1000" (unclear;
+    conflicts)'
+- count: 3160
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3585, field POP100
+  note: 'Census area: Santo Domingo Pueblo (code 3585). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 4306
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3053 (Kewa Pueblo, New Mexico alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Kewa Pueblo, New Mexico' (race code 6180) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label matched by name variant.
+- count: 4492
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Santo Domingo Pueblo', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 3219
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 79, row T17300 'Kewa Pueblo'
+  note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
+    Census tribal statistical area (2010), used by Indian Affairs as the nation's population indicator;
+    includes people of any tribe; not enrollment. Report published 2014-01-16; row name matched to the
+    nation by name.
 contacts:
 - kind: website
   value: https://santodomingotribe.org/
@@ -54,6 +125,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Santo Domingo Pueblo
+languages:
+- name: Keres
+  language_tag: kee
+  source: santo-domingo-pueblo-kewa-keres-language-program
+  confidence: high
+  as_of: '2026-11-21'
+  note: Kewa Keres Language Program
 federal_administration:
   bureau_of_indian_affairs_region: Southwest
   bureau_of_indian_affairs_agency: Southern Pueblos Agency

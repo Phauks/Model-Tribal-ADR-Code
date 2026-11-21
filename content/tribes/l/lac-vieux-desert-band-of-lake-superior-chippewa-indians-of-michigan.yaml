@@ -11,6 +11,16 @@ recognition:
   confidence: high
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: Legislative clarification of recognition, P.L. 100-420
+  petition_number: '6'
+  petition_stage: Letter of Intent to Petition 06/01/1971; Legislative Clarification of Recognition 09/08/1988
+    P.L.100-420
+  since: '1988-09-08'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '1988-09-08'
+  locator: 'Petitioner #6'
 states:
 - state: MI
   presence: government-office
@@ -18,6 +28,62 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Lac Vieux Desert Band of Lake Superior Chippewa Indians of Michigan
+- state: MI
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1830
+  note: 'Census area with land in this state: Lac Vieux Desert Reservation (code 1830). Area matched to
+    the nation by name.'
+census_areas:
+- geographic_identifier: '1830'
+  name: Lac Vieux Desert Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1830
+  note: Matched by name. Census class code D2.
+population:
+- count: 221
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1830, field POP100
+  note: 'Census area: Lac Vieux Desert Reservation (code 1830). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 467
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3075 (Lac Vieux Desert Band of Lake Superior Chippewa Indians alone
+    or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Lac Vieux Desert Band of Lake Superior Chippewa Indians'
+    (race code 5659) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 672
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Lac Vieux Desert Band of Lake Superior Chippewa Indians',
+    PDF page 4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 426
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 80, row T19200 'Lac Vieux Desert Band of Lake Superior Chippewa
+    Indians'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
 contacts:
 - kind: website
   value: https://lvd-nsn.gov/

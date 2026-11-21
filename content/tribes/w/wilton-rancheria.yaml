@@ -18,6 +18,40 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Wilton Rancheria, California
+population:
+- count: 1000
+  kind: citizens
+  source: wilton-rancheria-departments-enrollment
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"our more than 1,000 current Citizens"; undated statement on the official site; as_of is the
+    access date'
+- count: 247
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3425 (Wilton Rancheria alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Wilton Rancheria' (race code 5976) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 1053
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Wilton Rancheria', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 600
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 90, row T55000 'Wilton Rancheria'
+  note: Column 4, population information from other sources (2010), as given by Indian Affairs; not described
+    further in the report. Report published 2014-01-16; row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://wiltonrancheria-nsn.gov/

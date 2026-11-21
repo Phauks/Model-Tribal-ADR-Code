@@ -2,6 +2,13 @@ id: port-gamble-sklallam-tribe
 entity_type: native-nation
 names:
   official: Port Gamble S'Klallam Tribe
+  self_designation:
+  - name: Nux Sklai Yem
+    language_tag: clm
+    source: port-gamble-sklallam-tribe-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"originally known as the Nux Sklai Yem—or the Strong People"'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -18,6 +25,59 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Port Gamble S'Klallam Tribe
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2910
+  note: 'Census area with land in this state: Port Gamble Reservation and Off-Reservation Trust Land (code
+    2910). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2910'
+  name: Port Gamble Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2910
+  note: Matched by name. Census class code D1.
+population:
+- count: 1400
+  kind: citizens
+  source: port-gamble-sklallam-tribe-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"Many of the Tribe’s members, who total about 1400"; undated statement on the official site;
+    as_of is the access date'
+- count: 750
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2910, field POP100
+  note: 'Census area: Port Gamble Reservation and Off-Reservation Trust Land (code 2910). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 1067
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3226 (Port Gamble S'Klallam Tribe alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Port Gamble S'Klallam Tribe' (race code 6227) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 1313
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Port Gamble S'Klallam Tribe', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://pgst.nsn.us/

@@ -11,6 +11,33 @@ recognition:
   confidence: high
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: 25 C.F.R. Part 83; final determination 80 FR 39144 (2015-07-08)
+  petition_number: '323'
+  petition_stage: Acknowledged (Petitions Resolved page); final determination 80 FR 39144
+  since: '2015-07-08'
+  source: federal-register-2015-16711
+  confidence: high
+  as_of: '2015-07-08'
+  locator: 'Petitioner #323'
+  note: 'The since date is the publication date of the final determination; the sources read do not give
+    its effective date. Also see source(s): ofa-petitions-resolved.'
+- type: state
+  state: VA
+  legal_basis: Listed by the Secretary of the Commonwealth among the 11 Virginia Indian tribes the Commonwealth
+    recognizes (also federally recognized)
+  source: virginia-report-status-of-indian-tribes-2025
+  confidence: high
+  as_of: '2025-12-30'
+- type: state
+  state: VA
+  legal_basis: Virginia House Joint Resolution 54 (1983) reaffirmed recognition; treaty relationship (1677
+    Treaty of Middle Plantation)
+  source: virginiaplaces-state-recognition
+  confidence: medium
+  as_of: '1983'
+  note: Year from a secondary source; resolution number not confirmed from the legislature's own record
+    except where stated.
 states:
 - state: VA
   presence: government-office
@@ -18,6 +45,54 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Pamunkey Indian Tribe
+- state: VA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 9260
+  note: 'Census area with land in this state: Pamunkey (state) Reservation (code 9260). Area matched to
+    the nation by name.'
+census_areas:
+- geographic_identifier: '9260'
+  name: Pamunkey (state) Reservation
+  area_type: (state) Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US9260
+  note: Matched by name. Census classifies this as a state reservation (Pamunkey (state) Reservation);
+    the Pamunkey Indian Tribe is federally recognized. Census class code D4.
+population:
+- count: 114
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US9260, field POP100
+  note: 'Census area: Pamunkey (state) Reservation (code 9260). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    Census classifies this as a state reservation (Pamunkey (state) Reservation); the Pamunkey Indian
+    Tribe is federally recognized.'
+- count: 2330
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3187 (Pamunkey Indian Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Pamunkey Indian Tribe' (race code 6078) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+- count: 398
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Pamunkey Indian Tribe', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.pamunkey.org/

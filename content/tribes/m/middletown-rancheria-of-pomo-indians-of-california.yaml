@@ -18,6 +18,59 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Middletown Rancheria of Pomo Indians of California
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2255
+  note: 'Census area with land in this state: Middletown Rancheria (code 2255). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '2255'
+  name: Middletown Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2255
+  note: Matched by name. Census class code D2.
+population:
+- count: 266
+  kind: citizens
+  source: middletown-rancheria-of-pomo-indians-of-history-culture
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"entire membership is two hundred sixty-six (266) Tribal Members" (149 adults, 117 minors); undated
+    statement on the official site; as_of is the access date'
+- count: 33
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2255, field POP100
+  note: 'Census area: Middletown Rancheria (code 2255). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 85
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3123 (Middletown Rancheria of Pomo Indians alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Middletown Rancheria of Pomo Indians' (race code 6133)
+    alone or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 265
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Middletown Rancheria of Pomo Indians', PDF page 7, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://middletownrancheria-nsn.gov/
@@ -54,6 +107,18 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Middletown Rancheria of Pomo Indians of California
+languages:
+- name: Lake Miwok
+  language_tag: lmw
+  source: middletown-rancheria-of-pomo-indians-of-history-culture
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"The native language of the Tribe is Lake Miwok and Pomo."'
+- name: Pomo
+  source: middletown-rancheria-of-pomo-indians-of-history-culture
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"The native language of the Tribe is Lake Miwok and Pomo." Site does not name which Pomo language'
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

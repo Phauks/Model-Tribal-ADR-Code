@@ -2,6 +2,20 @@ id: miami-tribe-of-oklahoma
 entity_type: native-nation
 names:
   official: Miami Tribe of Oklahoma
+  self_designation:
+  - name: Myaamia
+    language_tag: mia
+    source: miami-tribe-of-oklahoma-about-us
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"In the Miami language, the Miami Tribe''s name for itself is Myaamia, which means ''the Downstream
+      People''"; plural form myaamiaki also used'
+  - name: myaamiaki
+    language_tag: mia
+    source: miami-tribe-of-oklahoma-about-us
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'plural form used on the site: "the people known as myaamiaki"'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -18,6 +32,79 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Miami Tribe of Oklahoma
+- state: OK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5730, 5970
+  note: 'Census area with land in this state: Miami OTSA (code 5730); Miami/Peoria joint-use OTSA (code
+    5970). Statistical area only (not a land holding), so presence is recorded as other. Area matched
+    to the nation by name.'
+census_areas:
+- geographic_identifier: '5730'
+  name: Miami OTSA
+  area_type: Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5730
+  note: Matched by name. Census class code D6.
+- geographic_identifier: '5970'
+  name: Miami/Peoria joint-use OTSA
+  area_type: joint-use Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5970
+  note: 'Matched by name. Shared with: Peoria Tribe of Indians of Oklahoma. Census class code D0.'
+population:
+- count: 7008
+  kind: tribal-population-estimate
+  source: miami-tribe-of-oklahoma-about-us
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"The population of the Nation is approximately 7,008 people"; same page also says "over 7,000
+    citizens"; undated statement on the official site; as_of is the access date'
+- count: 257
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5730, field POP100
+  note: 'Census area: Miami OTSA (code 5730). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. The area is a Census
+    statistical area, not a land holding.'
+- count: 4029
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5970, field POP100
+  note: 'Census area: Miami/Peoria joint-use OTSA (code 5970). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    The area is a Census statistical area, not a land holding. The area is shared with: Peoria Tribe of
+    Indians of Oklahoma; the same count applies to the whole area.'
+- count: 1838
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3120 (Miami Tribe of Oklahoma alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Miami Tribe of Oklahoma' (race code 5955) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+- count: 7008
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Miami Tribe', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.miamination.com
@@ -54,6 +141,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Miami Tribe of Oklahoma
+languages:
+- name: Miami (myaamiaataweenki)
+  language_tag: mia
+  source: miami-tribe-of-oklahoma-about-us
+  confidence: high
+  as_of: '2026-11-21'
+  note: site uses "myaamiaataweenki 'the Miami language'"
 federal_administration:
   bureau_of_indian_affairs_region: Eastern Oklahoma
   bureau_of_indian_affairs_agency: Miami Agency

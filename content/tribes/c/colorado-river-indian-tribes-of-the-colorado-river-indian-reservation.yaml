@@ -12,18 +12,65 @@ recognition:
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
-- state: CA
-  source: bia-recognized-entities-2026
-  confidence: high
-  as_of: '2026-01-30'
-  locator: 91 Fed. Reg. 4103
-  note: State named in the listed name.
 - state: AZ
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
   as_of: '2026-11-20'
   locator: Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California
+- state: AZ
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0735
+  note: 'Census area with land in this state: Colorado River Indian Reservation (code 0735). Area matched
+    to the nation by name.'
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0735
+  note: 'Census area with land in this state: Colorado River Indian Reservation (code 0735). Area matched
+    to the nation by name.'
+census_areas:
+- geographic_identifier: '0735'
+  name: Colorado River Indian Reservation
+  area_type: Indian Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0735
+  note: Matched by name. Census class code D2.
+population:
+- count: 8431
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0735, field POP100
+  note: 'Census area: Colorado River Indian Reservation (code 0735). Everyone counted as living in the
+    area in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 3146
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2938 (Colorado River Indian Tribe alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Colorado River Indian Tribe' (race code 5712) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 4634
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Colorado River Indian Tribes', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.crit-nsn.gov/

@@ -1,0 +1,132 @@
+id: fort-mojave-indian-tribe
+entity_type: native-nation
+names:
+  official: Fort Mojave Indian Tribe of Arizona, California & Nevada
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
+- state: AZ
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1235
+  note: 'Census area with land in this state: Fort Mojave Reservation and Off-Reservation Trust Land (code
+    1235). Area matched to the nation by name.'
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1235
+  note: 'Census area with land in this state: Fort Mojave Reservation and Off-Reservation Trust Land (code
+    1235). Area matched to the nation by name.'
+- state: NV
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1235
+  note: 'Census area with land in this state: Fort Mojave Reservation and Off-Reservation Trust Land (code
+    1235). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1235'
+  name: Fort Mojave Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1235
+  note: Matched by name. Census class code D1.
+population:
+- count: 1697
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1235, field POP100
+  note: 'Census area: Fort Mojave Reservation and Off-Reservation Trust Land (code 1235). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 2350
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2999 (Fort Mojave Indian Tribe of Arizona, California, and Nevada alone
+    or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Fort Mojave Indian Tribe of Arizona, California, and
+    Nevada' (race code 6446) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 1436
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Fort Mojave Indian Tribe', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.fortmojaveindiantribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
+- kind: physical-address
+  value: 500 Merriman Avenue, Needles, CA 92363
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
+- kind: mailing-address
+  value: 500 Merriman Avenue, Needles, CA 92363
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
+- kind: phone
+  value: (760) 629-4591
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
+- kind: fax
+  value: (760) 629-2468
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
+federal_administration:
+  bureau_of_indian_affairs_region: Western
+  bureau_of_indian_affairs_agency: Colorado River Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

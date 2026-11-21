@@ -18,6 +18,58 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of California
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4330
+  note: 'Census area with land in this state: Tuolumne Rancheria (code 4330). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '4330'
+  name: Tuolumne Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4330
+  note: Matched by name. Census class code D2.
+population:
+- count: 400
+  kind: tribal-population-estimate
+  source: tuolumne-band-of-me-wuk-indians-of-the-t-cultural-history
+  confidence: low
+  as_of: '2026-11-21'
+  note: '"approximately 200 residents living on the Rancheria and an additional 200 non-resident members"
+    (sum 400); undated statement on the official site; as_of is the access date'
+- count: 154
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4330, field POP100
+  note: 'Census area: Tuolumne Rancheria (code 4330). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 270
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3384 (Tuolumne Band of Me-Wuk Indians of California alone or in any
+    combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Tuolumne Band of Me-Wuk Indians of California' (race
+    code 5975) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 363
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Tuolumne Band of Me-Wuk Indians', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://mewuk.com//
@@ -54,6 +106,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of California
+languages:
+- name: Me-Wuk
+  language_tag: csm
+  source: tuolumne-band-of-me-wuk-indians-of-the-t-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Me-Wuk language classes; tag (Central Sierra Miwok) applied by researcher
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

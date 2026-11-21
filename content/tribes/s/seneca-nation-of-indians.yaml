@@ -2,6 +2,13 @@ id: seneca-nation-of-indians
 entity_type: native-nation
 names:
   official: Seneca Nation of Indians
+  self_designation:
+  - name: O-non-dowa-gah
+    language_tag: see
+    source: seneca-nation-of-indians-culture-history
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"In the Seneca language we are known as O-non-dowa-gah ... or ''Great Hill People.''"'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -18,6 +25,98 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Seneca Nation of Indians
+- state: NY
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0080, 0540, 2535
+  note: 'Census area with land in this state: Allegany Reservation (code 0080); Cattaraugus Reservation
+    (code 0540); Oil Springs Reservation (code 2535). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: 0080
+  name: Allegany Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0080
+  note: Matched by name. Reservation of the Seneca Nation of Indians; matched by reservation name. Census
+    class code D2.
+- geographic_identifier: '0540'
+  name: Cattaraugus Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0540
+  note: Matched by name. Reservation of the Seneca Nation of Indians; matched by reservation name. Census
+    class code D2.
+- geographic_identifier: '2535'
+  name: Oil Springs Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2535
+  note: Matched by name. Reservation of the Seneca Nation of Indians; matched by reservation name. Census
+    class code D2.
+population:
+- count: 8500
+  kind: citizens
+  source: seneca-nation-of-indians-about
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"more than 8,500 Seneca citizens"; undated statement on the official site; as_of is the access
+    date'
+- count: 6664
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0080, field POP100
+  note: 'Census area: Allegany Reservation (code 0080). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Reservation
+    of the Seneca Nation of Indians; matched by reservation name.'
+- count: 2676
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0540, field POP100
+  note: 'Census area: Cattaraugus Reservation (code 0540). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Reservation
+    of the Seneca Nation of Indians; matched by reservation name.'
+- count: 20
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2535, field POP100
+  note: 'Census area: Oil Springs Reservation (code 2535). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Reservation
+    of the Seneca Nation of Indians; matched by reservation name.'
+- count: 20025
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3305 (Seneca Nation of Indians alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Seneca Nation of Indians' (race code 5870) alone or
+    in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 8124
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Seneca Nation of New York', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://sni.org/
@@ -54,6 +153,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Seneca Nation of Indians
+languages:
+- name: Seneca
+  language_tag: see
+  source: seneca-nation-of-indians-culture-history
+  confidence: high
+  as_of: '2026-11-21'
+  note: Seneca language programs
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office

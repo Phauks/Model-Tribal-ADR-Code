@@ -2,6 +2,12 @@ id: three-affiliated-tribes-of-the-fort-berthold-reservation
 entity_type: native-nation
 names:
   official: Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota
+  alternate:
+  - name: Mandan, Hidatsa, and Arikara Nation
+    source: three-affiliated-tribes-of-the-fort-bert-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"the Mandan, Hidatsa, and Arikara Nation, also known as the Three Affiliated Tribes"'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -18,6 +24,60 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota
+- state: ND
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1160
+  note: 'Census area with land in this state: Fort Berthold Reservation (code 1160). Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '1160'
+  name: Fort Berthold Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1160
+  note: Matched by name. Census class code D2.
+population:
+- count: 17825
+  kind: citizens
+  source: three-affiliated-tribes-of-the-fort-bert-home
+  confidence: high
+  as_of: '2026-08-20'
+  note: '"As of August 20, 2026, 17,825 members are currently enrolled in the Mandan, Hidatsa, and Arikara
+    Nation"'
+- count: 8350
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1160, field POP100
+  note: 'Census area: Fort Berthold Reservation (code 1160). Everyone counted as living in the area in
+    the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 8879
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3369 (Three Affiliated Tribes of the Ft. Berthold Reservation, North
+    Dakota alone or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Three Affiliated Tribes of the Ft. Berthold Reservation,
+    North Dakota' (race code 6339:6340) alone or in combination with other tribes or races in the 2020
+    Census; self-identification, not enrollment. Includes noise added for disclosure avoidance. Census
+    label matched by name variant.
+- count: 15013
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Denver, row 'Three Affiliated Tribes of Fort Berthold', PDF page 5, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.mhanation.com/
@@ -54,6 +114,25 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota
+languages:
+- name: Hidatsa
+  language_tag: hid
+  source: three-affiliated-tribes-of-the-fort-bert-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: MHA Nation language resources list Hidatsa, Arikara, and Mandan projects
+- name: Mandan
+  language_tag: mhq
+  source: three-affiliated-tribes-of-the-fort-bert-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: MHA Nation language resources list Hidatsa, Arikara, and Mandan projects
+- name: Arikara
+  language_tag: ari
+  source: three-affiliated-tribes-of-the-fort-bert-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: MHA Nation language resources list Hidatsa, Arikara, and Mandan projects
 federal_administration:
   bureau_of_indian_affairs_region: Great Plains
   bureau_of_indian_affairs_agency: Fort Berthold Agency

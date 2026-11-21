@@ -18,6 +18,69 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico
+- state: NM
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2205
+  note: 'Census area with land in this state: Mescalero Reservation (code 2205). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '2205'
+  name: Mescalero Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2205
+  note: Matched by name. Census class code D2.
+population:
+- count: 5230
+  kind: citizens
+  source: mescalero-apache-tribe-of-the-mescalero-handouts-iac-20071323-20item-205-20mat-2
+  confidence: high
+  as_of: '2023-07-13'
+  note: 'tribe''s 150th anniversary presentation to the New Mexico Legislature Indian Affairs Committee:
+    "Today, there are a total 5,230 members enrolled with the Mescalero Apache Tribe"'
+- count: 4022
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2205, field POP100
+  note: 'Census area: Mescalero Reservation (code 2205). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 11161
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3117 (Mescalero Apache Tribe of the Mescalero Reservation, New Mexico
+    alone or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Mescalero Apache Tribe of the Mescalero Reservation,
+    New Mexico' (race code 5519) alone or in combination with other tribes or races in the 2020 Census;
+    self-identification, not enrollment. Includes noise added for disclosure avoidance. Census label exact
+    name match.
+- count: 5231
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Mescalero Apache Tribe', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 7569
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: low
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 81, row T21900 'Mescalero Apache Tribe of the Mescalero Reservation'
+  note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
+    in the vicinity of the nation (2010), used by Indian Affairs as the nation's population indicator;
+    a broad proxy that includes people of any tribe; not enrollment. Report published 2014-01-16; row
+    name matched to the nation by name.
 contacts:
 - kind: website
   value: https://mescaleroapachetribe.com/

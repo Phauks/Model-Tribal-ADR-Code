@@ -1,0 +1,71 @@
+id: lower-muscogee-creek-tribe
+entity_type: native-nation
+names:
+  official: Lower Muscogee Creek Tribe
+  alternate:
+  - name: Lower Muskogee Creek Tribe - East of the Mississippi, Inc.
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    locator: 'Petitioner #8'
+    note: Name as printed on the Office of Federal Acknowledgment list by state.
+  - name: Lower Muskogee Creek Tribe
+    source: alabama-indian-affairs-commission-state-recognized-tribes-compilation
+    confidence: low
+    as_of: '2001'
+  - name: Lower Muscogee Creek Tribe -- East of the Mississippi
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    note: Name used for this group in the cited source; matched to this record by name and state.
+  official_source: ofa-list-of-petitioners-by-state-2013
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 46 FR 51652 (as printed in the Office of Federal
+    Acknowledgment list)
+  petition_number: '8'
+  petition_stage: Denied (Petitions Resolved page); Letter of Intent to Petition 02/02/1972; Declined
+    Acknowledgment effective 12/21/1981 46 FR 51652
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  locator: 'Petitioner #8'
+  note: Decision from the Petitions Resolved page; citation and date from the Office of Federal Acknowledgment
+    list.
+- type: state
+  state: GA
+  legal_basis: Official Code of Georgia Annotated Section 44-12-300(a) (Ga. L. 1993, p. 1813; amended
+    by House Bill 43, 2024)
+  source: georgia-code-44-12-300
+  confidence: high
+  as_of: '2022'
+  locator: Section 44-12-300(a)
+  note: '''The State of Georgia officially recognizes as legitimate American Indian tribes of Georgia
+    the following tribes''. Enacted 1993.'
+- type: state
+  state: GA
+  legal_basis: Official Code of Georgia Annotated Section 44-12-300(a) as amended by House Bill 43 (2024)
+  source: georgia-house-bill-43-2024
+  confidence: high
+  as_of: '2024'
+  locator: Section 2
+states:
+- state: GA
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+- state: GA
+  presence: other
+  source: georgia-code-44-12-300
+  confidence: high
+  as_of: '2022'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

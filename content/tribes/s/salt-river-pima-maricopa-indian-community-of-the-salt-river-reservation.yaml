@@ -2,6 +2,19 @@ id: salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation
 entity_type: native-nation
 names:
   official: Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona
+  self_designation:
+  - name: Onk Akimel O’odham
+    language_tag: ood
+    source: salt-river-pima-maricopa-indian-communit-about
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"Onk Akimel O’odham (Salt River People), also known as Pima"'
+  - name: Xalychidom Piipaash
+    language_tag: mrc
+    source: salt-river-pima-maricopa-indian-communit-about
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"Xalychidom Piipaash (Upriver People), and more commonly known as Maricopa"'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -18,6 +31,70 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona
+- state: AZ
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3340
+  note: 'Census area with land in this state: Salt River Reservation (code 3340). Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '3340'
+  name: Salt River Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3340
+  note: Matched by name. Census class code D2.
+population:
+- count: 10800
+  kind: citizens
+  source: salt-river-pima-maricopa-indian-communit-about
+  confidence: high
+  as_of: 2021-09
+  note: '"Population Over 10,800 enrolled members (as of September 2021)"; same page also says "more than
+    11,000 enrolled tribal members" (undated)'
+- count: 6321
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3340, field POP100
+  note: 'Census area: Salt River Reservation (code 3340). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 6334
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3281 (Salt River Pima-Maricopa Indian Community alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Salt River Pima-Maricopa Indian Community' (race code
+    6105) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 10543
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Salt River Pima-Maricopa Indian Community', PDF page 8, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 4692
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 87, row T43600 'Salt River Pima-Maricopa Indian Community of the
+    Salt River Reservation'
+  note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
+    Census tribal statistical area (2010), used by Indian Affairs as the nation's population indicator;
+    includes people of any tribe; not enrollment. Report published 2014-01-16; row name matched to the
+    nation by name.
 contacts:
 - kind: website
   value: https://srpmic-nsn.gov/
@@ -54,6 +131,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona
+languages:
+- name: O’odham Ñiokĭ (Pima)
+  language_tag: ood
+  source: salt-river-pima-maricopa-indian-communit-about-languages
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"Background and Status of the O’odham Ñiokĭ (Pima Language)"'
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Salt River Agency

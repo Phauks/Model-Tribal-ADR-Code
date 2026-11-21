@@ -1,0 +1,62 @@
+id: natchitoches-tribe-of-louisiana
+entity_type: native-nation
+names:
+  official: Natchitoches Tribe of Louisiana
+  official_source: louisiana-governor-federally-and-state-recognized-tribes
+recognition:
+- type: state
+  state: LA
+  legal_basis: Listed as a state recognized tribe by the Louisiana Governor's Office of Indian Affairs
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+  note: Louisiana recognized tribes by legislative concurrent resolutions; the individual resolutions
+    were not retrieved.
+- type: state
+  state: LA
+  legal_basis: Louisiana Revised Statutes 46:2305(B) (Acts 2018, No. 102), Native American Commission
+    membership, listed as 'Natchitoches Tribe of Louisiana'
+  source: louisiana-revised-statutes-46-2305
+  confidence: high
+  as_of: '2018'
+  locator: R.S. 46:2305(B)
+  note: The statute gives the tribe a seat on the Native American Commission; it does not itself confer
+    recognition.
+- type: state
+  state: LA
+  legal_basis: Louisiana House Resolution No. 227 (2017 Regular Session)
+  since: '2017-06-09'
+  source: louisiana-house-resolution-227-2017
+  confidence: medium
+  as_of: '2017-06-09'
+  note: '''the House of Representatives of the Legislature of Louisiana does hereby recognize the Natchitoches
+    Tribe of Louisiana as an Indian tribe of the state''. Single-chamber resolution; the concurrent resolution
+    did not pass the Senate.'
+states:
+- state: LA
+  presence: other
+  source: louisiana-governor-indian-affairs
+  confidence: high
+  as_of: '2026'
+  locator: Regional map
+  note: Located in Natchitoches Parish per the Office of Indian Affairs regional map.
+contacts:
+- kind: mailing-address
+  value: P.O. Box 85, Campti, LA 71411
+  label: Contact address listed by the Louisiana Governor's Office of Indian Affairs
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+- kind: website
+  value: http://www.natchitochestribeoflouisiana.info
+  label: Official website
+  source: louisiana-governor-federally-and-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

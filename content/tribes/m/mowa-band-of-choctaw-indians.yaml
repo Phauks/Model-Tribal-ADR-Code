@@ -1,0 +1,64 @@
+id: mowa-band-of-choctaw-indians
+entity_type: native-nation
+names:
+  official: MOWA Band of Choctaw Indians
+  alternate:
+  - name: Mowa Band of Choctaws of southwest Alabama
+    source: alabama-code-41-9-708
+    confidence: high
+    as_of: '2025'
+    locator: Section 41-9-708(b)
+  official_source: alabama-code-41-9-708
+recognition:
+- type: state
+  state: AL
+  legal_basis: Code of Alabama 1975, Section 41-9-708 (Acts 1984, No. 84-257; Acts 1985, No. 85-738; Acts
+    1992, No. 92-134)
+  source: alabama-code-41-9-708
+  confidence: high
+  as_of: '2025'
+  locator: Section 41-9-708(b)
+  note: Statute names the group as 'the Mowa Band of Choctaws of southwest Alabama' among the Indian tribes,
+    bands or groups with a seat on the Alabama Indian Affairs Commission.
+- type: state
+  state: AL
+  legal_basis: Alabama Administrative Code Rule 475-X-1-.02 (Alabama Indian Affairs Commission, effective
+    2026-09-14)
+  source: alabama-administrative-code-475-x-1-2026
+  confidence: high
+  as_of: '2026-07-31'
+  locator: Rule 475-X-1-.02 Members
+- type: state
+  state: AL
+  legal_basis: Listed by the Alabama Indian Affairs Commission as a tribe recognized by the State of Alabama
+  source: alabama-indian-affairs-commission-tribes-list-2026
+  confidence: high
+  as_of: 2026-10
+states:
+- state: AL
+  presence: other
+  source: alabama-indian-affairs-commission-tribes-list-2026
+  confidence: high
+  as_of: 2026-10
+  note: State-recognized in Alabama; Alabama contact address listed.
+contacts:
+- kind: website
+  value: https://mowachoctawindians.com
+  label: Official website
+  source: alabama-indian-affairs-commission-tribes-list-2026
+  confidence: high
+  as_of: 2026-10
+- kind: physical-address
+  value: 1080 Red Fox Road, Mount Vernon, AL 36560
+  label: Contact address listed by the Alabama Indian Affairs Commission
+  source: alabama-indian-affairs-commission-tribes-list-2026
+  confidence: medium
+  as_of: 2026-10
+  note: Listed beside the chief's name; recorded as the nation's contact address.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

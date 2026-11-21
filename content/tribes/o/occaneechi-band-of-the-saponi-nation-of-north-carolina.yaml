@@ -1,0 +1,100 @@
+id: occaneechi-band-of-the-saponi-nation-of-north-carolina
+entity_type: native-nation
+names:
+  official: Occaneechi Band of the Saponi Nation of North Carolina
+  alternate:
+  - name: Occaneechi Band of the Saponi Nation
+    source: north-carolina-tribal-communities-2026
+    confidence: high
+    as_of: '2026'
+  - name: Occaneechi Band of Saponi Nation in North Carolina
+    source: north-carolina-general-statutes-chapter-71a
+    confidence: high
+    as_of: '2026'
+    locator: Section 71A-7.2 heading
+  - name: Occaneechi Band of Saponi Nation
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    note: Name used for this group in the cited source; matched to this record by name and state.
+  official_source: ofa-list-of-petitioners-by-state-2013
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '148'
+  petition_stage: Letter of Intent to Petition 01/06/1995
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  locator: 'Petitioner #148'
+  note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
+    Additional Resources page says groups on the 2013 list may no longer be active petitioners under the
+    current regulations.
+- type: state
+  state: NC
+  legal_basis: North Carolina General Statutes Section 71A-7.2 (2003-54, s. 2)
+  since: '1971-07-20'
+  source: north-carolina-general-statutes-chapter-71a
+  confidence: high
+  as_of: '2026'
+  locator: Section 71A-7.2
+  note: Statute says the tribe is designated and officially recognized 'from and after' this date.
+- type: state
+  state: NC
+  legal_basis: Listed among North Carolina tribal communities by the North Carolina Commission of Indian
+    Affairs
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+states:
+- state: NC
+  presence: other
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+- state: NC
+  presence: government-office
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+population:
+- count: 1100
+  kind: citizens
+  source: north-carolina-tribal-communities-2026
+  confidence: medium
+  as_of: '2026'
+  note: 'Source: ''1100+ members''; count is a floor.'
+contacts:
+- kind: mailing-address
+  value: PO Box 356 Mebane, NC 27302
+  label: Tribal mailing address
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: phone
+  value: 336-421-1317
+  label: Tribal phone
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: email-general
+  value: obsntribe@gmail.com
+  label: Tribal email
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: website
+  value: https://obsn.org/
+  label: Official website
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

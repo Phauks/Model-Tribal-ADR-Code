@@ -22,11 +22,23 @@ recognition:
   locator: 91 Fed. Reg. 4105
 states:
 - state: AK
-  source: bia-recognized-entities-2026
-  confidence: high
-  as_of: '2026-01-30'
-  locator: 91 Fed. Reg. 4105
-  note: Listed among Native entities within the State of Alaska.
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 6015
+  note: 'Census area with land in this state: Akhiok ANVSA (code 6015). Statistical area only (not a land
+    holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '6015'
+  name: Akhiok ANVSA
+  area_type: Alaska Native Village Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US6015
+  note: Matched by name. Census class code E1.
 population:
 - count: 98
   kind: citizens
@@ -36,6 +48,25 @@ population:
   locator: ALASKA row "Akhiok", Enrollment column
   note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
     tribe to the Department of Housing and Urban Development); row name matched to the roster by the researcher.
+- count: 63
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US6015, field POP100
+  note: 'Census area: Akhiok ANVSA (code 6015). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. The area is a Census
+    statistical area, not a land holding.'
+- count: 117
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2656 (Native Village of Akhiok alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Native Village of Akhiok' (race code 5141) alone or
+    in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
 contacts:
 - kind: website
   value: https://aki-kodiak.com/

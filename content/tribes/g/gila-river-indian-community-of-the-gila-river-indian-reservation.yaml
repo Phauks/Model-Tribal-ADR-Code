@@ -18,6 +18,63 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
+- state: AZ
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1310
+  note: 'Census area with land in this state: Gila River Indian Reservation (code 1310). Area matched
+    to the nation by name.'
+census_areas:
+- geographic_identifier: '1310'
+  name: Gila River Indian Reservation
+  area_type: Indian Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1310
+  note: Matched by name. Census class code D2.
+population:
+- count: 14053
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1310, field POP100
+  note: 'Census area: Gila River Indian Reservation (code 1310). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 15301
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3005 (Gila River Indian Community of the Gila River Indian Reservation
+    alone or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Gila River Indian Community of the Gila River Indian
+    Reservation' (race code 6103) alone or in combination with other tribes or races in the 2020 Census;
+    self-identification, not enrollment. Includes noise added for disclosure avoidance. Census label exact
+    name match.
+- count: 20479
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Gila River Indian Community', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 11251
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 78, row T12700 'Gila River Indian Community of the Gila River Indian
+    Reservation'
+  note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
+    Census tribal statistical area (2010), used by Indian Affairs as the nation's population indicator;
+    includes people of any tribe; not enrollment. Report published 2014-01-16; row name matched to the
+    nation by name.
 contacts:
 - kind: website
   value: https://www.gilariver.org/

@@ -18,6 +18,61 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Pueblo of Isleta, New Mexico
+- state: NM
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1625
+  note: 'Census area with land in this state: Isleta Pueblo (code 1625). Area matched to the nation by
+    name.'
+census_areas:
+- geographic_identifier: '1625'
+  name: Isleta Pueblo
+  area_type: Pueblo
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1625
+  note: Matched by name. Census class code D2.
+population:
+- count: 3376
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1625, field POP100
+  note: 'Census area: Isleta Pueblo (code 1625). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 6355
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3236 (Pueblo of Isleta alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Pueblo of Isleta' (race code 6169) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 3980
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Isleta Pueblo', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 3170
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 86, row T39600 'Pueblo of Isleta'
+  note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
+    Census tribal statistical area (2010), used by Indian Affairs as the nation's population indicator;
+    includes people of any tribe; not enrollment. Report published 2014-01-16; row name matched to the
+    nation by name.
 contacts:
 - kind: website
   value: https://www.isletapueblo.com/
@@ -54,6 +109,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Pueblo of Isleta, New Mexico
+languages:
+- name: Tiwa
+  language_tag: tix
+  source: pueblo-of-isleta-tribal-programs-tiwa-language-program
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"The Tiwa Language Program offers Tiwa language instruction"'
 federal_administration:
   bureau_of_indian_affairs_region: Southwest
   bureau_of_indian_affairs_agency: Southern Pueblos Agency

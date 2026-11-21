@@ -2,6 +2,14 @@ id: ponca-tribe-of-nebraska
 entity_type: native-nation
 names:
   official: Ponca Tribe of Nebraska
+  self_designation:
+  - name: P'ą́'k'a
+    language_tag: oma
+    source: ponca-tribe-of-nebraska-ponca-language
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'language page: "the Ponca (P''ą́''k''a) people"; home page also writes it with curly apostrophes
+      and spacing'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -18,6 +26,66 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Ponca Tribe of Nebraska
+- state: IA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2900
+  note: 'Census area with land in this state: Ponca (NE) Trust Land (code 2900). Area matched to the nation
+    by name.'
+- state: NE
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2900
+  note: 'Census area with land in this state: Ponca (NE) Trust Land (code 2900). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '2900'
+  name: Ponca (NE) Trust Land
+  area_type: Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2900
+  note: Matched by name. Census class code D3.
+population:
+- count: 6048
+  kind: citizens
+  source: ponca-tribe-of-nebraska-enrollment-home
+  confidence: high
+  as_of: 2026-09
+  note: '"As of September 2026, the Ponca Tribe of Nebraska had 6,048 enrolled members worldwide, with
+    2,234 residing in the fifteen-county Ponca Service Delivery Area"'
+- count: 8
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2900, field POP100
+  note: 'Census area: Ponca (NE) Trust Land (code 2900). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 2210
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3223 (Ponca Tribe of Nebraska alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Ponca Tribe of Nebraska' (race code 6149) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+- count: 5456
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Denver, row 'Ponca Tribe of Nebraska', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://poncatribe-ne.gov/
@@ -54,6 +122,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Ponca Tribe of Nebraska
+languages:
+- name: Ponca
+  language_tag: oma
+  source: ponca-tribe-of-nebraska-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"Ponca is a Siouan language"; tag is Omaha-Ponca'
 federal_administration:
   bureau_of_indian_affairs_region: Great Plains
   bureau_of_indian_affairs_agency: Yankton Agency

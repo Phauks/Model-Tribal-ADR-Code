@@ -11,6 +11,15 @@ recognition:
   confidence: high
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  legal_basis: 25 C.F.R. Part 83; final determination 45 FR 19322
+  petition_number: '3'
+  petition_stage: Letter of Intent to Petition 05/05/1935; Acknowledgment effective 05/27/1980 45 FR 19322
+  since: '1980-05-27'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '1980-05-27'
+  locator: 'Petitioner #3'
 states:
 - state: MI
   presence: government-office
@@ -18,6 +27,53 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
+- state: MI
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1370
+  note: 'Census area with land in this state: Grand Traverse Reservation and Off-Reservation Trust Land
+    (code 1370). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1370'
+  name: Grand Traverse Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1370
+  note: Matched by name. Census class code D1.
+population:
+- count: 595
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1370, field POP100
+  note: 'Census area: Grand Traverse Reservation and Off-Reservation Trust Land (code 1370). Everyone
+    counted as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a
+    count of the nation''s citizens.'
+- count: 2601
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3009 (Grand Traverse Band of Ottawa and Chippewa Indians alone or in
+    any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Grand Traverse Band of Ottawa and Chippewa Indians'
+    (race code 5655) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 4101
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Grand Traverse Band of Ottawa and Chippewa Indians', PDF page
+    4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.gtbindians.org/

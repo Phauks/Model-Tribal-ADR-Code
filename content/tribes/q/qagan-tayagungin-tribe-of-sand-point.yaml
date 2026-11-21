@@ -25,6 +25,25 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Qagan Tayagungin Tribe of Sand Point
+- state: AK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 7410
+  note: 'Census area with land in this state: Sand Point ANVSA (code 7410). Statistical area only (not
+    a land holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '7410'
+  name: Sand Point ANVSA
+  area_type: Alaska Native Village Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US7410
+  note: 'Matched by name. Matched by community: the Qagan Tayagungin Tribe is the tribal government of
+    Sand Point. Census class code E1.'
 population:
 - count: 775
   kind: citizens
@@ -34,6 +53,26 @@ population:
   locator: ALASKA row "Qagan Tayagungin (Sand Point)", Enrollment column
   note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
     tribe to the Department of Housing and Urban Development); row name matched to the roster by the researcher.
+- count: 536
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US7410, field POP100
+  note: 'Census area: Sand Point ANVSA (code 7410). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. The area
+    is a Census statistical area, not a land holding. Matched by community: the Qagan Tayagungin Tribe
+    is the tribal government of Sand Point.'
+- count: 404
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2774 (Qagan Tayagungin Tribe of Sand Point Village alone or in any
+    combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Qagan Tayagungin Tribe of Sand Point Village' (race
+    code 5164) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label matched by name variant.
 contacts:
 - kind: website
   value: https://www.qttribe.org/

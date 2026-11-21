@@ -1,0 +1,48 @@
+id: chaloklowa-chickasaw-indian-people
+entity_type: native-nation
+names:
+  official: Chaloklowa Chickasaw Indian People
+  official_source: ofa-list-of-petitioners-by-state-2013
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '259'
+  petition_stage: Letter of Intent to Petition 8/14/2002
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  locator: 'Petitioner #259'
+  note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
+    Additional Resources page says groups on the 2013 list may no longer be active petitioners under the
+    current regulations.
+- type: state
+  state: SC
+  legal_basis: 'South Carolina Code of Laws Section 1-31-40(A)(10); South Carolina Code of Regulations
+    Chapter 139 (category: State Recognized Native American Indian Group)'
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  as_of: '2026'
+  note: Listed under 'Indian Groups', a separate state category the agency defines as individuals assembled
+    together, composed of Native American Indians and other ethnic races, governed by a tribal council;
+    not the 'Tribe' category.
+states:
+- state: SC
+  presence: other
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+- state: SC
+  presence: other
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  as_of: '2026'
+  note: State-recognized entity with a South Carolina contact address.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

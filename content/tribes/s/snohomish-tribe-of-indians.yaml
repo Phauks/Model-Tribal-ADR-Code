@@ -1,0 +1,31 @@
+id: snohomish-tribe-of-indians
+entity_type: native-nation
+names:
+  official: Snohomish Tribe of Indians
+  official_source: federal-register-03-30575
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 68 FR 68942 (2003-12-10)
+  petition_number: '12'
+  petition_stage: Denied (Petitions Resolved page); Denied acknowledgment through 25 CFR 83 (eff. 3/9/04)
+  source: federal-register-03-30575
+  confidence: high
+  as_of: '2003-12-10'
+  locator: 'Petitioner #12'
+  note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
+    Denied acknowledgment through 25 CFR 83 (eff. 3/9/04).'
+states:
+- state: WA
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

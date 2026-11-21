@@ -11,6 +11,31 @@ recognition:
   confidence: high
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  legal_basis: Public Law 115-121, title II
+  petition_number: '241'
+  petition_stage: Letter of Intent to Petition 9/6/2001
+  since: '2018-01-29'
+  source: public-law-115-121
+  confidence: high
+  as_of: '2018-01-29'
+  locator: 'Petitioner #241'
+  note: 'Also see source(s): ofa-list-of-petitioners-by-state-2008.'
+- type: state
+  state: VA
+  legal_basis: Listed by the Secretary of the Commonwealth among the 11 Virginia Indian tribes the Commonwealth
+    recognizes (also federally recognized)
+  source: virginia-report-status-of-indian-tribes-2025
+  confidence: high
+  as_of: '2025-12-30'
+- type: state
+  state: VA
+  legal_basis: Virginia General Assembly joint resolution, 1983
+  source: virginiaplaces-state-recognition
+  confidence: medium
+  as_of: '1983'
+  note: Year from a secondary source; resolution number not confirmed from the legislature's own record
+    except where stated.
 states:
 - state: VA
   presence: government-office
@@ -18,6 +43,53 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Chickahominy Indian Tribe—Eastern Division
+- state: VA
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 8160
+  note: 'Census area with land in this state: Eastern Chickahominy TDSA (code 8160). Statistical area
+    only (not a land holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '8160'
+  name: Eastern Chickahominy TDSA
+  area_type: Tribal Designated Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US8160
+  note: Matched by name. Census class code D6.
+population:
+- count: 193
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US8160, field POP100
+  note: 'Census area: Eastern Chickahominy TDSA (code 8160). Everyone counted as living in the area in
+    the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    The area is a Census statistical area, not a land holding.'
+- count: 194
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2917 (Chickahominy Indian Tribe - Eastern Division alone or in any
+    combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Chickahominy Indian Tribe - Eastern Division' (race
+    code 5629) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 175
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Chickahominy Indian Tribe-Eastern Division', PDF page 4, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.cied.org/

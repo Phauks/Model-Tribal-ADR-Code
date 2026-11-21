@@ -2,6 +2,12 @@ id: mashpee-wampanoag-tribe
 entity_type: native-nation
 names:
   official: Mashpee Wampanoag Tribe
+  alternate:
+  - name: People of the First Light
+    source: mashpee-wampanoag-tribe-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'site: "also known as the People of the First Light"'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -11,6 +17,26 @@ recognition:
   confidence: high
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: 25 C.F.R. Part 83; final determination 72 FR 8007 (2007-02-22)
+  petition_number: '15'
+  petition_stage: Letter of Intent to Petition 07/07/1975; Acknowledgment effective 05/23/2007 72 FR 8007
+  since: '2007-05-23'
+  source: federal-register-e7-2966
+  confidence: high
+  as_of: '2007-05-23'
+  locator: 'Petitioner #15'
+  note: 'Also see source(s): ofa-list-of-petitioners-by-state-2013.'
+- type: state
+  state: MA
+  legal_basis: Massachusetts Executive Order No. 126 (1976)
+  since: '1976-07-08'
+  source: massachusetts-executive-order-126
+  confidence: medium
+  as_of: '1976-07-08'
+  note: Directs state agencies to deal directly with the Mashpee Wampanoag Indian Tribal Council; Executive
+    Order No. 637 (2024) refers to the Mashpee Wampanoag Tribe as recognized by the Commonwealth. Also
+    federally recognized.
 states:
 - state: MA
   presence: government-office
@@ -18,6 +44,68 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Mashpee Wampanoag Tribe
+- state: MA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2147
+  note: 'Census area with land in this state: Mashpee Wampanoag Trust Land (code 2147). Area matched to
+    the nation by name.'
+census_areas:
+- geographic_identifier: '2147'
+  name: Mashpee Wampanoag Trust Land
+  area_type: Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2147
+  note: Matched by name. Census class code D3.
+population:
+- count: 3200
+  kind: citizens
+  source: mashpee-wampanoag-tribe-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"approximately 3,200 enrolled citizens"; undated statement on the official site; as_of is the
+    access date'
+- count: 3
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2147, field POP100
+  note: 'Census area: Mashpee Wampanoag Trust Land (code 2147). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 1273
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3108 (Mashpee Wampanoag Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Mashpee Wampanoag Tribe' (race code 6375) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+- count: 2830
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Mashpee Wampanoag Tribe', PDF page 4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 2813
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: low
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 80, row T21200 'Mashpee Wampanoag Tribe'
+  note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
+    in the vicinity of the nation (2010), used by Indian Affairs as the nation's population indicator;
+    a broad proxy that includes people of any tribe; not enrollment. Report published 2014-01-16; row
+    name matched to the nation by name.
 contacts:
 - kind: website
   value: https://mashpeewampanoagtribe-nsn.gov/
@@ -54,6 +142,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Mashpee Wampanoag Tribe
+languages:
+- name: Wampanoag (Wôpanâak)
+  language_tag: wam
+  source: mashpee-wampanoag-tribe-language
+  confidence: high
+  as_of: '2026-11-21'
+  note: site names the Wampanoag language, also spelled Wôpanâak and Wopanaotaok on the same page
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office

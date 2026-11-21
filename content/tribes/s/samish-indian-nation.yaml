@@ -11,6 +11,18 @@ recognition:
   confidence: high
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  legal_basis: 25 C.F.R. Part 83; final determination 61 FR 15825 (1996-04-09); supplemental final determination
+    61 FR 26922 (1996-05-29)
+  petition_number: '14'
+  petition_stage: Acknowledged through 25 CFR 83 (eff. 4/26/96)
+  since: '1996-04-26'
+  source: federal-register-96-8636
+  confidence: high
+  as_of: '1996-04-26'
+  locator: 'Petitioner #14'
+  note: 'Earlier negative determination (52 FR 3709, 1987) was vacated by a District Court decision in
+    February 1992, per the 2008 list. Also see source(s): ofa-status-summary-2013.'
 states:
 - state: WA
   presence: government-office
@@ -18,6 +30,52 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Samish Indian Nation
+- state: WA
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 8750
+  note: 'Census area with land in this state: Samish TDSA (code 8750). Statistical area only (not a land
+    holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '8750'
+  name: Samish TDSA
+  area_type: Tribal Designated Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US8750
+  note: Matched by name. Census class code D6.
+population:
+- count: 41102
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US8750, field POP100
+  note: 'Census area: Samish TDSA (code 8750). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. The area is a Census
+    statistical area, not a land holding.'
+- count: 1683
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3282 (Samish Indian Nation alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Samish Indian Nation' (race code 6198) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 2318
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Samish Indian Nation', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.samishtribe.nsn.us/
@@ -54,6 +112,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Samish Indian Nation
+languages:
+- name: Samish
+  language_tag: str
+  source: samish-indian-nation-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"Samish Language Program"; tag is Straits Salish'
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Puget Sound Agency

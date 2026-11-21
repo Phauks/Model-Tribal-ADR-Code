@@ -21,6 +21,174 @@ states:
   as_of: '2026-11-20'
   locator: Pit River Tribe, California (includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek,
     and Roaring Creek Rancherias)
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0215, 1955, 1980, 2330, 2835, 3185,
+    4680
+  note: 'Census area with land in this state: Big Bend Rancheria (code 0215); Likely Rancheria (code 1955);
+    Lookout Rancheria (code 1980); Montgomery Creek Rancheria (code 2330); Pit River Trust Land (code
+    2835); Roaring Creek Rancheria (code 3185); XL Ranch Rancheria (code 4680). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '0215'
+  name: Big Bend Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0215
+  note: Matched by name. Rancheria named in the 2026 list entry for the Pit River Tribe (includes XL Ranch,
+    Big Bend, Likely, Lookout, Montgomery Creek and Roaring Creek Rancherias). Census class code D2.
+- geographic_identifier: '1955'
+  name: Likely Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1955
+  note: Matched by name. Rancheria named in the 2026 list entry for the Pit River Tribe (includes XL Ranch,
+    Big Bend, Likely, Lookout, Montgomery Creek and Roaring Creek Rancherias). Census class code D2.
+- geographic_identifier: '1980'
+  name: Lookout Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1980
+  note: Matched by name. Rancheria named in the 2026 list entry for the Pit River Tribe (includes XL Ranch,
+    Big Bend, Likely, Lookout, Montgomery Creek and Roaring Creek Rancherias). Census class code D2.
+- geographic_identifier: '2330'
+  name: Montgomery Creek Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2330
+  note: Matched by name. Rancheria named in the 2026 list entry for the Pit River Tribe (includes XL Ranch,
+    Big Bend, Likely, Lookout, Montgomery Creek and Roaring Creek Rancherias). Census class code D2.
+- geographic_identifier: '2835'
+  name: Pit River Trust Land
+  area_type: Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2835
+  note: Matched by name. Census class code D3.
+- geographic_identifier: '3185'
+  name: Roaring Creek Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3185
+  note: Matched by name. Rancheria named in the 2026 list entry for the Pit River Tribe (includes XL Ranch,
+    Big Bend, Likely, Lookout, Montgomery Creek and Roaring Creek Rancherias). Census class code D2.
+- geographic_identifier: '4680'
+  name: XL Ranch Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4680
+  note: Matched by name. Rancheria named in the 2026 list entry for the Pit River Tribe (includes XL Ranch,
+    Big Bend, Likely, Lookout, Montgomery Creek and Roaring Creek Rancherias). Census class code D2.
+population:
+- count: 5
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0215, field POP100
+  note: 'Census area: Big Bend Rancheria (code 0215). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Rancheria
+    named in the 2026 list entry for the Pit River Tribe (includes XL Ranch, Big Bend, Likely, Lookout,
+    Montgomery Creek and Roaring Creek Rancherias).'
+- count: 0
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1955, field POP100
+  note: 'Census area: Likely Rancheria (code 1955). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Rancheria
+    named in the 2026 list entry for the Pit River Tribe (includes XL Ranch, Big Bend, Likely, Lookout,
+    Montgomery Creek and Roaring Creek Rancherias).'
+- count: 11
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1980, field POP100
+  note: 'Census area: Lookout Rancheria (code 1980). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Rancheria
+    named in the 2026 list entry for the Pit River Tribe (includes XL Ranch, Big Bend, Likely, Lookout,
+    Montgomery Creek and Roaring Creek Rancherias).'
+- count: 33
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2330, field POP100
+  note: 'Census area: Montgomery Creek Rancheria (code 2330). Everyone counted as living in the area in
+    the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    Rancheria named in the 2026 list entry for the Pit River Tribe (includes XL Ranch, Big Bend, Likely,
+    Lookout, Montgomery Creek and Roaring Creek Rancherias).'
+- count: 24
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2835, field POP100
+  note: 'Census area: Pit River Trust Land (code 2835). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 19
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3185, field POP100
+  note: 'Census area: Roaring Creek Rancheria (code 3185). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Rancheria
+    named in the 2026 list entry for the Pit River Tribe (includes XL Ranch, Big Bend, Likely, Lookout,
+    Montgomery Creek and Roaring Creek Rancherias).'
+- count: 117
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4680, field POP100
+  note: 'Census area: XL Ranch Rancheria (code 4680). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Rancheria
+    named in the 2026 list entry for the Pit River Tribe (includes XL Ranch, Big Bend, Likely, Lookout,
+    Montgomery Creek and Roaring Creek Rancherias).'
+- count: 3694
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3212 (Pit River Tribe of California alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Pit River Tribe of California' (race code 6113) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 3109
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Pit River Tribe', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://pitrivertribe.gov/

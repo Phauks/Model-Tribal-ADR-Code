@@ -19,6 +19,88 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Wichita and Affiliated Tribes (Wichita, Keechi, Waco, & Tawakonie), Oklahoma
+- state: OK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5540, 5955
+  note: 'Census area with land in this state: Caddo-Wichita-Delaware OTSA (code 5540); Kiowa-Comanche-Apache-Ft
+    Sill Apache/Caddo-Wichita-Delaware joint-use OTSA (code 5955). Statistical area only (not a land holding),
+    so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '5540'
+  name: Caddo-Wichita-Delaware OTSA
+  area_type: Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5540
+  note: 'Matched by name. Statistical area shared by the Caddo Nation, the Wichita and Affiliated Tribes
+    and the Delaware Nation (the Delaware named in the area is the Delaware Nation of Anadarko). Shared
+    with: Caddo Nation of Oklahoma; Delaware Nation, Oklahoma. Census class code D6.'
+- geographic_identifier: '5955'
+  name: Kiowa-Comanche-Apache-Ft Sill Apache/Caddo-Wichita-Delaware joint-use OTSA
+  area_type: joint-use Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5955
+  note: 'Matched by name. Shared with: Kiowa Tribe; Comanche Nation, Oklahoma; Apache Tribe of Oklahoma;
+    Fort Sill--Chiricahua--Warm Springs--Apache Tribe; Caddo Nation of Oklahoma; Delaware Nation, Oklahoma.
+    Census class code D0.'
+population:
+- count: 3481
+  kind: citizens
+  source: wichita-and-affiliated-tribes-justice
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'justice program page: "Tribal Enrollment of 3,481 tribal members"; undated statement on the official
+    site; as_of is the access date'
+- count: 15107
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5540, field POP100
+  note: 'Census area: Caddo-Wichita-Delaware OTSA (code 5540). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    The area is a Census statistical area, not a land holding. The area is shared with: Caddo Nation of
+    Oklahoma; Delaware Nation, Oklahoma; the same count applies to the whole area. Statistical area shared
+    by the Caddo Nation, the Wichita and Affiliated Tribes and the Delaware Nation (the Delaware named
+    in the area is the Delaware Nation of Anadarko).'
+- count: 9690
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5955, field POP100
+  note: 'Census area: Kiowa-Comanche-Apache-Ft Sill Apache/Caddo-Wichita-Delaware joint-use OTSA (code
+    5955). Everyone counted as living in the area in the 2020 Census, of any race or tribal affiliation;
+    this is not a count of the nation''s citizens. The area is a Census statistical area, not a land holding.
+    The area is shared with: Kiowa Tribe; Comanche Nation, Oklahoma; Apache Tribe of Oklahoma; Fort Sill--Chiricahua--Warm
+    Springs--Apache Tribe; Caddo Nation of Oklahoma; Delaware Nation, Oklahoma; the same count applies
+    to the whole area.'
+- count: 3177
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3422 (Wichita and Affiliated Tribes, Oklahoma alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Wichita and Affiliated Tribes, Oklahoma' (race code
+    6395) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 3279
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Wichita and Affiliated Tribes', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://wichitatribe.com/
@@ -55,6 +137,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Wichita and Affiliated Tribes (Wichita, Keechi, Waco, & Tawakonie), Oklahoma
+languages:
+- name: Wichita
+  language_tag: wic
+  source: wichita-and-affiliated-tribes-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: English to Wichita dictionary page
 federal_administration:
   bureau_of_indian_affairs_region: Southern Plains
   bureau_of_indian_affairs_agency: Anadarko Agency

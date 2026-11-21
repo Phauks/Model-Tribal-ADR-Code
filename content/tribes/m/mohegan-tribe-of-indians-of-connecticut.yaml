@@ -11,6 +11,23 @@ recognition:
   confidence: high
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: 25 C.F.R. Part 83; final determination 59 FR 12140
+  petition_number: '38'
+  petition_stage: Letter of Intent to Petition 07/12/1978; Acknowledgment effective 3/15/1994 59 FR 12140
+  since: '1994-03-15'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '1994-03-15'
+  locator: 'Petitioner #38'
+- type: state
+  state: CT
+  legal_basis: Connecticut General Statutes Section 47-59a(b) (Public Act 89-368), naming 'the Mohegan'
+  source: connecticut-general-statutes-47-59a
+  confidence: high
+  as_of: '2020'
+  locator: Section 47-59a(b)
+  note: Also federally recognized; the state agency calls it a Federal and State recognized Tribe.
 states:
 - state: CT
   presence: government-office
@@ -18,6 +35,52 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Mohegan Tribe of Indians of Connecticut
+- state: CT
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2320
+  note: 'Census area with land in this state: Mohegan Reservation (code 2320). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '2320'
+  name: Mohegan Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2320
+  note: Matched by name. Census class code D2.
+population:
+- count: 212
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2320, field POP100
+  note: 'Census area: Mohegan Reservation (code 2320). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 3801
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3133 (Mohegan Tribe of Indians of Connecticut alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Mohegan Tribe of Indians of Connecticut' (race code
+    5984) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 1611
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Mohegan Tribe of Indians of Connecticut', PDF page 4, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.mohegan.nsn.us/

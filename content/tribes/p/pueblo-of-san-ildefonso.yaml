@@ -2,6 +2,13 @@ id: pueblo-of-san-ildefonso
 entity_type: native-nation
 names:
   official: Pueblo of San Ildefonso, New Mexico
+  self_designation:
+  - name: Po-woh-ge-oweenge
+    language_tag: tew
+    source: pueblo-of-san-ildefonso-visiting-the-pueblo
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"Our tewa location name is ''Po-woh-ge-oweenge'', which means ''Where the Water Cuts Through.''"'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -18,6 +25,69 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Pueblo of San Ildefonso, New Mexico
+- state: NM
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3415
+  note: 'Census area with land in this state: San Ildefonso Pueblo and Off-Reservation Trust Land (code
+    3415). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '3415'
+  name: San Ildefonso Pueblo and Off-Reservation Trust Land
+  area_type: Pueblo and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3415
+  note: Matched by name. Census class code D1.
+population:
+- count: 750
+  kind: citizens
+  source: pueblo-of-san-ildefonso-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"an enrollment of approximately 750 people"; undated statement on the official site; as_of is
+    the access date'
+- count: 1819
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3415, field POP100
+  note: 'Census area: San Ildefonso Pueblo and Off-Reservation Trust Land (code 3415). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 707
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3243 (Pueblo of San Ildefonso alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Pueblo of San Ildefonso' (race code 6176) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+- count: 804
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'San Ildefonso Pueblo', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 498
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 86, row T40300 'Pueblo of San Ildefonso'
+  note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
+    Census tribal statistical area (2010), used by Indian Affairs as the nation's population indicator;
+    includes people of any tribe; not enrollment. Report published 2014-01-16; row name matched to the
+    nation by name.
 contacts:
 - kind: website
   value: https://sanipueblo.org/

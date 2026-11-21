@@ -1,0 +1,350 @@
+id: native-hawaiian-community
+entity_type: native-hawaiian
+names:
+  official: Native Hawaiian community
+  self_designation:
+  - name: kānaka maoli
+    language_tag: haw
+    source: interior-native-hawaiian-organization-notification-list
+    confidence: medium
+    as_of: '2025'
+    locator: page text on https://www.doi.gov/hawaiian/nhonl
+    note: The Interior page uses 'nā kānaka maoli' (with the plural article nā). Haw. Rev. Stat. § 10H-1
+      uses 'maoli' in 'indigenous, aboriginal, maoli people'. Diacritics kept as published.
+  official_source: us-code-20-7512-native-hawaiian-education-findings
+recognition:
+- type: congressional-special-relationship
+  legal_basis: 20 U.S.C. § 7512 (Native Hawaiian Education Act findings), Pub. L. 89-10, title VI, § 6202,
+    as amended
+  source: us-code-20-7512-native-hawaiian-education-findings
+  confidence: high
+  as_of: '2015-12-10'
+  locator: paragraphs (1), (8), (10)-(13)
+  note: Congress finds Native Hawaiians are 'a distinct and unique indigenous people'; that through the
+    Hawaiian Homes Commission Act Congress 'affirmed the special relationship'; that it does not extend
+    services 'because of their race, but because of their unique status as the indigenous people of a
+    once sovereign nation as to whom the United States has established a trust relationship' (para. 12(B));
+    and lists statutes evidencing 'the political relationship' (para. 13). The findings call Native Hawaiians
+    a people; they do not designate a tribe.
+- type: congressional-special-relationship
+  legal_basis: Pub. L. 103-150, 107 Stat. 1510 (Apology Resolution), §§ 1-3
+  since: '1993-11-23'
+  source: apology-resolution-1993
+  confidence: high
+  as_of: '1993-11-23'
+  locator: 107 Stat. 1513-1514
+  note: 'Section 1 acknowledges ''the suppression of the inherent sovereignty of the Native Hawaiian people'',
+    apologizes for the 1893 overthrow and the deprivation of ''the rights of Native Hawaiians to self-determination'',
+    and commits to ''reconciliation between the United States and the Native Hawaiian people''. Section
+    2 defines ''Native Hawaiian'' as any descendant of the aboriginal people who, prior to 1778, occupied
+    and exercised sovereignty in the area that now constitutes the State of Hawaii. Section 3: ''Nothing
+    in this Joint Resolution is intended to serve as a settlement of any claims against the United States.'''
+- type: congressional-special-relationship
+  legal_basis: Hawaiian Homes Commission Act, 1920, Act of July 9, 1921, ch. 42, 42 Stat. 108
+  since: '1921-07-09'
+  source: hawaiian-homes-commission-act-1920
+  confidence: high
+  as_of: '1921-07-09'
+  locator: § 201(a)(7) (definition); § 202 (commission)
+  note: Defines 'native Hawaiian' as 'any descendant of not less than one-half part of the blood of the
+    races inhabiting the Hawaiian Islands previous to 1778' and sets aside lands for homesteading. 20
+    U.S.C. § 7512(7)-(8) describes this Act as Congress affirming the special relationship. The source
+    is the 1921 enactment; later amendments not reviewed.
+- type: congressional-special-relationship
+  legal_basis: Hawaii Admission Act, Pub. L. 86-3, 73 Stat. 4, §§ 4 and 5(f)
+  since: '1959-03-18'
+  source: hawaii-admission-act-1959
+  confidence: high
+  as_of: '1959-03-18'
+  locator: § 4 (73 Stat. 5); § 5(f) (73 Stat. 6)
+  note: Section 4 adopts the Hawaiian Homes Commission Act as a compact with the United States, amendable
+    in key respects only with federal consent. Section 5(f) requires ceded lands and their proceeds to
+    be held by the State 'as a public trust' for purposes including 'the betterment of the conditions
+    of native Hawaiians, as defined in the Hawaiian Homes Commission Act', with misuse a breach of trust
+    'for which suit may be brought by the United States'. 20 U.S.C. § 7512(10)-(11) describes these provisions
+    as reaffirming the trust relationship.
+- type: state
+  state: HI
+  legal_basis: Haw. Rev. Stat. § 10H-1 (Act 195, Session Laws of Hawaii 2011)
+  since: '2011-07-06'
+  source: hawaii-revised-statutes-10h-1
+  confidence: high
+  as_of: '2011'
+  locator: § 10H-1
+  note: 'Text: ''The Native Hawaiian people are hereby recognized as the only indigenous, aboriginal,
+    maoli people of Hawaii.'' [L 2011, c 195, pt of §2]. The since date is the Act''s date as bracketed
+    in § 10H-3(b). § 10H-8(b) adds that members of the qualified Native Hawaiian roll and their descendants
+    ''shall be acknowledged by the State of Hawaii as the indigenous, aboriginal, maoli population of
+    Hawaii'' (hawaii-revised-statutes-10h-8).'
+- type: state
+  state: HI
+  legal_basis: Haw. Rev. Stat. § 10H-8 (Act 195, Session Laws of Hawaii 2011)
+  since: '2011-07-06'
+  source: hawaii-revised-statutes-10h-8
+  confidence: high
+  as_of: '2011'
+  locator: § 10H-8(a)-(b)
+  note: Reaffirms the 1959 Admission Act delegation to the State 'to address the conditions of the indigenous,
+    native people of Hawaii' and acknowledges members of the qualified Native Hawaiian roll and descendants
+    as 'the indigenous, aboriginal, maoli population of Hawaii'.
+- type: state
+  state: HI
+  legal_basis: Haw. Const. art. XII, §§ 4-7 (Hawaiian Affairs), as added by Const. Con. 1978
+  since: '1978-11-07'
+  source: hawaii-constitution
+  confidence: high
+  as_of: '1978-11-07'
+  locator: art. XII §§ 4, 5, 6, 7
+  note: '§ 4 holds ceded lands ''as a public trust for native Hawaiians and the general public''; § 5
+    establishes the Office of Hawaiian Affairs to hold property ''in trust for native Hawaiians and Hawaiians'';
+    § 6 sets the trustees'' powers; § 7: ''The State reaffirms and shall protect all rights, customarily
+    and traditionally exercised for subsistence, cultural and religious purposes and possessed by ahupua''a
+    tenants who are descendants of native Hawaiians who inhabited the Hawaiian Islands prior to 1778,
+    subject to the right of the State to regulate such rights.'' Art. XII §§ 1-3 adopt the Hawaiian Homes
+    Commission Act. The § 5 provision limiting trustee elections to Hawaiian voters was the subject of
+    Rice v. Cayetano (2000); not reviewed here.'
+states:
+- state: HI
+  presence: land
+  source: hawaii-constitution
+  confidence: high
+  as_of: '1978-11-07'
+  locator: art. XII §§ 1-4
+  note: Hawaiian home lands administered under the Hawaiian Homes Commission Act and ceded lands held
+    in public trust for native Hawaiians and the general public. Not reservation land.
+population:
+- count: 680442
+  kind: census-native-hawaiian-alone-or-in-any-combination
+  source: census-2020-detailed-dhc-a-nhpi-story
+  confidence: high
+  as_of: '2020-04-01'
+  locator: United States total; 2020 Census Detailed DHC-A, table T01001, population group 'Native Hawaiian
+    alone or in any combination'
+  note: 'Native Hawaiian, a detailed group within the Native Hawaiian and Other Pacific Islander race
+    category; not American Indian or Alaska Native. Kind value is new (the contract list has only American
+    Indian and Alaska Native census kinds). Article: 46.7% of this population lived in Hawaii in 2020.'
+- count: 199880
+  kind: census-native-hawaiian-alone
+  source: census-2020-detailed-dhc-a-nhpi-story
+  confidence: high
+  as_of: '2020-04-01'
+  locator: United States total; 2020 Census Detailed DHC-A, table T01001, population group 'Native Hawaiian
+    alone'
+  note: Native Hawaiian, not American Indian or Alaska Native. Kind value is new.
+- count: 317497
+  kind: census-native-hawaiian-alone-or-in-any-combination
+  source: hawaii-dbedt-native-hawaiian-population-2020
+  confidence: high
+  as_of: '2020-04-01'
+  locator: State of Hawaii; report p. 4 and Table 1 (from 2020 Census Detailed DHC-A)
+  note: Hawaii state only (21.8% of state population). Native Hawaiian, not American Indian or Alaska
+    Native. Kind value is new.
+- count: 94025
+  kind: census-native-hawaiian-alone
+  source: hawaii-dbedt-native-hawaiian-population-2020
+  confidence: high
+  as_of: '2020-04-01'
+  locator: State of Hawaii; report p. 4 and Table 1 (from 2020 Census Detailed DHC-A)
+  note: Hawaii state only (6.5% of state population). Native Hawaiian, not American Indian or Alaska Native.
+    Kind value is new.
+contacts:
+- kind: website
+  value: https://www.oha.org
+  label: Office of Hawaiian Affairs (state agency)
+  source: office-of-hawaiian-affairs-contact
+  confidence: high
+  as_of: '2026-11-21'
+- kind: physical-address
+  value: '560 N. Nimitz Hwy #200, Honolulu, HI 96817'
+  label: Office of Hawaiian Affairs (state agency) office
+  source: office-of-hawaiian-affairs-contact
+  confidence: high
+  as_of: '2026-11-21'
+  note: Read through the WebFetch tool; the page lists no separate mailing address.
+- kind: phone
+  value: (808) 594-1835
+  label: Office of Hawaiian Affairs (state agency), contact number
+  source: office-of-hawaiian-affairs-contact
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Only phone listed on the contact page; not labeled as the main line.
+- kind: website
+  value: https://dhhl.hawaii.gov
+  label: Department of Hawaiian Home Lands (state agency)
+  source: department-of-hawaiian-home-lands-contact
+  confidence: high
+  as_of: '2026-11-21'
+- kind: physical-address
+  value: 91-5420 Kapolei Parkway, Kapolei, HI 96707
+  label: Department of Hawaiian Home Lands (state agency) main office
+  source: department-of-hawaiian-home-lands-contact
+  confidence: high
+  as_of: '2026-11-21'
+- kind: mailing-address
+  value: P.O. Box 1879, Honolulu, Hawaiʻi 96805
+  label: Department of Hawaiian Home Lands (state agency)
+  source: department-of-hawaiian-home-lands-contact
+  confidence: high
+  as_of: '2026-11-21'
+  note: Listed under 'Mailing Addresses' together with the Kapolei street address.
+- kind: phone
+  value: (808) 620-9500
+  label: Department of Hawaiian Home Lands (state agency) main line
+  source: department-of-hawaiian-home-lands-contact
+  confidence: high
+  as_of: '2026-11-21'
+- kind: website
+  value: https://www.doi.gov/hawaiian
+  label: U.S. Department of the Interior, Office of Native Hawaiian Relations (federal)
+  source: interior-onhr-contact
+  confidence: high
+  as_of: '2026-11-21'
+- kind: mailing-address
+  value: Office of Native Hawaiian Relations, U.S. Department of the Interior, 300 Ala Moana Boulevard,
+    Box 50165, Honolulu, Hawaiʻi 96850
+  label: Office of Native Hawaiian Relations (federal), Honolulu
+  source: interior-onhr-contact
+  confidence: high
+  as_of: '2026-11-21'
+- kind: physical-address
+  value: 300 Ala Moana Boulevard, Room 3-122, Honolulu, Hawaiʻi 96850
+  label: Office of Native Hawaiian Relations (federal), Honolulu street address
+  source: interior-onhr-contact
+  confidence: high
+  as_of: '2026-11-21'
+  note: Page asks visitors to call or use the web form to schedule a visit.
+- kind: mailing-address
+  value: Office of Native Hawaiian Relations, U.S. Department of the Interior, 1849 C Street, NW (MS 3561),
+    Washington, D.C. 20240
+  label: Office of Native Hawaiian Relations (federal), Washington
+  source: interior-onhr-contact
+  confidence: high
+  as_of: '2026-11-21'
+languages:
+- name: Hawaiian
+  language_tag: haw
+  source: hawaii-constitution
+  confidence: high
+  as_of: '1978-11-07'
+  locator: art. XV § 4
+  note: '''English and Hawaiian shall be the official languages of Hawaii''. Tag haw confirmed in the
+    ISO 639-3 registry (source key iso-639-3-haw); Hawaiian has no ISO 639-1 two-letter code.'
+government_structure:
+- kind: other
+  detail: No Native Hawaiian government has a formal government-to-government relationship with the United
+    States. The Department of the Interior's Solicitor wrote that the Department 'has not yet received
+    a request' under 43 C.F.R. Part 50 and that a Native Hawaiian government 'has been lacking since the
+    overthrow of the monarchy'.
+  source: interior-solicitor-opinion-m-37083
+  confidence: high
+  as_of: '2025-01-16'
+  locator: pages 21-22
+  note: Opinion M-37083 is listed as 'Under Suspension Review' in the Interior M-Opinions index dated
+    May 2026 (interior-m-opinions-index-2026-05), so its legal conclusions may change. The factual statement
+    about requests is as of 2025-01-16.
+- kind: other
+  detail: The Justice Department's Office of Legal Counsel stated that in the decade since the 2016 rule
+    'no Native Hawaiian community has availed itself of this opportunity', and that Native Hawaiian statutes
+    do not confer 'formal federal recognition on any Native Hawaiian political entity, which is why no
+    such entity appears' on the Interior recognition list.
+  source: justice-olc-race-based-education-programs-2025
+  confidence: high
+  as_of: '2025-12-02'
+  locator: slip op. 11-12 and n.7
+  note: The same opinion concludes that a Native Hawaiian-serving education grant program is a racial
+    classification subject to strict scrutiny, and leaves unresolved 'whether Congress may treat the native
+    Hawaiians as it does the Indian tribes' (citing Rice v. Cayetano, 528 U.S. 495 (2000)). This differs
+    from the 2016 rule, in which the Department of the Interior took the position that Congress, through
+    more than 150 statutes, recognized that the Native Hawaiian community 'exists as an Indian tribe within
+    the meaning of the Constitution' while also stating Native Hawaiians 'would not be added to the list'
+    of federally recognized tribes (81 FR 71284 and n.4). Contested; record without a tribal status category.
+governing_documents:
+- kind: other
+  title: Procedures for Reestablishing a Formal Government-to-Government Relationship With the Native
+    Hawaiian Community (Department of the Interior final rule; 43 C.F.R. Part 50)
+  year: '2016'
+  link: https://www.govinfo.gov/content/pkg/FR-2016-10-14/pdf/2016-23720.pdf
+  source: interior-native-hawaiian-final-rule-2016
+  confidence: high
+  as_of: '2016-10-14'
+  locator: 81 FR 71278 (summary); 43 C.F.R. §§ 50.1-50.44 at 81 FR 71318-71323
+  note: A federal regulation, not a document of the community. The rule 'does not attempt to reorganize
+    a Native Hawaiian government or draft its constitution'; it sets the procedure the Secretary would
+    use 'if the Native Hawaiian community forms a unified government' that seeks a relationship (summary).
+    The Secretary will reestablish the relationship 'with only one sovereign Native Hawaiian government'
+    (§ 50.3). A reestablished governing entity would not be eligible for Federal Indian programs unless
+    Congress says so (§ 50.44(d)). Effective 2016-11-14. Recorded under governing-document because the
+    contract has no field for a federal procedural rule.
+- kind: other
+  title: 43 CFR Part 50 - Procedures for Reestablishing a Formal Government-to-Government Relationship
+    With the Native Hawaiian Community (current codified text)
+  link: https://www.law.cornell.edu/cfr/text/43/part-50
+  source: cfr-43-part-50
+  confidence: high
+  as_of: '2016-10-14'
+  locator: Part 50, subparts A-C
+  note: Codified text of the 2016 rule; source line 81 FR 71318, Oct. 14, 2016, with no later amendments
+    shown.
+related_entities:
+- name: Office of Hawaiian Affairs
+  relation: state-agency
+  source: hawaii-constitution
+  confidence: high
+  as_of: '1978-11-07'
+  locator: art. XII § 5
+  note: Established by the Hawaii Constitution; holds property in trust for native Hawaiians and Hawaiians.
+    The Native Hawaiian roll commission under Haw. Rev. Stat. § 10H-3 is placed within this office 'for
+    administrative purposes only'.
+- name: Department of Hawaiian Home Lands
+  relation: state-agency
+  source: interior-native-hawaiian-final-rule-2016
+  confidence: high
+  as_of: '2016-10-14'
+  locator: 43 C.F.R. § 50.4 (definition of DHHL), 81 FR 71318
+  note: Defined as 'the agency or department of the State of Hawaii that is responsible for administering
+    the HHCA' (Hawaiian Homes Commission Act).
+- name: Hawaiian Homes Commission
+  relation: state-agency
+  source: hawaiian-homes-commission-act-1920
+  confidence: medium
+  as_of: '1921-07-09'
+  locator: § 202(a), 42 Stat. 109
+  note: Established by § 202 of the 1921 Act (then a territorial body); the Act was adopted as state law
+    by Haw. Const. art. XII § 1 and as a compact by Admission Act § 4. Its current placement as head of
+    the Department of Hawaiian Home Lands was not verified in a state statute during this session.
+- name: U.S. Department of the Interior, Office of Native Hawaiian Relations
+  relation: federal-agency
+  source: interior-onhr-mission
+  confidence: high
+  as_of: '2026'
+  note: 'Page: ''formally established by Congress in 2004''; its mission includes implementing ''the special
+    political and legal relationship between the United States and the Native Hawaiian Community'' and
+    continuing ''the process of reconciliation''. The Solicitor''s opinion M-37083 cites the establishing
+    law as Consolidated Appropriations Act, Pub. L. 108-199, div. H, § 148, 118 Stat. 3, 445 (2004).'
+- name: Native Hawaiian Organization Notification List (Department of the Interior)
+  relation: federal-consultation-list
+  source: interior-native-hawaiian-organization-notification-list
+  confidence: high
+  as_of: 2025-04
+  locator: PDF directory 'as of April 2025'
+  note: Maintained by the Office of Native Hawaiian Relations as a tool for federal notification and consultation
+    under laws such as the National Environmental Policy Act, the National Historic Preservation Act and
+    the Native American Graves Protection and Repatriation Act. Listed organizations are not governments
+    of the community and were not imported. Solicitor's opinion M-37083 states federal agencies currently
+    engage the community 'through Native Hawaiian organizations who serve as its informal representatives'.
+- name: Native Hawaiian roll commission
+  relation: state-commission
+  source: hawaii-revised-statutes-10h-3
+  confidence: high
+  as_of: '2013'
+  locator: § 10H-3(a)
+  note: Five-member commission within the Office of Hawaiian Affairs to prepare a roll of qualified Native
+    Hawaiians; § 10H-6 directs its dissolution once the roll is published. Whether it has been dissolved
+    was not checked.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

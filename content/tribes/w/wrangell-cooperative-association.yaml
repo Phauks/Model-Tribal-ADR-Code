@@ -27,6 +27,24 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Wrangell Cooperative Association
+- state: AK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 7755
+  note: 'Census area with land in this state: Wrangell ANVSA (code 7755). Statistical area only (not a
+    land holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '7755'
+  name: Wrangell ANVSA
+  area_type: Alaska Native Village Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US7755
+  note: Matched by name. Census class code E1.
 population:
 - count: 538
   kind: citizens
@@ -36,6 +54,35 @@ population:
   locator: ALASKA row "Wrangell", Enrollment column
   note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
     tribe to the Department of Housing and Urban Development); row name matched to the roster by the researcher.
+- count: 1173
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US7755, field POP100
+  note: 'Census area: Wrangell ANVSA (code 7755). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. The area is a Census
+    statistical area, not a land holding.'
+- count: 106
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2827 (Wrangell Cooperative Association alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Wrangell Cooperative Association' (race code 5341) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 582
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: low
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 90, row T55400 'Wrangell Cooperative Association'
+  note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
+    in the vicinity of the nation (2010), used by Indian Affairs as the nation's population indicator;
+    a broad proxy that includes people of any tribe; not enrollment. Report published 2014-01-16; row
+    name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.wcatribe.org/

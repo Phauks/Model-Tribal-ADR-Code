@@ -18,6 +18,58 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Pala Band of Mission Indians
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2635
+  note: 'Census area with land in this state: Pala Reservation (code 2635). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '2635'
+  name: Pala Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2635
+  note: Matched by name. Census class code D2.
+population:
+- count: 918
+  kind: citizens
+  source: pala-band-of-mission-indians-visitors-history
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"the 918 enrolled members – Cupeño and Luiseño Indians"; undated statement on the official site;
+    as_of is the access date'
+- count: 1541
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2635, field POP100
+  note: 'Census area: Pala Reservation (code 2635). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 1593
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3186 (Pala Band of Mission Indians alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Pala Band of Mission Indians' (race code 5914) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 906
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Pala Band of Mission Indians', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.palatribe.com/

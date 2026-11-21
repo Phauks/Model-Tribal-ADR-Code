@@ -9,6 +9,13 @@ names:
     as_of: '2026-01-30'
     locator: 91 Fed. Reg. 4104
     note: Listed in the notice as a previous name.
+  self_designation:
+  - name: Payomkawichum
+    language_tag: lui
+    source: rincon-band-of-luiseno-indians-culture-history-history
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"the people of Rincon, also known as the Payomkawichum"'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -26,6 +33,53 @@ states:
   as_of: '2026-11-20'
   locator: Rincon Band of Luiseno Indians (previously listed as Rincon Band of Luiseno Mission Indians
     of Rincon Reservation, California)
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3165
+  note: 'Census area with land in this state: Rincon Reservation and Off-Reservation Trust Land (code
+    3165). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '3165'
+  name: Rincon Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3165
+  note: Matched by name. Census class code D1.
+population:
+- count: 1095
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3165, field POP100
+  note: 'Census area: Rincon Reservation and Off-Reservation Trust Land (code 3165). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 861
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3268 (Rincon Band of Luiseno Mission Indians alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Rincon Band of Luiseno Mission Indians' (race code 5917)
+    alone or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 575
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Rincon Band of Luiseno Mission Indians', PDF page 8, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://rincon-nsn.gov/
@@ -67,6 +121,13 @@ contacts:
   as_of: '2026-11-20'
   locator: Rincon Band of Luiseno Indians (previously listed as Rincon Band of Luiseno Mission Indians
     of Rincon Reservation, California)
+languages:
+- name: Luiseño
+  language_tag: lui
+  source: rincon-band-of-luiseno-indians-culture-history-history
+  confidence: high
+  as_of: '2026-11-21'
+  note: Luiseño language preservation
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Southern California Agency

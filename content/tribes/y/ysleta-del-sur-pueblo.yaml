@@ -2,6 +2,12 @@ id: ysleta-del-sur-pueblo
 entity_type: native-nation
 names:
   official: Ysleta del Sur Pueblo
+  alternate:
+  - name: Tigua
+    source: ysleta-del-sur-pueblo-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"The Tribal community known as ''Tigua''"'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -18,6 +24,68 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Ysleta del Sur Pueblo
+- state: TX
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4755
+  note: 'Census area with land in this state: Ysleta del Sur Pueblo and Off-Reservation Trust Land (code
+    4755). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '4755'
+  name: Ysleta del Sur Pueblo and Off-Reservation Trust Land
+  area_type: Pueblo and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4755
+  note: Matched by name. Census class code D1.
+population:
+- count: 4226
+  kind: citizens
+  source: ysleta-del-sur-pueblo-about-us
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'About page: "approximately 4,226 members nationwide"; home page: "Tribal enrollment is 5,000+
+    citizens" (conflict)'
+- count: 1124
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4755, field POP100
+  note: 'Census area: Ysleta del Sur Pueblo and Off-Reservation Trust Land (code 4755). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 5091
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3445 (Ysleta del Sur Pueblo of Texas alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Ysleta del Sur Pueblo of Texas' (race code 6185) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 5270
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Ysleta Del Sur Pueblo', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 1169
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 91, row T56300 'Ysleta Del Sur Pueblo of Texas'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
 contacts:
 - kind: website
   value: https://www.ysletadelsurpueblo.org/

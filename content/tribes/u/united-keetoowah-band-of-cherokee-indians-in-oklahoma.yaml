@@ -2,6 +2,19 @@ id: united-keetoowah-band-of-cherokee-indians-in-oklahoma
 entity_type: native-nation
 names:
   official: United Keetoowah Band of Cherokee Indians in Oklahoma
+  self_designation:
+  - name: Anigiduwagi
+    language_tag: chr
+    source: united-keetoowah-band-of-cherokee-indian-about-us
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"''Ani-gi-du-wa-gi'' is our original name"; site also writes "Anigiduwagi"'
+  alternate:
+  - name: Western Cherokee
+    source: united-keetoowah-band-of-cherokee-indian-about-us
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"We are also known as the Western Cherokee, or Old Settlers"'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -18,6 +31,42 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: United Keetoowah Band of Cherokee Indians in Oklahoma
+population:
+- count: 14000
+  kind: citizens
+  source: united-keetoowah-band-of-cherokee-indian-about-us
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"Today we number more than 14,000 tribal members"; undated statement on the official site; as_of
+    is the access date'
+- count: 1643
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3394 (United Keetoowah Band of Cherokee Indians in Oklahoma alone or
+    in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'United Keetoowah Band of Cherokee Indians in Oklahoma'
+    (race code 5616) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 14034
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'United Keetoowah Band of Cherokee Indians', PDF page 6, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 14300
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 89, row T51600 'United Keetoowah Band of Cherokee Indians in Oklahoma'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
 contacts:
 - kind: website
   value: https://www.ukb-nsn.gov/
@@ -54,6 +103,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: United Keetoowah Band of Cherokee Indians in Oklahoma
+languages:
+- name: Cherokee (Giduwa)
+  language_tag: chr
+  source: united-keetoowah-band-of-cherokee-indian-about-us
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"Giduwa Language ... represented by the Cherokee Syllabary"'
 federal_administration:
   bureau_of_indian_affairs_region: Eastern Oklahoma
   bureau_of_indian_affairs_agency: Eastern Oklahoma Regional Office

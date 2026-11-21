@@ -18,6 +18,59 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Mesa Grande Band of Diegueno Mission Indians of the Mesa Grande Reservation, California
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2190
+  note: 'Census area with land in this state: Mesa Grande Reservation (code 2190). Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '2190'
+  name: Mesa Grande Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2190
+  note: Matched by name. Census class code D2.
+population:
+- count: 800
+  kind: citizens
+  source: mesa-grande-band-of-diegueno-mission-ind-about-mesa-grande
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"over 800 enrolled citizens", about 130 live on the reservation; undated statement on the official
+    site; as_of is the access date'
+- count: 87
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2190, field POP100
+  note: 'Census area: Mesa Grande Reservation (code 2190). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 565
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3116 (Mesa Grande Band of Diegueno Mission Indians alone or in any
+    combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Mesa Grande Band of Diegueno Mission Indians' (race
+    code 5781) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 690
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Mesa Grande Band of Diegueno Mission Indians', PDF page 7,
+    Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.mesagrandeband-nsn.gov/

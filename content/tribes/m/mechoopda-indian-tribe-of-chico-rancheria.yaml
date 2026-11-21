@@ -18,6 +18,60 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Mechoopda Indian Tribe of Chico Rancheria, California
+- state: CA
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 8450
+  note: 'Census area with land in this state: Mechoopda TDSA (code 8450). Statistical area only (not a
+    land holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '8450'
+  name: Mechoopda TDSA
+  area_type: Tribal Designated Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US8450
+  note: Matched by name. Census class code D6.
+population:
+- count: 560
+  kind: citizens
+  source: mechoopda-indian-tribe-of-chico-rancheri-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"comprised of 560 Tribal Members"; undated statement on the official site; as_of is the access
+    date'
+- count: 3227
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US8450, field POP100
+  note: 'Census area: Mechoopda TDSA (code 8450). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. The area is a Census
+    statistical area, not a land holding.'
+- count: 406
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3113 (Mechoopda Indian Tribe of Chico Rancheria alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Mechoopda Indian Tribe of Chico Rancheria' (race code
+    5930) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 633
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Mechoopda Indian Tribe of Chico Rancheria', PDF page 7, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: http://www.mechoopda-nsn.gov/
@@ -54,6 +108,14 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Mechoopda Indian Tribe of Chico Rancheria, California
+languages:
+- name: Northwestern Maidu
+  language_tag: mjd
+  source: mechoopda-indian-tribe-of-chico-rancheri-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'site: "spoke a language related to Maidu" and links a Northwestern Maidu language site; tag is
+    Konkow/Northwest Maidu'
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

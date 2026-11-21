@@ -11,6 +11,16 @@ recognition:
   confidence: high
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  legal_basis: 25 C.F.R. Part 83; final determination 54 FR 51502; correction 54 FR 53799
+  petition_number: '71'
+  petition_stage: Letter of Intent to Petition 05/06/1980; Acknowledgment effective 03/28/1990 54 FR 51502;
+    correction 54 FR 53799
+  since: '1990-03-28'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '1990-03-28'
+  locator: 'Petitioner #71'
 states:
 - state: AZ
   presence: government-office
@@ -18,6 +28,34 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: San Juan Southern Paiute Tribe of Arizona
+population:
+- count: 80
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3285 (San Juan Southern Paiute Tribe of Arizona alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'San Juan Southern Paiute Tribe of Arizona' (race code
+    6058) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 208
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'San Juan Southern Paiute Tribe', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 243
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 87, row T43900 'San Juan Southern Paiute Tribe of Arizona'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
 contacts:
 - kind: website
   value: https://www.sanjuanpaiute-nsn.gov/
@@ -47,6 +85,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: San Juan Southern Paiute Tribe of Arizona
+languages:
+- name: Southern Paiute
+  language_tag: ute
+  source: san-juan-southern-paiute-tribe-of-arizon-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"Our language is a different dialect of the Southern Paiute/Ute language group"'
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Southern Paiute Agency

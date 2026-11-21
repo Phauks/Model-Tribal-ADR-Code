@@ -2,6 +2,19 @@ id: otoe-missouria-tribe-of-indians
 entity_type: native-nation
 names:
   official: Otoe-Missouria Tribe of Indians, Oklahoma
+  self_designation:
+  - name: Jiwere
+    language_tag: iow
+    source: otoe-missouria-tribe-of-indians-who-we-are-history
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"The Otoes also call themselves Jiwere (jee-WEH-ray)"'
+  - name: Nutachi
+    language_tag: iow
+    source: otoe-missouria-tribe-of-indians-who-we-are-history
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"the Missourias who call themselves Nutachi (noo-TAH-chi)"'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -18,6 +31,59 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Otoe-Missouria Tribe of Indians, Oklahoma
+- state: OK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5760
+  note: 'Census area with land in this state: Otoe-Missouria OTSA (code 5760). Statistical area only (not
+    a land holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '5760'
+  name: Otoe-Missouria OTSA
+  area_type: Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5760
+  note: Matched by name. Census class code D6.
+population:
+- count: 3300
+  kind: citizens
+  source: otoe-missouria-tribe-of-indians-who-we-are-history
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"the nearly 3,300 tribal members"; undated statement on the official site; as_of is the access
+    date'
+- count: 810
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5760, field POP100
+  note: 'Census area: Otoe-Missouria OTSA (code 5760). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. The area
+    is a Census statistical area, not a land holding.'
+- count: 4082
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3180 (Otoe-Missouria Tribe of Indians alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Otoe-Missouria Tribe of Indians' (race code 6031) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 3283
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Otoe-Missouria Tribe', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.omtribe.org/
@@ -54,6 +120,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Otoe-Missouria Tribe of Indians, Oklahoma
+languages:
+- name: Jiwere-Nut’achi
+  language_tag: iow
+  source: otoe-missouria-tribe-of-indians-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"Jiwere-Nut’achi language learners"'
 federal_administration:
   bureau_of_indian_affairs_region: Southern Plains
   bureau_of_indian_affairs_agency: Pawnee Agency

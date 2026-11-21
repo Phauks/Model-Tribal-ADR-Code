@@ -18,6 +18,72 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Kaw Nation, Oklahoma
+- state: OK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5690, 5950
+  note: 'Census area with land in this state: Kaw OTSA (code 5690); Kaw/Ponca joint-use OTSA (code 5950).
+    Statistical area only (not a land holding), so presence is recorded as other. Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '5690'
+  name: Kaw OTSA
+  area_type: Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5690
+  note: Matched by name. Census class code D6.
+- geographic_identifier: '5950'
+  name: Kaw/Ponca joint-use OTSA
+  area_type: joint-use Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5950
+  note: 'Matched by name. Shared with: Ponca Tribe of Indians of Oklahoma. Census class code D0.'
+population:
+- count: 5692
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5690, field POP100
+  note: 'Census area: Kaw OTSA (code 5690). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. The area is a Census
+    statistical area, not a land holding.'
+- count: 26146
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5950, field POP100
+  note: 'Census area: Kaw/Ponca joint-use OTSA (code 5950). Everyone counted as living in the area in
+    the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    The area is a Census statistical area, not a land holding. The area is shared with: Ponca Tribe of
+    Indians of Oklahoma; the same count applies to the whole area.'
+- count: 3862
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3051 (Kaw Nation alone or in any combination), GEOID 0100000US (United
+    States)
+  note: People in the United States who reported 'Kaw Nation' (race code 5884) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 3403
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Kaw Nation', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.kawnation.gov/

@@ -18,6 +18,84 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Winnebago Tribe of Nebraska
+- state: IA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4625
+  note: 'Census area with land in this state: Winnebago Reservation and Off-Reservation Trust Land (code
+    4625). Area matched to the nation by name.'
+- state: NE
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4625
+  note: 'Census area with land in this state: Winnebago Reservation and Off-Reservation Trust Land (code
+    4625). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '4625'
+  name: Winnebago Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4625
+  note: Matched by name. Census class code D1.
+population:
+- count: 5000
+  kind: citizens
+  source: winnebago-tribe-of-nebraska-tribal-council
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"Currently, the Tribe has over 5,000 enrolled members"; undated statement on the official site;
+    as_of is the access date'
+- count: 5829
+  kind: citizens
+  source: omaha-tribe-of-nebraska-p-4596
+  confidence: medium
+  as_of: 2026-05
+  note: '"Winnebago Tribe of Nebraska: 5,829"; figure published by the Omaha Tribe; Winnebago site says
+    "over 5,000"; Omaha Tribe news post "Enrollment Roundtable" on the May 18-19, 2026 quarterly enrollment
+    training attended by Nebraska tribes'' enrollment staff: "Total Tribal Membership for Each Tribe"'
+- count: 2737
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4625, field POP100
+  note: 'Census area: Winnebago Reservation and Off-Reservation Trust Land (code 4625). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 2111
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3428 (Winnebago Tribe of Nebraska alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Winnebago Tribe of Nebraska' (race code 6403) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 5300
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Denver, row 'Winnebago Tribe', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 1450
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 90, row T55100 'Winnebago Tribe of Nebraska'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
 contacts:
 - kind: website
   value: https://winnebagotribe.com/

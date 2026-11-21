@@ -18,6 +18,69 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Ute Indian Tribe of the Uintah & Ouray Reservation, Utah
+- state: UT
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4390
+  note: 'Census area with land in this state: Uintah and Ouray Reservation and Off-Reservation Trust Land
+    (code 4390). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '4390'
+  name: Uintah and Ouray Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4390
+  note: Matched by name. Census class code D1.
+population:
+- count: 2400
+  kind: citizens
+  source: ute-indian-tribe-of-the-uintah-and-ouray-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"has a tribal membership of 2,400"; undated statement on the official site; as_of is the access
+    date'
+- count: 25192
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4390, field POP100
+  note: 'Census area: Uintah and Ouray Reservation and Off-Reservation Trust Land (code 4390). Everyone
+    counted as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a
+    count of the nation''s citizens.'
+- count: 1878
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3400 (Ute Indian Tribe of the Uintah and Ouray Reservation, Utah alone
+    or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Ute Indian Tribe of the Uintah and Ouray Reservation,
+    Utah' (race code 6364) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 3174
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Denver, row 'Ute Indian Tribe of the Uintah & Ouray Reservation', PDF page
+    5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 3125
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 89, row T51900 'Ute Indian Tribe of the Uintah & Ouray Reservation'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
 contacts:
 - kind: website
   value: https://utetribe.com/

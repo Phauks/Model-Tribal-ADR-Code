@@ -7,24 +7,73 @@
    "sources": 0
   },
   {
+   "file": "hawaiian-and-territorial.json",
+   "session": "2026-11-21-hawaiian-and-territorial",
+   "facts": 78,
+   "sources": 40
+  },
+  {
    "file": "nations-alaska.json",
    "session": "2026-11-21-nations-alaska",
    "facts": 2047,
    "sources": 11
+  },
+  {
+   "file": "nations-contiguous-m-z.json",
+   "session": "2026-11-21-nations-contiguous-m-z",
+   "facts": 276,
+   "sources": 194
+  },
+  {
+   "file": "petitioning.json",
+   "session": "2026-11-21-petitioning",
+   "facts": 741,
+   "sources": 101
+  },
+  {
+   "file": "population-bulk.json",
+   "session": "2026-11-21-population-bulk",
+   "facts": 2848,
+   "sources": 5
+  },
+  {
+   "file": "state-recognized.json",
+   "session": "2026-11-21-state-recognized",
+   "facts": 378,
+   "sources": 47
   }
  ],
  "dropped_facts": [],
  "unknown_nations": {},
  "renamed_sources": [],
- "merged_entities": [],
+ "merged_entities": [
+  "echota-cherokee-tribe-of-alabama-inc -> echota-cherokee-tribe-of-alabama",
+  "cher-o-creek-intra-tribal-indians -> cher-o-creek-intratribal-indians",
+  "machis-lower-alabama-creek-indian-tribe -> ma-chis-lower-creek-indian-tribe-of-alabama",
+  "haliwa-saponi-indian-tribe-inc -> haliwa-saponi-indian-tribe",
+  "occaneechi-band-of-saponi-nation -> occaneechi-band-of-the-saponi-nation-of-north-carolina",
+  "choctaw-apache-community-of-ebarb-inc -> choctaw-apache-tribe-of-ebarb",
+  "clifton-choctaw-indians -> clifton-choctaw-tribe-of-louisiana",
+  "united-houma-nation-inc -> united-houma-nation",
+  "beaver-creek-band-of-pee-dee-indians -> beaver-creek-indians",
+  "piedmont-american-indian-association -> piedmont-american-indian-association-lower-eastern-cherokee-nation-of-south-carolina",
+  "golden-hill-paugussett-tribe -> golden-hill-paugussett",
+  "lower-muscogee-creek-tribe-east-of-the-mississippi -> lower-muscogee-creek-tribe",
+  "accohannock-indian-tribal-association-inc -> accohannock-indian-tribe",
+  "nanticoke-lenni-lenape-indians -> nanticoke-lenni-lenape-tribal-nation",
+  "ramapough-mountain-indians-inc -> ramapough-lenape-nation",
+  "lipan-apache-band-of-texas-inc -> lipan-apache-tribe-of-texas",
+  "grand-river-bands-of-ottawa-indians -> grand-river-band-of-ottawa-indians",
+  "mackinac-bands-of-chippewa-and-ottawa-indians -> mackinaw-bands-of-chippewa-and-ottawa-indians"
+ ],
  "skipped_profiles": [],
  "invalid_sources": [],
  "missing_sources": {},
  "counts": {
-  "profiles_written": 575,
+  "profiles_written": 933,
   "profiles_skipped": 0,
   "new_sources": 0,
-  "facts_read": 7118,
+  "facts_read": 11457,
   "facts_dropped": 0,
   "sources_missing": 0
  }

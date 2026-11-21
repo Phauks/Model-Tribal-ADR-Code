@@ -1,0 +1,32 @@
+id: tolowa-nation
+entity_type: native-nation
+names:
+  official: Tolowa Nation
+  official_source: federal-register-2014-01831
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 79 FR 4953 (2014-01-30)
+  petition_number: '85'
+  petition_stage: Denied (Petitions Resolved page); Letter of Intent to Petition 01/31/1983
+  source: federal-register-2014-01831
+  confidence: high
+  as_of: '2014-01-30'
+  locator: 'Petitioner #85'
+  note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
+    Letter of Intent to Petition 01/31/1983. Other Federal Register history: Proposed Finding Against
+    Federal Acknowledgment of the Tolowa Nation, 75 FR 71732 (2010-11-24).'
+states:
+- state: CA
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -18,6 +18,186 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Seminole Tribe of Florida
+- state: FL
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0225, 0360, 0690, 1260, 1475, 1555,
+    3665, 4130
+  note: 'Census area with land in this state: Big Cypress Reservation (code 0225); Brighton Reservation
+    (code 0360); Coconut Creek Trust Land (code 0690); Fort Pierce Reservation (code 1260); Hollywood
+    Reservation (code 1475); Immokalee Reservation (code 1555); Seminole (FL) Trust Land (code 3665);
+    Tampa Reservation (code 4130). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '0225'
+  name: Big Cypress Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0225
+  note: 'Matched by name. Matched by name: Big Cypress Reservation is a Seminole Tribe of Florida reservation.
+    Census class code D2.'
+- geographic_identifier: '0360'
+  name: Brighton Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0360
+  note: 'Matched by name. Matched by name: Brighton Reservation is a Seminole Tribe of Florida reservation.
+    Census class code D2.'
+- geographic_identifier: 0690
+  name: Coconut Creek Trust Land
+  area_type: Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0690
+  note: Matched by name. Coconut Creek Trust Land is held for the Seminole Tribe of Florida; matched by
+    known land holding. Census class code D3.
+- geographic_identifier: '1260'
+  name: Fort Pierce Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1260
+  note: Matched by name. Fort Pierce Reservation is held for the Seminole Tribe of Florida; matched by
+    known land holding. Census class code D2.
+- geographic_identifier: '1475'
+  name: Hollywood Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1475
+  note: Matched by name. Hollywood Reservation is a Seminole Tribe of Florida reservation. Census class
+    code D2.
+- geographic_identifier: '1555'
+  name: Immokalee Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1555
+  note: Matched by name. Immokalee Reservation is a Seminole Tribe of Florida reservation. Census class
+    code D2.
+- geographic_identifier: '3665'
+  name: Seminole (FL) Trust Land
+  area_type: Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3665
+  note: Matched by name. Census class code D3.
+- geographic_identifier: '4130'
+  name: Tampa Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4130
+  note: Matched by name. Tampa Reservation is a Seminole Tribe of Florida reservation. Census class code
+    D2.
+population:
+- count: 5000
+  kind: citizens
+  source: seminole-tribe-of-florida-history-introduction
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"more than five thousand Tribal members today"; undated statement on the official site; as_of
+    is the access date'
+- count: 239
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0225, field POP100
+  note: 'Census area: Big Cypress Reservation (code 0225). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Matched
+    by name: Big Cypress Reservation is a Seminole Tribe of Florida reservation.'
+- count: 438
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0360, field POP100
+  note: 'Census area: Brighton Reservation (code 0360). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Matched
+    by name: Brighton Reservation is a Seminole Tribe of Florida reservation.'
+- count: 0
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0690, field POP100
+  note: 'Census area: Coconut Creek Trust Land (code 0690). Everyone counted as living in the area in
+    the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    Coconut Creek Trust Land is held for the Seminole Tribe of Florida; matched by known land holding.'
+- count: 52
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1260, field POP100
+  note: 'Census area: Fort Pierce Reservation (code 1260). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Fort
+    Pierce Reservation is held for the Seminole Tribe of Florida; matched by known land holding.'
+- count: 1426
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1475, field POP100
+  note: 'Census area: Hollywood Reservation (code 1475). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Hollywood
+    Reservation is a Seminole Tribe of Florida reservation.'
+- count: 197
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1555, field POP100
+  note: 'Census area: Immokalee Reservation (code 1555). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Immokalee
+    Reservation is a Seminole Tribe of Florida reservation.'
+- count: 2336
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3304 (Seminole Tribe of Florida alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Seminole Tribe of Florida' (race code 6250) alone or
+    in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 3991
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Seminole Tribe of Florida', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 3680
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 87, row T45100 'Seminole Tribe of Florida'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
 contacts:
 - kind: website
   value: https://www.semtribe.com/

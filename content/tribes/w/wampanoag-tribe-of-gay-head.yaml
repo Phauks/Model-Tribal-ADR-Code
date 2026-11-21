@@ -2,6 +2,12 @@ id: wampanoag-tribe-of-gay-head
 entity_type: native-nation
 names:
   official: Wampanoag Tribe of Gay Head
+  alternate:
+  - name: Wampanoag Tribe of Gay Head (Aquinnah)
+    source: wampanoag-tribe-of-gay-head-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: name as shown on the site
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -12,6 +18,25 @@ recognition:
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
   note: 'The notice adds in parentheses: Aquinnah.'
+- type: federal
+  legal_basis: 25 C.F.R. Part 83; final determination 52 FR 4193
+  petition_number: '76'
+  petition_stage: Letter of Intent to Petition 07/06/1981; Acknowledgment effective 04/11/1987 52 FR 4193
+  since: '1987-04-11'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '1987-04-11'
+  locator: 'Petitioner #76'
+- type: state
+  state: MA
+  legal_basis: Massachusetts Executive Order No. 126 (1976)
+  since: '1976-07-08'
+  source: massachusetts-executive-order-126
+  confidence: medium
+  as_of: '1976-07-08'
+  note: Directs state agencies to deal directly with the Wampanoag Tribal council of Gay Head; Executive
+    Order No. 637 (2024) refers to the Wampanoag Tribe of Gay Head as recognized by the Commonwealth.
+    Also federally recognized.
 states:
 - state: MA
   presence: government-office
@@ -19,6 +44,69 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Wampanoag Tribe of Gay Head (Aquinnah)
+- state: MA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4530
+  note: 'Census area with land in this state: Wampanoag-Aquinnah Trust Land (code 4530). Area matched
+    to the nation by name.'
+census_areas:
+- geographic_identifier: '4530'
+  name: Wampanoag-Aquinnah Trust Land
+  area_type: Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4530
+  note: Matched by name. Census class code D3.
+population:
+- count: 901
+  kind: citizens
+  source: wampanoag-tribe-of-gay-head-wampanoag-history
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"count 901 members, about 300 of whom live on the Island"; undated statement on the official
+    site; as_of is the access date'
+- count: 86
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4530, field POP100
+  note: 'Census area: Wampanoag-Aquinnah Trust Land (code 4530). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 604
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3411 (Wampanoag Tribe of Gay Head (Aquinnah) alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Wampanoag Tribe of Gay Head (Aquinnah)' (race code 6380)
+    alone or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 1065
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Wampanoag Tribe of Gay Head (Aquinnah)', PDF page 5, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 472
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: low
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 90, row T54600 'Wampanoag Tribe of Gay Head (Aquinnah) of Massachusetts'
+  note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
+    in the vicinity of the nation (2010), used by Indian Affairs as the nation's population indicator;
+    a broad proxy that includes people of any tribe; not enrollment. Report published 2014-01-16; row
+    name matched to the nation by name.
 contacts:
 - kind: website
   value: https://wampanoagtribe-nsn.gov/
@@ -55,6 +143,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Wampanoag Tribe of Gay Head (Aquinnah)
+languages:
+- name: Wampanoag
+  language_tag: wam
+  source: wampanoag-tribe-of-gay-head-wampanoag-history
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"the Wampanoag language is being taught to tribal members"'
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office

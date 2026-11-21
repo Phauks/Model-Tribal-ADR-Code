@@ -11,6 +11,17 @@ recognition:
   confidence: high
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
+- type: federal
+  legal_basis: Legislative recognition (as stated in the Office of Federal Acknowledgment list)
+  petition_number: '203'
+  petition_stage: Letter of Intent to Petition 10/14/98; Legislative recognition 12/27/2000
+  since: '2000-12-27'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2000-12-27'
+  locator: 'Petitioner #203'
+  note: 'Petitioner name: Loyal Shawnee Tribe; matched to the roster Shawnee Tribe by name and date, not
+    stated by the source.'
 states:
 - state: OK
   presence: government-office
@@ -18,6 +29,25 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Shawnee Tribe
+population:
+- count: 1995
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3313 (Shawnee Tribe alone or in any combination), GEOID 0100000US (United
+    States)
+  note: People in the United States who reported 'Shawnee Tribe' (race code 6275) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 2113
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Shawnee Tribe', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://shawnee-nsn.gov/
@@ -54,6 +84,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Shawnee Tribe
+languages:
+- name: Shawnee
+  language_tag: sjw
+  source: shawnee-tribe-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Shawnee Language Immersion Program
 federal_administration:
   bureau_of_indian_affairs_region: Eastern Oklahoma
   bureau_of_indian_affairs_agency: Miami Agency

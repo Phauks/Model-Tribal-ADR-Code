@@ -18,6 +18,57 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Quileute Tribe of the Quileute Reservation
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3030
+  note: 'Census area with land in this state: Quileute Reservation (code 3030). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '3030'
+  name: Quileute Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3030
+  note: Matched by name. Census class code D2.
+population:
+- count: 808
+  kind: citizens
+  source: quileute-tribe-of-the-quileute-reservati-government-tribal-council
+  confidence: medium
+  as_of: '2018-03-14'
+  note: '"a federally recognized Indian Tribe of 808 enrolled members (as of 3/14/2018)"'
+- count: 404
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3030, field POP100
+  note: 'Census area: Quileute Reservation (code 3030). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 1001
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3256 (Quileute Tribe of the Quileute Reservation, Washington alone
+    or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Quileute Tribe of the Quileute Reservation, Washington'
+    (race code 5594) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 793
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Quileute Tribe', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://quileutetribe.com/
@@ -54,6 +105,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Quileute Tribe of the Quileute Reservation
+languages:
+- name: Quileute
+  language_tag: qui
+  source: quileute-tribe-of-the-quileute-reservati-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"the Quileute language, is still spoken by elders at LaPush"'
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Olympic Peninsula Agency

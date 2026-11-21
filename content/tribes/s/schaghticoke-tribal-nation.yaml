@@ -1,0 +1,52 @@
+id: schaghticoke-tribal-nation
+entity_type: native-nation
+names:
+  official: Schaghticoke Tribal Nation
+  former:
+  - name: Schaghticoke Indian Tribe
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    locator: 'Petitioner #79'
+  official_source: federal-register-05-20719
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 70 FR 60101 (2005-10-14)
+  petition_number: '79'
+  petition_stage: Denied (Petitions Resolved page); Letter of Intent to Petition 12/14/1981; Declined
+    Acknowledgment effective 10/14/2005 70 FR 60101
+  source: federal-register-05-20719
+  confidence: high
+  as_of: '2005-10-14'
+  locator: 'Petitioner #79'
+  note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
+    Letter of Intent to Petition 12/14/1981; Declined Acknowledgment effective 10/14/2005 70 FR 60101.
+    Other Federal Register history: Proposed Finding Against Federal Acknowledgment of the Schaghticoke
+    Tribal Nation, 67 FR 76184 (2002-12-11); Final Determination To Acknowledge the Schaghticoke Tribal
+    Nation, 69 FR 5570 (2004-02-05).'
+- type: petitioning
+  legal_basis: 25 C.F.R. Part 83, subpart D (re-petition authorization); notice 90 FR 61161 (2025-12-30)
+  petition_number: R003
+  petition_stage: 'Re-petition request: Awaiting Active Consideration'
+  source: ofa-re-petition-requests
+  confidence: high
+  as_of: '2026-11-21'
+  locator: Current Re-Petition Requests, row R003
+  note: 'Request for authorization to re-petition; Federal Register notice Receipt of Request for Authorization
+    To Re-Petition for Federal Acknowledgment as an American Indian Tribe, 90 FR 61161 (2025-12-30) (source
+    key federal-register-2025-23954). Earlier petition #79 was denied.'
+states:
+- state: CT
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

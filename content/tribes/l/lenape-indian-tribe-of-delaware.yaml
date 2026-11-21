@@ -1,0 +1,41 @@
+id: lenape-indian-tribe-of-delaware
+entity_type: native-nation
+names:
+  official: Lenape Indian Tribe of Delaware
+  former:
+  - name: the Moors
+    source: delaware-code-title-29-chapter-1
+    confidence: high
+    as_of: '2026'
+    note: 'Statute finding: ''The Tribe was formerly known as "the Moors"'' (a term applied in state records).'
+  - name: Moors of Kent County, Delaware
+    source: delaware-code-title-29-chapter-1
+    confidence: high
+    as_of: '2026'
+    note: Name used in a 1948 Smithsonian Institution report cited in the statute findings.
+  official_source: delaware-code-title-29-chapter-1
+recognition:
+- type: state
+  state: DE
+  legal_basis: Delaware Code Title 29, Section 106 (80 Del. Laws, c. 367, Section 1)
+  source: delaware-code-title-29-chapter-1
+  confidence: high
+  as_of: '2026'
+  locator: 29 Del. C. Section 106(b)
+  note: Designated and recognized as an American Indian Tribe with a recognized tribal governing body;
+    findings say the Department of State concluded by 2009 that the State had historically acknowledged
+    the Tribe.
+states:
+- state: DE
+  presence: other
+  source: delaware-code-title-29-chapter-1
+  confidence: high
+  as_of: '2026'
+  note: 'Statute findings: settlement and residency in the vicinity of the Town of Cheswold, Kent County.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

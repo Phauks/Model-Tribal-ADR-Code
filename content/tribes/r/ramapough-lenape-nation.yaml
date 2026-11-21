@@ -1,0 +1,78 @@
+id: ramapough-lenape-nation
+entity_type: native-nation
+names:
+  official: Ramapough Lenape Nation
+  alternate:
+  - name: Ramapough Mountain Indians
+    source: new-jersey-statutes-52-16a-53
+    confidence: high
+    as_of: '2001'
+  - name: Ramapough Lenape Indian Nation
+    source: new-jersey-commission-american-indian-affairs-about
+    confidence: high
+    as_of: '2026'
+  - name: Ramapough Mountain Indians, Inc.
+    source: federal-register-98-298
+    confidence: medium
+    as_of: '1998-01-07'
+    note: Name used for this group in the cited source; matched to this record by name and state.
+  official_source: federal-register-98-298
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 61 FR 4476 (1996-02-06); 63 FR 888 (1998-01-07)
+  petition_number: '58'
+  petition_stage: Denied (Petitions Resolved page); Letter of Intent to Petition 08/14/1979; Declined
+    Acknowledgment effective 1/7/1998 61 FR 4476, 63 FR 888
+  source: federal-register-98-298
+  confidence: high
+  as_of: '1998-01-07'
+  locator: 'Petitioner #58'
+  note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
+    Letter of Intent to Petition 08/14/1979; Declined Acknowledgment effective 1/7/1998 61 FR 4476, 63
+    FR 888.'
+- type: state
+  state: NJ
+  legal_basis: New Jersey concurrent legislative resolution (1980), acknowledged in a 2019 settlement
+    agreement with the New Jersey Attorney General
+  source: new-jersey-ramapough-settlement-agreement
+  confidence: high
+  as_of: 2019-03
+  locator: Paragraph 1
+  note: 'Agreement: New Jersey has ''formally recognized the Tribe as an American Indian Tribe since 1980''
+    through processes including ''a concurrent legislative resolution, state statutes ... state official
+    communications''. Resolution number not retrieved.'
+- type: state
+  state: NJ
+  legal_basis: New Jersey Attorney General settlement announcement, 2019-03-18
+  source: new-jersey-attorney-general-2019-03-18
+  confidence: high
+  as_of: '2019-03-18'
+- type: state
+  state: NJ
+  legal_basis: New Jersey Statutes 52:16A-53 (L.1995, c.295; 2001, c.417), commission seats for the 'Ramapough
+    Mountain Indians'
+  source: new-jersey-statutes-52-16a-53
+  confidence: high
+  as_of: '2001'
+  note: The statute provides seats on the Commission on American Indian Affairs; the Attorney General
+    calls these the three 'New Jersey tribes of American Indians' referenced in 1990s statutes.
+states:
+- state: NJ
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+- state: NJ
+  presence: other
+  source: new-jersey-attorney-general-2019-03-18
+  confidence: high
+  as_of: '2019-03-18'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

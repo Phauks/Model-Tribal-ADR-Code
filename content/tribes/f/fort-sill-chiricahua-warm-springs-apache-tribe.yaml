@@ -26,6 +26,103 @@ states:
   as_of: '2026-11-20'
   locator: Fort Sill—Chiricahua—Warm Springs—Apache Tribe (previously listed as Fort Sill Apache Tribe
     of Oklahoma)
+- state: NM
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1270
+  note: 'Census area with land in this state: Fort Sill Apache Indian Reservation (code 1270). Area matched
+    to the nation by name.'
+- state: OK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5720, 5955
+  note: 'Census area with land in this state: Kiowa-Comanche-Apache-Fort Sill Apache OTSA (code 5720);
+    Kiowa-Comanche-Apache-Ft Sill Apache/Caddo-Wichita-Delaware joint-use OTSA (code 5955). Statistical
+    area only (not a land holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1270'
+  name: Fort Sill Apache Indian Reservation
+  area_type: Indian Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1270
+  note: Matched by name. Census class code D2.
+- geographic_identifier: '5720'
+  name: Kiowa-Comanche-Apache-Fort Sill Apache OTSA
+  area_type: Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5720
+  note: 'Matched by name. Shared with: Kiowa Tribe; Comanche Nation, Oklahoma; Apache Tribe of Oklahoma.
+    Census class code D6.'
+- geographic_identifier: '5955'
+  name: Kiowa-Comanche-Apache-Ft Sill Apache/Caddo-Wichita-Delaware joint-use OTSA
+  area_type: joint-use Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5955
+  note: 'Matched by name. Shared with: Kiowa Tribe; Comanche Nation, Oklahoma; Apache Tribe of Oklahoma;
+    Caddo Nation of Oklahoma; Wichita and Affiliated Tribes , Oklahoma; Delaware Nation, Oklahoma. Census
+    class code D0.'
+population:
+- count: 0
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1270, field POP100
+  note: 'Census area: Fort Sill Apache Indian Reservation (code 1270). Everyone counted as living in the
+    area in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 187646
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5720, field POP100
+  note: 'Census area: Kiowa-Comanche-Apache-Fort Sill Apache OTSA (code 5720). Everyone counted as living
+    in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s
+    citizens. The area is a Census statistical area, not a land holding. The area is shared with: Kiowa
+    Tribe; Comanche Nation, Oklahoma; Apache Tribe of Oklahoma; the same count applies to the whole area.'
+- count: 9690
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5955, field POP100
+  note: 'Census area: Kiowa-Comanche-Apache-Ft Sill Apache/Caddo-Wichita-Delaware joint-use OTSA (code
+    5955). Everyone counted as living in the area in the 2020 Census, of any race or tribal affiliation;
+    this is not a count of the nation''s citizens. The area is a Census statistical area, not a land holding.
+    The area is shared with: Kiowa Tribe; Comanche Nation, Oklahoma; Apache Tribe of Oklahoma; Caddo Nation
+    of Oklahoma; Wichita and Affiliated Tribes , Oklahoma; Delaware Nation, Oklahoma; the same count applies
+    to the whole area.'
+- count: 4760
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3000 (Fort Sill Apache Tribe of Oklahoma alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Fort Sill Apache Tribe of Oklahoma' (race code 5516)
+    alone or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 815
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Fort Sill Apache Tribe', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://fortsillapache-nsn.gov/

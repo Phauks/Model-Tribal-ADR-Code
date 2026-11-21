@@ -11,6 +11,18 @@ recognition:
   confidence: high
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: Determined to be part of the Oklahoma Kickapoo Tribe 09/14/1981, but legislation allowed
+    them to organize as a separate entity (as stated in the Office of Federal Acknowledgment list)
+  petition_number: '54'
+  petition_stage: Letter of Intent to Petition 06/04/1979; determined to be part of Oklahoma Kickapoo
+    Tribe 09/14/1981, but legislation allowed them to organize as a separate entity
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  locator: 'Petitioner #54'
+  note: 'Petitioner name: Texas Band of Traditional Kickapoo (changed to Kickapoo Traditional Tribe of
+    Texas after acknowledgment).'
 states:
 - state: TX
   presence: government-office
@@ -18,6 +30,63 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Kickapoo Traditional Tribe of Texas
+- state: TX
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1775
+  note: 'Census area with land in this state: Kickapoo (TX) Reservation and Off-Reservation Trust Land
+    (code 1775). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1775'
+  name: Kickapoo (TX) Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1775
+  note: Matched by name. Census class code D1.
+population:
+- count: 377
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1775, field POP100
+  note: 'Census area: Kickapoo (TX) Reservation and Off-Reservation Trust Land (code 1775). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 508
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3057 (Kickapoo Traditional Tribe of Texas alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Kickapoo Traditional Tribe of Texas' (race code 5887)
+    alone or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 459
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Kickapoo Traditional Tribe of Texas', PDF page 6, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 721
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: low
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 79, row T17600 'Kickapoo Traditional Tribe of Texas'
+  note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
+    in the vicinity of the nation (2010), used by Indian Affairs as the nation's population indicator;
+    a broad proxy that includes people of any tribe; not enrollment. Report published 2014-01-16; row
+    name matched to the nation by name.
 contacts:
 - kind: website
   value: https://kickapootexas.org/

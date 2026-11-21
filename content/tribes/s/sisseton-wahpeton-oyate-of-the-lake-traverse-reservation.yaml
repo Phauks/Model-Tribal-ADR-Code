@@ -18,6 +18,75 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South Dakota
+- state: ND
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1860
+  note: 'Census area with land in this state: Lake Traverse Reservation and Off-Reservation Trust Land
+    (code 1860). Area matched to the nation by name.'
+- state: SD
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1860
+  note: 'Census area with land in this state: Lake Traverse Reservation and Off-Reservation Trust Land
+    (code 1860). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1860'
+  name: Lake Traverse Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1860
+  note: Matched by name. Census class code D1.
+population:
+- count: 14000
+  kind: citizens
+  source: sisseton-wahpeton-oyate-of-the-lake-trav-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"We have 14,000+ tribal members"; undated statement on the official site; as_of is the access
+    date'
+- count: 12389
+  kind: citizens
+  source: sisseton-wahpeton-oyate-of-the-lake-trav-tribes-sisseton-wahpeton-oyate-aspx
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"Estimated Tribal Enrollment: 12,389"; the nation''s own site says 14,000+; South Dakota Department
+    of Tribal Relations tribe profile (state agency); figure undated, page links a 2019 statistical profile'
+- count: 11043
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1860, field POP100
+  note: 'Census area: Lake Traverse Reservation and Off-Reservation Trust Land (code 1860). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 8044
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3323 (Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South
+    Dakota alone or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Sisseton-Wahpeton Oyate of the Lake Traverse Reservation,
+    South Dakota' (race code 6310) alone or in combination with other tribes or races in the 2020 Census;
+    self-identification, not enrollment. Includes noise added for disclosure avoidance. Census label exact
+    name match.
+- count: 11763
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Denver, row 'Sisseton-Wahpeton Oyate', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.swo-nsn.gov/
@@ -54,6 +123,14 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South Dakota
+languages:
+- name: Dakota
+  language_tag: dak
+  source: sisseton-wahpeton-oyate-of-the-lake-trav-tribes-sisseton-wahpeton-oyate-aspx
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"Traditional Language: Dakota"; South Dakota Department of Tribal Relations tribe profile (state
+    agency); figure undated, page links a 2019 statistical profile'
 federal_administration:
   bureau_of_indian_affairs_region: Great Plains
   bureau_of_indian_affairs_agency: Sisseton Agency

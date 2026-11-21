@@ -11,6 +11,31 @@ recognition:
   confidence: high
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: 25 C.F.R. Part 83; final determination 49 FR 24083
+  petition_number: '13'
+  petition_stage: Letter of Intent to Petition 05/15/1975; Acknowledgment effective 08/10/1984 49 FR 24083
+  since: '1984-08-10'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '1984-08-10'
+  locator: 'Petitioner #13'
+- type: state
+  state: AL
+  legal_basis: Code of Alabama 1975, Section 41-9-708 (Acts 1984, No. 84-257)
+  source: alabama-code-41-9-708
+  confidence: high
+  as_of: '2025'
+  locator: Section 41-9-708(b)
+  note: Statute names 'The Poarch Band of Creeks of Escambia County' as a member tribe of the Alabama
+    Indian Affairs Commission; the commission lists it as also federally recognized.
+- type: state
+  state: AL
+  legal_basis: Alabama Administrative Code Rule 475-X-1-.02
+  source: alabama-administrative-code-475-x-1-2026
+  confidence: high
+  as_of: '2026-07-31'
+  locator: Rule 475-X-1-.02 Members
 states:
 - state: AL
   presence: government-office
@@ -18,6 +43,69 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Poarch Band of Creek Indians
+- state: AL
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2865
+  note: 'Census area with land in this state: Poarch Creek Reservation and Off-Reservation Trust Land
+    (code 2865). Area matched to the nation by name.'
+- state: FL
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2865
+  note: 'Census area with land in this state: Poarch Creek Reservation and Off-Reservation Trust Land
+    (code 2865). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2865'
+  name: Poarch Creek Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2865
+  note: Matched by name. Census class code D1.
+population:
+- count: 287
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2865, field POP100
+  note: 'Census area: Poarch Creek Reservation and Off-Reservation Trust Land (code 2865). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 6237
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3214 (Poarch Band of Creeks alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Poarch Band of Creeks' (race code 5744) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label matched by name variant.
+- count: 2885
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Poarch Band of Creeks', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 1914
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 85, row T38500 'Poarch Band of Creek Indians of Alabama'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
 contacts:
 - kind: website
   value: https://pci-nsn.gov/

@@ -18,6 +18,68 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Tohono O'odham Nation of Arizona
+- state: AZ
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4200
+  note: 'Census area with land in this state: Tohono O''odham Nation Reservation and Off-Reservation Trust
+    Land (code 4200). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '4200'
+  name: Tohono O'odham Nation Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4200
+  note: Matched by name. Census class code D1.
+population:
+- count: 28000
+  kind: citizens
+  source: tohono-oodham-nation-of-arizona-about-tohono-oodham-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"approximately 28,000 members"; undated statement on the official site; as_of is the access date'
+- count: 9561
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4200, field POP100
+  note: 'Census area: Tohono O''odham Nation Reservation and Off-Reservation Trust Land (code 4200). Everyone
+    counted as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a
+    count of the nation''s citizens.'
+- count: 25895
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3372 (Tohono O'odham Nation of Arizona alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Tohono O'odham Nation of Arizona' (race code 6341) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 35386
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Tohono O'odham Nation', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 9278
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 89, row T49800 'Tohono O'odham Nation of Arizona'
+  note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
+    Census tribal statistical area (2010), used by Indian Affairs as the nation's population indicator;
+    includes people of any tribe; not enrollment. Report published 2014-01-16; row name matched to the
+    nation by name.
 contacts:
 - kind: website
   value: https://www.tonation-nsn.gov/
@@ -54,6 +116,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Tohono O'odham Nation of Arizona
+languages:
+- name: O’odham
+  language_tag: ood
+  source: tohono-oodham-nation-of-arizona-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"All of the groups still speak the O’odham language"'
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Tohono O'odham Agency

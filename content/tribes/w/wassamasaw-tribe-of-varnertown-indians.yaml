@@ -1,0 +1,52 @@
+id: wassamasaw-tribe-of-varnertown-indians
+entity_type: native-nation
+names:
+  official: Wassamasaw Tribe of Varnertown Indians
+  alternate:
+  - name: The Wassamasaw Tribe of Varnertown Indians
+    source: south-carolina-recognized-tribes-advance-sc
+    confidence: high
+    as_of: '2026'
+  official_source: south-carolina-recognized-tribes-advance-sc
+recognition:
+- type: state
+  state: SC
+  legal_basis: 'South Carolina Code of Laws Section 1-31-40(A)(10); South Carolina Code of Regulations
+    Chapter 139 (category: State Recognized Native American Indian Tribe)'
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  as_of: '2026'
+  note: Listed under 'State Recognized Tribes'.
+states:
+- state: SC
+  presence: other
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  as_of: '2026'
+  note: State-recognized entity with a South Carolina contact address.
+contacts:
+- kind: mailing-address
+  value: PO Box 428, Summerville, SC 29484
+  label: Mailing address listed by the South Carolina commission
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  as_of: '2026'
+- kind: website
+  value: http://www.wassamasawtribe.com/
+  label: Official website
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  as_of: '2026'
+- kind: email-general
+  value: wassamasaw@hotmail.com
+  label: Tribe Email
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

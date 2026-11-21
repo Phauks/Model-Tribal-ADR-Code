@@ -1,0 +1,40 @@
+key: ofa-list-of-petitioners-by-state-2013
+kind: report
+citation:
+  type: report
+  title: List of Petitioners by State (as of November 12, 2013)
+  author:
+  - literal: U.S. Department of the Interior, Office of the Assistant Secretary - Indian Affairs, Office
+      of Federal Acknowledgment
+  container-title: Indian Affairs (bia.gov), Office of Federal Acknowledgment, Additional Resources
+  URL: https://www.bia.gov/sites/default/files/media_document/listpetbystate_2013-11-12.pdf
+  issued:
+    date-parts:
+    - - 2013
+      - 11
+      - 12
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 21
+original_link: https://www.bia.gov/sites/default/files/media_document/listpetbystate_2013-11-12.pdf
+retrieved: '2026-11-21'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-21'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Only facts are recorded from this source; it is cited and linked, not quoted or reproduced.
+  redistribution: false
+found_in:
+- 2026-11-21-petitioning
+notes: Read through the web-fetch tool from the live bia.gov copy (bia.gov blocks plain curl); also posted
+  at https://www.bia.gov/sites/bia.gov/files/assets/as-ia/ofa/admindocs/ListPetByState_2013-11-12.pdf.
+  The text extraction stopped partway through the Vermont section (about 73,800 characters), so Vermont,
+  Virginia, Washington, West Virginia and Wisconsin rows come from the 2008 edition. Rows were extracted
+  state by state by a summarizing fetch tool; names and dates are as printed but should be spot-checked
+  against the PDF. The bia.gov Additional Resources page notes that groups on this list may no longer
+  be active petitioners under the current regulations.

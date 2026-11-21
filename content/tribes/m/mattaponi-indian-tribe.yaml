@@ -1,0 +1,66 @@
+id: mattaponi-indian-tribe
+entity_type: native-nation
+names:
+  official: Mattaponi Indian Tribe
+  alternate:
+  - name: Mattaponi
+    source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
+    confidence: high
+    as_of: '2026'
+  official_source: virginia-report-status-of-indian-tribes-2025
+recognition:
+- type: state
+  state: VA
+  legal_basis: Listed by the Secretary of the Commonwealth among the 11 Virginia Indian tribes the Commonwealth
+    recognizes
+  source: virginia-report-status-of-indian-tribes-2025
+  confidence: high
+  as_of: '2025-12-30'
+- type: state
+  state: VA
+  legal_basis: Virginia House Joint Resolution 54 (1983); 1677 Treaty of Middle Plantation
+  since: '1983-03-25'
+  source: virginia-mattaponi-tribe-history
+  confidence: high
+  as_of: '2026'
+  note: 'Source: ''on March 25, 1983, Virginia Joint Resolution 54 officially recognized the Mattaponi
+    tribe.'' The Secretary''s page also says two tribes were recognized through a treaty; the annual tribute
+    under the 1677 Treaty of Middle Plantation continues (2025 report).'
+states:
+- state: VA
+  presence: government-office
+  source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+- state: VA
+  presence: land
+  source: virginia-mattaponi-tribe-history
+  confidence: high
+  as_of: '2026'
+  note: Reservation set aside by treaty; address on Mattaponi Reservation Circle.
+contacts:
+- kind: physical-address
+  value: 1314 Mattaponi Reservation Circle, West Point, VA 23181
+  label: Tribal contact address
+  source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+- kind: phone
+  value: 804-353-5908
+  label: Tribal contact phone
+  source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+- kind: website
+  value: https://www.Mattaponi.gov
+  label: Official website
+  source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

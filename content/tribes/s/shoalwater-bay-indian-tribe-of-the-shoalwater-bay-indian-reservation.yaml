@@ -18,6 +18,64 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3780
+  note: 'Census area with land in this state: Shoalwater Bay Indian Reservation and Off-Reservation Trust
+    Land (code 3780). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '3780'
+  name: Shoalwater Bay Indian Reservation and Off-Reservation Trust Land
+  area_type: Indian Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3780
+  note: Matched by name. Census class code D1.
+population:
+- count: 82
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3780, field POP100
+  note: 'Census area: Shoalwater Bay Indian Reservation and Off-Reservation Trust Land (code 3780). Everyone
+    counted as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a
+    count of the nation''s citizens.'
+- count: 342
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3317 (Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation
+    alone or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian
+    Reservation' (race code 6281) alone or in combination with other tribes or races in the 2020 Census;
+    self-identification, not enrollment. Includes noise added for disclosure avoidance. Census label exact
+    name match.
+- count: 387
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Shoalwater Bay Indian Tribe', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 1083
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: low
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 88, row T46000 'Shoalwater Bay Tribe of the Shoalwater Bay Indian
+    Reservation'
+  note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
+    in the vicinity of the nation (2010), used by Indian Affairs as the nation's population indicator;
+    a broad proxy that includes people of any tribe; not enrollment. Report published 2014-01-16; row
+    name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.shoalwaterbay-nsn.gov/

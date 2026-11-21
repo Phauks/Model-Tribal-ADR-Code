@@ -18,6 +18,26 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Delaware Tribe of Indians
+population:
+- count: 1752
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2968 (Delaware Tribe of Indians, Oklahoma  alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Delaware Tribe of Indians, Oklahoma ' (race code 5764)
+    alone or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 11014
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Delaware Tribe of Indians (Eastern)', PDF page 6, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://delawaretribe.org/

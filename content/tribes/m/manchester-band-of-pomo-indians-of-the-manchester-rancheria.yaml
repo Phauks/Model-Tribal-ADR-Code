@@ -2,6 +2,13 @@ id: manchester-band-of-pomo-indians-of-the-manchester-rancheria
 entity_type: native-nation
 names:
   official: Manchester Band of Pomo Indians of the Manchester Rancheria, California
+  alternate:
+  - name: Manchester Point Arena Band of Pomo Indians
+    source: manchester-band-of-pomo-indians-of-the-m-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"The Manchester Point Arena Band of Pomo Indians of the Manchester Rancheria, also known as
+      the Manchester Band of Pomo Indians"'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -18,6 +25,52 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Manchester Band of Pomo Indians of the Manchester Rancheria, California
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2100
+  note: 'Census area with land in this state: Manchester-Point Arena Rancheria (code 2100). Area matched
+    to the nation by name.'
+census_areas:
+- geographic_identifier: '2100'
+  name: Manchester-Point Arena Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2100
+  note: Matched by name. Census class code D2.
+population:
+- count: 188
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2100, field POP100
+  note: 'Census area: Manchester-Point Arena Rancheria (code 2100). Everyone counted as living in the
+    area in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 357
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3103 (Manchester Band of Pomo Indians of the Manchester Rancheria,
+    California alone or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Manchester Band of Pomo Indians of the Manchester Rancheria,
+    California' (race code 6132) alone or in combination with other tribes or races in the 2020 Census;
+    self-identification, not enrollment. Includes noise added for disclosure avoidance. Census label exact
+    name match.
+- count: 1217
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Manchester Band of Pomo Indians', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://mpapomotribe.com/tribal-council/

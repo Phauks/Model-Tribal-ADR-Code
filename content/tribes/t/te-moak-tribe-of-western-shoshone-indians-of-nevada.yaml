@@ -2,6 +2,13 @@ id: te-moak-tribe-of-western-shoshone-indians-of-nevada
 entity_type: native-nation
 names:
   official: Te-Moak Tribe of Western Shoshone Indians of Nevada
+  self_designation:
+  - name: Newe
+    language_tag: shh
+    source: te-moak-tribe-of-western-shoshone-indian-history-shtml
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'site: people "whose name is ''Newe'' meaning ''The People.''" (Western Shoshone)'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -21,6 +28,121 @@ states:
   as_of: '2026-11-20'
   locator: 'Te-Moak Tribe of Western Shoshone Indians of Nevada (Four constituent bands: Battle Mountain
     Band; Elko Band; South Fork Band; and Wells Band)'
+- state: NV
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0165, 1005, 3930, 4580
+  note: 'Census area with land in this state: Battle Mountain Reservation and Off-Reservation Trust Land
+    (code 0165); Elko Colony (code 1005); South Fork Reservation and Off-Reservation Trust Land (code
+    3930); Wells Colony (code 4580). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '0165'
+  name: Battle Mountain Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0165
+  note: Matched by name. Land of a constituent band of the Te-Moak Tribe (the 2026 list names Battle Mountain,
+    Elko, South Fork and Wells bands). Census class code D1.
+- geographic_identifier: '1005'
+  name: Elko Colony
+  area_type: Colony
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1005
+  note: Matched by name. Land of a constituent band of the Te-Moak Tribe (the 2026 list names Battle Mountain,
+    Elko, South Fork and Wells bands). Census class code D2.
+- geographic_identifier: '3930'
+  name: South Fork Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3930
+  note: Matched by name. Land of a constituent band of the Te-Moak Tribe (the 2026 list names Battle Mountain,
+    Elko, South Fork and Wells bands). Census class code D1.
+- geographic_identifier: '4580'
+  name: Wells Colony
+  area_type: Colony
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4580
+  note: Matched by name. Land of a constituent band of the Te-Moak Tribe (the 2026 list names Battle Mountain,
+    Elko, South Fork and Wells bands). Census class code D2.
+population:
+- count: 2096
+  kind: citizens
+  source: te-moak-tribe-of-western-shoshone-indian-elko-shtml
+  confidence: low
+  as_of: '2026-11-21'
+  note: 'sum by researcher of band pages on the official site: Elko 1,143; Battle Mountain 516 (battlemountain.shtml);
+    South Fork 260 (southfork.shtml); Wells 177 (wells.shtml); pages undated (site footer 2004-2022)'
+- count: 142
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0165, field POP100
+  note: 'Census area: Battle Mountain Reservation and Off-Reservation Trust Land (code 0165). Everyone
+    counted as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a
+    count of the nation''s citizens. Land of a constituent band of the Te-Moak Tribe (the 2026 list names
+    Battle Mountain, Elko, South Fork and Wells bands).'
+- count: 723
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1005, field POP100
+  note: 'Census area: Elko Colony (code 1005). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. Land of a constituent
+    band of the Te-Moak Tribe (the 2026 list names Battle Mountain, Elko, South Fork and Wells bands).'
+- count: 98
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3930, field POP100
+  note: 'Census area: South Fork Reservation and Off-Reservation Trust Land (code 3930). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens. Land of a constituent band of the Te-Moak Tribe (the 2026 list names Battle
+    Mountain, Elko, South Fork and Wells bands).'
+- count: 54
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4580, field POP100
+  note: 'Census area: Wells Colony (code 4580). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. Land of a constituent
+    band of the Te-Moak Tribe (the 2026 list names Battle Mountain, Elko, South Fork and Wells bands).'
+- count: 1930
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3359 (Te-Moak Tribes of Western Shoshone Indians of Nevada alone or
+    in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Te-Moak Tribes of Western Shoshone Indians of Nevada'
+    (race code 6326) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 2597
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Te-Moak Tribe of Western Shoshone Indians', PDF page 8, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://www.temoaktribe.com/index.shtml

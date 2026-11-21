@@ -11,6 +11,17 @@ recognition:
   confidence: high
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
+- type: federal
+  legal_basis: Restored as Graton Rancheria by Act of 12/27/2000 (as stated in the Office of Federal Acknowledgment
+    list)
+  petition_number: '154'
+  petition_stage: Letter of Intent to Petition 02/08/1995; Restored as Graton Rancheria by Act of 12/27/2000
+  since: '2000-12-27'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2000-12-27'
+  locator: 'Petitioner #154'
+  note: 'Petitioner name: Federated Coast Miwok.'
 states:
 - state: CA
   presence: government-office
@@ -18,6 +29,26 @@ states:
   confidence: high
   as_of: '2026-11-20'
   locator: Federated Indians of Graton Rancheria, California
+population:
+- count: 966
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2989 (Federated Indians of Graton Rancheria alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Federated Indians of Graton Rancheria' (race code 6125)
+    alone or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 1513
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Graton Rancheria Federated Indians', PDF page 7, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
 contacts:
 - kind: website
   value: https://gratonrancheria.com/
