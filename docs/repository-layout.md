@@ -62,10 +62,17 @@ or removed record leaves a redirect entry instead.
 | Commentary | `content/commentary/<chapter>-<section>.md` | `content/commentary/02-104.md` |
 | Essay | `content/essays/<part>-<slug>.md` | `content/essays/i-history-of-adr.md` |
 | Form | `content/forms/<slug>.md` | `content/forms/agreement-to-participate.md` |
-| Tribe | `content/tribes/<slug>.yaml` | `content/tribes/navajo-nation.yaml` |
+| Tribe | `content/tribes/<letter>/<slug>.yaml` | `content/tribes/n/navajo-nation.yaml` |
 | Glossary entry | `content/glossary/<id>.yaml` | `content/glossary/native-nations.yaml` |
-| Source | `content/sources/<key>.yaml` | `content/sources/narf-ipi-tribal-peacemaking-laws.yaml` |
+| Source | `content/sources/<letter>/<key>.yaml` | `content/sources/n/narf-ipi-tribal-peacemaking-laws.yaml` |
 | Research session | `research/sessions/<yyyy>/<yyyy-mm-dd>-<topic>.md` | `research/sessions/2026/2026-11-20-foundational-scan.md` |
+
+Tribe profiles and source records sit in a subfolder named for the first
+character of their id or key (`content/tribes/n/`, `content/sources/u/`). These
+folders will hold thousands of records, and a folder that large is hard to
+browse on GitHub and in editors. The first character is the only grouping that
+never moves a file: status, state and region can all change, but an id cannot.
+Links and citations use the id or key, never the path (project choice).
 
 Section numbers leave room for later editions: a new section between § 2-104
 and § 2-105 becomes § 2-104A rather than renumbering what follows.

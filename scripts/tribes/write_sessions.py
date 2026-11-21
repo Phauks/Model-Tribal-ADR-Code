@@ -55,7 +55,7 @@ def main(raw_directory, purposes_json):
             "purpose": purposes.get(agent, f"Gather cited facts for Native nation profiles ({agent})."),
             "queries": [q for q in log.get("queries", []) if isinstance(q, str)][:60],
             "sources_added": sorted({s["key"] for s in data.get("sources", []) if s.get("key")
-                                     and (ROOT / "content" / "sources" / f"{s['key']}.yaml").exists()}),
+                                     and (ROOT / "content" / "sources" / s["key"][0] / f"{s['key']}.yaml").exists()}),
             "limits": log.get("limits") or "Not stated by the assistant.",
         }
         narrative = log.get("narrative") or "The assistant gave no narrative."

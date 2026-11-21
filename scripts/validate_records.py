@@ -4,7 +4,8 @@ Checks:
   - each schema is a valid draft 2020-12 schema
   - each example in schemas/examples/ and each record in content/ and
     research/sessions/ validates against its schema
-  - file names match record ids and keys
+  - file names match record ids and keys, and tribe profiles and source records
+    sit in the folder named for their first character
   - every [@key] and every glossary 'sources' entry names a source record
   - every [[id]], 'see_also', 'use_instead' and 'redirect_to' names a glossary entry
   - every 'found_in' names a research session
@@ -40,9 +41,9 @@ EXAMPLES = {
     "glossary.example.yaml": "glossary.schema.json",
 }
 RECORD_FOLDERS = [
-    ("content/sources/*.yaml", "source.schema.json"),
+    ("content/sources/*/*.yaml", "source.schema.json"),
     ("content/glossary/*.yaml", "glossary.schema.json"),
-    ("content/tribes/*.yaml", "tribe.schema.json"),
+    ("content/tribes/*/*.yaml", "tribe.schema.json"),
     ("content/variables/*.yaml", "variable.schema.json"),
     ("content/provisions/*.md", "provision.schema.json"),
     ("content/commentary/*.md", "commentary.schema.json"),
@@ -123,6 +124,10 @@ def main() -> int:
     sources = {path.stem for path, _ in records.get("source.schema.json", [])}
     glossary = {path.stem for path, _ in records.get("glossary.schema.json", [])}
     sessions = {path.stem for path, _ in records.get("research-session.schema.json", [])}
+
+    for path, record in records.get("source.schema.json", []) + records.get("tribe.schema.json", []):
+        if path.parent.name != path.stem[:1]:
+            errors.append(f"{path}: belongs in the folder '{path.stem[:1]}/' (first character of its name)")
 
     for path, record in records.get("source.schema.json", []):
         if record.get("key") != path.stem:

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/tribe.schema.json",
   "title": "Native nation or community profile",
-  "description": "One Native nation, Alaska Native entity, Native Hawaiian community or Indigenous people of a U.S. territory: names, legal status, state presence, population, official contacts, government, justice institutions, published law, gaming, jurisdiction and consultation history. Stored as content/tribes/<id>.yaml. Every fact cites a source key and a confidence level; a field with no supporting source is left out.",
+  "description": "One Native nation, Alaska Native entity, Native Hawaiian community or Indigenous people of a U.S. territory: names, legal status, state presence, population, official contacts, government, justice institutions, published law, gaming, jurisdiction and consultation history. Stored as content/tribes/<first letter of id>/<id>.yaml. Every fact cites a source key and a confidence level; a field with no supporting source is left out.",
   "type": "object",
   "additionalProperties": false,
   "required": ["id", "entity_type", "names", "recognition", "states", "review"],

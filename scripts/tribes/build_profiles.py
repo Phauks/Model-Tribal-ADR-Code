@@ -5,8 +5,8 @@ Reads every research/raw/<date>/*.json file (cited facts gathered by
 scripts/tribes/federal_facts.py and by research assistants; the shape is described in
 research/raw/README.md), and writes:
 
-  content/tribes/<id>.yaml     one profile per Native nation or community
-  content/sources/<key>.yaml   one record per new source (existing records are kept)
+  content/tribes/<letter>/<id>.yaml     one profile per Native nation or community
+  content/sources/<letter>/<key>.yaml   one record per new source (existing records are kept)
   research/raw/<date>/build-report.json   what was merged, dropped and why
 
 Every value keeps its source key and confidence level. A fact that does not fit the
@@ -99,6 +99,10 @@ def date_parts(value):
     if not value or not re.match(r"^\d{4}(-\d{2}(-\d{2})?)?$", str(value)):
         return None
     return [[int(part) for part in str(value).split("-")]]
+
+
+def source_path(key):
+    return ROOT / "content" / "sources" / key[0] / f"{key}.yaml"
 
 
 def contact_key(item):
@@ -317,14 +321,15 @@ def main(raw_directory):
             continue
         ordered = {key: profile[key] for key in KEY_ORDER if key in profile}
         text = yaml.safe_dump(ordered, allow_unicode=True, sort_keys=False, width=100)
-        (out_directory / f"{nation}.yaml").write_text(text, encoding="utf-8")
+        (out_directory / nation[0]).mkdir(exist_ok=True)
+        (out_directory / nation[0] / f"{nation}.yaml").write_text(text, encoding="utf-8")
         written += 1
     report["skipped_profiles"] = skipped
 
     # Source records for keys the profiles cite.
     new_sources = 0
     for key, source in sorted(sources.items()):
-        path = ROOT / "content" / "sources" / f"{key}.yaml"
+        path = source_path(key)
         if path.exists() or key not in cited_by:
             continue
         kind = source.get("kind") if source.get("kind") in SOURCE_KINDS else "other"
@@ -367,10 +372,11 @@ def main(raw_directory):
         if errors:
             report["invalid_sources"].append({"key": key, "errors": errors[:5]})
             continue
+        path.parent.mkdir(exist_ok=True)
         path.write_text(yaml.safe_dump(record, allow_unicode=True, sort_keys=False, width=100), encoding="utf-8")
         new_sources += 1
 
-    missing = sorted(k for k in cited_by if not (ROOT / "content" / "sources" / f"{k}.yaml").exists())
+    missing = sorted(k for k in cited_by if not source_path(k).exists())
     report["missing_sources"] = {k: sorted(cited_by[k])[:5] for k in missing}
     report["unknown_nations"] = dict(report["unknown_nations"])
     report["counts"] = {"profiles_written": written, "profiles_skipped": len(skipped),

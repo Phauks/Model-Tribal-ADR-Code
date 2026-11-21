@@ -34,9 +34,9 @@ research session ──found──▶ source ◀──cites── provision / co
 
 | Record | Schema | Stored as | Purpose |
 | --- | --- | --- | --- |
-| Source | [source.schema.json](../schemas/source.schema.json) | `content/sources/<key>.yaml` | Citation data (CSL-JSON), original URL, archives, change history, citator check, rights |
+| Source | [source.schema.json](../schemas/source.schema.json) | `content/sources/<letter>/<key>.yaml` | Citation data (CSL-JSON), original URL, archives, change history, citator check, rights |
 | Rights | [permission.schema.json](../schemas/permission.schema.json) | the `rights` field of a source | Permission status, legal basis, redistribution, request log |
-| Tribe profile | [tribe.schema.json](../schemas/tribe.schema.json) | `content/tribes/<id>.yaml` | One Native nation or community: names, legal status, state presence, population, official contacts, government, justice institutions, dispute resolution practice, gaming, jurisdiction, consultation history; every fact cited with a confidence level |
+| Tribe profile | [tribe.schema.json](../schemas/tribe.schema.json) | `content/tribes/<letter>/<id>.yaml` | One Native nation or community: names, legal status, state presence, population, official contacts, government, justice institutions, dispute resolution practice, gaming, jurisdiction, consultation history; every fact cited with a confidence level |
 | Provision | [provision.schema.json](../schemas/provision.schema.json) | `content/provisions/<chapter>-<section>.md` | Model text with alternatives and placeholders |
 | Commentary | [commentary.schema.json](../schemas/commentary.schema.json) | `content/commentary/<chapter>-<section>.md` | Comment, Illustrations and Source Note for one provision |
 | Glossary entry | [glossary.schema.json](../schemas/glossary.schema.json) | `content/glossary/<id>.yaml` | A defined term or acronym, its usage status and sources; linked from text as `[[id]]` |
