@@ -1,0 +1,14 @@
+{
+  "note": "FICTIONAL mock records for the map spike only. Shaped like schemas/tribe.schema.json (id, names.official, states[].state/presence/source). No real nation is described.",
+  "nations": [
+    { "id": "example-nation-a", "kind": "tribe", "names": { "official": "Example Nation A" }, "states": [ { "state": "NV", "presence": "land", "source": "mock-source" }, { "state": "CA", "presence": "land", "source": "mock-source" } ] },
+    { "id": "example-nation-b", "kind": "tribe", "names": { "official": "Example Nation B" }, "states": [ { "state": "AZ", "presence": "land", "source": "mock-source" }, { "state": "NM", "presence": "land", "source": "mock-source" }, { "state": "UT", "presence": "land", "source": "mock-source" } ] },
+    { "id": "example-nation-c", "kind": "tribe", "names": { "official": "Example Nation C" }, "states": [ { "state": "OK", "presence": "land", "source": "mock-source" }, { "state": "DC", "presence": "government-office", "source": "mock-source" } ] },
+    { "id": "example-nation-d", "kind": "tribe", "names": { "official": "Example Nation D" }, "states": [ { "state": "OK", "presence": "land", "source": "mock-source" }, { "state": "KS", "presence": "service-area", "source": "mock-source" } ] },
+    { "id": "example-village-e", "kind": "tribe", "names": { "official": "Example Village E" }, "states": [ { "state": "AK", "presence": "land", "source": "mock-source" } ] },
+    { "id": "example-nation-f", "kind": "tribe", "names": { "official": "Example Nation F" }, "states": [ { "state": "WA", "presence": "land", "source": "mock-source" } ] },
+    { "id": "example-nation-g", "kind": "tribe", "names": { "official": "Example Nation G" }, "states": [ { "state": "OK", "presence": "land", "source": "mock-source" } ] },
+    { "id": "example-hawaiian-organization", "kind": "native-hawaiian-organization", "names": { "official": "Example Native Hawaiian Organization" }, "states": [ { "state": "HI", "presence": "other", "source": "mock-source" } ] },
+    { "id": "example-territorial-community", "kind": "territorial-people", "names": { "official": "Example Territorial Community" }, "states": [ { "state": "GU", "presence": "other", "source": "mock-source" }, { "state": "MP", "presence": "other", "source": "mock-source" } ] }
+  ]
+}
