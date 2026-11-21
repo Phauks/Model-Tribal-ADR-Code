@@ -5,7 +5,7 @@ Checks:
   - each example in schemas/examples/ and each record in content/ and
     research/sessions/ validates against its schema
   - file names match record ids and keys, and tribe profiles and source records
-    sit in the folder named for their first character
+    sit in the folder named for their first letter ('other' for any other first character)
   - every [@key] and every glossary 'sources' entry names a source record
   - every [[id]], 'see_also', 'use_instead' and 'redirect_to' names a glossary entry
   - every 'found_in' names a research session
@@ -72,6 +72,14 @@ def dates_as_text(value):
     return value
 
 
+def letter_folder(name: str) -> str:
+    """Folder for a tribe profile or source record: its first letter, or 'other' when
+    the name starts with anything else (ids and keys allow only a-z and 0-9, so in
+    practice a digit)."""
+    first = name[:1]
+    return first if "a" <= first <= "z" else "other"
+
+
 def cited_source_keys(value):
     """Every source key a tribe profile cites: each fact's 'source', the official name's
     'official_source', and the keys listed in 'dispute_resolution_law'."""
@@ -126,8 +134,8 @@ def main() -> int:
     sessions = {path.stem for path, _ in records.get("research-session.schema.json", [])}
 
     for path, record in records.get("source.schema.json", []) + records.get("tribe.schema.json", []):
-        if path.parent.name != path.stem[:1]:
-            errors.append(f"{path}: belongs in the folder '{path.stem[:1]}/' (first character of its name)")
+        if path.parent.name != letter_folder(path.stem):
+            errors.append(f"{path}: belongs in the folder '{letter_folder(path.stem)}/'")
 
     for path, record in records.get("source.schema.json", []):
         if record.get("key") != path.stem:

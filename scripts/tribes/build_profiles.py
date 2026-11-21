@@ -101,8 +101,13 @@ def date_parts(value):
     return [[int(part) for part in str(value).split("-")]]
 
 
+def letter_folder(name):
+    """First letter of an id or key, or 'other' for any other first character."""
+    return name[:1] if "a" <= name[:1] <= "z" else "other"
+
+
 def source_path(key):
-    return ROOT / "content" / "sources" / key[0] / f"{key}.yaml"
+    return ROOT / "content" / "sources" / letter_folder(key) / f"{key}.yaml"
 
 
 def contact_key(item):
@@ -172,7 +177,7 @@ def main(raw_directory):
               "renamed_sources": [], "merged_entities": [], "skipped_profiles": [], "invalid_sources": []}
     entities, by_name, facts, sources = {}, {}, [], {}
     source_sessions = collections.defaultdict(set)
-    files = sorted(p for p in raw_directory.glob("*.json") if p.name != "build-report.json")
+    files = sorted(p for p in raw_directory.glob("*.json") if p.name not in ("build-report.json", "entity-merges.json"))
     # The federal list comes first so its ids win when another file names the same nation.
     files.sort(key=lambda p: p.stem != "federal-list-and-directory")
     for path in files:
@@ -218,6 +223,28 @@ def main(raw_directory):
             fact["agent"] = agent
             source_sessions[fact.get("source")].add(session)
             facts.append(fact)
+
+    # Merge entities that two lists name differently (research/raw/<date>/entity-merges.json).
+    merges_path = raw_directory / "entity-merges.json"
+    merges = json.loads(merges_path.read_text(encoding="utf-8"))["merges"] if merges_path.exists() else []
+    renames = {r["from"]: r["into"] for r in (json.loads(merges_path.read_text(encoding="utf-8")).get("renames", [])
+                                              if merges_path.exists() else [])}
+    for fact in facts:
+        fact["nation"] = renames.get(fact.get("nation"), fact.get("nation"))
+    for merge in merges:
+        source_entity = entities.pop(merge["from"], None)
+        if not source_entity or merge["into"] not in entities:
+            report["merged_entities"].append(f"merge skipped, id missing: {merge}")
+            continue
+        moved = [f for f in facts if f.get("nation") == merge["from"]]
+        for fact in moved:
+            fact["nation"] = merge["into"]
+        if moved:
+            facts.append({"nation": merge["into"], "field": "name-alternate",
+                          "value": {"name": source_entity["official_name"]}, "source": moved[0]["source"],
+                          "confidence": "medium", "as_of": moved[0].get("as_of"), "agent": source_entity["agent"],
+                          "note": "Name used for this group in the cited source; matched to this record by name and state."})
+        report["merged_entities"].append(f"{merge['from']} -> {merge['into']}")
 
     # Assemble profiles.
     profiles = {}
@@ -321,8 +348,8 @@ def main(raw_directory):
             continue
         ordered = {key: profile[key] for key in KEY_ORDER if key in profile}
         text = yaml.safe_dump(ordered, allow_unicode=True, sort_keys=False, width=100)
-        (out_directory / nation[0]).mkdir(exist_ok=True)
-        (out_directory / nation[0] / f"{nation}.yaml").write_text(text, encoding="utf-8")
+        (out_directory / letter_folder(nation)).mkdir(exist_ok=True)
+        (out_directory / letter_folder(nation) / f"{nation}.yaml").write_text(text, encoding="utf-8")
         written += 1
     report["skipped_profiles"] = skipped
 

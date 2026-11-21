@@ -68,9 +68,11 @@ or removed record leaves a redirect entry instead.
 | Research session | `research/sessions/<yyyy>/<yyyy-mm-dd>-<topic>.md` | `research/sessions/2026/2026-11-20-foundational-scan.md` |
 
 Tribe profiles and source records sit in a subfolder named for the first
-character of their id or key (`content/tribes/n/`, `content/sources/u/`). These
+letter of their id or key (`content/tribes/n/`, `content/sources/u/`). An id or
+key that starts with anything else (ids allow only a to z and 0 to 9, so in
+practice a digit) goes in `other/`. These
 folders will hold thousands of records, and a folder that large is hard to
-browse on GitHub and in editors. The first character is the only grouping that
+browse on GitHub and in editors. The first letter is the only grouping that
 never moves a file: status, state and region can all change, but an id cannot.
 Links and citations use the id or key, never the path (project choice).
 

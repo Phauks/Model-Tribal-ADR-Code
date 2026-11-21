@@ -81,8 +81,17 @@ def slug(text):
     return re.sub(r"[^a-z0-9]+", "-", text).strip("-")
 
 
+# Names whose trailing list of states the general rule cannot strip cleanly.
+ID_OVERRIDES = {
+    "Navajo Nation, Arizona, New Mexico, & Utah": "navajo-nation",
+    "Fort Mojave Indian Tribe of Arizona, California & Nevada": "fort-mojave-indian-tribe",
+}
+
+
 def make_id(name):
     name = strip_parentheses(name)
+    if name in ID_OVERRIDES:
+        return ID_OVERRIDES[name]
     name = re.sub(rf",\s*({STATE_NAMES})((\s*(,|and|&)\s*({STATE_NAMES}))*)$", "", name)
     return slug(name)
 
