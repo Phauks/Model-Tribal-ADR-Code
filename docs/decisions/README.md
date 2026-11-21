@@ -22,10 +22,8 @@ and says so.
 | [0009](0009-private-requests-from-nations.md) | Take requests from nations privately, not in public issues | Accepted |
 | [0010](0010-glossary-records-and-term-links.md) | Define terms once, as records, and link them from text | Accepted |
 | [0011](0011-ebook-custom-pipeline.md) | Build the ebook with a custom pipeline | Accepted |
-<<<<<<< HEAD
 | [0012](0012-outreach-list-split-public-and-private.md) | Keep outreach organizations public and the outreach plan private | Accepted |
-=======
 | [0012](0012-open-list-of-dispute-resolution-methods.md) | Keep the list of dispute resolution methods open | Accepted |
->>>>>>> origin/main
+| [0013](0013-sign-in-with-auth0.md) | Sign in co-authors with Auth0; keep roles in the site's database | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.
