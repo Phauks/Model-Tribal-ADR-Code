@@ -250,7 +250,16 @@ export const load: PageServerLoad = ({ params }) => {
 	};
 
 	if (page.withdrawn) {
-		return { page, selfDesignations: [], features: [], glance: [], courts: [], law: [], sources: [] };
+		return {
+			page,
+			selfDesignations: [],
+			pronunciations: [],
+			features: [],
+			glance: [],
+			courts: [],
+			law: [],
+			sources: []
+		};
 	}
 
 	const sources = new SourceUses();
@@ -265,9 +274,31 @@ export const load: PageServerLoad = ({ params }) => {
 		return { name: fact.name, languageTag: fact.language_tag };
 	});
 
+	// Copied only from an authoritative source, never worked out from the
+	// spelling (docs/data-model.md, "Names and languages").
+	const pronunciations = (record.names.pronunciation ?? []).map((fact) => {
+		const recording = webLink(fact.recording);
+		const said = [
+			fact.respelling,
+			fact.phonetic_transcription ? `/${fact.phonetic_transcription}/` : undefined,
+			recording ? 'recording' : undefined
+		]
+			.filter(Boolean)
+			.join(', ');
+		sources.use(fact, 'How to say', `${fact.name}: ${said}`);
+		return {
+			name: fact.name,
+			languageTag: fact.language_tag,
+			respelling: fact.respelling,
+			phoneticTranscription: fact.phonetic_transcription,
+			recording
+		};
+	});
+
 	return {
 		page,
 		selfDesignations,
+		pronunciations,
 		features: recordedFeatures(record, sources),
 		glance: atAGlance(record, sources),
 		courts: courtsAndDisputeResolution(record, sources),

@@ -72,8 +72,8 @@ Each mark encodes something about the text; none is decoration.
   The U.S. Web Design System itself says not to use its official banner on
   non-government domains.[^uswds-banner] The site borrows government design
   patterns, not their look (project choice).
-- **Custom icons.** An icon set will be chosen later. Until then, controls
-  use words.
+- **Custom icons.** The site and the book draw only from Lucide (see
+  [section 6, Icons](#6-components)). No icons are drawn for the project.
 
 ## 3. What the design borrows
 
@@ -233,9 +233,27 @@ size, because the book's trim size is not yet decided (project choice).
 
 ## 6. Components
 
-**Masthead.** Wordmark and edition, main menu, theme setting, Contribute.
+**Masthead.** Wordmark and edition, main menu, theme button, Contribute.
 Menu items are at least 44 px tall. The current section is marked with
 `aria-current="page"` and a 3 px underline.
+
+**Icons.** All icons come from Lucide,[^lucide-license] chosen on Nov. 21,
+2026, after a comparison of six packs ([research session](../research/sessions/2026/2026-11-21-icon-pack-comparison.md)).
+The site imports single icons from `@lucide/svelte`, so only the icons used are
+bundled.[^lucide-svelte] The book and the ebook use the same drawings from
+`lucide-static`, at the same version number, which `site/package.json` pins
+exactly. Rules:
+
+- An icon sits beside words. The only icon-only control is the theme button,
+  and it carries an `aria-label` that names the action, because Lucide hides
+  icons from screen readers by default.[^lucide-a11y]
+- Beside 18 px body text, icons are 20 px with `strokeWidth` 1.75, which
+  matches the stem of Atkinson Hyperlegible Next Regular (about 1.5 px; project
+  measurement). Standalone controls use 24 px and the default 2 px stroke.
+- Never use icons that read as Native imagery, even where Lucide offers them:
+  `feather`, `tent`, `tent-tree` and `bow-arrow`.
+- In print, Typst draws `currentColor` as black, which suits the black-and-white
+  interior.
 
 **Notices.** One style for status: "This is a working draft" on the home
 page; "Model text, not law in force" with the version and last change on
@@ -431,8 +449,11 @@ are in [design-tokens.json](design-tokens.json).
 
 ## 8. Themes
 
-- **Choices:** Automatic (follows the device's `prefers-color-scheme`
-  setting[^mdn-color-scheme]), Light and Dark. Automatic is the default.
+- **Choices:** Light and Dark, switched by one button in the masthead that
+  shows a sun in the light theme and a moon in the dark theme (Trevor, Nov. 21,
+  2026). Until the reader presses it, the device's `prefers-color-scheme`
+  setting decides.[^mdn-color-scheme] Once pressed, the choice stays on that
+  device; clearing the site's data returns to the device's setting.
 - **How:** the root element carries `data-theme="light"` or `"dark"` when the
   reader picks one; otherwise the `prefers-color-scheme` media query decides.
   A small inline script sets the attribute before the page paints, so there is
@@ -529,7 +550,7 @@ The interface follows the style guide's voice: plain verbs, sentence case,
    a few people in each role, especially Tribal court staff and peacemakers,
    before the templates are built. Nothing here has been tested with them.
 2. **Advisor review** of the request flow and the nation profile wording.
-3. **Icon set:** to be chosen; it must not draw on Native motifs.
+3. **Icon set:** settled: Lucide ([section 6, Icons](#6-components)).
 4. **Art:** sizes for the cover, part openers and the home page space, to
    give to the art contest.
 5. **Color, second pass.** Trevor's review on Nov. 20, 2026 found the first
@@ -566,3 +587,6 @@ The interface follows the style guide's voice: plain verbs, sentence case,
 [^webdev-caching]: web.dev, *Learn PWA: Caching*, [web.dev/learn/pwa/caching](https://web.dev/learn/pwa/caching).
 [^mdn-caching]: MDN Web Docs, *Caching (Progressive web apps)*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Caching).
 [^cloudflare-sveltekit]: Cloudflare, *SvelteKit (Workers framework guide)*, [developers.cloudflare.com/workers/framework-guides/web-apps/sveltekit](https://developers.cloudflare.com/workers/framework-guides/web-apps/sveltekit/).
+[^lucide-license]: Lucide, *License*, [lucide.dev/license](https://lucide.dev/license) (accessed Nov. 21, 2026). ISC License, with the MIT License for icons drawn from Feather; full text in [`LICENSES/Lucide.txt`](../LICENSES/Lucide.txt).
+[^lucide-svelte]: Lucide, *Lucide for Svelte*, [lucide.dev/guide/svelte](https://lucide.dev/guide/svelte) (accessed Nov. 21, 2026).
+[^lucide-a11y]: Lucide, *Accessibility* (Svelte), [lucide.dev/guide/svelte/advanced/accessibility](https://lucide.dev/guide/svelte/advanced/accessibility) (accessed Nov. 21, 2026).
