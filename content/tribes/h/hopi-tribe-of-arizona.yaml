@@ -209,7 +209,7 @@ justice_institutions:
   note: 'Link check 2026-11-21: the site did not respond.'
 dispute_resolution:
   forums:
-  - kind: traditional-forum
+  - kind: customary-dispute-resolution
     name: Village authority over family disputes
     description: The Constitution reserves to each village the power to adjust family disputes and regulate
       family relations of village members, along with appointing guardians, regulating inheritance and
@@ -229,7 +229,7 @@ dispute_resolution:
     locator: Article III, Sections 2(a)-(d) and 3
     note: The Constitution states the reserved powers; it does not describe how individual villages carry
       them out, so no procedure, participation or enforcement is recorded.
-  - kind: other
+  - kind: council-hearing
     name: Tribal Council hearing of disputes between villages
     description: When villages dispute any matter, the Kikmongwi of a village party may ask the Chairman
       to call a special Council meeting; the Council hears representatives and witnesses, decides in a

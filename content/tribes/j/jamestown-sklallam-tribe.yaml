@@ -198,7 +198,7 @@ justice_institutions:
   locator: Washington section, entry 'Jamestown S’Klallam Tribe'
 dispute_resolution:
   forums:
-  - kind: family-or-talking-circle
+  - kind: family-group-conference
     name: Peacemaker Conference (Youth Code)
     description: An informal conference in youth proceedings, which the code describes as an element of
       the Peacemaking Initiative, aimed at a written agreed disposition such as a Family Preservation
@@ -334,18 +334,20 @@ dispute_resolution:
   - kind: arbitration
     title: Title 2 Arbitration
     citation: Title 2 Arbitration
-    link: https://www.narf.org/nill/codes/jamestown_sklallam/index.html
-    source: national-indian-law-library-code-index-jamestown-sklallam
+    link: https://narf.org/nill/codes/jamestown_sklallam/index.html
+    source: national-indian-law-library-code-codes-jamestown-sklallam
     confidence: medium
-    as_of: 2016-04
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
+    as_of: '2016'
+    locator: Table of Contents, under 'Chapter 1.03 - Codification and Amendments'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: April 2016); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
   - kind: arbitration
     title: Chapter 2.02 - Agreement to Arbitrate
     citation: Chapter 2.02 - Agreement to Arbitrate; Section 2.02.01 Agreement to Arbitrate is Enforceable;
       Section 2.02.07 Arbitration Award Not Appealable
     link: https://www.narf.org/nill/codes/jamestown_sklallam/index.html
-    source: national-indian-law-library-code-index-jamestown-sklallam
+    source: national-indian-law-library-code-codes-jamestown-sklallam
     confidence: medium
     as_of: 2016-04
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
@@ -355,7 +357,7 @@ dispute_resolution:
     citation: Chapter 13.10 - Informal Dispute Resolution; Section 13.10.02 Initiating Informal Dispute
       Resolution
     link: https://www.narf.org/nill/codes/jamestown_sklallam/index.html
-    source: national-indian-law-library-code-index-jamestown-sklallam
+    source: national-indian-law-library-code-codes-jamestown-sklallam
     confidence: medium
     as_of: 2016-04
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
@@ -364,24 +366,13 @@ dispute_resolution:
     title: Title 33 – Youth Code
     citation: Title 33 – Youth Code
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Jamestown-SKlallam-Title-33-Youth-Code-1-6-20-2.pdf
-    source: narf-youth-family-peacemaking-laws
+    source: narf-ipi-youth-family-peacemaking-laws
     confidence: medium
     as_of: '2025-08-25'
     locator: Jamestown S’Klallam Tribe of Washington
     note: 'Native American Rights Fund description (provision itself not read): Provides procedures, referral
       process, inadmissibility of information from peacemaking into evidence (except terms of an agreed
       Family Preservation Plan are admissible), and formalization of agreement requirements.'
-  - kind: arbitration
-    title: Title 2 Arbitration
-    citation: Title 2 Arbitration
-    link: https://narf.org/nill/codes/jamestown_sklallam/index.html
-    source: national-indian-law-library-code-codes-jamestown-sklallam
-    confidence: medium
-    as_of: '2016'
-    locator: Table of Contents, under 'Chapter 1.03 - Codification and Amendments'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: April 2016); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
   - kind: arbitration
     title: Chapter 2.02 - Agreement to Arbitrate
     citation: Chapter 2.02 - Agreement to Arbitrate

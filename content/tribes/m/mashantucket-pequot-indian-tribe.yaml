@@ -184,7 +184,7 @@ governing_documents:
 justice_institutions:
 - kind: peacemaking-program
   name: Peacemakers Council
-  source: narf-tribal-peacemaking-laws
+  source: narf-ipi-tribal-peacemaking-laws
   confidence: medium
   as_of: '2025-09-29'
   note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
@@ -375,7 +375,7 @@ dispute_resolution:
       10. Peacemaking Mediation Process; 11. Success of Peacemaking Mediation Process; 12. Failure of
       the Peacemakers Mediation Process; 16. Powers of Peacemakers; 17. Protection of Peacemakers
     link: https://www.narf.org/nill/codes/mashantucket_pequot/index.html
-    source: national-indian-law-library-code-index-mashantucket-pequot
+    source: national-indian-law-library-code-codes-mashantucket-pequot
     confidence: medium
     as_of: 2015-08
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
@@ -384,7 +384,7 @@ dispute_resolution:
     title: 7. Conciliation Period
     citation: 7. Conciliation Period
     link: https://www.narf.org/nill/codes/mashantucket_pequot/index.html
-    source: national-indian-law-library-code-index-mashantucket-pequot
+    source: national-indian-law-library-code-codes-mashantucket-pequot
     confidence: medium
     as_of: 2015-08
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
@@ -392,19 +392,21 @@ dispute_resolution:
   - kind: arbitration
     title: TITLE 10. ARBITRATION
     citation: TITLE 10. ARBITRATION
-    link: https://www.narf.org/nill/codes/mashantucket_pequot/index.html
-    source: national-indian-law-library-code-index-mashantucket-pequot
+    link: https://narf.org/nill/codes/mashantucket_pequot/index.html
+    source: national-indian-law-library-code-codes-mashantucket-pequot
     confidence: medium
-    as_of: 2015-08
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
+    as_of: '2015'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
   - kind: arbitration
     title: 2. Agreements to Arbitrate are Enforceable
     citation: 2. Agreements to Arbitrate are Enforceable; 4. Stay of Proceedings and Order to Proceed
       with Arbitration; 8. Arbitration Award Not Appealable; 7. Dispute Resolution for Prohibited Practices
       Questions; 7. Dispute Resolution for Prohibited Practices Questions
     link: https://www.narf.org/nill/codes/mashantucket_pequot/index.html
-    source: national-indian-law-library-code-index-mashantucket-pequot
+    source: national-indian-law-library-code-codes-mashantucket-pequot
     confidence: medium
     as_of: 2015-08
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
@@ -413,7 +415,7 @@ dispute_resolution:
     title: 5. Establishment of Mediation Panel
     citation: 5. Establishment of Mediation Panel; 3. Establishment of Mediation Panel
     link: https://www.narf.org/nill/codes/mashantucket_pequot/index.html
-    source: national-indian-law-library-code-index-mashantucket-pequot
+    source: national-indian-law-library-code-codes-mashantucket-pequot
     confidence: medium
     as_of: 2015-08
     note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
@@ -421,27 +423,32 @@ dispute_resolution:
   - kind: arbitration
     title: 11. Arbitration
     citation: 11. Arbitration
-    link: https://www.narf.org/nill/codes/mashantucket_pequot/index.html
-    source: national-indian-law-library-code-index-mashantucket-pequot
+    link: https://narf.org/nill/codes/mashantucket_pequot/index.html
+    source: national-indian-law-library-code-codes-mashantucket-pequot
     confidence: medium
-    as_of: 2015-08
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
+    as_of: '2015'
+    locator: Table of Contents, under 'TITLE 8. EMPLOYMENT'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
   - kind: mediation
     title: 9. Claim Procedures; Investigations; Mediation
     citation: 9. Claim Procedures; Investigations; Mediation; 9. Claim Procedures; Investigations; Hearings,
       Mediation
-    link: https://www.narf.org/nill/codes/mashantucket_pequot/index.html
-    source: national-indian-law-library-code-index-mashantucket-pequot
+    link: https://narf.org/nill/codes/mashantucket_pequot/index.html
+    source: national-indian-law-library-code-codes-mashantucket-pequot
     confidence: medium
-    as_of: 2015-08
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
+    as_of: '2015'
+    locator: Table of Contents, under 'TITLE 33. MASHANTUCKET PEQUOT TRIBAL AND NATIVE AMERICAN PREFERENCE
+      LAW'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
   - kind: peacemaking
     title: Title 1 – Judiciary, Chapter 4 – Peacemakers Council
     citation: Title 1 – Judiciary, Chapter 4 – Peacemakers Council
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Mashantucket-Title-1-Judiciary.pdf
-    source: narf-tribal-peacemaking-laws
+    source: narf-ipi-tribal-peacemaking-laws
     confidence: medium
     as_of: '2025-09-29'
     locator: Mashantucket Pequot Indian Tribe
@@ -456,17 +463,6 @@ dispute_resolution:
     confidence: medium
     as_of: '2015'
     locator: Table of Contents, under 'TITLE 1. JUDICIARY'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  - kind: arbitration
-    title: TITLE 10. ARBITRATION
-    citation: TITLE 10. ARBITRATION
-    link: https://narf.org/nill/codes/mashantucket_pequot/index.html
-    source: national-indian-law-library-code-codes-mashantucket-pequot
-    confidence: medium
-    as_of: '2015'
-    locator: Table of Contents
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
@@ -489,30 +485,6 @@ dispute_resolution:
     confidence: medium
     as_of: '2015'
     locator: Table of Contents, under 'TITLE 32. MASHANTUCKET PEQUOT LABOR RELATIONS LAW'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  - kind: arbitration
-    title: Arbitration
-    citation: Arbitration
-    link: https://narf.org/nill/codes/mashantucket_pequot/index.html
-    source: national-indian-law-library-code-codes-mashantucket-pequot
-    confidence: medium
-    as_of: '2015'
-    locator: Table of Contents, under 'TITLE 8. EMPLOYMENT'
-    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
-      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
-      is taken from the page layout and may be imprecise.'
-  - kind: mediation
-    title: Claim Procedures; Investigations; Mediation
-    citation: Claim Procedures; Investigations; Mediation; Claim Procedures; Investigations; Hearings,
-      Mediation
-    link: https://narf.org/nill/codes/mashantucket_pequot/index.html
-    source: national-indian-law-library-code-codes-mashantucket-pequot
-    confidence: medium
-    as_of: '2015'
-    locator: Table of Contents, under 'TITLE 33. MASHANTUCKET PEQUOT TRIBAL AND NATIVE AMERICAN PREFERENCE
-      LAW'
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'

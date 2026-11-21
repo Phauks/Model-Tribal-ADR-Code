@@ -11,13 +11,13 @@ names:
     note: Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting
       source.
   - name: Meherrin Indian Tribe
-    source: north-carolina-tribal-communities-2026
+    source: north-carolina-commission-of-indian-affairs-tribal-communities
     confidence: high
     as_of: '2026'
   self_designation:
   - name: Kauwets’a·ka
     language_tag: und
-    source: north-carolina-tribal-communities-2026
+    source: north-carolina-commission-of-indian-affairs-tribal-communities
     confidence: high
     as_of: '2026'
     note: 'Source: ''The Meherrin People, also known as Kauwets’a·ka (People of the Water)''. The source
@@ -47,7 +47,7 @@ recognition:
   state: NC
   legal_basis: Listed among North Carolina tribal communities by the North Carolina Commission of Indian
     Affairs
-  source: north-carolina-tribal-communities-2026
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
   as_of: '2026'
 states:
@@ -60,7 +60,7 @@ states:
   note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
 - state: NC
   presence: government-office
-  source: north-carolina-tribal-communities-2026
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
   as_of: '2026'
 census_areas:
@@ -78,25 +78,25 @@ contacts:
 - kind: physical-address
   value: 852 NC-11 South, Ahoskie, NC 27910
   label: Tribal physical address
-  source: north-carolina-tribal-communities-2026
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
   as_of: '2026'
 - kind: mailing-address
   value: PO Box 274, Ahoskie, NC 27910
   label: Tribal mailing address
-  source: north-carolina-tribal-communities-2026
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
   as_of: '2026'
 - kind: email-general
   value: meherrincouncil@gmail.com
   label: Tribal council email
-  source: north-carolina-tribal-communities-2026
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
   as_of: '2026'
 - kind: website
   value: http://www.meherrinnation.org/
   label: Official website
-  source: north-carolina-tribal-communities-2026
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
   as_of: '2026'
 review:
