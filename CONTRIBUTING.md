@@ -63,7 +63,8 @@ A pull request that resolves an issue says so in its description, for example
 3. Sign off each commit (`git commit -s`) to certify, under the
    [Developer Certificate of Origin](https://developercertificate.org/), that you
    have the right to submit it under this project's licenses.
-4. Run the checks locally: `python3 scripts/check_text.py` and, after
+4. Run the checks locally (the same checks run on every pull request and are
+   summarized as one required check, `All checks`): `python3 scripts/check_text.py` and, after
    `pip install -r scripts/requirements.txt`, `python3 scripts/validate_records.py`.
 5. Open a pull request against `main` and fill in the template.
 6. Pull requests are squash-merged. The branch is deleted automatically after

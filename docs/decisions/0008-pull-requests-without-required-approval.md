@@ -18,6 +18,12 @@ Pull requests are squash-merged, and head branches are deleted automatically
 after merge (turned on 2026-11-20). When content co-authors join, `CODEOWNERS`
 requests their review on content paths.
 
+The ruleset requires a single status check, `All checks`, defined in
+`.github/workflows/checks.yml`. That job waits for every other check job in
+the workflow and fails if any of them failed or was cancelled. New checks are
+added as jobs in that workflow and listed under the `All checks` job's
+`needs`, so the ruleset itself never has to change.
+
 ## Consequences
 
 The lead author's review is reading the diff and the preview build before

@@ -1,6 +1,8 @@
-# Checks every pull request and every push to main. These are the status
-# checks the main branch ruleset requires (decision record 0008).
-# Uses no secrets.
+# Checks every pull request and every push to main. Uses no secrets.
+#
+# The main branch ruleset requires only the final "All checks" job
+# (decision record 0008). To add a check, add a job here and list it under
+# all-checks.needs; the ruleset never needs editing.
 name: checks
 
 on:
@@ -32,3 +34,20 @@ jobs:
           python-version: "3.12"
       - run: pip install -r scripts/requirements.txt
       - run: python3 scripts/validate_records.py
+
+  all-checks:
+    name: All checks
+    if: always()
+    needs: [text, records]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fail if any check failed or was cancelled
+        env:
+          RESULTS: ${{ join(needs.*.result, ' ') }}
+        run: |
+          echo "Results: $RESULTS"
+          for result in $RESULTS; do
+            if [ "$result" = "failure" ] || [ "$result" = "cancelled" ]; then
+              exit 1
+            fi
+          done
