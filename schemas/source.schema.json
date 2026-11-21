@@ -15,10 +15,13 @@
       "type": "string",
       "enum": [
         "tribal-code", "tribal-constitution", "tribal-court-rule", "tribal-case",
-        "federal-statute", "federal-regulation", "federal-register-notice", "federal-case",
-        "state-statute", "state-case", "uniform-act", "model-law",
-        "book", "book-chapter", "journal-article", "report", "web-page", "dataset", "interview", "other"
-      ]
+        "federal-statute", "federal-regulation", "federal-register-notice", "federal-case", "executive-order",
+        "state-statute", "state-regulation", "state-case",
+        "territorial-statute", "territorial-regulation", "territorial-case",
+        "court-rule", "intergovernmental-agreement", "uniform-act", "model-law", "restatement",
+        "book", "book-chapter", "journal-article", "journal", "report", "web-page", "dataset", "interview", "other"
+      ],
+      "description": "court-rule: rules of any court, including local rules. intergovernmental-agreement: a compact or agreement between governments, such as a tribal-state gaming compact. journal: a periodical as a whole, cited as a place to search."
     },
     "citation": {
       "type": "object",
@@ -107,6 +110,39 @@
       "description": "Tribe profile ids this source concerns.",
       "items": { "$ref": "common.schema.json#/$defs/slug" },
       "uniqueItems": true
+    },
+    "jurisdictions": {
+      "type": "array",
+      "description": "The governments or legal orders the source concerns.",
+      "items": { "$ref": "common.schema.json#/$defs/jurisdiction" }
+    },
+    "methods": {
+      "$ref": "common.schema.json#/$defs/methodIds",
+      "description": "Dispute resolution methods the source establishes, describes or analyzes. Add a method record with status 'proposed' for any process that has none."
+    },
+    "topics": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/slug" },
+      "uniqueItems": true,
+      "description": "Free tags for grouping in bibliographies, e.g. history, treatise, court-connected-program, full-faith-and-credit. Not a fixed list."
+    },
+    "annotation": {
+      "type": "string",
+      "description": "Markdown. The annotated-bibliography entry: what the source is and why it matters to the project. Quotations carry pinpoints; the project's own judgments are labeled (project analysis)."
+    },
+    "access": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "How to reach the full text, so a researcher knows what needs a subscription database or a library.",
+      "properties": {
+        "open": { "type": "boolean", "description": "True when the full text is free to read online." },
+        "pull_from": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "enum": ["free-web", "westlaw", "lexis", "heinonline", "library", "publisher"] }
+        },
+        "note": { "type": "string", "description": "What to pull and how, e.g. the annotated code section to open in Westlaw." }
+      }
     },
     "sensitivity": { "$ref": "common.schema.json#/$defs/sensitivity" },
     "found_in": {
