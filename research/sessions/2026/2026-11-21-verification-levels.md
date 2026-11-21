@@ -21,17 +21,17 @@ queries:
 sources_added: []
 limits: >-
   Levels describe how each fact was gathered, as its note and source record it; no fact was checked
-  again against its source in this session. 16,041 facts take the level their own note implies
+  again against its source in this session. 16,103 facts take the level their own note implies
   (NOTE_LEVELS in scripts/record_facts.py) or bulk-import because their source is a list cited by 20
-  or more profiles; 2,307 facts in 869 groups take a level an AI reviewer chose from the group's
-  example notes. The 1,261 dispute resolution provisions were left without a level, because their
+  or more profiles; 2,234 facts in the 869 groups take a level an AI reviewer chose from the group's
+  example notes. The dispute resolution provisions were left without a level, because their
   level follows the lead author's decisions on the provision pre-review.
 ---
 
 Output: the level for each group of facts whose note does not say how it was
 checked, in [`2026-11-21-verification-levels.json`](../../reviews/2026-11-21-verification-levels.json)
 (and as a [spreadsheet](../../reviews/2026-11-21-verification-levels.csv)),
-and `verification` on 18,348 facts in the 948 profiles.
+and `verification` on 18,337 facts in the 948 profiles.
 
 Method: the dataset gap audit found that no fact recorded how it was checked.
 Facts whose note uses the wording the coverage report already reads (for

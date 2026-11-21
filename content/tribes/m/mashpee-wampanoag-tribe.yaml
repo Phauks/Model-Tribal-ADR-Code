@@ -307,18 +307,23 @@ dispute_resolution:
     link: https://www.mashpeewampanoagtribe-nsn.gov/s/Participants-Guide-to-Peacemaking-final.pdf
     source: mashpee-peacemakers-court-pages
     confidence: low
-    verification: inferred
+    verification: read-in-full
     as_of: '2026-11-21'
-    note: Link listed on the Tribe's Peacemakers Court page; the guide itself was not opened. Page undated.
+    note: Guide opened (20 pages). It was developed by the Elders Judiciary Committee with the Suffolk
+      University Law School Indigenous Peoples Rights Clinic. Undated. On Nov. 21, 2026 the link was not
+      found on the Tribe's current Peacemakers Court pages, but the file still resolves.
   - kind: rules
-    title: Operation of Peacemaker Court (rules)
+    title: 'Chapter 3: Operation of Peacemaker Court (Mashpee Wampanoag Tribal Judiciary Ordinance)'
     link: https://www.mashpeewampanoagtribe-nsn.gov/s/OPERATION-OF-PEACEMAKER-COURT.pdf
     source: mashpee-peacemakers-court-pages
     confidence: low
-    verification: inferred
+    verification: read-in-full
     as_of: '2026-11-21'
-    note: Link listed on the Tribe's Peacemakers Court page; the NARF copy of Chapter 3 was read (source
-      mashpee-chapter-3-peacemaker-court). Page undated.
+    note: Standalone copy of Chapter 3 of the Tribal Judiciary Ordinance (2008-ORD-002, enacted Oct. 7,
+      2009), so it is ordinance text rather than separate court rules; kind stays "rules" because the
+      schema has no kind for ordinance text. The current text is Chapter 3 of 2018-ORD-007 (adopted June
+      28, 2018). The standalone PDF is undated, and which version it reproduces was not confirmed. The
+      NARF copy of Chapter 3 was also read (source mashpee-chapter-3-peacemaker-court).
   provisions:
   - kind: peacemaking
     title: 'Chapter 3: Operation of Peacemaker Court'

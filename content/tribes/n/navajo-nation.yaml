@@ -476,30 +476,32 @@ dispute_resolution:
     verification: title-only
     as_of: '2026-11-21'
   - kind: forms
-    title: Form 1 Peacemaking Referral Form
-    link: https://courts.navajo-nsn.gov/Peacemaking/forms/Form 1 PeacemakingReferralForm 3.29.pdf
-    source: web-search-navajo-peacemaking-2026-11-21
-    confidence: low
-    verification: title-only
-    as_of: '2026-11-21'
-    note: Seen in search results only; not opened.
+    title: Peacemaking Referral Form (Form 1)
+    link: https://courts.navajo-nsn.gov/Peacemaking/forms/Form%201%20PeacemakingReferralForm%203.29.pdf
+    source: navajo-peacemaking-referral-form-2024
+    confidence: medium
+    verification: read-in-full
+    as_of: 2024-03
+    note: Opened; one-page referral form for courts and agencies, updated March 2024.
   - kind: brochure
-    title: Peacemaking Program Brochure OCT.2025
+    title: Peacemaking Program brochure (updated October 2025)
     link: https://courts.navajo-nsn.gov/wp-content/uploads/2025/10/Peacemaking-Program-Brochure-OCT.2025.pdf
     source: web-search-navajo-peacemaking-2026-11-21
     confidence: low
-    verification: title-only
+    verification: read-in-full
     as_of: 2025-10
-    note: Seen in search results only; download failed.
+    note: 'Title and ''Updated: October 2025'' read through a fetch-and-summarize tool. Direct download
+      returned 404 or connection resets on Nov. 21, 2026. A 2026 brochure is listed in search results
+      but was not opened.'
   - kind: rules
-    title: Peacemaking Program Plan of Operation (2013 copy hosted by Tribal Justice)
+    title: Peacemaking Program Plan of Operations (July 30, 2012; Section 5 amended Feb. 25, 2013)
     link: https://tribaljustice.org/wp-content/uploads/2022/04/PPPO2013-2-25.pdf
-    source: web-search-navajo-peacemaking-2026-11-21
-    confidence: low
-    verification: title-only
-    as_of: '2013'
-    note: Seen in search results only; not opened. Title inferred from file name and result title 'PPPO2013
-      2 25'.
+    source: navajo-peacemaking-plan-of-operations-2012
+    confidence: medium
+    verification: read-in-full
+    as_of: '2012-07-30'
+    note: Opened (69 pages). The Plan implements 7 N.N.C. §§ 409-413. Copy hosted by Tribal Justice (tribaljustice.org);
+      the Judicial Branch also publishes the Plan as web pages.
 gaming:
   compacts:
   - state: AZ
