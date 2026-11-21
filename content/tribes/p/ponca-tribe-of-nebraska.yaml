@@ -196,20 +196,22 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Ponca Tribe of Nebraska Constitution
-  link: https://www.poncatribe-ne.org/wp-content/uploads/2016/10/PoncaConstitution.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Nebraska section, entry 'Ponca Tribe of Nebraska'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://www.poncatribe-ne.org/wp-content/uploads/2016/10/PoncaConstitution.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Ponca Tribe of Nebraska Law and Order Code
-  link: https://www.poncatribe-ne.org/tribal-documents/law-code-title/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Nebraska section, entry 'Ponca Tribe of Nebraska'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://www.poncatribe-ne.org/tribal-documents/law-code-title/)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution (Ponca Tribe of Native Americans of Nebraska)
   year: '1936'
@@ -237,11 +239,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Ponca Tribe of Nebraska Tribal Court
-  link: https://www.poncatribe-ne.org/departments/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Nebraska section, entry 'Ponca Tribe of Nebraska'
+  note: 'Link check 2026-11-21: the link the source gives (https://www.poncatribe-ne.org/departments/tribal-court/)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: mediation

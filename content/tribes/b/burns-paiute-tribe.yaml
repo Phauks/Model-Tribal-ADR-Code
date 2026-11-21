@@ -187,12 +187,13 @@ governing_documents:
     of contents (and may link to the nation''s own copy); full text is not hosted there.'
 - kind: constitution
   title: Burns Paiute Tribe Constitution
-  link: http://www.burnspaiute-nsn.gov/index.php/resources/online-documents/documents/tribal-code/49-tribal-code-part-1-cover-pl-280/file
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oregon section, entry 'Burns Paiute Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.burnspaiute-nsn.gov/index.php/resources/online-documents/documents/tribal-code/49-tribal-code-part-1-cover-pl-280/file)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Burns Paiute Tribal Code
   link: http://www.burnspaiute-nsn.gov/index.php/resources/online-documents/documents/tribal-code
@@ -204,19 +205,21 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: https://burnspaiute-nsn.gov/departments/tribal-police-courts/
   source: national-indian-law-library-burns-paiute
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (https://burnspaiute-nsn.gov/departments/tribal-police-courts/) returned HTTP
+    404, so it is not recorded.'
 - kind: tribal-court
   name: Burns Paiute Tribal Court
-  link: http://www.burnspaiute-nsn.gov/index.php/departments/police-department-home
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oregon section, entry 'Burns Paiute Tribe'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.burnspaiute-nsn.gov/index.php/departments/police-department-home)
+    returned HTTP 404, so it is not recorded.'
 gaming:
   compacts:
   - state: OR

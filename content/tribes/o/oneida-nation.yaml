@@ -182,12 +182,13 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Oneida Nation Constitution and By-Laws
-  link: https://oneida-nsn.gov/dl-file.php?file=2016/02/CONSTITUTION-AND-BY.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Wisconsin section, entry 'Oneida Nation of Wisconsin'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://oneida-nsn.gov/dl-file.php?file=2016/02/CONSTITUTION-AND-BY.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Oneida Nation Code of Laws
   link: https://oneida-nsn.gov/government/register/laws/
@@ -235,6 +236,7 @@ justice_institutions:
   confidence: medium
   as_of: '2022'
   locator: Wisconsin section, entry 'Oneida Nation of Wisconsin'
+  note: 'Link check 2026-11-21: the site did not respond.'
 dispute_resolution:
   provisions:
   - kind: peacemaking

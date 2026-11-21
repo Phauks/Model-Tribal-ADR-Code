@@ -117,13 +117,13 @@ federal_administration:
 governing_documents:
 - kind: law-code
   title: Tribal code
-  link: http://nebula.wsimg.com/567372326ed4e1609fdb030cdc02abfc?AccessKeyId=90E638307C2FCCDC5F73&disposition=0&alloworigin=1
   source: national-indian-law-library-mesa-grande
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
-    .".'
+    .". Link check 2026-11-21: the link the source gives (http://nebula.wsimg.com/567372326ed4e1609fdb030cdc02abfc?AccessKeyId=90E638307C2FCCDC5F73&disposition=0&alloworigin=1)
+    returned HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

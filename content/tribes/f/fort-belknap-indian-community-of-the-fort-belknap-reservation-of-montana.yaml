@@ -179,13 +179,13 @@ governing_documents:
     . Various ordinances and policies.".'
 - kind: law-code
   title: Tribal code
-  link: http://indianlaw.mt.gov/fb/codes
   source: national-indian-law-library-fort-belknap
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Montana Indian Law
-    website .".'
+    website .". Link check 2026-11-21: the link the source gives (http://indianlaw.mt.gov/fb/codes) returned
+    HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
   link: https://ftbelknap.org/forms%2Fdocuments
@@ -205,12 +205,13 @@ governing_documents:
   note: Title is the link text in the directory; link not re-checked and may be out of date.
 - kind: constitution
   title: Bylaws
-  link: http://ftbelknap.org/documents/By-Laws.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Montana section, entry 'Fort Belknap Indian Community'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://ftbelknap.org/documents/By-Laws.pdf) returned HTTP 404,
+    so it is not recorded.'
 - kind: law-code
   title: Fort Belknap Tribal Code
   link: http://ftbelknap.org/documents/Fort%20Belknap%20Tribal%20Code.pdf
@@ -218,7 +219,8 @@ governing_documents:
   confidence: medium
   as_of: '2022'
   locator: Montana section, entry 'Fort Belknap Indian Community'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the site did not respond.'
 - kind: corporate-charter
   title: Corporate charter (Fort Belknap Indian Community of the Fort Belknap Reservation Montana)
   year: '1937'

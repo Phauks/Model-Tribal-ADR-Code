@@ -157,12 +157,13 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Seneca-Cayuga Nation Constitution and Bylaws
-  link: http://sctribe.com/letters/seneca-cayuga-nation-constitution-bylaws/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Seneca-Cayuga Tribe of Oklahoma'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://sctribe.com/letters/seneca-cayuga-nation-constitution-bylaws/)
+    returned HTTP 404, so it is not recorded.'
 - kind: corporate-charter
   title: Corporate charter (Seneca-Cayuga Tribe of Oklahoma)
   year: '1937'

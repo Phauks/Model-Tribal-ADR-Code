@@ -177,12 +177,13 @@ governing_documents:
     website . (pdf)".'
 - kind: law-code
   title: Nez Perce Tribal Code
-  link: http://nezperce.org/~code/index.htm
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Idaho section, entry 'Nez Perce Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://nezperce.org/~code/index.htm) returned HTTP 404, so
+    it is not recorded.'
 justice_institutions:
 - kind: peacemaking-program
   name: Peacemaker Court
@@ -201,11 +202,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Nez Perce Tribal Court
-  link: http://www.nezperce.org/official/tribalcourt.htm
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Idaho section, entry 'Nez Perce Tribe'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.nezperce.org/official/tribalcourt.htm)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: peacemaking

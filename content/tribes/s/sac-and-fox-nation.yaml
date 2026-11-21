@@ -177,20 +177,22 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Sac & Fox Nation Constitution
-  link: http://sacandfoxnation-nsn.gov/departments/government/constitution/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Sac & Fox Nation of Oklahoma'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://sacandfoxnation-nsn.gov/departments/government/constitution/)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Sac & Fox Nation Code of Laws
-  link: http://sacandfoxnation-nsn.gov/government/judicial/code-of-laws/code-of-laws/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Sac & Fox Nation of Oklahoma'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://sacandfoxnation-nsn.gov/government/judicial/code-of-laws/code-of-laws/)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution (Sac and Fox Tribe of Indians of Oklahoma)
   year: '1937'
@@ -210,11 +212,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Sac & Fox Nation of Oklahoma Judicial System
-  link: http://www.sacandfoxnation-nsn.gov/government/judicial/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Sac & Fox Nation of Oklahoma'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.sacandfoxnation-nsn.gov/government/judicial/)
+    returned HTTP 404, so it is not recorded.'
 gaming:
   compacts:
   - state: OK

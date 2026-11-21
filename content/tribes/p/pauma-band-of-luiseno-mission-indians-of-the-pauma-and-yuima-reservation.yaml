@@ -139,12 +139,13 @@ governing_documents:
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website .".'
 - kind: law-code
   title: Pauma Band of Mission Indians Ordinances
-  link: http://www.sciljc.org/ordinances--codes---laws.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: California section, entry 'Pauma Band of Luiseno Indians'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.sciljc.org/ordinances--codes---laws.html) returned
+    HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Pauma Tribal Court - Intertribal Court of Southern California

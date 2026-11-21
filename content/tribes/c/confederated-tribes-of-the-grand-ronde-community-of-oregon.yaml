@@ -199,12 +199,13 @@ governing_documents:
   note: Title is the link text in the directory; link not re-checked and may be out of date.
 - kind: law-code
   title: Confederated Tribes of the Grand Ronde Community of Oregon Ordinances and Resolutions
-  link: http://www.grandronde.org/about/archives/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oregon section, entry 'Confederated Tribes of Grand Ronde'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.grandronde.org/about/archives/) returned HTTP 404,
+    so it is not recorded.'
 - kind: corporate-charter
   title: Corporate charter (Grand Ronde Community Oregon)
   year: '1936'
@@ -224,31 +225,33 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: http://www.grandronde.org/about/tribal-court/
   source: national-indian-law-library-confederated-grand-ronde
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://www.grandronde.org/about/tribal-court/) returned HTTP 404, so it is
+    not recorded.'
 - kind: tribal-court
   name: Confederated Tribes of Grand Ronde Tribal Court
-  link: http://www.grandronde.org/about/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oregon section, entry 'Confederated Tribes of Grand Ronde'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.grandronde.org/about/tribal-court/)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: other
     title: Tribal Court Ordinance Chapter 302
     citation: Tribal Court Ordinance Chapter 302
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Grand-Ronde-Tribal-Court-Ordinance-2013-10-23.pdf
     source: narf-tribal-peacemaking-laws
     confidence: medium
     as_of: '2025-09-29'
     locator: Confederated Tribes of the Grand Ronde Community of Oregon
     note: 'Native American Rights Fund description (provision itself not read): Provides purpose, authorization,
-      and qualifications.'
+      and qualifications. Link check 2026-11-21: the link the source gives (https://peacemaking.narf.org/wp-content/uploads/2025/07/Grand-Ronde-Tribal-Court-Ordinance-2013-10-23.pdf)
+      returned HTTP 404, so it is not recorded.'
 gaming:
   compacts:
   - state: OR

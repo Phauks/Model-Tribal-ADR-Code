@@ -155,21 +155,22 @@ governing_documents:
     .".'
 - kind: constitution
   title: Constitution
-  link: http://www.hoopa-nsn.gov/wp-content/uploads/2015/07/HVTConstitutionAndBylaws.pdf
   source: national-indian-law-library-hoopa-valley
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link check 2026-11-21: the link the source gives (http://www.hoopa-nsn.gov/wp-content/uploads/2015/07/HVTConstitutionAndBylaws.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Hoopa Valley Tribe of the Hoopa Valley Indian Reservation Constitution and Bylaws
-  link: https://www.hoopa-nsn.gov/wp-content/uploads/2015/07/HVTConstitutionAndBylaws.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: California section, entry 'Hoopa Valley Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://www.hoopa-nsn.gov/wp-content/uploads/2015/07/HVTConstitutionAndBylaws.pdf)
+    returned HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -178,7 +179,8 @@ justice_institutions:
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    site did not respond.'
 - kind: tribal-court
   name: Hoopa Valley Tribal Court
   link: https://www.hoopa-nsn.gov/the-tribal-government/hoopa-valley-tribal-court
@@ -186,6 +188,7 @@ justice_institutions:
   confidence: medium
   as_of: '2022'
   locator: California section, entry 'Hoopa Valley Tribe'
+  note: 'Link check 2026-11-21: the site did not respond.'
 dispute_resolution:
   provisions:
   - kind: other

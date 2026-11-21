@@ -136,13 +136,13 @@ government_structure:
 governing_documents:
 - kind: law-code
   title: Tribal code
-  link: https://stcroixojibwe-nsn.gov/government/judiciary/codes/
   source: national-indian-law-library-st-croix-chippewa
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
-    .".'
+    .". Link check 2026-11-21: the link the source gives (https://stcroixojibwe-nsn.gov/government/judiciary/codes/)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
   link: https://stcroixojibwe-nsn.gov/government/constitution/
@@ -189,12 +189,13 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: https://stcroixojibwe-nsn.gov/government/judiciary/
   source: national-indian-law-library-st-croix-chippewa
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (https://stcroixojibwe-nsn.gov/government/judiciary/) returned HTTP 404, so
+    it is not recorded.'
 - kind: tribal-court
   name: St. Croix Chippewa Tribal Court
   link: http://www.stcciw.com/tribal-court

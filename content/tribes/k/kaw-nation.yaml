@@ -149,13 +149,13 @@ federal_administration:
 governing_documents:
 - kind: law-code
   title: Tribal code
-  link: https://www.kawnation.gov/tribal-codes/
   source: national-indian-law-library-kaw-nation
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
-    .".'
+    .". Link check 2026-11-21: the link the source gives (https://www.kawnation.gov/tribal-codes/) returned
+    HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
   link: https://www.kawnation.gov/kaw-nation-constitution-2/
@@ -167,12 +167,13 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Kaw Nation Constitution
-  link: http://kawnation.com/?page_id=3312
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Kaw Nation'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://kawnation.com/?page_id=3312) returned HTTP 404, so it
+    is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -184,11 +185,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Kaw Nation Judicial Branch
-  link: http://kawnation.com/?page_id=2820
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Kaw Nation'
+  note: 'Link check 2026-11-21: the link the source gives (http://kawnation.com/?page_id=2820) returned
+    HTTP 404, so it is not recorded.'
 gaming:
   compacts:
   - state: OK

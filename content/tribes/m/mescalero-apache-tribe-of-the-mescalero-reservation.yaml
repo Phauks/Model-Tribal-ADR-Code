@@ -192,12 +192,13 @@ governing_documents:
   note: Title is the link text in the directory; link not re-checked and may be out of date.
 - kind: law-code
   title: Mescalero Apache Tribal Code
-  link: http://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-101116-for-tabbing.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: New Mexico section, entry 'Mescalero Apache Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-101116-for-tabbing.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: corporate-charter
   title: Corporate Charter of the Apache Tribe of the Mescalero Reservation New Mexico
   year: '1936'

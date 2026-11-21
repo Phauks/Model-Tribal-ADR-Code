@@ -191,12 +191,13 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: https://www.yeringtonpaiute.us/resume
   source: national-indian-law-library-yerington-paiute
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Review 2026-11-21: the link
+    the source gives (https://www.yeringtonpaiute.us/resume) is malformed or is not a page about this
+    item, so it is not recorded.'
 - kind: tribal-court
   name: Yerington Paiute Tribal Court
   link: http://yeringtonpaiute.us/index.php/tribal-court

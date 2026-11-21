@@ -152,12 +152,13 @@ governing_documents:
     Office of Legislative Services Public Reports for information about legislation / resolutions.".'
 - kind: law-code
   title: Navajo Nation Code
-  link: http://www.navajonationcouncil.org/Code%20Page.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Arizona section, entry 'Navajo Nation'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.navajonationcouncil.org/Code%20Page.html) returned
+    HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: peacemaking-program
   name: Navajo Nation Peacemaking Program (Hózhóójí Naat’áanii)

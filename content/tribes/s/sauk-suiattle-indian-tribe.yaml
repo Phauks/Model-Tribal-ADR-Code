@@ -129,38 +129,40 @@ governing_documents:
     to the nation''s own copy); full text is not hosted there.'
 - kind: law-code
   title: Tribal code
-  link: http://www.sauk-suiattle.com/documents_and_forms.htm
   source: national-indian-law-library-sauk-suiattle
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
-    .".'
+    .". Link check 2026-11-21: the link the source gives (http://www.sauk-suiattle.com/documents_and_forms.htm)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
-  link: http://www.sauk-suiattle.com/documents_and_forms.htm
   source: national-indian-law-library-sauk-suiattle
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link check 2026-11-21: the link the source gives (http://www.sauk-suiattle.com/documents_and_forms.htm)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Sauk-Suiattle Indian Tribe Constitution and Bylaws
-  link: http://www.sauk-suiattle.com/Documents/Constitution%201.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Washington section, entry 'Sauk-Suiattle Indian Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.sauk-suiattle.com/Documents/Constitution%201.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Sauk-Suiattle Indian Tribe Ordinances
-  link: http://www.sauk-suiattle.com/documents_and_forms.htm
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Washington section, entry 'Sauk-Suiattle Indian Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.sauk-suiattle.com/documents_and_forms.htm) returned
+    HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

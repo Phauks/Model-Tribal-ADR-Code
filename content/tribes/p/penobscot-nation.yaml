@@ -129,28 +129,31 @@ governing_documents:
     page.'
 - kind: law-code
   title: Penobscot Tribal Laws and Ordinances
-  link: http://www.penobscotnation.org/departments/tribal-court/tribal-laws-and-ordinances
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Maine section, entry 'Penobscot Indian Nation'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.penobscotnation.org/departments/tribal-court/tribal-laws-and-ordinances)
+    returned HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: https://www.penobscotnation.org/departments/tribal-court/
   source: national-indian-law-library-penobscot
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (https://www.penobscotnation.org/departments/tribal-court/) returned HTTP 404,
+    so it is not recorded.'
 - kind: tribal-court
   name: Penobscot Indian Nation Tribal Court
-  link: http://www.penobscotnation.org/departments/tribal-court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Maine section, entry 'Penobscot Indian Nation'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.penobscotnation.org/departments/tribal-court)
+    returned HTTP 404, so it is not recorded.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

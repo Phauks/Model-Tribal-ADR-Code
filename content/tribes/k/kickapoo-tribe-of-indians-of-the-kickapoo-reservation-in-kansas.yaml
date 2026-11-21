@@ -135,12 +135,13 @@ government_structure:
 governing_documents:
 - kind: law-code
   title: Kansas Kickapoo Tribal Codes and Ordinances
-  link: https://www.ktik-nsn.gov/programs/kickapoo-judicial-center/useful-links-and-documents/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Kansas section, entry 'Kickapoo Tribe in Kansas'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://www.ktik-nsn.gov/programs/kickapoo-judicial-center/useful-links-and-documents/)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution (Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas)
   year: '1937'
@@ -159,11 +160,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Kickapoo District Court
-  link: https://www.ktik-nsn.gov/programs/kickapoo-judicial-center/district-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Kansas section, entry 'Kickapoo Tribe in Kansas'
+  note: 'Link check 2026-11-21: the link the source gives (https://www.ktik-nsn.gov/programs/kickapoo-judicial-center/district-court/)
+    returned HTTP 404, so it is not recorded.'
 gaming:
   compacts:
   - state: KS

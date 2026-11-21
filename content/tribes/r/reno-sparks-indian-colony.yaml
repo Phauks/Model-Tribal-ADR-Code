@@ -204,20 +204,22 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Reno-Sparks Indian Colony Constitution and Bylaws
-  link: http://www.rsic.org/wp-content/uploads/2013/10/Constitution.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Nevada section, entry 'Reno-Sparks Indian Colony'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.rsic.org/wp-content/uploads/2013/10/Constitution.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Reno-Sparks Indian Colony Tribal Ordinances
-  link: http://www.rsic.org/rsic-services/court-services/tribal-ordinances/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Nevada section, entry 'Reno-Sparks Indian Colony'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.rsic.org/rsic-services/court-services/tribal-ordinances/)
+    returned HTTP 404, so it is not recorded.'
 - kind: corporate-charter
   title: Corporate charter (Reno-Sparks Indian Colony of the State of Nevada)
   year: '1938'
@@ -237,19 +239,21 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: https://www.rsic.org/rsic-services/court-services/
   source: national-indian-law-library-reno-sparks
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (https://www.rsic.org/rsic-services/court-services/) returned HTTP 404, so it
+    is not recorded.'
 - kind: tribal-court
   name: Reno-Sparks Indian Colony Court Services
-  link: http://www.rsic.org/rsic-services/court-services/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Nevada section, entry 'Reno-Sparks Indian Colony'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.rsic.org/rsic-services/court-services/)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: arbitration

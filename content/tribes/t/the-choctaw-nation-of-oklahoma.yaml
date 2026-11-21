@@ -136,13 +136,13 @@ federal_administration:
 governing_documents:
 - kind: law-code
   title: Tribal code
-  link: https://www.choctawnation.com/government/judicial-branch/tribal-codes
   source: national-indian-law-library-choctaw-oklahoma
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
-    .".'
+    .". Link check 2026-11-21: the link the source gives (https://www.choctawnation.com/government/judicial-branch/tribal-codes)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
   link: https://www.choctawnation.com/history-culture/history/historical-documents
@@ -173,20 +173,22 @@ governing_documents:
   note: 'Approved: 1983. Full text linked from the National Indian Law Library page.'
 - kind: constitution
   title: Choctaw Nation of Oklahoma Constitution
-  link: https://www.choctawnation.com/sites/default/files/constitution_1983_original.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Choctaw Nation of Oklahoma'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://www.choctawnation.com/sites/default/files/constitution_1983_original.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Choctaw Nation Tribal Codes
-  link: https://www.choctawnation.com/government/tribal-court/tribal-codes
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Choctaw Nation of Oklahoma'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://www.choctawnation.com/government/tribal-court/tribal-codes)
+    returned HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -198,11 +200,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Choctaw Nation of Oklahoma Tribal Court
-  link: http://www.choctawnation.com/government/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Choctaw Nation of Oklahoma'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.choctawnation.com/government/tribal-court/)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: peacemaking

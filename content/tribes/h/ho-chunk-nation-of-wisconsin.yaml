@@ -195,20 +195,22 @@ governing_documents:
     website (pdf).".'
 - kind: constitution
   title: Ho-Chunk Nation Constitution
-  link: http://www.ho-chunknation.com/Constitution.htm
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Wisconsin section, entry 'Ho-Chunk Nation'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.ho-chunknation.com/Constitution.htm) returned HTTP
+    404, so it is not recorded.'
 - kind: law-code
   title: Ho Chunk Nation Laws
-  link: http://www.ho-chunknation.com/HCNLaws.aspx
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Wisconsin section, entry 'Ho-Chunk Nation'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.ho-chunknation.com/HCNLaws.aspx) returned HTTP 404,
+    so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Courts

@@ -154,12 +154,13 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Delaware Tribe of Indians Constitution and Bylaws
-  link: http://delawaretribe.org/wp-content/uploads/constitution.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Delaware Tribe of Indians'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://delawaretribe.org/wp-content/uploads/constitution.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Delaware Tribe Ordinance, Acts, and Resolutions
   link: http://delawaretribe.org/tribal-documents/

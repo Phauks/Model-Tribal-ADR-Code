@@ -187,12 +187,13 @@ governing_documents:
     of Congress website . Corporate charter. (1950)".'
 - kind: constitution
   title: United Keetoowah Band of Cherokee Indians in Oklahoma Constitution
-  link: http://www.ukb-nsn.gov/documents/constitution.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'United Keetoowah Band of Cherokee Indians in Oklahoma'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.ukb-nsn.gov/documents/constitution.pdf) returned
+    HTTP 404, so it is not recorded.'
 - kind: corporate-charter
   title: Corporate charter (United Keetowah Band of Cherokee Indians Oklahoma)
   year: '1950'

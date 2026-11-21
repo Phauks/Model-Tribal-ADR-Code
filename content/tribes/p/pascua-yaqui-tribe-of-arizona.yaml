@@ -173,12 +173,13 @@ governing_documents:
   note: Title is the link text in the directory; link not re-checked and may be out of date.
 - kind: law-code
   title: Pascua Yaqui Tribe Tribal Codes
-  link: http://www.pascuayaqui-nsn.gov/index.php/law-order-tribal-code
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Arizona section, entry 'Pascua Yaqui Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.pascuayaqui-nsn.gov/index.php/law-order-tribal-code)
+    returned HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

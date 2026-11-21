@@ -181,12 +181,13 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Port Gamble S’Klallam Tribe Constitution
-  link: https://www.pgst.nsn.us/images/law-and-order/Constitution.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Washington section, entry 'Port Gamble S’Klallam Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://www.pgst.nsn.us/images/law-and-order/Constitution.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Port Gamble S’Klallam Tribe Law and Order Code
   link: https://www.pgst.nsn.us/government/law-and-order-code
@@ -222,11 +223,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Port Gamble S’Klallam Court Services
-  link: http://www.pgst.nsn.us/sklallam-government/court-laws
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Washington section, entry 'Port Gamble S’Klallam Tribe'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.pgst.nsn.us/sklallam-government/court-laws)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: mediation

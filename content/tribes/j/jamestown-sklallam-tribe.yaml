@@ -155,38 +155,40 @@ governing_documents:
     (and may link to the nation''s own copy); full text is not hosted there.'
 - kind: law-code
   title: Tribal code
-  link: http://www.jamestowntribe.org/govdocs/gov_code.htm
   source: national-indian-law-library-jamestown-sklallam
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
-    .".'
+    .". Link check 2026-11-21: the link the source gives (http://www.jamestowntribe.org/govdocs/gov_code.htm)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
-  link: http://www.jamestowntribe.org/govdocs/gov_const.htm
   source: national-indian-law-library-jamestown-sklallam
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link check 2026-11-21: the link the source gives (http://www.jamestowntribe.org/govdocs/gov_const.htm)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Jamestown S'Klallam Tribe of Indians Constitution
-  link: http://www.jamestowntribe.org/govdocs/gov_const.htm
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Washington section, entry 'Jamestown S’Klallam Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.jamestowntribe.org/govdocs/gov_const.htm) returned
+    HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Jamestown S’Klallam Tribe Tribal Code
-  link: http://www.jamestowntribe.org/govdocs/gov_code.htm
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Washington section, entry 'Jamestown S’Klallam Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.jamestowntribe.org/govdocs/gov_code.htm) returned
+    HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Jamestown S’Klallam Tribal Court

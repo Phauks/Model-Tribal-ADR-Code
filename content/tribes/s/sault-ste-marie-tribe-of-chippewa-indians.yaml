@@ -155,12 +155,13 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Sault Ste. Marie Tribe of Chippewa Indians Constitution and Bylaws
-  link: http://www.saulttribe.com/~saultt5/images/government/Constitution_amended_2010.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Michigan section, entry 'Sault Ste. Marie Tribe of Chippewa Indians'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.saulttribe.com/~saultt5/images/government/Constitution_amended_2010.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Sault Ste. Marie Tribal Code
   link: http://www.saulttribe.com/government/tribal-code

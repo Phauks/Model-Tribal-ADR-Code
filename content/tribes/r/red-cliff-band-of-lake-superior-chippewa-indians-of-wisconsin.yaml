@@ -193,20 +193,22 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Red Cliff Band of Lake Superior Chippewa Indians Constitution and Bylaws
-  link: http://redcliff-nsn.gov/government/TribalChapters/Chapter1.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Wisconsin section, entry 'Red Cliff Band of Lake Superior Chippewa'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://redcliff-nsn.gov/government/TribalChapters/Chapter1.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Red Cliff Band of Lake Superior Chippewa Code of Laws
-  link: http://redcliff-nsn.gov/government/chapters_table_contents.htm
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Wisconsin section, entry 'Red Cliff Band of Lake Superior Chippewa'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://redcliff-nsn.gov/government/chapters_table_contents.htm)
+    returned HTTP 404, so it is not recorded.'
 - kind: corporate-charter
   title: Corporate charter (Red Cliff Band of Lake Superior Chippewa Indians)
   link: https://thorpe.law.ou.edu/IRA/amchipchrtr.html
@@ -234,19 +236,21 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: http://redcliff-nsn.gov/resources/popup/tribal_court.htm
   source: national-indian-law-library-red-cliff-band
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://redcliff-nsn.gov/resources/popup/tribal_court.htm) returned HTTP 404,
+    so it is not recorded.'
 - kind: tribal-court
   name: Red Cliff Tribal Court
-  link: http://redcliff-nsn.gov/resources/popup/tribal_court.htm
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Wisconsin section, entry 'Red Cliff Band of Lake Superior Chippewa'
+  note: 'Link check 2026-11-21: the link the source gives (http://redcliff-nsn.gov/resources/popup/tribal_court.htm)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: other

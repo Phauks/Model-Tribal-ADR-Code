@@ -173,20 +173,22 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Stockbridge-Munsee Community Constitution and By-Laws
-  link: http://www.mohican.com/mt-content/uploads/2015/11/constitution-and-bylaws.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Wisconsin section, entry 'Stockbridge-Munsee Community Band of Mohican Indians'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.mohican.com/mt-content/uploads/2015/11/constitution-and-bylaws.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Stockbridge-Munsee Ordinances
-  link: http://www.mohican.com/ordinances/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Wisconsin section, entry 'Stockbridge-Munsee Community Band of Mohican Indians'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.mohican.com/ordinances/) returned HTTP 404, so it
+    is not recorded.'
 - kind: corporate-charter
   title: Corporate charter (Stockbridge Munsee Community of Wisconsin)
   year: '1938'
@@ -214,11 +216,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Stockbridge-Munsee Tribal Court
-  link: http://www.mohican.com/tribalcourt/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Wisconsin section, entry 'Stockbridge-Munsee Community Band of Mohican Indians'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.mohican.com/tribalcourt/) returned
+    HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: peacemaking

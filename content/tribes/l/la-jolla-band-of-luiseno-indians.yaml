@@ -128,12 +128,13 @@ governing_documents:
     of contents (and may link to the nation's own copy); full text is not hosted there.
 - kind: law-code
   title: La Jolla Band of Luiseño Indians Ordinances
-  link: http://www.sciljc.org/ordinances--codes---laws.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: California section, entry 'La Jolla Band of Luiseno Indians'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.sciljc.org/ordinances--codes---laws.html) returned
+    HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: La Jolla Tribal Court - Intertribal Court of Southern California

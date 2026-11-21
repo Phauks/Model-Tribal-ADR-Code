@@ -157,22 +157,22 @@ government_structure:
 governing_documents:
 - kind: law-code
   title: Code
-  link: http://indianlaw.mt.gov/bf/codes
   source: national-indian-law-library-blackfeet
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Montana Indian Law
-    website . Code.".'
+    website . Code.". Link check 2026-11-21: the link the source gives (http://indianlaw.mt.gov/bf/codes)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Resolutions
-  link: http://indianlaw.mt.gov/bf/resolution
   source: national-indian-law-library-blackfeet
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Montana Indian Law
-    website . Resolutions.".'
+    website . Resolutions.". Link check 2026-11-21: the link the source gives (http://indianlaw.mt.gov/bf/resolution)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
   link: http://blackfeetnation.com/government/constitution/
@@ -184,13 +184,13 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Constitution
-  link: http://indianlaw.mt.gov/bf/constitution
   source: national-indian-law-library-blackfeet
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Montana
-    Indian Law website .".'
+    Indian Law website .". Link check 2026-11-21: the link the source gives (http://indianlaw.mt.gov/bf/constitution)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Blackfeet Tribal Law and Order Code
   year: '2002'

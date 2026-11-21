@@ -171,38 +171,40 @@ governing_documents:
   note: 'Amended: September 2005. Full text linked from the National Indian Law Library page.'
 - kind: law-code
   title: Tribal code
-  link: https://www.ldftribe.com/departments/97/Other_Pages/Court_Ordinances.html
   source: national-indian-law-library-lac-du-flambeau-chippewa
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
-    .".'
+    .". Link check 2026-11-21: the link the source gives (https://www.ldftribe.com/departments/97/Other_Pages/Court_Ordinances.html)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
-  link: https://www.ldftribe.com/departments/97/Other_Pages/Court_Ordinances.html
   source: national-indian-law-library-lac-du-flambeau-chippewa
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link check 2026-11-21: the link the source gives (https://www.ldftribe.com/departments/97/Other_Pages/Court_Ordinances.html)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Lac du Flambeau Band of Lake Superior Chippewa Indians Constitution and Bylaws
-  link: https://www.ldftribe.com/uploads/files/Court-Ordinances/BYLAWS.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Wisconsin section, entry 'Lac du Flambeau Band of Lake Superior Chippewa Indians'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://www.ldftribe.com/uploads/files/Court-Ordinances/BYLAWS.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Lac du Flambeau Tribal Ordinances
-  link: http://www.ldftribe.com/pages/23/Court-Ordinances/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Wisconsin section, entry 'Lac du Flambeau Band of Lake Superior Chippewa Indians'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.ldftribe.com/pages/23/Court-Ordinances/) returned
+    HTTP 404, so it is not recorded.'
 - kind: corporate-charter
   title: Corporate charter (Lac Du Flambeau Band of Lake Superior Chippewa Indians of Wisconsin)
   year: '1937'
@@ -222,19 +224,21 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: https://www.ldftribe.com/departments/43/Tribal_Operations/Tribal_Courts.html
   source: national-indian-law-library-lac-du-flambeau-chippewa
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (https://www.ldftribe.com/departments/43/Tribal_Operations/Tribal_Courts.html)
+    returned HTTP 404, so it is not recorded.'
 - kind: tribal-court
   name: Lac du Flambeau Tribal Courts
-  link: http://www.ldftribe.com/departments/43/Tribal_Operations/Tribal_Courts.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Wisconsin section, entry 'Lac du Flambeau Band of Lake Superior Chippewa Indians'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.ldftribe.com/departments/43/Tribal_Operations/Tribal_Courts.html)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: other

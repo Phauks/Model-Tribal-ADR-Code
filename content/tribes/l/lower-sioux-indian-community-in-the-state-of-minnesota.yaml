@@ -205,12 +205,13 @@ governing_documents:
   note: Title is the link text in the directory; link not re-checked and may be out of date.
 - kind: law-code
   title: Lower Sioux Tribal Laws
-  link: http://circle.red/mlbo/statutes/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Minnesota section, entry 'Lower Sioux Indian Community'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://circle.red/mlbo/statutes/) returned HTTP 404, so it
+    is not recorded.'
 - kind: corporate-charter
   title: Corporate charter (Lower Sioux Indian Community in Minnesota)
   year: '1937'

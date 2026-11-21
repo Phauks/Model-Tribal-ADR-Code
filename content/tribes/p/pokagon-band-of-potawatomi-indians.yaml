@@ -181,13 +181,13 @@ governing_documents:
     (and may link to the nation''s own copy); full text is not hosted there.'
 - kind: law-code
   title: Tribal code
-  link: http://www.pokagonband-nsn.gov/Codes_and_Ordinances.aspx
   source: national-indian-law-library-pokagon-potawatomi
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
-    .".'
+    .". Link check 2026-11-21: the link the source gives (http://www.pokagonband-nsn.gov/Codes_and_Ordinances.aspx)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
   link: http://www.pokagonband-nsn.gov/Government/Constitution/
@@ -216,12 +216,13 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: http://www.pokagonband-nsn.gov/Government/TribalCourt/
   source: national-indian-law-library-pokagon-potawatomi
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://www.pokagonband-nsn.gov/Government/TribalCourt/) returned HTTP 404,
+    so it is not recorded.'
 - kind: tribal-court
   name: Pokagon Tribal Court
   link: http://www.pokagonband-nsn.gov/government/tribal-court

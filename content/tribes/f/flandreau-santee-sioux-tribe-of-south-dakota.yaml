@@ -187,20 +187,22 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Flandreau Santee Sioux Tribe of South Dakota Constitution and By-Laws
-  link: http://santeesioux.com/wp-content/uploads/2016/10/FSSTConstitution.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: South Dakota section, entry 'Flandreau Santee Sioux Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://santeesioux.com/wp-content/uploads/2016/10/FSSTConstitution.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Flandreau Santee Sioux Law & Order Code
-  link: http://santeesioux.com/government/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: South Dakota section, entry 'Flandreau Santee Sioux Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://santeesioux.com/government/) returned HTTP 404, so it
+    is not recorded.'
 - kind: corporate-charter
   title: Corporate charter (Flandreau Santee Sioux Tribe South Dakota)
   year: '1936'

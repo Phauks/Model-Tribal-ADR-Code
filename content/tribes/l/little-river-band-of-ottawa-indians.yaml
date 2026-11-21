@@ -175,12 +175,13 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Little River Band of Ottawa Constitution
-  link: https://lrboi-nsn.gov/wp-content/uploads/2015/10/The-Constitution-of-the-Little-River-Band-of-Ottawa-Indians-Amended-07-11-16.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Michigan section, entry 'Little River Band of Ottawa Indians'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://lrboi-nsn.gov/wp-content/uploads/2015/10/The-Constitution-of-the-Little-River-Band-of-Ottawa-Indians-Amended-07-11-16.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Little River Band of Ottawa Indians Tribal Code
   link: https://lrboi-nsn.gov/government/tribal-code/
@@ -192,19 +193,21 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: https://www.lrboi-nsn.gov/index.php/government/tribal-court
   source: national-indian-law-library-little-river-band-ottawa
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (https://www.lrboi-nsn.gov/index.php/government/tribal-court) returned HTTP
+    404, so it is not recorded.'
 - kind: tribal-court
   name: Little River Band of Ottawa Indians Tribal Court
-  link: https://www.lrboi-nsn.gov/index.php/government/tribal-court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Michigan section, entry 'Little River Band of Ottawa Indians'
+  note: 'Link check 2026-11-21: the link the source gives (https://www.lrboi-nsn.gov/index.php/government/tribal-court)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: peacemaking

@@ -123,22 +123,22 @@ federal_administration:
 governing_documents:
 - kind: law-code
   title: Tribal code
-  link: http://www.ccthita.org/government/legislative/index.html
   source: national-indian-law-library-ccthita
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
-    .".'
+    .". Link check 2026-11-21: the link the source gives (http://www.ccthita.org/government/legislative/index.html)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
-  link: http://www.ccthita.org/government/legislative/index.html
   source: national-indian-law-library-ccthita
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link check 2026-11-21: the link the source gives (http://www.ccthita.org/government/legislative/index.html)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Central Council Tlingit & Haida Indian Tribes of Alaska
   year: '2016'
@@ -169,28 +169,31 @@ governing_documents:
   note: Title is the link text in the directory; link not re-checked and may be out of date.
 - kind: law-code
   title: Central Council of Tlingit & Haida Indian Tribes of Alaska Statutes
-  link: http://www.ccthita.org/government/legislative/index.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Alaska section, entry 'Central Council Tlingit & Haida Indian Tribes of Alaska'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.ccthita.org/government/legislative/index.html) returned
+    HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: http://www.ccthita.org/government/court/index.html
   source: national-indian-law-library-ccthita
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://www.ccthita.org/government/court/index.html) returned HTTP 404, so it
+    is not recorded.'
 - kind: tribal-court
   name: Central Council Tlingit and Haida Judicial Branch
-  link: http://www.ccthita.org/government/judicial/index.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Alaska section, entry 'Central Council Tlingit & Haida Indian Tribes of Alaska'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.ccthita.org/government/judicial/index.html)
+    returned HTTP 404, so it is not recorded.'
 gaming:
   ordinances:
   - approved: '2016-05-13'

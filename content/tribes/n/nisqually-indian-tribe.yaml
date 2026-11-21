@@ -162,38 +162,40 @@ governing_documents:
     may link to the nation''s own copy); full text is not hosted there.'
 - kind: law-code
   title: Tribal code
-  link: http://www.nisqually-nsn.gov/index.php/council/tribal-code/
   source: national-indian-law-library-nisqually
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
-    .".'
+    .". Link check 2026-11-21: the link the source gives (http://www.nisqually-nsn.gov/index.php/council/tribal-code/)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
-  link: http://www.nisqually-nsn.gov/index.php/council/constitution/
   source: national-indian-law-library-nisqually
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website .".'
+    website .". Link check 2026-11-21: the link the source gives (http://www.nisqually-nsn.gov/index.php/council/constitution/)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Nisqually Indian Tribe Constitution
-  link: http://www.nisqually-nsn.gov/index.php/council/constitution/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Washington section, entry 'Nisqually Indian Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.nisqually-nsn.gov/index.php/council/constitution/)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Nisqually Tribal Code
-  link: http://www.nisqually-nsn.gov/index.php/council/tribal-code/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Washington section, entry 'Nisqually Indian Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.nisqually-nsn.gov/index.php/council/tribal-code/)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution (Nisqually Indian Community of the Nisqually Reservation Washington)
   year: '1946'
@@ -205,19 +207,21 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: http://www.nisqually-nsn.gov/index.php/administration/tribal-services/judicial-services/tribal-court/
   source: national-indian-law-library-nisqually
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://www.nisqually-nsn.gov/index.php/administration/tribal-services/judicial-services/tribal-court/)
+    returned HTTP 404, so it is not recorded.'
 - kind: tribal-court
   name: Nisqually Tribal Court
-  link: http://www.nisqually-nsn.gov/index.php/administration/tribal-services/judicial-services/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Washington section, entry 'Nisqually Indian Tribe'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.nisqually-nsn.gov/index.php/administration/tribal-services/judicial-services/tribal-court/)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: other

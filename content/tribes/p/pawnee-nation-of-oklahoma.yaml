@@ -174,12 +174,13 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Pawnee Nation of Oklahoma Constitution
-  link: http://www.pawneenation.org/files/constitution.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Pawnee Nation of Oklahoma'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.pawneenation.org/files/constitution.pdf) returned
+    HTTP 404, so it is not recorded.'
 - kind: corporate-charter
   title: Corporate charter (Pawnee Indian Tribe of Oklahoma)
   year: '1938'
@@ -207,11 +208,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Pawnee Nation Court
-  link: http://www.pawneenation.org/page/home/government/pawnee-nation-court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Pawnee Nation of Oklahoma'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.pawneenation.org/page/home/government/pawnee-nation-court)
+    returned HTTP 404, so it is not recorded.'
 gaming:
   compacts:
   - state: OK

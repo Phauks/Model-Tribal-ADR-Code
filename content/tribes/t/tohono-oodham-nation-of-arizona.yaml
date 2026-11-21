@@ -182,22 +182,22 @@ governing_documents:
     . Tribal Code.".'
 - kind: law-code
   title: Legislative updates
-  link: https://www.tolc-nsn.gov/council-actions-2024/
   source: national-indian-law-library-tohono
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
-    . Legislative updates.".'
+    . Legislative updates.". Link check 2026-11-21: the link the source gives (https://www.tolc-nsn.gov/council-actions-2024/)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
-  link: https://www.tolc-nsn.gov/docs/Constitution.pdf
   source: national-indian-law-library-tohono
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link check 2026-11-21: the link the source gives (https://www.tolc-nsn.gov/docs/Constitution.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Tohono O’odham Nation Constitution
   link: http://www.tolc-nsn.org/docs/Constitution.pdf
@@ -208,12 +208,13 @@ governing_documents:
   note: Title is the link text in the directory; link not re-checked and may be out of date.
 - kind: law-code
   title: Tohono O’odham Code
-  link: http://www.tolc-nsn.org/tocode.htm
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Arizona section, entry 'Tohono O’odham Nation'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.tolc-nsn.org/tocode.htm) returned HTTP 404, so it
+    is not recorded.'
 - kind: constitution
   title: Constitution (Papago Tribe of Arizona)
   year: '1937'
@@ -234,11 +235,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Tohono O’odham Nation Judicial Court
-  link: http://www.tolc-nsn.org/opinions.htm
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Arizona section, entry 'Tohono O’odham Nation'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.tolc-nsn.org/opinions.htm) returned
+    HTTP 404, so it is not recorded.'
 gaming:
   compacts:
   - state: AZ

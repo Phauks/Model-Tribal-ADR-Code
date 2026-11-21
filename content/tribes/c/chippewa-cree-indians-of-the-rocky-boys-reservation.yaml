@@ -147,13 +147,13 @@ governing_documents:
 - kind: law-code
   title: Tribal code
   year: '1939'
-  link: http://indianlaw.mt.gov/cc/codes
   source: national-indian-law-library-chippewa-cree
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Montana Indian Law
-    website . 1939-1999 Ordinances. 1987 Law & Order Code.".'
+    website . 1939-1999 Ordinances. 1987 Law & Order Code.". Link check 2026-11-21: the link the source
+    gives (http://indianlaw.mt.gov/cc/codes) returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Chippewa Cree Indians of the Rocky Boy's Reservation, Montana
   year: '1987'

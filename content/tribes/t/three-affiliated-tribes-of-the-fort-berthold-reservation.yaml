@@ -202,61 +202,53 @@ governing_documents:
 - kind: law-code
   title: MHA Nation Water Use and Administration Code ( Public Notice and Request for Comments - May
   year: '2018'
-  link: https://www.mhanation.com/s/Water-Code-Public-Comment-RLS.pdf
   source: national-indian-law-library-three-affiliated-fort-berthold
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "MHA Nation Water Use
-    and Administration Code ( Public Notice and Request for Comments - May 2018)".'
-- kind: law-code
-  title: MHA Nation Water Use and Administration Code ( Public Notice and Request for Comments - May
-  year: '2018'
-  link: https://www.mhanation.com/news/2018/5/4/public-notice-and-request-for-comments-on-the-proposed-enactment-of-the-mha-nation-water-use-and-administration-code-of-the-three-affiliated-tribes?rq=%22water%20code%22
-  source: national-indian-law-library-three-affiliated-fort-berthold
-  confidence: medium
-  as_of: '2026-11-21'
-  locator: Tribal Code section
-  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "MHA Nation Water Use
-    and Administration Code ( Public Notice and Request for Comments - May 2018)".'
+    and Administration Code ( Public Notice and Request for Comments - May 2018)". Link check 2026-11-21:
+    the link the source gives (https://www.mhanation.com/s/Water-Code-Public-Comment-RLS.pdf) returned
+    HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Enrollment Ordinance of the Three Affiliated Tribes Amendments (Draft, -
   year: '2016'
-  link: https://www.mhanation.com/s/Enrollment-Ordinance-of-TAT-Amendments-PDF-Dec2016.pdf
   source: national-indian-law-library-three-affiliated-fort-berthold
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "Enrollment Ordinance
-    of the Three Affiliated Tribes Amendments (Draft, 2016-2017)".'
+    of the Three Affiliated Tribes Amendments (Draft, 2016-2017)". Link check 2026-11-21: the link the
+    source gives (https://www.mhanation.com/s/Enrollment-Ordinance-of-TAT-Amendments-PDF-Dec2016.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Animal Control Ordinance and Resolutions
   year: '2009'
-  link: https://www.mhanation.com/s/Animal-Control-Ordinance-and-Resolutions.pdf
   source: national-indian-law-library-three-affiliated-fort-berthold
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "Animal Control Ordinance
-    and Resolutions (2009)".'
+    and Resolutions (2009)". Link check 2026-11-21: the link the source gives (https://www.mhanation.com/s/Animal-Control-Ordinance-and-Resolutions.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Election Ordinance (14-117-VJB
-  link: https://www.mhanation.com/s/Election-Ordinance.pdf
   source: national-indian-law-library-three-affiliated-fort-berthold
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "Election Ordinance
-    (14-117-VJB)".'
+    (14-117-VJB)". Link check 2026-11-21: the link the source gives (https://www.mhanation.com/s/Election-Ordinance.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
-  link: https://www.mhanation.com/s/TAT-Constitution-v2010.pdf
   source: national-indian-law-library-three-affiliated-fort-berthold
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website (pdf).".'
+    website (pdf).". Link check 2026-11-21: the link the source gives (https://www.mhanation.com/s/TAT-Constitution-v2010.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: corporate-charter
   title: Corporate charter (Three Affiliated Tribes of the Fort Berthold Reservation North Dakota)
   year: '1937'
@@ -282,11 +274,12 @@ justice_institutions:
   locator: Contact Info, Tribal Court
 - kind: tribal-court
   name: Three Affiliated Tribes of the Fort Berthold Tribal Court
-  link: http://www.mhanation.com/main2/departments/fort-berthold-district-court/fort-berthold-district-court.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: 'North Dakota section, entry ''Three Affiliated Tribes: Mandan, Hidatsa & Arikara Nation'''
+  note: 'Link check 2026-11-21: the link the source gives (http://www.mhanation.com/main2/departments/fort-berthold-district-court/fort-berthold-district-court.html)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: arbitration

@@ -193,20 +193,22 @@ governing_documents:
     Branch -> Tribal Code.".'
 - kind: constitution
   title: Little Traverse Bay Bands of Odawa Indians Constitution
-  link: http://www.ltbbodawa-nsn.gov/OdawaRegister/LTBB%20Constitution.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Michigan section, entry 'Little Traverse Bay Band of Odawa Indians'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.ltbbodawa-nsn.gov/OdawaRegister/LTBB%20Constitution.pdf)
+    returned HTTP 410, so it is not recorded.'
 - kind: law-code
   title: Little Traverse Bay Bands of Odawa Indians Waganakising Odawak Tribal Code
-  link: http://www.ltbbodawa-nsn.gov/TribalCode.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Michigan section, entry 'Little Traverse Bay Band of Odawa Indians'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.ltbbodawa-nsn.gov/TribalCode.pdf) returned HTTP
+    404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -218,11 +220,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Little Traverse Bay Band of Odawa Indians Tribal Court
-  link: http://www.ltbbodawa-nsn.gov/Tribal%20Court/TribaCourtStart.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Michigan section, entry 'Little Traverse Bay Band of Odawa Indians'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.ltbbodawa-nsn.gov/Tribal%20Court/TribaCourtStart.html)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: traditional-dispute-resolution

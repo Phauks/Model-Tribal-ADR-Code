@@ -182,12 +182,13 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Klamath Tribes Constitution
-  link: http://klamathtribalcourts.com/wp-content/uploads/2013/05/KT-11-19-2011-Constitution.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oregon section, entry 'Klamath Tribes'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://klamathtribalcourts.com/wp-content/uploads/2013/05/KT-11-19-2011-Constitution.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Klamath Tribal Laws
   link: http://klamathtribalcourts.com/tribal-laws/

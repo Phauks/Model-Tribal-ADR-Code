@@ -153,12 +153,13 @@ governing_documents:
     .".'
 - kind: constitution
   title: Lac Courte Oreilles Lake Superior Chippewa Indians Constitution
-  link: http://www.lco-nsn.gov/lac-courte-oreilles-constitution.php
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Wisconsin section, entry 'Lac Courte Oreilles Band of Ojibwe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.lco-nsn.gov/lac-courte-oreilles-constitution.php)
+    returned HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

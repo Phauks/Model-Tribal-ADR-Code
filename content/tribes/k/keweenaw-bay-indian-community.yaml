@@ -169,20 +169,22 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Keweenaw Bay Indian Community Constitution and Bylaws
-  link: http://www.kbic-nsn.gov/sites/default/files/KBIC%20Constitution%20%26%20By-Laws%20compiled%203-26-2014.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Michigan section, entry 'Keweenaw Bay Indian Community'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.kbic-nsn.gov/sites/default/files/KBIC%20Constitution%20%26%20By-Laws%20compiled%203-26-2014.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Keweenaw Bay Indian Community Tribal Code
-  link: http://www.kbic-nsn.gov/content/kbic-tribal-code
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Michigan section, entry 'Keweenaw Bay Indian Community'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.kbic-nsn.gov/content/kbic-tribal-code) returned
+    HTTP 404, so it is not recorded.'
 - kind: corporate-charter
   title: Corporate charter (Keweenaw Bay Indian Community of the L'Anse Reservation Michigan)
   year: '1937'

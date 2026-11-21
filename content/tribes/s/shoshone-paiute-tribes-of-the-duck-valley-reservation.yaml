@@ -163,21 +163,22 @@ governing_documents:
     the table of contents (and may link to the nation''s own copy); full text is not hosted there.'
 - kind: constitution
   title: Constitution
-  link: https://shopaitribes.org/sptenroll/constitution-and-bylaws.html
   source: national-indian-law-library-shoshone-paiute
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribes''
-    website .".'
+    website .". Link check 2026-11-21: the link the source gives (https://shopaitribes.org/sptenroll/constitution-and-bylaws.html)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Shoshone-Paiute Tribes of the Duck Valley Indian Reservation Constitution and Bylaws
-  link: http://www.shopaitribes.org/tenroll/constitutionabylaws.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Nevada section, entry 'Shoshone Paiute Tribes of the Duck Valley Indian Reservation'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.shopaitribes.org/tenroll/constitutionabylaws.html)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution (Shoshone-Paiute Tribes of the Duck Valley Reservation Nevada)
   year: '1936'
@@ -213,12 +214,12 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: https://shopaitribes.org/spcourt/
   source: national-indian-law-library-shoshone-paiute
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (https://shopaitribes.org/spcourt/) returned HTTP 404, so it is not recorded.'
 - kind: tribal-court
   name: Shoshone-Paiute Tribes of the Duck Valley Tribal Court
   link: http://www.shopaitribes.org/court/

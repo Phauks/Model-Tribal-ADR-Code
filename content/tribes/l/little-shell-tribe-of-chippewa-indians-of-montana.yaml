@@ -95,13 +95,13 @@ federal_administration:
 governing_documents:
 - kind: constitution
   title: Constitution
-  link: http://indianlaw.mt.gov/ls/constitution
   source: national-indian-law-library-little-shell-chippewa-montana
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Montana
-    Indian Law website .".'
+    Indian Law website .". Link check 2026-11-21: the link the source gives (http://indianlaw.mt.gov/ls/constitution)
+    returned HTTP 404, so it is not recorded.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

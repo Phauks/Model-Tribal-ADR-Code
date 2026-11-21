@@ -225,11 +225,12 @@ justice_institutions:
   locator: Contact Info, Tribal Court
 - kind: tribal-court
   name: Alabama-Coushatta Tribe of Texas Tribal Judicial System
-  link: http://alabama-coushatta.com/Government/TribalJudicialSystem.aspx
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Texas section, entry 'Alabama-Coushatta Tribe of Texas'
+  note: 'Link check 2026-11-21: the link the source gives (http://alabama-coushatta.com/Government/TribalJudicialSystem.aspx)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: peacemaking

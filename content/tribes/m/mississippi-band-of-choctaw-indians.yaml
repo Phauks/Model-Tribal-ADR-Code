@@ -174,38 +174,40 @@ governing_documents:
     to the nation''s own copy); full text is not hosted there.'
 - kind: law-code
   title: Tribal code
-  link: http://www.choctaw.org/government/court/code.html
   source: national-indian-law-library-mississippi-choctaw
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
-    .".'
+    .". Link check 2026-11-21: the link the source gives (http://www.choctaw.org/government/court/code.html)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
-  link: http://www.choctaw.org/government/court/constitution.html
   source: national-indian-law-library-mississippi-choctaw
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link check 2026-11-21: the link the source gives (http://www.choctaw.org/government/court/constitution.html)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Mississippi Band of Choctaw Indians Tribal Constitution
-  link: http://www.choctaw.org/government/court/constitution.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Mississippi section, entry 'Mississippi Band of Choctaw Indians'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.choctaw.org/government/court/constitution.html)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Mississippi Band of Choctaw Indians Tribal Code
-  link: http://www.choctaw.org/government/court/code.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Mississippi section, entry 'Mississippi Band of Choctaw Indians'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.choctaw.org/government/court/code.html) returned
+    HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution (Mississippi Band of Choctaw Indians)
   year: '1945'
@@ -217,19 +219,21 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: http://www.choctaw.org/government/court/index.html
   source: national-indian-law-library-mississippi-choctaw
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://www.choctaw.org/government/court/index.html) returned HTTP 404, so it
+    is not recorded.'
 - kind: tribal-court
   name: Mississippi Band of Choctaw Indians Tribal Court
-  link: http://www.choctaw.org/government/court/index.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Mississippi section, entry 'Mississippi Band of Choctaw Indians'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.choctaw.org/government/court/index.html)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: peacemaking

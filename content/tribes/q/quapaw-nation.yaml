@@ -119,28 +119,31 @@ governing_documents:
     .".'
 - kind: law-code
   title: Quapaw Tribe of Oklahoma Criminal Law and Order Code
-  link: https://www.quapawtribe.com/DocumentCenter/View/3700
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Quapaw Tribe of Oklahoma'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://www.quapawtribe.com/DocumentCenter/View/3700) returned
+    HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Quapaw Dissolution of Marriage Code
-  link: https://www.quapawtribe.com/DocumentCenter/View/5046
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Quapaw Tribe of Oklahoma'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://www.quapawtribe.com/DocumentCenter/View/5046) returned
+    HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Quapaw Child Welfare Code
-  link: https://www.quapawtribe.com/DocumentCenter/View/5045
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Quapaw Tribe of Oklahoma'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://www.quapawtribe.com/DocumentCenter/View/5045) returned
+    HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

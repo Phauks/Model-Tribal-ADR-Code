@@ -154,12 +154,13 @@ governing_documents:
     .".'
 - kind: law-code
   title: Hoh Tribe Law and Order Code
-  link: http://hohtribe-nsn.org/?page_id=1446
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Washington section, entry 'Hoh Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://hohtribe-nsn.org/?page_id=1446) returned HTTP 404, so
+    it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -171,11 +172,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Hoh Tribal Court
-  link: http://www.hohtribe.com/?page_id=43
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Washington section, entry 'Hoh Tribe'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.hohtribe.com/?page_id=43) returned
+    HTTP 404, so it is not recorded.'
 gaming:
   compacts:
   - state: WA

@@ -173,13 +173,13 @@ governing_documents:
     may link to the nation''s own copy); full text is not hosted there.'
 - kind: law-code
   title: Tribal code
-  link: http://www.creeksupremecourt.com/index.php/mcn-code
   source: national-indian-law-library-muscogee-creek-nation
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
-    .".'
+    .". Link check 2026-11-21: the link the source gives (http://www.creeksupremecourt.com/index.php/mcn-code)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
   link: https://creeksupremecourt.com/constitution
@@ -191,20 +191,22 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Muscogee Constitution
-  link: http://www.creeksupremecourt.com/mcn-constitutiion/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Muscogee (Creek) Nation'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.creeksupremecourt.com/mcn-constitutiion/) returned
+    HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Muscogee (Creek) Nation Code
-  link: http://www.creeksupremecourt.com/mcn-code/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Muscogee (Creek) Nation'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.creeksupremecourt.com/mcn-code/) returned HTTP 404,
+    so it is not recorded.'
 justice_institutions:
 - kind: court-of-appeals
   name: Supreme Court
@@ -220,6 +222,7 @@ justice_institutions:
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Muscogee (Creek) Nation'
+  note: 'Link check 2026-11-21: the site did not respond.'
 - kind: court-of-appeals
   name: Muscogee Creek Supreme Court
   link: http://creeksupremecourt.com/

@@ -189,11 +189,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Muckleshoot Tribal Court
-  link: http://www.muckleshoot.nsn.us/services/tribal-court.aspx
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Washington section, entry 'Muckleshoot Indian Tribe'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.muckleshoot.nsn.us/services/tribal-court.aspx)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: other

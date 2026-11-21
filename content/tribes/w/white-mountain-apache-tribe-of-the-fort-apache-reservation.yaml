@@ -183,12 +183,13 @@ governing_documents:
     website .".'
 - kind: constitution
   title: White Mountain Apache Tribe of the Fort Apache Indian Reservation Constitution
-  link: http://www.wmat.nsn.us/Legal/Constitution.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Arizona section, entry 'White Mountain Apache Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.wmat.nsn.us/Legal/Constitution.html) returned HTTP
+    404, so it is not recorded.'
 - kind: law-code
   title: White Mountain Apache Code
   link: http://www.wmat.nsn.us/Legal/contents.html

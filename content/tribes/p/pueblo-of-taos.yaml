@@ -118,11 +118,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Pueblo of Taos Tribal Court
-  link: http://www.taospueblo.org/cms/taos-pueblo-tribal-court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: New Mexico section, entry 'Pueblo of Taos'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.taospueblo.org/cms/taos-pueblo-tribal-court)
+    returned HTTP 404, so it is not recorded.'
 gaming:
   compacts:
   - state: NM

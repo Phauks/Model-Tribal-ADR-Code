@@ -160,20 +160,22 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Shoalwater Bay Indian Tribe Constitution
-  link: http://www.shoalwaterbay-nsn.gov/assets/00-CONSTITUTION-3-new.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Washington section, entry 'Shoalwater Bay Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.shoalwaterbay-nsn.gov/assets/00-CONSTITUTION-3-new.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Shoalwater Bay Code of Laws
-  link: http://www.shoalwaterbay-nsn.gov/home/tribal-government/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Washington section, entry 'Shoalwater Bay Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.shoalwaterbay-nsn.gov/home/tribal-government/tribal-court/)
+    returned HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -185,11 +187,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Shoalwater Bay Tribal Court
-  link: http://www.shoalwaterbay-nsn.gov/home/tribal-government/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Washington section, entry 'Shoalwater Bay Tribe'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.shoalwaterbay-nsn.gov/home/tribal-government/tribal-court/)
+    returned HTTP 404, so it is not recorded.'
 gaming:
   compacts:
   - state: WA

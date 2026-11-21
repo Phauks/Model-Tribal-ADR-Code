@@ -132,13 +132,14 @@ governing_documents:
     own copy); full text is not hosted there.
 - kind: law-code
   title: Rules of Court and Civil Procedure; Children's code; Domestic Relations Code; Tribal Court Ordinance
-  link: http://www.tolowa-nsn.gov/tribal-government/tribal-judicial-system
   source: national-indian-law-library-tolowa-deeni
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
-    . Rules of Court and Civil Procedure; Children''s code; Domestic Relations Code; Tribal Court Ordinance.".'
+    . Rules of Court and Civil Procedure; Children''s code; Domestic Relations Code; Tribal Court Ordinance.".
+    Link check 2026-11-21: the link the source gives (http://www.tolowa-nsn.gov/tribal-government/tribal-judicial-system)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
   link: http://www.tolowa-nsn.gov/tribal-government/constitution/
@@ -150,20 +151,22 @@ governing_documents:
     website .".'
 - kind: law-code
   title: Smith River Rancheria – Tolowa Dee-ni Nation Code and Ordinances
-  link: http://www.tolowa-nsn.gov/tribal-government/tribal-judicial-system/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: California section, entry 'Smith River Rancheria – Tolowa Dee-ni’ Nation'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.tolowa-nsn.gov/tribal-government/tribal-judicial-system/)
+    returned HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tolowa Dee-ni’ Nation Tribal Court
-  link: http://www.tolowa-nsn.gov/tribal-government/tribal-judicial-system/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: California section, entry 'Smith River Rancheria – Tolowa Dee-ni’ Nation'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.tolowa-nsn.gov/tribal-government/tribal-judicial-system/)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: mediation

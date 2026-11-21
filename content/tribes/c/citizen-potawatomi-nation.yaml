@@ -153,7 +153,7 @@ governing_documents:
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
-    . Election Code (pdf)".'
+    . Election Code (pdf)". Link check 2026-11-21: the site did not respond.'
 - kind: constitution
   title: Constitution
   link: https://www.potawatomi.org/wp-content/uploads/cpn-constitution.pdf
@@ -185,12 +185,13 @@ governing_documents:
     may link to the nation''s own copy); full text is not hosted there.'
 - kind: constitution
   title: Citizen Potawatomi Nation Constitution
-  link: http://www.potawatomi.org/images/court%20codes/Title%201%20CONSTITUTION.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Citizen Potawatomi Nation'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.potawatomi.org/images/court%20codes/Title%201%20CONSTITUTION.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Citizen Potawatomi Nation Codes
   link: http://www.potawatomi.org/government/judicial-branch/

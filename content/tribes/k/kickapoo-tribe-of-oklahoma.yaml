@@ -147,12 +147,13 @@ governing_documents:
     . Criminal Code.".'
 - kind: court-rules
   title: Kickapoo Tribe of Oklahoma Tribal Court Forms, Rules, and Procedures
-  link: http://www.kickapootribeofoklahoma.com/ktocourtform.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Kickapoo Tribe of Oklahoma'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.kickapootribeofoklahoma.com/ktocourtform.html) returned
+    HTTP 404, so it is not recorded.'
 - kind: corporate-charter
   title: Corporate charter (Kickapoo Tribe of Oklahoma)
   year: '1938'

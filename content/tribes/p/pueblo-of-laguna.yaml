@@ -208,19 +208,21 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: http://lagunapueblo-nsn.gov/pol-judicial-services.aspx
   source: national-indian-law-library-pueblo-laguna
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://lagunapueblo-nsn.gov/pol-judicial-services.aspx) returned HTTP 404,
+    so it is not recorded.'
 - kind: tribal-court
   name: Laguna Pueblo Court
-  link: http://lagunapueblo-nsn.gov/pol-judicial-services.aspx
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: New Mexico section, entry 'Pueblo of Laguna'
+  note: 'Link check 2026-11-21: the link the source gives (http://lagunapueblo-nsn.gov/pol-judicial-services.aspx)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: other

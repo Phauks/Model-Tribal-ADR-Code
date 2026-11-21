@@ -152,19 +152,21 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: https://pojoaque.org/community/tribal-courts/
   source: national-indian-law-library-pueblo-pojoaque
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (https://pojoaque.org/community/tribal-courts/) returned HTTP 404, so it is
+    not recorded.'
 - kind: tribal-court
   name: Pueblo of Pojoaque Tribal Court
-  link: http://pojoaque.org/community/tribal-courts/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: New Mexico section, entry 'Pueblo of Pojoaque'
+  note: 'Link check 2026-11-21: the link the source gives (http://pojoaque.org/community/tribal-courts/)
+    returned HTTP 404, so it is not recorded.'
 gaming:
   compacts:
   - state: NM

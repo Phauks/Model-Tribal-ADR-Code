@@ -197,12 +197,13 @@ governing_documents:
     website . Constitution and Corporate Charter.".'
 - kind: constitution
   title: Wyandotte Tribe of Oklahoma Constitution
-  link: http://www.wyandotte-nation.org/government/legal-documents/constitution/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Wyandotte Nation'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.wyandotte-nation.org/government/legal-documents/constitution/)
+    returned HTTP 404, so it is not recorded.'
 - kind: corporate-charter
   title: Corporate charter (Wyandotte Tribe of Oklahoma)
   year: '1937'

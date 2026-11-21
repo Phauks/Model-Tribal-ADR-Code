@@ -155,21 +155,22 @@ governing_documents:
     .".'
 - kind: constitution
   title: Constitution
-  link: https://www.menominee-nsn.gov/Documents/Tribal%20Constitution.pdf
   source: national-indian-law-library-menominee
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website (pdf).".'
+    website (pdf).". Link check 2026-11-21: the link the source gives (https://www.menominee-nsn.gov/Documents/Tribal%20Constitution.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Menominee Indian Tribe Constitution & Bylaws
-  link: http://courts.menominee-nsn.gov/pdf/constitutionAndBylaws.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Wisconsin section, entry 'Menominee Indian Tribe of Wisconsin'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://courts.menominee-nsn.gov/pdf/constitutionAndBylaws.pdf)
+    returned HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

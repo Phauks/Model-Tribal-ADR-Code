@@ -169,12 +169,13 @@ governing_documents:
     website . See NILL catalog records for the constitution and corporate charter.".'
 - kind: constitution
   title: Iowa Tribe of Oklahoma Constitution & Bylaws
-  link: http://bahkhoje.com/government/constitution-bylaws/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Iowa Tribe of Oklahoma'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://bahkhoje.com/government/constitution-bylaws/) returned
+    HTTP 404, so it is not recorded.'
 - kind: corporate-charter
   title: Corporate charter (Iowa Tribe of Oklahoma)
   year: '1938'
@@ -202,11 +203,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Iowa Tribe of Oklahoma Tribal Court
-  link: http://bahkhoje.com/government/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Iowa Tribe of Oklahoma'
+  note: 'Link check 2026-11-21: the link the source gives (http://bahkhoje.com/government/tribal-court/)
+    returned HTTP 404, so it is not recorded.'
 gaming:
   compacts:
   - state: OK

@@ -182,12 +182,13 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Hualapai Constitution
-  link: http://hualapai-nsn.gov/wp-content/uploads/2013/07/HualapaiConstitution.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Arizona section, entry 'Hualapai Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://hualapai-nsn.gov/wp-content/uploads/2013/07/HualapaiConstitution.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: corporate-charter
   title: Corporate charter (Hualapai Tribe of the Hualapai Reservation Arizona)
   year: '1955'

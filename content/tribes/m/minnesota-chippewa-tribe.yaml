@@ -382,14 +382,14 @@ governing_documents:
     website . Water quality standards.".'
 - kind: constitution
   title: Constitution
-  link: http://www.mnchippewatribe.org/pdf/constitution_revised.pdf
   source: national-indian-law-library-minn-chippewa-grand-portage
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Component reservation of the Minnesota Chippewa Tribe: Grand Portage Band of the Minnesota Chippewa
     Tribe, Minnesota. Listed on the National Indian Law Library page under ''Tribal Constitution'' as:
-    "At Minnesota Chippewa Tribe''s website .".'
+    "At Minnesota Chippewa Tribe''s website .". Link check 2026-11-21: the link the source gives (http://www.mnchippewatribe.org/pdf/constitution_revised.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Tribal code
   link: https://www.llojibwe.org/
@@ -452,14 +452,14 @@ governing_documents:
     website . Resolutions.".'
 - kind: constitution
   title: Constitution
-  link: http://www.mnchippewatribe.org/pdf/constitution_revised.pdf
   source: national-indian-law-library-minn-chippewa-white-earth
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band of the Minnesota Chippewa
     Tribe, Minnesota. Listed on the National Indian Law Library page under ''Tribal Constitution'' as:
-    "At Minnesota Chippewa Tribe''s website .".'
+    "At Minnesota Chippewa Tribe''s website .". Link check 2026-11-21: the link the source gives (http://www.mnchippewatribe.org/pdf/constitution_revised.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
   link: https://mnchippewatribe.org/governance/constitution/
@@ -471,13 +471,14 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Minnesota Chippewa Tribe Constitution and Bylaws
-  link: http://www.mnchippewatribe.org/pdf/constitution_revised.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Minnesota section, entry 'Bois Forte Band of Chippewa'
   note: 'Component reservation of the Minnesota Chippewa Tribe: Bois Forte Band. Title is the link text
-    in the directory; link not re-checked and may be out of date.'
+    in the directory; link not re-checked and may be out of date. Link check 2026-11-21: the link the
+    source gives (http://www.mnchippewatribe.org/pdf/constitution_revised.pdf) returned HTTP 404, so it
+    is not recorded.'
 - kind: law-code
   title: Minnesota Chippewa Tribe Ordinances
   link: http://www.mnchippewatribe.org/constitution.html
@@ -507,13 +508,14 @@ governing_documents:
     in the directory; link not re-checked and may be out of date.'
 - kind: law-code
   title: White Earth Nation Codes/Resolutions
-  link: http://whiteearth.com/community/index.html@page_id=582.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Minnesota section, entry 'White Earth Nation'
   note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band. Title is the link text
-    in the directory; link not re-checked and may be out of date.'
+    in the directory; link not re-checked and may be out of date. Link check 2026-11-21: the link the
+    source gives (http://whiteearth.com/community/index.html@page_id=582.html) returned HTTP 404, so it
+    is not recorded.'
 - kind: corporate-charter
   title: Charter Mille Lacs Band of Chippewa Indians 1939
   year: '1936'
@@ -549,12 +551,13 @@ justice_institutions:
     whether it currently operates was not checked.
 - kind: tribal-court
   name: Tribal Court
-  link: http://boisforte.com/divisions/judicial.htm
   source: national-indian-law-library-minn-chiippewa-bois-forte
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://boisforte.com/divisions/judicial.htm) returned HTTP 404, so it is not
+    recorded.'
 - kind: tribal-court
   name: Tribal Court
   link: https://www.fdlband.org/government/tribal_court/index.php
@@ -591,21 +594,23 @@ justice_institutions:
     Tribe, Minnesota. The page gives a contact for a tribal court without a fuller name.'
 - kind: tribal-court
   name: Tribal Court
-  link: http://www.whiteearth.com/programs/judicial/home
   source: national-indian-law-library-minn-chippewa-white-earth
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band of the Minnesota Chippewa
-    Tribe, Minnesota. The page gives a contact for a tribal court without a fuller name.'
+    Tribe, Minnesota. The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21:
+    the link the source gives (http://www.whiteearth.com/programs/judicial/home) returned HTTP 404, so
+    it is not recorded.'
 - kind: tribal-court
   name: Bois Forte Band of Chippewa Tribal Court
-  link: http://www.boisforte.com/divisions/judicial.htm
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Minnesota section, entry 'Bois Forte Band of Chippewa'
-  note: 'Component reservation of the Minnesota Chippewa Tribe: Bois Forte Band'
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Bois Forte Band Link check 2026-11-21:
+    the link the source gives (http://www.boisforte.com/divisions/judicial.htm) returned HTTP 404, so
+    it is not recorded.'
 - kind: tribal-court
   name: Fond du Lac Band of Chippewa Tribal Court
   link: http://www.fdlrez.com/government/courtmain.htm
@@ -631,20 +636,21 @@ justice_institutions:
   note: 'Component reservation of the Minnesota Chippewa Tribe: Leech Lake Band'
 - kind: tribal-court
   name: Mille Lacs Band of Ojibwe Tribal Court
-  link: http://circle.red/mlbo/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Minnesota section, entry 'Mille Lacs Band of Ojibwe Tribe'
-  note: 'Component reservation of the Minnesota Chippewa Tribe: Mille Lacs Band'
+  note: 'Component reservation of the Minnesota Chippewa Tribe: Mille Lacs Band Link check 2026-11-21:
+    the link the source gives (http://circle.red/mlbo/tribal-court/) returned HTTP 404, so it is not recorded.'
 - kind: tribal-court
   name: White Earth Nation Tribal Court
-  link: http://www.whiteearth.com/programs@program_id=3.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Minnesota section, entry 'White Earth Nation'
-  note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band'
+  note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band Link check 2026-11-21:
+    the link the source gives (http://www.whiteearth.com/programs@program_id=3.html) returned HTTP 404,
+    so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: peacemaking

@@ -187,20 +187,22 @@ governing_documents:
     .".'
 - kind: constitution
   title: Bad River Band of Lake Superior Chippewa Tribe Constitution and Bylaws
-  link: http://www.badriver-nsn.gov/legislative/bad-river-constitution-a-bylaws
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Wisconsin section, entry 'Bad River Band of Lake Superior Chippewa Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.badriver-nsn.gov/legislative/bad-river-constitution-a-bylaws)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Bad River Band of the Lake Superior Tribe of Chippewa Indians Tribal Court Code
-  link: http://www.badriver-nsn.gov/legislative/tribal-court-code
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Wisconsin section, entry 'Bad River Band of Lake Superior Chippewa Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.badriver-nsn.gov/legislative/tribal-court-code)
+    returned HTTP 404, so it is not recorded.'
 - kind: corporate-charter
   title: Corporate charter (Bad River Band of Chippewa Indians of the Bad River Reservation Wisconsin)
   year: '1938'
@@ -229,11 +231,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Bad River Tribal Court
-  link: http://www.badriver-nsn.gov/2013-08-14-17-05-42/legal-a-court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Wisconsin section, entry 'Bad River Band of Lake Superior Chippewa Tribe'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.badriver-nsn.gov/2013-08-14-17-05-42/legal-a-court)
+    returned HTTP 404, so it is not recorded.'
 gaming:
   compacts:
   - state: WI

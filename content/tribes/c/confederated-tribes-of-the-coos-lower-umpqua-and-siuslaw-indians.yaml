@@ -183,12 +183,13 @@ governing_documents:
     to the nation''s own copy); full text is not hosted there.'
 - kind: constitution
   title: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians of Oregon Constitution
-  link: https://ctclusi.org/assets/58406a5dc9e22c6130000001.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oregon section, entry 'Confederated Tribes of Coos, Lower Umpqua, and Siuslaw Indians'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://ctclusi.org/assets/58406a5dc9e22c6130000001.pdf) returned
+    HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians Tribal Code
   link: https://ctclusi.org/tribalcode
@@ -222,11 +223,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Confederated Tribes of Coos, Lower Umqua, Siuslaw Indians Tribal Court
-  link: http://ctclusi.org/court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oregon section, entry 'Confederated Tribes of Coos, Lower Umpqua, and Siuslaw Indians'
+  note: 'Link check 2026-11-21: the link the source gives (http://ctclusi.org/court) returned HTTP 404,
+    so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: peacemaking

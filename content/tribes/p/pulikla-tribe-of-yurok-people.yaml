@@ -120,22 +120,22 @@ federal_administration:
 governing_documents:
 - kind: law-code
   title: Tribal code
-  link: http://resighinirancheria.com/Documents/Resighini_Rancheria_Final_WQ_Ordinance_Revised_6_06.pdf
   source: national-indian-law-library-resighini-rancheria
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
-    .".'
+    .". Link check 2026-11-21: the link the source gives (http://resighinirancheria.com/Documents/Resighini_Rancheria_Final_WQ_Ordinance_Revised_6_06.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
-  link: http://resighinirancheria.com/Documents/RR_Tribal_Constitution.pdf
   source: national-indian-law-library-resighini-rancheria
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link check 2026-11-21: the link the source gives (http://resighinirancheria.com/Documents/RR_Tribal_Constitution.pdf)
+    returned HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

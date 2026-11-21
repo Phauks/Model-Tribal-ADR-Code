@@ -246,20 +246,22 @@ governing_documents:
     of contents (and may link to the nation''s own copy); full text is not hosted there.'
 - kind: constitution
   title: Confederated Salish and Kootenai Tribes Constitution and Bylaws
-  link: http://www.cskt.org/documents/gov/cskt_constitution.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Montana section, entry 'Confederated Salish and Kootenai Tribes'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.cskt.org/documents/gov/cskt_constitution.pdf) returned
+    HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Confederated Salish and Kootenai Tribes Codified Laws
-  link: http://www.cskt.org/gov/court-triballawcode.htm
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Montana section, entry 'Confederated Salish and Kootenai Tribes'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.cskt.org/gov/court-triballawcode.htm) returned HTTP
+    404, so it is not recorded.'
 - kind: constitution
   title: Constitution (Confederated Salish and Kootenai Tribes of the Flathead Reservation)
   year: '1948'
@@ -295,11 +297,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Confederated Salish and Kootenai Tribal Court
-  link: http://www.cskt.org/gov/court.htm
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Montana section, entry 'Confederated Salish and Kootenai Tribes'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.cskt.org/gov/court.htm) returned
+    HTTP 404, so it is not recorded.'
 gaming:
   compacts:
   - state: MT

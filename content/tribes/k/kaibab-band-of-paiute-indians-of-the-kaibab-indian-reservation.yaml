@@ -130,30 +130,31 @@ governing_documents:
     (and may link to the nation''s own copy); full text is not hosted there.'
 - kind: constitution
   title: Constitution
-  link: http://www.kaibabpaiute-nsn.gov/KPTConstitution.pdf
   source: national-indian-law-library-kaibab-paiute
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link check 2026-11-21: the link the source gives (http://www.kaibabpaiute-nsn.gov/KPTConstitution.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Kaibab Paiute Tribe Constitution
-  link: http://www.kaibabpaiute-nsn.gov/constitution.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Arizona section, entry 'Kaibab Band of Paiute Indians'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.kaibabpaiute-nsn.gov/constitution.html) returned
+    HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: http://kaibabpaiute-nsn.gov/court.html
   source: national-indian-law-library-kaibab-paiute
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://kaibabpaiute-nsn.gov/court.html) returned HTTP 404, so it is not recorded.'
 - kind: tribal-court
   name: Kaibab-Paiute Tribe Court
   source: tribal-law-policy-institute-justice-systems

@@ -152,11 +152,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Orutsaramiut Tribal Court
-  link: http://nativecouncil.org/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Alaska section, entry 'Orutsaramuit Native Village (aka Bethel)'
+  note: 'Link check 2026-11-21: the link the source gives (http://nativecouncil.org/tribal-court/) returned
+    HTTP 404, so it is not recorded.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

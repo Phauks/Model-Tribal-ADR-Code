@@ -162,29 +162,31 @@ governing_documents:
     contents (and may link to the nation''s own copy); full text is not hosted there.'
 - kind: law-code
   title: Tribal Court Rules and Ordinances
-  link: https://gunlaketribe-nsn.gov/departments/tribal-justice/tribal-court/rules-ordinances-forms-court-opinions/
   source: national-indian-law-library-match-e-be-nash-she-wish
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
-    website . Tribal Court Rules and Ordinances.".'
+    website . Tribal Court Rules and Ordinances.". Link check 2026-11-21: the link the source gives (https://gunlaketribe-nsn.gov/departments/tribal-justice/tribal-court/rules-ordinances-forms-court-opinions/)
+    returned HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: https://gunlaketribe-nsn.gov/departments/tribal-justice/tribal-court/
   source: national-indian-law-library-match-e-be-nash-she-wish
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (https://gunlaketribe-nsn.gov/departments/tribal-justice/tribal-court/) returned
+    HTTP 404, so it is not recorded.'
 - kind: tribal-court
   name: Match-E-Be-Nash-She-Wish Band of Pottawatomi Tribal Court
-  link: https://gunlaketribe-nsn.gov/departments/tribal-justice/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Michigan section, entry 'Match-E-Be-Nash-She-Wish Band of Pottawatomi Gun Lake Tribe'
+  note: 'Link check 2026-11-21: the link the source gives (https://gunlaketribe-nsn.gov/departments/tribal-justice/tribal-court/)
+    returned HTTP 404, so it is not recorded.'
 gaming:
   compacts:
   - state: MI

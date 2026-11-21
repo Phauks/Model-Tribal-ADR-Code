@@ -184,13 +184,13 @@ governing_documents:
     may link to the nation''s own copy); full text is not hosted there.'
 - kind: law-code
   title: Tribal code
-  link: https://www.kenaitze.org/tribal-government/tribal-court/court-codes/
   source: national-indian-law-library-kenaitze
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
-    .".'
+    .". Link check 2026-11-21: the link the source gives (https://www.kenaitze.org/tribal-government/tribal-court/court-codes/)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
   link: https://www.kenaitze.org/tribal-government/constitution/
@@ -202,20 +202,22 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Kenaitze Indian Tribe Constitution
-  link: https://www.kenaitze.org/about/executive-council/constitution/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Alaska section, entry 'Kenaitze Indian Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://www.kenaitze.org/about/executive-council/constitution/)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Kenaitze Indian Tribal Code
-  link: https://www.kenaitze.org/about/tribal-court/court-codes/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Alaska section, entry 'Kenaitze Indian Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://www.kenaitze.org/about/tribal-court/court-codes/) returned
+    HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

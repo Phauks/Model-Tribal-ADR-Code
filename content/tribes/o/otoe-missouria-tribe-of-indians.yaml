@@ -147,23 +147,23 @@ governing_documents:
 - kind: law-code
   title: Minutes and Resolutions -
   year: '2009'
-  link: http://www.omtribe.org/who-we-are-government-minutes-and-resolutions
   source: national-indian-law-library-otoe-missouria
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "Minutes and Resolutions
-    (2009-).".'
+    (2009-).". Link check 2026-11-21: the link the source gives (http://www.omtribe.org/who-we-are-government-minutes-and-resolutions)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Election and Voting Ordinance  (pdf
   year: '2016'
-  link: http://www.omtribe.org/useruploads/files/2016_election_&_voting_ordinance_resolution.pdf
   source: national-indian-law-library-otoe-missouria
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "Election and Voting
-    Ordinance (2016) (pdf).".'
+    Ordinance (2016) (pdf).". Link check 2026-11-21: the link the source gives (http://www.omtribe.org/useruploads/files/2016_election_&_voting_ordinance_resolution.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
   link: https://www.omtribe.org/who-we-are/government/constitution/
@@ -175,12 +175,13 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Otoe-Missouria Tribe of Oklahoma Constitution
-  link: http://www.omtribe.org/who-we-are-government-constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Otoe Missouria Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.omtribe.org/who-we-are-government-constitution)
+    returned HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: court-of-indian-offenses
   name: Southern Plains CFR Court (Court of Indian Offenses)

@@ -136,13 +136,13 @@ governing_documents:
     .".'
 - kind: constitution
   title: Constitution
-  link: http://www.ctsi.nsn.us/uploads/downloads/Ordinances/Constitution%2004-17-09.pdf
   source: national-indian-law-library-confederated-siletz
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link check 2026-11-21: the link the source gives (http://www.ctsi.nsn.us/uploads/downloads/Ordinances/Constitution%2004-17-09.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Confederated Tribes of Siletz Indians of Oregon - Tribal Constitution
   year: '2008'
@@ -155,12 +155,13 @@ governing_documents:
     may link to the nation''s own copy); full text is not hosted there.'
 - kind: constitution
   title: Confederated Tribes of Siletz Indians of Oregon Constitution
-  link: http://www.ctsi.nsn.us/uploads/downloads/Ordinances/Constitution%2004-17-09.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oregon section, entry 'Confederated Tribes of Siletz Indians'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.ctsi.nsn.us/uploads/downloads/Ordinances/Constitution%2004-17-09.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Confederated Tribes of Siletz Indians Tribal Ordinances
   link: http://www.ctsi.nsn.us/warm-springs-umpqua-tillamook-siletz-government/tribal-ordinances#content

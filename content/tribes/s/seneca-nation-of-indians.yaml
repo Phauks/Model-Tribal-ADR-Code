@@ -217,11 +217,12 @@ justice_institutions:
   locator: New York section, entry 'Seneca Nation of New York'
 - kind: court-of-appeals
   name: Seneca Nation of New York – Cattaraugus Reservation Court of Appeals
-  link: http://sni.org/government/court-of-appeal/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: New York section, entry 'Seneca Nation of New York'
+  note: 'Link check 2026-11-21: the link the source gives (http://sni.org/government/court-of-appeal/)
+    returned HTTP 404, so it is not recorded.'
 - kind: peacemaking-program
   name: Seneca Nation of New York – Cattaraugus Reservation Peacemaker’s Court
   link: http://sni.org/government/peacemakers-court/

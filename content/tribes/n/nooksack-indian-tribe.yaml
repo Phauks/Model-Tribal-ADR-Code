@@ -133,21 +133,22 @@ governing_documents:
     .".'
 - kind: constitution
   title: Constitution
-  link: https://nooksacktribe.org/wp-content/uploads/2011/11/2016_02_04_11_28_33.pdf
   source: national-indian-law-library-nooksack-tribe
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link check 2026-11-21: the link the source gives (https://nooksacktribe.org/wp-content/uploads/2011/11/2016_02_04_11_28_33.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Nooksack Indian Tribe Constitution and Bylaws
-  link: http://www.nooksacktribe.org/wp-content/uploads/2011/11/2016_02_04_11_28_33.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Washington section, entry 'Nooksack Indian Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.nooksacktribe.org/wp-content/uploads/2011/11/2016_02_04_11_28_33.pdf)
+    returned HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

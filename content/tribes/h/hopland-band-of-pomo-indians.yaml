@@ -151,13 +151,13 @@ governing_documents:
     (and may link to the nation''s own copy); full text is not hosted there.'
 - kind: law-code
   title: Tribal code
-  link: https://www.hoplandtribe.com/tribal-constitution-and-laws
   source: national-indian-law-library-hopland-pomo
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
-    .".'
+    .". Link check 2026-11-21: the link the source gives (https://www.hoplandtribe.com/tribal-constitution-and-laws)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Tribal code
   link: https://www.tribalcourt.org/laws-ordinances
@@ -169,13 +169,13 @@ governing_documents:
     Intertribal Court System''s website .".'
 - kind: constitution
   title: Constitution
-  link: https://www.hoplandtribe.com/tribal-constitution-and-laws
   source: national-indian-law-library-hopland-pomo
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link check 2026-11-21: the link the source gives (https://www.hoplandtribe.com/tribal-constitution-and-laws)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
   link: https://www.tribalcourt.org/laws-ordinances
@@ -187,36 +187,39 @@ governing_documents:
     California Intertribal Court System''s website .".'
 - kind: constitution
   title: Hopland Band of Pomo Indians Constitution
-  link: http://www.hoplandtribe.com/sites/default/files/2017-05/Hopland%20Constitution%20effective%208-22-09.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: California section, entry 'Hopland Band of Pomo Indians'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.hoplandtribe.com/sites/default/files/2017-05/Hopland%20Constitution%20effective%208-22-09.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Hopland Tribal Code
-  link: http://www.hoplandtribe.com/tribal-constitution-and-laws
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: California section, entry 'Hopland Band of Pomo Indians'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.hoplandtribe.com/tribal-constitution-and-laws) returned
+    HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: http://www.hoplandtribe.com/tribal-court
   source: national-indian-law-library-hopland-pomo
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://www.hoplandtribe.com/tribal-court) returned HTTP 404, so it is not recorded.'
 - kind: tribal-court
   name: Hopland Tribal Court
-  link: http://www.hoplandtribe.com/tribal-court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: California section, entry 'Hopland Band of Pomo Indians'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.hoplandtribe.com/tribal-court) returned
+    HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: peacemaking

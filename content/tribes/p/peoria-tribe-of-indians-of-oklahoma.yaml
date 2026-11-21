@@ -156,22 +156,22 @@ government_structure:
 governing_documents:
 - kind: law-code
   title: Tribal code
-  link: https://peoriatribe.com/government/
   source: national-indian-law-library-peoria-oklahoma
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
-    . Selected ordinances.".'
+    . Selected ordinances.". Link check 2026-11-21: the link the source gives (https://peoriatribe.com/government/)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
-  link: https://peoriatribe.com/government/
   source: national-indian-law-library-peoria-oklahoma
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
-    website .".'
+    website .". Link check 2026-11-21: the link the source gives (https://peoriatribe.com/government/)
+    returned HTTP 404, so it is not recorded.'
 - kind: corporate-charter
   title: Corporate charter (Peoria Tribe of Indians Oklahoma)
   year: '1940'

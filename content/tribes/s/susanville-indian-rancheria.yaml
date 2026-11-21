@@ -144,22 +144,22 @@ governing_documents:
   note: 'Constitution: 2005; Bylaws: 2002. Full text linked from the National Indian Law Library page.'
 - kind: law-code
   title: Tribal code
-  link: http://sir-nsn.gov/onlinedocuments.html
   source: national-indian-law-library-susanville
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
-    .".'
+    .". Link check 2026-11-21: the link the source gives (http://sir-nsn.gov/onlinedocuments.html) returned
+    HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
-  link: http://www.sir-nsn.gov/pp/uploads/2005_Constitution.pdf
   source: national-indian-law-library-susanville
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link check 2026-11-21: the link the source gives (http://www.sir-nsn.gov/pp/uploads/2005_Constitution.pdf)
+    returned HTTP 404, so it is not recorded.'
 gaming:
   compacts:
   - state: CA

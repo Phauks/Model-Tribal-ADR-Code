@@ -179,22 +179,22 @@ governing_documents:
     tab on the legislative branch''s website.".'
 - kind: law-code
   title: Crow Law and Order Code
-  link: http://indianlaw.mt.gov/crow/codes
   source: national-indian-law-library-crow-montana
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Montana Indian Law
-    website . Crow Law and Order Code.".'
+    website . Crow Law and Order Code.". Link check 2026-11-21: the link the source gives (http://indianlaw.mt.gov/crow/codes)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Resolutions
-  link: http://indianlaw.mt.gov/crow/resolution
   source: national-indian-law-library-crow-montana
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Montana Indian Law
-    website . Resolutions.".'
+    website . Resolutions.". Link check 2026-11-21: the link the source gives (http://indianlaw.mt.gov/crow/resolution)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
   link: http://www.ctlb.org/crow-lawspolicies/
@@ -206,13 +206,13 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Constitution
-  link: http://indianlaw.mt.gov/crow/constitution
   source: national-indian-law-library-crow-montana
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Montana
-    Indian Law website .".'
+    Indian Law website .". Link check 2026-11-21: the link the source gives (http://indianlaw.mt.gov/crow/constitution)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Crow Tribe of Indians Constitution and Bylaws
   link: http://crowlaws.org/2001_crow_constitution
@@ -220,7 +220,8 @@ governing_documents:
   confidence: medium
   as_of: '2022'
   locator: Montana section, entry 'Crow Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the site did not respond.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

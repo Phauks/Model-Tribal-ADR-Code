@@ -168,29 +168,31 @@ governing_documents:
     . MuniCode.".'
 - kind: constitution
   title: Constitution
-  link: http://sno-nsn.gov/government/constitution
   source: national-indian-law-library-seminole-nation-ok
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link check 2026-11-21: the link the source gives (http://sno-nsn.gov/government/constitution)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Seminole Nation of Oklahoma Constitution
-  link: http://sno-nsn.gov/index.php/government/constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Seminole Nation of Oklahoma'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://sno-nsn.gov/index.php/government/constitution) returned
+    HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Seminole Nation of Oklahoma Code of Laws
-  link: http://sno-nsn.gov/government/codeoflaws
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Seminole Nation of Oklahoma'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://sno-nsn.gov/government/codeoflaws) returned HTTP 404,
+    so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
@@ -202,11 +204,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Seminole Nation Tribal Court
-  link: http://sno-nsn.gov/government/tribalcourts
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Seminole Nation of Oklahoma'
+  note: 'Link check 2026-11-21: the link the source gives (http://sno-nsn.gov/government/tribalcourts)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: other

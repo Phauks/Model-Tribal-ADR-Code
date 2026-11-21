@@ -167,12 +167,13 @@ governing_documents:
     website .".'
 - kind: constitution
   title: Swinomish Indian Tribal Community Constitution and By-Laws
-  link: http://www.swinomish-nsn.gov/media/3383/constitutionbylaws.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Washington section, entry 'Swinomish Indian Tribal Community'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.swinomish-nsn.gov/media/3383/constitutionbylaws.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Swinomish Tribal Code
   link: http://www.swinomish.org/government/tribal-code.aspx

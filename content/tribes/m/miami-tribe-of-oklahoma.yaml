@@ -204,12 +204,13 @@ governing_documents:
     . Table of Contents. See NILL catalog record for the constitution and corporate charter.".'
 - kind: constitution
   title: Miami Tribe of Oklahoma Constitution
-  link: https://miamination.com/node/18
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Miami Tribe of Oklahoma'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://miamination.com/node/18) returned HTTP 404, so it is
+    not recorded.'
 - kind: corporate-charter
   title: Corporate charter (Miami Tribe of Oklahoma)
   year: '1940'
@@ -237,11 +238,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Miami Tribe of Oklahoma Tribal Court
-  link: https://miamination.com/node/19
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Oklahoma section, entry 'Miami Tribe of Oklahoma'
+  note: 'Link check 2026-11-21: the link the source gives (https://miamination.com/node/19) returned HTTP
+    404, so it is not recorded.'
 gaming:
   compacts:
   - state: OK

@@ -134,13 +134,13 @@ federal_administration:
 governing_documents:
 - kind: law-code
   title: Tribal code
-  link: http://www.theoneidanation.com/codesandordinances/
   source: national-indian-law-library-oneida-newyork
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
-    .".'
+    .". Link check 2026-11-21: the link the source gives (http://www.theoneidanation.com/codesandordinances/)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Tribal code
   link: http://www.narf.org/nill/codes/oneida_new_york/index.html
@@ -151,12 +151,13 @@ governing_documents:
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website .".'
 - kind: law-code
   title: Oneida Indian Nation Codes, Ordinances and Regulations
-  link: http://www.theoneidanation.com/codesandordinances/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: New York section, entry 'Oneida Indian Nation'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.theoneidanation.com/codesandordinances/) returned
+    HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court

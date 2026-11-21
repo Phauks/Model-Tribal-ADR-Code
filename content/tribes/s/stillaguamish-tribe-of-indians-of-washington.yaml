@@ -130,11 +130,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Stillaguamish Tribal Court
-  link: http://www.stillaguamish.com/courtsjustice.asp
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Washington section, entry 'Stillaguamish Tribe of Indians'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.stillaguamish.com/courtsjustice.asp)
+    returned HTTP 404, so it is not recorded.'
 gaming:
   compacts:
   - state: WA

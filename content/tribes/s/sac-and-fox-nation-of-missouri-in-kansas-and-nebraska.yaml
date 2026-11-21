@@ -181,11 +181,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Sac and Fox Tribal Court
-  link: http://www.sacandfoxks.com/sacfox.nsf/ContentPage.xsp?action=openDocument&amp;documentId=34E543F62D49B32D86257721007294A1
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Nebraska section, entry 'Sac and Fox Nation of Missouri in Kansas and Nebraska'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.sacandfoxks.com/sacfox.nsf/ContentPage.xsp?action=openDocument&amp;documentId=34E543F62D49B32D86257721007294A1)
+    returned HTTP 404, so it is not recorded.'
 gaming:
   compacts:
   - state: KS

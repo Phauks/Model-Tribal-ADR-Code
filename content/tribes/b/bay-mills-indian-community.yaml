@@ -182,20 +182,22 @@ governing_documents:
     contents (and may link to the nation''s own copy); full text is not hosted there.'
 - kind: constitution
   title: Bay Mills Indian Community Constitution and Bylaws
-  link: http://www.baymills.org/tribal-constitution.php
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Michigan section, entry 'Bay Mills Indian Community'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.baymills.org/tribal-constitution.php) returned HTTP
+    404, so it is not recorded.'
 - kind: law-code
   title: Bay Mills Tribal Court Code and Ordinances
-  link: http://www.baymills.org/tribal-laws-and-court.php
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Michigan section, entry 'Bay Mills Indian Community'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.baymills.org/tribal-laws-and-court.php) returned
+    HTTP 404, so it is not recorded.'
 - kind: corporate-charter
   title: Corporate charter (Bay Mills Indian Community Michigan)
   year: '1937'
@@ -223,11 +225,12 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Bay Mills Indian Community Tribal Court
-  link: http://www.baymills.org/tribal-laws-and-court.php
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Michigan section, entry 'Bay Mills Indian Community'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.baymills.org/tribal-laws-and-court.php)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: arbitration

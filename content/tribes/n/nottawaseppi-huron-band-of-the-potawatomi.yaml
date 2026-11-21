@@ -155,53 +155,57 @@ governing_documents:
   note: 'Last amended: 2013. Full text linked from the National Indian Law Library page.'
 - kind: law-code
   title: Tribal code
-  link: http://nhbpi.com/sovereignty/tribal-code/
   source: national-indian-law-library-nottawaseppi-huron-potawatomi
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
-    .".'
+    .". Link check 2026-11-21: the link the source gives (http://nhbpi.com/sovereignty/tribal-code/) returned
+    HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Constitution
-  link: http://nhbpi.com/sovereignty/tribal-code/
   source: national-indian-law-library-nottawaseppi-huron-potawatomi
   confidence: medium
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
-    website .".'
+    website .". Link check 2026-11-21: the link the source gives (http://nhbpi.com/sovereignty/tribal-code/)
+    returned HTTP 404, so it is not recorded.'
 - kind: constitution
   title: Nottawaseppi Huron Band of the Potawatomi Tribe Constitution
-  link: http://nhbpi.com/sovereignty/constitution/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Michigan section, entry 'Nottawaseppi Huron Band of Potawatomi'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://nhbpi.com/sovereignty/constitution/) returned HTTP 404,
+    so it is not recorded.'
 - kind: law-code
   title: Nottawaseppi Huron Band of the Potawatomi Tribal Code
-  link: http://nhbpi.com/sovereignty/constitution/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Michigan section, entry 'Nottawaseppi Huron Band of Potawatomi'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://nhbpi.com/sovereignty/constitution/) returned HTTP 404,
+    so it is not recorded.'
 justice_institutions:
 - kind: tribal-court
   name: tribal-court
-  link: http://nhbpi.com/sovereignty/tribal-court/
   source: national-indian-law-library-nottawaseppi-huron-potawatomi
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
+  note: 'Link check 2026-11-21: the link the source gives (http://nhbpi.com/sovereignty/tribal-court/)
+    returned HTTP 404, so it is not recorded.'
 - kind: tribal-court
   name: Nottawaseppi Huron Band of Potawatomi Tribal Court
-  link: http://nhbpi.com/sovereignty/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: Michigan section, entry 'Nottawaseppi Huron Band of Potawatomi'
+  note: 'Link check 2026-11-21: the link the source gives (http://nhbpi.com/sovereignty/tribal-court/)
+    returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
   - kind: arbitration

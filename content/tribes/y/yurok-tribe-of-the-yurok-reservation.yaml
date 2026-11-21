@@ -161,35 +161,39 @@ governing_documents:
     website (eCode360).".'
 - kind: constitution
   title: Yurok Tribe Constitution
-  link: http://www.yuroktribe.org/government/councilsupport/documents/Constitution.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: California section, entry 'Yurok Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.yuroktribe.org/government/councilsupport/documents/Constitution.pdf)
+    returned HTTP 404, so it is not recorded.'
 - kind: law-code
   title: Yurok Tribal Codes
-  link: http://www.yuroktribe.org/government/councilsupport/YurokTribeOrdinances.htm
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: California section, entry 'Yurok Tribe'
-  note: Title is the link text in the directory; link not re-checked and may be out of date.
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.yuroktribe.org/government/councilsupport/YurokTribeOrdinances.htm)
+    returned HTTP 404, so it is not recorded.'
 justice_institutions:
 - kind: other
   name: Yurok Justice Center
-  link: http://www.yuroktribe.org/tribalcourt/
   source: national-indian-law-library-yurok
   confidence: medium
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
+  note: 'Link check 2026-11-21: the link the source gives (http://www.yuroktribe.org/tribalcourt/) returned
+    HTTP 404, so it is not recorded.'
 - kind: tribal-court
   name: Yurok Tribal Court
-  link: http://www.yuroktribe.org/tribalcourt/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   as_of: '2022'
   locator: California section, entry 'Yurok Tribe'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.yuroktribe.org/tribalcourt/) returned
+    HTTP 404, so it is not recorded.'
 - kind: other
   name: Yurok Justice Center
   source: tribal-law-policy-institute-justice-systems
