@@ -280,22 +280,26 @@ gaming:
       API (source federal-register-api-gaming-notices).'
   - state: AZ
     status: approved
-    approved: '2003-02-05'
+    approved: '2021-05-21'
+    federal_register_citation: 86 FR 27889
     dispute_resolution_summary: Either party may serve written notice of non-compliance or an interpretation
       dispute, after which agency heads and then designated tribal and gubernatorial representatives negotiate;
       if unresolved within 30 days, either party may request non-binding mediation under CPR Institute
       for Dispute Resolution procedures and may then demand binding arbitration under CPR rules before
       three arbitrators unless both agree to one.
     dispute_resolution_locator: Section 15 (Dispute Resolution)
-    source: compact-az-ak-chin-indian-community-2003
-    confidence: medium
-    verification: bulk-import
-    as_of: '2003-02-05'
+    source: compact-az-ak-chin-indian-community-2021
+    confidence: high
+    verification: read-in-full
+    as_of: '2021-05-24'
     locator: Section 15 (Dispute Resolution)
-    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
-      five years; later amendments may have changed the clause. Arizona nations signed a standard-form
-      compact approved in 2003; this text is the Ak-Chin Indian Community copy of that form, and the 2021-2022
-      amendments in the list refer back to Section 15.
+    document_version:
+      document: ak-chin-indian-community-arizona-gaming-compact
+      version: 2021-restatement
+    note: Section 15 of the 2021 amended and restated compact, the version in effect (as amended in 2022,
+      which left Section 15 unchanged), read in full and compared with the 2003 text it replaced; it differs
+      only in wording (see the document history). Changed on 2026-11-21 from the superseded 2003 compact
+      to the version in effect, a choice made pending Trevor's Gate 1 review.
   ordinances:
   - approved: '1993-12-07'
     link: https://www.nigc.gov?wpdmdl=3268&ind=3273
