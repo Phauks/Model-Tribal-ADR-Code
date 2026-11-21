@@ -24,8 +24,8 @@
 		</p>
 		<p class="small muted">
 			The site’s colors are a design choice and carry no tribal symbolism. Set in Atkinson
-			Hyperlegible Next and Noto Sans, under the SIL Open Font License. Icons from Lucide, under the
-			ISC License.
+			Hyperlegible Next and Noto Sans; Noto Serif and OpenDyslexic can be chosen in Settings. All
+			fonts are under the SIL Open Font License. Icons from Lucide, under the ISC License.
 		</p>
 	</div>
 </footer>

@@ -409,6 +409,61 @@ sup {
 	font-weight: var(--font-weight-semibold);
 }
 
+/*
+ * Reading settings (DESIGN.md, section 6, "Settings"). The inline script in
+ * app.html sets these attributes on the root element from the reader's stored
+ * choices before the page paints. Every size on the site is in rem, so the
+ * text size scales the whole page. The doubled :root outranks the token
+ * rules of both themes, whatever order the style sheets load in.
+ */
+:root[data-text-size='large'] {
+	font-size: 112.5%;
+}
+
+:root[data-text-size='larger'] {
+	font-size: 125%;
+}
+
+:root[data-text-size='largest'] {
+	font-size: 150%;
+}
+
+:root:root[data-font='serif'] {
+	--font-family-reading: var(--font-family-serif);
+}
+
+:root:root[data-font='opendyslexic'] {
+	--font-family-reading: var(--font-family-opendyslexic);
+}
+
+:root:root[data-font='device'] {
+	--font-family-reading: var(--font-family-device);
+}
+
+/* Wide spacing uses the values WCAG 2.2, 1.4.12 Text Spacing tests. */
+:root:root[data-text-spacing='wide'] {
+	--font-line-height-reading: var(--font-line-height-reading-wide);
+	--font-line-height-heading: var(--font-line-height-heading-wide);
+	letter-spacing: var(--font-letter-spacing-wide);
+	word-spacing: var(--font-word-spacing-wide);
+}
+
+:root[data-text-spacing='wide'] :is(p, li, dd, blockquote) {
+	margin-bottom: var(--font-paragraph-spacing-wide);
+}
+
+/* More contrast: gray text becomes ink, and light dividing lines take the
+   darker control border color. */
+:root:root[data-contrast='more'] {
+	--color-ink-muted: var(--color-ink);
+	--color-line: var(--color-control-border);
+}
+
+/* Controls that need scripts are hidden when scripts do not run. */
+:root:not([data-scripts='on']) .needs-scripts {
+	display: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
 	*,
 	*::before,

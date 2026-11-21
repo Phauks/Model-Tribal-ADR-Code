@@ -5,7 +5,10 @@
  *   Hyperlegible Next fonts, the static files and the core pages.
  * - Other pages are saved as they are read and refreshed in the background
  *   the next time they are opened online (stale while revalidate).
- * - Noto fallback fonts are saved only when a page needs them.
+ * - Noto fallback fonts, and the fonts a reader can pick in Settings, are
+ *   saved when a page first uses them. A new build keeps the ones already
+ *   saved whose files have not changed, so a font picked earlier still
+ *   works offline after an update.
  * - Each build has its own cache, named after the build version, and the
  *   old caches are deleted when the new worker takes over.
  * - When a page is neither saved nor reachable, the /offline page is shown.
@@ -66,8 +69,21 @@ self.addEventListener('install', (event) => {
 self.addEventListener('activate', (event) => {
 	event.waitUntil(
 		(async () => {
+			const cache = await caches.open(cacheName);
+			const currentFiles = new Set(immutable.map((file) => absolute(file.path)));
 			for (const name of await caches.keys()) {
-				if (name !== cacheName) await caches.delete(name);
+				if (name === cacheName) continue;
+				// Font file names carry a hash of their content, so a saved copy
+				// with a name in this build is still the same file.
+				const oldCache = await caches.open(name);
+				for (const request of await oldCache.keys()) {
+					const path = new URL(request.url).pathname;
+					if (isFallbackFont(path) && currentFiles.has(path) && !(await cache.match(path))) {
+						const response = await oldCache.match(request);
+						if (response) await cache.put(path, response);
+					}
+				}
+				await caches.delete(name);
 			}
 			await self.clients.claim();
 		})()

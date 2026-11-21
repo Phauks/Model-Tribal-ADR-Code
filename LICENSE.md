@@ -14,6 +14,7 @@ has different users with different needs. The reasons for each choice are in
 | Citation style and locale (third-party, modified) | `pdf/styles/*.csl`, `pdf/styles/*.xml` | CC BY-SA 3.0, the license of the originals ([pdf/styles/README.md](pdf/styles/README.md)) | [LICENSES/CC-BY-SA-3.0.txt](LICENSES/CC-BY-SA-3.0.txt) |
 | Icons (third-party, unmodified) | Lucide, installed as `@lucide/svelte` for the website and `lucide-static` for the print edition | ISC License, and the MIT License for icons drawn from Feather | [LICENSES/Lucide.txt](LICENSES/Lucide.txt) |
 | Fonts (third-party, unmodified) | `pdf/fonts/` | SIL Open Font License 1.1 ([pdf/fonts/README.md](pdf/fonts/README.md)) | [LICENSES/OFL-1.1.txt](LICENSES/OFL-1.1.txt) |
+| Website fonts (third-party, unmodified) | Installed from npm for `site/`: Atkinson Hyperlegible Next, Noto Sans, Noto Sans Cherokee, Osage and Canadian Aboriginal, Noto Serif and OpenDyslexic (Reserved Font Name "OpenDyslexic"), as `@fontsource/*` packages; each font file carries its own copyright and license notice | SIL Open Font License 1.1 | [LICENSES/OFL-1.1.txt](LICENSES/OFL-1.1.txt) |
 
 ## Material these licenses do not cover
 
