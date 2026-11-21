@@ -1,7 +1,7 @@
 ---
 id: 2026-11-20-decision-follow-ups
 date: 2026-11-20
-researchers: [Lead author, Claude (AI assistant)]
+researchers: [Trevor Goldsmith, Claude (AI assistant)]
 tools:
   - kind: ai-assistant
     name: Claude (AI assistant)
@@ -13,7 +13,7 @@ tools:
   - kind: other
     name: GitHub API
     detail: Confirmed the repository had no branches yet.
-purpose: Follow up on the lead author's decisions about framing, map, print, licensing, branches and changelogs.
+purpose: Follow up on Trevor Goldsmith's decisions as lead author about framing, map, print, licensing, branches and changelogs.
 queries:
   - Local Contexts Notices and Labels
   - Nelson Denis War Against All Puerto Ricans sources and reviews

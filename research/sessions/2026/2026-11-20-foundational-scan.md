@@ -1,7 +1,7 @@
 ---
 id: 2026-11-20-foundational-scan
 date: 2026-11-20
-researchers: [Lead author, Claude (AI assistant)]
+researchers: [Trevor Goldsmith, Claude (AI assistant)]
 tools:
   - kind: ai-assistant
     name: Claude (AI assistant)
