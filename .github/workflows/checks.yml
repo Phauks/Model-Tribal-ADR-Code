@@ -51,6 +51,8 @@ jobs:
       - run: npm ci
       - name: Type check
         run: npm run check
+      - name: Unit tests
+        run: npm test
       - name: Colors come only from design-tokens.json
         run: npm run check:colors
       - name: Build
