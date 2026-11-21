@@ -1,14 +1,20 @@
 <script lang="ts">
+	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
 	import { repositoryLink } from '#lib';
 	import SourceList from '#lib/components/SourceList.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
 
-	const describeState = (state: { name: string; count: number }) =>
-		state.count === 0
-			? `${state.name}: no nations recorded`
-			: `${state.name}: ${state.count} ${state.count === 1 ? 'nation' : 'nations'}`;
+	// The small states and territories drawn as markers show only their
+	// two-letter code, so their names start with it: what is seen is what can
+	// be spoken to select it (WCAG 2.5.3, label in name).
+	const describeState = (state: { name: string; code: string; count: number; marker?: unknown }) => {
+		const name = state.marker ? `${state.code}, ${state.name}` : state.name;
+		return state.count === 0
+			? `${name}: no nations recorded`
+			: `${name}: ${state.count} ${state.count === 1 ? 'nation' : 'nations'}`;
+	};
 
 	const describeRegion = (region: { name: string; count: number }) =>
 		`${region.name} Region: ${region.count} ${region.count === 1 ? 'nation' : 'nations'}`;
@@ -101,7 +107,7 @@
 		</figcaption>
 	</figure>
 
-	<div class="table-scroll" role="region" aria-label="Table: nations by state" tabindex="-1">
+	<div class="table-scroll" role="region" aria-label="Table: nations by state" {@attach keyboardScroll}>
 		<table>
 			<caption>Nations with a recorded presence, by state and territory</caption>
 			<thead>
@@ -173,7 +179,7 @@
 		</figcaption>
 	</figure>
 
-	<div class="table-scroll" role="region" aria-label="Table: regions" tabindex="-1">
+	<div class="table-scroll" role="region" aria-label="Table: regions" {@attach keyboardScroll}>
 		<table>
 			<caption>Nations each region serves, as the Bureau’s Tribal Leaders Directory lists them</caption>
 			<thead>

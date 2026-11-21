@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
 	import { decisionLabels, roleDescriptions, roleLabels, subjectKindLabels } from '#lib/permissions.ts';
 	import { requestKindLabels, requestStatusLabels } from '#lib/requests.ts';
 	import type { PageProps } from './$types';
@@ -44,7 +45,7 @@
 				{overdue.length} past a target date. <a href="/workspace/requests">See all requests</a>
 			</p>
 			{#if overdue.length > 0}
-				<div class="table-scroll" role="region" aria-label="Table: requests past a target date" tabindex="-1">
+				<div class="table-scroll" role="region" aria-label="Table: requests past a target date" {@attach keyboardScroll}>
 					<table>
 						<thead>
 							<tr><th scope="col">Reference</th><th scope="col">Kind</th><th scope="col">Status</th><th scope="col">Past target</th></tr>

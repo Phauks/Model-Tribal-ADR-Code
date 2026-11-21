@@ -20,7 +20,8 @@
 	</p>
 	<p>
 		If you see this page while trying to open another one, that page has not been saved on this
-		device yet. Connect to the internet and open it once to save it.
+		device yet. Connect to the internet and open it once to save it. The request form and co-author
+		sign-in are never saved, because they need a connection to send anything.
 	</p>
 	<p class="muted">
 		Choosing which parts to save will be added in a later version. The PDF and the ebook will be on
