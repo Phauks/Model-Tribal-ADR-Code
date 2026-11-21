@@ -74,6 +74,27 @@ const ITEMS = {
     volume: "25",
     section: "§ 900.217",
   },
+  "executive-order": {
+    id: "executive-order",
+    type: "legislation",
+    title: "Executive Order 12988, Civil Justice Reform",
+    "title-short": "Exec. Order 12,988",
+    "container-title": "Federal Register",
+    "container-title-short": "Fed. Reg.",
+    volume: "61",
+    page: "4729",
+    issued: { "date-parts": [[1996, 2, 5]] },
+  },
+  "register-notice": {
+    id: "register-notice",
+    type: "legislation",
+    title: "Reconsidered Final Determination To Decline To Acknowledge the Chinook Indian Tribe/Chinook Nation",
+    "container-title": "Federal Register",
+    "container-title-short": "Fed. Reg.",
+    volume: "67",
+    page: "46204-46206",
+    issued: { "date-parts": [[2002, 7, 12]] },
+  },
   case: {
     id: "case",
     type: "legal_case",
@@ -179,6 +200,23 @@ test("a hyphen inside one section number is kept", () => {
   assert.equal(normalizeSection("10H-1"), "§\u00A010H-1");
   assert.equal(normalizeSection("471, 473"), "§§\u00A0471, 473");
   assert.equal(normalizeSection("§§ 3.475-3.500"), "§§\u00A03.475–3.500");
+});
+
+test("Federal Register documents print volume, first page and full date (Indigo Book R19.4)", () => {
+  const printed = notes([
+    [{ key: "executive-order" }],
+    [{ key: "register-notice", pinpoint: "46205" }],
+    [{ key: "register-notice", pinpoint: "46206" }],
+    [{ key: "book" }],
+    [{ key: "executive-order" }],
+  ]);
+  assert.equal(printed[0], "Exec. Order 12,988, 61 Fed. Reg. 4729 (Feb. 5, 1996).");
+  assert.equal(
+    printed[1],
+    "Reconsidered Final Determination To Decline To Acknowledge the Chinook Indian Tribe/Chinook Nation, 67 Fed. Reg. 46204, 46205 (July 12, 2002).",
+  );
+  assert.equal(printed[2], "#emph[Id.] at 46206.");
+  assert.equal(printed[4], "Exec. Order 12,988, 61 Fed. Reg. 4729.");
 });
 
 test("cases and books print as before, with a comma before 'at' after supra", () => {
