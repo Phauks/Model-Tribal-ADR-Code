@@ -12,8 +12,11 @@ source is cited.
   ([decision record 0013](../docs/decisions/0013-sign-in-with-auth0.md)).
   Auth0 proves who someone is. The site's own database decides what they may
   do.
-- **Nobody can sign in until the lead author adds them.** There is no open
-  sign-up.
+- **Nobody reaches the workspace until the lead author adds them.** There is
+  no open access to the workspace. Anyone with a verified email address may
+  sign in to register as a contributor and keep a profile
+  ([docs/contributor-profiles.md](../docs/contributor-profiles.md),
+  [decision record 0022](../docs/decisions/0022-open-registration-for-contributors.md)).
 - **The lead author is the administrator**: full access to everything, and
   the only person who adds people, changes roles, grants and restricts
   access to documents, and reads the activity log
@@ -41,8 +44,8 @@ the page only hides buttons a person cannot use.
 
 | Role | Can do | Starts at, on every document |
 | --- | --- | --- |
-| Lead author | The administrator. Everything below, and adds, changes and removes people, grants and restricts access, and reads the activity log. The project always keeps at least one. | Full, always; cannot be restricted |
-| Editor | Reads requests and their uploaded files, changes their status, decides them; signs off on content or asks for changes. | Contribute |
+| Lead author | The administrator. Everything below, and adds, changes and removes people, grants and restricts access, reads the activity log, and welcomes or declines contributor registrations. The project always keeps at least one. | Full, always; cannot be restricted |
+| Editor | Reads requests and their uploaded files, changes their status, decides them; reads contributor registrations; signs off on content or asks for changes. | Contribute |
 | Advisor | Signs off on content or asks for changes, as a project advisor; comments. Does not see requests. | Comment |
 | Co-author | Comments. Does not see requests. | Comment |
 | Contributor | Works only on what the lead author grants, for example writing one assigned essay. Cannot sign off or publish. | No access |
@@ -228,7 +231,10 @@ the footer, start here.
      invitation by typing someone else's address;
    - the very first lead author, by the `LEAD_AUTHOR_EMAIL` secret.
 
-   Anyone else is signed out of Auth0 again and told why.
+   Anyone else with a verified email address stays signed in and goes to
+   their contributor profile (`/profile`), where they can register to help;
+   the workspace stays closed to them. Everyone else is signed out of Auth0
+   again and told why.
 3. The session is an encrypted, HTTP-only cookie. It lasts at most 12 hours,
    and ends after 4 hours without use.
 4. On every workspace page the site checks the database again, so removing
@@ -328,6 +334,10 @@ page, where their level on each document is raised or lowered. Tell each person 
 | `request_sources` | Proof for adding a nation, and other uploaded files. |
 | `events` | The activity log: who did what and when, numbered in order. Cannot be changed or deleted. |
 | `event_seals` | The seal of each activity log entry, chained to the one before. |
+
+`migrations/0003_contributor_profiles.sql` adds contributor profiles, their
+nations, interests and confirmed versions; see
+[docs/contributor-profiles.md](../docs/contributor-profiles.md).
 
 Status and outcome values are the words docs/requests.md uses
 (`hidden-pending-review`, `declined` and so on), so the documentation and the

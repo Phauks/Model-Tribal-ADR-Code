@@ -10,8 +10,11 @@ export const prerender = false;
 
 /**
  * Auth0 sends people here after they sign in. The sign-in is matched to a
- * person in the database; anyone who is not on the list is signed out of
- * Auth0 again and told why.
+ * person in the database. Someone with a verified email address who is not
+ * on the list stays signed in and goes to their contributor profile, where
+ * they can register to help (docs/contributor-profiles.md); the workspace
+ * stays closed to them until the lead author gives access. Anyone else is
+ * signed out of Auth0 again and told why.
  */
 export const GET: RequestHandler = async ({ url, cookies }) => {
 	const environment = workerEnvironment();
@@ -55,6 +58,10 @@ export const GET: RequestHandler = async ({ url, cookies }) => {
 		},
 		environment.LEAD_AUTHOR_EMAIL
 	);
+	if (match.outcome === 'not-on-list') {
+		markSignedIn(cookies);
+		redirect(303, returnTo.startsWith('/profile') ? returnTo : '/profile');
+	}
 	if (match.outcome !== 'signed-in') return refuse(match.outcome, true);
 	markSignedIn(cookies);
 	redirect(303, returnTo);
