@@ -238,12 +238,15 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Shoshone-Bannock Tribal Court
-  link: http://www.shoshonebannocktribes.com/shoshone-bannock-courts.html
+  link: https://www.sbtribes.com/courts/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Idaho section, entry 'Shoshone-Bannock Tribes'
+  note: The listed link (http://www.shoshonebannocktribes.com/shoshone-bannock-courts.html) no longer
+    reached the court on 2026-11-21; the link is the court's page on the nation's own site, found in the
+    data gap review (research/reviews/2026-11-21-court-listings.json).
 gaming:
   compacts:
   - state: ID

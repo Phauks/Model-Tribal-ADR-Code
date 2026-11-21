@@ -337,15 +337,17 @@ gaming:
     dispute_resolution_summary: The parties must use best efforts to negotiate for at least 14 days, after
       which either party may refer the dispute to binding arbitration before a sole agreed arbitrator
       or a three-member panel, with judicial enforcement in the United States District Court for Kansas.
-    dispute_resolution_locator: Section 29 (Dispute Resolution)
-    source: compact-ks-wyandotte-nation-2026
-    confidence: medium
-    verification: inferred
-    as_of: '2026-07-14'
-    locator: Section 29 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 2026 Wyandotte Nation compact;
-      other Kansas compacts were not checked. Status copied from this nation's most recent approved or
-      deemed-approved entry for this state in the Office of Indian Gaming list (2025-11-24).
+    dispute_resolution_locator: 'section 31: Dispute Resolution., (A) General.'
+    source: compact-ks-sac-fox-nation-of-missouri-in-kansas-and-1995
+    confidence: high
+    verification: read-in-full
+    as_of: '1995-11-14'
+    locator: 'section 31: Dispute Resolution., (A) General.'
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-ks-wyandotte-nation-2026 without reading; two reviewers found the clause the same in
+      substance (research/reviews/2026-11-21-compact-clauses.json, item 178). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2025-11-24).
   ordinances:
   - approved: '1995-08-09'
     link: https://www.nigc.gov?wpdmdl=10953&ind=10971

@@ -3,6 +3,7 @@ research/reviews/, and fill in `verification` on profile facts that have none.
 
     python3 scripts/review/gap_review.py merge WORK_DIRECTORY
     python3 scripts/review/gap_review.py levels [--check]
+    python3 scripts/review/gap_review.py apply [--check]
 
 `merge` reads the reviewers' output in WORK_DIRECTORY (names/, compacts/,
 courts/, levels/, as written by the briefs in research/reviews/briefs/) and
@@ -28,10 +29,24 @@ note implies (`NOTE_LEVELS` in scripts/record_facts.py); failing that, the
 level recorded for its group in 2026-11-21-verification-levels.json; failing
 that, the fact is left alone. Only the `verification` key is added; nothing
 else in a profile changes. With `--check` it reports what it would change.
+
+`apply` makes the two clear fixes from the review that need no decision:
+
+- a copied compact dispute clause that both reviewers, with high confidence,
+  found the same in substance as the nation's own compact is cited to that
+  compact instead (a new source record, unless one already has its address),
+  with the reviewers' pinpoint; its summary is not changed;
+- a court whose listed link no longer reaches it, where the review found the
+  court's page on the nation's own site (fetched during the review), gets
+  that page as its link, and its note keeps the listed link.
+
+Everything else in the review waits for the lead author. With `--check` it
+reports what it would change.
 """
 
 import collections
 import csv
+import re
 import glob
 import json
 import pathlib
@@ -293,10 +308,129 @@ def levels(check):
               + ", ".join(f"{g} ({n})" for g, n in missing.most_common(10)))
 
 
+REVIEW_DATE = "2026-11-21"
+SESSION = "2026-11-21-data-gap-review"
+
+
+def dump(path, record):
+    path.write_text(yaml.safe_dump(record, allow_unicode=True, sort_keys=False, width=100), encoding="utf-8")
+
+
+def compact_source(document, state, nation):
+    year, month, day = (int(part) for part in document["date"].split("-"))
+    slug = re.sub(r"[^a-z0-9]+", "-", nation.lower().replace("'", "")).strip("-")[:40].strip("-")
+    return {
+        "key": f"compact-{state.lower()}-{slug}-{year}",
+        "kind": "other",
+        "citation": {
+            "type": "document",
+            "title": f"{document['title']} (document posted by the Office of Indian Gaming)",
+            "author": [{"literal": "Parties to the compact: the named Native nation and the State; posted by "
+                                   "U.S. Department of the Interior, Office of Indian Gaming"}],
+            "container-title": "Indian Affairs (bia.gov), Gaming Compacts list",
+            "URL": document["link"],
+            "issued": {"date-parts": [[year, month, day]]},
+            "accessed": {"date-parts": [[2026, 11, 21]]},
+        },
+        "original_link": document["link"],
+        "retrieved": REVIEW_DATE,
+        "archives": [],
+        "history": {"status": "live", "last_checked": REVIEW_DATE},
+        "rights": {"status": "no-permission-needed", "basis": "fact-only",
+                   "basis_note": "Only facts are recorded from this source; it is cited and linked, not quoted "
+                                 "or reproduced.",
+                   "redistribution": False},
+        "found_in": [SESSION],
+        "notes": "Compact PDF downloaded with curl; text extracted with pdftotext and the dispute resolution "
+                 "section read in the data gap review. Date is the date shown in the Office of Indian Gaming list.",
+    }
+
+
+def repoint_compact(fact, row, key):
+    status = re.search(r"Status copied from .*", str(fact.get("note", "")))
+    fact["source"] = key
+    fact["dispute_resolution_locator"] = row["locator"]
+    fact["locator"] = row["locator"]
+    fact["confidence"] = "high"
+    fact["verification"] = "read-in-full"
+    fact["as_of"] = row["governing_document"]["date"]
+    fact["note"] = (f"Checked on {REVIEW_DATE} against this nation's own compact, which the summary was first "
+                    f"copied from {row['copied_from']} without reading; two reviewers found the clause the same in "
+                    f"substance (research/reviews/{PREFIX}compact-clauses.json, item {row['item_id']})."
+                    + (f" {status.group(0)}" if status else ""))
+
+
+def apply(check):
+    tree = record_facts.Tree(ROOT)
+    by_link = {}
+    for key, source in tree.sources.items():
+        for link in record_facts.source_links(source):
+            by_link[link] = key
+    compacts = [r for r in json.loads((REVIEWS / f"{PREFIX}compact-clauses.json").read_text(encoding="utf-8"))
+                if r["verdict"] == "same" and r["confidence"] == "high" and r["passes_agree"]]
+    courts = [r for r in json.loads((REVIEWS / f"{PREFIX}court-listings.json").read_text(encoding="utf-8"))
+              if r["verdict"] == "link-dead-court-found" and r["working_link"]
+              and record_facts.normalized_link(r["working_link"]) in
+              {record_facts.normalized_link(p["url"]) for p in r["pages_fetched"] if p.get("status") == 200}]
+    new_sources, changed, skipped = {}, set(), []
+
+    for row in compacts:
+        profile = tree.profiles[row["profile"]]
+        matches = [f for f in profile.get("gaming", {}).get("compacts", [])
+                   if f.get("state") == row["state"] and "nation-specific text not checked" in str(f.get("note", ""))]
+        if len(matches) != 1:
+            skipped.append(f"compact item {row['item_id']}: {len(matches)} matching facts")
+            continue
+        document = row["governing_document"]
+        key = by_link.get(record_facts.normalized_link(document["link"]))
+        if not key:
+            source = compact_source(document, row["state"], row["nation"])
+            key = source["key"]
+            if key in tree.sources or (key in new_sources and new_sources[key]["original_link"] != document["link"]):
+                skipped.append(f"compact item {row['item_id']}: key {key} already used for another document")
+                continue
+            new_sources[key] = source
+            by_link[record_facts.normalized_link(document["link"])] = key
+        repoint_compact(matches[0], row, key)
+        changed.add(row["profile"])
+
+    court_count = 0
+    for row in courts:
+        profile = tree.profiles[row["profile"]]
+        matches = [f for f in profile.get("justice_institutions", [])
+                   if f["source"] == row["source"] and f.get("name") == row["name"]
+                   and f.get("link") == row["listed_link"]]
+        if len(matches) != 1:
+            skipped.append(f"court {row['profile']} {row['name']}: {len(matches)} matching facts")
+            continue
+        fact = matches[0]
+        fact["link"] = row["working_link"]
+        moved = (f"The listed link ({row['listed_link']}) no longer reached the court on {REVIEW_DATE}; the link "
+                 f"is the court's page on the nation's own site, found in the data gap review "
+                 f"(research/reviews/{PREFIX}court-listings.json).")
+        fact["note"] = f"{fact['note']} {moved}" if fact.get("note") else moved
+        court_count += 1
+        changed.add(row["profile"])
+
+    if not check:
+        for key, source in new_sources.items():
+            dump(ROOT / "content" / "sources" / key[0] / f"{key}.yaml", source)
+        for relative in changed:
+            profile = {k: v for k, v in tree.profiles[relative].items() if not k.startswith("_")}
+            dump(ROOT / relative, profile)
+    repointed = sum(1 for r in compacts) - sum(1 for s in skipped if s.startswith("compact"))
+    print(f"{'would repoint' if check else 'repointed'} {repointed} compact clauses ({len(new_sources)} new source "
+          f"records) and {'would relink' if check else 'relinked'} {court_count} courts in {len(changed)} profiles")
+    for line in skipped:
+        print(f"skipped {line}")
+
+
 if __name__ == "__main__":
     if len(sys.argv) == 3 and sys.argv[1] == "merge":
         merge(pathlib.Path(sys.argv[2]))
     elif len(sys.argv) in (2, 3) and sys.argv[1] == "levels":
         levels(check="--check" in sys.argv)
+    elif len(sys.argv) in (2, 3) and sys.argv[1] == "apply":
+        apply(check="--check" in sys.argv)
     else:
         sys.exit(__doc__)

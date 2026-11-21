@@ -148,23 +148,27 @@ federal_administration:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: http://www.pueblodecochiti.org/departments/tribal-administration/tribal-court
+  link: https://cochiti.org/tribal-court/
   source: national-indian-law-library-pueblo-cochiti
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
-    site did not respond.'
+    site did not respond. The listed link (http://www.pueblodecochiti.org/departments/tribal-administration/tribal-court)
+    no longer reached the court on 2026-11-21; the link is the court''s page on the nation''s own site,
+    found in the data gap review (research/reviews/2026-11-21-court-listings.json).'
 - kind: tribal-court
   name: Pueblo of Cochiti Tribal Court
-  link: http://www.pueblodecochiti.org/departments/tribal-administration/tribal-court
+  link: https://cochiti.org/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: New Mexico section, entry 'Pueblo de Cochiti'
-  note: 'Link check 2026-11-21: the site did not respond.'
+  note: 'Link check 2026-11-21: the site did not respond. The listed link (http://www.pueblodecochiti.org/departments/tribal-administration/tribal-court)
+    no longer reached the court on 2026-11-21; the link is the court''s page on the nation''s own site,
+    found in the data gap review (research/reviews/2026-11-21-court-listings.json).'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

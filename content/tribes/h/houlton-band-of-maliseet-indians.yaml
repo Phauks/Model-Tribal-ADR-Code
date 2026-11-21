@@ -150,12 +150,14 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: HBMI Tribal Court
-  link: http://www.maliseets.com/tribal_courts.htm
+  link: https://maliseets.net/maliseet-healing-to-wellness-court/
   source: national-indian-law-library-houlton-maliseet
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
+  note: The listed link (http://www.maliseets.com/tribal_courts.htm) no longer reached the court on 2026-11-21;
+    the link is the court's page on the nation's own site, found in the data gap review (research/reviews/2026-11-21-court-listings.json).
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

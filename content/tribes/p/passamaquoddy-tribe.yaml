@@ -214,21 +214,26 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: https://wabanaki.com/tribal_court/
+  link: https://www.passamaquoddy.com/?page_id=1885
   source: national-indian-law-library-passamaquoddy-tribe
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: The page gives a contact for a tribal court without a fuller name. The listed link (https://wabanaki.com/tribal_court/)
+    no longer reached the court on 2026-11-21; the link is the court's page on the nation's own site,
+    found in the data gap review (research/reviews/2026-11-21-court-listings.json).
 - kind: tribal-court
   name: Passamaquoddy Tribal Court
-  link: http://www.wabanaki.com/wabanaki_new/Tribal_Court.html
+  link: https://www.passamaquoddy.com/?page_id=1885
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Maine section, entry 'Passamaquoddy Tribe'
+  note: The listed link (http://www.wabanaki.com/wabanaki_new/Tribal_Court.html) no longer reached the
+    court on 2026-11-21; the link is the court's page on the nation's own site, found in the data gap
+    review (research/reviews/2026-11-21-court-listings.json).
 gaming:
   ordinances:
   - approved: '1995-07-19'

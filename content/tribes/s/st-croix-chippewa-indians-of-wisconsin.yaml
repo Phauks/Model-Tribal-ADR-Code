@@ -221,12 +221,14 @@ justice_institutions:
     it is not recorded.'
 - kind: tribal-court
   name: St. Croix Chippewa Tribal Court
-  link: http://www.stcciw.com/tribal-court
+  link: https://stcroixojibwe-nsn.gov/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Wisconsin section, entry 'St. Croix Chippewa Indians of Wisconsin'
+  note: The listed link (http://www.stcciw.com/tribal-court) no longer reached the court on 2026-11-21;
+    the link is the court's page on the nation's own site, found in the data gap review (research/reviews/2026-11-21-court-listings.json).
 gaming:
   compacts:
   - state: WI

@@ -140,6 +140,23 @@ California items (`intertribalcourt.org`, not fetched).
 The 47 `link-dead-court-found` rows give a working address. Replacing the
 listed link with it is a clear fix once the lead author agrees.
 
+## Clear fixes applied
+
+Two kinds of finding needed no decision, and `scripts/review/gap_review.py
+apply` made them in a separate pull request on Nov. 21, 2026:
+
+- 96 compact dispute clauses that both reviewers, with high confidence, found
+  the same in substance as the nation's own compact now cite that compact (96
+  new source records) with the reviewers' pinpoint, at `read-in-full`. Their
+  summaries did not change. The other 28 `same` items (13 where the passes
+  disagreed, 15 at medium confidence) still cite the copied compact.
+- 42 courts whose listed link no longer reached them now link to the court's
+  page on the nation's own site, which the review fetched; the note keeps the
+  listed link. The other 5 `link-dead-court-found` rows (Seneca Nation, four;
+  Muscogee Nation, one) name a page the review did not fetch, so they wait.
+
+Everything else waits for the lead author's decisions.
+
 ## Limits
 
 - Every verdict is AI-written. In the provision pre-review a second pass
