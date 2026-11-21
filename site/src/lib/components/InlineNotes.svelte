@@ -47,7 +47,9 @@
 			event.preventDefault();
 			toggle(marker);
 		};
-		document.addEventListener('click', onClick);
-		return () => document.removeEventListener('click', onClick);
+		// Capture, so this runs before the router's own link handling, which
+		// would otherwise treat the note as already visited.
+		document.addEventListener('click', onClick, true);
+		return () => document.removeEventListener('click', onClick, true);
 	});
 </script>

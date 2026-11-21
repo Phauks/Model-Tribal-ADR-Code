@@ -6,8 +6,9 @@ function recorder() {
 	const used: { key: string; section: string; text: string }[] = [];
 	return {
 		used,
-		add(key: string, use: { section: string; text: string }) {
+		add(key: string, use: { section: string; text: string }): number {
 			used.push({ key, section: use.section, text: use.text });
+			return new Set(used.map((entry) => entry.key)).size;
 		},
 		use(fact: { source?: string } | undefined, section: string, text: string) {
 			if (fact?.source) used.push({ key: fact.source, section, text });
