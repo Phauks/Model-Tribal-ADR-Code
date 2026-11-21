@@ -202,7 +202,7 @@ the project's view, this is the clearest published example of the validation
 route that article 2 contemplates.
 
 **Cherán (Controversia Constitucional 32/2012, May 29, 2014).** After the
-federal electoral tribunal held (SUP-JDC-9167/2011) that the Purépecha
+federal electoral tribunal held (SUP-JDC-9167/2011) that the Indigenous
 community of Cherán, Michoacán, could elect its authorities by its own
 rules, Cherán's Council of Communal Government, acting as the municipal
 authority, sued the state legislature for
