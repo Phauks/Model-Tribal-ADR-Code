@@ -54,7 +54,8 @@ comparison.
 ## Summary
 
 The first table shows what each framework is and how parties enter it. The
-second shows what happens to the outcome.
+second shows how an outcome is enforced and reviewed, and the third how
+each treats confidentiality.
 
 | Framework | Kind | Consent |
 | --- | --- | --- |
@@ -70,19 +71,33 @@ second shows what happens to the outcome.
 | Nisg̱a'a Final Agreement, chapter 19 | Modern treaty | Staged: negotiation, then a facilitated process, then adjudication |
 | Native Title Act right to negotiate (Australia) | Statute | Six months of good faith negotiation, then arbitration on application |
 
-| Framework | Enforcement | Confidentiality | Review or appeal |
-| --- | --- | --- | --- |
-| Uniform Mediation Act (2001, amended 2003) | Left to contract law; signed agreements are outside the privilege | Evidentiary privilege; general confidentiality only "to the extent agreed by the parties or provided by other law" | None; it is not an adjudication statute |
-| Revised Uniform Arbitration Act (2000) | Court confirms the award; judgment enforced like any other | Protective orders only; no general duty | Narrow grounds to vacate; listed appealable orders |
-| Uniform Family Law Arbitration Act (2016) | Confirmation; child-related awards need a best-interests finding | Not addressed; left to agreement | Vacatur grounds plus child-related review; listed appealable orders |
-| Uniform Collaborative Law Rules and Act (2009, amended 2010) | Tribunal may approve agreements | Confidential as agreed; evidentiary privilege | Not applicable |
-| Tribal arbitration ordinances (for example Ho-Chunk Nation) | Tribal court confirms; judgment enforced | Not addressed in the sections read | No review on the merits; no appeal |
-| Gaming compact clauses | Varies: court action, arbitration, or declaratory relief only | Rarely addressed | Varies; Oklahoma's de novo review clause was held invalid |
-| UNDRIP (2007) and American Declaration (2016) | Not binding on the United States | Not addressed | Not addressed |
-| Māori Land Court mediation (Part 3A, 2020) | Agreement becomes a court order after a legality check | Statutory confidentiality and inadmissibility | Ordinary court process if mediation fails |
-| Framework Agreement on First Nation Land Management | Arbitral awards final and binding | Not addressed in Part IX | Judicial review within 30 days on narrow grounds |
-| Nisg̱a'a Final Agreement, chapter 19 | Arbitral awards final and binding | Not addressed in the chapter body | Court review only as the arbitration appendix allows |
-| Native Title Act right to negotiate (Australia) | Determination takes effect as if agreed | Not addressed in the sources read | Ministerial override; law reform recommended |
+| Framework | Enforcement | Review or appeal |
+| --- | --- | --- |
+| Uniform Mediation Act (2001, amended 2003) | Left to contract law; signed agreements are outside the privilege | None; it is not an adjudication statute |
+| Revised Uniform Arbitration Act (2000) | Court confirms the award; judgment enforced like any other | Narrow grounds to vacate; listed appealable orders |
+| Uniform Family Law Arbitration Act (2016) | Confirmation; child-related awards need a best-interests finding | Vacatur grounds plus child-related review; listed appealable orders |
+| Uniform Collaborative Law Rules and Act (2009, amended 2010) | Tribunal may approve agreements | Not applicable |
+| Tribal arbitration ordinances (for example Ho-Chunk Nation) | Tribal court confirms; judgment enforced | No review on the merits; no appeal |
+| Gaming compact clauses | Varies: court action, arbitration, or declaratory relief only | Varies; Oklahoma's de novo review clause was held invalid |
+| UNDRIP (2007) and American Declaration (2016) | Not binding on the United States | Not addressed |
+| Māori Land Court mediation (Part 3A, 2020) | Agreement becomes a court order after a legality check | Ordinary court process if mediation fails |
+| Framework Agreement on First Nation Land Management | Arbitral awards final and binding | Judicial review within 30 days on narrow grounds |
+| Nisg̱a'a Final Agreement, chapter 19 | Arbitral awards final and binding | Court review only as the arbitration appendix allows |
+| Native Title Act right to negotiate (Australia) | Determination takes effect as if agreed | Ministerial override; law reform recommended |
+
+| Framework | Confidentiality |
+| --- | --- |
+| Uniform Mediation Act (2001, amended 2003) | Evidentiary privilege; general confidentiality only "to the extent agreed by the parties or provided by other law" |
+| Revised Uniform Arbitration Act (2000) | Protective orders only; no general duty |
+| Uniform Family Law Arbitration Act (2016) | Not addressed; left to agreement |
+| Uniform Collaborative Law Rules and Act (2009, amended 2010) | Confidential as agreed; evidentiary privilege |
+| Tribal arbitration ordinances (for example Ho-Chunk Nation) | Not addressed in the sections read |
+| Gaming compact clauses | Rarely addressed |
+| UNDRIP (2007) and American Declaration (2016) | Not addressed |
+| Māori Land Court mediation (Part 3A, 2020) | Statutory confidentiality and inadmissibility |
+| Framework Agreement on First Nation Land Management | Not addressed in Part IX |
+| Nisg̱a'a Final Agreement, chapter 19 | Not addressed in the chapter body |
+| Native Title Act right to negotiate (Australia) | Not addressed in the sources read |
 
 Sources for each row are cited in the sections below. The table is project
 analysis.
