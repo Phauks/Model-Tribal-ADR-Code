@@ -1,0 +1,51 @@
+id: inter-tribal-council-of-arizona
+name: Inter Tribal Council of Arizona, Inc.
+also_known_as:
+- ITCA
+category: intertribal-organization
+location:
+  city: Phoenix
+  state: AZ
+scope: regional
+relevance:
+  text: The Inter Tribal Council of Arizona provides its 21 member tribes with a united voice and the
+    means for united action on matters affecting them. Its programs include emergency preparedness, human
+    services and community development, and it offers training events. It is a route to Arizona tribal
+    leadership rather than a justice-specific body.
+  sources:
+  - home
+  - contact
+possible_roles:
+- distribution
+contacts:
+- kind: email
+  value: info@itcaonline.com
+  label: General inbox
+  sources:
+  - contact
+- kind: telephone
+  value: (602) 258-4822
+  label: Main office
+  sources:
+  - contact
+- kind: mailing-address
+  value: 2214 North Central Avenue, Suite 100, Phoenix, AZ 85004
+  label: Main office
+  sources:
+  - contact
+sources:
+- id: home
+  title: Inter Tribal Council of Arizona home page
+  publisher: Inter Tribal Council of Arizona
+  link: https://itcaonline.com/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Mission statement, 21 member tribes, program areas
+- id: contact
+  title: Contact Us
+  publisher: Inter Tribal Council of Arizona
+  link: https://itcaonline.com/contact-us/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Address, phone, email
+checked: '2026-11-21'

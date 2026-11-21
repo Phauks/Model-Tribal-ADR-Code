@@ -1,0 +1,59 @@
+id: bureau-of-indian-affairs-tribal-justice-support-directorate
+name: Tribal Justice Support Directorate
+also_known_as:
+- TJS
+- BIA Office of Justice Services, Tribal Justice Support
+category: federal-program
+location:
+  city: Albuquerque
+  state: NM
+scope: national
+relevance:
+  text: The Bureau of Indian Affairs Tribal Justice Support Directorate, part of the Office of Justice
+    Services, works to develop and strengthen tribal justice systems while respecting traditional justice
+    systems. Under the Indian Tribal Justice Act it provides training and technical support to tribal
+    courts, conducts tribal court assessments, and passes funding to tribal courts through Bureau of Indian
+    Affairs regional offices. It also oversees Courts of Indian Offenses (CFR courts) and has published
+    an annotated model Indian juvenile code.
+  sources:
+  - tribal-justice-support
+  - topic
+possible_roles:
+- advice
+- sources-and-data
+- funding
+contacts:
+- kind: mailing-address
+  value: Tribal Justice Support Directorate, BIA-OJS-Tribal Justice Support, 1001 Indian School Road NW,
+    Albuquerque, New Mexico 87104
+  label: Mailing address
+  sources:
+  - topic
+- kind: web-page
+  value: https://www.bia.gov/bia/ojs/contact-us
+  label: Office of Justice Services contact page
+  sources:
+  - office-of-justice-services
+sources:
+- id: tribal-justice-support
+  title: Tribal Justice Support Directorate
+  publisher: Bureau of Indian Affairs
+  link: https://www.bia.gov/index.php/CFRCourts/tribal-justice-support-directorate
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Mission, statutory training duty, funding, CFR courts, model juvenile code link
+- id: topic
+  title: Tribal Justice (topic page)
+  publisher: Bureau of Indian Affairs
+  link: https://www.bia.gov/topic/tribal-justice
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Tribal court assessments and Albuquerque mailing address
+- id: office-of-justice-services
+  title: Who We Are - Office of Justice Services
+  publisher: Bureau of Indian Affairs
+  link: https://www.bia.gov/bia/ojs/who-we-are
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: TJS listed as an OJS area of activity; OJS contact page link
+checked: '2026-11-21'

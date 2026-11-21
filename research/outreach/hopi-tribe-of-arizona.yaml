@@ -1,0 +1,38 @@
+id: hopi-tribe-of-arizona
+name: Hopi Tribe of Arizona
+category: native-nation
+tribe_profile: hopi-tribe-of-arizona
+location:
+  state: AZ
+scope: local
+relevance:
+  text: 'Federally recognized Native nation whose government office the Bureau of Indian Affairs lists
+    in Arizona. Dispute resolution forums named in its law or court materials include: Village authority
+    over family disputes; Tribal Council hearing of disputes between villages.'
+  sources:
+  - bureau-of-indian-affairs-tribal-leaders-directory
+  - hopi-constitution-national-indian-law-library
+possible_roles:
+- consultation
+- reviewer
+- sources-and-data
+contacts: []
+sources:
+- id: bureau-of-indian-affairs-tribal-leaders-directory
+  title: Tribal Leaders Directory (data service)
+  publisher: Bureau of Indian Affairs
+  link: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: State of the nation's government office. The office contacts are in the Tribe profile, which
+    was built from this data service.
+- id: hopi-constitution-national-indian-law-library
+  title: Constitution and By-laws of the Hopi Tribe (as amended through Amendment III, December 7, 1993)
+  publisher: National Indian Law Library Tribal Law Gateway (Native American Rights Fund)
+  link: https://narf.org/nill/constitutions/hopi/hopi_const_1993.pdf
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Dispute resolution forum named in the nation's law or court materials.
+checked: '2026-11-21'
+notes: Government office contacts are in the nation's Tribe profile. Approach through the government office
+  and ask whether the court, peacemaking program or legal department is the right point of contact.

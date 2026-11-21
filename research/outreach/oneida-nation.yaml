@@ -1,0 +1,48 @@
+id: oneida-nation
+name: Oneida Nation
+category: native-nation
+tribe_profile: oneida-nation
+location:
+  state: WI
+scope: local
+relevance:
+  text: 'Federally recognized Native nation whose government office the Bureau of Indian Affairs lists
+    in Wisconsin. Dispute resolution forums named in its law or court materials include: Peacemaking and
+    Mediation Division of the Trial Court (peacemaking); Peacemaking and Mediation Division of the Trial
+    Court (mediation). Training recorded: Application to serve as Peacemaker/Mediator (background check
+    and interview process).'
+  sources:
+  - bureau-of-indian-affairs-tribal-leaders-directory
+  - oneida-wisconsin-8-oc-801-judiciary
+  - oneida-wisconsin-trial-court-rules
+possible_roles:
+- consultation
+- reviewer
+- sources-and-data
+contacts: []
+sources:
+- id: bureau-of-indian-affairs-tribal-leaders-directory
+  title: Tribal Leaders Directory (data service)
+  publisher: Bureau of Indian Affairs
+  link: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: State of the nation's government office. The office contacts are in the Tribe profile, which
+    was built from this data service.
+- id: oneida-wisconsin-8-oc-801-judiciary
+  title: Oneida Code of Laws, Title 8, Chapter 801 – Judiciary
+  publisher: Indigenous Peacemaking Initiative (Native American Rights Fund) document library
+  link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Chapter-801-Judiciary.pdf
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Dispute resolution forum named in the nation's law or court materials.
+- id: oneida-wisconsin-trial-court-rules
+  title: Oneida Judiciary Trial Court Rules (Rule 1.10 Peacemaking and Mediation)
+  publisher: Indigenous Peacemaking Initiative (Native American Rights Fund) document library
+  link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Oneida-Trial-Court-Rules.pdf
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Training on peacemaking or dispute resolution held with the nation.
+checked: '2026-11-21'
+notes: Government office contacts are in the nation's Tribe profile. Approach through the government office
+  and ask whether the court, peacemaking program or legal department is the right point of contact.

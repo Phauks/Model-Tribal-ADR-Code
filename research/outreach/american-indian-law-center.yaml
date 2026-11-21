@@ -8,55 +8,51 @@ location:
   state: NM
 scope: national
 relevance:
-  text: The American Indian Law Center publishes policy and legal analysis and runs law school recruitment
-    work for Native students. It has partnered with the University of New Mexico on tribal court training
-    programs.
+  text: Established in 1967, the American Indian Law Center describes itself as the oldest existing Indian-managed
+    and Indian-operated legal and public policy organization in the country. It assists tribal governments
+    and tribal courts on judicial systems and continues ongoing work on tribal code development, including
+    children's, elder protection and research codes. It also administers the Southwest Intertribal Court
+    of Appeals and the Pre-Law Summer Institute.
   sources:
-  - american-indian-law-center-policy
-  - american-indian-law-center-recruit
-  - turtletalk-training
+  - about
 possible_roles:
+- reviewer
 - consultation
 - advice
 - student-assistance
 contacts:
-- kind: web-page
-  value: https://www.ailc-inc.org/about/policy-legal-analysis/
-  label: Organization website
+- kind: telephone
+  value: (505) 277-5462
+  label: Main office
   sources:
-  - american-indian-law-center-policy
+  - about
+  - switca
+- kind: email
+  value: ailcinfo@law.unm.edu
+  label: General inbox
+  sources:
+  - about
+  - switca
+- kind: mailing-address
+  value: P.O. Box 4456, Albuquerque, NM 87196
+  label: Mailing address
+  sources:
+  - switca
 sources:
-- id: american-indian-law-center-policy
-  title: Policy & Legal Analysis
+- id: about
+  title: About | AILC
   publisher: American Indian Law Center, Inc.
-  link: https://www.ailc-inc.org/about/policy-legal-analysis/
+  link: https://ailc-inc.org/about
   accessed: '2026-11-21'
-  verification: search-result-only
-  supports: Organization website and a policy and legal analysis function.
-- id: american-indian-law-center-recruit
-  title: Law School Recruitment
+  verification: page-read
+  supports: Founding 1967, oldest Indian-managed legal and policy organization, tribal court and code
+    development work, SWITCA and PLSI programs, phone and email
+- id: switca
+  title: Southwest Intertribal Court of Appeals (SWITCA)
   publisher: American Indian Law Center, Inc.
-  link: https://www.ailc-inc.org/?p=1078
+  link: https://www.ailc-inc.org/switca/
   accessed: '2026-11-21'
-  verification: search-result-only
-  supports: Law school recruitment work.
-- id: turtletalk-training
-  title: Tribal Court Training Programs Announcement — UNM and American Indian Law Center — Sept. 12-14,
-    2011
-  publisher: Turtle Talk
-  link: https://turtletalk.blog/tag/southwest-indian-law-clinic/
-  accessed: '2026-11-21'
-  verification: search-result-only
-  supports: A 2011 joint tribal court training with UNM.
-- id: american-indian-law-center-repository
-  title: American Indian Law Center
-  publisher: UNM Digital Repository
-  link: https://digitalrepository.unm.edu/ailc
-  accessed: '2026-11-21'
-  verification: search-result-only
-  supports: UNM hosts an American Indian Law Center collection.
+  verification: page-read
+  supports: Mailing address, phone, email
 checked: '2026-11-21'
-notes: An independent nonprofit in Albuquerque, not part of the University of New Mexico. Its pages were
-  seen only in search results.
-notes_sources:
-- american-indian-law-center-repository
+notes: An independent nonprofit in Albuquerque, not part of the University of New Mexico.

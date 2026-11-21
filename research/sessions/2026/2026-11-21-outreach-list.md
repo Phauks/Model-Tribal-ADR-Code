@@ -14,7 +14,7 @@ tools:
   - kind: other
     name: Tribe profile dataset (pull request 2)
     detail: Nevada nation records were drafted from the profiles' Bureau of Indian Affairs, Census, National Indian Law Library and Tribal Law and Policy Institute citations; tribal court links were loaded again on 2026-11-21 and only working links kept.
-purpose: Consolidate the outreach list from section 9 of the planning analysis into cited records of organizations the project may ask for help (co-authoring, review, consultation, art), covering UNLV and Boyd School of Law, national Native organizations, Nevada nations and regional bodies, law schools with Indian law programs, dispute resolution bodies, and possible art contest partners.
+purpose: Consolidate, nationwide, the outreach list from section 9 of the planning analysis into cited records of organizations the project may ask for help (co-authoring, review, consultation, art), covering UNLV and Boyd School of Law, national Native organizations, Nevada nations and regional bodies, law schools with Indian law programs, dispute resolution bodies, and possible art contest partners.
 queries:
   - Saltman Center for Conflict Resolution faculty and Mediation Clinic
   - Wiener-Rogers Law Library federal Indian law and tribal law research guide
@@ -32,6 +32,9 @@ queries:
   - Indian law programs and clinics at Arizona, Arizona State, New Mexico, Oklahoma, Tulsa, Michigan State, UCLA, Colorado, Washington, Montana, North Dakota, Hawaiʻi, Lewis & Clark
   - ABA Section of Dispute Resolution; ABA Native American Concerns Committee; ABA Tribal Courts Council; Federal Bar Association Indian Law Section
   - Udall Foundation National Center for Environmental Conflict Resolution; Straus Institute; AAA-ICDR Foundation; JAMS Foundation; Uniform Mediation Act
+  - Intertribal courts and appellate courts; state and regional tribal judges associations; tribal-state court forums by state
+  - Department of Justice Office of Tribal Justice; Bureau of Justice Assistance tribal justice programs; Bureau of Indian Affairs Tribal Justice Support Directorate; National Tribal Trial College
+  - Regional intertribal organizations; American Indian Higher Education Consortium; Diné College and Diné Policy Institute; National Center on Restorative Justice
 sources_added: []
 limits: >-
   Outreach records cite web pages inline rather than as source records, and no
@@ -47,10 +50,23 @@ limits: >-
   were researched but are kept in the private plan, not here.
 ---
 
-Result: 102 records in `research/outreach/`: 20 Nevada-area Native nations
-(each pointing to its Tribe profile), 23 UNLV, Boyd and Nevada bodies, 31
-national Native, data governance and art organizations, and 28 law school
-programs and dispute resolution bodies. Named people, suggested asks, priority
+Result: 193 records in `research/outreach/`. The search is nationwide; the
+lead author's location in Nevada does not raise a body's priority.
+
+- 79 Native nations, each pointing to its Tribe profile: 59 nations across
+  the country whose law or court materials name a peacemaking or other
+  dispute resolution forum, or that held peacemaking training, selected from
+  the `dispute_resolution` and `justice_institutions` facts in the Tribe
+  profiles and citing the same source records; and 20 nations with
+  government offices or lands in Nevada, drafted first because the lead
+  author's school is there.
+- 33 national justice bodies: intertribal courts, tribal judges and bar
+  bodies, tribal-state court forums in eight states, federal tribal justice
+  programs, regional intertribal organizations, tribal colleges and a
+  restorative justice center.
+- 81 other organizations: UNLV and Boyd bodies, national Native legal,
+  governance, data and art organizations, law school Indian law programs and
+  dispute resolution bodies. Named people, suggested asks, priority
 and contact status are in the private plan
 ([decision record 0012](../../../docs/decisions/0012-outreach-list-split-public-and-private.md)).
 
@@ -74,10 +90,14 @@ Changes found while checking the original list:
 
 Not found: an Indian law clinic at Boyd, a Native student services office at
 UNLV, a Nevada tribal-state court forum, a Nevada tribal judges association,
-and an Alaska tribal judges association with its own website.
+and an Alaska tribal judges association with its own website. Not listed
+because no current official presence was found: the Northern Plains
+Intertribal Court of Appeals, the Oklahoma Indian Bar Association (social
+media only), the California Tribal Court Judges' Association, the California
+Tribal Chairpersons' Association, the Midwest Alliance of Sovereign Tribes,
+the Great Plains Tribal Chairmen's Association, and tribal judges
+associations in Michigan, Arizona, Minnesota, New Mexico and the Northwest.
 
-Data issues noticed in the Tribe profile dataset (pull request 2), for that
-work: several tribal court links no longer load (Las Vegas Paiute, Fallon
-Paiute-Shoshone, Reno-Sparks, Duck Valley, Goshute), and the Pyramid Lake
-profile cites a law-code source keyed to another nation
-(`national-indian-law-library-code-codes-snoqualmie`).
+Data issues noticed in the Tribe profile dataset while drafting (dead tribal
+court links, and a Pyramid Lake profile citing another nation's law code)
+were reported to that work and fixed before it merged.
