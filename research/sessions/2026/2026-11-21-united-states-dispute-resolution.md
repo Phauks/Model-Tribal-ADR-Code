@@ -483,6 +483,7 @@ sources_added:
 - usdc-vi-alternative-dispute-resolution-program
 - valencia-weber-1994-tribal-courts-custom-innovative-law
 - vi-ocean-pest-v-rebelly-2026-vi-5
+- vi-code-24-74a-employment-arbitration
 - vi-super-ct-r-40-civil-mediation
 - vi-whyte-v-bockino-2018
 - washington-superior-court-civil-rule-82-5
@@ -610,3 +611,15 @@ Register block page, and two Uniform Law Commission downloads redirected to
 signed storage links that carry a temporary access token. The script now
 reports such redirects for a person to check, retries once after a refused
 connection, and the workflow runs one at a time.
+
+## Follow-up: Whyte v. Bockino
+
+The lead author pulled Whyte v. Bockino, 69 V.I. 749 (2018), and the
+trial-court opinion, 69 V.I. 83 (Super. Ct. 2017), from Westlaw on
+2026-11-20. The record now summarizes the full opinion with pinpoints. Its
+footnote 5 quotes 24 V.I.C. § 74a, which lets employment disputes go to
+arbitration only by written agreement made after the dispute arises. That
+corrects the earlier note that no Virgin Islands arbitration statute was
+found; a new record, `vi-code-24-74a-employment-arbitration`, holds it. Its
+text was read only as quoted in Whyte, because the Justia compilation
+blocked automated access.
