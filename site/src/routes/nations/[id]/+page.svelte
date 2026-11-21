@@ -38,6 +38,18 @@
 				{designation.name}<NoteMarkers numbers={designation.notes} />
 			</p>
 		{/each}
+		<!-- Pronunciation: copied from the cited source, never worked out from the spelling -->
+		{#each data.pronunciations as entry, index (index)}
+			<p>
+				<span class="muted">How to say</span>
+				<span lang={entry.languageTag}>{entry.name}</span>:
+				{#if entry.respelling}{entry.respelling}{/if}
+				{#if entry.phoneticTranscription}/{entry.phoneticTranscription}/{/if}
+				{#if entry.recording}<a href={entry.recording}>Listen to the recording</a>{/if}<NoteMarkers
+					numbers={entry.notes}
+				/>
+			</p>
+		{/each}
 	{/if}
 
 	<!-- 2. Review panel -->

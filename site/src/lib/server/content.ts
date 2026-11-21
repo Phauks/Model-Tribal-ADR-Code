@@ -132,6 +132,13 @@ export interface NationRecord {
 		official_source?: string;
 		self_designation?: (CitedFact & { name: string; language_tag?: string })[];
 		former?: (CitedFact & { name: string })[];
+		pronunciation?: (CitedFact & {
+			name: string;
+			language_tag?: string;
+			respelling?: string;
+			phonetic_transcription?: string;
+			recording?: string;
+		})[];
 	};
 	recognition?: (CitedFact & { type: string; legal_basis?: string })[];
 	states?: (CitedFact & { state: string; presence?: string })[];

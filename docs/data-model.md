@@ -144,6 +144,16 @@ Names in a nation's own language are kept exactly as the nation writes them,
 in Unicode Normalization Form C, with a BCP 47 language tag (for example
 `chr`, `nv`, `haw`) and a romanized form only when the source gives one.
 
+`names.pronunciation` records how to say a name, and only as an authoritative
+source publishes it. The nation's own sources come first: its website, its
+language program, or a recording it published. Each entry names the name it
+pronounces and copies at least one of a sound-it-out `respelling`, a
+`phonetic_transcription` or a link to a `recording`, exactly as the source
+gives it. A pronunciation is never worked out from the spelling, and the
+field is left out when no such source is found. A nation can ask for an entry
+to be corrected or removed like any other fact
+([charter, commitment 6](charter.md#6-the-right-to-correct-restrict-or-withdraw)).
+
 ### Building profiles
 
 The first profiles were generated from cited facts in `research/raw/`
