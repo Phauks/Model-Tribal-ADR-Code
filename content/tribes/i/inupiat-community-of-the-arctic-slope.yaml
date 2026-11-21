@@ -85,11 +85,15 @@ contacts:
 - kind: website
   value: http://www.inupiatgov.com
   label: Tribal government website (State of Alaska tribal contacts list)
+  link_status: lapsed
+  link_checked: '2026-11-21'
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: high
   verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Inupiat Community of the Arctic Slope" (community: Utqiagvik, object 220)'
+  note: 'Checked 2026-11-21: the address now shows gambling advertising, not the Community''s website.
+    The Community''s website is https://icas-nsn.gov/ (listed above).'
 federal_administration:
   bureau_of_indian_affairs_region: Alaska
   bureau_of_indian_affairs_agency: Fairbanks Agency

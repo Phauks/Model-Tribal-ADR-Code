@@ -330,7 +330,7 @@ def main() -> int:
     profiles = []
     for path in sorted(pathlib.Path("content/tribes").glob("*/*.yaml")):
         record = yaml.safe_load(path.read_text(encoding="utf-8"))
-        sites = [(c["value"], c.get("source")) for c in record.get("contacts", []) if c.get("kind") == "website"]
+        sites = [(c["value"], c.get("source")) for c in record.get("contacts", []) if c.get("kind") == "website" and c.get("link_status") != "lapsed"]
         if sites:
             profiles.append({"id": record["id"], "name": record["names"]["official"], "sites": sites})
     with concurrent.futures.ThreadPoolExecutor(max_workers=24) as pool:

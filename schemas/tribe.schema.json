@@ -208,7 +208,13 @@
         "properties": {
           "kind": { "type": "string", "enum": ["website", "physical-address", "mailing-address", "phone", "fax", "email-general"] },
           "value": { "type": "string" },
-          "label": { "type": "string", "description": "Which office, for example 'Tribal government headquarters'." }
+          "label": { "type": "string", "description": "Which office, for example 'Tribal government headquarters'." },
+          "link_status": {
+            "type": "string",
+            "enum": ["live", "lapsed"],
+            "description": "For a website: lapsed when the address no longer belongs to the nation, for example a lapsed domain now showing unrelated content. The website shows a lapsed address as text, never as a link, and research scripts skip it."
+          },
+          "link_checked": { "$ref": "common.schema.json#/$defs/calendarDate", "description": "When link_status was last checked." }
         },
         "unevaluatedProperties": false
       }
