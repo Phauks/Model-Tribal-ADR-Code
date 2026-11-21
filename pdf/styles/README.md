@@ -48,7 +48,13 @@ manual the project follows.
    record may give its section with or without the symbol; after "§§" a hyphen
    becomes an en dash, but a hyphen inside one section number, such as Hawaii's
    "10H-1", is kept (`normalizeSection` in `../pipeline/citations.mjs`).
-7. **Comma after *supra*.** "Austin, *supra* note 2, at 14" (R6.2.3), where the
+7. **Federal Register documents.** A legislation record with `volume` and
+   `page` but no `section` prints as a Federal Register document: its name,
+   volume, "Fed. Reg." (from `container-title-short`), first page, any page
+   pinpoint after a comma, and the full date, as in "Exec. Order 12,988, 61
+   Fed. Reg. 4729 (Feb. 5, 1996)" (R19.4, and the executive order entry in
+   the Indigo Book's agency table).
+8. **Comma after *supra*.** "Austin, *supra* note 2, at 14" (R6.2.3), where the
    original had no comma.
 
 The tests in [`../tests/citations.test.mjs`](../tests/citations.test.mjs)
@@ -79,5 +85,19 @@ citation:
     date-parts: [[2001]]
 ```
 
-In the text, cite a code section's subdivision as `[@key, (2)]` and an act's
-section as `[@key, § 4]`.
+```yaml
+# A Federal Register document: Exec. Order 12,988, 61 Fed. Reg. 4729 (Feb. 5, 1996)
+citation:
+  type: legislation
+  title: Executive Order 12988, Civil Justice Reform
+  title-short: Exec. Order 12,988   # what prints; a notice may print its full title
+  container-title: Federal Register
+  container-title-short: Fed. Reg.
+  volume: "61"
+  page: "4729"                      # first page, or a range such as "46204-46206"
+  issued:
+    date-parts: [[1996, 2, 5]]      # date signed or published
+```
+
+In the text, cite a code section's subdivision as `[@key, (2)]`, an act's
+section as `[@key, § 4]`, and a Federal Register page as `[@key, 4731]`.

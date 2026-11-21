@@ -162,6 +162,23 @@
       </else>
     </choose>
   </macro>
+  <!-- Model Tribal ADR Code: a document in the Federal Register, cited by its
+       volume and first page, "Exec. Order 12,988, 61 Fed. Reg. 4729" (Indigo
+       Book R19.4 and the executive order entry in its agency table). A page
+       pinpoint follows the first page: "61 Fed. Reg. 4729, 4731". Used for a
+       legislation record with volume and page but no section; put "Fed. Reg."
+       in container-title-short. -->
+  <macro name="register-document">
+    <group delimiter=", ">
+      <text variable="title" form="short"/>
+      <group delimiter=" ">
+        <text variable="volume"/>
+        <text variable="container-title" form="short"/>
+        <text variable="page-first"/>
+      </group>
+      <text macro="full-pinpoint"/>
+    </group>
+  </macro>
   <!-- Model Tribal ADR Code: "(Unif. L. Comm'n 2001)", "(West 2021)", "(2018)",
        "(repealed 2015)" (Indigo Book R16.1.5, R17.3, R17.4, R18.4). -->
   <macro name="legislation-parenthetical">
@@ -175,9 +192,31 @@
           <text variable="publisher"/>
         </else>
       </choose>
-      <date variable="issued">
-        <date-part name="year"/>
-      </date>
+      <choose>
+        <!-- Model Tribal ADR Code: a Federal Register document gives its full
+             date, "(Feb. 5, 1996)" (Indigo Book R19.4). -->
+        <if variable="section" match="none">
+          <choose>
+            <if variable="volume page" match="all">
+              <date variable="issued">
+                <date-part name="month" form="short" suffix=" "/>
+                <date-part name="day" suffix=", "/>
+                <date-part name="year"/>
+              </date>
+            </if>
+            <else>
+              <date variable="issued">
+                <date-part name="year"/>
+              </date>
+            </else>
+          </choose>
+        </if>
+        <else>
+          <date variable="issued">
+            <date-part name="year"/>
+          </date>
+        </else>
+      </choose>
     </group>
   </macro>
   <macro name="legislation-short">
@@ -185,6 +224,9 @@
       <if variable="section">
         <text macro="code-section"/>
       </if>
+      <else-if variable="volume page" match="all">
+        <text macro="register-document"/>
+      </else-if>
       <else>
         <text macro="named-act"/>
       </else>
