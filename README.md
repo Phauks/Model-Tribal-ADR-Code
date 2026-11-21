@@ -11,7 +11,8 @@ from the plain-text sources in this repository.
 ## Status
 
 Pre-release (0.0.x). The project charter, data model and citation rules come
-first; no reading content or website code exists yet.
+first. A first version of the website is in [site/](site/README.md); the model
+provisions themselves are not written yet.
 
 ## Start here
 

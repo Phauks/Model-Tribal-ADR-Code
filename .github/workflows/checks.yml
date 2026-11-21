@@ -35,6 +35,29 @@ jobs:
       - run: pip install -r scripts/requirements.txt
       - run: python3 scripts/validate_records.py
 
+  site:
+    name: Website build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: site
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: site/package-lock.json
+      - run: npm ci
+      - name: Type check
+        run: npm run check
+      - name: Colors come only from design-tokens.json
+        run: npm run check:colors
+      - name: Build
+        run: npm run build
+      - name: Check the built pages, manifest and service worker
+        run: npm run check:built-site
+
   print:
     name: Print build
     runs-on: ubuntu-latest
@@ -80,7 +103,7 @@ jobs:
   all-checks:
     name: All checks
     if: always()
-    needs: [text, records, print]
+    needs: [text, records, site, print]
     runs-on: ubuntu-latest
     steps:
       - name: Fail if any check failed or was cancelled

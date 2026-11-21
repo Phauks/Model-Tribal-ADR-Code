@@ -1,0 +1,95 @@
+<script lang="ts">
+	import { siteName } from '#lib';
+	import type { PageProps } from './$types';
+
+	let { data }: PageProps = $props();
+</script>
+
+<svelte:head>
+	<title>{siteName}</title>
+	<meta
+		name="description"
+		content="Model provisions and commentary on dispute resolution that Native nations may adapt through their own processes."
+	/>
+</svelte:head>
+
+<div class="reading">
+	<h1>{siteName}</h1>
+	<p class="lead">
+		Model provisions and commentary on dispute resolution, offered as an optional framework that a
+		Native nation may adapt through its own processes. The project does not speak for any nation.
+	</p>
+
+	<div class="notice" role="note">
+		<p>
+			<strong>This is a working draft.</strong> Content version {data.versions.content}. Nothing here
+			has been reviewed or adopted by a Native nation yet, and the model provisions are not law in
+			force.
+		</p>
+	</div>
+</div>
+
+<div class="art-reserved" role="img" aria-label="Space reserved for art">
+	<p>Space reserved for art by a Native artist, to be chosen through the art contest.</p>
+</div>
+
+<h2>Contents</h2>
+<div class="contents-band">
+	<section class="panel" aria-labelledby="code-heading">
+		<h3 id="code-heading">The model code</h3>
+		<p class="muted">
+			Model provisions with commentary, in two tracks: the ADR track and the peacemaking track. Not
+			yet published.
+		</p>
+	</section>
+	<section class="panel" aria-labelledby="nations-heading">
+		<h3 id="nations-heading"><a href="/nations">Native nations</a></h3>
+		<p>
+			{#if data.nationCount > 0}
+				A page for each of {data.nationCount.toLocaleString('en-US')} nations and communities, drafted
+				from public sources.
+			{:else}
+				One page for every nation and community, drafted from public sources. A sample page shows the
+				layout until the records are published.
+			{/if}
+		</p>
+	</section>
+	<section class="panel" aria-labelledby="glossary-heading">
+		<h3 id="glossary-heading"><a href="/glossary">Glossary</a></h3>
+		<p>{data.glossaryCount} terms the project defines, with how and when to use them.</p>
+	</section>
+	<section class="panel" aria-labelledby="changelog-heading">
+		<h3 id="changelog-heading"><a href="/changelog">Changelog</a></h3>
+		<p>What changed in the content, the website and the print edition, version by version.</p>
+	</section>
+</div>
+
+<section class="panel panel-filled reading" aria-labelledby="for-nations-heading">
+	<h2 id="for-nations-heading">For Native nations</h2>
+	<p>
+		A nation can ask the project to correct, restrict or remove material about it, or offer to
+		contribute. Requests are private and need no account. Material named in a request to restrict or
+		remove it is taken out of public view before the request is reviewed.
+	</p>
+	<p><a class="button" href="/requests">Make a request</a></p>
+</section>
+
+<style>
+	.contents-band {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+		gap: 0 var(--space-4);
+	}
+
+	.contents-band .panel {
+		margin: var(--space-2) 0;
+	}
+
+	.contents-band h3 {
+		margin-top: 0;
+	}
+
+	.art-reserved {
+		margin: var(--space-5) 0;
+	}
+</style>
