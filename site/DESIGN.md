@@ -179,7 +179,8 @@ its fixed sections on each nation's page:
 6. Published dispute resolution law: linked, not reproduced, until the nation
    permits more ([data model, permission statuses](../docs/data-model.md#permission-statuses)).
 7. Notices and Labels from Local Contexts.
-8. Sources, and the date the page was last checked.
+8. Sources, each followed by the facts on the page that come from it, and
+   the date the page was last checked.
 
 **What is distinctive here** has two parts:
 
@@ -187,7 +188,7 @@ its fixed sections on each nation's page:
   approves. Until then the space says so and offers a link to contribute;
   the project never writes it for the nation.
 - **Recorded features.** Short sentences generated from the record's cited
-  facts, each with its citation, for example: a peacemaking program beside the
+  facts, each listed under its sources in the Sources section, for example: a peacemaking program beside the
   Tribal court (`justice_institutions`, `dispute_resolution.forums`); a
   published peacemaking or mediation law (`dispute_resolution_law`); a court
   of appeals; presence in more than one state (`states`); a heritage language
@@ -197,12 +198,25 @@ its fixed sections on each nation's page:
   comparing it with others
   ([style guide, section 1](../docs/style-guide.md#1-voice-and-tone)).
 
-**Reporting a problem.** Every fact and every table row carries a small
-"Report a problem" link. It opens the request form with the record and the
-field already filled in, for example `/requests?record=tribes/<id>&field=states`,
-so a nation's staff can point at the exact fact without describing it. Each
-link has hidden text naming the fact, so screen reader users hear "Report a
-problem with states," not a list of identical links.
+**Reporting a problem.** One "Report a problem" link sits at the top of each
+nation page, under the names, and opens the request form with the record
+filled in, for example `/requests?kind=correct&record=tribes/<id>`. Trevor
+asked on 2026-11-21 for one link per page instead of one beside every fact,
+which repeated the same link down the page.
+
+**Sources.** The sources of a nation page's facts are listed together in a
+"Sources" section at the end of the page, not beside each fact (Trevor,
+2026-11-21). Each source appears once, numbered, followed by every fact on
+the page that comes from it, grouped by the heading the fact appears under,
+with the place in the source and the date the value was true. Every fact
+stays traceable to its source; the reader finds it by source rather than by
+a mark beside the fact.
+
+**Contacts.** An address links to a Google Maps search for it; a phone number
+is a `tel:` link that opens the device's dialer; an email address is a
+`mailto:` link. Fax numbers stay as text. A value that cannot be read
+reliably, such as a phone number that is not ten digits, stays as text
+(Trevor, 2026-11-21).
 
 **Missing information.** Empty fields are left out rather than shown as
 "unknown," so a page never suggests a nation lacks something it may simply
@@ -248,9 +262,12 @@ for content on hover or focus.[^wcag-1413] The link itself goes to the full
 entry, so the card is never the only way to the content. A setting turns cards
 off.
 
-**Citations.** A numbered marker in the text; on wide screens the note sits
-in the margin beside the line, and on narrow screens it opens inline under
-the paragraph. Each note links to its source record and archived copy.
+**Citations.** In prose, such as a section's commentary or a glossary entry,
+a numbered marker in the text; on wide screens the note sits in the margin
+beside the line, and on narrow screens it opens inline under the paragraph.
+Each note links to its source record and archived copy. Data pages, such as
+a nation's facts, put no marker beside a fact; their sources are listed in a
+Sources section at the end (see [Nation pages](#nation-pages)).
 
 **Panels.** Outlined (`line`) or filled (`surface`). One panel per purpose;
 the design does not chop pages into rows of identical cards (project choice).
@@ -480,11 +497,18 @@ accessibility statement is published at `/about/accessibility`.
 - **Budgets (project choice):** under 100 KB of JavaScript compressed on a
   section page; no map library in the browser (the map is a static SVG, per
   the map spike); fonts subset to the characters used.
-- **Map:** drawn at build time with d3-geo as two SVG files, one themed by
-  tokens for the web and one grayscale for print, with a table holding the
-  same data (map tool spike, project files `spikes/map/REPORT.md`). The map
-  shows presence by state only
+- **Map:** drawn at build time with d3-geo, with a table holding the same
+  data (map tool spike, project files `spikes/map/REPORT.md`). The page
+  `/nations/map` has two maps. The first shades states by how many nations
+  have a recorded presence there, and draws no nation's land
   ([decision record 0007](../docs/decisions/0007-map-shows-state-presence.md)).
+  The second draws the twelve Bureau of Indian Affairs regions from the
+  Bureau's own boundary file (`geography/`), with a note that they are the
+  Bureau's administrative areas, not nations' lands; Trevor chose on
+  2026-11-21 to draw the official outlines even though the Navajo Region's
+  follows the Navajo Nation's land. `src/lib/map-geometry.ts` projects the
+  shapes once, in `vite.config.ts`, so the browser gets SVG paths and no map
+  library. The grayscale print version for the book is not built yet.
 
 ## 12. Words in the interface
 

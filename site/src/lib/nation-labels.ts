@@ -54,3 +54,15 @@ export const stateNames: Record<string, string> = {
 export function stateName(code: string): string {
 	return stateNames[code] ?? code;
 }
+
+/**
+ * The id of a Bureau of Indian Affairs region's row on the map page, such as
+ * "region-eastern-oklahoma" for "Eastern Oklahoma".
+ */
+export function regionAnchor(regionName: string): string {
+	return `region-${regionName
+		.normalize('NFKD')
+		.toLocaleLowerCase('en-US')
+		.replace(/[^a-z0-9]+/g, '-')
+		.replace(/^-|-$/g, '')}`;
+}

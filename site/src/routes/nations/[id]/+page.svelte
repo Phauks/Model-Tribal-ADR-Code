@@ -1,7 +1,7 @@
 <script lang="ts">
 	import FactGroups from '#lib/components/FactGroups.svelte';
-	import NoteList from '#lib/components/NoteList.svelte';
-	import NoteMarkers from '#lib/components/NoteMarkers.svelte';
+	import ReportLink from '#lib/components/ReportLink.svelte';
+	import SourceList from '#lib/components/SourceList.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -30,15 +30,12 @@
 	<!-- 1. Name -->
 	<h1>{page.officialName}</h1>
 	{#if !page.withdrawn}
-		<p class="small muted">
-			Name as the recognizing list gives it.<NoteMarkers numbers={page.officialNote} />
-		</p>
+		<p class="small muted">Name as the recognizing list gives it.</p>
 		{#each data.selfDesignations as designation (designation.name)}
-			<p class="lead" lang={designation.languageTag}>
-				{designation.name}<NoteMarkers numbers={designation.notes} />
-			</p>
+			<p class="lead" lang={designation.languageTag}>{designation.name}</p>
 		{/each}
 	{/if}
+	<ReportLink {record} />
 
 	<!-- 2. Review panel -->
 	<section class="panel panel-filled" aria-labelledby="review-heading">
@@ -65,7 +62,7 @@
 			<h3>Recorded features</h3>
 			<ul>
 				{#each data.features as feature, index (index)}
-					<li>{feature.text}<NoteMarkers numbers={feature.notes} /></li>
+					<li>{feature.text}</li>
 				{/each}
 			</ul>
 		{/if}
@@ -73,13 +70,13 @@
 		<!-- 4. At a glance -->
 		{#if data.glance.length > 0}
 			<h2>At a glance</h2>
-			<FactGroups groups={data.glance} {record} />
+			<FactGroups groups={data.glance} />
 		{/if}
 
 		<!-- 5. Courts and dispute resolution -->
 		{#if data.courts.length > 0}
 			<h2>Courts and dispute resolution</h2>
-			<FactGroups groups={data.courts} {record} />
+			<FactGroups groups={data.courts} />
 		{/if}
 
 		<!-- 6. Published dispute resolution law: linked, not reproduced -->
@@ -88,7 +85,7 @@
 			<p class="small muted">
 				Laws are linked, not reproduced, until the nation permits more.
 			</p>
-			<FactGroups groups={data.law} {record} />
+			<FactGroups groups={data.law} />
 		{/if}
 
 		<!-- 8. Sources -->
@@ -96,6 +93,6 @@
 			Know of a published source we have missed?
 			<a href="/requests?kind=contribute&record={record}">Add it</a>.
 		</p>
-		<NoteList notes={data.notes} />
+		<SourceList sources={data.sources} />
 	{/if}
 </article>

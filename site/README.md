@@ -80,6 +80,16 @@ resource can be renamed or replaced by editing that file.
   yet given, are left out. Until nation records are merged into
   `content/tribes/`, the nations section shows the fictitious example from
   `schemas/examples/tribe.example.yaml`, marked as an example.
+- **Map.** `/nations/map` shows nations by state and the Bureau of Indian
+  Affairs regions. `src/lib/map-geometry.ts` projects the shapes with d3-geo
+  when the site is built, through a small Vite plugin in `vite.config.ts`
+  (module `virtual:map-geometry`), so the browser gets plain SVG. The region
+  outlines are in `geography/`; see [geography/README.md](geography/README.md).
+- **Nation pages.** Facts carry no citation marks; their sources are listed
+  together at the end of the page (`src/lib/server/source-uses.ts`).
+  Addresses link to Google Maps, phone numbers to the dialer and email
+  addresses to a new message (`src/lib/contact-links.ts`). One "Report a
+  problem" link sits at the top of the page.
 - **Offline.** `src/service-worker/index.ts` saves the app shell, the fonts
   and the core pages when the site is first opened, saves other pages as
   they are read, and shows `/offline` for a page that was never saved.
