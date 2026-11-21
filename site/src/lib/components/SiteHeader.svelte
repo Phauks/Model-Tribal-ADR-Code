@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { siteName } from '#lib';
+	import AccountLink from './AccountLink.svelte';
 	import SettingsPanel from './SettingsPanel.svelte';
 	import ThemeSetting from './ThemeSetting.svelte';
 
@@ -11,6 +12,7 @@
 	const menu = [
 		{ label: 'Nations', link: '/nations' },
 		{ label: 'Glossary', link: '/glossary' },
+		{ label: 'Downloads', link: '/downloads' },
 		{ label: 'Changelog', link: '/changelog' }
 	];
 
@@ -40,6 +42,7 @@
 			</ul>
 		</nav>
 		<div class="masthead-tools">
+			<AccountLink />
 			<ThemeSetting />
 			<SettingsPanel />
 		</div>

@@ -66,7 +66,7 @@ recognition:
   state: NC
   legal_basis: Listed among North Carolina tribal communities by the North Carolina Commission of Indian
     Affairs
-  source: north-carolina-tribal-communities-2026
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
   as_of: '2026'
 states:
@@ -86,12 +86,12 @@ states:
   note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
 - state: NC
   presence: government-office
-  source: north-carolina-tribal-communities-2026
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
   as_of: '2026'
 - state: VA
   presence: government-office
-  source: north-carolina-tribal-communities-2026
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
   as_of: '2026'
   note: Physical address in Virgilina, Virginia; source says part of the High Plains community is in Halifax
@@ -110,7 +110,7 @@ census_areas:
 population:
 - count: 850
   kind: citizens
-  source: north-carolina-tribal-communities-2026
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: medium
   as_of: '2026'
   note: 'Source: ''the tribe''s 850 members''.'
@@ -118,25 +118,25 @@ contacts:
 - kind: mailing-address
   value: PO Box 3268 Roxboro, NC 27574
   label: Tribal mailing address
-  source: north-carolina-tribal-communities-2026
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
   as_of: '2026'
 - kind: physical-address
   value: 4218 Virgilina Rd. Virgilina, VA 24598
   label: Tribal physical address
-  source: north-carolina-tribal-communities-2026
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
   as_of: '2026'
 - kind: phone
   value: 434-585-3352
   label: Tribal phone
-  source: north-carolina-tribal-communities-2026
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
   as_of: '2026'
 - kind: website
   value: https://www.sappony.org
   label: Official website
-  source: north-carolina-tribal-communities-2026
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
   as_of: '2026'
 review:

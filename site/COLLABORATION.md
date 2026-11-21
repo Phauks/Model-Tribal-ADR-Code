@@ -107,6 +107,9 @@ requester to make an account or solve a puzzle.
 
 ## How sign-in works
 
+The "Sign in" link in the masthead of every page, and "Co-author sign-in" in
+the footer, start here.
+
 1. `/sign-in` sends the person to Auth0's sign-in page, using the Auth0
    server SDK (`@auth0/auth0-server-js`) with PKCE.
 2. Auth0 sends them back to `/sign-in/callback`. The site matches the sign-in
@@ -123,6 +126,12 @@ requester to make an account or solve a puzzle.
 4. On every workspace page the site checks the database again, so removing
    someone's access takes effect at once, even if they are signed in.
 5. "Sign out" ends the session here and at Auth0.
+6. The masthead's link reads "Workspace" instead of "Sign in" while a
+   `signed-in-hint` cookie is present (`src/lib/signed-in-hint.ts`). It holds
+   only "1", is readable by the page's script because public pages are built
+   ahead of time and cannot ask the Worker, and grants nothing: it is set at a
+   successful sign-in and on each workspace page while the session is valid,
+   and cleared at sign-out or once the session has ended.
 
 Workspace pages, sign-in and the request form are never cached, by the
 browser or by the offline copy (`src/service-worker/index.ts`), and cannot be

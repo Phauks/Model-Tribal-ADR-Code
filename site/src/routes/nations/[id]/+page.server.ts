@@ -1,4 +1,5 @@
 import { error } from '@sveltejs/kit';
+import geometry from 'virtual:map-geometry';
 import { emailLink, mapSearchLink, phoneLink, webLink } from '#lib/contact-links.ts';
 import { nations, type CitedFact, type NationRecord } from '#lib/server/content.ts';
 import { SourceUses } from '#lib/server/source-uses.ts';
@@ -233,6 +234,30 @@ function recordedFeatures(record: NationRecord, sources: SourceUses): FactItem[]
 	return features;
 }
 
+/**
+ * The small map of the states where sources record the nation's presence
+ * (decision record 0007: state presence only, never the nation's land). It
+ * reuses the shapes of the nations map, simplified for a small drawing, and
+ * is left out when no state is recorded.
+ */
+function presenceMap(record: NationRecord, sources: SourceUses) {
+	const present = new Set((record.states ?? []).map((fact) => fact.state));
+	if (present.size === 0) return undefined;
+	sources.add('census-cartographic-boundary-states-2017', {
+		section: 'Map of states with a presence',
+		text: 'state and territory outlines, through us-atlas 3.0.1'
+	});
+	return {
+		width: geometry.width,
+		height: geometry.height,
+		stateNames: [...present].map(stateName).sort((first, second) => first.localeCompare(second, 'en')),
+		states: geometry.smallStates
+			.map((shape) => ({ ...shape, name: stateName(shape.code), present: present.has(shape.code) }))
+			// Shaded states are drawn last, so their outlines sit on top of their neighbors'.
+			.sort((first, second) => Number(first.present) - Number(second.present))
+	};
+}
+
 export const load: PageServerLoad = ({ params }) => {
 	const record = nations().find((candidate) => candidate.id === params.id);
 	if (!record) error(404, 'No nation page has this address.');
@@ -258,6 +283,7 @@ export const load: PageServerLoad = ({ params }) => {
 			glance: [],
 			courts: [],
 			law: [],
+			map: undefined,
 			sources: []
 		};
 	}
@@ -301,6 +327,7 @@ export const load: PageServerLoad = ({ params }) => {
 		pronunciations,
 		features: recordedFeatures(record, sources),
 		glance: atAGlance(record, sources),
+		map: presenceMap(record, sources),
 		courts: courtsAndDisputeResolution(record, sources),
 		law: publishedLaw(record, sources),
 		sources: sources.list

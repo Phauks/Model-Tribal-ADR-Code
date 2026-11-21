@@ -1,0 +1,120 @@
+{
+  "typst": "typst 0.15.1 (9dfd3a08)",
+  "rows": 1000,
+  "results": [
+    {
+      "trimSize": "6x9",
+      "variant": "default",
+      "output": "out/print/nations-directory-6x9.pdf",
+      "timesInSeconds": [
+        0.916,
+        0.812,
+        0.7,
+        0.738,
+        0.773
+      ],
+      "pages": 40,
+      "tagged": true,
+      "structure": {
+        "Table": 1,
+        "THead": 1,
+        "TBody": 1,
+        "TR": 1001,
+        "TH": 6,
+        "TD": 6000,
+        "Caption": 1
+      },
+      "header_cell_scopes": {
+        "Column": 6
+      },
+      "color_spaces": {
+        "/ICCBased with 1 component(s)": 40
+      }
+    },
+    {
+      "trimSize": "6x9",
+      "variant": "-tagged-row-headers",
+      "output": "out/print/nations-directory-6x9-tagged-row-headers.pdf",
+      "timesInSeconds": [
+        0.801,
+        0.631,
+        0.676,
+        0.671,
+        0.654
+      ],
+      "pages": 40,
+      "tagged": true,
+      "structure": {
+        "Table": 1,
+        "TR": 1001,
+        "TH": 1006,
+        "TD": 5000,
+        "Caption": 1
+      },
+      "header_cell_scopes": {
+        "Column": 6,
+        "Row": 1000
+      },
+      "color_spaces": {
+        "/ICCBased with 1 component(s)": 40
+      }
+    },
+    {
+      "trimSize": "8.5x11",
+      "variant": "default",
+      "output": "out/print/nations-directory-8.5x11.pdf",
+      "timesInSeconds": [
+        0.628,
+        0.599,
+        0.655,
+        0.623,
+        0.615
+      ],
+      "pages": 17,
+      "tagged": true,
+      "structure": {
+        "Table": 1,
+        "THead": 1,
+        "TBody": 1,
+        "TR": 1001,
+        "TH": 6,
+        "TD": 6000,
+        "Caption": 1
+      },
+      "header_cell_scopes": {
+        "Column": 6
+      },
+      "color_spaces": {
+        "/ICCBased with 1 component(s)": 17
+      }
+    },
+    {
+      "trimSize": "8.5x11",
+      "variant": "-tagged-row-headers",
+      "output": "out/print/nations-directory-8.5x11-tagged-row-headers.pdf",
+      "timesInSeconds": [
+        0.612,
+        0.728,
+        0.825,
+        0.614,
+        0.647
+      ],
+      "pages": 17,
+      "tagged": true,
+      "structure": {
+        "Table": 1,
+        "TR": 1001,
+        "TH": 1006,
+        "TD": 5000,
+        "Caption": 1
+      },
+      "header_cell_scopes": {
+        "Column": 6,
+        "Row": 1000
+      },
+      "color_spaces": {
+        "/ICCBased with 1 component(s)": 17
+      }
+    }
+  ]
+}

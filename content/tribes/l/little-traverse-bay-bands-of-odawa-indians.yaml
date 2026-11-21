@@ -249,7 +249,7 @@ dispute_resolution:
     as_of: 2015-08
     locator: Rule XXIX
     note: Language tag otw (Ottawa/Odawa) assigned because the rule glosses the term as Odawa peacemaking.
-  - kind: mediation-program
+  - kind: mediation
     name: Court-ordered mediation in child protection
     description: After finding probable cause at a preliminary hearing the court may order custodians
       to participate in mediation; statements are not part of the record or used against them, except
@@ -280,7 +280,7 @@ dispute_resolution:
     confidence: medium
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/peacemaking-in-child-protection-cases/
-  - kind: family-or-talking-circle
+  - kind: circle-process
     name: Mnodaawin Peacemaking Circles (juvenile)
     own_term:
       name: Mnodaawin
@@ -289,7 +289,8 @@ dispute_resolution:
       such as truancy, curfew, incorrigibility and minor offenses. Trained facilitators lead circles of
       the juvenile, parents, family, elders and community members (the victim may take part or be represented)
       until they reach a written consensus agreement signed by all, followed by monitoring circles over
-      several months. The page says the Tribal Court plans similar processes for civil disputes.
+      several months. The page says the Tribal Court will develop similar processes for civil disputes
+      and other types of cases.
     case_types:
     - juvenile
     participation: voluntary
@@ -299,6 +300,7 @@ dispute_resolution:
     link: https://ltbbodawa-nsn.gov/judicial-branch/peacemaking/
     source: ltbb-judicial-branch-peacemaking-page
     confidence: low
+    verification: read-in-full
     as_of: '2026-11-21'
     note: Official page but undated (as_of is the access date), so confidence is low under the contract;
       it reads as a program description from the program's start. Agreements may include school, community
@@ -394,25 +396,6 @@ dispute_resolution:
   - kind: other
     title: 7.412 PATRON DISPUTE RESOLUTION
     citation: 7.412 PATRON DISPUTE RESOLUTION
-    link: https://www.narf.org/nill/codes/ltraverse/index.html
-    source: national-indian-law-library-code-index-ltraverse
-    confidence: medium
-    as_of: 2024-03
-    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
-      text was not read, so there is no summary. Kind assigned from words in the title.
-  - kind: traditional-dispute-resolution
-    title: 'Chapter 3 – Rules of Civil Procedure, Rule XXIX: Mnodaawin'
-    citation: 'Chapter 3 – Rules of Civil Procedure, Rule XXIX: Mnodaawin'
-    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-Traverse-Civil-Rules-of-Procedure-Amended-August-2015.pdf
-    source: narf-tribal-peacemaking-laws
-    confidence: medium
-    as_of: '2025-09-29'
-    locator: Little Traverse Bay Bands of Odawa Indians, Michigan
-    note: 'Native American Rights Fund description (provision itself not read): Provides authorization
-      and procedures for transferring a case to Mnodaawin.'
-  - kind: other
-    title: 7.412 PATRON DISPUTE RESOLUTION
-    citation: 7.412 PATRON DISPUTE RESOLUTION
     link: https://narf.org/nill/codes/ltraverse/index.html
     source: national-indian-law-library-code-codes-ltraverse
     confidence: medium
@@ -421,6 +404,16 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: March 2024); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
+  - kind: traditional-dispute-resolution
+    title: 'Chapter 3 – Rules of Civil Procedure, Rule XXIX: Mnodaawin'
+    citation: 'Chapter 3 – Rules of Civil Procedure, Rule XXIX: Mnodaawin'
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-Traverse-Civil-Rules-of-Procedure-Amended-August-2015.pdf
+    source: narf-ipi-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Little Traverse Bay Bands of Odawa Indians, Michigan
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization
+      and procedures for transferring a case to Mnodaawin.'
   - kind: arbitration
     title: LIMITED WAIVER OF SOVEREIGN IMMUNITY OF THE LITTLE TRAVERSE BAY BANDS OF ODAWA INDIANS TO AUTHORIZE
       ARBITRATION WITH DROPBOX
@@ -441,7 +434,7 @@ dispute_resolution:
     summary: Statute title states that it authorizes a bank loan or related swap and adopts law governing
       arbitration of disputes related to the loan, along with law on security interests.
     link: https://www.narf.org/nill/codes/ltraverse/index.html
-    source: national-indian-law-library-code-index-ltraverse
+    source: national-indian-law-library-code-codes-ltraverse
     confidence: medium
     as_of: 2024-03
     note: 'From the statute title in the National Indian Law Library table of contents; the statute text
@@ -456,7 +449,7 @@ dispute_resolution:
     summary: Statute title states that it authorizes a bank loan or related swap and adopts law governing
       arbitration of disputes related to the loan, along with law on security interests.
     link: https://www.narf.org/nill/codes/ltraverse/index.html
-    source: national-indian-law-library-code-index-ltraverse
+    source: national-indian-law-library-code-codes-ltraverse
     confidence: medium
     as_of: 2024-03
     note: 'From the statute title in the National Indian Law Library table of contents; the statute text
@@ -470,7 +463,7 @@ dispute_resolution:
     summary: Statute title states a limited waiver of the Bands' sovereign immunity to authorize arbitration
       with a named company.
     link: https://www.narf.org/nill/codes/ltraverse/index.html
-    source: national-indian-law-library-code-index-ltraverse
+    source: national-indian-law-library-code-codes-ltraverse
     confidence: medium
     as_of: 2024-03
     note: 'From the statute title in the National Indian Law Library table of contents; the statute text
@@ -483,7 +476,7 @@ dispute_resolution:
     summary: Statute title states that it authorizes a bank loan or related swap and adopts law governing
       arbitration of disputes related to the loan, along with law on security interests.
     link: https://www.narf.org/nill/codes/ltraverse/index.html
-    source: national-indian-law-library-code-index-ltraverse
+    source: national-indian-law-library-code-codes-ltraverse
     confidence: medium
     as_of: 2024-03
     note: 'From the statute title in the National Indian Law Library table of contents; the statute text
@@ -497,7 +490,7 @@ dispute_resolution:
     summary: Statute title states that it authorizes a bank loan or related swap and adopts law governing
       arbitration of disputes related to the loan, along with law on security interests.
     link: https://www.narf.org/nill/codes/ltraverse/index.html
-    source: national-indian-law-library-code-index-ltraverse
+    source: national-indian-law-library-code-codes-ltraverse
     confidence: medium
     as_of: 2024-03
     note: 'From the statute title in the National Indian Law Library table of contents; the statute text
@@ -512,7 +505,7 @@ dispute_resolution:
     summary: Statute title states that it authorizes a bank loan or related swap and adopts law governing
       arbitration of disputes related to the loan, along with law on security interests.
     link: https://www.narf.org/nill/codes/ltraverse/index.html
-    source: national-indian-law-library-code-index-ltraverse
+    source: national-indian-law-library-code-codes-ltraverse
     confidence: medium
     as_of: 2024-03
     note: 'From the statute title in the National Indian Law Library table of contents; the statute text

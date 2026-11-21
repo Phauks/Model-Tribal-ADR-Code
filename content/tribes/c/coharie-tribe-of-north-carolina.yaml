@@ -11,11 +11,11 @@ names:
     note: Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting
       source.
   - name: Coharie Indian Tribe
-    source: north-carolina-tribal-communities-2026
+    source: north-carolina-commission-of-indian-affairs-tribal-communities
     confidence: high
     as_of: '2026'
   - name: Coharie Tribe
-    source: north-carolina-tribal-communities-2026
+    source: north-carolina-commission-of-indian-affairs-tribal-communities
     confidence: high
     as_of: '2026'
   official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
@@ -60,7 +60,7 @@ recognition:
   state: NC
   legal_basis: Listed among North Carolina tribal communities by the North Carolina Commission of Indian
     Affairs
-  source: north-carolina-tribal-communities-2026
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
   as_of: '2026'
 states:
@@ -87,7 +87,7 @@ states:
   note: HUD gives recipient city Clinton.
 - state: NC
   presence: government-office
-  source: north-carolina-tribal-communities-2026
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
   as_of: '2026'
 census_areas:
@@ -104,7 +104,7 @@ census_areas:
 population:
 - count: 2700
   kind: citizens
-  source: north-carolina-tribal-communities-2026
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: medium
   as_of: '2026'
   note: 'Source: ''approximately 2,700 members''.'
@@ -112,19 +112,19 @@ contacts:
 - kind: physical-address
   value: 7531 N U.S. Hwy 421, Clinton, NC 28328
   label: Tribal address
-  source: north-carolina-tribal-communities-2026
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
   as_of: '2026'
 - kind: phone
   value: 910-564-6909
   label: Tribal office phone
-  source: north-carolina-tribal-communities-2026
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
   as_of: '2026'
 - kind: website
   value: https://www.coharietribe.org
   label: Official website
-  source: north-carolina-tribal-communities-2026
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
   as_of: '2026'
 review:
