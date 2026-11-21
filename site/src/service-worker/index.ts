@@ -26,8 +26,18 @@ const offlinePage = '/offline';
 const corePages = ['/', '/glossary', '/changelog', offlinePage];
 const neverCached = ['/workspace', '/sign-in', '/sign-out', '/requests'];
 
+/**
+ * A nation's seal or logo is never saved for offline use, so that an image a
+ * nation asks to withdraw stops showing at once (charter, commitment 5;
+ * docs/official-images.md).
+ */
+const nationImage = /^\/nations\/[^/]+\/image$/;
+
 function isNeverCached(path: string): boolean {
-	return neverCached.some((prefix) => path === prefix || path.startsWith(`${prefix}/`));
+	return (
+		nationImage.test(path) ||
+		neverCached.some((prefix) => path === prefix || path.startsWith(`${prefix}/`))
+	);
 }
 
 function isFallbackFont(path: string): boolean {

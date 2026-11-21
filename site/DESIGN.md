@@ -173,7 +173,10 @@ nation's staff always know where to look, as the Tribal Law Gateway does with
 its fixed sections on each nation's page:
 
 1. Name as the recognizing list gives it, and the nation's own name for
-   itself, exactly as the nation writes it, once the nation confirms it.
+   itself, exactly as the nation writes it, once the nation confirms it. Beside it, the nation's seal or
+   logo when its reuse status allows showing it, credited to the nation's
+   website, with a link to ask for its removal
+   ([official-images.md](../docs/official-images.md)).
 2. Review panel: the review status (drafted from public sources, sent to the
    nation, reviewed by the nation, approved by the nation), what that means,
    and "Is this about your nation? Make a request."

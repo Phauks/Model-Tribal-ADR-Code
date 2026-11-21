@@ -107,11 +107,25 @@ go out through the outreach plan in the project files (`outreach/`).
 
 Copies live outside this repository, in the project's private research
 captures under `nation-images/<nation id>/`, with a `manifest.json` that lists
-each file's source link, retrieval date and SHA-256. When the website serves
-images, the same paths are used in the private source documents bucket (R2), so
-removing a nation's folder removes every copy. Images are never committed to
-git, because a public history cannot be fully rewritten if a nation later asks
-for removal.
+each file's source link, retrieval date and SHA-256. Images are never committed
+to git, because a public history cannot be fully rewritten if a nation later
+asks for removal.
+
+The website serves images from the private source documents bucket (R2), under
+the same paths ([decision record 0017](decisions/0017-serve-nation-images-from-the-private-bucket.md)):
+
+- The build lists the images whose status allows showing them
+  (`site/src/lib/official-images.ts`). Only those are served, at
+  `/nations/<nation id>/image`; any other image is never served, whatever the
+  bucket holds.
+- The bucket copy is filled the first time an image is asked for: the Worker
+  fetches it from the nation's own website and keeps it only if its SHA-256
+  matches the reviewed copy. If the nation has changed or removed the image,
+  nothing is shown until it is reviewed again, and the page hides the figure.
+- Responses are cached for an hour at most and never saved for offline use.
+- To withdraw an image, set its status, rebuild the site, and delete the
+  object `nation-images/<nation id>/...` from the bucket (and the private
+  research copy, for `withdrawn-at-request`).
 
 ## Legal and ethical background
 
@@ -204,9 +218,11 @@ ask for any image to be restricted for that reason alone.
 
 ## Ways to show the images
 
+Trevor Goldsmith chose the first option on 2026-11-21.
+
 | Option | For | Against |
 | --- | --- | --- |
-| Serve from the private R2 bucket through a Worker route that checks `reuse.status` on every request (recommended) | No copies in git; removal is one delete; the rule is enforced when the image is served | Needs a small route and an upload step |
+| Serve from the private R2 bucket through a Worker route that serves only images the rule allows (chosen) | No copies in git; removal is one delete; the rule is enforced when the image is served | Needs a small route; the first view of each image depends on the nation's website being reachable |
 | Link to the image on the nation's own website | No copy at all; the nation keeps control | Breaks when the site changes; embedding may still count as display;[^embedding] the nation's server sees the project's visitors |
 | Commit shown images to the website's static files | Simplest | Images stay in public git history even after removal, against charter commitment 6 |
 | Show no images; name and link only | No reuse questions | Loses the visual identification the nations chose |

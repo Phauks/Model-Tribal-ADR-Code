@@ -18,6 +18,11 @@ declare module 'virtual:review-subjects' {
 	}[];
 }
 
+declare module 'virtual:nation-images' {
+	/** The nations' official images the Worker may serve, listed at build time. */
+	export const nationImages: import('#lib/official-images.ts').ServableImage[];
+}
+
 declare module 'virtual:build' {
 	/** The git commit the site was built from, or empty when built on a computer. */
 	export const buildCommit: string;
