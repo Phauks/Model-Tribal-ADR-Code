@@ -1,0 +1,26 @@
+id: short-trial
+name: short trial
+classification: court-process
+tradition: [western-legal, governmental]
+definition: >-
+  Nevada defines a short trial as "a trial that is conducted, with the consent of
+  the parties to the action, in accordance with procedures designed to limit the
+  length of the trial," and lists it among the "alternative methods of resolving
+  disputes" the Supreme Court may authorize [@nevada-revised-statutes-38-250, NRS
+  38.249, 38.258]. It is governed by the Nevada Short Trial Rules [@nevada-short-trial-rules].
+characteristics:
+  who_decides: [a-court-or-agency]
+  outcome: [binding]
+  neutral_role: [adjudicative]
+  participation: [voluntary, required-by-court-or-law]
+  settings: [court-connected]
+  note: >-
+    Unlike a summary jury trial, the verdict binds (project analysis, from the rules
+    cited).
+related: [summary-jury-trial, nonbinding-arbitration]
+jurisdictions:
+- level: state
+  state: NV
+sources: [nevada-revised-statutes-38-250, nevada-short-trial-rules]
+basis: source-and-project-analysis
+status: proposed

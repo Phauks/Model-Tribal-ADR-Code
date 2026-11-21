@@ -14,6 +14,7 @@ uses a fictitious nation on purpose.
 | `provision.schema.json` | Front matter of `content/provisions/*.md` |
 | `commentary.schema.json` | Front matter of `content/commentary/*.md` |
 | `glossary.schema.json` | `content/glossary/*.yaml` |
+| `method.schema.json` | `content/methods/*.yaml` |
 | `variable.schema.json` | `content/variables/*.yaml` |
 | `research-session.schema.json` | Front matter of `research/sessions/**/*.md` |
 | `outreach-organization.schema.json` | `research/outreach/*.yaml` |

@@ -1,0 +1,49 @@
+key: nevada-short-trial-rules
+kind: court-rule
+citation:
+  type: legislation
+  title: Nevada Short Trial Rules
+  author:
+  - literal: Supreme Court of Nevada
+  issued:
+    date-parts: [[2000, 7, 6]]
+  URL: https://www.leg.state.nv.us/CourtRules/NSTR.html
+  accessed:
+    date-parts: [[2026, 11, 21]]
+original_link: https://www.leg.state.nv.us/CourtRules/NSTR.html
+retrieved: 2026-11-21
+archives:
+- service: wayback
+  link: >-
+    https://web.archive.org/web/20260712174628/https://www.leg.state.nv.us/courtrules/NSTR.html
+  captured: 2026-07-12
+history:
+  status: live
+  last_checked: 2026-11-21
+rights:
+  status: no-permission-needed
+  basis: government-edict
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NV
+methods: [short-trial]
+topics: [court-connected-program, expedited-trial, jury]
+annotation: >-
+  The Short Trial Rules were adopted June 7, 2000 (effective July 6, 2000), readopted
+  with amendments by order of December 22, 2004 (effective January 1, 2005), and
+  amended through March 12, 2026. The program is mandatory in districts with mandatory
+  court-annexed arbitration. A case enters it when a party requests trial de novo
+  after arbitration, or by stipulation instead of arbitration. Juries have four members
+  by default (six, or eight for good cause), each side gets 3.5 hours, and judgments
+  are capped at $100,000 per plaintiff unless the parties stipulate otherwise. The
+  statute lists the short trial among 'alternative methods of resolving disputes'
+  (NRS 38.258), and NMR 9 sends unresolved mediations to the short trial program.
+  (project analysis) It is an adjudicative, binding jury trial, not an advisory summary
+  jury trial, so it is proposed as a new method ('short-trial').
+access:
+  open: true
+  pull_from: [free-web]
+found_in:
+- 2026-11-21-united-states-dispute-resolution
+notes: Read on the original page. Citator check not yet run.

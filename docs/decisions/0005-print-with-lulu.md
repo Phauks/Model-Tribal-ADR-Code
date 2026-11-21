@@ -35,18 +35,24 @@ lead author, Trevor Goldsmith, has prior good experience with Lulu.
   analysis).
 - Footnote placement (one note in the sample started a page late) is to be
   tuned and checked on a full-length build before the 1st Edition.
-- The markdown-it "typographer" option stays off, because it turned "(c)" into
-  "©" and would corrupt legal subsection labels (measured in the test build).
-- Trim size, binding, ink and paper are chosen only from Lulu's
-  distribution-eligible options: US Trade 6 x 9 in, paperback perfect bound,
-  standard black-and-white ink, 60# cream or white paper, 32 to 800 pages
-  (Lulu, *Retail Distribution Eligible Products*, p.5). Premium black-and-white
-  ink is not eligible (Lulu, *Retail Distribution Guide*, p.9).
+- The markdown-it "typographer" replacements stay off, because they turned
+  "(c)" into "©" and would corrupt legal subsection labels (measured in the
+  test build). The print build turns on only its curly quotes.
+- Binding, ink and paper are chosen only from Lulu's distribution-eligible
+  options: paperback perfect bound, standard black-and-white ink, 60# cream or
+  white paper, 32 to 800 pages (Lulu, *Retail Distribution Eligible Products*,
+  p.5). Premium black-and-white ink is not eligible (Lulu, *Retail Distribution
+  Guide*, p.9).
+- The trim size is not chosen yet. The print build supports every trim Lulu
+  lists as distribution-eligible for that binding and ink, and the size is one
+  line (`trim`) in `pdf/book.yaml`; margins, gutter, type sizes and spine width
+  follow from it (2026-11-21; see [pdf/README.md](../../pdf/README.md)). US
+  Trade 6 x 9 in is the default until the lead author decides.
 - An ISBN is required for distribution (same Lulu help page).
 
 ## Evidence
 
 The PDF engine test build (report, sample PDFs, page images, build scripts and
 measurements) is kept outside the repository in the project's shared files at
-`spikes/pdf-engine/`. Its findings will be summarized in a research session
-file when the print build is added.
+`spikes/pdf-engine/`. The sources read for the print build are logged in
+[research/sessions/2026/2026-11-21-print-pipeline.md](../../research/sessions/2026/2026-11-21-print-pipeline.md).

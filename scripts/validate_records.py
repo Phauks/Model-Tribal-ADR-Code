@@ -13,6 +13,10 @@ Checks:
     names another outreach record, and a Native nation record names a Tribe
     profile (checked against content/tribes/ once profiles exist)
   - every source a tribe profile cites names a source record
+  - every method id (in 'methods' lists and in a method's 'broader', 'combines',
+    'related' and 'redirect_to') names a method record, and no method is a
+    broader kind of itself
+  - (warning only) every tribe profile forum 'kind' names a method record
 
 Run from the repository root:  python3 scripts/validate_records.py
 Requires the packages in scripts/requirements.txt.
@@ -44,11 +48,13 @@ EXAMPLES = {
     "glossary.example.yaml": "glossary.schema.json",
     "outreach-organization.example.yaml": "outreach-organization.schema.json",
     "outreach-plan.example.yaml": "outreach-plan.schema.json",
+    "method.example.yaml": "method.schema.json",
 }
 RECORD_FOLDERS = [
     ("content/sources/*/*.yaml", "source.schema.json"),
     ("content/glossary/*.yaml", "glossary.schema.json"),
     ("content/tribes/*/*.yaml", "tribe.schema.json"),
+    ("content/methods/*.yaml", "method.schema.json"),
     ("content/variables/*.yaml", "variable.schema.json"),
     ("content/provisions/*.md", "provision.schema.json"),
     ("content/commentary/*.md", "commentary.schema.json"),
@@ -166,6 +172,12 @@ def main() -> int:
     sources = {path.stem for path, _ in records.get("source.schema.json", [])}
     glossary = {path.stem for path, _ in records.get("glossary.schema.json", [])}
     sessions = {path.stem for path, _ in records.get("research-session.schema.json", [])}
+    methods = {path.stem: record for path, record in records.get("method.schema.json", [])}
+
+    def check_methods(path: pathlib.Path, field: str, identifiers) -> None:
+        for identifier in identifiers or []:
+            if identifier not in methods:
+                errors.append(f"{path}: {field} names a missing method record '{identifier}'")
 
     for path, record in records.get("source.schema.json", []) + records.get("tribe.schema.json", []):
         if path.parent.name != letter_folder(path.stem):
@@ -177,6 +189,33 @@ def main() -> int:
         for session in record.get("found_in", []):
             if session not in sessions:
                 errors.append(f"{path}: found_in names a missing research session '{session}'")
+        check_methods(path, "methods", record.get("methods"))
+
+    for path, record in records.get("method.schema.json", []):
+        if record.get("id") != path.stem:
+            errors.append(f"{path}: id does not match the file name")
+        for field in ("broader", "combines", "related"):
+            check_methods(path, field, record.get(field))
+        if record.get("redirect_to"):
+            check_methods(path, "redirect_to", [record["redirect_to"]])
+        for key in record.get("sources", []):
+            if key not in sources:
+                errors.append(f"{path}: sources names a missing source record '{key}'")
+        if record.get("glossary") and record["glossary"] not in glossary:
+            errors.append(f"{path}: glossary names a missing glossary entry")
+        seen, waiting = set(), list(record.get("broader", []))
+        while waiting:
+            identifier = waiting.pop()
+            if identifier == record.get("id"):
+                errors.append(f"{path}: the method is listed as a broader kind of itself")
+                break
+            if identifier in seen or identifier not in methods:
+                continue
+            seen.add(identifier)
+            waiting.extend(methods[identifier].get("broader", []))
+
+    for path, record in records.get("provision.schema.json", []):
+        check_methods(path, "methods", record.get("methods"))
 
     for path, record in records.get("glossary.schema.json", []):
         if record.get("id") != path.stem:
@@ -200,9 +239,24 @@ def main() -> int:
 
     check_outreach(records.get("outreach-organization.schema.json", []), errors)
 
-    text_files = list(ROOT.glob("content/**/*.md")) + list(ROOT.glob("content/glossary/*.yaml"))
-    for path in sorted(text_files):
-        text = CODE.sub("", path.read_text(encoding="utf-8"))  # ignore code examples
+    unmatched_kinds: dict[str, int] = {}
+    for path, record in records.get("tribe.schema.json", []):
+        for forum in (record.get("dispute_resolution") or {}).get("forums", []):
+            kind = forum.get("kind")
+            if kind and kind not in methods:
+                unmatched_kinds[kind] = unmatched_kinds.get(kind, 0) + 1
+
+    text_files = (
+        list(ROOT.glob("content/**/*.md"))
+        + list(ROOT.glob("content/glossary/*.yaml"))
+        + list(ROOT.glob("content/methods/*.yaml"))
+    )
+    texts = [(path, path.read_text(encoding="utf-8")) for path in sorted(text_files)]
+    # In source records only the annotation is prose; citation data such as
+    # date-parts: [[2021]] would look like a term link.
+    texts += [(path, record["annotation"]) for path, record in records.get("source.schema.json", []) if record.get("annotation")]
+    for path, raw_text in texts:
+        text = CODE.sub("", raw_text)  # ignore code examples
         for key in CITATION_KEY.findall(text):
             if key not in sources:
                 errors.append(f"{path}: [@{key}] does not match any source record")
@@ -210,6 +264,10 @@ def main() -> int:
             if term not in glossary:
                 errors.append(f"{path}: [[{term}]] does not match any glossary entry")
 
+    for kind, count in sorted(unmatched_kinds.items()):
+        # A warning, not an error: forum kinds are an open vocabulary, so an
+        # unknown method still passes (decision record 0012).
+        print(f"warning: forum kind '{kind}' ({count} profile(s)) has no method record in content/methods/")
     for error in errors:
         print(error)
     if errors:

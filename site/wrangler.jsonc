@@ -1,0 +1,41 @@
+// Cloudflare Worker that serves the website.
+//
+// Workers Builds deploys it from the GitHub repository (root directory:
+// site, build command: npm ci && npm run build, deploy command:
+// npx wrangler deploy). No secret is stored in GitHub (decision record 0006).
+//
+// There is no "main" or "assets" setting here: @sveltejs/adapter-cloudflare
+// sets the Worker entry and the static assets directory when it builds, and
+// points Wrangler at the generated configuration.
+{
+	"$schema": "./node_modules/wrangler/config-schema.json",
+	"name": "model-tribal-adr-code",
+	"compatibility_date": "2026-11-20",
+	"workers_dev": true,
+	"preview_urls": true,
+	"observability": {
+		"enabled": true
+	},
+	// Code refers to these resources only by their binding names ("database"
+	// and "sourceDocuments"). The resource names below can change, for
+	// example when the project is renamed, without changing any code.
+	//
+	// Database for sign-in and collaboration. No tables yet: the sign-in and
+	// collaboration design will set the schema. A database identifier is not
+	// a secret.
+	"d1_databases": [
+		{
+			"binding": "database",
+			"database_name": "model-tribal-adr-code",
+			"database_id": "2386ebd3-cea2-4ca1-9fff-0772fcd8bc6b"
+		}
+	],
+	// Private bucket for copies of source documents. Not public: nothing in
+	// it is served unless the Worker chooses to serve it.
+	"r2_buckets": [
+		{
+			"binding": "sourceDocuments",
+			"bucket_name": "model-tribal-adr-code-sources"
+		}
+	]
+}
