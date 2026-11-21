@@ -12,6 +12,7 @@ history: see [CHANGELOG.md](CHANGELOG.md).
 | `forms/` | Fill-in forms (referral, agreement to participate, settlement, arbitration clause) | Markdown with placeholders | CC0 1.0 |
 | `tribes/` | One profile per nation or community | YAML | CC BY 4.0 |
 | `sources/` | One record per source: citation data, archive links, rights | YAML | CC BY 4.0 (records only, not the works they describe) |
+| `glossary/` | One entry per defined term or acronym, linked from text as `[[id]]` | YAML | CC BY 4.0 |
 | `variables/` | Placeholder definitions such as `{{nation.name}}` for templates | YAML | CC0 1.0 |
 
 Each record type has a schema in [`../schemas/`](../schemas/) and is described

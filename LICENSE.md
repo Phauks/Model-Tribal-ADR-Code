@@ -6,9 +6,9 @@ has different users with different needs. The reasons for each choice are in
 
 | Material | Where it lives | License | Full text |
 | --- | --- | --- | --- |
-| Model provisions and forms (text a nation may enact or adapt) | `content/provisions/`, `content/forms/` | CC0 1.0 Universal public domain dedication. Any nation may enact, adapt or republish them without attribution | [LICENSES/CC0-1.0.txt](LICENSES/CC0-1.0.txt) |
+| Model provisions and forms (text a nation may enact or adapt) | `content/provisions/`, `content/forms/`, `content/variables/` | CC0 1.0 Universal public domain dedication. Any nation may enact, adapt or republish them without attribution | [LICENSES/CC0-1.0.txt](LICENSES/CC0-1.0.txt) |
 | Commentary, illustrations and essays | `content/commentary/`, `content/essays/` | Creative Commons Attribution 4.0 International (CC BY 4.0) | [LICENSES/CC-BY-4.0.txt](LICENSES/CC-BY-4.0.txt) |
-| Data: tribe profiles, source records, comparative tables, research logs | `content/tribes/`, `content/sources/`, `research/` | CC BY 4.0 | [LICENSES/CC-BY-4.0.txt](LICENSES/CC-BY-4.0.txt) |
+| Data: glossary, tribe profiles, source records, comparative tables, research logs | `content/glossary/`, `content/tribes/`, `content/sources/`, `research/` | CC BY 4.0 | [LICENSES/CC-BY-4.0.txt](LICENSES/CC-BY-4.0.txt) |
 | Website, build and tooling code, schemas | `site/`, `pdf/`, `schemas/`, scripts | MIT License | [LICENSES/MIT.txt](LICENSES/MIT.txt) |
 | Project documentation | `docs/`, root documents | CC BY 4.0 | [LICENSES/CC-BY-4.0.txt](LICENSES/CC-BY-4.0.txt) |
 

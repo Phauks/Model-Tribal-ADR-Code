@@ -13,5 +13,6 @@ uses a fictitious nation on purpose.
 | `tribe.schema.json` | `content/tribes/*.yaml` |
 | `provision.schema.json` | Front matter of `content/provisions/*.md` |
 | `commentary.schema.json` | Front matter of `content/commentary/*.md` |
+| `glossary.schema.json` | `content/glossary/*.yaml` |
 | `variable.schema.json` | `content/variables/*.yaml` |
 | `research-session.schema.json` | Front matter of `research/sessions/**/*.md` |

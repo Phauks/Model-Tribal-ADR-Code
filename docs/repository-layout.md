@@ -15,12 +15,14 @@ and makes each edition reproducible
 │   ├── forms/               Fill-in forms with placeholders             CC0
 │   ├── tribes/              One profile per nation or community         CC BY
 │   ├── sources/             One record per cited source                 CC BY
+│   ├── glossary/            One entry per defined term or acronym       CC BY
 │   ├── variables/           Template placeholder definitions            CC0
 │   ├── version.txt
 │   └── CHANGELOG.md
 ├── site/                    Website code (version + changelog)          MIT
 ├── pdf/                     Print build for Lulu (version + changelog)  MIT
 ├── schemas/                 JSON Schemas for every record type          MIT
+├── scripts/                 Checks run on every pull request            MIT
 │   └── examples/            One valid example per schema
 ├── research/
 │   └── sessions/YYYY/       One dated file per research session         CC BY
@@ -28,6 +30,9 @@ and makes each edition reproducible
 │   ├── charter.md           Project charter
 │   ├── data-model.md        Record types and fields
 │   ├── citation-style.md    How sources are recorded and cited
+│   ├── terminology.md       How terms are chosen, defined and linked
+│   ├── style-guide.md       Tone and writing standards
+│   ├── requests.md          Correction, restriction, removal and contribution flow
 │   ├── repository-layout.md This file
 │   └── decisions/           Numbered decision records
 ├── LICENSES/                Full license texts
@@ -58,6 +63,7 @@ or removed record leaves a redirect entry instead.
 | Essay | `content/essays/<part>-<slug>.md` | `content/essays/i-history-of-adr.md` |
 | Form | `content/forms/<slug>.md` | `content/forms/agreement-to-participate.md` |
 | Tribe | `content/tribes/<slug>.yaml` | `content/tribes/navajo-nation.yaml` |
+| Glossary entry | `content/glossary/<id>.yaml` | `content/glossary/native-nations.yaml` |
 | Source | `content/sources/<key>.yaml` | `content/sources/narf-ipi-tribal-peacemaking-laws.yaml` |
 | Research session | `research/sessions/<yyyy>/<yyyy-mm-dd>-<topic>.md` | `research/sessions/2026/2026-11-20-foundational-scan.md` |
 

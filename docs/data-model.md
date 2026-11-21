@@ -27,6 +27,8 @@ research session ──found──▶ source ◀──cites── provision / co
   they discuss.
 - A **tribe profile** cites sources for every fact, including recognition and
   state presence.
+- A **glossary entry** defines a term or acronym and cites its sources. Any
+  text links to it as `[[id]]` (see [terminology.md](terminology.md)).
 
 ## Record types
 
@@ -37,6 +39,7 @@ research session ──found──▶ source ◀──cites── provision / co
 | Tribe profile | [tribe.schema.json](../schemas/tribe.schema.json) | `content/tribes/<id>.yaml` | Names, recognition, state presence, justice institutions, published ADR law, review status |
 | Provision | [provision.schema.json](../schemas/provision.schema.json) | `content/provisions/<chapter>-<section>.md` | Model text with alternatives and placeholders |
 | Commentary | [commentary.schema.json](../schemas/commentary.schema.json) | `content/commentary/<chapter>-<section>.md` | Comment, Illustrations and Source Note for one provision |
+| Glossary entry | [glossary.schema.json](../schemas/glossary.schema.json) | `content/glossary/<id>.yaml` | A defined term or acronym, its usage status and sources; linked from text as `[[id]]` |
 | Variables | [variable.schema.json](../schemas/variable.schema.json) | `content/variables/<group>.yaml` | Placeholders such as `{{nation.name}}` and their model text |
 | Research session | [research-session.schema.json](../schemas/research-session.schema.json) | `research/sessions/<yyyy>/<yyyy-mm-dd>-<topic>.md` | How research was done and what it produced |
 | Shared types | [common.schema.json](../schemas/common.schema.json) | n/a | Slugs, dates, versions, state codes, review status, sensitivity flags |
@@ -101,4 +104,6 @@ states a nation has a presence in and does not draw boundaries
 
 A check in continuous integration (to be added) will validate every record
 against its schema, confirm every `[@key]` in the text resolves to a source,
-and confirm every `found_in` names an existing research session.
+confirm every `[[id]]` resolves to a glossary entry, flag unlinked first uses
+of glossary terms and any use of an "avoid" term outside a quotation, and
+confirm every `found_in` names an existing research session.
