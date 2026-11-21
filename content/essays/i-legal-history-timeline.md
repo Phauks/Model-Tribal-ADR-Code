@@ -1,5 +1,5 @@
 ---
-title: "Federal Indian law and Tribal justice: an annotated timeline"
+title: "Federal Indian law and Tribal justice: a timeline"
 part: i
 status: draft
 review_status: drafted-from-public-sources
@@ -8,7 +8,7 @@ research_session: 2026-11-21-legal-history-and-key-cases
 companion: i-key-cases-digest
 ---
 
-# Federal Indian law and Tribal justice: an annotated timeline
+# Federal Indian law and Tribal justice: a timeline
 
 This timeline is background for the model code. It follows the statutes,
 regulations, executive acts and court decisions that shaped how
@@ -492,10 +492,10 @@ self-governance" [@ncai-tribal-nations-and-the-united-states, p. 13].
   essential to the maintenance of the culture and identity of Indian
   tribes" [@indian-tribal-justice-act-1993, sec. 2(6)-(7)]. It defines a
   "tribal justice system" to include "traditional methods and forums for
-  dispute resolution" and "alternative dispute resolution systems," and it
-  bars the federal office it created from imposing "justice standards on
-  Indian tribes" [@indian-tribal-justice-act-1993, sec. 3(8); 25 U.S.C.
-  § 3611(d)]. This is the
+  dispute resolution" and "alternative dispute resolution systems"
+  [@indian-tribal-justice-act-1993, sec. 3(8)]. It also bars the federal
+  office it created from imposing "justice standards on Indian tribes"
+  (25 U.S.C. § 3611(d)) [@indian-tribal-justice-act-1993]. This is the
   core federal statutory recognition that traditional and alternative
   dispute resolution are part of a nation's justice system (project
   analysis).
@@ -507,8 +507,8 @@ self-governance" [@ncai-tribal-nations-and-the-united-states, p. 13].
   often the most appropriate institutions for maintaining law and order in
   Indian country" and allowed sentences up to three years per offense when a
   nation provides licensed defense counsel, a law-trained judge, published
-  laws and a record [@tribal-law-and-order-act-2010, secs. 202(a)(2)(B),
-  234(a)]. Diversion or restorative options in serious cases have to be
+  laws and a record
+  [@tribal-law-and-order-act-2010, secs. 202(a)(2)(B), 234(a)]. Diversion or restorative options in serious cases have to be
   designed around those conditions (project analysis).
 - **2013 and 2022. Violence Against Women Act reauthorizations.** The 2013
   act recognized the inherent power of "participating tribes" to exercise
@@ -585,7 +585,7 @@ self-governance" [@ncai-tribal-nations-and-the-united-states, p. 13].
   sec. 1(a)(1)]. It continues a pattern of Congress resolving land disputes
   by assigning them to a chosen forum (project analysis).
 
-## Thread: Tribal courts and peacemaking
+## Tribal courts and peacemaking
 
 This thread runs across the eras above.
 
@@ -647,7 +647,7 @@ This thread runs across the eras above.
   Christine Zuni Cruz describes the Southwest Intertribal Court of Appeals,
   a shared appellate court [@zuni-cruz-southwest-intertribal-court-of-appeals-1994].
 
-## Thread: how states recognize Tribal judgments
+## How states recognize Tribal judgments
 
 Robert Laurence's primer explains the choice: "When a state court is asked
 to enforce a foreign-nation judgment, as opposed to a sister-state judgment,
@@ -658,9 +658,9 @@ below were verified to the extent stated in each source record.
 
 | State | Rule | Model | Notable conditions |
 | --- | --- | --- | --- |
-| Washington | Superior Court Civil Rule 82.5 [@washington-superior-court-civil-rule-82-5] | Recognition with exceptions | Refused if the Tribal court lacked jurisdiction, "denied due process as provided by the Indian Civil Rights Act of 1968," or does not reciprocate; 2019 amendments allow court-to-court communication |
+| Washington | Superior Court Civil Rule 82.5 [@washington-superior-court-civil-rule-82-5] | Recognition with exceptions | Refused if the Tribal court lacked jurisdiction, "denied due process as provided by the Indian Civil Rights Act of 1968," or does not reciprocate; 2019 amendments let the two courts talk directly |
 | Wisconsin | Wis. Stat. § 806.245 [@wisconsin-statutes-806-245] | Full faith and credit by statute | Listed conditions; text only partly read |
-| Michigan | Mich. Ct. R. 2.615 [@michigan-court-rule-2-615] | Reciprocity by filing | Applies only if the nation enacts a binding measure to enforce Michigan judgments and sends it to the State Court Administrative Office |
+| Michigan | Mich. Ct. R. 2.615 [@michigan-court-rule-2-615] | Reciprocity by filing | Applies only if the nation enacts a binding measure to enforce Michigan judgments and sends it to the state's court office |
 | South Dakota | S.D. Codified Laws § 1-1-25 [@south-dakota-codified-laws-1-1-25] | Restrictive comity | Proponent proves five conditions by clear and convincing evidence; limited case types |
 | Oklahoma | Okla. Stat. tit. 12, § 728 [@oklahoma-statutes-title-12-section-728] | Supreme Court standards, reciprocity | Includes Courts of Indian Offenses |
 | North Dakota | N.D. R. Ct. 7.2 [@north-dakota-rule-of-court-7-2] | Recognized unless a party objects | Amended effective Mar. 1, 2025 |
@@ -675,7 +675,9 @@ enforced elsewhere may therefore enter them as judgments with findings on
 jurisdiction, notice and hearing, and enact reciprocity provisions
 (project analysis).
 
-## Threads for the model code (project analysis)
+## Threads for the model code
+
+The threads below are project analysis.
 
 1. **Forums and their legitimacy.** Santa Clara Pueblo, the Indian Tribal
    Justice Act and the 2000 act treat nonjudicial and traditional forums as

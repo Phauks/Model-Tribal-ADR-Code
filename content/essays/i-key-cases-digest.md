@@ -64,7 +64,9 @@ for their legal content and are reproduced as written (project choice).
 | Child welfare | 4 | Fisher v. District Court (1976); Mississippi Band of Choctaw Indians v. Holyfield (1989); John v. Baker (1999); Haaland v. Brackeen (2023) |
 | Gaming | 5 | California v. Cabazon Band of Mission Indians (1987); Seminole Tribe of Florida v. Florida (1996); AT&T Corp. v. Coeur d'Alene Tribe (2002); Michigan v. Bay Mills Indian Community (2014); Ysleta del Sur Pueblo v. Texas (2022) |
 
-## Cases most relevant to dispute resolution (project analysis)
+## Cases most relevant to dispute resolution
+
+This grouping is project analysis.
 
 - **Legitimacy of Tribal forums, including nonjudicial ones.** Santa Clara
   Pueblo v. Martinez, Williams v. Lee, Fisher v. District Court and United
