@@ -1,0 +1,101 @@
+<script lang="ts">
+	import FactGroups from '#lib/components/FactGroups.svelte';
+	import NoteList from '#lib/components/NoteList.svelte';
+	import NoteMarkers from '#lib/components/NoteMarkers.svelte';
+	import type { PageProps } from './$types';
+
+	let { data }: PageProps = $props();
+	const page = $derived(data.page);
+	const record = $derived(`tribes/${data.page.id}`);
+</script>
+
+<svelte:head>
+	<title>{page.officialName} · Nations · Model Tribal ADR Code</title>
+</svelte:head>
+
+<nav aria-label="Breadcrumb" class="small">
+	<a href="/nations">Nations</a> › {page.officialName}
+</nav>
+
+<article class="reading">
+	{#if page.example}
+		<div class="notice" role="note">
+			<p>
+				<strong>This is a fictitious example.</strong> It describes no real nation. It shows how each
+				nation’s page will be laid out once the records are published.
+			</p>
+		</div>
+	{/if}
+
+	<!-- 1. Name -->
+	<h1>{page.officialName}</h1>
+	{#if !page.withdrawn}
+		<p class="small muted">
+			Name as the recognizing list gives it.<NoteMarkers numbers={page.officialNote} />
+		</p>
+		{#each data.selfDesignations as designation (designation.name)}
+			<p class="lead" lang={designation.languageTag}>
+				{designation.name}<NoteMarkers numbers={designation.notes} />
+			</p>
+		{/each}
+	{/if}
+
+	<!-- 2. Review panel -->
+	<section class="panel panel-filled" aria-labelledby="review-heading">
+		<h2 id="review-heading">Review status: {page.review.label}</h2>
+		<p>{page.review.meaning}</p>
+		{#if page.review.lastVerified}
+			<p class="small muted">Sources last checked {page.review.lastVerified}.</p>
+		{/if}
+		<p class="no-print">
+			<a class="button" href="/requests?record={record}">Is this about your nation? Make a request</a>
+		</p>
+	</section>
+
+	{#if !page.withdrawn}
+		<!-- 3. What is distinctive here -->
+		<h2>What is distinctive here</h2>
+		<h3>In the nation’s own words</h3>
+		<p class="muted">
+			This space is for a short description that the nation writes or approves. The project does not
+			write it for the nation.
+			<a href="/requests?kind=contribute&record={record}">Contribute a description</a>.
+		</p>
+		{#if data.features.length > 0}
+			<h3>Recorded features</h3>
+			<ul>
+				{#each data.features as feature, index (index)}
+					<li>{feature.text}<NoteMarkers numbers={feature.notes} /></li>
+				{/each}
+			</ul>
+		{/if}
+
+		<!-- 4. At a glance -->
+		{#if data.glance.length > 0}
+			<h2>At a glance</h2>
+			<FactGroups groups={data.glance} {record} />
+		{/if}
+
+		<!-- 5. Courts and dispute resolution -->
+		{#if data.courts.length > 0}
+			<h2>Courts and dispute resolution</h2>
+			<FactGroups groups={data.courts} {record} />
+		{/if}
+
+		<!-- 6. Published dispute resolution law: linked, not reproduced -->
+		{#if data.law.length > 0}
+			<h2>Published law</h2>
+			<p class="small muted">
+				Laws are linked, not reproduced, until the nation permits more.
+			</p>
+			<FactGroups groups={data.law} {record} />
+		{/if}
+
+		<!-- 8. Sources -->
+		<p class="no-print">
+			Know of a published source we have missed?
+			<a href="/requests?kind=contribute&record={record}">Add it</a>.
+		</p>
+		<NoteList notes={data.notes} />
+	{/if}
+</article>
