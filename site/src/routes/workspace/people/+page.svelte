@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
+	import DataTable from '#lib/components/DataTable.svelte';
 	import { roleDescriptions, roleLabels, roles } from '#lib/permissions.ts';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
 
 	let { data, form }: PageProps = $props();
@@ -15,7 +16,56 @@
 	function nationTitle(identifier: string | null): string {
 		return data.nations.find((nation) => nation.identifier === identifier)?.title ?? identifier ?? '';
 	}
+
+	const columns: TableColumn[] = [
+		{ key: 'name', header: 'Name', sortable: true, custom: true },
+		{ key: 'role', header: 'Role', sortable: true, custom: true },
+		{ key: 'status', header: 'Status', sortable: true, custom: true },
+		{ key: 'added', header: 'Added', type: 'date', sortable: true, custom: true },
+		{ key: 'access', header: 'Access', custom: true }
+	];
+	const peopleByKey = $derived(new Map(data.people.map((listed) => [listed.identifier, listed])));
+	const rows: TableRow[] = $derived(
+		data.people.map((listed) => ({
+			key: listed.identifier,
+			cells: {
+				name: { text: `${listed.displayName} ${listed.email}`, sortValue: listed.displayName },
+				role: { text: roleLabels[listed.role] },
+				status: { text: statusLabels[listed.status] },
+				added: { text: date(listed.addedAt), sortValue: listed.addedAt },
+				access: { text: '' }
+			}
+		}))
+	);
 </script>
+
+{#snippet cell(row: TableRow, column: TableColumn)}
+	{@const listed = peopleByKey.get(row.key)}
+	{#if listed}
+		{#if column.key === 'name'}
+			{listed.displayName}<br /><span class="small muted">{listed.email}</span>
+		{:else if column.key === 'role'}
+			{roleLabels[listed.role]}
+			{#if listed.nationIdentifier}<br /><span class="small">for {nationTitle(listed.nationIdentifier)}</span>{/if}
+		{:else if column.key === 'status'}
+			{statusLabels[listed.status]}
+			{#if listed.lastSignedInAt}<br /><span class="small muted">Last signed in {date(listed.lastSignedInAt)}</span>{/if}
+		{:else if column.key === 'added'}
+			{date(listed.addedAt)}{#if listed.addedByName}<br /><span class="small muted">by {listed.addedByName}</span>{/if}
+		{:else}
+			<form method="post" action="?/access" class="row-form">
+				<input type="hidden" name="identifier" value={listed.identifier} />
+				{#if listed.status === 'removed'}
+					<input type="hidden" name="change" value="restore" />
+					<button class="button button-quiet" type="submit">Restore access</button>
+				{:else if listed.identifier !== data.person.identifier}
+					<input type="hidden" name="change" value="remove" />
+					<button class="button button-quiet" type="submit">Remove access</button>
+				{/if}
+			</form>
+		{/if}
+	{/if}
+{/snippet}
 
 <svelte:head>
 	<title>People · Workspace · Model Tribal ADR Code</title>
@@ -41,47 +91,7 @@
 </dl>
 
 <h2>Everyone on the list</h2>
-<div class="table-scroll" role="region" aria-label="Table: people" {@attach keyboardScroll}>
-	<table>
-		<thead>
-			<tr>
-				<th scope="col">Name</th>
-				<th scope="col">Role</th>
-				<th scope="col">Status</th>
-				<th scope="col">Added</th>
-				<th scope="col">Access</th>
-			</tr>
-		</thead>
-		<tbody>
-			{#each data.people as listed (listed.identifier)}
-				<tr>
-					<td>{listed.displayName}<br /><span class="small muted">{listed.email}</span></td>
-					<td>
-						{roleLabels[listed.role]}
-						{#if listed.nationIdentifier}<br /><span class="small">for {nationTitle(listed.nationIdentifier)}</span>{/if}
-					</td>
-					<td>
-						{statusLabels[listed.status]}
-						{#if listed.lastSignedInAt}<br /><span class="small muted">Last signed in {date(listed.lastSignedInAt)}</span>{/if}
-					</td>
-					<td>{date(listed.addedAt)}{#if listed.addedByName}<br /><span class="small muted">by {listed.addedByName}</span>{/if}</td>
-					<td>
-						<form method="post" action="?/access" class="row-form">
-							<input type="hidden" name="identifier" value={listed.identifier} />
-							{#if listed.status === 'removed'}
-								<input type="hidden" name="change" value="restore" />
-								<button class="button button-quiet" type="submit">Restore access</button>
-							{:else if listed.identifier !== data.person.identifier}
-								<input type="hidden" name="change" value="remove" />
-								<button class="button button-quiet" type="submit">Remove access</button>
-							{/if}
-						</form>
-					</td>
-				</tr>
-			{/each}
-		</tbody>
-	</table>
-</div>
+<DataTable identifier="people" label="Table: people" {columns} {rows} rowName={['person', 'people']} {cell} />
 
 <form method="post" action="?/role" class="panel">
 	<h2>Change a role</h2>

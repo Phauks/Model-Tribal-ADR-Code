@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
+	import DataTable from '#lib/components/DataTable.svelte';
 	import { requestKindLabels, requestOutcomeLabels, requestStatusLabels } from '#lib/requests.ts';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -14,7 +15,45 @@
 	function date(value: string): string {
 		return new Date(value).toLocaleDateString('en-US', { dateStyle: 'medium' });
 	}
+
+	const columns: TableColumn[] = [
+		{ key: 'reference', header: 'Reference', isRowHeader: true, sortable: true },
+		{ key: 'kind', header: 'Kind', sortable: true },
+		{ key: 'about', header: 'About', sortable: true },
+		{ key: 'status', header: 'Status', sortable: true },
+		{ key: 'received', header: 'Received', type: 'date', sortable: true },
+		{ key: 'target', header: 'Next target', type: 'date', sortable: true, custom: true }
+	];
+	const requestsByKey = $derived(new Map(data.requests.map((request) => [request.identifier, request])));
+	const rows: TableRow[] = $derived(
+		data.requests.map((request) => {
+			const next = request.deadlines[0];
+			return {
+				key: request.identifier,
+				cells: {
+					reference: { text: request.reference, href: `/workspace/requests/${request.reference}` },
+					kind: { text: requestKindLabels[request.kind] },
+					about: { text: request.missingNationOfficialName ?? request.nationIdentifier ?? '' },
+					status: {
+						text: request.outcome
+							? `${requestStatusLabels[request.status]}: ${requestOutcomeLabels[request.outcome]}`
+							: requestStatusLabels[request.status]
+					},
+					received: { text: date(request.receivedAt), sortValue: request.receivedAt },
+					target: { text: next ? `${next.label} ${date(next.due)}` : '', sortValue: next?.due }
+				}
+			};
+		})
+	);
 </script>
+
+{#snippet cell(row: TableRow)}
+	{#each requestsByKey.get(row.key)?.deadlines.slice(0, 1) ?? [] as deadline (deadline.label)}
+		<span class:overdue={deadline.overdue}>
+			{deadline.overdue ? 'Past: ' : ''}{deadline.label.toLocaleLowerCase('en-US')} {date(deadline.due)}
+		</span>
+	{/each}
+{/snippet}
 
 <svelte:head>
 	<title>Requests · Workspace · Model Tribal ADR Code</title>
@@ -49,40 +88,15 @@
 {#if data.requests.length === 0}
 	<p>No requests here.</p>
 {:else}
-	<div class="table-scroll" role="region" aria-label="Table: requests" {@attach keyboardScroll}>
-		<table>
-			<thead>
-				<tr>
-					<th scope="col">Reference</th>
-					<th scope="col">Kind</th>
-					<th scope="col">About</th>
-					<th scope="col">Status</th>
-					<th scope="col">Received</th>
-					<th scope="col">Next target</th>
-				</tr>
-			</thead>
-			<tbody>
-				{#each data.requests as request (request.identifier)}
-					<tr>
-						<td><a href="/workspace/requests/{request.reference}">{request.reference}</a></td>
-						<td>{requestKindLabels[request.kind]}</td>
-						<td>{request.missingNationOfficialName ?? request.nationIdentifier ?? ''}</td>
-						<td>
-							{requestStatusLabels[request.status]}{#if request.outcome}: {requestOutcomeLabels[request.outcome]}{/if}
-						</td>
-						<td>{date(request.receivedAt)}</td>
-						<td>
-							{#each request.deadlines.slice(0, 1) as deadline (deadline.label)}
-								<span class:overdue={deadline.overdue}>
-									{deadline.overdue ? 'Past: ' : ''}{deadline.label.toLocaleLowerCase('en-US')} {date(deadline.due)}
-								</span>
-							{/each}
-						</td>
-					</tr>
-				{/each}
-			</tbody>
-		</table>
-	</div>
+	<DataTable
+		identifier="requests"
+		label="Table: requests"
+		{columns}
+		{rows}
+		defaultSort={{ key: 'received', direction: 'descending' }}
+		rowName={['request', 'requests']}
+		{cell}
+	/>
 {/if}
 
 <style>

@@ -1,11 +1,68 @@
 <script lang="ts">
-	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
 	import { repositoryLink } from '#lib';
+	import DataTable from '#lib/components/DataTable.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
+
+	type ListedNation = { id: string; name: string };
+	const nationsByRow = $derived(
+		new Map<string, ListedNation[]>([
+			...data.stateRows.map((row) => [`state-${row.code}`, row.nations] as const),
+			...data.regionRows.map((row) => [row.anchor, row.nations] as const)
+		])
+	);
+
+	const stateColumns: TableColumn[] = [
+		{ key: 'state', header: 'State or territory', isRowHeader: true, sortable: true },
+		{ key: 'count', header: 'Nations', type: 'number', sortable: true },
+		{ key: 'names', header: 'Names', custom: true }
+	];
+	const stateRows: TableRow[] = $derived(
+		data.stateRows.map((row) => ({
+			key: `state-${row.code}`,
+			anchor: `state-${row.code}`,
+			cells: {
+				state: { text: row.name },
+				count: { text: row.nations.length.toLocaleString('en-US'), sortValue: row.nations.length },
+				names: { text: row.nations.map((nation) => nation.name).join(', ') }
+			}
+		}))
+	);
+
+	const regionColumns: TableColumn[] = [
+		{ key: 'region', header: 'Region', isRowHeader: true, sortable: true },
+		{ key: 'count', header: 'Nations', type: 'number', sortable: true },
+		{ key: 'states', header: 'States where those nations have a presence' },
+		{ key: 'names', header: 'Names', custom: true }
+	];
+	const regionRows: TableRow[] = $derived(
+		data.regionRows.map((row) => ({
+			key: row.anchor,
+			anchor: row.anchor,
+			cells: {
+				region: { text: row.name },
+				count: { text: row.nations.length.toLocaleString('en-US'), sortValue: row.nations.length },
+				states: { text: row.states.join(', ') },
+				names: { text: row.nations.map((nation) => nation.name).join(', ') }
+			}
+		}))
+	);
 </script>
+
+{#snippet cell(row: TableRow)}
+	{@const nations = nationsByRow.get(row.key) ?? []}
+	<details>
+		<summary>Show {nations.length === 1 ? 'the nation' : `all ${nations.length}`}</summary>
+		<ul>
+			{#each nations as nation (nation.id)}
+				<li><a href="/nations/{nation.id}">{nation.name}</a></li>
+			{/each}
+		</ul>
+	</details>
+{/snippet}
 
 <svelte:head>
 	<title>Map · Nations · Model Tribal ADR Code</title>
@@ -56,36 +113,15 @@
 		</figcaption>
 	</figure>
 
-	<div class="table-scroll" role="region" aria-label="Table: nations by state" {@attach keyboardScroll}>
-		<table>
-			<caption>Nations with a recorded presence, by state and territory</caption>
-			<thead>
-				<tr>
-					<th scope="col">State or territory</th>
-					<th scope="col">Nations</th>
-					<th scope="col">Names</th>
-				</tr>
-			</thead>
-			<tbody>
-				{#each data.stateRows as row (row.code)}
-					<tr id="state-{row.code}">
-						<th scope="row">{row.name}</th>
-						<td>{row.nations.length.toLocaleString('en-US')}</td>
-						<td>
-							<details>
-								<summary>Show {row.nations.length === 1 ? 'the nation' : `all ${row.nations.length}`}</summary>
-								<ul>
-									{#each row.nations as nation (nation.id)}
-										<li><a href="/nations/{nation.id}">{nation.name}</a></li>
-									{/each}
-								</ul>
-							</details>
-						</td>
-					</tr>
-				{/each}
-			</tbody>
-		</table>
-	</div>
+	<DataTable
+		identifier="nations-by-state"
+		label="Table: nations by state"
+		caption="Nations with a recorded presence, by state and territory"
+		columns={stateColumns}
+		rows={stateRows}
+		defaultSort={{ key: 'state', direction: 'ascending' }}
+		{cell}
+	/>
 </section>
 
 <section aria-labelledby="bureau-of-indian-affairs-regions">
@@ -101,38 +137,15 @@
 		</figcaption>
 	</figure>
 
-	<div class="table-scroll" role="region" aria-label="Table: regions" {@attach keyboardScroll}>
-		<table>
-			<caption>Nations each region serves, as the Bureau’s Tribal Leaders Directory lists them</caption>
-			<thead>
-				<tr>
-					<th scope="col">Region</th>
-					<th scope="col">Nations</th>
-					<th scope="col">States where those nations have a presence</th>
-					<th scope="col">Names</th>
-				</tr>
-			</thead>
-			<tbody>
-				{#each data.regionRows as row (row.name)}
-					<tr id={row.anchor}>
-						<th scope="row">{row.name}</th>
-						<td>{row.nations.length.toLocaleString('en-US')}</td>
-						<td>{row.states.join(', ')}</td>
-						<td>
-							<details>
-								<summary>Show {row.nations.length === 1 ? 'the nation' : `all ${row.nations.length}`}</summary>
-								<ul>
-									{#each row.nations as nation (nation.id)}
-										<li><a href="/nations/{nation.id}">{nation.name}</a></li>
-									{/each}
-								</ul>
-							</details>
-						</td>
-					</tr>
-				{/each}
-			</tbody>
-		</table>
-	</div>
+	<DataTable
+		identifier="regions"
+		label="Table: regions"
+		caption="Nations each region serves, as the Bureau’s Tribal Leaders Directory lists them"
+		columns={regionColumns}
+		rows={regionRows}
+		defaultSort={{ key: 'region', direction: 'ascending' }}
+		{cell}
+	/>
 </section>
 
 <div class="reading">
@@ -270,11 +283,5 @@
 		width: 1.25rem;
 		height: 1.25rem;
 		border: 1px solid var(--color-control-border);
-	}
-
-	table caption {
-		text-align: left;
-		font-weight: var(--font-weight-semibold);
-		padding-bottom: var(--space-2);
 	}
 </style>

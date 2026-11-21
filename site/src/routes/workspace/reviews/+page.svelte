@@ -1,6 +1,7 @@
 <script lang="ts">
-	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
+	import DataTable from '#lib/components/DataTable.svelte';
 	import { decisionLabels, subjectKindLabels, subjectKinds } from '#lib/permissions.ts';
+	import type { TableColumn, TableRow } from '#lib/tables/table-definition.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -9,7 +10,33 @@
 	function date(value: string): string {
 		return new Date(value).toLocaleDateString('en-US', { dateStyle: 'medium' });
 	}
+
+	const columns: TableColumn[] = [
+		{ key: 'name', header: 'Name', isRowHeader: true, sortable: true },
+		{ key: 'kind', header: 'Kind', sortable: true },
+		{ key: 'latest', header: 'Latest review', type: 'date', sortable: true, custom: true }
+	];
+	const rows: TableRow[] = $derived(
+		data.subjects.map((subject) => ({
+			key: `${subject.kind}/${subject.identifier}`,
+			cells: {
+				name: { text: subject.title, href: `/workspace/reviews/${subject.kind}/${subject.identifier}` },
+				kind: { text: subjectKindLabels[subject.kind] },
+				latest: subject.latest
+					? {
+							text: `${decisionLabels[subject.latest.decision]}, ${subject.latest.personName}, ${date(subject.latest.createdAt)}`,
+							sortValue: subject.latest.createdAt
+						}
+					: { text: '' }
+			}
+		}))
+	);
 </script>
+
+{#snippet cell(row: TableRow, column: TableColumn)}
+	{@const text = row.cells[column.key].text}
+	{#if text}{text}{:else}<span class="muted">None</span>{/if}
+{/snippet}
 
 <svelte:head>
 	<title>Reviews · Workspace · Model Tribal ADR Code</title>
@@ -51,28 +78,7 @@
 {#if data.subjects.length === 0}
 	<p>{searching ? 'Nothing matches.' : 'No reviews recorded yet. Search above to find a record.'}</p>
 {:else}
-	<div class="table-scroll" role="region" aria-label="Table: content to review" {@attach keyboardScroll}>
-		<table>
-			<thead>
-				<tr><th scope="col">Name</th><th scope="col">Kind</th><th scope="col">Latest review</th></tr>
-			</thead>
-			<tbody>
-				{#each data.subjects as subject (`${subject.kind}/${subject.identifier}`)}
-					<tr>
-						<td><a href="/workspace/reviews/{subject.kind}/{subject.identifier}">{subject.title}</a></td>
-						<td>{subjectKindLabels[subject.kind]}</td>
-						<td>
-							{#if subject.latest}
-								{decisionLabels[subject.latest.decision]}, {subject.latest.personName}, {date(subject.latest.createdAt)}
-							{:else}
-								<span class="muted">None</span>
-							{/if}
-						</td>
-					</tr>
-				{/each}
-			</tbody>
-		</table>
-	</div>
+	<DataTable identifier="reviews" label="Table: content to review" {columns} {rows} {cell} />
 {/if}
 
 <style>

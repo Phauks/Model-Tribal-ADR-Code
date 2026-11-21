@@ -363,7 +363,16 @@ the design does not chop pages into rows of identical cards (project choice).
 "Check your request," following the GOV.UK summary list.
 
 **Tables.** For data a reader compares across rows. Wide tables scroll inside
-their own box, so the page never scrolls sideways.
+their own box, so the page never scrolls sideways. Data tables use the
+`DataTable` component, the project's own, not a data grid library
+(`spikes/tables/REPORT.md`; Trevor chose this on 2026-11-20). The page is
+built with every row in order, as a plain table that reads the same without
+scripts. Once scripts run, sortable column headers become buttons, following
+the WAI-ARIA Authoring Practices sortable table example (the sorted header
+carries `aria-sort`), and a long table gets a search box with a live count.
+Sorting and search follow one set of rules in
+`src/lib/tables/table-definition.ts`: case and accents are ignored, numbers
+inside text sort as numbers, and empty cells stay last.
 
 **Forms.** Labels above fields; hints under labels; "(optional)" in the label;
 large choice buttons for single choices; errors stated in words beside the
