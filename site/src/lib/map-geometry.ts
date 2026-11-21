@@ -21,7 +21,7 @@
 import { readFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { geoPath, type GeoProjection } from 'd3-geo';
-import { feature, mesh } from 'topojson-client';
+import { feature, merge, mesh } from 'topojson-client';
 import { presimplify, quantile, simplify, sphericalTriangleArea } from 'topojson-simplify';
 import type { Feature, FeatureCollection, Geometry, MultiPolygon, Polygon } from 'geojson';
 import type { GeometryCollection, Topology } from 'topojson-specification';
@@ -91,6 +91,8 @@ export interface MapGeometry {
 	states: StateShape[];
 	/** Lines between states, drawn once. */
 	stateBorders: string;
+	/** Every state and territory as one shape, for the land under the regions map. */
+	land: string;
 	regions: RegionShape[];
 	/** Lines between regions and around their outer edges. */
 	regionBorders: string;
@@ -212,6 +214,7 @@ export async function buildMapGeometry(regionsFile: string): Promise<MapGeometry
 		height: mapHeight,
 		states: stateShapes,
 		stateBorders: round(path(mesh(atlas, atlas.objects.states, (first, second) => first !== second))),
+		land: round(path(merge(atlas, atlas.objects.states.geometries as Parameters<typeof merge>[1]))),
 		regions: regionShapes,
 		regionBorders: round(path(mesh(regionsTopology, regionsTopology.objects.regions))),
 		regionSource: {

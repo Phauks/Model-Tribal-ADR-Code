@@ -5,22 +5,6 @@
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
-
-	// The small states and territories drawn as markers show only their
-	// two-letter code, so their names start with it: what is seen is what can
-	// be spoken to select it (WCAG 2.5.3, label in name).
-	const describeState = (state: { name: string; code: string; count: number; marker?: unknown }) => {
-		const name = state.marker ? `${state.code}, ${state.name}` : state.name;
-		return state.count === 0
-			? `${name}: no nations recorded`
-			: `${name}: ${state.count} ${state.count === 1 ? 'nation' : 'nations'}`;
-	};
-
-	const describeRegion = (region: { name: string; count: number }) =>
-		`${region.name} Region: ${region.count} ${region.count === 1 ? 'nation' : 'nations'}`;
-
-	// Lines of a region's label; two-word names that sit in narrow regions wrap.
-	const labelLines = (name: string) => (name === 'Eastern Oklahoma' ? ['Eastern', 'Oklahoma'] : [name]);
 </script>
 
 <svelte:head>
@@ -55,45 +39,10 @@
 <section aria-labelledby="by-state-heading">
 	<h2 id="by-state-heading">Nations by state</h2>
 	<figure class="map-figure">
-		<svg
-			class="map"
-			viewBox="0 0 {data.width} {data.height}"
-			role="group"
-			aria-labelledby="by-state-title"
-		>
-			<title id="by-state-title">Number of nations with a recorded presence in each state and territory</title>
-			<g class="states">
-				{#each data.states as state (state.code)}
-					{#if state.marker}
-						<path class="state count-{state.countClass}" d={state.path}><title>{describeState(state)}</title></path>
-					{:else if state.count > 0}
-						<a href="#state-{state.code}" aria-label={describeState(state)}>
-							<path class="state count-{state.countClass}" d={state.path}><title>{describeState(state)}</title></path>
-						</a>
-					{:else}
-						<path class="state count-0" d={state.path}><title>{describeState(state)}</title></path>
-					{/if}
-				{/each}
-			</g>
-			<path class="state-borders" d={data.stateBorders} />
-			<g class="markers">
-				{#each data.states as state (state.code)}
-					{#if state.marker}
-						{@const marker = state.marker}
-						<line class="marker-line" x1={marker.fromX} y1={marker.fromY} x2={marker.x} y2={marker.y} />
-						{#if state.count > 0}
-							<a href="#state-{state.code}" aria-label={describeState(state)}>
-								<circle class="state count-{state.countClass}" cx={marker.x} cy={marker.y} r="9"><title>{describeState(state)}</title></circle>
-								<text class="map-label marker-label" x={marker.x + 12} y={marker.y + 5}>{state.code}</text>
-							</a>
-						{:else}
-							<circle class="state count-0" cx={marker.x} cy={marker.y} r="9"><title>{describeState(state)}</title></circle>
-							<text class="map-label marker-label" x={marker.x + 12} y={marker.y + 5}>{state.code}</text>
-						{/if}
-					{/if}
-				{/each}
-			</g>
-		</svg>
+		<div class="map-drawing" data-nations-map>
+			<!-- svelte-ignore hydration_html_changed -->
+			{@html data.drawings.states}
+		</div>
 		<figcaption>
 			<ul class="legend" aria-label="Key">
 				{#each data.countClasses as entry (entry.key)}
@@ -142,37 +91,10 @@
 <section aria-labelledby="bureau-of-indian-affairs-regions">
 	<h2 id="bureau-of-indian-affairs-regions">Bureau of Indian Affairs regions</h2>
 	<figure class="map-figure">
-		<svg
-			class="map"
-			viewBox="0 0 {data.width} {data.height}"
-			role="group"
-			aria-labelledby="regions-title"
-		>
-			<title id="regions-title">The twelve regions of the Bureau of Indian Affairs</title>
-			<g class="states">
-				{#each data.states as state (state.code)}
-					<path class="state-background" d={state.path} />
-				{/each}
-			</g>
-			<g class="regions">
-				{#each data.regions as region (region.name)}
-					<a href="#{region.anchor}" aria-label={describeRegion(region)}>
-						<path class="region" d={region.path}><title>{describeRegion(region)}</title></path>
-					</a>
-				{/each}
-			</g>
-			<path class="state-borders faint" d={data.stateBorders} />
-			<path class="region-borders" d={data.regionBorders} />
-			<g class="region-labels" aria-hidden="true">
-				{#each data.regions as region (region.name)}
-					<text class="map-label region-label" x={region.label.x} y={region.label.y}>
-						{#each labelLines(region.name) as line, index (index)}
-							<tspan x={region.label.x} dy={index === 0 ? 0 : '1.1em'}>{line}</tspan>
-						{/each}
-					</text>
-				{/each}
-			</g>
-		</svg>
+		<div class="map-drawing">
+			<!-- svelte-ignore hydration_html_changed -->
+			{@html data.drawings.regions}
+		</div>
 		<figcaption class="small muted">
 			Select a region to go to its row in the table. Hawaiʻi and the territories are in no region.
 			Lines are simplified for a national map.
@@ -227,79 +149,89 @@
 		margin: var(--space-5) 0;
 	}
 
-	.map {
+	.map-drawing :global(.map) {
 		display: block;
 		width: 100%;
 		height: auto;
 		max-width: 975px;
 	}
 
-	.state,
+	.map-drawing :global(.state),
 	.swatch {
 		stroke: var(--color-control-border);
 		stroke-width: 0.5;
 	}
 
-	.count-0 {
+	.map-drawing :global(.count-0) {
 		fill: var(--color-map-class-0);
+	}
+	.swatch.count-0 {
 		background: var(--color-map-class-0);
 	}
-	.count-1 {
+	.map-drawing :global(.count-1) {
 		fill: var(--color-map-class-1);
+	}
+	.swatch.count-1 {
 		background: var(--color-map-class-1);
 	}
-	.count-2 {
+	.map-drawing :global(.count-2) {
 		fill: var(--color-map-class-2);
+	}
+	.swatch.count-2 {
 		background: var(--color-map-class-2);
 	}
-	.count-3 {
+	.map-drawing :global(.count-3) {
 		fill: var(--color-map-class-3);
+	}
+	.swatch.count-3 {
 		background: var(--color-map-class-3);
 	}
-	.count-4 {
+	.map-drawing :global(.count-4) {
 		fill: var(--color-map-class-4);
+	}
+	.swatch.count-4 {
 		background: var(--color-map-class-4);
 	}
 
-	.state-background {
+	.map-drawing :global(.land) {
 		fill: var(--color-map-class-0);
 	}
 
-	.region {
+	.map-drawing :global(.region) {
 		fill: var(--color-map-class-1);
 	}
 
-	a:hover .state,
-	a:focus .state,
-	a:hover .region,
-	a:focus .region {
+	.map-drawing :global(a:hover .state),
+	.map-drawing :global(a:focus .state),
+	.map-drawing :global(a:hover .region),
+	.map-drawing :global(a:focus .region) {
 		fill: var(--color-focus);
 	}
 
-	.state-borders {
+	.map-drawing :global(.state-borders) {
 		fill: none;
 		stroke: var(--color-control-border);
 		stroke-width: 0.6;
 		stroke-linejoin: round;
 	}
 
-	.state-borders.faint {
+	.map-drawing :global(.state-borders.faint) {
 		stroke: var(--color-line);
 	}
 
-	.region-borders {
+	.map-drawing :global(.region-borders) {
 		fill: none;
 		stroke: var(--color-ink);
 		stroke-width: 1.6;
 		stroke-linejoin: round;
 	}
 
-	.marker-line {
+	.map-drawing :global(.marker-line) {
 		stroke: var(--color-ink-muted);
 		stroke-width: 0.8;
 	}
 
-	.map-label {
+	.map-drawing :global(.map-label) {
 		fill: var(--color-ink);
 		font-family: var(--font-family-reading);
 		paint-order: stroke;
@@ -308,11 +240,11 @@
 		stroke-linejoin: round;
 	}
 
-	.marker-label {
+	.map-drawing :global(.marker-label) {
 		font-size: 16px;
 	}
 
-	.region-label {
+	.map-drawing :global(.region-label) {
 		font-size: 17px;
 		font-weight: var(--font-weight-semibold);
 		text-anchor: middle;

@@ -615,7 +615,13 @@ accessibility statement is published at `/about/accessibility`.
   2026-11-21 to draw the official outlines even though the Navajo Region's
   follows the Navajo Nation's land. `src/lib/map-geometry.ts` projects the
   shapes once, in `vite.config.ts`, so the browser gets SVG paths and no map
-  library. The grayscale print version for the book is not built yet. Each
+  library. `src/lib/nations-map-drawing.ts` turns them into the page's SVG
+  markup, which `/nations/map` shows with `{@html}` from a universal load, so
+  the outlines are sent once, in the page, and not again in the data the page
+  hydrates from; the regions map draws the land as one shape under the
+  regions. A reader who arrives from another page without reloading gets the
+  same markup from `/nations/map/drawings.json`. The grayscale print version
+  for the book is not built yet. Each
 nation's page also draws a small map of its states (see
 [Nation pages](#nation-pages)) from the same shapes, simplified to 5 percent
 of their points and whole map units so that it adds about 14 KB, before
