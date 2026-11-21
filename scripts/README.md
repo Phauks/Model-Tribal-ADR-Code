@@ -11,3 +11,9 @@ add a job to the workflow and list it under `all-checks.needs`.
 | --- | --- | --- |
 | `check_text.py` | Every text file is UTF-8 without a byte order mark, in Unicode Normalization Form C, with LF line endings and a final newline | Python 3 standard library |
 | `validate_records.py` | Every schema, example and content record is valid, and every citation key, glossary link and research session reference resolves | `pip install -r scripts/requirements.txt` |
+
+Other scripts, run by hand:
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `build_outreach_overview.py` | Checks the private outreach plan against its schema and the public records in `research/outreach/`, and writes a private overview next to the plan ([decision record 0012](../docs/decisions/0012-outreach-list-split-public-and-private.md)) | `pip install -r scripts/requirements.txt` |

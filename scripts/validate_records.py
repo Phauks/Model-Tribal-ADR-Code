@@ -8,6 +8,9 @@ Checks:
   - every [@key] and every glossary 'sources' entry names a source record
   - every [[id]], 'see_also', 'use_instead' and 'redirect_to' names a glossary entry
   - every 'found_in' names a research session
+  - each outreach record's source ids resolve within the record, 'part_of'
+    names another outreach record, and a Native nation record names a Tribe
+    profile (checked against content/tribes/ once profiles exist)
 
 Run from the repository root:  python3 scripts/validate_records.py
 Requires the packages in scripts/requirements.txt.
@@ -37,6 +40,8 @@ EXAMPLES = {
     "variables.example.yaml": "variable.schema.json",
     "research-session.example.md": "research-session.schema.json",
     "glossary.example.yaml": "glossary.schema.json",
+    "outreach-organization.example.yaml": "outreach-organization.schema.json",
+    "outreach-plan.example.yaml": "outreach-plan.schema.json",
 }
 RECORD_FOLDERS = [
     ("content/sources/*.yaml", "source.schema.json"),
@@ -46,6 +51,7 @@ RECORD_FOLDERS = [
     ("content/provisions/*.md", "provision.schema.json"),
     ("content/commentary/*.md", "commentary.schema.json"),
     ("research/sessions/*/*.md", "research-session.schema.json"),
+    ("research/outreach/*.yaml", "outreach-organization.schema.json"),
 ]
 
 
@@ -68,6 +74,34 @@ def dates_as_text(value):
     if isinstance(value, datetime.date):
         return value.isoformat()
     return value
+
+
+def check_outreach(outreach: list, errors: list[str]) -> None:
+    """Links inside and between outreach records (research/outreach/)."""
+    outreach_ids = {path.stem for path, _ in outreach}
+    tribe_ids = {path.stem for path in ROOT.glob("content/tribes/**/*.yaml")}
+    for path, record in outreach:
+        if record.get("id") != path.stem:
+            errors.append(f"{path}: id does not match the file name")
+        source_ids = [source.get("id") for source in record.get("sources", [])]
+        if len(source_ids) != len(set(source_ids)):
+            errors.append(f"{path}: source ids are not unique")
+        cited = list(record.get("relevance", {}).get("sources", [])) + list(record.get("notes_sources", []))
+        for contact in record.get("contacts", []):
+            cited.extend(contact.get("sources", []))
+        for source_id in cited:
+            if source_id not in source_ids:
+                errors.append(f"{path}: cites a missing source id '{source_id}'")
+        for source_id in set(source_ids) - set(cited):
+            errors.append(f"{path}: source '{source_id}' is listed but never cited")
+        if record.get("part_of") and record["part_of"] not in outreach_ids:
+            errors.append(f"{path}: part_of names a missing outreach record '{record['part_of']}'")
+        if record.get("category") == "native-nation":
+            profile = record.get("tribe_profile")
+            if not profile:
+                errors.append(f"{path}: a Native nation record needs tribe_profile")
+            elif tribe_ids and profile not in tribe_ids:
+                errors.append(f"{path}: tribe_profile names a missing Tribe profile '{profile}'")
 
 
 def main() -> int:
@@ -126,6 +160,8 @@ def main() -> int:
         for key in record.get("sources", []):
             if key not in sources:
                 errors.append(f"{path}: sources names a missing source record '{key}'")
+
+    check_outreach(records.get("outreach-organization.schema.json", []), errors)
 
     text_files = list(ROOT.glob("content/**/*.md")) + list(ROOT.glob("content/glossary/*.yaml"))
     for path in sorted(text_files):

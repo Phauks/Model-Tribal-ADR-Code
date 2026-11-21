@@ -25,7 +25,8 @@ and makes each edition reproducible
 ├── scripts/                 Checks run on every pull request            MIT
 │   └── examples/            One valid example per schema
 ├── research/
-│   └── sessions/YYYY/       One dated file per research session         CC BY
+│   ├── sessions/YYYY/       One dated file per research session         CC BY
+│   └── outreach/            One record per organization to ask for help CC BY
 ├── docs/
 │   ├── charter.md           Project charter
 │   ├── data-model.md        Record types and fields
@@ -66,6 +67,7 @@ or removed record leaves a redirect entry instead.
 | Glossary entry | `content/glossary/<id>.yaml` | `content/glossary/native-nations.yaml` |
 | Source | `content/sources/<key>.yaml` | `content/sources/narf-ipi-tribal-peacemaking-laws.yaml` |
 | Research session | `research/sessions/<yyyy>/<yyyy-mm-dd>-<topic>.md` | `research/sessions/2026/2026-11-20-foundational-scan.md` |
+| Outreach organization | `research/outreach/<id>.yaml` | `research/outreach/native-american-rights-fund.yaml` |
 
 Section numbers leave room for later editions: a new section between § 2-104
 and § 2-105 becomes § 2-104A rather than renumbering what follows.
