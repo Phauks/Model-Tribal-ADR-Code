@@ -197,18 +197,23 @@ justice_institutions:
 dispute_resolution:
   forums:
   - kind: restorative-justice
-    name: Tribal youth court (youth wellness court program), Juneau
-    description: Planned opt-in program for youth tribal members in Southeast Alaska, described as an
-      alternative to the regular justice system and built on tribal mentorship and tradition.
+    name: Youth Healing to Wellness Court
+    description: Voluntary, four-phase restorative justice program that serves as an alternative to the
+      State of Alaska criminal justice system for Tlingit & Haida youth aged 14 to 21 who are involved
+      with alcohol or substance misuse. Each participant has a Wellness Team that provides clinical services,
+      intensive case management and judicial oversight. Office in Juneau; serves Southeast Alaska communities.
     case_types:
     - juvenile
     participation: voluntary
-    link: http://www.ktoo.org/2016/08/31/tlingit-haida-tribal-youth-court-could-launch-in-a-few-weeks/
-    source: ktoo-tlingit-haida-youth-court-2016
-    confidence: low
-    as_of: '2016-08-31'
-    note: News report of a program expected to launch within weeks; the launch is not confirmed in the
-      source. Read through a fetch-and-summarize tool.
+    link: https://tlingitandhaida.gov/service/youth-healing-to-wellness-court/
+    source: tlingit-haida-youth-healing-to-wellness-court
+    confidence: medium
+    as_of: '2025-05-20'
+    relationship_to_court: The Wellness Team includes judicial oversight; referrals come from service
+      providers, by self-referral or from family.
+    note: A 2016 KTOO report (source ktoo-tlingit-haida-youth-court-2016) described a planned opt-in youth
+      court; the Tribe's current service page describes this program. The page does not say whether the
+      two are the same program. Re-read Nov. 21, 2026.
   - kind: elders-council
     name: Court of Elders
     description: A body of two to six citizens of the Tlingit & Haida communities, including elder village
