@@ -10,6 +10,7 @@ recognition:
     2026-09-14)
   source: alabama-administrative-code-475-x-1-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-07-31'
   locator: Rule 475-X-1-.02 Members
 - type: state
@@ -17,6 +18,7 @@ recognition:
   legal_basis: Listed by the Alabama Indian Affairs Commission as a tribe recognized by the State of Alabama
   source: alabama-indian-affairs-commission-tribes-list-2026
   confidence: high
+  verification: bulk-import
   as_of: 2026-10
 - type: state
   state: AL
@@ -24,6 +26,7 @@ recognition:
     Administrative Code Chapter 475-X-3); not named in Code of Alabama Section 41-9-708
   source: alabama-indian-affairs-commission-state-recognized-tribes-compilation
   confidence: medium
+  verification: inferred
   as_of: '2001'
   note: Compilation says the last two tribes were recognized in 2001 under commission criteria; it does
     not name which two. Rule 475-X-1-.02 calls both 'previously recognized by the Commission'.
@@ -32,6 +35,7 @@ states:
   presence: other
   source: alabama-indian-affairs-commission-tribes-list-2026
   confidence: high
+  verification: bulk-import
   as_of: 2026-10
   note: State-recognized in Alabama; Alabama contact address listed.
 contacts:
@@ -40,6 +44,7 @@ contacts:
   label: Official website
   source: alabama-indian-affairs-commission-tribes-list-2026
   confidence: high
+  verification: bulk-import
   as_of: 2026-10
 review:
   status: drafted-from-public-sources

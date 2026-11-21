@@ -7,6 +7,7 @@ names:
     language_tag: poo
     source: hbpi-home
     confidence: high
+    verification: read-in-full
     as_of: '2026-11-21'
     note: 'Homepage: ''In the Central Pomo language, we call ourselves Sho-Ka-Wah, meaning “east of the
       river.”'''
@@ -17,6 +18,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -24,12 +26,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hopland Band of Pomo Indians, California
 - state: CA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1515
   note: 'Census area with land in this state: Hopland Rancheria (code 1515). Area matched to the nation
@@ -41,6 +45,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1515
   note: Matched by name. Census class code D2.
@@ -49,6 +54,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1515, field POP100
   note: 'Census area: Hopland Rancheria (code 1515). Everyone counted as living in the area in the 2020
@@ -57,6 +63,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3026 (Hopland Band of Pomo Indians alone or in any combination), GEOID
     0100000US (United States)
@@ -67,6 +74,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Hopland Band of Pomo Indians', PDF page 7, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -77,6 +85,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hopland Band of Pomo Indians, California
 - kind: physical-address
@@ -84,6 +93,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hopland Band of Pomo Indians, California
 - kind: mailing-address
@@ -91,6 +101,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hopland Band of Pomo Indians, California
 - kind: phone
@@ -98,6 +109,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hopland Band of Pomo Indians, California
 - kind: fax
@@ -105,6 +117,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hopland Band of Pomo Indians, California
 - kind: website
@@ -112,6 +125,7 @@ contacts:
   label: Official website (directory address https://www.hoplandtribe.com/ redirects here)
   source: hbpi-home
   confidence: high
+  verification: title-only
   as_of: '2026-11-21'
   note: Directory URL works but redirects to hbpi.gov.
 languages:
@@ -119,6 +133,7 @@ languages:
   language_tag: poo
   source: hbpi-home
   confidence: high
+  verification: read-in-full
   as_of: '2026-11-21'
   note: Homepage refers to 'the Central Pomo language'.
 federal_administration:
@@ -126,6 +141,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Central California Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hopland Band of Pomo Indians, California
 governing_documents:
@@ -135,6 +151,7 @@ governing_documents:
   link: https://narf.org/nill/codes/hopland_pomo/index.html
   source: national-indian-law-library-code-codes-hopland-pomo
   confidence: medium
+  verification: title-only
   as_of: '2012'
   locator: page heading
   note: 'Most recent Update : March 2012. The National Indian Law Library page gives the table of contents
@@ -145,6 +162,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/hopland_pomo/index.html
   source: national-indian-law-library-constitution-constitutions-hopland-pomo
   confidence: medium
+  verification: title-only
   as_of: '2009'
   locator: page heading
   note: 'Effective: August 22, 2009. The National Indian Law Library page gives the table of contents
@@ -153,6 +171,7 @@ governing_documents:
   title: Tribal code
   source: national-indian-law-library-hopland-pomo
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -163,6 +182,7 @@ governing_documents:
   link: https://www.tribalcourt.org/laws-ordinances
   source: national-indian-law-library-hopland-pomo
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Northern California
@@ -171,6 +191,7 @@ governing_documents:
   title: Constitution
   source: national-indian-law-library-hopland-pomo
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -181,6 +202,7 @@ governing_documents:
   link: https://www.tribalcourt.org/laws-ordinances
   source: national-indian-law-library-hopland-pomo
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Nothern
@@ -189,6 +211,7 @@ governing_documents:
   title: Hopland Band of Pomo Indians Constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: California section, entry 'Hopland Band of Pomo Indians'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -198,6 +221,7 @@ governing_documents:
   title: Hopland Tribal Code
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: California section, entry 'Hopland Band of Pomo Indians'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -208,6 +232,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-hopland-pomo
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
@@ -216,6 +241,7 @@ justice_institutions:
   name: Hopland Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'Hopland Band of Pomo Indians'
   note: 'Link check 2026-11-21: the link the source gives (http://www.hoplandtribe.com/tribal-court) returned
@@ -241,6 +267,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Hopland-Title-12-Tribal-Court.pdf
     source: hopland-title-12-tribal-court
     confidence: medium
+    verification: read-in-full
     as_of: '2025'
     locator: Sections 12-1.20.020, 12-1.100.020-070
     note: Roster kept by Tribal Council with advice of the Chief Judge and Culture Committee; peacemakers
@@ -261,6 +288,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Hopland-Title-12-Tribal-Court.pdf
     source: hopland-title-12-tribal-court
     confidence: medium
+    verification: read-in-full
     as_of: '2025'
     locator: Sections 12-4.10, 12-4.20
   provisions:
@@ -336,6 +364,7 @@ gaming:
     approved: '2024-01-31'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2024-01-31'
     locator: result page 7 (?page=7), row 17
     note: 'Listed as: "Hopland Band of Pomo Indians Secretarial Procedures" (Secretarial Procedures);
@@ -348,6 +377,7 @@ gaming:
     federal_register_citation: 87 FR 39115
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2022-06-30'
     locator: result page 7 (?page=7), row 18
     note: 'Listed as: "Hopland Band of Pomo Indians Tribal State Gaming Compact" (Extensions); list''s
@@ -362,6 +392,7 @@ gaming:
     federal_register_citation: 65 FR 31189
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-05-16'
     locator: result page 7 (?page=7), row 19
     note: 'Listed as: "Hopland Band of Pomo Indians Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -379,6 +410,7 @@ gaming:
     dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     source: compact-ca-cher-ae-heights-indian-community-of-the-2026
     confidence: medium
+    verification: inferred
     as_of: '2026-01-26'
     locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
@@ -391,6 +423,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9926&ind=9941
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1996-09-04'
     locator: table row 100, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 100 lists the nation
@@ -399,6 +432,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9927&ind=9942
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-04-27'
     locator: table row 100, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 100 lists the nation
@@ -407,6 +441,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9928&ind=9943
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2001-03-19'
     locator: table row 100, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 100 lists the nation
@@ -419,6 +454,7 @@ jurisdiction:
     country within California; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
   note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
@@ -428,6 +464,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Hopland Band of Pomo Indians, California Confidence lowered from high by the lead

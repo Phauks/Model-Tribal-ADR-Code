@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 - type: federal
@@ -18,6 +19,7 @@ recognition:
   since: '1983-10-18'
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '1983-10-18'
   locator: 'Petitioner #42'
 - type: state
@@ -26,6 +28,7 @@ recognition:
     Pequot'
   source: connecticut-general-statutes-47-59a
   confidence: high
+  verification: inferred
   as_of: '2020'
   locator: Section 47-59a(b)
   note: Also federally recognized; the state agency calls it a Federal and State recognized Tribe.
@@ -34,12 +37,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mashantucket Pequot Indian Tribe
 - state: CT
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2145
   note: 'Census area with land in this state: Mashantucket Pequot Reservation and Off-Reservation Trust
@@ -51,6 +56,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2145
   note: Matched by name. Census class code D1.
@@ -59,6 +65,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2145, field POP100
   note: 'Census area: Mashantucket Pequot Reservation and Off-Reservation Trust Land (code 2145). Everyone
@@ -68,6 +75,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3107 (Mashantucket Pequot Indian Tribe alone or in any combination),
     GEOID 0100000US (United States)
@@ -78,6 +86,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Mashantucket Pequot Indian Tribe', PDF page 4, Enrollment
     column
@@ -89,6 +98,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mashantucket Pequot Indian Tribe
 - kind: physical-address
@@ -96,6 +106,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mashantucket Pequot Indian Tribe
 - kind: mailing-address
@@ -103,6 +114,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mashantucket Pequot Indian Tribe
 - kind: phone
@@ -110,6 +122,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mashantucket Pequot Indian Tribe
 - kind: fax
@@ -117,6 +130,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mashantucket Pequot Indian Tribe
 federal_administration:
@@ -124,6 +138,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Eastern Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mashantucket Pequot Indian Tribe
 governing_documents:
@@ -133,6 +148,7 @@ governing_documents:
   link: https://narf.org/nill/codes/mashantucket_pequot/index.html
   source: national-indian-law-library-code-codes-mashantucket-pequot
   confidence: medium
+  verification: title-only
   as_of: '2015'
   locator: page heading
   note: 'Table of Contents Updated: August 2015. The National Indian Law Library page gives the table
@@ -143,6 +159,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/mashantucket_pequot/index.html
   source: national-indian-law-library-constitution-constitutions-mashantucket-pequot
   confidence: medium
+  verification: title-only
   as_of: '2012'
   locator: page heading
   note: 'Amended: September 19, 2012. The National Indian Law Library page gives the table of contents
@@ -152,6 +169,7 @@ governing_documents:
   link: http://www.mptnlaw.com/TribalLaws.htm
   source: national-indian-law-library-mashantucket-pequot
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -161,6 +179,7 @@ governing_documents:
   link: http://www.mptnlaw.com/TribalLaws.htm
   source: national-indian-law-library-mashantucket-pequot
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -170,6 +189,7 @@ governing_documents:
   link: http://www.mptnlaw.com/laws/MPT%20CONSTITUTION%20%20BYLAWS%209%2019%2012.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Connecticut section, entry 'Mashantucket (Western) Pequot Tribal Nation'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -178,6 +198,7 @@ governing_documents:
   link: http://www.mptnlaw.com/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Connecticut section, entry 'Mashantucket (Western) Pequot Tribal Nation'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -186,6 +207,7 @@ justice_institutions:
   name: Peacemakers Council
   source: narf-ipi-tribal-peacemaking-laws
   confidence: medium
+  verification: title-only
   as_of: '2025-09-29'
   note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
     whether it currently operates was not checked.
@@ -194,6 +216,7 @@ justice_institutions:
   link: http://www.mashantucket.com/tribalcourt.aspx
   source: national-indian-law-library-mashantucket-pequot
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -202,6 +225,7 @@ justice_institutions:
   link: https://www.mptn-nsn.gov/tribalcourt.aspx
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Connecticut section, entry 'Mashantucket (Western) Pequot Tribal Nation'
 dispute_resolution:
@@ -227,6 +251,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Mashantucket-Title-1-Judiciary.pdf
     source: mashantucket-title-1-judiciary
     confidence: medium
+    verification: read-in-full
     as_of: '2017-06-22'
     locator: 1 M.P.T.L. ch. 4 §§ 1, 2, 3, 6, 10, 11
     note: Proceedings are confidential and participants sign non-disclosure agreements (§ 6). Filing a
@@ -495,6 +520,7 @@ gaming:
     approved: '1991-05-31'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '1991-05-31'
     locator: result page 13 (?page=13), row 23
     note: 'Listed as: "Mashantucket Pequot Indian Tribe Secretarial Procedures" (Secretarial Procedures);
@@ -508,6 +534,7 @@ gaming:
     federal_register_citation: 86 FR 53340
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '2021-09-10'
     locator: result page 13 (?page=13), row 24
     note: 'Listed as: "Mashantucket Pequot Indian Tribe Secretarial Procedures" (Secretarial Procedures);
@@ -522,6 +549,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10218&ind=10232
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1995-02-07'
     locator: table row 144, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 144 lists the nation
@@ -530,6 +558,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10219&ind=10233
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2021-09-14'
     locator: table row 144, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 144 lists the nation
@@ -538,6 +567,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Mashantucket Pequot Indian Tribe".
       Name extracted from the PDF by the page-fetch tool and matched to the roster.
@@ -547,6 +577,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Mashantucket Pequot Indian Tribe Confidence lowered from high by the lead session:
@@ -556,6 +587,7 @@ memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Mashantucket Pequot Tribal Nation". Name matched to the roster entry.
 review:

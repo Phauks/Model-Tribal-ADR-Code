@@ -6,6 +6,7 @@ names:
   - name: Ḵéex̱ʼ
     source: alaska-dcra-native-place-names
     confidence: medium
+    verification: bulk-import
     as_of: '2018-10-15'
     locator: community row "Kake"
     note: Native place name for the community of Kake in Tlingit (State of Alaska, from the Alaska Native
@@ -18,6 +19,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4106
 states:
@@ -25,12 +27,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Organized Village of Kake
 - state: AK
   presence: other
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 6670
   note: 'Census area with land in this state: Kake ANVSA (code 6670). Statistical area only (not a land
@@ -42,6 +46,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US6670
   note: Matched by name. Census class code E1.
@@ -50,6 +55,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: ALASKA row "Kake", Enrollment column
   note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
@@ -58,6 +64,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US6670, field POP100
   note: 'Census area: Kake ANVSA (code 6670). Everyone counted as living in the area in the 2020 Census,
@@ -67,6 +74,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2760 (Organized Village of Kake alone or in any combination), GEOID
     0100000US (United States)
@@ -77,6 +85,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 85, row T35500 'Organized Village of Kake'
   note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
@@ -88,6 +97,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Organized Village of Kake
 - kind: physical-address
@@ -95,6 +105,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Organized Village of Kake
 - kind: mailing-address
@@ -102,6 +113,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Organized Village of Kake
 - kind: phone
@@ -109,6 +121,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Organized Village of Kake
 - kind: fax
@@ -116,6 +129,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Organized Village of Kake
 - kind: mailing-address
@@ -123,6 +137,7 @@ contacts:
   label: Tribal office address listed by the State of Alaska
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: high
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Organized Village of Kake" (community: Kake, object 86)'
 languages:
@@ -130,6 +145,7 @@ languages:
   language_tag: tli
   source: alaska-dcra-native-place-names
   confidence: medium
+  verification: inferred
   as_of: '2018-10-15'
   locator: community row "Kake"
   note: Language of the Native place name for the community (Kake), as listed by the State of Alaska from
@@ -139,6 +155,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Alaska Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Organized Village of Kake
 government_structure:
@@ -147,6 +164,7 @@ government_structure:
     Act of June 18, 1934 (48 Stat. 984); Act of May 1, 1936 (49 Stat. 1250)
   source: university-of-oklahoma-indian-reorganization-act-kakecons
   confidence: medium
+  verification: read-in-full
   as_of: '1947'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -156,6 +174,7 @@ governing_documents:
   link: https://kake-nsn.gov/tribal-court/
   source: national-indian-law-library-organized-kake
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
@@ -166,6 +185,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/kakecons.html
   source: national-indian-law-library-organized-kake
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
@@ -176,6 +196,7 @@ governing_documents:
   link: https://www.loc.gov/item/50061131/
   source: national-indian-law-library-organized-kake
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
@@ -186,6 +207,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/kakechrtr.html
   source: national-indian-law-library-organized-kake
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
@@ -196,6 +218,7 @@ governing_documents:
   link: https://www.loc.gov/item/50061206/
   source: national-indian-law-library-organized-kake
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
@@ -206,6 +229,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/kakechrtr.html
   source: university-of-oklahoma-indian-reorganization-act-kakechrtr
   confidence: medium
+  verification: title-only
   as_of: '1948'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -214,6 +238,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/kakecons.html
   source: university-of-oklahoma-indian-reorganization-act-kakecons
   confidence: medium
+  verification: title-only
   as_of: '1947'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -222,6 +247,7 @@ justice_institutions:
   link: https://kake-nsn.gov/tribal-court/
   source: national-indian-law-library-organized-kake
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -256,6 +282,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Kake-judical_peacemaking_code.pdf
     source: kake-keex-kwaan-judicial-peacemaking-code
     confidence: medium
+    verification: inferred
     as_of: '2025'
     locator: Chapter 1, Sections 1, 2, 3, 7, 8, 9
     note: Read from OCR of a scanned copy. Peacemakers may consult Elders and Council members (Section
@@ -278,6 +305,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Kake-judical_peacemaking_code.pdf
     source: kake-keex-kwaan-judicial-peacemaking-code
     confidence: medium
+    verification: inferred
     as_of: '2025'
     locator: Chapter 4, Sections 1, 2, 11, 12
     note: Participation recorded as court-referred because the chapter is part of the court system; voluntariness
@@ -288,6 +316,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2016/09/2005kake_peacemaking_handbook.pdf
     source: narf-ipi-other-tribal-materials
     confidence: medium
+    verification: title-only
     as_of: '2005'
   provisions:
   - kind: other
@@ -421,6 +450,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10520&ind=10538
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-04-18'
     locator: table row 178, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 178 lists the nation
@@ -433,6 +463,7 @@ jurisdiction:
     within Alaska; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Alaska"
   note: Statute is primary; nation matched to Alaska by office state in the BIA Tribal Leaders Directory,
@@ -442,6 +473,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Organized Village of Kake Confidence lowered from high by the lead session: the notice
@@ -451,6 +483,7 @@ related_entities:
   relation: alaska-native-claims-settlement-act-regional-corporation
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Organized Village of Kake
   note: Regional corporation for the area, as listed in the directory.
@@ -458,6 +491,7 @@ related_entities:
   relation: alaska-native-claims-settlement-act-regional-corporation
   source: alaska-dcra-community-regions-overview
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: community row "Kake"
   note: State of Alaska lists this affiliation for the community where the nation is based (Kake), not
@@ -466,6 +500,7 @@ related_entities:
   relation: alaska-native-claims-settlement-act-regional-nonprofit
   source: alaska-dcra-community-regions-overview
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: community row "Kake"
   note: State of Alaska lists this affiliation for the community where the nation is based (Kake), not
@@ -474,6 +509,7 @@ related_entities:
   relation: native-regional-health-care-provider
   source: alaska-dcra-community-regions-overview
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: community row "Kake"
   note: State of Alaska lists this affiliation for the community where the nation is based (Kake), not

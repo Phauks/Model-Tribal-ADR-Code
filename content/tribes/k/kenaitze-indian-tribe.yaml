@@ -6,6 +6,7 @@ names:
   - name: Shk'ituk't
     source: alaska-dcra-native-place-names
     confidence: medium
+    verification: bulk-import
     as_of: '2018-10-15'
     locator: community row "Kenai"
     note: Native place name for the community of Kenai in Dena'ina (State of Alaska, from the Alaska Native
@@ -16,6 +17,7 @@ names:
     language_tag: tfn
     source: kenaitze-indian-tribe-website
     confidence: high
+    verification: title-only
     as_of: '2026'
     locator: page header under the English name
   official_source: bia-recognized-entities-2026
@@ -25,6 +27,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -32,12 +35,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kenaitze Indian Tribe
 - state: AK
   presence: other
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 6720
   note: 'Census area with land in this state: Kenaitze ANVSA (code 6720). Statistical area only (not a
@@ -49,6 +54,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US6720
   note: Matched by name. Census class code E1.
@@ -57,6 +63,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: ALASKA row "Kenaitze", Enrollment column
   note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
@@ -65,6 +72,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US6720, field POP100
   note: 'Census area: Kenaitze ANVSA (code 6720). Everyone counted as living in the area in the 2020 Census,
@@ -74,6 +82,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2634 (Kenaitze Indian Tribe alone or in any combination), GEOID 0100000US
     (United States)
@@ -84,6 +93,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 79, row T17100 'Kenaitze Indian Tribe'
   note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
@@ -95,6 +105,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kenaitze Indian Tribe
 - kind: physical-address
@@ -102,6 +113,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kenaitze Indian Tribe
 - kind: mailing-address
@@ -109,6 +121,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kenaitze Indian Tribe
 - kind: phone
@@ -116,6 +129,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kenaitze Indian Tribe
 - kind: fax
@@ -123,6 +137,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kenaitze Indian Tribe
 - kind: website
@@ -130,6 +145,7 @@ contacts:
   label: Tribal government website (State of Alaska tribal contacts list)
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: high
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Kenaitze Indian Tribe" (community: Kenai, object 93)'
 - kind: mailing-address
@@ -137,6 +153,7 @@ contacts:
   label: Tribal office address listed by the State of Alaska
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: high
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Kenaitze Indian Tribe" (community: Kenai, object 93)'
 languages:
@@ -144,6 +161,7 @@ languages:
   language_tag: tfn
   source: alaska-dcra-native-place-names
   confidence: medium
+  verification: inferred
   as_of: '2018-10-15'
   locator: community row "Kenai"
   note: Language of the Native place name for the community (Kenai), as listed by the State of Alaska
@@ -152,6 +170,7 @@ languages:
   language_tag: tfn
   source: kenaitze-indian-tribe-website
   confidence: high
+  verification: read-in-full
   as_of: '2026'
   locator: '"Our language" section; Dena’ina Language Institute'
 federal_administration:
@@ -159,6 +178,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Alaska Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kenaitze Indian Tribe
 governing_documents:
@@ -168,6 +188,7 @@ governing_documents:
   link: https://narf.org/nill/codes/kenaitze/index.html
   source: national-indian-law-library-code-codes-kenaitze
   confidence: medium
+  verification: title-only
   as_of: '2019'
   locator: page heading
   note: 'Table of Contents Updated: March 2019. The National Indian Law Library page gives the table of
@@ -178,6 +199,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/kenaitze/index.html
   source: national-indian-law-library-constitution-constitutions-kenaitze
   confidence: medium
+  verification: title-only
   as_of: '1997'
   locator: page heading
   note: 'Adopted: June 16, 1997. The National Indian Law Library page gives the table of contents (and
@@ -186,6 +208,7 @@ governing_documents:
   title: Tribal code
   source: national-indian-law-library-kenaitze
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -196,6 +219,7 @@ governing_documents:
   link: https://www.kenaitze.org/tribal-government/constitution/
   source: national-indian-law-library-kenaitze
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -204,6 +228,7 @@ governing_documents:
   title: Kenaitze Indian Tribe Constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Alaska section, entry 'Kenaitze Indian Tribe'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -213,6 +238,7 @@ governing_documents:
   title: Kenaitze Indian Tribal Code
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Alaska section, entry 'Kenaitze Indian Tribe'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -224,6 +250,7 @@ justice_institutions:
   link: https://www.kenaitze.org/tribal-government/tribal-court/
   source: national-indian-law-library-kenaitze
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -232,6 +259,7 @@ justice_institutions:
   link: https://www.kenaitze.org/about/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Alaska section, entry 'Kenaitze Indian Tribe'
 dispute_resolution:
@@ -254,6 +282,7 @@ dispute_resolution:
     link: https://www.kenaitze.org/wp-content/uploads/KenaitzeCourtCode.pdf
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/referral-to-the-traditional-conflict-resolution-program-tcrp-during-a-case/
     note: Case types reflect the separate NCORJ records for Sections 14(B), 17 and 18 and Domestic Relations
@@ -327,6 +356,7 @@ jurisdiction:
     within Alaska; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Alaska"
   note: Statute is primary; nation matched to Alaska by office state in the BIA Tribal Leaders Directory,
@@ -336,6 +366,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Kenaitze Indian Tribe Confidence lowered from high by the lead session: the notice
@@ -345,6 +376,7 @@ related_entities:
   relation: alaska-native-claims-settlement-act-regional-corporation
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kenaitze Indian Tribe
   note: Regional corporation for the area, as listed in the directory.
@@ -352,6 +384,7 @@ related_entities:
   relation: alaska-native-claims-settlement-act-regional-corporation
   source: alaska-dcra-community-regions-overview
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: community row "Kenai"
   note: State of Alaska lists this affiliation for the community where the nation is based (Kenai), not
@@ -360,6 +393,7 @@ related_entities:
   relation: alaska-native-claims-settlement-act-regional-nonprofit
   source: alaska-dcra-community-regions-overview
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: community row "Kenai"
   note: State of Alaska lists this affiliation for the community where the nation is based (Kenai), not

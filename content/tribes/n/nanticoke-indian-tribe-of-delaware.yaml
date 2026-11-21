@@ -7,6 +7,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State Designated Tribal Statistical Area; area 9830
   note: The 2020 Census delineated "Nanticoke Indian Tribe SDTSA" (State Designated Tribal Statistical
@@ -20,6 +21,7 @@ recognition:
   since: '1881-03-10'
   source: delaware-code-title-29-chapter-1
   confidence: high
+  verification: read-in-full
   as_of: '2026'
   locator: 29 Del. C. Section 107
   note: 'Statute: ''designated and recognized as the first state-recognized tribe in Delaware, and has
@@ -29,6 +31,7 @@ states:
   presence: other
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9830
   note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
@@ -36,6 +39,7 @@ states:
   presence: other
   source: delaware-code-title-29-chapter-1
   confidence: high
+  verification: inferred
   as_of: '2026'
 census_areas:
 - geographic_identifier: '9830'
@@ -44,6 +48,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9830, GEOID 9830R
   note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched

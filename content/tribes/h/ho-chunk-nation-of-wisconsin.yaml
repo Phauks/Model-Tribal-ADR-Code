@@ -6,6 +6,7 @@ names:
   - name: People of the Big Voice
     source: ho-chunknation-home
     confidence: medium
+    verification: read-in-full
     as_of: '2026-11-21'
     note: 'Homepage: ''the nation reclaimed their original name: Ho-Chunk or “People of the Big Voice.”''
       Page header also says ''People of the Sacred Voice''.'
@@ -13,6 +14,7 @@ names:
   - name: Wisconsin Winnebago Tribe
     source: ho-chunknation-home
     confidence: high
+    verification: read-in-full
     as_of: '1994'
     note: 'Homepage: ''were first recorded as the Wisconsin Winnebago Tribe. This name was given to them
       by early European explorers. In 1994 ... the nation reclaimed their original name: Ho-Chunk''.'
@@ -23,6 +25,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -30,12 +33,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ho-Chunk Nation of Wisconsin
 - state: MN
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1450
   note: 'Census area with land in this state: Ho-Chunk Nation Reservation and Off-Reservation Trust Land
@@ -44,6 +49,7 @@ states:
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1450
   note: 'Census area with land in this state: Ho-Chunk Nation Reservation and Off-Reservation Trust Land
@@ -55,6 +61,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1450
   note: Matched by name. Census class code D1.
@@ -63,12 +70,14 @@ population:
   kind: citizens
   source: ho-chunknation-home
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'Homepage: ''this group of 7,752 citizens''. Undated; as_of is access date.'
 - count: 1577
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1450, field POP100
   note: 'Census area: Ho-Chunk Nation Reservation and Off-Reservation Trust Land (code 1450). Everyone
@@ -78,6 +87,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3021 (Ho-Chunk Nation alone or in any combination), GEOID 0100000US
     (United States)
@@ -88,6 +98,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Ho-Chunk Nation', PDF page 4, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -96,6 +107,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 78, row T13700 'Ho-Chunk Nation of Wisconsin'
   note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
@@ -107,6 +119,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ho-Chunk Nation of Wisconsin
 - kind: physical-address
@@ -114,6 +127,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ho-Chunk Nation of Wisconsin
 - kind: mailing-address
@@ -121,6 +135,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ho-Chunk Nation of Wisconsin
 - kind: phone
@@ -128,6 +143,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ho-Chunk Nation of Wisconsin
 - kind: fax
@@ -135,6 +151,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ho-Chunk Nation of Wisconsin
 languages:
@@ -142,6 +159,7 @@ languages:
   language_tag: win
   source: ho-chunknation-home
   confidence: low
+  verification: inferred
   as_of: '2026-11-21'
   note: Homepage directory lists 'Hocak Wazija Haci Language Programs' and several Language Offices; the
     language name is inferred from that program name.
@@ -150,6 +168,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Great Lakes Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ho-Chunk Nation of Wisconsin
 governing_documents:
@@ -159,6 +178,7 @@ governing_documents:
   link: https://narf.org/nill/codes/hochunkcode/index.html
   source: national-indian-law-library-code-codes-hochunkcode
   confidence: medium
+  verification: title-only
   as_of: '2019'
   locator: page heading
   note: 'Updated: April 2019 Downloaded with permission from the tribe''s website . Individual sections
@@ -171,6 +191,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/hochunkconst/index.html
   source: national-indian-law-library-constitution-constitutions-hochunkconst
   confidence: medium
+  verification: title-only
   as_of: '2016'
   locator: page heading
   note: 'Amended: January 26, 2016, effective on February 11, 2016. The National Indian Law Library page
@@ -180,6 +201,7 @@ governing_documents:
   link: https://ho-chunknation.com/government/legislative-branch/ho-chunk-nation-laws/
   source: national-indian-law-library-ho-chunk
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -189,6 +211,7 @@ governing_documents:
   link: https://ho-chunknation.com/wp-content/uploads/2019/10/Final-HCN-Constitution-July-2019-1.pdf
   source: national-indian-law-library-ho-chunk
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -197,6 +220,7 @@ governing_documents:
   title: Ho-Chunk Nation Constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Wisconsin section, entry 'Ho-Chunk Nation'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -206,6 +230,7 @@ governing_documents:
   title: Ho Chunk Nation Laws
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Wisconsin section, entry 'Ho-Chunk Nation'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -217,12 +242,14 @@ justice_institutions:
   link: https://ho-chunknation.com/government/judicial-branch/
   source: national-indian-law-library-ho-chunk
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
 - kind: tribal-court
   name: Ho-Chunk Nation Judiciary
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Wisconsin section, entry 'Ho-Chunk Nation'
 dispute_resolution:
@@ -242,6 +269,7 @@ dispute_resolution:
     link: https://ho-chunknation.com/government/judicial-branch/courts/traditional-court-2/
     source: ho-chunk-1-hcc-1-judiciary-act
     confidence: high
+    verification: inferred
     as_of: '2017-06-05'
     locator: 1 HCC § 1, Sections 3(c), 3(d)-(e), 13
     note: Case types are not enumerated in the sources reviewed. Referral routes are from the Judiciary's
@@ -260,6 +288,7 @@ dispute_resolution:
     link: https://ho-chunknation.com/wp-content/uploads/2024/01/01.23.24-4-HCC-18-Custody-and-Placement-Ordinance-1.23.24-1.pdf
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/peacemaking-circles-for-child-welfare/
   provisions:
@@ -433,6 +462,7 @@ dispute_resolution:
     link: https://ho-chunknation.com/wp-content/uploads/2019/10/2HCC13-Arbitration-Ordinance-12.28.04.pdf
     source: ho-chunk-2-hcc-13-arbitration
     confidence: medium
+    verification: read-in-full
     as_of: '2004-12-28'
     locator: §§ 2-3, 8-10, 12-13
 gaming:
@@ -443,6 +473,7 @@ gaming:
     federal_register_citation: 90 FR 1539
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2025-01-08'
     locator: result page 45 (?page=45), row 17
     note: 'Listed as: "Ho-Chunk Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
@@ -456,6 +487,7 @@ gaming:
     federal_register_citation: 68 FR 39964
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2003-07-03'
     locator: result page 45 (?page=45), row 18
     note: 'Listed as: "Ho-Chunk Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
@@ -468,6 +500,7 @@ gaming:
     approved: '1992-08-05'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1992-08-05'
     locator: result page 45 (?page=45), row 19
     note: 'Listed as: "Ho-Chunk Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Ho-Chunk
@@ -478,6 +511,7 @@ gaming:
     federal_register_citation: 73 FR 75764
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2008-12-12'
     locator: result page 45 (?page=45), row 20
     note: 'Listed as: "Ho-Chunk Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Ho-Chunk
@@ -491,6 +525,7 @@ gaming:
     federal_register_citation: 64 FR 4890
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-02-01'
     locator: result page 45 (?page=45), row 21
     note: 'Listed as: "Ho-Chunk Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Ho-Chunk
@@ -506,6 +541,7 @@ gaming:
     dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
     source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
     confidence: medium
+    verification: inferred
     as_of: '1992-08-10'
     locator: Section XXIII (Dispute Resolution) of the 1992 compact
     note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
@@ -518,6 +554,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9902&ind=9916
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1994-05-19'
     locator: table row 98, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 98 lists the nation
@@ -526,6 +563,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9903&ind=9917
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1996-12-17'
     locator: table row 98, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 98 lists the nation
@@ -534,6 +572,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9904&ind=9918
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-09-07'
     locator: table row 98, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 98 lists the nation
@@ -542,6 +581,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9905&ind=9919
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-02-14'
     locator: table row 98, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 98 lists the nation
@@ -550,6 +590,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9906&ind=9920
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2008-02-07'
     locator: table row 98, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 98 lists the nation
@@ -558,6 +599,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Ho-Chunk Nation of Wisconsin".
       Facilities as machine-extracted from the report text (verify): Ho-Chunk Gaming - Madison; Ho-Chunk
@@ -572,6 +614,7 @@ jurisdiction:
     country within Wisconsin; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Wisconsin"
   note: Statute is primary; nation matched to Wisconsin by office state in the BIA Tribal Leaders Directory,
@@ -581,6 +624,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Ho-Chunk Nation of Wisconsin Confidence lowered from high by the lead session: the
@@ -589,11 +633,13 @@ memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Ho-Chunk Nation". Name matched to the roster entry.
 - organization: Great Lakes Inter-Tribal Council
   source: great-lakes-inter-tribal-council-tribes-served
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Ho-Chunk Nation". Name matched to the roster entry.
 review:

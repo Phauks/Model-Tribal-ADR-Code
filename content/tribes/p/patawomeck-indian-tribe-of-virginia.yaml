@@ -6,6 +6,7 @@ names:
   - name: Patawomeck Indian Tribe
     source: virginia-report-status-of-indian-tribes-2025
     confidence: high
+    verification: inferred
     as_of: '2025-12-30'
   official_source: virginia-report-status-of-indian-tribes-2025
 recognition:
@@ -15,6 +16,7 @@ recognition:
     recognizes
   source: virginia-report-status-of-indian-tribes-2025
   confidence: high
+  verification: bulk-import
   as_of: '2025-12-30'
 - type: state
   state: VA
@@ -22,6 +24,7 @@ recognition:
   since: '2010-02-18'
   source: virginia-house-joint-resolution-150-2010
   confidence: high
+  verification: read-in-full
   as_of: '2010-02-18'
   note: 'Resolved clause: ''the General Assembly of Virginia extend state recognition to the Patawomeck
     Indian Tribe of Virginia''. Senate agreed February 16, 2010; House February 18, 2010.'
@@ -30,6 +33,7 @@ states:
   presence: government-office
   source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
   confidence: high
+  verification: inferred
   as_of: '2026'
 contacts:
 - kind: physical-address
@@ -37,24 +41,28 @@ contacts:
   label: Tribal contact address
   source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: phone
   value: (540) 225-3900
   label: Tribal contact phone
   source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: email-general
   value: patawomecktribalcenter@gmail.com
   label: Tribal center email
   source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: website
   value: https://patawomeckindiantribeofvirginia.org/
   label: Tribal information website
   source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 review:
   status: drafted-from-public-sources

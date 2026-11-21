@@ -6,6 +6,7 @@ names:
   - name: Rumsey Band of Wintun Indians
     source: yocha-dehe-wintun-nation-heritage-our-history
     confidence: high
+    verification: read-in-full
     as_of: '2009'
     note: '"In 2009, we legally changed our name from the Rumsey Band of Wintun Indians"'
   official_source: bia-recognized-entities-2026
@@ -15,6 +16,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -22,12 +24,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yocha Dehe Wintun Nation, California
 - state: CA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3265
   note: 'Census area with land in this state: Rumsey Indian Rancheria (code 3265). Area matched to the
@@ -39,6 +43,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3265
   note: Matched by name. Rumsey Indian Rancheria is the former name of the Yocha Dehe Wintun Nation; matched
@@ -48,6 +53,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3265, field POP100
   note: 'Census area: Rumsey Indian Rancheria (code 3265). Everyone counted as living in the area in the
@@ -57,6 +63,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3442 (Yocha Dehe Wintun Nation, California alone or in any combination),
     GEOID 0100000US (United States)
@@ -67,6 +74,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Yocha Dehe Wintun Nation (Rumsey Rancheria)', PDF page 8,
     Enrollment column
@@ -76,6 +84,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 91, row T56100 'Yocha Dehe Wintun Nation'
   note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
@@ -87,6 +96,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yocha Dehe Wintun Nation, California
 - kind: physical-address
@@ -94,6 +104,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yocha Dehe Wintun Nation, California
 - kind: mailing-address
@@ -101,6 +112,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yocha Dehe Wintun Nation, California
 - kind: phone
@@ -108,6 +120,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yocha Dehe Wintun Nation, California
 - kind: fax
@@ -115,6 +128,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yocha Dehe Wintun Nation, California
 languages:
@@ -122,6 +136,7 @@ languages:
   language_tag: pwi
   source: yocha-dehe-wintun-nation-home
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: '"our Patwin language"'
 federal_administration:
@@ -129,6 +144,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Central California Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yocha Dehe Wintun Nation, California
 gaming:
@@ -139,6 +155,7 @@ gaming:
     federal_register_citation: 81 FR 87585
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2016-12-05'
     locator: result page 13 (?page=13), row 12
     note: 'Listed as: "Yocha Dehe Wintun Nation Tribal State Gaming Compact" (Deemed Approved); list''s
@@ -151,6 +168,7 @@ gaming:
     approved: '1998-10-22'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1998-10-22'
     locator: result page 13 (?page=13), row 13
     note: 'Listed as: "Yocha Dehe Wintun Nation Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -161,6 +179,7 @@ gaming:
     federal_register_citation: 65 FR 31189
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-05-16'
     locator: result page 13 (?page=13), row 14
     note: 'Listed as: "Yocha Dehe Wintun Nation Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -174,6 +193,7 @@ gaming:
     federal_register_citation: 69 FR 53733
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2004-09-02'
     locator: result page 13 (?page=13), row 15
     note: 'Listed as: "Yocha Dehe Wintun Nation Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -191,6 +211,7 @@ gaming:
     dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     source: compact-ca-cher-ae-heights-indian-community-of-the-2026
     confidence: medium
+    verification: inferred
     as_of: '2026-01-26'
     locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
@@ -203,6 +224,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11592&ind=11601
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1994-01-28'
     locator: table row 318, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 318 lists the nation
@@ -211,6 +233,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11595&ind=11602
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1998-12-18'
     locator: table row 318, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 318 lists the nation
@@ -219,6 +242,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11594&ind=11603
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2008-01-11'
     locator: table row 318, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 318 lists the nation
@@ -227,6 +251,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=14472&ind=14473
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2026-08-06'
     locator: table row 318, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 318 lists the nation
@@ -235,6 +260,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Yocha DeHe Wintun Nation". Name
       extracted from the PDF by the page-fetch tool and matched to the roster.
@@ -246,6 +272,7 @@ jurisdiction:
     country within California; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
   note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
@@ -255,6 +282,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Yocha Dehe Wintun Nation, California Confidence lowered from high by the lead session:

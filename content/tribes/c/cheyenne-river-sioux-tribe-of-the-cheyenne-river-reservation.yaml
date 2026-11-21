@@ -7,6 +7,7 @@ names:
     language_tag: lkt
     source: cheyenneriversioux-history
     confidence: medium
+    verification: inferred
     as_of: '2026-11-21'
     note: 'History page: the bands are ''of the Titunwan (People of the Plains) one of the Oceti Sakowin
       (Seven Council Fires)''. Reservation is home to four bands: Mnicoujou, Oohenumpa, Itazipco, Siha
@@ -18,6 +19,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -25,12 +27,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cheyenne River Sioux Tribe of the Cheyenne River Reservation, South Dakota
 - state: SD
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0605
   note: 'Census area with land in this state: Cheyenne River Reservation and Off-Reservation Trust Land
@@ -42,6 +46,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0605
   note: Matched by name. Census class code D1.
@@ -50,6 +55,7 @@ population:
   kind: citizens
   source: sd-tribal-relations-cheyenne-river-sioux-tribe
   confidence: medium
+  verification: inferred
   as_of: '2026-11-21'
   note: 'State profile page: ''Total Population: 8,594 Estimated Tribal Enrollment: 15,993''. ''Estimated''
     per the page; undated (page links a 2019 statistical profile); as_of is access date.'
@@ -57,6 +63,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0605, field POP100
   note: 'Census area: Cheyenne River Reservation and Off-Reservation Trust Land (code 0605). Everyone
@@ -66,6 +73,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2915 (Cheyenne River Sioux Tribe of the Cheyenne River Reservation,
     South Dakota alone or in any combination), GEOID 0100000US (United States)
@@ -77,6 +85,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Denver, row 'Cheyenne River Sioux', PDF page 5, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -87,6 +96,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cheyenne River Sioux Tribe of the Cheyenne River Reservation, South Dakota
 - kind: physical-address
@@ -94,6 +104,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cheyenne River Sioux Tribe of the Cheyenne River Reservation, South Dakota
 - kind: mailing-address
@@ -101,6 +112,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cheyenne River Sioux Tribe of the Cheyenne River Reservation, South Dakota
 - kind: phone
@@ -108,6 +120,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cheyenne River Sioux Tribe of the Cheyenne River Reservation, South Dakota
 - kind: fax
@@ -115,6 +128,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cheyenne River Sioux Tribe of the Cheyenne River Reservation, South Dakota
 languages:
@@ -122,6 +136,7 @@ languages:
   language_tag: lkt
   source: sd-tribal-relations-cheyenne-river-sioux-tribe
   confidence: medium
+  verification: inferred
   as_of: '2026-11-21'
   note: 'State profile page: ''Traditional Language: Lakota''.'
 federal_administration:
@@ -129,6 +144,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Cheyenne River Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cheyenne River Sioux Tribe of the Cheyenne River Reservation, South Dakota
 government_structure:
@@ -137,6 +153,7 @@ government_structure:
     approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -147,6 +164,7 @@ government_structure:
     under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
   confidence: medium
+  verification: read-in-full
   as_of: '1935'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -156,6 +174,7 @@ governing_documents:
   link: https://sdtribalrelations.sd.gov/docs/chysiouxcon.pdf
   source: national-indian-law-library-cheyenne-river-sioux
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At South Dakota
@@ -166,6 +185,7 @@ governing_documents:
   link: https://narf.org/nill/codes/cheyenne_river_sioux/index.html
   source: national-indian-law-library-code-codes-cheyenne-river-sioux
   confidence: medium
+  verification: title-only
   as_of: '2012'
   locator: page heading
   note: 'Received: April 2012. The National Indian Law Library page gives the table of contents (and may
@@ -176,6 +196,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/cheyenne_river_sioux/index.html
   source: national-indian-law-library-constitution-constitutions-cheyenne-river-sioux
   confidence: medium
+  verification: title-only
   as_of: '1992'
   locator: page heading
   note: 'Dated: 1992. The National Indian Law Library page gives the table of contents (and may link to
@@ -186,6 +207,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/sdsiouxcons.html
   source: university-of-oklahoma-indian-reorganization-act-sdsiouxcons
   confidence: medium
+  verification: title-only
   as_of: '1935'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -194,6 +216,7 @@ justice_institutions:
   link: https://www.cheyenneriversioux.com/judicial-department
   source: national-indian-law-library-cheyenne-river-sioux
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -201,6 +224,7 @@ justice_institutions:
   name: Cheyenne River Sioux Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: South Dakota section, entry 'Cheyenne River Sioux Tribe'
 gaming:
@@ -210,6 +234,7 @@ gaming:
     approved: '1993-12-03'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '1993-12-03'
     locator: result page 33 (?page=33), row 23
     note: 'Listed as: "Cheyenne River Sioux Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -226,6 +251,7 @@ gaming:
       procedure
     source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-trav-2019
     confidence: medium
+    verification: inferred
     as_of: '2019-04-01'
     locator: Section 13.1 or 14.1 (General Provisions) and Section 7 (Licensing) arbitration procedure
     note: state model compact; nation-specific text not checked. The same federal-court clause appears
@@ -237,6 +263,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9478&ind=9501
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1995-05-04'
     locator: table row 40, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 40 lists the nation
@@ -245,6 +272,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9490&ind=9502
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2018-04-10'
     locator: table row 40, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 40 lists the nation
@@ -255,6 +283,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Cheyenne River Sioux Tribe of the Cheyenne River Reservation, South Dakota Confidence
@@ -264,11 +293,13 @@ memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Cheyenne River Sioux Tribe". Name matched to the roster entry.
 - organization: Coalition of Large Tribes
   source: coalition-of-large-tribes-home
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Cheyenne River Sioux Tribe". Name matched to the roster entry.
 review:

@@ -19,6 +19,17 @@
 // Section title shown in the running head of recto pages.
 #let running-section = state("running-section", none)
 
+// A running head stays on one line: a title too long for the measure is set
+// smaller until it fits, so a long heading never pushes the head toward the
+// trim at small sizes. A title that would need less than 70 percent of the
+// running-head size is cut at the edge instead.
+#let one-line(body) = layout(region => {
+  let natural = measure(body).width
+  if natural <= region.width { return body }
+  let factor = calc.max(region.width / natural, 0.7)
+  box(width: region.width, clip: true, outset: (bottom: 0.3em), text(size: factor * 1em, body))
+})
+
 #let page-has(label-name, page-number) = query(label-name).any(found => found.location().page() == page-number)
 
 // Start the next item on a right-hand (odd) page. A page left empty for that
@@ -89,7 +100,7 @@
       if calc.even(number) {
         let chapters = query(heading.where(level: 2).before(here()))
         let chapter = if chapters.len() > 0 { chapters.last().body } else { [] }
-        grid(columns: (auto, 1fr), column-gutter: 1em, folio, emph(chapter))
+        grid(columns: (auto, 1fr), column-gutter: 1em, folio, one-line(emph(chapter)))
       } else {
         let on-page = query(heading.where(level: 3)).filter(found => found.location().page() == number)
         let section = if on-page.len() > 0 { on-page.first().body } else { running-section.get() }
@@ -97,7 +108,7 @@
           let chapters = query(heading.where(level: 2).before(here()))
           section = if chapters.len() > 0 { chapters.last().body } else { [] }
         }
-        grid(columns: (1fr, auto), column-gutter: 1em, align(right, section), folio)
+        grid(columns: (1fr, auto), column-gutter: 1em, align(right, one-line(section)), folio)
       }
       v(-0.55em)
       line(length: 100%, stroke: 0.4pt + black)

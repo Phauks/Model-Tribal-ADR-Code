@@ -6,6 +6,7 @@ names:
   - name: St. Francis/Sokoki Band of Abenakis of Vermont Abenaki Tribal Council
     source: gao-12-348-federal-funding-non-federally-recognized-tribes
     confidence: medium
+    verification: bulk-import
     as_of: 2012-04
     note: Name used for this group in the cited source; matched to this record by name and state.
   official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
@@ -13,6 +14,7 @@ recognition:
 - type: unrecognized
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1; Table 3
   note: 'GAO Table 1 lists "St. Francis/Sokoki Band of Abenakis of Vermont Abenaki Tribal Council" among
@@ -27,6 +29,7 @@ recognition:
   petition_stage: Denied (Petitions Resolved page); Denied acknowledgment through 25 CFR 83 (eff. 10/1/07)
   source: federal-register-e7-12727
   confidence: high
+  verification: bulk-import
   as_of: '2007-07-02'
   locator: 'Petitioner #68'
   note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
@@ -38,6 +41,7 @@ states:
   presence: other
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1, State column
   note: State as listed by GAO.
@@ -45,6 +49,7 @@ states:
   presence: other
   source: ofa-petitions-resolved
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.

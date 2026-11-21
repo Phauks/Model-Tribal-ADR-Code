@@ -19,6 +19,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -26,12 +27,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona
 - state: AZ
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1545
   note: 'Census area with land in this state: Hualapai Indian Reservation and Off-Reservation Trust Land
@@ -43,6 +46,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1545
   note: Matched by name. Census class code D1.
@@ -51,6 +55,7 @@ population:
   kind: citizens
   source: hualapai-nsn-community-about-the-hualapai-tribe-index
   confidence: low
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'Page: ''Total tribal membership, including members not residing on the reservation, is approximately
     2,300.'' The surrounding text cites 2000 U.S. Census figures, so the membership figure may be old.
@@ -59,6 +64,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1545, field POP100
   note: 'Census area: Hualapai Indian Reservation and Off-Reservation Trust Land (code 1545). Everyone
@@ -68,6 +74,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3028 (Hualapai Indian Tribe of the Hualapai Indian Reservation alone
     or in any combination), GEOID 0100000US (United States)
@@ -78,6 +85,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Hualapai Indian Tribe', PDF page 7, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -86,6 +94,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 79, row T14500 'Hualapai Indian Tribe of the Hualapai Indian Reservation'
   note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
@@ -97,6 +106,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona
 - kind: physical-address
@@ -104,6 +114,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona
 - kind: mailing-address
@@ -111,6 +122,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona
 - kind: phone
@@ -118,6 +130,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona
 - kind: fax
@@ -125,6 +138,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona
 federal_administration:
@@ -132,6 +146,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Truxton Canon Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona
 government_structure:
@@ -141,6 +156,7 @@ government_structure:
     as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -151,6 +167,7 @@ government_structure:
     was adopted under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-amhuacons
   confidence: medium
+  verification: read-in-full
   as_of: '1955'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -159,6 +176,7 @@ government_structure:
     was adopted under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-huacons
   confidence: medium
+  verification: read-in-full
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -168,6 +186,7 @@ governing_documents:
   link: https://hualapai-nsn.gov/Documents/Government/Tribal%20Court/Law-and-Order-Code.pdf
   source: national-indian-law-library-hualapai
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
@@ -177,6 +196,7 @@ governing_documents:
   link: https://hualapai-nsn.gov/government/tribal_council/hualapai_tribal_council_ordinances.php
   source: national-indian-law-library-hualapai
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
@@ -186,6 +206,7 @@ governing_documents:
   link: https://hualapai-nsn.gov/Documents/Community/Election/CONSTITUTION-OF-THE-HUALAPAI-INDIAN-TRIBE.pdf
   source: national-indian-law-library-hualapai
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
@@ -194,6 +215,7 @@ governing_documents:
   title: Hualapai Constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Arizona section, entry 'Hualapai Tribe'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -205,6 +227,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/amhuachrtr.html
   source: university-of-oklahoma-indian-reorganization-act-amhuachrtr
   confidence: medium
+  verification: title-only
   as_of: '1955'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -213,6 +236,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/amhuacons.html
   source: university-of-oklahoma-indian-reorganization-act-amhuacons
   confidence: medium
+  verification: title-only
   as_of: '1955'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: corporate-charter
@@ -221,6 +245,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/huachrtr.html
   source: university-of-oklahoma-indian-reorganization-act-huachrtr
   confidence: medium
+  verification: title-only
   as_of: '1943'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -229,6 +254,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/huacons.html
   source: university-of-oklahoma-indian-reorganization-act-huacons
   confidence: medium
+  verification: title-only
   as_of: '1938'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -237,6 +263,7 @@ justice_institutions:
   link: https://hualapai-nsn.gov/judicial_branch_of_government/tribal_court/index.php
   source: national-indian-law-library-hualapai
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -245,6 +272,7 @@ justice_institutions:
   link: http://hualapai-nsn.gov/government/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Hualapai Tribe'
 gaming:
@@ -255,6 +283,7 @@ gaming:
     federal_register_citation: 74 FR 12889
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2009-03-25'
     locator: result page 1 (?page=1), row 7
     note: 'Listed as: "Hualapai Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -268,6 +297,7 @@ gaming:
     federal_register_citation: 86 FR 27889
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2021-05-24'
     locator: result page 1 (?page=1), row 8
     note: 'Listed as: "Hualapai Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -281,6 +311,7 @@ gaming:
     federal_register_citation: 87 FR 35992
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2022-06-14'
     locator: result page 1 (?page=1), row 9
     note: 'Listed as: "Hualapai Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -293,6 +324,7 @@ gaming:
     approved: '1994-04-26'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '1994-04-26'
     locator: result page 1 (?page=1), row 10
     note: 'Listed as: "Hualapai Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -306,6 +338,7 @@ gaming:
     federal_register_citation: 68 FR 5912
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2003-02-05'
     locator: result page 1 (?page=1), row 11
     note: 'Listed as: "Hualapai Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -323,6 +356,7 @@ gaming:
     dispute_resolution_locator: Section 15 (Dispute Resolution)
     source: compact-az-ak-chin-indian-community-2003
     confidence: medium
+    verification: inferred
     as_of: '2003-02-05'
     locator: Section 15 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
@@ -334,6 +368,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9929&ind=9944
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1995-09-28'
     locator: table row 101, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 101 lists the nation
@@ -344,6 +379,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona Confidence lowered
@@ -353,6 +389,7 @@ memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Hualapai Tribe". Name matched to the roster entry.
 review:

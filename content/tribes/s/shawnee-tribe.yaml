@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 - type: federal
@@ -18,6 +19,7 @@ recognition:
   since: '2000-12-27'
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: inferred
   as_of: '2000-12-27'
   locator: 'Petitioner #203'
   note: 'Petitioner name: Loyal Shawnee Tribe; matched to the roster Shawnee Tribe by name and date, not
@@ -27,6 +29,7 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shawnee Tribe
 population:
@@ -34,6 +37,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3313 (Shawnee Tribe alone or in any combination), GEOID 0100000US (United
     States)
@@ -44,6 +48,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Oklahoma, row 'Shawnee Tribe', PDF page 6, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -54,6 +59,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shawnee Tribe
 - kind: physical-address
@@ -61,6 +67,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shawnee Tribe
 - kind: mailing-address
@@ -68,6 +75,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shawnee Tribe
 - kind: phone
@@ -75,6 +83,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shawnee Tribe
 - kind: fax
@@ -82,6 +91,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shawnee Tribe
 languages:
@@ -89,6 +99,7 @@ languages:
   language_tag: sjw
   source: shawnee-tribe-home
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: Shawnee Language Immersion Program
 federal_administration:
@@ -96,6 +107,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Miami Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shawnee Tribe
 governing_documents:
@@ -104,6 +116,7 @@ governing_documents:
   link: https://shawnee.municipalcodeonline.com/
   source: national-indian-law-library-shawnee
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Municode website
@@ -113,6 +126,7 @@ governing_documents:
   link: https://shawnee.municipalcodeonline.com/book?type=Laws#name=CONSTITUTION_(Rev_2022)
   source: national-indian-law-library-shawnee
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Municode
@@ -123,6 +137,7 @@ justice_institutions:
   link: https://shawnee-nsn.gov/courts/
   source: national-indian-law-library-shawnee
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -162,6 +177,7 @@ gaming:
     federal_register_citation: 84 FR 20162
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2019-05-08'
     locator: result page 29 (?page=29), row 10
     note: 'Listed as: "Shawnee Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Shawnee
@@ -175,6 +191,7 @@ gaming:
     federal_register_citation: 83 FR 26706
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2018-06-08'
     locator: result page 29 (?page=29), row 11
     note: 'Listed as: "Shawnee Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Shawnee
@@ -191,6 +208,7 @@ gaming:
     dispute_resolution_locator: Part 12 (Dispute Resolution)
     source: compact-ok-cherokee-nation-2005
     confidence: medium
+    verification: inferred
     as_of: '2005-01-27'
     locator: Part 12 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
@@ -203,6 +221,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11112&ind=11135
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2003-06-11'
     locator: table row 255, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 255 lists the nation
@@ -211,6 +230,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11113&ind=11136
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2024-06-24'
     locator: table row 255, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 255 lists the nation
@@ -221,6 +241,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Shawnee Tribe Confidence lowered from high by the lead session: the notice prints

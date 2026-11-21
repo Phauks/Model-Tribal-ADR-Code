@@ -6,19 +6,23 @@ names:
   - name: Nanticoke Lenni Lenape Indians
     source: new-jersey-statutes-52-16a-53
     confidence: high
+    verification: inferred
     as_of: '2001'
   - name: Nanticoke Lenni-Lenape Indians
     source: new-jersey-commission-american-indian-affairs-about
     confidence: high
+    verification: inferred
     as_of: '2026'
   - name: Nanticoke Lenni-Lenape Indians
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     note: Name used for this group in the cited source; matched to this record by name and state.
   - name: Nanticoke Lenni-Lenape Indians of New Jersey
     source: gao-12-348-federal-funding-non-federally-recognized-tribes
     confidence: medium
+    verification: bulk-import
     as_of: 2012-04
     note: Name used for this group in the cited source; matched to this record by name and state.
   official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
@@ -26,6 +30,7 @@ recognition:
 - type: unrecognized
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1; Table 3
   note: 'GAO Table 1 lists "Nanticoke Lenni-Lenape Indians of New Jersey" among 26 non-federally recognized
@@ -38,6 +43,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: low
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State Designated Tribal Statistical Area; area 9835
   note: The 2020 Census delineated "Nanticoke Lenni Lenape SDTSA" (State Designated Tribal Statistical
@@ -51,6 +57,7 @@ recognition:
   petition_stage: Letter of Intent to Petition 01/03/1992
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   locator: 'Petitioner #127'
   note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
@@ -62,6 +69,7 @@ recognition:
     Attorney General
   source: new-jersey-attorney-general-2019-03-18
   confidence: medium
+  verification: inferred
   as_of: '2019-03-18'
   note: The 2019 release refers to the November 2018 state-recognition settlement with the Nanticoke Lenni-Lenape
     Tribal Nation; the 2018 agreement and the original resolution were not retrieved.
@@ -71,6 +79,7 @@ recognition:
     Lenni Lenape Indians'
   source: new-jersey-statutes-52-16a-53
   confidence: high
+  verification: inferred
   as_of: '2001'
   note: The statute provides seats on the Commission on American Indian Affairs; the Attorney General
     calls these the three 'New Jersey tribes of American Indians' referenced in 1990s statutes.
@@ -79,6 +88,7 @@ states:
   presence: other
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1, State column
   note: State as listed by GAO.
@@ -86,6 +96,7 @@ states:
   presence: other
   source: census-aiannh-codes-by-state-2020
   confidence: low
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9835
   note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
@@ -93,6 +104,7 @@ states:
   presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
@@ -100,6 +112,7 @@ states:
   presence: other
   source: new-jersey-attorney-general-2019-03-18
   confidence: high
+  verification: inferred
   as_of: '2019-03-18'
 census_areas:
 - geographic_identifier: '9835'
@@ -108,6 +121,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: low
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9835, GEOID 9835R
   note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched

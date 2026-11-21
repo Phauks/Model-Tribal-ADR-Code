@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 - type: federal
@@ -18,6 +19,7 @@ recognition:
   since: '1984-08-10'
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '1984-08-10'
   locator: 'Petitioner #13'
 - type: state
@@ -25,6 +27,7 @@ recognition:
   legal_basis: Code of Alabama 1975, Section 41-9-708 (Acts 1984, No. 84-257)
   source: alabama-code-41-9-708
   confidence: high
+  verification: read-in-full
   as_of: '2025'
   locator: Section 41-9-708(b)
   note: Statute names 'The Poarch Band of Creeks of Escambia County' as a member tribe of the Alabama
@@ -34,6 +37,7 @@ recognition:
   legal_basis: Alabama Administrative Code Rule 475-X-1-.02
   source: alabama-administrative-code-475-x-1-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-07-31'
   locator: Rule 475-X-1-.02 Members
 states:
@@ -41,12 +45,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Poarch Band of Creek Indians
 - state: AL
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2865
   note: 'Census area with land in this state: Poarch Creek Reservation and Off-Reservation Trust Land
@@ -55,6 +61,7 @@ states:
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2865
   note: 'Census area with land in this state: Poarch Creek Reservation and Off-Reservation Trust Land
@@ -66,6 +73,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2865
   note: Matched by name. Census class code D1.
@@ -74,6 +82,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2865, field POP100
   note: 'Census area: Poarch Creek Reservation and Off-Reservation Trust Land (code 2865). Everyone counted
@@ -83,6 +92,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3214 (Poarch Band of Creeks alone or in any combination), GEOID 0100000US
     (United States)
@@ -93,6 +103,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Poarch Band of Creeks', PDF page 5, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -101,6 +112,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 85, row T38500 'Poarch Band of Creek Indians of Alabama'
   note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
@@ -112,6 +124,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Poarch Band of Creek Indians
 - kind: physical-address
@@ -119,6 +132,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Poarch Band of Creek Indians
 - kind: mailing-address
@@ -126,6 +140,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Poarch Band of Creek Indians
 - kind: phone
@@ -133,6 +148,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Poarch Band of Creek Indians
 - kind: fax
@@ -140,6 +156,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Poarch Band of Creek Indians
 federal_administration:
@@ -147,6 +164,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Eastern Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Poarch Band of Creek Indians
 governing_documents:
@@ -156,6 +174,7 @@ governing_documents:
   link: https://narf.org/nill/codes/poarchcode/index.html
   source: national-indian-law-library-code-codes-poarchcode
   confidence: medium
+  verification: title-only
   as_of: '2019'
   locator: page heading
   note: 'Table of Contents Updated: May 2019. The National Indian Law Library page gives the table of
@@ -166,6 +185,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/poarch_creek/index.html
   source: national-indian-law-library-constitution-constitutions-poarch-creek
   confidence: medium
+  verification: title-only
   as_of: '2016'
   locator: page heading
   note: 'Amended: March 8, 2016. The National Indian Law Library page gives the table of contents (and
@@ -175,6 +195,7 @@ governing_documents:
   link: https://www.municode.com/library/tribes_and_tribal_nations/poarch_band_of_creek_indians/codes/code_of_ordinances
   source: national-indian-law-library-poarch-creek
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Municode website
@@ -184,6 +205,7 @@ governing_documents:
   link: https://www.municode.com/library/tribes_and_tribal_nations/poarch_band_of_creek_indians/ordinances/code_of_ordinances
   source: national-indian-law-library-poarch-creek
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Municode website
@@ -193,6 +215,7 @@ governing_documents:
   link: https://www.municode.com/library/tribes_and_tribal_nations/poarch_band_of_creek_indians/codes/code_of_ordinances?nodeId=TRCO
   source: national-indian-law-library-poarch-creek
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Municode
@@ -202,6 +225,7 @@ governing_documents:
   link: https://www.municode.com/library/tribes_and_tribal_nations/poarch_band_of_creek_indians/codes/code_of_ordinances?nodeId=TRCO
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Alabama section, entry 'Poarch Band of Creek Indians'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -210,6 +234,7 @@ governing_documents:
   link: https://www.municode.com/library/tribes_and_tribal_nations/poarch_band_of_creek_indians/codes/code_of_ordinances
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Alabama section, entry 'Poarch Band of Creek Indians'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -218,6 +243,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-poarch-creek
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
@@ -228,6 +254,7 @@ justice_institutions:
   link: http://pci-nsn.gov/westminster/tribal_court.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Alabama section, entry 'Poarch Band of Creek Indians'
 dispute_resolution:
@@ -371,6 +398,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10636&ind=10669
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-08-02'
     locator: table row 194, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 194 lists the nation
@@ -379,6 +407,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10653&ind=10670
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2010-07-30'
     locator: table row 194, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 194 lists the nation
@@ -387,6 +416,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10654&ind=10671
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2013-08-22'
     locator: table row 194, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 194 lists the nation
@@ -395,6 +425,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10655&ind=10672
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-08-11'
     locator: table row 194, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 194 lists the nation
@@ -403,6 +434,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Poarch Band of Creek Indians".
       Name extracted from the PDF by the page-fetch tool and matched to the roster.
@@ -412,6 +444,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Poarch Band of Creek Indians Confidence lowered from high by the lead session: the
@@ -420,6 +453,7 @@ memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations
   confidence: medium
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Poarch Band of Creek Indians".
 review:

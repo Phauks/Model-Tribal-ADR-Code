@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation, Nevada
 - state: NV
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3010
   note: 'Census area with land in this state: Pyramid Lake Paiute Reservation (code 3010). Area matched
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3010
   note: Matched by name. Census class code D2.
@@ -41,12 +45,14 @@ population:
   kind: resident-population
   source: pyramid-lake-paiute-tribe-of-the-pyramid-about-us
   confidence: medium
+  verification: read-in-full
   as_of: 2017-02
   note: '"As of February 2017, living on the reservation were 1,300 individuals"'
 - count: 1933
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3010, field POP100
   note: 'Census area: Pyramid Lake Paiute Reservation (code 3010). Everyone counted as living in the area
@@ -55,6 +61,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3252 (Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation, Nevada  alone
     or in any combination), GEOID 0100000US (United States)
@@ -65,6 +72,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Pyramid Lake Paiute Tribe', PDF page 8, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -73,6 +81,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 86, row T41100 'Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation'
   note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
@@ -84,6 +93,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation, Nevada
 - kind: physical-address
@@ -91,6 +101,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation, Nevada
 - kind: mailing-address
@@ -98,6 +109,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation, Nevada
 - kind: phone
@@ -105,6 +117,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation, Nevada
 - kind: fax
@@ -112,6 +125,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation, Nevada
 languages:
@@ -119,6 +133,7 @@ languages:
   language_tag: pao
   source: pyramid-lake-paiute-tribe-of-the-pyramid-about-us
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: '"The Paiute language is a dialect of the Numic branch"'
 federal_administration:
@@ -126,6 +141,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Western Nevada Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation, Nevada
 government_structure:
@@ -134,6 +150,7 @@ government_structure:
     by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -144,6 +161,7 @@ government_structure:
     Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-pyrcons
   confidence: medium
+  verification: read-in-full
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -153,6 +171,7 @@ governing_documents:
   link: https://plpt.nsn.us/pyramid-lake-ordinances/
   source: national-indian-law-library-pyramid-lake
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
@@ -162,6 +181,7 @@ governing_documents:
   link: https://plpt.nsn.us/pyramid-lake-ordinances/
   source: national-indian-law-library-pyramid-lake
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
@@ -172,6 +192,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/pyrchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-pyrchrtr
   confidence: medium
+  verification: title-only
   as_of: '1936'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -180,6 +201,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/pyrcons.html
   source: university-of-oklahoma-indian-reorganization-act-pyrcons
   confidence: medium
+  verification: title-only
   as_of: '1936'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -188,6 +210,7 @@ justice_institutions:
   link: https://plpt.nsn.us/tribal-court/
   source: national-indian-law-library-pyramid-lake
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -195,6 +218,7 @@ justice_institutions:
   name: Pyramid Lake Paiute Tribe Judicial Services
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Nevada section, entry 'Pyramid Lake Paiute Tribe'
   note: 'Link check 2026-11-21: the link the source gives (http://www.plpt.nsn.us/judicial/index.html)
@@ -248,6 +272,7 @@ gaming:
     federal_register_citation: 63 FR 573
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1998-01-06'
     locator: result page 24 (?page=24), row 24
     note: 'Listed as: "Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation Tribal State Gaming Compact"
@@ -262,6 +287,7 @@ gaming:
     federal_register_citation: 67 FR 17436
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2002-04-10'
     locator: result page 24 (?page=24), row 25
     note: 'Listed as: "Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation Tribal State Gaming Compact"
@@ -276,6 +302,7 @@ gaming:
     federal_register_citation: 80 FR 64442
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-10-23'
     locator: result page 25 (?page=25), row 1
     note: 'Listed as: "Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation Tribal State Gaming Compact"
@@ -290,6 +317,7 @@ gaming:
     federal_register_citation: 70 FR 2652
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2005-01-14'
     locator: result page 25 (?page=25), row 2
     note: 'Listed as: "Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation Tribal State Gaming Compact"
@@ -304,6 +332,7 @@ gaming:
     federal_register_citation: 86 FR 40618
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-07-28'
     locator: result page 25 (?page=25), row 3
     note: 'Listed as: "Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation Tribal State Gaming Compact"
@@ -319,6 +348,7 @@ gaming:
     federal_register_citation: 88 FR 21207
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2023-04-10'
     locator: result page 25 (?page=25), row 4
     note: 'Listed as: "Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation Tribal State Gaming Compact"
@@ -334,6 +364,7 @@ gaming:
     federal_register_citation: 90 FR 16171
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2025-04-17'
     locator: result page 25 (?page=25), row 5
     note: 'Listed as: "Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation Tribal State Gaming Compact"
@@ -349,6 +380,7 @@ gaming:
     federal_register_citation: 78 FR 17428
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2013-03-21'
     locator: result page 25 (?page=25), row 6
     note: 'Listed as: "Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation Tribal State Gaming Compact"
@@ -363,6 +395,7 @@ gaming:
     federal_register_citation: 77 FR 30550
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2012-05-23'
     locator: result page 25 (?page=25), row 7
     note: 'Listed as: "Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation Tribal State Gaming Compact"
@@ -377,6 +410,7 @@ gaming:
     federal_register_citation: 75 FR 8108
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2010-02-23'
     locator: result page 25 (?page=25), row 8
     note: 'Listed as: "Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation Tribal State Gaming Compact"
@@ -391,6 +425,7 @@ gaming:
     federal_register_citation: 84 FR 43156
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2019-08-20'
     locator: result page 25 (?page=25), row 9
     note: 'Listed as: "Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation Tribal State Gaming Compact"
@@ -410,6 +445,7 @@ gaming:
       of Sovereign Immunity)
     source: compact-nv-washoe-tribe-of-nevada-and-california-2018
     confidence: medium
+    verification: inferred
     as_of: '2018-01-18'
     locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver of Sovereign Immunity)
     note: state model compact; nation-specific text not checked. Read from the 2018 Washoe Tribe compact;
@@ -420,6 +456,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10848&ind=10863
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2000-07-19'
     locator: table row 217, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 217 lists the nation
@@ -428,6 +465,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10849&ind=10864
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2011-02-08'
     locator: table row 217, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 217 lists the nation
@@ -436,6 +474,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10850&ind=10865
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2017-08-09'
     locator: table row 217, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 217 lists the nation
@@ -446,6 +485,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation, Nevada Confidence lowered
@@ -455,6 +495,7 @@ memberships:
 - organization: Inter-Tribal Council of Nevada
   source: inter-tribal-council-of-nevada-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Pyramid Lake Paiute Tribe". Name matched to the roster entry.
 review:

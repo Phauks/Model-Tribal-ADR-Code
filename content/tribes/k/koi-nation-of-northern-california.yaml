@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -16,6 +17,7 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Koi Nation of Northern California
 population:
@@ -23,6 +25,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3067 (Koi Nation of Northern California alone or in any combination),
     GEOID 0100000US (United States)
@@ -33,6 +36,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Koi Nation of Northern California (Lower Lake)', PDF page
     7, Enrollment column
@@ -45,6 +49,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Koi Nation of Northern California
 - kind: physical-address
@@ -52,6 +57,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Koi Nation of Northern California
 - kind: mailing-address
@@ -59,6 +65,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Koi Nation of Northern California
 - kind: phone
@@ -66,6 +73,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Koi Nation of Northern California
 - kind: fax
@@ -73,6 +81,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Koi Nation of Northern California
 federal_administration:
@@ -80,6 +89,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Pacific Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Koi Nation of Northern California
 gaming:
@@ -88,6 +98,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10097&ind=10116
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2024-08-20'
     locator: table row 125, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 125 lists the nation
@@ -100,6 +111,7 @@ jurisdiction:
     country within California; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
   note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
@@ -109,6 +121,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Koi Nation of Northern California Confidence lowered from high by the lead session:

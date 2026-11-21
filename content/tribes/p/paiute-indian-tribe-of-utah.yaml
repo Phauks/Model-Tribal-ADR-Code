@@ -7,6 +7,7 @@ names:
     language_tag: ute
     source: paiute-indian-tribe-of-utah-home
     confidence: high
+    verification: read-in-full
     as_of: '2026-11-21'
     note: '"The true name for the Southern Paiute People is Nung’wu."'
   official_source: bia-recognized-entities-2026
@@ -16,6 +17,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
   note: 'The notice adds in parentheses: Cedar Band of Paiutes, Kanosh Band of Paiutes, Koosharem Band
@@ -25,6 +27,7 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Paiute Indian Tribe of Utah (Cedar Band of Paiutes, Kanosh Band of Paiutes, Koosharem Band
     of Paiutes, Indian Peaks Band of Paiutes, and Shivwits Band of Paiutes)
@@ -32,6 +35,7 @@ states:
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2625
   note: 'Census area with land in this state: Paiute (UT) Reservation (code 2625). Area matched to the
@@ -43,6 +47,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2625
   note: Matched by name. Census class code D2.
@@ -51,6 +56,7 @@ population:
   kind: citizens
   source: paiute-indian-tribe-of-utah-enrollment
   confidence: high
+  verification: bulk-import
   as_of: '2024-12-31'
   note: '"Paiute Tribal Membership (12-31-2024)" table: Cedar 276, Indian Peaks 42, Kanosh 151, Koosharem
     123, Shivwits 317, total 909'
@@ -58,6 +64,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2625, field POP100
   note: 'Census area: Paiute (UT) Reservation (code 2625). Everyone counted as living in the area in the
@@ -66,6 +73,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3184 (Paiute Indian Tribe of Utah (Southern Paiute) alone or in any
     combination), GEOID 0100000US (United States)
@@ -76,6 +84,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Denver, row 'Paiute Indian Tribe of Utah', PDF page 5, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -84,6 +93,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 85, row T36400 'Paiute Indian Tribe of Utah'
   note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
@@ -95,6 +105,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Paiute Indian Tribe of Utah (Cedar Band of Paiutes, Kanosh Band of Paiutes, Koosharem Band
     of Paiutes, Indian Peaks Band of Paiutes, and Shivwits Band of Paiutes)
@@ -103,6 +114,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Paiute Indian Tribe of Utah (Cedar Band of Paiutes, Kanosh Band of Paiutes, Koosharem Band
     of Paiutes, Indian Peaks Band of Paiutes, and Shivwits Band of Paiutes)
@@ -111,6 +123,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Paiute Indian Tribe of Utah (Cedar Band of Paiutes, Kanosh Band of Paiutes, Koosharem Band
     of Paiutes, Indian Peaks Band of Paiutes, and Shivwits Band of Paiutes)
@@ -119,6 +132,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Paiute Indian Tribe of Utah (Cedar Band of Paiutes, Kanosh Band of Paiutes, Koosharem Band
     of Paiutes, Indian Peaks Band of Paiutes, and Shivwits Band of Paiutes)
@@ -127,6 +141,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Paiute Indian Tribe of Utah (Cedar Band of Paiutes, Kanosh Band of Paiutes, Koosharem Band
     of Paiutes, Indian Peaks Band of Paiutes, and Shivwits Band of Paiutes)
@@ -135,6 +150,7 @@ languages:
   language_tag: ute
   source: paiute-indian-tribe-of-utah-home
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: site describes honoring "the culture and language of Southern Paiutes"
 federal_administration:
@@ -142,6 +158,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Southern Paiute Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Paiute Indian Tribe of Utah (Cedar Band of Paiutes, Kanosh Band of Paiutes, Koosharem Band
     of Paiutes, Indian Peaks Band of Paiutes, and Shivwits Band of Paiutes)
@@ -151,6 +168,7 @@ government_structure:
     by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Kanosh Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
@@ -163,6 +181,7 @@ government_structure:
     1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Shivwits Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
@@ -174,6 +193,7 @@ government_structure:
     states it was adopted under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-kancons
   confidence: medium
+  verification: read-in-full
   as_of: '1942'
   locator: preamble / approval and certification of adoption
   note: Kanosh Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
@@ -183,6 +203,7 @@ government_structure:
     it was adopted under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-shivcons
   confidence: medium
+  verification: read-in-full
   as_of: '1940'
   locator: preamble / approval and certification of adoption
   note: Shivwits Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
@@ -194,6 +215,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/paiute_utah/index.html
   source: national-indian-law-library-constitution-constitutions-paiute-utah
   confidence: medium
+  verification: title-only
   as_of: '1997'
   locator: page heading
   note: 'Amended: 1997. The National Indian Law Library page gives the table of contents (and may link
@@ -203,6 +225,7 @@ governing_documents:
   link: http://www.utahpaiutes.org/about/government/documents.aspx
   source: national-indian-law-library-paiute-utah
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -213,6 +236,7 @@ governing_documents:
   link: https://web.archive.org/web/20180711194014/http://www.utahpaiutes.org:80/about/government/documents.aspx
   source: national-indian-law-library-paiute-utah
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -223,6 +247,7 @@ governing_documents:
   link: https://www.utahpaiutes.org/constitution-and-open-government/
   source: national-indian-law-library-paiute-utah
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -232,6 +257,7 @@ governing_documents:
   link: http://www.utahpaiutes.org/about/government/documents.aspx
   source: national-indian-law-library-paiute-utah-cedar
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Cedar Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
@@ -242,6 +268,7 @@ governing_documents:
   link: http://www.utahpaiutes.org/about/government/documents.aspx
   source: national-indian-law-library-paiute-utah-indian-peaks
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Indian Peaks Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of
@@ -252,6 +279,7 @@ governing_documents:
   link: http://www.utahpaiutes.org/about/government/documents.aspx
   source: national-indian-law-library-paiute-utah-kanosh
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Kanosh Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
@@ -262,6 +290,7 @@ governing_documents:
   link: http://www.utahpaiutes.org/about/government/documents.aspx
   source: national-indian-law-library-paiute-utah-koosharem
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Koosharem Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
@@ -272,6 +301,7 @@ governing_documents:
   link: http://www.utahpaiutes.org/about/government/documents.aspx
   source: national-indian-law-library-paiute-utah-shivwits
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Shivwits Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
@@ -283,6 +313,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/kanchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-kanchrtr
   confidence: medium
+  verification: title-only
   as_of: '1943'
   note: Kanosh Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
     Affairs list. Historical text as originally approved; the nation may have amended or replaced it since.
@@ -292,6 +323,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/kancons.html
   source: university-of-oklahoma-indian-reorganization-act-kancons
   confidence: medium
+  verification: title-only
   as_of: '1942'
   note: Kanosh Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
     Affairs list. Historical text as originally approved; the nation may have amended or replaced it since.
@@ -301,6 +333,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/shivchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-shivchrtr
   confidence: medium
+  verification: title-only
   as_of: '1941'
   note: Shivwits Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
     Affairs list. Historical text as originally approved; the nation may have amended or replaced it since.
@@ -310,6 +343,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/shivcons.html
   source: university-of-oklahoma-indian-reorganization-act-shivcons
   confidence: medium
+  verification: title-only
   as_of: '1940'
   note: Shivwits Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
     Affairs list. Historical text as originally approved; the nation may have amended or replaced it since.
@@ -319,6 +353,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Paiute Indian Tribe of Utah (Cedar Band of Paiutes, Kanosh Band of Paiutes, Koosharem

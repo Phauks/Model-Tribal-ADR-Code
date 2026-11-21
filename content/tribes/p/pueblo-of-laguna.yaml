@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Laguna, New Mexico
 - state: NM
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1840
   note: 'Census area with land in this state: Laguna Pueblo and Off-Reservation Trust Land (code 1840).
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1840
   note: Matched by name. Census class code D1.
@@ -41,6 +45,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1840, field POP100
   note: 'Census area: Laguna Pueblo and Off-Reservation Trust Land (code 1840). Everyone counted as living
@@ -50,6 +55,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3238 (Pueblo of Laguna alone or in any combination), GEOID 0100000US
     (United States)
@@ -60,6 +66,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Laguna Pueblo', PDF page 7, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -68,6 +75,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 86, row T39800 'Pueblo of Laguna'
   note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
@@ -80,6 +88,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Laguna, New Mexico
 - kind: physical-address
@@ -87,6 +96,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Laguna, New Mexico
 - kind: mailing-address
@@ -94,6 +104,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Laguna, New Mexico
 - kind: phone
@@ -101,6 +112,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Laguna, New Mexico
 - kind: fax
@@ -108,6 +120,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Laguna, New Mexico
 federal_administration:
@@ -115,6 +128,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Southern Pueblos Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Laguna, New Mexico
 government_structure:
@@ -123,6 +137,7 @@ government_structure:
     Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
   confidence: medium
+  verification: read-in-full
   as_of: '1958'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -131,6 +146,7 @@ government_structure:
     of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-nmpuebcons
   confidence: medium
+  verification: read-in-full
   as_of: '1949'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -141,6 +157,7 @@ governing_documents:
   link: https://narf.org/nill/codes/pueblo_laguna/index.html
   source: national-indian-law-library-code-codes-pueblo-laguna
   confidence: medium
+  verification: title-only
   as_of: '2018'
   locator: page heading
   note: 'Table of Contents Updated: May 2018. The National Indian Law Library page gives the table of
@@ -151,6 +168,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/pueblo_laguna/index.html
   source: national-indian-law-library-constitution-constitutions-pueblo-laguna
   confidence: medium
+  verification: title-only
   as_of: '2016'
   locator: page heading
   note: 'Table of Contents Updated: January 2016. The National Indian Law Library page gives the table
@@ -160,6 +178,7 @@ governing_documents:
   link: https://www.lagunapueblo-nsn.gov/departments/government-affairs-office/pol-codes/
   source: national-indian-law-library-pueblo-laguna
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
@@ -169,6 +188,7 @@ governing_documents:
   link: https://library.municode.com/nm/pueblo_of_laguna/codes/tribal_code?nodeId=APXACUHICOPULA_S5CUCOOC292012
   source: national-indian-law-library-pueblo-laguna
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At MuniCode
@@ -178,6 +198,7 @@ governing_documents:
   link: https://library.municode.com/nm/pueblo_of_laguna/codes/tribal_code
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: New Mexico section, entry 'Pueblo of Laguna'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -186,6 +207,7 @@ governing_documents:
   link: https://library.municode.com/nm/pueblo_of_laguna/codes/tribal_code
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: New Mexico section, entry 'Pueblo of Laguna'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -195,6 +217,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/1958nmpuebcon.html
   source: university-of-oklahoma-indian-reorganization-act-1958nmpuebcon
   confidence: medium
+  verification: title-only
   as_of: '1958'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -203,6 +226,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/nmpuebcons.html
   source: university-of-oklahoma-indian-reorganization-act-nmpuebcons
   confidence: medium
+  verification: title-only
   as_of: '1949'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -210,6 +234,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-pueblo-laguna
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
@@ -219,6 +244,7 @@ justice_institutions:
   name: Laguna Pueblo Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: New Mexico section, entry 'Pueblo of Laguna'
   note: 'Link check 2026-11-21: the link the source gives (http://lagunapueblo-nsn.gov/pol-judicial-services.aspx)
@@ -378,6 +404,7 @@ gaming:
     federal_register_citation: 72 FR 58333
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-10-15'
     locator: result page 22 (?page=22), row 25
     note: 'Listed as: "Pueblo of Laguna Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -391,6 +418,7 @@ gaming:
     federal_register_citation: 80 FR 64442
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-10-23'
     locator: result page 23 (?page=23), row 1
     note: 'Listed as: "Pueblo of Laguna Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
@@ -404,6 +432,7 @@ gaming:
     federal_register_citation: 62 FR 45867
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1997-08-29'
     locator: result page 23 (?page=23), row 2
     note: 'Listed as: "Pueblo of Laguna Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
@@ -417,6 +446,7 @@ gaming:
     federal_register_citation: 66 FR 64856
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2001-12-14'
     locator: result page 23 (?page=23), row 3
     note: 'Listed as: "Pueblo of Laguna Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -433,6 +463,7 @@ gaming:
     dispute_resolution_locator: Section 7 (Dispute Resolution)
     source: compact-nm-pueblo-of-santa-ana-2016
     confidence: medium
+    verification: inferred
     as_of: '2016-12-30'
     locator: Section 7 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
@@ -444,6 +475,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10749&ind=10768
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1995-06-29'
     locator: table row 204, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 204 lists the nation
@@ -452,6 +484,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10750&ind=10769
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2013-07-09'
     locator: table row 204, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 204 lists the nation
@@ -462,6 +495,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Pueblo of Laguna, New Mexico Confidence lowered from high by the lead session: the
@@ -470,6 +504,7 @@ memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Pueblo of Laguna". Name matched to the roster entry.
 review:

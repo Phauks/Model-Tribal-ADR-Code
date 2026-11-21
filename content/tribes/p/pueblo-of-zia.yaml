@@ -19,6 +19,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -26,12 +27,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Zia, New Mexico
 - state: NM
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4770
   note: 'Census area with land in this state: Zia Pueblo and Off-Reservation Trust Land (code 4770). Area
@@ -43,6 +46,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4770
   note: Matched by name. Census class code D1.
@@ -51,6 +55,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4770, field POP100
   note: 'Census area: Zia Pueblo and Off-Reservation Trust Land (code 4770). Everyone counted as living
@@ -60,6 +65,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3249 (Pueblo of Zia alone or in any combination), GEOID 0100000US (United
     States)
@@ -70,6 +76,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Zia Pueblo', PDF page 8, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -78,6 +85,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 86, row T40900 'Pueblo of Zia'
   note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
@@ -90,6 +98,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Zia, New Mexico
 - kind: physical-address
@@ -97,6 +106,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Zia, New Mexico
 - kind: mailing-address
@@ -104,6 +114,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Zia, New Mexico
 - kind: phone
@@ -111,6 +122,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Zia, New Mexico
 - kind: fax
@@ -118,6 +130,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Zia, New Mexico
 languages:
@@ -125,6 +138,7 @@ languages:
   language_tag: kee
   source: pueblo-of-zia-home
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: '"comprised of Keresan-speaking Indians"'
 federal_administration:
@@ -132,6 +146,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Southern Pueblos Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Zia, New Mexico
 justice_institutions:
@@ -140,6 +155,7 @@ justice_institutions:
   link: http://www.ziapueblo.org/tribal-courts
   source: national-indian-law-library-pueblo-zia
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -147,6 +163,7 @@ justice_institutions:
   name: Pueblo of Zia Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: New Mexico section, entry 'Pueblo of Zia'
 jurisdiction:
@@ -155,6 +172,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Pueblo of Zia, New Mexico Confidence lowered from high by the lead session: the notice
@@ -163,6 +181,7 @@ memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Pueblo of Zia". Name matched to the roster entry.
 review:

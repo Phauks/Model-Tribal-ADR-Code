@@ -6,12 +6,14 @@ names:
   - name: Ohlone/Costanoan Muwekma Tribe
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     locator: 'Petitioner #111'
   alternate:
   - name: Muwekma Indian Tribe
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     locator: 'Petitioner #111'
   official_source: federal-register-02-23672
@@ -23,6 +25,7 @@ recognition:
     Acknowledgment effective 12/16/2002 67 FR 58631
   source: federal-register-02-23672
   confidence: high
+  verification: bulk-import
   as_of: '2002-09-17'
   locator: 'Petitioner #111'
   note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
@@ -34,6 +37,7 @@ states:
   presence: other
   source: ofa-petitions-resolved
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.

@@ -19,6 +19,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -26,12 +27,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ramona Band of Cahuilla, California
 - state: CA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3070
   note: 'Census area with land in this state: Ramona Village (code 3070). Area matched to the nation by
@@ -43,6 +46,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3070
   note: Matched by name. Census class code D2.
@@ -51,6 +55,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3070, field POP100
   note: 'Census area: Ramona Village (code 3070). Everyone counted as living in the area in the 2020 Census,
@@ -59,6 +64,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3259 (Ramona Band of Cahuilla, California alone or in any combination),
     GEOID 0100000US (United States)
@@ -69,6 +75,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Ramona Band of Cahuilla', PDF page 8, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -79,6 +86,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ramona Band of Cahuilla, California
 - kind: physical-address
@@ -86,6 +94,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ramona Band of Cahuilla, California
 - kind: mailing-address
@@ -93,6 +102,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ramona Band of Cahuilla, California
 - kind: phone
@@ -100,6 +110,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ramona Band of Cahuilla, California
 - kind: fax
@@ -107,6 +118,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ramona Band of Cahuilla, California
 federal_administration:
@@ -114,6 +126,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Southern California Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ramona Band of Cahuilla, California
 gaming:
@@ -124,6 +137,7 @@ gaming:
     federal_register_citation: 79 FR 3241
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2014-01-17'
     locator: result page 10 (?page=10), row 8
     note: 'Listed as: "Ramona Band of Cahuilla Tribal State Gaming Compact" (Deemed Approved); list''s
@@ -141,6 +155,7 @@ gaming:
     dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     source: compact-ca-cher-ae-heights-indian-community-of-the-2026
     confidence: medium
+    verification: inferred
     as_of: '2026-01-26'
     locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
@@ -156,6 +171,7 @@ jurisdiction:
     country within California; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
   note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
@@ -165,6 +181,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Ramona Band of Cahuilla, California Confidence lowered from high by the lead session:

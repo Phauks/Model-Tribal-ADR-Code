@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 - type: federal
@@ -19,6 +20,7 @@ recognition:
   since: '2002-01-04'
   source: federal-register-02-299
   confidence: high
+  verification: bulk-import
   as_of: '2002-01-04'
   locator: 'Petitioner #16'
   note: 'Also see source(s): ofa-status-summary-2013.'
@@ -27,12 +29,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cowlitz Indian Tribe
 - state: WA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0820
   note: 'Census area with land in this state: Cowlitz Reservation (code 0820). Area matched to the nation
@@ -44,6 +48,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0820
   note: Matched by name. Census class code D2.
@@ -52,6 +57,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0820, field POP100
   note: 'Census area: Cowlitz Reservation (code 0820). Everyone counted as living in the area in the 2020
@@ -60,6 +66,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2958 (Cowlitz Indian Tribe alone or in any combination), GEOID 0100000US
     (United States)
@@ -70,6 +77,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Seattle, row 'Cowlitz Indian Tribe', PDF page 9, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -78,6 +86,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 77, row T09200 'Cowlitz Indian Tribe'
   note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
@@ -89,6 +98,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cowlitz Indian Tribe
 - kind: physical-address
@@ -96,6 +106,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cowlitz Indian Tribe
 - kind: mailing-address
@@ -103,6 +114,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cowlitz Indian Tribe
 - kind: phone
@@ -110,6 +122,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cowlitz Indian Tribe
 - kind: fax
@@ -117,6 +130,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cowlitz Indian Tribe
 - kind: email-general
@@ -124,6 +138,7 @@ contacts:
   label: General office email shown on the nation's website
   source: cowlitz-contact-directory
   confidence: high
+  verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
 languages:
@@ -131,6 +146,7 @@ languages:
   language_tag: cow
   source: cowlitz-blog-mmip-may-2026
   confidence: medium
+  verification: inferred
   as_of: '2026-11-21'
   note: Page uses the phrase 'Cowlitz Coast Salish language'. The history page (our-story) also mentions
     an Athapaskan language in the Willapa Hills.
@@ -139,6 +155,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Northwest Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cowlitz Indian Tribe
 governing_documents:
@@ -147,6 +164,7 @@ governing_documents:
   link: https://cowlitz.tribal.codes/
   source: national-indian-law-library-cowlitz
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -157,6 +175,7 @@ justice_institutions:
   link: https://www.cowlitz.org/tribal-court
   source: national-indian-law-library-cowlitz
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -196,6 +215,7 @@ gaming:
     federal_register_citation: 86 FR 2448
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-01-12'
     locator: result page 38 (?page=38), row 9
     note: 'Listed as: "Cowlitz Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -209,6 +229,7 @@ gaming:
     federal_register_citation: 86 FR 49049
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-09-01'
     locator: result page 38 (?page=38), row 10
     note: 'Listed as: "Cowlitz Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -222,6 +243,7 @@ gaming:
     federal_register_citation: 88 FR 66499
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2023-09-27'
     locator: result page 38 (?page=38), row 11
     note: 'Listed as: "Cowlitz Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -235,6 +257,7 @@ gaming:
     federal_register_citation: 89 FR 68638
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2024-08-27'
     locator: result page 38 (?page=38), row 12
     note: 'Listed as: "Cowlitz Indian Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
@@ -248,6 +271,7 @@ gaming:
     federal_register_citation: 79 FR 46275
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2014-08-07'
     locator: result page 38 (?page=38), row 13
     note: 'Listed as: "Cowlitz Indian Tribe Tribal-State Gaming Compact" (Approve); list''s Tribe column:
@@ -261,6 +285,7 @@ gaming:
     federal_register_citation: 80 FR 31918
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-06-04'
     locator: result page 38 (?page=38), row 14
     note: 'Listed as: "Cowlitz Indian Tribe Tribal-State Gaming Compact" (Approve); list''s Tribe column:
@@ -276,6 +301,7 @@ gaming:
     dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
     source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
     confidence: medium
+    verification: inferred
     as_of: '2021-09-01'
     locator: Section XIV (Dispute Resolution), subsection B
     note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
@@ -287,6 +313,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9676&ind=9705
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2005-11-23'
     locator: table row 64, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 64 lists the nation
@@ -295,6 +322,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9689&ind=9706
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2008-01-08'
     locator: table row 64, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 64 lists the nation
@@ -303,6 +331,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9690&ind=9707
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2011-12-12'
     locator: table row 64, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 64 lists the nation
@@ -311,6 +340,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9691&ind=9708
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-09-15'
     locator: table row 64, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 64 lists the nation
@@ -319,6 +349,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9692&ind=9709
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2016-12-16'
     locator: table row 64, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 64 lists the nation
@@ -327,6 +358,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9694&ind=9710
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2018-04-30'
     locator: table row 64, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 64 lists the nation
@@ -335,6 +367,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9693&ind=9711
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-06-24'
     locator: table row 64, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 64 lists the nation
@@ -343,6 +376,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Cowlitz Tribe". Facilities
       as machine-extracted from the report text (verify): ilani Casino Resort. Name extracted from the
@@ -357,6 +391,7 @@ jurisdiction:
     jurisdiction under RCW 37.12.021.'
   source: revised-code-of-washington-37-12-010
   confidence: medium
+  verification: inferred
   as_of: '1963'
   locator: RCW 37.12.010
   note: Nation matched to Washington by office state. Check for later retrocession facts.
@@ -365,6 +400,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Cowlitz Indian Tribe Confidence lowered from high by the lead session: the notice
@@ -373,6 +409,7 @@ memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes
   confidence: high
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Cowlitz Indian Tribe".
 review:

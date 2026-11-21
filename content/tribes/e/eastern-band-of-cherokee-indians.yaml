@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Eastern Band of Cherokee Indians
 - state: NC
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0990
   note: 'Census area with land in this state: Eastern Cherokee Reservation (code 0990). Area matched to
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0990
   note: Matched by name. Census class code D2.
@@ -41,6 +45,7 @@ population:
   kind: citizens
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'State page: ''There are more than 16,000 enrolled members with over 60% living on the Boundary.''
     Undated; as_of is access date.'
@@ -48,6 +53,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0990, field POP100
   note: 'Census area: Eastern Cherokee Reservation (code 0990). Everyone counted as living in the area
@@ -56,6 +62,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2973 (Eastern Band of Cherokee Indians alone or in any combination),
     GEOID 0100000US (United States)
@@ -66,6 +73,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Eastern Band of Cherokee Indians', PDF page 4, Enrollment
     column
@@ -75,6 +83,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 77, row T10400 'Eastern Band of Cherokee Indians of North Carolina'
   note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
@@ -86,6 +95,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Eastern Band of Cherokee Indians
 - kind: physical-address
@@ -93,6 +103,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Eastern Band of Cherokee Indians
 - kind: mailing-address
@@ -100,6 +111,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Eastern Band of Cherokee Indians
 - kind: phone
@@ -107,6 +119,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Eastern Band of Cherokee Indians
 - kind: fax
@@ -114,6 +127,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Eastern Band of Cherokee Indians
 - kind: email-general
@@ -121,6 +135,7 @@ contacts:
   label: General office email shown on the nation's website
   source: ebci-home
   confidence: high
+  verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
 languages:
@@ -128,6 +143,7 @@ languages:
   language_tag: chr
   source: ebci-department-of-education
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: New Kituwah Academy is the 'Cherokee language campus' of the Eastern Band.
 federal_administration:
@@ -135,6 +151,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Cherokee Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Eastern Band of Cherokee Indians
 governing_documents:
@@ -143,6 +160,7 @@ governing_documents:
   link: https://narf.org/nill/codes/eastern_band_cherokee/index.html
   source: national-indian-law-library-code-codes-eastern-band-cherokee
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: page heading
   note: The National Indian Law Library page gives the table of contents (and may link to the nation's
@@ -152,6 +170,7 @@ governing_documents:
   link: http://www.municode.com/resources/gateway.aspx?productid=13359
   source: national-indian-law-library-eastern-band-cherokee
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At publisher''s website
@@ -161,6 +180,7 @@ governing_documents:
   link: http://www.municode.com/resources/gateway.aspx?productid=13359
   source: national-indian-law-library-eastern-band-cherokee
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At publisher''s
@@ -170,6 +190,7 @@ governing_documents:
   link: https://library.municode.com/nc/cherokee_indians_eastern_band/codes/code_of_ordinances
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: North Carolina section, entry 'Eastern Band of Cherokee'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -179,6 +200,7 @@ justice_institutions:
   link: https://ebci.com/government/judicial/
   source: national-indian-law-library-eastern-band-cherokee
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
@@ -187,6 +209,7 @@ justice_institutions:
   name: Eastern Band of Cherokee Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: North Carolina section, entry 'Eastern Band of Cherokee'
 dispute_resolution:
@@ -198,6 +221,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/2018/02/eastern-band-of-cherokee-indian-completes-peacemaking-training/
     source: narf-ipi-news-ebci-training-2018
     confidence: medium
+    verification: inferred
     as_of: 2018-02
   published_materials:
   - kind: guide
@@ -206,6 +230,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2018/02/EBCI-Oct.-2017-and-Jan.-2018-PM-Training-Materials-00187450x9D7F5.pdf
     source: narf-ipi-ebci-training-materials-2017-2018
     confidence: medium
+    verification: title-only
     as_of: 2018-01
     note: Developed by the Indigenous Peacemaking Initiative for the training; not a tribal law.
   provisions:
@@ -288,6 +313,7 @@ gaming:
     federal_register_citation: 86 FR 12204
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-03-02'
     locator: result page 20 (?page=20), row 19
     note: 'Listed as: "Eastern Band of Cherokee Indians Tribal State Gaming Compact" (Approve); list''s
@@ -301,6 +327,7 @@ gaming:
     federal_register_citation: 77 FR 48167
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2012-08-13'
     locator: result page 20 (?page=20), row 20
     note: 'Listed as: "Eastern Band of Cherokee Indians Tribal State Gaming Compact" (Approve); list''s
@@ -314,6 +341,7 @@ gaming:
     federal_register_citation: 66 FR 4038
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2001-01-17'
     locator: result page 20 (?page=20), row 21
     note: 'Listed as: "Eastern Band of Cherokee Indians Tribal State Gaming Compact" (Approve); list''s
@@ -327,6 +355,7 @@ gaming:
     federal_register_citation: 61 FR 36078
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1996-07-09'
     locator: result page 20 (?page=20), row 22
     note: 'Listed as: "Eastern Band of Cherokee Indians Tribal State Gaming Compact" (Approve); list''s
@@ -339,6 +368,7 @@ gaming:
     approved: '1994-10-03'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1994-10-03'
     locator: result page 20 (?page=20), row 23
     note: 'Listed as: "Eastern Band of Cherokee Indians Tribal State Gaming Compact" (Approve); list''s
@@ -356,6 +386,7 @@ gaming:
     dispute_resolution_locator: Section 13 (Dispute Resolution)
     source: compact-nc-catawba-indian-nation-2021
     confidence: medium
+    verification: inferred
     as_of: '2021-03-25'
     locator: Section 13 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Read from the 2021 Catawba Indian Nation
@@ -367,6 +398,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9731&ind=9748
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1994-05-31'
     locator: table row 71, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 71 lists the nation
@@ -375,6 +407,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9732&ind=9749
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1995-08-16'
     locator: table row 71, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 71 lists the nation
@@ -383,6 +416,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9733&ind=9750
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1996-10-24'
     locator: table row 71, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 71 lists the nation
@@ -391,6 +425,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9734&ind=9751
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2001-07-03'
     locator: table row 71, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 71 lists the nation
@@ -399,6 +434,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9735&ind=9752
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2006-07-11'
     locator: table row 71, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 71 lists the nation
@@ -407,6 +443,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9736&ind=9753
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2012-10-31'
     locator: table row 71, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 71 lists the nation
@@ -415,6 +452,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9737&ind=9754
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-04-20'
     locator: table row 71, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 71 lists the nation
@@ -423,6 +461,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Eastern Band of Cherokee Indians
       of North Carolina". Facilities as machine-extracted from the report text (verify): Harrah''s Cherokee
@@ -434,6 +473,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Eastern Band of Cherokee Indians Confidence lowered from high by the lead session:
@@ -444,6 +484,7 @@ jurisdiction:
   detail: Listed by NCAI as implementing special Tribal criminal jurisdiction (list updated May 2022).
   source: national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction
   confidence: medium
+  verification: bulk-import
   as_of: 2022-05
   locator: Implementing Tribes list
   note: Listed as "Eastern Band of Cherokee Indians".
@@ -453,6 +494,7 @@ jurisdiction:
     Law and Order Act (as of 2013 interviews).
   source: bureau-of-justice-assistance-enhanced-sentencing-in-tribal-courts-2015
   confidence: medium
+  verification: bulk-import
   as_of: '2013'
   locator: p. 3, list of tribes exercising enhanced sentencing
   note: Listed as "Eastern Band of Cherokee Nation".

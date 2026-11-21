@@ -6,6 +6,7 @@ names:
   - name: Cherokee Tribal Council of Georgia
     source: alabama-indian-affairs-commission-state-recognized-tribes-compilation
     confidence: low
+    verification: bulk-import
     as_of: '2001'
   official_source: georgia-code-44-12-300
 recognition:
@@ -15,6 +16,7 @@ recognition:
     by House Bill 43, 2024)
   source: georgia-code-44-12-300
   confidence: high
+  verification: read-in-full
   as_of: '2022'
   locator: Section 44-12-300(a)
   note: '''The State of Georgia officially recognizes as legitimate American Indian tribes of Georgia
@@ -24,6 +26,7 @@ recognition:
   legal_basis: Official Code of Georgia Annotated Section 44-12-300(a) as amended by House Bill 43 (2024)
   source: georgia-house-bill-43-2024
   confidence: high
+  verification: read-in-full
   as_of: '2024'
   locator: Section 2
 states:
@@ -31,6 +34,7 @@ states:
   presence: other
   source: georgia-code-44-12-300
   confidence: high
+  verification: inferred
   as_of: '2022'
 review:
   status: drafted-from-public-sources

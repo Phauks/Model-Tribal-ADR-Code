@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 - type: federal
@@ -18,6 +19,7 @@ recognition:
   since: '1994-03-15'
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '1994-03-15'
   locator: 'Petitioner #38'
 - type: state
@@ -25,6 +27,7 @@ recognition:
   legal_basis: Connecticut General Statutes Section 47-59a(b) (Public Act 89-368), naming 'the Mohegan'
   source: connecticut-general-statutes-47-59a
   confidence: high
+  verification: inferred
   as_of: '2020'
   locator: Section 47-59a(b)
   note: Also federally recognized; the state agency calls it a Federal and State recognized Tribe.
@@ -33,12 +36,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mohegan Tribe of Indians of Connecticut
 - state: CT
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2320
   note: 'Census area with land in this state: Mohegan Reservation (code 2320). Area matched to the nation
@@ -50,6 +55,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2320
   note: Matched by name. Census class code D2.
@@ -58,6 +64,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2320, field POP100
   note: 'Census area: Mohegan Reservation (code 2320). Everyone counted as living in the area in the 2020
@@ -66,6 +73,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3133 (Mohegan Tribe of Indians of Connecticut alone or in any combination),
     GEOID 0100000US (United States)
@@ -76,6 +84,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Mohegan Tribe of Indians of Connecticut', PDF page 4, Enrollment
     column
@@ -87,6 +96,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mohegan Tribe of Indians of Connecticut
 - kind: physical-address
@@ -94,6 +104,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mohegan Tribe of Indians of Connecticut
 - kind: mailing-address
@@ -101,6 +112,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mohegan Tribe of Indians of Connecticut
 - kind: phone
@@ -108,6 +120,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mohegan Tribe of Indians of Connecticut
 - kind: fax
@@ -115,6 +128,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mohegan Tribe of Indians of Connecticut
 federal_administration:
@@ -122,6 +136,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Eastern Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mohegan Tribe of Indians of Connecticut
 governing_documents:
@@ -131,6 +146,7 @@ governing_documents:
   link: https://narf.org/nill/codes/mohegan/index.html
   source: national-indian-law-library-code-codes-mohegan
   confidence: medium
+  verification: title-only
   as_of: '2024'
   locator: page heading
   note: 'Table of Contents Updated: January 2024. The National Indian Law Library page gives the table
@@ -141,6 +157,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/mohegan/index.html
   source: national-indian-law-library-constitution-constitutions-mohegan
   confidence: medium
+  verification: title-only
   as_of: '2014'
   locator: page heading
   note: 'Amended: February 23, 2014. The National Indian Law Library page gives the table of contents
@@ -150,6 +167,7 @@ governing_documents:
   link: https://library.municode.com/tribes_and_tribal_nations/mohegan_tribe/codes/code_of_laws
   source: national-indian-law-library-mohegan
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -159,6 +177,7 @@ governing_documents:
   link: https://library.municode.com/tribes_and_tribal_nations/mohegan_tribe/codes/code_of_laws?nodeId=PTICO_COMOTRINCO
   source: national-indian-law-library-mohegan
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -168,6 +187,7 @@ governing_documents:
   link: https://www.municode.com/library/tribes_and_tribal_nations/mohegan_tribe/codes/code_of_laws?nodeId=PTICO
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Connecticut section, entry 'Mohegan Tribe'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -176,6 +196,7 @@ governing_documents:
   link: https://www.municode.com/library/tribes_and_tribal_nations/mohegan_tribe/codes/code_of_laws
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Connecticut section, entry 'Mohegan Tribe'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -185,6 +206,7 @@ justice_institutions:
   link: https://www.mohegan.nsn.us/about/government/the-tribal-court-sytem
   source: national-indian-law-library-mohegan
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -193,6 +215,7 @@ justice_institutions:
   link: https://www.mohegan.nsn.us/explore/government/tribal-court-system
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Connecticut section, entry 'Mohegan Tribe'
 dispute_resolution:
@@ -235,6 +258,7 @@ gaming:
     approved: '1994-12-16'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '1994-12-16'
     locator: result page 13 (?page=13), row 25
     note: 'Listed as: "Mohegan Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -249,6 +273,7 @@ gaming:
     federal_register_citation: 86 FR 51369
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2021-09-15'
     locator: result page 14 (?page=14), row 1
     note: 'Listed as: "Mohegan Tribe of Indians and State of Connecticut Tribal State Gaming Compact"
@@ -269,6 +294,7 @@ gaming:
       staffing arbitration)
     source: compact-ct-mohegan-tribe-of-indians-of-connecticut-1994
     confidence: medium
+    verification: read-in-full
     as_of: '1994-12-16'
     locator: Section 13(c) (Enforcement of Compact provisions); Section 7 (table-game staffing arbitration)
     note: Dispute-resolution clause read from this nation's own compact document. Document is older than
@@ -279,6 +305,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10323&ind=10348
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1994-11-08'
     locator: table row 158, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 158 lists the nation
@@ -287,6 +314,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Mohegan Tribe of Indians of Connecticut".
       Name extracted from the PDF by the page-fetch tool and matched to the roster.
@@ -296,6 +324,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Mohegan Tribe of Indians of Connecticut Confidence lowered from high by the lead session:
@@ -305,6 +334,7 @@ memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Mohegan Tribe". Name matched to the roster entry.
 review:

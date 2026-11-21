@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 - type: federal
@@ -18,6 +19,7 @@ recognition:
   since: '2018-01-29'
   source: public-law-115-121
   confidence: high
+  verification: inferred
   as_of: '2018-01-29'
   locator: 'Petitioner #61'
   note: 'Petitioner name: Rappahannock Indian Tribe (formerly United Rappahannock Tribe, Inc.); matched
@@ -29,6 +31,7 @@ recognition:
   since: '2018-01-29'
   source: public-law-115-121
   confidence: medium
+  verification: inferred
   as_of: '2018-01-29'
   locator: 'Petitioner #234'
   note: 'Petitioner name: Rappahannock Indian Tribe, Inc.; matched to the roster by name. Also see source(s):
@@ -39,12 +42,14 @@ recognition:
     recognizes (also federally recognized)
   source: virginia-report-status-of-indian-tribes-2025
   confidence: high
+  verification: bulk-import
   as_of: '2025-12-30'
 - type: state
   state: VA
   legal_basis: Virginia General Assembly joint resolution, 1983
   source: virginiaplaces-state-recognition
   confidence: medium
+  verification: inferred
   as_of: '1983'
   note: Year from a secondary source; resolution number not confirmed from the legislature's own record
     except where stated.
@@ -53,12 +58,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Rappahannock Tribe, Inc.
 - state: VA
   presence: other
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 8700
   note: 'Census area with land in this state: Rappahannock TDSA (code 8700). Statistical area only (not
@@ -70,6 +77,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US8700
   note: Matched by name. Census class code D6.
@@ -78,6 +86,7 @@ population:
   kind: citizens
   source: rappahannock-tribe-inc-consultationpolicy
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"The Rappahannock Tribe has 500 enrolled tribal citizens"; undated statement on the official
     site; as_of is the access date'
@@ -85,6 +94,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US8700, field POP100
   note: 'Census area: Rappahannock TDSA (code 8700). Everyone counted as living in the area in the 2020
@@ -94,6 +104,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3260 (Rappahannock Tribe, Inc. alone or in any combination), GEOID
     0100000US (United States)
@@ -104,6 +115,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Rappahannock Tribe, Inc.', PDF page 5, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -114,6 +126,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Rappahannock Tribe, Inc.
 - kind: physical-address
@@ -121,6 +134,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Rappahannock Tribe, Inc.
 - kind: mailing-address
@@ -128,6 +142,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Rappahannock Tribe, Inc.
 - kind: phone
@@ -135,6 +150,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Rappahannock Tribe, Inc.
 - kind: fax
@@ -142,6 +158,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Rappahannock Tribe, Inc.
 federal_administration:
@@ -149,6 +166,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Eastern Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Rappahannock Tribe, Inc.
 jurisdiction:
@@ -157,6 +175,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Rappahannock Tribe, Inc. Confidence lowered from high by the lead session: the notice
@@ -165,6 +184,7 @@ memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Rappahannock Tribe". Name matched to the roster entry.
 review:

@@ -7,6 +7,7 @@ names:
     language_tag: str
     source: lummi-nsn-home
     confidence: high
+    verification: inferred
     as_of: '2026-11-21'
     note: 'Homepage: ''We are the Lhaq''temish, the Lummi People.'' Tag str (Straits Salish) assigned
       by researcher.'
@@ -14,6 +15,7 @@ names:
   - name: Lummi Nation
     source: lummi-nsn-home
     confidence: high
+    verification: read-in-full
     as_of: '2026-11-21'
     note: 'Homepage: ''Welcome to Lummi Nation''.'
   official_source: bia-recognized-entities-2026
@@ -23,6 +25,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -30,12 +33,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Lummi Tribe of the Lummi Reservation
 - state: WA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2070
   note: 'Census area with land in this state: Lummi Reservation (code 2070). Area matched to the nation
@@ -47,6 +52,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2070
   note: Matched by name. Census class code D2.
@@ -55,6 +61,7 @@ population:
   kind: citizens
   source: lummi-nation-community-plan-final-draft-2022
   confidence: high
+  verification: read-in-full
   as_of: '2022-11-27'
   note: 'Community Plan, Population section: ''Based on data from the Lummi enrollment office, the Lummi
     Nation currently includes an enrolled population of 5,258. This includes 2,920 members on reservation,
@@ -64,6 +71,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2070, field POP100
   note: 'Census area: Lummi Reservation (code 2070). Everyone counted as living in the area in the 2020
@@ -72,6 +80,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3096 (Lummi Tribe alone or in any combination), GEOID 0100000US (United
     States)
@@ -82,6 +91,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Seattle, row 'Lummi Tribe', PDF page 9, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -92,6 +102,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Lummi Tribe of the Lummi Reservation
 - kind: physical-address
@@ -99,6 +110,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Lummi Tribe of the Lummi Reservation
 - kind: mailing-address
@@ -106,6 +118,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Lummi Tribe of the Lummi Reservation
 - kind: phone
@@ -113,6 +126,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Lummi Tribe of the Lummi Reservation
 - kind: fax
@@ -120,6 +134,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Lummi Tribe of the Lummi Reservation
 federal_administration:
@@ -127,6 +142,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Puget Sound Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Lummi Tribe of the Lummi Reservation
 governing_documents:
@@ -136,6 +152,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/lummi/index.html
   source: national-indian-law-library-constitution-constitutions-lummi
   confidence: medium
+  verification: title-only
   as_of: '2016'
   locator: page heading
   note: 'Amended: February 7, 2006 Signed: February 1, 2016. The National Indian Law Library page gives
@@ -145,6 +162,7 @@ governing_documents:
   link: https://www.lummi-nsn.gov/Website.php?PageID=831
   source: national-indian-law-library-lummi
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -154,6 +172,7 @@ governing_documents:
   link: https://www.lummi-nsn.gov/userfiles/831_2006ConstitutionSigned2016.pdf
   source: national-indian-law-library-lummi
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -162,6 +181,7 @@ governing_documents:
   title: Lummi Tribe of the Lummi Reservation Constitution and Bylaws
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Washington section, entry 'Lummi Nation'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -172,6 +192,7 @@ governing_documents:
   link: https://www.lummi-nsn.gov/Website.php?PageID=393
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Washington section, entry 'Lummi Nation'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -181,6 +202,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/lummicons.html
   source: university-of-oklahoma-indian-reorganization-act-lummicons
   confidence: medium
+  verification: title-only
   as_of: '1948'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -188,6 +210,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-lummi
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -196,6 +219,7 @@ justice_institutions:
   link: http://www.lummi-nsn.org/website/dept_pages/law_order/courts.shtml
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Lummi Nation'
   note: 'Link check 2026-11-21: the site did not respond.'
@@ -368,6 +392,7 @@ gaming:
     federal_register_citation: 66 FR 12542
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2001-02-27'
     locator: result page 39 (?page=39), row 12
     note: 'Listed as: "Lummi Tribe of the Lummi Reservation Tribal State Gaming Compact" (Approve); list''s
@@ -381,6 +406,7 @@ gaming:
     federal_register_citation: 79 FR 19353
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2014-04-08'
     locator: result page 39 (?page=39), row 13
     note: 'Listed as: "Lummi Tribe of the Lummi Reservation Tribal State Gaming Compact" (Approve); list''s
@@ -394,6 +420,7 @@ gaming:
     federal_register_citation: 72 FR 30392
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-05-31'
     locator: result page 39 (?page=39), row 14
     note: 'Listed as: "Lummi Tribe of the Lummi Reservation Tribal State Gaming Compact" (Approve); list''s
@@ -407,6 +434,7 @@ gaming:
     federal_register_citation: 60 FR 65064
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1995-12-18'
     locator: result page 39 (?page=39), row 15
     note: 'Listed as: "Lummi Tribe of the Lummi Reservation Tribal State Gaming Compact" (Approve); list''s
@@ -420,6 +448,7 @@ gaming:
     federal_register_citation: 71 FR 53706
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2006-09-12'
     locator: result page 39 (?page=39), row 16
     note: 'Listed as: "Lummi Tribe of the Lummi Reservation Tribal State Gaming Compact" (Approve); list''s
@@ -433,6 +462,7 @@ gaming:
     federal_register_citation: 80 FR 31918
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-06-04'
     locator: result page 39 (?page=39), row 17
     note: 'Listed as: "Lummi Tribe of the Lummi Reservation Tribal State Gaming Compact" (Approve); list''s
@@ -446,6 +476,7 @@ gaming:
     federal_register_citation: 86 FR 73313
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-12-27'
     locator: result page 39 (?page=39), row 18
     note: 'Listed as: "Lummi Tribe of the Lummi Reservation Tribal State Gaming Compact" (Approve); list''s
@@ -459,6 +490,7 @@ gaming:
     federal_register_citation: 86 FR 49052
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-09-01'
     locator: result page 39 (?page=39), row 19
     note: 'Listed as: "Lummi Tribe of the Lummi Reservation Tribal State Gaming Compact" (Approve); list''s
@@ -472,6 +504,7 @@ gaming:
     federal_register_citation: 91 FR 5508
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2026-02-06'
     locator: result page 39 (?page=39), row 20
     note: 'Listed as: "Lummi Tribe of the Lummi Reservation Tribal State Gaming Compact" (Deemed Approved);
@@ -487,6 +520,7 @@ gaming:
     dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
     source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
     confidence: medium
+    verification: inferred
     as_of: '2021-09-01'
     locator: Section XIV (Dispute Resolution), subsection B
     note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
@@ -498,6 +532,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10193&ind=10222
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1994-10-03'
     locator: table row 139, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 139 lists the nation
@@ -506,6 +541,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10209&ind=10223
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2002-04-08'
     locator: table row 139, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 139 lists the nation
@@ -514,6 +550,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10210&ind=10224
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2022-03-11'
     locator: table row 139, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 139 lists the nation
@@ -528,6 +565,7 @@ jurisdiction:
     jurisdiction under RCW 37.12.021.'
   source: revised-code-of-washington-37-12-010
   confidence: medium
+  verification: inferred
   as_of: '1963'
   locator: RCW 37.12.010
   note: Nation matched to Washington by office state. Check for later retrocession facts.
@@ -536,6 +574,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Lummi Tribe of the Lummi Reservation Confidence lowered from high by the lead session:
@@ -545,11 +584,13 @@ memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Lummi Nation". Name matched to the roster entry.
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Lummi Nation". Name matched to the roster entry.
 review:

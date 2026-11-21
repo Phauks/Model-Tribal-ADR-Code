@@ -7,6 +7,7 @@ names:
     language_tag: qui
     source: hohtribe-nsn-culture
     confidence: medium
+    verification: inferred
     as_of: '2026-11-21'
     note: 'Culture page: ''Those-Who-Live-on-the-Hoh (Chalat’, as the Hoh call themselves)''. Tag qui
       (Quileute) assigned by researcher.'
@@ -17,6 +18,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -24,12 +26,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hoh Indian Tribe
 - state: WA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1460
   note: 'Census area with land in this state: Hoh Indian Reservation and Off-Reservation Trust Land (code
@@ -41,6 +45,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1460
   note: Matched by name. Census class code D1.
@@ -49,6 +54,7 @@ population:
   kind: citizens
   source: hohtribe-nsn-culture-hoh-indian-tribe-safe-homelands
   confidence: low
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'Page about the Hoh Indian Tribe Safe Homelands Act: ''our 230 tribal members''; ''130 tribal
     members who reside on the Reservation''. The text appears to date from the Act''s passage (around
@@ -57,6 +63,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1460, field POP100
   note: 'Census area: Hoh Indian Reservation and Off-Reservation Trust Land (code 1460). Everyone counted
@@ -66,6 +73,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3022 (Hoh Indian Tribe alone or in any combination), GEOID 0100000US
     (United States)
@@ -76,6 +84,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Seattle, row 'Hoh Indian Tribe', PDF page 9, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -86,6 +95,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hoh Indian Tribe
 - kind: physical-address
@@ -93,6 +103,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hoh Indian Tribe
 - kind: mailing-address
@@ -100,6 +111,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hoh Indian Tribe
 - kind: phone
@@ -107,6 +119,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hoh Indian Tribe
 - kind: fax
@@ -114,6 +127,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hoh Indian Tribe
 federal_administration:
@@ -121,6 +135,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Olympic Peninsula Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Hoh Indian Tribe
 governing_documents:
@@ -129,6 +144,7 @@ governing_documents:
   link: https://narf.org/nill/codes/hoh/index.html
   source: national-indian-law-library-code-codes-hoh
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: page heading
   note: The National Indian Law Library page gives the table of contents (and may link to the nation's
@@ -139,6 +155,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/hoh/index.html
   source: national-indian-law-library-constitution-constitutions-hoh
   confidence: medium
+  verification: title-only
   as_of: '1969'
   locator: page heading
   note: 'Adopted: 1969. The National Indian Law Library page gives the table of contents (and may link
@@ -148,6 +165,7 @@ governing_documents:
   link: https://hohtribe-nsn.org/government/law-and-order-code/
   source: national-indian-law-library-hoh
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -156,6 +174,7 @@ governing_documents:
   title: Hoh Tribe Law and Order Code
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Washington section, entry 'Hoh Tribe'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -167,6 +186,7 @@ justice_institutions:
   link: https://hohtribe-nsn.org/government/tribal-court/
   source: national-indian-law-library-hoh
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -174,6 +194,7 @@ justice_institutions:
   name: Hoh Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Hoh Tribe'
   note: 'Link check 2026-11-21: the link the source gives (http://www.hohtribe.com/?page_id=43) returned
@@ -282,6 +303,7 @@ gaming:
     federal_register_citation: 66 FR 4038
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2001-01-17'
     locator: result page 38 (?page=38), row 15
     note: 'Listed as: "Hoh Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -295,6 +317,7 @@ gaming:
     federal_register_citation: 72 FR 30392
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-05-31'
     locator: result page 38 (?page=38), row 16
     note: 'Listed as: "Hoh Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -308,6 +331,7 @@ gaming:
     federal_register_citation: 80 FR 31918
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-06-04'
     locator: result page 38 (?page=38), row 17
     note: 'Listed as: "Hoh Indian Tribe Tribal-State Gaming Compact" (Approve); list''s Tribe column:
@@ -323,6 +347,7 @@ gaming:
     dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
     source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
     confidence: medium
+    verification: inferred
     as_of: '2021-09-01'
     locator: Section XIV (Dispute Resolution), subsection B
     note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
@@ -339,6 +364,7 @@ jurisdiction:
     jurisdiction under RCW 37.12.021.'
   source: revised-code-of-washington-37-12-010
   confidence: medium
+  verification: inferred
   as_of: '1963'
   locator: RCW 37.12.010
   note: Nation matched to Washington by office state. Check for later retrocession facts.
@@ -347,6 +373,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Hoh Indian Tribe Confidence lowered from high by the lead session: the notice prints
@@ -355,11 +382,13 @@ memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes
   confidence: high
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Hoh Indian Tribe".
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes
   confidence: high
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Hoh Indian Tribe".
 review:

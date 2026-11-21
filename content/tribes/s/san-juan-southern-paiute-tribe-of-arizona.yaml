@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 - type: federal
@@ -19,6 +20,7 @@ recognition:
   since: '1990-03-28'
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '1990-03-28'
   locator: 'Petitioner #71'
 states:
@@ -26,6 +28,7 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: San Juan Southern Paiute Tribe of Arizona
 population:
@@ -33,6 +36,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3285 (San Juan Southern Paiute Tribe of Arizona alone or in any combination),
     GEOID 0100000US (United States)
@@ -43,6 +47,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'San Juan Southern Paiute Tribe', PDF page 8, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -51,6 +56,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 87, row T43900 'San Juan Southern Paiute Tribe of Arizona'
   note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
@@ -62,6 +68,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: San Juan Southern Paiute Tribe of Arizona
 - kind: physical-address
@@ -69,6 +76,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: San Juan Southern Paiute Tribe of Arizona
 - kind: mailing-address
@@ -76,6 +84,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: San Juan Southern Paiute Tribe of Arizona
 - kind: phone
@@ -83,6 +92,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: San Juan Southern Paiute Tribe of Arizona
 languages:
@@ -90,6 +100,7 @@ languages:
   language_tag: ute
   source: san-juan-southern-paiute-tribe-of-arizon-home
   confidence: medium
+  verification: inferred
   as_of: '2026-11-21'
   note: '"Our language is a different dialect of the Southern Paiute/Ute language group"'
 federal_administration:
@@ -97,6 +108,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Southern Paiute Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: San Juan Southern Paiute Tribe of Arizona
 governing_documents:
@@ -105,6 +117,7 @@ governing_documents:
   link: https://membersupport.sanjuanpaiute-nsn.gov/portal/en/kb/san-juan-southern-paiute-tribe/law-and-order-code
   source: national-indian-law-library-san-juan
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -114,6 +127,7 @@ governing_documents:
   link: https://membersupport.sanjuanpaiute-nsn.gov/portal/en/kb/san-juan-southern-paiute-tribe/constitution
   source: national-indian-law-library-san-juan
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -126,6 +140,7 @@ gaming:
     federal_register_citation: 68 FR 51299
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2003-08-26'
     locator: result page 2 (?page=2), row 13
     note: 'Listed as: "San Juan Southern Paiute Tribe Tribal State Gaming Compact" (Approve); list''s
@@ -139,6 +154,7 @@ gaming:
     federal_register_citation: 86 FR 27889
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-05-24'
     locator: result page 2 (?page=2), row 14
     note: 'Listed as: "San Juan Southern Paiute Tribe Tribal State Gaming Compact" (Approve); list''s
@@ -152,6 +168,7 @@ gaming:
     federal_register_citation: 87 FR 35992
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2022-06-14'
     locator: result page 2 (?page=2), row 15
     note: 'Listed as: "San Juan Southern Paiute Tribe Tribal State Gaming Compact" (Approve); list''s
@@ -169,6 +186,7 @@ gaming:
     dispute_resolution_locator: Section 15 (Dispute Resolution)
     source: compact-az-ak-chin-indian-community-2003
     confidence: medium
+    verification: inferred
     as_of: '2003-02-05'
     locator: Section 15 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
@@ -181,6 +199,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: San Juan Southern Paiute Tribe of Arizona Confidence lowered from high by the lead
@@ -190,6 +209,7 @@ memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "San Juan Southern Paiute". Name matched to the roster entry.
 review:

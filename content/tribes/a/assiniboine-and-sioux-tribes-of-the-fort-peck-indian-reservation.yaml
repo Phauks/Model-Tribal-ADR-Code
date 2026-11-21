@@ -7,12 +7,14 @@ names:
     language_tag: asb
     source: mt-tribal-nations-fort-peck
     confidence: medium
+    verification: inferred
     as_of: '2026-11-21'
     note: 'State page: ''The Assiniboine refer to themselves as "Nakona"''. Secondary (state) source.'
   - name: Dakota
     language_tag: dak
     source: mt-tribal-nations-fort-peck
     confidence: medium
+    verification: inferred
     as_of: '2026-11-21'
     note: 'State page: ''the Sioux call themselves "Dakota"''. Secondary (state) source.'
   official_source: bia-recognized-entities-2026
@@ -43,6 +45,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -50,12 +53,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation, Montana
 - state: MT
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1250
   note: 'Census area with land in this state: Fort Peck Indian Reservation and Off-Reservation Trust Land
@@ -67,6 +72,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1250
   note: Matched by name. Census class code D1.
@@ -75,6 +81,7 @@ population:
   kind: citizens
   source: mt-tribal-nations-fort-peck
   confidence: low
+  verification: inferred
   as_of: '2026-11-21'
   note: 'State page ''Fast Facts'': ''an estimated 11,786 enrolled tribal members, of whom approximately
     6,000 reside on or near the reservation.'' The same page elsewhere says about 6,800 live on the reservation
@@ -83,6 +90,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1250, field POP100
   note: 'Census area: Fort Peck Indian Reservation and Off-Reservation Trust Land (code 1250). Everyone
@@ -92,6 +100,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2854 (Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation,
     Montana alone or in any combination), GEOID 0100000US (United States)
@@ -103,6 +112,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Denver, row 'Assiniboine & Sioux Tribes of Ft. Peck', PDF page 5, Enrollment
     column
@@ -112,6 +122,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 75, row T02000 'Assiniboine and Sioux Tribes of the Fort Peck Indian
     Reservation'
@@ -124,6 +135,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation, Montana
 - kind: physical-address
@@ -131,6 +143,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation, Montana
 - kind: mailing-address
@@ -138,6 +151,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation, Montana
 - kind: phone
@@ -145,6 +159,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation, Montana
 - kind: fax
@@ -152,6 +167,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation, Montana
 federal_administration:
@@ -159,6 +175,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Fort Peck Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation, Montana
 governing_documents:
@@ -167,6 +184,7 @@ governing_documents:
   link: https://fptc.org/comprehensive-code-of-justice-ccoj/
   source: national-indian-law-library-assiniboine-sioux
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -176,6 +194,7 @@ governing_documents:
   link: https://fptc.org/comprehensive-code-of-justice-ccoj/
   source: national-indian-law-library-assiniboine-sioux
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -187,6 +206,7 @@ governing_documents:
   link: https://narf.org/nill/codes/assiniboine_sioux/index.html
   source: national-indian-law-library-code-codes-assiniboine-sioux
   confidence: medium
+  verification: title-only
   as_of: '2024'
   locator: page heading
   note: 'Most recent update received : June 2024. The National Indian Law Library page gives the table
@@ -197,6 +217,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/assiniboine_sioux/index.html
   source: national-indian-law-library-constitution-constitutions-assiniboine-sioux
   confidence: medium
+  verification: title-only
   as_of: '2013'
   locator: page heading
   note: 'Amended: 2013. The National Indian Law Library page gives the table of contents (and may link
@@ -206,6 +227,7 @@ governing_documents:
   link: http://www.fortpecktribes.org/pdf/fpt_constitution_bylaws.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Montana section, entry 'Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -213,6 +235,7 @@ governing_documents:
   title: Fort Peck Tribes Comprehensive Code of Justice
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Montana section, entry 'Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -224,6 +247,7 @@ justice_institutions:
   link: http://www.fptc.org/
   source: national-indian-law-library-assiniboine-sioux
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -232,6 +256,7 @@ justice_institutions:
   link: http://www.fptc.org/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Montana section, entry 'Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation'
 dispute_resolution:
@@ -320,6 +345,7 @@ gaming:
     approved: '1993-04-14'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-04-14'
     locator: result page 19 (?page=19), row 3
     note: 'Listed as: "Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation Tribal State Gaming
@@ -331,6 +357,7 @@ gaming:
     federal_register_citation: 68 FR 55411
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2003-09-25'
     locator: result page 19 (?page=19), row 4
     note: 'Listed as: "Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation Tribal State Gaming
@@ -345,6 +372,7 @@ gaming:
     federal_register_citation: 77 FR 76514
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2012-12-28'
     locator: result page 19 (?page=19), row 5
     note: 'Listed as: "Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation Tribal State Gaming
@@ -359,6 +387,7 @@ gaming:
     federal_register_citation: 68 FR 9095
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2003-02-27'
     locator: result page 19 (?page=19), row 6
     note: 'Listed as: "Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation Tribal State Gaming
@@ -373,6 +402,7 @@ gaming:
     federal_register_citation: 67 FR 51867
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2002-08-09'
     locator: result page 19 (?page=19), row 7
     note: 'Listed as: "Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation Tribal State Gaming
@@ -388,6 +418,7 @@ gaming:
     federal_register_citation: 69 FR 40646
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2004-07-06'
     locator: result page 19 (?page=19), row 8
     note: 'Listed as: "Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation Tribal State Gaming
@@ -402,6 +433,7 @@ gaming:
     approved: '1992-07-01'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1992-07-01'
     locator: result page 19 (?page=19), row 9
     note: 'Listed as: "Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation Tribal State Gaming
@@ -413,6 +445,7 @@ gaming:
     federal_register_citation: 67 FR 72967
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2002-12-09'
     locator: result page 19 (?page=19), row 10
     note: 'Listed as: "Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation Tribal State Gaming
@@ -427,6 +460,7 @@ gaming:
     approved: '1992-11-18'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1992-11-18'
     locator: result page 19 (?page=19), row 11
     note: 'Listed as: "Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation Tribal State Gaming
@@ -438,6 +472,7 @@ gaming:
     federal_register_citation: 63 FR 55887
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1998-10-19'
     locator: result page 19 (?page=19), row 12
     note: 'Listed as: "Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation Tribal State Gaming
@@ -451,6 +486,7 @@ gaming:
     approved: '1992-09-08'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1992-09-08'
     locator: result page 19 (?page=19), row 13
     note: 'Listed as: "Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation Tribal State Gaming
@@ -462,6 +498,7 @@ gaming:
     federal_register_citation: 67 FR 40003
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2002-06-11'
     locator: result page 19 (?page=19), row 14
     note: 'Listed as: "Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation Tribal State Gaming
@@ -477,6 +514,7 @@ gaming:
     federal_register_citation: 89 FR 5572
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2024-01-29'
     locator: result page 19 (?page=19), row 15
     note: 'Listed as: "Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation Tribal State Gaming
@@ -493,6 +531,7 @@ gaming:
     dispute_resolution_locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
     source: compact-mt-confederated-salish-and-kootenai-tribes-2026
     confidence: medium
+    verification: inferred
     as_of: '2026-01-26'
     locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
     note: state model compact; nation-specific text not checked. Read from the 2026 Confederated Salish
@@ -504,6 +543,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=3301&ind=3303
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1994-02-07'
     locator: table row 8, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 8 lists the nation
@@ -512,6 +552,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=3302&ind=3305
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1998-12-07'
     locator: table row 8, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 8 lists the nation
@@ -520,6 +561,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=13559&ind=13560
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2025-12-02'
     locator: table row 8, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 8 lists the nation
@@ -528,6 +570,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Assiniboine & Sioux Tribes
       of the Fort Peck Reservation". Facilities as machine-extracted from the report text (verify): Fred''s
@@ -539,6 +582,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation, Montana Confidence
@@ -551,6 +595,7 @@ jurisdiction:
     (list updated May 2022).
   source: national-congress-of-american-indians-implementing-tribe-profile-assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation
   confidence: medium
+  verification: bulk-import
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation". Also on the NCAI
@@ -561,6 +606,7 @@ jurisdiction:
     approved March 6, 2015 (pilot project).
   source: department-of-justice-violence-against-women-act-2013-pilot-project
   confidence: medium
+  verification: bulk-import
   as_of: '2015-03-06'
   locator: List of granted Pilot Project applications
   note: Primary source but describes the 2014-2015 pilot period; page updated April 7, 2023.
@@ -570,6 +616,7 @@ jurisdiction:
     Law and Order Act (as of 2013 interviews).
   source: bureau-of-justice-assistance-enhanced-sentencing-in-tribal-courts-2015
   confidence: medium
+  verification: bulk-import
   as_of: '2013'
   locator: p. 3, list of tribes exercising enhanced sentencing
   note: Listed as "Fort Peck Assiniboine & Sioux Tribes".
@@ -578,12 +625,14 @@ jurisdiction:
   detail: 'NCAI profile: "The Tribes implemented felony sentencing under TLOA in 2012."'
   source: national-congress-of-american-indians-implementing-tribe-profile-assiniboine-and-sioux-tribes-of-the-fort-peck-indian-reservation
   confidence: medium
+  verification: read-in-full
   as_of: '2012'
   note: Statement on an individual NCAI implementing-tribe profile page, not a list.
 memberships:
 - organization: Rocky Mountain Tribal Leaders Council
   source: rocky-mountain-tribal-leaders-council-who-we-are
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Fort Peck Tribes Assiniboine-Sioux". Name matched to the roster entry.
 review:

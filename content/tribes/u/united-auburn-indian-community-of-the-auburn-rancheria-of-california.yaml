@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: United Auburn Indian Community of the Auburn Rancheria of California
 - state: CA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0120
   note: 'Census area with land in this state: Auburn Rancheria and Off-Reservation Trust Land (code 0120).
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0120
   note: Matched by name. Census class code D1.
@@ -41,6 +45,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0120, field POP100
   note: 'Census area: Auburn Rancheria and Off-Reservation Trust Land (code 0120). Everyone counted as
@@ -50,6 +55,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3391 (United Auburn Indian Community of the Auburn Rancheria of California
     alone or in any combination), GEOID 0100000US (United States)
@@ -61,6 +67,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'United Auburn Indian Community', PDF page 8, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -69,6 +76,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 89, row T51500 'United Auburn Indian Community of the Auburn Rancheria
     of California'
@@ -81,6 +89,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: United Auburn Indian Community of the Auburn Rancheria of California
 - kind: physical-address
@@ -88,6 +97,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: United Auburn Indian Community of the Auburn Rancheria of California
 - kind: mailing-address
@@ -95,6 +105,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: United Auburn Indian Community of the Auburn Rancheria of California
 - kind: phone
@@ -102,6 +113,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: United Auburn Indian Community of the Auburn Rancheria of California
 - kind: fax
@@ -109,6 +121,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: United Auburn Indian Community of the Auburn Rancheria of California
 federal_administration:
@@ -116,6 +129,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Central California Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: United Auburn Indian Community of the Auburn Rancheria of California
 gaming:
@@ -126,6 +140,7 @@ gaming:
     federal_register_citation: 83 FR 3015
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2018-01-22'
     locator: result page 12 (?page=12), row 25
     note: 'Listed as: "United Auburn Indian Community of the Auburn Rancheria Tribal State Gaming Compact"
@@ -140,6 +155,7 @@ gaming:
     federal_register_citation: 65 FR 31189
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-05-16'
     locator: result page 13 (?page=13), row 1
     note: 'Listed as: "United Auburn Indian Community of the Auburn Rancheria Tribal State Gaming Compact"
@@ -154,6 +170,7 @@ gaming:
     federal_register_citation: 69 FR 53733
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2004-09-02'
     locator: result page 13 (?page=13), row 2
     note: 'Listed as: "United Auburn Indian Community of the Auburn Rancheria Tribal State Gaming Compact"
@@ -168,6 +185,7 @@ gaming:
     federal_register_citation: 80 FR 79926
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-12-23'
     locator: result page 13 (?page=13), row 3
     note: 'Listed as: "United Auburn Indian Community of the Auburn Rancheria Tribal State Gaming Compact"
@@ -186,6 +204,7 @@ gaming:
     dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     source: compact-ca-cher-ae-heights-indian-community-of-the-2026
     confidence: medium
+    verification: inferred
     as_of: '2026-01-26'
     locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
@@ -198,6 +217,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11472&ind=11495
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2000-02-24'
     locator: table row 299, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 299 lists the nation
@@ -206,6 +226,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11473&ind=11496
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2008-01-11'
     locator: table row 299, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 299 lists the nation
@@ -214,6 +235,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "United Auburn Indian Community
       of the Auburn Rancheria". Name extracted from the PDF by the page-fetch tool and matched to the
@@ -226,6 +248,7 @@ jurisdiction:
     country within California; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
   note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
@@ -235,6 +258,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: United Auburn Indian Community of the Auburn Rancheria of California Confidence lowered

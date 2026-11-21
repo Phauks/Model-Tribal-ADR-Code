@@ -6,6 +6,7 @@ names:
   - name: Munsee Thames River Delaware
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     locator: 'Petitioner #26'
     note: Name as printed on the Office of Federal Acknowledgment list by state.
@@ -19,6 +20,7 @@ recognition:
     Acknowledgment effective 01/03/1983 47 FR 50109
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   locator: 'Petitioner #26'
   note: Decision from the Petitions Resolved page; citation and date from the Office of Federal Acknowledgment
@@ -28,6 +30,7 @@ states:
   presence: other
   source: ofa-petitions-resolved
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.

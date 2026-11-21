@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Eastern Shoshone Tribe of the Wind River Reservation, Wyoming
 - state: WY
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4610
   note: 'Census area with land in this state: Wind River Reservation and Off-Reservation Trust Land (code
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4610
   note: 'Matched by name. Shared with: Northern Arapaho Tribe of the Wind River Reservation, Wyoming.
@@ -42,6 +46,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4610, field POP100
   note: 'Census area: Wind River Reservation and Off-Reservation Trust Land (code 4610). Everyone counted
@@ -52,6 +57,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2979 (Eastern Shoshone Tribe of the Wind River Reservation, Wyoming
     alone or in any combination), GEOID 0100000US (United States)
@@ -62,6 +68,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Denver, row 'Eastern Shoshone Tribe of the Wind River Reservation', PDF
     page 5, Enrollment column
@@ -71,6 +78,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: low
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 88, row T46100 'Shoshone Tribe of the Wind River Reservation'
   note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
@@ -83,6 +91,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Eastern Shoshone Tribe of the Wind River Reservation, Wyoming
 - kind: physical-address
@@ -90,6 +99,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Eastern Shoshone Tribe of the Wind River Reservation, Wyoming
 - kind: mailing-address
@@ -97,6 +107,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Eastern Shoshone Tribe of the Wind River Reservation, Wyoming
 - kind: phone
@@ -104,6 +115,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Eastern Shoshone Tribe of the Wind River Reservation, Wyoming
 - kind: fax
@@ -111,6 +123,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Eastern Shoshone Tribe of the Wind River Reservation, Wyoming
 - kind: email-general
@@ -118,6 +131,7 @@ contacts:
   label: General office email shown on the nation's website
   source: easternshoshone-contact
   confidence: high
+  verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
 federal_administration:
@@ -125,6 +139,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Wind River Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Eastern Shoshone Tribe of the Wind River Reservation, Wyoming
 governing_documents:
@@ -135,6 +150,7 @@ governing_documents:
   link: https://narf.org/nill/codes/shoshonearapaho/index.html
   source: national-indian-law-library-code-codes-shoshonearapaho
   confidence: medium
+  verification: title-only
   as_of: '2004'
   locator: page heading
   note: 'Updated: Nov. 1, 2004. The National Indian Law Library page gives the table of contents (and
@@ -144,6 +160,7 @@ governing_documents:
   link: https://www.wrtribalcourt.com/forms/rules-of-court/tribal-codes/
   source: national-indian-law-library-eastern-shoshone
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
@@ -154,6 +171,7 @@ governing_documents:
   link: https://archive.org/stream/tribal-constitutions-rocky-mountains/Shoshone%20and%20Arapaho%20of%20Wind%20River%20Const%20and%20By-laws%2010.7.1938
   source: national-indian-law-library-eastern-shoshone
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Internet
@@ -164,6 +182,7 @@ justice_institutions:
   link: http://shoshone-arapaho-tribal-court.org
   source: national-indian-law-library-eastern-shoshone
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
@@ -303,6 +322,7 @@ gaming:
     federal_register_citation: 81 FR 56693
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2016-08-22'
     locator: result page 47 (?page=47), row 20
     note: 'Listed as: "Eastern Shoshone Tribe of the Wind River Reservation Tribal State Gaming Compact"
@@ -317,6 +337,7 @@ gaming:
     federal_register_citation: 71 FR 40147
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2006-07-14'
     locator: result page 47 (?page=47), row 21
     note: 'Listed as: "Eastern Shoshone Tribe of the Wind River Reservation Tribal State Gaming Compact"
@@ -335,6 +356,7 @@ gaming:
     dispute_resolution_locator: Section VII (Term)
     source: compact-wy-eastern-shoshone-tribe-of-the-wind-river-2016
     confidence: medium
+    verification: read-in-full
     as_of: '2016-08-22'
     locator: Section VII (Term)
     note: Dispute-resolution clause read from this nation's own compact document. Document is older than
@@ -345,6 +367,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9761&ind=9776
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2004-03-10'
     locator: table row 73, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 73 lists the nation
@@ -353,6 +376,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11148&ind=11162
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2004-03-10'
     locator: table row 260, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 260 lists the nation
@@ -363,6 +387,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Eastern Shoshone Tribe of the Wind River Reservation, Wyoming Confidence lowered from
@@ -372,6 +397,7 @@ memberships:
 - organization: Rocky Mountain Tribal Leaders Council
   source: rocky-mountain-tribal-leaders-council-who-we-are
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Eastern Shoshone Tribal Council". Name matched to the roster entry.
 review:

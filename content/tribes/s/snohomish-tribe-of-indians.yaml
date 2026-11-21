@@ -10,6 +10,7 @@ recognition:
   petition_stage: Denied (Petitions Resolved page); Denied acknowledgment through 25 CFR 83 (eff. 3/9/04)
   source: federal-register-03-30575
   confidence: high
+  verification: bulk-import
   as_of: '2003-12-10'
   locator: 'Petitioner #12'
   note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
@@ -19,6 +20,7 @@ states:
   presence: other
   source: ofa-petitions-resolved
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.

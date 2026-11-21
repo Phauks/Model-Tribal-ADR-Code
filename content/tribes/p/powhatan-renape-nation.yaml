@@ -6,12 +6,14 @@ names:
   - name: Powhatan Renape Indians
     source: new-jersey-commission-american-indian-affairs-about
     confidence: high
+    verification: inferred
     as_of: '2026'
   official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
 recognition:
 - type: unrecognized
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1; Table 3
   note: 'GAO Table 1 lists "Powhatan Renape Nation" among 26 non-federally recognized tribes that received
@@ -25,6 +27,7 @@ recognition:
   petition_stage: Letter of Intent to Petition 04/12/96
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   locator: 'Petitioner #171'
   note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
@@ -36,6 +39,7 @@ recognition:
     agreement with the New Jersey Attorney General
   source: new-jersey-powhatan-settlement-agreement
   confidence: high
+  verification: read-in-full
   as_of: 2019-03
   locator: Paragraph 1
   note: 'Agreement: New Jersey has ''formally recognized the Tribe as an American Indian Tribe since 1980''
@@ -46,6 +50,7 @@ recognition:
   legal_basis: New Jersey Attorney General settlement announcement, 2019-03-18
   source: new-jersey-attorney-general-2019-03-18
   confidence: high
+  verification: inferred
   as_of: '2019-03-18'
 - type: state
   state: NJ
@@ -53,6 +58,7 @@ recognition:
     Renape Nation'
   source: new-jersey-statutes-52-16a-53
   confidence: high
+  verification: inferred
   as_of: '2001'
   note: The statute provides seats on the Commission on American Indian Affairs; the Attorney General
     calls these the three 'New Jersey tribes of American Indians' referenced in 1990s statutes.
@@ -61,6 +67,7 @@ states:
   presence: other
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1, State column
   note: State as listed by GAO.
@@ -68,6 +75,7 @@ states:
   presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
@@ -75,6 +83,7 @@ states:
   presence: other
   source: new-jersey-attorney-general-2019-03-18
   confidence: high
+  verification: inferred
   as_of: '2019-03-18'
 review:
   status: drafted-from-public-sources

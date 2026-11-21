@@ -20,6 +20,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4106
   note: 'The notice adds in parentheses: Arctic Village and Village of Venetie.'
@@ -28,12 +29,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Venetie Tribal Government (Arctic Village and Village of Venetie)
 - state: AK
   presence: other
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 6140, 7725
   note: 'Census area with land in this state: Arctic Village ANVSA (code 6140); Venetie ANVSA (code 7725).
@@ -46,6 +49,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US6140
   note: Matched by name. The 2026 list entry is Native Village of Venetie Tribal Government (Arctic Village
@@ -56,6 +60,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US7725
   note: Matched by name. The 2026 list entry is Native Village of Venetie Tribal Government (Arctic Village
@@ -65,6 +70,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US6140, field POP100
   note: 'Census area: Arctic Village ANVSA (code 6140). Everyone counted as living in the area in the
@@ -75,6 +81,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US7725, field POP100
   note: 'Census area: Venetie ANVSA (code 7725). Everyone counted as living in the area in the 2020 Census,
@@ -87,6 +94,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Venetie Tribal Government (Arctic Village and Village of Venetie)
 - kind: mailing-address
@@ -94,6 +102,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Venetie Tribal Government (Arctic Village and Village of Venetie)
 - kind: phone
@@ -101,6 +110,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Venetie Tribal Government (Arctic Village and Village of Venetie)
 - kind: fax
@@ -108,6 +118,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Venetie Tribal Government (Arctic Village and Village of Venetie)
 - kind: mailing-address
@@ -115,6 +126,7 @@ contacts:
   label: 'Arctic Village council office: Tribal office address listed by the State of Alaska'
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: high
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Arctic Village" (community: Arctic Village, object 16)'
 - kind: phone
@@ -122,6 +134,7 @@ contacts:
   label: 'Arctic Village council office: Tribal office main phone'
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: high
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Arctic Village" (community: Arctic Village, object 16)'
 - kind: email-general
@@ -129,6 +142,7 @@ contacts:
   label: 'Arctic Village council office: Tribal office email listed by the State of Alaska'
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: medium
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Arctic Village" (community: Arctic Village, object 16)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
@@ -138,6 +152,7 @@ contacts:
   label: Tribal office email listed by the State of Alaska
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: medium
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Native Village of Venetie Tribal Government" (community: Venetie, object 222)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
@@ -147,6 +162,7 @@ contacts:
   label: 'Village of Venetie council office: Tribal office address listed by the State of Alaska'
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: high
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Village of Venetie" (community: Venetie, object 223)'
 - kind: phone
@@ -154,6 +170,7 @@ contacts:
   label: 'Village of Venetie council office: Tribal office main phone'
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: high
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Village of Venetie" (community: Venetie, object 223)'
 - kind: email-general
@@ -161,6 +178,7 @@ contacts:
   label: 'Village of Venetie council office: Tribal office email listed by the State of Alaska'
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: medium
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Village of Venetie" (community: Venetie, object 223)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
@@ -170,6 +188,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Fairbanks Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Venetie Tribal Government (Arctic Village and Village of Venetie)
 government_structure:
@@ -179,6 +198,7 @@ government_structure:
     1936), as of 1947
   source: haas-1947-table-b-alaska
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, Alaska Native Communities and Cooperatives, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -189,6 +209,7 @@ government_structure:
     Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-vencons
   confidence: medium
+  verification: read-in-full
   as_of: '1940'
   locator: preamble / approval and certification of adoption
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
@@ -201,6 +222,7 @@ governing_documents:
   link: https://narf.org/nill/triballaw/climate/index.html
   source: national-indian-law-library-native-venetie
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Arctic Village is part of the Native Village of Venetie Tribal Government per the Bureau of Indian
@@ -212,6 +234,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/vencons.html
   source: national-indian-law-library-native-venetie
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Arctic Village is part of the Native Village of Venetie Tribal Government per the Bureau of Indian
@@ -223,6 +246,7 @@ governing_documents:
   link: https://www.loc.gov/item/40029069/
   source: national-indian-law-library-native-venetie
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Arctic Village is part of the Native Village of Venetie Tribal Government per the Bureau of Indian
@@ -234,6 +258,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/venchrtr.html
   source: national-indian-law-library-native-venetie
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Arctic Village is part of the Native Village of Venetie Tribal Government per the Bureau of Indian
@@ -245,6 +270,7 @@ governing_documents:
   link: https://www.loc.gov/item/40029112/
   source: national-indian-law-library-native-venetie
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Arctic Village is part of the Native Village of Venetie Tribal Government per the Bureau of Indian
@@ -256,6 +282,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/venchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-venchrtr
   confidence: medium
+  verification: title-only
   as_of: '1940'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -264,6 +291,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/vencons.html
   source: university-of-oklahoma-indian-reorganization-act-vencons
   confidence: medium
+  verification: title-only
   as_of: '1940'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -271,6 +299,7 @@ justice_institutions:
   name: Arctic Village Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Alaska section, entry 'Village of Arctic Village'
   note: Arctic Village is part of the Native Village of Venetie Tribal Government per the Bureau of Indian
@@ -279,6 +308,7 @@ justice_institutions:
   name: Venetie Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Alaska section, entry 'Venetie Village Council'
 jurisdiction:
@@ -289,6 +319,7 @@ jurisdiction:
     within Alaska; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Alaska"
   note: Statute is primary; nation matched to Alaska by office state in the BIA Tribal Leaders Directory,
@@ -298,6 +329,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Arctic Village; Native Village of Venetie Tribal Government (Arctic Village and Village
@@ -309,6 +341,7 @@ related_entities:
   relation: alaska-native-claims-settlement-act-regional-corporation
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Venetie Tribal Government (Arctic Village and Village of Venetie)
   note: Regional corporation for the area, as listed in the directory.
@@ -316,6 +349,7 @@ related_entities:
   relation: alaska-native-claims-settlement-act-regional-corporation
   source: alaska-dcra-community-regions-overview
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: community row "Arctic Village"
   note: State of Alaska lists this affiliation for the community where the nation is based (Arctic Village),
@@ -324,6 +358,7 @@ related_entities:
   relation: alaska-native-claims-settlement-act-regional-nonprofit
   source: alaska-dcra-community-regions-overview
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: community row "Arctic Village"
   note: State of Alaska lists this affiliation for the community where the nation is based (Arctic Village),
@@ -332,6 +367,7 @@ related_entities:
   relation: native-regional-health-care-provider
   source: alaska-dcra-community-regions-overview
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: community row "Arctic Village"
   note: State of Alaska lists this affiliation for the community where the nation is based (Arctic Village),

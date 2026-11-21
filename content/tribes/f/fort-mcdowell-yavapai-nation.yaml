@@ -7,6 +7,7 @@ names:
     language_tag: yuf
     source: fmyn-about-fmyn
     confidence: medium
+    verification: inferred
     as_of: '2026-11-21'
     note: 'About page: ''Abaja'' – ''the people''. Tag yuf (Havasupai-Walapai-Yavapai) assigned by researcher.
       Read via the WebFetch tool because plain fetching was refused (HTTP 403); quote is as extracted
@@ -18,6 +19,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -25,12 +27,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort McDowell Yavapai Nation, Arizona
 - state: AZ
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1220
   note: 'Census area with land in this state: Fort McDowell Yavapai Nation Reservation (code 1220). Area
@@ -42,6 +46,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1220
   note: Matched by name. Census class code D2.
@@ -50,6 +55,7 @@ population:
   kind: citizens
   source: fmyn-home
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'Homepage: ''a 950-member Native American tribe''. Undated. Read via the WebFetch tool because
     plain fetching was refused (HTTP 403); quote is as extracted by that tool.'
@@ -57,6 +63,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1220, field POP100
   note: 'Census area: Fort McDowell Yavapai Nation Reservation (code 1220). Everyone counted as living
@@ -66,6 +73,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2998 (Fort McDowell Yavapai Nation alone or in any combination), GEOID
     0100000US (United States)
@@ -76,6 +84,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Fort McDowell Yavapai Nation', PDF page 7, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -84,6 +93,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 78, row T12300 'Fort McDowell Yavapai Nation'
   note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
@@ -96,6 +106,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort McDowell Yavapai Nation, Arizona
 - kind: physical-address
@@ -103,6 +114,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort McDowell Yavapai Nation, Arizona
 - kind: mailing-address
@@ -110,6 +122,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort McDowell Yavapai Nation, Arizona
 - kind: phone
@@ -117,6 +130,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort McDowell Yavapai Nation, Arizona
 - kind: fax
@@ -124,6 +138,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort McDowell Yavapai Nation, Arizona
 federal_administration:
@@ -131,6 +146,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Salt River Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort McDowell Yavapai Nation, Arizona
 government_structure:
@@ -139,6 +155,7 @@ government_structure:
     approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
   source: haas-1947-table-b
   confidence: low
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Matched by former name (Fort McDowell Mohave-Apache Community); confirm. Historical status in
@@ -150,6 +167,7 @@ government_structure:
     under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-ftmcdowcons
   confidence: low
+  verification: inferred
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Matched by former name (Fort McDowell Mohave-Apache Community); confirm. Historical constitution;
@@ -161,6 +179,7 @@ governing_documents:
   link: https://narf.org/nill/codes/fort_mcdowell/index.html
   source: national-indian-law-library-code-codes-fort-mcdowell
   confidence: medium
+  verification: title-only
   as_of: '2018'
   locator: page heading
   note: 'Updated: December 2018. Full text linked from the National Indian Law Library page.'
@@ -170,6 +189,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/fort_mcdowell/index.html
   source: national-indian-law-library-constitution-constitutions-fort-mcdowell
   confidence: medium
+  verification: title-only
   as_of: '1999'
   locator: page heading
   note: 'Received: 1999. The National Indian Law Library page gives the table of contents (and may link
@@ -179,6 +199,7 @@ governing_documents:
   link: https://library.municode.com/tribes_and_tribal_nations/fort_mcdowell_yavapai_nation/codes/the_law_and_order_code
   source: national-indian-law-library-fort-mcdowell
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Municode website
@@ -188,6 +209,7 @@ governing_documents:
   link: http://www.fmyn.org/tribal-government/fmyn-constitution/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Arizona section, entry 'Fort McDowell Yavapai Nation'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -196,6 +218,7 @@ governing_documents:
   link: http://www.fmyn.org/tribal-government/law-and-order-code/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Arizona section, entry 'Fort McDowell Yavapai Nation'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -205,6 +228,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/ftmcdowcons.html
   source: university-of-oklahoma-indian-reorganization-act-ftmcdowcons
   confidence: low
+  verification: inferred
   as_of: '1936'
   note: Matched by former name (Fort McDowell Mohave-Apache Community); confirm. Historical text as originally
     approved; the nation may have amended or replaced it since.
@@ -214,6 +238,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/mpchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-mpchrtr
   confidence: low
+  verification: inferred
   as_of: '1938'
   note: Matched by former name (Fort McDowell Mohave-Apache Community); confirm. Historical text as originally
     approved; the nation may have amended or replaced it since.
@@ -222,6 +247,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-fort-mcdowell
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -230,6 +256,7 @@ justice_institutions:
   link: http://www.fmyn.org/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Fort McDowell Yavapai Nation'
 dispute_resolution:
@@ -386,6 +413,7 @@ gaming:
     approved: '1992-12-30'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '1992-12-30'
     locator: result page 0 (?page=0), row 15
     note: 'Listed as: "Fort McDowell Mohave-Apache Indian Community of Arizona Tribal State Gaming Compact"
@@ -396,6 +424,7 @@ gaming:
     approved: '1993-08-18'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '1993-08-18'
     locator: result page 0 (?page=0), row 16
     note: 'Listed as: "Fort McDowell Mohave-Apache Indian Community Tribal State Gaming Compact" (Approve);
@@ -407,6 +436,7 @@ gaming:
     federal_register_citation: 87 FR 35992
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2022-06-14'
     locator: result page 0 (?page=0), row 17
     note: 'Listed as: "Fort McDowell Yavapai Nation Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -420,6 +450,7 @@ gaming:
     federal_register_citation: 74 FR 12889
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2009-03-25'
     locator: result page 0 (?page=0), row 18
     note: 'Listed as: "Fort McDowell Yavapai Nation Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -433,6 +464,7 @@ gaming:
     federal_register_citation: 86 FR 27889
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-05-24'
     locator: result page 0 (?page=0), row 19
     note: 'Listed as: "Fort McDowell Yavapai Nation Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -446,6 +478,7 @@ gaming:
     federal_register_citation: 68 FR 5912
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2003-02-05'
     locator: result page 0 (?page=0), row 20
     note: 'Listed as: "Fort McDowell Yavapai Nation Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -463,6 +496,7 @@ gaming:
     dispute_resolution_locator: Section 15 (Dispute Resolution)
     source: compact-az-ak-chin-indian-community-2003
     confidence: medium
+    verification: inferred
     as_of: '2003-02-05'
     locator: Section 15 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
@@ -474,6 +508,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9827&ind=9852
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-12-17'
     locator: table row 87, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 87 lists the nation
@@ -482,6 +517,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9841&ind=9853
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2002-04-11'
     locator: table row 87, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 87 lists the nation
@@ -490,6 +526,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9842&ind=9854
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2003-05-19'
     locator: table row 87, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 87 lists the nation
@@ -498,6 +535,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9843&ind=9855
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2003-07-31'
     locator: table row 87, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 87 lists the nation
@@ -506,6 +544,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9844&ind=9856
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2004-04-26'
     locator: table row 87, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 87 lists the nation
@@ -514,6 +553,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9845&ind=9857
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-01-29'
     locator: table row 87, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 87 lists the nation
@@ -522,6 +562,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9846&ind=9858
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2020-05-11'
     locator: table row 87, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 87 lists the nation
@@ -530,6 +571,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Fort McDowell Yavapai Nation
       of Arizona". Facilities as machine-extracted from the report text (verify): We-Ko-Pa Casino Resort.
@@ -540,6 +582,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Fort McDowell Yavapai Nation, Arizona Confidence lowered from high by the lead session:
@@ -549,6 +592,7 @@ memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Fort McDowell Yavapai Nation". Name matched to the roster entry.
 review:

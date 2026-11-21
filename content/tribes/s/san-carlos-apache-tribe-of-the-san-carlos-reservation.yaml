@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: San Carlos Apache Tribe of the San Carlos Reservation, Arizona
 - state: AZ
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3355
   note: 'Census area with land in this state: San Carlos Reservation (code 3355). Area matched to the
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3355
   note: Matched by name. Census class code D2.
@@ -41,6 +45,7 @@ population:
   kind: resident-population
   source: san-carlos-apache-tribe-of-the-san-carlo-faq
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'FAQ: "a population on the reservation of approximately 10,815 persons: According to the U.S.
     census"; enrollment figure not published on the pages read'
@@ -48,6 +53,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3355, field POP100
   note: 'Census area: San Carlos Reservation (code 3355). Everyone counted as living in the area in the
@@ -56,6 +62,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3283 (San Carlos Apache Tribe of the San Carlos Reservation alone or
     in any combination), GEOID 0100000US (United States)
@@ -66,6 +73,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'San Carlos Apache Tribe', PDF page 8, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -74,6 +82,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 87, row T43800 'San Carlos Apache Tribe of the San Carlos Reservation'
   note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
@@ -86,6 +95,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: San Carlos Apache Tribe of the San Carlos Reservation, Arizona
 - kind: physical-address
@@ -93,6 +103,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: San Carlos Apache Tribe of the San Carlos Reservation, Arizona
 - kind: mailing-address
@@ -100,6 +111,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: San Carlos Apache Tribe of the San Carlos Reservation, Arizona
 - kind: phone
@@ -107,6 +119,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: San Carlos Apache Tribe of the San Carlos Reservation, Arizona
 - kind: fax
@@ -114,6 +127,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: San Carlos Apache Tribe of the San Carlos Reservation, Arizona
 - kind: website
@@ -121,6 +135,7 @@ contacts:
   label: Official tribal website
   source: san-carlos-apache-tribe-of-the-san-carlo-faq
   confidence: high
+  verification: title-only
   as_of: '2026-11-21'
   note: BIA directory lists an Inter Tribal Council of Arizona member page instead of the nation's own
     site; scat-nsn.gov is titled "SAN CARLOS APACHE TRIBE - OFFICIAL WEBSITE"
@@ -129,6 +144,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: San Carlos Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: San Carlos Apache Tribe of the San Carlos Reservation, Arizona
 government_structure:
@@ -137,6 +153,7 @@ government_structure:
     by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -147,6 +164,7 @@ government_structure:
     Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-amsancarcons
   confidence: medium
+  verification: read-in-full
   as_of: '1953'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -155,6 +173,7 @@ government_structure:
     of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-sancarcons
   confidence: medium
+  verification: read-in-full
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -165,6 +184,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/amsancarcons.html
   source: national-indian-law-library-san-carlos
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
@@ -175,6 +195,7 @@ governing_documents:
   link: https://www.loc.gov/item/57060872/
   source: national-indian-law-library-san-carlos
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
@@ -185,6 +206,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/amsancarchrtr.html
   source: national-indian-law-library-san-carlos
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
@@ -195,6 +217,7 @@ governing_documents:
   link: https://www.loc.gov/item/57062030/
   source: national-indian-law-library-san-carlos
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
@@ -205,6 +228,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/amsancarchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-amsancarchrtr
   confidence: medium
+  verification: title-only
   as_of: '1955'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -213,6 +237,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/amsancarcons.html
   source: university-of-oklahoma-indian-reorganization-act-amsancarcons
   confidence: medium
+  verification: title-only
   as_of: '1953'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: corporate-charter
@@ -221,6 +246,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/sancarchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-sancarchrtr
   confidence: medium
+  verification: title-only
   as_of: '1940'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -229,6 +255,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/sancarcons.html
   source: university-of-oklahoma-indian-reorganization-act-sancarcons
   confidence: medium
+  verification: title-only
   as_of: '1936'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -237,6 +264,7 @@ justice_institutions:
   link: https://www.scat-nsn.gov/tribalcourt/
   source: national-indian-law-library-san-carlos
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -244,6 +272,7 @@ justice_institutions:
   name: San Carlos Apache Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'San Carlos Apache – Ndeh Nation'
 dispute_resolution:
@@ -281,6 +310,7 @@ gaming:
     federal_register_citation: 86 FR 27889
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2021-05-24'
     locator: result page 2 (?page=2), row 9
     note: 'Listed as: "San Carlos Apache Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -294,6 +324,7 @@ gaming:
     federal_register_citation: 68 FR 5912
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2003-02-05'
     locator: result page 2 (?page=2), row 10
     note: 'Listed as: "San Carlos Apache Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -306,6 +337,7 @@ gaming:
     approved: '1993-11-10'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '1993-11-10'
     locator: result page 2 (?page=2), row 11
     note: 'Listed as: "San Carlos Apache Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -317,6 +349,7 @@ gaming:
     federal_register_citation: 87 FR 35992
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2022-06-14'
     locator: result page 2 (?page=2), row 12
     note: 'Listed as: "San Carlos Apache Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -334,6 +367,7 @@ gaming:
     dispute_resolution_locator: Section 15 (Dispute Resolution)
     source: compact-az-ak-chin-indian-community-2003
     confidence: medium
+    verification: inferred
     as_of: '2003-02-05'
     locator: Section 15 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
@@ -345,6 +379,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10980&ind=10992
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1994-02-16'
     locator: table row 240, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 240 lists the nation
@@ -353,6 +388,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10981&ind=10993
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1996-11-04'
     locator: table row 240, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 240 lists the nation
@@ -361,6 +397,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10982&ind=10994
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2000-06-13'
     locator: table row 240, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 240 lists the nation
@@ -369,6 +406,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10983&ind=10995
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2004-11-19'
     locator: table row 240, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 240 lists the nation
@@ -377,6 +415,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "San Carlos Apache Tribe of the
       San Carlos Reservation". Name extracted from the PDF by the page-fetch tool and matched to the roster.
@@ -386,6 +425,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: San Carlos Apache Tribe of the San Carlos Reservation, Arizona Confidence lowered
@@ -395,6 +435,7 @@ memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "San Carlos Apache Tribe". Name matched to the roster entry.
 review:

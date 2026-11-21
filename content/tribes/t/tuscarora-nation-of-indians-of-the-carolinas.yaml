@@ -7,6 +7,7 @@ recognition:
 - type: unrecognized
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1; Table 3
   note: 'GAO Table 1 lists "Tuscarora Nation of Indians of the Carolinas" among 26 non-federally recognized
@@ -19,6 +20,7 @@ recognition:
   petition_stage: Letter of Intent to Petition 12/21/2004
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   locator: 'Petitioner #286'
   note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
@@ -29,6 +31,7 @@ states:
   presence: other
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1, State column
   note: State as listed by GAO.
@@ -36,6 +39,7 @@ states:
   presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.

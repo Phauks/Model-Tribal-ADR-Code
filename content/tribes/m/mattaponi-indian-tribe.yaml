@@ -6,12 +6,14 @@ names:
   - name: Mattaponi
     source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
     confidence: high
+    verification: bulk-import
     as_of: '2026'
   official_source: census-aian-geography-definitions
 recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State American Indian reservation; area 9230
   note: The 2020 Census delineated "Mattaponi (state) Reservation" (State American Indian reservation).
@@ -24,6 +26,7 @@ recognition:
     recognizes
   source: virginia-report-status-of-indian-tribes-2025
   confidence: high
+  verification: bulk-import
   as_of: '2025-12-30'
 - type: state
   state: VA
@@ -31,6 +34,7 @@ recognition:
   since: '1983-03-25'
   source: virginia-mattaponi-tribe-history
   confidence: high
+  verification: read-in-full
   as_of: '2026'
   note: 'Source: ''on March 25, 1983, Virginia Joint Resolution 54 officially recognized the Mattaponi
     tribe.'' The Secretary''s page also says two tribes were recognized through a treaty; the annual tribute
@@ -40,6 +44,7 @@ states:
   presence: land
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9230
   note: State reservation land.
@@ -47,11 +52,13 @@ states:
   presence: government-office
   source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
   confidence: high
+  verification: inferred
   as_of: '2026'
 - state: VA
   presence: land
   source: virginia-mattaponi-tribe-history
   confidence: high
+  verification: inferred
   as_of: '2026'
   note: Reservation set aside by treaty; address on Mattaponi Reservation Circle.
 census_areas:
@@ -61,6 +68,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9230, GEOID 9230R
   note: Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched
@@ -71,18 +79,21 @@ contacts:
   label: Tribal contact address
   source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: phone
   value: 804-353-5908
   label: Tribal contact phone
   source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: website
   value: https://www.Mattaponi.gov
   label: Official website
   source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 review:
   status: drafted-from-public-sources

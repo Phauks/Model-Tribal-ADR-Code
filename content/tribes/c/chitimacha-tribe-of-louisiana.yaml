@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Chitimacha Tribe of Louisiana
 - state: LA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0635
   note: 'Census area with land in this state: Chitimacha Reservation (code 0635). Area matched to the
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0635
   note: Matched by name. Census class code D2.
@@ -41,6 +45,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0635, field POP100
   note: 'Census area: Chitimacha Reservation (code 0635). Everyone counted as living in the area in the
@@ -49,6 +54,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2924 (Chitimacha Tribe of Louisiana alone or in any combination), GEOID
     0100000US (United States)
@@ -59,6 +65,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Oklahoma, row 'Chitimacha Tribe', PDF page 6, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -67,6 +74,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 76, row T06700 'Chitimacha Tribe of Louisiana'
   note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
@@ -78,6 +86,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Chitimacha Tribe of Louisiana
 - kind: physical-address
@@ -85,6 +94,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Chitimacha Tribe of Louisiana
 - kind: mailing-address
@@ -92,6 +102,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Chitimacha Tribe of Louisiana
 - kind: phone
@@ -99,6 +110,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Chitimacha Tribe of Louisiana
 - kind: fax
@@ -106,6 +118,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Chitimacha Tribe of Louisiana
 - kind: email-general
@@ -113,6 +126,7 @@ contacts:
   label: General office email shown on the nation's website
   source: chitimacha-about-us-contact-us
   confidence: high
+  verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
 languages:
@@ -120,6 +134,7 @@ languages:
   language_tag: ctm
   source: chitimacha-about-us-faq
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: 'FAQ: ''the Chitimacha people have their own unique language, which is an isolate, unrelated to
     any other language.'''
@@ -128,6 +143,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Eastern Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Chitimacha Tribe of Louisiana
 governing_documents:
@@ -136,6 +152,7 @@ governing_documents:
   link: http://www.chitimacha.gov/tribal-government/constitution-and-comprehensive-codes-justice
   source: national-indian-law-library-chitimacha
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -145,6 +162,7 @@ governing_documents:
   link: http://www.chitimacha.gov/tribal-government/constitution-and-comprehensive-codes-justice
   source: national-indian-law-library-chitimacha
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -155,6 +173,7 @@ governing_documents:
   link: https://narf.org/nill/codes/chitimachacode/index.html
   source: national-indian-law-library-code-codes-chitimachacode
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: page heading
   note: 'Table of Contents Updated: June 2022. The National Indian Law Library page gives the table of
@@ -165,6 +184,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/chitimacha/index.html
   source: national-indian-law-library-constitution-constitutions-chitimacha
   confidence: medium
+  verification: title-only
   as_of: '2010'
   locator: page heading
   note: 'Amended: July 4, 2010. The National Indian Law Library page gives the table of contents (and
@@ -174,6 +194,7 @@ governing_documents:
   link: http://www.chitimacha.gov/sites/default/files/Chitimacha%20Constitution.PDF
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Louisiana section, entry 'Sovereign Nation of the Chitimacha'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -182,6 +203,7 @@ governing_documents:
   link: http://www.chitimacha.gov/tribal-government/constitution-and-comprehensive-codes-justice
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Louisiana section, entry 'Sovereign Nation of the Chitimacha'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -190,6 +212,7 @@ justice_institutions:
   name: Peacemaker Court
   source: narf-ipi-tribal-peacemaking-laws
   confidence: medium
+  verification: title-only
   as_of: '2025-09-29'
   note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
     whether it currently operates was not checked.
@@ -198,6 +221,7 @@ justice_institutions:
   link: http://www.chitimacha.gov/departments-services/tribal-courts
   source: national-indian-law-library-chitimacha
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -206,6 +230,7 @@ justice_institutions:
   link: http://www.chitimacha.gov/departments-services/tribal-courts
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Louisiana section, entry 'Sovereign Nation of the Chitimacha'
 dispute_resolution:
@@ -231,6 +256,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/CCCJ-Title-IA-Chitimacha-Peacemaker-Court.pdf
     source: chitimacha-title-1a-peacemaker-court
     confidence: medium
+    verification: read-in-full
     as_of: '1990-08-14'
     locator: Title I-A, Secs. 101-103, 302, 403-406, 601-603
     note: Listed matters include marital and family strife, extended family disputes, minor neighbor disputes,
@@ -253,6 +279,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/CCCJ-Title-IA-Chitimacha-Peacemaker-Court.pdf
     source: chitimacha-title-1a-peacemaker-court
     confidence: medium
+    verification: read-in-full
     as_of: '1990-08-14'
     locator: Sec. 203
   provisions:
@@ -355,6 +382,7 @@ gaming:
     federal_register_citation: 90 FR 13192
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2025-03-20'
     locator: result page 15 (?page=15), row 8
     note: 'Listed as: "Chitimacha Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
@@ -367,6 +395,7 @@ gaming:
     approved: '2008-04-18'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2008-04-18'
     locator: result page 15 (?page=15), row 9
     note: 'Listed as: "Chitimacha Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -378,6 +407,7 @@ gaming:
     federal_register_citation: 66 FR 20324
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2001-04-20'
     locator: result page 15 (?page=15), row 10
     note: 'Listed as: "Chitimacha Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -390,6 +420,7 @@ gaming:
     approved: '1993-07-06'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-07-06'
     locator: result page 15 (?page=15), row 11
     note: 'Listed as: "Chitimacha Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -400,6 +431,7 @@ gaming:
     federal_register_citation: 65 FR 54859
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-09-11'
     locator: result page 15 (?page=15), row 12
     note: 'Listed as: "Chitimacha Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -416,6 +448,7 @@ gaming:
     dispute_resolution_locator: Section 14(D) (Dispute Resolution)
     source: compact-la-tunica-biloxi-indian-tribe-2019
     confidence: medium
+    verification: inferred
     as_of: '2019-12-27'
     locator: Section 14(D) (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Read from the 2019 Tunica-Biloxi Indian
@@ -427,6 +460,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9496&ind=9508
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-09-24'
     locator: table row 44, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 44 lists the nation
@@ -435,6 +469,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9497&ind=9509
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1996-06-21'
     locator: table row 44, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 44 lists the nation
@@ -443,6 +478,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9498&ind=9510
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-07-13'
     locator: table row 44, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 44 lists the nation
@@ -451,6 +487,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9499&ind=9511
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2002-05-24'
     locator: table row 44, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 44 lists the nation
@@ -459,6 +496,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Chitimacha Tribe of Louisiana".
       Name extracted from the PDF by the page-fetch tool and matched to the roster.
@@ -468,6 +506,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Chitimacha Tribe of Louisiana Confidence lowered from high by the lead session: the
@@ -479,6 +518,7 @@ jurisdiction:
     (list updated May 2022).
   source: national-congress-of-american-indians-implementing-tribe-profile-chitimacha-tribe-of-louisiana
   confidence: medium
+  verification: bulk-import
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Chitimacha Tribe of Louisiana". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
@@ -486,6 +526,7 @@ memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations
   confidence: medium
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Chitimacha Tribe of Louisiana".
 review:

@@ -6,6 +6,7 @@ names:
   - name: Southern Sierra Miwuk Nation
     source: gao-12-348-federal-funding-non-federally-recognized-tribes
     confidence: medium
+    verification: bulk-import
     as_of: 2012-04
     locator: Table 1
     note: 'GAO: petitioned as Southern Sierra Miwuk Nation.'
@@ -14,6 +15,7 @@ recognition:
 - type: unrecognized
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1; Table 3
   note: 'GAO Table 1 lists "American Indian Council of Mariposa County" among 26 non-federally recognized
@@ -27,6 +29,7 @@ states:
   presence: other
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1, State column
   note: State as listed by GAO.

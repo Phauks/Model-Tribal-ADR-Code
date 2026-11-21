@@ -6,6 +6,7 @@ names:
   - name: Koasek Traditional Band of Abenaki Nation
     source: alabama-indian-affairs-commission-state-recognized-tribes-compilation
     confidence: low
+    verification: bulk-import
     as_of: '2001'
   official_source: vermont-statutes-title-1-chapter-23
 recognition:
@@ -15,6 +16,7 @@ recognition:
   since: '2012-05-07'
   source: vermont-statutes-title-1-chapter-23
   confidence: high
+  verification: read-in-full
   as_of: '2026'
   locator: Section 855
 states:
@@ -22,6 +24,7 @@ states:
   presence: other
   source: vermont-statutes-title-1-chapter-23
   confidence: high
+  verification: inferred
   as_of: '2026'
 review:
   status: drafted-from-public-sources

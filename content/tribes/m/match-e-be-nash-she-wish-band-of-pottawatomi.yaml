@@ -6,6 +6,7 @@ names:
   - name: Match-E-Be-Nash-She-Wish Band of Pottawatomi Indians of Michigan
     source: bia-recognized-entities-2026
     confidence: high
+    verification: bulk-import
     as_of: '2026-01-30'
     locator: 91 Fed. Reg. 4104
     note: Listed in the notice as a previous name.
@@ -13,6 +14,7 @@ names:
   - name: Gun Lake Tribe
     source: match-e-be-nash-she-wish-band-of-pottawa-home-tribes-match-e-be-nash-she-wish-ban
     confidence: high
+    verification: inferred
     as_of: '2026-11-21'
     note: 'Inter-Tribal Council of Michigan: "commonly referred to as the Gun Lake Tribe"; the nation''s
       own site domain is gunlaketribe-nsn.gov'
@@ -23,6 +25,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 - type: federal
@@ -32,6 +35,7 @@ recognition:
   since: '1999-08-23'
   source: federal-register-98-28438
   confidence: high
+  verification: bulk-import
   as_of: '1999-08-23'
   locator: 'Petitioner #9A'
   note: 'Also see source(s): ofa-list-of-petitioners-by-state-2013.'
@@ -40,6 +44,7 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Match-E-Be-Nash-She-Wish Band of Pottawatomi (previously listed as Match-E-Be-Nash-She-Wish
     Band of Pottawatomi Indians of Michigan)
@@ -47,6 +52,7 @@ states:
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2150
   note: 'Census area with land in this state: Match-e-be-nash-she-wish Band of Pottawatomi Reservation
@@ -58,6 +64,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2150
   note: Matched by name. Census class code D1.
@@ -66,6 +73,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2150, field POP100
   note: 'Census area: Match-e-be-nash-she-wish Band of Pottawatomi Reservation and Off-Reservation Trust
@@ -75,6 +83,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3109 (Match-e-be-nash-she-wish Band of Pottawatomi Indians alone or
     in any combination), GEOID 0100000US (United States)
@@ -85,6 +94,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Match-e-be-nash-she-wish Band of Pottawatomi Indians', PDF
     page 4, Enrollment column
@@ -94,6 +104,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 80, row T21300 'Match-e-be-nash-she-wish Band of Pottawatomi Indians
     of Michigan'
@@ -106,6 +117,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Match-E-Be-Nash-She-Wish Band of Pottawatomi (previously listed as Match-E-Be-Nash-She-Wish
     Band of Pottawatomi Indians of Michigan)
@@ -114,6 +126,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Match-E-Be-Nash-She-Wish Band of Pottawatomi (previously listed as Match-E-Be-Nash-She-Wish
     Band of Pottawatomi Indians of Michigan)
@@ -122,6 +135,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Match-E-Be-Nash-She-Wish Band of Pottawatomi (previously listed as Match-E-Be-Nash-She-Wish
     Band of Pottawatomi Indians of Michigan)
@@ -130,6 +144,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Match-E-Be-Nash-She-Wish Band of Pottawatomi (previously listed as Match-E-Be-Nash-She-Wish
     Band of Pottawatomi Indians of Michigan)
@@ -138,6 +153,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Match-E-Be-Nash-She-Wish Band of Pottawatomi (previously listed as Match-E-Be-Nash-She-Wish
     Band of Pottawatomi Indians of Michigan)
@@ -146,6 +162,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Michigan Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Match-E-Be-Nash-She-Wish Band of Pottawatomi (previously listed as Match-E-Be-Nash-She-Wish
     Band of Pottawatomi Indians of Michigan)
@@ -156,6 +173,7 @@ governing_documents:
   link: https://narf.org/nill/codes/match-e-be-nash-she-wish/index.html
   source: national-indian-law-library-code-codes-match-e-be-nash-she-wish
   confidence: medium
+  verification: title-only
   as_of: '2018'
   locator: page heading
   note: 'Table of Contents Updated: June 2018. The National Indian Law Library page gives the table of
@@ -164,6 +182,7 @@ governing_documents:
   title: Tribal Court Rules and Ordinances
   source: national-indian-law-library-match-e-be-nash-she-wish
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
@@ -174,6 +193,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-match-e-be-nash-she-wish
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
@@ -183,6 +203,7 @@ justice_institutions:
   name: Match-E-Be-Nash-She-Wish Band of Pottawatomi Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Michigan section, entry 'Match-E-Be-Nash-She-Wish Band of Pottawatomi Gun Lake Tribe'
   note: 'Link check 2026-11-21: the link the source gives (https://gunlaketribe-nsn.gov/departments/tribal-justice/tribal-court/)
@@ -261,6 +282,7 @@ gaming:
     federal_register_citation: 74 FR 18397
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2009-04-22'
     locator: result page 16 (?page=16), row 18
     note: 'Listed as: "Match-e-be-nash-she-wish Band of Pottawatomi Indians Tribal State Gaming Compact"
@@ -279,6 +301,7 @@ gaming:
     dispute_resolution_locator: Section 7 (Dispute Resolution)
     source: compact-mi-bay-mills-indian-community-1993
     confidence: medium
+    verification: inferred
     as_of: '1993-11-30'
     locator: Section 7 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. The same Section 7 text appears in the
@@ -291,6 +314,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10221&ind=10247
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2003-08-06'
     locator: table row 146, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 146 lists the nation
@@ -299,6 +323,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10236&ind=10248
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2010-02-22'
     locator: table row 146, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 146 lists the nation
@@ -307,6 +332,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10237&ind=10249
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2013-04-29'
     locator: table row 146, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 146 lists the nation
@@ -315,6 +341,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10238&ind=10250
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2013-09-03'
     locator: table row 146, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 146 lists the nation
@@ -322,6 +349,7 @@ gaming:
   - approved: '2014-02-26'
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2014-02-26'
     locator: table row 146, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 146 lists the nation
@@ -330,6 +358,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10240&ind=10251
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2014-04-24'
     locator: table row 146, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 146 lists the nation
@@ -338,6 +367,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10241&ind=10252'
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2015-05-04'
     locator: table row 146, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 146 lists the nation
@@ -346,6 +376,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10242&ind=10253
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2017-10-13'
     locator: table row 146, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 146 lists the nation
@@ -354,6 +385,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10243&ind=10254
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2018-07-20'
     locator: table row 146, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 146 lists the nation
@@ -362,6 +394,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10244&ind=10255
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2020-04-23'
     locator: table row 146, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 146 lists the nation
@@ -370,6 +403,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10245&ind=10256
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2024-10-18'
     locator: table row 146, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 146 lists the nation
@@ -378,6 +412,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Match-E-Be-Nash-She-Wish Band of
       Potawatomi Indians". Name extracted from the PDF by the page-fetch tool and matched to the roster.
@@ -387,6 +422,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Match-E-Be-Nash-She-Wish Band of Pottawatomi Confidence lowered from high by the lead
@@ -396,6 +432,7 @@ memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Match-e-be-nash-shewish Band of Pottawatomi Indians of Michigan". Name matched to the
     roster entry.

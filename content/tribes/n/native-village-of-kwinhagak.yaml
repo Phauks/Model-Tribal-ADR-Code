@@ -6,12 +6,14 @@ names:
   - name: Quinhagak
     source: bia-recognized-entities-2026
     confidence: high
+    verification: bulk-import
     as_of: '2026-01-30'
     locator: 91 Fed. Reg. 4106
     note: Listed in the notice as also known as.
   - name: Kuinerraq
     source: alaska-dcra-native-place-names
     confidence: medium
+    verification: bulk-import
     as_of: '2018-10-15'
     locator: community row "Quinhagak"
     note: Native place name for the community of Quinhagak in Central Yup'ik (State of Alaska, from the
@@ -24,6 +26,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4106
 states:
@@ -31,12 +34,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Kwinhagak (aka Quinhagak)
 - state: AK
   presence: other
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 6845
   note: 'Census area with land in this state: Kwinhagak ANVSA (code 6845). Statistical area only (not
@@ -48,6 +53,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US6845
   note: Matched by name. Census class code E1.
@@ -56,6 +62,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: ALASKA row "Kwinhagak (Quinhagak)", Enrollment column
   note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
@@ -64,6 +71,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US6845, field POP100
   note: 'Census area: Kwinhagak ANVSA (code 6845). Everyone counted as living in the area in the 2020
@@ -73,6 +81,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2698 (Native Village of Kwinhagak (Quinhagak) alone or in any combination),
     GEOID 0100000US (United States)
@@ -85,6 +94,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Kwinhagak (aka Quinhagak)
 - kind: mailing-address
@@ -92,6 +102,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Kwinhagak (aka Quinhagak)
 - kind: phone
@@ -99,6 +110,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Kwinhagak (aka Quinhagak)
 - kind: fax
@@ -106,6 +118,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Kwinhagak (aka Quinhagak)
 - kind: website
@@ -113,6 +126,7 @@ contacts:
   label: Tribal government website (State of Alaska tribal contacts list)
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: high
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Native Village of Kwinhagak" (community: Quinhagak, object 171)'
 - kind: phone
@@ -120,6 +134,7 @@ contacts:
   label: Tribal office main phone
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: high
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Native Village of Kwinhagak" (community: Quinhagak, object 171)'
 - kind: email-general
@@ -127,6 +142,7 @@ contacts:
   label: Tribal office email listed by the State of Alaska
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: medium
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Native Village of Kwinhagak" (community: Quinhagak, object 171)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
@@ -136,6 +152,7 @@ languages:
   language_tag: esu
   source: alaska-dcra-native-place-names
   confidence: medium
+  verification: inferred
   as_of: '2018-10-15'
   locator: community row "Quinhagak"
   note: Language of the Native place name for the community (Quinhagak), as listed by the State of Alaska
@@ -145,6 +162,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Alaska Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Kwinhagak (aka Quinhagak)
 government_structure:
@@ -153,6 +171,7 @@ government_structure:
     June 18, 1934 (48 Stat. 984); Act of May 1, 1936 (49 Stat. 1250)
   source: university-of-oklahoma-indian-reorganization-act-kwincons
   confidence: medium
+  verification: read-in-full
   as_of: '1948'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -163,6 +182,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/kwincons.html
   source: national-indian-law-library-native-kwinhagak
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
@@ -173,6 +193,7 @@ governing_documents:
   link: https://www.loc.gov/item/50061146/
   source: national-indian-law-library-native-kwinhagak
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
@@ -183,6 +204,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/kwinchrtr.html
   source: national-indian-law-library-native-kwinhagak
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
@@ -193,6 +215,7 @@ governing_documents:
   link: https://www.loc.gov/item/50061126/
   source: national-indian-law-library-native-kwinhagak
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
@@ -203,6 +226,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/kwinchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-kwinchrtr
   confidence: medium
+  verification: title-only
   as_of: '1948'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -211,6 +235,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/kwincons.html
   source: university-of-oklahoma-indian-reorganization-act-kwincons
   confidence: medium
+  verification: title-only
   as_of: '1948'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -218,6 +243,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-native-kwinhagak
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -229,6 +255,7 @@ jurisdiction:
     within Alaska; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Alaska"
   note: Statute is primary; nation matched to Alaska by office state in the BIA Tribal Leaders Directory,
@@ -238,6 +265,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Native Village of Kwinhagak (aka Quinhagak) Confidence lowered from high by the lead
@@ -247,6 +275,7 @@ memberships:
 - organization: Association of Village Council Presidents
   source: association-of-village-council-presidents-tribal-office-directory
   confidence: high
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Native Village of Kwinhagak".
 related_entities:
@@ -254,6 +283,7 @@ related_entities:
   relation: alaska-native-claims-settlement-act-regional-corporation
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Kwinhagak (aka Quinhagak)
   note: Regional corporation for the area, as listed in the directory.
@@ -261,6 +291,7 @@ related_entities:
   relation: alaska-native-claims-settlement-act-regional-corporation
   source: alaska-dcra-community-regions-overview
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: community row "Quinhagak"
   note: State of Alaska lists this affiliation for the community where the nation is based (Quinhagak),
@@ -269,6 +300,7 @@ related_entities:
   relation: alaska-native-claims-settlement-act-regional-nonprofit
   source: alaska-dcra-community-regions-overview
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: community row "Quinhagak"
   note: State of Alaska lists this affiliation for the community where the nation is based (Quinhagak),

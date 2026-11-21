@@ -6,12 +6,14 @@ names:
   - name: Cherokees of Southeast Alabama
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     locator: 'Petitioner #107'
   alternate:
   - name: Cherokees of southeast Alabama
     source: alabama-code-41-9-708
     confidence: high
+    verification: read-in-full
     as_of: '2025'
     locator: Section 41-9-708(b)
     note: Name used in the statute; Rule 475-X-1-.02 says the Cher-O-Creek Intratribal Indians are the
@@ -19,10 +21,12 @@ names:
   - name: Cher-O-Creek Intertribal Indians (Cherokees of SE Alabama)
     source: alabama-indian-affairs-commission-state-recognized-tribes-compilation
     confidence: low
+    verification: bulk-import
     as_of: '2001'
   - name: Cher-o-Creek Intra Tribal Indians
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     note: Name used for this group in the cited source; matched to this record by name and state.
   official_source: census-aian-geography-definitions
@@ -30,6 +34,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State Designated Tribal Statistical Area; area 9550
   note: The 2020 Census delineated "Cher-O-Creek SDTSA" (State Designated Tribal Statistical Area). The
@@ -43,6 +48,7 @@ recognition:
   petition_stage: Letter of Intent to Petition 05/27/1988
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   locator: 'Petitioner #107'
   note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
@@ -54,6 +60,7 @@ recognition:
     1992, No. 92-134)
   source: alabama-code-41-9-708
   confidence: high
+  verification: read-in-full
   as_of: '2025'
   locator: Section 41-9-708(b)
   note: Statute names the group as 'the Cherokees of southeast Alabama' among the Indian tribes, bands
@@ -64,6 +71,7 @@ recognition:
     2026-09-14)
   source: alabama-administrative-code-475-x-1-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-07-31'
   locator: Rule 475-X-1-.02 Members
 - type: state
@@ -71,12 +79,14 @@ recognition:
   legal_basis: Listed by the Alabama Indian Affairs Commission as a tribe recognized by the State of Alabama
   source: alabama-indian-affairs-commission-tribes-list-2026
   confidence: high
+  verification: bulk-import
   as_of: 2026-10
 states:
 - state: AL
   presence: other
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9550
   note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
@@ -84,6 +94,7 @@ states:
   presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
@@ -91,6 +102,7 @@ states:
   presence: other
   source: alabama-indian-affairs-commission-tribes-list-2026
   confidence: high
+  verification: bulk-import
   as_of: 2026-10
   note: State-recognized in Alabama; Alabama contact address listed.
 census_areas:
@@ -100,6 +112,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9550, GEOID 9550R
   note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
