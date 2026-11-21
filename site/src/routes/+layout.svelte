@@ -29,6 +29,7 @@
 	import { siteName } from '#lib';
 	import SiteHeader from '#lib/components/SiteHeader.svelte';
 	import SiteFooter from '#lib/components/SiteFooter.svelte';
+	import PrintDetails from '#lib/components/PrintDetails.svelte';
 	import OfflineNotice from '#lib/components/OfflineNotice.svelte';
 	import UpdateNotice from '#lib/components/UpdateNotice.svelte';
 	import InlineNotes from '#lib/components/InlineNotes.svelte';
@@ -49,6 +50,7 @@
 </svelte:head>
 
 <SiteHeader contentVersion={data.versions.content} />
+<PrintDetails />
 <OfflineNotice contentVersion={data.versions.content} />
 <UpdateNotice versions={data.versions} />
 <main id="main-content" class="page-width" tabindex="-1">

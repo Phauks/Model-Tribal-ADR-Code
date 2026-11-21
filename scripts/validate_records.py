@@ -63,6 +63,7 @@ EXAMPLES = {
     "method.example.yaml": "method.schema.json",
     "document-history.example.yaml": "document-history.schema.json",
     "story.example.yaml": "story.schema.json",
+    "contribution-filing.example.yaml": "contribution-filing.schema.json",
 }
 RECORD_FOLDERS = [
     ("content/sources/*/*.yaml", "source.schema.json"),

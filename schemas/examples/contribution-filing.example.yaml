@@ -1,0 +1,78 @@
+# Fictional example. A real filing lives in the website's private database and
+# file bucket, never in git (docs/contributions.md).
+identifier: filing-2026-0001
+received: 2026-12-01
+status: held
+channel: interview
+contributor:
+  person: contact-7f3k2m
+  capacity: self
+  adult: true
+items:
+  - identifier: interview-audio
+    kind: audio-recording
+    title: Interview about a family dispute settled by talking circle
+    description: About fifty minutes. The narrator describes how an elder led a circle in the 1980s.
+    created: 2026-12-01
+    languages: [en]
+    made_by_contributor: true
+    names_other_people: true
+    community_held_knowledge: false
+    file:
+      storage_key: filings/filing-2026-0001/interview-audio.flac
+      checksum: "0000000000000000000000000000000000000000000000000000000000000000"
+      media_type: audio/flac
+  - identifier: interview-transcript
+    kind: transcript
+    title: Transcript approved by the narrator
+    made_by_contributor: false
+    rights_holder: the narrator
+forms:
+  - form: interview-consent
+    form_version: 0.1.0
+    signed: 2026-12-01
+    signature_method: recorded-verbal
+    evidence_item: interview-audio
+    copy_given_to_signer: true
+  - form: contributor-statement
+    form_version: 0.1.0
+    signed: 2026-12-20
+    signature_method: electronic
+    signed_by_capacity: self
+    copy_given_to_signer: true
+  - form: interview-release
+    form_version: 0.1.0
+    signed: 2026-12-20
+    signature_method: electronic
+    signed_by_capacity: self
+    copy_given_to_signer: true
+permissions:
+  credit:
+    form: role
+    role: a citizen of the nation who took part in the circle
+  permitted_uses:
+    level: quote
+    scope: [web, print, ebook]
+  access:
+    level: embargoed
+    until: 2027-06-01
+  license: permission-to-the-project-only
+  originals: keep
+  conditions: Leave out the names of the other family members.
+log:
+  - date: 2026-12-01
+    event: consent-explained
+    by: lead author
+  - date: 2026-12-01
+    event: recorded
+    by: lead author
+  - date: 2026-12-10
+    event: transcript-sent
+    by: lead author
+  - date: 2026-12-20
+    event: transcript-approved
+    by: contributor
+  - date: 2026-12-20
+    event: accepted
+    by: lead author
+    note: Held until the embargo date the narrator chose.
