@@ -1,0 +1,347 @@
+id: tohono-oodham-nation-of-arizona-arizona-gaming-compact
+kind: gaming-compact
+title: Tohono O'odham Nation of Arizona–State of Arizona Gaming Compact
+nations:
+- tohono-oodham-nation-of-arizona
+states:
+- AZ
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Tohono O'odham Nation of Arizona and the State of Arizona under 25 U.S.C. §
+    2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Tohono O''odham Nation of
+  Arizona and the State of Arizona as of Nov. 21, 2026: 1 original, 1 replacement, 3 amendments and 1 restatement.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1993-original
+  label: 1993 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1993-08-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-az-tohono-oodham-nation-of-arizona-1993-08-18
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_1993.08.18_tohono_oodham_tribal_state_gaming_compact_2.pdf
+    sha256: 221a42f547f1c19da0fc7fb40042164cd86fb884a150013f64437df357545f18
+    pages: 75
+  clauses:
+  - topic: dispute-resolution
+    locator: Subsections (c)-(g) of the dispute resolution section (section heading not in excerpt)
+    summary: After notice, representatives of the Nation and the State must meet within ten days, and a dispute
+      unresolved within thirty days goes to arbitration in Arizona before arbitrators agreed by the parties or,
+      failing agreement, appointed with the American Arbitration Association; the decision is final and binding,
+      and U.S. District Courts may hear actions to enjoin unlawful Class III gaming.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 17. AMENDMENTS
+    summary: Any amendment must be in writing and signed by both parties; the excerpt shows no separate reopening
+      request, trigger or time limit.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2003-replacement
+  label: 2003 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1993-original
+  dates:
+    listed: '2003-02-05'
+    published: '2003-02-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-2787
+    locator: 68 Fed. Reg. 5912 (Feb. 5, 2003)
+  source: compact-az-tohono-oodham-nation-of-arizona-2003-02-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508 Compliant  2003.02.05 Tohono Oodham Nation Gaming Compact.pdf
+    sha256: c5bf5bccdd34580b4936072d368125f30d69eefb766a5d29776949ff3660be3d
+    pages: 76
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 15, subsections (a)-(c) (as printed)
+    summary: After written notice, the parties first attempt non-binding mediation administered by the CPR Institute,
+      and if the dispute is not settled within thirty days after notice either party may demand binding arbitration
+      under CPR rules at a neutral location, with expenses split equally.
+    methods:
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 17. AMENDMENTS, subsections (a)-(c)
+    summary: Either party may propose amendments to listed regulatory provisions, and failed good-faith negotiations
+      go to mediation under Section 15(b) before the parties document any amendment; any provision may also be amended
+      at any time by mutual agreement in a signed writing.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: changed
+    summary: The later compact provides a 10-day negotiation step with escalation, then non-binding CPR mediation
+      on either party's request, then binding CPR arbitration on demand after 30 days before a three-arbitrator
+      panel. The earlier compact went from a 10-day meeting to mandatory arbitration in Arizona after 30 days, with
+      a majority decision that was final, binding and unappealable.
+    locator_before: Section 15(a)-(f)
+    locator_after: Section 15(a)-(c)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: changed
+    summary: The 1993 Section 17 says amendments must be in writing and signed by both parties, while the 2003 Section
+      17 adds a 180-day window to propose amendments on listed regulatory topics, requires good-faith negotiation
+      and then mediation under Section 15(b) if no agreement is reached, and states that the Governor may agree
+      to amendments consistent with Arizona law.
+    locator_before: Section 17
+    locator_after: Section 17(a)-(c)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2009-amendment
+  label: 2009 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2003-replacement
+  dates:
+    listed: '2009-03-25'
+    published: '2009-03-25'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e9-6585
+    locator: 74 Fed. Reg. 12889 (Mar. 25, 2009)
+  source: compact-az-tohono-oodham-nation-of-arizona-2009-03-25
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2009.03.25_tohono_oodham_nation_tribal_state_gaming_compact.pdf
+    sha256: 5bbaa878ba4f58c389af9bfcc46b80ad084626cb9239ff0e57a0f93a4417eb24
+    pages: 14
+  clauses:
+  - topic: dispute-resolution
+    locator: Paragraph 11
+    summary: The amendment keeps the compact's Section 15 dispute resolution provisions in force, but the excerpt
+      does not include their steps.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Paragraph 10
+    summary: The parties may renegotiate the amendment's provisions under the compact, and the amendment can be
+      changed only by a writing signed by the parties.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-replacement
+    change: unchanged
+    summary: The 2009 Agreement to Amend lists the provisions it amends (Sections 2(n), 3(d), 3(d)(8), 3(m), 4(d),
+      5(i) and (n), 6(g), 7(g) and 12(e)) and says the parties do not intend to amend any other provision, so Section
+      15 of the 2003 compact continues to govern.
+    locator_before: Section 15(a)
+    locator_after: Agreement para. 4
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2003-replacement
+    change: unchanged
+    summary: The 2009 Agreement does not amend Section 17 of the 2003 compact, and its paragraph 4 says no provision
+      other than the nine listed attachments is amended, so the 2003 Section 17 amendment process, including Section
+      17(c), continues to govern.
+    locator_before: Section 17(c)
+    locator_after: Agreement para. 4
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2017-amendment
+  label: 2017 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2003-replacement
+  dates:
+    listed: '2017-07-17'
+    published: '2017-07-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2017-14881
+    locator: 82 Fed. Reg. 32720 (July 17, 2017)
+  source: compact-az-tohono-oodham-nation-of-arizona-2017-07-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2017.07.17_tohono_o_odham_nation_tribal_state_gaming_compact.pdf
+    sha256: 1e877d64a32a07163e9ffac90dc47ffdb01c821e6990634b95a2507d03bd96f7
+    pages: 7
+  clauses:
+  - topic: renegotiation
+    locator: Amendment text on West Valley Trust Land (section heading not in excerpt)
+    summary: If the Secretary of the Interior takes the West Valley Trust Land into trust, the parties shall attempt
+      in good faith to negotiate an amendment, and a failure to agree is not a breach of the compact.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-replacement
+    change: unchanged
+    summary: The 2017 Agreement to Amend lists only three provisions it amends (Section 3(e)(1) card game tables,
+      Section 3(f) keno games and Section 3(j)(1) location of the gaming facility), so Section 15 of the 2003 compact
+      is not among them and continues to govern.
+    locator_before: Section 15(a)
+    locator_after: Agreement para. 1
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2003-replacement
+    change: unchanged
+    summary: The 2017 Agreement amends only the three listed provisions and does not amend Section 17 of the 2003
+      compact, so the Section 17 amendment process, including Section 17(c), continues to govern.
+    locator_before: Section 17(c)
+    locator_after: Agreement para. 1
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2021-restatement
+  label: 2021 amended and restated compact
+  event: restatement
+  status: in-effect
+  supersedes:
+  - 2003-replacement
+  - 2009-amendment
+  - 2017-amendment
+  dates:
+    listed: '2021-05-24'
+    published: '2021-05-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-10877
+    locator: 86 Fed. Reg. 27889 (May 24, 2021)
+  source: compact-az-tohono-oodham-nation-of-arizona-2021
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508 Compliant 2021.05.24 Tohono O'odham Nation Tribal State
+      Gaming Compact.pdf
+    sha256: 48772344e1b708d0a7f2c39f1fc56ec343ef26c92fd49ef39aad3a945c21bdb9
+    pages: 80
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 3(b)(3)(C)
+    summary: For appendix disputes, either party may start Section 15 dispute resolution after 180 days without
+      agreement, and arbitration runs before one neutral arbitrator selected by CPR in a last-best-offer format;
+      the excerpt does not show whether the result binds.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 3(b)(3)(B); SECTION 17. AMENDMENTS
+    summary: Either the Tohono O'odham Nation or the State Gaming Agency may request in writing to negotiate a new
+      or modified appendix, and if no agreement is reached within 180 days either may start Section 15 dispute resolution;
+      amendments must be in writing, signed by both parties and approved or deemed approved under the Act.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2003-replacement
+    change: changed
+    summary: The 2021 Section 17 keeps the written, signed amendment requirement and mutual amendment at any time,
+      adds approval or deemed approval under the Act and a Governor's authority clause tied to revenue for the Hopi
+      and San Juan Southern Paiute tribes, and the 2021 compact adds an appendix-modification process (Section 3(b)(3))
+      that is not an amendment and that can go to Section 15 dispute resolution after 180 days, whereas the 2003
+      Section 17 had a 180-day window to propose listed regulatory amendments followed by mediation, which the 2021
+      Section 17 does not carry forward.
+    locator_before: Section 17(c)
+    locator_after: Section 17; Section 3(b)(3)(A)-(C)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2021 compact is a replacement; its Section 15 body and its Section 2
+      definitions are not in the excerpts, so the dispute row cannot be compared. The 2021 Section 3(b)(3) appendix
+      process and the Section 17 revenue language for other tribes are described from excerpt text only. The 2003
+      Section 17(a) list of regulatory topics is not in the 2021 Section 17 excerpt.'
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2021-restatement
+  dates:
+    listed: '2022-06-14'
+    published: '2022-06-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-12743
+    locator: 87 Fed. Reg. 35992 (June 14, 2022)
+  source: compact-az-tohono-oodham-nation-of-arizona-2022-06-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2022.06.14_tohono_o_odham_nation_tribal_state_gaming_compact_0.pdf
+    sha256: 3960f39b9ab93b4309eb2d1fe0d05e043e8a519cad49e668b9ebdef19302ea23
+    pages: 20
+  clauses:
+  - topic: dispute-resolution
+    locator: Paragraph 12
+    summary: Disputes under the Agreement go to the dispute resolution provisions of Section 15 of the Compact,
+      which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Paragraph 10
+    summary: The Compact is amended under its Section 17, which the excerpt does not reproduce, and this Agreement
+      itself may be changed only by a written document signed by both parties.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2021-restatement
+    change: unchanged
+    summary: 'The 2022 Agreement to Amend does not amend Section 15 of the 2021 compact: its listed amendments are
+      to Sections 2, 3 and 6(b) and the Gaming Facility Annex, and it says disputes arising under the agreement
+      use the Section 15 dispute resolution provisions of the Compact.'
+    locator_before: Section 3(b)(3)(B)
+    locator_after: Agreement, paragraph on disputes arising under this Agreement
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2021-restatement
+    change: unchanged
+    summary: 'The 2022 Agreement does not amend Section 17 of the 2021 compact: its listed amendments do not include
+      Section 17, and it states that the parties do not intend to amend any provision other than the thirteen listed
+      attachments, so the 2021 Section 17 amendment rules continue to govern.'
+    locator_before: Section 17
+    locator_after: Agreement, paragraph 4
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

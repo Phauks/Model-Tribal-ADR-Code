@@ -1,0 +1,123 @@
+id: mooretown-rancheria-of-maidu-indians-of-california-california-gaming-compact
+kind: gaming-compact
+title: Mooretown Rancheria of Maidu Indians of California–State of California Gaming Compact
+nations:
+- mooretown-rancheria-of-maidu-indians-of-california
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Mooretown Rancheria of Maidu Indians of California and the State of California
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Mooretown Rancheria of Maidu
+  Indians of California and the State of California as of Nov. 21, 2026: 1 original and 1 replacement. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-mooretown-rancheria-of-maidu-indians-of-california-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2000.05.16 Mooretown Rancheria of Maidu Indians
+      Tribal State Gaming Compact.pdf
+    sha256: d865feae63037aec25b8f726ac70935daef47356debaeafa14aedc13ce9e3155
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 and Sec. 9.2
+    summary: The compact provides for written notice, a good-faith meeting within 10 days and, if unresolved after
+      30 days, optional arbitration under the AAA Commercial Arbitration Rules with a binding award; otherwise the
+      dispute may go to the U.S. District Court where the gaming facility is located and the Ninth Circuit Court
+      of Appeals, or to state courts if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Sec. 12.1 to Sec. 12.3
+    summary: The compact may be amended by mutual written agreement, and the Mooretown Rancheria may request renegotiation
+      in writing for Class III games other than those authorized, but not within 12 months of the effective date;
+      talks are to be scheduled within 30 days under IGRA good-faith standards.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2020-replacement
+  label: 2020 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  dates:
+    listed: '2020-12-11'
+    published: '2020-12-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2020-27221
+    locator: 85 Fed. Reg. 80142 (Dec. 11, 2020)
+  source: compact-ca-mooretown-rancheria-of-maidu-indians-of-california-2020-12-11
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2020.12.11_mooretown_rancheria_of_maidu-indians_tribal_state_gaming_compact_0.pdf
+    sha256: 9c331ab645efe201493590dc1e688c1e8b32b44c856548086a25bd8231e70e50
+    pages: 188
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1 Voluntary Resolution; Court Resolution and Sec.
+      13.2 Arbitration Rules
+    summary: Disputes under the compact begin with a written notice, a written response within 15 days and a meet-and-confer
+      within 30 days; if unresolved either party may seek arbitration before JAMS, but neither party is required
+      to agree to arbitrate, and unresolved disputes may be brought in the federal district court for the district
+      of the Gaming Facility or, if that court lacks jurisdiction, a state court of competent jurisdiction in the
+      county.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS, Sec. 15.1 to Sec. 15.6
+    summary: Sec. 15.1 permits amendment at any time by mutual written agreement if each party voluntarily consents
+      to the negotiations in writing, Sec. 15.2 lets either party request negotiation of an extension or new compact
+      no sooner than 18 months before the termination date, and Sec. 15.3 requires written requests and a schedule
+      for negotiations. Sec. 15.3 requires the parties to meet within 30 days and negotiate a replacement if a court
+      holds a compact provision invalid or inoperable because of a change in the law. Sec. 15.4 requires good-faith
+      negotiation at the Tribe's written request where changed conditions either materially and adversely affect
+      the Tribe's gaming operation or create opportunities to expand beyond the compact's device or facility limits,
+      if the Tribe supplies adequate information; Sec. 15.5 requires good-faith negotiation to add Class III games
+      the State newly authorizes.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: changed
+    summary: The 2000 Sec. 12.0 allows amendment by mutual written agreement and renegotiation for new forms of
+      Class III gaming after 12 months. The 2020 table of contents adds separate renegotiation entitlements for
+      changed market conditions (Sec. 15.4) and new forms of gaming (Sec. 15.5), and renames Sec. 15.6.
+    locator_before: Sec. 12.1
+    locator_after: Sec. 15.4
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The renegotiation call rests on the 2020 table of contents, because the
+      body of Section 15 is not in the excerpt; the dispute call is not-compared because the later arbitration clause
+      covers project negotiations.'
+found_in:
+- 2026-11-21-gaming-compact-histories

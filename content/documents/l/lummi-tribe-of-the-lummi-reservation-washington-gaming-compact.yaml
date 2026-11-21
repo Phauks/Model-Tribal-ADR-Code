@@ -1,0 +1,428 @@
+id: lummi-tribe-of-the-lummi-reservation-washington-gaming-compact
+kind: gaming-compact
+title: Lummi Tribe of the Lummi Reservation–State of Washington Gaming Compact
+nations:
+- lummi-tribe-of-the-lummi-reservation
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Lummi Tribe of the Lummi Reservation and the State of Washington under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Lummi Tribe of the Lummi
+  Reservation and the State of Washington as of Nov. 21, 2026: 1 original and 8 amendments. The order, the kind
+  of each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1995-12-18'
+    published: '1995-12-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-30339
+    locator: 60 Fed. Reg. 65064 (Dec. 18, 1995)
+  source: compact-wa-lummi-tribe-of-the-lummi-reservation-1995-12-18
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_1995.12.18_lummi_tribe_tribal_state_gaming_compact.pdf
+    sha256: e655f9c37ba9c5f1337874baec8cd6305ece3eb97297bf7895f1fb707c4e42ca
+    pages: 95
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XIV.C (Community Contribution), paragraph 1
+    summary: Disputes go to Section XII.C, whose text is not in the excerpt, and disagreements over the Community
+      Contribution Fund are sent there when the committee cannot agree.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section XV.D.3 and D.5
+    summary: Sections III D(1), G, H and I cannot be renegotiated or amended for thirty-six months from January
+      1 1995 unless a listed event occurs; after that, either party may request renegotiation on listed triggers,
+      with negotiations starting within thirty days and the original terms staying in effect until agreed.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2001-amendment
+  label: 2001 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2001-02-27'
+    published: '2001-02-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-4743
+    locator: 66 Fed. Reg. 12542 (Feb. 27, 2001)
+  source: compact-wa-lummi-tribe-of-the-lummi-reservation-2001-02-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2001.02.27 Lummi Tribe Tribal State Gaming
+      Compact._0.pdf
+    sha256: 1b2faeb411ab5926d921d653099468662adbbf1530807cf8a710116b233ee284
+    pages: 51
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 16. DISPUTE RESOLUTION (Appendix X)
+    summary: Disputes under Appendix X are resolved under any dispute provision made specifically applicable in
+      the Appendix, and otherwise under the binding arbitration provisions of the compact.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: The First Amendment amends Section III.A and adds Appendix X; it does not list Section XV (amendments,
+      duration and adjustments) among its changes, so the earlier adjustment and renegotiation terms still apply.
+    locator_before: XV.D.1
+    locator_after: Recitals; Section III.A
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The Appendix X dispute clause refers to binding arbitration under the Compact,
+      and the Compact''s own arbitration text is not in the excerpts, so the reader cannot tell which dispute process
+      governs lottery-system disputes. The 2001 letter also raises a charitable-donation provision (Section 14.2)
+      under IGRA, which is not a dispute or renegotiation clause.'
+- id: 2006-amendment
+  label: 2006 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2006-09-12'
+    published: '2006-09-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e6-15024
+    locator: 71 Fed. Reg. 53706 (Sept. 12, 2006)
+  source: compact-wa-lummi-tribe-of-the-lummi-reservation-2006-09-12
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2006.09.12 Lummi Tribe Tribal State Gaming
+      Compact.Amendment.pdf
+    sha256: b2ab607be0d096591ca14bc95fa07d5b9802f5fc572ce1b908fcd280726194b0
+    pages: 4
+  clauses:
+  - topic: dispute-resolution
+    locator: Introduction, quoting Section XV.D.8
+    summary: Either party may take a dispute about whether the automatic most favored nation amendment applies to
+      a term to dispute resolution under Section XII.C of the compact, which is not in the excerpt.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Introduction (quoting Section XV.D.8)
+    summary: Under Section XV.D.8 the compact is amended automatically when Interior approves a compact or amendment
+      giving another tribe broader terms, and for an East of the Cascades tribe the Nation must also show an adverse
+      economic impact.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-lummi-tribe-of-the-lummi-reservation-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2007.05.31_lummi_tribe_tribal_state_gaming_compact.pdf
+    sha256: ccf8abf9d56045b8acdf1f83322bdddf7295ccde904e2ac7d8b23f7379777512
+    pages: 55
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 17. DISPUTE RESOLUTION (Appendix X2)
+    summary: Disputes under Appendix X2 are resolved under any dispute provision made specifically applicable in
+      the Appendix, otherwise under the compact's dispute provisions, which are not in the excerpt.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Appendix X2 Section 15.2 (Post-Moratorium)
+    summary: After a moratorium on gambling device amendments expires, the Tribe may seek an amendment when federal
+      or State law authorizes new devices, a court decision permits them, or another tribe obtains materially different
+      devices or higher wagers, with negotiations subject to the compact's dispute provisions.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: The Second Amendment amends Section III and adds Appendix X2 and does not list Section XV (amendments
+      and renegotiation) among its changes, so the earlier renegotiation terms still apply.
+    locator_before: XV.D.1
+    locator_after: Recitals; Section III
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2014-amendment
+  label: 2014 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2014-04-08'
+    published: '2014-04-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2014-07823
+    locator: 79 Fed. Reg. 19353 (Apr. 8, 2014)
+  source: compact-wa-lummi-tribe-of-the-lummi-reservation-2014-04-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2014.04.08 Lummi Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: 73b8baa6f09771a94e80e90b9cff9d5d84b83318b8d5c504c96cac1684a6f050
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: The Third Amendment changes only the definition of 'gaming facility' in Section II.J and does not amend
+      any dispute provision, so the earlier dispute terms still govern.
+    locator_after: Section II.J
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: The Third Amendment changes only the definition of 'gaming facility' in Section II.J and does not amend
+      Section XV, so the earlier renegotiation terms still apply.
+    locator_before: XV.D.1
+    locator_after: Recitals; Section II.J
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-13712
+    locator: 80 Fed. Reg. 31918 (June 4, 2015)
+  source: compact-wa-lummi-tribe-of-the-lummi-reservation-2015-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2015.06.04_lummi_nation_tribal_state_gaming_compact.pdf
+    sha256: b0ade2867a99da9ddab65b9395da16d4667ad8ddc59c9c0484f1273e11497ccb
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4 (Dispute Resolution), 4.1-4.2
+    summary: The parties meet and attempt to resolve a dispute about Player Terminal allocation not later than 30
+      days before the increase takes effect; if no resolution is reached, either or both parties may use the dispute
+      resolution provisions of the compact (not in the excerpt).
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: The 2015 amendment amends Section III and Appendix X2 sections 12.1, 13.4 and 14.6.3 and incorporates
+      an Addendum; it does not list Section XV among its changes, so the earlier renegotiation terms still apply.
+    locator_before: XV.D.1
+    locator_after: Operative paragraphs
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The Addendum dispute step is limited to its own terms; the 1995 excerpts
+      show no dispute clause to compare against, so the new step may be additive or may follow an existing process.
+      The 2015 Addendum closely follows the Elwha Tribal Community''s 2015 amendment in the same batch set.'
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2021-09-01'
+    published: '2021-09-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-18814
+    locator: 86 Fed. Reg. 49052 (Sept. 1, 2021)
+  source: compact-wa-lummi-tribe-of-the-lummi-reservation-2021-09-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2021.09.01_lummi_tribe_tribal_state_gaming_compact.pdf
+    sha256: 835ba132e9d36e9c1e6881bc42789add17ad18c0d0cbb51f36839bf0023d30d0
+    pages: 24
+  clauses:
+  - topic: dispute-resolution
+    locator: Appendix S, Section 5.3.6 Approval of Certification; Revocation
+    summary: For sports wagering certifications, the Tribal and State gaming agencies meet and confer on the State
+      agency's concerns; the excerpt describes no further dispute steps.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: The Fifth Amendment adds Appendix S (sports wagering) and changes Sections 1, 5.3.3, 7.1.1, 8.3.2,
+      11, 14.4, 14.6, II, III and IX; the excerpts show no change to a dispute clause, so the earlier dispute terms
+      still govern.
+    locator_after: Appendix S, Sections 5-7
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: The Fifth Amendment does not list Section XV among its changes, so the earlier amendment and renegotiation
+      terms still apply.
+    locator_before: XV.D.1
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2021-amendment-2
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2021-12-27'
+    published: '2021-12-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-27975
+    locator: 86 Fed. Reg. 73313 (Dec. 27, 2021)
+  source: compact-wa-lummi-tribe-of-the-lummi-reservation-2021-12-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2021.12.27_lummi_nation_tribal_state_gaming_compact.pdf
+    sha256: 7e2caa9946c587bd8d63aae23aa81ad3e92f64a321e9ecc7d3bb06ebc2f81b70
+    pages: 3
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XV.D.8 (Most Favored Nation clause, quoted in the introduction)
+    summary: If the parties disagree whether the automatic amendment applies to a particular term, either party
+      may take the issue to dispute resolution under Section XII.LC of the compact, which the excerpt does not reproduce.
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Section XV.D.8 (Most Favored Nation clause, quoted in the introduction)
+    summary: The compact is amended automatically to maintain equality when the Secretary approves a compact with
+      another Washington tribe that gives more gaming stations, higher wagers or other expanded terms, and the Nation
+      can show adverse economic impact for tribes east of the Cascades.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+- id: 2026-amendment
+  label: 2026 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2026-02-06'
+    published: '2026-02-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2026-02385
+    locator: 91 Fed. Reg. 5508 (Feb. 6, 2026)
+  source: compact-wa-lummi-tribe-of-the-lummi-reservation-2026-02-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/sixth_amendment_to_lummi_&_wa_gaming_compact.pdf
+    sha256: 4066a46567e9c5367fef15c2dbfb8cf31c5eede13a4c192f1e2726e96ee0ea04
+    pages: 39
+  clauses:
+  - topic: dispute-resolution
+    locator: Paragraph 2 (facility location)
+    summary: The excerpt says the compact's arbitration remedies do not apply to disputes arising from renegotiation
+      of the facility location; the general dispute process is not in the excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Paragraph 2 (facility location)
+    summary: The Lummi Nation may request renegotiation of the facility location; such renegotiation is conducted
+      under 25 U.S.C. 2710(d) without prejudice to the State's rights under 25 U.S.C. 2719.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

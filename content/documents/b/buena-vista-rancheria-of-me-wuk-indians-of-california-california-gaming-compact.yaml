@@ -1,0 +1,174 @@
+id: buena-vista-rancheria-of-me-wuk-indians-of-california-california-gaming-compact
+kind: gaming-compact
+title: Buena Vista Rancheria of Me-Wuk Indians of California–State of California Gaming Compact
+nations:
+- buena-vista-rancheria-of-me-wuk-indians-of-california
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Buena Vista Rancheria of Me-Wuk Indians of California and the State of California
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Buena Vista Rancheria of
+  Me-Wuk Indians of California and the State of California as of Nov. 21, 2026: 1 original, 1 amendment and 1 replacement.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-buena-vista-rancheria-of-me-wuk-indians-of-california-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2000.05.16_buena_vista_rancheria_of_me-wuk_indians_tribal_state_gaming_compact_0.pdf
+    sha256: 4b86498cc9c2d7e4d2c7ec70d0fd6cf18c7c128fefab08d59787dc56cf81f864
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.0 (dispute resolution), Sec. 9.2 Arbitration Rules
+    summary: If a dispute is not resolved within 30 calendar days after the first meeting, either party may seek
+      arbitration under the American Arbitration Association Commercial Rules, the arbitrator's written decision
+      is binding and judgment may be entered in any federal or state court, and alternative dispute resolution is
+      to be explored before judicial process.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.0. AMENDMENTS; RENEGOTIATIONS, Sec. 12.1 to 12.3
+    summary: The compact may be amended at any time by mutual written agreement, and the Governor or the Band may
+      request renegotiation to add other forms of Class III gaming, with negotiations to begin within 30 days of
+      the request and no such request for 12 months after the effective date; the excerpt does not show what happens
+      if talks fail.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2004-amendment
+  label: 2004 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2004-12-20'
+    published: '2004-12-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-04-27713
+    locator: 69 Fed. Reg. 76004 (Dec. 20, 2004)
+  source: compact-ca-buena-vista-rancheria-of-me-wuk-indians-of-california-2004-12-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2004.12.20_buena_vista_rancheria_of_me-wuk_indians_tribal_state_gaming_compact.pdf
+    sha256: dcc53fabee9849f55b651e48e8dc4529f4687aa10e2e9ae8f5551da12a5a6961
+    pages: 47
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: changed
+    summary: The earlier compact's Section 9.0 provides notice, a meeting within 10 days, optional AAA arbitration
+      and then federal or state court; the 2004 amendment does not restate it but adds that failure to remit payments
+      entitles the State to seek immediate injunctive relief in federal or state court notwithstanding Section 9.0,
+      and adds binding single-arbitrator AAA arbitration (last best offer) for county agreement disputes (Section
+      10.8.9) and JAMS arbitration for patron disputes and third-party injury claims.
+    locator_before: Sec. 9.0 (9.1-9.3)
+    locator_after: Section 4.3.3(e); Section 10.8.9; Section 8.1.10(d)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: unchanged
+    summary: The 2004 amendment does not change Section 12 (amendments and renegotiation) as shown in the excerpts.
+      Its recitals state that the amendment revises the 1999 Compact, which is the mutual written amendment process
+      that Section 12.1 already allows.
+    locator_before: Sec. 12.1
+    locator_after: Recitals (WHEREAS clauses)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2016-replacement
+  label: 2016 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  - 2004-amendment
+  dates:
+    listed: '2016-12-05'
+    published: '2016-12-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2016-29076
+    locator: 81 Fed. Reg. 87585 (Dec. 5, 2016)
+  source: compact-ca-buena-vista-rancheria-of-me-wuk-indians-of-california-2016-12-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_comp_liant_2016.12.05_buena_vista_rancheria_of_me-wuk_indians_tribal_state_gaming_compact.pdf
+    sha256: c79fe5b2153ffce401d805b358986280e64721cf362a0b15f5966cde18d087cf
+    pages: 138
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1 Voluntary Resolution; Court Resolution and Sec.
+      13.2 Arbitration Rules
+    summary: Disputes under the compact begin with a written notice, a written response within 15 days and a meet-and-confer
+      within 30 days; if unresolved either party may seek arbitration before JAMS, but neither party is required
+      to agree to arbitrate, and unresolved disputes may be brought in the federal district court for the district
+      of the Gaming Facility or, if that court lacks jurisdiction, a state court of competent jurisdiction in the
+      county. Sec. 13.4 limits remedies to injunctive relief, specific performance and declaratory relief.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS, Sec. 15.1 to Sec. 15.3; Sec. 5.2(f)
+    summary: Sec. 15.1 permits amendment at any time by mutual written agreement if each party voluntarily consents
+      to the negotiations in writing, Sec. 15.2 lets either party request negotiation of an extension or new compact
+      no sooner than 18 months before the termination date, and Sec. 15.3 requires written requests and a schedule
+      for negotiations; Sec. 5.2(f) also lets either party request reopening of the Revenue Sharing Trust Fund payment
+      terms if the fund balance exceeds or falls short of long-term needs, which the other party may decline.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: changed
+    summary: The earlier compact provides written notice, a meeting within 10 days, and optional AAA arbitration
+      (single arbitrator unless a party objects) with a binding decision, then federal or state court; the later
+      compact provides written notice, a written response within 15 days, a meeting within 30 days, optional arbitration
+      before a JAMS arbitrator with an optional JAMS appeal procedure, then federal or state court (Sacramento County)
+      with the Section 13.4 remedies as exclusive and no damages or attorney fees.
+    locator_before: Sec. 9.0 (9.1-9.3)
+    locator_after: Section 13.0 (13.1-13.3)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: changed
+    summary: The 2000 compact's Section 12 allowed renegotiation when the nation wished to engage in Class III games
+      not authorized in the compact, with a written-request process and a termination right. The 2016 replacement's
+      Section 15 allows amendment by mutual written agreement during the term, lets either party request negotiations
+      for an extension or new compact up to 18 months before termination, and automatically extends the compact
+      for one year (or two years while a deal is advancing). The nation-only renegotiation for new games is not
+      in the 2016 excerpts.
+    locator_before: Sec. 12.2
+    locator_after: Sec. 15.1, 15.2
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,257 @@
+id: kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-arizona-gaming-compact
+kind: gaming-compact
+title: Kaibab Band of Paiute Indians of the Kaibab Indian Reservation, Arizona–State of Arizona Gaming Compact
+nations:
+- kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation
+states:
+- AZ
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Kaibab Band of Paiute Indians of the Kaibab Indian Reservation, Arizona and
+    the State of Arizona under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Kaibab Band of Paiute Indians
+  of the Kaibab Indian Reservation, Arizona and the State of Arizona as of Nov. 21, 2026: 1 original, 1 replacement,
+  2 amendments and 1 restatement. The order, the kind of each event and which version is in effect are inferred
+  from the list (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1994-original
+  label: 1994 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1994-04-26'
+    published: '1994-04-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-94-9901
+    locator: 59 Fed. Reg. 0 (Apr. 26, 1994)
+  source: compact-az-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-1994-04-26
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_1994.04.26_kaibab_band_of_paiute_indians_tribal_state_gaming_compact_0.pdf
+    sha256: ee46f4a29a1a8c547fa232e834da96d26b1b6f48cabd64e2628769823218adab
+    pages: 88
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 15. DISPUTE RESOLUTION, subsections (a)-(g)
+    summary: The compact provides for written notice, a meeting within ten days, and arbitration in Arizona if the
+      dispute is not resolved within thirty days, with one agreed arbitrator or a panel of three whose third member
+      the American Arbitration Association appoints if the two cannot agree; the majority decision is final, binding
+      and unappealable, and U.S. District Courts have jurisdiction over actions to enjoin class III gaming in violation
+      of the compact.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15(a); SECTION 17 Amendments; Section 23(b)(5)
+    summary: The parties may discuss and reconsider specified sections and appendices upon written notice and request
+      by either party; amendments must be in writing and signed by both parties, and after notice of nonrenewal
+      Kaibab Band of Paiute Indians may request negotiation of a successor compact.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2003-replacement
+  label: 2003 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1994-original
+  dates:
+    listed: '2003-02-05'
+    published: '2003-02-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-2787
+    locator: 68 Fed. Reg. 5912 (Feb. 5, 2003)
+  source: compact-az-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-2003-02-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2003.02.05_kaibab_band_of_paiute_indians_tribal_gaming_compact.pdf
+    sha256: ddd45f280696ebb7cbafa6921f31441ab4e4dee98ce62eabca151369b61d15ae
+    pages: 60
+  clauses:
+  - topic: renegotiation
+    locator: SECTION 17. AMENDMENTS, subsections (a)-(c)
+    summary: Within 180 days after the Effective Date either party may propose amendments to listed regulatory provisions;
+      the parties then negotiate in good faith for 90 days and, failing agreement, mediate under Section 15(b),
+      while other provisions may be amended by written mutual agreement signed by both parties.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1994-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1994-original
+    change: changed
+    summary: The 1994 Section 17 requires any amendment to be in writing and signed by both parties; the 2003 Section
+      17 keeps that rule and adds a 180-day window to propose amendments on listed regulatory subjects, 90 days
+      of good-faith negotiation, then mediation under Section 15(b) if talks fail, and allows the Governor to agree
+      to amendments consistent with Arizona law.
+    locator_before: '17'
+    locator_after: 17(b)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2003 Section 15 is not in the excerpts, so the scope of its arbitration
+      cannot be confirmed. The 2003 replacement takes effect on the conditions in Section 2(vv), including new compacts
+      for other Arizona tribes. This item parallels the Hualapai 1994-to-2003 item in batch 029.'
+- id: 2009-amendment
+  label: 2009 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2003-replacement
+  dates:
+    listed: '2009-03-25'
+    published: '2009-03-25'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e9-6585
+    locator: 74 Fed. Reg. 12889 (Mar. 25, 2009)
+  source: compact-az-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-2009-03-25
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2009.03.25_kaibab_band_of_paiute_indians_tribal_gaming_compact_0.pdf
+    sha256: 458459467c1f3e8d426c852d4056d782a46ae3a14eec62538c9b34eb8e630c8d
+    pages: 14
+  changes:
+  - topic: renegotiation
+    compared_with: 2003-replacement
+    change: not-compared
+    verification: inferred
+- id: 2021-restatement
+  label: 2021 amended and restated compact
+  event: restatement
+  status: in-effect
+  supersedes:
+  - 2003-replacement
+  - 2009-amendment
+  dates:
+    listed: '2021-05-24'
+    published: '2021-05-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-10877
+    locator: 86 Fed. Reg. 27889 (May 24, 2021)
+  source: compact-az-kaibab-band-of-paiute-indians-of-the-kai-2021
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508 Compliant 2021.05.24 Kaibab Band of Paiute Indians Tribal
+      State Gaming Compact.pdf
+    sha256: 75a54de4f7f4fc0f114df65bf39966c9bff4ee31395ea271807413104ab3283a
+    pages: 80
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 3(b)(3)(B)-(C)
+    summary: For appendix disputes, either party may request a new or modified appendix in writing, and if no agreement
+      is reached within 180 days either may initiate Section 15 dispute resolution, where an arbitration under Section
+      15(c) is conducted before a single neutral arbitrator selected by CPR in a last best offer format; the general
+      Section 15 procedure is not in the excerpt.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 3(b)(3) and SECTION 17. AMENDMENTS
+    summary: Either Kaibab Band of Paiute Indians or the State Gaming Agency may request in writing to negotiate
+      a new or modified appendix, and after 180 days without agreement either may initiate Section 15 dispute resolution;
+      compact amendments must be in writing, signed by both parties, and approved or deemed approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2003-replacement
+    change: changed
+    summary: The 2003 Section 17 has a proposed-amendment process (proposals within 180 days, 90 days of negotiation,
+      then mediation) and a general rule that any provision can be amended by mutual agreement; the 2021 Section
+      17 keeps the general rule (writing signed by both parties, Secretary approval where required, mutual agreement)
+      without the proposal and mediation steps shown, and Section 3(b)(3) adds a notice-and-negotiation route for
+      new or modified appendices, followed by Section 15 dispute resolution if no agreement is reached within 180
+      days.
+    locator_before: 17(c)
+    locator_after: 3(b)(3)(B)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2021 Section 15 and the 2003 Section 15 text are not in the excerpts.
+      The 2021 compact applies only after the Effective Date conditions in Section 2(dd). The absence of 2003-style
+      Section 17(a) to (c) text in the 2021 excerpt should be confirmed in the full compact.'
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2021-restatement
+  dates:
+    listed: '2022-06-14'
+    published: '2022-06-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-12743
+    locator: 87 Fed. Reg. 35992 (June 14, 2022)
+  source: compact-az-kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation-2022-06-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2022.06.14_kaibab_band_of_paiute_indians_tribal_state_gaming_compact.pdf
+    sha256: 443b5a7aa00202a7181dd0bb6dfe7b852eebc3297b7dc94262d4227ea8822ce4
+    pages: 20
+  clauses:
+  - topic: dispute-resolution
+    locator: Paragraph 12
+    summary: Disputes under the Agreement go to the dispute resolution provisions of Section 15 of the Compact,
+      which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Paragraph 10
+    summary: The Compact is amended under its Section 17, which the excerpt does not reproduce, and this Agreement
+      itself may be changed only by a written document signed by both parties.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2021-restatement
+    change: unchanged
+    summary: The 2022 amendment lists thirteen provisions it amends (definitions, Sections 3 and 6(b), and an annex)
+      and does not list Section 15; paragraph 12 says disputes under the Agreement use the Compact's Section 15
+      dispute resolution provisions, so the existing Section 15 still governs.
+    locator_before: 3(d)(4)
+    locator_after: '12'
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2021-restatement
+    change: unchanged
+    summary: Section 17 (amendments) is not among the listed provisions, and the agreement says the parties do not
+      intend to amend any provision other than the thirteen attachments, so the 2021 Section 17 still governs; the
+      agreement's own amendment clause (paragraph 10) requires a signed writing.
+    locator_before: '17'
+    locator_after: '4'
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

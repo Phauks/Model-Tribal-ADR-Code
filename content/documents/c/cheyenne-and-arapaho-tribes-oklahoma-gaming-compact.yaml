@@ -1,0 +1,131 @@
+id: cheyenne-and-arapaho-tribes-oklahoma-gaming-compact
+kind: gaming-compact
+title: Cheyenne and Arapaho Tribes, Oklahoma–State of Oklahoma Gaming Compact
+nations:
+- cheyenne-and-arapaho-tribes
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Cheyenne and Arapaho Tribes, Oklahoma and the State of Oklahoma under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Cheyenne and Arapaho Tribes,
+  Oklahoma and the State of Oklahoma as of Nov. 21, 2026: 1 original, 2 disapproved compacts and 1 amendment. The
+  order, the kind of each event and which version is in effect are inferred from the list (project analysis); clause
+  summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2005-original
+  label: 2005 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2005-04-08'
+    published: '2005-04-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-05-6986
+    locator: 70 Fed. Reg. 18041 (Apr. 8, 2005)
+  source: compact-ok-cheyenne-and-arapaho-tribes-oklahoma-2005
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2005.04.08 Cheyenne and Arapaho Tribes Tribal
+      State Gaming Compact.pdf
+    sha256: c50d658a28068d1504e19b4049db4641cf54b59960dec164718a3818ec54e664
+    pages: 60
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION
+    summary: Either party gives written notice and representatives meet within thirty days; either party may then
+      refer the dispute to AAA arbitration, with awards subject to enforcement or de novo review by a federal district
+      court.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, subsection B
+    summary: Within 180 days before the term or any renewal expires, either the Tribe or the State, acting through
+      its Governor, may request renegotiation of subsections A and E of Part 11.
+    verification: read-in-full
+    reviewer: small model, first pass
+- id: 2013-disapproval
+  label: 2013 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2013-08-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-ok-cheyenne-and-arapaho-tribes-2013-08-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2013.08.01.Cheyenne and Arapaho Tribes Disapproval
+      Letter.pdf
+    sha256: 7d5da3122653a2bf695135ca079adb5d74b33a426eae09de74a3c69000e515f4
+    pages: 5
+- id: 2013-disapproval-2
+  label: 2013 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2013-11-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-ok-cheyenne-and-arapaho-tribes-2013-11-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2013.11.06 Cheyenne and Arapaho Tribes Arapaho
+      Disapproval letter.pdf
+    sha256: 728439357944101db54dd853fa3922d8ba393d18f5ed494a966f3845547d57e4
+    pages: 2
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2005-original
+  dates:
+    listed: '2018-11-02'
+    published: '2018-11-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-23920
+    locator: 83 Fed. Reg. 55199 (Nov. 2, 2018)
+  source: compact-ok-cheyenne-and-arapaho-tribes-2018-11-02
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2018.11.02 Cheyenne and Arapaho 2018 compact
+      amendment.pdf
+    sha256: 998418cf4ae13ae55a319c70f439eca613f7c0dcbefbc63a169ca620f6fa1fd7
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2005-original
+    change: unchanged
+    summary: The 2018 supplement adds non-house-banked table games and provides that those games are subject to
+      the enforcement and exclusivity provisions of the 2005 compact. It does not amend Part 12, so the 2005 dispute
+      procedure, including the AAA arbitration option, still governs.
+    locator_before: Part 12
+    locator_after: Part 2.C
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2005-original
+    change: unchanged
+    summary: The 2018 supplement does not amend Part 15 of the 2005 compact. Its terms are to be governed in accord
+      with the compact, so the 2005 renegotiation right for Part 11 subsections A and E still governs.
+    locator_before: Part 15
+    locator_after: Preamble
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,56 @@
+id: seneca-cayuga-nation-oklahoma-off-track-wagering-compact
+kind: gaming-compact
+title: Seneca-Cayuga Nation–State of Oklahoma Off-Track Wagering Compact
+nations:
+- seneca-cayuga-nation
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III off-track wagering compact for Seneca-Cayuga Nation and the State of Oklahoma under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III off-track wagering compact documents the Office of Indian Gaming lists for Seneca-Cayuga
+  Nation and the State of Oklahoma as of Nov. 21, 2026: 1 original. The order, the kind of each event and which
+  version is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small
+  model''s reading of excerpts.'
+versions:
+- id: 2002-original
+  label: 2002 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2002-02-08'
+    published: '2002-02-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-02-3038
+    locator: 67 Fed. Reg. 6050 (Feb. 8, 2002)
+  source: compact-ok-seneca-cayuga-nation-2002-02-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508_compliant_2002.02.08_seneca-cayuga_nation_tribal_state_gaming_comapct.pdf
+    sha256: 3c4ac7d29c881e42b9fde31b38ebca7d2517d9b488f6331c00cde6ee5bcb6094
+    pages: 38
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 15 Dispute Resolution, paragraphs a. to c.
+    summary: Notice is served, the parties meet within 30 days, unresolved disputes may go to non-binding arbitration
+      with the American Arbitration Association naming any third arbitrator, and either party may bring an action
+      for breach in the United States District Court for the Western District of Oklahoma.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 19 Amendments
+    summary: Either party may request negotiations to amend or modify the compact; it stays in effect during a 180-day
+      negotiation period, and any amendment must be in writing and approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+found_in:
+- 2026-11-21-gaming-compact-histories

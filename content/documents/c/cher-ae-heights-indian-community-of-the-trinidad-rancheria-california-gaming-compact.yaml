@@ -1,0 +1,260 @@
+id: cher-ae-heights-indian-community-of-the-trinidad-rancheria-california-gaming-compact
+kind: gaming-compact
+title: Cher-Ae Heights Indian Community of the Trinidad Rancheria, California–State of California Gaming Compact
+nations:
+- cher-ae-heights-indian-community-of-the-trinidad-rancheria
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Cher-Ae Heights Indian Community of the Trinidad Rancheria, California and
+    the State of California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Cher-Ae Heights Indian Community
+  of the Trinidad Rancheria, California and the State of California as of Nov. 21, 2026: 1 original, 2 replacements
+  and 3 extensions. The order, the kind of each event and which version is in effect are inferred from the list
+  (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1998-original
+  label: 1998 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1998-10-22'
+    published: '1998-10-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-28311
+    locator: 63 Fed. Reg. 56659 (Oct. 22, 1998)
+  source: compact-ca-cher-ae-heights-indian-community-of-the-trinidad-rancheria-1998-10-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_1998.10.22_cher-ae_heights_indian_community_of_the_trinidad_rancheria_tribal_state_gaming_compact_0.pdf
+    sha256: 194b936d519247f45f5d7bce8d7d416dd874fced0d6299e0fb52df287c3df9d0
+    pages: 141
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 8.3.3 and Sec. 2.7
+    summary: The excerpt refers to arbitration under the AAA Commercial Arbitration Rules (subsections 16.2.10.2
+      to 16.2.10.5) and to an arbitral tribunal under subsection 16.2.10 when a court declines jurisdiction over
+      a Tribe proceeding, but the subsections setting out the steps are not in the excerpt.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 2.5 and Sec. 2.7
+    summary: Either party may request good-faith negotiations to amend the compact when IGRA or a state statute
+      or constitutional provision changes permitted Class III gaming, and after a notice of non-renewal or termination
+      the Governor must begin negotiating a new compact.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2000-replacement
+  label: 2000 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1998-original
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-cher-ae-heights-indian-community-of-the-trinidad-rancheria-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2000.05.16_cher-ae_heights_indian_community_of_the_trinidad_rancheria_tribal_state_gaming_compact.pdf
+    sha256: a82385d6d9b813397c0666be4c37323185e3c7e484b061d335522a8b77b7f8fd
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 and Sec. 9.2
+    summary: The compact provides for written notice, a good-faith meeting within 10 days and, if unresolved after
+      30 days, optional arbitration under the AAA Commercial Arbitration Rules with a binding award; otherwise the
+      dispute may go to the U.S. District Court where the gaming facility is located and the Ninth Circuit Court
+      of Appeals, or to state courts if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Sec. 12.1 to Sec. 12.3
+    summary: The compact may be amended by mutual written agreement, and the Tribe may request renegotiation in
+      writing for Class III games other than those authorized, but not within 12 months of the effective date; talks
+      are to be scheduled within 30 days under IGRA good-faith standards.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1998-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1998-original
+    change: changed
+    summary: The 1998 compact's Section 2.5 lets either party request negotiations to amend the compact when IGRA
+      or a State statute or constitutional provision changes the types of Class III gaming permitted, and the other
+      party must then negotiate in good faith. The 2000 compact's Section 12 instead allows amendment by mutual
+      written agreement, renegotiation when the nation seeks games other than those authorized, a process for requests
+      with negotiations under IGRA, and a termination right.
+    locator_before: Sec. 2.5
+    locator_after: Sec. 12.2
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier 1998 excerpts under the renegotiation heading do not show a
+      clause matching the 2000 Section 12 text, and the dispute excerpts do not show the 1998 general dispute process.
+      The later Section 9 excerpt is cut before the end of the arbitration and court terms.'
+- id: 2022-extension
+  label: 2022 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-replacement
+  dates:
+    listed: '2022-06-30'
+    published: '2022-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-14054
+    locator: 87 Fed. Reg. 39115 (June 30, 2022)
+  source: compact-ca-cher-ae-heights-indian-community-of-the-trinidad-rancheria-2022-06-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2022.06.30_cher-ae_heights_indian_community_tribal_state_gaming_compact.pdf
+    sha256: d106923932eacf99b44b109ae6b676e749d7b501b926a9f046eda04a398cd81d
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+- id: 2023-extension
+  label: 2023 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-replacement
+  dates:
+    listed: '2023-12-22'
+    published: '2023-12-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-28198
+    locator: 88 Fed. Reg. 88640 (Dec. 22, 2023)
+  source: compact-ca-cher-ae-heights-indian-community-of-the-trinidad-rancheria-2023-12-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2023.12.22_cher-ae_heights_indian_community_of_the_trinidad_rancheria_tribal_state_gaming_compact.pdf
+    sha256: 55147971e542101e7f200c510fa4e741ed9268eaf75caff2d36643ade8c15632
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+- id: 2025-extension
+  label: 2025 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-replacement
+  dates:
+    listed: '2025-02-20'
+    published: '2025-02-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2025-02848
+    locator: 90 Fed. Reg. 9973 (Feb. 20, 2025)
+  source: compact-ca-cher-ae-heights-indian-community-of-the-trinidad-rancheria-2025-02-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2025.02.206_cher-ae_heights_trinidad)_tribal_state_gaming_compact_third_amendment).pdf
+    sha256: 8fd7f229397fd47627998ca89a390ccf67c302e8551a934280e875bda572a9c0
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+- id: 2026-replacement
+  label: 2026 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-replacement
+  - 2022-extension
+  - 2023-extension
+  - 2025-extension
+  dates:
+    listed: '2026-01-26'
+    published: '2026-01-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2026-01392
+    locator: 91 Fed. Reg. 3213 (Jan. 26, 2026)
+  source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/cher-ae_heights_tribal_state_gaming_compact_compressed.pdf
+    sha256: 31a5a5e0b6977252854fe96bf8e252525b7f08998709c580eaca65792b75d11b
+    pages: 123
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1 Voluntary Resolution; Court Resolution, subdivision
+      (d)
+    summary: After written notice, a written response within 15 days, and meeting and conferring within 30 days,
+      disputes may be resolved in the United States District Court where the gaming facility is located or, if the
+      federal court lacks jurisdiction, in any state court, with the Sec. 13.3 remedies as the sole and exclusive
+      remedies and no damages or attorney fees awarded; no arbitration is shown in the excerpt.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: changed
+    summary: The earlier compact provides written notice, a meeting within 10 days, then optional AAA arbitration
+      (neither party required to agree) and federal or state court; the later compact provides written notice, a
+      written response within 15 days, a meeting within 30 days conducted by the Governor or designee and the nation's
+      Chief Executive Officer or gaming agency director, then federal or state court action with the Section 13.3
+      remedies as the sole remedies and no damages or attorney fees; it contains no arbitration step.
+    locator_before: Sec. 9.0 (9.1-9.3)
+    locator_after: Section 13.0 (13.1-13.2)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,48 @@
+id: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-kansas-gaming-compact
+kind: gaming-compact
+title: Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas–State of Kansas Gaming Compact
+nations:
+- kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas
+states:
+- KS
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas and the State
+    of Kansas under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Kickapoo Tribe of Indians
+  of the Kickapoo Reservation in Kansas and the State of Kansas as of Nov. 21, 2026: 1 original. The order, the
+  kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1995-08-21'
+    published: '1995-08-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-20653
+    locator: 60 Fed. Reg. 43512 (Aug. 21, 1995)
+  source: compact-ks-kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas-1995-08-21
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/kansas/508_compliant_1995.08.21_kickapoo_tribe_tribal_state_gaming_compact_0.pdf
+    sha256: 1ca13e7978b50ff626bd73d289b7fccec6970c6373068483a3f0e9531d0f127d
+    pages: 94
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 31(C) Enforcement
+    summary: Settlements and arbitration decisions are enforced in the United States District Court for Kansas if
+      a party does not implement them voluntarily or refuses to arbitrate; the initial arbitration steps are not
+      in the excerpt.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+found_in:
+- 2026-11-21-gaming-compact-histories

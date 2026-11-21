@@ -1,0 +1,110 @@
+id: washoe-tribe-of-nevada-and-california-nevada-gaming-compact
+kind: gaming-compact
+title: Washoe Tribe of Nevada & California–State of Nevada Gaming Compact
+nations:
+- washoe-tribe-of-nevada-and-california
+states:
+- NV
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Washoe Tribe of Nevada & California and the State of Nevada under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Washoe Tribe of Nevada &
+  California and the State of Nevada as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each
+  event and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 2004-original
+  label: 2004 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2004-07-16'
+    published: '2004-07-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-04-16199
+    locator: 69 Fed. Reg. 42764 (July 16, 2004)
+  source: compact-nv-washoe-tribe-of-nevada-and-california-2004-07-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/nevada/508_compliant_2004.07.16_washoe_tribe_tribal_state_gaming_compact.pdf
+    sha256: 08c114ce714e1493726dbe0610c2fe624a2f682cbd267cc8deb8726074c93887
+    pages: 20
+  clauses:
+  - topic: dispute-resolution
+    locator: Limited Waiver of Sovereign Immunity (unnumbered heading, after Section XIII)
+    summary: The compact provides that disputes under it are resolved in federal court of competent jurisdiction,
+      limited to issues arising under the compact, with no monetary damages claims and no third parties.
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: XII. AMENDMENTS
+    summary: The compact may be amended only with the consent of both parties by written instrument signed by both;
+      the parties must negotiate in good faith if a change in law affects it, and if a change in law would prohibit
+      the gaming, they must negotiate a reasonable period for it to continue.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2004-original
+  dates:
+    listed: '2018-01-18'
+    published: '2018-01-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-00793
+    locator: 83 Fed. Reg. 2667 (Jan. 18, 2018)
+  source: compact-nv-washoe-tribe-of-nevada-and-california-2018
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/nevada/508 Compliant 2018.01.18 Washoe Tribal State Compact.pdf
+    sha256: 247e21ebbcad906e41ec69258f84a04a1fa139cb94b442490ae91c827fb5b3f0
+    pages: 32
+  clauses:
+  - topic: dispute-resolution
+    locator: ARTICLE XV. DISPUTE RESOLUTION AND LIMITED WAIVER OF SOVEREIGN IMMUNITY
+    summary: Disputes must first go through the informal procedures in Article XIII(1), which are not in the excerpt;
+      after that the dispute may be heard in federal court with venue in Washoe County, Nevada, and on appeal from
+      that court.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: AMENDMENTS (article number not shown in excerpt)
+    summary: The Compact may be amended only by written instrument signed by both parties and approved by the Secretary;
+      if applicable law changes substantially the parties negotiate in good faith, and a change in law that would
+      prohibit Class III gaming triggers good-faith talks on a reasonable period to continue operations.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2004-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2004-original
+    change: changed
+    summary: The 2018 First Amended Compact keeps the mutual-written-consent and change-in-law negotiation terms
+      of the 2004 Article XII, but adds that amendments must be approved by the Secretary of the Interior, where
+      the 2004 text requires only a written instrument signed by both parties; the 2004 new-games negotiation clause
+      (Article XV) and reservation of rights (Article XIII) do not appear in the 2018 excerpts.
+    locator_before: XII
+    locator_after: Amendments (article number not shown)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2004 ''earlier'' compact is a Slots Only compact that the 2018 ''First
+      Amended Compact'' replaces (its Article XVI terminates the 2004 compact upon approval). The 2018 excerpts
+      do not show the first part of the dispute article or any Article XIII reservation of rights. The 2004 Article
+      XIII reserves the Tribe''s IGRA 11(d)(7) right to sue the State for failing to negotiate in good faith on
+      an expansion compact, which should be checked in the full 2018 text.'
+found_in:
+- 2026-11-21-gaming-compact-histories

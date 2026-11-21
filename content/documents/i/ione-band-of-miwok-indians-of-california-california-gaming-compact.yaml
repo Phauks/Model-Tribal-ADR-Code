@@ -1,0 +1,65 @@
+id: ione-band-of-miwok-indians-of-california-california-gaming-compact
+kind: gaming-compact
+title: Ione Band of Miwok Indians of California–State of California Gaming Compact
+nations:
+- ione-band-of-miwok-indians-of-california
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Ione Band of Miwok Indians of California and the State of California under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Ione Band of Miwok Indians
+  of California and the State of California as of Nov. 21, 2026: 1 original. The order, the kind of each event and
+  which version is in effect are inferred from the list (project analysis); clause summaries and comparisons are
+  a small model''s reading of excerpts.'
+versions:
+- id: 2020-original
+  label: 2020 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2020-12-11'
+    published: '2020-12-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2020-27221
+    locator: 85 Fed. Reg. 80142 (Dec. 11, 2020)
+  source: compact-ca-ione-band-of-miwok-indians-of-california-2020-12-11
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2020.12.11 Ione Band of Miwok Indians Tribal
+      State Gaming Compact.pdf
+    sha256: f9450b22982b36fa956fbf24811970314169269bea628021af37baf89ea288a7
+    pages: 175
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1 Voluntary Resolution; Court Resolution and Sec.
+      13.2 Arbitration Rules
+    summary: Disputes under the compact begin with a written notice, a written response within 15 days and a meet-and-confer
+      within 30 days; if unresolved either party may seek arbitration before JAMS, but neither party is required
+      to agree to arbitrate, and unresolved disputes may be brought in the federal district court for the district
+      of the Gaming Facility or, if that court lacks jurisdiction, a state court of competent jurisdiction in the
+      county.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS, Sec. 15.1 to Sec. 15.6
+    summary: Sec. 15.1 permits amendment at any time by mutual written agreement if each party voluntarily consents
+      to the negotiations in writing, Sec. 15.2 lets either party request negotiation of an extension or new compact
+      no sooner than 18 months before the termination date, and Sec. 15.3 requires written requests and a schedule
+      for negotiations. Sec. 15.3 requires the parties to meet within 30 days and negotiate a replacement if a court
+      holds a compact provision invalid or inoperable because of a change in the law. Sec. 15.4 requires good-faith
+      negotiation at the Tribe's written request where changed conditions either materially and adversely affect
+      the Tribe's gaming operation or create opportunities to expand beyond the compact's device or facility limits,
+      if the Tribe supplies adequate information; Sec. 15.5 requires good-faith negotiation to add Class III games
+      the State newly authorizes.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+found_in:
+- 2026-11-21-gaming-compact-histories

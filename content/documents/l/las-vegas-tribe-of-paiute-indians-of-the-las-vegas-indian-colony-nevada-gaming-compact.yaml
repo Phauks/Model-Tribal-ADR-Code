@@ -1,0 +1,51 @@
+id: las-vegas-tribe-of-paiute-indians-of-the-las-vegas-indian-colony-nevada-gaming-compact
+kind: gaming-compact
+title: Las Vegas Tribe of Paiute Indians of the Las Vegas Indian Colony, Nevada–State of Nevada Gaming Compact
+nations:
+- las-vegas-tribe-of-paiute-indians-of-the-las-vegas-indian-colony
+states:
+- NV
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Las Vegas Tribe of Paiute Indians of the Las Vegas Indian Colony, Nevada and
+    the State of Nevada under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Las Vegas Tribe of Paiute
+  Indians of the Las Vegas Indian Colony, Nevada and the State of Nevada as of Nov. 21, 2026: 1 original. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1994-original
+  label: 1994 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1994-09-21'
+    published: '1994-09-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-94-23272
+    locator: 59 Fed. Reg. 0 (Sept. 21, 1994)
+  source: compact-nv-las-vegas-tribe-of-paiute-indians-of-the-las-vegas-indian-colony-1994-09-21
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/nevada/508_compliant_1994.09.21_las_vegas_tribe_of_paiute_indians_tribal_state_gaming_compact.pdf
+    sha256: be3ee52c08775dad53daec3ca11d5aed2201520092f6435b16d2758fa09f64b9
+    pages: 11
+  clauses:
+  - topic: dispute-resolution
+    locator: Paragraph 10. Governing Law; Forum.
+    summary: The excerpt has no notice or negotiation steps; any action to enforce the compact is to be brought
+      in the United States District Court for the District of Nevada, and the governing-law paragraph applies IGRA
+      and Nevada law.
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Paragraph 2. Modification in Writing.
+    summary: Amendments must be in writing and approved under IGRA and state law, and if the parties negotiate written
+      amendments the compact remains in effect until they are executed and approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, first pass
+found_in:
+- 2026-11-21-gaming-compact-histories

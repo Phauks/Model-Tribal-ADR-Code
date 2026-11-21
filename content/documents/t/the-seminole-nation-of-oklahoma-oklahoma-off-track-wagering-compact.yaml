@@ -1,0 +1,56 @@
+id: the-seminole-nation-of-oklahoma-oklahoma-off-track-wagering-compact
+kind: gaming-compact
+title: The Seminole Nation of Oklahoma–State of Oklahoma Off-Track Wagering Compact
+nations:
+- the-seminole-nation-of-oklahoma
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III off-track wagering compact for The Seminole Nation of Oklahoma and the State of Oklahoma under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III off-track wagering compact documents the Office of Indian Gaming lists for The Seminole
+  Nation of Oklahoma and the State of Oklahoma as of Nov. 21, 2026: 1 original. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 2001-original
+  label: 2001 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2001-06-07'
+    published: '2001-06-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-14306
+    locator: 66 Fed. Reg. 30749 (June 7, 2001)
+  source: compact-ok-the-seminole-nation-of-oklahoma-2001-06-07
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2001.06.07 Seminole Nation Tribal State Gaming
+      Compact.pdf
+    sha256: 154108366cbeba5ea5c2c76fe0e1585b799a683f8fc3dce0e969865657a3bf8b
+    pages: 65
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 15 Dispute Resolution, paragraphs a. to c.
+    summary: Notice is served, the parties meet within 30 days, unresolved disputes may go to non-binding arbitration
+      with the American Arbitration Association naming any third arbitrator, and either party may bring an action
+      for breach in the United States District Court for the Western District of Oklahoma.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section 19 Amendments
+    summary: Either party may request negotiations to amend or modify the compact; it stays in effect during a 180-day
+      negotiation period, which the Native nation and the State may extend by agreement, after which the remedies
+      in the Act apply, and any amendment must be in writing and approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+found_in:
+- 2026-11-21-gaming-compact-histories

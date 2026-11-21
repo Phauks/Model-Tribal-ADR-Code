@@ -1,0 +1,103 @@
+id: navajo-nation-new-mexico-gaming-compact
+kind: gaming-compact
+title: Navajo Nation, Arizona, New Mexico, & Utah–State of New Mexico Gaming Compact
+nations:
+- navajo-nation
+states:
+- NM
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Navajo Nation, Arizona, New Mexico, & Utah and the State of New Mexico under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Navajo Nation, Arizona, New
+  Mexico, & Utah and the State of New Mexico as of Nov. 21, 2026: 1 original and 1 replacement. The order, the kind
+  of each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2004-original
+  label: 2004 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2004-01-16'
+    published: '2004-01-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-04-1023
+    locator: 69 Fed. Reg. 2617 (Jan. 16, 2004)
+  source: compact-nm-navajo-nation-2004-01-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508 compliant Navajo Nation 2004.pdf
+    sha256: e27163e39bf89c1202b98f9666e0cd68031361d788b67797ddd9dace73037395
+    pages: 23
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraph A(5)
+    summary: The compact provides for written notice, a twenty-day period and a notice to cease disputed games,
+      then arbitration by attorney arbitrators with the American Arbitration Association choosing any unchosen third
+      arbitrator; the results are final and binding and enforceable in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2015-replacement
+  label: 2015 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2004-original
+  dates:
+    listed: '2015-06-22'
+    published: '2015-06-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2015-15207
+    locator: 80 Fed. Reg. 35668 (June 22, 2015)
+  source: compact-nm-navajo-nation-arizona-new-mexico-utah-2015
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2015.06.22_navajo_nation_tribal_state_gaming_compact.pdf
+    sha256: ce930abd413f74be344e444d2d38bdf357cf671ca1fedfabb2e5b3d3247678e6
+    pages: 35
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution.
+    summary: After written notice and a twenty-day period, the complaining party may issue a notice to cease the
+      disputed activity, and either side may invoke arbitration before a three-member panel with the American Arbitration
+      Association appointing a third arbitrator if needed; the arbitration result is final and binding and enforceable
+      in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: SECTION 14. Entire Agreement.
+    summary: The compact may be amended only by a written instrument signed by the Native nation and the State and
+      approved by the Secretary of the Interior, with approval of the Native nation, the Governor and the State
+      Legislature; the excerpt sets no reopening trigger or time limit.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2004-original
+    change: changed
+    summary: The 2015 compact keeps the notice, stop-or-arbitrate election and final and binding attorney arbitration,
+      and adds a two-year window to start the procedure (and a two-year State window for pre-effective-date payment
+      breaches), lets the parties agree in writing to a single arbitrator, sets 30-day periods for choosing arbitrators
+      (a non-responding party is bound to proceed with the other's single arbitrator), and lengthens the third-arbitrator
+      period from 10 to 30 days.
+    locator_before: 7.A.1-5
+    locator_after: 7.A.1-4
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2004-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

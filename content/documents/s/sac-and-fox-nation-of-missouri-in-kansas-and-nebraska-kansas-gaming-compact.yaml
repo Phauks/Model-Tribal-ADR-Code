@@ -1,0 +1,90 @@
+id: sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-kansas-gaming-compact
+kind: gaming-compact
+title: Sac & Fox Nation of Missouri in Kansas and Nebraska–State of Kansas Gaming Compact
+nations:
+- sac-and-fox-nation-of-missouri-in-kansas-and-nebraska
+states:
+- KS
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Sac & Fox Nation of Missouri in Kansas and Nebraska and the State of Kansas
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Sac & Fox Nation of Missouri
+  in Kansas and Nebraska and the State of Kansas as of Nov. 21, 2026: 1 disapproved compact, 1 original and 1 amendment.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-disapproval
+  label: 1992 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '1992-07-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-ks-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-1992-07-10
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/kansas/508_compliant_1992.07.10_sac_and_fox_nation_of_missouri_in_kansas_and_nebraska_tribal_state_gaming_compact.pdf
+    sha256: 9e7d23f84c023f79cfff1ecbabfd6c37b147cd3f33f0f5be7801a492841c178e
+    pages: 57
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1995-11-14'
+    published: '1995-11-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-28035
+    locator: 60 Fed. Reg. 57246 (Nov. 14, 1995)
+  source: compact-ks-sac-fox-nation-of-missouri-in-kansas-and-1995
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/kansas/508_compliant_1995.11.14_sac_fox_nation_tribal_state_gaming_compact.pdf
+    sha256: fee08583c251386daa853beffd7c0c853005e01415ec03390f3da36887ba3e87
+    pages: 65
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 31(B) Arbitration
+    summary: Arbitration is started by written notice under Section 30 with each side naming a nominee, and disputes
+      may proceed to judicial resolution and enforcement; the excerpt does not name the court or say whether awards
+      are binding.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2025-amendment
+  label: 2025 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2025-11-24'
+    published: '2025-11-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2025-20696
+    locator: 90 Fed. Reg. 52995 (Nov. 24, 2025)
+  source: compact-ks-sac-and-fox-nation-of-missouri-in-kansas-and-nebraska-2025-11-24
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/kansas/sac_and_fox_nation_of_missouri_in_kansas_and_nebraska_tribal_state_gaming_compact.pdf
+    sha256: 97da1d3e382a906416e7f7ea79ea9358a5fa9f3aa5b40c502b5688f089917d7f
+    pages: 6
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

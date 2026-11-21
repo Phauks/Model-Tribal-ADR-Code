@@ -1,0 +1,177 @@
+id: cahto-tribe-of-the-laytonville-rancheria-california-gaming-compact
+kind: gaming-compact
+title: Cahto Tribe of the Laytonville Rancheria–State of California Gaming Compact
+nations:
+- cahto-tribe-of-the-laytonville-rancheria
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Cahto Tribe of the Laytonville Rancheria and the State of California under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Cahto Tribe of the Laytonville
+  Rancheria and the State of California as of Nov. 21, 2026: 1 original, 2 extensions and 1 replacement. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-cahto-tribe-of-the-laytonville-rancheria-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2000.05.16_cahto_tribe_of_the_laytonville_rancheria_tribal_state_gaming_compact.pdf
+    sha256: 6757282465ee3e8247b362a44d5170ccd6e0cde2e7aadf71ae074b6a9ac367d0
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.0 (dispute resolution), Sec. 9.1 to 9.2
+    summary: After a dispute is not resolved within 30 calendar days after the first meeting, either party may seek
+      arbitration before an arbitrator under the American Arbitration Association Commercial Rules, with judgment
+      on the award entered in a federal or state court; alternative dispute resolution is to be explored before
+      judicial process.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.0. AMENDMENTS; RENEGOTIATIONS, Sec. 12.1 to 12.3
+    summary: The compact may be amended at any time by mutual written agreement, and the Governor or the Band may
+      request renegotiation to add other forms of Class III gaming, with negotiations to begin within 30 days of
+      the request and no such request for 12 months after the effective date; the excerpt does not show what happens
+      if talks fail.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2022-extension
+  label: 2022 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2022-06-30'
+    published: '2022-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-14054
+    locator: 87 Fed. Reg. 39115 (June 30, 2022)
+  source: compact-ca-cahto-tribe-of-the-laytonville-rancheria-2022-06-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2022.06.30_cahto_tribe_of_the_laytonville_rancheria_tribal_state_gaming_compact1999.pdf
+    sha256: acd9f0ec7ae4b4781007f2ef55a8e9421c203818356925b82497cae80c631d26
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2023-extension
+  label: 2023 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2023-12-22'
+    published: '2023-12-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-28198
+    locator: 88 Fed. Reg. 88640 (Dec. 22, 2023)
+  source: compact-ca-cahto-tribe-of-the-laytonville-rancheria-2023-12-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2023.12.22_cahto_tribe_of_the_laytonville_rancheria_tribal_state_gaming_compact.pdf
+    sha256: de25515b50999fb9da22729a2c2b5428dc2ef6da15f76e84ab6a1fb9f29473e7
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2024-replacement
+  label: 2024 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  - 2022-extension
+  - 2023-extension
+  dates:
+    listed: '2024-01-23'
+    published: '2024-01-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2024-01231
+    locator: 89 Fed. Reg. 4333 (Jan. 23, 2024)
+  source: compact-ca-cahto-tribe-of-the-laytonville-rancheria-2024
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2024.01.23_cahto_indian_tribe_of_the_laytonville_rancheria_tribal_state_gaming_compact.pdf
+    sha256: d06f64caf79b2e7c5bd9763279f735f98e538ab99f611dacf319861527680f1c
+    pages: 123
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1 (a) to (e); Sec. 13.2; Sec. 13.4
+    summary: After written notice, a written response and a meet-and-confer, unresolved disputes may be heard in
+      the U.S. District Court for the district of the gaming facility or, if it lacks jurisdiction, a state court,
+      with remedies limited by Sec. 13.4; other methods such as mediation only by mutual written agreement; there
+      is no arbitration step.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS, Sec. 15.1 and 15.2
+    summary: The compact may be amended at any time by mutual written agreement with each party voluntarily consenting
+      to the negotiations; either party may request negotiations no sooner than eighteen months before expiration,
+      and further provisions address changes in law.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: changed
+    summary: The earlier compact provides written notice, a meeting within 10 days, then optional AAA arbitration
+      (neither party required to agree) and federal or state court; the later compact provides written notice, a
+      written response within 15 days, a meeting within 30 days, then court action in federal district court or
+      state court with the Section 13.3 remedies as the sole remedies, no damages or attorney fees, and a separate
+      Section 13.4 action for declaration of material breach; it contains no arbitration step.
+    locator_before: Sec. 9.0 (9.1-9.3)
+    locator_after: Section 13.0 (13.1-13.4)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,101 @@
+id: coeur-dalene-tribe-idaho-gaming-compact
+kind: gaming-compact
+title: Coeur D'Alene Tribe–State of Idaho Gaming Compact
+nations:
+- coeur-dalene-tribe
+states:
+- ID
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Coeur D'Alene Tribe and the State of Idaho under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Coeur D''Alene Tribe and
+  the State of Idaho as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event and which
+  version is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small
+  model''s reading of excerpts.'
+versions:
+- id: 1993-original
+  label: 1993 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1993-02-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-id-coeur-dalene-tribe-1993
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/idaho/508_compliant_1993.02.12_coeur_d_alene_tribe_tribal_state_gaming_comapct.pdf
+    sha256: 4f45b6622c8f056a473ecf3a9320ab0882484b5839ba92bd0204281eb2e0f281
+    pages: 46
+  clauses:
+  - topic: dispute-resolution
+    locator: Article 6 (arbitration subsection; heading not in excerpt, cross-referenced as Article 6.6.1).
+    summary: Disputes over permitted games and scale restrictions are first to be negotiated; unresolved matters
+      go to binding arbitration by AAA-selected arbitrators, who must decide within 90 days with no judicial review;
+      separately, either party may file suit for a declaratory judgment in the U.S. District Court for the District
+      of Idaho.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: ARTICLE 29. DURATION AND RENEGOTIATION
+    summary: Either party may request negotiations to amend or replace the compact by appropriate and lawful means;
+      requests must be in writing and sent by certified mail to the Governor or the Tribal Chairman, and the compact
+      stays in effect during renegotiation.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2003-amendment
+  label: 2003 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '2003-01-08'
+    published: '2003-01-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-338
+    locator: 68 Fed. Reg. 1068 (Jan. 8, 2003)
+  source: compact-id-coeur-dalene-tribe-2003-01-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/idaho/508_compliant_2003.01.08._coeur_d_alene_tribe_tribal_state_gaming_compact.pdf
+    sha256: 6306c3faa142044637b80196ec6352f2b93b728cab71a1a94c2ecd7ac22a1fdd
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: AMENDMENT, adding Article 6.8.
+    summary: The 1992 compact was amended by Idaho ballot measure Proposition One, which added Article 6.8 on tribal
+      video gaming machines, a 10-year limit on expansion, and an education contribution; the excerpt shows no separate
+      renegotiation procedure.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 2003 addendum adds only a new Article 6.8 and does not amend the 1993 dispute provisions, so the
+      arbitration terms with no judicial review still govern.
+    locator_before: '6.6'
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 2003 addendum amends the compact only by adding Article 6.8, so Article 29 on duration and renegotiation
+      still governs.
+    locator_before: '29'
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

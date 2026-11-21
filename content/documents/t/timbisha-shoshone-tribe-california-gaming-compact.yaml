@@ -1,0 +1,58 @@
+id: timbisha-shoshone-tribe-california-gaming-compact
+kind: gaming-compact
+title: Timbisha Shoshone Tribe–State of California Gaming Compact
+nations:
+- timbisha-shoshone-tribe
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Timbisha Shoshone Tribe and the State of California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Timbisha Shoshone Tribe and
+  the State of California as of Nov. 21, 2026: 1 original. The order, the kind of each event and which version is
+  in effect are inferred from the list (project analysis); clause summaries and comparisons are a small model''s
+  reading of excerpts.'
+versions:
+- id: 2024-original
+  label: 2024 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2024-12-26'
+    published: '2024-12-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2024-30744
+    locator: 89 Fed. Reg. 105090 (Dec. 26, 2024)
+  source: compact-ca-timbisha-shoshone-tribe-2024
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2024.12.26_timbisha_shoshone_tribe_tribal_state_gaming_compact.pdf
+    sha256: d118bdd8429b29a1a8ea2e1b74f3cbed9be0d99a6ba4d50f08cfeaa6baef277e
+    pages: 131
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 13.1. Voluntary Resolution; Court Resolution.
+    summary: After written notice, a 15-day written response and a meet-and-confer within 30 days, unresolved disputes
+      may be taken to the United States District Court where the Native nation's Gaming Facility is located or,
+      if that court lacks jurisdiction, to a state court in the county; mediation is available only by mutual written
+      agreement.
+    methods:
+    - negotiation
+    - mediation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 15.1. Amendment by Agreement.
+    summary: The compact may be amended by mutual written agreement during its term, and either party may request
+      negotiations on an extension or new compact no sooner than 18 months before expiration; if no agreement is
+      reached by expiration, the compact is automatically extended 18 months, or two years if both parties agree
+      in writing that talks are progressing.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+found_in:
+- 2026-11-21-gaming-compact-histories

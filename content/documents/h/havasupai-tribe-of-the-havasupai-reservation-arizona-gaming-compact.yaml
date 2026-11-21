@@ -1,0 +1,236 @@
+id: havasupai-tribe-of-the-havasupai-reservation-arizona-gaming-compact
+kind: gaming-compact
+title: Havasupai Tribe of the Havasupai Reservation, Arizona–State of Arizona Gaming Compact
+nations:
+- havasupai-tribe-of-the-havasupai-reservation
+states:
+- AZ
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Havasupai Tribe of the Havasupai Reservation, Arizona and the State of Arizona
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Havasupai Tribe of the Havasupai
+  Reservation, Arizona and the State of Arizona as of Nov. 21, 2026: 1 original, 2 amendments and 1 restatement.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2003-original
+  label: 2003 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2003-02-05'
+    published: '2003-02-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-2787
+    locator: 68 Fed. Reg. 5912 (Feb. 5, 2003)
+  source: compact-az-havasupai-tribe-of-the-havasupai-reservation-2003-02-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2003.02.05_havasupai_indian_tribal_gaming_compact.pdf
+    sha256: caa9cab9c4671f8819a76385bd495092e4b380000c7860dc8299e824bfe12be1
+    pages: 60
+  clauses:
+  - topic: renegotiation
+    locator: SECTION 17. AMENDMENTS, subsections (a)-(c)
+    summary: Within 180 days after the Effective Date either party may propose amendments to listed regulatory provisions;
+      the parties then negotiate in good faith for 90 days and, failing agreement, mediate under Section 15(b),
+      while other provisions may be amended by written mutual agreement signed by both parties.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2009-amendment
+  label: 2009 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2003-original
+  dates:
+    listed: '2009-03-25'
+    published: '2009-03-25'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e9-6585
+    locator: 74 Fed. Reg. 12889 (Mar. 25, 2009)
+  source: compact-az-havasupai-tribe-of-the-havasupai-reservation-2009-03-25
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_03.25.2009_havasupai_tribe_tribal_state_gaming_compact.pdf
+    sha256: 38b4dabd3b9755de594c19a3142c48d604a72c6718dfbbaae2e126df45a08a47
+    pages: 14
+  clauses:
+  - topic: dispute-resolution
+    locator: Attachment 7, Section 7(g) Compact Compliance Review
+    summary: Under the amended compliance-review procedure the parties meet and attempt in good faith to resolve
+      compliance issues, and unresolved disputes are noticed under Section 15 of the compact, whose procedure is
+      not in the excerpt.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-original
+    change: unchanged
+    summary: The 2009 agreement to amend lists the provisions it amends (Sections 2(n), 4(d), 5(i) and (n), 3(m),
+      3(d), 12(e), 7(g) and 3(d)(8)) and does not list Section 15, so the earlier dispute process still governs.
+      The earlier excerpts cite Section 15 but do not include its text.
+    locator_before: '15'
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: Section 15 (the dispute process) is cited in the earlier excerpts but its
+      text is not included, so the dispute row rests on the amendment''s list of amended provisions. The amendment
+      refers to Sections 3(d) and 3(d)(8), which contain transfer provisions.'
+  - topic: renegotiation
+    compared_with: 2003-original
+    change: unchanged
+    summary: The 2009 agreement is made under Section 17(c) and does not list Section 17 among the provisions it
+      amends, so the earlier Section 17 amendment process still governs.
+    locator_before: 17(b)
+    locator_after: 17(c)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: Section 15 (the dispute process) is cited in the earlier excerpts but its
+      text is not included, so the dispute row rests on the amendment''s list of amended provisions. The amendment
+      refers to Sections 3(d) and 3(d)(8), which contain transfer provisions.'
+- id: 2021-restatement
+  label: 2021 amended and restated compact
+  event: restatement
+  status: in-effect
+  supersedes:
+  - 2003-original
+  - 2009-amendment
+  dates:
+    listed: '2021-05-24'
+    published: '2021-05-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-10877
+    locator: 86 Fed. Reg. 27889 (May 24, 2021)
+  source: compact-az-havasupai-tribe-of-the-havasupai-reserva-2021
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508 Compliant 2021.05.24 Havasupai Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: 6667387245cf729f7112fa5aa0ac4d7925e93c85a5bb7e046eee570fbd0475ff
+    pages: 80
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 15. DISPUTE RESOLUTION, (a) to (d)
+    summary: After written notice the Tribal Gaming Office and State Gaming Agency directors meet within ten days,
+      then senior representatives; unresolved disputes go on request to non-binding mediation administered by CPR,
+      and then on demand to binding arbitration before a three-arbitrator panel under CPR rules (last-best-offer
+      format unless opted out, no money damages), with an award final and non-appealable except under 9 U.S.C. 10;
+      the parties keep the right to seek injunctive relief in court, including Arizona Superior Court or the U.S.
+      District Court for the District of Arizona.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 17. AMENDMENTS; SECTION 3(b)(3) (appendices); SECTION 23. EFFECTIVE DATE AND DURATION, (b)
+    summary: The compact may be amended in writing signed by both parties and approved by the Secretary where required,
+      and remains in effect until amended, modified or terminated; appendices may be modified by agreement of the
+      Tribal Gaming Office and State Gaming Agency without amending the compact, and Section 23(b)(3) provides notice
+      180 days before the first renewal term ends to negotiate a successor compact over a term of up to two years.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-original
+    change: changed
+    summary: 'The later compact keeps the Section 15 sequence (written notice, negotiation, CPR non-binding mediation,
+      then binding CPR arbitration) and adds a Section 3(b)(3) route: if parties cannot agree on a new or modified
+      appendix within 180 days, either may start Section 15 dispute resolution, and at either party''s election
+      the arbitration uses a single CPR-selected arbitrator and a last best offer format. The 2003 compact''s Section
+      15 has the same notice, negotiation, mediation and arbitration steps.'
+    locator_before: 15(a)-(c)
+    locator_after: 3(b)(3)(B)-(C); 15
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2003-original
+    change: changed
+    summary: The 2021 compact adds a process for modifying appendices by agreement, which is not treated as an amendment;
+      if no agreement is reached within 180 days, either side may start Section 15 dispute resolution. Section 17
+      keeps mutual-agreement amendment but no longer contains the 2003 proposed-amendment and 90-day negotiation
+      and mediation steps in Sections 17(a) and (b).
+    locator_before: 17(a)-(b)
+    locator_after: 3(b)(3)(A)-(B), 17
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2021-restatement
+  dates:
+    listed: '2022-06-14'
+    published: '2022-06-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-12743
+    locator: 87 Fed. Reg. 35992 (June 14, 2022)
+  source: compact-az-havasupai-tribe-of-the-havasupai-reservation-2022-06-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2022.06.14_havasupai_tribe_tribal_state_gaming_compact.pdf
+    sha256: 5e24d66f1a6bb561d98e6c0ad6bc6e6fdc082f6a21d5cc8b4740f78d2346a95f
+    pages: 19
+  clauses:
+  - topic: dispute-resolution
+    locator: Paragraph 12
+    summary: Disputes under the Agreement go to the dispute resolution provisions of Section 15 of the Compact,
+      which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Paragraph 10
+    summary: The Compact is amended under its Section 17, which the excerpt does not reproduce, and this Agreement
+      itself may be changed only by a written document signed by both parties.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2021-restatement
+    change: unchanged
+    summary: The 2022 agreement lists thirteen amended provisions (Sections 2, 3, 6 and a Gaming Facility Annex)
+      and says the parties do not amend any other provision, so Section 15 still governs. Paragraph 12 of the agreement
+      directs disputes under the agreement itself to Section 15.
+    locator_before: 3(d)(4), 15
+    locator_after: 12, 15
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The text of Section 15 is not in the excerpts. The agreement is an Interior
+      approval letter plus the agreement; the approval letter (June 9, 2022) approves the 2022 Amendment under IGRA
+      Section 11.'
+  - topic: renegotiation
+    compared_with: 2021-restatement
+    change: unchanged
+    summary: The 2022 agreement is made under Section 17 and does not list Section 17 among the provisions it amends.
+      It states that the parties do not intend to amend any other provision of the Compact, so the earlier Section
+      17 amendment language still governs.
+    locator_before: '17'
+    locator_after: 17 (recital), 4
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The text of Section 15 is not in the excerpts. The agreement is an Interior
+      approval letter plus the agreement; the approval letter (June 9, 2022) approves the 2022 Amendment under IGRA
+      Section 11.'
+found_in:
+- 2026-11-21-gaming-compact-histories

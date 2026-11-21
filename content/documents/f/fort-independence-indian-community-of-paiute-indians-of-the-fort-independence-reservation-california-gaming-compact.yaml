@@ -1,0 +1,56 @@
+id: fort-independence-indian-community-of-paiute-indians-of-the-fort-independence-reservation-california-gaming-compact
+kind: gaming-compact
+title: Fort Independence Indian Community of Paiute Indians of the Fort Independence Reservation, California–State
+  of California Gaming Compact
+nations:
+- fort-independence-indian-community-of-paiute-indians-of-the-fort-independence-reservation
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Fort Independence Indian Community of Paiute Indians of the Fort Independence
+    Reservation, California and the State of California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Fort Independence Indian
+  Community of Paiute Indians of the Fort Independence Reservation, California and the State of California as of
+  Nov. 21, 2026: 1 original. The order, the kind of each event and which version is in effect are inferred from
+  the list (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2014-original
+  label: 2014 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2014-01-17'
+    published: '2014-01-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2014-00898
+    locator: 79 Fed. Reg. 3241 (Jan. 17, 2014)
+  source: compact-ca-fort-independence-indian-community-of-paiute-indians-of-the-fort-independence-reservation-2014-01-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2014.01.17_fort_independence_indian_community_of_the_paiute_indians_tribal_state_gaming_compact.pdf
+    sha256: 897c87a8407a1054ced45cd94ff8e3a93abab24b82238fbefe4da834b70ea3ab
+    pages: 223
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.7 (excerpt begins at subdivision 9.6 text)
+    summary: Disputes over regulations are decided by a single JAMS arbitrator under Comprehensive Arbitration Rules,
+      and the arbitrator's order takes effect on issuance with review waived; the general Section 13 dispute clause
+      is not in the excerpt.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS. Sec. 15.1 and Sec. 15.2
+    summary: The compact may be amended by mutual written agreement, and either party may begin negotiations for
+      an extension or new compact no sooner than eighteen months before the termination date.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+found_in:
+- 2026-11-21-gaming-compact-histories

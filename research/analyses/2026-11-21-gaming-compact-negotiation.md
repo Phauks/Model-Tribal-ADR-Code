@@ -157,6 +157,64 @@ row therefore means "not found," not "none."
 so the two can be read side by side; this file does not change or decide any
 of its verdicts.
 
+## Secretarial Procedures in practice
+
+The list holds 28 documents of Secretarial Procedures for 21 nations in
+three states, and the texts and the Federal Register name four more amendments the list does not
+post.[^procedures] Every California set (Rincon 2013 through the four sets of
+July 8, 2025) and the three Northern Arapaho sets came through the
+court-and-mediator route of § 2710(d)(7)(B)(vii), not through part 291; so
+did the Mashantucket Pequot procedures of 1991.[^procedures] Part 291 itself
+was used once to the point of an eligibility finding (Pueblo of Pojoaque),
+and the Tenth Circuit held it invalid in that case; it has not been amended
+since 1999, and no proposal to rescind it was found in the Federal
+Register.[^part-291-history]
+
+The California sets fall into three groups (project analysis of the
+procedures file): the 2013 to 2018 sets let the State opt in to regulate,
+send Tribe-State disputes to arbitration and court, require payments to the
+Special Distribution Fund, run for fixed terms and give way to any later
+compact; the 2024 sets give the State no role, leave regulation to the
+National Indian Gaming Commission, have no fixed term, require only Revenue
+Sharing Trust Fund payments and still give way to a compact; and the July
+2025 sets keep that structure, with lighter or no payments and no clause
+found that lets a compact replace them.[^procedures] Only the Mashantucket
+procedures and their amendments have Federal Register notices; the
+California and Wyoming sets were issued by letter.[^procedures]
+
+## How dispute clauses changed between versions
+
+Every document on the list is now a version in a document history (336
+records: 315 compacts, among them 12 Oklahoma off-track wagering compacts
+and 22 Minnesota blackjack or video games of chance compacts that the list
+files under the nation's general title, and 21 sets of Secretarial
+Procedures), each version with a source record of its own file.[^histories]
+253 histories have more than one version; the longest has 32.
+
+Of the 1,197 versions, 833 amend, extend, replace or restate an earlier
+one. For dispute resolution between the nation and the state, 417
+comparisons settled the question: 233 unchanged, 172 changed, 6 reworded, 3
+renumbered, 2 removed and 1 added; 372 were not compared (the 120 extensions,
+and pairs whose excerpts did not show both clauses).[^histories] Replacements
+and restatements usually changed the clause (91 of 109 settled), and
+amendments usually left it alone (222 of 308) (project analysis of the same
+records). In an audit of 30 small-model comparisons, "unchanged" calls were
+reliable (15 of 16 right) and every "added" call was wrong; a larger model
+then reread all 216 "added", "changed" and "removed" calls on the full texts,
+agreeing with 90, partly with 52 and not with 74. Most of the first pass's
+"added" calls were changes to a clause the earlier compact already had, such
+as an appendix with its own meeting step. Reviewers differed on whether an
+appendix that only routes its disputes to the compact's existing clause
+changes it; those calls are split between "changed" and "unchanged".
+Renegotiation clause changes had no second pass.
+
+Thirteen profile facts cite a compact version that a later version
+superseded: eleven Wisconsin nations' `gaming.compacts` facts cite the
+Menominee Indian Tribe's 1992 compact, and two North Carolina facts cite the
+Catawba Indian Nation's 2021 compact (record lint, `superseded-citation`).
+The profiles were not changed; the decision belongs with the data gap
+review's compact clause items.
+
 ## For the model code (project analysis)
 
 - Compacts already contain a layered dispute process (notice, meeting,
@@ -201,4 +259,7 @@ of its verdicts.
 [^pokagon]: Interior's review of the 2020 Pokagon Band compact, context facts `negotiations-a-m` for Indiana.
 [^stitt]: Cherokee Nation v. Stitt, No. CIV-19-1198-D (W.D. Okla. July 28, 2020) (source `cherokee-nation-v-stitt-2020`).
 [^clauses]: [`research/gaming/compact-clauses.json`](../gaming/compact-clauses.json); reviewer briefs in [`research/gaming/briefs/`](../gaming/briefs/).
+[^procedures]: [`research/gaming/secretarial-procedures.csv`](../gaming/secretarial-procedures.csv), from the issuing letters and procedures on the list (source `office-of-indian-gaming-compacts-list-2026`) and 84 Fed. Reg. 11122 (Mar. 25, 2019) and 86 Fed. Reg. 53340 (Sept. 27, 2021) (sources `federal-register-2019-05683`, `federal-register-2021-20933`).
+[^part-291-history]: [`research/gaming/part-291-history.csv`](../gaming/part-291-history.csv): 61 Fed. Reg. 21394 (May 10, 1996) through 64 Fed. Reg. 17535 (Apr. 12, 1999) and the two appellate decisions (sources `federal-register-96-11287`, `federal-register-99-8910`, `texas-v-united-states-2007`, `new-mexico-v-department-of-the-interior-2017`).
+[^histories]: `content/documents/` (records found in session `2026-11-21-gaming-compact-histories`) and [`research/gaming/compact-history-versions.csv`](../gaming/compact-history-versions.csv); comparisons by reviewers under the briefs in [`research/gaming/briefs/`](../gaming/briefs/).
 [^treat]: Treat v. Stitt, 2021 OK 3 (source `treat-v-stitt-2021`; holding seen only in an excerpt).

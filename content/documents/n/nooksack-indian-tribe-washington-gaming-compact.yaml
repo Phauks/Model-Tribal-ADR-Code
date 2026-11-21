@@ -1,0 +1,376 @@
+id: nooksack-indian-tribe-washington-gaming-compact
+kind: gaming-compact
+title: Nooksack Indian Tribe–State of Washington Gaming Compact
+nations:
+- nooksack-indian-tribe
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Nooksack Indian Tribe and the State of Washington under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Nooksack Indian Tribe and
+  the State of Washington as of Nov. 21, 2026: 2 disapproved compacts, 1 original and 8 amendments. The order, the
+  kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-disapproval
+  label: 1992 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '1992-01-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-wa-nooksack-indian-tribe-1992-01-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1992.01.17  Disapproved Nooksack Compact Letter.pdf
+    sha256: 3b6030820b5cbad9351825fb6d96798099a06a5a5a97200a902efb8d47860229
+    pages: 2
+- id: 1992-disapproval-2
+  label: 1992 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '1992-05-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-wa-nooksack-indian-tribe-1992-05-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_1992.05.22_nooksack_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: ed8eb76799e20f2a90b3b0818efa36255700bcf77a32c2eed101135ae50a4296
+    pages: 1
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1992-06-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-wa-nooksack-indian-tribe-1992-06-23
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_1992.06.23_nooksack_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: 96736e36df31d6f5c2e2f53ca4a6e4872f792f7cf2adc43825e445fb45d86140
+    pages: 110
+  clauses:
+  - topic: dispute-resolution
+    locator: (c) Dispute Resolution.
+    summary: Parties give written notice, meet and confer within ten days, and after twenty days may proceed to
+      a JAMS hearing in Seattle under JAMS policies supplemented by AAA commercial rules, with the JAMS decision
+      final and unappealable.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1994-amendment
+  label: 1994 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '1994-07-20'
+    published: '1994-07-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-94-17686
+    locator: 59 Fed. Reg. 0 (July 20, 1994)
+  source: compact-wa-nooksack-indian-tribe-1994-07-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1994.07.20 Nooksack Indian Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: ee558ec773ddf0566d1c5b9fa7b2c4385e5b1e497dbdc85d3eb94ef606c70936
+    pages: 13
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 1995-amendment
+  label: 1995 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '1995-04-12'
+    published: '1995-04-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-9023
+    locator: 60 Fed. Reg. 186704 (Apr. 12, 1995)
+  source: compact-wa-nooksack-indian-tribe-1995-04-12
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1995.04.12 Nooksack Indian Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: fb946873dc2a6a92e06f2ff384b6a64c51ac459040022f15f97aedfb6b93001c
+    pages: 4
+  clauses:
+  - topic: dispute-resolution
+    locator: 3(o) Conditions
+    summary: If the State finds the phase-two conditions are not met, the resulting dispute is resolved under the
+      dispute resolution procedures in Section 12 of the Compact, which the excerpt does not reproduce.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The Second Amendment says it amends only Section III and Section XV, so Section 12 is not amended;
+      Section 3(o) still sends disputes over the phase-two conditions to the Section 12 procedures.
+    locator_before: 12(c)
+    locator_after: 3(o)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: This is the Second Amendment (1995) to the 1992 Nooksack compact, dated
+      January 26, 1995 per the Interior letter (approved April 3, 1995). The Interior letter is dated April 3, 1995;
+      the file lists the later document as 1995-04-12. The amendment is a partial rewrite of Section 15 and so the
+      earlier 15(d) text must be checked against the 1992 compact itself. The exception in 15(d)(ii)(4) for other
+      tribes east of the Cascades requires the Tribe to show an adverse economic impact.'
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '1999-01-28'
+    published: '1999-01-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-1927
+    locator: 64 Fed. Reg. 4459 (Jan. 28, 1999)
+  source: compact-wa-nooksack-indian-tribe-1999-01-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1999.01.28 Nooksack Indian Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: f01823389b061df1feb4a1b81319b0462df89559478bbe9788f879cae9b18410
+    pages: 54
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 16. DISPUTE RESOLUTION.
+    summary: Disputes under the Appendix are resolved under any dispute provisions in the Appendix or, if there
+      are none, under the binding arbitration provisions of the Compact, which the excerpt does not detail.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15. MORATORIUM
+    summary: The Tribe agrees not to seek an amendment on gambling devices for three years from execution of the
+      Amendment, except if state or federal law is amended, a court decision permits such devices, or another Washington
+      tribe obtains them.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 1999 Third Amendment adds Appendix X (tribal lottery systems) without amending Section 12(c). Appendix
+      Section 16 only routes disputes under the appendix to any procedures the appendix makes applicable, or otherwise
+      to the compact's binding arbitration provisions. The 1992 clause (written notice, a meeting within 10 days,
+      then JAMS arbitration after 20 days, final and unappealable) stays in place.
+    locator_before: 12(c)
+    locator_after: Appendix X Sec. 16
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: unchanged
+    summary: The Third Amendment's list of changes covers only Section 3(a) and the addition of Appendix X, and
+      Section 15(d) is not among them, so the earlier renegotiation clause still governs.
+    locator_before: 15(d)
+    locator_after: Section 3(a)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2005-amendment
+  label: 2005 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2005-12-15'
+    published: '2005-12-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e5-7394
+    locator: 70 Fed. Reg. 74331 (Dec. 15, 2005)
+  source: compact-wa-nooksack-indian-tribe-2005-12-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2005.12.15 Nooksack Indian Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 3252287052864df0b7dfcfdf38ea319f620d2d8661ac5310d026309640c50276
+    pages: 21
+  clauses:
+  - topic: dispute-resolution
+    locator: 2. Section 3(a)(xx) Keno (COMPACT AMENDMENTS)
+    summary: For a dispute over a new game, the State and Tribal Gaming Agencies must meet and resolve it before
+      play begins, and the Section 12(c) dispute procedures may be used if necessary, which the excerpt does not
+      reproduce.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-nooksack-indian-tribe-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2007.05.31_nooksack_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: c40588cfc36d5243b87bd9f685f35c4e328194f5383cc1d84084cf04ef7373b8
+    pages: 55
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 2007 Fifth Amendment adds Appendix X2 (tribal lottery systems) without amending Section 12(c).
+      The appendix's Section 17 (legible only in spaced-out OCR) routes appendix disputes to its own provisions
+      or otherwise to the compact's Dispute Resolution provisions, and Section 3.6 covers patron and agency disputes.
+      The 1992 clause (written notice, a meeting within 10 days, then JAMS arbitration after 20 days) stays in place.
+    locator_before: 12(c)
+    locator_after: Appendix X2 Sec. 17, 3.6
+    verification: inferred
+    reviewer: larger model, second pass on the full text
+- id: 2019-amendment
+  label: 2019 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2019-01-02'
+    published: '2019-01-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-28369
+    locator: 84 Fed. Reg. 2 (Jan. 2, 2019)
+  source: compact-wa-nooksack-indian-tribe-2019-01-02
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2019_01.02_nooksack_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: 34fa30e205e2c8d7748cf5bfe7d473d30ebc3c08c1b9dfecf3caff75c36715ec
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4. Dispute Resolution, item 4.2
+    summary: Nooksack and the State meet and confer on disputes about the Addendum, and if no resolution is reached
+      either party may use the Compact's dispute resolution provisions, which are not in the excerpt.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: 'The 2019 Sixth Amendment''s addendum adds a step for disputes over its terms, such as the number of
+      player terminals: the State and Tribe must meet and attempt to resolve the dispute not later than 30 days
+      before an increased allocation takes effect, and then either may use the compact''s dispute resolution provisions.
+      The 1992 Section 12(c) (notice, a meeting within 10 days, then JAMS arbitration) is not amended.'
+    locator_before: 12(c)
+    locator_after: Addendum Sec. 4.1-4.2
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+- id: 2019-amendment-2
+  label: 2019 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2019-04-16'
+    published: '2019-04-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2019-07487
+    locator: 84 Fed. Reg. 15634 (Apr. 16, 2019)
+  source: compact-wa-nooksack-indian-tribe-2019-04-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2019.04.16_nooksack_indian_tribe_and_state_of_washington_tribal_state_compact_0.pdf
+    sha256: 317d442d31e5fa68f98876d58bdd7621b01fc0d97c1e0de93cd48e1b8bd814ab
+    pages: 5
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2025-amendment
+  label: 2025 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2025-11-26'
+    published: '2025-11-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2025-21213
+    locator: 90 Fed. Reg. 54365 (Nov. 26, 2025)
+  source: compact-wa-nooksack-indian-tribe-2025-11-26
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/nooksack_deemed_approved_eighth_amendment_508_compliant_0.pdf
+    sha256: a907c6c223ac41b6c50f7d9058b347c8f1267d8f0ff7e1d0f97e226ef2460b30
+    pages: 39
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

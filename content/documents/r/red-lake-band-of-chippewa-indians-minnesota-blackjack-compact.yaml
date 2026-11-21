@@ -1,0 +1,83 @@
+id: red-lake-band-of-chippewa-indians-minnesota-blackjack-compact
+kind: gaming-compact
+title: Red Lake Band of Chippewa Indians, Minnesota–State of Minnesota Blackjack Compact
+nations:
+- red-lake-band-of-chippewa-indians
+states:
+- MN
+jurisdictions:
+- level: multiple
+  note: Class III blackjack compact for Red Lake Band of Chippewa Indians, Minnesota and the State of Minnesota
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III blackjack compact documents the Office of Indian Gaming lists for Red Lake Band of Chippewa
+  Indians, Minnesota and the State of Minnesota as of Nov. 21, 2026: 1 original and 1 amendment. The order, the
+  kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1991-original
+  label: 1991 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1991-10-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mn-red-lake-band-of-chippewa-indians-1991-10-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_1991.10.03_red_lake_band_of_chippewa_indians_tribal_state_gaming_compact.pdf
+    sha256: 881da55ea76adede4856e24d8ac13537b79b3fa770152f160e35fe8c58101405
+    pages: 16
+  clauses:
+  - topic: renegotiation
+    locator: Section 2.2 Renegotiation
+    summary: Either the State or the Band may request in writing, by certified mail, negotiations to amend, replace
+      or repeal the compact; the parties have 180 days to negotiate before IGRA procedures and remedies apply, and
+      the compact stays in effect meanwhile.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 1992-amendment
+  label: 1992 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '1992-09-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mn-red-lake-band-of-chippewa-indians-1992-09-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_1992.09.16_red_lake_tribal_state_gaming_compact.pdf
+    sha256: efcb7f569d1560973fc5c9de7dcd52c39a6ab1e42f86ccbe986461f9ad731643
+    pages: 4
+  clauses:
+  - topic: renegotiation
+    locator: Section 2.2 (as cited in the Secretary's letter)
+    summary: The preamble and Section 1 were changed under Section 2.2 of the compact by the Tribal Council and
+      the State, and the excerpt does not reproduce the request or time-limit terms of Section 2.2.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: unchanged
+    summary: The 1992 amendment, as described in the Federal Register notice, amends only paragraphs 2 and 3 of
+      the preamble and Section 1.04 (blackjack), and does not amend Section 2.2, so the earlier renegotiation provision
+      still governs.
+    locator_before: 2.2(1)-(2)
+    locator_after: Preamble paragraphs 2-3; Section 1.04
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later document is a Federal Register notice with two-column OCR text,
+      and the amendment''s text is only partly legible. The earlier excerpts show a 1991 compact in which Section
+      2.2 sets a 180-day negotiation period. The item lists the later document as an amendment, but the notice describes
+      a limited change to the preamble and Section 1.04.'
+found_in:
+- 2026-11-21-gaming-compact-histories

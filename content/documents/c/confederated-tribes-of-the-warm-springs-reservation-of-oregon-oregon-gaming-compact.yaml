@@ -1,0 +1,881 @@
+id: confederated-tribes-of-the-warm-springs-reservation-of-oregon-oregon-gaming-compact
+kind: gaming-compact
+title: Confederated Tribes of the Warm Springs Reservation of Oregon–State of Oregon Gaming Compact
+nations:
+- confederated-tribes-of-the-warm-springs-reservation-of-oregon
+states:
+- OR
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Confederated Tribes of the Warm Springs Reservation of Oregon and the State
+    of Oregon under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Confederated Tribes of the
+  Warm Springs Reservation of Oregon and the State of Oregon as of Nov. 21, 2026: 1 original, 13 amendments, 1 disapproved
+  compact, 2 restatements and 1 replacement. The order, the kind of each event and which version is in effect are
+  inferred from the list (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1995-03-13'
+    published: '1995-03-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-6412
+    locator: 60 Fed. Reg. 13568 (Mar. 13, 1995)
+  source: compact-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1995-03-13
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1995.03.13 Confederated Tribes of Warm Springs
+      Tribal State Gaming Compact.pdf
+    sha256: b8d409e4c40258e0b4786ee1087f75a5705330ec1b1351e1fcc2fe5b0e44e387
+    pages: 60
+  clauses:
+  - topic: dispute-resolution
+    locator: B. Procedure for Resolving Disputes Concerning Operational Decisions
+    summary: For operational decisions the State gives written notice, the parties meet and confer within fifteen
+      days, and either party may then use non-binding arbitration through U.S. Arbitration and Mediation of Oregon
+      or an action in the United States District Court for the District of Oregon, with arbitration binding only
+      if both parties agree.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: C. Automatic Amendment
+    summary: A type of Class III game is automatically removed from the compact if it is criminally prohibited by
+      a state statute, constitution amendment, or final court decision.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1996-amendment
+  label: 1996 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1996-02-06'
+    published: '1996-02-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-96-2447
+    locator: 61 Fed. Reg. 4478 (Feb. 6, 1996)
+  source: compact-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1996-02-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1996.02.06 Confederated Tribes of Warm Springs
+      Tribal State Gaming Compact.pdf
+    sha256: 872dac2075077c12cb2770ae68f317b4a643ca0a84386df509e46eaef4980b9f
+    pages: 13
+  clauses:
+  - topic: renegotiation
+    locator: Section VI (Amendment I)
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and while a compact amendment is under negotiation the Native nation may replace blackjack
+      tables with video lottery terminals.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment I amends Sections 7.A.8, 7.B.6, 4 (new Subsection H and Appendix D) and Appendix A, and it
+      does not amend the dispute procedure. Its only dispute-related term is a player-complaint procedure for the
+      Tribal Gaming Commission, which is not a process between the Tribes and the State.
+    locator_before: B (Section 6 heading not in excerpt)
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment I's numbered paragraphs do not include Section 12, and it says it does not supersede the
+      original compact except as specifically provided, so the earlier Section 12(D) still governs.
+    locator_before: 12(D)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 1996-amendment-2
+  label: 1996 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1996-09-04'
+    published: '1996-09-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-96-22439
+    locator: 61 Fed. Reg. 46662 (Sept. 4, 1996)
+  source: compact-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1996-09-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508_compliant_1996.09.04_confederated_tribes_of_the_warm_springs_reservation_tribal_state_gaming_compact.pdf
+    sha256: 379faadc6c6464e7f2dcafb5fbdab571d4549b2e3362c5d2a6e97af69cef1714
+    pages: 9
+  clauses:
+  - topic: dispute-resolution
+    locator: Expedited procedure, paragraph d (immediate-threat examples), as printed in Amendment II
+    summary: The excerpt reproduces the list of immediate-threat examples that allow the State to act under the
+      expedited dispute procedure; the other steps of the procedure are not in the excerpt.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: changed
+    summary: The earlier compact's expedited procedure lets the State give written notice to the Tribes of an immediate
+      threat, confer within five days, then go to federal court in the District of Oregon if unresolved; Amendment
+      II revises subparagraph 6.B.5.a so notice goes to the Tribal Gaming Commission with a recommended action,
+      the State and Commission meet and confer within 24 hours, and the Commission takes action to address the concern,
+      after which either party may invoke the compact's dispute procedures, and it expands the list of immediate
+      threats.
+    locator_before: Section 6.B.5
+    locator_after: Amendment II, paragraphs VI-VII (6.B.5.a and 6.B.5.d)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+- id: 1998-amendment
+  label: 1998 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1998-02-27'
+    published: '1998-02-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-5073
+    locator: 63 Fed. Reg. 10035 (Feb. 27, 1998)
+  source: compact-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1998-02-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1998.02.27 Confederated Tribes of the Warm Springs
+      Reservation Tribal State Gaming Compact.pdf
+    sha256: 4f94325743c27e14991a88e0bc8ac7262b1bebe0c316e4e29cdd3510e338084f
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Amendment III, Section I
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and the Native nation may replace blackjack tables with video lottery terminals while a
+      compact amendment is under negotiation.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment III changes only the expiry date of paragraph IV of Amendment II's blackjack authority and
+      adds an effective-date extension paragraph. It does not amend the dispute procedure in Section 6(B), so the
+      earlier procedure still governs.
+    locator_before: B
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment III changes only the expiry date of paragraph IV of Amendment II's blackjack authority and
+      adds an effective-date extension paragraph. It does not amend Section 12, so the earlier renegotiation provisions
+      still govern.
+    locator_before: 12(D)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 1998-amendment-2
+  label: 1998 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1998-05-19'
+    published: '1998-05-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-13220
+    locator: 63 Fed. Reg. 27585 (May 19, 1998)
+  source: compact-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1998-05-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1998.05.19 Confederated Tribes of the Warm Springs
+      Reservation Tribal State Gaming Compact.pdf
+    sha256: bb731abfab2cf0081017831b648db5b476b17f1db31779c7931c6c40ffbffa14
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Amendment IV, Section I
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and while a compact amendment is under negotiation the Native nation may replace blackjack
+      tables with video lottery terminals.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment IV changes only the expiry date of paragraph IV of Amendment I's blackjack authority, through
+      an effective-date extension paragraph. It does not amend the dispute procedure in Section 6(B), so the earlier
+      procedure still governs.
+    locator_before: B
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment IV changes only the expiry date of paragraph IV of Amendment I's blackjack authority, through
+      an effective-date extension paragraph. It does not amend Section 12, so the earlier renegotiation provisions
+      still govern.
+    locator_before: 12(D)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1999-06-01'
+    published: '1999-06-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-13728
+    locator: 64 Fed. Reg. 29333 (June 1, 1999)
+  source: compact-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon-1999-06-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1999.06.01 Confederated Tribes of the Warm Springs
+      Reservation Tribal State Gaming Compact.pdf
+    sha256: d2b006a5a3c50af4794b96b46069f6df2be34b6f67dec496d74319bb5e097621
+    pages: 6
+  clauses:
+  - topic: renegotiation
+    locator: Amendment V, Section I
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and while a compact amendment is under negotiation the Native nation may replace blackjack
+      tables with video lottery terminals.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+- id: 2000-amendment
+  label: 2000 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '2000-05-31'
+    published: '2000-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-13497
+    locator: 65 Fed. Reg. 34726 (May 31, 2000)
+  source: compact-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon-2000-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2000.05.31 Confederated Tribes of the Warm Springs
+      Reservation Tribal State Gaming Compact.pdf
+    sha256: fe5e2a09391f1a8f8e7f390704020592cf0b387d90651638b23309b55e6c2b92
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Amendment VI, Section I
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and while a compact amendment is under negotiation the Native nation may replace blackjack
+      tables with video lottery terminals.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment VI changes only the expiry date of paragraph IV of Amendment I's blackjack authority, through
+      an effective-date extension paragraph. It does not amend the dispute procedure in Section 6(B), so the earlier
+      procedure still governs.
+    locator_before: B
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment VI changes only the expiry date of paragraph IV of Amendment I's blackjack authority, through
+      an effective-date extension paragraph. It does not amend Section 12, so the earlier renegotiation provisions
+      still govern.
+    locator_before: 12(D)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2000-amendment-2
+  label: 2000 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '2000-11-24'
+    published: '2000-11-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-30037
+    locator: 65 Fed. Reg. 70609 (Nov. 24, 2000)
+  source: compact-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon-2000-11-24
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2000.11.24 Confederated Tribes of the Warm Springs
+      Reservation Tribal State Gaming Compact.pdf
+    sha256: 31672b3662c6bbf41fc279b66ba998900c341a8eb750d4dd7dd9728a3d3a9e69
+    pages: 96
+  clauses:
+  - topic: renegotiation
+    locator: Section I of Amendment VI (as amended by Amendment VII)
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and while a compact amendment is under negotiation the Native nation may replace blackjack
+      tables with video lottery terminals.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment VII changes only the expiry date of paragraph IV of Amendment I's blackjack authority. The
+      rest of the excerpt is an internal-controls text attached to the amendment. It does not amend the dispute
+      procedure in Section 6(B), so the earlier procedure still governs.
+    locator_before: B
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment VII changes only the expiry date of paragraph IV of Amendment I's blackjack authority. The
+      rest of the excerpt is an internal-controls text attached to the amendment. It does not amend Section 12,
+      so the earlier renegotiation provisions still govern.
+    locator_before: 12(D)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2001-amendment
+  label: 2001 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '2001-04-20'
+    published: '2001-04-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-9802
+    locator: 66 Fed. Reg. 20324 (Apr. 20, 2001)
+  source: compact-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon-2001-04-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2001.04.20 Confederated Tribes of the Warm Springs
+      Reservation Tribal State Gaming Compact.pdf
+    sha256: 2586df6a9b680f572048049569b2d53b410a221a4a40c9730181daf1b2148d55
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Amendment VIII, Section I
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and while a compact amendment is under negotiation the Native nation may replace blackjack
+      tables with video lottery terminals.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment VIII changes only the expiry date of paragraph IV of Amendment I's blackjack authority, through
+      an effective-date extension paragraph. It does not amend the dispute procedure in Section 6(B), so the earlier
+      procedure still governs.
+    locator_before: B
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment VIII changes only the expiry date of paragraph IV of Amendment I's blackjack authority, through
+      an effective-date extension paragraph. It does not amend Section 12, so the earlier renegotiation provisions
+      still govern.
+    locator_before: 12(D)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2001-amendment-2
+  label: 2001 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '2001-06-28'
+    published: '2001-06-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-16214
+    locator: 66 Fed. Reg. 34458 (June 28, 2001)
+  source: compact-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon-2001-06-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2001.06.28 Confederated Tribes of the Warm Springs
+      Reservation Tribal State Gaming Compact.pdf
+    sha256: 62b4ae227d1ce471a372ddfc340c62add8eb1dfa07998062a6001c87587409d8
+    pages: 6
+  clauses:
+  - topic: renegotiation
+    locator: Amendment IX, Section I
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and while a compact amendment is under negotiation the Native nation may replace blackjack
+      tables with video lottery terminals.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment IX changes the expiry date of paragraph IV of Amendment I, and it also amends Section 7.A.4.a
+      (licensing) and Section 9 (records access). It does not amend the dispute procedure in Section 6(B), so the
+      earlier procedure still governs.
+    locator_before: B
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment IX changes the expiry date of paragraph IV of Amendment I, and it also amends Section 7.A.4.a
+      (licensing) and Section 9 (records access). It does not amend Section 12, so the earlier renegotiation provisions
+      still govern.
+    locator_before: 12(D)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2002-amendment
+  label: 2002 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '2002-02-19'
+    published: '2002-02-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-02-3859
+    locator: 67 Fed. Reg. 7393 (Feb. 19, 2002)
+  source: compact-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon-2002-02-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2002.02.19 Confederated Tribes of the Warm Springs
+      Reservation Tribal State Gaming Compact.pdf
+    sha256: 4bdc549ad2047396cf2b2a42470f99640c9f448efdb11b5ae7074e602abdfa97
+    pages: 4
+  clauses:
+  - topic: renegotiation
+    locator: Amendment X, Section I
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and while a compact amendment is under negotiation the Native nation may replace blackjack
+      tables with video lottery terminals.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment X changes only the expiry date of paragraph IV of Amendment I's blackjack authority, through
+      an effective-date extension paragraph. It does not amend the dispute procedure in Section 6(B), so the earlier
+      procedure still governs.
+    locator_before: B
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment X changes only the expiry date of paragraph IV of Amendment I's blackjack authority, through
+      an effective-date extension paragraph. It does not amend Section 12, so the earlier renegotiation provisions
+      still govern.
+    locator_before: 12(D)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2003-amendment
+  label: 2003 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '2003-02-27'
+    published: '2003-02-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-4655
+    locator: 68 Fed. Reg. 9095 (Feb. 27, 2003)
+  source: compact-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon-2003-02-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2003.02.27 Confederated Tribes of the Warm Spring
+      Reservation Tribal State Gaming Compact.pdf
+    sha256: eb6bd92ad909c8b83a934befb02836133400e8dccebc30f368c6e47ed862c57d
+    pages: 5
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+- id: 2005-disapproval
+  label: 2005 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2005-05-20'
+    published: '2005-06-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+    source: federal-register-05-10878
+    locator: 70 Fed. Reg. 31499 (June 1, 2005)
+  source: compact-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon-2005-05-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2005.05.20 Confederated Tribes of the Warm Springs
+      Reservation Tribal State Gaming Compact.pdf
+    sha256: 5fa720921dc9cd2b0785b0c07fe8f372dcba4da8c66292cf38b67e69c82e78b1
+    pages: 72
+- id: 2005-restatement
+  label: 2005 amended and restated compact
+  event: restatement
+  status: superseded
+  supersedes:
+  - 1995-original
+  - 1996-amendment
+  - 1996-amendment-2
+  - 1998-amendment
+  - 1998-amendment-2
+  - 1999-amendment
+  - 2000-amendment
+  - 2000-amendment-2
+  - 2001-amendment
+  - 2001-amendment-2
+  - 2002-amendment
+  - 2003-amendment
+  dates:
+    listed: '2005-06-01'
+    published: '2005-06-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-05-10878
+    locator: 70 Fed. Reg. 31499 (June 1, 2005)
+  source: compact-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon-2005-06-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2005.06.01 Confederated Tribes of the Warm Springs
+      Reservation Tribal State Gaming Compact.pdf
+    sha256: e363d0303cd828a1dec636577993443f775080e7c27abbc5e6404f9e9c89cc81
+    pages: 53
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 6(B), Procedure for Resolving Disputes Concerning Operational Decisions
+    summary: For operational decisions, the State gives written notice, the parties meet and confer within fifteen
+      days, either party may start non-binding arbitration within forty-five days, and either party may then sue
+      in the United States District Court for the District of Oregon, with arbitration binding only if both parties
+      agree.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section 13(E), Amendments
+    summary: Either party may request in writing, by certified mail, negotiations to amend the compact, both parties
+      agree to negotiate in good faith, and a failure to do so may be grounds for termination after a court or arbitrator
+      finding and thirty days.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: changed
+    summary: The earlier compact provides notice and a 30-day meeting, then a federal court action after 90 days
+      (state or tribal court if the federal court declines), an operational-decisions procedure (15-day meeting,
+      non-binding arbitration, federal court) that is the exclusive method for those disputes, and an expedited
+      procedure; the later compact lets either party bring a federal court action without the 90-day wait (state
+      court if federal declines, with immunity waivers), lets the State request an expedited meeting no earlier
+      than five days after notice, requires the State's arbitration costs to come from non-OSP funds, makes the
+      operational-decisions procedure the 'preferred' rather than exclusive method, and has the Commission act on
+      the State's recommendation or another mutually agreed action in the 24-hour procedure.
+    locator_before: Section 6.B; Section 16
+    locator_after: Section 6.B; Section 17
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: changed
+    summary: 'The replacement compact replaces the earlier three-year amendment bar, the list of conditions for
+      amendment and the 100-day IGRA negotiation language in Section 12(D) with a clause in Section 13(E): the parties
+      may amend in writing with Secretary approval, either party may request negotiations, and the parties must
+      negotiate in good faith. If one party does not negotiate in good faith, the other may use the dispute provisions
+      in Section 17.'
+    locator_before: 12(D)
+    locator_after: 13(E)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2011-replacement
+  label: 2011 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 2005-restatement
+  dates:
+    listed: '2011-03-01'
+    published: '2011-03-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2011-4522
+    locator: 76 Fed. Reg. 11258 (Mar. 1, 2011)
+  source: compact-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon-2011-03-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2011.03.01 Confederated Tribes of the Warm Springs
+      Reservation Tribal State Gaming Compact.pdf
+    sha256: cbf0d9dfa6338e4c1b392e4ec374153bdb610296c532462136cfdba95695619b
+    pages: 97
+  clauses:
+  - topic: dispute-resolution
+    locator: Section G, Local Public Safety Issues
+    summary: Disputes between the Native nation and the State are referred to the dispute resolution process established
+      in Article XVII, which the excerpt does not reproduce, and the State may start it when local safety measures
+      cannot be agreed.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: D. Amendments
+    summary: Either party may request in writing, by certified mail, negotiations to amend the compact, the parties
+      must negotiate in good faith, and a failure to do so may be grounds for termination after a court or arbitrator
+      finding and thirty days; the compact is also amended automatically when a game is criminally prohibited.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2005-restatement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2005-restatement
+    change: reworded
+    summary: 'The amendment clause keeps the same steps as the 2005 Section 13(E): written amendments approved by
+      the Secretary, a written request to negotiate, a duty to negotiate in good faith, and a dispute route for
+      a party that does not negotiate in good faith. The cross-references are changed (Article XVIII(D), Article
+      XXI and Article XVII instead of Section 13(E), Section 15 and Section 17).'
+    locator_before: 13(E)
+    locator_after: Article XVIII(D)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later document is a different compact (the Cascade Locks facility),
+      not a clean replacement of the 2005 Kah-Nee-Ta compact, and the excerpts do not show whether it replaces the
+      earlier one. The later Article XVII is referred to but not shown, so the dispute comparison cannot be made.'
+- id: 2011-restatement
+  label: 2011 amended and restated compact
+  event: restatement
+  status: in-effect
+  supersedes:
+  - 2011-replacement
+  dates:
+    listed: '2011-10-20'
+    published: '2011-10-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2011-27233
+    locator: 76 Fed. Reg. 65208 (Oct. 20, 2011)
+  source: compact-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon-2011-10-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2011.10.20 Confederated Tribe of the  Warm Springs
+      Reservation Tribal State Gaming Compact.pdf
+    sha256: 7ba1be571db1285f63f5d5a09c285f4ff7023a2151726654b880b4558d927edf
+    pages: 54
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 17. DISPUTE RESOLUTION, A; SECTION 6. PRINCIPLES GOVERNING GAMING OPERATIONS DECISIONS, B
+    summary: A party alleging noncompliance serves written notice and the parties meet within thirty days; either
+      party may then sue in the U.S. District Court for the District of Oregon, or in state court if the federal
+      court declines jurisdiction; for operational, hiring and contracting disputes Section 6(B) adds a meet-and-confer
+      within fifteen days and arbitration that is binding only if both parties agree, with an expedited track for
+      immediate threats.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 13. EFFECTIVE DATE; TERMINATION; AMENDMENTS, E. Amendments
+    summary: The compact may be amended in a writing signed by all parties and approved by the Secretary of the
+      Interior; either party may request negotiations by certified mail and both must negotiate in good faith, failing
+      which the other may use dispute resolution and persistent failure can be grounds for termination.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2011-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2011-replacement
+    change: reworded
+    summary: 'The amendment clause is the same as in the 2005 compact''s Section 13(E): written amendments approved
+      by the Secretary, a written request to negotiate, good-faith negotiation, and a dispute route if a party does
+      not negotiate in good faith. Only the cross-references differ (Section 15 and Section 17 in the later document,
+      Article XXI and Article XVII in the earlier one).'
+    locator_before: Article XVIII(D)
+    locator_after: 13(E)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier excerpts are from the 2011 Cascade Locks compact, which refers
+      to Article XVII for disputes without showing its text. The later compact is a Warm Springs compact dated 2011-10-20.
+      The earlier ''dispute_resolution'' excerpts include licensing text, not the dispute procedure.'
+- id: 2019-amendment
+  label: 2019 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2011-restatement
+  dates:
+    listed: '2019-04-16'
+    published: '2019-04-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2019-07488
+    locator: 84 Fed. Reg. 15629 (Apr. 16, 2019)
+  source: compact-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon-2019-04-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant.2019.04.16 Confederated Tribes Warm Springs and
+      State of Oregon Tribal State Compact. Amdt I.pdf
+    sha256: 5c616408efa1abb0c05b707e2458867a3266fcf4bb0051dce1737f8819957d54
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2011-restatement
+    change: unchanged
+    summary: Amendment I changes only the video lottery terminal definition (Section EE) and adds Section 4(B)(5)
+      on approval of new terminals. It does not amend the dispute procedure in Section 6(B), so the earlier procedure
+      still governs.
+    locator_before: 6(B)
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2011-restatement
+    change: unchanged
+    summary: Amendment I does not amend the amendment and renegotiation clause in Section 13(E), so the earlier
+      clause still governs.
+    locator_before: 13(E)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2024-amendment
+  label: 2024 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2011-restatement
+  dates:
+    listed: '2024-12-13'
+    published: '2024-12-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2024-29450
+    locator: 89 Fed. Reg. 101036 (Dec. 13, 2024)
+  source: compact-or-confederated-tribes-of-the-warm-springs-reservation-of-oregon-2024-12-13
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508_compliant_2024.12.13_confederated_tribes_of_the_warm_springs_reservation_tribal_state_gaming_compact.pdf
+    sha256: ab9249e8bd292fe68cff5372ad2533d86b3b0e85545b37da92b4a02fb561afb2
+    pages: 19
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 6, subsection B, paragraph 5 (Expedited Procedure), item (vii), as amended
+    summary: Amendment II adds a mobile gaming geofence malfunction as an immediate-threat example that triggers
+      the expedited procedure in Section 6(B)(5); the excerpt does not restate the full dispute process.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2011-restatement
+    change: changed
+    summary: The earlier compact's operational-decisions procedure (notice to the Tribal Gaming Commission, meeting
+      within 15 days, non-binding arbitration binding by agreement, federal court) and its expedited procedure with
+      a six-item list of immediate threats are unchanged; the later amendment adds a seventh example, a malfunction
+      of the mobile gaming geofence allowing wagering outside the Highway 26 Facility.
+    locator_before: Section 6(B)(5)(c)
+    locator_after: Amendment II, Section 6, B(5)(c)(vii)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2011-restatement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

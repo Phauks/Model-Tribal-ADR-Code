@@ -1,0 +1,200 @@
+id: shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-washington-gaming-compact
+kind: gaming-compact
+title: Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation–State of Washington Gaming Compact
+nations:
+- shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation and the
+    State of Washington under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Shoalwater Bay Indian Tribe
+  of the Shoalwater Bay Indian Reservation and the State of Washington as of Nov. 21, 2026: 1 original and 3 amendments.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2002-original
+  label: 2002 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2002-11-08'
+    published: '2002-11-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-02-28426
+    locator: 67 Fed. Reg. 68152 (Nov. 8, 2002)
+  source: compact-wa-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2002-11-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant  2002.11.08 Shoalwater Bay Indian Tribe Tribal
+      State Gaming Compact.pdf
+    sha256: f2bb0851f29a2d7a4c497d10330dd128247dbcff804b4353140c6d2f7970ab6a
+    pages: 108
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 16. DISPUTE RESOLUTION.
+    summary: Disputes under Appendix X are resolved under any dispute provisions in the Appendix or, if there are
+      none, under the binding arbitration provisions of the Compact, which the excerpt does not detail.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: E. Adjustments/Renegotiations (XV.E.1 and XV.E.3)
+    summary: Either party may request renegotiation when circumstances merit it, with current terms remaining in
+      effect until agreement, and the compact is amended automatically if the State gives another tribe more facilities,
+      stations, wager limits or hours, once the Tribe approves and accepts the increase in writing.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2002-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2007.05.31_shoalwater_bay_indian_tribe_tribal_state_gaming_compact_0.pdf
+    sha256: cf5e1b9aed02b9f0b83fd46ed98a2dc66fa2cecad835d1c45dfddb7819b2a380
+    pages: 55
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 17. DISPUTE RESOLUTION
+    summary: Disputes under Appendix X2 are resolved under any dispute provisions in the Appendix or otherwise under
+      the Dispute Resolution provisions of the Compact, which the excerpt does not reproduce.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15.2 Post-Moratorium (Appendix X2)
+    summary: After the moratorium in Section 15.1 expires, the Tribe may seek an amendment on listed grounds, including
+      a change in federal or state law, a final court decision, or another tribe obtaining materially different
+      equipment or higher wagers, subject to negotiation under the Compact's dispute provisions.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2002-original
+    change: unchanged
+    summary: The 2007 amendment adds Appendix X2, whose Section 17 sends disputes under the appendix to any dispute
+      provisions made applicable in it or otherwise to the Compact's dispute resolution provisions. The earlier
+      compact's Section XII.C (written notice, a meeting within ten days, then AAA arbitration with a final decision)
+      is not amended.
+    locator_before: Sec. XII.C
+    locator_after: Appendix X2, Sec. 17
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2002-original
+    change: unchanged
+    summary: The First Amendment's operative text only adds Appendix X2 and recognizes its activities under Section
+      III. It does not mention Section XV, so the 2002 renegotiation terms still govern on the face of the amendment.
+    locator_before: XV.D
+    locator_after: Amendment para. 1
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2002-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-13712
+    locator: 80 Fed. Reg. 31918 (June 4, 2015)
+  source: compact-wa-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2015-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2015.06.04 Shoalwater Bay Indian Tribe Tribal
+      State Gaming Compact.pdf
+    sha256: f600a46f3aede83d2f157376e9e781d3106474f62804afeca7622ae11da48554
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4. Dispute Resolution
+    summary: The State and Tribe must meet and attempt to resolve disputes over the Addendum terms, and if they
+      cannot reach agreement either party may use the dispute resolution provisions of the Compact, which the excerpt
+      does not reproduce.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2002-original
+    change: changed
+    summary: 'The 2015 amendment''s optional Addendum adds a step for disputes over the Player Terminal allocation:
+      the State and the Native nation must meet and attempt to resolve the dispute at least 30 days before the increased
+      allocation takes effect, after which either or both may use the Compact''s dispute resolution provisions.
+      The earlier compact already provided in Section XII.C for notice, a meeting within ten days, and AAA arbitration
+      with a final decision.'
+    locator_before: Sec. XII.C
+    locator_after: Addendum Sec. 4.1-4.2
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2002-original
+    change: unchanged
+    summary: The Second Amendment's four numbered changes (new Section III.Q and changes to Appendix X2 Sections
+      12.1, 13.4 and 14.4 to 14.5) and the Addendum do not refer to Section XV, so the 2002 renegotiation provisions
+      appear unchanged.
+    locator_before: XV.D
+    locator_after: Amendment preamble
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2002-original
+  dates:
+    listed: '2021-09-15'
+    published: '2021-09-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-19842
+    locator: 86 Fed. Reg. 51373 (Sept. 15, 2021)
+  source: compact-wa-shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation-2021-09-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2021.09.15_shoalwater_bay_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: c7c05fee46a1d66b5ff476bf0e0ac02ed6700c4f41926a9cee53ad5cec22e5a8
+    pages: 24
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2002-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2002-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

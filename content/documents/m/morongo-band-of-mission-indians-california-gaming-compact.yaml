@@ -1,0 +1,174 @@
+id: morongo-band-of-mission-indians-california-gaming-compact
+kind: gaming-compact
+title: Morongo Band of Mission Indians, California–State of California Gaming Compact
+nations:
+- morongo-band-of-mission-indians
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Morongo Band of Mission Indians, California and the State of California under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Morongo Band of Mission Indians,
+  California and the State of California as of Nov. 21, 2026: 1 original, 1 amendment and 1 replacement. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-morongo-band-of-mission-indians-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 compliant 2000.05.16 Morongo Band of Mission Indians
+      Tribal State Gaming Compact Packet.pdf
+    sha256: 0809da904d7481f56dd0f4df27ac299bd21502b63d106f494f6b2d02e4f90b8b
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 and Sec. 9.2
+    summary: The compact provides for written notice, a good-faith meeting within 10 days and, if unresolved after
+      30 days, optional arbitration under the AAA Commercial Arbitration Rules with a binding award; otherwise the
+      dispute may go to the U.S. District Court where the gaming facility is located and the Ninth Circuit Court
+      of Appeals, or to state courts if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Sec. 12.1 to Sec. 12.3
+    summary: The compact may be amended by mutual written agreement, and the Morongo Band may request renegotiation
+      in writing for Class III games other than those authorized, but not within 12 months of the effective date;
+      talks are to be scheduled within 30 days under IGRA good-faith standards.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2007-12-19'
+    published: '2007-12-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-e7-24566
+    locator: 72 Fed. Reg. 71939 (Dec. 19, 2007)
+  source: compact-ca-morongo-band-of-mission-indians-2007-12-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2007.12.19_morongo_band_of_mission_indians_tribal_state_gaming_compact.pdf
+    sha256: a8a699b390e7d87fa6683a60303655c027113832fedae6d1ec897bd86d35032a
+    pages: 44
+  clauses:
+  - topic: renegotiation
+    locator: Sec. 11.2.1(a)
+    summary: The amendment provides that either the State or the Morongo Band may request good-faith negotiations
+      to extend and modify the amended compact or enter a new compact no later than July 1, 2028; the parties must
+      schedule a meeting within 30 days of the request.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: changed
+    summary: The 2007 amended compact leaves Section 9.0 in place as the general process (the later text refers
+      to 'Amended Compact Section 9.0' for payment and fire-safety disputes) and adds, for failure to remit specified
+      payments, a right for the State to seek injunctive relief immediately in federal or state court notwithstanding
+      Section 9.0, with the Tribe consenting to suit; it also adds JAMS arbitration for patron disputes and for
+      off-reservation mitigation disputes with a county. The 2000 compact's Section 9.0 provided written notice,
+      a meet and confer within 10 days, optional arbitration under AAA rules after 30 days, and then federal or
+      state court.
+    locator_before: 9.1-9.4
+    locator_after: Payment provisions (i); 9.0 references
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: changed
+    summary: The 2000 Sec. 12.0 allows amendment by mutual written agreement and renegotiation for new games after
+      12 months. The 2007 Section 11.2.1(a) replaces the term to December 31, 2030 and sets a renegotiation request
+      date of July 1, 2028.
+    locator_before: Sec. 12.1
+    locator_after: Section 11.2.1(a)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2018-replacement
+  label: 2018 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  - 2007-amendment
+  dates:
+    listed: '2018-01-22'
+    published: '2018-01-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2018-01058
+    locator: 83 Fed. Reg. 3015 (Jan. 22, 2018)
+  source: compact-ca-morongo-band-of-mission-indians-2018-01-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2018.01.22_morongo_band_of_mission_indians_tribal_state_gaming_compact.pdf
+    sha256: 11445469e046091c0f7873377cd9b1ee7bda24545da9d06005f1c6b73d0147c3
+    pages: 148
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1 Voluntary Resolution; Court Resolution and Sec.
+      13.2 Arbitration Rules
+    summary: Disputes under the compact begin with a written notice, a written response within 15 days and a meet-and-confer
+      within 30 days; if unresolved either party may seek arbitration before JAMS, but neither party is required
+      to agree to arbitrate, and unresolved disputes may be brought in the federal district court for the district
+      of the Gaming Facility or, if that court lacks jurisdiction, a state court of competent jurisdiction in the
+      county. Sec. 13.4 limits remedies to injunctive relief, specific performance and declaratory relief.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS, Sec. 15.1 to Sec. 15.3
+    summary: Sec. 15.1 permits amendment at any time by mutual written agreement if each party voluntarily consents
+      to the negotiations, Sec. 15.2 lets either party request negotiation of an extension or new compact no sooner
+      than 18 months before the expiration date, and Sec. 15.3 requires written requests and a schedule for negotiations
+      in accordance with IGRA.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: changed
+    summary: The 2000 Sec. 12.0 allows amendment by mutual written agreement and renegotiation after 12 months.
+      The 2018 Section 15.0 keeps amendment by agreement but requires written consent to negotiate during the term,
+      adds a new-compact negotiation window of up to 18 months before expiry with a two-year automatic extension,
+      and sets a 45-day scheduling period.
+    locator_before: Sec. 12.1
+    locator_after: Sec. 15.1
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2018 replacement adds consent and extension mechanics to the amendment
+      and renegotiation clauses; the compact-level dispute process is not visible, so the dispute call is not-compared.'
+found_in:
+- 2026-11-21-gaming-compact-histories

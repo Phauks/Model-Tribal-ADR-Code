@@ -1,0 +1,511 @@
+id: coquille-indian-tribe-oregon-gaming-compact
+kind: gaming-compact
+title: Coquille Indian Tribe–State of Oregon Gaming Compact
+nations:
+- coquille-indian-tribe
+states:
+- OR
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Coquille Indian Tribe and the State of Oregon under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Coquille Indian Tribe and
+  the State of Oregon as of Nov. 21, 2026: 1 original, 9 amendments and 1 restatement. The order, the kind of each
+  event and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1995-02-16'
+    published: '1995-02-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-3841
+    locator: 60 Fed. Reg. 9258 (Feb. 16, 1995)
+  source: compact-or-coquille-indian-tribe-1995-02-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1995.02.16 Coquille Indian Tribe Tribal State GamingCompact.pdf
+    sha256: 51faff7b96dbec74cd0b0e2ab8c19d13b4aa3054649143426b0f1ae43d778bd4
+    pages: 67
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 16, paragraph 6 (dispute resolution)
+    summary: Under the compact the State may give written notice, the parties confer within five days for expedited
+      matters, and either party may use arbitration through U.S. Arbitration and Mediation of Oregon, with arbitration
+      binding only if both agree, before suing in the United States District Court for the District of Oregon.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section 12, D. Amendments
+    summary: The compact may be reopened for negotiation only on listed events, such as the State expanding Class
+      III gaming, a new compact with another tribe, a State rule change, delay of the fee-to-trust process, or a
+      joint operation agreement; the excerpt does not say what happens if talks fail.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 1996-amendment
+  label: 1996 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1996-02-06'
+    published: '1996-02-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-96-2452
+    locator: 61 Fed. Reg. 4477 (Feb. 6, 1996)
+  source: compact-or-coquille-indian-tribe-1996-02-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1996.02.06 Coquille Indian Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: 91205cf41b254d73eff81f8481515c2aa32ca577ec89e36370172b55ba2f5a97
+    pages: 16
+  clauses:
+  - topic: renegotiation
+    locator: Paragraph 7 (Section V of the amendment)
+    summary: The Native nation may request additional negotiations for house banked blackjack on a permanent basis
+      before the amendment expires, and the amendment's blackjack authority ends unless an extension or permanent
+      amendment is executed.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment I (blackjack) amends Sections 7 and 8, Appendix A, Section 4 (new Subsection H and Appendix
+      D) and the memorandum of understanding, and none of its paragraphs amends Section 6. Its player-complaint
+      procedure is for the Tribe's own regulation, not a process between the Tribe and the State.
+    locator_before: 6(B)
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: changed
+    summary: Amendment I's paragraph 7 says that, notwithstanding Section 12(D), the Tribe may request additional
+      negotiations for permanent house-banked blackjack before the amendment expires. The negotiation is then subject
+      to Section 12. The earlier amendment bar in 12(D) is otherwise unchanged in the excerpts.
+    locator_before: 12(D)
+    locator_after: Amendment I, paragraph 7
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 1996-amendment-2
+  label: 1996 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1996-09-04'
+    published: '1996-09-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-96-22438
+    locator: 61 Fed. Reg. 46662 (Sept. 4, 1996)
+  source: compact-or-coquille-indian-tribe-1996-09-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1996.09.04 Coquille Indian Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: a7cc3c7dac3b07c1bcc17bb97f92bd92313de597d584e2ccf1876a8ff5c81314
+    pages: 9
+  clauses:
+  - topic: renegotiation
+    locator: Section VII of Amendment I, as amended
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and while a compact amendment is under negotiation the Native nation may replace blackjack
+      tables with video lottery terminals.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+- id: 1998-amendment
+  label: 1998 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1998-02-27'
+    published: '1998-02-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-5074
+    locator: 63 Fed. Reg. 10035 (Feb. 27, 1998)
+  source: compact-or-coquille-indian-tribe-1998-02-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1998.02.27 Coquille Indina Tribe Tribal State Gaming
+      Compact_0.pdf
+    sha256: ebfc68949850757ac207b565fa1c002091201d959d682e24607894932eaaef6d
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Section I of Amendment II (as amended by Amendment III)
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and while a compact amendment is under negotiation the Native nation may replace blackjack
+      tables with video lottery terminals.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment III changes only the blackjack expiry provision (its Section I amends the expiry date in
+      Amendment II). It does not amend the dispute procedure in Section 6(B), so the earlier procedure still governs.
+    locator_before: 6(B)
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment III changes only the blackjack expiry provision (its Section I amends the expiry date in
+      Amendment II). It does not amend Section 12, so the earlier renegotiation provisions still govern.
+    locator_before: 12(D)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 1998-amendment-2
+  label: 1998 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1998-05-19'
+    published: '1998-05-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-13219
+    locator: 63 Fed. Reg. 27585 (May 19, 1998)
+  source: compact-or-coquille-indian-tribe-1998-05-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1998.05.19 Coquille Indian Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: 370c0c72d775c7b62040f7ab85f94b9a35fcff706ff012ffc29851e3085763a8
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Section I of Amendment III (as amended by Amendment IV)
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and while a compact amendment is under negotiation the Native nation may replace blackjack
+      tables with video lottery terminals.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment IV changes only the blackjack expiry date and adds an effective-date extension paragraph.
+      It does not amend the dispute procedure in Section 6(B), so the earlier procedure still governs.
+    locator_before: 6(B)
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment IV changes only the blackjack expiry date and adds an effective-date extension paragraph.
+      It does not amend Section 12, so the earlier renegotiation provisions still govern.
+    locator_before: 12(D)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1999-06-01'
+    published: '1999-06-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-13726
+    locator: 64 Fed. Reg. 29334 (June 1, 1999)
+  source: compact-or-coquille-indian-tribe-1999-06-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1999.06.01 Coquille Indian Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: 5b37f46211ca3db1170b8925d0b8803349bc7bb42d544d465d39b621f6c4d875
+    pages: 6
+  clauses:
+  - topic: renegotiation
+    locator: Section I of Amendment IV (as amended by Amendment V)
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and while a compact amendment is under negotiation the Native nation may replace blackjack
+      tables with video lottery terminals.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+- id: 2000-amendment
+  label: 2000 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '2000-05-31'
+    published: '2000-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-13495
+    locator: 65 Fed. Reg. 34727 (May 31, 2000)
+  source: compact-or-coquille-indian-tribe-2000-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2000.05.31 Coquille Indian Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: 4e7d2853394cc6c4a9f581e45fbf4186c8b1aa5f2e1c9609760f8e2f939bbc22
+    pages: 4
+  clauses:
+  - topic: renegotiation
+    locator: Section I of Amendment V (as amended by Amendment VI)
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and while a compact amendment is under negotiation the Native nation may replace blackjack
+      tables with video lottery terminals.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment VI changes only the blackjack expiry date (Section I), adds Section 8A language (Section
+      II) and an effective-date extension (paragraph III). It does not amend the dispute procedure in Section 6(B),
+      so the earlier procedure still governs.
+    locator_before: 6(B)
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment VI changes only the blackjack expiry date (Section I), adds Section 8A language (Section
+      II) and an effective-date extension (paragraph III). It does not amend Section 12, so the earlier renegotiation
+      provisions still govern.
+    locator_before: 12(D)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2000-restatement
+  label: 2000 amended and restated compact
+  event: restatement
+  status: in-effect
+  supersedes:
+  - 1995-original
+  - 1996-amendment
+  - 1996-amendment-2
+  - 1998-amendment
+  - 1998-amendment-2
+  - 1999-amendment
+  - 2000-amendment
+  dates:
+    listed: '2000-12-06'
+    published: '2000-12-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-31026
+    locator: 65 Fed. Reg. 76278 (Dec. 6, 2000)
+  source: compact-or-coquille-indian-tribe-2000
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2000.12.06 Coquille Indian Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: 80284a390c4f313b682b04f1956099dd264fe1ff5496a4319a8f7126dc9c27bb
+    pages: 53
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 6, subsection B (Procedure for Resolving Disputes Concerning Operational Decisions), paragraphs
+      1-5
+    summary: The State may give written notice to the Tribal Gaming Commission, the parties meet and confer within
+      fifteen days, either party may seek non-binding arbitration within forty-five days, and the matter may then
+      go to the United States District Court for the District of Oregon under Section 16, with an expedited procedure
+      for immediate threats.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Section 12, subsection D
+    summary: The compact may be amended after one year from Interior approval, when the Tribe notifies the State
+      of a joint operation with another tribe, or when the State expands Class III gaming; requests are made in
+      writing by certified mail and the negotiation period is 100 days.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: changed
+    summary: The earlier compact's general clause provides notice, a 30-day meeting, then non-binding arbitration
+      (binding by agreement) after 90 days and a District of Oregon action only if arbitration does not resolve
+      the controversy; the later compact drops arbitration from the general clause and lets either party sue in
+      the District of Oregon (state court if federal declines) after 90 days. The later compact also sends operational-decision
+      notices to the Tribal Gaming Commission, requires the Commission to follow the State's recommended action
+      or another mutually acceptable one in the expedited procedure, and lets either the State or the Native nation
+      sue in federal court if an expedited concern is unresolved after ten days.
+    locator_before: Section 6.B; Section 16.A.2-3
+    locator_after: Section 6.B; Section 16.A.2
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: changed
+    summary: 'The replacement drops the earlier three-year bar on amendment and the ''except as provided in subsection
+      12.C'' lead-in: the Compact ''may be amended if'' one of the listed conditions occurs. It adds a new 12(D)(4)
+      that no amendment under Section 12(D) takes effect before Interior approval or approval deemed under IGRA.'
+    locator_before: 12(D)
+    locator_after: 12(D)(4)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2008-amendment
+  label: 2008 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2000-restatement
+  dates:
+    listed: '2008-03-17'
+    published: '2008-03-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e8-5198
+    locator: 73 Fed. Reg. 14267 (Mar. 17, 2008)
+  source: compact-or-coquille-indian-tribe-2008-03-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2008.03.17 Coquille Indian Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: 6dd7bdfaa589252a6b95cf1b00f67b03581d64bc36de173f127c4230c5cc3135
+    pages: 5
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-restatement
+    change: unchanged
+    summary: The 2008 amendment revises only Section 10.A (state regulatory and law enforcement cost assessment)
+      and adds an OSP payment methodology paragraph. It does not amend Section 6(B), so the earlier dispute procedure
+      still governs.
+    locator_before: 6(B)
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2000-restatement
+    change: unchanged
+    summary: The 2008 amendment does not amend Section 12, so the earlier 12(D) provisions still govern.
+    locator_before: 12(D)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2016-amendment
+  label: 2016 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2000-restatement
+  dates:
+    listed: '2016-10-31'
+    published: '2016-10-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2016-26252
+    locator: 81 Fed. Reg. 75428 (Oct. 31, 2016)
+  source: compact-or-coquille-indian-tribe-2016-10-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2016.10.31 Coquille Gaming Compact.pdf
+    sha256: 6f709816baea4fa9801b734c94bd907c7d790e28a5f46dad121d3f9f6bf710c1
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-restatement
+    change: unchanged
+    summary: Amendment II (2016) adds vendor-licensing factors to Section 7(B)(6) only. It does not amend Section
+      6, so the earlier dispute procedure still governs.
+    locator_before: 6(B)
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2000-restatement
+    change: unchanged
+    summary: Amendment II does not amend Section 12, so the earlier 12(D) provisions still govern.
+    locator_before: 12(D)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2020-amendment
+  label: 2020 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2000-restatement
+  dates:
+    listed: '2020-05-20'
+    published: '2020-05-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2020-10823
+    locator: 85 Fed. Reg. 30732 (May 20, 2020)
+  source: compact-or-coquille-indian-tribe-2020-05-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2020.05.20 Coquille Tribe and State of Oregon Compact
+      Amendment.pdf
+    sha256: cef6b20ad418eaabcfb8588884e48e688991cf5a5b768aa7b434da14f4e7ad21
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-restatement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-restatement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

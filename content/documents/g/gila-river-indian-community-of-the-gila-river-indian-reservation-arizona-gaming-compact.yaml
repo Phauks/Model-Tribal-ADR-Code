@@ -1,0 +1,113 @@
+id: gila-river-indian-community-of-the-gila-river-indian-reservation-arizona-gaming-compact
+kind: gaming-compact
+title: Gila River Indian Community of the Gila River Indian Reservation, Arizona–State of Arizona Gaming Compact
+nations:
+- gila-river-indian-community-of-the-gila-river-indian-reservation
+states:
+- AZ
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Gila River Indian Community of the Gila River Indian Reservation, Arizona and
+    the State of Arizona under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Gila River Indian Community
+  of the Gila River Indian Reservation, Arizona and the State of Arizona as of Nov. 21, 2026: 1 original and 1 amendment.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2021-original
+  label: 2021 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2021-05-24'
+    published: '2021-05-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-10877
+    locator: 86 Fed. Reg. 27889 (May 24, 2021)
+  source: compact-az-gila-river-indian-community-of-the-gila-2021
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2021.05.24_gila_river_indian_community_tribal_state_gaming_compact.pdf
+    sha256: 308c43d89fc19e2b06ab102be4a4ea6a5d03c366803cc04d7b133b3d9185e61d
+    pages: 80
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 3(b)(3)(B)-(C)
+    summary: For appendix disputes, either party may request a new or modified appendix in writing, and if no agreement
+      is reached within 180 days either may initiate Section 15 dispute resolution, where an arbitration under Section
+      15(c) is conducted before a single neutral arbitrator selected by CPR in a last best offer format; the general
+      Section 15 procedure is not in the excerpt.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 3(b)(3) and SECTION 17. AMENDMENTS
+    summary: Either Gila River Indian Community or the State Gaming Agency may request in writing to negotiate a
+      new or modified appendix, and after 180 days without agreement either may initiate Section 15 dispute resolution;
+      compact amendments must be in writing, signed by both parties, and approved or deemed approved by the Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2021-original
+  dates:
+    listed: '2022-06-14'
+    published: '2022-06-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-12743
+    locator: 87 Fed. Reg. 35992 (June 14, 2022)
+  source: compact-az-gila-river-indian-community-of-the-gila-river-indian-reservation-2022-06-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2022.06.14_gila_river_indian_community_tribal_state_gaming_compact_0.pdf
+    sha256: 420877e673b0f33b8e13c478416197462d8cc527e2efe302e4ce5eef084e98f3
+    pages: 20
+  clauses:
+  - topic: dispute-resolution
+    locator: Paragraph 12
+    summary: Disputes under the Agreement go to the dispute resolution provisions of Section 15 of the Compact,
+      which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Paragraph 10
+    summary: The Compact is amended under its Section 17, which the excerpt does not reproduce, and this Agreement
+      itself may be changed only by a written document signed by both parties.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2021-original
+    change: unchanged
+    summary: The 2022 Agreement to Amend amends listed definitions and compact sections and does not list Section
+      15. It states that a dispute under the agreement is resolved under the compact's Section 15 dispute provisions,
+      which therefore continue to apply.
+    locator_after: 12 (agreement), referring to Section 15
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2021-original
+    change: unchanged
+    summary: The Agreement amends listed compact provisions and does not list Section 17. Its own amendment clause
+      requires a written, signed document, which is consistent with the 2021 Section 17.
+    locator_before: '17'
+    locator_after: '10'
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

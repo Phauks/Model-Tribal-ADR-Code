@@ -1,0 +1,91 @@
+id: soboba-band-of-luiseno-indians-california-gaming-compact
+kind: gaming-compact
+title: Soboba Band of Luiseno Indians, California–State of California Gaming Compact
+nations:
+- soboba-band-of-luiseno-indians
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Soboba Band of Luiseno Indians, California and the State of California under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Soboba Band of Luiseno Indians,
+  California and the State of California as of Nov. 21, 2026: 1 original and 1 extension. The order, the kind of
+  each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-soboba-band-of-luiseno-indians-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2000.05.16 Sobobo Band of Luiseno Indians Tribal
+      State Gaming Compact.pdf
+    sha256: 10efd69282f36b94379f9597ea75b450762acf958db537a2ff643f36a559898a
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.0. DISPUTE RESOLUTION PROVISIONS, Sec. 9.1 to 9.3
+    summary: Disputes first go to written notice and a meet-and-confer within 10 days; if unresolved 30 days after
+      the first meeting either party may seek arbitration under AAA Commercial Arbitration Rules (binding if used,
+      but neither party must agree to arbitrate), and disputes not otherwise resolved may be heard in the U.S. District
+      Court, the Ninth Circuit, or state court if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: Sec. 12.0. AMENDMENTS; RENEGOTIATIONS, Sec. 12.1 to 12.3
+    summary: The compact may be amended at any time by mutual written agreement, and the Band may request renegotiation
+      to add other forms of Class III gaming after 12 months, with a negotiation schedule set within 30 days and
+      IGRA good-faith standards applying.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 2022-extension
+  label: 2022 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2022-06-30'
+    published: '2022-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-14054
+    locator: 87 Fed. Reg. 39115 (June 30, 2022)
+  source: compact-ca-soboba-band-of-luiseno-indians-2022-06-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2022.06.30_soboba_badfn_of_luiseno_indians_tribal_state_gaming_compact.pdf
+    sha256: 32b3d1801d2a8b76bab7f90fd62adc6e8ab8b1d76dfac1c95634fa7bb066430a
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+related:
+- document: soboba-band-of-luiseno-indians-california-secretarial-procedures
+  relation: replaced-by
+  note: Secretarial Procedures issued under 25 U.S.C. § 2710(d)(7)(B)(vii) took the place of the compact (research/gaming/secretarial-procedures.csv).
+found_in:
+- 2026-11-21-gaming-compact-histories

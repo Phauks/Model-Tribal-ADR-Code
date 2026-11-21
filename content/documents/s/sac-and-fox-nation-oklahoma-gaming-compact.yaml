@@ -1,0 +1,97 @@
+id: sac-and-fox-nation-oklahoma-gaming-compact
+kind: gaming-compact
+title: Sac & Fox Nation, Oklahoma–State of Oklahoma Gaming Compact
+nations:
+- sac-and-fox-nation
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Sac & Fox Nation, Oklahoma and the State of Oklahoma under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Sac & Fox Nation, Oklahoma
+  and the State of Oklahoma as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event and
+  which version is in effect are inferred from the list (project analysis); clause summaries and comparisons are
+  a small model''s reading of excerpts.'
+versions:
+- id: 2005-original
+  label: 2005 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2005-06-01'
+    published: '2005-06-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-05-10877
+    locator: 70 Fed. Reg. 31499 (June 1, 2005)
+  source: compact-ok-sac-fox-nation-oklahoma-2005
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2005.06.01 Sac and Fox Nation Tribal State Gaming
+      Compact.pdf
+    sha256: 7ad86efc4c243b1f883dd49497342e86180df0c0f7ab21b6cd3c095ad22d18d3
+    pages: 34
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION
+    summary: Disputes start with written notice and a meeting of tribal and state representatives within thirty
+      days, then either party may refer the dispute to arbitration under AAA rules, and an award may be reviewed
+      de novo by a federal district court whose decision is subject to appeal.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, subsection B
+    summary: Within 180 days after expiration of the Compact or any renewal, either the tribe or the state, acting
+      through its Governor, may request renegotiation of subsections A and E of Part 11; the Compact otherwise renews
+      automatically for fifteen-year terms if electronic gaming is authorized.
+    verification: read-in-full
+    reviewer: small model, first pass
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2005-original
+  dates:
+    listed: '2018-08-27'
+    published: '2018-08-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-18425
+    locator: 83 Fed. Reg. 43703 (Aug. 27, 2018)
+  source: compact-ok-sac-and-fox-nation-2018-08-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2018.08.27 Sac and Fox Nation 2018 Compact Amendment.pdf
+    sha256: 092f138a57b75a4989c5bb89cbe60b982799fe35cf4b6d4cc0da684d8d997994
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2005-original
+    change: unchanged
+    summary: The 2018 Gaming Compact Supplement contains only Parts 1 to 3 (title, terms and authority to execute)
+      and no dispute provision. It states that the table-games operation is subject to the enforcement and exclusivity
+      provisions of the 2005 Compact, so the earlier Part 12 dispute process (including AAA arbitration) still governs.
+    locator_before: Part 12
+    locator_after: Part 2.C
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2005-original
+    change: unchanged
+    summary: The 2018 Supplement does not mention renegotiation and does not amend Part 15 of the 2005 Compact,
+      so the earlier Part 15.B right to request renegotiation of Part 11 subsections A and E within 180 days of
+      expiration still governs.
+    locator_before: Part 15.B
+    locator_after: Part 2.C (no renegotiation provision)
+    verification: inferred
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

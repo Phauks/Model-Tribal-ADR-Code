@@ -1,0 +1,71 @@
+id: pueblo-of-jemez-new-mexico-gaming-compact
+kind: gaming-compact
+title: Pueblo of Jemez, New Mexico–State of New Mexico Gaming Compact
+nations:
+- pueblo-of-jemez
+states:
+- NM
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Pueblo of Jemez, New Mexico and the State of New Mexico under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Pueblo of Jemez, New Mexico
+  and the State of New Mexico as of Nov. 21, 2026: 1 disapproved compact and 1 original. The order, the kind of
+  each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2014-disapproval
+  label: 2014 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2014-08-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-nm-pueblo-of-jemez-2014-08-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2014.08.27_pueblo_of_jemez_disapproval_letter.pdf
+    sha256: 26f7b906a7bd97442fd9bf222479c2ba4e9a55ba285304575307d508a5c8ea94
+    pages: 3
+- id: 2015-original
+  label: 2015 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2015-06-22'
+    published: '2015-06-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2015-15207
+    locator: 80 Fed. Reg. 35668 (June 22, 2015)
+  source: compact-nm-pueblo-of-jemez-new-mexico-2015
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2015.06.22_pueblo_of_jemez_tribal_state_gaming_compact.pdf
+    sha256: 38ce434754717601237c00f3d2c7ecd81b8248c7f47a4afe9b13de96a7765f04
+    pages: 47
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution.
+    summary: After written notice and twenty days, the complaining party may issue a notice to cease the disputed
+      activity; the responding party may stop or invoke arbitration before a three-arbitrator panel (third arbitrator
+      named by the American Arbitration Association if the parties' arbitrators cannot agree), and the result is
+      final and binding, enforceable by injunctive action in any court of competent jurisdiction; other available
+      remedies are preserved.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 14. Entire Agreement.
+    summary: The compact may be changed only by a signed written instrument approved by the Secretary of the Interior,
+      and may not be amended without the express approval of the Pueblo, the Governor and the State Legislature;
+      no reopening trigger or negotiation timeline is stated.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+found_in:
+- 2026-11-21-gaming-compact-histories

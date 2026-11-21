@@ -1,0 +1,189 @@
+id: seminole-tribe-of-florida-florida-gaming-compact
+kind: gaming-compact
+title: Seminole Tribe of Florida–State of Florida Gaming Compact
+nations:
+- seminole-tribe-of-florida
+states:
+- FL
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Seminole Tribe of Florida and the State of Florida under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Seminole Tribe of Florida
+  and the State of Florida as of Nov. 21, 2026: 1 original and 2 replacements. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 2008-original
+  label: 2008 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2008-01-07'
+    published: '2008-01-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-e7-25628
+    locator: 73 Fed. Reg. 1229 (Jan. 7, 2008)
+  source: compact-fl-seminole-tribe-of-florida-2008-01-07
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/florida/508_compliant_2008.01.07_seminole_tribe_tribal_state_gaming_compact.pdf
+    sha256: a680c88c5f00a949c05ec453fcf5a86a5f63d8faa9173a5908003c133e9912de
+    pages: 43
+  clauses:
+  - topic: dispute-resolution
+    locator: Part XIII.A to XIII.E (Dispute Resolution)
+    summary: Disputes go through written notice and a meeting within 30 days, then AAA Commercial Mediation for
+      up to 60 days, and then the State may sue the Tribe in federal district court or, if that court declines jurisdiction,
+      in the Seventeenth Judicial Circuit courts in Broward County, Florida; the excerpt is cut off before paragraph
+      G.
+    methods:
+    - negotiation
+    - mediation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Part XVII (Amendment of Compact and Appendices)
+    summary: Compact amendments require written agreement of the parties and Secretary approval; the Tribe may change
+      tribal ordinances on 30 days notice, and the State may object and invoke the Part XIII dispute process, but
+      the excerpt shows no separate request or reopening mechanism.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2010-replacement
+  label: 2010 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 2008-original
+  dates:
+    listed: '2010-07-06'
+    published: '2010-07-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2010-16213
+    locator: 75 Fed. Reg. 38833 (July 6, 2010)
+  source: compact-fl-seminole-tribe-of-florida-2010-07-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/florida/508_compliant_2010.07.06_seminole_tribe_tribal_state_gaming_compact.pdf
+    sha256: 2ae88ed565de1171234fcaa2fdcf7dd26c8adfc5ddb44fb61899a402a23dd5ef
+    pages: 58
+  clauses:
+  - topic: dispute-resolution
+    locator: Part XIII.A to XIII.D (Dispute Resolution)
+    summary: After written notice and a meeting within 30 days, either party may call AAA Commercial Mediation for
+      up to 60 days, and if unresolved either party may sue in a United States District Court or, if that court
+      declines jurisdiction, in the Seventeenth Judicial Circuit courts in Broward County, Florida; no arbitration
+      step appears in the excerpt.
+    methods:
+    - negotiation
+    - mediation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Part XVII.A to XVII.C (Amendment of Compact and References)
+    summary: The compact may be amended only by written agreement of the parties with Secretary approval, and any
+      amendment changing revenue-sharing payments, payment suspension or reduction, or exclusivity requires legislative
+      ratification; the Tribe may change tribal ordinances on 30 days notice, subject to the State's dispute process.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2008-original
+    change: changed
+    summary: The 2008 compact provides notice and a 30-day meeting, AAA mediation of up to 60 days, then a State-only
+      court action (federal court or Broward County) with a Tribe-only waiver of immunity, and lets the Tribe invoke
+      AAA arbitration under Appendix S with a decision not enforceable in court and subject to de novo State review.
+      The 2010 compact keeps the notice, meeting and mediation steps, lets either party sue in federal court or
+      Broward County court, makes the immunity waiver mutual, and no longer contains the Tribe-invoked arbitration.
+    locator_before: Part XIII.C-H
+    locator_after: Part XIII.C-F
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2008-original
+    change: changed
+    summary: Part XVII of the 2010 compact keeps amendment by written agreement, with Secretary approval now cited
+      under 25 U.S.C. 2710(d)(8) instead of (d)(7)(C). It adds that amendments changing Covered Games, revenue-sharing
+      payments, payment suspension or reduction, or exclusivity require legislative ratification. The 30-day notice
+      for tribal ordinance changes is unchanged.
+    locator_before: Part XVII
+    locator_after: Part XVII.B
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2021-replacement
+  label: 2021 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2010-replacement
+  dates:
+    listed: '2021-08-11'
+    published: '2021-08-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2021-17055
+    locator: 86 Fed. Reg. 44037 (Aug. 11, 2021)
+  source: compact-fl-seminole-tribe-of-florida-2021
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/florida/508 Compliant 2021.08.11 Seminole Tribe Gaming Compact.pdf
+    sha256: 950869cab884df39c10831778c9fbe3d98461b8288c703bc9ff696c283cc8871
+    pages: 89
+  clauses:
+  - topic: dispute-resolution
+    locator: Part XIII. DISPUTE RESOLUTION, A, C.
+    summary: After written notice, representatives meet within 30 days; if unresolved, either party may call for
+      AAA commercial mediation of up to 60 days; then either party may sue in a U.S. District Court with venue,
+      or if that court declines jurisdiction, in the Seventeenth Judicial Circuit in Broward County, Florida. No
+      arbitration is provided in the excerpt.
+    methods:
+    - negotiation
+    - mediation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Part XVII. AMENDMENT OF COMPACT AND REFERENCES, A-B; Part XVIII. MISCELLANEOUS, A and D.
+    summary: Amendments require written agreement of the parties and approval by the Secretary of the Interior;
+      amendments on covered games, revenue payments, suspension or exclusivity require legislative ratification;
+      the parties must negotiate in good faith within 36 months about online and mobile covered games.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2010-replacement
+    change: changed
+    summary: The later compact keeps the notice, 30-day meeting, 60-day AAA mediation and the federal court or Broward
+      County route, but provides that the Part XIII procedures 'shall be invoked' where the 2010 compact said they
+      'may be invoked', and that a party 'shall certify' its claim is made in good faith where the earlier text
+      said it is 'deemed to have certified'. The payment-injunction paragraph (now F) is in both.
+    locator_before: Part XIII intro, B
+    locator_after: Part XIII intro, B
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2010-replacement
+    change: changed
+    summary: The 2021 replacement's Part XVII keeps amendment by written agreement and the legislative-ratification
+      requirement, worded as 'Ratification by the Legislature'. It adds Part XVIII.A, a duty to negotiate in good
+      faith within 36 months on online or mobile Covered Games, with disputes over that negotiation kept out of
+      Part XIII. It also adds Part XVIII.B, under which the Seminole Tribe may accept online wagers in a form the
+      State permits another person to offer.
+    locator_before: Part XVII
+    locator_after: Part XVIII.A
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

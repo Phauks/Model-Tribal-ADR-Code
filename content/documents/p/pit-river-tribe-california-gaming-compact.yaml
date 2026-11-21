@@ -1,0 +1,121 @@
+id: pit-river-tribe-california-gaming-compact
+kind: gaming-compact
+title: Pit River Tribe, California–State of California Gaming Compact
+nations:
+- pit-river-tribe
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Pit River Tribe, California and the State of California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Pit River Tribe, California
+  and the State of California as of Nov. 21, 2026: 1 original and 2 extensions. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-pit-river-tribe-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2000.05.16 Pit River Tribe Tribal State Gaming
+      Compact_0.pdf
+    sha256: da77d92930eb47520e4aa53ed7be52719e0d957aa888ac4c1c88a99c436f35b7
+    pages: 62
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.0. DISPUTE RESOLUTION PROVISIONS; Sec. 9.2. Arbitration Rules.
+    summary: After written notice and a meet-and-confer within 10 days, either party may seek arbitration under
+      AAA Commercial Rules with a binding award, and disputes not resolved that way may go to the U.S. District
+      Court, the Ninth Circuit, or a state court.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.0. AMENDMENTS; RENEGOTIATIONS.
+    summary: The compact may be amended by mutual written agreement, and the Pit River Tribe may request renegotiation
+      to offer other forms of Class III gaming after 12 months, with a schedule set within 30 days under IGRA's
+      good-faith standards.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2022-extension
+  label: 2022 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2022-06-30'
+    published: '2022-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-14054
+    locator: 87 Fed. Reg. 39115 (June 30, 2022)
+  source: compact-ca-pit-river-tribe-2022-06-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2022.06.30_pit_river_tribe_tribal_state_gaming_compact.pdf
+    sha256: 8426cfd80ce5a1904b359a208fabf33d057d8a345b7a12e00527a62678f9e4f8
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+- id: 2024-extension
+  label: 2024 extension
+  event: extension
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2024-01-08'
+    published: '2024-01-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2024-00107
+    locator: 89 Fed. Reg. 944 (Jan. 8, 2024)
+  source: compact-ca-pit-river-tribe-2024-01-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2024.01.08_pit_river_tribe_tribal_state_gaming_compact.pdf
+    sha256: 75978d974bc80baf5d92de68bbd648b811d15b5b790cee126295b84c7f531615
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+related:
+- document: pit-river-tribe-california-secretarial-procedures
+  relation: replaced-by
+  note: Secretarial Procedures issued under 25 U.S.C. § 2710(d)(7)(B)(vii) took the place of the compact (research/gaming/secretarial-procedures.csv).
+found_in:
+- 2026-11-21-gaming-compact-histories

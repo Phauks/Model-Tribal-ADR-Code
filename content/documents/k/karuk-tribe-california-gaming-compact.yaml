@@ -1,0 +1,93 @@
+id: karuk-tribe-california-gaming-compact
+kind: gaming-compact
+title: Karuk Tribe–State of California Gaming Compact
+nations:
+- karuk-tribe
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Karuk Tribe and the State of California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Karuk Tribe and the State
+  of California as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event and which version
+  is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small model''s
+  reading of excerpts.'
+versions:
+- id: 2014-original
+  label: 2014 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2014-11-19'
+    published: '2014-11-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2014-27377
+    locator: 79 Fed. Reg. 68910 (Nov. 19, 2014)
+  source: compact-ca-karuk-tribe-2014-11-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2014.11.19_karuk_tribe_tribal_state_gaming_compact.pdf
+    sha256: da8e94a3ce6f57cde5e7cade3e46be48b4fbd50a493fb39131a43839255c4298
+    pages: 224
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.7 (excerpt begins at Sec. 9.6 text)
+    summary: Disputes over which regulation to adopt go to a single retired-judge JAMS arbitrator under Comprehensive
+      Arbitration Rules, whose order takes effect on issuance with review waived; the general Section 13 dispute
+      clause is not in the excerpt.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS. Sec. 15.1 and Sec. 15.2
+    summary: The compact may be amended by mutual written agreement, in addition to circumstances in Sections 10.0(d)
+      and 12.5(f); no sooner than eighteen months before termination the parties may negotiate an extension or new
+      compact.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2014-original
+  dates:
+    listed: '2018-12-27'
+    published: '2018-12-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2018-28135
+    locator: 83 Fed. Reg. 66741 (Dec. 27, 2018)
+  source: compact-ca-karuk-tribe-2018-12-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2018.12.27 Karuk Deemed approved compact.pdf
+    sha256: 48c5bd3b29f6a384d55247d5f499bcb8b83e174a409d7833d48fa65f60f52bc3
+    pages: 5
+  clauses:
+  - topic: renegotiation
+    locator: Preamble (recital referring to Section 15.1 of the 2014 Compact)
+    summary: The amendment recites that the 2014 Compact may be amended upon written agreement of both parties under
+      its Section 15.1.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2014-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2014-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

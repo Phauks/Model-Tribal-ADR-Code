@@ -1,0 +1,54 @@
+id: walker-river-paiute-tribe-of-the-walker-river-reservation-nevada-gaming-compact
+kind: gaming-compact
+title: Walker River Paiute Tribe of the Walker River Reservation, Nevada–State of Nevada Gaming Compact
+nations:
+- walker-river-paiute-tribe-of-the-walker-river-reservation
+states:
+- NV
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Walker River Paiute Tribe of the Walker River Reservation, Nevada and the State
+    of Nevada under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Walker River Paiute Tribe
+  of the Walker River Reservation, Nevada and the State of Nevada as of Nov. 21, 2026: 1 original. The order, the
+  kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1996-original
+  label: 1996 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1996-08-02'
+    published: '1996-08-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-x96-20802
+    locator: 61 Fed. Reg. 40429 (Aug. 2, 1996)
+  source: compact-nv-walker-river-paiute-tribe-of-the-walker-river-reservation-1996-08-02
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/nevada/508_compliant_1996.08.02_walker_river_paiute_tribe_tribal_state_gaming_compact.pdf
+    sha256: 6a5e886d83c6dfd0327f8f5938560e024cb7588ae1f6dd114ea1868138e884ce
+    pages: 14
+  clauses:
+  - topic: dispute-resolution
+    locator: ARTICLE VII. DEFAULT AND TERMINATION, 1. Default.
+    summary: For a substantial and continuing default, the alleging party gives written notice demanding cure within
+      sixty days; if uncured the parties meet within thirty days, and if still unresolved thirty days after meeting
+      either party may pursue any lawful remedy, including an action under 25 U.S.C. 2710(d)(7)(A), with consent
+      to jurisdiction of any court of competent jurisdiction; mediation or arbitration only by mutual written agreement.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: ARTICLE VIII. AMENDMENTS
+    summary: The compact may be amended only with the consent of both parties by written instrument signed by both;
+      if applicable law changes substantially the parties agree to negotiate in good faith to amend it.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+found_in:
+- 2026-11-21-gaming-compact-histories

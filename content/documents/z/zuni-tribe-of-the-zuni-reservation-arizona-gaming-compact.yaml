@@ -1,0 +1,189 @@
+id: zuni-tribe-of-the-zuni-reservation-arizona-gaming-compact
+kind: gaming-compact
+title: Zuni Tribe of the Zuni Reservation, New Mexico–State of Arizona Gaming Compact
+nations:
+- zuni-tribe-of-the-zuni-reservation
+states:
+- AZ
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Zuni Tribe of the Zuni Reservation, New Mexico and the State of Arizona under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Zuni Tribe of the Zuni Reservation,
+  New Mexico and the State of Arizona as of Nov. 21, 2026: 1 original, 2 amendments and 1 restatement. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2003-original
+  label: 2003 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2003-07-03'
+    published: '2003-07-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-16826
+    locator: 68 Fed. Reg. 39964 (July 3, 2003)
+  source: compact-az-zuni-tribe-of-the-zuni-reservation-2003-07-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2003.07.03_zuni_tribe_tribal_state_gaming_compact.pdf
+    sha256: 9e4e842632bea742166bc806966049aaf40b6a78d7187703bc8e4f57583c1569
+    pages: 60
+- id: 2009-amendment
+  label: 2009 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2003-original
+  dates:
+    listed: '2009-03-25'
+    published: '2009-03-25'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e9-6585
+    locator: 74 Fed. Reg. 12889 (Mar. 25, 2009)
+  source: compact-az-zuni-tribe-of-the-zuni-reservation-2009-03-25
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2009.03.25_zuni_tribe_tribal_state_gaming_compact_1.pdf
+    sha256: 37079180ad2c4993fbb46f438aaa08a979c71f68921810e392a26cc0f0defada
+    pages: 14
+  clauses:
+  - topic: dispute-resolution
+    locator: Attachment 7, Section 7(g) Compact Compliance Review
+    summary: Under the amended compliance review in Section 7(g), an unresolved compliance dispute leads to a notice
+      of dispute under Section 15, whose procedures are not in the excerpt.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-original
+    change: unchanged
+    summary: The 2003 Compact's Section 3(d)(4) sends a transfer-denial dispute to Section 15. The 2009 Agreement
+      to Amend lists nine amended sections (2(n), 3(d), 3(d)(8), 3(m), 4(d), 5(i) and (n), 6(g), 7(g), 12(e)), none
+      of them Section 15, and its paragraph 11 carries the Section 15 dispute resolution provisions forward. The
+      dispute article is therefore not amended.
+    locator_before: Section 3(d)(4)
+    locator_after: Agreement paragraph 11
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2021-restatement
+  label: 2021 amended and restated compact
+  event: restatement
+  status: in-effect
+  supersedes:
+  - 2003-original
+  - 2009-amendment
+  dates:
+    listed: '2021-05-24'
+    published: '2021-05-24'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-10877
+    locator: 86 Fed. Reg. 27889 (May 24, 2021)
+  source: compact-az-zuni-tribe-of-the-zuni-reservation-new-m-2021
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508 Compliant 2021.05.24 Zuni Tribe Tribal State Gaming Compact.pdf
+    sha256: 0319d5b961f743bc086e8241c50abac1ed1f165c3c8d8c6d0d8c1507a5f1c559
+    pages: 80
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 3(b)(3)(C)
+    summary: For appendix disputes, either party may start Section 15 dispute resolution after 180 days without
+      agreement, and arbitration runs before one neutral arbitrator selected by CPR in a last-best-offer format;
+      the excerpt does not show whether the result binds.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 3(b)(3)(B); SECTION 17. AMENDMENTS
+    summary: Either the nation or the State Gaming Agency may request in writing to negotiate a new or modified
+      appendix, and if no agreement is reached within 180 days either may start Section 15 dispute resolution; amendments
+      must be in writing, signed by both parties and approved or deemed approved under the Act.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2003-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2003-original
+    change: not-compared
+    verification: inferred
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2021-restatement
+  dates:
+    listed: '2022-06-14'
+    published: '2022-06-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-12743
+    locator: 87 Fed. Reg. 35992 (June 14, 2022)
+  source: compact-az-zuni-tribe-of-the-zuni-reservation-2022-06-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508_compliant_2022.06.14_zuni_tribe_tribal_state_gaming_compact.pdf
+    sha256: b022f0d4e6102117c060368e708f44cedc831869dde262bc06a57710e61364bd
+    pages: 20
+  clauses:
+  - topic: dispute-resolution
+    locator: Paragraph 12
+    summary: Disputes under the Agreement go to the dispute resolution provisions of Section 15 of the Compact,
+      which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Paragraph 10
+    summary: The Compact is amended under its Section 17, which the excerpt does not reproduce, and this Agreement
+      itself may be changed only by a written document signed by both parties.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2021-restatement
+    change: unchanged
+    summary: The earlier compact already has a full Section 15 (negotiation within 10 days, non-binding CPR mediation
+      on request, then binding CPR arbitration). The later Agreement does not amend Section 15 and only states that
+      a dispute under the Agreement uses the Compact's Section 15 dispute resolution provisions, so the process
+      is the same.
+    locator_before: Section 15(a)-(c)
+    locator_after: Agreement paragraph 12 (Section 15 not amended)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2021-restatement
+    change: unchanged
+    summary: Section 17 of the 2021 Compact is not among the thirteen sections the 2022 Agreement amends. The Agreement's
+      paragraph 10 says it may be amended only in a signed writing, and the 2021 Section 17 writing-and-signature
+      and mutual-agreement rule stands.
+    locator_before: Section 17 (Amendments)
+    locator_after: Agreement paragraph 10
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,427 @@
+id: tunica-biloxi-indian-tribe-louisiana-gaming-compact
+kind: gaming-compact
+title: Tunica-Biloxi Indian Tribe–State of Louisiana Gaming Compact
+nations:
+- tunica-biloxi-indian-tribe
+states:
+- LA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Tunica-Biloxi Indian Tribe and the State of Louisiana under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Tunica-Biloxi Indian Tribe
+  and the State of Louisiana as of Nov. 21, 2026: 1 original, 3 amendments, 3 extensions and 2 replacements. The
+  order, the kind of each event and which version is in effect are inferred from the list (project analysis); clause
+  summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1992-11-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-la-tunica-biloxi-indian-tribe-1992-11-18
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/louisiana/508_compliant_1992.11.18_tunica_biloxi_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: b62c96424b4893a018af8f333fe94d733980146325e27cda98edafb8d9e6f565
+    pages: 43
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 14(A)-(D), Dispute Resolution
+    summary: Patron prize disputes go to an Inspector and then the Tribal Gaming Commission, then mediation and
+      legal action; for other disputes the parties meet within ten days, then mediate under the AAA Commercial Mediation
+      Rules, and may then sue, with exclusive venue in the 19th Judicial District Court where the State of Louisiana
+      is a party.
+    methods:
+    - negotiation
+    - mediation
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section 13(A)-(C), Amendment and Revision
+    summary: Section 13 allows amendment only by written instrument signed by the Tribal Chairman and the Governor
+      and approved by the Secretary; unless written concurrence is given within thirty days the parties are deemed
+      to disagree, then they meet within ten days and unresolved matters follow the Section 14(C) mediation process.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '1999-11-26'
+    published: '1999-11-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-30725
+    locator: 64 Fed. Reg. 66488 (Nov. 26, 1999)
+  source: compact-la-tunica-biloxi-indian-tribe-1999-11-26
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/louisiana/508_compliant_1999.11.26_tunica_biloxi_tribe_tribal_state_gaming_compact.pdf
+    sha256: aa824278be1f274539320bd06b9b8225481db1263da63594a210b179436ef246
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 1999 amendment only extends the 1992 compact to 5:00 p.m. on May 18, 2000, or until a successor
+      compact takes effect, and it states that it is not a renewal. It does not amend the Section 14 dispute process
+      (inspector and Tribal Gaming Commission steps, AAA mediation, and legal action in the 19th Judicial District
+      Court), so that process still governs during the extension.
+    locator_before: Section 14(D)
+    locator_after: Extension, closing paragraph
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 1999 extension does not amend the Section 13 amendment and revision clause, which requires a written
+      instrument signed by both leaders and approved by the Secretary, with notice, concurrence and a 30-day deemed-disagreement
+      rule. The extension itself records that the parties will negotiate a successor compact, and that the State
+      gave notice of non-renewal under the compact's term provisions, which are not excerpted.
+    locator_before: Section 13(A)
+    locator_after: Recitals
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2000-extension
+  label: 2000 extension
+  event: extension
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '2000-05-12'
+    published: '2000-05-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-11941
+    locator: 65 Fed. Reg. 30606 (May 12, 2000)
+  source: compact-la-tunica-biloxi-indian-tribe-2000-05-12
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/louisiana/508_compliant_2000.05.12_tunica_biloxi_tribe_tribal_state_gaming_compact.pdf
+    sha256: 8f186376e08315141c2d5e2e340a1811ab7e65634f90a459225c6ef8c968e2e3
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2001-extension
+  label: 2001 extension
+  event: extension
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '2001-01-17'
+    published: '2001-01-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-1262
+    locator: 66 Fed. Reg. 4038 (Jan. 17, 2001)
+  source: compact-la-tunica-biloxi-indian-tribe-2001-01-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/louisiana/508_compliant_2001.01.17_tunica_biloxi_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: f46edd4ca027a6a8351610755d144981652a407dc176857f30cd918dc8eca631
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2001-extension-2
+  label: 2001 extension
+  event: extension
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '2001-04-20'
+    published: '2001-04-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-9800
+    locator: 66 Fed. Reg. 20325 (Apr. 20, 2001)
+  source: compact-la-tunica-biloxi-indian-tribe-2001-04-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/louisiana/508_compliant_2001.04.20_tunica_biloxi_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: eadecc2ddf2dc3b8e17d43033d03a1ea4542aec83879ba67fd3426b5fda6c698
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2001-replacement
+  label: 2001 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1992-original
+  - 1999-amendment
+  - 2000-extension
+  - 2001-extension
+  - 2001-extension-2
+  dates:
+    listed: '2001-10-09'
+    published: '2001-10-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-25124
+    locator: 66 Fed. Reg. 51453 (Oct. 9, 2001)
+  source: compact-la-tunica-biloxi-indian-tribe-2001-10-09
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/louisiana/508_compliant_2001.10.09_tunica_biloxi_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: 3ce05d32ecba4c896d02fcafccd7847e4c07990766a9ede919f993514d74f551
+    pages: 42
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 14(D)(1)-(3), Dispute Resolution
+    summary: Disputes go through a 10-day notice, a preliminary meeting and a 45-day negotiation period, then Commercial
+      Mediation Rules of the American Arbitration Association, and then formal binding arbitration under AAA rules
+      if the mediator's summary report leaves the issues unresolved.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section 13(A), Amendment and Revision
+    summary: Section 13 allows amendment only by written instrument signed by the Tribal Chairman and the Governor
+      and approved by the Secretary; written notice requests concurrence, which is deemed disagreement after thirty
+      days, followed by a ten-day meeting and non-binding mediation under Section 14(C), and unresolved amendments
+      are not adopted.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: The later compact provides, for disputes between the Native nation and the state, notice within 10
+      days, a meeting within 10 days and 45 days of negotiation, AAA Commercial Mediation, and then formal binding
+      arbitration under AAA rules (one arbitrator or a panel of three) with a final, non-reviewable decision. The
+      earlier compact went from mediation under the same AAA rules straight to a legal action, with exclusive venue
+      in the 19th Judicial District Court where the State is a party.
+    locator_before: Section 14(D)
+    locator_after: Section 14(D)(1)-(3)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: changed
+    summary: The 2001 Section 13(A) keeps the written, Secretary-approved amendment rule, but after a deemed disagreement
+      the parties must meet within ten days and, if unresolved, go to non-binding mediation under Section 14(C),
+      and if mediation fails the proposed amendments are not adopted. The 1992 Section 13(C) instead sent unresolved
+      amendment differences to the Section 14(C) et seq. procedures, which included legal action. Section 13(B)
+      on revisions now uses the Section 14(D) mediation and arbitration procedures if the parties disagree.
+    locator_before: Section 13(C)
+    locator_after: Section 13(A)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2006-amendment
+  label: 2006 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2006-01-31'
+    published: '2006-01-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e6-1196
+    locator: 71 Fed. Reg. 5068 (Jan. 31, 2006)
+  source: compact-la-tunica-biloxi-indian-tribe-2006-01-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/louisiana/508_compliant_2006.01.31_tunica_biloxi_tribe_tribal_state_gaming_compact.pdf
+    sha256: a4940b42022a1e51fef7260080de9d8511e519ab1e21f5ffc78e4956dd5604ff
+    pages: 7
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: unchanged
+    summary: The 2006 Economic Development Amendment is an additional provision and clarification to the 2001 compact,
+      and its excerpts contain no change to Section 14. Section 14 is not among the provisions it refers to, so
+      the 2001 dispute process still governs.
+    locator_before: Section 14(D)
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2006 amendment''s excerpt is heavily OCR-damaged, so the amended text
+      and recitals are only partly readable. No clean quotation of the amendment''s ''additional provision'' wording
+      was found, so the later quotes are left null. The 2006 Section 6 text in the excerpt is about financing and
+      the Economic Development Amendment''s own terms. The Interior approval letter is dated January 17, 2006 and
+      the amendment was executed January 15, 2006. The earlier 2001 text in these excerpts is the same as in the
+      previous item.'
+  - topic: renegotiation
+    compared_with: 2001-replacement
+    change: unchanged
+    summary: The 2006 amendment adds a Section 6 provision on economic development and does not refer to Section
+      13. The excerpts show that it is an additional provision and clarification of the 2001 compact, not a renewal
+      or replacement of it, so the 2001 Section 13 amendment and revision rules still govern.
+    locator_before: Section 13(A)
+    locator_after: Recitals
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2006 amendment''s excerpt is heavily OCR-damaged, so the amended text
+      and recitals are only partly readable. No clean quotation of the amendment''s ''additional provision'' wording
+      was found, so the later quotes are left null. The 2006 Section 6 text in the excerpt is about financing and
+      the Economic Development Amendment''s own terms. The Interior approval letter is dated January 17, 2006 and
+      the amendment was executed January 15, 2006. The earlier 2001 text in these excerpts is the same as in the
+      previous item.'
+- id: 2013-amendment
+  label: 2013 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2013-10-22'
+    published: '2013-10-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2013-24348
+    locator: 78 Fed. Reg. 62649 (Oct. 22, 2013)
+  source: compact-la-tunica-biloxi-indian-tribe-2013-10-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/louisiana/508_compliant_2013.10.22_tunica_biloxi_tribe_tribal_state_gaming_compact.pdf
+    sha256: fdeca304bc2527c71ebb7a622f789f66f826ff0b5bce72b56a7da33a584c9083
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: unchanged
+    summary: The 2013 amendment changes only Section 6, Parts C and J, and says it is not an adoption, renewal or
+      extension of the 2001 compact. Section 14 is not among the provisions it amends, so the 2001 dispute process
+      still governs, though the excerpt's cut-off Miscellaneous paragraph 3 is not seen.
+    locator_before: Section 14(D)
+    locator_after: Recitals
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2013 excerpt cuts off in Miscellaneous paragraph 3, so any dispute or
+      amendment terms there are not shown. The Interior approval letter says the compact took effect on Federal
+      Register publication and that it was approved September 30, 2013, though the letter is dated October 30, 2013.
+      The amendment is dated June 24, 2013 and was received August 19, 2013. The excerpt has OCR damage, but the
+      quoted lines are clean.'
+  - topic: renegotiation
+    compared_with: 2001-replacement
+    change: unchanged
+    summary: The 2013 amendment amends Section 6, Parts C and J only and describes itself as an agreement to additional
+      provisions and clarifications to the compact. Section 13 is not among the provisions amended, so the 2001
+      Section 13 amendment and revision rules still govern.
+    locator_before: Section 13(A)
+    locator_after: Recitals; Section 1
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2013 excerpt cuts off in Miscellaneous paragraph 3, so any dispute or
+      amendment terms there are not shown. The Interior approval letter says the compact took effect on Federal
+      Register publication and that it was approved September 30, 2013, though the letter is dated October 30, 2013.
+      The amendment is dated June 24, 2013 and was received August 19, 2013. The excerpt has OCR damage, but the
+      quoted lines are clean.'
+- id: 2019-replacement
+  label: 2019 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2001-replacement
+  - 2006-amendment
+  - 2013-amendment
+  dates:
+    listed: '2019-12-27'
+    published: '2019-12-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2019-27987
+    locator: 84 Fed. Reg. 71451 (Dec. 27, 2019)
+  source: compact-la-tunica-biloxi-indian-tribe-2019
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/louisiana/508 Compliant.2019.12.27 Tunica-Biloxi Indian Tribe of Louisiana
+      and the State of Louisiana Tribal State Compact.pdf
+    sha256: e866edfa2632cb5048f21129badef6f8c44b5d8a857ff1eaf93ed139a243c830
+    pages: 42
+  clauses:
+  - topic: dispute-resolution
+    locator: 'SECTION 14: DISPUTE RESOLUTION, paragraphs (A) to (D)'
+    summary: For disputes between the Tribe and the State, the party alleging the dispute gives notice within ten
+      days, representatives meet within ten days and negotiate up to 45 days, then mediation under the AAA Commercial
+      Mediation Rules, and then formal binding arbitration by one or three arbitrators under AAA rules whose decision
+      is final and non-reviewable; patron prize disputes follow tribal procedures and the parties may agree to other
+      methods.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: 'SECTION 13: AMENDMENT AND REVISION, (A) and (B); SECTION 15(D)'
+    summary: The compact may be amended only by a written instrument signed by the Tribal Chairman and the Governor
+      and approved by the Secretary of the Interior; a written amendment request is followed by a 30-day concurrence
+      period, a ten-day meeting and non-binding mediation, and unresolved amendments are not adopted.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2001-replacement
+    change: unchanged
+    summary: 'Section 13 of the 2019 compact has the same amendment and revision text as Section 13 of the 2001
+      compact: a written, Secretary-approved amendment with notice and concurrence, a ten-day meeting, non-binding
+      mediation under Section 14(C), and no adoption if mediation fails. Section 13(B) still sends unresolved revision
+      disputes to the Section 14(D) procedures.'
+    locator_before: Section 13(A)
+    locator_after: Section 13(A)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2001 Section 14(D)(3) arbitration cost and finality text is cut off
+      in the excerpt, so the 2019 ''final and non-reviewable'' sentence cannot be compared. Section 15 of the 2019
+      compact resets a seven-year primary term with automatic one-year extensions, which affects renegotiation timing
+      but is not in either dispute or amendment clause. The 2019 excerpt has OCR-free text in the dispute section,
+      and the quotations are clean.'
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,114 @@
+id: susanville-indian-rancheria-california-gaming-compact
+kind: gaming-compact
+title: Susanville Indian Rancheria, California–State of California Gaming Compact
+nations:
+- susanville-indian-rancheria
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Susanville Indian Rancheria, California and the State of California under 25
+    U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Susanville Indian Rancheria,
+  California and the State of California as of Nov. 21, 2026: 1 original and 1 replacement. The order, the kind
+  of each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-susanville-indian-rancheria-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2000.05.16 Susanville Indian Rancheria  Tribal
+      State Gaming Compact.pdf
+    sha256: 6dfa5c691da6000bd47ab0c7b1d35f960868fff3d0764fe44dd531f3f6e949f7
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 Voluntary Resolution; Reference to Other Means of Resolution (Secs. 9.2-9.3 also)
+    summary: Disputes first go through written notice and a good-faith meet-and-confer, then either party may seek
+      AAA Commercial Rules arbitration with a binding award (neither party must agree to arbitrate), and otherwise
+      may sue in the U.S. District Court where the Tribe's Gaming Facility is located and the Ninth Circuit, or
+      in a state court if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.0 AMENDMENTS; RENEGOTIATIONS (Secs. 12.1-12.3)
+    summary: The compact may be amended at any time by mutual written agreement, and the Tribe may request renegotiation
+      in writing to add Class III games other than those authorized, but not within 12 months of the effective date,
+      with talks to be scheduled within 30 days; the excerpt does not say what happens if talks fail.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2019-replacement
+  label: 2019 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  dates:
+    listed: '2019-12-27'
+    published: '2019-12-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2019-27990
+    locator: 84 Fed. Reg. 71448 (Dec. 27, 2019)
+  source: compact-ca-susanville-indian-rancheria-2019-12-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant.12.27.2019_susanville_indian_rancheria_tribal_state_gaming_compact.pdf
+    sha256: 121ed02ad68debe397096806e41ea3bef9b4437ee2c51388d4dabf22ed0aa977
+    pages: 144
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 11.7. Arbitration.
+    summary: If an intergovernmental agreement with the County is not reached within 75 days of the final TEIR,
+      either party may demand binding JAMS arbitration on remaining negotiation disputes, and the award becomes
+      the agreement.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: changed
+    summary: Both compacts require written notice, a meeting, voluntary arbitration and then court. The later compact
+      provides a written response within 15 days and a meeting within 30 days of notice (the earlier required a
+      meeting within 10 days and arbitration 30 days after the first meeting), JAMS rather than AAA arbitration,
+      state or federal court proceedings in the district or county of the Gaming Facility, and remedies limited
+      to those in Section 13.4.
+    locator_before: Sec. 9.0-9.2
+    locator_after: Sec. 13.0-13.2
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: changed
+    summary: The 2000 Sec. 12.2 allows renegotiation when the Tribe wants games beyond those authorized, with a
+      12-month bar. The 2019 table of contents lists a renumbered Sec. 15.4 on entitlement to renegotiate based
+      on changed market conditions. The body of that section is not in the excerpt.
+    locator_before: Sec. 12.2
+    locator_after: Table of contents, Sec. 15.4
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

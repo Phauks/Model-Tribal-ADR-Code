@@ -1,0 +1,279 @@
+id: three-affiliated-tribes-of-the-fort-berthold-reservation-north-dakota-gaming-compact
+kind: gaming-compact
+title: Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota–State of North Dakota Gaming Compact
+nations:
+- three-affiliated-tribes-of-the-fort-berthold-reservation
+states:
+- ND
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota and
+    the State of North Dakota under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Three Affiliated Tribes of
+  the Fort Berthold Reservation, North Dakota and the State of North Dakota as of Nov. 21, 2026: 1 original, 2 amendments
+  and 2 replacements. The order, the kind of each event and which version is in effect are inferred from the list
+  (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1992-12-11'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-nd-three-affiliated-tribes-of-the-fort-berthold-reservation-1992-12-11
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-dakota/508_compliant_1992.12.11_three_affiliated_tribes_tribal_state_gaming_compact.pdf
+    sha256: 4e32ce3cbd1fb4ffbb3c4c52dc63a537f81421c03bc8811cc13c8fdcb13195a0
+    pages: 37
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 10.2, Availability of Dispute Resolution Procedures
+    summary: If the State disqualifies an individual and the Tribe disagrees, the Tribe may pursue dispute resolution
+      under Section XXVII of the compact, which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section XXII, Amendments to Regulatory and Technical Standards
+    summary: Section XXII allows the technical and regulatory standards for electronic games to be modified by mutual
+      agreement of the North Dakota Attorney General and the Tribal Council upon written recommendation; the excerpt
+      shows no general amendment or renegotiation clause.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1994-amendment
+  label: 1994 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '1994-03-10'
+    published: '1994-03-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-94-5465
+    locator: 59 Fed. Reg. 0 (Mar. 10, 1994)
+  source: compact-nd-three-affiliated-tribes-of-the-fort-berthold-reservation-1994-03-10
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-dakota/508_compliant_1994.03.10_three_affiliated_tribes_tribal_state_gaming_compact.pdf
+    sha256: e49ffc91eb7dce54c63dd487b3c8f0b9c1d7f47cd9324313ef2e0cdf7ea0507c
+    pages: 22
+  clauses:
+  - topic: dispute-resolution
+    locator: Addendum Section XV, Dispute Resolution
+    summary: Disputes under the addendum are handled through the dispute resolution procedures in Article XXVII
+      of the compact, which the excerpt does not include.
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Addendum Section XVI, Term of Addendum
+    summary: The addendum may be terminated or amended only by mutual consent of the parties with approval of the
+      United States Secretary of the Interior.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: 'The earlier compact already had Article XXVII: written notice, a meeting within 30 days, and after
+      90 days any available remedy including AAA arbitration with a three-arbitrator panel or an action in federal
+      district court. The later addendum adds that a party alleging non-compliance with the addendum may invoke
+      the compact''s Article XXVII procedures, extending that process to addendum disputes.'
+    locator_before: Art. XXVII (27.1-27.4)
+    locator_after: Addendum Art. XV
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 1999-replacement
+  label: 1999 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1992-original
+  - 1994-amendment
+  dates:
+    listed: '1999-11-23'
+    published: '1999-11-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-30555
+    locator: 64 Fed. Reg. 65722 (Nov. 23, 1999)
+  source: compact-nd-three-affiliated-tribes-of-the-fort-berthold-reservation-1999-11-23
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-dakota/508_compliant_1999.11.23_three_affiliated_tribes_tribal_state_gaming_compact.pdf
+    sha256: 9cf06a31627958056fffeb2d607dc84403fa540e2b926bae501d85be5943aa13
+    pages: 40
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XXVIII, Dispute Resolution (28.1-28.5)
+    summary: A party alleging noncompliance gives written notice and the parties meet within thirty days; if unresolved
+      after ninety days either party may pursue arbitration under AAA rules, an action in the United States District
+      Court for North Dakota, or any other available remedy, and the State may serve a notice to cease gaming that
+      the Tribe may stop or contest through these procedures.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section XXXIV, Amendment
+    summary: The State or the Tribe may at any time request amendment or negotiations, both parties must negotiate
+      in good faith and reach a determination within ninety days, and amendments take effect only when both parties
+      agree and, if necessary, the Secretary approves.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2013-replacement
+  label: 2013 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1999-replacement
+  dates:
+    listed: '2013-03-21'
+    published: '2013-03-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2013-06446
+    locator: 78 Fed. Reg. 17427 (Mar. 21, 2013)
+  source: compact-nd-three-affiliated-tribes-of-the-fort-berthold-reservation-2013-03-21
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-dakota/508_compliant_2013.03.21_three_affiliated_tribes_tribal_state_gaming_compact.pdf
+    sha256: cb9752d65a2419a2a50ec5d610813de446b973a368fd4c6d6cdb3246dc7f2b6f
+    pages: 31
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XXVIII, Dispute Resolution (28.1-28.5)
+    summary: A party alleging noncompliance gives written notice and the parties meet within thirty days; if unresolved
+      after ninety days either party may pursue arbitration under AAA rules, an action in the United States District
+      Court for North Dakota, or any other available remedy, and the State may serve a notice to cease gaming that
+      the Tribe may stop or contest through these procedures.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section XXXIV, Amendment
+    summary: The State or the Tribe may at any time request amendment or negotiations, both parties must negotiate
+      in good faith and reach a determination within ninety days, and amendments take effect only when both parties
+      agree and, if necessary, the Secretary approves; Section XXI also allows technical standards to be modified
+      by mutual agreement.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1999-replacement
+    change: unchanged
+    summary: 'The 2013 compact''s dispute article (printed as Article VIII in the excerpt, with the same Section
+      28.1 to 28.4 numbering as the 1999 Article XXVIII) has the same steps: a 30-day meeting, a 90-day period,
+      then arbitration under AAA rules or an action in the U.S. District Court for North Dakota, with the same State
+      and Tribal arbitrator selection.'
+    locator_before: XXVIII, 28.1(B)
+    locator_after: 28.1(B) (heading garbled in excerpt)
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1999-replacement
+    change: unchanged
+    summary: 'The amendment article (Article XXXIV) is the same in both compacts: either party may request amendment
+      or negotiations at any time, the other party negotiates in good faith with a 90-day determination, and amendments
+      take effect only when both parties agree and, if necessary, the Secretary approves; the technical-standards
+      clause (Article XXI) is reworded only by adding ''Office of'' to the Attorney General''s title.'
+    locator_before: XXXIV
+    locator_after: XXXIV
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2013-replacement
+  dates:
+    listed: '2022-12-19'
+    published: '2022-12-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-27470
+    locator: 87 Fed. Reg. 77628 (Dec. 19, 2022)
+  source: compact-nd-three-affiliated-tribes-of-the-fort-bert-2022
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/north-dakota/508_compliant_2022.12.19_three_affiliated_tribes_of_the_fort_berthold_reservation_tribal_state_gaming_compact.pdf
+    sha256: a8f201174ebb8b029a75ba83d4696b49eb1ad9d441db5fb658ecb6f5ad57514c
+    pages: 27
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XXVIII, 28.1 and 28.2, Dispute Resolution
+    summary: Written notice and a thirty-day meeting come first; after ninety days unresolved the parties try mediation
+      administered by the American Arbitration Association, and after mediation or 180 days each party gives a limited
+      waiver of immunity for an action in the United States District Court for the District of North Dakota.
+    methods:
+    - negotiation
+    - mediation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section XXXIV, Amendment
+    summary: Either party may request amendment with notice, the parties must negotiate in good faith and reach
+      a determination within ninety days, and amendments apply only when both parties agree and, if needed, the
+      Secretary approves.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2013-replacement
+    change: changed
+    summary: The later compact provides notice and a 30-day meeting, then mediation (AAA Commercial Mediation Procedures
+      in Bismarck, if no mediator is agreed) if unresolved after 90 days, then a limited waiver of immunity for
+      an action in the District of North Dakota after mediation fails or 180 days pass. The earlier compact went
+      from the 30-day meeting, after 90 days, to any available remedy including three-arbitrator AAA arbitration
+      or federal court; the later text has no arbitration provision or sections 28.3 to 28.5.
+    locator_before: XXVIII, 28.1-28.5
+    locator_after: XXVIII, 28.1(a)-(b), 28.2
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2013-replacement
+    change: changed
+    summary: The Interior letter describes the amendment as waiving the State's Eleventh Amendment immunity if the
+      parties negotiate a successor compact, so that IGRA's good-faith negotiation provisions can be enforced and
+      the existing compact remains in effect through IGRA's remedial process; the 2013 Article XXXIV amendment clause
+      is the same in the 2022 excerpt, and the operative successor-compact text is not in the excerpts.
+    locator_before: XXXIV
+    locator_after: Interior letter (operative text not excerpted)
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

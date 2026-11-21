@@ -1,0 +1,316 @@
+id: kalispel-indian-community-of-the-kalispel-reservation-washington-gaming-compact
+kind: gaming-compact
+title: Kalispel Indian Community of the Kalispel Reservation–State of Washington Gaming Compact
+nations:
+- kalispel-indian-community-of-the-kalispel-reservation
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Kalispel Indian Community of the Kalispel Reservation and the State of Washington
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Kalispel Indian Community
+  of the Kalispel Reservation and the State of Washington as of Nov. 21, 2026: 1 original and 6 amendments. The
+  order, the kind of each event and which version is in effect are inferred from the list (project analysis); clause
+  summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1998-original
+  label: 1998 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1998-12-14'
+    published: '1998-12-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-33045
+    locator: 63 Fed. Reg. 68787 (Dec. 14, 1998)
+  source: compact-wa-kalispel-indian-community-of-the-kalispel-reservation-1998-12-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_1998.12.14_kalispel_indian_community_tribal_state_gaming_compact.pdf
+    sha256: fb503bc0ba5506d151b7dfd1338cc20788d8e16fe3201ca3a942b0825dfbb47f
+    pages: 75
+  clauses:
+  - topic: renegotiation
+    locator: Section XV.D.3 and XV.D.5
+    summary: Sections III E, H, I and J cannot be renegotiated or amended for thirty-six months from the Governor's
+      signature unless a listed event occurs; other sections may be renegotiated on written notice for unforeseen
+      circumstances, with negotiations starting within thirty days.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1998-original
+  dates:
+    listed: '1999-06-03'
+    published: '1999-06-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-13999
+    locator: 64 Fed. Reg. 29874 (June 3, 1999)
+  source: compact-wa-kalispel-indian-community-of-the-kalispel-reservation-1999-06-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1999.06.03 Kalispel Indian Community Tribal
+      State Gaming Compact.pdf
+    sha256: d736b64b5943dcf69f1fa066344c4c6004f1734500e2a414df3c6abdea6d5be8
+    pages: 53
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 16. DISPUTE RESOLUTION (Appendix X)
+    summary: Disputes under Appendix X are resolved under any dispute provisions made specifically applicable in
+      the Appendix, and otherwise under the binding arbitration provisions of the compact.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1998-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1998-original
+    change: unchanged
+    summary: The First Amendment amends only Section III.A and adds Appendix X and does not list Section XV (amendments
+      and renegotiation), so the 1998 Section XV still governs.
+    locator_before: XV.D.1
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 1998 compact''s dispute article is not in the excerpts, so the 1999
+      Appendix X dispute routing cannot be compared with it. The Appendix X dispute terms are the only dispute text
+      in the amendment.'
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1998-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-kalispel-indian-community-of-the-kalispel-reservation-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2007.05.31_kalispel_indian_community_tribal_state_gaming_compact.pdf
+    sha256: d082665f2b8cfaaa4a26d4fabcc2b77e669a3d7410e39ed17d6b316012bb4f59
+    pages: 55
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 17. DISPUTE RESOLUTION (Appendix X2)
+    summary: Disputes under Appendix X2 are resolved under any dispute provision made specifically applicable in
+      the Appendix, otherwise under the compact's dispute provisions, which are not in the excerpt.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Appendix X2 Section 15.2 (Post-Moratorium)
+    summary: After a moratorium on gambling device amendments expires, the Tribe may seek an amendment when federal
+      or State law authorizes new devices, a court decision permits them, or another tribe obtains materially different
+      devices or higher wagers, with negotiations subject to the compact's dispute provisions.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1998-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1998-original
+    change: unchanged
+    summary: The Second Amendment states that it adds Appendix X2 and does not list Section XV (amendments and renegotiation),
+      so the 1998 Section XV still governs.
+    locator_before: XV.D.1
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 1998 compact''s dispute article is not in the excerpts. Appendix X2
+      is incorporated as an enforceable part of the Compact and its full text may contain other dispute or amendment
+      terms.'
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1998-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-13712
+    locator: 80 Fed. Reg. 31918 (June 4, 2015)
+  source: compact-wa-kalispel-indian-community-of-the-kalispel-reservation-2015-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2015.06.04 Kalispel Indian Community Tribal
+      State Gaming Compact.pdf
+    sha256: c5c7fae63149ee5871903347e0c57e0d22752dd3c616ebb3328038ac3a06ddbf
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4 (Dispute Resolution), 4.1-4.2
+    summary: The parties meet and attempt to resolve a dispute about Player Terminal allocation not later than 30
+      days before the increase takes effect; if no resolution is reached, either or both parties may use the dispute
+      resolution provisions of the compact (not in the excerpt).
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1998-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1998-original
+    change: unchanged
+    summary: The Third Amendment lists its changes (Section III.P, Appendix X2 Sections 12.1 and 13.4 and an Addendum)
+      and does not list Section XV, so the 1998 Section XV still governs.
+    locator_before: XV.D.1
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2015 amendment is a Third Amendment that adds Appendix X2 terms and
+      an Addendum on terminal allocations, which parallel the 2015 Hoh and Jamestown amendments. The 1998 dispute
+      article and the full Appendix X2 are not in the excerpts. The 2015 amendment refers to the Compact''s dispute
+      provisions without restating them.'
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1998-original
+  dates:
+    listed: '2021-09-15'
+    published: '2021-09-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-19843
+    locator: 86 Fed. Reg. 51374 (Sept. 15, 2021)
+  source: compact-wa-kalispel-indian-community-of-the-kalispel-reservation-2021-09-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2021.09.15_kalispel_indian_community_tribal_state_gaming_compact.pdf
+    sha256: 993045062ed933b6d45c3677af31f8aca150cee113c017e83eaeb1387749323e
+    pages: 28
+  clauses:
+  - topic: renegotiation
+    locator: Amendment item 7 (Digital Wallet)
+    summary: A future proposal to connect a patron's player account or digital wallet is not approved by this amendment;
+      if the compact does not allow the connection, additional amendments or negotiations may be initiated.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: renegotiation
+    compared_with: 1998-original
+    change: unchanged
+    summary: The Fourth Amendment does not list the 1998 Section XV (amendments and renegotiation) among its changes,
+      so that section appears to still govern; its visible text covers definitions, payments, state law consent
+      and Appendix S.
+    locator_before: XV.D.1
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The excerpts for the amendment are cut off before the full list of amended
+      sections, and the Appendix S text may contain its own dispute and amendment terms. The ''unchanged'' answers
+      therefore rest on the visible list of changes and on the amendment not restating either clause.'
+- id: 2023-amendment
+  label: 2023 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1998-original
+  dates:
+    listed: '2023-06-14'
+    published: '2023-06-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-12681
+    locator: 88 Fed. Reg. 38889 (June 14, 2023)
+  source: compact-wa-kalispel-indian-community-of-the-kalispel-reservation-2023-06-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2023.06.14_kalispel_indian_community_tribal_state_gaming_compact.pdf
+    sha256: 2ec71458b949610f4aa83fcf363b2a652c71fbaf31944e1ca49084b28b63c830
+    pages: 28
+  clauses:
+  - topic: renegotiation
+    locator: Memorandum of Incorporation preamble; Section XV.D.8
+    summary: Changes to the scope of gaming under the most favored nation clause in Section XV.D.8 are incorporated
+      automatically; modifications that require formal amendment or renegotiation are to be addressed separately.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: renegotiation
+    compared_with: 1998-original
+    change: unchanged
+    summary: The Memorandum of Incorporation is a set of automatic most-favored-nation changes under Section XV.D.8
+      and says modifications that need formal amendment or renegotiation will be addressed separately; it does not
+      list Sections XV.D.1 to D.6, which remain in effect, but the 1998 text of XV.D.7 and D.8 is not in the excerpts.
+    locator_before: XV.D.1
+    locator_after: Introduction
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: This item is a memorandum of incorporation that changes scope-of-gaming
+      terms automatically under the most-favored-nation clause, rather than a bilateral amendment, so confirm that
+      the 2023 changes are not themselves renegotiation or dispute changes. The memorandum also says the Tribe''s
+      compact has been amended five times by mutual agreement.'
+- id: 2024-amendment
+  label: 2024 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1998-original
+  dates:
+    listed: '2024-02-14'
+    published: '2024-02-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2024-03012
+    locator: 89 Fed. Reg. 11311 (Feb. 14, 2024)
+  source: compact-wa-kalispel-indian-community-of-the-kalispel-reservation-2024-02-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2024.02.14_kalispel_indian_coimmunity_tribal_state_gaming_compact.pdf
+    sha256: cc82ee2fe16dfe021712ec4bd84e441798ee58cfe2d487c5ae593cff5246a818
+    pages: 23
+  changes:
+  - topic: renegotiation
+    compared_with: 1998-original
+    change: unchanged
+    summary: The fifth amendment amends Section III.P and Appendix A and adds Appendices E and G; Section XV.D is
+      not among the provisions amended, so the earlier renegotiation clause still governs.
+    locator_before: XV.D
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The amendment does not expressly say that no other provision is amended;
+      the ''unchanged'' call rests on the list of amended provisions. The earlier dispute excerpt is empty on both
+      sides.'
+found_in:
+- 2026-11-21-gaming-compact-histories

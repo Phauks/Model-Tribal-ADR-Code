@@ -1,0 +1,245 @@
+id: comanche-nation-oklahoma-gaming-compact
+kind: gaming-compact
+title: Comanche Nation, Oklahoma–State of Oklahoma Gaming Compact
+nations:
+- comanche-nation
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Comanche Nation, Oklahoma and the State of Oklahoma under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Comanche Nation, Oklahoma
+  and the State of Oklahoma as of Nov. 21, 2026: 1 disapproved compact, 1 original, 2 replacements and 1 amendment.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1999-disapproval
+  label: 1999 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '1999-04-02'
+    published: '1999-07-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+    source: federal-register-99-17116
+    locator: 64 Fed. Reg. 36713 (July 7, 1999)
+  source: compact-ok-comanche-nation-1999-04-02
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 1999.04.02 Comanche Disapproval Letter.pdf
+    sha256: a328b6dbcbd1a57c7135ce6e752ace600f036503d4f30e79fdcdd6f09e3f5ed1
+    pages: 1
+- id: 1999-original
+  label: 1999 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1999-07-07'
+    published: '1999-07-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-17116
+    locator: 64 Fed. Reg. 36713 (July 7, 1999)
+  source: compact-ok-comanche-nation-1999-07-07
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 1999.07.07 Comanche Nation Tribal State Gaming
+      Compact.pdf
+    sha256: d5bef28da84886e64b82fa5fbad9054f673cc3f44efb4626990af8d3dbff9435
+    pages: 21
+  clauses:
+  - topic: dispute-resolution
+    locator: 22. Dispute Resolution.
+    summary: Disputes are first submitted to the Commission, which must act within ninety days, after which either
+      party may submit the matter to American Arbitration Association arbitration in Lawton, Oklahoma; a majority
+      decision of three arbitrators is binding on both parties subject to appeal, and enforcement lies in the United
+      States District Court.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: 25. Changes in Applicable Law.
+    summary: A party that believes a change in Oklahoma or federal law materially affects the compact must notify
+      the other in writing and request a meeting within 30 days; within 180 days the parties must agree no change
+      is needed, agree and execute modifications, or either may sue for a declaratory judgment in federal court,
+      and amendments require written agreement and Secretary approval.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2005-replacement
+  label: 2005 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1999-original
+  dates:
+    listed: '2005-01-27'
+    published: '2005-01-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-05-1468
+    locator: 70 Fed. Reg. 3942 (Jan. 27, 2005)
+  source: compact-ok-comanche-nation-2005-01-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508_compliant_2005.01.27_comanche_nation_tribal_state_gaming_comapct.pdf
+    sha256: 2fb307f857d6ced4f7d78cf7f4cb80f28338abaa383c753923d54fd539910423
+    pages: 60
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION
+    summary: The compact provides written notice and a meeting of representatives within thirty days, then arbitration
+      under American Arbitration Association rules subject to de novo review in a federal district court, whose
+      decision may be appealed.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, paragraph B
+    summary: Within 180 days after expiration or renewal, the tribe or the state, acting through its Governor, may
+      request to renegotiate subsections A and E of Part 11; the compact renews for fifteen-year terms if other
+      electronic gaming is authorized.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1999-original
+    change: changed
+    summary: The earlier compact provides that disputes first go to the Commission, which has 90 days to act, then
+      either party may take the matter to AAA arbitration in Lawton before three arbitrators whose majority decision
+      binds both parties subject to appeal, with judicial review in federal court; the later compact provides notice
+      and a meeting within 30 days, then arbitration under AAA rules before one arbitrator with remedies limited
+      to enforcing the compact and de novo federal district court review of the award.
+    locator_before: Sections 22-23
+    locator_after: Part 12
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1999-original
+    change: changed
+    summary: 'The 1999 compact has a change-in-law procedure (Section 25: a meeting within 30 days, then agreement
+      on modifications within 180 days or a federal declaratory-judgment suit) and requires Secretary approval for
+      amendments (Section 32), while the 2005 compact''s visible renegotiation text sets a 180-day window after
+      the term expires or a renewal ends to request renegotiation of Part 11 subsections A and E.'
+    locator_before: 25, 32
+    locator_after: Part 15(B)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2005-replacement
+  dates:
+    listed: '2018-09-18'
+    published: '2018-09-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-20187
+    locator: 83 Fed. Reg. 47187 (Sept. 18, 2018)
+  source: compact-ok-comanche-nation-2018-09-18
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2018.09.18 Comanche Compact amendment.pdf
+    sha256: 63a6ea1d48ed0f81009c26ad81287684d24a3c8657ab4384bb0399b8e1f89af9
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2005-replacement
+    change: unchanged
+    summary: The 2018 supplement does not amend Part 12; it says the table games operation is treated as subject
+      to the Compact for enforcement and exclusivity, so the 2005 Part 12 process still applies.
+    locator_before: Part 12
+    locator_after: Part 2(C)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The supplement''s text is garbled in places (OCR), so check the quoted wording
+      against the original. The supplement says it is to be governed in accord with a Compact ''approved by the
+      United States Department of the Interior on April 6, 2018'', which does not match the 2005 compact''s date,
+      so confirm which compact it attaches to.'
+  - topic: renegotiation
+    compared_with: 2005-replacement
+    change: unchanged
+    summary: The supplement does not mention renegotiation, so the 2005 Part 15 renegotiation terms still govern;
+      it says it is to be governed in accord with the Compact.
+    locator_before: Part 15(B)
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The supplement''s text is garbled in places (OCR), so check the quoted wording
+      against the original. The supplement says it is to be governed in accord with a Compact ''approved by the
+      United States Department of the Interior on April 6, 2018'', which does not match the 2005 compact''s date,
+      so confirm which compact it attaches to.'
+- id: 2020-replacement
+  label: 2020 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2005-replacement
+  - 2018-amendment
+  dates:
+    listed: '2020-06-29'
+    published: '2020-06-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2020-13886
+    locator: 85 Fed. Reg. 38919 (June 29, 2020)
+  source: compact-ok-comanche-nation-2020-06-29
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2020.06.29 Comanche Nation Gaming Compact.pdf
+    sha256: 031420af404b4fe8a8021ad52dae112e4061401a4023dd621bd272f722756f5c
+    pages: 30
+  clauses:
+  - topic: dispute-resolution
+    locator: 'PART 6: DISPUTE RESOLUTION - THE TRIBE AND THE STATE, subsection B'
+    summary: Disputes go first to mediation between the State and the Tribe, unless irreparable harm requires immediate
+      injunctive relief, and if mediation fails or injunctive relief is sought the dispute is litigated in federal
+      district court.
+    methods:
+    - mediation
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: PART 10, subsection B (Substantial Exclusivity Rate Reevaluation, subsection e)
+    summary: The Compact may be amended only by a writing executed by all Parties; if the Tribe's annual Adjusted
+      Net Win exceeds $300,000,000, new substantial exclusivity fees are set through a meet-and-confer period of
+      sixty days and then a panel process.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2005-replacement
+    change: changed
+    summary: The earlier compact provides notice, a meeting within 30 days, then arbitration under AAA rules before
+      one arbitrator with de novo federal district court review; the later compact provides a two-step process of
+      mediation with a mutually agreeable mediator (or direct federal suit for injunctive relief against irreparable
+      harm), then litigation in federal court in the district where the events occurred, with limited immunity waivers
+      and the Governor holding exclusive authority to settle for the State.
+    locator_before: Part 12
+    locator_after: Part 6
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2005-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

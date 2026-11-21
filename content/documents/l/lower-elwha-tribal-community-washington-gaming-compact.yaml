@@ -1,0 +1,222 @@
+id: lower-elwha-tribal-community-washington-gaming-compact
+kind: gaming-compact
+title: Lower Elwha Tribal Community–State of Washington Gaming Compact
+nations:
+- lower-elwha-tribal-community
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Lower Elwha Tribal Community and the State of Washington under 25 U.S.C. §
+    2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Lower Elwha Tribal Community
+  and the State of Washington as of Nov. 21, 2026: 1 original and 3 amendments. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1993-original
+  label: 1993 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1993-02-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-wa-lower-elwha-tribal-community-1993-02-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1993.02.19 Lower Elwha Tribal Community Tribal
+      State Gaming Compact.pdf
+    sha256: 693428290a8936e26281046efe94b330f04b9e05a669fd45708c043dd11d1a7f
+    pages: 99
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XII.C (Dispute Resolution), items 1-8
+    summary: Either party gives notice and the parties meet and confer within ten days; if unresolved within twenty
+      days, a party may proceed before JAMS of Seattle, whose decision is final and unappealable, with AAA rules
+      supplementing; other remedies are preserved.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section XV.D (Amendments/Renegotiations), items 2-6
+    summary: Either party may request renegotiation of the wagering limits and scope of gaming on listed triggers,
+      such as a change in State law or a court decision, with negotiations starting within thirty days; if State-requested
+      talks fail, the matter goes to Section XII.C, which is mandatory and binding.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '1999-10-01'
+    published: '1999-10-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-25506
+    locator: 64 Fed. Reg. 53404 (Oct. 1, 1999)
+  source: compact-wa-lower-elwha-tribal-community-1999-10-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1999.10.01 Lower Elwha Tribal Community Tribal
+      State Gaming Compact.pdf
+    sha256: fd2cbf3f5524f30ed69c8feaa871f77cc492bdcf50c7b0867eafc2056c5cd67b
+    pages: 54
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 16. DISPUTE RESOLUTION (Appendix X)
+    summary: Disputes under Appendix X are resolved under any dispute provision made specifically applicable in
+      the Appendix, and otherwise under the binding arbitration provisions of the compact.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 1999 Second Amendment adds Appendix X (tribal lottery systems) without amending Section XII.C.
+      Its Section 16 only routes disputes under the appendix to any procedures the appendix makes applicable, or
+      otherwise to the compact's binding arbitration provisions. The 1993 clause (notice, a meeting within 10 days,
+      then JAMS arbitration after 20 days) stays in place.
+    locator_before: XII.C
+    locator_after: Appendix X Sec. 16; 10.3
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The Second Amendment amends only Section III.A and adds Appendix X, and does not list Section XV (amendments
+      and renegotiation) among its changes, so the earlier mutual-amendment and renegotiation terms still apply.
+    locator_before: XV.D.1
+    locator_after: Recitals; Section III.A
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-lower-elwha-tribal-community-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2007.05.31_lower_elwha_indian_community_tribal_state_gaming_compact.pdf
+    sha256: 8fa19a156b6c6318f58ceeb0358b098e3feb8cecd176ec9ab56cdaa6c7d4ec74
+    pages: 55
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 17. DISPUTE RESOLUTION (see also 3.6.4 TGA/SGA Disputes)
+    summary: Disputes under the Appendix are resolved under any dispute provisions made applicable in the Appendix,
+      and otherwise under the Compact's dispute provisions; a dispute between the tribal and State gaming agencies
+      over the game-data process follows the process set out in the Appendix.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15.2 Post-Moratorium (Appendix X2)
+    summary: After the moratorium expires, the Lower Elwha Indian Community may seek an amendment when law or a
+      court permits new devices or another Washington tribe obtains materially different devices or higher wagers,
+      subject to good faith negotiation with the State.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 2007 Sixth Amendment adds Appendix X2 (tribal lottery systems) without amending Section XII.C.
+      Appendix Section 17 and Section 3.6.4 route disputes under the appendix, and state-versus-tribal-agency disputes,
+      to the compact's dispute resolution provisions. The 1993 clause (notice, a meeting within 10 days, then JAMS
+      arbitration after 20 days) stays in place.
+    locator_before: XII.C
+    locator_after: Appendix X2 Sec. 17, 3.6.4
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The Sixth Amendment adds Appendix X2 and recognizes lottery systems under Section III; it does not
+      list Section XV (amendments, duration and renegotiation) among its changes, so the earlier amendment and renegotiation
+      terms still apply.
+    locator_before: XV.D.1
+    locator_after: Operative paragraphs 1-2
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-13712
+    locator: 80 Fed. Reg. 31918 (June 4, 2015)
+  source: compact-wa-lower-elwha-tribal-community-2015-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2015.06.04 Lower Elwha Indian Community Tribal
+      State Gaming Compact.pdf
+    sha256: 731eaf5bd2806c23b71b424071d153d1443ef7ddcf80df90523ed9b5d1e2439a
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4. Dispute Resolution (4.1 and 4.2)
+    summary: Disputes over the addendum terms, including the number of player terminals, are to be met on by the
+      State and Tribe at least 30 days before the increased allocation; if no resolution is reached either party
+      may use the Compact's dispute provisions.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: changed
+    summary: 'The 2015 Addendum adds a step for disputes over its terms, such as the number of player terminals:
+      the State and Tribe must meet and attempt to resolve the dispute not later than 30 days before an increased
+      allocation takes effect, and then either may use the compact''s dispute resolution provisions. The 1993 Section
+      XII.C (notice, a meeting within 10 days, then JAMS arbitration after 20 days) is not amended.'
+    locator_before: XII.C
+    locator_after: Addendum Sec. 4.1-4.2
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The Seventh Amendment adds Section III.T and amends Appendix X2 sections 12.1, 13.4 and 14.6.3 and
+      incorporates an Addendum; it does not list Section XV (amendments and renegotiation), so the earlier amendment
+      and renegotiation terms still apply.
+    locator_before: XV.D.1
+    locator_after: Operative paragraphs 1-5
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

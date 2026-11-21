@@ -1,0 +1,183 @@
+id: sac-and-fox-tribe-of-the-mississippi-in-iowa-iowa-gaming-compact
+kind: gaming-compact
+title: Sac & Fox Tribe of the Mississippi in Iowa–State of Iowa Gaming Compact
+nations:
+- sac-and-fox-tribe-of-the-mississippi-in-iowa
+states:
+- IA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Sac & Fox Tribe of the Mississippi in Iowa and the State of Iowa under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Sac & Fox Tribe of the Mississippi
+  in Iowa and the State of Iowa as of Nov. 21, 2026: 1 original and 2 replacements. The order, the kind of each
+  event and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1992-04-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+  source: compact-ia-sac-and-fox-tribe-of-the-mississippi-in-iowa-1992-04-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/iowa/508_compliant_1992.04.30_sac_and_fox_tribe_of_the_mississippi_tribal_state_gaming_compact.pdf
+    sha256: 37f8ac8c240ffb92e07c9157556e6f11cf1487038267f41114e8b7ebe2c986d9
+    pages: 42
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 20.1 (Breach by Tribe and Dispute Resolution); Sec. 20.2; Sec. 20.3
+    summary: Before suspending or terminating the compact or seeking other remedies, the Director must give the
+      Tribe written notice with at least 30 days to cure; the Tribe may seek any remedy at law or equity against
+      the State after its own notice; and Section 20.3 allows non-exclusive alternatives such as arbitration or
+      mediation, binding or not, by agreement.
+    methods:
+    - arbitration
+    - mediation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 19 (Amendments and Waivers); Sec. 30 (Renegotiation); Sec. 34 (Duration)
+    summary: The compact may be amended only by written agreement, and a renegotiation at expiration requires written
+      notice at least 120 days before the term ends with negotiations beginning within 20 days; the excerpt does
+      not say what happens if talks fail.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1995-replacement
+  label: 1995 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1992-original
+  dates:
+    listed: '1995-06-23'
+    published: '1995-06-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-15405
+    locator: 60 Fed. Reg. 32898 (June 23, 1995)
+  source: compact-ia-sac-and-fox-tribe-of-the-mississippi-in-iowa-1995-06-23
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/iowa/508_compliant_1995.06.23_sac_and_fox_tribe_of_the_mississippi_tribal_state_gaming_compact.pdf
+    sha256: bd138722847d80a51937f64a35ecac498cba9de41fba34e2d8e1f106674305df
+    pages: 39
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 20.2 (Breach by State and Dispute Resolution); Sec. 20.3 (Non-Exclusiveness)
+    summary: If the State fails to comply, the Tribe may seek any legal or equitable remedy after written notice
+      to the Director with at least 30 days to cure, and Section 20.3 lets the parties use non-exclusive alternatives
+      such as arbitration or mediation, binding or not, only if they agree.
+    methods:
+    - arbitration
+    - mediation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 19 (Amendments and Waivers); Sec. 30 (Renegotiation); Sec. 34 (Duration)
+    summary: The compact may be modified only by written agreement of the parties, and renegotiation under the duration
+      section is conducted in good faith under the Act as a request to negotiate a compact; the excerpt does not
+      state a time limit.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: The earlier compact lets the Tribe request mediation, with negotiation assisted by the mediator for
+      up to 45 days. The later compact extends that to 60 days, adds a process for the Director to object to the
+      proposed mediator and for the Tribe to propose three others, and lets the Tribe withdraw its request; the
+      30-day notice and the non-exclusiveness clause remain.
+    locator_before: Sec. 20.1
+    locator_after: Sec. 20.1
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: changed
+    summary: 'Section 30 (renegotiation to be conducted in good faith) is substantively the same in both compacts.
+      Section 34 changes: the 1992 compact has a two-year term with notice of intent to renegotiate at least 120
+      days before expiration, while the 1995 compact has an eight-year term that renews automatically for eight-year
+      periods unless either party gives notice six months to one year before expiration.'
+    locator_before: Sec. 30; Sec. 34
+    locator_after: Sec. 30; Sec. 34
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2004-replacement
+  label: 2004 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1995-replacement
+  dates:
+    listed: '2004-12-20'
+    published: '2004-12-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-04-27710
+    locator: 69 Fed. Reg. 76004 (Dec. 20, 2004)
+  source: compact-ia-sac-and-fox-tribe-of-the-mississippi-in-iowa-2004-12-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/iowa/508_compliant_2004.12.20_sac_and_fox_tribe_of_the_mississippi_tribal_state_gaming_compact.pdf
+    sha256: 5888d80d0ccad807cb6b30dd3b9b221684bbca5fc834bb69376c48645b4b6e1b
+    pages: 56
+  clauses:
+  - topic: dispute-resolution
+    locator: 20. BINDING DISPUTE RESOLUTION FOR NON-MATERIAL BREACH; 21. REMEDIES FOR MATERIAL BREACH
+    summary: For a non-material breach, the parties give written notice and meet and confer within 15 days, a demand
+      to halt or remedy follows with a 10-day response, and either party may then request binding arbitration before
+      one agreed arbitrator or a three-arbitrator panel; for a material breach each party may instead give 30 days'
+      notice of termination, with other judicial remedies preserved.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: 19. AMENDMENTS AND WAIVERS; 31. RENEGOTIATION; 41. DURATION
+    summary: The compact may be modified only by written agreement, effective on Secretary approval except appendices
+      and technical standards; renegotiation under Section 41 (notice 6 to 12 months before expiry) is conducted
+      in good faith as if a request to negotiate a compact.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-replacement
+    change: changed
+    summary: The earlier compact provides for notice and a 30-day cure period before the Director may suspend or
+      terminate, with optional Tribe-requested mediation of up to 60 days, and notice and 30 days before the Tribe
+      may seek any remedy against the State. The later compact provides a meet-and-confer within 15 days, a written
+      demand and 10-day response, then binding arbitration before a single or three-member arbitrator for non-material
+      breaches, with termination on 30 days' notice as an alternative for material breaches.
+    locator_before: Sec. 20.1-20.3
+    locator_after: Sec. 20-21
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1995-replacement
+    change: renumbered
+    summary: The 2004 compact's renegotiation provision (Section 31) carries the same text as the 1995 Section 30,
+      with the cross-reference changed from Section 34 to Section 41, and the Section 19 amendment clause is unchanged
+      in substance. The 1995 and 2004 duration sections (34 and 41) are not in the excerpts, so any change to the
+      renegotiation trigger cannot be compared.
+    locator_before: Sec. 30
+    locator_after: Sec. 31
+    verification: inferred
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

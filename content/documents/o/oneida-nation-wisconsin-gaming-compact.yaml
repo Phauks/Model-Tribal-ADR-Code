@@ -1,0 +1,307 @@
+id: oneida-nation-wisconsin-gaming-compact
+kind: gaming-compact
+title: Oneida Nation–State of Wisconsin Gaming Compact
+nations:
+- oneida-nation
+states:
+- WI
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Oneida Nation and the State of Wisconsin under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Oneida Nation and the State
+  of Wisconsin as of Nov. 21, 2026: 1 original and 5 amendments. The order, the kind of each event and which version
+  is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small model''s
+  reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1992-01-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-wi-oneida-nation-1992-01-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1992.01.30 Oneida Nation Gaming Compact.pdf
+    sha256: 78fdd67faa3f113211404c3afbf957cda5597ff98c13c9ecf2c3d039712682c4
+    pages: 42
+  clauses:
+  - topic: dispute-resolution
+    locator: XXII. Dispute Resolution, A and B
+    summary: A party asserting noncompliance serves written notice, the parties meet within thirty days, and if
+      unresolved within ninety days either party may pursue any remedy otherwise available; mediation or arbitration
+      is used only by mutual agreement.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: XXX. Amendment
+    summary: The compact may be amended only by prior written agreement of both the State and the Oneida Tribe of
+      Indians, and the excerpt shows no unilateral reopening.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1998-amendment
+  label: 1998 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '1998-08-21'
+    published: '1998-08-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-22495
+    locator: 63 Fed. Reg. 44920 (Aug. 21, 1998)
+  source: compact-wi-oneida-nation-1998-08-21
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1998.08.21 Oneida Nation Compact.pdf
+    sha256: 81fbb81405983e5e026fd9dc8de660c7a45e8a7cfaa43d4ec631b7a1585f85f4
+    pages: 8
+  clauses:
+  - topic: renegotiation
+    locator: Recitals and closing paragraph (Section XXXII reference)
+    summary: The Oneida compact may be amended upon written agreement of both parties under its Section XXX, and
+      the parties agree to discuss modification if the State enacts a new gaming law, as memorialized in Section
+      XXXII.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: 'The 1998 amendments change Section V.A, add Section XV.I and new Sections XXXII to XXXIV, and do not
+      list Section XXII (the 1991 dispute procedure: written notice, thirty-day meeting, ninety days, then any available
+      remedy), so the earlier clause still governs; the 1998 excerpt contains no dispute text.'
+    locator_before: XXII.A.2
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 1998 document is an amendment agreement to the 1991 Wisconsin compact
+      (dated May 8, 1998; Interior approval letter August 1, 1998). It is not a replacement, and its text is partial.
+      The 1998 renewal of the term runs under Section XXV.B and sets the term from November 8, 1998 to November
+      8, 2003.'
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: changed
+    summary: 'Section XXX still requires prior written agreement of both parties for any amendment, but the 1998
+      amendments add reopening triggers: if a later agreement on Class III gaming substantially and adversely affects
+      the Nation''s revenues, the State and the Nation shall meet to discuss a reduction of the annual payment,
+      and the State and the Nation agree to discuss modifying Section XXXII if the State enacts a tax or fee on
+      Class III revenues.'
+    locator_before: XXX
+    locator_after: XXXII.B
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 1998 document is an amendment agreement to the 1991 Wisconsin compact
+      (dated May 8, 1998; Interior approval letter August 1, 1998). It is not a replacement, and its text is partial.
+      The 1998 renewal of the term runs under Section XXV.B and sets the term from November 8, 1998 to November
+      8, 2003.'
+- id: 2003-amendment
+  label: 2003 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2003-07-22'
+    published: '2003-07-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-03-18631
+    locator: 68 Fed. Reg. 43366 (July 22, 2003)
+  source: compact-wi-oneida-nation-2003-07-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2003.07.22 Oneida Nation Gaming Compact_0.pdf
+    sha256: 1729939df1c2e7fe3bd50f6d491646d975e3ca3d0ed535ec534af3da89bd79aa
+    pages: 26
+  clauses:
+  - topic: dispute-resolution
+    locator: XXII. DISPUTE RESOLUTION; XXIII. Negotiation; XXIV. Mediation; XXV. Arbitration
+    summary: The compact provides for written notice, a meeting of the Governor's and the Nation's representatives
+      within twenty days, optional non-binding mediation, and then arbitration by a three-member panel for the listed
+      articles.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: XXX. AMENDMENT; XXXII. Periodic Amendment Process, paragraph 1
+    summary: The compact may be amended by written agreement of both parties, and the State or the Nation may propose
+      regulatory amendments in the thirty days before each fifth anniversary of July 1, 2004, with good faith negotiations
+      and disputes resolved under Article XXII.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: 'The later compact replaces Article XXII: the earlier text had a notice, a meeting within 30 days and,
+      after 90 days without resolution, any available remedy, with ADR only by mutual agreement. The later compact
+      provides negotiation within 20 days of notice, optional non-binding mediation by written agreement, and arbitration
+      by a three-member panel as the sole mechanism for disputes under listed Articles, with demand allowed after
+      30 days; disputes under Articles IV, XXIII and XXXII are not arbitrable except the Nation''s claims for money
+      owed by the State.'
+    locator_before: Article XXII.A-B
+    locator_after: Article XXII (Sections XXIII-XXV), as replaced by Second Amendment section 23
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: changed
+    summary: 'The 2003 amendment keeps the prior-written-agreement rule (now Article XXXI) and adds a periodic process:
+      within the thirty days before each fifth anniversary of July 1, 2004 either party may propose amendments to
+      the regulatory provisions, and before each twenty-fifth anniversary the Governor or the Nation may propose
+      amendments to any provision, with good-faith negotiation and disputes under Article XXII.'
+    locator_before: XXX
+    locator_after: XXXII.1
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2021-08-20'
+    published: '2021-08-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-17858
+    locator: 86 Fed. Reg. 46866 (Aug. 20, 2021)
+  source: compact-wi-oneida-nation-2021-08-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2021.08.20 Oneida Gaming Compact.pdf
+    sha256: 621d49ba49c03aef530643350cd833305a15c330011dfc58d2c646bcf7b06c07
+    pages: 8
+  clauses:
+  - topic: renegotiation
+    locator: Recitals (WHEREAS clauses referring to Section XXX); E. Amendment, paragraph 2
+    summary: The compact may be amended by written agreement of both parties, and the Nation may propose amendments
+      to its event wagering and remote wagering internal control standards at any time, with the State to negotiate
+      in good faith within thirty days.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: changed
+    summary: 'The 2021 third amendment adds an amendment procedure for minimum internal control standards: the Nation
+      sends amendments to the State within fourteen days, the Department may object within thirty days, the Nation
+      may keep using an amended rule while the objection is resolved, and the State may propose new areas for the
+      standards; the article on amendment of the compact itself is renumbered from Article XXX to Article XXXI.'
+    locator_before: XXX
+    locator_after: E
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2021 Third Amendment renumbers Articles XVIII through XXX as XIX through
+      XXXI, so the 1991 amendment article is now Article XXXI, and the amended MICS procedure is in the amendment''s
+      text, not the compact''s own numbering. The 1992 earlier excerpt is the 1991 compact.'
+- id: 2025-amendment
+  label: 2025 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2025-06-30'
+    published: '2025-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2025-12057
+    locator: 90 Fed. Reg. 27874 (June 30, 2025)
+  source: compact-wi-oneida-nation-2025-06-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508_compliant_4th_amendment.pdf
+    sha256: 800ac21d5e3524d3f724304496a351ef77706f13465eb1f71a70a3d405f6b878
+    pages: 2
+  clauses:
+  - topic: renegotiation
+    locator: WHEREAS clauses; paragraph 2 (replacing the fourth paragraph of Article XXXII)
+    summary: The compact may be amended by written agreement of both parties, and this Fourth Amendment changes
+      how the annual payment is reduced for payments and in-kind contributions made to Brown and Outagamie County
+      governments.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: renumbered
+    summary: The 2025 fourth amendment's recital says the compact's amendment article is now Article XXXI and may
+      be amended upon the written agreement of both parties, the same rule as the 1991 Section XXX; the amendment's
+      own text does not restate that article and its changes concern the annual payment in Article XXXII.
+    locator_before: XXX
+    locator_after: Recitals
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2025 Fourth Amendment was approved by operation of law as well as by
+      the Interior Department according to its preamble; the payment reduction in Article XXXII is the amended provision.
+      The 1992 earlier excerpt is the 1991 compact; the later recitals describe the compact''s text as amended in
+      1998, 2003 and 2021.'
+- id: 2025-amendment-2
+  label: 2025 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1992-original
+  dates:
+    listed: '2025-06-30'
+    published: '2025-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2025-12057
+    locator: 90 Fed. Reg. 27874 (June 30, 2025)
+  source: compact-wi-oneida-nation-2025-06-30-2
+  confidence: high
+  verification: bulk-import
+  note: 'List row flags: no profile cites this list row; no text layer (scanned).'
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/2025.06.25_aprov_by_operation_of_law_letter_to_tribe.pdf
+    sha256: fd951e15f0c9f23dc1da9a76ad4e5490829be789377e578d4b63bc949f20a601
+    pages: 1
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

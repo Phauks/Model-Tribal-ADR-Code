@@ -1,0 +1,111 @@
+id: ute-mountain-ute-tribe-colorado-gaming-compact
+kind: gaming-compact
+title: Ute Mountain Ute Tribe–State of Colorado Gaming Compact
+nations:
+- ute-mountain-ute-tribe
+states:
+- CO
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Ute Mountain Ute Tribe and the State of Colorado under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Ute Mountain Ute Tribe and
+  the State of Colorado as of Nov. 21, 2026: 1 original and 1 replacement. The order, the kind of each event and
+  which version is in effect are inferred from the list (project analysis); clause summaries and comparisons are
+  a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1992-07-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-co-ute-mountain-ute-tribe-1992-07-10
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/colorado/508_compliant_1992.07.10_ute_mountain_ute_tribe_tribal_state_gaming_compact.pdf
+    sha256: f29a91b7b0cfdf4c81f7f9903c22af743ca7c9961dc2e239e7fe19fb69dd7096
+    pages: 37
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 10 (Remedy for Breach of Compact Provisions-Arbitration), subsections (a)-(c)
+    summary: After written notice and 20 days to resolve informally, the complaining party may invoke arbitration
+      before a panel of three American Arbitration Association arbitrators (no State or Tribal employees), once
+      invoked the matter may not be litigated in court, and the decision may not be judicially reviewed.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 13(c) (Amendment)
+    summary: The compact may be amended by written agreement of both parties with Secretary approval; either party
+      may request negotiations by notice, the parties then have 180 days to negotiate (extendable by agreement),
+      and the remedies available under the Act apply thereafter.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1996-replacement
+  label: 1996 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1992-original
+  dates:
+    listed: '1996-03-19'
+    published: '1996-03-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-96-6534
+    locator: 61 Fed. Reg. 11217 (Mar. 19, 1996)
+  source: compact-co-ute-mountain-ute-tribe-1996-03-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/colorado/508_compliant_1996.03.19_ute_mountian_ute_tribe_tribal_state_gaming_compact.pdf
+    sha256: e7d50d4342e292b642e582ab1f9ca82855fd81a47ef462bb7a0b413b7f399df9
+    pages: 48
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 9. REMEDY FOR BREACH OF COMPACT PROVISIONS-ARBITRATION, A and B
+    summary: A complaining party gives written notice and the parties have twenty days to resolve it informally;
+      the complaining party may then invoke arbitration before one agreed arbitrator or a three-arbitrator panel
+      under American Arbitration Association commercial rules, the matter may not be litigated in court once arbitration
+      is invoked, and the Tribe and the State agree to be bound by the panel's decision.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 12. EFFECTIVE DATE, TERMINATION AND AMENDMENT, C. Amendment
+    summary: Either party may request negotiations to amend the compact by notice; the parties have 180 days to
+      negotiate with IGRA remedies available, after which a mediator selects between last best offers and, if not
+      accepted within 45 days, the Secretary prescribes procedures; amendment otherwise requires written agreement
+      and federal approvals.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: Both compacts have a 20-day informal resolution step after written notice, then arbitration with court
+      litigation barred. The later compact has the parties first try to agree on one arbitrator with Indian gaming
+      expertise, failing which each designates one and those two choose a third under AAA commercial rules, with
+      a written statement of reasons and shared fees. The earlier compact used a panel of three arbitrators selected
+      by the AAA, an award within 120 days, and no judicial review.
+    locator_before: Section 10(a)-(c)
+    locator_after: Section 9(A)-(B)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

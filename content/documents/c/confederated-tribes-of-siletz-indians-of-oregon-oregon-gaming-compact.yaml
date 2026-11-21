@@ -1,0 +1,506 @@
+id: confederated-tribes-of-siletz-indians-of-oregon-oregon-gaming-compact
+kind: gaming-compact
+title: Confederated Tribes of Siletz Indians of Oregon–State of Oregon Gaming Compact
+nations:
+- confederated-tribes-of-siletz-indians-of-oregon
+states:
+- OR
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Confederated Tribes of Siletz Indians of Oregon and the State of Oregon under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Confederated Tribes of Siletz
+  Indians of Oregon and the State of Oregon as of Nov. 21, 2026: 1 original, 9 amendments and 1 replacement. The
+  order, the kind of each event and which version is in effect are inferred from the list (project analysis); clause
+  summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1995-03-22'
+    published: '1995-03-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-6966
+    locator: 60 Fed. Reg. 15194 (Mar. 22, 1995)
+  source: compact-or-confederated-tribes-of-siletz-indians-of-oregon-1995-03-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1995.03.22  Confederated Tribes of Siletz Indians
+      Tribal State Gaming Compact.pdf
+    sha256: 23a79e48ff77e6e71de18e7be6466d6d93e9574a327c73fcaadff4e7d1a738d7
+    pages: 43
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 6, subsection B, Procedure for Resolving Disputes Concerning Operational Decisions
+    summary: The State may give written notice of an operational concern, the parties meet and confer within 15
+      days, either party may begin non-binding arbitration within 45 days (binding only if both parties agree),
+      and an action may be brought in the United States District Court for the District of Oregon; the State may
+      use expedited procedures for immediate threats.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Section 12.D.3 Amendments
+    summary: Either the State or the Native nation may, by written request sent by certified mail, request negotiations
+      to amend, replace or repeal the compact when a listed event occurs; the compact remains in effect during negotiations,
+      and a Native nation request is treated under the Act with a 100-day period instead of 180 days.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 1996-amendment
+  label: 1996 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1996-02-06'
+    published: '1996-02-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-96-2450
+    locator: 61 Fed. Reg. 4477 (Feb. 6, 1996)
+  source: compact-or-confederated-tribes-of-siletz-indians-of-oregon-1996-02-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1996.02.06 Confederated Tribes of Siletz Tribal
+      State Gaming Compact.pdf
+    sha256: d3fda3391b783be2b5361357342a166f9b9ccdc6d013f70d73c1830c1ede265f
+    pages: 15
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment I amends only Sections 7.B.6.j, 7.A.8 and 8.F and adds house-banked blackjack terms, and
+      says it does not supersede the original compact except as specifically provided, so the 1995 dispute procedure
+      (Section 6.B and the exclusive-method sentence) still governs.
+    locator_before: 6.B
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment I does not list Section 12 among the provisions it changes, so the 1995 amendment conditions
+      in Section 12.D still govern.
+    locator_before: 12.D
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 1996-amendment-2
+  label: 1996 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1996-09-04'
+    published: '1996-09-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-96-22440
+    locator: 61 Fed. Reg. 46662 (Sept. 4, 1996)
+  source: compact-or-confederated-tribes-of-siletz-indians-of-oregon-1996-09-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1996.09.04 Confederated Tribes of Siletz Indians
+      Tribal State Gaming Compact.pdf
+    sha256: e6f584736e5f0fe8a48d6e795211566188f8a8ae6c13b81896672d897ec881f2
+    pages: 10
+  clauses:
+  - topic: dispute-resolution
+    locator: Amendment II, examples of an immediate threat under the expedited dispute procedure (Section 6, subsection
+      B, paragraph 5.d as printed)
+    summary: Amendment II expands the list of examples of an immediate threat that lets the State invoke the expedited
+      procedure in the operational-decisions dispute process, and the examples apply to the Tribal gaming operation
+      and its management.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment II amends Section 4(F) and Section 8(F), adds a Section 13(H) on changes in federal law,
+      and amends the MOU; it does not list Section 12, so the 1995 amendment conditions still govern.
+    locator_before: 12.D
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: Amendment II requires the Tribe to adopt a dispute resolution procedure
+      for player complaints about house-banked blackjack (Appendix D). That is a procedure for players, not a dispute
+      between the Tribe and the State. The new Section 13(H) reserves the Tribe''s right to take advantage of federal
+      changes that permit gaming without a compact.'
+- id: 1998-amendment
+  label: 1998 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1998-02-27'
+    published: '1998-02-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-5072
+    locator: 63 Fed. Reg. 10035 (Feb. 27, 1998)
+  source: compact-or-confederated-tribes-of-siletz-indians-of-oregon-1998-02-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1998.02.27 Confederated Tribes of Siletz Indians
+      Tribal State Gaming Compact.pdf
+    sha256: c49e1d459ee70463fcc7c75dc0ca6001f96145e0d2987e67785a1178aafa8ad3
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment III changes only the expiry of the house-banked blackjack provisions of Amendment I and says
+      it does not supersede the original compact except as specifically provided, so the 1995 dispute procedure
+      still governs.
+    locator_before: 6.B
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment III sets the blackjack provisions to expire on March 31, 1998, unless an extension or a permanent
+      amendment is negotiated and executed first, but it does not change Section 12.D, which still governs how the
+      compact can be amended.
+    locator_before: 12.D
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 1998-amendment-2
+  label: 1998 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1998-05-19'
+    published: '1998-05-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-13218
+    locator: 63 Fed. Reg. 27585 (May 19, 1998)
+  source: compact-or-confederated-tribes-of-siletz-indians-of-oregon-1998-05-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1998.05.19 Confederated Tribes of the Siletz Indians
+      Tribal State Gaming Compact.pdf
+    sha256: 8d5dd57fddd4be77f5811ea5e289a31e84ddf5074df42c96534b341ab4c5eeae
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment IV changes only the expiry date of the house-banked blackjack provisions and says it does
+      not supersede the original compact except as specifically provided, so the 1995 dispute procedure still governs.
+    locator_before: 6.B
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment IV extends the blackjack expiry from March 31, 1998 to March 31, 1999, with the same negotiate-or-terminate
+      condition, and does not change Section 12.D, which still governs how the compact can be amended.
+    locator_before: 12.D
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1999-06-01'
+    published: '1999-06-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-13727
+    locator: 64 Fed. Reg. 29333 (June 1, 1999)
+  source: compact-or-confederated-tribes-of-siletz-indians-of-oregon-1999-06-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1999.06.01 Confederated Tribes of Siletz Indians
+      Tribal State Gaming Compact.pdf
+    sha256: 8fae842f356e667011dac1f7bea0b2bb4059162bd62bbbe9b7f2b4ec706fd9e9
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 10 State Assessment of Costs for Oversight, subsection C (as amended by Amendment V)
+    summary: Disputes over the state assessment that the parties cannot agree on are resolved under a compact section
+      that the garbled text cross-references but that is not in the excerpt.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment V amends Section 10 (A to C) and extends the blackjack expiry to March 31, 2000, and does
+      not list Section 12, so the 1995 amendment conditions in Section 12.D still govern.
+    locator_before: 12.D
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The Section 10 text in Amendment V is badly garbled (strike-through and
+      insertion marks), and the Section 10.C reference reads ''Section le''. Check the original before relying on
+      the assessment dispute route. The state assessment itself is set out in Section 10.A and B, which the excerpt
+      shows only in part.'
+- id: 1999-amendment-2
+  label: 1999 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1995-original
+  dates:
+    listed: '1999-07-07'
+    published: '1999-07-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-17117
+    locator: 64 Fed. Reg. 36713 (July 7, 1999)
+  source: compact-or-confederated-tribes-of-siletz-indians-of-oregon-1999-07-07
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1999.07.07 Confederated Tribes of Siletz Indians
+      Tribal State Gaming Compact.pdf
+    sha256: d63e86ea7b1d2009d335414b0835f982a0cb3c2726b4e8e08c582edd1c27c069
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment VI changes only the blackjack table and video lottery terminal limits in Section 4(F) and
+      adds a storage rule for terminals, and says it does not supersede the original compact except as specifically
+      provided, so the 1995 dispute procedure still governs.
+    locator_before: 6.B
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: Amendment VI does not list Section 12, so the 1995 amendment conditions in Section 12.D still govern;
+      its recital records that the parties are renegotiating the compact while the terminal limits apply.
+    locator_before: 12.D
+    locator_after: Recitals
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 1999-replacement
+  label: 1999 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1995-original
+  - 1996-amendment
+  - 1996-amendment-2
+  - 1998-amendment
+  - 1998-amendment-2
+  - 1999-amendment
+  - 1999-amendment-2
+  dates:
+    listed: '1999-11-12'
+    published: '1999-11-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-29547
+    locator: 64 Fed. Reg. 61658 (Nov. 12, 1999)
+  source: compact-or-confederated-tribes-of-siletz-indians-of-1999
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1999.11.12 Confederated Tribes of Siletz Indians
+      Tribal State Gaming Compact.pdf
+    sha256: dda29ac39711b146fc0457c4c2bdcbd71aca9b2839845d837b6545d65d74bd5f
+    pages: 59
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 6, subsection B (Procedure for Resolving Disputes Concerning Operational Decisions), paragraphs
+      1-5
+    summary: The State may give written notice of operational concerns, the parties meet and confer within fifteen
+      days, either party may seek non-binding arbitration within forty-five days, and the matter may then go to
+      the United States District Court for the District of Oregon; an expedited procedure applies to immediate threats.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Section 12, subsection D
+    summary: The compact may be amended only if one year has passed after its effective date, the State joins a
+      compact with another tribe, or the State expands Class III gaming by statute; either party may request negotiations
+      in writing by certified mail, with a 100-day negotiation period in place of the 180 days under IGRA.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: changed
+    summary: Both compacts provide the same general clause (notice, a meeting within 30 days, then a District of
+      Oregon action after 90 days with state-court fallback) and the same operational-decisions steps (meet and
+      confer within 15 days, non-binding arbitration binding by agreement, federal court); the later compact changes
+      the expedited procedure so the Tribal Gaming Commission must follow the State's recommended action unless
+      it finds it would adversely affect gaming integrity or that an equally effective, less disruptive action exists,
+      and the Native nation may present a disagreement over that finding to the federal court.
+    locator_before: Section 6.B (6.B.5); Section 16
+    locator_after: Section 6.B (6.B.5); Section 16
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: changed
+    summary: The 1999 Section 12.D cuts the compact's period before a change-in-law reopener from three years to
+      one year after the effective date, limits renegotiation of gaming already authorized in Section 4 unless the
+      State consents, and shortens the IGRA negotiation period from 180 days to 100 days.
+    locator_before: 12.D.1(b)
+    locator_after: 12.D.1(b), 12.D.2, 12.D.3
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2000-amendment
+  label: 2000 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1999-replacement
+  dates:
+    listed: '2000-12-06'
+    published: '2000-12-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-31025
+    locator: 65 Fed. Reg. 76278 (Dec. 6, 2000)
+  source: compact-or-confederated-tribes-of-siletz-indians-of-oregon-2000-12-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2000.12.06  Confederated Tribes of Siletz Tribal
+      State Gaming Compact.pdf
+    sha256: 13b17c05b3e6b9c7e3cba103e4e870ab4b7685d08cfe3fbbd16069f6bca67a18
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1999-replacement
+    change: unchanged
+    summary: Amendment I clarifies the definition of Video Lottery Terminal in Section 3Z and says it does not supersede
+      the original compact except as specifically provided, so the 1999 dispute procedure in Section 6.B still governs.
+    locator_before: 6.B.3(c)
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1999-replacement
+    change: unchanged
+    summary: Amendment I changes only the Section 3Z definition, so the 1999 Section 12.D amendment and renegotiation
+      terms still govern.
+    locator_before: 12.D.1
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2008-amendment
+  label: 2008 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1999-replacement
+  dates:
+    listed: '2008-03-17'
+    published: '2008-03-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e8-5198
+    locator: 73 Fed. Reg. 14267 (Mar. 17, 2008)
+  source: compact-or-confederated-tribes-of-siletz-indians-of-oregon-2008-03-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2008.03.17 Confederated Tribes of Siletz Indians
+      Tribal State Gaming Compact.pdf
+    sha256: 1b197a0f9cd128775287b831e5aa528d90d630d1dcf3b55399d50b3f91b88aab
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1999-replacement
+    change: unchanged
+    summary: Amendment II revises only Section 10.A, which covers the Oregon State Police payment methodology, and
+      says it does not supersede the original compact except as specifically provided, so the 1999 dispute terms
+      still govern.
+    locator_before: 6.B; 10.C
+    locator_after: 10.A
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1999-replacement
+    change: unchanged
+    summary: Amendment II does not list Section 12, so the 1999 Section 12.D amendment and renegotiation terms still
+      govern.
+    locator_before: 12.D.1
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2010-amendment
+  label: 2010 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1999-replacement
+  dates:
+    listed: '2010-11-09'
+    published: '2010-11-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2010-28267
+    locator: 75 Fed. Reg. 68823 (Nov. 9, 2010)
+  source: compact-or-confederated-tribes-of-siletz-indians-of-oregon-2010-11-09
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2010.11.09 Confederated Tribes of the Siletz Indians
+      of Oregon Tribal State Gaming Compact_0.pdf
+    sha256: 48261beaf0bef1946ef1991ae5d04aa177eaec81055909fea5b5f82b57782dbd
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1999-replacement
+    change: unchanged
+    summary: Amendment III adds a Section 4(F)(5) count rule for multiple-player terminals and revises the definition
+      of Video Lottery Terminal, and says it does not supersede the original compact or Amendment II except as specifically
+      provided, so the 1999 dispute terms still govern.
+    locator_before: 6.B
+    locator_after: 4(F)(5)
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1999-replacement
+    change: unchanged
+    summary: Amendment III does not list Section 12, so the 1999 Section 12.D amendment and renegotiation terms
+      still govern; it states that it supersedes the 2000 Amendment I.
+    locator_before: 12.D.1
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

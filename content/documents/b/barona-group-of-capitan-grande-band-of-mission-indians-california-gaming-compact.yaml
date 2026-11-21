@@ -1,0 +1,243 @@
+id: barona-group-of-capitan-grande-band-of-mission-indians-california-gaming-compact
+kind: gaming-compact
+title: Barona Group of Capitan Grande Band of Mission Indians of the Barona Reservation–State of California Gaming
+  Compact
+nations:
+- barona-group-of-capitan-grande-band-of-mission-indians
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Barona Group of Capitan Grande Band of Mission Indians of the Barona Reservation
+    and the State of California under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Barona Group of Capitan Grande
+  Band of Mission Indians of the Barona Reservation and the State of California as of Nov. 21, 2026: 1 original
+  and 3 replacements. The order, the kind of each event and which version is in effect are inferred from the list
+  (project analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1992-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-ca-barona-group-of-capitan-grande-band-of-mission-indians-1992-06-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_1992.06.30_barona_group_of_the_capitan_grande_band_tribal_state_gaming_compact_0.pdf
+    sha256: 68e0515e855a3ac6b78144fee0732f6cd22a18c6afa1d586fad8a7d5eec088b1
+    pages: 17
+  clauses:
+  - topic: dispute-resolution
+    locator: Paragraph 11(b), item (3) (Negotiation of Amendments)
+    summary: If the parties cannot agree on a proposed amendment, either party may sue in a court of competent jurisdiction
+      for a declaratory judgment on the parties' respective rights; no arbitration is shown.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Paragraph 11(a)-(b), Negotiation of Amendments
+    summary: Either party may request in writing a meeting within 30 days to discuss a proposed amendment or a change
+      in law, and the parties then have 180 days to agree that no amendment is needed or to execute one; the excerpt
+      does not show every later step.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1998-replacement
+  label: 1998 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1992-original
+  dates:
+    listed: '1998-10-22'
+    published: '1998-10-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-28313
+    locator: 63 Fed. Reg. 56659 (Oct. 22, 1998)
+  source: compact-ca-barona-group-of-capitan-grande-band-of-mission-indians-1998-10-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_1998.10.22_barona_band_tribal_state_gaming_compact.pdf
+    sha256: cbef23aa17a3151529e9569c20a8bd31a8e844d6d2fb5f0a617a9bc8beb26786
+    pages: 96
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 8.3.3
+    summary: The State may challenge the Band's designation of records as trade secret or personal information through
+      binding arbitration under the American Arbitration Association Commercial Rules, following procedures in subsections
+      17.2.10.2 to 17.2.10.5 that are not in the excerpt.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 2.5 Amendments
+    summary: Either party may request the other to negotiate in good faith over an amendment when IGRA is amended
+      or a state law or constitutional provision changes the types of Class III gaming, and the other party must
+      then negotiate in good faith; the excerpt gives no deadline or result if talks fail.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: changed
+    summary: The 1992 compact's Section 11 requires a meeting within 30 days of a request and, if no amendment is
+      agreed within 180 days, allows either party to sue for a declaratory judgment; the 1998 compact instead requires
+      good faith negotiation on request after an IGRA or state-law change (Section 2.5), and adds term, renewal
+      and termination provisions (Sections 2.3 to 2.7) under which the Governor must negotiate in good faith for
+      a new compact.
+    locator_before: Section 11(b)(3)
+    locator_after: Sections 2.5, 2.4.2, 2.7
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 1998 Barona compact is a replacement compact with a different 1992 base:
+      the earlier excerpts for this pair are the 1992 Barona Group compact, whose dispute excerpts are empty. The
+      1998 compact''s Section 2.7 refers to a Section 17.2.10 arbitral tribunal, which is not in the excerpts. The
+      1998 excerpts show OCR errors such as ''Class m'' and ''ore 2.4.1.2''.'
+- id: 2000-replacement
+  label: 2000 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1998-replacement
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-barona-group-of-capitan-grande-band-of-mission-indians-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliance_2000.05.16_barona_band_of_mission_indians_tribal_state_gaming_compact.pdf
+    sha256: 4731ecbb037931fc5a5dae6f514b178a3805306a04e954e9fe0972069db2dac6
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.0 (dispute resolution), Sec. 9.2 Arbitration Rules
+    summary: If a dispute is not resolved within 30 calendar days after the first meeting, either party may seek
+      arbitration under the American Arbitration Association Commercial Rules, the arbitrator's written decision
+      is binding and judgment may be entered in any federal or state court, and alternative dispute resolution is
+      to be explored before judicial process.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 12.0. AMENDMENTS; RENEGOTIATIONS, Sec. 12.1 to 12.3
+    summary: The compact may be amended at any time by mutual written agreement, and the Governor or the Band may
+      request renegotiation to add other forms of Class III gaming, with negotiations to begin within 30 days of
+      the request and no such request for 12 months after the effective date; the excerpt does not show what happens
+      if talks fail.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1998-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1998-replacement
+    change: changed
+    summary: The 1998 compact's Section 2.5 requires good faith negotiation on request after an IGRA or state-law
+      change, and Sections 2.3 to 2.7 provide renewal, termination and negotiation of a new compact; the 2000 compact's
+      Section 12 instead provides for amendment by mutual written agreement, bars a request to renegotiate for new
+      games for 12 months after the effective date, sets a request-and-confer process under IGRA, and gives the
+      nation a termination right if exclusivity is abrogated (Section 12.4).
+    locator_before: Sections 2.5, 2.4, 2.7
+    locator_after: Sections 12.1-12.4
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2000 document''s first dispute excerpt is a table of contents and preamble;
+      its Section 9.0 appears in the second excerpt. The 1998 excerpts for Section 17.2.10 are not included. The
+      listed 2000 date is 2000-05-16, and the file name carries a 508-compliance prefix. The 2000 compact''s Section
+      9.0 is the same as the 2000 Agua Caliente and Alturas text in this batch set, which suggests a common template.'
+- id: 2016-replacement
+  label: 2016 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-replacement
+  dates:
+    listed: '2016-12-05'
+    published: '2016-12-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2016-29076
+    locator: 81 Fed. Reg. 87585 (Dec. 5, 2016)
+  source: compact-ca-barona-group-of-capitan-grande-band-of-mission-indians-2016-12-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2016.12.05_barona_band_of_mission_indians_tribal_state_gaming_compact.pdf
+    sha256: 7a782628dfdb88e08887f281c6bc6af5f765939fc7f38073a5c3af127c3070b3
+    pages: 137
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1 Voluntary Resolution; Court Resolution and Sec.
+      13.2 Arbitration Rules
+    summary: Disputes under the compact begin with a written notice, a written response within 15 days and a meet-and-confer
+      within 30 days; if unresolved either party may seek arbitration before JAMS, but neither party is required
+      to agree to arbitrate, and unresolved disputes may be brought in the federal district court for the district
+      of the Gaming Facility or, if that court lacks jurisdiction, a state court of competent jurisdiction in the
+      county. Sec. 13.4 limits remedies to injunctive relief, specific performance and declaratory relief.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS, Sec. 15.1 to Sec. 15.3; Sec. 5.2(f)
+    summary: Sec. 15.1 permits amendment at any time by mutual written agreement if each party voluntarily consents
+      to the negotiations in writing, Sec. 15.2 lets either party request negotiation of an extension or new compact
+      no sooner than 18 months before the termination date, and Sec. 15.3 requires written requests and a schedule
+      for negotiations; Sec. 5.2(f) also lets either party request reopening of the Revenue Sharing Trust Fund payment
+      terms if the fund balance exceeds or falls short of long-term needs, which the other party may decline.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: changed
+    summary: The 2000 compact's Section 12 provides for amendment by mutual written agreement, bars a request to
+      renegotiate for new games for 12 months after the effective date, sets a request-and-confer process under
+      IGRA, and gives the nation a termination right if exclusivity is abrogated; the 2016 compact's Section 15
+      adds a consent-in-writing requirement for amendment negotiations, a request window no sooner than 18 months
+      before termination, automatic one- and two-year extensions while talks continue, and a limited reopener of
+      Section 5.2(a) revenue-fund payments.
+    locator_before: Sec. 12.0 (12.1-12.4)
+    locator_after: Sec. 15.1-15.3; Sec. 5.2(f)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2016 compact''s dispute section text is not in the excerpts, so its
+      existence and content cannot be confirmed. The 2016 compact is a replacement of the 2000 compact and refers
+      to ''1999 Compact'' in Section 6.4.2(k), which is the same reference found in other batch documents. The 2016
+      Section 5.2(f) reopener applies only to Revenue Sharing Trust Fund and Tribal Nation Grant Fund balances,
+      and the State''s general fund is not obligated to cover shortfalls.'
+found_in:
+- 2026-11-21-gaming-compact-histories

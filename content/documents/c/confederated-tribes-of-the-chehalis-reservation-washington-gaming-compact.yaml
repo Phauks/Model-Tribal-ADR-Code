@@ -1,0 +1,341 @@
+id: confederated-tribes-of-the-chehalis-reservation-washington-gaming-compact
+kind: gaming-compact
+title: Confederated Tribes of the Chehalis Reservation–State of Washington Gaming Compact
+nations:
+- confederated-tribes-of-the-chehalis-reservation
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Confederated Tribes of the Chehalis Reservation and the State of Washington
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Confederated Tribes of the
+  Chehalis Reservation and the State of Washington as of Nov. 21, 2026: 1 original, 5 amendments and 1 replacement.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1993-original
+  label: 1993 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1993-03-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-wa-confederated-tribes-of-the-chehalis-reservation-1993-03-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1993.03.04 Confederated Tribes of the Chehalis
+      Reservation Tribal State Gaming Compact.pdf
+    sha256: 2e1109725429622cdcedfbc9f40f31c6ddc512fc7bd5c40c4b6b805bdc24d0fa
+    pages: 62
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XII.C (Dispute Resolution)
+    summary: Disputes go through written notice, a meet-and-confer within ten days, and negotiation; if unresolved
+      within twenty days, a party may have the matter decided by JAMS of Seattle, whose decision is final and unappealable,
+      with the AAA rules supplementing; other remedies remain available.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section XV.D.5 (Renegotiation - Either Party)
+    summary: Either party may request renegotiation in writing on the listed triggers, such as a change in state
+      law, a court decision, or another tribe's terms, with negotiations starting within thirty days, and the original
+      terms stay in effect until agreed changes.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1995-amendment
+  label: 1995 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1993-original
+  dates:
+    listed: '1995-04-20'
+    published: '1995-04-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-9818
+    locator: 60 Fed. Reg. 19822 (Apr. 20, 1995)
+  source: compact-wa-confederated-tribes-of-the-chehalis-reservation-1995-04-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1995.04.20 Confederated Tribes of the Chehalis
+      Reservation Tribal State Gaming Compact.pdf
+    sha256: 6107fb3f56142e157a7b490d0e97f3b95a9bb682224e813f93ba3d34a1d32fae
+    pages: 5
+  clauses:
+  - topic: renegotiation
+    locator: Section III.S (Renegotiation/Amendments); Section XV.D.1 and D.8
+    summary: Sections III.G, I, J and K are not subject to renegotiation for thirty-six months unless a listed event
+      occurs, and Section XV.D.8 is amended to require renegotiation to keep competitive equality with other tribes'
+      compacts.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 1995 amendment does not amend the Section XII dispute procedure; it adds only a new Section III.R
+      cross-reference that sends disputes over phase-two compliance review to that procedure.
+    locator_before: XII
+    locator_after: III.R
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier XV.D.8 text is not in the excerpt, so the amendment''s replacement
+      cannot be compared line by line. The 1993 excerpt also shows that the dispute procedure allows JAMS arbitration/mediation,
+      which this answer does not describe in full. The amended XV.D.8 adds an adverse-economic-impact condition
+      for tribes East of the Cascade Mountains.'
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: changed
+    summary: The 1995 amendment adds a 36-month freeze on renegotiating Sections III.G, I, J and K, with four exceptions,
+      makes the mutual-amendment clause in XV.D.1 subject to that freeze, and replaces XV.D.8 with a requirement
+      to renegotiate and amend the compact for competitive equality when the State gives another Washington tribe
+      broader gaming terms.
+    locator_before: XV.D.1
+    locator_after: III.S, XV.D.1, XV.D.8
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The earlier XV.D.8 text is not in the excerpt, so the amendment''s replacement
+      cannot be compared line by line. The 1993 excerpt also shows that the dispute procedure allows JAMS arbitration/mediation,
+      which this answer does not describe in full. The amended XV.D.8 adds an adverse-economic-impact condition
+      for tribes East of the Cascade Mountains.'
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1993-original
+  dates:
+    listed: '1999-01-28'
+    published: '1999-01-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-1926
+    locator: 64 Fed. Reg. 4458 (Jan. 28, 1999)
+  source: compact-wa-confederated-tribes-of-the-chehalis-reservation-1999-01-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_1999.01.28_confederated_tribes_of_the_chehalis_reservation_tribal_state_gaming_compact_0.pdf
+    sha256: 3dc6bb7285c2975af672464da96dd1ee0456963009b671e6acb8ddae3bb28277
+    pages: 54
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 16. DISPUTE RESOLUTION
+    summary: Disputes under the Appendix follow any dispute provisions made specifically applicable in the Appendix,
+      and otherwise go to the binding arbitration provisions of the compact.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: changed
+    summary: 'The earlier compact (Section XII.C) provides notice, a meeting within ten days, and JAMS dispute resolution
+      if unresolved after 20 days, with a final and unappealable decision; the 1999 Third Amendment leaves that
+      clause in place and adds Appendix X terms: a routing rule sending appendix disputes to any appendix-specific
+      provisions and otherwise to the compact''s binding arbitration, and a regulatory fee dispute step with escrow
+      of the disputed amount before arbitration.'
+    locator_before: Section XII.C
+    locator_after: Appendix X, Section 16; Section 13.5
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The Third Amendment amends Section III.A and adds Appendix X, and does not change the renegotiation
+      terms, so the 1993 amendment provisions still govern; III.A is not among the III.G, I, J and K items frozen
+      by the 1995 amendment.
+    locator_before: XV.D.1
+    locator_after: I
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1993-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-confederated-tribes-of-the-chehalis-reservation-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2007.05.31 Confederated Tribes of the Chehalis
+      Reservation Tribal State Gaming Compact_0.pdf
+    sha256: c6110703741a8a9875274265df3280d9fc5171c1df95574a43b2486f600a03ad
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The Fourth Amendment adds Appendix X2 and recognizes the lottery systems under Section III, and does
+      not list Section XV, so the 1993 amendment terms still govern.
+    locator_before: XV.D.1
+    locator_after: '2'
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: Appendix X2 is attached to the amendment but is not in the excerpt beyond
+      its heading, so its dispute section (if any) and its effect on the Section III.S freeze cannot be read here.
+      The Fourth Amendment''s Section 2 amends nothing beyond Section III.'
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1993-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-16035
+    locator: 80 Fed. Reg. 37293 (June 30, 2015)
+  source: compact-wa-confederated-tribes-of-the-chehalis-reservation-2015-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2015.06.04 Confederated Tribes of the Chehalis
+      Reservation Tribal State Gaming Compact.pdf
+    sha256: 51b79d1ea7d666d2f22e4bf6ea1459d9c8c65b9c832f5bd4d60631c5c12ebaa7
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+- id: 2022-replacement
+  label: 2022 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1993-original
+  - 1995-amendment
+  - 1999-amendment
+  - 2007-amendment
+  - 2015-amendment
+  dates:
+    listed: '2022-08-09'
+    published: '2022-08-09'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-17028
+    locator: 87 Fed. Reg. 48494 (Aug. 9, 2022)
+  source: compact-wa-confederated-tribes-of-the-chehalis-reservation-2022-08-09
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2022.08.09_confederated_tribes_of_chehalis_reservation_tribal_state_gaming_compact.pdf
+    sha256: e245b2151c33c2359d1fbc5bf966d82093fb259493123de59829d0b1b7e3351e
+    pages: 226
+  clauses:
+  - topic: dispute-resolution
+    locator: XIII.B Dispute Resolution Alternatives
+    summary: Disputes go first to written notice and a meet and confer within twenty business days, then optional
+      mediation, then arbitration if the parties agree; if mediation fails, either party may seek judicial resolution.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: XVI.C Subsequent Negotiations
+    summary: The compact preserves the Chehalis Reservation nation's right to request negotiations for Class III
+      gaming that the State later permits, under 25 U.S.C. 2710(d)(3)(A); the excerpt sets no time limit.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: changed
+    summary: The earlier compact provides notice, a meeting within ten days, and JAMS dispute resolution on either
+      party's request if unresolved after 20 days, with a final and unappealable decision; the later compact provides
+      written notice, a meeting within 20 business days, mediation only by agreement, and arbitration only by mutual
+      agreement (not requested earlier than 20 days after notice) with a final written decision subject to judicial
+      review, and permits judicial resolution if mediation is unsatisfactory.
+    locator_before: Section XII.C
+    locator_after: Section XIII.B (1)-(3)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: not-compared
+    verification: inferred
+- id: 2024-amendment
+  label: 2024 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2022-replacement
+  dates:
+    listed: '2024-02-14'
+    published: '2024-02-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2024-03014
+    locator: 89 Fed. Reg. 11312 (Feb. 14, 2024)
+  source: compact-wa-confederated-tribes-of-the-chehalis-reservation-2024-02-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2024.02.14_confederated_tribes_of_the_chehalis_reservation_tribal_state_gaming_compact.pdf
+    sha256: 6b863fa8b4c459e3ae66b081717e232bf4ddd4aacef02656f0902fc1dfd4c218
+    pages: 12
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2022-replacement
+    change: unchanged
+    summary: The Seventh Amendment's three numbered amendments change only Section II.S and II.EE, add Section IV.A(4),
+      and add Appendix G, so Section XIII is not among the provisions amended and the 2022 dispute clause still
+      governs; the later-side dispute excerpt is empty.
+    locator_before: XIII.B(3)(a)
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2022-replacement
+    change: unchanged
+    summary: The Seventh Amendment's three numbered amendments do not list Section XVI, and its text does not amend
+      the amendment or renegotiation clauses, so the 2022 Section XVI clauses still govern; the amendment states
+      that the parties reached agreement on the listed changes only.
+    locator_before: XVI.C
+    locator_after: Introduction
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

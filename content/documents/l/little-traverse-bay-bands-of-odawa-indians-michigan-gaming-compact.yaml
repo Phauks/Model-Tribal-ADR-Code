@@ -1,0 +1,152 @@
+id: little-traverse-bay-bands-of-odawa-indians-michigan-gaming-compact
+kind: gaming-compact
+title: Little Traverse Bay Bands of Odawa Indians, Michigan–State of Michigan Gaming Compact
+nations:
+- little-traverse-bay-bands-of-odawa-indians
+states:
+- MI
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Little Traverse Bay Bands of Odawa Indians, Michigan and the State of Michigan
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Little Traverse Bay Bands
+  of Odawa Indians, Michigan and the State of Michigan as of Nov. 21, 2026: 1 original and 2 amendments. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1999-original
+  label: 1999 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1999-02-18'
+    published: '1999-02-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-4005
+    locator: 64 Fed. Reg. 8111 (Feb. 18, 1999)
+  source: compact-mi-little-traverse-bay-bands-of-odawa-india-1999
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/michigan/508_compliant_1999.02.18_little_traverse_bay_bands_of_odawa_indians_tribal_state_gaming_compact.pdf
+    sha256: 2c83523e792d82e0c55210682921b12142d3dd1507919a4081c2ce180541fb8f
+    pages: 24
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution, paragraph (A)
+    summary: Disputes start with written notice and a 30-day meeting; if the State's claim is not resolved within
+      90 days, the State may serve notice to stop the disputed games, and the Tribe may stop them or invoke arbitration
+      under the AAA Commercial Arbitration rules while the games continue; the excerpt does not say whether the
+      award binds.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 16. Amendment
+    summary: The compact may be amended by mutual agreement under Section 16, with proposals sent to the Governor
+      or the Tribe under notice provisions, and either party may serve notice of its right to renegotiate one year
+      before the 20-year term ends and each later five-year period.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2003-amendment
+  label: 2003 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1999-original
+  dates:
+    listed: '2003-12-10'
+    published: '2003-12-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-03-30634
+    locator: 68 Fed. Reg. 68944 (Dec. 10, 2003)
+  source: compact-mi-little-traverse-bay-bands-of-odawa-indians-2003-12-10
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/michigan/508_compliant_2003.12.10_little_traverse_bay_bands_of_odawa_indians_tribal_state_gaming_compact.pdf
+    sha256: b7944569a186db84f5da78ee5a18ac4fd3ada645f4703246adfc5695f78756a3
+    pages: 4
+  clauses:
+  - topic: renegotiation
+    locator: Section 12(B), as amended
+    summary: Section 12(B) is amended so the renegotiation notice window runs from twenty-five years after the amendments
+      take effect, with one-year notice before each later five-year period.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1999-original
+    change: unchanged
+    summary: The 2003 amendment changes Sections 2, 4, 17 and 18 and states that all other provisions remain in
+      force, so Section 7 (dispute resolution) is not amended.
+    locator_before: 7(A)
+    locator_after: Sections 2(B)(1), 2(E), 2(F), 4(1), 4(O), 17, 18
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1999-original
+    change: unchanged
+    summary: The 2003 amendment does not list Section 16 (amendment) among the provisions it amends, and its general
+      clause keeps all other provisions in force, so the earlier amendment procedure still governs.
+    locator_before: '16'
+    locator_after: Sections 2, 4, 17, 18
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2008-amendment
+  label: 2008 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1999-original
+  dates:
+    listed: '2008-04-21'
+    published: '2008-04-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-e8-8494
+    locator: 73 Fed. Reg. 21361 (Apr. 21, 2008)
+  source: compact-mi-little-traverse-bay-bands-of-odawa-indians-2008-04-21
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/michigan/508_compliant_2008.04.21_little_traverse_bay_bands_tribal_state_gaming_compact.pdf
+    sha256: 5788cf5900b298747d95f91f55d31f0bd1814fc75ddd2180196e73870063005f
+    pages: 8
+  clauses:
+  - topic: renegotiation
+    locator: Section 12(B), as amended
+    summary: Either party may serve written notice of its right to renegotiate one year before the compact's expiration
+      and each later five-year period, and the parties agree IGRA's successor-compact provisions apply.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1999-original
+    change: unchanged
+    summary: The 2008 amendment changes Sections 3, 4(M)(5), 12 and 17 and states that all other provisions remain
+      in force, so Section 7 (dispute resolution) is not amended.
+    locator_before: 7(A)
+    locator_after: Sections 3, 4(M)(5), 12, 17
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2008 amendment was deemed approved after the 45-day period; the Secretary''s
+      letter raises concerns about the new Section 17, which is not a dispute or renegotiation provision. Section
+      12(A) also fixes the Compact''s term at October 31, 2028 unless modified by written agreement.'
+  - topic: renegotiation
+    compared_with: 1999-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

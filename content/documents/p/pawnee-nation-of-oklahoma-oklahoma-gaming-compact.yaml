@@ -1,0 +1,55 @@
+id: pawnee-nation-of-oklahoma-oklahoma-gaming-compact
+kind: gaming-compact
+title: Pawnee Nation of Oklahoma–State of Oklahoma Gaming Compact
+nations:
+- pawnee-nation-of-oklahoma
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Pawnee Nation of Oklahoma and the State of Oklahoma under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Pawnee Nation of Oklahoma
+  and the State of Oklahoma as of Nov. 21, 2026: 1 original. The order, the kind of each event and which version
+  is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small model''s
+  reading of excerpts.'
+versions:
+- id: 2005-original
+  label: 2005 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2005-03-21'
+    published: '2005-03-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-05-5482
+    locator: 70 Fed. Reg. 13535 (Mar. 21, 2005)
+  source: compact-ok-pawnee-nation-of-oklahoma-2005
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2005.03.21 Pawnee Nation Tribal State Gaming
+      Compact.pdf
+    sha256: 7fdcd458b43f323b4c5155470f9d74f41c85ef269184ee5cc0e5120dbcb85b5f
+    pages: 29
+  clauses:
+  - topic: dispute-resolution
+    locator: DISPUTE RESOLUTION (heading; part number not printed in excerpt)
+    summary: Disputes start with written notice and a meeting of tribal and state representatives within thirty
+      days, then either party may refer the dispute to arbitration under AAA rules, and an award may be reviewed
+      de novo by a federal district court whose decision is subject to appeal.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: DURATION AND NEGOTIATION, subsection B (part number not printed in excerpt)
+    summary: Within 180 days after expiration of the Compact or any renewal, either the tribe or the state, acting
+      through its Governor, may request renegotiation of subsections A and E of Part 11; the Compact otherwise renews
+      automatically for fifteen-year terms if electronic gaming is authorized.
+    verification: read-in-full
+    reviewer: small model, first pass
+found_in:
+- 2026-11-21-gaming-compact-histories

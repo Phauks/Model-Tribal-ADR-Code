@@ -1,0 +1,33 @@
+id: jena-band-of-choctaw-indians-louisiana-gaming-compact
+kind: gaming-compact
+title: Jena Band of Choctaw Indians–State of Louisiana Gaming Compact
+nations:
+- jena-band-of-choctaw-indians
+states:
+- LA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Jena Band of Choctaw Indians and the State of Louisiana under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Jena Band of Choctaw Indians
+  and the State of Louisiana as of Nov. 21, 2026: 1 disapproved compact. The order, the kind of each event and which
+  version is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small
+  model''s reading of excerpts.'
+versions:
+- id: 2002-disapproval
+  label: 2002 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2002-03-07'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-la-jena-band-of-choctaw-indians-2002-03-07
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/louisiana/508_compliant_2002.03.07_jena_band_of_choctaw_indians_disapproval_letter.pdf
+    sha256: ae1aa8575fe67d30cab734ef0d287d88574ef32688d02c0589acc00c8b744e14
+    pages: 3
+found_in:
+- 2026-11-21-gaming-compact-histories

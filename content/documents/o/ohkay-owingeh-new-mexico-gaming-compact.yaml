@@ -1,0 +1,211 @@
+id: ohkay-owingeh-new-mexico-gaming-compact
+kind: gaming-compact
+title: Ohkay Owingeh, New Mexico–State of New Mexico Gaming Compact
+nations:
+- ohkay-owingeh
+states:
+- NM
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Ohkay Owingeh, New Mexico and the State of New Mexico under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Ohkay Owingeh, New Mexico
+  and the State of New Mexico as of Nov. 21, 2026: 1 original, 1 other document, 2 replacements and 1 amendment.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1995-03-22'
+    published: '1995-03-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-6966
+    locator: 60 Fed. Reg. 15194 (Mar. 22, 1995)
+  source: compact-nm-ohkay-owingeh-1995-03-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_1995.03.22_ohkay_owingeh_san_juan_tribal_state_gaming_compact.pdf
+    sha256: b9ff1b895e8039229eb8e4b2c1401d41025cee7677cd5caf5ed284787fbb2958
+    pages: 42
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraph A(1)-(2)
+    summary: The compact provides for written notice, a meeting of State and Native nation representatives within
+      thirty days, and a ninety-day period before a notice to cease disputed gaming may be served; the excerpt ends
+      before any arbitration or court step.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1997-other
+  label: 1997 document
+  event: other
+  status: superseded
+  dates:
+    listed: '1997-10-15'
+    published: '1997-10-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-97-27292
+    locator: 62 Fed. Reg. 53650 (Oct. 15, 1997)
+  source: compact-nm-ohkay-owingeh-1997-10-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_1997.10.01_ohkay_owingeh_deemed_approved_letter.pdf
+    sha256: 2e654b0c8bb0e4ef9f02a2c5884d44780961269f9ca9c30424ca37a9f1b1c612
+    pages: 3
+- id: 2001-replacement
+  label: 2001 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1995-original
+  - 1997-other
+  dates:
+    listed: '2001-12-14'
+    published: '2001-12-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-30908
+    locator: 66 Fed. Reg. 64856 (Dec. 14, 2001)
+  source: compact-nm-ohkay-owingeh-2001-12-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2001.12.14_ohkay_owingeh_san_juan_tribal_state_gaming_compact.pdf
+    sha256: 04e312387445eb75566b2cdd9d047834efba0d1cb38b4e480f05e029418c7ef3
+    pages: 26
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraph A(5)
+    summary: The compact provides for written notice, a twenty-day period and a notice to cease disputed games,
+      then arbitration by attorney arbitrators with the American Arbitration Association choosing any unchosen third
+      arbitrator; the results are final and binding and enforceable in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: changed
+    summary: 'The later compact provides a shorter track: the 30-day meeting of representatives after notice is
+      dropped, the complaining party may serve a notice to cease after 20 days instead of 90, the responding party
+      has 10 days instead of 30 to stop or invoke arbitration, and arbitration results are stated to be final and
+      binding; both versions use three arbitrators under a State/Tribe/third selection and enforce results by injunction.'
+    locator_before: Section 7(A)(1)-(5)
+    locator_after: Section 7(A)(1)-(5)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2001-replacement
+  dates:
+    listed: '2007-07-05'
+    published: '2007-07-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-12904
+    locator: 72 Fed. Reg. 36717 (July 5, 2007)
+  source: compact-nm-ohkay-owingeh-2007-07-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2007.07.05_ohkay_owingeh_tribal_state_gaming_compact.pdf
+    sha256: ff05fb9ef52e5338e2cfd20dd45629b1d64d8395e1c48ca5707090e8ab2dfe6a
+    pages: 40
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraph A(5)
+    summary: The compact provides for written notice, a twenty-day period and a notice to cease disputed games,
+      then arbitration by attorney arbitrators with the American Arbitration Association choosing any unchosen third
+      arbitrator within thirty days; the results are final and binding and enforceable in any court of competent
+      jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: changed
+    summary: The later compact provides 30-day deadlines for the noticing party and then the responding party to
+      select their arbitrators, and 30 days (earlier ten) for the third arbitrator to be chosen before the American
+      Arbitration Association selects one; the notice, 20-day, 10-day response and binding-results steps are otherwise
+      the same.
+    locator_before: Section 7(A)(3)
+    locator_after: Section 7(A)(3)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+- id: 2015-replacement
+  label: 2015 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2001-replacement
+  - 2007-amendment
+  dates:
+    listed: '2015-08-13'
+    published: '2015-08-13'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2015-19972
+    locator: 80 Fed. Reg. 48559 (Aug. 13, 2015)
+  source: compact-nm-ohkay-owingeh-new-mexico-2015
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2015.08.13_ohkay_owingeh_tribal_state_gaming_compact.pdf
+    sha256: f4f054cc0141ded25eb6b6b85f348f61347fab2db0fb988f2ebbdab6005ee475
+    pages: 47
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution.
+    summary: After written notice and twenty days, the complaining party may issue a notice to cease the disputed
+      activity; the responding party may stop or invoke arbitration before a three-arbitrator panel (third arbitrator
+      named by the American Arbitration Association if needed), and the result is final and binding, enforceable
+      by injunctive action in any court of competent jurisdiction; other available remedies are preserved.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 14. Entire Agreement.
+    summary: The compact may be changed only by a signed written instrument approved by the Secretary of the Interior,
+      and may not be amended without the express approval of Ohkay Owingeh, the Governor and the State Legislature;
+      no reopening trigger or negotiation timeline is stated.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: changed
+    summary: The later compact provides a two-year limit for invoking the procedure (counted from discovery, with
+      a special rule for pre-compact payment breaches), allows the parties to agree to a single arbitrator, and
+      sets 30-day deadlines for each side's arbitrator and for the third (earlier ten days); the 20-day, 10-day
+      and binding-results steps are the same.
+    locator_before: Section 7(A)
+    locator_after: Section 7(A)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

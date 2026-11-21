@@ -1,0 +1,55 @@
+id: shoshone-bannock-tribes-of-the-fort-hall-reservation-idaho-gaming-compact
+kind: gaming-compact
+title: Shoshone-Bannock Tribes of the Fort Hall Reservation–State of Idaho Gaming Compact
+nations:
+- shoshone-bannock-tribes-of-the-fort-hall-reservation
+states:
+- ID
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Shoshone-Bannock Tribes of the Fort Hall Reservation and the State of Idaho
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Shoshone-Bannock Tribes of
+  the Fort Hall Reservation and the State of Idaho as of Nov. 21, 2026: 1 original. The order, the kind of each
+  event and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2000-09-08'
+    published: '2000-09-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-23091
+    locator: 65 Fed. Reg. 54541 (Sept. 8, 2000)
+  source: compact-id-shoshone-bannock-tribes-of-the-fort-hall-reservation-2000-09-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/idaho/508_compliant_2000.09.08_shoshone_bannock_tribes_of_the_fort_hall_reservation_tribal_state_gaming_compact.pdf
+    sha256: 15f862dff1490a9fb017a8563bcdcad24aa89310b95b10250ab68adbd8b79988
+    pages: 35
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 5 (arbitration subsections (iii) to (viii); heading not in excerpt)
+    summary: Disputes under the compact go to arbitration under Section 5, with arbitration decisions effective
+      unless a federal court determines otherwise and expenses billed equally; the excerpt does not name an arbitration
+      body or rules.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: 25. Amendments
+    summary: The compact may be amended only in writing by the State and the Tribes as provided in Section 23; the
+      excerpt does not describe reopening triggers or time limits.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+found_in:
+- 2026-11-21-gaming-compact-histories

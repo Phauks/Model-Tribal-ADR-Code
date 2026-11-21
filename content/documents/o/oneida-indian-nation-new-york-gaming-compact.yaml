@@ -1,0 +1,53 @@
+id: oneida-indian-nation-new-york-gaming-compact
+kind: gaming-compact
+title: Oneida Indian Nation–State of New York Gaming Compact
+nations:
+- oneida-indian-nation
+states:
+- NY
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Oneida Indian Nation and the State of New York under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Oneida Indian Nation and
+  the State of New York as of Nov. 21, 2026: 1 original. The order, the kind of each event and which version is
+  in effect are inferred from the list (project analysis); clause summaries and comparisons are a small model''s
+  reading of excerpts.'
+versions:
+- id: 1993-original
+  label: 1993 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1993-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-ny-oneida-indian-nation-1993-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-york/508_compliant_1993.06.04_oneida_indian_nation_tribal_state_gaming_compact.pdf
+    sha256: 2d5afa37693d8a2526e6717addb30e0c2d4ede9cfb58b645801f9bc57bc99953
+    pages: 245
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 14. DISPUTE RESOLUTION
+    summary: After notice and a meeting of representatives, disputes not resolved within thirty days go to binding
+      AAA arbitration, and the award may be enforced in the federal court for the Northern District of New York.
+      State claims of unauthorized gaming are not subject to mandatory arbitration.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15. AMENDMENT AND MODIFICATION
+    summary: Either party may request amendment in writing; representatives meet within five days and negotiate
+      in good faith, and if they cannot agree within thirty days either party may submit the matter to arbitration.
+      New games are added to Appendix A through the State and Nation notice and acceptance procedure.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+found_in:
+- 2026-11-21-gaming-compact-histories

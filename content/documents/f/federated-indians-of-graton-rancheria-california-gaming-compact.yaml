@@ -1,0 +1,138 @@
+id: federated-indians-of-graton-rancheria-california-gaming-compact
+kind: gaming-compact
+title: Federated Indians of Graton Rancheria, California–State of California Gaming Compact
+nations:
+- federated-indians-of-graton-rancheria
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Federated Indians of Graton Rancheria, California and the State of California
+    under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Federated Indians of Graton
+  Rancheria, California and the State of California as of Nov. 21, 2026: 1 original, 1 amendment and 1 replacement.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2012-original
+  label: 2012 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2012-07-12'
+    published: '2012-07-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2012-17042
+    locator: 77 Fed. Reg. 41200 (July 12, 2012)
+  source: compact-ca-federated-indians-of-graton-rancheria-2012-07-12
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2012.07.12_federated_indian_of_graton_rancheria_tribal_state_gaming_compact.pdf
+    sha256: 01f831ec4a6547065eb44b277419578785620ba84b3283d7f3ba4eeb47570a8f
+    pages: 259
+  clauses:
+  - topic: renegotiation
+    locator: Sec. 15.1 to Sec. 15.3
+    summary: Amendments require mutual written agreement, and either party may request negotiations for an extension
+      or new compact no sooner than 18 months before the termination date; requests go in writing to the Tribal
+      Chair or Governor, with a negotiation schedule set within 45 days.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2012-original
+  dates:
+    listed: '2018-01-22'
+    published: '2018-01-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2018-01058
+    locator: 83 Fed. Reg. 3015 (Jan. 22, 2018)
+  source: compact-ca-federated-indians-of-graton-rancheria-2018-01-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 01.22.2018 Federated Indians of Graton Rancheria.pdf
+    sha256: 847400be602bea10bd41e3afa2578cfb4d50b7dd753db95dc5b9680ae5b93426
+    pages: 8
+  clauses:
+  - topic: renegotiation
+    locator: Preamble (citing 2012 Compact Sec. 15.1)
+    summary: The amendment recites that the 2012 Compact may be amended upon written agreement of both parties under
+      its Section 15.1 and records the parties' agreement to negotiate on workers' compensation participation; the
+      excerpt shows no other procedure for requests.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: renegotiation
+    compared_with: 2012-original
+    change: unchanged
+    summary: The amendment repeals and replaces only Section 3.1(c) and Section 12.6(a) of the 2012 compact and
+      is made under Section 15.1 of that compact, so the Section 15 amendment and renegotiation clauses are not
+      amended and still govern.
+    locator_before: 15.1, 15.2
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2018 amendment was submitted to the Department on October 5, 2017, and
+      approved by letter of December 15, 2017. Its Section 12.6(a) concerns the workers'' compensation election,
+      not disputes.'
+- id: 2023-replacement
+  label: 2023 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2012-original
+  - 2018-amendment
+  dates:
+    listed: '2023-07-14'
+    published: '2023-07-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-14894
+    locator: 88 Fed. Reg. 45245 (July 14, 2023)
+  source: compact-ca-federated-indians-of-graton-rancheria-ca-2023
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2023.07.14_federated_indians_of_the_graton_rancheria_tribal_state_gaming_compact_1.pdf
+    sha256: 7f5ef7e5825ba887f73bc329ff1315406fe74676264916ee266509a548a8efa4
+    pages: 118
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS. Sec. 13.1. Voluntary Resolution; Court Resolution.
+    summary: Disputes proceed through written notice, a written response within fifteen days, a meet and confer
+      within thirty days, and then may be resolved in the United States District Court or, if that court lacks jurisdiction,
+      a state court, without binding arbitration.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Table of Contents, Sec. 15.4 and Sec. 15.5
+    summary: The excerpt shows table of contents headings for renegotiation on changed market conditions and on
+      new forms of Class III gaming, but the operative text is not in the excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2012-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2012-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

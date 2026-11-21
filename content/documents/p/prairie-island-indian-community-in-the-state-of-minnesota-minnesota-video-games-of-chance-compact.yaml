@@ -1,0 +1,78 @@
+id: prairie-island-indian-community-in-the-state-of-minnesota-minnesota-video-games-of-chance-compact
+kind: gaming-compact
+title: Prairie Island Indian Community in the State of Minnesota–State of Minnesota Video Games of Chance Compact
+nations:
+- prairie-island-indian-community-in-the-state-of-minnesota
+states:
+- MN
+jurisdictions:
+- level: multiple
+  note: Class III video games of chance compact for Prairie Island Indian Community in the State of Minnesota and
+    the State of Minnesota under 25 U.S.C. § 2710(d).
+summary: 'The Class III video games of chance compact documents the Office of Indian Gaming lists for Prairie Island
+  Indian Community in the State of Minnesota and the State of Minnesota as of Nov. 21, 2026: 1 original and 1 amendment.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1990-original
+  label: 1990 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1990-04-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mn-prairie-island-indian-community-in-the-s-1990
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_1990.04.02_prairie_island_sopix_community_tribal_state_gaming_compact.pdf
+    sha256: 3279c48c0bd47b52bd49db7a576ec75b671ae8463efff8b4171a11175adfc9b5
+    pages: 18
+  clauses:
+  - topic: renegotiation
+    locator: Section 2.2 Renegotiation
+    summary: Either the State or the Community may request in writing, by certified mail, negotiations to amend,
+      replace or repeal the compact; the parties have 180 days to negotiate before IGRA procedures and remedies
+      apply, and the compact stays in effect meanwhile.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 1991-amendment
+  label: 1991 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1990-original
+  dates:
+    listed: '1991-04-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mn-prairie-island-indian-community-in-the-state-of-minnesota-1991-04-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_1991.04.30_prairie_island_gaming_tribal_state_gaming_compact.pdf
+    sha256: 4437e17ebf793683bbe82b5e664bd4d7191d543e7895cfe923f8ab6a73056cbe
+    pages: 2
+  clauses:
+  - topic: renegotiation
+    locator: Section 6.12 (as referenced in the amendment preamble)
+    summary: The amendment is made under Section 6.12 of the compact by agreement of the Community and the State,
+      and the excerpt does not show who may request renegotiation or the time limits.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: renegotiation
+    compared_with: 1990-original
+    change: unchanged
+    summary: The 1991 First Amendment (technical standards for video games of chance) amends only Sections 6.9(9)
+      and 6.9(11) and does not amend Section 2.2, so the 1990 renegotiation request procedure, with its 180-day
+      negotiation period, still governs.
+    locator_before: '2.2'
+    verification: inferred
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

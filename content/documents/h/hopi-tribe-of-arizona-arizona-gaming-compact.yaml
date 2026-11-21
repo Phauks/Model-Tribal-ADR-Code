@@ -1,0 +1,57 @@
+id: hopi-tribe-of-arizona-arizona-gaming-compact
+kind: gaming-compact
+title: Hopi Tribe of Arizona–State of Arizona Gaming Compact
+nations:
+- hopi-tribe-of-arizona
+states:
+- AZ
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Hopi Tribe of Arizona and the State of Arizona under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Hopi Tribe of Arizona and
+  the State of Arizona as of Nov. 21, 2026: 1 original. The order, the kind of each event and which version is in
+  effect are inferred from the list (project analysis); clause summaries and comparisons are a small model''s reading
+  of excerpts.'
+versions:
+- id: 2018-original
+  label: 2018 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2018-05-08'
+    published: '2018-05-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2018-09800
+    locator: 83 Fed. Reg. 20852 (May 8, 2018)
+  source: compact-az-hopi-tribe-of-arizona-2018
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/arizona/508 Compliant 2019.05.08 Hopi Tribe Tribal State Gaming Compact.pdf
+    sha256: b99ce729473805cf5b04082ad9629085a2f549b27c55468df379b7f75d79f981
+    pages: 63
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 15(d), Injunctive Relief
+    summary: Under Section 15, negotiation followed by mediation and arbitration are the preferred dispute methods,
+      with a court of competent jurisdiction for injunctive relief, which is the Arizona Superior Court for a Native
+      nation claim against the State and the U.S. District Court for Arizona for a State claim.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 17(c), Effect
+    summary: Either party may propose amendments to listed regulatory provisions within 180 days after the Effective
+      Date, followed by 90 days of good-faith negotiation and then mediation under Section 15(b) if talks fail,
+      and any amendment must be in writing and signed by both parties.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+found_in:
+- 2026-11-21-gaming-compact-histories

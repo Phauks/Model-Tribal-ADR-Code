@@ -1,0 +1,217 @@
+id: pala-band-of-mission-indians-california-gaming-compact
+kind: gaming-compact
+title: Pala Band of Mission Indians–State of California Gaming Compact
+nations:
+- pala-band-of-mission-indians
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Pala Band of Mission Indians and the State of California under 25 U.S.C. §
+    2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Pala Band of Mission Indians
+  and the State of California as of Nov. 21, 2026: 1 original, 2 replacements and 1 amendment. The order, the kind
+  of each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1998-original
+  label: 1998 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1998-05-05'
+    published: '1998-05-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-98-11895
+    locator: 63 Fed. Reg. 24823 (May 5, 1998)
+  source: compact-ca-pala-band-of-mission-indians-1998-05-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 1998.05.05 Pala Band of Mission Indians Tribal
+      State Gaming Compact.pdf
+    sha256: 9bbea1bf5a9d772b350addb842d78a38ceb401ce2773febbf70873bf2a452017
+    pages: 140
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 8.3.3 and Sec. 2.7
+    summary: The excerpt refers to arbitration under the AAA Commercial Arbitration Rules (subsections 17.2.10.2
+      to 17.2.10.5) and to an arbitral tribunal under subsection 17.2.10 when a court declines jurisdiction over
+      a Pala Band proceeding, but the subsections setting out the steps are not in the excerpt.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Sec. 2.4.2 and Sec. 2.5
+    summary: Either party may request good-faith negotiations to amend the compact when IGRA or a state statute
+      or constitutional provision changes permitted Class III gaming; a termination notice takes effect no earlier
+      than 12 months after service for some grounds or 6 months for others, and the Governor must then negotiate
+      a new compact.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2000-replacement
+  label: 2000 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1998-original
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-pala-band-of-mission-indians-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2000.05.16 Pala Band fo Mission Indians Tribal
+      State Gaming Compact.pdf
+    sha256: 7e7c61c55f10a1c57efde6a2dd0641155d6a4c42e3ce913b659bceb33811c4a7
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 and Sec. 9.2
+    summary: The compact provides for written notice, a good-faith meeting within 10 days and, if unresolved after
+      30 days, optional arbitration under the AAA Commercial Arbitration Rules with a binding award; otherwise the
+      dispute may go to the U.S. District Court where the gaming facility is located and the Ninth Circuit Court
+      of Appeals, or to state courts if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Sec. 12.1 to Sec. 12.3
+    summary: The compact may be amended by mutual written agreement, and the Pala Band may request renegotiation
+      in writing for Class III games other than those authorized, but not within 12 months of the effective date;
+      talks are to be scheduled within 30 days under IGRA good-faith standards.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1998-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1998-original
+    change: changed
+    summary: The 1998 compact lets either party request good-faith negotiations to amend the compact after an IGRA
+      or state-law change that expands or reduces Class III gaming (Section 2.5); the 2000 compact instead lets
+      the Pala Band seek renegotiation to engage in Class III forms not authorized in the compact (no sooner than
+      twelve months after its effective date), sets a thirty-day scheduling step (12.3), and gives the Pala Band
+      a right to terminate if exclusivity over gaming devices is abrogated (12.4); the excerpts do not show a 2000
+      equivalent of the 1998 Section 2.5.
+    locator_before: '2.5'
+    locator_after: '12.2'
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 1998 dispute section (17.2, the arbitral tribunal referred to in Sections
+      2.6 and 8.3.3) is not in the excerpts, so the dispute clause is not compared. The 2000 excerpt''s Sec. 9.0
+      is a meet-and-confer process before arbitration or court. The 2000 Sec. 12.4 termination right is an added
+      right in the later compact.'
+- id: 2004-amendment
+  label: 2004 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2000-replacement
+  dates:
+    listed: '2004-09-02'
+    published: '2004-09-02'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-04-20000
+    locator: 69 Fed. Reg. 53733 (Sept. 2, 2004)
+  source: compact-ca-pala-band-of-mission-indians-2004-09-02
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2004.09.02_pala_band_of_mission_indians_tribal_state_gaming_compact_1.pdf
+    sha256: 63ccd984f5a3be75fbfde1f6f4c1413acb705bde8910610afa3ea5a151517ea7
+    pages: 48
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+- id: 2016-replacement
+  label: 2016 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-replacement
+  - 2004-amendment
+  dates:
+    listed: '2016-11-04'
+    published: '2016-11-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2016-26670
+    locator: 81 Fed. Reg. 76960 (Nov. 4, 2016)
+  source: compact-ca-pala-band-of-mission-indians-2016-11-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2016.11.04_pala_band_of_mission_indians_tribal_state_gaming_compact.pdf
+    sha256: 83a1d3dc3f1484409c2e7126c48cdab5d897b9c005b47cacc19bde7dc621ea48
+    pages: 136
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1 Voluntary Resolution; Court Resolution and Sec.
+      13.2 Arbitration Rules
+    summary: Disputes under the compact begin with a written notice, a written response within 15 days and a meet-and-confer
+      within 30 days; if unresolved either party may seek arbitration before JAMS, but neither party is required
+      to agree to arbitrate, and unresolved disputes may be brought in the federal district court for the district
+      of the Gaming Facility or, if that court lacks jurisdiction, a state court of competent jurisdiction in the
+      county. Under Sec. 13.2 each party bears its own costs and the arbitrator may not award costs or attorney
+      fees to a prevailing party.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS, Sec. 15.1 to Sec. 15.3; Sec. 5.3
+    summary: Sec. 15.1 permits amendment at any time by mutual written agreement if each party voluntarily consents
+      to the negotiations in writing, Sec. 15.2 lets either party request negotiation of an extension or new compact
+      no sooner than 18 months before the termination date, and Sec. 15.3 requires written requests and a schedule
+      for negotiations; Sec. 5.3 also lets the Tribe request reopening of negotiations on the credit provisions
+      once carry-forward credits are exhausted.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-replacement
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-replacement
+    change: changed
+    summary: The 2016 Section 15.1 keeps amendment by mutual written agreement during the term, but the 2000 compact's
+      Section 12.2 right to renegotiate for Class III forms not authorized in the compact (after a twelve-month
+      bar) does not appear in the 2016 excerpts; instead Section 15.2 lets either party request negotiations for
+      a new compact or an extension no sooner than eighteen months before termination, and the compact is automatically
+      extended one year if neither has been agreed by the termination date.
+    locator_before: '12.2'
+    locator_after: '15.2'
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2016 excerpts are OCR-garbled in places ("ofthis" for "of this") and
+      the dispute excerpt is mis-captured. The 2016 document is a replacement compact; its Section 15.3 requests
+      process is in the excerpt, with a forty-five-day schedule for negotiations.'
+found_in:
+- 2026-11-21-gaming-compact-histories

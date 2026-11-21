@@ -1,0 +1,53 @@
+id: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-montana-gaming-compact
+kind: gaming-compact
+title: Blackfeet Tribe of the Blackfeet Indian Reservation of Montana–State of Montana Gaming Compact
+nations:
+- blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana
+states:
+- MT
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Blackfeet Tribe of the Blackfeet Indian Reservation of Montana and the State
+    of Montana under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Blackfeet Tribe of the Blackfeet
+  Indian Reservation of Montana and the State of Montana as of Nov. 21, 2026: 1 original. The order, the kind of
+  each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1996-original
+  label: 1996 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1996-10-25'
+    published: '1996-10-25'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-96-27424
+    locator: 61 Fed. Reg. 55312 (Oct. 25, 1996)
+  source: compact-mt-blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana-1996-10-25
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/montana/508_compliant_1996.10.25_blackfeet_tribe_tribal_state_gaming_compact.pdf
+    sha256: f17a6797d851174d40ff25b6082f7e7852680682ea6e7288f981b2525654ed70
+    pages: 42
+  clauses:
+  - topic: dispute-resolution
+    locator: IX. DEFAULT AND TERMINATION, B. Default by State
+    summary: 'The agreement has no negotiation, arbitration or court process for disputes; its only mechanism is
+      default: a party in substantial failure may be terminated by the other after thirty days written notice and
+      a failure to cure within thirty days, and the State may terminate immediately for unacceptable changes to
+      the Native nation''s gaming ordinance.'
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: X. MISCELLANEOUS TERMS, B. Amendments
+    summary: The agreement may be amended only by signed written instrument with both parties' consent; the parties
+      must negotiate in good faith if IGRA or state law changes, and the Council may notify the State that it wants
+      additional Class III games or less restrictive terms, after which the parties negotiate.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+found_in:
+- 2026-11-21-gaming-compact-histories

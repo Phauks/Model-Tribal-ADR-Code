@@ -1,0 +1,253 @@
+id: pueblo-of-taos-new-mexico-gaming-compact
+kind: gaming-compact
+title: Pueblo of Taos, New Mexico–State of New Mexico Gaming Compact
+nations:
+- pueblo-of-taos
+states:
+- NM
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Pueblo of Taos, New Mexico and the State of New Mexico under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Pueblo of Taos, New Mexico
+  and the State of New Mexico as of Nov. 21, 2026: 1 original and 4 replacements. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1995-03-22'
+    published: '1995-03-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-6966
+    locator: 60 Fed. Reg. 15194 (Mar. 22, 1995)
+  source: compact-nm-pueblo-of-taos-1995-03-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_1995.03.22_pueblo_of_taos_tribal_state_gaming_compact.pdf
+    sha256: 95f1f64cab0ad13e39167d8a75cd96d925dced60b083be13d6990c9b9b65bb22
+    pages: 41
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution.
+    summary: The compact provides written notice and a meeting of State and Tribe representatives within thirty
+      days, and after ninety days a notice to cease the disputed games, after which the responding party may elect
+      to invoke arbitration; the excerpt is cut off before the arbitration terms.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1997-replacement
+  label: 1997 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1995-original
+  dates:
+    listed: '1997-08-29'
+    published: '1997-08-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-97-22989
+    locator: 62 Fed. Reg. 45867 (Aug. 29, 1997)
+  source: compact-nm-pueblo-of-taos-1997-08-29
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_1997.08.23_pueblo_of_taos_tribal_state_gaming_compact.pdf
+    sha256: dd840da9c0a38b94175609d25c45ad47762139d832a7c8ac30ddc46347149073
+    pages: 64
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution.
+    summary: The compact provides written notice, a meeting within thirty days, and after ninety days a notice to
+      cease disputed games, with arbitration under the Commercial Arbitration Rules of the American Arbitration
+      Association if invoked, and results enforceable by court action.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+- id: 2001-replacement
+  label: 2001 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1997-replacement
+  dates:
+    listed: '2001-12-20'
+    published: '2001-12-20'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-31292
+    locator: 66 Fed. Reg. 65740 (Dec. 20, 2001)
+  source: compact-nm-pueblo-of-taos-2001-12-20
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2001.12.20_pueblo_of_taos_tribal_state_gaming_compact.pdf
+    sha256: ca425ea82ca0c7a0901eaaee526d2b39d05ecbece8d750009c41b71969863f0f
+    pages: 26
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraphs A(1) to A(5)
+    summary: The compact provides written notice, a 20-day wait, a notice to cease the disputed games with an option
+      to arbitrate, arbitration by three New Mexico attorneys with a third chosen by the American Arbitration Association,
+      and results enforceable by injunctive relief in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: SECTION 14. Entire Agreement.
+    summary: The compact provides that it may not be amended without express approval of the Tribe, the Governor
+      and the State Legislature, and that changes must be in writing, signed by both parties and approved by the
+      Secretary.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-replacement
+    change: changed
+    summary: 'The later compact provides a shorter track: the 30-day meeting of State and Native nation representatives
+      after notice is dropped, the notice to cease conduct may follow after 20 days instead of 90, the responding
+      party has 10 days instead of 30 to stop or invoke arbitration (with a right for the complaining party to invoke
+      arbitration if it does not act), and results of arbitration are stated to be final and binding. Both use attorney-arbitrators
+      chosen by each side and a third.'
+    locator_before: Section 7(A)(1)-(5)
+    locator_after: Section 7(A)(1)-(5)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1997-replacement
+    change: not-compared
+    verification: inferred
+- id: 2007-replacement
+  label: 2007 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 2001-replacement
+  dates:
+    listed: '2007-07-05'
+    published: '2007-07-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-12904
+    locator: 72 Fed. Reg. 36717 (July 5, 2007)
+  source: compact-nm-pueblo-of-taos-2007-07-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2007.07.05_pueblo_of_taos_tribal_state_gaming_compact.pdf
+    sha256: 77ec697270bed3aa03801c5170734b73df84b2284c95d01488022165087c8863
+    pages: 46
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraph A(5)
+    summary: The compact provides written notice, a 20-day wait, a notice to cease disputed games with an option
+      to arbitrate, arbitration by New Mexico attorneys with a third chosen by the American Arbitration Association,
+      and results that are final and binding and enforceable by injunctive relief in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 14. Entire Agreement.
+    summary: The compact provides that it may not be amended without express approval of the Tribe, the Governor
+      and the State Legislature, and that changes must be in writing, signed by both parties and approved by the
+      Secretary; the 2007 amendments modify definitions, facility limits and other sections.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2001-replacement
+    change: changed
+    summary: The later compact provides 30-day deadlines for the noticing party and then the responding party to
+      select arbitrators, and 30 days (earlier ten) for the two arbitrators to choose a third before the American
+      Arbitration Association acts; the notice, 20-day, 10-day response and binding-results steps are the same.
+    locator_before: Section 7(A)(3)
+    locator_after: Section 7(A)(3)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2001-replacement
+    change: not-compared
+    verification: inferred
+- id: 2015-replacement
+  label: 2015 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2007-replacement
+  dates:
+    listed: '2015-07-29'
+    published: '2015-07-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2015-18553
+    locator: 80 Fed. Reg. 45230 (July 29, 2015)
+  source: compact-nm-pueblo-of-taos-new-mexico-2015
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2015.07.29_pueblo_of_taos_tribal_state_gaming_compact.pdf
+    sha256: aa02479474c4d61727cfa70d58110dfab5bcba78084a706fcee15b99d2174426
+    pages: 47
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution.
+    summary: After written notice and a twenty-day period, the complaining party may issue a notice to cease the
+      disputed activity, and either side may invoke arbitration before a three-member panel with the American Arbitration
+      Association appointing a third arbitrator if needed; the arbitration result is final and binding and enforceable
+      in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: SECTION 14. Entire Agreement.
+    summary: The compact may be amended only by a written instrument signed by the Native nation and the State and
+      approved by the Secretary of the Interior, with approval of the Native nation, the Governor and the State
+      Legislature; the excerpt sets no reopening trigger or time limit.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2007-replacement
+    change: changed
+    summary: The later compact provides a two-year limit for invoking the procedure (counted from discovery, with
+      a two-year window for the State to raise pre-compact payment breaches), allows the parties to agree to one
+      arbitrator, and if the responding party does not select its arbitrator within 30 days has the case proceed
+      before the first-selected arbitrator; it also sets 30 days from the responding party's selection for the third
+      arbitrator. The earlier 2007 text already had 30-day deadlines and a three-member panel; the 20-day step and
+      binding results are the same.
+    locator_before: Section 7(A)(3)
+    locator_after: Section 7(A), 7(A)(3)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2007-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

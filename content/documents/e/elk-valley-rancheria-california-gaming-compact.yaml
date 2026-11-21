@@ -1,0 +1,124 @@
+id: elk-valley-rancheria-california-gaming-compact
+kind: gaming-compact
+title: Elk Valley Rancheria, California–State of California Gaming Compact
+nations:
+- elk-valley-rancheria
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Elk Valley Rancheria, California and the State of California under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Elk Valley Rancheria, California
+  and the State of California as of Nov. 21, 2026: 1 original and 1 replacement. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-elk-valley-rancheria-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2000.05.16_elk_valley_rancheria_tribal_state_gaming_compact_0.pdf
+    sha256: 9675f2772cd53983333155719cd086ef781040b3adf73eb02256dc96a42d15aa
+    pages: 63
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 and Sec. 9.2
+    summary: The compact provides for written notice, a good-faith meeting within 10 days and, if unresolved after
+      30 days, optional arbitration under the AAA Commercial Arbitration Rules with a binding award; otherwise the
+      dispute may go to the U.S. District Court where the gaming facility is located and the Ninth Circuit Court
+      of Appeals, or to state courts if federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Sec. 12.1 to Sec. 12.3
+    summary: The compact may be amended by mutual written agreement, and the Tribe may request renegotiation in
+      writing for Class III games other than those authorized, but not within 12 months of the effective date; talks
+      are to be scheduled within 30 days under IGRA good-faith standards.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2018-replacement
+  label: 2018 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  dates:
+    listed: '2018-08-15'
+    published: '2018-08-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2018-17548
+    locator: 83 Fed. Reg. 40549 (Aug. 15, 2018)
+  source: compact-ca-elk-valley-rancheria-2018-08-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2018.08.15_elk_valley_rancheria_tribal_state_gaming_compact.pdf
+    sha256: eb6e4a5e36abb34d088923e009c315e4ffa2413b39009b6b31a9a730ec69d447
+    pages: 133
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS, Sec. 13.1 (a) to (f), Sec. 13.2; SECTION 14.0, Sec. 14.2(b)
+    summary: After written notice, a written response within 15 days and a meet-and-confer within 30 days, either
+      party may seek arbitration before a JAMS arbitrator (neither party need agree, and either may invoke the JAMS
+      optional appeal), and unresolved disputes may be heard in the U.S. District Court for the district of the
+      gaming facility or, if it lacks jurisdiction, a state court in the County, with remedies limited under Sec.
+      13.4; a federal action for declaration of material breach and possible termination follows exhaustion of Section
+      13.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS, Sec. 15.1 to 15.3
+    summary: The compact may be amended at any time by mutual written agreement with each party voluntarily consenting
+      to the negotiation; no sooner than eighteen months before the termination date either party may request negotiations
+      to extend or replace it, with automatic one-year and then two-year extensions in stated circumstances, and
+      requests must be in writing with a schedule set within 45 days.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: changed
+    summary: The earlier compact provides written notice, a meeting within 10 days, then optional AAA arbitration
+      (neither party required to agree) held on Tribal land, and federal or state court; the later compact provides
+      written notice, a written response within 15 days, a meeting within 30 days, then optional arbitration (neither
+      party required to agree) before a JAMS arbitrator, and federal or state court with the Section 13.4 remedies
+      as the sole remedies and no damages or attorney fees.
+    locator_before: Sec. 9.0 (9.1-9.3)
+    locator_after: Section 13.1-13.2
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: changed
+    summary: The 2018 replacement's Section 15 allows amendment during the term only by mutual written agreement,
+      with each party's written consent to the negotiations, and allows either party to request negotiations for
+      an extension or a new compact no sooner than eighteen months before termination, with automatic one-year extension
+      if no agreement is reached. The 2000 compact's Section 12 allowed renegotiation for new Class III forms after
+      12 months, with requests in writing and a schedule set within 30 days.
+    locator_before: '12.3'
+    locator_after: '15.2'
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

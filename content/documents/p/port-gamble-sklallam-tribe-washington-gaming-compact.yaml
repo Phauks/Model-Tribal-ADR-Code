@@ -1,0 +1,328 @@
+id: port-gamble-sklallam-tribe-washington-gaming-compact
+kind: gaming-compact
+title: Port Gamble S'Klallam Tribe–State of Washington Gaming Compact
+nations:
+- port-gamble-sklallam-tribe
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Port Gamble S'Klallam Tribe and the State of Washington under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Port Gamble S''Klallam Tribe
+  and the State of Washington as of Nov. 21, 2026: 1 original and 6 amendments. The order, the kind of each event
+  and which version is in effect are inferred from the list (project analysis); clause summaries and comparisons
+  are a small model''s reading of excerpts.'
+versions:
+- id: 1995-original
+  label: 1995 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1995-04-12'
+    published: '1995-04-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-9024
+    locator: 60 Fed. Reg. 186704 (Apr. 12, 1995)
+  source: compact-wa-port-gamble-sklallam-tribe-1995-04-12
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_1995.04.12_port_gambles'klallam_tribe_tribal_state_gaming_compact.pdf
+    sha256: 3ddf96a20e2090179a9b6af5e0ae16d1974fc44bc8d36160f36955505646e843
+    pages: 113
+  clauses:
+  - topic: dispute-resolution
+    locator: B. Dispute Resolution Methods (XII.B.3.a)
+    summary: Parties give written notice, negotiate, then mediate, then arbitrate before JAMS under AAA supplemental
+      rules; arbitration is non-binding unless the parties agree in writing, mandatory binding arbitration applies
+      only where the Compact so specifies, and federal district court review is available.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: D. Amendments/Renegotiations (XV.D)
+    summary: Amendments are made by mutual written agreement, and renegotiation may be requested by the Tribe on
+      changes in state law or a wish for new games, and by the State on health and safety provisions, with the parties
+      required to negotiate in good faith.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '1999-01-28'
+    published: '1999-01-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-1933
+    locator: 64 Fed. Reg. 4459 (Jan. 28, 1999)
+  source: compact-wa-port-gamble-sklallam-tribe-1999-01-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_1999.01.28_port_gambles_klallam_tribe_tribal_state_gaming_compact_0.pdf
+    sha256: cfe1cde4dbc2afa9b9146156314a5b2d6cfb641ccf519835480155532067ad0c
+    pages: 54
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: The 1999 amendment amends only Section III and adds Appendix X (tribal lottery systems), so the 1995
+      dispute resolution process (good faith negotiation, mediation, then JAMS arbitration) still governs.
+    locator_before: Dispute Resolution, B
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: The 1999 amendment's operative paragraphs amend only Section III and add Appendix X, so the 1995 Section
+      XV.D amendment and renegotiation provisions still govern.
+    locator_before: XV.D
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2004-amendment
+  label: 2004 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2004-06-23'
+    published: '2004-06-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-04-14260
+    locator: 69 Fed. Reg. 35059 (June 23, 2004)
+  source: compact-wa-port-gamble-sklallam-tribe-2004-06-23
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2004.06.23 Port Gamble S'Klallam Tribe Tribal
+      State Gaming Compact Amdt II.pdf
+    sha256: 5b12bc53c4eb4c81350f7c4370e6f36c78f3bf4c18a1b47a470ca0a886b3c7e0
+    pages: 14
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-port-gamble-sklallam-tribe-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2007.05.31_port_gamble_s_klallam_tribe_tribal_state_gaming_compact_0.pdf
+    sha256: 92001c975c661a2c8b71965e2777c52e6b00bfd7ced67e83eab6c1068ae5caba
+    pages: 57
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 17. DISPUTE RESOLUTION
+    summary: Disputes under Appendix X2 follow any dispute provisions in the Appendix or otherwise the Dispute Resolution
+      provisions of the Compact, which the excerpt does not reproduce.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15.2 Post-Moratorium (Appendix X2)
+    summary: After the moratorium in Section 15.1 expires, the Tribe may seek an amendment on listed grounds, including
+      a change in federal or state law, a final court decision, or another Washington tribe obtaining materially
+      different equipment or higher wagers, subject to negotiation under the Compact's dispute provisions.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: The Third Amendment adds Appendix X2 on tribal lottery systems, and that appendix's Section 17 sends
+      its own disputes to any dispute provisions in the appendix or otherwise to the Compact's dispute resolution
+      provisions, so the 1995 process still governs.
+    locator_before: DISPUTE RESOLUTION (heading, no number shown)
+    locator_after: Appendix X2, Section 17
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: The Third Amendment's operative text adds Appendix X2 and recognizes lottery systems under Section
+      III, and does not amend the 1995 Section XV.D amendment and renegotiation provisions, which therefore still
+      govern.
+    locator_before: XV.D
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-13712
+    locator: 80 Fed. Reg. 31918 (June 4, 2015)
+  source: compact-wa-port-gamble-sklallam-tribe-2015-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2015.06.04 Port Gamble S'Klallam Tribe Tribal
+      State Gaming Compact.pdf
+    sha256: c817ad39206714ff807605017744df718f94e3992a276669a92c7f48d6d2ca9f
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4. Dispute Resolution
+    summary: The State and Tribe must meet and attempt to resolve disputes over the Addendum terms, and if they
+      cannot reach agreement either party may use the dispute resolution provisions of the Compact, which the excerpt
+      does not reproduce.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: changed
+    summary: The later document amends other parts of the compact and leaves the earlier Section XII (negotiation
+      within 10 days, mediation, then JAMS arbitration that is non-binding unless the parties agree or a provision
+      calls for binding arbitration) intact. It adds a requirement that the Native nation and the State meet and
+      attempt to resolve disputes over the Addendum's terminal allocation at least 30 days before an increase takes
+      effect, and a 30-day meet-and-confer for disputes over the State's revised cost allocation model, after which
+      the compact's dispute resolution provisions apply.
+    locator_before: Section XII.B (Dispute Resolution Methods)
+    locator_after: Addendum Sections 4.1-4.2; Appendix X2 Section 13.4.5
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: unchanged
+    summary: The Fourth Amendment's operative paragraphs add Section III.Q and amend Appendix X2 Sections 12.1,
+      13.4, 14.4 and 14.5 and incorporate an Addendum, and do not amend the 1995 Section XV.D amendment and renegotiation
+      provisions, which therefore still govern.
+    locator_before: XV.D
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2021-12-28'
+    published: '2021-12-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-28213
+    locator: 86 Fed. Reg. 73800 (Dec. 28, 2021)
+  source: compact-wa-port-gamble-sklallam-tribe-2021-12-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2021.12.28_port_gamble_s_klallam_tribe_tribal_state_gaming_compac.pdf
+    sha256: 4ec60eed8f4a2f1b02de8c09258d7e50abdb7d7644a85da4e956d2e201e0495c
+    pages: 26
+  clauses:
+  - topic: renegotiation
+    locator: Most Favored Nations Section XV.D.3 (Authorization to Other Tribes)
+    summary: Under the Most Favored Nation clause, Port Gamble's compact is amended when the State gives another
+      tribe more facilities, activities, stations or wager limits and Port Gamble approves and accepts them; other
+      modifications require separate amendment or renegotiation.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: changed
+    summary: 'The 2021 memorandum adds an automatic most favored nation mechanism: when the State enters into or
+      amends a compact giving another tribe more facilities, activities, wager limits or hours, the Compact is amended
+      upon the Tribe''s approval and written notice, and the Tribe used this to add sports wagering; the memorandum
+      says modifications requiring formal amendment or renegotiation will be addressed separately and that Section
+      XV.D.3 as amended remains in force.'
+    locator_before: XV.D.3
+    locator_after: Memorandum, Authorization to Other Tribes; Compact XV.D.3 (as amended)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The memorandum relies on Section XV.D.3 as amended, and the intervening
+      amendments that changed it (between 1995 and 2021) are not in the excerpts, so the 1995 text may not be the
+      operative text. The memorandum also incorporates the Compact''s Section II, III and VIII changes, which are
+      outside this comparison. Renegotiation is the only mechanism described in the memorandum''s operative text.'
+- id: 2026-amendment
+  label: 2026 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1995-original
+  dates:
+    listed: '2026-04-14'
+    published: '2026-04-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2026-07174
+    locator: 91 Fed. Reg. 19199 (Apr. 14, 2026)
+  source: compact-wa-port-gamble-sklallam-tribe-2026-04-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/2026.04.07_port_gamble_s'klallam_tribe_5th_amend_gaming_compact_508.pdf
+    sha256: 6dd9354735339cfc35b4e08d8c9aea463b3095403c0efc86d2e3773e84cc06c5
+    pages: 19
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1995-original
+    change: unchanged
+    summary: The Fifth Amendment's operative paragraphs amend Sections II.F, II (definition of Pit), III.A and III.E
+      and add Appendices F and G, and do not amend the dispute resolution provisions, so the 1995 dispute process
+      still governs as to this amendment.
+    locator_before: DISPUTE RESOLUTION (heading, no number shown)
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The Interior letter (April 7, 2026) approved the Fifth Amendment, which
+      increases the facilities to two, adds Appendix F (wager limits and problem gaming resources) and Appendix
+      G (electronic table games). The dispute excerpt for the amendment is empty, and the amendment''s appendices
+      are only partly visible. The amendments between 1995 and 2026 (including the 2021 memorandum) are not in this
+      excerpt set.'
+  - topic: renegotiation
+    compared_with: 1995-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

@@ -1,0 +1,90 @@
+id: prairie-island-indian-community-in-the-state-of-minnesota-minnesota-blackjack-compact
+kind: gaming-compact
+title: Prairie Island Indian Community in the State of Minnesota–State of Minnesota Blackjack Compact
+nations:
+- prairie-island-indian-community-in-the-state-of-minnesota
+states:
+- MN
+jurisdictions:
+- level: multiple
+  note: Class III blackjack compact for Prairie Island Indian Community in the State of Minnesota and the State
+    of Minnesota under 25 U.S.C. § 2710(d).
+summary: 'The Class III blackjack compact documents the Office of Indian Gaming lists for Prairie Island Indian
+  Community in the State of Minnesota and the State of Minnesota as of Nov. 21, 2026: 1 original and 1 amendment.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1991-original
+  label: 1991 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1991-10-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mn-prairie-island-indian-community-in-the-state-of-minnesota-1991-10-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_1991.10.03_prairie_island_indian_community_tribal_state_gaming_compact.pdf
+    sha256: 6b96367bb1f9b30622f5937d0d12e3a7e592557eb0a169aede558655ba5095fb
+    pages: 18
+  clauses:
+  - topic: renegotiation
+    locator: Section 2.2 Renegotiation
+    summary: Either the State or the Community may request in writing, by certified mail, negotiations to amend,
+      replace or repeal the compact; the parties have 180 days to negotiate before IGRA procedures and remedies
+      apply, and the compact stays in effect meanwhile.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 2023-amendment
+  label: 2023 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1991-original
+  dates:
+    listed: '2023-10-04'
+    published: '2023-10-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2023-22027
+    locator: 88 Fed. Reg. 68663 (Oct. 4, 2023)
+  source: compact-mn-prairie-island-indian-community-in-the-state-of-minnesota-2023-10-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_2023.10.04_prairie_island_indian_community_tribal_state_gaming_compact.pdf
+    sha256: ded0655b43db3049add7df7358f6c49cb1395b0626f5662bf47265f53aa2b0da
+    pages: 5
+  clauses:
+  - topic: dispute-resolution
+    locator: 4.0 Enforcement and Disputes, Section 4.2
+    summary: The Department of Public Safety gives notice of an alleged violation to the Community's Gaming Commission,
+      which has 7 days to investigate and order corrective action; a disputed finding goes to a meeting within 7
+      days, after which each party may pursue remedies under IGRA or state law.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1991-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1991-original
+    change: unchanged
+    summary: The 2023 addendum does not amend Section 2.2 or 2.3 of the 1991 compact; it recites those sections
+      as the basis for the negotiation, so the 1991 renegotiation provisions still govern.
+    locator_before: '2.2'
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2023 document is an addendum for Class III card games (including blackjack),
+      which the Interior letter approved on September 29, 2023. The 1991 compact''s dispute text is not in the excerpts,
+      so it is not clear whether the addendum''s disputes section is new or changes an existing process.'
+found_in:
+- 2026-11-21-gaming-compact-histories

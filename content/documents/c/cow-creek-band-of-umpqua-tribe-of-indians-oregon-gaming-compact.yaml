@@ -1,0 +1,461 @@
+id: cow-creek-band-of-umpqua-tribe-of-indians-oregon-gaming-compact
+kind: gaming-compact
+title: Cow Creek Band of Umpqua Tribe of Indians–State of Oregon Gaming Compact
+nations:
+- cow-creek-band-of-umpqua-tribe-of-indians
+states:
+- OR
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Cow Creek Band of Umpqua Tribe of Indians and the State of Oregon under 25
+    U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Cow Creek Band of Umpqua
+  Tribe of Indians and the State of Oregon as of Nov. 21, 2026: 1 original, 6 amendments, 1 restatement and 1 replacement.
+  The order, the kind of each event and which version is in effect are inferred from the list (project analysis);
+  clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1992-11-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-or-cow-creek-band-of-umpqua-tribe-of-indians-1992-11-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1992.11.30 Cow Creek Band of Umpua Indians Tribal
+      Statre Gaming Compact.pdf
+    sha256: 9dec3dbd36a0309afc97e7268f9a299a10c05de68be1553833c6174cac14f6a0
+    pages: 54
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 15. DISPUTE RESOLUTION.
+    summary: A party that believes the other has not complied serves written notice, the parties meet within thirty
+      days, and if the dispute is not resolved within ninety days either party may sue in the United States District
+      Court for the District of Oregon, or in state court if the federal court declines jurisdiction.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: B. Amendments (3), SECTION 11
+    summary: Either the State or the Native nation may request negotiations to amend, replace or repeal the compact
+      when a listed condition occurs; the compact remains in effect during renegotiation, and the IGRA negotiation
+      period is shortened to 100 days.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1995-amendment
+  label: 1995 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '1995-01-30'
+    published: '1995-01-30'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-95-2192
+    locator: 60 Fed. Reg. 5812 (Jan. 30, 1995)
+  source: compact-or-cow-creek-band-of-umpqua-tribe-of-indians-1995-01-30
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1995.01.30 Cow Creek Band of Umpqua Indian Tribe
+      Tribal State Gaming Compact.pdf
+    sha256: 596b81f63e2681a7e3391c79210bf67813ed20b390a8ac8ca9ab0006a50db74c
+    pages: 59
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 15. DISPUTE RESOLUTION.
+    summary: A party that believes the other has not complied serves written notice, the parties meet within thirty
+      days, and if the dispute is not resolved within ninety days either party may sue in the United States District
+      Court for the District of Oregon, or in state court if the federal court declines jurisdiction.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 11. TERMINATION; AMENDMENTS, B. Amendments
+    summary: Either the State or the Native nation may request negotiations to amend, replace or repeal the compact
+      when a listed condition occurs; the compact remains in effect until renegotiated or replaced.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 1995 document amends only Section 7(E) (armed security supervisors). Its copy of Section 15 matches
+      the 1992 text, so the dispute procedure is unchanged.
+    locator_before: 15(A)(2)
+    locator_after: 15(A)(2)
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 1995 amendment does not change the renegotiation provisions, which remain as in the 1992 compact.
+    locator_before: '11'
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 1996-amendment
+  label: 1996 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '1996-02-06'
+    published: '1996-02-06'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-96-2451
+    locator: 61 Fed. Reg. 4477 (Feb. 6, 1996)
+  source: compact-or-cow-creek-band-of-umpqua-tribe-of-indians-1996-02-06
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508_compliant_1996.02.06_cow_creek_band_of_umpqua_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: 89368f6072bd5fcf36059835e997c224ecaa210f11681b7006f36eeee5a2529b
+    pages: 21
+  clauses:
+  - topic: renegotiation
+    locator: Paragraph 8 (Amendment II)
+    summary: Blackjack must end unless an extension or permanent amendment is negotiated and executed before the
+      amendment expires, and while a compact amendment is under negotiation the Native nation may replace blackjack
+      tables with video lottery terminals.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 1996 blackjack amendment adds Section 4(E) and Appendix C and does not amend Section 15, so the
+      earlier dispute procedure still governs. Its player-complaint procedure is for the Tribe's own regulation,
+      not a process between the Tribe and the State.
+    locator_before: 15(A)(2)
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 1996 blackjack amendment does not amend the renegotiation provisions, so the earlier clause still
+      governs.
+    locator_before: '11'
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 1996-amendment-2
+  label: 1996 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '1996-09-04'
+    published: '1996-09-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-96-22437
+    locator: 61 Fed. Reg. 46662 (Sept. 4, 1996)
+  source: compact-or-cow-creek-band-of-umpqua-tribe-of-indians-1996-09-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1996.09.04 Cow Creek Band of Umpqua Indian Tribe
+      Tribal State Gaming Compact.pdf
+    sha256: bd2955775913c51841b991a098fe6d3d2bc2cc52fb4a54911216e86f5e3eaed5
+    pages: 21
+  clauses:
+  - topic: dispute-resolution
+    locator: (b) Procedure for Resolving Disputes Concerning Operational Decisions
+    summary: The State gives written notice, the parties meet and confer within fifteen days, either party may use
+      non-binding arbitration within forty-five days through U.S. Arbitration and Mediation of Oregon (binding only
+      on agreement), and then either party may sue in the United States District Court for the District of Oregon.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 1997-restatement
+  label: 1997 amended and restated compact
+  event: restatement
+  status: superseded
+  supersedes:
+  - 1992-original
+  - 1995-amendment
+  - 1996-amendment
+  - 1996-amendment-2
+  dates:
+    listed: '1997-06-27'
+    published: '1997-06-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-97-16789
+    locator: 62 Fed. Reg. 34771 (June 27, 1997)
+  source: compact-or-cow-creek-band-of-umpqua-tribe-of-indians-1997-06-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 1997.06.27 Cow Creek Band of Umpqua Indian Tribe
+      Tribal State Gaming Compact.pdf
+    sha256: 6c3aafecd2d739cc434068e74c82d15d64bb74c354ee3c57f21b1d846d2c0b2f
+    pages: 46
+  clauses:
+  - topic: dispute-resolution
+    locator: B. Procedure for Resolving Disputes Concerning Operational Decisions.
+    summary: For operational disputes the State gives written notice, the parties meet and confer within fifteen
+      days, either party may start non-binding arbitration within forty-five days through U.S. Arbitration and Mediation
+      of Oregon, and then either party may sue in the United States District Court for the District of Oregon, with
+      arbitration binding only if both parties agree.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: D. Amendments (paragraph 12.D.1.b)
+    summary: Either party may request negotiations to amend the compact when a listed condition occurs, such as
+      one year after Secretary approval, a new state compact with another tribe, or a state change expanding Class
+      III gaming; the Native nation's fund contributions are to be renegotiated if blackjack is prohibited, and
+      the excerpt does not say what happens if talks fail.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: The earlier compact provides a general clause of written notice, a meeting within 30 days, and a District
+      of Oregon action after 90 days (state court if federal declines); the later compact keeps that clause with
+      designated representatives for the meeting and adds an operational-decisions procedure (notice, meeting within
+      15 days, non-binding arbitration within 45 days binding by agreement, then federal court) and an expedited
+      procedure under which the Tribe acts on the State's recommendation unless the Tribal Gaming Commission finds
+      harm, with a federal court action if unresolved after ten days.
+    locator_before: Section 15.A
+    locator_after: Section 6.B; Section 16.A
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: reworded
+    summary: The amendment-and-termination clause is restated in the 1997 Section 12 with the same conditions and
+      the same request-to-renegotiate procedure. The main textual changes are a new 'Except as provided in subsection
+      12.C above' lead-in and updated cross-references to Sections 12, 15 and 16.
+    locator_before: 11(B)(1)
+    locator_after: '12'
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2007-replacement
+  label: 2007 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 1997-restatement
+  dates:
+    listed: '2007-03-19'
+    published: '2007-03-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-4903
+    locator: 72 Fed. Reg. 12813 (Mar. 19, 2007)
+  source: compact-or-cow-creek-band-of-umpqua-tribe-of-indians-2007-03-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2007.03.19 Cow Creek Band Compact.pdf
+    sha256: dc93ca6f6755b91d257972750739df2b9f2259c967293116b563a00715f120a4
+    pages: 55
+  clauses:
+  - topic: dispute-resolution
+    locator: ARTICLE XII - DISPUTE RESOLUTION, Section B. Standard Dispute Resolution Process
+    summary: After written notice, the parties meet and confer within twenty days; if unresolved, either party may
+      start non-binding mediation or arbitration (binding only if both agree), and then may sue in court under Article
+      XII, Section E.
+    methods:
+    - negotiation
+    - mediation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: ARTICLE XIII - EFFECTIVE DATE; EXHIBITS; TERMINATION; AMENDMENTS, Section E. Renegotiations
+    summary: Either party may request negotiations to amend, replace or repeal the compact by written certified-mail
+      request to the Governor or Tribal Chair, the compact stays in effect during talks, and amendments must be
+      in writing, signed by all parties and approved by the Secretary of the Interior.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-restatement
+    change: changed
+    summary: 'The earlier compact provides a general clause (notice, 30-day meeting, District of Oregon action after
+      90 days) plus an operational-decisions procedure (15-day meeting, non-binding arbitration binding by agreement,
+      federal court) and an expedited procedure (Tribe acts on the State''s recommendation unless the Commission
+      finds harm, conference within five days, court action after ten days); the later compact replaces them with
+      Article XII: a meeting within 20 calendar days, then mediation or non-binding arbitration (convertible to
+      binding by agreement), then court action, and an expedited process limited to immediate and serious threats
+      with a three-business-day conference, a second notice, implementation of the State''s recommendation or other
+      agreed action, State-imposed remedies (withholding or suspending authorizations, closure for public safety
+      threats) if the Tribe does not act, and a right for the Native nation to seek declaratory relief in court.'
+    locator_before: Section 16; Section 6.B (6.B.5)
+    locator_after: Article XII (A)-(E)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1997-restatement
+    change: changed
+    summary: The 2007 replacement drops the 1997 list of conditions for amendment and the bar on renegotiating Section
+      4 gaming terms without State consent. Amendments may be made by the parties in writing with Secretary approval,
+      and either party may request renegotiation, which must be negotiated in good faith.
+    locator_before: 12(D)(1)
+    locator_after: Article XIII(D)-(E)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2012-amendment
+  label: 2012 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2007-replacement
+  dates:
+    listed: '2012-09-28'
+    published: '2012-09-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2012-23975
+    locator: 77 Fed. Reg. 59641 (Sept. 28, 2012)
+  source: compact-or-cow-creek-band-of-umpqua-tribe-of-indians-2012-09-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2012.09.28 Cow Creek Band of Umpqua Tribe of Indians
+      Tribal State Gaming Compact.pdf
+    sha256: 4e55d6cf2c36caa8263644a7e5d15d398265612c843b5c70d99bcbc60e629bba
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2007-replacement
+    change: unchanged
+    summary: Amendment I changes only Article XI (the Community Benefit Fund board of trustees) and states that
+      the rest of the Compact is unchanged, so the 2007 Article XII standard process still governs.
+    locator_before: Article XII, Section B(1)
+    locator_after: Amendment I (Article XI only)
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2007-replacement
+    change: unchanged
+    summary: Amendment I does not amend the 2007 Article XIII amendment or renegotiation provisions, which are not
+      among the provisions it revises, so the earlier clause still governs.
+    locator_before: Article XIII, Section E
+    locator_after: Amendment I (Article XI only)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2007-replacement
+  dates:
+    listed: '2015-04-08'
+    published: '2015-04-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-08059
+    locator: 80 Fed. Reg. 18863 (Apr. 8, 2015)
+  source: compact-or-cow-creek-band-of-umpqua-tribe-of-indians-2015-04-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2015.04.08 Cow Creek Band of Umpqua Tribe of Indians
+      Tribal State Gaming Compact.pdf
+    sha256: efd278a20fe17d3e93ed61e976edae344eaddebdd0827cd8fc74421ed9193ecb
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2007-replacement
+    change: unchanged
+    summary: Amendment II amends only Article VII, Section B, subsection 6, which adds a new 6(C) on licensing of
+      contractors; Article XII is not among the provisions it revises, so the 2007 standard process still governs.
+    locator_before: Article XII, Section B(1)
+    locator_after: Amendment II (Article VII.B.6 only)
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2007-replacement
+    change: unchanged
+    summary: Amendment II does not amend the 2007 renegotiation provisions in Article XIII; its WHEREAS clause limits
+      the changes to Article VII, Section B, subsection 6, so the earlier clause still governs.
+    locator_before: Article XIII, Section E
+    locator_after: Amendment II (Article VII.B.6 only)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2007-replacement
+  dates:
+    listed: '2018-09-27'
+    published: '2018-09-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-20993
+    locator: 83 Fed. Reg. 48862 (Sept. 27, 2018)
+  source: compact-or-cow-creek-band-of-umpqua-tribe-of-indians-2018-09-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oregon/508 Compliant 2018.09.27 Cow Creek Band of Umpqua Indians.pdf
+    sha256: e5246b793ed8763bed0cc9ba7197f737ce97968bc8ba80da7a143f86482d81d6
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2007-replacement
+    change: unchanged
+    summary: Amendment III changes the definition of Video Lottery Terminal in Article III(JJ) and adds Article
+      V(F)(5) on new VLTs; it does not revise Article XII, so the 2007 standard process still governs.
+    locator_before: Article XII, Section B(1)
+    locator_after: Amendment III (Article III(JJ), Article V(F)(5))
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2007-replacement
+    change: unchanged
+    summary: Amendment III does not revise the 2007 Article XIII amendment or renegotiation provisions; it states
+      that its terms supplement the original Compact and Amendments I and II, so the earlier clause still governs.
+    locator_before: Article XIII, Section E
+    locator_after: Amendment III (preamble)
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

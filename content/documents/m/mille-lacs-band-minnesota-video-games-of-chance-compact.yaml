@@ -1,0 +1,42 @@
+id: mille-lacs-band-minnesota-video-games-of-chance-compact
+kind: gaming-compact
+title: Mille Lacs Band–State of Minnesota Video Games of Chance Compact
+nations:
+- mille-lacs-band
+states:
+- MN
+jurisdictions:
+- level: multiple
+  note: Class III video games of chance compact for Mille Lacs Band and the State of Minnesota under 25 U.S.C. §
+    2710(d).
+summary: 'The Class III video games of chance compact documents the Office of Indian Gaming lists for Mille Lacs
+  Band and the State of Minnesota as of Nov. 21, 2026: 1 original. The order, the kind of each event and which version
+  is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small model''s
+  reading of excerpts.'
+versions:
+- id: 1990-original
+  label: 1990 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1990-06-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-mn-mille-lacs-band-1990-06-29
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/minnesota/508_compliant_1990.06.29_mille_lacs_band_of_chippewa_indians_tribal_state_gaming_compact.pdf
+    sha256: 00a0cc4e3cf21a26e7b0fdc6ecf5ac42693b203bea9dd60fe13ffda5acfa1cf6
+    pages: 19
+  clauses:
+  - topic: renegotiation
+    locator: Section 2.2, Renegotiation
+    summary: Either the State or the Band may request in writing, by certified mail, negotiations to amend, replace
+      or repeal the compact; the compact stays in effect during renegotiation, the parties have 180 days to negotiate
+      (extendable by agreement), and IGRA procedures then apply.
+    verification: read-in-full
+    reviewer: small model, older version
+found_in:
+- 2026-11-21-gaming-compact-histories

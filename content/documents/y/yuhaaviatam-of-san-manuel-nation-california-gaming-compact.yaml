@@ -1,0 +1,221 @@
+id: yuhaaviatam-of-san-manuel-nation-california-gaming-compact
+kind: gaming-compact
+title: Yuhaaviatam of San Manuel Nation–State of California Gaming Compact
+nations:
+- yuhaaviatam-of-san-manuel-nation
+states:
+- CA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Yuhaaviatam of San Manuel Nation and the State of California under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Yuhaaviatam of San Manuel
+  Nation and the State of California as of Nov. 21, 2026: 1 original, 2 amendments and 1 replacement. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2000-05-16'
+    published: '2000-05-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-12322
+    locator: 65 Fed. Reg. 31189 (May 16, 2000)
+  source: compact-ca-yuhaaviatam-of-san-manuel-nation-2000-05-16
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508 Compliant 2000.05.16 San Manuel Band of Mission Indians
+      Tribal State Gaming Compact.pdf
+    sha256: 8ed056e5bff168edf2ddf578c631fe983d5521fc9cbab34573c7d8d756457c2b
+    pages: 63
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 9.1 and Sec. 9.2
+    summary: Disputes start with written notice and a meet-and-confer within 10 days, then either party may seek
+      arbitration under the AAA Commercial Arbitration Rules if the dispute is unresolved within 30 days of the
+      first meeting, with a binding award once submitted; unresolved disputes may go to the U.S. District Court
+      and Ninth Circuit, or to state courts if the federal courts lack jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Sec. 12.1 to Sec. 12.3
+    summary: The compact may be amended at any time by mutual written agreement, and the Tribe may request renegotiation
+      in writing to offer Class III games not authorized in the compact, but not within 12 months of the effective
+      date; the parties set a negotiation schedule within 30 days of the request, under IGRA good-faith standards
+      enforceable in federal court.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2008-amendment
+  label: 2008 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 2000-original
+  dates:
+    listed: '2008-01-18'
+    published: '2008-01-18'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-e8-894
+    locator: 73 Fed. Reg. 3480 (Jan. 18, 2008)
+  source: compact-ca-yuhaaviatam-of-san-manuel-nation-2008-01-18
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2008.01.18_san_manuel_band_of_mission_indians_tribal_state_gaming_compact.pdf
+    sha256: 3fe9f0bce242c021a28a724375250c1139b25cf96258cff743d937c7fba6a36e
+    pages: 45
+  clauses:
+  - topic: renegotiation
+    locator: Section 10.2, subdivision (d)(v)
+    summary: The Tribe may give notice to the State that it seeks good-faith renegotiation of the claims subdivision
+      once it establishes a tribal court system, and the State must then negotiate in good faith.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: unchanged
+    summary: The earlier compact already has Section 9.0 (meet and confer, voluntary AAA arbitration, then court).
+      The later amendment does not amend Section 9.0; it only refers certain payment and regulatory-cost disputes
+      to Section 9.0 or 9.2, and adds separate arbitration processes for patron claims and for disputes with the
+      County over off-reservation impacts, which are not disputes between the Native nation and the state.
+    locator_before: Sec. 9.0-9.2
+    locator_after: Amendment (Section 9.0 not amended; cross-references only)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: added
+    summary: 'The 2000 Section 12 covers amendment (12.1), renegotiation on the Tribe''s request (12.2) and the
+      process for requests (12.3). The 2008 amendment adds a narrow renegotiation trigger in Section 10.2(d)(v):
+      once the Tribe establishes a tribal court system, it may give notice to seek good-faith renegotiation of the
+      claimant-injury subdivision, and the State must negotiate in good faith. Section 12 is not shown as amended
+      in the excerpts.'
+    locator_before: Sec. 12.1
+    locator_after: Section 10.2(d)(v)
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2017-replacement
+  label: 2017 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2000-original
+  - 2008-amendment
+  dates:
+    listed: '2017-04-10'
+    published: '2017-04-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2017-07190
+    locator: 82 Fed. Reg. 17277 (Apr. 10, 2017)
+  source: compact-ca-yuhaaviatam-of-san-manuel-nation-2017-04-10
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2017.04.10_san_manuel_band_of_mission_indians_tribal_state_gaming_compact.pdf
+    sha256: f138a62efe3a694f5093afba026af38e39c557868fe08f77610db8a8e6752fbe
+    pages: 133
+  clauses:
+  - topic: dispute-resolution
+    locator: Sec. 11.8. Arbitration.
+    summary: If an intergovernmental agreement with the County or Caltrans is not reached within 55 days of the
+      Final TEIR, either party may demand binding JAMS arbitration on remaining disputes about the negotiation,
+      and the award becomes the agreement.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15.0. AMENDMENTS; RENEGOTIATIONS. Sec. 15.1 and 15.2.
+    summary: The compact may be amended at any time by mutual written agreement during its term, and either party
+      may request negotiations to extend it or for a new compact no sooner than 18 months before termination.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: changed
+    summary: 'The 2000 Section 12 covered amendments and renegotiations: Section 12.1 allowed amendment, Section
+      12.2 made the Compact subject to renegotiation on the Tribe''s request, and Section 12.3 set the request and
+      scheduling rules. In the 2017 Compact the article is renumbered as Section 15.0, with Section 15.1 mutual
+      written amendment, Section 15.2 a new-compact negotiation with automatic one-year extension, and Section 15.3
+      a 45-day scheduling rule. The 2017 excerpts contain no Tribe-initiated renegotiation entitlement like 2000
+      Section 12.2.'
+    locator_before: Sec. 12.1 (with Sec. 12.2)
+    locator_after: Sec. 15.1 (Amendment by Agreement)
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The 2017 document is a replacement of the 2000 Compact. Its excerpts show
+      Section 12 as General Requirements and Section 15 as Amendments; Renegotiations, so the article is renumbered,
+      and the 2017 Section 15 has no 15.4 entitlement clause in the excerpt.'
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2017-replacement
+  dates:
+    listed: '2018-01-22'
+    published: '2018-01-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2018-01058
+    locator: 83 Fed. Reg. 3015 (Jan. 22, 2018)
+  source: compact-ca-yuhaaviatam-of-san-manuel-nation-2018-01-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/california/508_compliant_2018.01.22_san_manuel_band_and_state_of_california_tribal_state_compact.pdf
+    sha256: b5b012dba48ef6b756a46d7220ee800ada798f73f1e52d4112d5ab1b33334737
+    pages: 9
+  clauses:
+  - topic: renegotiation
+    locator: Recitals (WHEREAS clauses) preceding the operative amendment text.
+    summary: The recitals state that the 2016 Compact may be amended upon written agreement of both parties, and
+      this amendment is entered under that provision and under IGRA.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2017-replacement
+    change: unchanged
+    summary: The 2018 amendment repeals and replaces only Section 4.2 of the Compact (authorized facilities and
+      trust lands), and recites that the rest of the 2017 text stays in place. The 2017 dispute provisions, including
+      the County-Tribe arbitration in Section 11.8, are therefore not amended by this document.
+    locator_before: Sec. 11.8 (Arbitration)
+    locator_after: Amendment, operative clause; Section 4.2 is the only section replaced
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2017-replacement
+    change: unchanged
+    summary: The 2017 Section 15.1 allows amendment by mutual written agreement, and the 2018 amendment is expressly
+      made under that section, so the clause is used rather than changed. Section 15.1 is not among the sections
+      the amendment replaces.
+    locator_before: Sec. 15.1 (Amendment by Agreement)
+    locator_after: Recital (WHEREAS clauses)
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

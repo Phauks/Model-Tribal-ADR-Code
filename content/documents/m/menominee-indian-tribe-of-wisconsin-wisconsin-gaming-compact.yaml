@@ -1,0 +1,445 @@
+id: menominee-indian-tribe-of-wisconsin-wisconsin-gaming-compact
+kind: gaming-compact
+title: Menominee Indian Tribe of Wisconsin–State of Wisconsin Gaming Compact
+nations:
+- menominee-indian-tribe-of-wisconsin
+states:
+- WI
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Menominee Indian Tribe of Wisconsin and the State of Wisconsin under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Menominee Indian Tribe of
+  Wisconsin and the State of Wisconsin as of Nov. 21, 2026: 1 original, 6 amendments, 1 restatement and 1 disapproved
+  compact. The order, the kind of each event and which version is in effect are inferred from the list (project
+  analysis); clause summaries and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1992-original
+  label: 1992 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '1992-08-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1992.08.10 Menominee Indian Tribe Gaming Compact.pdf
+    sha256: ca4b4bccc33c649b4b1ddf19612e6f87a5141337e0d399c794baee7502668311
+    pages: 49
+  clauses:
+  - topic: dispute-resolution
+    locator: XXIII. Dispute Resolution, A to C
+    summary: A party asserting noncompliance serves written notice, the State and Menominee meet within thirty days,
+      and if unresolved within ninety days either party may pursue any remedy otherwise available; mediation or
+      arbitration is used only by mutual agreement.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: XXXI. Amendment
+    summary: The compact may be amended only by prior written agreement of both the State and Menominee Indian Tribe,
+      and the excerpt shows no unilateral reopening.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '1999-02-01'
+    published: '1999-02-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-2278
+    locator: 64 Fed. Reg. 4890 (Feb. 1, 1999)
+  source: compact-wi-menominee-indian-tribe-of-wisconsin-1999-02-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1999.02.01 Menominee Indian Tribe Tribal State
+      Gaming Compact.pdf
+    sha256: 644bf39b5a49c1a205c24324bf0017c59570072dd6069d4e907a2251024081c2
+    pages: 4
+  clauses:
+  - topic: renegotiation
+    locator: Recitals and paragraph 4, Section XXXIV
+    summary: The Menominee compact may be amended upon written agreement of both parties under its Section XXXI,
+      and if the Secretary disapproves the amendments or a court holds them unenforceable, either party may demand
+      renegotiation, with nonrenewal notice following if talks fail within 30 days.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 1999 amendment changes the expiration date (Section XXVI.A), Section XXVI.B, and adds Sections
+      XXXIII and XXXIV, and does not list Section XXIII (dispute resolution) among its changes, so the earlier dispute
+      process still applies.
+    locator_before: XXIII.A
+    locator_after: XXVI.A, XXVI.B, XXXIII, XXXIV
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: added
+    summary: The 1999 amendment creates Section XXXIV, under which either party may demand renegotiation if the
+      Secretary disapproves the amendments or a court invalidates them within six months; if no solution is reached
+      within 30 days of the Secretary's action, either party may serve notice of nonrenewal within 15 days, and
+      the Compact expires 180 days later. The earlier Section XXXI only requires written agreement of both parties
+      to amend.
+    locator_before: XXXI
+    locator_after: XXXIV.A-B
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 1999-amendment-2
+  label: 1999 amendment
+  event: amendment
+  status: superseded
+  amends:
+  - 1992-original
+  dates:
+    listed: '1999-04-29'
+    published: '1999-04-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-10676
+    locator: 64 Fed. Reg. 23096 (Apr. 29, 1999)
+  source: compact-wi-menominee-indian-tribe-of-wisconsin-1999-04-29
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 1999.04.29 Menominee Indian Tribe Gaming Compact
+      Amendment.pdf
+    sha256: 09385054aa0b6f5c772d3b10a8c0130c019c6d58bf81a7888dce518f98d1ab07
+    pages: 10
+  clauses:
+  - topic: renegotiation
+    locator: Recitals and paragraph 1
+    summary: The Menominee compact may be amended upon written agreement of both parties under its Section XXXI,
+      and the amendment sets a new five-year renewal with a further-extension clause.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: unchanged
+    summary: The 1999 amendment changes Sections V.A, XV.I, XXXIII and XXXV (and adds Section XXXIV) and does not
+      list Section XXIII (dispute resolution) among its changes, so the earlier dispute process still applies.
+    locator_before: XXIII.A
+    locator_after: V.A, XV.I, XXXIII, XXXIV, XXXV
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later section number is printed as ''XX.XV'' and is read here as Section
+      XXXV from context. The ''Section XXXIV'' ADDITIONAL BENEFITS paragraph is an incorporation duty, not a disapproval
+      trigger, and it does not reopen the Compact by itself.'
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: added
+    summary: The 1999 amendment creates a new Section XXXV (printed as 'XX.XV' in the excerpt), under which either
+      party may demand renegotiation if the Secretary disapproves the amendments, with 30 days to meet and a 60-day
+      window to serve notice of nonrenewal; the Compact then expires 180 days after notice. It also creates Section
+      XXXIV, under which the parties meet on the Tribe's request to negotiate incorporation of more favorable terms
+      from other Wisconsin compacts. The earlier Section XXXI only requires written agreement of both parties.
+    locator_before: XXXI
+    locator_after: XXXV.A
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The later section number is printed as ''XX.XV'' and is read here as Section
+      XXXV from context. The ''Section XXXIV'' ADDITIONAL BENEFITS paragraph is an incorporation duty, not a disapproval
+      trigger, and it does not reopen the Compact by itself.'
+- id: 2000-restatement
+  label: 2000 amended and restated compact
+  event: restatement
+  status: in-effect
+  supersedes:
+  - 1992-original
+  - 1999-amendment
+  - 1999-amendment-2
+  dates:
+    listed: '2000-10-19'
+    published: '2000-10-19'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-26882
+    locator: 65 Fed. Reg. 62749 (Oct. 19, 2000)
+  source: compact-wi-menominee-indian-tribe-of-wisconsin-2000-10-19
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2000.10.19 Menominee Indian Tribe Gaming Compact.pdf
+    sha256: 201ef62a2f21707d9f28f86bbb336fa8169a6ca2b4b2ef04f1ae147446dfa83c
+    pages: 83
+  clauses:
+  - topic: dispute-resolution
+    locator: XXIII. DISPUTE RESOLUTION, A and C; XXIV. SOVEREIGN IMMUNITY, COMPACT ENFORCEMENT, C and D
+    summary: Either party may pursue any otherwise available remedy to enforce or resolve compact disputes (without
+      a mandatory ladder), mediation or arbitration is used only by mutual agreement, and Section XXIV also allows
+      suit in federal court for prospective declaratory or injunctive relief; the Tribal gaming authority consents
+      to suit in Wisconsin courts.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: XXXI. AMENDMENT; XXVI (1). DURATION OF COMPACT WITH RESPECT TO ON-RESERVATION GAMING, E
+    summary: The compact may not be modified without the prior written agreement of the State and the Tribe; if
+      either party gives notice of non-renewal, the Tribe may request negotiation of a successor compact under IGRA,
+      and the State must negotiate in good faith.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1992-original
+    change: changed
+    summary: The 2000 compact's Section XXIII.A drops the required written notice, 30-day meeting and 90-day waiting
+      period and simply says either party may pursue any available remedy; it keeps the optional mediation or arbitration
+      paragraph. It also adds, in the internal control procedures section, a hearing before a three-member panel
+      of certified public accountants (final and non-appealable) for disagreements over internal control compliance.
+      The 1992 compact required notice, a meeting within 30 days, and 90 days before pursuing remedies.
+    locator_before: XXIII.A-C
+    locator_after: XXIII.A-C; internal control procedures para. 4
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1992-original
+    change: not-compared
+    verification: inferred
+- id: 2003-amendment
+  label: 2003 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2000-restatement
+  dates:
+    listed: '2003-07-22'
+    published: '2003-07-22'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-03-18631
+    locator: 68 Fed. Reg. 43366 (July 22, 2003)
+  source: compact-wi-menominee-indian-tribe-of-wisconsin-2003-07-22
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2003.07.22 Menominee Indian Tribe Gaming Compact
+      Amendments.pdf
+    sha256: 5793bb9259eebe6ba19c9ab876394910948716765814172b86ee4a4e1d9d87d8
+    pages: 24
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XXIII.F (amendment paragraph 33)
+    summary: 'If the dispute is unresolved after the steps in Sections XXIII.A to D, it goes to court: a federal
+      district court or Menominee Tribal Court when the State sues the Tribe, and a federal district court or Wisconsin
+      circuit court when the Tribe sues the State.'
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Amendment and Periodic Enhancement of Compact Provisions, subsections A and B
+    summary: The compact may be amended only by written agreement of both parties, and either party may propose
+      amendments in the 30 days before each fifth anniversary of July 1, 2004, or the Governor or Tribe may do so
+      before the 25th anniversary, with good faith negotiation and disputes resolved under Section XXIII.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-restatement
+    change: changed
+    summary: The 2003 amendments delete Section XXIII and replace it with written notice and a response within 7
+      days, a negotiation session within 10 days, mandatory non-binding mediation (at least two sessions), and then
+      binding arbitration before a single arbitrator under the Federal Rules of Civil Procedure and Evidence; disputes
+      under listed sections go to a court of competent jurisdiction after the A-D steps, and provisional relief
+      may be sought first. The 2000 compact's Section XXIII.A said only that either party may pursue any available
+      remedy, with mediation or arbitration by mutual agreement.
+    locator_before: XXIII.A-C
+    locator_after: XXIII.A-G
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-restatement
+    change: not-compared
+    verification: inferred
+- id: 2011-amendment
+  label: 2011 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2000-restatement
+  dates:
+    listed: '2011-01-03'
+    published: '2011-01-03'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2010-33094
+    locator: 76 Fed. Reg. 165 (Jan. 3, 2011)
+  source: compact-wi-menominee-indian-tribe-of-wisconsin-2011-01-03
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2011.01.03 Menominee Indian Tribe of Wisconsin
+      2010 Amendments to Compact.pdf
+    sha256: eb2d4909b664d83ceb80c1aed953ca7c887be8b1a25c55903c955d3311d9b397
+    pages: 8
+  clauses:
+  - topic: dispute-resolution
+    locator: Amendment paragraph 7 (Section XXVI.F)
+    summary: If the parties have not agreed on proposed terms when the compact term expires, either party may require
+      last best offer arbitration under Section XXIII, and the arbitrator may select only an extension of between
+      15 and 25 years.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Amendment paragraph 7 (Section XXVI.F)
+    summary: If neither party gives notice of nonrenewal, either party may propose amendments or new terms and the
+      parties must negotiate in good faith, and last best offer arbitration applies if they do not agree by expiration.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-restatement
+    change: unchanged
+    summary: The 2010 amendments change Sections IV, VII, X and XXXIII and do not list Section XXIII (dispute resolution)
+      among their changes, so the earlier dispute process still applies.
+    locator_before: XXIII.A
+    locator_after: IV, VII, X, XXXIII
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2000-restatement
+    change: unchanged
+    summary: The 2010 amendments recite that Section XXXI allows amendment on written agreement of both parties
+      and do not list Section XXXI among their changes, so the earlier amendment terms still apply.
+    locator_after: Recitals
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2013-amendment
+  label: 2013 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2000-restatement
+  dates:
+    listed: '2013-05-08'
+    published: '2013-05-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2013-10923
+    locator: 78 Fed. Reg. 26801 (May 8, 2013)
+  source: compact-wi-menominee-indian-tribe-of-wisconsin-2013-05-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant 2013.05.08 Menominee Indian Tribe Compact Amendment.pdf
+    sha256: 62b7d7608b668b05f096933e090ff341d1cbd2af96318517c33947bd842c0b1f
+    pages: 2
+  clauses:
+  - topic: renegotiation
+    locator: Recitals (Section XXXI)
+    summary: The compact may be amended upon the written agreement of both parties under Section XXXI, and this
+      2013 amendment was made under that provision.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-restatement
+    change: unchanged
+    summary: The 2013 amendment changes only Section VII(A)(6) and does not list Section XXIII (dispute resolution)
+      among its changes, so the earlier dispute process still applies.
+    locator_before: XXIII.A
+    locator_after: VII(A)(6)
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2000-restatement
+    change: unchanged
+    summary: The 2013 amendment changes only Section VII(A)(6) and does not list Section XXXI (amendment) among
+      its changes, so the earlier amendment terms still apply.
+    locator_after: VII(A)(6)
+    verification: inferred
+    reviewer: small model, version comparison
+- id: 2015-disapproval
+  label: 2015 compact (disapproved)
+  event: disapproval
+  status: disapproved
+  dates:
+    listed: '2015-03-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: disapproved
+  source: compact-wi-menominee-indian-tribe-of-wisconsin-2015-03-12
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508 Compliant Menominee Indian Tribe Disapproved 2015 Compact
+      Amendment.pdf
+    sha256: f09fd5251dc8a6484c248ab252072c486e2dcf596c6b2bcabde43ba20025594e
+    pages: 20
+- id: 2022-amendment
+  label: 2022 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2000-restatement
+  dates:
+    listed: '2022-10-05'
+    published: '2022-10-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2022-21607
+    locator: 87 Fed. Reg. 60409 (Oct. 5, 2022)
+  source: compact-wi-menominee-indian-tribe-of-wisconsin-2022-10-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/wisconsin/508_compliant_2022.10.05_menominee_indian_tribe_tribal_state_gaming_compact.pdf
+    sha256: 0467c72a7646f54c25ece44fdf0c3856b0fa66c1cbfdadafdf7eec7c4c86f89b
+    pages: 13
+  clauses:
+  - topic: renegotiation
+    locator: Recitals (Section XXXI)
+    summary: The compact may be amended upon the written agreement of both parties under Section XXXI, and this
+      2022 amendment permits event wagering under that provision.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-restatement
+    change: unchanged
+    summary: The 2022 amendment changes Sections III, IV, V and VII (event wagering and technical terms) and does
+      not list the dispute section among its changes, so the earlier dispute process still applies.
+    locator_before: XXIII
+    locator_after: III, IV, V, VII
+    verification: inferred
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2000-restatement
+    change: unchanged
+    summary: The 2022 amendment recites that Section XXXI allows amendment upon written agreement of both parties
+      and does not list Section XXXI among its changes, so the earlier amendment terms still apply.
+    locator_after: Recitals
+    verification: inferred
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

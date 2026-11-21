@@ -1,0 +1,46 @@
+id: omaha-tribe-of-nebraska-nebraska-gaming-compact
+kind: gaming-compact
+title: Omaha Tribe of Nebraska–State of Nebraska Gaming Compact
+nations:
+- omaha-tribe-of-nebraska
+states:
+- NE
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Omaha Tribe of Nebraska and the State of Nebraska under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Omaha Tribe of Nebraska and
+  the State of Nebraska as of Nov. 21, 2026: 1 original. The order, the kind of each event and which version is
+  in effect are inferred from the list (project analysis); clause summaries and comparisons are a small model''s
+  reading of excerpts.'
+versions:
+- id: 1991-original
+  label: 1991 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1991-01-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-ne-omaha-tribe-of-nebraska-1991
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/nebraska/508_compliant_1991.01.08_omaha_tribe_tribal_state_gaming_compact.pdf
+    sha256: 59891654e009c380c68e4f571ddfb747cdb37fa0143af404be740e7cd4c515f7
+    pages: 55
+  clauses:
+  - topic: dispute-resolution
+    locator: 33. Remedies For Breach Of Compact; Dispute Resolution.
+    summary: After written notice and a thirty-day negotiation period, the parties may elect arbitration or mediation,
+      binding or nonbinding as they choose, and otherwise the dispute goes to the United States District Court for
+      the District of Nebraska.
+    methods:
+    - negotiation
+    - arbitration
+    - mediation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+found_in:
+- 2026-11-21-gaming-compact-histories

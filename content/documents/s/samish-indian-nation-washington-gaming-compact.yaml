@@ -1,0 +1,166 @@
+id: samish-indian-nation-washington-gaming-compact
+kind: gaming-compact
+title: Samish Indian Nation–State of Washington Gaming Compact
+nations:
+- samish-indian-nation
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Samish Indian Nation and the State of Washington under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Samish Indian Nation and
+  the State of Washington as of Nov. 21, 2026: 1 original and 2 amendments. The order, the kind of each event and
+  which version is in effect are inferred from the list (project analysis); clause summaries and comparisons are
+  a small model''s reading of excerpts.'
+versions:
+- id: 2000-original
+  label: 2000 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2000-06-21'
+    published: '2000-06-21'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-00-15563
+    locator: 65 Fed. Reg. 38570 (June 21, 2000)
+  source: compact-wa-samish-indian-nation-2000-06-21
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2000.06.21 Samish Indian Nation Tribal State
+      Gaming Compact.pdf
+    sha256: 237bce03e644882e49425924b341b18c1fb217ff9c30d2313056cdce6bb37c9a
+    pages: 135
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 16. DISPUTE RESOLUTION. (Appendix X); see also 3.6.4
+    summary: Disputes under the Appendix are resolved under any dispute provisions in the Appendix or, if there
+      are none, under the binding arbitration provisions of the Compact, and TGA/SGA disputes follow the compact's
+      own dispute process.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: D. Adjustments/Renegotiations (XV.D)
+    summary: The compact may be amended by mutual written agreement, and the Tribe may request adjustment when state
+      law expands gaming, a court decision permits new activities, or federal legislation authorizes them; Sections
+      III E, H, I and J are subject to a 36-month moratorium from the Governor's signature unless listed events
+      occur, including another Washington tribe's expanded gaming.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2000-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-samish-indian-nation-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2007.05.31_samish_indian_nation_tribal_state_gaming_compact.pdf
+    sha256: da79ec6b973d9591843d91a96d76fc45d3f7ce3df9ca5c490d033079bd01af7a
+    pages: 55
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 17. Dispute Resolution
+    summary: Disputes under Appendix X2 are resolved under any dispute provisions made applicable in that Appendix,
+      or otherwise under the Compact's dispute resolution provisions, which are not in the excerpt.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Section 15.2 (Post-Moratorium), item 15.2.3
+    summary: Samish may seek an amendment after the Moratorium expires when listed triggers occur, and negotiations
+      on the resulting equipment are subject to the Compact's dispute resolution provisions.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: unchanged
+    summary: The 2007 amendment adds Appendix X2, whose Section 17 sends disputes under the appendix to any dispute
+      provisions made applicable in it or otherwise to the Compact's dispute resolution provisions. The earlier
+      compact's Section XII.C (written notice, a meeting within ten days, then AAA arbitration with a final decision)
+      is not amended.
+    locator_before: Sec. XII.C
+    locator_after: Appendix X2, Sec. 17
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: unchanged
+    summary: The First Amendment's operative text only adds Appendix X2 and recognizes its activities under Section
+      III. It does not mention Section XV, so the 2000 renegotiation terms still govern on the face of the amendment.
+    locator_before: XV.D
+    locator_after: Amendment para. 1
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2015-amendment
+  label: 2015 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2000-original
+  dates:
+    listed: '2015-06-04'
+    published: '2015-06-04'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2015-13712
+    locator: 80 Fed. Reg. 31918 (June 4, 2015)
+  source: compact-wa-samish-indian-nation-2015-06-04
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2015.06.04 Samish Indian Nation Tribal State
+      Gaming Compact.pdf
+    sha256: 9936bbe0c886e78423ea587c5fe19d0ac663819d6278c4694a13e708d2adf12b
+    pages: 6
+  clauses:
+  - topic: dispute-resolution
+    locator: Section 4. Dispute Resolution, item 4.2
+    summary: Samish and the State meet and confer on disputes about the Addendum, and if no resolution is reached
+      either party may use the Compact's dispute resolution provisions, which are not in the excerpt.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2000-original
+    change: changed
+    summary: 'The 2015 amendment''s optional Addendum adds a step for disputes over the Player Terminal allocation:
+      the State and the Native nation must meet and attempt to resolve the dispute at least 30 days before the increased
+      allocation takes effect, after which either or both may use the Compact''s dispute resolution provisions.
+      The earlier compact already provided in Section XII.C for notice, a meeting within ten days, and AAA arbitration
+      with a final decision.'
+    locator_before: Sec. XII.C
+    locator_after: Addendum Sec. 4.1-4.2
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2000-original
+    change: unchanged
+    summary: The Second Amendment's numbered changes (new Section III.Q, Appendix X2 Sections 12.1, 13.4, 14.4 and
+      14.5, and an Addendum) do not refer to Section XV, so the 2000 renegotiation provisions appear unchanged.
+    locator_before: XV.D
+    locator_after: Amendment preamble
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

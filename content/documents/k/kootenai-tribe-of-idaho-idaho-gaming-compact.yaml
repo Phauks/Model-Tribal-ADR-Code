@@ -1,0 +1,106 @@
+id: kootenai-tribe-of-idaho-idaho-gaming-compact
+kind: gaming-compact
+title: Kootenai Tribe of Idaho–State of Idaho Gaming Compact
+nations:
+- kootenai-tribe-of-idaho
+states:
+- ID
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Kootenai Tribe of Idaho and the State of Idaho under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Kootenai Tribe of Idaho and
+  the State of Idaho as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event and which
+  version is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small
+  model''s reading of excerpts.'
+versions:
+- id: 1993-original
+  label: 1993 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1993-11-10'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+  source: compact-id-kootenai-tribe-of-idaho-1993
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/idaho/508_compliant_1993.11.10_kootenai_tribe_tribal_state_gaming_compact.pdf
+    sha256: cee4a94e53ba048a0f5c8e0f79384fc06a20a54057a84a8b871840696f264828
+    pages: 38
+  clauses:
+  - topic: dispute-resolution
+    locator: ARTICLE 21. DISPUTE RESOLUTION, 21.1-21.3.
+    summary: After written notice, the State and the Native nation meet within 10 working days; if the dispute is
+      unresolved within 60 days after notice, either party may pursue binding arbitration before three AAA-selected
+      arbitrators (or a single arbitrator by written agreement), who must decide within 120 days with no judicial
+      review; Article 6 disputes are governed by Article 6.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: ARTICLE 29. DURATION AND RENEGOTIATION
+    summary: Either party may request negotiations to amend or replace the compact by appropriate and lawful means;
+      requests must be in writing and sent by certified mail to the Governor or the Tribal Chairman, and the compact
+      stays in effect during renegotiation.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2003-amendment
+  label: 2003 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1993-original
+  dates:
+    listed: '2003-01-08'
+    published: '2003-01-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-03-340
+    locator: 68 Fed. Reg. 1068 (Jan. 8, 2003)
+  source: compact-id-kootenai-tribe-of-idaho-2003-01-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/idaho/508_compliant_2003.01.08_kootenai_tribe_tribal_state_gaming_compact.pdf
+    sha256: 380885d4f822843bd0b4e75129025123c99435defb07a26c08fed53a49782f98
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: AMENDMENT, adding Article 6.8.
+    summary: The 1993 compact is amended by adding Article 6.8 on tribal video gaming machines, an expansion limit,
+      and an education contribution, under Idaho ballot measure Proposition One; the excerpt shows no separate renegotiation
+      procedure.
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1993-original
+    change: unchanged
+    summary: The 2003 amendment adds Article 6.8 on video gaming machines and does not list Article 21 among the
+      provisions it amends, so the earlier dispute article appears to remain in force; Article 6.8 is stated to
+      apply notwithstanding other provisions of the compact.
+    locator_before: '21'
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: Article 6.8 says it applies notwithstanding any other provision of the compact,
+      so its effect on the dispute and renegotiation articles cannot be fully checked from the excerpt.'
+  - topic: renegotiation
+    compared_with: 1993-original
+    change: unchanged
+    summary: The amendment does not list Article 29 among the provisions it amends, so the earlier renegotiation
+      article appears to remain in force.
+    locator_before: '29'
+    verification: inferred
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: Article 6.8 says it applies notwithstanding any other provision of the compact,
+      so its effect on the dispute and renegotiation articles cannot be fully checked from the excerpt.'
+found_in:
+- 2026-11-21-gaming-compact-histories

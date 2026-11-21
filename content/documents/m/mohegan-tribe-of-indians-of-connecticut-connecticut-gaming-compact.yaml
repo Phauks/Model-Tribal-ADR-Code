@@ -1,0 +1,86 @@
+id: mohegan-tribe-of-indians-of-connecticut-connecticut-gaming-compact
+kind: gaming-compact
+title: Mohegan Tribe of Indians of Connecticut–State of Connecticut Gaming Compact
+nations:
+- mohegan-tribe-of-indians-of-connecticut
+states:
+- CT
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Mohegan Tribe of Indians of Connecticut and the State of Connecticut under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Mohegan Tribe of Indians
+  of Connecticut and the State of Connecticut as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind
+  of each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1994-original
+  label: 1994 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1994-12-16'
+    published: '1994-12-16'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-94-30879
+    locator: 59 Fed. Reg. 0 (Dec. 16, 1994)
+  source: compact-ct-mohegan-tribe-of-indians-of-connecticut-1994
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/connecticut/508_compliant_1994.12.16_mohegan_tribe_of_indians_tribal_state_gaming_compact_0.pdf
+    sha256: b53a112a8ef58ea83edd2f4d378cf5f9ba3a1446157992aa508633f52e747a95
+    pages: 306
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 13. Enforcement of Compact provisions, (c) Enforcement authority of the State gaming agency
+    summary: The State gaming agency delivers a notice of non-compliance and, if the Native nation's operation does
+      not correct it, may sue in U.S. District Court to enjoin the gaming activity; a narrower table-game supervisory-staffing
+      disagreement goes to binding American Arbitration Association arbitration after the parties confer, and Sec.
+      10(c) routes certain appeals to AAA arbitration if the Connecticut Superior Court lacks jurisdiction.
+    methods:
+    - negotiation
+    - arbitration
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+  - topic: renegotiation
+    locator: SECTION 17. Effective Date and Duration; Amendments, (c) Amendment and modification
+    summary: The terms may be modified only by written agreement of both parties; the Native nation may request
+      negotiations on Class III games later permitted by the State, but may not open new talks on terms for already-authorized
+      games except where state law changes or the State consents.
+    verification: read-in-full
+    reviewer: larger model, second pass, whole document
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1994-original
+  dates:
+    listed: '2021-09-15'
+    published: '2021-09-15'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-19839
+    locator: 86 Fed. Reg. 51369 (Sept. 15, 2021)
+  source: compact-ct-mohegan-tribe-of-indians-of-connecticut-2021-09-15
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/connecticut/508 Compliant 2021.09.15 Mohegan Compact Amendment_0.pdf
+    sha256: 50ce6be0db01b77c05b38295d8a3cc64b4d43beb5557c04e8b2a9cb6902b2d21
+    pages: 17
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1994-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1994-original
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

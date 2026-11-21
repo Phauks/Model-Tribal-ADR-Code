@@ -1,0 +1,165 @@
+id: pueblo-of-santa-clara-new-mexico-gaming-compact
+kind: gaming-compact
+title: Pueblo of Santa Clara, New Mexico–State of New Mexico Gaming Compact
+nations:
+- pueblo-of-santa-clara
+states:
+- NM
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Pueblo of Santa Clara, New Mexico and the State of New Mexico under 25 U.S.C.
+    § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Pueblo of Santa Clara, New
+  Mexico and the State of New Mexico as of Nov. 21, 2026: 1 other document, 1 original and 2 replacements. The order,
+  the kind of each event and which version is in effect are inferred from the list (project analysis); clause summaries
+  and comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1997-other
+  label: 1997 document
+  event: other
+  status: superseded
+  dates:
+    listed: '1997-08-29'
+    published: '1997-08-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-97-22989
+    locator: 62 Fed. Reg. 45867 (Aug. 29, 1997)
+  source: compact-nm-pueblo-of-santa-clara-1997-08-29
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_1997.08.29_pueblo_of_santa_clara_deemed_approved_letter.pdf
+    sha256: cba3b7808e1c1142b29a8c7fe3953e57bcd30c86062d3f064cf4b9c34f82f946
+    pages: 3
+- id: 2001-original
+  label: 2001 compact
+  event: original
+  status: superseded
+  dates:
+    listed: '2001-12-14'
+    published: '2001-12-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-01-30908
+    locator: 66 Fed. Reg. 64856 (Dec. 14, 2001)
+  source: compact-nm-pueblo-of-santa-clara-2001-12-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2001.12.14_pueblo_of_santa_clara_tribal_state_gaming_compact.pdf
+    sha256: e9685807d5da51650441cb5b1699ef29e343afe04aaf36898d3e32adcf7b2d2d
+    pages: 26
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution., paragraph A(5)
+    summary: The compact provides for written notice, a twenty-day period and a notice to cease disputed games,
+      then arbitration by attorney arbitrators with the American Arbitration Association choosing any unchosen third
+      arbitrator; the results are final and binding and enforceable in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2007-replacement
+  label: 2007 compact
+  event: replacement
+  status: superseded
+  supersedes:
+  - 1997-other
+  - 2001-original
+  dates:
+    listed: '2007-07-05'
+    published: '2007-07-05'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-12904
+    locator: 72 Fed. Reg. 36717 (July 5, 2007)
+  source: compact-nm-pueblo-of-santa-clara-2007-07-05
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2007.07.05_pueblo_of_santa_clara_tribal_state_gaming_compact.pdf
+    sha256: 798b9acea4fae81f2d60adc6a00e6a6c95bcf6644b91ca184f50b06e64136ad9
+    pages: 26
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution.
+    summary: The compact provides written notice, a 20-day wait, a notice to cease the disputed games with an option
+      to arbitrate, arbitration by three New Mexico attorneys with a third chosen by the American Arbitration Association,
+      and results enforceable by injunctive relief in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: SECTION 14. Entire Agreement.
+    summary: The compact provides that it may not be amended without express approval of the Tribe, the Governor
+      and the State Legislature, and that any change must be in writing, signed by the Tribe and the State and approved
+      by the Secretary of the Interior.
+    verification: read-in-full
+    reviewer: small model, older version
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1997-other
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1997-other
+    change: not-compared
+    verification: inferred
+- id: 2015-replacement
+  label: 2015 compact
+  event: replacement
+  status: in-effect
+  supersedes:
+  - 2007-replacement
+  dates:
+    listed: '2015-10-23'
+    published: '2015-10-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2015-27091
+    locator: 80 Fed. Reg. 64443 (Oct. 23, 2015)
+  source: compact-nm-pueblo-of-santa-clara-new-mexico-2015
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/new-mexico/508_compliant_2015.10.23_pueblo_of_santa_clara_tribal_state_gaming_compact.pdf
+    sha256: a004e744ecebb013a1517157bad3af22722891209c5ae99a8af298d757ddda06
+    pages: 43
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 7. Dispute Resolution.
+    summary: After written notice and a twenty-day period, the complaining party may issue a notice to cease the
+      disputed activity, and either side may invoke arbitration before a three-member panel with the American Arbitration
+      Association appointing a third arbitrator if needed; the arbitration result is final and binding and enforceable
+      in any court of competent jurisdiction.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2007-replacement
+    change: changed
+    summary: The later compact provides a two-year limit for invoking the procedure (counted from discovery, with
+      a two-year window for the State to raise pre-compact payment breaches), allows the parties to agree to one
+      arbitrator, and if the responding party does not select its arbitrator within 30 days has the case proceed
+      before the first-selected arbitrator; it also sets 30 days from the responding party's selection for the third
+      arbitrator. The earlier 2007 text already had 30-day deadlines and a three-member panel; the 20-day step and
+      binding results are the same.
+    locator_before: Section 7(A)(3)
+    locator_after: Section 7(A), 7(A)(3)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 2007-replacement
+    change: not-compared
+    verification: inferred
+found_in:
+- 2026-11-21-gaming-compact-histories

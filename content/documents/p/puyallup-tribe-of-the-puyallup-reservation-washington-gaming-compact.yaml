@@ -1,0 +1,458 @@
+id: puyallup-tribe-of-the-puyallup-reservation-washington-gaming-compact
+kind: gaming-compact
+title: Puyallup Tribe of the Puyallup Reservation–State of Washington Gaming Compact
+nations:
+- puyallup-tribe-of-the-puyallup-reservation
+states:
+- WA
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Puyallup Tribe of the Puyallup Reservation and the State of Washington under
+    25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Puyallup Tribe of the Puyallup
+  Reservation and the State of Washington as of Nov. 21, 2026: 1 original and 8 amendments. The order, the kind
+  of each event and which version is in effect are inferred from the list (project analysis); clause summaries and
+  comparisons are a small model''s reading of excerpts.'
+versions:
+- id: 1996-original
+  label: 1996 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '1996-07-23'
+    published: '1996-07-23'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-96-18620
+    locator: 61 Fed. Reg. 38213 (July 23, 1996)
+  source: compact-wa-puyallup-tribe-of-the-puyallup-reservation-1996-07-23
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_07.23.1996_puyallup_tribe_of_the_puyallup_reservation_tribal_state_gaming_compact.pdf
+    sha256: a320f7a444bea38333e44622023285d62284f768244a123a21aa2f427e4f2634
+    pages: 122
+  clauses:
+  - topic: dispute-resolution
+    locator: XII.B. Dispute Resolution Methods
+    summary: Parties give written notice, negotiate and meet within ten days, then mediate, then arbitrate before
+      JAMS under AAA supplemental rules; arbitration is non-binding unless the parties agree in writing, mandatory
+      binding arbitration applies only where referenced, and federal district court review is available.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: XV.D. Amendments/Renegotiations
+    summary: Amendments are made by mutual written agreement, renegotiation is required on changes in state law,
+      a court decision or federal legislation and on Tribal requests for new games, and either party may request
+      renegotiation after 24 months from opening, with unresolved State-requested talks going to final arbitration.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 1999-amendment
+  label: 1999 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1996-original
+  dates:
+    listed: '1999-01-28'
+    published: '1999-01-28'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-99-1924
+    locator: 64 Fed. Reg. 4459 (Jan. 28, 1999)
+  source: compact-wa-puyallup-tribe-of-the-puyallup-reservation-1999-01-28
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 1999.01.28 Puyallup Tribe Tribal State Gaming
+      Compact_0.pdf
+    sha256: b1ac9142e754ea31e2e5b850da951a6c477d01a66edbb5f7204a24ce7a3bc850
+    pages: 53
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 16. DISPUTE RESOLUTION.
+    summary: Disputes under the Appendix are resolved under any dispute provisions in the Appendix or, if there
+      are none, under the binding arbitration provisions of the Compact, which the excerpt does not detail.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: SECTION 15. MORATORIUM
+    summary: The Tribe agrees not to seek an amendment on gambling devices for three years from execution of the
+      Amendment, except if state or federal law is amended, a court decision permits such devices, or another Washington
+      tribe obtains them.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1996-original
+    change: changed
+    summary: The later document adds Appendix X (tribal lottery systems) and leaves the earlier Section XII untouched.
+      The earlier Section XII provides negotiation within 10 days, mediation, then JAMS arbitration (non-binding
+      unless agreed, binding where a provision calls for it). Appendix X adds Section 16, sending disputes under
+      the appendix to any procedure it specifies or otherwise to the compact's binding arbitration provisions, a
+      72-hour process for player disputes at the tribal gaming agency, and a rule that regulatory fee disputes are
+      paid into escrow and resolved by binding arbitration.
+    locator_before: Section XII.B.1-4
+    locator_after: Appendix X, Sections 3.6, 13.5 and 16
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1996-original
+    change: unchanged
+    summary: The amendment states that it amends Section III.A and adds Appendix X, and it does not list Section
+      XV.D, so the earlier renegotiation provisions still govern.
+    locator_before: XV.D.1
+    locator_after: III.A and Appendix X
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2002-amendment
+  label: 2002 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1996-original
+  dates:
+    listed: '2002-07-12'
+    published: '2002-07-12'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-02-17642
+    locator: 67 Fed. Reg. 46368 (July 12, 2002)
+  source: compact-wa-puyallup-tribe-of-the-puyallup-reservation-2002-07-12
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant  2002.07.12 Puyallup Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: 5a0bef7b85b3a1cd7ce2cd124322da201d83e581bcef0577557e11b6c2c2aa8a
+    pages: 17
+  clauses:
+  - topic: dispute-resolution
+    locator: 2. Section II, A, item 22 (Other table games authorized for play in Nevada)
+    summary: If a dispute arises over a Nevada-style table game, the game may not be used until the dispute is resolved
+      under Section XII.B.3.b's final and unappealable arbitration provisions.
+    methods:
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: INTRODUCTION (Second Amendment)
+    summary: The compact is automatically amended when the State authorizes another tribe more gaming stations,
+      higher wager limits, more hours of operation or other Class III activities.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1996-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1996-original
+    change: not-compared
+    verification: inferred
+- id: 2004-amendment
+  label: 2004 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1996-original
+  dates:
+    listed: '2004-10-14'
+    published: '2004-10-14'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-04-23092
+    locator: 69 Fed. Reg. 61036 (Oct. 14, 2004)
+  source: compact-wa-puyallup-tribe-of-the-puyallup-reservation-2004-10-14
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2004.10.14 Puyallup Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: 331d603d0b07a22d7e7dbbc70216fc966d68205c59fd211239e10ed7121bb179
+    pages: 3
+  clauses:
+  - topic: renegotiation
+    locator: Section XV.D.3 (Most Favored Nation clause), quoted in INTRODUCTION
+    summary: The compact is amended automatically when the State enters into or amends an agreement giving another
+      tribe more facilities, stations, wager limits or hours, once the Tribe approves and accepts the increase and
+      incorporates it in writing.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1996-original
+    change: unchanged
+    summary: The Most Favored Nation memorandum amends Appendix X and adds Appendix Y and does not list Section
+      XII among its amendments, so the earlier dispute provisions still govern.
+    locator_before: XII.B.3.b
+    locator_after: Appendix X; Appendix Y
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The memorandum quotes Section XV.D.3 ''as amended'' as a most favored nation
+      clause, but the 1996 excerpt shows XV.D.3 as a Tribal renegotiation clause, and the 1998 and 2002 amendments
+      in this batch do not show any change to Section XV. The clause the memorandum relies on is therefore not visible
+      in the excerpts. The memorandum incorporates the Colville increases by reference (Appendix Y).'
+  - topic: renegotiation
+    compared_with: 1996-original
+    change: not-compared
+    verification: inferred
+- id: 2004-amendment-2
+  label: 2004 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1996-original
+  dates:
+    listed: '2004-12-29'
+    published: '2004-12-29'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-04-28506
+    locator: 69 Fed. Reg. 78045 (Dec. 29, 2004)
+  source: compact-wa-puyallup-tribe-of-the-puyallup-reservation-2004-12-29
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant 2004.12.29 Puyallup Tribe Tribal State Gaming
+      Compact.pdf
+    sha256: 8dbe3dcd0e777c6bf73c366964f7de6e6ab9ce3d4585027be02e275b8674c150
+    pages: 4
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1996-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1996-original
+    change: not-compared
+    verification: inferred
+- id: 2007-amendment
+  label: 2007 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1996-original
+  dates:
+    listed: '2007-05-31'
+    published: '2007-05-31'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-e7-10397
+    locator: 72 Fed. Reg. 30392 (May 31, 2007)
+  source: compact-wa-puyallup-tribe-of-the-puyallup-reservation-2007-05-31
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2007.05.31_puyallup_tribe_tribal_state_gaming_compact_0.pdf
+    sha256: ef3d521b5dabc3d9d70e1e96453232eaf8f67ea763b93b282a6c670cc7f2d925
+    pages: 55
+  clauses:
+  - topic: dispute-resolution
+    locator: SECTION 17. DISPUTE RESOLUTION
+    summary: Disputes under Appendix X2 are resolved under any dispute provisions in the Appendix or otherwise under
+      the Dispute Resolution provisions of the Compact, which the excerpt does not reproduce.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1996-original
+    change: changed
+    summary: The later document adds Appendix X2 and leaves the earlier Section XII (negotiation within 10 days,
+      mediation, then JAMS arbitration) untouched. Appendix X2 provides in Section 17 that disputes under it follow
+      any procedure the appendix specifies or otherwise the compact's dispute resolution provisions, requires disputed
+      regulatory fees to be paid into escrow pending resolution by binding arbitration, and sends approval-process
+      disputes to the compact's binding arbitration provisions.
+    locator_before: Section XII.B.1-4
+    locator_after: Appendix X2, Sections 10.3, 13.5 and 17
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1996-original
+    change: unchanged
+    summary: The fourth amendment's operative paragraphs add Appendix X2 and recognize lottery systems under Section
+      III and do not list Section XV.D, so the earlier renegotiation provisions still govern.
+    locator_before: XV.D.1
+    locator_after: 1 and 2
+    verification: read-in-full
+    reviewer: small model, version comparison
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1996-original
+  dates:
+    listed: '2018-01-17'
+    published: '2018-01-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-00637
+    locator: 83 Fed. Reg. 2462 (Jan. 17, 2018)
+  source: compact-wa-puyallup-tribe-of-the-puyallup-reservation-2018-01-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508 Compliant .2018.01.17 Puyallup Tribe Fifth Amendment
+      to the Tribal State Gaming Compact_0.pdf
+    sha256: fd8b8562b66494f3150bc520590d6229e8ae38e3370f40b28ae2c0dbb33999e0
+    pages: 4
+  clauses:
+  - topic: dispute-resolution
+    locator: 4. Amend Appendix X2, Section 13.4 (13.4.5 Revisions to State's Cost Allocation Model)
+    summary: If the State revises its cost allocation model and the parties cannot agree within 30 days, the dispute
+      resolution provisions of Section 13.5 of Appendix X2 apply, which the excerpt does not reproduce.
+    methods:
+    - negotiation
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1996-original
+    change: unchanged
+    summary: The fifth amendment's listed amendments are Section II, a new Section III provision and Appendix X2
+      Sections 12.1, 13.4, 14.4 and 14.5, and it does not list Section XII, so the earlier compact dispute process
+      still governs; the amended Appendix X2 Section 13.4 adds a 30-day meet-and-confer step before the appendix's
+      Section 13.5 dispute provisions, which the excerpts do not show.
+    locator_before: XII.B.1
+    locator_after: Appendix X2, 13.4
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The dispute change is inside Appendix X2 Section 13.4, which the amendment
+      rewrites in part; Section 13.5 is not in the excerpts. Appendix X2 numbering here (12.1, 13.4, 13.5, 14.4)
+      does not match the Appendix X2 Section 17 dispute clause shown in the 2007 fourth amendment, so the appendix
+      may have been restructured between those documents; the excerpts do not show the full appendix. The later
+      renegotiation excerpt appears to contain the whole amendment, and the earlier XII and XV excerpts are the
+      1996 compact text.'
+  - topic: renegotiation
+    compared_with: 1996-original
+    change: unchanged
+    summary: The fifth amendment's listed amendments are Section II, a new Section III provision and Appendix X2
+      Sections 12.1, 13.4, 14.4 and 14.5, and it does not list Section XV.D, so the earlier renegotiation provisions
+      still govern.
+    locator_before: XV.D.1
+    locator_after: 1-5
+    verification: read-in-full
+    reviewer: small model, version comparison
+    note: 'Marked hard by the reviewer: The dispute change is inside Appendix X2 Section 13.4, which the amendment
+      rewrites in part; Section 13.5 is not in the excerpts. Appendix X2 numbering here (12.1, 13.4, 13.5, 14.4)
+      does not match the Appendix X2 Section 17 dispute clause shown in the 2007 fourth amendment, so the appendix
+      may have been restructured between those documents; the excerpts do not show the full appendix. The later
+      renegotiation excerpt appears to contain the whole amendment, and the earlier XII and XV excerpts are the
+      1996 compact text.'
+- id: 2021-amendment
+  label: 2021 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1996-original
+  dates:
+    listed: '2021-09-01'
+    published: '2021-09-01'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2021-18816
+    locator: 86 Fed. Reg. 49053 (Sept. 1, 2021)
+  source: compact-wa-puyallup-tribe-of-the-puyallup-reservation-2021-09-01
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/508_compliant_2021.09.01_puyallup_tribe_tribal_state_gmign_compact.pdf
+    sha256: bd61c4889d896005577ca4b2a4bdb79f094cc5be3834807a23fb90845f35a40f
+    pages: 25
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1996-original
+    change: not-compared
+    verification: inferred
+  - topic: renegotiation
+    compared_with: 1996-original
+    change: not-compared
+    verification: inferred
+- id: 2026-amendment
+  label: 2026 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 1996-original
+  dates:
+    listed: '2026-01-26'
+    published: '2026-01-26'
+  approval:
+    authority: secretary-of-the-interior
+    action: deemed-approved
+    source: federal-register-2026-01394
+    locator: 91 Fed. Reg. 3213 (Jan. 26, 2026)
+  source: compact-wa-puyallup-tribe-of-the-puyallup-reservation-2026-01-26
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/washington/puyallup_tribal_state_compact_seventh_amendment.pdf
+    sha256: 71f06f1d7bf103bd2a0407d9046ac5b0cea2f88e04a74a73b24a977d48404939
+    pages: 190
+  clauses:
+  - topic: dispute-resolution
+    locator: Section XI.B (Dispute Resolution Alternatives)
+    summary: Either party gives written notice, the parties meet and confer within twenty business days, then may
+      seek mediation by agreement; if dissatisfied either may seek judicial resolution, and arbitration occurs only
+      by mutual agreement.
+    methods:
+    - negotiation
+    - mediation
+    - arbitration
+    verification: read-in-full
+    reviewer: small model, first pass
+  - topic: renegotiation
+    locator: Section XIII.E (Clarification, Amendments, and Renegotiations)
+    summary: Either party may request renegotiation in writing, the Tribe may request changes when state or federal
+      law expands gaming, and agreed changes are documented in an amendment while existing terms remain in effect.
+    verification: read-in-full
+    reviewer: small model, first pass
+  changes:
+  - topic: dispute-resolution
+    compared_with: 1996-original
+    change: changed
+    summary: The later restated compact provides notice and a meet-and-confer within 20 business days (earlier ten
+      days), mediation only by agreement of the parties (earlier available to either party after 20 days), arbitration
+      only by mutual agreement with an arbitrator chosen within five business days and a decision within a year,
+      final decision subject to judicial review, and judicial resolution if mediation is unsatisfactory. The earlier
+      compact provided negotiation, mediation, then JAMS arbitration at either party's election, binding only where
+      a provision referenced mandatory binding arbitration.
+    locator_before: Section XII.B.1-3
+    locator_after: Section XI.B(1)-(3)
+    verification: read-in-full
+    reviewer: larger model, second pass on the full text
+  - topic: renegotiation
+    compared_with: 1996-original
+    change: changed
+    summary: The seventh amendment lets either party request renegotiation of any provision in writing, with the
+      existing terms remaining in effect until agreed and agreed changes documented in an amendment; the earlier
+      compact allowed either party to request renegotiation only after 24 months from opening, and sent unsuccessful
+      State-requested renegotiations of health and safety provisions to the arbitration in Section XII.B.3.b.
+    locator_before: XV.D.4-XV.D.5
+    locator_after: XIII.E(2)
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

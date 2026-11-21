@@ -1,0 +1,96 @@
+id: cherokee-nation-oklahoma-gaming-compact
+kind: gaming-compact
+title: Cherokee Nation–State of Oklahoma Gaming Compact
+nations:
+- cherokee-nation
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Cherokee Nation and the State of Oklahoma under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Cherokee Nation and the State
+  of Oklahoma as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event and which version
+  is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small model''s
+  reading of excerpts.'
+versions:
+- id: 2005-original
+  label: 2005 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2005-01-27'
+    published: '2005-01-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-05-1468
+    locator: 70 Fed. Reg. 3942 (Jan. 27, 2005)
+  source: compact-ok-cherokee-nation-2005
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2005.01.27 Cherokee Nation Tribal State Gaming
+      Compact.pdf
+    sha256: c8923ec87dbd1f082f6c6fbbf7f82ffe0996cc025ecabb4307d9840cb12dcd2b
+    pages: 31
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION
+    summary: The compact provides written notice and a meeting within thirty days, then arbitration under American
+      Arbitration Association rules subject to de novo review in a federal district court, whose decision may be
+      appealed.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, paragraph B
+    summary: Either the Nation or the State, acting through its Governor, may request within 180 days after expiration
+      or renewal to renegotiate subsections A and E of Part 11; the compact automatically renews for fifteen-year
+      terms if electronic gaming is authorized beyond pari-mutuel wagering.
+    verification: read-in-full
+    reviewer: small model, older version
+    note: A small model read excerpts of this document and marked it hard; check against the text.
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2005-original
+  dates:
+    listed: '2018-08-17'
+    published: '2018-08-17'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-17729
+    locator: 83 Fed. Reg. 41101 (Aug. 17, 2018)
+  source: compact-ok-cherokee-nation-2018-08-17
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2018.08.17 Cherokee  compact amendment.pdf
+    sha256: 65e44ac2c14527caf8adcc86d333fda29bfa8011922a482623aba6e75136f70a
+    pages: 3
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2005-original
+    change: unchanged
+    summary: 'The 2018 supplement does not amend Part 12 (Dispute Resolution): it covers only non-house-banked table
+      games and provides that those operations are treated as subject to the Compact for enforcement, so the earlier
+      Part 12 still governs.'
+    locator_before: Part 12
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2005-original
+    change: unchanged
+    summary: The 2018 supplement does not amend Part 15 (Duration and Negotiation), so the earlier request-to-renegotiate
+      right for subsections A and E of Part 11 still governs.
+    locator_before: Part 15(B)
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories

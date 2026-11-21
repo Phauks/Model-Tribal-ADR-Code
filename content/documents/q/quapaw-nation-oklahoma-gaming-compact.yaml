@@ -1,0 +1,94 @@
+id: quapaw-nation-oklahoma-gaming-compact
+kind: gaming-compact
+title: Quapaw Nation–State of Oklahoma Gaming Compact
+nations:
+- quapaw-nation
+states:
+- OK
+jurisdictions:
+- level: multiple
+  note: Class III gaming compact for Quapaw Nation and the State of Oklahoma under 25 U.S.C. § 2710(d).
+summary: 'The Class III gaming compact documents the Office of Indian Gaming lists for Quapaw Nation and the State
+  of Oklahoma as of Nov. 21, 2026: 1 original and 1 amendment. The order, the kind of each event and which version
+  is in effect are inferred from the list (project analysis); clause summaries and comparisons are a small model''s
+  reading of excerpts.'
+versions:
+- id: 2005-original
+  label: 2005 compact
+  event: original
+  status: in-effect
+  dates:
+    listed: '2005-02-08'
+    published: '2005-02-08'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-05-2428
+    locator: 70 Fed. Reg. 6725 (Feb. 8, 2005)
+  source: compact-ok-quapaw-nation-2005-02-08
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2005.02.08 Quapaw Nation Tribal States Gaming
+      Compact..pdf
+    sha256: 1e08c58802b985620c65c4685b340bee8598e87b56f317a62fa460b3899d118a
+    pages: 31
+  clauses:
+  - topic: dispute-resolution
+    locator: Part 12. DISPUTE RESOLUTION
+    summary: The compact provides for written notice, a meeting within 30 days, arbitration under American Arbitration
+      Association rules with one arbitrator chosen by the parties or named by the AAA, and de novo review of any
+      award in federal district court.
+    methods:
+    - negotiation
+    - nonbinding-arbitration
+    verification: read-in-full
+    reviewer: small model, older version
+  - topic: renegotiation
+    locator: Part 15. DURATION AND NEGOTIATION, B.
+    summary: Within 180 days of expiration or any renewal, either Quapaw or the State, acting through its Governor,
+      may request renegotiation of Part 11 subsections A and E, and the compact remains in effect until expiration
+      or mutual termination.
+    verification: read-in-full
+    reviewer: small model, older version
+- id: 2018-amendment
+  label: 2018 amendment
+  event: amendment
+  status: in-effect
+  amends:
+  - 2005-original
+  dates:
+    listed: '2018-08-27'
+    published: '2018-08-27'
+  approval:
+    authority: secretary-of-the-interior
+    action: approved
+    source: federal-register-2018-18425
+    locator: 83 Fed. Reg. 43703 (Aug. 27, 2018)
+  source: compact-ok-quapaw-nation-2018-08-27
+  confidence: high
+  verification: bulk-import
+  capture:
+    path: research/captures/gaming/compacts/oklahoma/508 Compliant 2018.08.27 Quapaw 2018 Compact Amendment.pdf
+    sha256: db4dc764977778b150a90edb8188cba6276ebbae7cdabe6e0b6b1cc198b887ab
+    pages: 2
+  changes:
+  - topic: dispute-resolution
+    compared_with: 2005-original
+    change: unchanged
+    summary: 'The 2018 supplement does not amend Part 12 (Dispute Resolution): it covers only non-house-banked table
+      games and provides that those operations are treated as subject to the Compact for enforcement, so the earlier
+      Part 12 still governs.'
+    locator_before: Part 12
+    verification: read-in-full
+    reviewer: small model, version comparison
+  - topic: renegotiation
+    compared_with: 2005-original
+    change: unchanged
+    summary: The 2018 supplement does not amend Part 15 (Duration and Negotiation), so the earlier request-to-renegotiate
+      right for subsections A and E of Part 11 still governs.
+    locator_before: Part 15(B)
+    verification: read-in-full
+    reviewer: small model, version comparison
+found_in:
+- 2026-11-21-gaming-compact-histories
