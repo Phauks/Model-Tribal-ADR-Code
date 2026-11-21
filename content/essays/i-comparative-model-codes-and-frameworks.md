@@ -168,8 +168,7 @@ from civil liability "to the same extent as a judge"
 **Consent.** Before a dispute arises, a party may not waive the right to
 judicial relief, the validity rule, provisional remedies, subpoena powers,
 jurisdiction or appeals, and may not "unreasonably restrict" notice or
-arbitrator disclosure [@uniform-law-commission-arbitration-act-2000,
-§ 4(b)]. The right to a lawyer may not be waived in advance except in labor
+arbitrator disclosure [@uniform-law-commission-arbitration-act-2000, § 4(b)]. The right to a lawyer may not be waived in advance except in labor
 arbitration [@uniform-law-commission-arbitration-act-2000, § 4(b)(4)]. In
 the project's view, § 4 is a ready-made list of minimum fairness guarantees
 that a nation could compare with its own due process law, including the
@@ -220,8 +219,7 @@ exclude child-related disputes
 [@uniform-law-commission-family-law-arbitration-act-2016, § 3(b)]. By
 default an arbitrator must be a lawyer or retired judge "trained in
 identifying domestic violence and child abuse," unless the parties waive this
-in a record [@uniform-law-commission-family-law-arbitration-act-2016,
-§ 8(a)].
+in a record [@uniform-law-commission-family-law-arbitration-act-2016, § 8(a)].
 
 **Consent.** The agreement must be in a signed record that names the
 arbitrator or a selection method and identifies the dispute
@@ -241,8 +239,7 @@ law and "is in the best interests of the child"
 
 **Confidentiality.** Not addressed in the act; the comments treat
 confidentiality as a matter for the parties' agreement, with a contract
-remedy for breach [@uniform-law-commission-family-law-arbitration-act-2016,
-§ 13 cmt.].
+remedy for breach [@uniform-law-commission-family-law-arbitration-act-2016, § 13 cmt.].
 
 **Appeals.** The appeals section tracks the general act, with bracketed
 options to allow immediate appeal of orders compelling arbitration
@@ -270,8 +267,7 @@ a statute, or both [@uniform-law-commission-collaborative-law-rules-act].
 
 **Provisions that matter for drafting.** A participation agreement must be in
 a signed record, describe the matter, and identify each party's
-collaborative lawyer [@uniform-law-commission-collaborative-law-rules-act,
-§ 4(a)]. A collaborative lawyer, and lawyers in the same firm, are
+collaborative lawyer [@uniform-law-commission-collaborative-law-rules-act, § 4(a)]. A collaborative lawyer, and lawyers in the same firm, are
 disqualified from representing the party in a related proceeding before a
 tribunal [@uniform-law-commission-collaborative-law-rules-act, § 9(a)-(b)].
 Lawyers must ask, before the agreement and throughout, whether a party "has
@@ -396,8 +392,7 @@ the same.
   UNDRIP as giving "plentiful, broad, and welcome support for the rights of
   Indigenous Peoples to continue or revitalize their own ways of dispute
   resolution," and Article 34 as "a clear affirmation of a right to develop
-  Peacemaking programs" [@narf-ipi-2019-peacemaking-support-in-undrip,
-  at 1, 4].
+  Peacemaking programs" [@narf-ipi-2019-peacemaking-support-in-undrip, at 1, 4].
 
 In the project's view, the comparative question for the outline is not how
 an ADR code would regulate peacemaking but where the two tracks meet: whether
@@ -410,8 +405,7 @@ how it avoids defining or limiting a process that each nation governs itself.
 ### 4.1 The federal frame
 
 The Indian Gaming Regulatory Act lists subjects a Tribal-State compact "may
-include," among them "remedies for breach of contract" [@usc-25-2710,
-(d)(3)(C)(v)]. If a state fails to negotiate in good faith, the act's court
+include," among them "remedies for breach of contract" [@usc-25-2710, (d)(3)(C)(v)]. If a state fails to negotiate in good faith, the act's court
 process ends with each side submitting "a proposed compact that represents
 their last best offer" to a court-appointed mediator, who "shall select from
 the two proposed compacts" [@usc-25-2710, (d)(7)(B)(iv)]. That last step is
@@ -464,8 +458,7 @@ Potawatomi Nation v. Oklahoma, the Tenth Circuit held that clause invalid
 under Hall Street Associates, and because de novo review was "a material
 aspect of the parties' agreement to engage in binding arbitration," it held
 the obligation to arbitrate unenforceable and directed that the Nation's
-award be vacated [@citizen-potawatomi-nation-v-oklahoma-2018, slip op. at
-2-3, 30]; [@hall-street-associates-v-mattel-2008].
+award be vacated [@citizen-potawatomi-nation-v-oklahoma-2018, slip op. at 2-3, 30]; [@hall-street-associates-v-mattel-2008].
 
 In the project's view, the lesson for any intergovernmental clause is that a
 negotiated review route the governing arbitration law does not allow can
@@ -508,8 +501,7 @@ human rights standards"; Article 27 calls for a "fair, independent,
 impartial, open and transparent process" to adjudicate land rights; Article
 32(3) calls for "effective mechanisms for just and fair redress"; and Article
 37 concerns the "recognition, observance and enforcement of treaties"
-[@un-general-assembly-2007-declaration-rights-indigenous-peoples, arts. 27,
-32(3), 34, 37].
+[@un-general-assembly-2007-declaration-rights-indigenous-peoples, arts. 27, 32(3), 34, 37].
 
 **Status in the United States.** When the United States announced its support
 in 2010, it described the Declaration as "not legally binding or a statement
@@ -532,8 +524,7 @@ by national, regional and international legal systems." Article XXXIV calls
 for "just, equitable and effective mechanisms" for conflicts with Indigenous
 peoples, developed with their participation, "and procedures for their
 prompt resolution," with due consideration of their customs, norms and legal
-systems [@oas-2016-american-declaration-rights-indigenous-peoples, arts.
-XXII(2), XXXIV]. A footnote records the United States' view that the
+systems [@oas-2016-american-declaration-rights-indigenous-peoples, arts. XXII(2), XXXIV]. A footnote records the United States' view that the
 Declaration "is not itself legally binding" and that the United States "has,
 however, persistently objected" to the text
 [@oas-2016-american-declaration-rights-indigenous-peoples, n.1].
@@ -551,8 +542,7 @@ Treaty" may submit a claim, and if the claim is well founded the Tribunal
 remove the prejudice" [@nz-treaty-of-waitangi-act-1975, s 6(1), (3)]. For
 land transferred to State enterprises and for Crown forest land, interim
 recommendations for return take effect as final recommendations after 90
-days unless the claim is settled [@nz-treaty-of-waitangi-act-1975, ss 8A,
-8B(6), 8HB, 8HC]. In the project's view, the design pairs a broad inquiry
+days unless the claim is settled [@nz-treaty-of-waitangi-act-1975, ss 8A, 8B(6), 8HB, 8HC]. In the project's view, the design pairs a broad inquiry
 power with a narrow binding power, and keeps settlement by negotiation as
 the expected outcome.
 
@@ -565,8 +555,7 @@ community's own law as a standard.
 - *Purpose.* To help parties, including owners of Māori land, resolve
   disputes "in accordance with the law" and, "as far as possible, in
   accordance with the relevant tikanga of the whanau or hapu with whom they
-  are affiliated" [@nz-te-ture-whenua-maori-amendment-act-2020-part-3a,
-  s 98I].
+  are affiliated" [@nz-te-ture-whenua-maori-amendment-act-2020-part-3a, s 98I].
 - *Consent.* "An issue may be referred to mediation only if all the parties
   agree to mediation," and it may be mediated only while all still agree
   [@nz-te-ture-whenua-maori-amendment-act-2020-part-3a, s 98J(1)-(2)].
@@ -581,8 +570,7 @@ community's own law as a standard.
 - *Enforceability.* The mediator records the terms and reports them to the
   referring Judge or Registrar, and a Judge may make an order including them,
   but only if satisfied the resolution complies with the law and tikanga
-  purposes [@nz-te-ture-whenua-maori-amendment-act-2020-part-3a,
-  s 98P(1)-(4)].
+  purposes [@nz-te-ture-whenua-maori-amendment-act-2020-part-3a, s 98P(1)-(4)].
 - *Neutrals.* The parties must agree on the mediator; at first only Māori
   Land Court Judges could mediate, and a Judge who mediates cannot sit on the
   matter [@te-puni-kokiri-2020-faq-dispute-resolution]. Up to two mediators
@@ -604,11 +592,9 @@ the Crown, read here only as comparative models of dispute design.
 **Specific Claims Tribunal Act.** The Tribunal decides "issues of validity
 and compensation relating to specific claims of First Nations"
 [@canada-specific-claims-tribunal-act-2008, s 3]. Its members are drawn from
-a roster of superior court judges [@canada-specific-claims-tribunal-act-2008,
-s 6(2)]. A claim may be filed only after it went to the Minister and was
+a roster of superior court judges [@canada-specific-claims-tribunal-act-2008, s 6(2)]. A claim may be filed only after it went to the Minister and was
 refused, left undecided for three years, consented to, or left unsettled
-after three years of negotiation [@canada-specific-claims-tribunal-act-2008,
-s 16(1)]. Compensation is monetary and capped at $150 million
+after three years of negotiation [@canada-specific-claims-tribunal-act-2008, s 16(1)]. Compensation is monetary and capped at $150 million
 [@canada-specific-claims-tribunal-act-2008, s 20(1)(a)-(b)]. Decisions are
 subject to judicial review but otherwise "final and conclusive between the
 parties" [@canada-specific-claims-tribunal-act-2008, s 34]. In the project's
@@ -619,8 +605,7 @@ forum, with a fixed trigger for moving from one to the other.
 works at two levels. Inside each nation, a land code must "identify or
 establish a forum for the resolution of disputes in relation to interests or
 land rights in First Nation lands," including review of land management
-decisions [@framework-agreement-first-nation-land-management-2022, cl.
-5.2(h)], and a nation may make laws on services "for the resolution, outside
+decisions [@framework-agreement-first-nation-land-management-2022, cl. 5.2(h)], and a nation may make laws on services "for the resolution, outside
 the courts, of disputes in relation to First Nation land"
 [@framework-agreement-first-nation-land-management-2022, cl. 18.2(e)].
 Between the parties, Part IX sets out a tiered process:
@@ -628,12 +613,10 @@ Between the parties, Part IX sets out a tiered process:
 - the parties commit to resolve disputes "amicably and in good faith"
   [@framework-agreement-first-nation-land-management-2022, cl. 43.1];
 - in mediation the other party must attend an initial meeting, after which
-  either may end it [@framework-agreement-first-nation-land-management-2022,
-  cl. 43.2];
+  either may end it [@framework-agreement-first-nation-land-management-2022, cl. 43.2];
 - one party may refer a dispute to neutral evaluation, but arbitration needs
   both, except for expropriation compensation, which always goes to
-  arbitration [@framework-agreement-first-nation-land-management-2022, cl.
-  43.3-43.4];
+  arbitration [@framework-agreement-first-nation-land-management-2022, cl. 43.3-43.4];
 - the parties and the Lands Advisory Board build rosters of neutrals, who
   must be "unbiased and free from any conflict of interest"
   [@framework-agreement-first-nation-land-management-2022, cl. 44];
@@ -652,11 +635,9 @@ disagreements "in a non-adversarial, collaborative, and informal atmosphere"
 [@nisgaa-final-agreement-chapter-19-dispute-resolution, para. 3(d)].
 Disagreements move through collaborative negotiations, then a facilitated
 process with "a neutral, who has no authority to resolve the dispute," then
-arbitration or court [@nisgaa-final-agreement-chapter-19-dispute-resolution,
-para. 12]. The facilitated options include mediation, a technical advisory
+arbitration or court [@nisgaa-final-agreement-chapter-19-dispute-resolution, para. 12]. The facilitated options include mediation, a technical advisory
 panel, neutral evaluation and an "elders advisory council," with mediation
-as the default [@nisgaa-final-agreement-chapter-19-dispute-resolution,
-para. 24]. Negotiating parties must disclose information, send
+as the default [@nisgaa-final-agreement-chapter-19-dispute-resolution, para. 24]. Negotiating parties must disclose information, send
 representatives with authority, and "negotiate in good faith"
 [@nisgaa-final-agreement-chapter-19-dispute-resolution, para. 26].
 Arbitration is mandatory only where the agreement names it, and otherwise
@@ -686,8 +667,7 @@ citing the Tribunal's own figures, it reports that six of 200 contested
 future acts were determined not to be done
 [@alrc-2026-report-144-future-acts-summary, paras. 61-62 & n.63]. It
 recommends repealing the bar on profit-based conditions and reforming the
-criteria for determinations [@alrc-2026-report-144-future-acts-summary,
-para. 63].
+criteria for determinations [@alrc-2026-report-144-future-acts-summary, para. 63].
 
 In the project's view, this is the clearest documented caution in the
 comparison: a binding fallback is not neutral. Who designs it, what remedies
@@ -714,12 +694,10 @@ states questions for the outline (Gate 2), not provisions.
 The frameworks use four consent models.
 
 1. **Agreement at entry, with protections that cannot be waived in advance**
-   (the arbitration acts) [@uniform-law-commission-arbitration-act-2000,
-   § 4(b)].
+   (the arbitration acts) [@uniform-law-commission-arbitration-act-2000, § 4(b)].
 2. **Agreement that must be renewed when the dispute arises** (child-related
    family arbitration, and arbitration after a risk finding)
-   [@uniform-law-commission-family-law-arbitration-act-2016, §§ 5(c),
-   12(b)].
+   [@uniform-law-commission-family-law-arbitration-act-2016, §§ 5(c), 12(b)].
 3. **Voluntary throughout** (Māori Land Court mediation)
    [@nz-te-ture-whenua-maori-amendment-act-2020-part-3a, s 98J].
 4. **Required first steps before a binding stage** (Nisg̱a'a stages, the
@@ -758,8 +736,7 @@ the law grants, and general secrecy, which the parties must agree to
 [@uniform-law-commission-mediation-act, §§ 4, 8];
 [@uniform-law-commission-collaborative-law-rules-act, § 16]. The Māori Land
 Court provision makes confidentiality a statutory duty of the mediator and
-participants [@nz-te-ture-whenua-maori-amendment-act-2020-part-3a,
-s 98O(5)]. The arbitration sources and the intergovernmental agreements say
+participants [@nz-te-ture-whenua-maori-amendment-act-2020-part-3a, s 98O(5)]. The arbitration sources and the intergovernmental agreements say
 little about it.
 
 *Question for the outline:* how confidentiality interacts with a small
