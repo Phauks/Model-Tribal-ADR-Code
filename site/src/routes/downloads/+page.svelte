@@ -1,6 +1,30 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { repositoryLink } from '#lib';
 	import Download from '@lucide/svelte/icons/download';
+	import type { PageProps } from './$types';
+
+	let { data }: PageProps = $props();
+
+	// A downloaded book or ebook prints this page's address with its own
+	// edition, as /downloads?edition=0.2.0, so a reader can check whether a
+	// newer edition is out (site/DESIGN.md, section 10, "Updates"). The page is
+	// built ahead of time, so the address is read in the browser.
+	let readerEdition = $state<string | undefined>();
+
+	onMount(() => {
+		const edition = new URLSearchParams(location.search).get('edition')?.trim();
+		if (edition && /^\d+\.\d+\.\d+$/.test(edition)) readerEdition = edition;
+	});
+
+	function isOlder(have: string, current: string): boolean {
+		const a = have.split('.').map(Number);
+		const b = current.split('.').map(Number);
+		for (let index = 0; index < 3; index += 1) {
+			if (a[index] !== b[index]) return a[index] < b[index];
+		}
+		return false;
+	}
 </script>
 
 <svelte:head>
@@ -12,6 +36,21 @@
 	<p class="lead">
 		The book and the data behind this site, to keep, print or share.
 	</p>
+
+	{#if readerEdition}
+		<div class="notice" role="note">
+			{#if isOlder(readerEdition, data.versions.print)}
+				<p>
+					You have edition {readerEdition} of the book. A newer edition, {data.versions.print}, is
+					out. <a href="/changelog">See what changed</a>.
+				</p>
+			{:else}
+				<p>
+					You have edition {readerEdition} of the book. That is the current edition.
+				</p>
+			{/if}
+		</div>
+	{/if}
 
 	<!-- Empty state: says what will appear and when (site/DESIGN.md, section 12). -->
 	<section class="panel panel-filled empty-state" aria-labelledby="nothing-yet-heading">

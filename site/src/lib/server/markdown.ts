@@ -45,11 +45,38 @@ export function formatSource(
 	let text = parts.join(', ');
 	if (year) text += ` (${year})`;
 	if (locator) text += `, ${escapeHtml(locator)}`;
-	const url = link && URL.canParse(link) ? new URL(link) : undefined;
-	if (url && (url.protocol === 'https:' || url.protocol === 'http:')) {
-		text += `. <a href="${escapeHtml(url.href)}">${escapeHtml(url.hostname)}</a>`;
+	const url = webAddress(link);
+	const archive = source.archives?.find((copy) => webAddress(copy.link));
+	const archiveUrl = webAddress(archive?.link);
+	if (url) {
+		// Both links are always written; the reader's "Source links" setting
+		// hides one with CSS (site/DESIGN.md, section 6, "Citations").
+		const original = `<a class="source-original" href="${escapeHtml(url.href)}">${escapeHtml(url.hostname)}</a>`;
+		if (archiveUrl) {
+			const captured = archive?.captured ? `, ${escapeHtml(formatCaptureDate(archive.captured))}` : '';
+			text +=
+				`. <span class="source-links has-archive">${original}` +
+				`<span class="source-archived"><span class="source-separator">; </span>` +
+				`<a href="${escapeHtml(archiveUrl.href)}">archived copy${captured}</a></span></span>`;
+		} else {
+			text += `. <span class="source-links">${original}</span>`;
+		}
 	}
 	return text;
+}
+
+function webAddress(link: string | undefined): URL | undefined {
+	const url = link && URL.canParse(link) ? new URL(link) : undefined;
+	return url && (url.protocol === 'https:' || url.protocol === 'http:') ? url : undefined;
+}
+
+const monthNames = ['Jan.', 'Feb.', 'Mar.', 'Apr.', 'May', 'June', 'July', 'Aug.', 'Sept.', 'Oct.', 'Nov.', 'Dec.'];
+
+/** "2026-11-21" as "Nov. 21, 2026", the style guide's form for dates. */
+export function formatCaptureDate(date: string): string {
+	const match = /^(\d{4})-(\d{2})-(\d{2})$/.exec(date);
+	if (!match) return date;
+	return `${monthNames[Number(match[2]) - 1]} ${Number(match[3])}, ${match[1]}`;
 }
 
 /**

@@ -65,7 +65,7 @@ export interface SourceRecord {
 		URL?: string;
 	};
 	original_link?: string;
-	archives?: { link?: string; url?: string }[];
+	archives?: { link?: string; url?: string; captured?: string }[];
 }
 
 let sourceCache: Map<string, SourceRecord> | undefined;
