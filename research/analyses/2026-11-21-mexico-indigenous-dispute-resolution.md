@@ -1,0 +1,398 @@
+# Dispute resolution among Indigenous peoples in Mexico: notes for a comparative sidebar
+
+**Status:** research notes, written Nov. 21, 2026, for a short comparative
+sidebar in the book. They are not a finding about any people's or community's
+law or practice. They report what Mexican federal and state law, Mexican courts
+and a few named secondary sources say, and they say where the evidence is thin.
+Interpretations are labeled project analysis. English renderings of Spanish
+quotations are the project's own translations unless a source gives one. The
+search method and its limits are in the session log,
+[2026-11-21-mexico-indigenous-dispute-resolution](../sessions/2026/2026-11-21-mexico-indigenous-dispute-resolution.md).
+A separate note covers Canada.
+
+**Why this note exists.** The lead author asked for this research because
+Native nations do not ascribe to the international border, and because the
+legal status of Native nations in the United States is largely a construct of
+their trust relationship with the federal government (lead author's framing,
+Nov. 21, 2026). Mexico is a useful contrast: several peoples live on both
+sides of the border, but on the Mexican side their law is recognized through a
+different constitutional route, with no treaties and no trust relationship
+(project analysis, sections 1 and 4).
+
+**What this note leaves out on purpose.** Some sources describe ceremonies,
+pilgrimages or spiritual practice. None of that is recorded here, following
+the charter's rule on community-held knowledge.[^charter-5] Nothing here is a
+draft provision; the roadmap holds drafting until Gates 1 and 2. If a later edition covers Mexico, the charter
+says the project would follow the comparable data principles of the nations
+concerned.[^charter-11]
+
+## Contents
+
+1. Two different legal footings: Mexico and the United States
+2. The federal framework in Mexico
+3. How Mexican courts read it
+4. State Indigenous justice systems
+5. Peoples who live on both sides of the border
+6. What a sidebar could say (project analysis)
+7. Gaps and next steps
+
+## 1. Two different legal footings: Mexico and the United States
+
+**Mexico.** The Constitution states that the Nation "tiene una composición
+pluricultural y multiétnica sustentada originalmente en sus pueblos
+indígenas" (has a pluricultural and multiethnic makeup originally grounded in
+its Indigenous peoples), and that self-determination "se ejercerá en un marco
+constitucional de autonomía que asegure la unidad nacional" (will be exercised
+within a constitutional framework of autonomy that ensures national
+unity).[^cpeum-2] Since the reform of Sept. 30, 2024, Indigenous peoples and
+communities are recognized "como sujetos de derecho público con personalidad
+jurídica y patrimonio propio" (as subjects of public law with their own legal
+personality and assets).[^cpeum-2][^dof-2024] Recognition began in 1992, when
+article 4 first described the Nation's "composición pluricultural" and
+required that Indigenous "prácticas y costumbres jurídicas" be taken into
+account in agrarian proceedings.[^dof-1992] The 2001 reform moved the subject
+to article 2 and added the right to apply "sus propios sistemas normativos en
+la regulación y solución de sus conflictos internos."[^dof-2001]
+
+Land is held mainly through the agrarian system. Article 27 recognizes "la
+personalidad jurídica de los núcleos de población ejidales y comunales" and
+says "La ley protegerá la integridad de las tierras de los grupos indígenas";
+boundary and tenure disputes between ejidos and communities are federal and go
+to agrarian tribunals.[^cpeum-27] A federal government monograph on the
+O'odham (Tohono O'odham) contrasts the two countries this way: in the United
+States, a reservation "con una constitución propia, pero limitada por la de
+ese país" (with its own constitution, but limited by that country's); in
+Mexico, "la existencia de comunidades y ejidos, producto de las reformas y
+políticas agrarias" (communities and ejidos, the product of agrarian reforms
+and policies).[^cdi-papagos]
+
+**United States.** The Supreme Court described Native nations as "domestic
+dependent nations" in 1831,[^cherokee] and later rested broad federal power on
+the nations' dependence on the United States.[^kagama] Nations have their own
+governments and courts, and their relationship with the United States runs
+through treaties, statutes and the trust responsibility, as the project's key
+cases digest explains.
+
+**Comparison (project analysis).**
+
+| Question | Mexico | United States |
+| --- | --- | --- |
+| Source of recognition | Federal Constitution art. 2 and state constitutions and laws[^cpeum-2] | Treaties, federal statutes, federal acknowledgment and case law[^cherokee][^kagama] |
+| Who holds the right | "pueblos y comunidades indígenas," identified by self-identification and ethnolinguistic and settlement criteria[^cpeum-2] | Federally recognized nations as governments |
+| Status | Subjects of public law with legal personality, within "un marco constitucional de autonomía que asegure la unidad nacional"[^cpeum-2] | Domestic dependent nations with retained sovereignty[^cherokee] |
+| Land | Ejidos and comunidades under article 27 and the agrarian laws[^cpeum-27] | Trust and fee lands, reservations |
+| Own dispute resolution | Express constitutional right, subject to validation by state courts "en los casos y procedimientos" set by law[^cpeum-2] | Inherent; tribal courts and peacemaking are tribal institutions |
+| Main external check | Human rights, the Constitution's general principles and "la dignidad e integridad de las mujeres"[^cpeum-2] | Indian Civil Rights Act, enforced mainly in tribal forums[^santa-clara] |
+
+In the project's view, the result is that a Mexican Indigenous community's
+dispute process is recognized as a right inside the national legal order and
+then checked by state courts, while a U.S. nation's process belongs to a
+separate sovereign, whose decisions other courts must decide whether to
+recognize. This is a difference of footing, not of quality.
+
+## 2. The federal framework in Mexico
+
+**Article 2, apartado A, fracción II.** Peoples and communities may "Aplicar y
+desarrollar sus propios sistemas normativos en la regulación y solución de sus
+conflictos internos, sujetándose a los principios generales de esta
+Constitución, respetando las garantías individuales, los derechos humanos y, de
+manera relevante, la dignidad e integridad de las mujeres. La ley establecerá
+los casos y procedimientos de validación por los jueces o tribunales
+correspondientes."[^cpeum-2] The 2024 reform added: "La jurisdicción indígena
+se ejercerá por las autoridades comunitarias de acuerdo con los sistemas
+normativos de los pueblos y comunidades indígenas, dentro del marco del orden
+jurídico vigente."[^cpeum-2][^dof-2024] (Indigenous jurisdiction is exercised
+by community authorities under the peoples' own normative systems, within the
+existing legal order.)
+
+**Access to state courts.** Fracción XI guarantees full access to the State's
+courts; in every proceeding "se deberán tomar en cuenta sus sistemas
+normativos y especificidades culturales," with interpreters, translators,
+defenders and experts "especializadas en derechos indígenas, pluralismo
+jurídico, perspectiva de género, y diversidad cultural y lingüística."[^cpeum-2]
+
+**Consultation.** Fracción XIII, added in 2024, requires consultation on
+legislative or administrative measures that may cause significant impacts,
+"con la finalidad de obtener su consentimiento o, en su caso, llegar a un
+acuerdo," and makes the peoples and communities "los únicos legitimados" to
+challenge a failure to consult.[^cpeum-2] Consultation has itself become a
+dispute-resolution arena (see the Yaqui and Cherán cases below).
+
+**A general law is still pending.** Apartado D says "La ley general debe
+establecer las normas y mecanismos" to implement these rights.[^cpeum-2] A
+June 29, 2026 press report says the federal government planned to consult more
+than 16,000 communities on a draft general law before sending it to
+Congress.[^zeta-2026] The project did not confirm the draft's text or status.
+
+**Criminal cases: article 420 of the national criminal procedure code.**
+Where a crime affects legal interests of an Indigenous people or community or
+the personal interests of a member, and both the accused and the victim (or
+the victim's family) "acepten el modo en el que la comunidad, conforme a sus
+propios sistemas normativos ... proponga resolver el conflicto," the criminal
+action is extinguished. The exceptions are solutions that do not consider "la
+perspectiva de género," affect "la dignidad de las personas, el interés
+superior de los niños y las niñas" or the right to a life free of violence
+against women; crimes that carry mandatory pretrial detention are
+excluded.[^cnpp-420]
+
+**The 2024 general law on alternative mechanisms.** The Ley General de
+Mecanismos Alternativos de Solución de Controversias (Jan. 26, 2024) lists
+negotiation, collaborative negotiation, mediation, conciliation and
+arbitration "de manera enunciativa y no limitativa."[^lgmasc] For Indigenous
+participants it defers to article 2: facilitators who belong to Indigenous or
+Afro-Mexican peoples are governed by article 2 and state law (art. 41), and
+when a party identifies as Indigenous or Afro-Mexican "se estará a sus usos y
+costumbres de conformidad con la libre autodeterminación y autonomía" (art.
+60).[^lgmasc] In the project's view, article 60 is the closest Mexican
+analogue to a model ADR code clause that makes a nation's own norms govern a
+mediation.
+
+**Agrarian disputes.** Agrarian tribunals must consider the "usos y
+costumbres" of Indigenous parties "mientras no contravengan" the Constitution
+and the Agrarian Law (art. 164(I)), accept filings in Indigenous languages
+without translation (art. 164(II)), and, before judgment, "exhortará a las
+partes a una composición amigable," a settlement that, once approved, "tendrá
+el carácter de sentencia ejecutoriada" (art. 185(VI)).[^ley-agraria] The
+Procuraduría Agraria is charged to "Promover y procurar la conciliación de
+intereses" (art. 136(III)).[^ley-agraria] Much Indigenous land conflict in
+Mexico therefore passes through a federal conciliation-then-adjudication
+system rather than a community forum (project analysis).
+
+**The federal Indigenous institute.** The INPI must support access to state
+courts so that "se tomen en cuenta sus sistemas normativos ... en el marco del
+pluralismo jurídico" (art. 4(XIII)), and recognizes "la Asamblea General
+Comunitaria como la máxima autoridad en la toma de decisiones" (art.
+7).[^linpi]
+
+**Treaty law.** Mexico ratified ILO Convention 169 in 1990, according to the
+Supreme Court's 2022 protocol.[^protocolo] The Supreme Court treats the
+Convention as part of the constitutional standard of review.[^cheran]
+
+## 3. How Mexican courts read it
+
+**The 2022 Supreme Court protocol.** The Supreme Court's *Protocolo para
+juzgar con perspectiva intercultural* (Nov. 2022) is a judges' guide, not a
+binding rule, but it collects the Court's holdings.[^protocolo] It reports
+that the Court has described Indigenous jurisdiction as covering "conocer,
+juzgar, resolver conflictos, definir derechos y obligaciones concretas,
+ordenar restricciones de derechos ... ordenar las prestaciones de servicios a
+la comunidad, la reparación de daños y perjuicios, y la disposición de
+bienes," citing Amparo Directo 6/2018.[^protocolo] It sets out a test for
+whether a case belongs to state courts or to Indigenous jurisdiction, built on
+"Factores personal, territorial, objetivo e institucional," and three
+principles: the greatest autonomy for communities that keep their own norms;
+human rights as "el mínimo obligatorio"; and "maximización o de mínimas
+restricciones de la autonomía indígena."[^protocolo] When the case belongs to
+Indigenous jurisdiction, "lo conducente sería declinar la competencia en favor
+de la jurisdicción indígena."[^protocolo] It also warns that the idea "de que
+los sistemas normativos indígenas son, a priori, violatorios de los derechos
+humanos suele ser un prejuicio discriminatorio."[^protocolo] The protocol
+cites, among others, Amparo en Revisión 202/2021, Amparo en Revisión
+1041/2019 and Amparo Directo en Revisión 5465/2014; the project has read only
+the protocol's summaries of those cases.
+
+**Amparo Directo 6/2018 (First Chamber, Nov. 21, 2019).** A non-member grazed
+cattle in a protected area of an Oaxaca community; the community authority
+sanctioned him; he went to state prosecutors; the community asked the criminal
+court to step aside, and its representatives brought a "Juicio de Derecho
+Indígena" before the Oaxaca high court's Sala de Justicia Indígena, which
+"reconoció la jurisdicción de la comunidad, convalidó el sistema normativo
+interno y su procedimiento." The Supreme Court denied amparo.[^ad-6-2018] In
+the project's view, this is the clearest published example of the validation
+route that article 2 contemplates.
+
+**Cherán (Controversia Constitucional 32/2012, May 29, 2014).** After the
+federal electoral tribunal held (SUP-JDC-9167/2011) that the Purépecha
+community of Cherán, Michoacán, could elect its authorities by its own
+rules, Cherán's Council of Communal Government, acting as the municipal
+authority, sued the state legislature for
+amending the state constitution without consulting it. The Supreme Court held
+that ILO Convention 169 "forms part of the parameter of constitutional
+regularity," found that consultation forums were not held adequately, and
+invalidated the reform as to the parties.[^cheran]
+
+**Yaqui water (Amparo en Revisión 631/2012, May 8, 2013).** Yaqui traditional
+authorities challenged the environmental approval of the Independencia
+aqueduct. The First Chamber, unanimously, confirmed amparo so that the tribe
+"sea escuchada para efectos de la operación (no construcción) del Acueducto,"
+and distinguished consultation from consent: consultation must aim at consent,
+but its absence may not always stop the authorities, depending on the level of
+impact.[^ar-631] A separate constitutional controversy over the same
+aqueduct (109/2012) was still in a compliance phase in January 2022, with the
+consultation to respect "los tiempos que determine el Pueblo Yaqui, con base
+en sus usos y costumbres."[^cc-109]
+
+## 4. State Indigenous justice systems
+
+States implement article 2 differently. The project read the statutes below;
+dates are those printed in the copies read, and later amendments may exist.
+
+| State | Statute | Forum and neutral | Matters | Process | Limits | Validation or review |
+| --- | --- | --- | --- | --- | --- | --- |
+| Quintana Roo | Ley de Justicia Indígena (1997; copy current to Dec. 31, 2012)[^qroo] | *Jueces tradicionales* appointed by the high court on the proposal of an Indigenous judicial council; must be "respetables de la comunidad, que dominen el idioma" (arts. 8-9) | Civil, family and listed criminal matters prosecuted on complaint (arts. 14-17) | Conciliation, then mediation, then arbitration "a conciencia y a verdad sabida" (art. 27) | Human rights (art. 10); serious crimes excluded (art. 18); conciliation and mediation "no se recomienda" in family violence (art. 27) | Settlement "homologado a una sentencia debidamente ejecutoriada," award is res judicata (art. 12); complaints to the magistrates for Indigenous affairs within three days (arts. 30-31) |
+| Oaxaca | Ley de Derechos de los Pueblos y Comunidades Indígenas y Afromexicano (1998; copy current to Jan. 3, 2026)[^oaxaca] | Community authorities | Disputes where "ambas partes sean indígenas"; in mixed cases the respondent or claimant may choose the forum (art. 38) | The community's own | Human rights; excluding women is "contraria al respeto a los derechos humanos" (art. 29); detention limits, no torture, written decision (art. 38) | Decisions "serán compatibilizadas y convalidadas por las autoridades estatales" (art. 34); the Sala de Justicia Indígena helps enforce them (art. 40) |
+| Chiapas | Ley de Derechos y Cultura Indígenas (1999, original text)[^chiapas-ldci]; Código de Organización del Poder Judicial (version not confirmed)[^chiapas-copj] | *Juzgados de Paz y Conciliación Indígena*; the judge "previamente deberá oír a las autoridades tradicionales del lugar" (Código art. 206) | Only where both parties are Indigenous (Ley art. 14) | "oralidad, conciliación, inmediatez, sencillez y pronta resolución" (Ley art. 12) | Human rights (Ley arts. 11, 13) | Appeal to a high court chamber that checks "que los derechos de los indígenas hayan sido respetados" (Ley art. 19) |
+| Yucatán | Ley del Sistema de Justicia Maya (2014; amended 2017; parts invalidated by the Supreme Court in 2018)[^yucatan] | *Juez maya*, "la autoridad nombrada por la comunidad maya," with jurisdiction only in that community (arts. 2, 12) | Administrative infractions, matters open to settlement, non-serious crimes where pardon is available (art. 13) | Conciliation, then mediation, then arbitration with res judicata effect (art. 17) | Human rights (art. 16); no deprivation of liberty "en ningún caso" (art. 21) | Resolutions "válidas ante cualquier instancia" (art. 15, as amended; see the invalidity note) |
+| Guerrero | Ley 701 (copy current to July 5, 2022)[^guerrero] | Community authorities and a community security system whose highest body is the General Assembly (arts. 38, 40) | Internal conflicts; non-members go to ordinary courts (art. 42) | Natural-resource conflicts by "la vía de la conciliación" (art. 74) | Constitution and human rights | Indigenous justice is "alterna a la vía jurisdiccional ordinaria" (art. 35); a 2018 amending decree was invalidated by the Supreme Court |
+| Puebla | Ley de Derechos, Cultura y Desarrollo de los Pueblos y Comunidades Indígenas (Jan. 24, 2011)[^puebla] | Community normative systems | Not specified in the articles read | Not specified | "derechos fundamentales" (art. 54) | Decisions "serán convalidados por las autoridades jurisdiccionales del Estado" (art. 54) |
+
+**Patterns (project analysis).** Two models appear. Quintana Roo, Chiapas and
+Yucatán build a state-appointed or community-named *judge* inside or beside
+the state judiciary, with a conciliation-mediation-arbitration ladder much
+like U.S. court-annexed ADR. Oaxaca, Puebla and Guerrero recognize the
+*community's own* authorities and then validate their decisions. Every statute
+read sets human rights as the outer limit, and several single out women,
+children and family violence. Quintana Roo's family-violence rule and
+Yucatán's bar on any deprivation of liberty are concrete design choices worth
+noting beside U.S. tribal peacemaking codes.
+
+## 5. Peoples who live on both sides of the border
+
+The border was drawn across these peoples' lands. The Tohono O'odham Nation
+says the 1854 Gadsden Purchase line "fragmentó las tierras ancestrales de la
+Nación y separó a muchas de sus familias," and that about 3,000 enrolled
+citizens still live on ancestral lands in Sonora.[^ton-brief] How each side
+governs and resolves disputes differs because the two states recognize them
+differently (project analysis).
+
+**Tohono O'odham.** In the United States, the Nation governs from Sells,
+Arizona, with executive, legislative and judicial branches and eleven district
+governments.[^ton-brief] On the Mexican side, a federal monograph describes
+O'odham communities organized through ejidos and agrarian communities.[^cdi-papagos]
+A July 2026 report says Sonora communities, with their own traditional
+governors, want a role in decisions about the shared territory, as the Nation
+litigates a border-wall segment in federal court in Washington, D.C.[^mongabay]
+U.S. statute gives a border-crossing right to "American Indians born in
+Canada" but has no parallel for those born in Mexico.[^usc-1359] A 2001 bill
+would have let Tohono O'odham members in Arizona or Mexico apply for U.S.
+citizenship and "pass and repass freely" across the border; the project found
+no record that it was enacted.[^hr-1502] No source found describes how a
+dispute between O'odham on the two sides would be resolved.
+
+**Kickapoo.** Congress found that the Texas Band "was forced to migrate from
+its ancestral lands to what is now the State of Texas and the nation of
+Mexico," let enrolled members apply for U.S. citizenship within five years of
+the roll, and provided that, notwithstanding the immigration laws, members
+"shall be entitled to freely pass and repass the borders of the United States
+and to live and work in the United States."[^kickapoo-act] The Kickapoo
+Traditional Tribe of Texas has a peacemaker system in its code (already in the
+project's records).[^kttt-peacemaker] The project did not find a primary
+Mexican source on governance of the Kickapoo community at El Nacimiento,
+Múzquiz, Coahuila.
+
+**Yaqui (Yoeme).** A 2020 federal decree describes the Yaqui people in Sonora
+as eight communities, "todas ellas con una forma de organización, territorio
+ancestral y gobierno tradicional de conformidad con sus propios usos y
+costumbres," and created a presidential commission to prepare a "Plan de
+Justicia" on "tierras, territorio, agua y desarrollo integral," working with
+"los gobernadores tradicionales y sus secretarios electos conforme a sus usos
+y costumbres."[^yaqui-decree] The Supreme Court's aqueduct cases above were
+brought by these traditional authorities.[^ar-631] The Pascua Yaqui Tribe in
+Arizona is a separate federally recognized nation; no source found links its
+institutions to the Sonora communities' disputes.
+
+**Cocopah (Cucapá).** A 2014 peer-reviewed article reports that Cucapá
+fishers in Baja California face fishing limits in the Colorado River delta,
+that the conservation framework "regula la zona en disputa desde 1993
+excluyendo sus derechos," and that "cuando los cucapás desafían el marco legal
+de conservación ... se les criminaliza."[^cucapa] This is a dispute with the
+Mexican federal government, not a cross-border process.
+
+**Kumeyaay (Kumiai).** The project could not retrieve a usable source on
+governance or dispute resolution in the Baja California Kumiai communities
+(the pages found refused automated access). This is an open gap.
+
+## 6. What a sidebar could say (project analysis)
+
+These are suggestions for a short sidebar, not draft text or provisions.
+
+1. **The border is recent; the peoples are not.** The Tohono O'odham Nation's
+   own account of the 1854 line and its citizens in Sonora makes the point in
+   the Nation's words.[^ton-brief]
+2. **Same people, different legal footing.** On the U.S. side a nation is a
+   domestic dependent sovereign in a trust relationship; on the Mexican side
+   its relatives are communities with a constitutional right to their own
+   dispute resolution inside the national order, subject to validation by
+   state courts.[^cherokee][^cpeum-2]
+3. **Mexico writes the validation step into law.** Article 2 calls for "casos
+   y procedimientos de validación"; Oaxaca convalidates community decisions;
+   Quintana Roo turns a settlement into a final judgment; Amparo Directo
+   6/2018 shows the route in use.[^cpeum-2][^oaxaca][^qroo][^ad-6-2018]
+   This invites comparison with how U.S. state courts recognize tribal
+   judgments and how the model code might ask other forums to honor its
+   outcomes.
+4. **Party consent can move a criminal case into the community.** Article 420
+   of the national code ends a prosecution when both sides accept the
+   community's resolution, with fixed exceptions.[^cnpp-420]
+5. **Rights limits are explicit.** Mexican texts name women's dignity, gender
+   perspective, children and family violence as limits.[^cpeum-2][^cnpp-420][^qroo]
+6. **Status shapes access to ADR.** The 2024 general ADR law defers to "usos
+   y costumbres" for Indigenous parties, so Mexican ADR is designed to yield
+   to community norms rather than to sit beside a separate sovereign's
+   courts.[^lgmasc]
+
+## 7. Gaps and next steps
+
+- **Primary texts not read:** the full Supreme Court judgments in AD 6/2018
+  and CC 32/2012 (only the Court's own summaries were read); AR 202/2021, AR
+  1041/2019 and ADR 5465/2014 (only as summarized in the 2022 protocol); the
+  1940 Yaqui decree (only as quoted in AR 631/2012); SUP-JDC-9167/2011.
+- **States not covered:** San Luis Potosí, Michoacán (statute), Campeche,
+  Hidalgo, Veracruz, Chihuahua and Sonora. The legal basis and current
+  jurisdiction of Oaxaca's Sala de Justicia Indígena beyond articles 40 and 44
+  of the state law. Whether Quintana Roo's law and Chiapas's code were amended
+  after the copies read. Guerrero's community police (the CRAC-PC) as an
+  institution; Ley 701 does not name it.
+- **Cross-border:** Kumiai governance; El Nacimiento Kickapoo governance from
+  a Mexican primary source; any U.S.–Mexico agreement on border crossing for
+  O'odham, Yaqui, Cocopah or Kumeyaay people; the Pascua Yaqui Tribe's links
+  with Sonora.
+- **Scholarship:** the project has not yet read the main English-language
+  scholarship on Indigenous justice in Mexico (for example, work by María
+  Teresa Sierra and Rachel Sieder on legal pluralism, which the 2022 protocol
+  cites). A library or HeinOnline search is listed in the project's Westlaw
+  list.
+- **Pending law:** the federal general law on Indigenous and Afro-Mexican
+  peoples' rights; recheck its status before the sidebar is written.
+
+## References
+
+Citation forms follow the *Indigo Book*; source records are in
+`content/sources/`. Spanish-language titles are given as published.
+
+[^charter-5]: [Charter, commitment 5](../../docs/charter.md).
+[^charter-11]: [Charter, commitment 11](../../docs/charter.md).
+[^cpeum-2]: Constitución Política de los Estados Unidos Mexicanos [Const.], as amended, art. 2o, Diario Oficial de la Federación [DOF] 05-02-1917, últimas reformas DOF 07-10-2026 (Mex.), [diputados.gob.mx](https://www.diputados.gob.mx/LeyesBiblio/pdf/CPEUM.pdf) (accessed Nov. 21, 2026). Source record: `mexico-constitucion-politica`.
+[^cpeum-27]: Id. art. 27, frs. VII, XIX.
+[^dof-2024]: Decreto por el que se reforman, adicionan y derogan diversas disposiciones del artículo 2o. de la Constitución Política de los Estados Unidos Mexicanos, en materia de Pueblos y Comunidades Indígenas y Afromexicanos, DOF 30-09-2024 (Mex.), [diputados.gob.mx](https://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_260_30sep24.pdf). Source record: `mexico-dof-2024-09-30-reforma-articulo-2`.
+[^dof-2001]: Decreto por el que se aprueba el diverso mediante el cual se adicionan un segundo y tercer párrafos al artículo 1o., se reforma el artículo 2o., se deroga el párrafo primero del artículo 4o.; y se adicionan un sexto párrafo al artículo 18, y un último párrafo a la fracción tercera del artículo 115 de la Constitución Política de los Estados Unidos Mexicanos, DOF 14-08-2001 (Mex.), [diputados.gob.mx](https://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_151_14ago01.pdf). Source record: `mexico-dof-2001-08-14-reforma-indigena`.
+[^dof-1992]: Decreto por el que se reforma el artículo 4o. de la Constitución Política de los Estados Unidos Mexicanos, DOF 28-01-1992 (Mex.), [diputados.gob.mx](https://www.diputados.gob.mx/LeyesBiblio/ref/dof/CPEUM_ref_122_28ene92.pdf). Source record: `mexico-dof-1992-01-28-reforma-articulo-4`.
+[^cnpp-420]: Código Nacional de Procedimientos Penales [CNPP], art. 420, DOF 05-03-2014, últimas reformas DOF 28-11-2025 (Mex.), [diputados.gob.mx](https://www.diputados.gob.mx/LeyesBiblio/pdf/CNPP.pdf). Source record: `mexico-codigo-nacional-procedimientos-penales`.
+[^lgmasc]: Ley General de Mecanismos Alternativos de Solución de Controversias, arts. 4, 41, 60, DOF 26-01-2024 (Mex.), [diputados.gob.mx](https://www.diputados.gob.mx/LeyesBiblio/pdf/LGMASC.pdf). Source record: `mexico-ley-general-mecanismos-alternativos-2024`.
+[^ley-agraria]: Ley Agraria, arts. 136(III), 164, 185(VI), DOF 26-02-1992, as amended (Mex.), [diputados.gob.mx](https://www.diputados.gob.mx/LeyesBiblio/pdf/LAgra.pdf). Source record: `mexico-ley-agraria`.
+[^linpi]: Ley del Instituto Nacional de los Pueblos Indígenas, arts. 4(XIII), 7, DOF 04-12-2018 (Mex.), [diputados.gob.mx](https://www.diputados.gob.mx/LeyesBiblio/pdf/LINPI.pdf). Source record: `mexico-ley-instituto-nacional-pueblos-indigenas`.
+[^protocolo]: Suprema Corte de Justicia de la Nación, *Protocolo para juzgar con perspectiva intercultural: personas, pueblos y comunidades indígenas* 56-61, 143-148, 168-169 (1st ed. Nov. 2022), [scjn.gob.mx](https://www.scjn.gob.mx/derechos-humanos/sites/default/files/protocolos/archivos/2022-11/Protocolo%20para%20Juzgar%20con%20Perspectiva%20Intercultural_Ind%C3%ADgenas_Digital_0.pdf). Source record: `scjn-2022-protocolo-perspectiva-intercultural-indigenas`.
+[^ad-6-2018]: Amparo Directo 6/2018, Primera Sala de la Suprema Corte de Justicia de la Nación [SCJN], Nov. 21, 2019 (Mex.), as summarized in SCJN, Dirección General de Derechos Humanos, *Reconocimiento de la jurisdicción indígena: Extracto del Amparo Directo 6/2018*, [scjn.gob.mx](https://www.scjn.gob.mx/derechos-humanos/sites/default/files/sentencias-emblematicas/resumen/2020-12/Resumen%20AD6-2018%20DGDH_0.pdf). Source record: `scjn-amparo-directo-6-2018`.
+[^cheran]: Controversia Constitucional 32/2012, Pleno de la SCJN, May 29, 2014 (Mex.), as summarized in SCJN Human Rights Office, *Cherán Case: Right to Consultation of the Indigenous Peoples in Legislative Processes* (English summary), [scjn.gob.mx](https://www.scjn.gob.mx/derechos-humanos/sites/default/files/sentencias-emblematicas/summary/2022-06/Summary%20CC32-2012%20HRO.pdf). Source record: `scjn-controversia-constitucional-32-2012-cheran`.
+[^ar-631]: Amparo en Revisión 631/2012, Primera Sala de la SCJN, May 8, 2013, at 86-88 (Mex.) (public version), [cemda.org.mx](https://cemda.org.mx/wp-content/uploads/2013/07/Sentencia-SCJN-1.pdf). Source record: `scjn-amparo-en-revision-631-2012-tribu-yaqui`.
+[^cc-109]: Controversia Constitucional 109/2012, SCJN, acuerdo of Jan. 12, 2022 (Mex.), [scjn.gob.mx](https://scjn.gob.mx/sites/default/files/acuerdos_controversias_constit/documento/2022-01-14/MP_ContConst-109-2012.pdf). Source record: `scjn-controversia-constitucional-109-2012-acueducto-independencia`.
+[^zeta-2026]: Carlos Álvarez Acevedo, *Gobierno consultará nueva ley indígena en más de 16 mil comunidades antes de enviarla al Congreso*, Zeta Tijuana (June 29, 2026), [zetatijuana.com](https://zetatijuana.com/2026/06/gobierno-consultara-nueva-ley-indigena-en-mas-de-16-mil-comunidades-antes-de-enviarla-al-congreso/). Read from the page's headline and summary only. Source record: `zeta-tijuana-2026-consulta-ley-general-indigena`.
+[^qroo]: Ley de Justicia Indígena del Estado de Quintana Roo, arts. 6-31, Periódico Oficial del Estado [POE] 14-08-1997, last amended POE 31-12-2012 (Q. Roo, Mex.), [transparencia.cancun.gob.mx](https://transparencia.cancun.gob.mx/uploads/24/28/Ley%20De%20Justicia%20Indigena%20Del%20Estado%20De%20Quintana%20Roo.pdf) (copy posted by the Benito Juárez municipal government). Source record: `quintana-roo-ley-justicia-indigena`.
+[^oaxaca]: Ley de Derechos de los Pueblos y Comunidades Indígenas y Afromexicano del Estado de Oaxaca, arts. 28-44, Periódico Oficial [P.O.] 19-06-1998, last amended P.O. 03-01-2026 (Oax., Mex.), [congresooaxaca.gob.mx](https://www.congresooaxaca.gob.mx/docs66.congresooaxaca.gob.mx/legislacion_estatal/Ley_de_Derechos_de_los_Pueblos_y_Comunidades_Indigenas_y_Afromexicano_del_Estado_de_Oaxaca_(Dto_ref_857_aprob_LXVI_Legis_25_noviembre_2025_PO_1_3a_secc_3_enero_2026).pdf). Source record: `oaxaca-ley-derechos-pueblos-comunidades-indigenas-afromexicano`.
+[^chiapas-ldci]: Ley de Derechos y Cultura Indígenas del Estado de Chiapas, arts. 6-20, P.O. 29-07-1999 (original text) (Chis., Mex.), [docs.mexico.justia.com](https://docs.mexico.justia.com/estatales/chiapas/ley-de-derechos-y-cultura-indigenas-del-estado-de-chiapas.pdf). Source record: `chiapas-ley-derechos-cultura-indigenas`.
+[^chiapas-copj]: Código de Organización del Poder Judicial del Estado de Chiapas, arts. 204-207 (version date not confirmed) (Chis., Mex.), [docs.mexico.justia.com](https://docs.mexico.justia.com/estatales/chiapas/codigo-de-organizacion-del-poder-judicial-del-estado-de-chiapas.pdf). Source record: `chiapas-codigo-organizacion-poder-judicial`.
+[^yucatan]: Ley del Sistema de Justicia Maya del Estado de Yucatán, arts. 2, 12-21, Diario Oficial del Gobierno del Estado [D.O.] 29-05-2014, last amended D.O. 31-10-2017 (Yuc., Mex.), [poderjudicialyucatan.gob.mx](https://www.poderjudicialyucatan.gob.mx/digestum/marcoLegal/02/2014/DIGESTUM02317.pdf). The copy's notes record that Acción de Inconstitucionalidad 151/2017 invalidated the 2017 amendments to arts. 13 Bis, 14, 15 and 17. Source record: `yucatan-ley-sistema-justicia-maya`.
+[^guerrero]: Ley Número 701 de Reconocimiento, Derechos y Cultura de los Pueblos y Comunidades Indígenas y Afromexicanas del Estado de Guerrero, arts. 35-42, 74, last amended P.O. 05-07-2022 (Gro., Mex.), [guerrero.gob.mx](https://dev.guerrero.gob.mx/wp-content/uploads/2022/03/L701RDCPCIEG-1.pdf). Source record: `guerrero-ley-701-pueblos-comunidades-indigenas`.
+[^puebla]: Ley de Derechos, Cultura y Desarrollo de los Pueblos y Comunidades Indígenas del Estado de Puebla, arts. 53-54 (Jan. 24, 2011) (Pue., Mex.), [pueblacapital.gob.mx](https://gobiernoabierto.pueblacapital.gob.mx/transparencia_file/Gobierno.Abierto/ACCESIBILIDAD/Ley_Derechos_Cultura_Desarrollo_de_Pueblos%20_Comunidades_Indigenas_del_Estado_de_Puebla.pdf). Source record: `puebla-ley-derechos-cultura-desarrollo-pueblos-indigenas`.
+[^cdi-papagos]: Neyra Patricia Alvarado Solís, *Pápagos* 5 (Comisión Nacional para el Desarrollo de los Pueblos Indígenas 2007) (Pueblos Indígenas del México Contemporáneo series), [gob.mx](https://www.gob.mx/cms/uploads/attachment/file/12577/papagos.pdf). Source record: `alvarado-solis-2007-papagos`.
+[^cherokee]: Cherokee Nation v. Georgia, 30 U.S. (5 Pet.) 1, 17 (1831). Source record: `cherokee-nation-v-georgia`.
+[^kagama]: United States v. Kagama, 118 U.S. 375 (1886). Source record: `united-states-v-kagama`.
+[^santa-clara]: Santa Clara Pueblo v. Martinez, 436 U.S. 49 (1978). Source record: `santa-clara-pueblo-v-martinez`.
+[^ton-brief]: Tohono O'odham Nation, *Informe informativo: La Nación Tohono O'odham* (June 2026), [tonation-nsn.gov](https://www.tonation-nsn.gov/wp-content/uploads/2026/06/Issue-Brief-Espanol-La-Nacion-Tohono-Oodham.pdf). Source record: `tohono-oodham-nation-2026-informe-informativo`.
+[^mongabay]: Astrid Arellano, *Nación Tohono O'odham lleva a tribunales la disputa por el muro construido entre EE.UU. y México*, Mongabay Latam (July 31, 2026), [es.mongabay.com](https://es.mongabay.com/2026/07/nacion-tohono-oodham-tribunales-disputa-muro-construido-ee-uu-mexico/). Source record: `mongabay-2026-tohono-oodham-muro`.
+[^usc-1359]: 8 U.S.C. § 1359. Source record: `united-states-code-8-1359`.
+[^hr-1502]: H.R. 1502, 107th Cong. § 1 (2001). Source record: `hr-1502-107th-congress-tohono-oodham-citizenship`.
+[^kickapoo-act]: Texas Band of Kickapoo Act, Pub. L. No. 97-429, §§ 2, 4, 96 Stat. 2269, 2269-70 (1983) (codified at 25 U.S.C. §§ 1300b-11 to 1300b-16). Source record: `texas-band-of-kickapoo-act-1983`.
+[^kttt-peacemaker]: Kickapoo Traditional Tribe of Texas, Chapter 4, The Peacemaker System. Source record: `kickapoo-traditional-tribe-texas-chapter-4-peacemaker-system`.
+[^yaqui-decree]: Decreto por el que se crea la Comisión Presidencial de Justicia para el Pueblo Yaqui, del Estado de Sonora, DOF 27-10-2020 (Mex.), [gob.mx](https://www.gob.mx/cms/uploads/attachment/file/588300/decreto-comision-presidencia-de-justicia-para-el-pueblo.yaqui-2020-10-27-MAT-inpi.pdf). Source record: `mexico-dof-2020-10-27-comision-justicia-pueblo-yaqui`.
+[^cucapa]: Alejandra Navarro Smith & Yacotzin Bravo Espinosa, *Derechos colectivos y consulta previa: territorio cucapá y recursos pesqueros en Baja California, México*, 37 Revista Colombiana de Sociología, no. 2, 2014, at 43, [revistas.unal.edu.co](https://revistas.unal.edu.co/index.php/recs/article/view/51697). Source record: `navarro-smith-bravo-espinosa-2014-cucapa`.
