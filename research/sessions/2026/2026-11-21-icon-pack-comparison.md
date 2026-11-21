@@ -1,3 +1,26 @@
+---
+id: 2026-11-21-icon-pack-comparison
+date: 2026-11-21
+researchers: [Trevor Goldsmith, Claude (AI assistant)]
+tools:
+  - kind: ai-assistant
+    name: Claude (AI assistant)
+    detail: Downloaded each icon package from npm, read its license and README, and built a comparison page.
+  - kind: page-fetch
+    name: Web page fetch tool
+    detail: Documentation pages were read as text. GitHub pages refused automated download, so license and README text was read from each npm package instead.
+  - kind: other
+    name: npm registry
+    detail: Versions, release dates, peerDependencies and sideEffects read with npm view.
+purpose: Choose one icon pack for the website (SvelteKit) and the book (Typst and EPUB), starting with an icon-only sun or moon theme button.
+sources_added: []
+limits: >-
+  Icon counts are files in each package, not the makers' published counts.
+  Only the regular or outline style of each pack was compared. Stroke widths
+  are project measurements. These are design references cited in
+  site/DESIGN.md, so no source records or archived copies were made.
+---
+
 # Icon pack comparison
 
 - **Date:** Nov. 21, 2026
