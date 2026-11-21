@@ -1,0 +1,59 @@
+id: inter-tribal-council-of-nevada
+name: Inter-Tribal Council of Nevada
+also_known_as:
+- ITCN
+category: intertribal-organization
+location:
+  city: Reno
+  state: NV
+scope: state
+relevance:
+  text: The Inter-Tribal Council of Nevada (ITCN) is a 501(c)(3) consortium of Nevada's 28 Tribal Nations
+    that provides services to tribal communities, including Family Violence Prevention services with legal
+    assistance. A February 2024 Nevada Lawyer article by a tribal judge reports that the Inter-Tribal
+    Court of Appeals for Nevada, which hears appeals for many Nevada tribes, is housed in ITCN's Reno
+    offices.
+  sources:
+  - inter-tribal-council-home
+  - nevada-lawyer-tribal-courts-article
+possible_roles:
+- consultation
+- advice
+- distribution
+contacts:
+- kind: email
+  value: info@itcn.org
+  label: General inbox
+  sources:
+  - inter-tribal-council-home
+- kind: telephone
+  value: (775) 355-0600
+  label: Main office
+  sources:
+  - inter-tribal-council-home
+- kind: mailing-address
+  value: 10 State Street, Reno, NV 89501
+  label: Main office
+  sources:
+  - inter-tribal-council-home
+- kind: contact-form
+  value: https://itcn.org/?page_id=3182
+  label: Contact form
+  sources:
+  - inter-tribal-council-home
+sources:
+- id: inter-tribal-council-home
+  title: Inter-Tribal Council of Nevada
+  publisher: ITCN
+  link: https://itcn.org/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Description, programs, contacts.
+- id: nevada-lawyer-tribal-courts-article
+  title: Nevada's Tribal Courts (Nevada Lawyer, Feb. 2024)
+  publisher: State Bar of Nevada
+  link: https://nvbar.org/wp-content/uploads/NevadaLawyer_February2024_NevadasTribalCourts.pdf
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Inter-Tribal Court of Appeals housed at ITCN offices in Reno.
+checked: '2026-11-21'

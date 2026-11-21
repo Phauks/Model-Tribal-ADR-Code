@@ -1,0 +1,43 @@
+id: native-nations-institute
+name: Native Nations Institute
+also_known_as:
+- NNI
+- Native Nations Institute for Leadership, Management, and Policy
+category: university-center
+location:
+  city: Tucson
+  state: AZ
+scope: national
+relevance:
+  text: The Native Nations Institute (NNI), housed at the University of Arizona's Udall Center for Studies
+    in Public Policy, strengthens Indigenous governance through research, capacity building and education.
+    It hosts the Constitutions Resource Center, runs the Indigenous Governance Program with the James
+    E. Rogers College of Law, and lists Indigenous data sovereignty as a research and policy area.
+  sources:
+  - about
+possible_roles:
+- reviewer
+- consultation
+- sources-and-data
+- advice
+contacts:
+- kind: email
+  value: nni@arizona.edu
+  label: General inbox
+  sources:
+  - about
+- kind: contact-form
+  value: https://nni.arizona.edu/contact-us
+  label: Contact page
+  sources:
+  - about
+sources:
+- id: about
+  title: About Us
+  publisher: Native Nations Institute, University of Arizona
+  link: https://nni.arizona.edu/about-us
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Mission, Udall Center home, founding 2001, Constitutions Resource Center, Indigenous Governance
+    Program, data sovereignty, nni@arizona.edu
+checked: '2026-11-21'

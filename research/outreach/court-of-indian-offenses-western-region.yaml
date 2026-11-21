@@ -1,0 +1,63 @@
+id: court-of-indian-offenses-western-region
+name: Court of Indian Offenses - Western Region
+also_known_as:
+- Western Region CFR Court
+- Court of Indian Offenses of the Western Region
+category: court
+location:
+  city: Phoenix
+  state: AZ
+scope: regional
+relevance:
+  text: This Bureau of Indian Affairs court (a Court of Indian Offenses, or CFR court, under 25 C.F.R.
+    part 11) serves the Te-Moak Tribe of Western Shoshone and the Yomba Shoshone Tribe in Nevada, the
+    Summit Lake Paiute Tribe, and the Skull Valley Band of Goshute in Utah. These courts hear civil matters
+    and misdemeanor offenses under federal regulations and can hear tribal law violations when a tribe
+    grants that authority.
+  sources:
+  - court-of-indian-offenses-court
+  - nevada-lawyer-tribal-courts-article
+possible_roles:
+- sources-and-data
+- advice
+contacts:
+- kind: email
+  value: WESTERN_RO_COURT_CLERK@BIA.GOV
+  label: Court clerk shared inbox (published for filings)
+  sources:
+  - court-of-indian-offenses-contact
+- kind: mailing-address
+  value: 'Bureau of Indian Affairs - Western Region, Attn: Court of Indian Offenses, 2600 N. Central Avenue,
+    4th Floor Mailroom, Phoenix, AZ 85004'
+  label: Court mailing address
+  sources:
+  - court-of-indian-offenses-contact
+- kind: web-page
+  value: https://bia.gov/regional-offices/western/court-indian-offenses
+  label: Court page
+  sources:
+  - court-of-indian-offenses-court
+sources:
+- id: court-of-indian-offenses-court
+  title: Court of Indian Offenses - Western Region
+  publisher: Bureau of Indian Affairs
+  link: https://bia.gov/regional-offices/western/court-indian-offenses
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Tribes served and court locations.
+- id: court-of-indian-offenses-contact
+  title: Court of Indian Offenses - Contact Us
+  publisher: Bureau of Indian Affairs
+  link: https://bia.gov/regional-offices/western/court-indian-offenses/contact-us
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Clerk inbox, mailing address, hours.
+- id: nevada-lawyer-tribal-courts-article
+  title: Nevada's Tribal Courts (Nevada Lawyer, Feb. 2024)
+  publisher: State Bar of Nevada
+  link: https://nvbar.org/wp-content/uploads/NevadaLawyer_February2024_NevadasTribalCourts.pdf
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: CFR court jurisdiction description.
+checked: '2026-11-21'
+notes: The clerk's inbox is published for filings; use it only for a short records question.

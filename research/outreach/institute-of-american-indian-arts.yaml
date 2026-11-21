@@ -1,0 +1,57 @@
+id: institute-of-american-indian-arts
+name: Institute of American Indian Arts
+also_known_as:
+- IAIA
+- Institute of American Indian and Alaska Native Culture and Arts Development
+category: native-arts-organization
+location:
+  city: Santa Fe
+  state: NM
+scope: national
+relevance:
+  text: The Institute of American Indian Arts is a Native arts college in Santa Fe, New Mexico, whose
+    formal name is the Institute of American Indian and Alaska Native Culture and Arts Development. It
+    has an Office of Institutional Communications that could help reach Native student artists (project
+    analysis).
+  sources:
+  - princeton-review-profile
+  - communications
+possible_roles:
+- art
+- advice
+- distribution
+contacts:
+- kind: web-page
+  value: https://iaia.edu/contact/
+  label: Contact page
+  sources:
+  - contact
+- kind: web-page
+  value: https://iaia.edu/communications/
+  label: Office of Institutional Communications
+  sources:
+  - communications
+sources:
+- id: contact
+  title: Contact < Institute of American Indian Arts (IAIA)
+  publisher: Institute of American Indian Arts
+  link: https://iaia.edu/contact/
+  accessed: '2026-11-21'
+  verification: search-result-only
+  supports: Official contact page
+- id: communications
+  title: Office of Institutional Communications < IAIA
+  publisher: Institute of American Indian Arts
+  link: https://iaia.edu/communications/
+  accessed: '2026-11-21'
+  verification: search-result-only
+  supports: Communications office page
+- id: princeton-review-profile
+  title: Institute of American Indian and Alaska Native Culture (also known as)
+  publisher: The Princeton Review
+  link: https://www.princetonreview.com/grad/institute-american-indian-alaska-native-culture-9187745
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Formal institutional name
+checked: '2026-11-21'
+notes: Its official pages blocked automated reading; the contact pages rest on search results.

@@ -1,0 +1,58 @@
+id: native-hawaiian-legal-corporation
+name: Native Hawaiian Legal Corporation
+also_known_as:
+- NHLC
+category: native-legal-organization
+location:
+  city: Honolulu
+  state: HI
+scope: regional
+relevance:
+  text: The Native Hawaiian Legal Corporation (NHLC) provides legal services addressing problems facing
+    Native Hawaiians, including threatened loss of ancestral lands and protection of their way of life.
+    Its practice areas include Hawaiian Home Lands, water rights, burial protection, access rights, traditional
+    and customary practices, and cultural intellectual property, traditional knowledge and data sovereignty.
+    It reports completing its 51st year of service in 2025.
+  sources:
+  - services
+possible_roles:
+- reviewer
+- consultation
+- advice
+contacts:
+- kind: email
+  value: info@nhlchi.org
+  label: General inbox
+  sources:
+  - contact
+- kind: telephone
+  value: (808) 521-2302
+  label: Main office
+  sources:
+  - contact
+- kind: mailing-address
+  value: 1164 Bishop Street, Suite 1205, Honolulu, Hawaii 96813
+  label: Oʻahu office
+  sources:
+  - contact
+- kind: contact-form
+  value: https://forms.microsoft.com/Pages/ResponsePage.aspx?id=FzyXwDpBqU-HtEd8DIIkiZRTW_zoXN5OkiqJaakAgxNUQjQ4Tkw0VldDM0U1ODBITjlZMkJETUFBRC4u&embed=true
+  label: Contact form linked from Contact Us page
+  sources:
+  - contact
+sources:
+- id: contact
+  title: Contact Us
+  publisher: Native Hawaiian Legal Corporation
+  link: https://nativehawaiianlegalcorp.org/contact/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Address, phone, info@nhlchi.org, contact form, hours, Kona office by appointment
+- id: services
+  title: Our Services
+  publisher: Native Hawaiian Legal Corporation
+  link: https://nativehawaiianlegalcorp.org/services/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Mission and practice areas; 51st year of service in 2025
+checked: '2026-11-21'

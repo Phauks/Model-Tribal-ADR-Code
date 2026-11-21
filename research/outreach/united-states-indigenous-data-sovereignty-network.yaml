@@ -1,0 +1,46 @@
+id: united-states-indigenous-data-sovereignty-network
+name: United States Indigenous Data Sovereignty Network
+also_known_as:
+- USIDSN
+- US Indigenous Data Sovereignty Network
+category: data-governance-organization
+scope: national
+relevance:
+  text: The United States Indigenous Data Sovereignty Network (USIDSN) provides research and policy advocacy
+    on Indigenous data sovereignty for US-based Native nations and peoples, following peer networks in
+    New Zealand, Canada and Australia. It held a US Indigenous Data Sovereignty and Governance Summit
+    on April 14-17, 2026.
+  sources:
+  - native-nations-institute-news
+  - summit-2026
+possible_roles:
+- advice
+- reviewer
+- event-or-presentation
+contacts:
+- kind: web-page
+  value: http://usindigenousdata.arizona.edu/
+  label: USIDSN website (as linked from NNI)
+  sources:
+  - native-nations-institute-news
+- kind: web-page
+  value: https://s2.goeshow.com/usidsn/summit/2026
+  label: 2026 summit information site
+  sources:
+  - summit-2026
+sources:
+- id: native-nations-institute-news
+  title: US Indigenous Data Sovereignty Network
+  publisher: Native Nations Institute
+  link: https://nni.arizona.edu/news/us-indigenous-data-sovereignty-network
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Purpose of USIDSN; link to usindigenousdata.arizona.edu
+- id: summit-2026
+  title: US Indigenous Data Sovereignty & Governance Summit 2026
+  publisher: University of Arizona
+  link: https://air.arizona.edu/events/us-indigenous-data-sovereignty-governance-summit-2026
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Summit dates April 14-17, 2026 at Casino Del Sol; hosted by USIDSN
+checked: '2026-11-21'

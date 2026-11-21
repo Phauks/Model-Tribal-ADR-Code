@@ -1,0 +1,67 @@
+id: first-peoples-fund
+name: First Peoples Fund
+also_known_as:
+- FPF
+category: foundation
+location:
+  city: Rapid City
+  state: SD
+scope: national
+relevance:
+  text: First Peoples Fund supports Native artists and culture bearers, including through annual artist
+    fellowships and grants. Its programs reach Native communities such as the Pine Ridge Reservation through
+    initiatives like Rolling Rez Arts.
+  sources:
+  - who
+  - fellows-2019
+  - national-endowment-for-the-arts
+possible_roles:
+- art
+- advice
+- distribution
+contacts:
+- kind: web-page
+  value: https://www.firstpeoplesfund.org/contact
+  label: Contact page
+  sources:
+  - contact
+- kind: telephone
+  value: (605) 348-0324
+  label: General office
+  sources:
+  - contact
+- kind: mailing-address
+  value: 706 West Boulevard, Rapid City, SD 57701
+  label: General office
+  sources:
+  - contact
+sources:
+- id: who
+  title: Who We Are - First Peoples Fund
+  publisher: First Peoples Fund
+  link: https://www.firstpeoplesfund.org/about/who-we-are
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: About page
+- id: contact
+  title: Contact - First Peoples Fund
+  publisher: First Peoples Fund
+  link: https://www.firstpeoplesfund.org/contact
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Contact page
+- id: fellows-2019
+  title: Welcoming the 2019 Artist Fellows - First Peoples Fund Blog
+  publisher: First Peoples Fund
+  link: https://www.firstpeoplesfund.org/post/welcoming-the-2019-artist-fellows
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Artist fellowship program
+- id: national-endowment-for-the-arts
+  title: 'Weaving the Sweetgrass Braid: Rolling Rez Arts at Pine Ridge'
+  publisher: National Endowment for the Arts
+  link: https://www.arts.gov/stories/blog/2017/weaving-sweetgrass-braid-rolling-rez-arts-pine-ridge
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Rolling Rez Arts program at Pine Ridge
+checked: '2026-11-21'

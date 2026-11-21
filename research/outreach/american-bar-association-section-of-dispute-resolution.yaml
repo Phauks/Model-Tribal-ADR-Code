@@ -1,0 +1,60 @@
+id: american-bar-association-section-of-dispute-resolution
+name: American Bar Association Section of Dispute Resolution
+also_known_as:
+- ABA Section of Dispute Resolution
+- ABA DR Section
+category: bar-association
+location:
+  city: Washington
+  state: DC
+scope: national
+relevance:
+  text: The Section calls itself the largest dispute resolution community in the world; its members include
+    mediators, arbitrators, ombuds, judges and attorney advocates. It runs practice committees, conferences,
+    webinars and publications, including a magazine and podcast.
+  sources:
+  - about
+  - committees
+possible_roles:
+- event-or-presentation
+- distribution
+- reviewer
+contacts:
+- kind: web-page
+  value: https://www.americanbar.org/groups/dispute_resolution/about
+  label: Section About page
+  sources:
+  - about
+- kind: web-page
+  value: https://www.americanbar.org/groups/dispute_resolution/about/committees
+  label: Committees page
+  sources:
+  - committees
+sources:
+- id: about
+  title: About the Section of Dispute Resolution
+  publisher: American Bar Association
+  link: https://www.americanbar.org/groups/dispute_resolution/about
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Mission, membership, committees, events, publications.
+- id: committees
+  title: Committees
+  publisher: American Bar Association Section of Dispute Resolution
+  link: https://www.americanbar.org/groups/dispute_resolution/about/committees
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: The Section has nine practice-specific committees (names not shown in fetched text).
+- id: tribal-arbitration
+  title: Eliminating Barriers to Use of Arbitration by Tribal Government, 25th Annual Dispute Resolution
+    Spring Conference
+  publisher: Foster Garvey (law firm)
+  link: https://www.foster.com/wp-content/uploads/pdf-exports/eliminating-barriers-to-use-of-arbitration-by-tribal-government-25th-annual-dispute-resolution-spring-conference-4253.pdf
+  accessed: '2026-11-21'
+  verification: search-result-only
+  supports: A tribal-government arbitration topic at the Section's 25th spring conference (title only).
+checked: '2026-11-21'
+notes: No committee on tribal or Indigenous dispute resolution was found, but the committee list did not
+  fully load.
+notes_sources:
+- tribal-arbitration

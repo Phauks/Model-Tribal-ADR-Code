@@ -1,0 +1,54 @@
+id: inter-tribal-court-of-appeals-of-nevada
+name: Inter-Tribal Court of Appeals of Nevada
+also_known_as:
+- Inter-Tribal Court of Appeals for Nevada
+- ITCA
+part_of: inter-tribal-council-of-nevada
+category: court
+location:
+  city: Reno
+  state: NV
+scope: state
+relevance:
+  text: Many Nevada tribes send appeals to this shared appellate court instead of keeping their own; Duckwater
+    Shoshone and Fallon Paiute have their own appellate courts. Nevada Legal Services counts it alongside
+    Nevada's 19 tribal courts.
+  sources:
+  - nevada-lawyer-tribal-courts-article
+  - nevada-lawyer-indian-law-project-article
+possible_roles:
+- reviewer
+- consultation
+- sources-and-data
+contacts:
+- kind: mailing-address
+  value: c/o Inter-Tribal Council of Nevada, 10 State Street, Reno, NV 89501
+  label: ITCN offices (where the court is reported to be housed)
+  sources:
+  - nevada-lawyer-tribal-courts-article
+  - inter-tribal-council-home
+sources:
+- id: nevada-lawyer-tribal-courts-article
+  title: Nevada's Tribal Courts (Nevada Lawyer, Feb. 2024)
+  publisher: State Bar of Nevada
+  link: https://nvbar.org/wp-content/uploads/NevadaLawyer_February2024_NevadasTribalCourts.pdf
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Court's role and location at ITCN.
+- id: nevada-lawyer-indian-law-project-article
+  title: Serving Nevada's Tribal Communities (Nevada Lawyer, Feb. 2024)
+  publisher: State Bar of Nevada
+  link: https://nvbar.org/wp-content/uploads/NevadaLawyer_February2024_IndianLawProject.pdf
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Nevada has 19 tribal courts and the Inter-Tribal Court of Appeals of Nevada.
+- id: inter-tribal-council-home
+  title: Inter-Tribal Council of Nevada
+  publisher: ITCN
+  link: https://itcn.org/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: ITCN address.
+checked: '2026-11-21'
+notes: Has no website. Its current operation is not confirmed from a primary source; both sources are
+  February 2024 bar magazine articles, which spell the name both 'of Nevada' and 'for Nevada'.

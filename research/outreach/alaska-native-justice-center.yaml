@@ -1,0 +1,80 @@
+id: alaska-native-justice-center
+name: Alaska Native Justice Center
+also_known_as:
+- ANJC
+category: tribal-justice-organization
+location:
+  city: Anchorage
+  state: AK
+scope: regional
+relevance:
+  text: The Alaska Native Justice Center's Tribal Justice Support service works statewide with federally
+    recognized Alaska Tribes to build and strengthen their justice systems, including training for tribal
+    justice staff. It develops Alaska-specific model codes, model forms and agreements, a tribal court
+    implementation handbook, and a tribal court resource database. Its page notes Alaska tribal approaches
+    such as Kake Circle Peacemaking and that Tribes may use councils, Elders or inter-tribal courts instead
+    of formal courts.
+  sources:
+  - tribal-justice
+possible_roles:
+- reviewer
+- consultation
+- sources-and-data
+- co-author
+contacts:
+- kind: email
+  value: anjcinfo@anjc.net
+  label: General inbox
+  sources:
+  - contact
+  - tribal-justice
+- kind: email
+  value: tribaljustice@anjc.net
+  label: Tribal Justice Support shared inbox
+  sources:
+  - tribal-justice
+- kind: telephone
+  value: (907) 793-3550
+  label: Main line as listed on ANJC site
+  sources:
+  - contact
+- kind: mailing-address
+  value: 3600 San Jeronimo Dr, 4th floor, Anchorage, AK 99508
+  label: Office
+  sources:
+  - contact
+sources:
+- id: contact
+  title: Contact
+  publisher: Alaska Native Justice Center
+  link: https://anjc.org/contact/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Address, phone, anjcinfo@anjc.net, training request forms
+- id: tribal-justice
+  title: Tribal Justice Support
+  publisher: Alaska Native Justice Center
+  link: https://anjc.org/services/tribal-justice-support/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Service description, model codes, Alaska examples, tribaljustice@anjc.net
+- id: cook-inlet-tribal-council-transition
+  title: 'Strengthening Support for Survivors: ANJC Victim Services Joins CITC'
+  publisher: Cook Inlet Tribal Council
+  link: https://citci.org/strengthening-support-for-survivors-anjc-victim-services-joins-citc/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: ANJC victim services moved to CITC effective October 11, 2025; other ANJC legal services continue
+- id: subsidiary
+  title: One year after becoming a CITC subsidiary, ANJC looks back on its growth
+  publisher: CIRI
+  link: https://ciri.com/?p=33397
+  accessed: '2026-11-21'
+  verification: search-result-only
+  supports: ANJC is a subsidiary of Cook Inlet Tribal Council
+checked: '2026-11-21'
+notes: Its victim services moved to Cook Inlet Tribal Council on October 11, 2025; other legal services
+  continue. Telephone numbers differ between sources.
+notes_sources:
+- cook-inlet-tribal-council-transition
+- subsidiary
