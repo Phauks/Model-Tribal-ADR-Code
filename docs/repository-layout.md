@@ -21,6 +21,14 @@ and makes each edition reproducible
 │   └── CHANGELOG.md
 ├── site/                    Website code (version + changelog)          MIT
 ├── pdf/                     Print build for Lulu (version + changelog)  MIT
+│   ├── book.yaml            Book size, paper, title page details        MIT
+│   ├── book-sizes.yaml      Every eligible size and its layout rules    MIT
+│   ├── pipeline/            Content to Typst, citations, page geometry  MIT
+│   ├── typst/               The page template                           MIT
+│   ├── styles/              Citation style and locale                   CC BY-SA
+│   ├── fonts/               Embedded fonts                              OFL
+│   ├── tools/               PDF checks against Lulu's rules             MIT
+│   └── tests/               Tests and the typesetting specimen          MIT
 ├── schemas/                 JSON Schemas for every record type          MIT
 ├── scripts/                 Checks run on every pull request            MIT
 │   └── examples/            One valid example per schema

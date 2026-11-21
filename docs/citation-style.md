@@ -39,14 +39,48 @@ updates before the 1st Edition.[^indigo]
 
 ## Style file
 
+The print build uses `pdf/styles/project-law-review.csl`, a modified copy of
+`bluebook-law-review.csl` from the official CSL styles repository
+(CC BY-SA 3.0).[^bluebook-csl] The changes bring its statute, *id.* and
+*supra* forms in line with the *Indigo Book* (R6.2.2, R6.2.3, R16, R17,
+R18.4)[^indigo] and are listed, with the upstream file's date and checksum, in
+[pdf/styles/README.md](../pdf/styles/README.md). The website and the ebook will
+use the same file. The modified copy stays under CC BY-SA 3.0, separate from
+the project's MIT-licensed code (project analysis).
+
 | Option | Status | License | Notes |
 | --- | --- | --- | --- |
-| Juris-M CSL-M "IndigoBook (for law reviews)" | Listed by Juris-M[^cslm] | Check the file's own license before use | First choice: matches the chosen rules and supports legal material in CSL-M mode |
-| `bluebook-law-review.csl` from the official CSL styles repository | Exists ("The Bluebook legal citation style for law reviews"), updated 2025-08-22[^bluebook-csl] | CC BY-SA 3.0[^bluebook-csl] | Fallback; Bluebook-compatible output |
+| `project-law-review.csl` (modified `bluebook-law-review.csl`) | In use since 2026-11-21 | CC BY-SA 3.0[^bluebook-csl] | Fixes statute pinpoints and short forms; tested in `pdf/tests/citations.test.mjs` |
+| Juris-M CSL-M "IndigoBook (for law reviews)" | Listed by Juris-M,[^cslm] not yet tested | Check the file's own license before use | Still worth testing: it targets the chosen rules, but needs citeproc-js in CSL-M mode |
 
-Whichever file is chosen lives at `pdf/styles/` (shared with the website build)
-with its own license notice. A modified copy of a CC BY-SA style must stay under
-CC BY-SA, separate from the project's MIT-licensed code (project analysis).
+### Recording a statute
+
+A section of a code needs the code's abbreviation and title number, so that it
+prints as `25 U.S.C. § 5130(2)`:
+
+```yaml
+citation:
+  type: legislation
+  container-title: U.S.C.
+  volume: "25"
+  section: "5130"
+```
+
+An act cited by name has no `section`, and prints as
+`Unif. Mediation Act § 4 (Unif. L. Comm'n 2001)`:
+
+```yaml
+citation:
+  type: legislation
+  title: Uniform Mediation Act
+  title-short: Unif. Mediation Act
+  authority: Unif. L. Comm'n
+  issued:
+    date-parts: [[2001]]
+```
+
+In the text, cite a code section's subdivision as `[@key, (2)]` and an act's
+section as `[@key, § 4]`.
 
 ## Rules the project adds
 
@@ -65,10 +99,13 @@ CC BY-SA, separate from the project's MIT-licensed code (project analysis).
 ## Open tasks
 
 - Obtain and test the CSL-M IndigoBook style with citeproc-js on sample sources.
-- Fix statute citations: in the ebook test build, `bluebook-law-review.csl`
-  dropped a "§ 4" pinpoint from a statute and printed nothing for its short
-  form (citeproc-js reported "reference with no printed form") (measured,
-  2026-11-21).
+- Update the U.S. Code source records (`usc-*.yaml`) to `container-title:
+  U.S.C.` with the title number in `volume`; they now print as "United States
+  Code § 5130" (measured in the print build, 2026-11-21).
+- Done 2026-11-21: statute citations. `bluebook-law-review.csl` dropped a "§ 4"
+  pinpoint from a statute and printed nothing for its short form (citeproc-js
+  reported "reference with no printed form"); `project-law-review.csl` fixes
+  both.
 - Confirm how the *Indigo Book* treats tribal codes, tribal court decisions and
   web-published tribal materials.
 - Decide the website's footnote display (hover card, side note or end of page).
