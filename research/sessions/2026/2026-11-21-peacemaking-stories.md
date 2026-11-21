@@ -81,7 +81,6 @@ sources_added:
 - tribal-college-journal-1996-making-peace-navajo-way
 - colville-peacemaker-circle-page
 - wilton-rancheria-tribal-court-page
-- ho-chunk-nation-traditional-court-page
 - yurok-tribe-tribal-court-page
 sources_updated:
 - navajo-nation-judicial-branch-courts-and-peacemaking
@@ -89,6 +88,7 @@ sources_updated:
 - cdatribe-nsn-home
 - nielsen-zion-2005-navajo-nation-peacemaking
 - ltbb-judicial-branch-peacemaking-page
+- ho-chunk-traditional-court-page
 limits: >-
   This is a first sweep of what nations publish on the open web. Many nations
   keep their stories off the web on purpose, so "none found" says nothing about
@@ -109,7 +109,7 @@ limits: >-
   `schemas/story.schema.json`), with the credit, permission and access shapes
   agreed with the contributor intake forms thread.
 - Twenty story records in `content/stories/`, from eighteen nations and the
-  Native Hawaiian community, and thirty-five new source records.
+  Native Hawaiian community, and thirty-four new source records.
 - The catalog and anthology shortlist in
   [research/analyses/2026-11-21-peacemaking-stories.md](../../analyses/2026-11-21-peacemaking-stories.md).
 - Nine library and database pulls, added as section 10 of the project's single
