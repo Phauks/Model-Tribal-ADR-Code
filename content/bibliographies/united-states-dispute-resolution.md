@@ -566,18 +566,9 @@ Sources whose records say to pull them on Westlaw, with each record's note on
 what to pull.
 
 - [@sander-1976-varieties-of-dispute-processing]: Not opened directly. The citation comes from Brazil (2002) n.1, which was opened: 'Frank E. A. Sander, Varieties of Dispute Processing, Address at the National Conference on the Causes of Popular Dissatisfaction with the Administration of Justice (Apr. 7-9, 1976), in 70 F.R.D. 79, 111-34 (1976).' Pull 70 F.R.D. 111 on Westlaw (F.R.D. reporter) or HeinOnline.
-- [@fiss-1984-against-settlement]: Free PDF on Yale Law School's open repository (OpenYLS).
 - [@cole-et-al-mediation-law-policy-practice-2025]: Westlaw: database 'MEDIATION' (per the Georgetown Law Library treatise finder link). Cite the current annual edition.
 - [@domke-on-commercial-arbitration]: Westlaw: database 'DCMLARB' (per the Georgetown Law Library treatise finder link).
 - [@ali-2023-restatement-us-law-international-commercial-investor-state-arbitration]: ali.org returned Access Denied to automated access. Confirm the official publication year and Westlaw availability on Westlaw (Restatements database).
-- [@journal-ohio-state-journal-on-dispute-resolution]: Archive: kb.osu.edu (OSU Knowledge Bank). ISSN 1046-4344 (print), per the KB record for Brazil (2002).
-- [@journal-harvard-negotiation-law-review]: journals.law.harvard.edu returned a Cloudflare block to automated access, so the description was read from pon.harvard.edu/publications/.
-- [@journal-cardozo-journal-of-conflict-resolution]: Archive: larc.cardozo.yu.edu/cjcr.
-- [@journal-pepperdine-dispute-resolution-law-journal]: Open access on Digital Commons.
-- [@journal-of-dispute-resolution-missouri]: Open access on scholarship.law.missouri.edu/jdr.
-- [@journal-negotiation-journal]: Current distribution platform (publisher partner) not verified here; pull back issues through a library database.
-- [@journal-conflict-resolution-quarterly]: Wiley Online Library blocked automated access; the URL is from search results. Facts come from the Wildy & Sons listing (wildy.com, ISSN 1536-5581 print), which may be out of date (it names Susan S. Raines as editor and a 2014 'latest release').
-- [@journal-aba-dispute-resolution-magazine]: americanbar.org pages could be read only in part through a summarizing tool. Issue-level volume and number not verified.
 - [@aba-model-rule-2-4]: Read through a summarizing tool (curl was blocked by Cloudflare); the quotes are the short excerpts it returned. Check the comments, and Rule 1.12, against the ABA page or a state's adopted version.
 - [@usc-9-2]: Free on LII and uscode.house.gov. For annotations pull 9 U.S.C.A. § 2 on Westlaw.
 - [@usc-9-3-4]: Free on LII (9 U.S.C. §§ 3, 4). Pull 9 U.S.C.A. §§ 3–4 on Westlaw for annotations.
@@ -613,20 +604,16 @@ what to pull.
 - [@nmi-pac-united-v-guam-concrete-2002-mp-15]: Official CNMI Law Revision Commission PDF (cnmilaw.org redirects to cnmilaw.gov). On Westlaw, check for any CNMI arbitration statute enacted after 2002.
 - [@asca-43-0302-certificate-irreconcilable-dispute]: The statute's own page was not opened. Its text was read as reproduced in the Hunkin opinion on PacLII. Pull the current A.S.C.A. § 43.0302 from the American Samoa Bar Association Code Annotated (asbar.org) or PacLII (paclii.org/as/legis/consol_act) and check for amendments. A Samoa News report (node/128315) on a Senate bill to expand the Office of Samoan Affairs' role was seen only in search results.
 - [@as-hunkin-v-galeai-2004]: PacLII [2004] ASLawRp 30. Get the internal page pinpoints from the A.S.R. volume or Westlaw.
-- [@as-in-re-matai-title-taliaaueafe-1999]: American Samoa Bar Association case-law page.
 - [@teichert-1999-resisting-temptations-samoan-custom]: Read only as a vLex preview; the issue listing for vol. 3, no. 1 (Jan. 1999) confirms it. Gonzaga J. Int'l L. was an online journal, so pinpoints may be by paragraph. Pull the full text on Westlaw or HeinOnline (cite as 3 Gonz. J. Int'l L. ___ (1999)).
 - [@usc-28-1738]: Pull 28 U.S.C.A. § 1738 with notes of decisions on tribal judgments.
 - [@usc-25-1911]: Official text also at uscode.house.gov and govinfo (USCODE-2023-title25 ... sec1911). Annotated: 25 U.S.C.A. § 1911 on Westlaw.
 - [@usc-18-2265]: Pull 18 U.S.C.A. § 2265 on Westlaw for amendment history (VAWA 2000, 2005, 2013, 2022).
 - [@usc-28-1738b]: Enacted by Pub. L. 103-383 (1994); see govinfo STATUTE-108 Pg4063. Pull 28 U.S.C.A. § 1738B on Westlaw for annotations.
-- [@hilton-v-guyot-1895]: Official U.S. Reports PDF at govinfo (USREPORTS-159-113).
 - [@wilson-v-marchington-1997]: Full opinion text read from the Caselaw Access Project (static.case.law/f3d/127/cases/0805-01.json); leagle shows the opening only. Page pinpoints were not available in the open text, so pull 127 F.3d 805 on Westlaw for star paging.
 - [@ali-2022-restatement-law-of-american-indians]: ali.org blocked automated access. Pull the Restatement of the Law of American Indians on Westlaw (Restatements database) and search 'tribal court judgment' to find the recognition section; do not rely on any section number from memory.
 - [@jones-1998-welcoming-tribal-courts-judicial-fraternity]: Repository record opened; PDF (viewcontent.cgi?article=1950&context=wmlr) blocked to automated download. Pull on HeinOnline for the starting page.
-- [@california-tribal-court-civil-money-judgment-act-sb-406-2014]: Current text: Cal. Civ. Proc. Code §§ 1730-1742 on leginfo.legislature.ca.gov or Westlaw (check § 1742 sunset history).
 - [@c-and-l-enterprises-v-citizen-band-potawatomi-2001]: Opinion text also at https://www.law.cornell.edu/supremecourt/text/532/411. Pull C & L Enters., Inc. v. Citizen Band Potawatomi Indian Tribe of Okla., 532 U.S. 411 (2001) on Westlaw for pinpoints; KeyCite for later tribal-arbitration-waiver cases.
 - [@usc-25-2710]: Also at uscode.house.gov and NIGC's IGRA PDF. Pull 25 U.S.C.A. § 2710 on Westlaw for post-Seminole case law on (d)(7).
-- [@seminole-tribe-v-florida-1996]: Official U.S. Reports PDF at govinfo USREPORTS-517-44.
 - [@usc-25-5329-c-model-agreement-disputes]: Free on LII. Pull 25 U.S.C.A. § 5329 on Westlaw (formerly 25 U.S.C. § 450l).
 - [@usc-25-5331]: Free on LII. Pull 25 U.S.C.A. § 5331 (formerly § 450m-1) on Westlaw with annotations.
 - [@cfr-25-900-217]: The eCFR text prints "108(1)(b)(12)", apparently for 108(l); quote exactly as printed. Pull 25 C.F.R. § 900.217 on Westlaw to confirm.
