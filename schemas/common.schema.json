@@ -9,12 +9,12 @@
       "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
       "description": "Lowercase words joined by hyphens. Stable once published."
     },
-    "isoDate": {
+    "calendarDate": {
       "type": "string",
       "format": "date",
       "description": "Calendar date, YYYY-MM-DD."
     },
-    "url": {
+    "link": {
       "type": "string",
       "format": "uri",
       "pattern": "^https?://"
@@ -24,7 +24,7 @@
       "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)$",
       "description": "Semantic version of the content track."
     },
-    "usState": {
+    "stateCode": {
       "type": "string",
       "pattern": "^[A-Z]{2}$",
       "description": "Two-letter USPS code for a state, DC or territory (e.g. NV, AK, HI, PR, GU, AS, MP, VI)."
@@ -60,7 +60,7 @@
           "uniqueItems": true,
           "description": "Labels applied by the community itself (e.g. 'TK Attribution'). Copied from the Local Contexts Hub; never applied by this project."
         },
-        "local_contexts_project_url": { "$ref": "#/$defs/url" },
+        "local_contexts_project_link": { "$ref": "#/$defs/link" },
         "restricted": {
           "type": "boolean",
           "description": "True means never publish, export, cache offline, or serve through any API."

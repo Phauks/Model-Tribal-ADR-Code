@@ -39,7 +39,7 @@
         "additionalProperties": false,
         "required": ["date", "event"],
         "properties": {
-          "date": { "$ref": "common.schema.json#/$defs/isoDate" },
+          "date": { "$ref": "common.schema.json#/$defs/calendarDate" },
           "event": { "type": "string", "enum": ["assessed", "requested", "followed-up", "granted", "denied", "revoked", "note"] },
           "with": { "type": "string", "description": "Role or office contacted, e.g. 'Tribal Court Administrator'." },
           "note": { "type": "string" },

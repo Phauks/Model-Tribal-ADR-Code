@@ -31,9 +31,9 @@
         "required": ["type", "source"],
         "properties": {
           "type": { "type": "string", "enum": ["federal", "state", "unrecognized", "petitioning"] },
-          "state": { "$ref": "common.schema.json#/$defs/usState", "description": "For state recognition: which state." },
+          "state": { "$ref": "common.schema.json#/$defs/stateCode", "description": "For state recognition: which state." },
           "source": { "$ref": "common.schema.json#/$defs/slug", "description": "Source key of the recognizing authority (e.g. the BIA list notice)." },
-          "since": { "$ref": "common.schema.json#/$defs/isoDate" }
+          "since": { "$ref": "common.schema.json#/$defs/calendarDate" }
         }
       }
     },
@@ -46,7 +46,7 @@
         "additionalProperties": false,
         "required": ["state", "source"],
         "properties": {
-          "state": { "$ref": "common.schema.json#/$defs/usState" },
+          "state": { "$ref": "common.schema.json#/$defs/stateCode" },
           "presence": { "type": "string", "enum": ["land", "government-office", "service-area", "other"] },
           "source": { "$ref": "common.schema.json#/$defs/slug" }
         }
@@ -77,7 +77,7 @@
       "required": ["status", "last_verified"],
       "properties": {
         "status": { "$ref": "common.schema.json#/$defs/reviewStatus" },
-        "last_verified": { "$ref": "common.schema.json#/$defs/isoDate" },
+        "last_verified": { "$ref": "common.schema.json#/$defs/calendarDate" },
         "note": { "type": "string" }
       }
     },

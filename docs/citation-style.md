@@ -21,7 +21,7 @@ updates before the 1st Edition.[^indigo]
 ## How citations work
 
 1. **One record per source.** Each source has a file in `content/sources/`
-   whose `csl` field holds its citation data in
+   whose `citation` field holds its citation data in
    [Citation Style Language (CSL) JSON](https://citationstyles.org/). See
    [data-model.md](data-model.md).
 2. **Text cites keys, not formatted citations.** Authors write
