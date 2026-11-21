@@ -1,0 +1,51 @@
+id: washington-tribal-state-court-consortium
+name: Tribal State Court Consortium
+also_known_as:
+- TSCC
+- Washington Tribal State Court Consortium
+category: state-agency
+location:
+  state: WA
+scope: regional
+relevance:
+  text: Washington's Tribal State Court Consortium is a joint effort of state and tribal court judicial
+    officers that provides a forum to discuss jurisdictional issues, gaps in services and lasting partnerships.
+    In 2019 it drafted amendments to Superior Court Civil Rule 82.5 to improve communication between state
+    and tribal judges and hired dedicated staff. It publishes a Washington State tribal court directory
+    and newsletters, and held regional and annual meetings into 2023.
+  sources:
+  - annual-2019
+  - updates-2023
+possible_roles:
+- reviewer
+- distribution
+contacts:
+- kind: web-page
+  value: https://www.courts.wa.gov/subsite/tscc/docs/TSCC%20WA%20State%20Tribal%20Court%20Directory.pdf
+  label: TSCC tribal court directory
+  sources:
+  - directory
+sources:
+- id: annual-2019
+  title: 2019 TSCC Annual Report
+  publisher: Washington Courts
+  link: https://www.courts.wa.gov/subsite/tscc/docs/2019%20TSCC%20Annual%20Report.pdf
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Purpose, CR 82.5 amendments, staffing
+- id: updates-2023
+  title: TSCC Updates - November 2023
+  publisher: Washington Courts
+  link: https://www.courts.wa.gov/subsite/tscc/docs/TSCC%20Updates%20-%20November%202023.pdf
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: 2023 activities and directory update
+- id: directory
+  title: TSCC WA State Tribal Court Directory
+  publisher: Washington Courts
+  link: https://www.courts.wa.gov/subsite/tscc/docs/TSCC%20WA%20State%20Tribal%20Court%20Directory.pdf
+  accessed: '2026-11-21'
+  verification: search-result-only
+  supports: Directory exists
+checked: '2026-11-21'
+notes: The newest activity confirmed is a November 2023 newsletter; its web pages blocked automated reading.

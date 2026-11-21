@@ -1,0 +1,53 @@
+id: wiener-rogers-law-library
+name: Wiener-Rogers Law Library
+also_known_as:
+- UNLV Law Library
+category: law-library
+location:
+  city: Las Vegas
+  state: NV
+scope: state
+relevance:
+  text: The library publishes a Federal Indian Law & Tribal Law Research guide (updated February 2026)
+    that separates federal Indian law from tribal law and covers primary sources, secondary sources, and
+    individual pages for 20 Nevada tribal nations plus Nevada tribal organizations. Its reference desk
+    takes research questions by email and phone.
+  sources:
+  - guide
+  - reference
+possible_roles:
+- sources-and-data
+- advice
+- reviewer
+contacts:
+- kind: email
+  value: lawlibraryrefdesk@unlv.edu
+  label: Reference desk
+  sources:
+  - reference
+- kind: telephone
+  value: (702) 895-2420
+  label: Reference desk
+  sources:
+  - reference
+- kind: web-page
+  value: https://law-unlv.libguides.com/federal-indian-tribal-law/welcome
+  label: Federal Indian Law & Tribal Law Research guide
+  sources:
+  - guide
+sources:
+- id: guide
+  title: 'Federal Indian Law & Tribal Law Research: Welcome'
+  publisher: Wiener-Rogers Law Library
+  link: https://law-unlv.libguides.com/federal-indian-tribal-law/welcome
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Guide scope, authors, Feb. 13, 2026 update, 20 Nevada tribal nation pages.
+- id: reference
+  title: Contact a Reference Librarian
+  publisher: Boyd School of Law
+  link: https://law.unlv.edu/law-library/contact-reference-librarian
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Reference desk email and phone.
+checked: '2026-11-21'

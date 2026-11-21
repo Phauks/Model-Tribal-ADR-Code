@@ -1,0 +1,54 @@
+id: stewart-indian-school-cultural-center-and-museum
+name: Stewart Indian School Cultural Center & Museum
+also_known_as:
+- SISCCM
+part_of: nevada-department-of-native-american-affairs
+category: museum
+location:
+  city: Carson City
+  state: NV
+scope: state
+relevance:
+  text: The museum tells the history of the Stewart Indian Boarding School (1890-1980) and the effects
+    of forced assimilation, and it hosts the Great Basin Native Artists Gallery featuring Native artists
+    from Nevada and the Great Basin. Its curator manages archival documents, photographs and artifacts
+    about Stewart's history.
+  sources:
+  - museum
+  - staff
+possible_roles:
+- art
+- sources-and-data
+- consultation
+contacts:
+- kind: telephone
+  value: 775-687-7608
+  label: Museum
+  sources:
+  - museum
+- kind: mailing-address
+  value: '5500 Snyder Ave, Building #3, Carson City, NV 89701'
+  label: Museum location
+  sources:
+  - museum
+- kind: contact-form
+  value: https://dnaa.nv.gov/contact/
+  label: DNAA contact form
+  sources:
+  - museum
+sources:
+- id: museum
+  title: Stewart Indian School Cultural Center & Museum
+  publisher: DNAA
+  link: https://dnaa.nv.gov/?p=307
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Mission, gallery, address, phone, hours.
+- id: staff
+  title: Staff & Commissioners
+  publisher: DNAA
+  link: https://dnaa.nv.gov/staff-commissioners/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Museum director and curator.
+checked: '2026-11-21'

@@ -1,0 +1,41 @@
+key: bia-regions-2026
+kind: dataset
+citation:
+  type: dataset
+  title: BIA Regions
+  author:
+    - literal: U.S. Department of the Interior, Bureau of Indian Affairs
+  publisher: Bureau of Indian Affairs, Office of Trust Services, Division of Land Titles and Records, Branch of Geospatial Support
+  medium: ArcGIS feature service
+  URL: https://biamaps.geoplatform.gov/server/rest/services/BOGS/BIA_Regions/FeatureServer/0
+  accessed:
+    date-parts: [[2026, 11, 21]]
+original_link: https://biamaps.geoplatform.gov/server/rest/services/BOGS/BIA_Regions/FeatureServer/0
+retrieved: 2026-11-21
+archives: []
+history:
+  status: live
+  last_checked: 2026-11-21
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: >-
+    Boundary data published by a federal agency (17 U.S.C. § 105). The
+    service's license note disclaims any warranty of accuracy and says the
+    data may change. A simplified copy of the outlines is kept in
+    site/geography/ to draw the website's map.
+  redistribution: true
+found_in:
+  - 2026-11-21-bureau-of-indian-affairs-regions-map
+notes: >-
+  The Bureau of Indian Affairs' own boundaries of its twelve regions (Alaska,
+  Eastern, Eastern Oklahoma, Great Plains, Midwest, Navajo, Northwest,
+  Pacific, Rocky Mountain, Southern Plains, Southwest, Western), listed in the
+  data.gov catalog as "BIA Regions" (catalog.data.gov/dataset/bia-regions).
+  The layer's description says each regional office "is responsible for all
+  Bureau activities within a defined geographical area except education, law
+  enforcement and functions of an administrative nature." The regions are
+  administrative areas of a federal agency, not the lands of any nation; the
+  Navajo Region's outline follows the Navajo Nation's land as the Bureau draws
+  it. Queried in full on 2026-11-21 (12 polygons, NAD83, returned as
+  longitude and latitude).

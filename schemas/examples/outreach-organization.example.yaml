@@ -1,0 +1,38 @@
+# Example outreach record (fictitious organization). File: research/outreach/example-tribal-judges-association.yaml
+id: example-tribal-judges-association
+name: Example Tribal Judges Association
+also_known_as: [ETJA]
+category: tribal-justice-organization
+location:
+  city: Albuquerque
+  state: NM
+scope: national
+relevance:
+  text: A membership association of tribal court judges that holds an annual conference and publishes a bench book.
+  sources: [about-page]
+possible_roles: [reviewer, event-or-presentation]
+contacts:
+  - kind: contact-form
+    value: https://example.org/contact
+    label: General office
+    sources: [contact-page]
+  - kind: telephone
+    value: (505) 555-0100
+    label: General office
+    sources: [contact-page]
+sources:
+  - id: about-page
+    title: About Us
+    publisher: Example Tribal Judges Association
+    link: https://example.org/about
+    accessed: 2026-11-21
+    verification: page-read
+    supports: Mission, conference and bench book.
+  - id: contact-page
+    title: Contact
+    publisher: Example Tribal Judges Association
+    link: https://example.org/contact
+    accessed: 2026-11-21
+    verification: page-read
+    supports: Contact form and telephone number.
+checked: 2026-11-21

@@ -1,0 +1,52 @@
+id: indigenousaf
+name: IndigenousAF (IAF Inc.)
+also_known_as:
+- IAF Inc.
+- Indigenous Allies and Friends
+- Nuwu Art Gallery and Community Center
+category: native-arts-organization
+location:
+  city: Las Vegas
+  state: NV
+scope: local
+relevance:
+  text: IndigenousAF is a majority Native-led arts and education nonprofit in Southern Nevada that runs
+    free public art projects, exhibitions and workshops and supports dozens of Native artists. It operates
+    the Nuwu Art Gallery and Community Center and in late 2025 announced a second space, Wai, in the Las
+    Vegas Arts District to show Native artisans year-round.
+  sources:
+  - indigenousaf-about
+  - indigenousaf-home
+  - knpr-news
+possible_roles:
+- art
+- consultation
+contacts:
+- kind: web-page
+  value: https://www.indigenousaf.org/
+  label: Website
+  sources:
+  - indigenousaf-home
+sources:
+- id: indigenousaf-home
+  title: IndigenousAF
+  publisher: IAF Inc.
+  link: https://www.indigenousaf.org/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Mission and store supporting Native artists.
+- id: indigenousaf-about
+  title: About IAF
+  publisher: IAF Inc.
+  link: https://www.indigenousaf.org/pages/about
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Founding, Native-led board, programs.
+- id: knpr-news
+  title: Nonprofit IndigenousAF expanding to Arts District
+  publisher: KNPR
+  link: https://knpr.org/local/2025-11-25/nonprofit-indigenousaf-expanding-to-arts-district
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Nuwu Art Gallery; new Wai space.
+checked: '2026-11-21'

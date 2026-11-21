@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/outreach-plan.schema.json",
+  "title": "Outreach plan (private)",
+  "description": "The private half of the outreach list: named people, suggested asks, priority and contact history, keyed to the public records in research/outreach/. The plan file itself is never committed to this repository (decision record 0012); only this schema is.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["checked", "entries"],
+  "properties": {
+    "checked": { "$ref": "common.schema.json#/$defs/calendarDate" },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["organization", "priority", "status"],
+        "properties": {
+          "organization": {
+            "$ref": "common.schema.json#/$defs/slug",
+            "description": "Id of a record in research/outreach/."
+          },
+          "priority": {
+            "type": "integer",
+            "enum": [1, 2, 3],
+            "description": "1: approach first. 2: approach once drafts exist. 3: later or optional."
+          },
+          "priority_reason": { "type": "string" },
+          "suggested_ask": { "type": "string", "description": "A specific, modest first ask." },
+          "people": {
+            "type": "array",
+            "description": "People named in an official role on an official page of the organization. Only name, title and that page; never a direct email or telephone.",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["name", "title", "profile_link"],
+              "properties": {
+                "name": { "type": "string" },
+                "title": { "type": "string" },
+                "profile_link": { "$ref": "common.schema.json#/$defs/link" },
+                "why": { "type": "string" },
+                "relationship": { "type": "string", "enum": ["advisor", "known", "not-yet-contacted"], "description": "advisor: already advising the project." }
+              }
+            }
+          },
+          "status": {
+            "type": "string",
+            "enum": ["not-contacted", "contacted", "replied", "agreed", "declined", "on-hold"]
+          },
+          "log": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["date", "summary"],
+              "properties": {
+                "date": { "$ref": "common.schema.json#/$defs/calendarDate" },
+                "channel": { "type": "string", "enum": ["email", "contact-form", "telephone", "letter", "meeting", "event", "other"] },
+                "summary": { "type": "string" }
+              }
+            }
+          },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}

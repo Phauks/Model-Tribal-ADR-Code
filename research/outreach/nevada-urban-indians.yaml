@@ -1,0 +1,58 @@
+id: nevada-urban-indians
+name: Nevada Urban Indians, Inc.
+also_known_as:
+- NUI
+category: intertribal-organization
+location:
+  city: Reno
+  state: NV
+scope: local
+relevance:
+  text: Nevada Urban Indians provides health, mental health, victim services and community programs for
+    American Indians and Alaska Natives in Reno and Carson City. The Boyd law library's Nevada tribal
+    resource guide lists it.
+  sources:
+  - nevada-urban-indians-home
+  - nevada-resources
+possible_roles:
+- consultation
+- distribution
+contacts:
+- kind: telephone
+  value: 775-788-7600
+  label: Reno office
+  sources:
+  - nevada-urban-indians-home
+- kind: mailing-address
+  value: 9480 Gateway Dr. STE 100, Reno, NV 89521
+  label: Reno office
+  sources:
+  - nevada-urban-indians-home
+- kind: web-page
+  value: https://www.nevadaurbanindians.org/contact
+  label: Contact page
+  sources:
+  - nevada-urban-indians-contact
+sources:
+- id: nevada-urban-indians-home
+  title: Nevada Urban Indians
+  publisher: Nevada Urban Indians, Inc.
+  link: https://www.nevadaurbanindians.org
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Mission, services, offices.
+- id: nevada-urban-indians-contact
+  title: Contact
+  publisher: Nevada Urban Indians, Inc.
+  link: https://www.nevadaurbanindians.org/contact
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Phones.
+- id: nevada-resources
+  title: 'Federal Indian Law & Tribal Law Research: Nevada-specific resources'
+  publisher: Wiener-Rogers Law Library
+  link: https://law-unlv.libguides.com/federal-indian-tribal-law/nevada-specific-resources
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Listed as a Nevada resource.
+checked: '2026-11-21'

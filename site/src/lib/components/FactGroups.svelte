@@ -1,31 +1,29 @@
 <script lang="ts">
-	import NoteMarkers from './NoteMarkers.svelte';
-	import ReportLink from './ReportLink.svelte';
-
+	// Label and value pairs for a nation's facts (site/DESIGN.md, "Summary list").
+	// Each fact's source is listed in the page's Sources section, not beside it.
 	interface FactGroup {
 		field: string;
 		label: string;
-		items: { text: string; link?: string; detail?: string; notes: number[] }[];
+		items: { label?: string; text: string; link?: string; linkHint?: string; detail?: string }[];
 	}
 
-	let { groups, record }: { groups: FactGroup[]; record: string } = $props();
+	let { groups }: { groups: FactGroup[] } = $props();
 </script>
 
 <dl class="summary-list">
 	{#each groups as group (group.field)}
 		<div>
-			<dt>
-				{group.label}
-				<br /><ReportLink {record} field={group.field} label={group.label} />
-			</dt>
+			<dt>{group.label}</dt>
 			<dd>
 				<ul>
 					{#each group.items as item, index (index)}
 						<li>
-							{#if item.link}<a href={item.link}>{item.text}</a>{:else}{item.text}{/if}<NoteMarkers
-								numbers={item.notes}
-							/>
-							{#if item.detail}<span class="muted small"> ({item.detail})</span>{/if}
+							{#if item.label}{item.label}:{' '}{/if}{#if item.link}<a href={item.link}
+									>{item.text}{#if item.linkHint}<span class="visually-hidden">
+											{item.linkHint}</span
+										>{/if}</a
+								>{:else}{item.text}{/if}
+							{#if item.detail}{' '}<span class="muted small">({item.detail})</span>{/if}
 						</li>
 					{/each}
 				</ul>

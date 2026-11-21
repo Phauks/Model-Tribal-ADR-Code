@@ -10,7 +10,9 @@
  *   old caches are deleted when the new worker takes over.
  * - When a page is neither saved nor reachable, the /offline page is shown.
  *
- * Restricted records are never published, so they are never cached.
+ * Restricted records are never published, so they are never cached. The
+ * co-author workspace, sign-in and the request form are answered by the
+ * Worker for one person at a time, so they are never cached either.
  */
 import { version } from '$app/env';
 import { assets, immutable, prerendered } from '$app/manifest';
@@ -19,6 +21,11 @@ import { self } from '$app/service-worker';
 const cacheName = `site-${version}`;
 const offlinePage = '/offline';
 const corePages = ['/', '/glossary', '/changelog', offlinePage];
+const neverCached = ['/workspace', '/sign-in', '/sign-out', '/requests'];
+
+function isNeverCached(path: string): boolean {
+	return neverCached.some((prefix) => path === prefix || path.startsWith(`${prefix}/`));
+}
 
 function isFallbackFont(path: string): boolean {
 	return /\.woff2?$/.test(path) && !path.includes('atkinson-hyperlegible-next');
@@ -106,5 +113,6 @@ async function respond(request: Request): Promise<Response> {
 self.addEventListener('fetch', (event) => {
 	const url = new URL(event.request.url);
 	if (event.request.method !== 'GET' || url.origin !== self.location.origin) return;
+	if (isNeverCached(url.pathname)) return;
 	event.respondWith(respond(event.request));
 });

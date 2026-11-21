@@ -12,5 +12,17 @@ easy to read and search instead of growing into one long log.
   field, so you can trace a citation back to how it was found.
 
 When an AI research assistant is used, list it as a tool and say what it did.
+Organizations the project may ask for help are kept as records in
+[`outreach/`](outreach/README.md).
+
 The website will generate a browsable index of sessions by month, tool and
 topic.
+
+## Analyses
+
+`analyses/` holds dated analyses of the records, each with the script output
+it quotes, for example
+[`2026-11-21-dispute-resolution-practice.md`](analyses/2026-11-21-dispute-resolution-practice.md).
+An analysis describes what the sources document, never what a nation
+practices, and labels its own reasoning as project analysis. Re-run the script
+named in the analysis to reproduce its counts.

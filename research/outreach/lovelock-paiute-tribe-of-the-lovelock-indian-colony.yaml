@@ -1,0 +1,51 @@
+id: lovelock-paiute-tribe-of-the-lovelock-indian-colony
+name: Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada
+category: native-nation
+tribe_profile: lovelock-paiute-tribe-of-the-lovelock-indian-colony
+location:
+  state: NV
+scope: state
+relevance:
+  text: Federally recognized Native nation whose government office the Bureau of Indian Affairs lists
+    in Nevada. The Tribal Law and Policy Institute lists its court as the Lovelock Paiute Tribal Court.
+    The National Indian Law Library keeps a tribal law page for the nation.
+  sources:
+  - bureau-of-indian-affairs-tribal-leaders-directory
+  - tribal-law-and-policy-institute-justice-systems
+  - national-indian-law-library-tribal-law-page
+possible_roles:
+- consultation
+- reviewer
+- sources-and-data
+contacts:
+- kind: web-page
+  value: https://www.paiutetribelovelock.org/tribal-court.html
+  label: Tribal court page (linked by the National Indian Law Library; loaded on 2026-11-21)
+  sources:
+  - national-indian-law-library-tribal-law-page
+sources:
+- id: bureau-of-indian-affairs-tribal-leaders-directory
+  title: Tribal Leaders Directory (data service)
+  publisher: Bureau of Indian Affairs
+  link: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: State of the nation's government office. The office contacts are in the Tribe profile, which
+    was built from this data service.
+- id: national-indian-law-library-tribal-law-page
+  title: Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada - Tribal Law
+  publisher: National Indian Law Library, Native American Rights Fund
+  link: https://narf.org/nill/tribes/lovelock_paiute.html
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Tribal court contact and published law listed for the nation.
+- id: tribal-law-and-policy-institute-justice-systems
+  title: Justice Systems of Indian Nations
+  publisher: Tribal Law and Policy Institute
+  link: https://www.tribal-institute.org/lists/justice.htm
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Name of the nation's court.
+checked: '2026-11-21'
+notes: Government office contacts are in the nation's Tribe profile. Approach through the government office
+  and ask whether the court or legal department is the right point of contact.

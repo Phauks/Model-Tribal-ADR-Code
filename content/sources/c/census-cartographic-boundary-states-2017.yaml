@@ -1,0 +1,36 @@
+key: census-cartographic-boundary-states-2017
+kind: dataset
+citation:
+  type: dataset
+  title: 2017 Cartographic Boundary File, State, 1:20,000,000 and 1:5,000,000, as redistributed in us-atlas 3.0.1 (states-10m.json)
+  author:
+    - literal: U.S. Census Bureau
+  medium: TopoJSON file in the us-atlas npm package, version 3.0.1, by Mike Bostock (ISC license)
+  URL: https://github.com/topojson/us-atlas
+  issued:
+    date-parts: [[2017]]
+  accessed:
+    date-parts: [[2026, 11, 21]]
+original_link: https://github.com/topojson/us-atlas
+retrieved: 2026-11-21
+archives: []
+history:
+  status: live
+  last_checked: 2026-11-21
+rights:
+  status: no-permission-needed
+  basis: us-government-work
+  basis_note: >-
+    The Census Bureau's boundary files "are not copyrighted" and are "free to
+    use in a product or publication, however acknowledgement must be given to
+    the U.S. Census Bureau as the source" (file metadata, as read in the map
+    tool spike, spikes/map/REPORT.md). us-atlas itself is ISC licensed.
+  license: ISC
+  redistribution: true
+found_in:
+  - 2026-11-21-bureau-of-indian-affairs-regions-map
+notes: >-
+  us-atlas is "a convenient redistribution of the Census Bureau's cartographic
+  boundary shapefiles, 2017 edition" (us-atlas README). The website draws
+  every state, DC and the five inhabited territories from it. The files are
+  meant for display at small scales only, which a national map is.

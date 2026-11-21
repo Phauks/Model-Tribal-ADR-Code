@@ -47,6 +47,8 @@ research session ──found──▶ source ◀──cites── provision / co
 | Method | [method.schema.json](../schemas/method.schema.json) | `content/methods/<id>.yaml` | One dispute resolution method: names (including in the community's language), classification, tradition, how it works, sources |
 | Variables | [variable.schema.json](../schemas/variable.schema.json) | `content/variables/<group>.yaml` | Placeholders such as `{{nation.name}}` and their model text |
 | Research session | [research-session.schema.json](../schemas/research-session.schema.json) | `research/sessions/<yyyy>/<yyyy-mm-dd>-<topic>.md` | How research was done and what it produced |
+| Outreach organization | [outreach-organization.schema.json](../schemas/outreach-organization.schema.json) | `research/outreach/<id>.yaml` | An organization, office or nation the project may ask for help, why it matters, and its public contact path; not published on the website |
+| Outreach plan (private) | [outreach-plan.schema.json](../schemas/outreach-plan.schema.json) | Outside git ([decision record 0012](decisions/0012-outreach-list-split-public-and-private.md)) | Named people, suggested asks, priority and contact log, keyed to outreach records |
 | Shared types | [common.schema.json](../schemas/common.schema.json) | n/a | Slugs, dates, versions, state codes, review status, sensitivity flags |
 
 ## Tribe profiles
@@ -141,6 +143,16 @@ recorded only as far as the nation itself has made it public
 Names in a nation's own language are kept exactly as the nation writes them,
 in Unicode Normalization Form C, with a BCP 47 language tag (for example
 `chr`, `nv`, `haw`) and a romanized form only when the source gives one.
+
+`names.pronunciation` records how to say a name, and only as an authoritative
+source publishes it. The nation's own sources come first: its website, its
+language program, or a recording it published. Each entry names the name it
+pronounces and copies at least one of a sound-it-out `respelling`, a
+`phonetic_transcription` or a link to a `recording`, exactly as the source
+gives it. A pronunciation is never worked out from the spelling, and the
+field is left out when no such source is found. A nation can ask for an entry
+to be corrected or removed like any other fact
+([charter, commitment 6](charter.md#6-the-right-to-correct-restrict-or-withdraw)).
 
 ### Building profiles
 

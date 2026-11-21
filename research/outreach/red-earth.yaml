@@ -1,0 +1,49 @@
+id: red-earth
+name: Red Earth (Red Earth Festival)
+also_known_as:
+- Red Earth Inc.
+- Red Earth Festival
+category: native-arts-organization
+location:
+  city: Oklahoma City
+  state: OK
+scope: regional
+relevance:
+  text: Red Earth holds the annual Red Earth Festival of Native art at the Oklahoma City Convention Center,
+    has run a youth art competition, and has called for emerging Native artists.
+  sources:
+  - festival
+  - youth
+  - emerging
+possible_roles:
+- advice
+- distribution
+contacts:
+- kind: web-page
+  value: https://redearth.org/pages/red-earth-festival
+  label: Festival page
+  sources:
+  - festival
+sources:
+- id: festival
+  title: The 39th Annual Red Earth Festival
+  publisher: Red Earth
+  link: https://redearth.org/pages/red-earth-festival
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Annual festival
+- id: youth
+  title: Red Earth Seeks Entries for Annual Youth Art Competition
+  publisher: Red Earth
+  link: https://redearth.org/blogs/news/red-earth-seeks-entries-for-annual-youth-art-competition
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Youth art competition
+- id: emerging
+  title: Red Earth Festival looking for emerging Native artists
+  publisher: Native News Online
+  link: https://nativenewsonline.net/arts-entertainment/red-earth-festival-looking-for-emerging-native-artists
+  accessed: '2026-11-21'
+  verification: search-result-only
+  supports: Emerging artist call
+checked: '2026-11-21'

@@ -1,0 +1,57 @@
+id: california-tribal-court-state-court-forum
+name: Tribal Court–State Court Forum
+also_known_as:
+- California Tribal Court-State Court Forum
+category: state-agency
+location:
+  state: CA
+scope: regional
+relevance:
+  text: The Tribal Court–State Court Forum is a Judicial Council of California advisory committee, established
+    in 2010 and made a formal advisory committee under California Rules of Court, rule 10.60, in 2013.
+    It recommends ways to improve the administration of justice where state and tribal court jurisdiction
+    overlaps, including recognition and enforcement of court orders that cross jurisdictional lines. Its
+    members include tribal chief judges and state judges, and the Judicial Council also maintains a California
+    tribal courts directory.
+  sources:
+  - forum
+  - roster
+  - california-directory
+possible_roles:
+- reviewer
+- consultation
+- distribution
+contacts:
+- kind: email
+  value: forum@jud.ca.gov
+  label: Forum shared inbox (Center for Families, Children & the Courts)
+  sources:
+  - forum
+- kind: web-page
+  value: https://www.courts.ca.gov/advisory-body/tribal-court-state-court-forum
+  label: Forum page
+  sources:
+  - forum
+sources:
+- id: forum
+  title: Tribal Court–State Court Forum (Advisory Committees)
+  publisher: Judicial Council of California
+  link: https://www.courts.ca.gov/advisory-body/tribal-court-state-court-forum
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Establishment, rule 10.60, charge, forum email and staff office
+- id: roster
+  title: Tribal Court-State Court Forum roster (effective September 15, 2025, rev. 12/10/2025)
+  publisher: Judicial Council of California
+  link: https://courts.ca.gov/system/files/file/forum_roster.pdf
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Current membership of tribal chief judges and state judges
+- id: california-directory
+  title: California Tribal Courts Directory
+  publisher: Judicial Council of California
+  link: https://www.courts.ca.gov/programs-initiatives/tribalstate-programs/tribal-justice-systems/california-tribal-courts-directory
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Directory of California tribal courts
+checked: '2026-11-21'

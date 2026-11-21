@@ -1,0 +1,78 @@
+id: nevada-department-of-native-american-affairs
+name: Nevada Department of Native American Affairs
+also_known_as:
+- DNAA
+- NDNAA
+- formerly Nevada Indian Commission
+category: state-agency
+location:
+  city: Carson City
+  state: NV
+scope: state
+relevance:
+  text: The Nevada Department of Native American Affairs (DNAA) is the state agency, created in 1965 as
+    the Nevada Indian Commission, that acts as liaison between the State and Nevada's federally recognized
+    Tribes and serves as a forum where Indian needs and issues are considered. It publishes a tribal directory
+    and runs the Stewart Indian School Cultural Center & Museum.
+  sources:
+  - about
+  - rename
+  - staff
+possible_roles:
+- consultation
+- advice
+- distribution
+- sources-and-data
+contacts:
+- kind: telephone
+  value: (775) 687-8333
+  label: Main office
+  sources:
+  - contact
+- kind: mailing-address
+  value: 5366 Snyder Avenue, Carson City, NV 89701
+  label: Mailing address
+  sources:
+  - contact
+- kind: mailing-address
+  value: '5500 Snyder Avenue, Building #3, Carson City, NV 89701'
+  label: Office location
+  sources:
+  - contact
+- kind: contact-form
+  value: https://dnaa.nv.gov/contact/
+  label: Contact form
+  sources:
+  - contact
+sources:
+- id: about
+  title: About DNAA
+  publisher: DNAA
+  link: https://dnaa.nv.gov/about-us/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Mission, liaison role, 1965 origin.
+- id: rename
+  title: Nevada Indian Commission transitioning to Nevada Department of Native American Affairs
+  publisher: DNAA
+  link: https://dnaa.nv.gov/nevada-indian-commission-transitioning-to-nevada-department-of-native-american-affairs
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Rename effective July 1, 2024.
+- id: contact
+  title: Contact Us
+  publisher: DNAA
+  link: https://dnaa.nv.gov/contact/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Addresses, phone, contact form.
+- id: staff
+  title: Staff & Commissioners
+  publisher: DNAA
+  link: https://dnaa.nv.gov/staff-commissioners/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Executive director, commissioners, Stewart museum staff.
+checked: '2026-11-21'
+notes: Called the Nevada Indian Commission until July 1, 2024. The old domain, nevadaindiancommission.org,
+  still appears in some research guides.

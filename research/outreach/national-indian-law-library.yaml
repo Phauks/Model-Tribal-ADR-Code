@@ -1,0 +1,58 @@
+id: national-indian-law-library
+name: National Indian Law Library
+also_known_as:
+- NILL
+part_of: native-american-rights-fund
+category: law-library
+location:
+  city: Boulder
+  state: CO
+scope: national
+relevance:
+  text: The National Indian Law Library (NILL) is a law library devoted to American Indian law that serves
+    both the Native American Rights Fund and the public. It offers the Tribal Law Gateway for access to
+    tribal law, weekly Indian Law Bulletins, and research assistance on specific Indian law questions.
+  sources:
+  - national-indian-law-library-about
+possible_roles:
+- sources-and-data
+- reviewer
+- advice
+contacts:
+- kind: contact-form
+  value: https://www.narf.org/nill/asknill.html
+  label: Ask NILL research request form
+  sources:
+  - national-indian-law-library-about
+- kind: telephone
+  value: 303-447-8760
+  label: NARF main line (NILL also lists a direct library line on its About page)
+  sources:
+  - national-indian-law-library-about
+- kind: mailing-address
+  value: 250 Arapahoe Ave., Boulder, CO 80302-5821
+  label: National Indian Law Library
+  sources:
+  - national-indian-law-library-about
+- kind: web-page
+  value: https://narf.org/contact-us/request-legal-research/
+  label: Request legal research
+  sources:
+  - search-research
+sources:
+- id: national-indian-law-library-about
+  title: About NILL
+  publisher: Native American Rights Fund
+  link: https://www.narf.org/nill/about/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Description, Tribal Law Gateway, Indian Law Bulletins, research assistance, phones, address,
+    ask NILL form, hours (Mon-Fri 9-4 MT, open by appointment only)
+- id: search-research
+  title: request legal research
+  publisher: Native American Rights Fund
+  link: https://narf.org/contact-us/request-legal-research/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Existence of a request-legal-research page
+checked: '2026-11-21'
