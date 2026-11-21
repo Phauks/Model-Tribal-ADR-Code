@@ -124,6 +124,21 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Pueblo of Zia, New Mexico
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.ziapueblo.org/tribal-courts
+  source: national-indian-law-library-pueblo-zia
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Pueblo of Zia Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New Mexico section, entry 'Pueblo of Zia'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

@@ -238,6 +238,62 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Pit River Tribe, California (includes XL Ranch, Big Bend, Likely, Lookout, Montgomery Creek,
     and Roaring Creek Rancherias)
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: http://pitrivertribe.org/tribal-law/
+  source: national-indian-law-library-pit-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: law-code
+  title: Tribal code
+  link: https://www.narf.org/nill/codes/pitrivercode/index.html
+  source: national-indian-law-library-pit-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website .".'
+- kind: constitution
+  title: Constitution
+  link: http://pitrivertribe.org/wp-content/uploads/2017/09/Pit-River-Constitution.pdf
+  source: national-indian-law-library-pit-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.narf.org/nill/constitutions/pit_river/index.html
+  source: national-indian-law-library-pit-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At NILL website
+    . See NILL catalog record for all available versions of the constitution.".'
+justice_institutions:
+- kind: peacemaking-program
+  name: Youth Reclamation Program – The Peacemaker Program
+  source: narf-youth-family-peacemaking-laws
+  confidence: medium
+  as_of: '2025-08-25'
+  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked.
+dispute_resolution:
+  provisions:
+  - kind: peacemaking
+    title: 'Title 8 – Chapter 15: Youth Reclamation Program – The Peacemaker Program'
+    citation: 'Title 8 – Chapter 15: Youth Reclamation Program – The Peacemaker Program'
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Pit-River-Title-8-%E2%80%93-Chapter-15-Youth-Reclamation-Program-%E2%80%93-The-Peacemaker-Program.pdf
+    source: narf-youth-family-peacemaking-laws
+    confidence: medium
+    as_of: '2025-08-25'
+    locator: Pit River Tribe of California
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      qualifications, and procedures (including authority to use tribally based methods).'
 gaming:
   compacts:
   - state: CA

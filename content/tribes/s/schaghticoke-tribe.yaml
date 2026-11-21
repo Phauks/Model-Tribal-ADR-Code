@@ -14,8 +14,17 @@ names:
     as_of: '2026'
     note: One of two factions the state agency names; the agency says this faction has an active federal
       acknowledgment petition.
-  official_source: ofa-list-of-petitioners-by-state-2013
+  official_source: census-aian-geography-definitions
 recognition:
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: low
+  as_of: '2020'
+  locator: Definition of State American Indian reservation; area 9350
+  note: The 2020 Census delineated "Schaghticoke (state) Reservation" (State American Indian reservation).
+    The Census Bureau defines state American Indian reservations as reservations of state-recognized tribes,
+    delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area
+    to group is by name comparison (see census-area fact).
 - type: unrecognized
   legal_basis: 25 C.F.R. Part 83
   petition_number: '245'
@@ -43,6 +52,13 @@ recognition:
   as_of: '2026'
 states:
 - state: CT
+  presence: land
+  source: census-aiannh-codes-by-state-2020
+  confidence: low
+  as_of: '2020'
+  locator: AIANNHCE 9350
+  note: State reservation land.
+- state: CT
   presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
@@ -55,6 +71,19 @@ states:
   confidence: high
   as_of: '2026'
   note: Reservation of about 300 acres in Kent, west of the Housatonic River.
+census_areas:
+- geographic_identifier: '9350'
+  name: Schaghticoke (state) Reservation
+  area_type: State American Indian reservation
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: low
+  as_of: '2020'
+  locator: AIANNHCE 9350, GEOID 9350R
+  note: Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list. Census area name "Schaghticoke (state) Reservation";
+    linked by name comparison to the state-recognized helper entity. The Census file does not name the
+    group that holds the reservation.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

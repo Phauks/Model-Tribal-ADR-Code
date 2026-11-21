@@ -125,6 +125,55 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Sokaogon Chippewa Community, Wisconsin
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Sokoagon Chippewa Community, Wisconsin" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: http://water.epa.gov/scitech/swguidance/standards/wqslibrary/tribes.cfm
+  source: national-indian-law-library-sokaogon
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "See NILL catalog record
+    for print version of water quality standards. Also available from the EPA website .".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.wtja.org/tribal-courts/Sokaogon/index.php
+  source: national-indian-law-library-sokaogon
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Sokaogon Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Sokaogon Chippewa (Mole Lake) Community'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Ch. 1 – Tribal Governance
+    citation: Ch. 1 – Tribal Governance
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Sokaogon-Chippewa-Community-Chapter-1-Tribal-Governance-Final-8-30-2011.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Sokaogon Chippewa Community of Wisconsin
+    note: 'Native American Rights Fund description (provision itself not read): Provides purpose, authorization,
+      procedures, subject matter and original jurisdiction, confidentiality, payment of $25.00 from each
+      party, referral guidelines, and jurisdiction over juvenile matters.'
 gaming:
   compacts:
   - state: WI

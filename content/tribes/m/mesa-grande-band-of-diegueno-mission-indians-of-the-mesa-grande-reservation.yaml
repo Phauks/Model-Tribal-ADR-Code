@@ -114,6 +114,32 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Mesa Grande Band of Diegueno Mission Indians of the Mesa Grande Reservation, California
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: http://nebula.wsimg.com/567372326ed4e1609fdb030cdc02abfc?AccessKeyId=90E638307C2FCCDC5F73&disposition=0&alloworigin=1
+  source: national-indian-law-library-mesa-grande
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.sciljc.org/
+  source: national-indian-law-library-mesa-grande
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Mesa Grande Tribal Court - Intertribal Court of Southern California
+  link: http://www.sciljc.org/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Mesa Grande Band of Diegueno Mission Indians'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

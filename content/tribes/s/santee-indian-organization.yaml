@@ -13,8 +13,18 @@ names:
     source: south-carolina-recognized-tribes-advance-sc
     confidence: high
     as_of: '2026'
-  official_source: ofa-list-of-petitioners-by-state-2013
+  official_source: census-aian-geography-definitions
 recognition:
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: low
+  as_of: '2020'
+  locator: Definition of State Designated Tribal Statistical Area; area 9875
+  note: The 2020 Census delineated "Santee SDTSA" (State Designated Tribal Statistical Area). The Census
+    Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized
+    and have no reservation or off-reservation trust land, delineated with a governor-appointed state
+    liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area
+    fact).
 - type: unrecognized
   legal_basis: 25 C.F.R. Part 83
   petition_number: '53'
@@ -37,6 +47,13 @@ recognition:
 states:
 - state: SC
   presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: low
+  as_of: '2020'
+  locator: AIANNHCE 9875
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: SC
+  presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
   as_of: '2013-11-12'
@@ -48,6 +65,20 @@ states:
   confidence: high
   as_of: '2026'
   note: State-recognized entity with a South Carolina contact address.
+census_areas:
+- geographic_identifier: '9875'
+  name: Santee SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: low
+  as_of: '2020'
+  locator: AIANNHCE 9875, GEOID 9875R
+  note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list. Census area name "Santee"; linked by name
+    comparison to the only South Carolina state-recognized group with Santee in its name in the state-recognized
+    helper list. Census DDHC-A lists both "Santee Indian Organization" and "Santee Indian Nation of South
+    Carolina".
 contacts:
 - kind: email-general
   value: santeetribesc@yahoo.com

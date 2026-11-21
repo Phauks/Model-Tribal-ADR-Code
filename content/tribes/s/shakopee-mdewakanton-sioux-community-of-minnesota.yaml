@@ -139,6 +139,63 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Shakopee Mdewakanton Sioux Community of Minnesota
+governing_documents:
+- kind: law-code
+  title: Shakopee Mdewakanton Sioux Community of Minnesota
+  year: '2003'
+  link: https://narf.org/nill/codes/shakopee/index.html
+  source: national-indian-law-library-code-codes-shakopee
+  confidence: medium
+  as_of: '2003'
+  locator: page heading
+  note: 'Received: May 2003. The National Indian Law Library page gives the table of contents (and may
+    link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Must request access
+  link: https://smsccourt.org/tribal-law/
+  source: national-indian-law-library-shakopee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    . (Must request access.)".'
+- kind: constitution
+  title: Must request access
+  link: https://smsccourt.org/tribal-law/
+  source: national-indian-law-library-shakopee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website . (Must request access.)".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://smsccourt.org/
+  source: national-indian-law-library-shakopee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Shakopee Mdewakanton Sioux Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Minnesota section, entry 'Shakopee Mdewakanton Sioux Community'
+dispute_resolution:
+  provisions:
+  - kind: mediation
+    title: Mediation.
+    citation: Mediation.
+    link: https://narf.org/nill/codes/shakopee/index.html
+    source: national-indian-law-library-code-codes-shakopee
+    confidence: medium
+    as_of: '2003'
+    locator: Table of Contents, under 'Domestic Relations Code'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Received:
+      May 2003); the provision itself was not read. The heading it falls under is taken from the page
+      layout and may be imprecise.'
 gaming:
   compacts:
   - state: MN

@@ -130,6 +130,96 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Chehalis Reservation
+governing_documents:
+- kind: law-code
+  title: Confederated Tribes of the Chehalis Reservation
+  link: https://narf.org/nill/codes/confederated_chehalis/index.html
+  source: national-indian-law-library-code-codes-confederated-chehalis
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: law-code
+  title: Tribal code
+  link: https://www.chehalistribe.org/departments/office-of-the-tribal-attorney/
+  source: national-indian-law-library-confederated-chehalis
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    / Code Publishing Co. website .".'
+- kind: law-code
+  title: Tribal code
+  link: http://www.codepublishing.com/WA/ChehalisTribe/
+  source: national-indian-law-library-confederated-chehalis
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    / Code Publishing Co. website .".'
+- kind: constitution
+  title: Constitution
+  link: http://www.codepublishing.com/WA/ChehalisTribe/#!/ChehalisTribeCB.html
+  source: national-indian-law-library-confederated-chehalis
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Code Publishing
+    Co. website .".'
+- kind: constitution
+  title: Confederated Tribes of the Chehalis Reservation - Constitution and Bylaws
+  link: https://narf.org/nill/constitutions/confederated_chehalis/index.html
+  source: national-indian-law-library-constitution-constitutions-confederated-chehalis
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: constitution
+  title: Confederated Tribes of the Chehalis Reservation Constitution and Bylaws
+  link: http://www.codepublishing.com/WA/ChehalisTribe/#!/ChehalisTribeCB.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Chehalis Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Chehalis Tribal Code – Code Publishing
+  link: http://www.codepublishing.com/WA/ChehalisTribe/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Chehalis Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.chehalistribe.org/departments/public-safety/tribal-court/
+  source: national-indian-law-library-confederated-chehalis
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Chehalis Tribal Court
+  link: https://www.chehalistribe.org/departments/public-safety/tribal-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Chehalis Tribe'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: 15.01.210 Dispute resolution.
+    citation: 15.01.210 Dispute resolution.
+    link: https://narf.org/nill/codes/confederated_chehalis/index.html
+    source: national-indian-law-library-code-codes-confederated-chehalis
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Table of Contents, under '15.01 General Welfare Exclusion Ordinance'
+    note: Identified from section headings in the National Indian Law Library table of contents; the provision
+      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
 gaming:
   compacts:
   - state: WA

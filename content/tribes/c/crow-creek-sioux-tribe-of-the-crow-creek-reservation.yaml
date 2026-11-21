@@ -131,6 +131,56 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Crow Creek Sioux Tribe of the Crow Creek Reservation, South Dakota
+governing_documents:
+- kind: law-code
+  title: Crow Creek Sioux Tribe - Tribal Code - Table of Contents
+  year: '2005'
+  link: https://narf.org/nill/codes/crow_creek_sioux/index.html
+  source: national-indian-law-library-code-codes-crow-creek-sioux
+  confidence: medium
+  as_of: '2005'
+  locator: page heading
+  note: 'Received: March 2005, On the cover: 1997 revisions. The National Indian Law Library page gives
+    the table of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Crow Creek Sioux Tribe - Tribal Constitution - Table of Contents
+  link: https://narf.org/nill/constitutions/crow_creek_sioux/index.html
+  source: national-indian-law-library-constitution-constitutions-crow-creek-sioux
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: constitution
+  title: Crow Creek Sioux Tribe of Fort Thompson Constitution and Bylaws
+  link: http://www.crowcreekconnections.org/CCST.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: South Dakota section, entry 'Crow Creek Sioux Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Crow Creek Sioux Tribe of Fort Thompson South Dakota)
+  year: '1949'
+  link: https://thorpe.law.ou.edu/IRA/crowcscons.html
+  source: university-of-oklahoma-indian-reorganization-act-crowcscons
+  confidence: medium
+  as_of: '1949'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-crow-creek-sioux
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Crow Creek Sioux Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: South Dakota section, entry 'Crow Creek Sioux Tribe'
 gaming:
   compacts:
   - state: SD

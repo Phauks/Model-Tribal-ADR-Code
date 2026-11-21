@@ -138,6 +138,137 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Sac & Fox Tribe of the Mississippi in Iowa
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Sac and Fox Tribe of the Mississippi in Iowa" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Sac and Fox Tribe of the Mississippi in Iowa) (approved 1937) states it was adopted
+    under Act of June 18, 1934 (48 Stat. 984); Act of June 26, 1936 (49 Stat. 1967)
+  source: university-of-oklahoma-indian-reorganization-act-ias-fcons
+  confidence: medium
+  as_of: '1937'
+  locator: preamble / approval and certification of adoption
+  note: The text also cites the Act of June 26, 1936 (49 Stat. 1967); because the nation is outside Oklahoma
+    and the ratification clause cites section 16 of the Indian Reorganization Act, it is recorded as the
+    Indian Reorganization Act. Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Sac & Fox Tribe of the Mississippi in Iowa - Code Table of Contents
+  year: '2017'
+  link: https://narf.org/nill/codes/sac_fox_miss_ia/index.html
+  source: national-indian-law-library-code-codes-sac-fox-miss-ia
+  confidence: medium
+  as_of: '2017'
+  locator: page heading
+  note: 'Table of Contents Updated: September 2017. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Sac & Fox Tribe of the Mississippi in Iowa - Constitution Table of Contents
+  year: '1937'
+  link: https://narf.org/nill/constitutions/sac_fox_mississippi_iowa/index.html
+  source: national-indian-law-library-constitution-constitutions-sac-fox-mississippi-iowa
+  confidence: medium
+  as_of: '1937'
+  locator: page heading
+  note: 'Ratified: November 13, 1937. The National Indian Law Library page gives the table of contents
+    (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.meskwaki.org/constitution/
+  source: national-indian-law-library-sac-fox-mississippi-iowa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: law-code
+  title: Tribal code
+  link: https://meskwakicourt.org/tribal-code-%26-court-rules
+  source: national-indian-law-library-sac-fox-mississippi-iowa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribal Court''s
+    website .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.meskwaki.org/constitution/
+  source: national-indian-law-library-sac-fox-mississippi-iowa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Constitution
+  link: https://meskwakicourt.org/tribal-code-%26-court-rules
+  source: national-indian-law-library-sac-fox-mississippi-iowa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribal Court''s
+    website .".'
+- kind: constitution
+  title: Sac & Fox Tribe of the Mississippi in Iowa Constitution
+  link: http://www.meskwaki.org/Constitution.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Iowa section, entry 'Sac & Fox Tribe of the Mississippi in Iowa/Meskwaki'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Sac and Fox Tribe of the Mississippi in Iowa Tribal Codes
+  link: http://www.meskwaki.org/Constitution.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Iowa section, entry 'Sac & Fox Tribe of the Mississippi in Iowa/Meskwaki'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Sac and Fox Tribe of the Mississippi in Iowa)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/ias&fcons.html
+  source: university-of-oklahoma-indian-reorganization-act-ias-fcons
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://meskwakicourt.org/
+  source: national-indian-law-library-sac-fox-mississippi-iowa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Sac & Fox Tribe of the Mississippi in Iowa Tribal Court
+  link: http://www.meskwakicourt.org/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Iowa section, entry 'Sac & Fox Tribe of the Mississippi in Iowa/Meskwaki'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Title 5. Dispute Resolution
+    citation: Title 5. Dispute Resolution
+    link: https://narf.org/nill/codes/sac_fox_miss_ia/index.html
+    source: national-indian-law-library-code-codes-sac-fox-miss-ia
+    confidence: medium
+    as_of: '2017'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: September 2017); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
 gaming:
   compacts:
   - state: IA

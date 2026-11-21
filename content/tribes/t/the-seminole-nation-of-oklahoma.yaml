@@ -136,6 +136,91 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: The Seminole Nation of Oklahoma
+governing_documents:
+- kind: law-code
+  title: The Seminole Nation of Oklahoma - Tribal Code, Table of Contents
+  year: '2017'
+  link: https://narf.org/nill/codes/seminole_nation_ok/index.html
+  source: national-indian-law-library-code-codes-seminole-nation-ok
+  confidence: medium
+  as_of: '2017'
+  locator: page heading
+  note: 'Table of Contents Updated: February 2017. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: The Seminole Nation of Oklahoma - Tribal Constitution, Table of Contents
+  year: '2013'
+  link: https://narf.org/nill/constitutions/seminole_nation_ok/index.html
+  source: national-indian-law-library-constitution-constitutions-seminole-nation-ok
+  confidence: medium
+  as_of: '2013'
+  locator: page heading
+  note: 'Amended: July 13, 2013. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://seminolenationofoklahoma.municipalcodeonline.com/book?type=ordinances
+  source: national-indian-law-library-seminole-nation-ok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . MuniCode.".'
+- kind: constitution
+  title: Constitution
+  link: http://sno-nsn.gov/government/constitution
+  source: national-indian-law-library-seminole-nation-ok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Seminole Nation of Oklahoma Constitution
+  link: http://sno-nsn.gov/index.php/government/constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Seminole Nation of Oklahoma'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Seminole Nation of Oklahoma Code of Laws
+  link: http://sno-nsn.gov/government/codeoflaws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Seminole Nation of Oklahoma'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.sno-nsn.org/getpage.php?name=Tribal_Courts&sub=Government
+  source: national-indian-law-library-seminole-nation-ok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Seminole Nation Tribal Court
+  link: http://sno-nsn.gov/government/tribalcourts
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Seminole Nation of Oklahoma'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Internal Dispute Resolution Policy
+    citation: Internal Dispute Resolution Policy
+    link: https://narf.org/nill/codes/seminole_nation_ok/index.html
+    source: national-indian-law-library-code-codes-seminole-nation-ok
+    confidence: medium
+    as_of: '2017'
+    locator: Table of Contents, under 'CHAPTER EIGHT WORK RULES, EMPLOYEE CONDUCT, DISCIPLINE AND ADMINISTRATIVE
+      REVIEW'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: February 2017); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
 gaming:
   compacts:
   - state: OK

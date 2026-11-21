@@ -98,6 +98,34 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Shawnee Tribe
+governing_documents:
+- kind: law-code
+  title: Tribal Laws, Titles, Codes, Resolutions and Other Tribal Documents
+  link: https://shawnee.municipalcodeonline.com/
+  source: national-indian-law-library-shawnee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Municode website
+    . Tribal Laws, Titles, Codes, Resolutions and Other Tribal Documents.".'
+- kind: constitution
+  title: Constitution
+  link: https://shawnee.municipalcodeonline.com/book?type=Laws#name=CONSTITUTION_(Rev_2022)
+  source: national-indian-law-library-shawnee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Municode
+    website .".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://shawnee-nsn.gov/courts/
+  source: national-indian-law-library-shawnee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 gaming:
   compacts:
   - state: OK

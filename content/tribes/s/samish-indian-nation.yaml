@@ -126,6 +126,33 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Samish Indian Nation
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://samish.tribal.codes/
+  source: national-indian-law-library-samish
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Code Publishing
+    website .".'
+- kind: constitution
+  title: Constitution
+  link: https://samish.tribal.codes/
+  source: national-indian-law-library-samish
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Code Publishing
+    website .".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-samish
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 gaming:
   compacts:
   - state: WA

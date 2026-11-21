@@ -129,6 +129,39 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Ysleta del Sur Pueblo
+governing_documents:
+- kind: law-code
+  title: Ysleta del Sur Pueblo Code of Laws
+  year: '2000'
+  link: https://narf.org/nill/codes/ysletacode/index.html
+  source: national-indian-law-library-code-codes-ysletacode
+  confidence: medium
+  as_of: '2000'
+  locator: page heading
+  note: 'Last revised: 2000. Full text linked from the National Indian Law Library page.'
+- kind: law-code
+  title: Ysleta del Sur Pueblo Tribal Code
+  link: http://www.ysletadelsurpueblo.org/html_pages.sstg?id=14&amp;sub1=188&amp;sub2=192
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Texas section, entry 'Ysleta del Sur Pueblo'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Judicial Facility
+  link: http://www.ysletadelsurpueblo.org/html_pages.sstg?id=14&amp;sub1=80
+  source: national-indian-law-library-ysleta-pueblo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: tribal-court
+  name: Ysleta Del Sur Pueblo Tribal Court
+  link: http://www.ysletadelsurpueblo.org/html_pages.sstg?id=14&amp;sub1=188
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Texas section, entry 'Ysleta del Sur Pueblo'
 gaming:
   ordinances:
   - approved: '1993-10-19'

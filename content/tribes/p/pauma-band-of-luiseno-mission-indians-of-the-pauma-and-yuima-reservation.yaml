@@ -128,6 +128,31 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Pauma Band of Luiseno Mission Indians of the Pauma & Yuima Reservation, California
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: http://www.narf.org/nill/codes/paumacode/gaming_reg_008_employment_discrimination.pdf
+  source: national-indian-law-library-pauma-california
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website .".'
+- kind: law-code
+  title: Pauma Band of Mission Indians Ordinances
+  link: http://www.sciljc.org/ordinances--codes---laws.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Pauma Band of Luiseno Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Pauma Tribal Court - Intertribal Court of Southern California
+  link: http://www.sciljc.org/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Pauma Band of Luiseno Indians'
 gaming:
   compacts:
   - state: CA

@@ -1,15 +1,44 @@
 id: haliwa-saponi-indian-tribe
 entity_type: native-nation
 names:
-  official: Haliwa-Saponi Indian Tribe
+  official: Haliwa-Saponi Indian Tribe of North Carolina
   alternate:
   - name: Haliwa-Saponi Indian Tribe, Inc.
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
     as_of: '2013-11-12'
     note: Name used for this group in the cited source; matched to this record by name and state.
-  official_source: ofa-list-of-petitioners-by-state-2013
+  official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
 recognition:
+- type: unrecognized
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1; Table 3
+  note: 'GAO Table 1 lists "Haliwa-Saponi Indian Tribe of North Carolina" among 26 non-federally recognized
+    tribes that received direct federal funding in FY2007-2010 (total $4,128,000, Table 3). GAO-reported
+    nonprofit status: Yes; state recognition per state officials: Yes. GAO names it as one of five Indian
+    Housing Block Grant (HUD) recipients and reports a Department of Education Small, Rural School Achievement
+    grant because it is organized as a local educational agency. Not on the 2026 federal list (bia-recognized-entities-2026).
+    GAO name differs from the state-recognized helper entity only by "of North Carolina"; id shared.'
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State Designated Tribal Statistical Area; area 9745
+  note: The 2020 Census delineated "Haliwa-Saponi SDTSA" (State Designated Tribal Statistical Area). The
+    Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally
+    recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed
+    state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area
+    fact).
+- type: unrecognized
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  as_of: 2026-04
+  locator: NC section, recipient "Haliwa-Saponi Indian Tribe"
+  note: HUD lists "Haliwa-Saponi Indian Tribe" (Hollister, NC) as an FY2026 Indian Housing Block Grant
+    formula recipient with a final allocation of $1,571,604. The HUD list does not state recognition status;
+    not on the 2026 federal list (bia-recognized-entities-2026).
 - type: unrecognized
   legal_basis: 25 C.F.R. Part 83
   petition_number: '63'
@@ -41,6 +70,27 @@ recognition:
 states:
 - state: NC
   presence: other
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1, State column
+  note: State as listed by GAO.
+- state: NC
+  presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9745
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: NC
+  presence: other
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  as_of: 2026-04
+  locator: NC section
+  note: HUD gives recipient city Hollister.
+- state: NC
+  presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
   as_of: '2013-11-12'
@@ -51,6 +101,17 @@ states:
   source: north-carolina-tribal-communities-2026
   confidence: high
   as_of: '2026'
+census_areas:
+- geographic_identifier: '9745'
+  name: Haliwa-Saponi SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9745, GEOID 9745R
+  note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
 population:
 - count: 3800
   kind: citizens

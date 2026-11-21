@@ -16,8 +16,35 @@ names:
     confidence: medium
     as_of: '2013-11-12'
     note: Name used for this group in the cited source; matched to this record by name and state.
-  official_source: ofa-list-of-petitioners-by-state-2013
+  - name: Nanticoke Lenni-Lenape Indians of New Jersey
+    source: gao-12-348-federal-funding-non-federally-recognized-tribes
+    confidence: medium
+    as_of: 2012-04
+    note: Name used for this group in the cited source; matched to this record by name and state.
+  official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
 recognition:
+- type: unrecognized
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1; Table 3
+  note: 'GAO Table 1 lists "Nanticoke Lenni-Lenape Indians of New Jersey" among 26 non-federally recognized
+    tribes that received direct federal funding in FY2007-2010 (total $208,000, Table 3). GAO-reported
+    nonprofit status: Yes; state recognition per state officials: Disputed (GAO: New Jersey''s official
+    position is that it has no state-recognized tribes). GAO reports two HHS Community Services Block
+    Grant awards totaling $44,405 (FY2007 and FY2010) and recommended HHS review eligibility. Not on the
+    2026 federal list (bia-recognized-entities-2026). Possible match with the state-recognized helper
+    entity nanticoke-lenni-lenape-tribal-nation; not verified, so a separate id is used.'
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: low
+  as_of: '2020'
+  locator: Definition of State Designated Tribal Statistical Area; area 9835
+  note: The 2020 Census delineated "Nanticoke Lenni Lenape SDTSA" (State Designated Tribal Statistical
+    Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are
+    not federally recognized and have no reservation or off-reservation trust land, delineated with a
+    governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name
+    comparison (see census-area fact).
 - type: unrecognized
   legal_basis: 25 C.F.R. Part 83
   petition_number: '127'
@@ -50,6 +77,20 @@ recognition:
 states:
 - state: NJ
   presence: other
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1, State column
+  note: State as listed by GAO.
+- state: NJ
+  presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: low
+  as_of: '2020'
+  locator: AIANNHCE 9835
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: NJ
+  presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
   as_of: '2013-11-12'
@@ -60,6 +101,19 @@ states:
   source: new-jersey-attorney-general-2019-03-18
   confidence: high
   as_of: '2019-03-18'
+census_areas:
+- geographic_identifier: '9835'
+  name: Nanticoke Lenni Lenape SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: low
+  as_of: '2020'
+  locator: AIANNHCE 9835, GEOID 9835R
+  note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list. Linked by name comparison to the state-recognized
+    helper entity; GAO (2012) lists the "Nanticoke Lenni-Lenape Indians of New Jersey" (id nanticoke-lenni-lenape-indians-of-new-jersey),
+    which may be the same group.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

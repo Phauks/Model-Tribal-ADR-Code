@@ -16,8 +16,18 @@ names:
     confidence: medium
     as_of: '1998-01-07'
     note: Name used for this group in the cited source; matched to this record by name and state.
-  official_source: federal-register-98-298
+  official_source: census-aian-geography-definitions
 recognition:
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State Designated Tribal Statistical Area; area 9850
+  note: The 2020 Census delineated "Ramapough SDTSA" (State Designated Tribal Statistical Area). The Census
+    Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized
+    and have no reservation or off-reservation trust land, delineated with a governor-appointed state
+    liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area
+    fact).
 - type: unrecognized
   legal_basis: 25 C.F.R. Part 83; final determination 61 FR 4476 (1996-02-06); 63 FR 888 (1998-01-07)
   petition_number: '58'
@@ -59,6 +69,13 @@ recognition:
 states:
 - state: NJ
   presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9850
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: NJ
+  presence: other
   source: ofa-petitions-resolved
   confidence: high
   as_of: '2026-11-21'
@@ -69,6 +86,17 @@ states:
   source: new-jersey-attorney-general-2019-03-18
   confidence: high
   as_of: '2019-03-18'
+census_areas:
+- geographic_identifier: '9850'
+  name: Ramapough SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9850, GEOID 9850R
+  note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

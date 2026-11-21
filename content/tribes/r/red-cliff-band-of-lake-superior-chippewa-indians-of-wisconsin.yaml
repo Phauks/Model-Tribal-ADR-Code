@@ -132,6 +132,134 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Red Cliff Band of Lake Superior Chippewa Indians, Wisconsin" among organizations
+    under constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18,
+    1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Red Cliff Band of Lake Superior Chippewa Indians Wisconsin) (approved 1936) states
+    it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-rccons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Red Cliff Band of Lake Superior Chippewa Indians, Code of Laws
+  year: '2017'
+  link: https://narf.org/nill/codes/redcliffcode/index.html
+  source: national-indian-law-library-code-codes-redcliffcode
+  confidence: medium
+  as_of: '2017'
+  locator: page heading
+  note: 'Updated: 8/25/2017. The National Indian Law Library page gives the table of contents (and may
+    link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution and Bylaws of the Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin
+  year: '1991'
+  link: https://narf.org/nill/constitutions/red_cliff/index.html
+  source: national-indian-law-library-constitution-constitutions-red-cliff
+  confidence: medium
+  as_of: '1991'
+  locator: page heading
+  note: 'Amended: January 1991. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.redcliff-nsn.gov/government/tribal_government/code_of_laws.php
+  source: national-indian-law-library-red-cliff-band
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.redcliff-nsn.gov/government/tribal_government/code_of_laws.php
+  source: national-indian-law-library-red-cliff-band
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Red Cliff Band of Lake Superior Chippewa Indians Constitution and Bylaws
+  link: http://redcliff-nsn.gov/government/TribalChapters/Chapter1.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Red Cliff Band of Lake Superior Chippewa'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Red Cliff Band of Lake Superior Chippewa Code of Laws
+  link: http://redcliff-nsn.gov/government/chapters_table_contents.htm
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Red Cliff Band of Lake Superior Chippewa'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Red Cliff Band of Lake Superior Chippewa Indians)
+  link: https://thorpe.law.ou.edu/IRA/amchipchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-amchipchrtr
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: corporate-charter
+  title: Corporate charter (Red Cliff Band of Lake Superior Chippewa Indians of the Red Cliff Reservation,
+    Wisconsin)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/rcchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-rcchrtr
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Red Cliff Band of Lake Superior Chippewa Indians Wisconsin)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/rccons.html
+  source: university-of-oklahoma-indian-reorganization-act-rccons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://redcliff-nsn.gov/resources/popup/tribal_court.htm
+  source: national-indian-law-library-red-cliff-band
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Red Cliff Tribal Court
+  link: http://redcliff-nsn.gov/resources/popup/tribal_court.htm
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Red Cliff Band of Lake Superior Chippewa'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: 17.12 SECTION 12- DISPUTE RESOLUTION
+    citation: 17.12 SECTION 12- DISPUTE RESOLUTION
+    link: https://narf.org/nill/codes/redcliffcode/index.html
+    source: national-indian-law-library-code-codes-redcliffcode
+    confidence: medium
+    as_of: '2017'
+    locator: Table of Contents, under 'Chapter 17 - RED CLIFF TRIBAL GAMING ORDINANCE'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Updated:
+      8/25/2017); the provision itself was not read. The heading it falls under is taken from the page
+      layout and may be imprecise.'
 gaming:
   compacts:
   - state: WI

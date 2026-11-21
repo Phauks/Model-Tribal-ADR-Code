@@ -142,6 +142,21 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Orutsararmiut Traditional Native Council
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-orutsararmuit
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Orutsaramiut Tribal Court
+  link: http://nativecouncil.org/tribal-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Orutsaramuit Native Village (aka Bethel)'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

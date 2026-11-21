@@ -7,8 +7,18 @@ names:
     source: louisiana-governor-federally-and-state-recognized-tribes
     confidence: high
     as_of: '2026'
-  official_source: louisiana-governor-federally-and-state-recognized-tribes
+  official_source: census-aian-geography-definitions
 recognition:
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State Designated Tribal Statistical Area; area 9520
+  note: The 2020 Census delineated "Bayou Lafourche SDTSA" (State Designated Tribal Statistical Area).
+    The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally
+    recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed
+    state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area
+    fact).
 - type: state
   state: LA
   legal_basis: Listed as a state recognized tribe by the Louisiana Governor's Office of Indian Affairs
@@ -40,11 +50,29 @@ recognition:
 states:
 - state: LA
   presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9520
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: LA
+  presence: other
   source: louisiana-governor-indian-affairs
   confidence: high
   as_of: '2026'
   locator: Regional map
   note: Located in Lafourche Parish per the Office of Indian Affairs regional map.
+census_areas:
+- geographic_identifier: '9520'
+  name: Bayou Lafourche SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9520, GEOID 9520R
+  note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
 contacts:
 - kind: mailing-address
   value: 160 East 19th St., Larose, LA 70373

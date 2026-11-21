@@ -120,6 +120,95 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Walker River Paiute Tribe of the Walker River Reservation, Nevada
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Walker River Paiute Tribe, Nevada" among organizations under constitutions approved
+    by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Walker River Paiute Tribe of Nevada) (approved 1937) states it was adopted under
+    Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  as_of: '1937'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Walker River Paiute Tribe of the Walker River Reservation, Nevada - Tribal Constitution
+  year: '1979'
+  link: https://narf.org/nill/constitutions/walkerriverpaiute/index.html
+  source: national-indian-law-library-constitution-constitutions-walkerriverpaiute
+  confidence: medium
+  as_of: '1979'
+  locator: page heading
+  note: 'Last amended: 1979. The National Indian Law Library page gives the table of contents (and may
+    link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Law & Order
+  link: https://www.wrpt.org/law-order/
+  source: national-indian-law-library-walker-river-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    . Law & Order.".'
+- kind: law-code
+  title: By-laws & Ordinances
+  link: https://www.wrpt.org/tribal-government/#Bylaws
+  source: national-indian-law-library-walker-river-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    . By-laws & Ordinances.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.wrpt.org/tribal-government/#Constitution
+  source: national-indian-law-library-walker-river-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: corporate-charter
+  title: Corporate charter (Walker River Pauite Tribe of the Walker Reservation Nevada)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/walkchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-walkchrtr
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Walker River Paiute Tribe of Nevada)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/walkcons.html
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.wrpt.org/tribal-court/
+  source: national-indian-law-library-walker-river-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Walker River Paiute Tribe Civil Court
+  link: http://www.wrpt.us/court.htm
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Nevada section, entry 'Walker River Paiute – Agai-Dicutta Numu'
 gaming:
   compacts:
   - state: NV

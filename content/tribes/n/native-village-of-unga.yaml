@@ -93,6 +93,13 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Native Village of Unga
+justice_institutions:
+- kind: tribal-court
+  name: Unga Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Native Village of Unga'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

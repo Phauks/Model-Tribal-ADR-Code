@@ -106,6 +106,34 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Jamul Indian Village of California
+governing_documents:
+- kind: constitution
+  title: Jamul Indian Village of California - Tribal Constitution
+  year: '1996'
+  link: https://narf.org/nill/constitutions/jamul/index.html
+  source: national-indian-law-library-constitution-constitutions-jamul
+  confidence: medium
+  as_of: '1996'
+  locator: page heading
+  note: 'Adopted: May 9, 1981 Amended: August 31, 1996. NILL does not have a copy of the 1996 amendment(s)..
+    The National Indian Law Library page gives the table of contents (and may link to the nation''s own
+    copy); full text is not hosted there.'
+- kind: law-code
+  title: Jamul Indian Village Ordinances
+  link: http://www.jamulindianvillage.com/tribal-law/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Jamul Indian Village'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Jamul Tribal Court - Intertribal Court of Southern California
+  link: http://www.sciljc.org/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Jamul Indian Village'
 gaming:
   compacts:
   - state: CA

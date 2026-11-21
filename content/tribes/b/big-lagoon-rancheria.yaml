@@ -106,6 +106,26 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Big Lagoon Rancheria, California
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: http://www.nigc.gov/images/uploads/gamingordinances/biglagoonrncha-ordappr081094.pdf
+  source: national-indian-law-library-big-lagoon
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At National Indian
+    Gaming Commission website , tribe''s gaming ordinance.".'
+- kind: constitution
+  title: Constitution and By-laws of the Big Lagoon Rancheria
+  year: '1985'
+  link: https://narf.org/nill/constitutions/big_lagoon/index.html
+  source: national-indian-law-library-constitution-constitutions-big-lagoon
+  confidence: medium
+  as_of: '1985'
+  locator: page heading
+  note: 'Last amended: 1985. The National Indian Law Library page gives the table of contents (and may
+    link to the nation''s own copy); full text is not hosted there.'
 gaming:
   compacts:
   - state: CA

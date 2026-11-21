@@ -122,6 +122,158 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: The Chickasaw Nation
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://chickasaw.net/Our-Nation/Government/Chickasaw-Code.aspx
+  source: national-indian-law-library-chickasaw
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://chickasaw.net/Our-Nation/Government/Chickasaw-Constitution.aspx
+  source: national-indian-law-library-chickasaw
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: law-code
+  title: The Chickasaw Nation
+  link: https://narf.org/nill/codes/chickasaw/index.html
+  source: national-indian-law-library-code-codes-chickasaw
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: constitution
+  title: The Chickasaw Nation - Tribal Constitution
+  year: '2002'
+  link: https://narf.org/nill/constitutions/chickasaw/index.html
+  source: national-indian-law-library-constitution-constitutions-chickasaw
+  confidence: medium
+  as_of: '2002'
+  locator: page heading
+  note: 'Amended: June 21, 2002. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Chickasaw Nation Constitution
+  link: https://www.chickasaw.net/Our-Nation/Government/Chickasaw-Constitution.aspx
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Chickasaw Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Chickasaw Nation Code
+  link: https://www.chickasaw.net/Our-Nation/Government/Chickasaw-Code.aspx
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Chickasaw Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: peacemaking-program
+  name: Chickasaw Nation Peacemaking Court
+  source: narf-other-tribal-materials
+  confidence: medium
+  as_of: '2025-10-15'
+  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked.
+- kind: peacemaking-program
+  name: Chickasaw Nation Peacemaking Court
+  source: narf-tribal-peacemaking-laws
+  confidence: medium
+  as_of: '2025-09-29'
+  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked.
+- kind: court-of-appeals
+  name: Supreme Court
+  link: https://judicial.chickasaw.net/
+  source: national-indian-law-library-chickasaw
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: tribal-court
+  name: District Court
+  link: https://judicial.chickasaw.net/
+  source: national-indian-law-library-chickasaw
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: tribal-court
+  name: Court Advocate
+  link: https://judicial.chickasaw.net/
+  source: national-indian-law-library-chickasaw
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: peacemaking-program
+  name: Peacemaking Court
+  link: https://judicial.chickasaw.net/
+  source: national-indian-law-library-chickasaw
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: tribal-court
+  name: Chickasaw Nation Judicial Branch
+  link: http://www.chickasaw.net/judicial/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Chickasaw Nation'
+dispute_resolution:
+  provisions:
+  - kind: peacemaking
+    title: Title 5, Courts & Procedures, Chapter 14 – Chickasaw Nation Peacemaking Court
+    citation: Title 5, Courts & Procedures, Chapter 14 – Chickasaw Nation Peacemaking Court
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/The-Chickasaw-Nation-Title-5-5.16.2025.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: The Chickasaw Nation of Oklahoma
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      referral standards, procedures, authority for District Court to limit, standards of conduct, confidentiality
+      of statements made in peacemaking, and use of tribal traditions and customary law.'
+  - kind: mediation
+    title: Section 3-3605 Arbitration or Mediation Authorized
+    citation: Section 3-3605 Arbitration or Mediation Authorized
+    link: https://narf.org/nill/codes/chickasaw/index.html
+    source: national-indian-law-library-code-codes-chickasaw
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Table of Contents, under 'TITLE 3. BUSINESS REGULATIONS AND LICENSING:'
+    note: Identified from section headings in the National Indian Law Library table of contents; the provision
+      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+  - kind: peacemaking
+    title: 'CHAPTER 14: CHICKASAW NATION PEACEMAKING COURT (Nanna alphi’sa ishtaa-asha ikbi'
+    citation: 'CHAPTER 14: CHICKASAW NATION PEACEMAKING COURT (Nanna alphi’sa ishtaa-asha ikbi; Section
+      5-1401.3 Peacemaker of the Court; Section 5-1401.4 Jurisdiction of the Peacemaking Court; Section
+      5-1401.6 Limitations of Peacemaker Authority; Section 5-1401.8 Procedures for Requesting to Transfer
+      as an Existing Action to the Peacemaking Court; ...'
+    link: https://narf.org/nill/codes/chickasaw/index.html
+    source: national-indian-law-library-code-codes-chickasaw
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Table of Contents, under 'TITLE 5. COURTS AND PROCEDURES:'
+    note: Identified from section headings in the National Indian Law Library table of contents; the provision
+      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+  - kind: mediation
+    title: Section 6-101.37 Best Interest of Child Considered in Awarding Custody or Appointing Guardian
+      - Joint Custody - Plan - Mediation
+    citation: Section 6-101.37 Best Interest of Child Considered in Awarding Custody or Appointing Guardian
+      - Joint Custody - Plan - Mediation
+    link: https://narf.org/nill/codes/chickasaw/index.html
+    source: national-indian-law-library-code-codes-chickasaw
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Table of Contents, under 'TITLE 6. DOMESTIC RELATIONS AND FAMILIES:'
+    note: Identified from section headings in the National Indian Law Library table of contents; the provision
+      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
 gaming:
   compacts:
   - state: OK

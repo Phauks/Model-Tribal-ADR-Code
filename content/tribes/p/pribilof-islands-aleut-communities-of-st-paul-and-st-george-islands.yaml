@@ -110,6 +110,90 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Pribilof Islands Aleut Communities of St. Paul & St. George Islands (St. George Island and
     Saint Paul Island)
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Constitution and Bylaws of the Aleut Community Alaska (approved 1950) states it was adopted
+    under Act of June 18, 1934 (48 Stat. 984); Act of May 1, 1936 (49 Stat. 1250)
+  source: university-of-oklahoma-indian-reorganization-act-aleutcons
+  confidence: medium
+  as_of: '1950'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Climate change resolution
+  year: '2007'
+  link: https://narf.org/nill/triballaw/climate/index.html
+  source: national-indian-law-library-pribilof-islands
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website . Climate
+    change resolution. (2007)".'
+- kind: constitution
+  title: Constitution. (St. Paul
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/aleutcons.html
+  source: national-indian-law-library-pribilof-islands
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Constitution. (St. Paul, 1950)".'
+- kind: constitution
+  title: Constitution. (St. Paul
+  year: '1950'
+  link: https://www.loc.gov/item/51061562/
+  source: national-indian-law-library-pribilof-islands
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Constitution. (St. Paul, 1950)".'
+- kind: corporate-charter
+  title: Corporate charter. (St. Paul
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/aleutchrtr.html
+  source: national-indian-law-library-pribilof-islands
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Corporate charter. (St. Paul, 1950)".'
+- kind: corporate-charter
+  title: Corporate charter. (St. Paul
+  year: '1950'
+  link: https://www.loc.gov/item/51061511/
+  source: national-indian-law-library-pribilof-islands
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Corporate charter. (St. Paul, 1950)".'
+- kind: corporate-charter
+  title: Corporate Charter of the Aleut Community of St. Paul Island Alaska
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/aleutchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-aleutchrtr
+  confidence: medium
+  as_of: '1950'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution and Bylaws of the Aleut Community Alaska
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/aleutcons.html
+  source: university-of-oklahoma-indian-reorganization-act-aleutcons
+  confidence: medium
+  as_of: '1950'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Aleut Community of St. Paul Island Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Saint Paul Island (Pribilof Islands Aleut Communities of St. Paul &
+    St. George Islands)'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

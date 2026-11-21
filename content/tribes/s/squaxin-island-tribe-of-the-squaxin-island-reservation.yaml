@@ -108,6 +108,82 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Squaxin Island Tribe of the Squaxin Island Reservation
+governing_documents:
+- kind: law-code
+  title: Squaxin Island Tribe
+  year: '2014'
+  link: https://narf.org/nill/codes/squaxinisland/index.html
+  source: national-indian-law-library-code-codes-squaxinisland
+  confidence: medium
+  as_of: '2014'
+  locator: page heading
+  note: 'Updated: February 2014. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Squaxin Island Tribe - Constitution and Bylaws
+  year: '2010'
+  link: https://narf.org/nill/constitutions/squaxinislandconst/index.html
+  source: national-indian-law-library-constitution-constitutions-squaxinislandconst
+  confidence: medium
+  as_of: '2010'
+  locator: page heading
+  note: 'Confirmed Current: 10/25/2010. Full text linked from the National Indian Law Library page.'
+- kind: law-code
+  title: Tribal code
+  link: https://library.municode.com/wa/squaxin_island_tribe/codes/code_of_ordinances
+  source: national-indian-law-library-squaxin
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Municode website
+    .".'
+- kind: constitution
+  title: Squaxin Island Tribe Constitution and Bylaws
+  link: http://www.squaxinisland.org/wp/wp-content/uploads/2010/04/constitution_treaty.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Squaxin Island Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Squaxin Island Tribal Code - Municode
+  link: https://library.municode.com/wa/squaxin_island_tribe/codes/code_of_ordinances
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Squaxin Island Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-squaxin
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Squaxin Island Tribal Court
+  link: http://www.squaxinisland.org/government/departments/legal/tribal-code/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Squaxin Island Tribe'
+dispute_resolution:
+  provisions:
+  - kind: mediation
+    title: 4.04.140 Informal dispute resolution.) 4.08 Administrative Rules (4.08.010 Clerk.
+    citation: 4.04.140 Informal dispute resolution.) 4.08 Administrative Rules (4.08.010 Clerk.; 4.52
+      Arbitration Code (4.52.010 Authority.; 4.52.030 Agreements to arbitrate are enforceable.; 4.52.050
+      Stay of proceedings and order to proceed with arbitration.; 4.52.090 Arbitration award not appealable.;
+      ...
+    link: https://narf.org/nill/codes/squaxinisland/index.html
+    source: national-indian-law-library-code-codes-squaxinisland
+    confidence: medium
+    as_of: '2014'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Updated:
+      February 2014); the provision itself was not read. The heading it falls under is taken from the
+      page layout and may be imprecise.'
 gaming:
   compacts:
   - state: WA

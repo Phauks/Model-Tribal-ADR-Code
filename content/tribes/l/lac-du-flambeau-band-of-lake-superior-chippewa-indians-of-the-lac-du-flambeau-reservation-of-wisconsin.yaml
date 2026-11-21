@@ -129,6 +129,125 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation of
     Wisconsin
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "Lac du Flambeau Band of the Lake Superior Chippewa Indians of Wisconsin" among organizations
+    under constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18,
+    1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Lac du Flambeau Band of Lake Superior Chippewa Indians of Wisconsin (approved 1936) states it
+    was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-lacduflamcons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Lac Du Flambeau Band of Lake Superior Chippewa Indians of Wisconsin
+  year: '2015'
+  link: https://narf.org/nill/codes/lac_du_flambeau_chippewa/index.html
+  source: national-indian-law-library-code-codes-lac-du-flambeau-chippewa
+  confidence: medium
+  as_of: '2015'
+  locator: page heading
+  note: 'Table of Contents Updated: October 2015. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Lac Du Flambeau Band of Lake Superior Chippewa Indians of Wisconsin Constitution and Bylaws
+  year: '2005'
+  link: https://narf.org/nill/constitutions/lac_flambeau/index.html
+  source: national-indian-law-library-constitution-constitutions-lac-flambeau
+  confidence: medium
+  as_of: '2005'
+  locator: page heading
+  note: 'Amended: September 2005. Full text linked from the National Indian Law Library page.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.ldftribe.com/departments/97/Other_Pages/Court_Ordinances.html
+  source: national-indian-law-library-lac-du-flambeau-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.ldftribe.com/departments/97/Other_Pages/Court_Ordinances.html
+  source: national-indian-law-library-lac-du-flambeau-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Lac du Flambeau Band of Lake Superior Chippewa Indians Constitution and Bylaws
+  link: https://www.ldftribe.com/uploads/files/Court-Ordinances/BYLAWS.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Lac du Flambeau Band of Lake Superior Chippewa Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Lac du Flambeau Tribal Ordinances
+  link: http://www.ldftribe.com/pages/23/Court-Ordinances/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Lac du Flambeau Band of Lake Superior Chippewa Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Lac Du Flambeau Band of Lake Superior Chippewa Indians of Wisconsin)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/lacduflamchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-lacduflamchrtr
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Lac du Flambeau Band of Lake Superior Chippewa Indians of Wisconsin
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/lacduflamcons.html
+  source: university-of-oklahoma-indian-reorganization-act-lacduflamcons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.ldftribe.com/departments/43/Tribal_Operations/Tribal_Courts.html
+  source: national-indian-law-library-lac-du-flambeau-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Lac du Flambeau Tribal Courts
+  link: http://www.ldftribe.com/departments/43/Tribal_Operations/Tribal_Courts.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Lac du Flambeau Band of Lake Superior Chippewa Indians'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: 43.417 Patron Dispute Resolution.
+    citation: 43.417 Patron Dispute Resolution.
+    link: https://narf.org/nill/codes/lac_du_flambeau_chippewa/index.html
+    source: national-indian-law-library-code-codes-lac-du-flambeau-chippewa
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
 gaming:
   compacts:
   - state: WI

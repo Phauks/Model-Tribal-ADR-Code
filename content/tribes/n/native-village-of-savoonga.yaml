@@ -134,6 +134,52 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Native Village of Savoonga
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Constitution (Native Village of Savoonga, Alaska) (approved 1940) states it was adopted under
+    Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-savcons
+  confidence: medium
+  as_of: '1940'
+  locator: preamble / approval and certification of adoption
+  note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
+    the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
+    constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Constitution
+  link: https://thorpe.law.ou.edu/IRA/savcons.html
+  source: national-indian-law-library-native-savoonga
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Univerisity
+    of Oklahoma website .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.loc.gov/item/51061564/
+  source: national-indian-law-library-native-savoonga
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website .".'
+- kind: corporate-charter
+  title: Corporate charter (Native Village of Savoonga, Alaska)
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/savchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-savchrtr
+  confidence: medium
+  as_of: '1940'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Native Village of Savoonga, Alaska)
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/savcons.html
+  source: university-of-oklahoma-indian-reorganization-act-savcons
+  confidence: medium
+  as_of: '1940'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

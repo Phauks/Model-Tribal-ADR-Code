@@ -145,6 +145,174 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Paiute Indian Tribe of Utah (Cedar Band of Paiutes, Kanosh Band of Paiutes, Koosharem Band
     of Paiutes, Indian Peaks Band of Paiutes, and Shivwits Band of Paiutes)
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Kanosh Band of Pauite Indians" among organizations under constitutions approved
+    by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Kanosh Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
+    Affairs list. Historical status in 1947; the nation may since have adopted a different constitution.
+    The act is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma
+    Indian Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Listed as "The Shivwits Band of Paiute Indians of the Shivwits Reservation, Utah" among organizations
+    under constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18,
+    1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Shivwits Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
+    Affairs list. Historical status in 1947; the nation may since have adopted a different constitution.
+    The act is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma
+    Indian Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Kanosh Band of Paiute Indians of the Kanosh Indian Community) (approved 1942)
+    states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-kancons
+  confidence: medium
+  as_of: '1942'
+  locator: preamble / approval and certification of adoption
+  note: Kanosh Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
+    Affairs list. Historical constitution; a later constitution may have replaced it.
+- kind: indian-reorganization-act
+  detail: Constitution (Shivwits Band of Paiute of the Shivwits Reservation Utah) (approved 1940) states
+    it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-shivcons
+  confidence: medium
+  as_of: '1940'
+  locator: preamble / approval and certification of adoption
+  note: Shivwits Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
+    Affairs list. Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Paiute Indian Tribe of Utah - Tribal Constitution
+  year: '1997'
+  link: https://narf.org/nill/constitutions/paiute_utah/index.html
+  source: national-indian-law-library-constitution-constitutions-paiute-utah
+  confidence: medium
+  as_of: '1997'
+  locator: page heading
+  note: 'Amended: 1997. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: http://www.utahpaiutes.org/about/government/documents.aspx
+  source: national-indian-law-library-paiute-utah
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . (See Internet Archive: https://web.archive.org/web/20180711194014/http://www.utahpaiutes.org:80/about/government/documents.aspx
+    )".'
+- kind: law-code
+  title: Tribal code
+  link: https://web.archive.org/web/20180711194014/http://www.utahpaiutes.org:80/about/government/documents.aspx
+  source: national-indian-law-library-paiute-utah
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . (See Internet Archive: https://web.archive.org/web/20180711194014/http://www.utahpaiutes.org:80/about/government/documents.aspx
+    )".'
+- kind: constitution
+  title: Constitution
+  link: https://www.utahpaiutes.org/constitution-and-open-government/
+  source: national-indian-law-library-paiute-utah
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Constitution of the Paiute Indian Tribe of Utah
+  link: http://www.utahpaiutes.org/about/government/documents.aspx
+  source: national-indian-law-library-paiute-utah-cedar
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Cedar Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
+    Affairs list. Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At
+    tribe''s website . Constitution of the Paiute Indian Tribe of Utah.".'
+- kind: constitution
+  title: Constitution of the Paiute Indian Tribe of Utah
+  link: http://www.utahpaiutes.org/about/government/documents.aspx
+  source: national-indian-law-library-paiute-utah-indian-peaks
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Indian Peaks Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of
+    Indian Affairs list. Listed on the National Indian Law Library page under ''Tribal Constitution''
+    as: "At tribe''s website . Constitution of the Paiute Indian Tribe of Utah.".'
+- kind: constitution
+  title: Constitution of the Paiute Indian Tribe of Utah
+  link: http://www.utahpaiutes.org/about/government/documents.aspx
+  source: national-indian-law-library-paiute-utah-kanosh
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Kanosh Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
+    Affairs list. Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At
+    tribe''s website . Constitution of the Paiute Indian Tribe of Utah.".'
+- kind: constitution
+  title: Constitution of the Paiute Indian Tribe of Utah
+  link: http://www.utahpaiutes.org/about/government/documents.aspx
+  source: national-indian-law-library-paiute-utah-koosharem
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Koosharem Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
+    Affairs list. Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At
+    tribe''s website . Constitution of the Paiute Indian Tribe of Utah.".'
+- kind: constitution
+  title: Constitution of the Paiute Indian Tribe of Utah
+  link: http://www.utahpaiutes.org/about/government/documents.aspx
+  source: national-indian-law-library-paiute-utah-shivwits
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Shivwits Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
+    Affairs list. Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At
+    tribe''s website . Constitution of the Paiute Indian Tribe of Utah.".'
+- kind: corporate-charter
+  title: Corporate charter (Kanosh Band of Paiute Indians of the Kanosh Reservation Utah)
+  year: '1943'
+  link: https://thorpe.law.ou.edu/IRA/kanchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-kanchrtr
+  confidence: medium
+  as_of: '1943'
+  note: Kanosh Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
+    Affairs list. Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Kanosh Band of Paiute Indians of the Kanosh Indian Community)
+  year: '1942'
+  link: https://thorpe.law.ou.edu/IRA/kancons.html
+  source: university-of-oklahoma-indian-reorganization-act-kancons
+  confidence: medium
+  as_of: '1942'
+  note: Kanosh Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
+    Affairs list. Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: corporate-charter
+  title: Corporate charter (Shivwits Band of Paiute Indians of the Shivwits Reservation Utah)
+  year: '1941'
+  link: https://thorpe.law.ou.edu/IRA/shivchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-shivchrtr
+  confidence: medium
+  as_of: '1941'
+  note: Shivwits Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
+    Affairs list. Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Shivwits Band of Paiute of the Shivwits Reservation Utah)
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/shivcons.html
+  source: university-of-oklahoma-indian-reorganization-act-shivcons
+  confidence: medium
+  as_of: '1940'
+  note: Shivwits Band is a constituent band of the Paiute Indian Tribe of Utah per the Bureau of Indian
+    Affairs list. Historical text as originally approved; the nation may have amended or replaced it since.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

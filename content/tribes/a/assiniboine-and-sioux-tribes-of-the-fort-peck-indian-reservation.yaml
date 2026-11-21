@@ -140,6 +140,78 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation, Montana
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://fptc.org/comprehensive-code-of-justice-ccoj/
+  source: national-indian-law-library-assiniboine-sioux
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Appendix I of Fort Peck Tribes Comprehensive Code of Justice
+  link: https://fptc.org/comprehensive-code-of-justice-ccoj/
+  source: national-indian-law-library-assiniboine-sioux
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website . Appendix I of Fort Peck Tribes Comprehensive Code of Justice.".'
+- kind: law-code
+  title: Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation, Montana - Comprehensive Code
+    of Justice
+  year: '2024'
+  link: https://narf.org/nill/codes/assiniboine_sioux/index.html
+  source: national-indian-law-library-code-codes-assiniboine-sioux
+  confidence: medium
+  as_of: '2024'
+  locator: page heading
+  note: 'Most recent update received : June 2024. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation, Montana - Constitution
+  year: '2013'
+  link: https://narf.org/nill/constitutions/assiniboine_sioux/index.html
+  source: national-indian-law-library-constitution-constitutions-assiniboine-sioux
+  confidence: medium
+  as_of: '2013'
+  locator: page heading
+  note: 'Amended: 2013. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation Constitution and Bylaws
+  link: http://www.fortpecktribes.org/pdf/fpt_constitution_bylaws.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Montana section, entry 'Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Fort Peck Tribes Comprehensive Code of Justice
+  link: http://www.fptc.org/ccoj/ccoj.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Montana section, entry 'Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.fptc.org/
+  source: national-indian-law-library-assiniboine-sioux
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Fort Peck Tribal Court
+  link: http://www.fptc.org/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Montana section, entry 'Assiniboine and Sioux Tribes of the Fort Peck Indian Reservation'
 gaming:
   compacts:
   - state: MT

@@ -122,6 +122,105 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Absentee-Shawnee Tribe of Indians of Oklahoma
+government_structure:
+- kind: oklahoma-indian-welfare-act
+  detail: Listed as "The Absentee-Shawnee Tribe of Indians of Oklahoma" among organizations under constitutions
+    approved by the Secretary of the Interior (Oklahoma Indian Welfare Act of June 26, 1936), as of 1947
+  source: haas-1947-table-b-oklahoma
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Oklahoma Tribes, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: oklahoma-indian-welfare-act
+  detail: Constitution (Absentee-Shawnee Tribe of Indians of Oklahoma) (approved 1938) states it was adopted
+    under Act of June 26, 1936 (49 Stat. 1967)
+  source: university-of-oklahoma-indian-reorganization-act-abshawcons
+  confidence: medium
+  as_of: '1938'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: AST Code of Laws
+  link: https://www.astribe.com/court
+  source: national-indian-law-library-absentee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribal Court''s
+    website . AST Code of Laws.".'
+- kind: law-code
+  title: Tax Codes
+  link: https://www.astribe.com/tax-codes
+  source: national-indian-law-library-absentee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    . Tax Codes.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.astribe.com/assets/Constitution.pdf
+  source: national-indian-law-library-absentee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: law-code
+  title: Absentee-Shawnee Tribe
+  year: '2024'
+  link: https://narf.org/nill/codes/absentee-shawnee/index.html
+  source: national-indian-law-library-code-codes-absentee-shawnee
+  confidence: medium
+  as_of: '2024'
+  locator: page heading
+  note: 'Table of Contents Updated: August 2024. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution of the Absentee Shawnee Tribe
+  year: '2019'
+  link: https://narf.org/nill/constitutions/absentee_shawnee_const/index.html
+  source: national-indian-law-library-constitution-constitutions-absentee-shawnee-const
+  confidence: medium
+  as_of: '2019'
+  locator: page heading
+  note: 'Ratified: May 10, 2019. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Absentee Shawnee Tribe of Indians of Oklahoma Constitution
+  link: http://www.astribe.com/astribe/resources/pdf/newsletter/AST_Constitution.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Absentee-Shawnee Tribe of Indians of Oklahoma'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Absentee-Shawnee Tribe of Indians of Oklahoma)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/abshawcons.html
+  source: university-of-oklahoma-indian-reorganization-act-abshawcons
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.astribe.com/court
+  source: national-indian-law-library-absentee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Absentee-Shawnee Tribal Court
+  link: http://www.astribe.com/astribe/?reload
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Absentee-Shawnee Tribe of Indians of Oklahoma'
 gaming:
   compacts:
   - state: OK

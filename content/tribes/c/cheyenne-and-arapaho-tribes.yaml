@@ -157,6 +157,93 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Cheyenne and Arapaho Tribes, Oklahoma
+government_structure:
+- kind: oklahoma-indian-welfare-act
+  detail: Listed as "The Cheyenne-Arapaho Tribes of Oklahoma" among organizations under constitutions
+    approved by the Secretary of the Interior (Oklahoma Indian Welfare Act of June 26, 1936), as of 1947
+  source: haas-1947-table-b-oklahoma
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Oklahoma Tribes, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: oklahoma-indian-welfare-act
+  detail: Constitution (Cheyenne-Arapaho Tribes of Oklahoma) (approved 1937) states it was adopted under
+    Act of June 26, 1936 (49 Stat. 1967)
+  source: university-of-oklahoma-indian-reorganization-act-charcons
+  confidence: medium
+  as_of: '1937'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://www.cheyenneandarapaho-nsn.gov/legislative/tribal-codes-acts-and-ordinances
+  source: national-indian-law-library-cheyenne-arapaho-ok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribes'' website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.cheyenneandarapaho-nsn.gov/legislative/tribal-codes-acts-and-ordinances
+  source: national-indian-law-library-cheyenne-arapaho-ok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribes''
+    website .".'
+- kind: law-code
+  title: Cheyenne-Arapaho Tribes of Oklahoma, Law and Order Code
+  year: '1988'
+  link: https://narf.org/nill/codes/cheyaracode/index.html
+  source: national-indian-law-library-code-codes-cheyaracode
+  confidence: medium
+  as_of: '1988'
+  locator: page heading
+  note: 'Dated: 1988. Full text linked from the National Indian Law Library page.'
+- kind: constitution
+  title: Constitution of the Cheyenne and Arapaho Tribes [Oklahoma]
+  year: '2007'
+  link: https://narf.org/nill/constitutions/cheyenne_arapaho_ok/index.html
+  source: national-indian-law-library-constitution-constitutions-cheyenne-arapaho-ok
+  confidence: medium
+  as_of: '2007'
+  locator: page heading
+  note: 'Received: January 2007. Full text linked from the National Indian Law Library page.'
+- kind: constitution
+  title: Cheyenne-Arapaho Tribes Constitution
+  link: https://www.c-a-tribes.org/staff/cheyenne-arapaho-tribes-constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Cheyenne and Arapaho Tribes'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Cheyenne-Arapaho Tribes of Oklahoma)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/charcons.html
+  source: university-of-oklahoma-indian-reorganization-act-charcons
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: judicial-branch
+  link: https://www.cheyenneandarapaho-nsn.gov/government/judicial
+  source: national-indian-law-library-cheyenne-arapaho-ok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: tribal-court
+  name: Cheyenne and Arapaho Tribes Judicial Branch
+  link: https://www.c-a-tribes.org/staff/judicial-branch
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Cheyenne and Arapaho Tribes'
 gaming:
   compacts:
   - state: OK

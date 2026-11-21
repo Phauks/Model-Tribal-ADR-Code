@@ -143,6 +143,53 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Ninilchik Village
+governing_documents:
+- kind: law-code
+  title: Ninilchik Village
+  year: '2001'
+  link: https://narf.org/nill/codes/ninilchik/index.html
+  source: national-indian-law-library-code-codes-ninilchik
+  confidence: medium
+  as_of: '2001'
+  locator: page heading
+  note: 'Dated: 2001. The National Indian Law Library page gives the table of contents (and may link to
+    the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: At tribe's website. Enrollment Ordinance. Election Ordinance. Judicial Ordinance. Domestic Violence
+    Ordinance. Consultation Ordinance
+  link: http://www.ninilchiktribe-nsn.gov/documents.html
+  source: national-indian-law-library-ninilchik
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website.
+    Enrollment Ordinance. Election Ordinance. Judicial Ordinance. Domestic Violence Ordinance. Consultation
+    Ordinance.".'
+- kind: constitution
+  title: At tribe's website
+  link: http://www.ninilchiktribe-nsn.gov/bylaws.html
+  source: national-indian-law-library-ninilchik
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website.".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.ninilchiktribe-nsn.gov/court.html
+  source: national-indian-law-library-ninilchik
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Ninilchik Tribal Court
+  link: http://www.ninilchiktribe-nsn.gov/about/tribal-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Ninilchik Village Tribe'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

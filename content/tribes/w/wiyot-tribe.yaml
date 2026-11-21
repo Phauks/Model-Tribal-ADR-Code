@@ -108,6 +108,25 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Wiyot Tribe, California
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://wiyot.tribal.codes/
+  source: national-indian-law-library-wiyot
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    (eCode360).".'
+- kind: constitution
+  title: Constitution
+  link: https://wiyot.tribal.codes/
+  source: national-indian-law-library-wiyot
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website (eCode360).".'
 gaming:
   compacts:
   - state: CA

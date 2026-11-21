@@ -122,6 +122,86 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Ottawa Tribe of Oklahoma
+government_structure:
+- kind: oklahoma-indian-welfare-act
+  detail: Listed as "The Ottawa Tribe of Oklahoma" among organizations under constitutions approved by
+    the Secretary of the Interior (Oklahoma Indian Welfare Act of June 26, 1936), as of 1947
+  source: haas-1947-table-b-oklahoma
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Oklahoma Tribes, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: oklahoma-indian-welfare-act
+  detail: Constitution (Ottawa Tribe of Oklahoma) (approved 1938) states it was adopted under Act of June
+    26, 1936 (49 Stat. 1967)
+  source: university-of-oklahoma-indian-reorganization-act-otcons
+  confidence: medium
+  as_of: '1938'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://www.ottawatribe.gov/publicly-available-documents
+  source: national-indian-law-library-ottawa-oklahoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    . Selected codes and ordinances.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.ottawatribe.gov/tribal-constitution
+  source: national-indian-law-library-ottawa-oklahoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Ottawa Tribe of Oklahoma Constitution
+  link: http://www.ottawatribe.org/961-2/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Ottawa Tribe of Oklahoma'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Ottawa Tribe of Oklahoma)
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/otchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-otchrtr
+  confidence: medium
+  as_of: '1939'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Ottawa Tribe of Oklahoma)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/otcons.html
+  source: university-of-oklahoma-indian-reorganization-act-otcons
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: court-of-indian-offenses
+  name: Miami Agency CFR Court (Court of Indian Offenses)
+  link: https://www.bia.gov/CFRCourts
+  source: bia-courts-of-indian-offenses
+  confidence: high
+  as_of: '2026-11-21'
+  locator: List of CFR Courts and the Tribes they Serve
+  note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
+    Indian Affairs list.
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.ottawatribe.gov/tribal-court
+  source: national-indian-law-library-ottawa-oklahoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 gaming:
   compacts:
   - state: OK

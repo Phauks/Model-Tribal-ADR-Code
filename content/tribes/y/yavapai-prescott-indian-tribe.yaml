@@ -113,6 +113,41 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Yavapai-Prescott Indian Tribe
+governing_documents:
+- kind: law-code
+  title: Yavapai-Prescott Tribe of the Yavapai Reservation, Arizona
+  year: '1979'
+  link: https://narf.org/nill/codes/yavapaiprescott/index.html
+  source: national-indian-law-library-code-codes-yavapaiprescott
+  confidence: medium
+  as_of: '1979'
+  locator: page heading
+  note: 'Dated: 1979. The National Indian Law Library page gives the table of contents (and may link to
+    the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Yavapai-Prescott Tribe of the Yavapai Reservation, Arizona - Amended Articles of Association
+  year: '1975'
+  link: https://narf.org/nill/constitutions/yavapaiprescott/index.html
+  source: national-indian-law-library-constitution-constitutions-yavapaiprescott
+  confidence: medium
+  as_of: '1975'
+  locator: page heading
+  note: 'Dated: 1975. The National Indian Law Library page gives the table of contents (and may link to
+    the nation''s own copy); full text is not hosted there.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-yavapai-prescott
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Yavapai-Prescott Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Yavapai Prescott Indian Tribe'
 gaming:
   compacts:
   - state: AZ

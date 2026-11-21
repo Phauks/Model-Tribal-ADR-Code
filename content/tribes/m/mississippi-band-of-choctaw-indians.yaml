@@ -132,6 +132,183 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Mississippi Band of Choctaw Indians
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Mississippi Band of Choctaw Indians" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Mississippi Band of Choctaw Indians) (approved 1945) states it was adopted under
+    Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-misschoccons
+  confidence: medium
+  as_of: '1945'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Mississippi Band of Choctaw Indians Tribal Code
+  year: '2015'
+  link: https://narf.org/nill/codes/mississippichoctaw/index.html
+  source: national-indian-law-library-code-codes-mississippichoctaw
+  confidence: medium
+  as_of: '2015'
+  locator: page heading
+  note: 'Table of Contents Updated: February 2015. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution and Bylaws of the Mississippi Band of Choctaw Indians
+  year: '2013'
+  link: https://narf.org/nill/constitutions/misschoctawconst/index.html
+  source: national-indian-law-library-constitution-constitutions-misschoctawconst
+  confidence: medium
+  as_of: '2013'
+  locator: page heading
+  note: 'Amended: 2013. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: http://www.choctaw.org/government/court/code.html
+  source: national-indian-law-library-mississippi-choctaw
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: http://www.choctaw.org/government/court/constitution.html
+  source: national-indian-law-library-mississippi-choctaw
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Mississippi Band of Choctaw Indians Tribal Constitution
+  link: http://www.choctaw.org/government/court/constitution.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Mississippi section, entry 'Mississippi Band of Choctaw Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Mississippi Band of Choctaw Indians Tribal Code
+  link: http://www.choctaw.org/government/court/code.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Mississippi section, entry 'Mississippi Band of Choctaw Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Mississippi Band of Choctaw Indians)
+  year: '1945'
+  link: https://thorpe.law.ou.edu/IRA/misschoccons.html
+  source: university-of-oklahoma-indian-reorganization-act-misschoccons
+  confidence: medium
+  as_of: '1945'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.choctaw.org/government/court/index.html
+  source: national-indian-law-library-mississippi-choctaw
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Mississippi Band of Choctaw Indians Tribal Court
+  link: http://www.choctaw.org/government/court/index.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Mississippi section, entry 'Mississippi Band of Choctaw Indians'
+dispute_resolution:
+  provisions:
+  - kind: peacemaking
+    title: Title XXIV – Choctaw Peacemaker Code, Chapter 1
+    citation: Title XXIV – Choctaw Peacemaker Code, Chapter 1
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Miss-Choctaw-Title-24-Choctaw-Peacemaker-Code.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Mississippi Band of Choctaw Indians, Mississippi
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      authority to use tribal traditions and customary law, qualifications, civil process authority, procedures,
+      and authority of Tribal Court to limit.'
+  - kind: peacemaking
+    title: § 3-10-15 Referral of Domestic Violence Cases to Peacemaker Court
+    citation: § 3-10-15 Referral of Domestic Violence Cases to Peacemaker Court
+    link: https://narf.org/nill/codes/mississippichoctaw/index.html
+    source: national-indian-law-library-code-codes-mississippichoctaw
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents, under 'CHAPTER 10. CRIMES INVOLVING DOMESTIC VIOLENCE'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: February 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: CHAPTER 2. TRANSFER PROCEDURES FOR JUVENILE OFFENDERS TO ADULT COURT OR PEACEMAKER COURT
+    citation: CHAPTER 2. TRANSFER PROCEDURES FOR JUVENILE OFFENDERS TO ADULT COURT OR PEACEMAKER COURT
+    link: https://narf.org/nill/codes/mississippichoctaw/index.html
+    source: national-indian-law-library-code-codes-mississippichoctaw
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: February 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: § 11-4-14 Informal Hearing or Transfer to Peacemaker Court
+    citation: § 11-4-14 Informal Hearing or Transfer to Peacemaker Court
+    link: https://narf.org/nill/codes/mississippichoctaw/index.html
+    source: national-indian-law-library-code-codes-mississippichoctaw
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents, under 'CHAPTER 4. MINOR IN NEED OF CARE PROCEEDINGS'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: February 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: other
+    title: DISPUTE RESOLUTION
+    citation: DISPUTE RESOLUTION
+    link: https://narf.org/nill/codes/mississippichoctaw/index.html
+    source: national-indian-law-library-code-codes-mississippichoctaw
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents, under 'CHAPTER 3. CLASS III (CASINO-TYPE) GAMING'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: February 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: Title XXIV - Choctaw Peacemaker Code
+    citation: Title XXIV - Choctaw Peacemaker Code
+    link: https://narf.org/nill/codes/mississippichoctaw/index.html
+    source: national-indian-law-library-code-codes-mississippichoctaw
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents, under 'CHAPTER 1. DOMESTIC ABUSE'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: February 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: CHAPTER 1. CHOCTAW PEACEMAKER CODE
+    citation: CHAPTER 1. CHOCTAW PEACEMAKER CODE
+    link: https://narf.org/nill/codes/mississippichoctaw/index.html
+    source: national-indian-law-library-code-codes-mississippichoctaw
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: February 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
 gaming:
   compacts:
   - state: MS

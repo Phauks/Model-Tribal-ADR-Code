@@ -121,6 +121,67 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Dry Creek Rancheria Band of Pomo Indians, California
+governing_documents:
+- kind: law-code
+  title: Dry Creek Rancheria Band of Pomo Indians, California
+  link: https://narf.org/nill/codes/dry_creek/index.html
+  source: national-indian-law-library-code-codes-dry-creek
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: law-code
+  title: Tribal code
+  link: https://www.drycreekrancheria.com/tribal-law/
+  source: national-indian-law-library-dry-creek
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: law-code
+  title: Tribal code
+  link: https://www.drycreekrancheria.com/tribal-court/
+  source: national-indian-law-library-dry-creek
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
+    website .".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://drycreekrancheria.com/tribal-court/
+  source: national-indian-law-library-dry-creek
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+dispute_resolution:
+  provisions:
+  - kind: mediation
+    title: Court-Ordered and Court-Referred Mediation, Marriage Counseling, or Reconciliation of Cases
+      Involving Domestic of Family Violence Prohibited
+    citation: Court-Ordered and Court-Referred Mediation, Marriage Counseling, or Reconciliation of Cases
+      Involving Domestic of Family Violence Prohibited
+    link: https://narf.org/nill/codes/dry_creek/index.html
+    source: national-indian-law-library-code-codes-dry-creek
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Table of Contents, under 'CHAPTER 3. DOMESTIC RELATIONS'
+    note: Identified from section headings in the National Indian Law Library table of contents; the provision
+      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+  - kind: other
+    title: Tribal Dispute Resolution
+    citation: Tribal Dispute Resolution
+    link: https://narf.org/nill/codes/dry_creek/index.html
+    source: national-indian-law-library-code-codes-dry-creek
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Table of Contents, under 'RULE G - 1. SCOPE AND CONSTRUCTION OF RULES'
+    note: Identified from section headings in the National Indian Law Library table of contents; the provision
+      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
 gaming:
   compacts:
   - state: CA

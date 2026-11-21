@@ -121,6 +121,134 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Karuk Tribe
+governing_documents:
+- kind: law-code
+  title: Karuk Tribe
+  link: https://narf.org/nill/codes/karuk/index.html
+  source: national-indian-law-library-code-codes-karuk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: constitution
+  title: Constitution of the Karuk Tribe
+  year: '2008'
+  link: https://narf.org/nill/constitutions/karukconst/index.html
+  source: national-indian-law-library-constitution-constitutions-karukconst
+  confidence: medium
+  as_of: '2008'
+  locator: page heading
+  note: 'Amended: 2008. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://karuk.tribal.codes/
+  source: national-indian-law-library-karuk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    (eCode360).".'
+- kind: constitution
+  title: Constitution
+  link: http://www.karuk.us/images/docs/hr-files/Tribal%20Constitution%207_19_2008.pdf
+  source: national-indian-law-library-karuk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website (pdf).".'
+- kind: constitution
+  title: Constitution
+  link: https://karuk.tribal.codes/
+  source: national-indian-law-library-karuk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website (eCode360).".'
+- kind: constitution
+  title: Karuk Tribe Constitution
+  link: http://www.karuk.us/images/docs/hr-files/Tribal%20Constitution%207_19_2008.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Karuk Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Karuk Tribal Court Ordinances, Codes & Rules of Court
+  link: http://www.karuk.us/index.php/departments/judicial-system
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Karuk Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: peacemaking-program
+  name: Peacemaker Mediation Forum
+  source: narf-tribal-peacemaking-laws
+  confidence: medium
+  as_of: '2025-09-29'
+  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked.
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.karuk.us/index.php/departments/judicial-system
+  source: national-indian-law-library-karuk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Karuk Judicial System
+  link: http://www.karuk.us/index.php/departments/judicial-system
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Karuk Tribe'
+dispute_resolution:
+  provisions:
+  - kind: peacemaking
+    title: Title 3 – Tribal Court, Sec. 3.05.100 – Peacemaker Mediation Forum
+    citation: Title 3 – Tribal Court, Sec. 3.05.100 – Peacemaker Mediation Forum
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Karuk-Chapter-3.05-KTC.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Karuk Tribe of California
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      procedures, and purpose.'
+  - kind: peacemaking
+    title: Section 10.9 Peacemaker Mediation Forum
+    citation: Section 10.9 Peacemaker Mediation Forum
+    link: https://narf.org/nill/codes/karuk/index.html
+    source: national-indian-law-library-code-codes-karuk
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Table of Contents
+    note: Identified from section headings in the National Indian Law Library table of contents; the provision
+      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+  - kind: peacemaking
+    title: 'Section 11: Peacemaker Mediation Forum/Family Unity'
+    citation: 'Section 11: Peacemaker Mediation Forum/Family Unity'
+    link: https://narf.org/nill/codes/karuk/index.html
+    source: national-indian-law-library-code-codes-karuk
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Table of Contents
+    note: Identified from section headings in the National Indian Law Library table of contents; the provision
+      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+  - kind: peacemaking
+    title: Dispute Resolution-Mediation/Peacemaking
+    citation: Dispute Resolution-Mediation/Peacemaking
+    link: https://narf.org/nill/codes/karuk/index.html
+    source: national-indian-law-library-code-codes-karuk
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Table of Contents, under 'SECTION 1. POLICY, PURPOSE AND SCOPE'
+    note: Identified from section headings in the National Indian Law Library table of contents; the provision
+      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
 gaming:
   compacts:
   - state: CA

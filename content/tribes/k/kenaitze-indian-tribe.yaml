@@ -161,6 +161,77 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Kenaitze Indian Tribe
+governing_documents:
+- kind: law-code
+  title: Kenaitze Indian Tribe
+  year: '2019'
+  link: https://narf.org/nill/codes/kenaitze/index.html
+  source: national-indian-law-library-code-codes-kenaitze
+  confidence: medium
+  as_of: '2019'
+  locator: page heading
+  note: 'Table of Contents Updated: March 2019. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Kenaitze Indian Tribe - Tribal Constitution
+  year: '1997'
+  link: https://narf.org/nill/constitutions/kenaitze/index.html
+  source: national-indian-law-library-constitution-constitutions-kenaitze
+  confidence: medium
+  as_of: '1997'
+  locator: page heading
+  note: 'Adopted: June 16, 1997. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.kenaitze.org/tribal-government/tribal-court/court-codes/
+  source: national-indian-law-library-kenaitze
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.kenaitze.org/tribal-government/constitution/
+  source: national-indian-law-library-kenaitze
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Kenaitze Indian Tribe Constitution
+  link: https://www.kenaitze.org/about/executive-council/constitution/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Kenaitze Indian Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Kenaitze Indian Tribal Code
+  link: https://www.kenaitze.org/about/tribal-court/court-codes/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Kenaitze Indian Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.kenaitze.org/tribal-government/tribal-court/
+  source: national-indian-law-library-kenaitze
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Kenaitze Tribal Court
+  link: https://www.kenaitze.org/about/tribal-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Kenaitze Indian Tribe'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

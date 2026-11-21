@@ -139,6 +139,33 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Santo Domingo Pueblo
+justice_institutions:
+- kind: court-of-indian-offenses
+  name: Albuquerque CFR Court (Court of Indian Offenses)
+  link: https://www.bia.gov/CFRCourts
+  source: bia-courts-of-indian-offenses
+  confidence: high
+  as_of: '2026-11-21'
+  locator: List of CFR Courts and the Tribes they Serve
+  note: Listed as Kewa Pueblo (New Mexico); the Bureau of Indian Affairs page says it is the only Court
+    of Indian Offenses that keeps only criminal jurisdiction, with the Pueblo keeping all other jurisdiction.
+    Court established 2019 (85 FR 10714). Courts of Indian Offenses are governed by 25 C.F.R. part 11;
+    § 11.100 points to this Bureau of Indian Affairs list.
+- kind: tribal-court
+  name: Tribal Court
+  link: http://santodomingotribe.org/tribal-courts-2/
+  source: national-indian-law-library-kewa-pueblo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Kewa Pueblo Tribal Courts
+  link: http://santodomingotribe.org/tribal-courts-2/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New Mexico section, entry 'Kewa Pueblo'
 gaming:
   ordinances:
   - approved: '1995-08-16'

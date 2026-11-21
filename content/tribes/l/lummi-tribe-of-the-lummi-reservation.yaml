@@ -129,6 +129,88 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Lummi Tribe of the Lummi Reservation
+governing_documents:
+- kind: constitution
+  title: Lummi Tribe of the Lummi Reservation - Constitution and Bylaws
+  year: '2016'
+  link: https://narf.org/nill/constitutions/lummi/index.html
+  source: national-indian-law-library-constitution-constitutions-lummi
+  confidence: medium
+  as_of: '2016'
+  locator: page heading
+  note: 'Amended: February 7, 2006 Signed: February 1, 2016. The National Indian Law Library page gives
+    the table of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.lummi-nsn.gov/Website.php?PageID=831
+  source: national-indian-law-library-lummi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.lummi-nsn.gov/userfiles/831_2006ConstitutionSigned2016.pdf
+  source: national-indian-law-library-lummi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Lummi Tribe of the Lummi Reservation Constitution and Bylaws
+  link: https://www.narf.org/nill/codes/lummi/Constitution.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Lummi Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Lummi Code of Laws
+  link: https://www.lummi-nsn.gov/Website.php?PageID=393
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Lummi Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Lummi Tribe of the Lummi Reservation Washinton)
+  year: '1948'
+  link: https://thorpe.law.ou.edu/IRA/lummicons.html
+  source: university-of-oklahoma-indian-reorganization-act-lummicons
+  confidence: medium
+  as_of: '1948'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-lummi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Lummi Tribal Court
+  link: http://www.lummi-nsn.org/website/dept_pages/law_order/courts.shtml
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Lummi Nation'
+dispute_resolution:
+  provisions:
+  - kind: traditional-dispute-resolution
+    title: 'Title 5: Code of Offenses, Chapter 5.12 – Ch’qi’n’txw an Offender’s Record of Conviction (Expungement)'
+    citation: 'Title 5: Code of Offenses, Chapter 5.12 – Ch’qi’n’txw an Offender’s Record of Conviction
+      (Expungement)'
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Lummi-Title5CodeofOffenses.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Lummi Nation of Washington
+    note: 'Native American Rights Fund description (provision itself not read): Full procedures and standards
+      for applying traditional notion related to clearing record of offender upon satisfactory completion
+      of penalty under cultural standards. Innovative sentencing-related provisions.'
 gaming:
   compacts:
   - state: WA

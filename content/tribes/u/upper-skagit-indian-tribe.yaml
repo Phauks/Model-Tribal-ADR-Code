@@ -107,6 +107,40 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Upper Skagit Indian Tribe
+governing_documents:
+- kind: law-code
+  title: Upper Skagit Indian Tribe of Washington
+  year: '1983'
+  link: https://narf.org/nill/codes/upperskagit/index.html
+  source: national-indian-law-library-code-codes-upperskagit
+  confidence: medium
+  as_of: '1983'
+  locator: page heading
+  note: 'Dated: 1983. The National Indian Law Library page gives the table of contents (and may link to
+    the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Upper Skagit Indian Tribe of Washington - Tribal Constitution
+  year: '1977'
+  link: https://narf.org/nill/constitutions/upperskagit/index.html
+  source: national-indian-law-library-constitution-constitutions-upperskagit
+  confidence: medium
+  as_of: '1977'
+  locator: page heading
+  note: 'Last updated: 1977. The National Indian Law Library page gives the table of contents (and may
+    link to the nation''s own copy); full text is not hosted there.'
+justice_institutions:
+- kind: tribal-court
+  name: Upper Skagit Court System
+  source: national-indian-law-library-upper-skagit
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: tribal-court
+  name: Upper Skagit Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Upper Skagit Indian Tribe'
 gaming:
   compacts:
   - state: WA

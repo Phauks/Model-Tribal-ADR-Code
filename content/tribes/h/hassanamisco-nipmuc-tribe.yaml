@@ -3,6 +3,13 @@ entity_type: native-nation
 names:
   official: Hassanamisco Nipmuc Tribe
   alternate:
+  - name: Hassanamisco Band of the Nipmuc Nation
+    source: census-2020-ddhca-popgroup-codes
+    confidence: low
+    as_of: '2020'
+    locator: POPGROUP code 1816
+    note: Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting
+      source.
   - name: Nipmuc Tribe
     source: massachusetts-executive-order-126
     confidence: medium
@@ -11,8 +18,17 @@ names:
     source: alabama-indian-affairs-commission-state-recognized-tribes-compilation
     confidence: low
     as_of: '2001'
-  official_source: massachusetts-executive-order-126
+  official_source: census-aian-geography-definitions
 recognition:
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State American Indian reservation; area 9150
+  note: The 2020 Census delineated "Hassanamisco (state) Reservation" (State American Indian reservation).
+    The Census Bureau defines state American Indian reservations as reservations of state-recognized tribes,
+    delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area
+    to group is by name comparison (see census-area fact).
 - type: state
   state: MA
   legal_basis: Massachusetts Executive Order No. 126 (1976)
@@ -33,10 +49,28 @@ recognition:
     Nipmuc Tribe, the Herring Pond Wampanoag Tribe is recognized by the Commonwealth''.'
 states:
 - state: MA
+  presence: land
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9150
+  note: State reservation land.
+- state: MA
   presence: other
   source: massachusetts-executive-order-126
   confidence: medium
   as_of: '1976-07-08'
+census_areas:
+- geographic_identifier: '9150'
+  name: Hassanamisco (state) Reservation
+  area_type: State American Indian reservation
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9150, GEOID 9150R
+  note: Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

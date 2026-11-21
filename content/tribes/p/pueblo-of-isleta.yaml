@@ -123,6 +123,95 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Pueblo of Isleta, New Mexico
+government_structure:
+- kind: indian-reorganization-act
+  detail: Constitution (Isleta Pueblo New Mexico) (approved 1947) states it was adopted under Act of June
+    18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-isnmcons
+  confidence: medium
+  as_of: '1947'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: http://www.isletapueblo.com/poi-regulations-ordinances--standards.html
+  source: national-indian-law-library-pueblo-isleta
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: law-code
+  title: Tribal code
+  link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
+  source: national-indian-law-library-pueblo-isleta
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
+  source: national-indian-law-library-pueblo-isleta
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Pueblo of Isleta Tribal Constitution
+  link: http://www.isletapueblo.com/poi-constitution.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New Mexico section, entry 'Pueblo of Isleta'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Isleta Pueblo New Mexico)
+  year: '1947'
+  link: https://thorpe.law.ou.edu/IRA/isnmcons.html
+  source: university-of-oklahoma-indian-reorganization-act-isnmcons
+  confidence: medium
+  as_of: '1947'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: peacemaking-program
+  name: Pueblo of Isleta Peacemaking Program
+  source: narf-tribal-peacemaking-laws
+  confidence: medium
+  as_of: '2025-09-29'
+  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked.
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.isletapueblo.com/tribal-court.html
+  source: national-indian-law-library-pueblo-isleta
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Pueblo of Isleta Tribal Court
+  link: http://www.isletapueblo.com/tribal-court.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New Mexico section, entry 'Pueblo of Isleta'
+dispute_resolution:
+  provisions:
+  - kind: peacemaking
+    title: Resolution Establishing Pueblo of Isleta Peacemaking Program
+    citation: Resolution Establishing Pueblo of Isleta Peacemaking Program
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Isleta-Pueblo-Resolution-for-Peacemaking-Program-and-Rules.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Pueblo of Isleta, New Mexico
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      purpose, list of cases subject to peacemaking (and exceptions), peacemaker guidelines and requirements,
+      procedures, and confidentiality.'
 gaming:
   compacts:
   - state: NM

@@ -131,6 +131,54 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Tule River Indian Tribe of the Tule River Reservation, California
+government_structure:
+- kind: indian-reorganization-act
+  detail: Constitution (Tule River Indian Tribe) (approved 1936) states it was adopted under Act of June
+    18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-tulecons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Constitution and By-laws of the Tule River Indian Tribe of California
+  year: '1974'
+  link: https://narf.org/nill/constitutions/tuleriverconst/index.html
+  source: national-indian-law-library-constitution-constitutions-tuleriverconst
+  confidence: medium
+  as_of: '1974'
+  locator: page heading
+  note: 'Approved: 1936; last amended: 1974. The National Indian Law Library page gives the table of contents
+    (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution
+  year: '1936'
+  link: http://www.tulerivertribe-nsn.gov/sites/default/files/images/council/constitution-bylaws.pdf
+  source: national-indian-law-library-tule-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website . 1936 version.".'
+- kind: constitution
+  title: Constitution
+  year: '1936'
+  link: http://thorpe.ou.edu/IRA/tulecons.html
+  source: national-indian-law-library-tule-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Oklahoma
+    University Law Center''s website . 1936 version.".'
+- kind: constitution
+  title: Constitution (Tule River Indian Tribe)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/tulecons.html
+  source: university-of-oklahoma-indian-reorganization-act-tulecons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
 gaming:
   compacts:
   - state: CA

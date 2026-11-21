@@ -97,6 +97,92 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Delaware Tribe of Indians
+governing_documents:
+- kind: law-code
+  title: Delaware Tribe of Indians - Tribal Code - Table of Contents
+  link: https://narf.org/nill/codes/delaware_tribe/index.html
+  source: national-indian-law-library-code-codes-delaware-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: constitution
+  title: Delaware Tribe of Indians - Tribal Constitution
+  link: https://narf.org/nill/constitutions/delaware_tribe/index.html
+  source: national-indian-law-library-constitution-constitutions-delaware-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: law-code
+  title: Tribal code
+  link: https://delawaretribe.org/tribal-documents/
+  source: national-indian-law-library-delaware-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: law-code
+  title: Tribal code
+  link: https://delawaretribe.org/tribal-government/tribal-court/
+  source: national-indian-law-library-delaware-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
+    website .".'
+- kind: law-code
+  title: Tribal code
+  link: https://tribaldomicile.com/downloads/
+  source: national-indian-law-library-delaware-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal domicile
+    website .".'
+- kind: constitution
+  title: Constitution
+  link: https://delawaretribe.org/tribal-documents/
+  source: national-indian-law-library-delaware-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Delaware Tribe of Indians Constitution and Bylaws
+  link: http://delawaretribe.org/wp-content/uploads/constitution.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Delaware Tribe of Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Delaware Tribe Ordinance, Acts, and Resolutions
+  link: http://delawaretribe.org/tribal-documents/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Delaware Tribe of Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Delaware Tribal Court
+  link: https://delawaretribe.org/tribal-government/tribal-court/
+  source: national-indian-law-library-delaware-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: tribal-court
+  name: Delaware Tribal Court
+  link: http://delawaretribe.org/tribalsite/tribal-government/tribal-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Delaware Tribe of Indians'
 gaming:
   ordinances:
   - approved: '1999-08-19'

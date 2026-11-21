@@ -127,6 +127,13 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Traditional Village of Togiak
+justice_institutions:
+- kind: tribal-court
+  name: Togiak Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Traditional Council of Togiak'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

@@ -39,6 +39,13 @@ states:
   locator: Shinnecock Indian Nation
 - state: NY
   presence: land
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9370
+  note: State reservation land.
+- state: NY
+  presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
   as_of: '2020'
@@ -46,6 +53,17 @@ states:
   note: 'Census area with land in this state: Shinnecock (state) Reservation (code 9370). Area matched
     to the nation by name.'
 census_areas:
+- geographic_identifier: '9370'
+  name: Shinnecock (state) Reservation
+  area_type: State American Indian reservation
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9370, GEOID 9370R
+  note: Census class code D4; AIANNHR = S (state). Matched to the federally recognized nation by name
+    comparison. State reservation in the 2020 Census; the Shinnecock Indian Nation is on the 2026 federal
+    list, so no recognition fact is given here.
 - geographic_identifier: '9370'
   name: Shinnecock (state) Reservation
   area_type: (state) Reservation

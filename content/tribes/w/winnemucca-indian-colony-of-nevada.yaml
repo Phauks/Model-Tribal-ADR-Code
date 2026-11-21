@@ -106,6 +106,55 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Winnemucca Indian Colony of Nevada
+governing_documents:
+- kind: law-code
+  title: Winnemucca Indian Colony of Nevada - Tribal Ordinances
+  year: '2012'
+  link: https://narf.org/nill/codes/winnemucca/index.html
+  source: national-indian-law-library-code-codes-winnemucca
+  confidence: medium
+  as_of: '2012'
+  locator: page heading
+  note: 'Last updated: 2012. The National Indian Law Library page gives the table of contents (and may
+    link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Winnemucca Indian Colony of Nevada - Tribal Constitution
+  year: '1970'
+  link: https://narf.org/nill/constitutions/winnemucca/index.html
+  source: national-indian-law-library-constitution-constitutions-winnemucca
+  confidence: medium
+  as_of: '1970'
+  locator: page heading
+  note: 'Dated: 1970. The National Indian Law Library page gives the table of contents (and may link to
+    the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: http://winnemuccaindiancolony.weebly.com/members.html
+  source: national-indian-law-library-winnemucca
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Selected ordinances.".'
+- kind: constitution
+  title: Constitution
+  year: '1970'
+  link: http://winnemuccaindiancolony.weebly.com/members.html
+  source: national-indian-law-library-winnemucca
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website . (1970)".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://narf.org/nill/tribes/www.itcn.org/Tribes.html
+  source: national-indian-law-library-winnemucca
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 jurisdiction:
 - topic: public-law-280
   value: retroceded

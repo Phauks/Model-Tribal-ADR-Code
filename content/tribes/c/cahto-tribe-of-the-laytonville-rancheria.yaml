@@ -107,6 +107,36 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Cahto Tribe of the Laytonville Rancheria
+governing_documents:
+- kind: law-code
+  title: Cahto Indian Tribe of the Laytonville Rancheria
+  year: '2012'
+  link: https://narf.org/nill/codes/cahto_laytonville/index.html
+  source: national-indian-law-library-code-codes-cahto-laytonville
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: constitution
+  title: Cahto Indian Tribe of the Laytonville Rancheria - Articles of Association
+  year: '1967'
+  link: https://narf.org/nill/constitutions/cahto_laytonville/index.html
+  source: national-indian-law-library-constitution-constitutions-cahto-laytonville
+  confidence: medium
+  as_of: '1967'
+  locator: page heading
+  note: 'Dated: 1967. The National Indian Law Library page gives the table of contents (and may link to
+    the nation''s own copy); full text is not hosted there.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.cahto.org/court/
+  source: national-indian-law-library-cahto-laytonville
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 gaming:
   compacts:
   - state: CA

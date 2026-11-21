@@ -141,6 +141,103 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Organized Village of Kake
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Constitution (Organized Village of Kake, Alaska) (approved 1947) states it was adopted under
+    Act of June 18, 1934 (48 Stat. 984); Act of May 1, 1936 (49 Stat. 1250)
+  source: university-of-oklahoma-indian-reorganization-act-kakecons
+  confidence: medium
+  as_of: '1947'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: At tribal court's website . Judicial Peacemaking Code; Keex Kwaan Domestic Relations Code
+  link: https://kake-nsn.gov/tribal-court/
+  source: national-indian-law-library-organized-kake
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
+    website . Judicial Peacemaking Code; Keex Kwaan Domestic Relations Code.".'
+- kind: constitution
+  title: Constitution
+  year: '1947'
+  link: https://thorpe.law.ou.edu/IRA/kakecons.html
+  source: national-indian-law-library-organized-kake
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Constitution. (1947)".'
+- kind: constitution
+  title: Constitution
+  year: '1947'
+  link: https://www.loc.gov/item/50061131/
+  source: national-indian-law-library-organized-kake
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website. Constitution. (1947)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1947'
+  link: https://thorpe.law.ou.edu/IRA/kakechrtr.html
+  source: national-indian-law-library-organized-kake
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Corporate charter. (1947)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1947'
+  link: https://www.loc.gov/item/50061206/
+  source: national-indian-law-library-organized-kake
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website. Corporate charter. (1947)".'
+- kind: corporate-charter
+  title: Corporate charter (Organized Village of Kake, Alaska)
+  year: '1948'
+  link: https://thorpe.law.ou.edu/IRA/kakechrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-kakechrtr
+  confidence: medium
+  as_of: '1948'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Organized Village of Kake, Alaska)
+  year: '1947'
+  link: https://thorpe.law.ou.edu/IRA/kakecons.html
+  source: university-of-oklahoma-indian-reorganization-act-kakecons
+  confidence: medium
+  as_of: '1947'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://kake-nsn.gov/tribal-court/
+  source: national-indian-law-library-organized-kake
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+dispute_resolution:
+  provisions:
+  - kind: peacemaking
+    title: Keex’ Kwaan Judicial Peacemaking Code
+    citation: Keex’ Kwaan Judicial Peacemaking Code
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Kake-judical_peacemaking_code.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Organized Village of Kake, Alaska
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization
+      and place in the clan system, referral standards, procedures, juvenile matters, and a Peacemaker
+      Appellate Court. See also the Circle Peacemaking powerpoint and Kake Circle Peacemaking Flow Chart.'
 gaming:
   ordinances:
   - approved: '2000-04-18'

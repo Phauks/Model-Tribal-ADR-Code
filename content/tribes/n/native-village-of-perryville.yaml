@@ -141,6 +141,80 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Native Village of Perryville
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Constitution (Native Village of Perryville, Alaska) (approved 1950) states it was adopted under
+    Act of June 18, 1934 (48 Stat. 984); Act of May 1, 1936 (49 Stat. 1250)
+  source: university-of-oklahoma-indian-reorganization-act-percons
+  confidence: medium
+  as_of: '1950'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Constitution
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/percons.html
+  source: national-indian-law-library-native-perryville
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Constitution. (1950)".'
+- kind: constitution
+  title: Constitution
+  year: '1950'
+  link: https://www.loc.gov/item/51061661/
+  source: national-indian-law-library-native-perryville
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website. Constitution. (1950)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/perchrtr.html
+  source: national-indian-law-library-native-perryville
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Corporate charter. (1950)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1950'
+  link: https://www.loc.gov/item/51061566/
+  source: national-indian-law-library-native-perryville
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website. Corporate charter. (1950)".'
+- kind: corporate-charter
+  title: Corporate charter (Native Village of Perryville, Alaska)
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/perchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-perchrtr
+  confidence: medium
+  as_of: '1950'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Native Village of Perryville, Alaska)
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/percons.html
+  source: university-of-oklahoma-indian-reorganization-act-percons
+  confidence: medium
+  as_of: '1950'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-native-perryville
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

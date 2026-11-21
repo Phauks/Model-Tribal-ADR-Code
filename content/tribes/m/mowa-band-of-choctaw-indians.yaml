@@ -8,8 +8,35 @@ names:
     confidence: high
     as_of: '2025'
     locator: Section 41-9-708(b)
-  official_source: alabama-code-41-9-708
+  official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
 recognition:
+- type: unrecognized
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1; Table 3
+  note: 'GAO Table 1 lists "MOWA Band of Choctaw Indians" among 26 non-federally recognized tribes that
+    received direct federal funding in FY2007-2010 (total $4,268,000, Table 3). GAO-reported nonprofit
+    status: Yes (GAO notes IRS automatic revocation effective May 15, 2010); state recognition per state
+    officials: Yes. GAO names it as one of five Indian Housing Block Grant (HUD) recipients and notes
+    it has a state reservation, according to state officials. Not on the 2026 federal list (bia-recognized-entities-2026).'
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State American Indian reservation; area 9240
+  note: The 2020 Census delineated "MOWA Choctaw (state) Reservation" (State American Indian reservation).
+    The Census Bureau defines state American Indian reservations as reservations of state-recognized tribes,
+    delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area
+    to group is by name comparison (see census-area fact).
+- type: unrecognized
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  as_of: 2026-04
+  locator: AL section, recipient "MOWA Band of Choctaw Indians"
+  note: HUD lists "MOWA Band of Choctaw Indians" (Mt. Vernon, AL) as an FY2026 Indian Housing Block Grant
+    formula recipient with a final allocation of $4,038,182. The HUD list does not state recognition status;
+    not on the 2026 federal list (bia-recognized-entities-2026).
 - type: state
   state: AL
   legal_basis: Code of Alabama 1975, Section 41-9-708 (Acts 1984, No. 84-257; Acts 1985, No. 85-738; Acts
@@ -37,10 +64,42 @@ recognition:
 states:
 - state: AL
   presence: other
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1, State column
+  note: State as listed by GAO.
+- state: AL
+  presence: land
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9240
+  note: State reservation land.
+- state: AL
+  presence: other
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  as_of: 2026-04
+  locator: AL section
+  note: HUD gives recipient city Mt. Vernon.
+- state: AL
+  presence: other
   source: alabama-indian-affairs-commission-tribes-list-2026
   confidence: high
   as_of: 2026-10
   note: State-recognized in Alabama; Alabama contact address listed.
+census_areas:
+- geographic_identifier: '9240'
+  name: MOWA Choctaw (state) Reservation
+  area_type: State American Indian reservation
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9240, GEOID 9240R
+  note: Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
 contacts:
 - kind: website
   value: https://mowachoctawindians.com

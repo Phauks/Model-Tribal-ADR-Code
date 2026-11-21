@@ -150,6 +150,82 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Nome Eskimo Community
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Listed as "The Nome Eskimo Community" among organizations under constitutions approved by the
+    Secretary of the Interior (Indian Reorganization Act as extended to Alaska by the Act of May 1, 1936),
+    as of 1947
+  source: haas-1947-table-b-alaska
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Alaska Native Communities and Cooperatives, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: alaska-indian-reorganization-act
+  detail: Constitution (Nome Eskimo Community Alaska) (approved 1939) states it was adopted under Act
+    of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-nomecons
+  confidence: medium
+  as_of: '1939'
+  locator: preamble / approval and certification of adoption
+  note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
+    the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
+    constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Constitution and By-Laws of the Nome Eskimo Community, Alaska
+  year: '1939'
+  link: https://narf.org/nill/constitutions/nome/index.html
+  source: national-indian-law-library-constitution-constitutions-nome
+  confidence: medium
+  as_of: '1939'
+  locator: page heading
+  note: 'Ratified: November 23, 1939. Full text linked from the National Indian Law Library page.'
+- kind: law-code
+  title: Climate change resolution
+  year: '2007'
+  link: https://narf.org/nill/triballaw/climate/index.html
+  source: national-indian-law-library-nome-eskimo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website . Climate
+    change resolution. (2007)".'
+- kind: constitution
+  title: Constitution
+  link: https://thorpe.law.ou.edu/IRA/nomecons.html
+  source: national-indian-law-library-nome-eskimo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.loc.gov/item/41050071/
+  source: national-indian-law-library-nome-eskimo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website .".'
+- kind: corporate-charter
+  title: Corporate charter (Nome Eskimo Community Alaska)
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/nomechrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-nomechrtr
+  confidence: medium
+  as_of: '1939'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Nome Eskimo Community Alaska)
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/nomecons.html
+  source: university-of-oklahoma-indian-reorganization-act-nomecons
+  confidence: medium
+  as_of: '1939'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

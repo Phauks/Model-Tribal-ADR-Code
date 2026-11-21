@@ -1,7 +1,7 @@
 id: four-winds-cherokee-tribe
 entity_type: native-nation
 names:
-  official: Four-Winds Cherokee Tribe
+  official: Four Winds Cherokee
   alternate:
   - name: Four Winds Cherokee
     source: louisiana-governor-federally-and-state-recognized-tribes
@@ -11,8 +11,28 @@ names:
     source: louisiana-house-concurrent-resolution-137-four-winds
     confidence: medium
     as_of: '2026'
-  official_source: louisiana-governor-federally-and-state-recognized-tribes
+  official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
 recognition:
+- type: unrecognized
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Highlights; section on likely ineligible awards
+  note: GAO names "Four Winds Cherokee" as part of a consortium with the Choctaw-Apache Tribe of Ebarb
+    that received Department of Education American Indian Vocational Rehabilitation Services funding,
+    and found the consortium appeared ineligible because it lacks a statutory reservation. Not on the
+    2026 federal list. Id shared with the state-recognized helper entity "Four-Winds Cherokee Tribe" (Louisiana)
+    by name comparison.
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State Designated Tribal Statistical Area; area 9720
+  note: The 2020 Census delineated "Four Winds Cherokee SDTSA" (State Designated Tribal Statistical Area).
+    The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally
+    recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed
+    state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area
+    fact).
 - type: state
   state: LA
   legal_basis: Listed as a state recognized tribe by the Louisiana Governor's Office of Indian Affairs
@@ -43,11 +63,29 @@ recognition:
 states:
 - state: LA
   presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9720
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: LA
+  presence: other
   source: louisiana-governor-indian-affairs
   confidence: high
   as_of: '2026'
   locator: Regional map
   note: Located in Allen Parish per the Office of Indian Affairs regional map.
+census_areas:
+- geographic_identifier: '9720'
+  name: Four Winds Cherokee SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9720, GEOID 9720R
+  note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
 contacts:
 - kind: mailing-address
   value: 101 East 6th Ave., P.O. Box 836, Oakdale, LA 71463

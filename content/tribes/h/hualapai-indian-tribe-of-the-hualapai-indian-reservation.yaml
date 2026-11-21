@@ -124,6 +124,118 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Hualapai Tribe of the Hualapai Reservation, Arizona" among organizations under
+    constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934),
+    as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Hualapai Tribe of the Hualapai Reservation Arizona) (approved 1955) states it
+    was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-amhuacons
+  confidence: medium
+  as_of: '1955'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+- kind: indian-reorganization-act
+  detail: Constitution (Hualapai Tribe of the Hualapai Reservation Arizona) (approved 1938) states it
+    was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-huacons
+  confidence: medium
+  as_of: '1938'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Law and Order Code
+  link: https://hualapai-nsn.gov/Documents/Government/Tribal%20Court/Law-and-Order-Code.pdf
+  source: national-indian-law-library-hualapai
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    . Law and Order Code.".'
+- kind: law-code
+  title: Tribal Council Ordinances
+  link: https://hualapai-nsn.gov/government/tribal_council/hualapai_tribal_council_ordinances.php
+  source: national-indian-law-library-hualapai
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    . Tribal Council Ordinances.".'
+- kind: constitution
+  title: Constitution
+  link: https://hualapai-nsn.gov/Documents/Community/Election/CONSTITUTION-OF-THE-HUALAPAI-INDIAN-TRIBE.pdf
+  source: national-indian-law-library-hualapai
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Hualapai Constitution
+  link: http://hualapai-nsn.gov/wp-content/uploads/2013/07/HualapaiConstitution.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Hualapai Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Hualapai Tribe of the Hualapai Reservation Arizona)
+  year: '1955'
+  link: https://thorpe.law.ou.edu/IRA/amhuachrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-amhuachrtr
+  confidence: medium
+  as_of: '1955'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Hualapai Tribe of the Hualapai Reservation Arizona)
+  year: '1955'
+  link: https://thorpe.law.ou.edu/IRA/amhuacons.html
+  source: university-of-oklahoma-indian-reorganization-act-amhuacons
+  confidence: medium
+  as_of: '1955'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: corporate-charter
+  title: Corporate charter (Hualapai Tribe of the Hualapai Reservation, Arizona)
+  year: '1943'
+  link: https://thorpe.law.ou.edu/IRA/huachrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-huachrtr
+  confidence: medium
+  as_of: '1943'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Hualapai Tribe of the Hualapai Reservation Arizona)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/huacons.html
+  source: university-of-oklahoma-indian-reorganization-act-huacons
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://hualapai-nsn.gov/judicial_branch_of_government/tribal_court/index.php
+  source: national-indian-law-library-hualapai
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Hualapai Tribal Court
+  link: http://hualapai-nsn.gov/government/tribal-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Hualapai Tribe'
 gaming:
   compacts:
   - state: AZ

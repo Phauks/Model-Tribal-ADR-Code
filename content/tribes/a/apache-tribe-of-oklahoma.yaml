@@ -141,6 +141,50 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Apache Tribe of Oklahoma
+governing_documents:
+- kind: constitution
+  title: Constitution
+  link: https://apachetribe.org/apache-tribe-constitution/
+  source: national-indian-law-library-apache
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: law-code
+  title: Apache Tribe of Oklahoma - Tribal CodE
+  link: https://narf.org/nill/codes/apache_ok/index.html
+  source: national-indian-law-library-code-codes-apache-ok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: Full text linked from the National Indian Law Library page.
+- kind: constitution
+  title: Apache Tribe of Oklahoma - Constitution
+  link: https://narf.org/nill/constitutions/apache_ok/index.html
+  source: national-indian-law-library-constitution-constitutions-apache-ok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+justice_institutions:
+- kind: court-of-indian-offenses
+  name: Southern Plains CFR Court (Court of Indian Offenses)
+  link: https://www.bia.gov/CFRCourts
+  source: bia-courts-of-indian-offenses
+  confidence: high
+  as_of: '2026-11-21'
+  locator: List of CFR Courts and the Tribes they Serve
+  note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
+    Indian Affairs list.
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-apache
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 gaming:
   compacts:
   - state: OK

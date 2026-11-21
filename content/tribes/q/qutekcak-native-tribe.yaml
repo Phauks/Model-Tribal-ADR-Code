@@ -2,8 +2,17 @@ id: qutekcak-native-tribe
 entity_type: native-nation
 names:
   official: Qutekcak Native Tribe
-  official_source: ofa-list-of-petitioners-by-state-2013
+  official_source: usaspending-award-90nk0197
 recognition:
+- type: unrecognized
+  source: usaspending-award-90nk0197
+  confidence: medium
+  as_of: '2022-09-30'
+  locator: Award summary
+  note: HHS Administration for Native Americans award 90NK0197 (Assistance Listing 93.612, Native American
+    Programs) to recipient "QUTEKCAK NATIVE TRIBE", start 2022-09-30, amount $85,408; project "UPDATING
+    TECHNOLOGY INFRASTRUCTURE AT THE QNT TRIBAL OFFICE". The award record does not state recognition status;
+    not on the 2026 federal list (bia-recognized-entities-2026).
 - type: unrecognized
   legal_basis: 25 C.F.R. Part 83
   petition_number: '252'
@@ -16,6 +25,13 @@ recognition:
     Additional Resources page says groups on the 2013 list may no longer be active petitioners under the
     current regulations.
 states:
+- state: AK
+  presence: other
+  source: usaspending-award-90nk0197
+  confidence: medium
+  as_of: '2022-09-30'
+  locator: Place of performance state
+  note: Place of performance state on the award record.
 - state: AK
   presence: other
   source: ofa-list-of-petitioners-by-state-2013

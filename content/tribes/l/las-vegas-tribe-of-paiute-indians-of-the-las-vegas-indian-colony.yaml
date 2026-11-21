@@ -107,6 +107,54 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Las Vegas Tribe of Paiute Indians of the Las Vegas Indian Colony, Nevada
+governing_documents:
+- kind: law-code
+  title: Las Vegas Tribe of Paiute Indians of the Las Vegas Indian Colony, Nevada
+  year: '2024'
+  link: https://narf.org/nill/codes/las_vegas_paiute/index.html
+  source: national-indian-law-library-code-codes-las-vegas-paiute
+  confidence: medium
+  as_of: '2024'
+  locator: page heading
+  note: 'Table of Contents Updated: April 2024. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Las Vegas Tribe of Paiute Indians of the Las Vegas Indian Colony, Nevada - Tribal Constitution
+  year: '1970'
+  link: https://narf.org/nill/constitutions/las_vegas_paiute/index.html
+  source: national-indian-law-library-constitution-constitutions-las-vegas-paiute
+  confidence: medium
+  as_of: '1970'
+  locator: page heading
+  note: 'Dated: 1970. The National Indian Law Library page gives the table of contents (and may link to
+    the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://lvpaiute.tribal.codes/
+  source: national-indian-law-library-las-vegas-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.lvpaiutetribe.com/tribal-court
+  source: national-indian-law-library-las-vegas-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.lvpaiutetribe.com/tribal-court
+  source: national-indian-law-library-las-vegas-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 gaming:
   compacts:
   - state: NV

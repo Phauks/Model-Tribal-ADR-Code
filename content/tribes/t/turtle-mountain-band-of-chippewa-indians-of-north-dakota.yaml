@@ -151,6 +151,73 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Turtle Mountain Band of Chippewa Indians of North Dakota
+governing_documents:
+- kind: constitution
+  title: Constitution and By-laws of the Turtle Mountain Band of Chippewa Indians, Belcourt, North Dakota
+  year: '2015'
+  link: https://narf.org/nill/constitutions/turtle_mountain/index.html
+  source: national-indian-law-library-constitution-constitutions-turtle-mountain
+  confidence: medium
+  as_of: '2015'
+  locator: page heading
+  note: 'Amended: 2015. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://law.tmchippewa.com/
+  source: national-indian-law-library-turtle-mountain
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: law-code
+  title: Tribal code
+  link: https://www.narf.org/nill/triballaw/us/nsn/tmchippewa/council/index.html
+  source: national-indian-law-library-turtle-mountain
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website.".'
+- kind: constitution
+  title: Constitution
+  link: https://law.tmchippewa.com/us/nsn/tmchippewa/council/constitution
+  source: national-indian-law-library-turtle-mountain
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Turtle Mountain Band of Chippewa Indians Tribal Constitution
+  link: http://tmbci.kkbold.com/government/?page_id=479
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: North Dakota section, entry 'Turtle Mountain Band of Chippewa Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Turtle Mountain Band of Chippewa Indians Tribal Code
+  link: http://tmbci.kkbold.com/government/?page_id=197
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: North Dakota section, entry 'Turtle Mountain Band of Chippewa Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-turtle-mountain
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Turtle Mountain Chippewa Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: North Dakota section, entry 'Turtle Mountain Band of Chippewa Indians'
 gaming:
   compacts:
   - state: ND

@@ -117,6 +117,100 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Snoqualmie Indian Tribe
+governing_documents:
+- kind: law-code
+  title: Snoqualmie Indian Tribe
+  year: '2017'
+  link: https://narf.org/nill/codes/snoqualmie/index.html
+  source: national-indian-law-library-code-codes-snoqualmie
+  confidence: medium
+  as_of: '2017'
+  locator: page heading
+  note: 'Table of Contents Updated: June 2017. Full text linked from the National Indian Law Library page.'
+- kind: constitution
+  title: Snoqualmie Indian Tribe- Tribal Constitution
+  year: '2014'
+  link: https://narf.org/nill/constitutions/snoqualmieconst/index.html
+  source: national-indian-law-library-constitution-constitutions-snoqualmieconst
+  confidence: medium
+  as_of: '2014'
+  locator: page heading
+  note: 'Table of Contents Updated: August 2014. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: http://www.snoqualmietribe.us/TribalCodes
+  source: national-indian-law-library-snoqualmie
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: http://www.snoqualmietribe.us/content/constitution-snoqualmie-tribe-indians
+  source: national-indian-law-library-snoqualmie
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Snoqualmie Tribe of Indians Constitution
+  link: http://www.snoqualmietribe.us/sites/default/files/linkedfiles/constitution.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Snoqualmie Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Snoqualmie Tribal Codes
+  link: http://www.snoqualmietribe.us/TribalCodes
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Snoqualmie Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: peacemaking-program
+  name: Peacemaker Court
+  source: narf-tribal-peacemaking-laws
+  confidence: medium
+  as_of: '2025-09-29'
+  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked.
+- kind: tribal-court
+  name: Snoqualmie Tribal Court
+  link: http://www.snoqualmietribe.us/TribalCourt
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Snoqualmie Tribe'
+dispute_resolution:
+  provisions:
+  - kind: peacemaking
+    title: Judiciary Act 3.1, Section 7.4 – Peacemaker Court
+    citation: Judiciary Act 3.1, Section 7.4 – Peacemaker Court
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Snoqualmie-act3-1.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Snoqualmie Indian Tribe of Washington
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization
+      and appointment requirements.'
+  - kind: arbitration
+    title: 'Chapter 3: Arbitration Act'
+    citation: 'Chapter 3: Arbitration Act; SECTION 5.0 - ENFORCEABILITY OF AGREEMENTS TO ARBITRATE; SECTION
+      7.0 - STAY OF PROCEEDINGS IN TRIBAL COURT AND ORDER TO PROCEED WITH ARBITRATION; SECTION 11.0 -
+      ARBITRATION AWARD NOT APPEALABLE'
+    link: https://narf.org/nill/codes/snoqualmie/index.html
+    source: national-indian-law-library-code-codes-snoqualmie
+    confidence: medium
+    as_of: '2017'
+    locator: 'Table of Contents, under ''TITLE III: SNOQUALMIE JUDICIAL CODE'''
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: June 2017); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
 gaming:
   compacts:
   - state: WA

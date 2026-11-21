@@ -143,6 +143,86 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Shageluk Native Village
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Constitution (Shageluk Native Village Alaska) (approved 1949) states it was adopted under Act
+    of June 18, 1934 (48 Stat. 984); Act of May 1, 1936 (49 Stat. 1250)
+  source: university-of-oklahoma-indian-reorganization-act-shagcons
+  confidence: medium
+  as_of: '1949'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Constitution
+  year: '1949'
+  link: https://thorpe.law.ou.edu/IRA/shagcons.html
+  source: national-indian-law-library-shageluk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Constitution. (1949)".'
+- kind: constitution
+  title: Constitution
+  year: '1949'
+  link: https://www.loc.gov/item/50061119/
+  source: national-indian-law-library-shageluk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website. Constitution. (1949)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1949'
+  link: https://thorpe.law.ou.edu/IRA/shagchrtr.html
+  source: national-indian-law-library-shageluk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Corporate charter. (1949)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1949'
+  link: https://www.loc.gov/item/50061243/
+  source: national-indian-law-library-shageluk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website. Corporate charter. (1949)".'
+- kind: corporate-charter
+  title: Corporate charter (Native Village of Shageluk, Alaska)
+  year: '1949'
+  link: https://thorpe.law.ou.edu/IRA/shagchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-shagchrtr
+  confidence: medium
+  as_of: '1949'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Shageluk Native Village Alaska)
+  year: '1949'
+  link: https://thorpe.law.ou.edu/IRA/shagcons.html
+  source: university-of-oklahoma-indian-reorganization-act-shagcons
+  confidence: medium
+  as_of: '1949'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-shageluk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Shageluk Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Shageluk Native Village'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

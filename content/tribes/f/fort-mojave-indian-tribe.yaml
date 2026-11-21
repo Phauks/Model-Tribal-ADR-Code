@@ -123,6 +123,43 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
+governing_documents:
+- kind: law-code
+  title: Fort Mojave Indian Tribe
+  year: '2010'
+  link: https://narf.org/nill/codes/ftmojave/index.html
+  source: national-indian-law-library-code-codes-ftmojave
+  confidence: medium
+  as_of: '2010'
+  locator: page heading
+  note: 'Dated: 1981-2010. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution and Bylaws of the Fort Mojave Indian Tribe
+  year: '1977'
+  link: https://narf.org/nill/constitutions/fort_mojave/index.html
+  source: national-indian-law-library-constitution-constitutions-fort-mojave
+  confidence: medium
+  as_of: '1977'
+  locator: page heading
+  note: 'Adopted: July 26, 1976 Approved: January 7, 1977. The National Indian Law Library page gives
+    the table of contents (and may link to the nation''s own copy); full text is not hosted there.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://fortmojavetribalcourt.com/
+  source: national-indian-law-library-fort-mojave
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Fort Mojave Tribal Court
+  link: http://mojaveindiantribe.com/tribal-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Fort Mojave Indian Tribe'
 gaming:
   compacts:
   - state: AZ

@@ -160,6 +160,151 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Umatilla Indian Reservation
+government_structure:
+- kind: indian-reorganization-act
+  detail: Constitution (Umatilla Reservation in Oregon) (approved 1949) states it was adopted under Act
+    of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-umacons
+  confidence: medium
+  as_of: '1949'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Statutes of the Confederated Tribes of the Umatilla Indian Reservation
+  year: '2014'
+  link: https://narf.org/nill/codes/confederated_umatilla/index.html
+  source: national-indian-law-library-code-codes-confederated-umatilla
+  confidence: medium
+  as_of: '2014'
+  locator: page heading
+  note: 'Table of Contents Updated: October 2014. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://ctuir.org/departments/office-of-legal-counsel/codesstatuteslaws/
+  source: national-indian-law-library-confederated-umatilla
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://ctuir.org/departments/office-of-legal-counsel/codesstatuteslaws/ctuir-constitution/
+  source: national-indian-law-library-confederated-umatilla
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Confederated Tribes of the Umatilla Indian Reservation Constitution
+  year: '2014'
+  link: https://narf.org/nill/constitutions/confederated_umatilla/index.html
+  source: national-indian-law-library-constitution-constitutions-confederated-umatilla
+  confidence: medium
+  as_of: '2014'
+  locator: page heading
+  note: 'Table of Contents Updated: October 2014. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Confederated Tribes of the Umatilla Indian Reservation Constitution
+  link: http://ctuir.org/ctuir-constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Confederated Tribes of the Umatilla Indian Reservation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Confederated Tribes of the Umatilla Indian Reservation Codes/Statutes/Laws
+  link: http://ctuir.org/about-us/ctuir-codesstatuteslaws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Confederated Tribes of the Umatilla Indian Reservation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Umatilla Reservation in Oregon)
+  year: '1949'
+  link: https://thorpe.law.ou.edu/IRA/umacons.html
+  source: university-of-oklahoma-indian-reorganization-act-umacons
+  confidence: medium
+  as_of: '1949'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://ctuir.org/our-government/tribal-court/
+  source: national-indian-law-library-confederated-umatilla
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Confederated Tribes of the Umatilla Indian Reservation Tribal Court
+  link: http://ctuir.org/government/tribal-court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Confederated Tribes of the Umatilla Indian Reservation'
+dispute_resolution:
+  provisions:
+  - kind: mediation
+    title: Mediation
+    citation: Mediation
+    link: https://narf.org/nill/codes/confederated_umatilla/index.html
+    source: national-indian-law-library-code-codes-confederated-umatilla
+    confidence: medium
+    as_of: '2014'
+    locator: Table of Contents, under 'Chapter 5. Disputes'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2014); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: other
+    title: Dispute Resolution
+    citation: Dispute Resolution
+    link: https://narf.org/nill/codes/confederated_umatilla/index.html
+    source: national-indian-law-library-code-codes-confederated-umatilla
+    confidence: medium
+    as_of: '2014'
+    locator: Table of Contents, under 'Chapter 2. Tribal Elders Retirement Program'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2014); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: other
+    title: Dispute Resolution Included in Plan
+    citation: Dispute Resolution Included in Plan
+    link: https://narf.org/nill/codes/confederated_umatilla/index.html
+    source: national-indian-law-library-code-codes-confederated-umatilla
+    confidence: medium
+    as_of: '2014'
+    locator: Table of Contents, under 'Chapter 7. Child Custody and Parenting Plans'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2014); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: other
+    title: Chapter 6. Dispute Resolution
+    citation: Chapter 6. Dispute Resolution
+    link: https://narf.org/nill/codes/confederated_umatilla/index.html
+    source: national-indian-law-library-code-codes-confederated-umatilla
+    confidence: medium
+    as_of: '2014'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2014); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: arbitration
+    title: Claimant Attorney's Fees and Other Related Arbitration Costs
+    citation: Claimant Attorney's Fees and Other Related Arbitration Costs
+    link: https://narf.org/nill/codes/confederated_umatilla/index.html
+    source: national-indian-law-library-code-codes-confederated-umatilla
+    confidence: medium
+    as_of: '2014'
+    locator: Table of Contents, under 'Chapter 9. Adjudication of Disputes'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2014); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
 gaming:
   compacts:
   - state: OR

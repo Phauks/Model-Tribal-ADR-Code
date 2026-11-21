@@ -114,6 +114,99 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Muckleshoot Indian Tribe
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Muckleshoot Indian Tribe, Washington" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Muckleshoot Indian Tribe of the Muckleshoot Reservation Washington) (approved
+    1936) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-muckcons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Muckleshoot Indian Tribe
+  year: '2012'
+  link: https://narf.org/nill/codes/muckleshoot/index.html
+  source: national-indian-law-library-code-codes-muckleshoot
+  confidence: medium
+  as_of: '2012'
+  locator: page heading
+  note: 'Received: July 2012. The National Indian Law Library page gives the table of contents (and may
+    link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Muckleshoot Indian Tribe - Tribal Constitution
+  year: '1977'
+  link: https://narf.org/nill/constitutions/muckleshoot/index.html
+  source: national-indian-law-library-constitution-constitutions-muckleshoot
+  confidence: medium
+  as_of: '1977'
+  locator: page heading
+  note: 'Last amended: June 28, 1977, though Amendment 13. The National Indian Law Library page gives
+    the table of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://muckleshoot.tribal.codes/
+  source: national-indian-law-library-muckleshoot
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: corporate-charter
+  title: Corporate charter (Muckleshoot Indian Tribe of the Muckleshoot Reservation Washington)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/muckchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-muckchrtr
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Muckleshoot Indian Tribe of the Muckleshoot Reservation Washington)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/muckcons.html
+  source: university-of-oklahoma-indian-reorganization-act-muckcons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-muckleshoot
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Muckleshoot Tribal Court
+  link: http://www.muckleshoot.nsn.us/services/tribal-court.aspx
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Muckleshoot Indian Tribe'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: 12.06.090 Additional Family Group Conferences
+    citation: 12.06.090 Additional Family Group Conferences
+    link: https://narf.org/nill/codes/muckleshoot/index.html
+    source: national-indian-law-library-code-codes-muckleshoot
+    confidence: medium
+    as_of: '2012'
+    locator: Table of Contents, under 'Chapter 12.06 Voluntary Safety Plans and Agreements'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Received:
+      July 2012); the provision itself was not read. The heading it falls under is taken from the page
+      layout and may be imprecise.'
 gaming:
   compacts:
   - state: WA

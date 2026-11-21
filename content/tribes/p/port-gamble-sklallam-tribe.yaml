@@ -121,6 +121,136 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Port Gamble S'Klallam Tribe
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Port Gamble Indian Community, Washington" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Port Gamble Indian Community Washington) (approved 1939) states it was adopted
+    under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-pgcons
+  confidence: medium
+  as_of: '1939'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Port Gamble S'Klallam - Law and Order Code
+  year: '2025'
+  link: https://narf.org/nill/codes/port_gamble/index.html
+  source: national-indian-law-library-code-codes-port-gamble
+  confidence: medium
+  as_of: '2025'
+  locator: page heading
+  note: 'Table of Contents Updated: May 2025. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Port Gamble S'Klallam - Tribal Constitution
+  year: '2024'
+  link: https://narf.org/nill/constitutions/port_gamble/index.html
+  source: national-indian-law-library-constitution-constitutions-port-gamble
+  confidence: medium
+  as_of: '2024'
+  locator: page heading
+  note: 'Amended: May 15, 2024. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://pgst.nsn.us/law-order-code/
+  source: national-indian-law-library-port-gamble-sklallam
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://pgst.nsn.us/wp-content/uploads/2022/09/Constitution.pdf
+  source: national-indian-law-library-port-gamble-sklallam
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Port Gamble S’Klallam Tribe Constitution
+  link: https://www.pgst.nsn.us/images/law-and-order/Constitution.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Port Gamble S’Klallam Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Port Gamble S’Klallam Tribe Law and Order Code
+  link: https://www.pgst.nsn.us/government/law-and-order-code
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Port Gamble S’Klallam Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Port Gamble Band of Clallam Indians of the Port Gample Indian Community Washington)
+  year: '1941'
+  link: https://thorpe.law.ou.edu/IRA/pgchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-pgchrtr
+  confidence: medium
+  as_of: '1941'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Port Gamble Indian Community Washington)
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/pgcons.html
+  source: university-of-oklahoma-indian-reorganization-act-pgcons
+  confidence: medium
+  as_of: '1939'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://court-services.pgst.nsn.us/
+  source: national-indian-law-library-port-gamble-sklallam
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Port Gamble S’Klallam Court Services
+  link: http://www.pgst.nsn.us/sklallam-government/court-laws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Port Gamble S’Klallam Tribe'
+dispute_resolution:
+  provisions:
+  - kind: mediation
+    title: 15.10.04 Mediation Not Allowed
+    citation: 15.10.04 Mediation Not Allowed
+    link: https://narf.org/nill/codes/port_gamble/index.html
+    source: national-indian-law-library-code-codes-port-gamble
+    confidence: medium
+    as_of: '2025'
+    locator: Table of Contents, under 'Chapter 15.10 Special Rules of Court and Other Matters'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: May 2025); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
+  - kind: other
+    title: 20.01.13 Patron Dispute Resolution
+    citation: 20.01.13 Patron Dispute Resolution
+    link: https://narf.org/nill/codes/port_gamble/index.html
+    source: national-indian-law-library-code-codes-port-gamble
+    confidence: medium
+    as_of: '2025'
+    locator: Table of Contents, under 'Chapter 20.01 Gaming'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: May 2025); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
 gaming:
   compacts:
   - state: WA

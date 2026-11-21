@@ -113,6 +113,25 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Pala Band of Mission Indians
+governing_documents:
+- kind: constitution
+  title: Constitution
+  year: '1994'
+  link: http://www.palatribe.com/government/executive-committee/
+  source: national-indian-law-library-pala-mission
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "According to
+    the Tribe''s website , the Tribe is governed by a constitution adopted in November 1994 and certified
+    by the BIA Pacific Region in 1997 retroactive to 1994. NILL does not have a copy of this constitution.".'
+justice_institutions:
+- kind: tribal-court
+  name: Pala Band of Luiseno Mission Indians Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Pala Band of Luiseno Mission Indians'
 gaming:
   compacts:
   - state: CA

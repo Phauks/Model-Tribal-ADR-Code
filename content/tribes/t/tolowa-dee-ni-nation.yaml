@@ -110,6 +110,84 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Tolowa Dee-ni' Nation
+governing_documents:
+- kind: law-code
+  title: Tolowa Dee-ni' Nation
+  year: '2008'
+  link: https://narf.org/nill/codes/smith_river/index.html
+  source: national-indian-law-library-code-codes-smith-river
+  confidence: medium
+  as_of: '2008'
+  locator: page heading
+  note: 'Dated: 2006-2008. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Tolowa Dee-ni' Nation - Tribal Constitution
+  link: https://narf.org/nill/constitutions/smith_river/index.html
+  source: national-indian-law-library-constitution-constitutions-smith-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: law-code
+  title: Rules of Court and Civil Procedure; Children's code; Domestic Relations Code; Tribal Court Ordinance
+  link: http://www.tolowa-nsn.gov/tribal-government/tribal-judicial-system
+  source: national-indian-law-library-tolowa-deeni
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Rules of Court and Civil Procedure; Children''s code; Domestic Relations Code; Tribal Court Ordinance.".'
+- kind: constitution
+  title: Constitution
+  link: http://www.tolowa-nsn.gov/tribal-government/constitution/
+  source: national-indian-law-library-tolowa-deeni
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: law-code
+  title: Smith River Rancheria – Tolowa Dee-ni Nation Code and Ordinances
+  link: http://www.tolowa-nsn.gov/tribal-government/tribal-judicial-system/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Smith River Rancheria – Tolowa Dee-ni’ Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tolowa Dee-ni’ Nation Tribal Court
+  link: http://www.tolowa-nsn.gov/tribal-government/tribal-judicial-system/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Smith River Rancheria – Tolowa Dee-ni’ Nation'
+dispute_resolution:
+  provisions:
+  - kind: mediation
+    title: Diversion/mediation/family unity.
+    citation: Diversion/mediation/family unity.
+    link: https://narf.org/nill/codes/smith_river/index.html
+    source: national-indian-law-library-code-codes-smith-river
+    confidence: medium
+    as_of: '2008'
+    locator: Table of Contents, under 'Children’s code'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Dated:
+      2006-2008); the provision itself was not read. The heading it falls under is taken from the page
+      layout and may be imprecise.'
+  - kind: mediation
+    title: Diversion, mediation and family unit programs.
+    citation: Diversion, mediation and family unit programs.
+    link: https://narf.org/nill/codes/smith_river/index.html
+    source: national-indian-law-library-code-codes-smith-river
+    confidence: medium
+    as_of: '2008'
+    locator: Table of Contents, under 'Tribal court ordinance'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Dated:
+      2006-2008); the provision itself was not read. The heading it falls under is taken from the page
+      layout and may be imprecise.'
 gaming:
   compacts:
   - state: CA

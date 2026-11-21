@@ -142,6 +142,63 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Chilkoot Indian Association (Haines)
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Listed as "The Chilkoot Indian Association" among organizations under constitutions approved
+    by the Secretary of the Interior (Indian Reorganization Act as extended to Alaska by the Act of May
+    1, 1936), as of 1947
+  source: haas-1947-table-b-alaska
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Alaska Native Communities and Cooperatives, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: alaska-indian-reorganization-act
+  detail: Constitution and By-Laws of the Chilkoot Indian Association (approved 1941) states it was adopted
+    under Act of June 18, 1934 (48 Stat. 984); Act of May 1, 1936 (49 Stat. 1250)
+  source: university-of-oklahoma-indian-reorganization-act-chilkcons
+  confidence: medium
+  as_of: '1941'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Constitution
+  year: '1941'
+  link: https://thorpe.law.ou.edu/IRA/chilkcons.html
+  source: national-indian-law-library-chilkoot
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At the University
+    of Oklahoma website . Constitution. (1941)".'
+- kind: constitution
+  title: Constitution
+  year: '1941'
+  link: https://www.loc.gov/item/42038592/
+  source: national-indian-law-library-chilkoot
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At the Library
+    of Congress website . Constitution. (1941)".'
+- kind: corporate-charter
+  title: Corporate Charter of the Chilkoot Indian Association
+  year: '1941'
+  link: https://thorpe.law.ou.edu/IRA/chilkchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-chilkchrtr
+  confidence: medium
+  as_of: '1941'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution and By-Laws of the Chilkoot Indian Association
+  year: '1941'
+  link: https://thorpe.law.ou.edu/IRA/chilkcons.html
+  source: university-of-oklahoma-indian-reorganization-act-chilkcons
+  confidence: medium
+  as_of: '1941'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

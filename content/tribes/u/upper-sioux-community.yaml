@@ -120,6 +120,41 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Upper Sioux Community, Minnesota
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: http://maiba.org/pdf/UpperSioux-JudicialCode.PDF
+  source: national-indian-law-library-upper-sioux
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Minnesota American
+    Indian Bar Association (MAIBA) website. Judicial Code.".'
+- kind: constitution
+  title: Constitution
+  year: '1996'
+  link: http://isites.harvard.edu/fs/docs/icb.topic177572.files/Winds_of_Change_UpperSioux_membership.pdf
+  source: national-indian-law-library-upper-sioux
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Harvard
+    website : Winds of Change; Constitutional Reform and the Upper Sioux Community, prepared by Kyle E.
+    Scherer & Gideon A. Valkin. 1996 constitution and draft 2004 constitution provided in appendices.".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-upper-sioux
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Upper Sioux Community Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Minnesota section, entry 'Upper Sioux Community'
 gaming:
   compacts:
   - state: MN

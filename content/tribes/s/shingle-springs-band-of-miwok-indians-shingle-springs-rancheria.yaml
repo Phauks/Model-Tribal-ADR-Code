@@ -119,6 +119,77 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California
+governing_documents:
+- kind: law-code
+  title: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California -
+    Tribal Codes, Policies and Bylaws
+  year: '2019'
+  link: https://narf.org/nill/codes/shingle_springs_miwok/index.html
+  source: national-indian-law-library-code-codes-shingle-springs-miwok
+  confidence: medium
+  as_of: '2019'
+  locator: page heading
+  note: 'Table of Contents Updated: May 2019. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Codes, Policies and Bylaws
+  link: http://www.shinglespringsrancheria.com/government/codes-policies-and-bylaws/
+  source: national-indian-law-library-shingle-springs
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Codes, Policies and Bylaws.".'
+- kind: constitution
+  title: Shingle Springs Band of Miwok Indians Codes, Polices and Bylaws
+  link: http://www.shinglespringsrancheria.com/government/codes-policies-and-bylaws/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Shingle Springs Band of Miwok Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://shinglespringsrancheria.com/content/index.php?option=com_content&amp;view=article&amp;id=158:tribal-court&amp;catid=37:departments-a-programs&amp;Itemid=57
+  source: national-indian-law-library-shingle-springs
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Shingle Springs Tribal Court
+  link: http://www.shinglespringsrancheria.com/tribal-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Shingle Springs Band of Miwok Indians'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: DISPUTE RESOLUTION
+    citation: DISPUTE RESOLUTION
+    link: https://narf.org/nill/codes/shingle_springs_miwok/index.html
+    source: national-indian-law-library-code-codes-shingle-springs-miwok
+    confidence: medium
+    as_of: '2019'
+    locator: Table of Contents, under 'IGRA Trust Agreement'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: May 2019); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
+  - kind: arbitration
+    title: ARBITRATION ORDINANCE
+    citation: ARBITRATION ORDINANCE; Enforceability of Agreements to Arbitrate; Stay of Proceedings in
+      Tribal Court and Order to Proceed with Arbitration; Arbitration Award Not Appealable; Tribal Dispute
+      Resolution Process; ...
+    link: https://narf.org/nill/codes/shingle_springs_miwok/index.html
+    source: national-indian-law-library-code-codes-shingle-springs-miwok
+    confidence: medium
+    as_of: '2019'
+    locator: Table of Contents, under 'Tribal Gaming Authority Bylaws'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: May 2019); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
 gaming:
   compacts:
   - state: CA

@@ -140,6 +140,87 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Bishop Paiute Tribe
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://www.bishoppaiutetribe.com/tribal-ordinances/
+  source: national-indian-law-library-bishop-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: law-code
+  title: Bishop Paiute Tribe - Tribal Ordinances
+  year: '2018'
+  link: https://narf.org/nill/codes/bishop_paiute/index.html
+  source: national-indian-law-library-code-codes-bishop-paiute
+  confidence: medium
+  as_of: '2018'
+  locator: page heading
+  note: 'Table of Contents Updated: September 2018. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Bishop Paiute Tribal Ordinances
+  link: http://www.bishoppaiutetribe.com/tribal-ordinances.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Bishop Paiute Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.bishoppaiutetribe.com/tribal-court/
+  source: national-indian-law-library-bishop-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Bishop Paiute Tribal Court
+  link: http://www.bishoppaiutetribe.com/tribal-court.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Bishop Paiute Tribe'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Dispute Resolution
+    citation: Dispute Resolution
+    link: https://narf.org/nill/codes/bishop_paiute/index.html
+    source: national-indian-law-library-code-codes-bishop-paiute
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents, under 'Gaming Revenue Allocation:'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: September 2018); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: other
+    title: 'Section 13: Binding dispute resolution mechanism'
+    citation: 'Section 13: Binding dispute resolution mechanism'
+    link: https://narf.org/nill/codes/bishop_paiute/index.html
+    source: national-indian-law-library-code-codes-bishop-paiute
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents, under 'Labor Relations:'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: September 2018); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: mediation
+    title: Rule 38 - Mediation and Arbitration
+    citation: Rule 38 - Mediation and Arbitration; 38.1 Alternative Dispute Resolution Program; 38.2 Mediation
+      and Arbitration Assistance; 38.3 Mediation by Court Order; 38.6 Enforcement of Arbitration Awards
+      or Decisions; ...
+    link: https://narf.org/nill/codes/bishop_paiute/index.html
+    source: national-indian-law-library-code-codes-bishop-paiute
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents, under 'Tribal Court Rules / Bishop Paiute Tribe Rules of the Court:'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: September 2018); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
 gaming:
   compacts:
   - state: CA

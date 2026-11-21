@@ -133,6 +133,41 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Ak-Chin Indian Community
+governing_documents:
+- kind: law-code
+  title: Ak Chin Indian Community of the Maricopa (Ak Chin) Indian Reservation, Arizona
+  year: '1975'
+  link: https://narf.org/nill/codes/ak-chin/index.html
+  source: national-indian-law-library-code-codes-ak-chin
+  confidence: medium
+  as_of: '1975'
+  locator: page heading
+  note: 'Revised: 1975. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: articles-of-association
+  title: Ak Chin Indian Community - Articles of Association
+  year: '1978'
+  link: https://narf.org/nill/constitutions/ak_chin/index.html
+  source: national-indian-law-library-constitution-constitutions-ak-chin
+  confidence: medium
+  as_of: '1978'
+  locator: page heading
+  note: 'Amended: 1978. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-ak-chin
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Ak-Chin Indian Community Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Ak-Chin Indian Community'
 gaming:
   compacts:
   - state: AZ

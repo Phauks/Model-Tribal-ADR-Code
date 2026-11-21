@@ -132,6 +132,32 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Confederated Tribes and Bands of the Yakama Nation
+governing_documents:
+- kind: law-code
+  title: Confederated Tribes and Bands of the Yakama Nation - Tribal Codes and Resolutions
+  year: '2009'
+  link: https://narf.org/nill/codes/confederatedyakama/index.html
+  source: national-indian-law-library-code-codes-confederatedyakama
+  confidence: medium
+  as_of: '2009'
+  locator: page heading
+  note: October 2009 edition. The National Indian Law Library page gives the table of contents (and may
+    link to the nation's own copy); full text is not hosted there.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-confederated-yakama
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Yakama Nation Tribal Court
+  link: http://www.yakamanation-nsn.gov/programs.php
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Confederated Tribes and Bands of Yakama Nation'
 gaming:
   compacts:
   - state: WA

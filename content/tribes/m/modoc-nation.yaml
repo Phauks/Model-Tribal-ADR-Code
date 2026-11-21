@@ -113,6 +113,16 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Modoc Nation
+justice_institutions:
+- kind: court-of-indian-offenses
+  name: Miami Agency CFR Court (Court of Indian Offenses)
+  link: https://www.bia.gov/CFRCourts
+  source: bia-courts-of-indian-offenses
+  confidence: high
+  as_of: '2026-11-21'
+  locator: List of CFR Courts and the Tribes they Serve
+  note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
+    Indian Affairs list.
 gaming:
   compacts:
   - state: OK

@@ -120,6 +120,102 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of California
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Tuolumne of Me-wuk Indians of the Tuolumne Rancheria, California" among organizations
+    under constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18,
+    1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Tuolumne Band of Me-wuk Indians of the Tuolumne Rancheria California) (approved
+    1936) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-tuocons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: 'From GPO: Federal Register : Alcoholic Beverage Control Ordinance'
+  year: '2001'
+  link: http://www.gpo.gov/fdsys/pkg/FR-2001-08-03/pdf/01-19404.pdf
+  source: national-indian-law-library-tuolumne
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "From GPO: Federal Register
+    : Alcoholic Beverage Control Ordinance (2001).".'
+- kind: constitution
+  title: Constitution
+  link: https://www.narf.org/nill/constitutions/tuolumne/index.html
+  source: national-indian-law-library-tuolumne
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At NILL website
+    . Table of contents only.".'
+- kind: constitution
+  title: Constitution
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/tuocons.html
+  source: national-indian-law-library-tuolumne
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Constitution. (1940)".'
+- kind: constitution
+  title: Constitution
+  year: '1936'
+  link: https://www.loc.gov/item/36026265/
+  source: national-indian-law-library-tuolumne
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website. Constitution. (1936)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/tuochrtr.html
+  source: national-indian-law-library-tuolumne
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Corporate charter. (1937)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1937'
+  link: https://www.loc.gov/item/38026377/
+  source: national-indian-law-library-tuolumne
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Corporate charter. (1937)".'
+- kind: corporate-charter
+  title: Corporate charter (Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria California)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/tuochrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-tuochrtr
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Tuolumne Band of Me-wuk Indians of the Tuolumne Rancheria California)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/tuocons.html
+  source: university-of-oklahoma-indian-reorganization-act-tuocons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
 gaming:
   compacts:
   - state: CA

@@ -123,6 +123,59 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Hoh Indian Tribe
+governing_documents:
+- kind: law-code
+  title: Hoh Indian Tribe
+  link: https://narf.org/nill/codes/hoh/index.html
+  source: national-indian-law-library-code-codes-hoh
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: constitution
+  title: Hoh Indian Tribe - Tribal Constitution
+  year: '1969'
+  link: https://narf.org/nill/constitutions/hoh/index.html
+  source: national-indian-law-library-constitution-constitutions-hoh
+  confidence: medium
+  as_of: '1969'
+  locator: page heading
+  note: 'Adopted: 1969. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://hohtribe-nsn.org/government/law-and-order-code/
+  source: national-indian-law-library-hoh
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: law-code
+  title: Hoh Tribe Law and Order Code
+  link: http://hohtribe-nsn.org/?page_id=1446
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Hoh Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://hohtribe-nsn.org/government/tribal-court/
+  source: national-indian-law-library-hoh
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Hoh Tribal Court
+  link: http://www.hohtribe.com/?page_id=43
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Hoh Tribe'
 gaming:
   compacts:
   - state: WA

@@ -108,6 +108,61 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation, California
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://library.municode.com/tribes_and_tribal_nations/agua_caliente_band_of_cahuilla_indians/codes/code_of_ordinances
+  source: national-indian-law-library-agua-caliente
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    . Municode.".'
+- kind: law-code
+  title: Newly Adopted Ordinances
+  link: https://www.aguacaliente.org/legal-Department
+  source: national-indian-law-library-agua-caliente
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    . Newly Adopted Ordinances.".'
+- kind: constitution
+  title: Constitution
+  link: https://library.municode.com/tribes_and_tribal_nations/agua_caliente_band_of_cahuilla_indians/codes/code_of_ordinances
+  source: national-indian-law-library-agua-caliente
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website . MuniCode.".'
+- kind: law-code
+  title: Agua Caliente Band of Cahuilla Indians
+  year: '2001'
+  link: https://narf.org/nill/codes/agua_caliente/index.html
+  source: national-indian-law-library-code-codes-agua-caliente
+  confidence: medium
+  as_of: '2001'
+  locator: page heading
+  note: 'Updated: 2001. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution and By-Laws of the Agua Caliente Band of Mission Indians
+  year: '1957'
+  link: https://thorpe.law.ou.edu/IRA/aguacalcons.html
+  source: university-of-oklahoma-indian-reorganization-act-aguacalcons
+  confidence: medium
+  as_of: '1957'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.aguacaliente.org/tribalcourt
+  source: national-indian-law-library-agua-caliente
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 gaming:
   compacts:
   - state: CA

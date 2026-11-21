@@ -128,6 +128,117 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Spirit Lake Tribe, North Dakota
+governing_documents:
+- kind: law-code
+  title: Spirit Lake Tribe, North Dakota
+  year: '2014'
+  link: https://narf.org/nill/codes/spirit_lake/index.html
+  source: national-indian-law-library-code-codes-spirit-lake
+  confidence: medium
+  as_of: '2014'
+  locator: page heading
+  note: 'Last Amended: March 24, 2014. The National Indian Law Library page gives the table of contents
+    (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Spirit Lake Tribe, North Dakota - Constitution & Bylaws
+  year: '1996'
+  link: https://narf.org/nill/constitutions/spirit_lake/index.html
+  source: national-indian-law-library-constitution-constitutions-spirit-lake
+  confidence: medium
+  as_of: '1996'
+  locator: page heading
+  note: 'Amended: August 19, 1996. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
+  source: national-indian-law-library-spirit-lake
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.spiritlakenation.com/programs/tribal-council/
+  source: national-indian-law-library-spirit-lake
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Spirit Lake Tribe Constitutions and Bylaws
+  link: http://www.spiritlakenation.com/data/upfiles/media/SLT%20Constittution%202016.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: North Dakota section, entry 'Spirit Lake Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Spirit Lake Tribe Law & Order Code
+  link: http://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: North Dakota section, entry 'Spirit Lake Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Devil's Lake Sioux Tribe North Dakota)
+  year: '1946'
+  link: https://thorpe.law.ou.edu/IRA/devcons.html
+  source: university-of-oklahoma-indian-reorganization-act-devcons
+  confidence: low
+  as_of: '1946'
+  note: Matched by former name (Devil's Lake Sioux Tribe); confirm. Historical text as originally approved;
+    the nation may have amended or replaced it since.
+justice_institutions:
+- kind: traditional-forum
+  name: 'Wodakota: Traditional Court'
+  source: narf-tribal-peacemaking-laws
+  confidence: medium
+  as_of: '2025-09-29'
+  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked.
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.spiritlakenation.com/programs/spirit-lake-tribal-court/
+  source: national-indian-law-library-spirit-lake
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Spirit Lake Tribal Court
+  link: http://www.spiritlakenation.com/programs/spirit-lake-tribal-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: North Dakota section, entry 'Spirit Lake Tribe'
+dispute_resolution:
+  provisions:
+  - kind: traditional-dispute-resolution
+    title: 'Title 21: Wodakota: Traditional Court Ordinance'
+    citation: 'Title 21: Wodakota: Traditional Court Ordinance'
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Spirit-Lake-Title-21-WODAKOTA.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Spirit Lake Tribe of North Dakota
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      philosophy, values, and tribal prayer, standards of conduct, authority to use traditional ways and
+      instruct on tribal teachings, referral standards, and procedures.'
+  - kind: peacemaking
+    title: 'Peacemakers: Qualifications, Appointments, Authorities'
+    citation: 'Peacemakers: Qualifications, Appointments, Authorities; Peacemaker Process'
+    link: https://narf.org/nill/codes/spirit_lake/index.html
+    source: national-indian-law-library-code-codes-spirit-lake
+    confidence: medium
+    as_of: '2014'
+    locator: Table of Contents, under 'Chapter Three. Community Notification'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Last
+      Amended: March 24, 2014); the provision itself was not read. The heading it falls under is taken
+      from the page layout and may be imprecise.'
 gaming:
   compacts:
   - state: ND

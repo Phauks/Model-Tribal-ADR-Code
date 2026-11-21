@@ -107,6 +107,23 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Sycuan Band of the Kumeyaay Nation
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://www.sycuan.com/about-us/tribal-law/
+  source: national-indian-law-library-sycuan
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Sycuan Casino website
+    (laws related to gaming only).".'
+justice_institutions:
+- kind: tribal-court
+  name: Sycuan Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Sycuan Band of the Kumeyaay Nation'
 gaming:
   compacts:
   - state: CA

@@ -143,6 +143,71 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Craig Tribal Association
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Listed as "The Craig Community Association of Craig, Alaska" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act as extended to Alaska by the
+    Act of May 1, 1936), as of 1947
+  source: haas-1947-table-b-alaska
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Alaska Native Communities and Cooperatives, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: alaska-indian-reorganization-act
+  detail: Constitution and By-Laws of the Craig Community Association of Craig, Alaska (approved 1938)
+    states it was adopted under Act of June 18, 1934 (48 Stat. 984); Act of May 1, 1936 (49 Stat. 1250)
+  source: university-of-oklahoma-indian-reorganization-act-craigcons
+  confidence: medium
+  as_of: '1938'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Constitution
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/craigcons.html
+  source: national-indian-law-library-craig
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Constitution. (1938)".'
+- kind: corporate-charter
+  title: Corporate Charter
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/craigchrtr.html
+  source: national-indian-law-library-craig
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Corporate Charter. (1938)".'
+- kind: corporate-charter
+  title: Corporate Charter of the Craig Community Associaiton of Craig, Alaska
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/craigchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-craigchrtr
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution and By-Laws of the Craig Community Association of Craig, Alaska
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/craigcons.html
+  source: university-of-oklahoma-indian-reorganization-act-craigcons
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-craig
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

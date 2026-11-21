@@ -130,6 +130,119 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Chitimacha Tribe of Louisiana
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: http://www.chitimacha.gov/tribal-government/constitution-and-comprehensive-codes-justice
+  source: national-indian-law-library-chitimacha
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: http://www.chitimacha.gov/tribal-government/constitution-and-comprehensive-codes-justice
+  source: national-indian-law-library-chitimacha
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: law-code
+  title: Chitimacha Comprehensive Codes of Justice
+  year: '2022'
+  link: https://narf.org/nill/codes/chitimachacode/index.html
+  source: national-indian-law-library-code-codes-chitimachacode
+  confidence: medium
+  as_of: '2022'
+  locator: page heading
+  note: 'Table of Contents Updated: June 2022. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution and By-laws of the Chitimacha Tribe of Louisiana
+  year: '2010'
+  link: https://narf.org/nill/constitutions/chitimacha/index.html
+  source: national-indian-law-library-constitution-constitutions-chitimacha
+  confidence: medium
+  as_of: '2010'
+  locator: page heading
+  note: 'Amended: July 4, 2010. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Chitimacha Tribe of Louisiana Constitution and Bylaws
+  link: http://www.chitimacha.gov/sites/default/files/Chitimacha%20Constitution.PDF
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Louisiana section, entry 'Sovereign Nation of the Chitimacha'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Chitimacha Comprehensive Codes of Justice
+  link: http://www.chitimacha.gov/tribal-government/constitution-and-comprehensive-codes-justice
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Louisiana section, entry 'Sovereign Nation of the Chitimacha'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: peacemaking-program
+  name: Peacemaker Court
+  source: narf-tribal-peacemaking-laws
+  confidence: medium
+  as_of: '2025-09-29'
+  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked.
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.chitimacha.gov/departments-services/tribal-courts
+  source: national-indian-law-library-chitimacha
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Chitimacha Tribal Courts
+  link: http://www.chitimacha.gov/departments-services/tribal-courts
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Louisiana section, entry 'Sovereign Nation of the Chitimacha'
+dispute_resolution:
+  provisions:
+  - kind: peacemaking
+    title: Title 1-A – Peacemaker Court
+    citation: Title 1-A – Peacemaker Court
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/CCCJ-Title-IA-Chitimacha-Peacemaker-Court.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Chitimacha Tribe of Louisiana
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      referral procedures, civil process authority, standards of conduct, and authority of Tribal Court
+      to limit.'
+  - kind: peacemaking
+    title: Title IA - Peacemaker Court
+    citation: Title IA - Peacemaker Court
+    link: https://narf.org/nill/codes/chitimachacode/index.html
+    source: national-indian-law-library-code-codes-chitimachacode
+    confidence: medium
+    as_of: '2022'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: June 2022); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
+  - kind: mediation
+    title: Mediation and Alternative Justice Prohibited
+    citation: Mediation and Alternative Justice Prohibited
+    link: https://narf.org/nill/codes/chitimachacode/index.html
+    source: national-indian-law-library-code-codes-chitimachacode
+    confidence: medium
+    as_of: '2022'
+    locator: Table of Contents, under 'Title III - Criminal Offenses'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: June 2022); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
 gaming:
   compacts:
   - state: LA

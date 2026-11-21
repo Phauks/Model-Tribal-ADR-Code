@@ -118,6 +118,24 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Koyukuk Native Village
+governing_documents:
+- kind: constitution
+  title: At University of Oklahoma website . (Amended
+  year: '1994'
+  link: https://thorpe.law.ou.edu/constitution/koyukuk/index.html
+  source: national-indian-law-library-koyukuk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . (Amended 1994)".'
+justice_institutions:
+- kind: tribal-court
+  name: Koyukuk Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Koyukuk Native Village'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

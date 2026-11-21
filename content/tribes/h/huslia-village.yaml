@@ -134,6 +134,41 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Huslia Village
+governing_documents:
+- kind: constitution
+  title: Huslia Village - Constitution Table of Contents
+  year: '1995'
+  link: https://narf.org/nill/constitutions/huslia/index.html
+  source: national-indian-law-library-constitution-constitutions-huslia
+  confidence: medium
+  as_of: '1995'
+  locator: page heading
+  note: 'Dated: April 26, 1995. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution
+  year: '1995'
+  link: https://thorpe.law.ou.edu/constitution/huslia/index.html
+  source: national-indian-law-library-huslia
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. (1995)".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-huslia
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Huslia Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Huslia Village'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

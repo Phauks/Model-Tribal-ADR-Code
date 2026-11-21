@@ -150,6 +150,20 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Native Village of Kwigillingok
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-native-kwigillingok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Kwigillingok Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Native Village of Kwigillingok'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

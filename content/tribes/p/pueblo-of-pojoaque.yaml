@@ -131,6 +131,40 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Pueblo of Pojoaque, New Mexico
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://pojoaque.org/community/legal-department/law-order-code/
+  source: national-indian-law-library-pueblo-pojoaque
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: law-code
+  title: Pueblo of Pojoaque Law and Order Code
+  link: http://pojoaque.org/community/legal-department/law-order-code/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New Mexico section, entry 'Pueblo of Pojoaque'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://pojoaque.org/community/tribal-courts/
+  source: national-indian-law-library-pueblo-pojoaque
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Pueblo of Pojoaque Tribal Court
+  link: http://pojoaque.org/community/tribal-courts/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New Mexico section, entry 'Pueblo of Pojoaque'
 gaming:
   compacts:
   - state: NM

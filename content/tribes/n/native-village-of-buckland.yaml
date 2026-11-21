@@ -136,6 +136,72 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Native Village of Buckland
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Constitution and By-Laws of the Native Village of Buckland Alaska (approved 1950) states it
+    was adopted under Act of June 18, 1934 (48 Stat. 984); Act of May 1, 1936 (49 Stat. 1250)
+  source: university-of-oklahoma-indian-reorganization-act-buckcons
+  confidence: medium
+  as_of: '1950'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Constitution
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/buckcons.html
+  source: national-indian-law-library-native-buckland
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Constitution. (1950)".'
+- kind: constitution
+  title: Constitution
+  year: '1950'
+  link: https://www.loc.gov/item/51061618/
+  source: national-indian-law-library-native-buckland
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website. Constitution. (1950)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/buckchrtr.html
+  source: national-indian-law-library-native-buckland
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Corporate charter. (1950)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1950'
+  link: https://www.loc.gov/item/51061567/
+  source: national-indian-law-library-native-buckland
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Corporate charter. (1950)".'
+- kind: corporate-charter
+  title: Corporate Charter of the Native Village of Buckland Alaska
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/buckchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-buckchrtr
+  confidence: medium
+  as_of: '1950'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution and By-Laws of the Native Village of Buckland Alaska
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/buckcons.html
+  source: university-of-oklahoma-indian-reorganization-act-buckcons
+  confidence: medium
+  as_of: '1950'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

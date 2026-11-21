@@ -151,6 +151,42 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Wichita and Affiliated Tribes (Wichita, Keechi, Waco, & Tawakonie), Oklahoma
+governing_documents:
+- kind: constitution
+  title: Wichita Governing Resolution
+  year: '1992'
+  link: https://narf.org/nill/constitutions/wichita/index.html
+  source: national-indian-law-library-constitution-constitutions-wichita
+  confidence: medium
+  as_of: '1992'
+  locator: page heading
+  note: 'Dated: April 11, 1992. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Wichita Governing Resolution
+  link: http://www.wichitatribe.com/government/governing-resolution.aspx
+  source: national-indian-law-library-wichita
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website . Wichita Governing Resolution.".'
+justice_institutions:
+- kind: court-of-indian-offenses
+  name: Southern Plains CFR Court (Court of Indian Offenses)
+  link: https://www.bia.gov/CFRCourts
+  source: bia-courts-of-indian-offenses
+  confidence: high
+  as_of: '2026-11-21'
+  locator: List of CFR Courts and the Tribes they Serve
+  note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
+    Indian Affairs list.
+- kind: tribal-court
+  name: Wichita Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Wichita and Affiliated Tribes'
 gaming:
   compacts:
   - state: OK

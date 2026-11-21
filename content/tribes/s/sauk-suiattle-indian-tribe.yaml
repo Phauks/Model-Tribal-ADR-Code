@@ -106,6 +106,88 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Sauk-Suiattle Indian Tribe
+governing_documents:
+- kind: law-code
+  title: 'Sauk-Suiattle Indian Tribe: Tribal Laws'
+  year: '2016'
+  link: https://narf.org/nill/codes/sauk/index.html
+  source: national-indian-law-library-code-codes-sauk
+  confidence: medium
+  as_of: '2016'
+  locator: page heading
+  note: 'Table of Contents Updated: January 2016. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Sauk-Suiattle Indian Tribe - Constitution and Bylaws
+  year: '1984'
+  link: https://narf.org/nill/constitutions/sauk/index.html
+  source: national-indian-law-library-constitution-constitutions-sauk
+  confidence: medium
+  as_of: '1984'
+  locator: page heading
+  note: 'Amended: 1984. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: http://www.sauk-suiattle.com/documents_and_forms.htm
+  source: national-indian-law-library-sauk-suiattle
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: http://www.sauk-suiattle.com/documents_and_forms.htm
+  source: national-indian-law-library-sauk-suiattle
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Sauk-Suiattle Indian Tribe Constitution and Bylaws
+  link: http://www.sauk-suiattle.com/Documents/Constitution%201.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Sauk-Suiattle Indian Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Sauk-Suiattle Indian Tribe Ordinances
+  link: http://www.sauk-suiattle.com/documents_and_forms.htm
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Sauk-Suiattle Indian Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-sauk-suiattle
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Sauk-Suiattle Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Sauk-Suiattle Indian Tribe'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: 7.3 Dispute Resolution.
+    citation: 7.3 Dispute Resolution.
+    link: https://narf.org/nill/codes/sauk/index.html
+    source: national-indian-law-library-code-codes-sauk
+    confidence: medium
+    as_of: '2016'
+    locator: Table of Contents, under 'Gaming Ordinance (November 19, 1999)'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: January 2016); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
 gaming:
   compacts:
   - state: WA

@@ -107,6 +107,28 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Skull Valley Band of Goshute Indians of Utah
+governing_documents:
+- kind: constitution
+  title: Constitution and By-laws of the Confederated Tribes of the Goshute Reservation, Utah
+  year: '1940'
+  link: http://thorpe.ou.edu/IRA/goshcons.html
+  source: national-indian-law-library-skull-valley
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Oklahoma
+    University Law Center''s website . 1940 Constitution and By-laws of the Confederated Tribes of the
+    Goshute Reservation, Utah.".'
+justice_institutions:
+- kind: court-of-indian-offenses
+  name: Western Region CFR Court (Court of Indian Offenses)
+  link: https://www.bia.gov/CFRCourts
+  source: bia-courts-of-indian-offenses
+  confidence: high
+  as_of: '2026-11-21'
+  locator: List of CFR Courts and the Tribes they Serve
+  note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
+    Indian Affairs list.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

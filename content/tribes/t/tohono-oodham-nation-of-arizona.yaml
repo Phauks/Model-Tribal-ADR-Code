@@ -130,6 +130,115 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Tohono O'odham Nation of Arizona
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Papago Tribe, Arizona" among organizations under constitutions approved by the
+    Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: low
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Matched by former name (Papago Tribe); confirm. Historical status in 1947; the nation may since
+    have adopted a different constitution. The act is assigned from the table (main table: Indian Reorganization
+    Act; Oklahoma table: Oklahoma Indian Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Papago Tribe of Arizona) (approved 1937) states it was adopted under Act of June
+    18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-papcons
+  confidence: low
+  as_of: '1937'
+  locator: preamble / approval and certification of adoption
+  note: Matched by former name (Papago Tribe); confirm. Historical constitution; a later constitution
+    may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Tohono O'odham
+  year: '2023'
+  link: https://narf.org/nill/codes/tohono/index.html
+  source: national-indian-law-library-code-codes-tohono
+  confidence: medium
+  as_of: '2023'
+  locator: page heading
+  note: 'Most Recent Update Received: August 2023. Full text linked from the National Indian Law Library
+    page.'
+- kind: constitution
+  title: Tohono O'odham Nation - Tribal Constitution
+  year: '2012'
+  link: https://narf.org/nill/constitutions/tohono/index.html
+  source: national-indian-law-library-constitution-constitutions-tohono
+  confidence: medium
+  as_of: '2012'
+  locator: page heading
+  note: 'Amended: March 6, 1986; Published in the 2012 online tribal code. Full text linked from the National
+    Indian Law Library page.'
+- kind: law-code
+  title: Tribal Code
+  link: https://www.tolc-nsn.gov/tohono-oodham-code/
+  source: national-indian-law-library-tohono
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Tribal Code.".'
+- kind: law-code
+  title: Legislative updates
+  link: https://www.tolc-nsn.gov/council-actions-2024/
+  source: national-indian-law-library-tohono
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Legislative updates.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.tolc-nsn.gov/docs/Constitution.pdf
+  source: national-indian-law-library-tohono
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Tohono O’odham Nation Constitution
+  link: http://www.tolc-nsn.org/docs/Constitution.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Tohono O’odham Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Tohono O’odham Code
+  link: http://www.tolc-nsn.org/tocode.htm
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Tohono O’odham Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Papago Tribe of Arizona)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/papcons.html
+  source: university-of-oklahoma-indian-reorganization-act-papcons
+  confidence: low
+  as_of: '1937'
+  note: Matched by former name (Papago Tribe); confirm. Historical text as originally approved; the nation
+    may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.tonation-nsn.gov/tribal_government.aspx
+  source: national-indian-law-library-tohono
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Tohono O’odham Nation Judicial Court
+  link: http://www.tolc-nsn.org/opinions.htm
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Tohono O’odham Nation'
 gaming:
   compacts:
   - state: AZ

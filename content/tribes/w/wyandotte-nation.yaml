@@ -128,6 +128,112 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Wyandotte Nation
+government_structure:
+- kind: oklahoma-indian-welfare-act
+  detail: Listed as "The Wyandotte Tribe of Oklahoma" among organizations under constitutions approved
+    by the Secretary of the Interior (Oklahoma Indian Welfare Act of June 26, 1936), as of 1947
+  source: haas-1947-table-b-oklahoma
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Oklahoma Tribes, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: oklahoma-indian-welfare-act
+  detail: Constitution (Wyandotte Tribe of Oklahoma) (approved 1937) states it was adopted under Act of
+    June 26, 1936 (49 Stat. 1967)
+  source: university-of-oklahoma-indian-reorganization-act-wyancons
+  confidence: medium
+  as_of: '1937'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Wyandotte Nation - Tribal Codes and Ordinances
+  year: '2009'
+  link: https://narf.org/nill/codes/wyandotte/index.html
+  source: national-indian-law-library-code-codes-wyandotte
+  confidence: medium
+  as_of: '2009'
+  locator: page heading
+  note: 'Dated: 2009. The National Indian Law Library page gives the table of contents (and may link to
+    the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Wyandotte Nation - Tribal Constitution
+  year: '1999'
+  link: https://narf.org/nill/constitutions/wyandotte/index.html
+  source: national-indian-law-library-constitution-constitutions-wyandotte
+  confidence: medium
+  as_of: '1999'
+  locator: page heading
+  note: 'Dated: 1999. The National Indian Law Library page gives the table of contents (and may link to
+    the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://wyandotte-nation.org/government/courts/
+  source: national-indian-law-library-wyandotte
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
+    website .".'
+- kind: law-code
+  title: Election Ordinance, Enrollment Ordinace and Ethics Act
+  link: https://wyandotte-nation.org/government/our-government/
+  source: national-indian-law-library-wyandotte
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Election Ordinance, Enrollment Ordinace and Ethics Act.".'
+- kind: constitution
+  title: Constitution and Corporate Charter
+  link: https://wyandotte-nation.org/government/our-government/
+  source: national-indian-law-library-wyandotte
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website . Constitution and Corporate Charter.".'
+- kind: constitution
+  title: Wyandotte Tribe of Oklahoma Constitution
+  link: http://www.wyandotte-nation.org/government/legal-documents/constitution/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Wyandotte Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Wyandotte Tribe of Oklahoma)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/wyanchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-wyanchrtr
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Wyandotte Tribe of Oklahoma)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/wyancons.html
+  source: university-of-oklahoma-indian-reorganization-act-wyancons
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: District Court of the Wyandotte Nation
+  link: https://wyandotte-nation.org/government/courts/
+  source: national-indian-law-library-wyandotte
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: tribal-court
+  name: Wyandotte Nation Tribal Court
+  link: http://www.wyandotte-nation.org/government/courts/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Wyandotte Nation'
 gaming:
   compacts:
   - state: KS

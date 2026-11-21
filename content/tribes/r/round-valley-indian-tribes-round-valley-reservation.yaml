@@ -107,6 +107,57 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Round Valley Indian Tribes, Round Valley Reservation, California
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://rvit.org/government/documents-forms
+  source: national-indian-law-library-round-valley
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://rvit.org/government/constitution
+  source: national-indian-law-library-round-valley
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Round Valley Indian Tribes Constitution
+  link: http://www.rvit.org/constitution/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Round Valley Indian Tribes'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Round Valley Indian Tribe Tribal Court Code
+  link: http://www.rvit.org/documentsforms.php
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Round Valley Indian Tribes'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://rvit.org/government/tribal-court
+  source: national-indian-law-library-round-valley
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Round Valley Indian Tribes Tribal Court
+  link: http://courts.rvit.org/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Round Valley Indian Tribes'
 gaming:
   ordinances:
   - approved: '1996-07-25'

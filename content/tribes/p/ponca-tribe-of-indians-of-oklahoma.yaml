@@ -135,6 +135,92 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Ponca Tribe of Indians of Oklahoma
+government_structure:
+- kind: oklahoma-indian-welfare-act
+  detail: Constitution (Ponca Tribe of Indians Oklahoma) (approved 1950) states it was adopted under Act
+    of June 26, 1936 (49 Stat. 1967)
+  source: university-of-oklahoma-indian-reorganization-act-okponcons
+  confidence: medium
+  as_of: '1950'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Ponca Tribe of Indians of Oklahoma
+  year: '2013'
+  link: https://narf.org/nill/codes/ponca_oklahoma/index.html
+  source: national-indian-law-library-code-codes-ponca-oklahoma
+  confidence: medium
+  as_of: '2013'
+  locator: page heading
+  note: 'Received: April 2013. The National Indian Law Library page gives the table of contents (and may
+    link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Ponca Indian Tribe of Oklahoma - Constitution
+  year: '1979'
+  link: https://narf.org/nill/constitutions/ponca_oklahoma/index.html
+  source: national-indian-law-library-constitution-constitutions-ponca-oklahoma
+  confidence: medium
+  as_of: '1979'
+  locator: page heading
+  note: 'Amended: 1979. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution
+  link: https://www.ponca-nsn.gov/constitution.html
+  source: national-indian-law-library-ponca-oklahoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: corporate-charter
+  title: Corporate charter (Ponca Indian Tribe Oklahoma)
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/okponchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-okponchrtr
+  confidence: medium
+  as_of: '1950'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Ponca Tribe of Indians Oklahoma)
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/okponcons.html
+  source: university-of-oklahoma-indian-reorganization-act-okponcons
+  confidence: medium
+  as_of: '1950'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.ponca-nsn.gov/tribal-district-court.html
+  source: national-indian-law-library-ponca-oklahoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Ponca Tribe of Oklahoma Tribal Court
+  link: http://www.ponca.com/121500/123500.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Ponca Tribe of Oklahoma'
+dispute_resolution:
+  provisions:
+  - kind: mediation
+    title: Court Ordered Or Referred Mediation, Marriage Counseling, Or Reconciliation Of Domestic Abuse
+      Cases Prohibited.
+    citation: Court Ordered Or Referred Mediation, Marriage Counseling, Or Reconciliation Of Domestic
+      Abuse Cases Prohibited.
+    link: https://narf.org/nill/codes/ponca_oklahoma/index.html
+    source: national-indian-law-library-code-codes-ponca-oklahoma
+    confidence: medium
+    as_of: '2013'
+    locator: Table of Contents, under 'Tab C. Domestic and Family Violence Code'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Received:
+      April 2013); the provision itself was not read. The heading it falls under is taken from the page
+      layout and may be imprecise.'
 gaming:
   compacts:
   - state: OK

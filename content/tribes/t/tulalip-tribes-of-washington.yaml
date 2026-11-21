@@ -123,6 +123,112 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Tulalip Tribes of Washington
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Tulalip Tribes, Washington" among organizations under constitutions approved
+    by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Tulalip Tribes of the Tulalip Reservation Washington) (approved 1936) states it
+    was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-tulacons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Tulalip Tribes of Washington Tribal Codes
+  year: '2024'
+  link: https://narf.org/nill/codes/tulalipcode/index.html
+  source: national-indian-law-library-code-codes-tulalipcode
+  confidence: medium
+  as_of: '2024'
+  locator: page heading
+  note: 'Current Through Legislation Passed: November 1, 2024. The National Indian Law Library page gives
+    the table of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution and By-laws of the Tulalip Tribes of Washington
+  year: '2015'
+  link: https://narf.org/nill/constitutions/tulalipconst/index.html
+  source: national-indian-law-library-constitution-constitutions-tulalipconst
+  confidence: medium
+  as_of: '2015'
+  locator: page heading
+  note: 'Table of Contents Updated: March 2015. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: CodePublishing Inc
+  link: http://www.codepublishing.com/wa/Tulalip/
+  source: national-indian-law-library-tulalip
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website.
+    (CodePublishing Inc.)".'
+- kind: constitution
+  title: CodePublishing Inc
+  link: http://www.codepublishing.com/WA/Tulalip/?TulalipCT.html
+  source: national-indian-law-library-tulalip
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website . (CodePublishing Inc.)".'
+- kind: constitution
+  title: Tulalip Tribes of Washington Constitution and Bylaws – Code Publishing, Inc.
+  link: http://www.codepublishing.com/WA/Tulalip/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Tulalip Tribes'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Tulalip Tribal Code
+  link: http://codepublishing.com/wa/tulalip/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Tulalip Tribes'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Tulalip Tribes of the Tulalip Reservation Washington)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/tulachrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-tulachrtr
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Tulalip Tribes of the Tulalip Reservation Washington)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/tulacons.html
+  source: university-of-oklahoma-indian-reorganization-act-tulacons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.tulaliptribes-nsn.gov/Home/Government/Departments/TribalCourt.aspx
+  source: national-indian-law-library-tulalip
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Tulalip Tribes Tribal Court
+  link: http://www.tulaliptribes-nsn.gov/Home/Government/Departments/TribalCourt.aspx
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Tulalip Tribes'
 gaming:
   compacts:
   - state: WA

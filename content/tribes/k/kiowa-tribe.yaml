@@ -155,6 +155,88 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Kiowa Tribe (previously listed as Kiowa Indian Tribe of Oklahoma)
+governing_documents:
+- kind: constitution
+  title: Kiowa Indian Tribe of Oklahoma - Tribal Constitution
+  year: '2017'
+  link: https://narf.org/nill/constitutions/kiowa/index.html
+  source: national-indian-law-library-constitution-constitutions-kiowa
+  confidence: medium
+  as_of: '2017'
+  locator: page heading
+  note: 'Approved: 2017. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Court Codes (KCC Code of Law
+  link: https://www.kiowatribe.org/judicial
+  source: national-indian-law-library-kiowa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
+    website . Court Codes (KCC Code of Law).".'
+- kind: law-code
+  title: Legislative Business
+  link: https://kiowatribe.org/legislative
+  source: national-indian-law-library-kiowa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Legislative Business.".'
+- kind: law-code
+  title: Tribal code
+  link: https://law.kiowatribe.org/
+  source: national-indian-law-library-kiowa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    (Open Law Library).".'
+- kind: constitution
+  title: Constitution
+  link: https://www.kiowatribe.org/legislative
+  source: national-indian-law-library-kiowa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Constitution
+  link: https://law.kiowatribe.org/
+  source: national-indian-law-library-kiowa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website (Open Law Library).".'
+- kind: constitution
+  title: Kiowa Indian Tribe Constitution
+  link: https://nebula.wsimg.com/01e4bef267704e46f0aa16463f02e170?AccessKeyId=B5606416FE67A0E216FA&amp;disposition=0&amp;alloworigin=1
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Kiowa Indian Tribe of Oklahoma'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: court-of-indian-offenses
+  name: Southern Plains CFR Court (Court of Indian Offenses)
+  link: https://www.bia.gov/CFRCourts
+  source: bia-courts-of-indian-offenses
+  confidence: high
+  as_of: '2026-11-21'
+  locator: List of CFR Courts and the Tribes they Serve
+  note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
+    Indian Affairs list.
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.kiowatribe.org/judicial
+  source: national-indian-law-library-kiowa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 gaming:
   compacts:
   - state: OK

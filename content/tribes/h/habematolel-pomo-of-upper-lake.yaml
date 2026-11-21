@@ -106,6 +106,88 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Habematolel Pomo of Upper Lake, California
+government_structure:
+- kind: indian-reorganization-act
+  detail: Constitution (Upper Lake Band of Pomo Indians of the Upper Lake Rancheria California) (approved
+    1936) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-capomocons
+  confidence: low
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Matched by former name (Upper Lake Band of Pomo Indians); confirm. Historical constitution; a
+    later constitution may have replaced it.
+- kind: indian-reorganization-act
+  detail: Constitution (Upper Lake Pomo Indian Community) (approved 1941) states it was adopted under
+    Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-uppomocons
+  confidence: medium
+  as_of: '1941'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Habematolel Pomo of Upper Lake, California
+  year: '2017'
+  link: https://narf.org/nill/codes/habematolel/index.html
+  source: national-indian-law-library-code-codes-habematolel
+  confidence: medium
+  as_of: '2017'
+  locator: page heading
+  note: 'Table of Contents Updated: March 2017. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Habematolel Pomo of Upper Lake, California - Constitution
+  year: '2019'
+  link: https://narf.org/nill/constitutions/habematolel/index.html
+  source: national-indian-law-library-constitution-constitutions-habematolel
+  confidence: medium
+  as_of: '2019'
+  locator: page heading
+  note: 'Effective: November 5, 2019. The National Indian Law Library page gives the table of contents
+    (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.hpultribe-nsn.gov/tribal-law/
+  source: national-indian-law-library-habematolel-pomo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.hpultribe-nsn.gov/tribal-law/
+  source: national-indian-law-library-habematolel-pomo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Constitution (Upper Lake Band of Pomo Indians of the Upper Lake Rancheria California)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/capomocons.html
+  source: university-of-oklahoma-indian-reorganization-act-capomocons
+  confidence: low
+  as_of: '1936'
+  note: Matched by former name (Upper Lake Band of Pomo Indians); confirm. Historical text as originally
+    approved; the nation may have amended or replaced it since.
+- kind: corporate-charter
+  title: Corporate charter (Upper Lake Pomo Indian Community)
+  year: '1942'
+  link: https://thorpe.law.ou.edu/IRA/uppomochrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-uppomochrtr
+  confidence: medium
+  as_of: '1942'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Upper Lake Pomo Indian Community)
+  year: '1941'
+  link: https://thorpe.law.ou.edu/IRA/uppomocons.html
+  source: university-of-oklahoma-indian-reorganization-act-uppomocons
+  confidence: medium
+  as_of: '1941'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
 gaming:
   compacts:
   - state: CA

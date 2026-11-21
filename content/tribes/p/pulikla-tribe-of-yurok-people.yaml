@@ -117,6 +117,33 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Pulikla Tribe of Yurok People (previously listed as Resighini Rancheria, California)
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: http://resighinirancheria.com/Documents/Resighini_Rancheria_Final_WQ_Ordinance_Revised_6_06.pdf
+  source: national-indian-law-library-resighini-rancheria
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: http://resighinirancheria.com/Documents/RR_Tribal_Constitution.pdf
+  source: national-indian-law-library-resighini-rancheria
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-resighini-rancheria
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 gaming:
   compacts:
   - state: CA

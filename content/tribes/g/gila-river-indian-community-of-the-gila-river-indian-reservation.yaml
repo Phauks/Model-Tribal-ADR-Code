@@ -139,6 +139,95 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
+government_structure:
+- kind: indian-reorganization-act
+  detail: Constitution (Gila River Indian Community, Arizona) (approved 1960) states it was adopted under
+    Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-gilacons
+  confidence: medium
+  as_of: '1960'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+- kind: indian-reorganization-act
+  detail: Constitution (Gila River Pima-Maricopa Indian Community, Arizona) (approved 1936) states it
+    was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-gilapmcons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Gila River Indian Community of Arizona - Tribal Constitution - Table of Contents
+  year: '2013'
+  link: https://narf.org/nill/constitutions/gila_river/index.html
+  source: national-indian-law-library-constitution-constitutions-gila-river
+  confidence: medium
+  as_of: '2013'
+  locator: page heading
+  note: 'Last Amended: July 9, 2013. The National Indian Law Library page gives the table of contents
+    (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.gilariver.org/index.php/government/judical-branch
+  source: national-indian-law-library-gila-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Selected Ordinances available at bottom of the page.".'
+- kind: law-code
+  title: Gila River Indian Community Ordinances
+  link: http://www.gilariver.org/index.php/government/judical-branch
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Gila River Indian Community'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Gila River Indian Community, Arizona)
+  year: '1960'
+  link: https://thorpe.law.ou.edu/IRA/gilacons.html
+  source: university-of-oklahoma-indian-reorganization-act-gilacons
+  confidence: medium
+  as_of: '1960'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: corporate-charter
+  title: Corporate charter (Gila River Pima-Maricopa Indian Community, Arizona)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/gilapmchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-gilapmchrtr
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Gila River Pima-Maricopa Indian Community, Arizona)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/gilapmcons.html
+  source: university-of-oklahoma-indian-reorganization-act-gilapmcons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Gila River Indian Community Court
+  source: national-indian-law-library-gila-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: tribal-court
+  name: Westend Judicial Center
+  source: national-indian-law-library-gila-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: tribal-court
+  name: Gila River Indian Community Judicial Branch
+  link: http://www.gilariver.org/index.php/government/judical-branch
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Gila River Indian Community'
 gaming:
   compacts:
   - state: AZ

@@ -155,6 +155,82 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Ute Mountain Ute Tribe
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Ute Mountain Tribe of the Ute Mountain Reservation, Colorado" among organizations
+    under constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18,
+    1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Ute Mountain Tribe Ute Mountain Reservation Colorado, New Mexico, Utah) (approved
+    1940) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-utemtcons
+  confidence: medium
+  as_of: '1940'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Ute Mountain Tribe of the Ute Mountain Reservation, Colorado, New Mexico & Utah
+  year: '1988'
+  link: https://narf.org/nill/codes/utemtnutecode/index.html
+  source: national-indian-law-library-code-codes-utemtnutecode
+  confidence: medium
+  as_of: '1988'
+  locator: page heading
+  note: 'Dated: 1988. The National Indian Law Library page gives the table of contents (and may link to
+    the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Ute Mountain Tribe of the Ute Mountain Reservation, Colorado, New Mexico & Utah - Tribal Constitution
+  year: '1976'
+  link: https://narf.org/nill/constitutions/utemtnmute/index.html
+  source: national-indian-law-library-constitution-constitutions-utemtnmute
+  confidence: medium
+  as_of: '1976'
+  locator: page heading
+  note: 'Dated: 1976. The National Indian Law Library page gives the table of contents (and may link to
+    the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution
+  year: '1940'
+  link: http://thorpe.ou.edu/IRA/utemtcons.html
+  source: national-indian-law-library-ute-mtn-ute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Oklahoma
+    University Law Center website . 1940 version.".'
+- kind: constitution
+  title: Constitution (Ute Mountain Tribe Ute Mountain Reservation Colorado, New Mexico, Utah)
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/utemtcons.html
+  source: university-of-oklahoma-indian-reorganization-act-utemtcons
+  confidence: medium
+  as_of: '1940'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: court-of-indian-offenses
+  name: Southwest Region CFR Court (Court of Indian Offenses)
+  link: https://www.bia.gov/CFRCourts
+  source: bia-courts-of-indian-offenses
+  confidence: high
+  as_of: '2026-11-21'
+  locator: List of CFR Courts and the Tribes they Serve
+  note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
+    Indian Affairs list.
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-ute-mtn-ute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 gaming:
   compacts:
   - state: CO

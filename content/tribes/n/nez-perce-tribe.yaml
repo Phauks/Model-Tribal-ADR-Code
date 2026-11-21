@@ -136,6 +136,134 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Nez Perce Tribe
+governing_documents:
+- kind: law-code
+  title: Nez Perce Tribal Code
+  year: '2019'
+  link: https://narf.org/nill/codes/nez_perce/index.html
+  source: national-indian-law-library-code-codes-nez-perce
+  confidence: medium
+  as_of: '2019'
+  locator: page heading
+  note: 'Table of Contents Updated: Feburary 2019. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Revised Constitution and Bylaws of the Nez Perce Tribe
+  year: '2005'
+  link: https://narf.org/nill/constitutions/nez_perce/index.html
+  source: national-indian-law-library-constitution-constitutions-nez-perce
+  confidence: medium
+  as_of: '2005'
+  locator: page heading
+  note: 'Revised: 2005. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: http://www.nezperce.org/resources/tribal-code/
+  source: national-indian-law-library-nez-perce
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: http://www.nezperce.org/wp-content/uploads/2018/01/ConstitutionByLaws.pdf
+  source: national-indian-law-library-nez-perce
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website . (pdf)".'
+- kind: law-code
+  title: Nez Perce Tribal Code
+  link: http://nezperce.org/~code/index.htm
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Idaho section, entry 'Nez Perce Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: peacemaking-program
+  name: Peacemaker Court
+  source: narf-tribal-peacemaking-laws
+  confidence: medium
+  as_of: '2025-09-29'
+  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked.
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.nezperce.org/government/law-and-justice/
+  source: national-indian-law-library-nez-perce
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Nez Perce Tribal Court
+  link: http://www.nezperce.org/official/tribalcourt.htm
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Idaho section, entry 'Nez Perce Tribe'
+dispute_resolution:
+  provisions:
+  - kind: peacemaking
+    title: Chapter 1-8 – Peacemaker Court
+    citation: Chapter 1-8 – Peacemaker Court
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Nez-Perce-2024-09-24-Title-1-VAWA-update.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Nez Perce Tribe
+    note: 'Native American Rights Fund description (provision itself not read): Provides purpose, definitions,
+      peacemaker qualifications, procedures, peacemaker duties, the creation of a “Peacemaker Handbook,”
+      a list of matters which can be heard by the peacemaking court, and jurisdiction over matters not
+      within ordinary tribal court jurisdiction.'
+  - kind: mediation
+    title: '''1-2-3 Mediation and Hearings'
+    citation: '''1-2-3 Mediation and Hearings'
+    link: https://narf.org/nill/codes/nez_perce/index.html
+    source: national-indian-law-library-code-codes-nez-perce
+    confidence: medium
+    as_of: '2019'
+    locator: 'Table of Contents, under ''CHAPTER 1-2: SMALL CLAIMS'''
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: Feburary 2019); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: other
+    title: 'CHAPTER 1-3: ALTERNATIVE DISPUTE RESOLUTION'
+    citation: 'CHAPTER 1-3: ALTERNATIVE DISPUTE RESOLUTION'
+    link: https://narf.org/nill/codes/nez_perce/index.html
+    source: national-indian-law-library-code-codes-nez-perce
+    confidence: medium
+    as_of: '2019'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: Feburary 2019); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: other
+    title: '''6-2-23 Dispute Resolution Process'
+    citation: '''6-2-23 Dispute Resolution Process'
+    link: https://narf.org/nill/codes/nez_perce/index.html
+    source: national-indian-law-library-code-codes-nez-perce
+    confidence: medium
+    as_of: '2019'
+    locator: Table of Contents, under 'BACKGROUND INVESTIGATIONS'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: Feburary 2019); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: arbitration
+    title: §11-9-4 Attorney Fees And Other Arbitration Costs
+    citation: §11-9-4 Attorney Fees And Other Arbitration Costs
+    link: https://narf.org/nill/codes/nez_perce/index.html
+    source: national-indian-law-library-code-codes-nez-perce
+    confidence: medium
+    as_of: '2019'
+    locator: 'Table of Contents, under ''CHAPTER 11-9: ADJUDICATION OF DISPUTES'''
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: Feburary 2019); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
 gaming:
   compacts:
   - state: ID

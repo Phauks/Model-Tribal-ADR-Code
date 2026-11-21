@@ -147,6 +147,85 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Rosebud Sioux Tribe of the Rosebud Indian Reservation, South Dakota
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Rosebud Sioux Tribe, South Dakota" among organizations under constitutions approved
+    by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+governing_documents:
+- kind: law-code
+  title: Code of the Rosebud Sioux Tribe
+  year: '2012'
+  link: https://narf.org/nill/codes/rosebudcode/index.html
+  source: national-indian-law-library-code-codes-rosebudcode
+  confidence: medium
+  as_of: '2012'
+  locator: page heading
+  note: 'Updated: April 2012. Full text linked from the National Indian Law Library page.'
+- kind: constitution
+  title: Constitution and By-laws of the Rosebud Sioux Tribe of South Dakota
+  year: '2007'
+  link: https://narf.org/nill/constitutions/rosebudconst/index.html
+  source: national-indian-law-library-constitution-constitutions-rosebudconst
+  confidence: medium
+  as_of: '2007'
+  locator: page heading
+  note: 'Amended: 2007. Full text linked from the National Indian Law Library page.'
+- kind: law-code
+  title: Law and Order Code
+  link: https://www.rstcourt.org/law-order-code/
+  source: national-indian-law-library-rosebud-sioux
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribal Court''s
+    website . Law and Order Code.".'
+- kind: law-code
+  title: Ordinances
+  link: https://www.rstcourt.org/documents/list/catid/7/
+  source: national-indian-law-library-rosebud-sioux
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribal Court''s
+    website . Ordinances.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.rstcourt.org/rst-constitution/
+  source: national-indian-law-library-rosebud-sioux
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribal Court''s
+    website .".'
+- kind: corporate-charter
+  title: Corporate charter (Rosebud Sioux Tribe South Dakota)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/sdrosechrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-sdrosechrtr
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Rosebud Sioux Tribal Court
+  link: https://www.rstcourt.org/
+  source: national-indian-law-library-rosebud-sioux
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: tribal-court
+  name: Rosebud Sioux Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: South Dakota section, entry 'Rosebud Sioux Tribe of the Sicangu Oyate'
 gaming:
   compacts:
   - state: SD

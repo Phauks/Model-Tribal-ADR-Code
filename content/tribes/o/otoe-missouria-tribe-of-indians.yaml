@@ -134,6 +134,71 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Otoe-Missouria Tribe of Indians, Oklahoma
+governing_documents:
+- kind: constitution
+  title: Otoe-Missouria Tribe of Indians, Oklahoma - Constitution
+  link: https://narf.org/nill/constitutions/otoe-missouria/index.html
+  source: national-indian-law-library-constitution-constitutions-otoe-missouria
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: law-code
+  title: Minutes and Resolutions -
+  year: '2009'
+  link: http://www.omtribe.org/who-we-are-government-minutes-and-resolutions
+  source: national-indian-law-library-otoe-missouria
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "Minutes and Resolutions
+    (2009-).".'
+- kind: law-code
+  title: Election and Voting Ordinance  (pdf
+  year: '2016'
+  link: http://www.omtribe.org/useruploads/files/2016_election_&_voting_ordinance_resolution.pdf
+  source: national-indian-law-library-otoe-missouria
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "Election and Voting
+    Ordinance (2016) (pdf).".'
+- kind: constitution
+  title: Constitution
+  link: https://www.omtribe.org/who-we-are/government/constitution/
+  source: national-indian-law-library-otoe-missouria
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Otoe-Missouria Tribe of Oklahoma Constitution
+  link: http://www.omtribe.org/who-we-are-government-constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Otoe Missouria Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: court-of-indian-offenses
+  name: Southern Plains CFR Court (Court of Indian Offenses)
+  link: https://www.bia.gov/CFRCourts
+  source: bia-courts-of-indian-offenses
+  confidence: high
+  as_of: '2026-11-21'
+  locator: List of CFR Courts and the Tribes they Serve
+  note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
+    Indian Affairs list.
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.omtribe.org/what-we-do/police-tribal-court/cfr-court/
+  source: national-indian-law-library-otoe-missouria
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 gaming:
   compacts:
   - state: OK

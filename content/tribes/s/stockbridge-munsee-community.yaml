@@ -114,6 +114,124 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Stockbridge Munsee Community, Wisconsin
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Stockbridge-Munsee Community, Wisconsin" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Stockbridge Munsee Community Wisconsin) (approved 1937) states it was adopted
+    under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-smuncons
+  confidence: medium
+  as_of: '1937'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Constitution and By-laws of the Stockbridge-Munsee Community, Wisconsin
+  year: '1995'
+  link: https://narf.org/nill/constitutions/stockbridge/index.html
+  source: national-indian-law-library-constitution-constitutions-stockbridge
+  confidence: medium
+  as_of: '1995'
+  locator: page heading
+  note: 'Ratified: 10/30/1937; amended: 11/14/1995; published in the tribal code. The National Indian
+    Law Library page gives the table of contents (and may link to the nation''s own copy); full text is
+    not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://law.mohican.com/
+  source: national-indian-law-library-stockbridge
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: law-code
+  title: Tribal code
+  link: https://www.narf.org/nill/triballaw/us/nsn/mohican/council/index.html
+  source: national-indian-law-library-stockbridge
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website .".'
+- kind: constitution
+  title: Constitution
+  link: https://law.mohican.com/
+  source: national-indian-law-library-stockbridge
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Stockbridge-Munsee Community Constitution and By-Laws
+  link: http://www.mohican.com/mt-content/uploads/2015/11/constitution-and-bylaws.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Stockbridge-Munsee Community Band of Mohican Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Stockbridge-Munsee Ordinances
+  link: http://www.mohican.com/ordinances/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Stockbridge-Munsee Community Band of Mohican Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Stockbridge Munsee Community of Wisconsin)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/smunchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-smunchrtr
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Stockbridge Munsee Community Wisconsin)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/smuncons.html
+  source: university-of-oklahoma-indian-reorganization-act-smuncons
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.mohican.com/government/tribal-court/
+  source: national-indian-law-library-stockbridge
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Stockbridge-Munsee Tribal Court
+  link: http://www.mohican.com/tribalcourt/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Stockbridge-Munsee Community Band of Mohican Indians'
+dispute_resolution:
+  provisions:
+  - kind: peacemaking
+    title: Title TCT, Chapter TCT.04 – Peacemaker Ordinance
+    citation: Title TCT, Chapter TCT.04 – Peacemaker Ordinance
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Stockbridge-Munsee-TCT.04-Peacemaker-Ordinance.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Stockbridge Munsee Community of Wisconsin
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization
+      and guiding principles, qualifications, procedures, authority of Tribal Court to limit, referral
+      standards, and standards of conduct, authority to use traditional ways and instruct on tribal teachings.'
 gaming:
   compacts:
   - state: NY

@@ -98,6 +98,25 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Upper Mattaponi Tribe
+governing_documents:
+- kind: law-code
+  title: Resolutions
+  link: https://law.umitribe.org/
+  source: national-indian-law-library-upper-mattaponi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    . Resolutions.".'
+- kind: constitution
+  title: Constitution
+  link: https://law.umitribe.org/
+  source: national-indian-law-library-upper-mattaponi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

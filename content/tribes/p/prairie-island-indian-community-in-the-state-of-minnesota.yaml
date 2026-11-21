@@ -131,6 +131,93 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Prairie Island Indian Community in the State of Minnesota
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Prairie Island Indian Community in the State of Minnesota" among organizations
+    under constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18,
+    1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Prairie Island Indian Community in Minnesota) (approved 1936) states it was adopted
+    under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-picons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://prairieisland.org/our-government/ordinances
+  source: national-indian-law-library-prairie-island
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://prairieisland.org/our-government/constitution
+  source: national-indian-law-library-prairie-island
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Prairie Island Indian Community Constitution and By-Laws
+  link: http://prairieisland.org/wp-content/uploads/2017/02/Current_Constitution_and_Bylaws_as_Amended_02-22-2017.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Minnesota section, entry 'Prairie Island Indian Community'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Prairie Island Indian Community Ordinances
+  link: http://prairieisland.org/government/#squelch-taas-accordion-shortcode-content-8
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Minnesota section, entry 'Prairie Island Indian Community'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Prairie Island Indian Community in the state of Minnesota)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/pichrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-pichrtr
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Prairie Island Indian Community in Minnesota)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/picons.html
+  source: university-of-oklahoma-indian-reorganization-act-picons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://narf.org/nill/tribes/prairieisland.org/our-government/tribal-court
+  source: national-indian-law-library-prairie-island
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Prairie Island Indian Community Tribal Court
+  link: http://prairieisland.org/government/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Minnesota section, entry 'Prairie Island Indian Community'
 gaming:
   compacts:
   - state: MN

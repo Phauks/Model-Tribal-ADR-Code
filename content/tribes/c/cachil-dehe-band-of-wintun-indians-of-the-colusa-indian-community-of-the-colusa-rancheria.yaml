@@ -115,6 +115,82 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa Rancheria,
     California
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Cachil Dehe Band of Wintun Indians, California" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Cahil Dehe Band of Wintun Indians of the Colusa Indian Community California) (approved
+    1941) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-wincons
+  confidence: medium
+  as_of: '1941'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Liquor ordinance
+  year: '2000'
+  link: https://www.federalregister.gov/articles/2000/04/05/00-8347/colusa-indian-community-council-liquor-ordinance-resolution-no-08-02-99-01
+  source: national-indian-law-library-cachil-dehe-wintun
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Federal Register
+    . Liquor ordinance (2000)".'
+- kind: constitution
+  title: Constitution
+  year: '1941'
+  link: https://thorpe.law.ou.edu/IRA/wincons.html
+  source: national-indian-law-library-cachil-dehe-wintun
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Constitution. (1941)".'
+- kind: constitution
+  title: Constitution
+  year: '1941'
+  link: https://www.loc.gov/item/42038591/
+  source: national-indian-law-library-cachil-dehe-wintun
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website. Constitution. (1941)".'
+- kind: law-code
+  title: Cachil DeHe Band of Wintun Indians of the Colusa Indian Community
+  year: '1995'
+  link: https://narf.org/nill/codes/cachil_dehe_wintun/index.html
+  source: national-indian-law-library-code-codes-cachil-dehe-wintun
+  confidence: medium
+  as_of: '1995'
+  locator: page heading
+  note: 'Dated: December 11, 1995. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: corporate-charter
+  title: Corporate charter (Cahil Dehe Band of Wintun Indians of the Colusa Indian Community)
+  year: '1941'
+  link: https://thorpe.law.ou.edu/IRA/winchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-winchrtr
+  confidence: medium
+  as_of: '1941'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Cahil Dehe Band of Wintun Indians of the Colusa Indian Community California)
+  year: '1941'
+  link: https://thorpe.law.ou.edu/IRA/wincons.html
+  source: university-of-oklahoma-indian-reorganization-act-wincons
+  confidence: medium
+  as_of: '1941'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
 gaming:
   compacts:
   - state: CA

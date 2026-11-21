@@ -114,6 +114,41 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Red Lake Band of Chippewa Indians, Minnesota
+governing_documents:
+- kind: law-code
+  title: Election ordinance
+  link: https://www.redlakenation.org/wp-content/uploads/2022/01/TITLE-XVIII-CHAPTER-1800-ELECTION-CODE-.pdf
+  source: national-indian-law-library-red-lake-minnesota
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    . Election ordinance.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.redlakenation.org/wp-content/uploads/2026/08/CONSTITUTION-AND-BYLAWS.pdf
+  source: national-indian-law-library-red-lake-minnesota
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.redlakenation.org/courts/
+  source: national-indian-law-library-red-lake-minnesota
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Red Lake Band of Chippewa Indians Tribal Court
+  link: http://www.rlnn.org/MinorSponsors/RLCourtsMain.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Minnesota section, entry 'Red Lake Band of Chippewa Indians'
 gaming:
   compacts:
   - state: MN

@@ -106,6 +106,101 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Big Valley Band of Pomo Indians of the Big Valley Rancheria, California
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Bib Valley Band of Pomo Indians of the Big Valley Racheria, California" among
+    organizations under constitutions approved by the Secretary of the Interior (Indian Reorganization
+    Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Big Valley Band of Pomo Indians of the Big Valley Rancheria California) (approved
+    1936) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  year: '2011'
+  link: http://emfsafetynetwork.org/wp-content/uploads/2009/11/Big-Valley-Band-of-Pomo-Indians.pdf
+  source: national-indian-law-library-big-valley-pomo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At EMF Safety Network
+    website. Ordinance banning installation of SmartMeters. (2011)".'
+- kind: law-code
+  title: Liquor Control Ordinance
+  year: '2001'
+  link: http://www.gpo.gov/fdsys/granule/FR-2001-01-25/01-2223
+  source: national-indian-law-library-big-valley-pomo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At 66 FR 7771 . Liquor
+    Control Ordinance. (2001)".'
+- kind: law-code
+  title: Tribal code
+  year: '1994'
+  link: http://www.nigc.gov/utility/documents/big-valley-band-of-pomo-indians-go
+  source: national-indian-law-library-big-valley-pomo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At National Indian
+    Gaming Commission website. Gaming Ordinance (1994). Amendment (2002). Amendment (2004)".'
+- kind: constitution
+  title: Constitution
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/pomocons.html
+  source: national-indian-law-library-big-valley-pomo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . 1940.".'
+- kind: constitution
+  title: Constitution
+  year: '1936'
+  link: https://www.loc.gov/item/36026355/
+  source: national-indian-law-library-big-valley-pomo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . 1936.".'
+- kind: corporate-charter
+  title: Corporate charter (Big Valley Band of Pomo Indians of the Big Valley Rancheria California)
+  year: '1941'
+  link: https://thorpe.law.ou.edu/IRA/pomochrt.html
+  source: university-of-oklahoma-indian-reorganization-act-pomochrt
+  confidence: medium
+  as_of: '1941'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Big Valley Band of Pomo Indians of the Big Valley Rancheria California)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/pomocons.html
+  source: university-of-oklahoma-indian-reorganization-act-pomocons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-big-valley-pomo
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 gaming:
   compacts:
   - state: CA

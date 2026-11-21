@@ -14,8 +14,18 @@ names:
     confidence: high
     as_of: '2025'
     locator: Section 41-9-708(b)
-  official_source: ofa-list-of-petitioners-by-state-2013
+  official_source: census-aian-geography-definitions
 recognition:
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State Designated Tribal Statistical Area; area 9560
+  note: The 2020 Census delineated "Cherokee Tribe of Northeast Alabama SDTSA" (State Designated Tribal
+    Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes
+    that are not federally recognized and have no reservation or off-reservation trust land, delineated
+    with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is
+    by name comparison (see census-area fact).
 - type: unrecognized
   legal_basis: 25 C.F.R. Part 83
   petition_number: '77'
@@ -54,6 +64,13 @@ recognition:
 states:
 - state: AL
   presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9560
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: AL
+  presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
   as_of: '2013-11-12'
@@ -65,6 +82,17 @@ states:
   confidence: high
   as_of: 2026-10
   note: State-recognized in Alabama; Alabama contact address listed.
+census_areas:
+- geographic_identifier: '9560'
+  name: Cherokee Tribe of Northeast Alabama SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9560, GEOID 9560R
+  note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
 contacts:
 - kind: website
   value: https://cherokeetribeofnortheastalabama.org

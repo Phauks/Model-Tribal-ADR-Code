@@ -49,6 +49,13 @@ states:
   locator: Lumbee Tribe of North Carolina
 - state: NC
   presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9815
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: NC
+  presence: other
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
   as_of: '2020'
@@ -56,6 +63,17 @@ states:
   note: 'Census area with land in this state: Lumbee SDTSA (code 9815). Statistical area only (not a land
     holding), so presence is recorded as other. Area matched to the nation by name.'
 census_areas:
+- geographic_identifier: '9815'
+  name: Lumbee SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9815, GEOID 9815R
+  note: Census class code D9; AIANNHR = S (state). Matched to the federally recognized nation by name
+    comparison. Area delineated as an SDTSA for 2020; the Lumbee Tribe of North Carolina is on the 2026
+    federal list, so no recognition fact is given here.
 - geographic_identifier: '9815'
   name: Lumbee SDTSA
   area_type: State Designated Tribal Statistical Area
@@ -146,6 +164,92 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Lumbee Tribe of North Carolina
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://www.lumbeetribe.com/tribal-ordinances
+  source: national-indian-law-library-lumbee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: law-code
+  title: Tribal code
+  link: https://narf.org/nill/tribes/lumbee.html
+  source: national-indian-law-library-lumbee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.lumbeetribe.com/_files/ugd/756e16_72e7de6efe2f40549c0c49fcc88c8ad3.pdf
+  source: national-indian-law-library-lumbee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: At University of Oklahoma Law Library website . Constitution
+  year: '1950'
+  link: https://narf.org/nill/tribes/lumbee.html
+  source: national-indian-law-library-lumbee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At NILL website
+    . At University of Oklahoma Law Library website . Constitution. (1950)".'
+- kind: constitution
+  title: Constitution
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/buckcons.html
+  source: national-indian-law-library-lumbee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At NILL website
+    . At University of Oklahoma Law Library website . Constitution. (1950)".'
+- kind: constitution
+  title: Constitution
+  year: '1950'
+  link: https://www.loc.gov/item/51061618/
+  source: national-indian-law-library-lumbee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Constitution. (1950)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/buckchrtr.html
+  source: national-indian-law-library-lumbee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma Law Library website . Corporate charter. (1950)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1950'
+  link: https://www.loc.gov/item/51061567/
+  source: national-indian-law-library-lumbee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Corporate charter. (1950)".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.lumbeetribe.com/government
+  source: national-indian-law-library-lumbee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

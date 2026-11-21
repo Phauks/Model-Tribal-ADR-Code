@@ -131,6 +131,121 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: San Carlos Apache Tribe of the San Carlos Reservation, Arizona
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The San Carlos Apache Tribe, Arizona" among organizations under constitutions approved
+    by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (San Carlos Apache Tribe of Arizona) (approved 1953) states it was adopted under
+    Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-amsancarcons
+  confidence: medium
+  as_of: '1953'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+- kind: indian-reorganization-act
+  detail: Constitution (San Carlos Apache Tribe Arizona) (approved 1936) states it was adopted under Act
+    of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-sancarcons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Constitution
+  year: '1954'
+  link: https://thorpe.law.ou.edu/IRA/amsancarcons.html
+  source: national-indian-law-library-san-carlos
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Constitution. (1954)".'
+- kind: constitution
+  title: Constitution
+  year: '1954'
+  link: https://www.loc.gov/item/57060872/
+  source: national-indian-law-library-san-carlos
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Constitution. (1954)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1955'
+  link: https://thorpe.law.ou.edu/IRA/amsancarchrtr.html
+  source: national-indian-law-library-san-carlos
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Corporate charter. (1955)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1955'
+  link: https://www.loc.gov/item/57062030/
+  source: national-indian-law-library-san-carlos
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Corporate charter. (1955)".'
+- kind: corporate-charter
+  title: Corporate charter (of the San Carlos Apache Tribe Arizona)
+  year: '1955'
+  link: https://thorpe.law.ou.edu/IRA/amsancarchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-amsancarchrtr
+  confidence: medium
+  as_of: '1955'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (San Carlos Apache Tribe of Arizona)
+  year: '1953'
+  link: https://thorpe.law.ou.edu/IRA/amsancarcons.html
+  source: university-of-oklahoma-indian-reorganization-act-amsancarcons
+  confidence: medium
+  as_of: '1953'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: corporate-charter
+  title: Corporate charter (San Carlos Apache Tribe Arizona)
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/sancarchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-sancarchrtr
+  confidence: medium
+  as_of: '1940'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (San Carlos Apache Tribe Arizona)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/sancarcons.html
+  source: university-of-oklahoma-indian-reorganization-act-sancarcons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.scat-nsn.gov/tribalcourt/
+  source: national-indian-law-library-san-carlos
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: San Carlos Apache Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'San Carlos Apache – Ndeh Nation'
 gaming:
   compacts:
   - state: AZ

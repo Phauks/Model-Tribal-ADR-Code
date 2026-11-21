@@ -120,6 +120,95 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Yurok Tribe of the Yurok Reservation, California
+governing_documents:
+- kind: law-code
+  title: Yurok Tribal Code
+  year: '2018'
+  link: https://narf.org/nill/codes/yurokcode/index.html
+  source: national-indian-law-library-code-codes-yurokcode
+  confidence: medium
+  as_of: '2018'
+  locator: page heading
+  note: 'Table of Contents Updated: March 2018. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Yurok Tribal Constitution
+  year: '2000'
+  link: https://narf.org/nill/constitutions/yurokconst/index.html
+  source: national-indian-law-library-constitution-constitutions-yurokconst
+  confidence: medium
+  as_of: '2000'
+  locator: page heading
+  note: 'Amended: 2000. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://yurok.tribal.codes/
+  source: national-indian-law-library-yurok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    (eCode360).".'
+- kind: constitution
+  title: Constitution
+  link: https://yurok.tribal.codes/
+  source: national-indian-law-library-yurok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website (eCode360).".'
+- kind: constitution
+  title: Yurok Tribe Constitution
+  link: http://www.yuroktribe.org/government/councilsupport/documents/Constitution.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Yurok Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Yurok Tribal Codes
+  link: http://www.yuroktribe.org/government/councilsupport/YurokTribeOrdinances.htm
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Yurok Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: other
+  name: Yurok Justice Center
+  link: http://www.yuroktribe.org/tribalcourt/
+  source: national-indian-law-library-yurok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: tribal-court
+  name: Yurok Tribal Court
+  link: http://www.yuroktribe.org/tribalcourt/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Yurok Tribe'
+- kind: other
+  name: Yurok Justice Center
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Yurok Tribe'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: 9.20 Dispute Resolution
+    citation: 9.20 Dispute Resolution
+    link: https://narf.org/nill/codes/yurokcode/index.html
+    source: national-indian-law-library-code-codes-yurokcode
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents, under 'Title 9 BUSINESS REGULATIONS – GAMING'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: March 2018); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
 gaming:
   compacts:
   - state: CA

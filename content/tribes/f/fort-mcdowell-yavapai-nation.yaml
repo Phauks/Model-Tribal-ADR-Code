@@ -133,6 +133,118 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Fort McDowell Yavapai Nation, Arizona
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Fort McDowell Mohave-Apache Community Arizona" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: low
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Matched by former name (Fort McDowell Mohave-Apache Community); confirm. Historical status in
+    1947; the nation may since have adopted a different constitution. The act is assigned from the table
+    (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian Welfare Act; Alaska table:
+    Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Fort McDowell Mohave-Apache Community Arizona) (approved 1936) states it was adopted
+    under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-ftmcdowcons
+  confidence: low
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Matched by former name (Fort McDowell Mohave-Apache Community); confirm. Historical constitution;
+    a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Law and Order Code of the Fort McDowell Yavapai Community, Arizona
+  year: '2018'
+  link: https://narf.org/nill/codes/fort_mcdowell/index.html
+  source: national-indian-law-library-code-codes-fort-mcdowell
+  confidence: medium
+  as_of: '2018'
+  locator: page heading
+  note: 'Updated: December 2018. Full text linked from the National Indian Law Library page.'
+- kind: constitution
+  title: Constitution of the Fort McDowell Yavapai Nation
+  year: '1999'
+  link: https://narf.org/nill/constitutions/fort_mcdowell/index.html
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  as_of: '1999'
+  locator: page heading
+  note: 'Received: 1999. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://library.municode.com/tribes_and_tribal_nations/fort_mcdowell_yavapai_nation/codes/the_law_and_order_code
+  source: national-indian-law-library-fort-mcdowell
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Municode website
+    .".'
+- kind: constitution
+  title: Fort McDowell Yavapai Nation Constitution
+  link: http://www.fmyn.org/tribal-government/fmyn-constitution/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Fort McDowell Yavapai Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Fort McDowell Yavapai Nation Law and Order Code
+  link: http://www.fmyn.org/tribal-government/law-and-order-code/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Fort McDowell Yavapai Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Fort McDowell Mohave-Apache Community Arizona)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/ftmcdowcons.html
+  source: university-of-oklahoma-indian-reorganization-act-ftmcdowcons
+  confidence: low
+  as_of: '1936'
+  note: Matched by former name (Fort McDowell Mohave-Apache Community); confirm. Historical text as originally
+    approved; the nation may have amended or replaced it since.
+- kind: corporate-charter
+  title: Corporate charter (Fort McDowell Mohave-Apache Community Arizona)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/mpchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-mpchrtr
+  confidence: low
+  as_of: '1938'
+  note: Matched by former name (Fort McDowell Mohave-Apache Community); confirm. Historical text as originally
+    approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-fort-mcdowell
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Fort McDowell Tribal Court
+  link: http://www.fmyn.org/tribal-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Fort McDowell Yavapai Nation'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: PATRON DISPUTE RESOLUTION
+    citation: PATRON DISPUTE RESOLUTION
+    link: https://narf.org/nill/codes/fort_mcdowell/index.html
+    source: national-indian-law-library-code-codes-fort-mcdowell
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents, under 'Chapter 21 - TRIBAL GAMING ORDINANCE'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Updated:
+      December 2018); the provision itself was not read. The heading it falls under is taken from the
+      page layout and may be imprecise.'
 gaming:
   compacts:
   - state: AZ

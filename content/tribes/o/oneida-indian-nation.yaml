@@ -131,6 +131,71 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Oneida Indian Nation
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: http://www.theoneidanation.com/codesandordinances/
+  source: national-indian-law-library-oneida-newyork
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: law-code
+  title: Tribal code
+  link: http://www.narf.org/nill/codes/oneida_new_york/index.html
+  source: national-indian-law-library-oneida-newyork
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website .".'
+- kind: law-code
+  title: Oneida Indian Nation Codes, Ordinances and Regulations
+  link: http://www.theoneidanation.com/codesandordinances/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New York section, entry 'Oneida Indian Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-oneida-newyork
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Oneida Nation Court
+  link: http://www.oneidaindiannation.com/court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New York section, entry 'Oneida Indian Nation'
+dispute_resolution:
+  provisions:
+  - kind: peacemaking
+    title: Oneida Indian Nation Peacemaking Rules
+    citation: Oneida Indian Nation Peacemaking Rules
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-NY-rulesofpeacemaking-document.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Oneida Indian Nation of New York
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      referral procedures, civil process authority, standards of conduct, and authority to use Nation
+      religious and traditional ways.'
+  - kind: traditional-dispute-resolution
+    title: Ordinance O-97-02
+    citation: Ordinance O-97-02
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-NY-OneidaNationCourt.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Oneida Indian Nation of New York
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      referral procedures, civil process authority, standards of conduct, and authority to use Nation
+      religious and traditional ways.'
 gaming:
   compacts:
   - state: NY

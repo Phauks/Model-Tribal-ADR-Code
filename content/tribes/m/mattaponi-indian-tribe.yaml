@@ -7,8 +7,17 @@ names:
     source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
     confidence: high
     as_of: '2026'
-  official_source: virginia-report-status-of-indian-tribes-2025
+  official_source: census-aian-geography-definitions
 recognition:
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State American Indian reservation; area 9230
+  note: The 2020 Census delineated "Mattaponi (state) Reservation" (State American Indian reservation).
+    The Census Bureau defines state American Indian reservations as reservations of state-recognized tribes,
+    delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area
+    to group is by name comparison (see census-area fact).
 - type: state
   state: VA
   legal_basis: Listed by the Secretary of the Commonwealth among the 11 Virginia Indian tribes the Commonwealth
@@ -28,6 +37,13 @@ recognition:
     under the 1677 Treaty of Middle Plantation continues (2025 report).'
 states:
 - state: VA
+  presence: land
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9230
+  note: State reservation land.
+- state: VA
   presence: government-office
   source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
   confidence: high
@@ -38,6 +54,17 @@ states:
   confidence: high
   as_of: '2026'
   note: Reservation set aside by treaty; address on Mattaponi Reservation Circle.
+census_areas:
+- geographic_identifier: '9230'
+  name: Mattaponi (state) Reservation
+  area_type: State American Indian reservation
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9230, GEOID 9230R
+  note: Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
 contacts:
 - kind: physical-address
   value: 1314 Mattaponi Reservation Circle, West Point, VA 23181

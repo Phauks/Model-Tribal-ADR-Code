@@ -2,8 +2,18 @@ id: pee-dee-indian-nation-of-upper-south-carolina
 entity_type: native-nation
 names:
   official: Pee Dee Indian Nation of Upper South Carolina
-  official_source: ofa-list-of-petitioners-by-state-2013
+  official_source: census-aian-geography-definitions
 recognition:
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State Designated Tribal Statistical Area; area 9963
+  note: The 2020 Census delineated "Upper South Carolina Pee Dee SDTSA" (State Designated Tribal Statistical
+    Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are
+    not federally recognized and have no reservation or off-reservation trust land, delineated with a
+    governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is by name
+    comparison (see census-area fact).
 - type: unrecognized
   legal_basis: 25 C.F.R. Part 83
   petition_number: '296'
@@ -26,6 +36,13 @@ recognition:
 states:
 - state: SC
   presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9963
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: SC
+  presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
   as_of: '2013-11-12'
@@ -37,6 +54,17 @@ states:
   confidence: high
   as_of: '2026'
   note: State-recognized entity with a South Carolina contact address.
+census_areas:
+- geographic_identifier: '9963'
+  name: Upper South Carolina Pee Dee SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9963, GEOID 9963R
+  note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

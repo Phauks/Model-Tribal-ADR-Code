@@ -156,6 +156,70 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Mashpee Wampanoag Tribe
+governing_documents:
+- kind: law-code
+  title: Mashpee Wampanoag Indian Tribal Council, Inc. - Corporate Documents and Selected Ordinances
+  year: '2007'
+  link: https://narf.org/nill/codes/mashpee_wampanoag/index.html
+  source: national-indian-law-library-code-codes-mashpee-wampanoag
+  confidence: medium
+  as_of: '2007'
+  locator: page heading
+  note: 'Received: circa 2007. The National Indian Law Library page gives the table of contents (and may
+    link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Mashpee Wampanoag - Tribal Constitution Table of Contents
+  year: '2004'
+  link: https://narf.org/nill/constitutions/mashpee_wampanoag/index.html
+  source: national-indian-law-library-constitution-constitutions-mashpee-wampanoag
+  confidence: medium
+  as_of: '2004'
+  locator: page heading
+  note: 'Cerified: June 28, 2004. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Mashpee Wampanoag Tribe Constitution
+  link: http://www.mwtribejudicial.com/amendments
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Massachusetts section, entry 'Mashpee Wampanoag Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: peacemaking-program
+  name: Peacemaker Court
+  source: narf-tribal-peacemaking-laws
+  confidence: medium
+  as_of: '2025-09-29'
+  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked.
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-mashpee-wampanoag
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Mashpee Wampanoag Tribal Court
+  link: http://www.mwtribejudicial.com/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Massachusetts section, entry 'Mashpee Wampanoag Tribe'
+dispute_resolution:
+  provisions:
+  - kind: peacemaking
+    title: 'Chapter 3: Operation of Peacemaker Court'
+    citation: 'Chapter 3: Operation of Peacemaker Court'
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Mashpee-Chapter-3-OPERATION-OF-PEACEMAKER-COURT.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Mashpee Wampanoag Tribe of Massachusetts
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      guiding principles, qualifications, and procedures. See also the Peacemaking Court Brochure and
+      A Participant’s Guide to Peacemaking.'
 gaming:
   compacts:
   - state: MA

@@ -1,8 +1,15 @@
 id: lower-muscogee-creek-tribe
 entity_type: native-nation
 names:
-  official: Lower Muscogee Creek Tribe
+  official: Lower Muskogee Creek Tribe
   alternate:
+  - name: Lower Muscogee Creek Tama Tribal Town
+    source: census-2020-ddhca-popgroup-codes
+    confidence: low
+    as_of: '2020'
+    locator: POPGROUP code 06B
+    note: Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting
+      source.
   - name: Lower Muskogee Creek Tribe - East of the Mississippi, Inc.
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
@@ -18,8 +25,28 @@ names:
     confidence: medium
     as_of: '2013-11-12'
     note: Name used for this group in the cited source; matched to this record by name and state.
-  official_source: ofa-list-of-petitioners-by-state-2013
+  official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
 recognition:
+- type: unrecognized
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1; Table 3
+  note: 'GAO Table 1 lists "Lower Muskogee Creek Tribe" among 26 non-federally recognized tribes that
+    received direct federal funding in FY2007-2010 (total $1,463,000, Table 3). GAO-reported nonprofit
+    status: Yes; state recognition per state officials: Yes. GAO notes the tribe has a state reservation,
+    according to state officials. Not on the 2026 federal list (bia-recognized-entities-2026). GAO spells
+    the name "Muskogee"; id shared with the state-recognized helper entity "Lower Muscogee Creek Tribe"
+    (Georgia).'
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: low
+  as_of: '2020'
+  locator: Definition of State American Indian reservation; area 9400
+  note: The 2020 Census delineated "Tama (state) Reservation" (State American Indian reservation). The
+    Census Bureau defines state American Indian reservations as reservations of state-recognized tribes,
+    delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area
+    to group is by name comparison (see census-area fact).
 - type: unrecognized
   legal_basis: 25 C.F.R. Part 83; final determination 46 FR 51652 (as printed in the Office of Federal
     Acknowledgment list)
@@ -52,6 +79,20 @@ recognition:
 states:
 - state: GA
   presence: other
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1, State column
+  note: State as listed by GAO.
+- state: GA
+  presence: land
+  source: census-aiannh-codes-by-state-2020
+  confidence: low
+  as_of: '2020'
+  locator: AIANNHCE 9400
+  note: State reservation land.
+- state: GA
+  presence: other
   source: ofa-petitions-resolved
   confidence: high
   as_of: '2026-11-21'
@@ -62,6 +103,21 @@ states:
   source: georgia-code-44-12-300
   confidence: high
   as_of: '2022'
+census_areas:
+- geographic_identifier: '9400'
+  name: Tama (state) Reservation
+  area_type: State American Indian reservation
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: low
+  as_of: '2020'
+  locator: AIANNHCE 9400, GEOID 9400R
+  note: Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list. Census lists one state American Indian reservation
+    in Georgia, "Tama (state) Reservation". Linked to the Lower Muscogee Creek Tribe because GAO-12-348
+    (Table 1 note) reports that tribe has a state reservation according to state officials, and the Census
+    DDHC-A code list names "Lower Muscogee Creek Tama Tribal Town". The Census geography file itself does
+    not name the group.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

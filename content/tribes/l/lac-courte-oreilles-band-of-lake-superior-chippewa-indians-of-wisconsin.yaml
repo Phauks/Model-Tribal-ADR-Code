@@ -115,6 +115,65 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://law.lco-nsn.gov
+  source: national-indian-law-library-lac-courte-oreilles-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: law-code
+  title: Tribal code
+  link: https://www.narf.org/nill/triballaw/us/nsn/lco/council/index.html
+  source: national-indian-law-library-lac-courte-oreilles-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website .".'
+- kind: constitution
+  title: Constitution
+  link: https://law.lco-nsn.gov/us/nsn/lco/council/constitution
+  source: national-indian-law-library-lac-courte-oreilles-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.narf.org/nill/triballaw/us/nsn/lco/council/constitution/
+  source: national-indian-law-library-lac-courte-oreilles-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At NILL website
+    .".'
+- kind: constitution
+  title: Lac Courte Oreilles Lake Superior Chippewa Indians Constitution
+  link: http://www.lco-nsn.gov/lac-courte-oreilles-constitution.php
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Lac Courte Oreilles Band of Ojibwe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.lcotribalcourt.org/
+  source: national-indian-law-library-lac-courte-oreilles-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Lac Courte Oreilles Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Lac Courte Oreilles Band of Ojibwe'
 gaming:
   compacts:
   - state: WI

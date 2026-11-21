@@ -4,6 +4,13 @@ names:
   official: Coharie Tribe of North Carolina
   alternate:
   - name: Coharie Indian Tribe
+    source: census-2020-ddhca-popgroup-codes
+    confidence: low
+    as_of: '2020'
+    locator: POPGROUP code 1734
+    note: Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting
+      source.
+  - name: Coharie Indian Tribe
     source: north-carolina-tribal-communities-2026
     confidence: high
     as_of: '2026'
@@ -11,8 +18,35 @@ names:
     source: north-carolina-tribal-communities-2026
     confidence: high
     as_of: '2026'
-  official_source: north-carolina-general-statutes-chapter-71a
+  official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
 recognition:
+- type: unrecognized
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1; Table 3
+  note: 'GAO Table 1 lists "Coharie Tribe of North Carolina" among 26 non-federally recognized tribes
+    that received direct federal funding in FY2007-2010 (total $2,874,000, Table 3). GAO-reported nonprofit
+    status: Yes; state recognition per state officials: Yes. GAO names it as one of five non-federally
+    recognized Indian Housing Block Grant (HUD) recipients. Not on the 2026 federal list (bia-recognized-entities-2026).'
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State Designated Tribal Statistical Area; area 9635
+  note: The 2020 Census delineated "Coharie SDTSA" (State Designated Tribal Statistical Area). The Census
+    Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized
+    and have no reservation or off-reservation trust land, delineated with a governor-appointed state
+    liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area
+    fact).
+- type: unrecognized
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  as_of: 2026-04
+  locator: NC section, recipient "Coharie Tribe"
+  note: HUD lists "Coharie Tribe" (Clinton, NC) as an FY2026 Indian Housing Block Grant formula recipient
+    with a final allocation of $1,046,538. The HUD list does not state recognition status; not on the
+    2026 federal list (bia-recognized-entities-2026).
 - type: state
   state: NC
   legal_basis: North Carolina General Statutes Section 71A-6 (1977, 2nd Sess., c. 1193, s. 1)
@@ -31,10 +65,42 @@ recognition:
   as_of: '2026'
 states:
 - state: NC
+  presence: other
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1, State column
+  note: State as listed by GAO.
+- state: NC
+  presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9635
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: NC
+  presence: other
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  as_of: 2026-04
+  locator: NC section
+  note: HUD gives recipient city Clinton.
+- state: NC
   presence: government-office
   source: north-carolina-tribal-communities-2026
   confidence: high
   as_of: '2026'
+census_areas:
+- geographic_identifier: '9635'
+  name: Coharie SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9635, GEOID 9635R
+  note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
 population:
 - count: 2700
   kind: citizens

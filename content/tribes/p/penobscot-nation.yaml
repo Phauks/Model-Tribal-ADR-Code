@@ -116,6 +116,41 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Penobscot Nation
+governing_documents:
+- kind: law-code
+  title: Penobscot Nation - Laws and Ordinances
+  year: '2025'
+  link: https://narf.org/nill/codes/penobscot/index.html
+  source: national-indian-law-library-code-codes-penobscot
+  confidence: medium
+  as_of: '2025'
+  locator: page heading
+  note: 'Most Recent Update Received: June 2025. Full text linked from the National Indian Law Library
+    page.'
+- kind: law-code
+  title: Penobscot Tribal Laws and Ordinances
+  link: http://www.penobscotnation.org/departments/tribal-court/tribal-laws-and-ordinances
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Maine section, entry 'Penobscot Indian Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.penobscotnation.org/departments/tribal-court/
+  source: national-indian-law-library-penobscot
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Penobscot Indian Nation Tribal Court
+  link: http://www.penobscotnation.org/departments/tribal-court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Maine section, entry 'Penobscot Indian Nation'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

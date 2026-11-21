@@ -131,6 +131,40 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Yuhaaviatam of San Manuel Nation (previously listed as San Manuel Band of Mission Indians,
     California)
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://www.sanmanuel-nsn.gov/Tribal-Government/Tribal-Court
+  source: national-indian-law-library-san-manuel
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: law-code
+  title: San Manuel Band of Mission Indians Tribal Laws
+  link: https://www.sanmanuel-nsn.gov/Tribal-Government/Tribal-Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'San Manuel Band of Mission Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.sanmanuel-nsn.gov/Tribal-Government/Tribal-Court
+  source: national-indian-law-library-san-manuel
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: San Manuel Band of Mission Indians Tribal Court
+  link: https://www.sanmanuel-nsn.gov/Tribal-Government/Tribal-Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'San Manuel Band of Mission Indians'
 gaming:
   compacts:
   - state: CA

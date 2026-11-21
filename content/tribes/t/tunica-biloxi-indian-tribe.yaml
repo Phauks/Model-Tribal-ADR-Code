@@ -138,6 +138,51 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Tunica-Biloxi Indian Tribe
+governing_documents:
+- kind: law-code
+  title: Resolutions and Ordinances. Additional codes listed under Tribal Info tab
+  link: https://www.tunicabiloxi.org/resolutions-and-ordinances/
+  source: national-indian-law-library-tunica-biloxi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Resolutions and Ordinances. Additional codes listed under Tribal Info tab.".'
+- kind: law-code
+  title: 'From GPO: Federal Register .  Liquor Control Code'
+  year: '1994'
+  link: http://www.gpo.gov/fdsys/pkg/FR-1994-06-15/html/94-14514.htm
+  source: national-indian-law-library-tunica-biloxi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "From GPO: Federal Register
+    . 1994 Liquor Control Code.".'
+- kind: constitution
+  title: Articles of Incorporation
+  year: '1974'
+  link: https://thorpe.law.ou.edu/constitution/tunica-biloxie/index.html
+  source: national-indian-law-library-tunica-biloxi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . 1974 Articles of Incorporation.".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://tunicabiloxi.org/tribal_court.php
+  source: national-indian-law-library-tunica-biloxi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Tunica-Biloxi Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Louisiana section, entry 'Tunica-Biloxi Tribe of Louisiana'
 gaming:
   compacts:
   - state: LA

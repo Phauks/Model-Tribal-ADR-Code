@@ -159,6 +159,105 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Sitka Tribe of Alaska
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Listed as "The Sitka Community Association of Alaska" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act as extended to Alaska by the
+    Act of May 1, 1936), as of 1947
+  source: haas-1947-table-b-alaska
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Alaska Native Communities and Cooperatives, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: alaska-indian-reorganization-act
+  detail: Constitution (Sitka Community Association Territory of Alaska) (approved 1938) states it was
+    adopted under Act of June 18, 1934 (48 Stat. 984); Act of May 1, 1936 (49 Stat. 1250)
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  as_of: '1938'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Sitka Tribe of Alaska
+  year: '2025'
+  link: https://narf.org/nill/codes/sitka/index.html
+  source: national-indian-law-library-code-codes-sitka
+  confidence: medium
+  as_of: '2025'
+  locator: page heading
+  note: 'Table of Contents Updated: September 2025. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution of the Sitka Tribe of Alaska
+  year: '1991'
+  link: https://narf.org/nill/constitutions/sitka/index.html
+  source: national-indian-law-library-constitution-constitutions-sitka
+  confidence: medium
+  as_of: '1991'
+  locator: page heading
+  note: 'Last Revision: November 26, 1991. The National Indian Law Library page gives the table of contents
+    (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal Law, Policies, and Procedures
+  link: https://sitkatribe.org/our-government/governance-documents/
+  source: national-indian-law-library-sitka
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    . Tribal Law, Policies, and Procedures.".'
+- kind: constitution
+  title: Constitution
+  link: https://sitkatribe.org/our-government/governance-documents/
+  source: national-indian-law-library-sitka
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: law-code
+  title: Sitka Tribe of Alaska Codes
+  link: http://www.sitkatribe.org/government/council/Codes.htm
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Sitka Tribe of Alaska'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Sitka Community Association Territory of Alaska)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/sitkachrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-sitkachrtr
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Sitka Community Association Territory of Alaska)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/sitkacons.html
+  source: university-of-oklahoma-indian-reorganization-act-sitkacons
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://sitkatribe.org/our-services/tribal-court/
+  source: national-indian-law-library-sitka
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Sitka Tribal Court
+  link: http://www.sitkatribe.org/services/legal/index.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Sitka Tribe of Alaska'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

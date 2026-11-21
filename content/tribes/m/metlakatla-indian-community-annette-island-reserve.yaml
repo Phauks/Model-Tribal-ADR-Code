@@ -153,6 +153,117 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Metlakatla Indian Community, Annette Island Reserve
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Listed as "The Metlakata Indian Community" among organizations under constitutions approved
+    by the Secretary of the Interior (Indian Reorganization Act as extended to Alaska by the Act of May
+    1, 1936), as of 1947
+  source: haas-1947-table-b-alaska
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Alaska Native Communities and Cooperatives, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: alaska-indian-reorganization-act
+  detail: Constitution (Metlakatla Indian Community Annette Islands Reserve Alaska) (approved 1944) states
+    it was adopted under Act of June 18, 1934 (48 Stat. 984); Act of May 1, 1936 (49 Stat. 1250)
+  source: university-of-oklahoma-indian-reorganization-act-metlacons
+  confidence: medium
+  as_of: '1944'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Metlakatla Indian Community - Law and Order Code Table of Contents
+  year: '1976'
+  link: https://narf.org/nill/codes/metlakatla/index.html
+  source: national-indian-law-library-code-codes-metlakatla
+  confidence: medium
+  as_of: '1976'
+  locator: page heading
+  note: 'Latest date on document: 1976. The National Indian Law Library page gives the table of contents
+    (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  year: '2008'
+  link: https://www.federalregister.gov/articles/2008/08/13/E8-18771/metlakatla-indian-community-alcohol-possession-code
+  source: national-indian-law-library-metlakatla
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Federal Register
+    . 2008 amendment to Alcohol Possession Code".'
+- kind: constitution
+  title: Constitution
+  year: '1944'
+  link: https://thorpe.law.ou.edu/IRA/metlacons.html
+  source: national-indian-law-library-metlakatla
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Constitution. (1944)".'
+- kind: constitution
+  title: Constitution
+  year: '1944'
+  link: https://www.loc.gov/item/46026380/
+  source: national-indian-law-library-metlakatla
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Constitution. (1944)".'
+- kind: corporate-charter
+  title: Corporate charter.  Amendment
+  year: '1949'
+  link: https://thorpe.law.ou.edu/IRA/metlachrtr.html
+  source: national-indian-law-library-metlakatla
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Corporate charter. (1949 Amendment)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1944'
+  link: https://www.loc.gov/item/46026471/
+  source: national-indian-law-library-metlakatla
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Corporate charter. (1944)".'
+- kind: corporate-charter
+  title: Corporate charter (Metlakatla Indian Community)
+  year: '1944'
+  link: https://thorpe.law.ou.edu/IRA/metlachrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-metlachrtr
+  confidence: medium
+  as_of: '1944'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Metlakatla Indian Community Annette Islands Reserve Alaska)
+  year: '1944'
+  link: https://thorpe.law.ou.edu/IRA/metlacons.html
+  source: university-of-oklahoma-indian-reorganization-act-metlacons
+  confidence: medium
+  as_of: '1944'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Metlakatla Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Metlakatla Indian Community, Annette Island Reserve'
+- kind: tribal-court
+  name: Metlakatla Indian Community – Northwest Intertribal Court System
+  link: http://www.codepublishing.com/WA/NICS/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Metlakatla Indian Community, Annette Island Reserve'
 gaming:
   ordinances:
   - approved: '1997-06-27'

@@ -127,6 +127,180 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Kalispel Indian Community of the Kalispel Reservation
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Kalispel Indian Community of the Kalispel Reservation, Washington" among organizations
+    under constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18,
+    1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Kalispel Indian Community of the Kalispel Reservation Washington) (approved 1938)
+    states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-kalcons
+  confidence: medium
+  as_of: '1938'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Law and Order Code of the Kalispel Indian Community
+  year: '2015'
+  link: https://narf.org/nill/codes/kalispelcode/index.html
+  source: national-indian-law-library-code-codes-kalispelcode
+  confidence: medium
+  as_of: '2015'
+  locator: page heading
+  note: 'Table of Contents Updated: August 2015. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Kalispel Indian Community - Revised Constitution and Bylaws
+  year: '2019'
+  link: https://narf.org/nill/constitutions/kalispelconst/index.html
+  source: national-indian-law-library-constitution-constitutions-kalispelconst
+  confidence: medium
+  as_of: '2019'
+  locator: page heading
+  note: 'Amended: November 11, 2019. The National Indian Law Library page gives the table of contents
+    (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://kalispeltribalcourt.org/law-order-code
+  source: national-indian-law-library-kalispel
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Constitution-and-Bylaws.pdf
+  source: national-indian-law-library-kalispel
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Kalispel Tribe’s Constitution and Bylaws
+  link: http://88e40d44ec63a58b8a49-298f012ea728efea7c302ad9a6f7bba0.r52.cf2.rackcdn.com/pdf-uploads/Kalispel-Tribal-Constitution-By-Laws.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Kalispel Tribe of Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Kalispel Law and Order Code
+  link: http://www.kalispeltribe.com/government/tribal-court/law-order-code
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Kalispel Tribe of Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Kalispel Indian Community of the Kalispel Reservation Washington)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/kalchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-kalchrtr
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Kalispel Indian Community of the Kalispel Reservation Washington)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/kalcons.html
+  source: university-of-oklahoma-indian-reorganization-act-kalcons
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://kalispeltribalcourt.org/
+  source: national-indian-law-library-kalispel
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Kalispel Tribal Court
+  link: http://www.kalispeltribe.com/government/tribal-court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Kalispel Tribe of Indians'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: 'Chapter 3 – Civil Actions, Sec. 3-21: Execution of Judgments'
+    citation: 'Chapter 3 – Civil Actions, Sec. 3-21: Execution of Judgments'
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Kalispel-Chapter-3-Civil-Actions-4.9.2025.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Kalispel Tribe of Indians, Washington
+    note: 'Native American Rights Fund description (provision itself not read): Provides authority and
+      procedure.'
+  - kind: arbitration
+    title: 'CHAPTER 22 � ARBITRATION CODE SECTION 22-1: SCOPE OF CODE'
+    citation: 'CHAPTER 22 � ARBITRATION CODE SECTION 22-1: SCOPE OF CODE'
+    link: https://narf.org/nill/codes/kalispelcode/index.html
+    source: national-indian-law-library-code-codes-kalispelcode
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: arbitration
+    title: 'SECTION 22-2: AGREMENTS TO ARBITRATE AND ENFORCEABLE'
+    citation: 'SECTION 22-2: AGREMENTS TO ARBITRATE AND ENFORCEABLE'
+    link: https://narf.org/nill/codes/kalispelcode/index.html
+    source: national-indian-law-library-code-codes-kalispelcode
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: arbitration
+    title: 'SECTION 22-4: STAY OF PROCEEDINGS AND ORDER TO PROCEED WITH ARBITRATION'
+    citation: 'SECTION 22-4: STAY OF PROCEEDINGS AND ORDER TO PROCEED WITH ARBITRATION'
+    link: https://narf.org/nill/codes/kalispelcode/index.html
+    source: national-indian-law-library-code-codes-kalispelcode
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: arbitration
+    title: 'SECTION 22-8: ARBITRATION AWARD NOT APPEALABLE'
+    citation: 'SECTION 22-8: ARBITRATION AWARD NOT APPEALABLE'
+    link: https://narf.org/nill/codes/kalispelcode/index.html
+    source: national-indian-law-library-code-codes-kalispelcode
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: arbitration
+    title: 23-9.03 Claimant Attorney’s Fees and Other Related Arbitration Costs
+    citation: 23-9.03 Claimant Attorney’s Fees and Other Related Arbitration Costs
+    link: https://narf.org/nill/codes/kalispelcode/index.html
+    source: national-indian-law-library-code-codes-kalispelcode
+    confidence: medium
+    as_of: '2015'
+    locator: 'Table of Contents, under ''SECTION 23-9: ADJUDICATION OF DISPUTES'''
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: August 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
 gaming:
   compacts:
   - state: WA

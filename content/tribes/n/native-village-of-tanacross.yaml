@@ -132,6 +132,84 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Native Village of Tanacross
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Listed as "The Native Village of Tanacross" among organizations under constitutions approved
+    by the Secretary of the Interior (Indian Reorganization Act as extended to Alaska by the Act of May
+    1, 1936), as of 1947
+  source: haas-1947-table-b-alaska
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Alaska Native Communities and Cooperatives, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: alaska-indian-reorganization-act
+  detail: Constitution (Native Village of Tanacross) (approved 1942) states it was adopted under Act of
+    June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-tancons
+  confidence: medium
+  as_of: '1942'
+  locator: preamble / approval and certification of adoption
+  note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
+    the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
+    constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Constitution
+  year: '1942'
+  link: https://thorpe.law.ou.edu/IRA/tancons.html
+  source: national-indian-law-library-native-tanacross
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Constitution. (1942)".'
+- kind: constitution
+  title: Constitution
+  year: '1942'
+  link: https://www.loc.gov/item/43052060/
+  source: national-indian-law-library-native-tanacross
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Constitution. (1942)".'
+- kind: corporate-charter
+  title: Corporate Charter
+  year: '1942'
+  link: https://thorpe.law.ou.edu/IRA/tanchrtr.html
+  source: national-indian-law-library-native-tanacross
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Corporate Charter. (1942)".'
+- kind: corporate-charter
+  title: Corporate Charter
+  year: '1942'
+  link: https://www.loc.gov/item/43052237/
+  source: national-indian-law-library-native-tanacross
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Corporate Charter. (1942)".'
+- kind: constitution
+  title: Constitution (Native Village of Tanacross)
+  year: '1942'
+  link: https://thorpe.law.ou.edu/IRA/tancons.html
+  source: university-of-oklahoma-indian-reorganization-act-tancons
+  confidence: medium
+  as_of: '1942'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tanacross Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Native Village of Tanacross'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

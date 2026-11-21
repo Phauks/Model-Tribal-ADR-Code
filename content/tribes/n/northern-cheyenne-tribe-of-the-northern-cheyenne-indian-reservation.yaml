@@ -139,6 +139,115 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Northern Cheyenne Tribe of the Northern Cheyenne Indian Reservation, Montana
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Northern Cheyenne Tribe, Montana" among organizations under constitutions approved
+    by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Northern Cheyenne Tribe of the Tongue River Reservation) (approved 1935) states
+    it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-ncheycons
+  confidence: medium
+  as_of: '1935'
+  locator: preamble / approval and certification of adoption
+  note: Tongue River Reservation is the former name of the Northern Cheyenne Indian Reservation. Historical
+    constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Northern Cheyenne Tribe
+  year: '2013'
+  link: https://narf.org/nill/codes/northern_cheyenne/index.html
+  source: national-indian-law-library-code-codes-northern-cheyenne
+  confidence: medium
+  as_of: '2013'
+  locator: page heading
+  note: 'Dated: 1998 Received: July 2013. Full text linked from the National Indian Law Library page.'
+- kind: constitution
+  title: Northern Cheyenne Tribe - Tribal Constitution
+  year: '2013'
+  link: https://narf.org/nill/constitutions/northern_cheyenne/index.html
+  source: national-indian-law-library-constitution-constitutions-northern-cheyenne
+  confidence: medium
+  as_of: '2013'
+  locator: page heading
+  note: 'Amended: 1996 Received: July 2013. The National Indian Law Library page gives the table of contents
+    (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: http://www.cheyennenation.com/index.html
+  source: national-indian-law-library-northern-cheyenne
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Various codes listed in left-hand column.".'
+- kind: law-code
+  title: Tribal code
+  link: http://www.northerncheyennelawandordercode.com/
+  source: national-indian-law-library-northern-cheyenne
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Law and Order Code
+    Revision Project website .".'
+- kind: constitution
+  title: Constitution
+  link: http://www.cheyennenation.com/nct/legislative/tribal%20constitution.pdf
+  source: national-indian-law-library-northern-cheyenne
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website . (pdf)".'
+- kind: constitution
+  title: Northern Cheyenne Tribe of the Northern Cheyenne Indian Reservation Constitution and Bylaws
+  link: http://www.cheyennenation.com/nct/legislative/tribal%20constitution.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Montana section, entry 'Northern Cheyenne Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Northern Cheyenne Tribe of the Tongue River Reservation Montana)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/ncheychrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-ncheychrtr
+  confidence: medium
+  as_of: '1936'
+  note: Tongue River Reservation is the former name of the Northern Cheyenne Indian Reservation. Historical
+    text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Northern Cheyenne Tribe of the Tongue River Reservation)
+  year: '1935'
+  link: https://thorpe.law.ou.edu/IRA/ncheycons.html
+  source: university-of-oklahoma-indian-reorganization-act-ncheycons
+  confidence: medium
+  as_of: '1935'
+  note: Tongue River Reservation is the former name of the Northern Cheyenne Indian Reservation. Historical
+    text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.northerncheyennecourt.com/
+  source: national-indian-law-library-northern-cheyenne
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Northern Cheyenne Judicial Branch
+  link: http://www.cheyennenation.com/judicial.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Montana section, entry 'Northern Cheyenne Tribe'
 gaming:
   compacts:
   - state: MT

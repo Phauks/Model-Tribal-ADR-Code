@@ -136,6 +136,31 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Curyung Tribal Council
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: http://www.curyungtribe.com/tribalcourt.html
+  source: national-indian-law-library-curyung
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
+    website .".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.curyungtribe.com/tribalcourt.html
+  source: national-indian-law-library-curyung
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Curyung Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Curyung Tribe'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

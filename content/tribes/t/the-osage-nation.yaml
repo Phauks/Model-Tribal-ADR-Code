@@ -106,6 +106,87 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: The Osage Nation
+governing_documents:
+- kind: law-code
+  title: The Osage Nation
+  link: https://narf.org/nill/codes/osage/index.html
+  source: national-indian-law-library-code-codes-osage
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: constitution
+  title: The Osage Nation - Tribal Constitution
+  link: https://narf.org/nill/constitutions/osage/index.html
+  source: national-indian-law-library-constitution-constitutions-osage
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: law-code
+  title: Osage Nation Code and recent legislation
+  link: https://www.osagenation-nsn.gov/who-we-are/congress-legislative-branch/legislation
+  source: national-indian-law-library-osage-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Osage Nation Code and recent legislation.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.osagenation-nsn.gov/who-we-are/congress-legislative-branch/legislation
+  source: national-indian-law-library-osage-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Osage Nation Constitution
+  link: https://www.osagenation-nsn.gov/who-we-are/congress-legislative-branch/legislation
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Osage Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Osage Nation Code
+  link: https://www.osagenation-nsn.gov/who-we-are/congress-legislative-branch/legislation
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Osage Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.osagenation-nsn.gov/who-we-are/judicial-branch/
+  source: national-indian-law-library-osage-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Osage Nation Judicial Branch
+  link: https://www.osagenation-nsn.gov/who-we-are/judicial-branch
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Osage Nation'
+dispute_resolution:
+  provisions:
+  - kind: arbitration
+    title: Dispute Resolution
+    citation: Dispute Resolution; Arbitration
+    link: https://narf.org/nill/codes/osage/index.html
+    source: national-indian-law-library-code-codes-osage
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Table of Contents, under 'TITLE 19. LABOR AND EMPLOYMENT'
+    note: Identified from section headings in the National Indian Law Library table of contents; the provision
+      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
 gaming:
   compacts:
   - state: OK

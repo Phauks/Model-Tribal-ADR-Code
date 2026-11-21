@@ -123,6 +123,26 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Native Village of Georgetown
+governing_documents:
+- kind: law-code
+  title: Native Village of Georgetown- Tribal Ordinances
+  year: '2006'
+  link: https://narf.org/nill/codes/native_georgetown/index.html
+  source: national-indian-law-library-code-codes-native-georgetown
+  confidence: medium
+  as_of: '2006'
+  locator: page heading
+  note: 'Dated: 1999, 2006. The National Indian Law Library page gives the table of contents (and may
+    link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Native Village of Georgetown - Tribal Constitution
+  year: '1999'
+  link: https://narf.org/nill/constitutions/native_georgetown/index.html
+  source: national-indian-law-library-constitution-constitutions-native-georgetown
+  confidence: medium
+  as_of: '1999'
+  locator: page heading
+  note: 'Date: 1999. Full text linked from the National Indian Law Library page.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

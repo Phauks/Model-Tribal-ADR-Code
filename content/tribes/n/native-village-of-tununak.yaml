@@ -136,6 +136,74 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Native Village of Tununak
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Constitution (Native Village of Tununak, Alaska) (approved 1939) states it was adopted under
+    Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-tunucons
+  confidence: medium
+  as_of: '1939'
+  locator: preamble / approval and certification of adoption
+  note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
+    the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
+    constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Climate change resolution
+  year: '2007'
+  link: https://narf.org/nill/triballaw/climate/index.html
+  source: national-indian-law-library-native-tununak
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website . Climate
+    change resolution. (2007)".'
+- kind: constitution
+  title: Constitution
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/tunucons.html
+  source: national-indian-law-library-native-tununak
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Constitution. (1939)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/tunuchrtr.html
+  source: national-indian-law-library-native-tununak
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Corporate charter. (1939)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1939'
+  link: https://www.loc.gov/item/50061210/
+  source: national-indian-law-library-native-tununak
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website. Corporate charter. (1939)".'
+- kind: corporate-charter
+  title: Corporate charter (Native Village of Tununak, Alaska)
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/tunuchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-tunuchrtr
+  confidence: medium
+  as_of: '1939'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Native Village of Tununak, Alaska)
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/tunucons.html
+  source: university-of-oklahoma-indian-reorganization-act-tunucons
+  confidence: medium
+  as_of: '1939'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

@@ -121,6 +121,120 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Spokane Tribe of the Spokane Reservation
+governing_documents:
+- kind: law-code
+  title: Spokane Tribe of the Spokane Reservation
+  year: '2001'
+  link: https://narf.org/nill/codes/spokane/index.html
+  source: national-indian-law-library-code-codes-spokane
+  confidence: medium
+  as_of: '2001'
+  locator: page heading
+  note: 'Dated: 2001. The National Indian Law Library page gives the table of contents (and may link to
+    the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Spokane Tribe of the Spokane Reservation - Tribal Constitution
+  year: '1987'
+  link: https://narf.org/nill/constitutions/spokane/index.html
+  source: national-indian-law-library-constitution-constitutions-spokane
+  confidence: medium
+  as_of: '1987'
+  locator: page heading
+  note: 'Dated: 1987. The National Indian Law Library page gives the table of contents (and may link to
+    the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.spokanetribe.com/government/legal/
+  source: national-indian-law-library-spokane
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.spokanetribe.com/government/legal/
+  source: national-indian-law-library-spokane
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Spokane Tribe of Indians Constitution
+  link: http://spokanetribe.com/userfiles/file/SLOC%2005-14-2013%20%28Final%29%281%29.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Spokane Tribe of Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Spokane Tribe of Indians Law and Order Code
+  link: http://spokanetribe.com/userfiles/file/SLOC%2005-14-2013%20%28Final%29%281%29.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Spokane Tribe of Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Spokane Tribe of the Spokane Reservation Washington)
+  year: '1951'
+  link: https://thorpe.law.ou.edu/IRA/spokcons.html
+  source: university-of-oklahoma-indian-reorganization-act-spokcons
+  confidence: medium
+  as_of: '1951'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.spokanetribe.com/government/court/
+  source: national-indian-law-library-spokane
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Spokane Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Spokane Tribe of Indians'
+dispute_resolution:
+  provisions:
+  - kind: arbitration
+    title: Section 4-26 Arbitration.
+    citation: Section 4-26 Arbitration.; 4-26.02 Agreements to Arbitrate are Enforceable.
+    link: https://narf.org/nill/codes/spokane/index.html
+    source: national-indian-law-library-code-codes-spokane
+    confidence: medium
+    as_of: '2001'
+    locator: Table of Contents, under 'CHAPTER 4 - CIVIL ACTIONS.'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Dated:
+      2001); the provision itself was not read. The heading it falls under is taken from the page layout
+      and may be imprecise.'
+  - kind: arbitration
+    title: 4-26.04 Stay of Proceedings and Order to Proceed with Arbitration.
+    citation: 4-26.04 Stay of Proceedings and Order to Proceed with Arbitration.; 4-26.08 Arbitration
+      Award not Appealable.
+    link: https://narf.org/nill/codes/spokane/index.html
+    source: national-indian-law-library-code-codes-spokane
+    confidence: medium
+    as_of: '2001'
+    locator: Table of Contents, under '.'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Dated:
+      2001); the provision itself was not read. The heading it falls under is taken from the page layout
+      and may be imprecise.'
+  - kind: other
+    title: 7-3.04 Informal Dispute Resolution.
+    citation: 7-3.04 Informal Dispute Resolution.
+    link: https://narf.org/nill/codes/spokane/index.html
+    source: national-indian-law-library-code-codes-spokane
+    confidence: medium
+    as_of: '2001'
+    locator: Table of Contents, under 'CHAPTER 7 - DOMESTIC RELATIONS'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Dated:
+      2001); the provision itself was not read. The heading it falls under is taken from the page layout
+      and may be imprecise.'
 gaming:
   compacts:
   - state: WA

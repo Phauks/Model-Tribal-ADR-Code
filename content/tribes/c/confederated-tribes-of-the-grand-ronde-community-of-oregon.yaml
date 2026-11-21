@@ -130,6 +130,125 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Grand Ronde Community of Oregon
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Confederated Tribes of the Grand Ronde Community, Oregon" among organizations
+    under constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18,
+    1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Confederated Tribes of the Grand Ronde Community Oregon) (approved 1936) states
+    it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Confederated Tribes of the Grand Ronde Community of Oregon - Ordinances
+  year: '2017'
+  link: https://narf.org/nill/codes/confederated_grand_ronde/index.html
+  source: national-indian-law-library-code-codes-confederated-grand-ronde
+  confidence: medium
+  as_of: '2017'
+  locator: page heading
+  note: 'Table of Contents Updated: February 2017. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://weblink.grandronde.org/WebLink/Browse.aspx?id=33719&dbid=0&repo=Grand-Ronde
+  source: national-indian-law-library-confederated-grand-ronde
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Choose Tribal Ordinances.".'
+- kind: constitution
+  title: Constitution
+  link: https://weblink.grandronde.org/WebLink/Browse.aspx?id=33719&dbid=0&repo=Grand-Ronde
+  source: national-indian-law-library-confederated-grand-ronde
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website . Choose Tribal Constitution.".'
+- kind: constitution
+  title: Constitution and By-Laws of the Confederated Tribes of the Grand Ronde Community of Oregon
+  year: '2024'
+  link: https://narf.org/nill/constitutions/confederated_grand_ronde/index.html
+  source: national-indian-law-library-constitution-constitutions-confederated-grand-ronde
+  confidence: medium
+  as_of: '2024'
+  locator: page heading
+  note: 'Amended: 2024. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Confederated Tribes of the Grand Ronde Community of Oregon Constitution
+  link: https://weblink.grandronde.org/weblink/Browse.aspx?startid=33719&amp;dbid=0
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Confederated Tribes of Grand Ronde'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Confederated Tribes of the Grand Ronde Community of Oregon Ordinances and Resolutions
+  link: http://www.grandronde.org/about/archives/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Confederated Tribes of Grand Ronde'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Grand Ronde Community Oregon)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/rondchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-rondchrtr
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Confederated Tribes of the Grand Ronde Community Oregon)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/rondcons.html
+  source: university-of-oklahoma-indian-reorganization-act-rondcons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.grandronde.org/about/tribal-court/
+  source: national-indian-law-library-confederated-grand-ronde
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Confederated Tribes of Grand Ronde Tribal Court
+  link: http://www.grandronde.org/about/tribal-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Confederated Tribes of Grand Ronde'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Tribal Court Ordinance Chapter 302
+    citation: Tribal Court Ordinance Chapter 302
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Grand-Ronde-Tribal-Court-Ordinance-2013-10-23.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Confederated Tribes of the Grand Ronde Community of Oregon
+    note: 'Native American Rights Fund description (provision itself not read): Provides purpose, authorization,
+      and qualifications.'
 gaming:
   compacts:
   - state: OR

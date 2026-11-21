@@ -108,6 +108,33 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Cher-Ae Heights Indian Community of the Trinidad Rancheria, California
+governing_documents:
+- kind: articles-of-association
+  title: Cher-Ae Heights Indian Community of the Trinidad Rancheria - Articles of Association
+  year: '1961'
+  link: https://narf.org/nill/constitutions/cher-ae_heights/index.html
+  source: national-indian-law-library-constitution-constitutions-cher-ae-heights
+  confidence: medium
+  as_of: '1961'
+  locator: page heading
+  note: 'Dated: 1961. The National Indian Law Library page gives the table of contents (and may link to
+    the nation''s own copy); full text is not hosted there.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://trinidad-rancheria.org/tribal-court/
+  source: national-indian-law-library-cher-ae-heights
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Cher-Ae Heights Indian Community Tribal Court
+  link: http://trinidad-rancheria.org/tribal-court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Cher-Ae Heights Indian Community of the Trinidad Rancheria'
 gaming:
   compacts:
   - state: CA

@@ -106,6 +106,60 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Kaibab Band of Paiute Indians of the Kaibab Indian Reservation, Arizona
+governing_documents:
+- kind: law-code
+  title: Kaibab Band of Paiute Indians
+  year: '2012'
+  link: https://narf.org/nill/codes/kaibab_paiute/index.html
+  source: national-indian-law-library-code-codes-kaibab-paiute
+  confidence: medium
+  as_of: '2012'
+  locator: page heading
+  note: 'Code Update by Tribe: April 1996; Received by NILL: August 2012. The National Indian Law Library
+    page gives the table of contents (and may link to the nation''s own copy); full text is not hosted
+    there.'
+- kind: constitution
+  title: Kaibab Band of Paiute Indians - Constitution Table of Contents
+  year: '2012'
+  link: https://narf.org/nill/constitutions/kaibabpaiute/index.html
+  source: national-indian-law-library-constitution-constitutions-kaibabpaiute
+  confidence: medium
+  as_of: '2012'
+  locator: page heading
+  note: 'Received: July 2012; Amended: 1994. The National Indian Law Library page gives the table of contents
+    (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution
+  link: http://www.kaibabpaiute-nsn.gov/KPTConstitution.pdf
+  source: national-indian-law-library-kaibab-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Kaibab Paiute Tribe Constitution
+  link: http://www.kaibabpaiute-nsn.gov/constitution.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Kaibab Band of Paiute Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://kaibabpaiute-nsn.gov/court.html
+  source: national-indian-law-library-kaibab-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Kaibab-Paiute Tribe Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Kaibab Band of Paiute Indians'
 gaming:
   compacts:
   - state: AZ

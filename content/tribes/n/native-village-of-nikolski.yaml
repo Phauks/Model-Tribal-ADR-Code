@@ -120,6 +120,85 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Native Village of Nikolski
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Listed as "The Native Village of Nikolski" among organizations under constitutions approved
+    by the Secretary of the Interior (Indian Reorganization Act as extended to Alaska by the Act of May
+    1, 1936), as of 1947
+  source: haas-1947-table-b-alaska
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Alaska Native Communities and Cooperatives, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: alaska-indian-reorganization-act
+  detail: Constitution (Native Village of Nikolski, Alaska) (approved 1939) states it was adopted under
+    Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-nikocons
+  confidence: medium
+  as_of: '1939'
+  locator: preamble / approval and certification of adoption
+  note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
+    the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
+    constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Constitution
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/nikocons.html
+  source: national-indian-law-library-native-nikolski
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Constitution. (1939)".'
+- kind: constitution
+  title: Constitution
+  year: '1939'
+  link: https://www.loc.gov/item/40026119/
+  source: national-indian-law-library-native-nikolski
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Constitution. (1939)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/nikochrtr.html
+  source: national-indian-law-library-native-nikolski
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Corporate charter. (1939)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1939'
+  link: https://www.loc.gov/item/40026120/
+  source: national-indian-law-library-native-nikolski
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Corporate charter. (1939)".'
+- kind: corporate-charter
+  title: Corporate charter (Native Village of Nikolski, Alaska)
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/nikochrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-nikochrtr
+  confidence: medium
+  as_of: '1939'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Native Village of Nikolski, Alaska)
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/nikocons.html
+  source: university-of-oklahoma-indian-reorganization-act-nikocons
+  confidence: medium
+  as_of: '1939'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

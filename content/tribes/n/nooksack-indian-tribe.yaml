@@ -121,6 +121,49 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Nooksack Indian Tribe
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://nooksacktribe.org/departments/nooksack-tribal-court/
+  source: national-indian-law-library-nooksack-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://nooksacktribe.org/wp-content/uploads/2011/11/2016_02_04_11_28_33.pdf
+  source: national-indian-law-library-nooksack-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Nooksack Indian Tribe Constitution and Bylaws
+  link: http://www.nooksacktribe.org/wp-content/uploads/2011/11/2016_02_04_11_28_33.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Nooksack Indian Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://nooksacktribe.org/departments/nooksack-tribal-court/
+  source: national-indian-law-library-nooksack-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Nooksack Tribal Court
+  link: http://nooksackindiantribe.org/departments/nooksack-tribal-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Nooksack Indian Tribe'
 gaming:
   compacts:
   - state: WA

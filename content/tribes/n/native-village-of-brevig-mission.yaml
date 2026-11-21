@@ -150,6 +150,34 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Native Village of Brevig Mission
+governing_documents:
+- kind: law-code
+  title: Native Village of Brevig Mission - Ordinances Table of Contents
+  year: '1988'
+  link: https://narf.org/nill/codes/native_brevig_mission/index.html
+  source: national-indian-law-library-code-codes-native-brevig-mission
+  confidence: medium
+  as_of: '1988'
+  locator: page heading
+  note: 'Dated: 1984 - 1988. The National Indian Law Library page gives the table of contents (and may
+    link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Native Village of Brevig Mission - Constitution
+  year: '2005'
+  link: https://narf.org/nill/constitutions/native_brevig_mission/index.html
+  source: national-indian-law-library-constitution-constitutions-native-brevig-mission
+  confidence: medium
+  as_of: '2005'
+  locator: page heading
+  note: 'Approved: January 28, 2002 Signed: November 8, 2005. The National Indian Law Library page gives
+    the table of contents (and may link to the nation''s own copy); full text is not hosted there.'
+justice_institutions:
+- kind: tribal-court
+  name: Brevig Mission Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Native Village of Brevig Mission'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

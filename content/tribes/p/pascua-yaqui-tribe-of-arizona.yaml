@@ -124,6 +124,101 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Pascua Yaqui Tribe of Arizona
+governing_documents:
+- kind: law-code
+  title: Pascua Yaqui Tribe of Arizona
+  year: '2018'
+  link: https://narf.org/nill/codes/pascua-yaqui/index.html
+  source: national-indian-law-library-code-codes-pascua-yaqui
+  confidence: medium
+  as_of: '2018'
+  locator: page heading
+  note: 'Table of Contents Updated: October 2018. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Pascua Yaqui Tribe of Arizona - Constitution
+  year: '2015'
+  link: https://narf.org/nill/constitutions/pascua-yaqui/index.html
+  source: national-indian-law-library-constitution-constitutions-pascua-yaqui
+  confidence: medium
+  as_of: '2015'
+  locator: page heading
+  note: 'Amended: July 2015. The National Indian Law Library page gives the table of contents (and may
+    link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.pascuayaqui-nsn.gov/tribal-code-v1/
+  source: national-indian-law-library-pascua-yaqui
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.pascuayaqui-nsn.gov/tribal-code-v1/
+  source: national-indian-law-library-pascua-yaqui
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Pascua Yaqui Tribe Constitution
+  link: http://www.pascuayaqui-nsn.gov/_static_pages/tribalcodes/index.php
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Pascua Yaqui Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Pascua Yaqui Tribe Tribal Codes
+  link: http://www.pascuayaqui-nsn.gov/index.php/law-order-tribal-code
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Pascua Yaqui Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.pascuayaqui-nsn.gov/judicial-branch/
+  source: national-indian-law-library-pascua-yaqui
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Pascua Yaqui Tribal Court
+  link: http://www.pycourts.org/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Pascua Yaqui Tribe'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Section 670 Dispute Resolution
+    citation: Section 670 Dispute Resolution
+    link: https://narf.org/nill/codes/pascua-yaqui/index.html
+    source: national-indian-law-library-code-codes-pascua-yaqui
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents, under 'SUBCHAPTER G PROCUREMENT'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2018); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: arbitration
+    title: CHAPTER 6- ARBITRATION
+    citation: CHAPTER 6- ARBITRATION
+    link: https://narf.org/nill/codes/pascua-yaqui/index.html
+    source: national-indian-law-library-code-codes-pascua-yaqui
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2018); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
 gaming:
   compacts:
   - state: AZ

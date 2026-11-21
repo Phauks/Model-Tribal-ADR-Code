@@ -113,6 +113,43 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Ely Shoshone Tribe of Nevada
+governing_documents:
+- kind: law-code
+  title: Ely Shoshone Tribe of Nevada
+  year: '2017'
+  link: https://narf.org/nill/codes/ely_shoshone/index.html
+  source: national-indian-law-library-code-codes-ely-shoshone
+  confidence: medium
+  as_of: '2017'
+  locator: page heading
+  note: 'Most Recent Update Received: November 2017. Full text linked from the National Indian Law Library
+    page.'
+- kind: constitution
+  title: Ely Shoshone Tribe of Nevada - Tribal Constitution
+  year: '2017'
+  link: https://narf.org/nill/constitutions/ely_shoshone/index.html
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  as_of: '2017'
+  locator: page heading
+  note: 'Confirmed Current: November 7, 2017 Amended: March 23, 2002. The National Indian Law Library
+    page gives the table of contents (and may link to the nation''s own copy); full text is not hosted
+    there.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-ely-shoshone
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Ely Shoshone Judicial Center
+  link: http://elyshoshonetribe-nsn.gov/departments.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Nevada section, entry 'Ely Shoshone Tribe'
 gaming:
   ordinances:
   - approved: '2004-10-22'

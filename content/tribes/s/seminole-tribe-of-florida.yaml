@@ -241,6 +241,48 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Seminole Tribe of Florida
+government_structure:
+- kind: indian-reorganization-act
+  detail: Constitution (Seminole Tribe of Florida) (approved 1957) states it was adopted under Act of
+    June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-flsemcons
+  confidence: medium
+  as_of: '1957'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Seminole Tribe of Florida Judicial Codes
+  link: http://www.semtribe.com/Government/TribalCourt/Codes.aspx
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Florida section, entry 'Seminole Tribe of Florida'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Seminole Tribe of Florida)
+  year: '1957'
+  link: https://thorpe.law.ou.edu/IRA/flsemcons.html
+  source: university-of-oklahoma-indian-reorganization-act-flsemcons
+  confidence: medium
+  as_of: '1957'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.semtribe.com/government/tribal-court
+  source: national-indian-law-library-seminole-tribe-fl
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Seminole Tribal Court
+  link: http://www.semtribe.com/Government/TribalCourt/TribalCourt.aspx
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Florida section, entry 'Seminole Tribe of Florida'
 gaming:
   compacts:
   - state: FL

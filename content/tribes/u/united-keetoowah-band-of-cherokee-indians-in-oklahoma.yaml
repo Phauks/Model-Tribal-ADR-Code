@@ -117,6 +117,114 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: United Keetoowah Band of Cherokee Indians in Oklahoma
+government_structure:
+- kind: oklahoma-indian-welfare-act
+  detail: Constitution (United Keetowah Band of Cherokee Indians Oklahoma) (approved 1950) states it was
+    adopted under Act of June 18, 1934 (48 Stat. 984); Act of June 26, 1936 (49 Stat. 1967)
+  source: university-of-oklahoma-indian-reorganization-act-keecons
+  confidence: medium
+  as_of: '1950'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Criminal Codes
+  link: https://www.ukb-nsn.gov/ukbtribalcourt
+  source: national-indian-law-library-united-keetoowah-cherokee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
+    website . Criminal Codes.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.ukb-nsn.gov/constitution-and-by-laws
+  source: national-indian-law-library-united-keetoowah-cherokee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Constitution
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/keecons.html
+  source: national-indian-law-library-united-keetoowah-cherokee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Constitution. (1950)".'
+- kind: constitution
+  title: Constitution
+  year: '1950'
+  link: https://www.loc.gov/item/51061558/
+  source: national-indian-law-library-united-keetoowah-cherokee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website. Constitution. (1950)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/keechrtr.html
+  source: national-indian-law-library-united-keetoowah-cherokee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Corporate charter. (1950)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1950'
+  link: https://www.loc.gov/item/51061613/
+  source: national-indian-law-library-united-keetoowah-cherokee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Corporate charter. (1950)".'
+- kind: constitution
+  title: United Keetoowah Band of Cherokee Indians in Oklahoma Constitution
+  link: http://www.ukb-nsn.gov/documents/constitution.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'United Keetoowah Band of Cherokee Indians in Oklahoma'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (United Keetowah Band of Cherokee Indians Oklahoma)
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/keechrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-keechrtr
+  confidence: medium
+  as_of: '1950'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (United Keetowah Band of Cherokee Indians Oklahoma)
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/keecons.html
+  source: university-of-oklahoma-indian-reorganization-act-keecons
+  confidence: medium
+  as_of: '1950'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.ukb-nsn.gov/ukbtribalcourt
+  source: national-indian-law-library-united-keetoowah-cherokee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: United Keetoowah Band Tribal Court System
+  link: http://www.keetoowahcherokee.org/government/tribal-courts
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'United Keetoowah Band of Cherokee Indians in Oklahoma'
 gaming:
   compacts:
   - state: OK

@@ -124,6 +124,75 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Ute Indian Tribe of the Uintah & Ouray Reservation, Utah
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Ute Indian Tribe of the Uintah and Ouray Reservation, Utah" among organizations
+    under constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18,
+    1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Ute Indian Tribe of the Unitah and Ouray Reservation Utah) (approved 1937) states
+    it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-utecons
+  confidence: medium
+  as_of: '1937'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: The Law and Order Code of the Ute Indian Tribe of the Uintah and Ouray Reservation Utah
+  year: '2013'
+  link: https://narf.org/nill/codes/ute_uintah_ouray/index.html
+  source: national-indian-law-library-code-codes-ute-uintah-ouray
+  confidence: medium
+  as_of: '2013'
+  locator: page heading
+  note: 'Dated: 1988, amended 2013. Full text linked from the National Indian Law Library page.'
+- kind: constitution
+  title: Constitution and By-laws of the Ute Indian Tribe of the Uintah and Ouray Reservation
+  year: '1937'
+  link: https://narf.org/nill/constitutions/ute_uintah_ouray/index.html
+  source: national-indian-law-library-constitution-constitutions-ute-uintah-ouray
+  confidence: medium
+  as_of: '1937'
+  locator: page heading
+  note: 'Approved: 1937. Full text linked from the National Indian Law Library page.'
+- kind: corporate-charter
+  title: Corporate charter (Ute Indian Tribe of the Uintah and Ouray Reservation Utah)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/utechrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-utechrtr
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Ute Indian Tribe of the Unitah and Ouray Reservation Utah)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/utecons.html
+  source: university-of-oklahoma-indian-reorganization-act-utecons
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-ute-uintah-ouray
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Ute Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Utah section, entry 'Ute Indian Tribe Uintah & Ouray Reservation'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

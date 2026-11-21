@@ -130,6 +130,91 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Organized Village of Grayling (aka Holikachuk)
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Constitution (Organized Village of Holikachuk, Alaska) (approved 1948) states it was adopted
+    under Act of June 18, 1934 (48 Stat. 984); Act of May 1, 1936 (49 Stat. 1250)
+  source: university-of-oklahoma-indian-reorganization-act-holicons
+  confidence: medium
+  as_of: '1948'
+  locator: preamble / approval and certification of adoption
+  note: Matched to Grayling through the Bureau of Indian Affairs list entry 'Organized Village of Grayling
+    (aka Holikachuk)'. Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Constitution
+  year: '1948'
+  link: https://thorpe.law.ou.edu/IRA/holicons.html
+  source: national-indian-law-library-organized-grayling
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Constitution. (1948)".'
+- kind: constitution
+  title: Constitution
+  year: '1948'
+  link: https://www.loc.gov/item/50061149/
+  source: national-indian-law-library-organized-grayling
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website. Constitution. (1948)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1948'
+  link: https://thorpe.law.ou.edu/IRA/holichrtr.html
+  source: national-indian-law-library-organized-grayling
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Corporate charter. (1948)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1948'
+  link: https://www.loc.gov/item/50061123/
+  source: national-indian-law-library-organized-grayling
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website. Corporate charter. (1948)".'
+- kind: corporate-charter
+  title: Corporate charter (Organized Village of Holikachuk, Alaska)
+  year: '1948'
+  link: https://thorpe.law.ou.edu/IRA/holichrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-holichrtr
+  confidence: medium
+  as_of: '1948'
+  note: Matched to Grayling through the Bureau of Indian Affairs list entry 'Organized Village of Grayling
+    (aka Holikachuk)'. Historical text as originally approved; the nation may have amended or replaced
+    it since.
+- kind: constitution
+  title: Constitution (Organized Village of Holikachuk, Alaska)
+  year: '1948'
+  link: https://thorpe.law.ou.edu/IRA/holicons.html
+  source: university-of-oklahoma-indian-reorganization-act-holicons
+  confidence: medium
+  as_of: '1948'
+  note: Matched to Grayling through the Bureau of Indian Affairs list entry 'Organized Village of Grayling
+    (aka Holikachuk)'. Historical text as originally approved; the nation may have amended or replaced
+    it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-organized-grayling
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Grayling Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Organized Village of Grayling (a.k.a. Holikachuk)'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

@@ -113,6 +113,39 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Redding Rancheria, California
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://www.narf.org/nill/codes/redding/index.html
+  source: national-indian-law-library-redding-rancheria
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.narf.org/nill/constitutions/redding/index.html
+  source: national-indian-law-library-redding-rancheria
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At NILL website
+    .".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-redding-rancheria
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Redding Rancheria Tribal Court
+  link: http://www.redding-rancheria.com/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Redding Rancheria Tribal Court'
 gaming:
   compacts:
   - state: CA

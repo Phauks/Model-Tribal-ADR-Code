@@ -134,6 +134,13 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Chignik Lake Village
+justice_institutions:
+- kind: tribal-court
+  name: Chignik Lake Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Chignik Lake Village'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

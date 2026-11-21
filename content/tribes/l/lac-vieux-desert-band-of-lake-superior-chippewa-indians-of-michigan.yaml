@@ -134,6 +134,40 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Lac Vieux Desert Band of Lake Superior Chippewa Indians of Michigan
+governing_documents:
+- kind: constitution
+  title: Constitution
+  link: https://lvd-nsn.gov///media/banners/LVD%20Constitution.pdf
+  source: national-indian-law-library-lac-vieux-desert-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Lac Vieux Desert Band of Lake Superior Chippewa Indians Constitution
+  link: http://www.lvdtribal.com/pdf/constitution.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Michigan section, entry 'Lac Vieux Desert Band of Lake Superior Chippewa Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://lvd-nsn.gov/Content/Court.cfm
+  source: national-indian-law-library-lac-vieux-desert-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Lac Vieux Tribal Court
+  link: http://www.lvdtribal.com/court.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Michigan section, entry 'Lac Vieux Desert Band of Lake Superior Chippewa Indians'
 gaming:
   compacts:
   - state: MI

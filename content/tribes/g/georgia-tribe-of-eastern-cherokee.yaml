@@ -9,8 +9,18 @@ names:
     as_of: '2013-11-12'
     locator: 'Petitioner #41'
     note: Name as printed on the Office of Federal Acknowledgment list by state.
-  official_source: federal-register-2017-27764
+  official_source: census-aian-geography-definitions
 recognition:
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State Designated Tribal Statistical Area; area 9730
+  note: The 2020 Census delineated "Georgia Tribe of Eastern Cherokee SDTSA" (State Designated Tribal
+    Statistical Area). The Census Bureau defines SDTSAs as statistical areas for state-recognized tribes
+    that are not federally recognized and have no reservation or off-reservation trust land, delineated
+    with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area to group is
+    by name comparison (see census-area fact).
 - type: unrecognized
   legal_basis: 25 C.F.R. Part 83; final determination 82 FR 61023 (2017-12-26)
   petition_number: '41'
@@ -42,6 +52,13 @@ recognition:
 states:
 - state: GA
   presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9730
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: GA
+  presence: other
   source: ofa-petitions-resolved
   confidence: high
   as_of: '2026-11-21'
@@ -52,6 +69,17 @@ states:
   source: georgia-code-44-12-300
   confidence: high
   as_of: '2022'
+census_areas:
+- geographic_identifier: '9730'
+  name: Georgia Tribe of Eastern Cherokee SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9730, GEOID 9730R
+  note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
 contacts:
 - kind: mailing-address
   value: P.O. Box 1993, Dahlonega, Georgia 30533

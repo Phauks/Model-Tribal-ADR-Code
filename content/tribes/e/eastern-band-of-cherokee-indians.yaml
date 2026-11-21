@@ -137,6 +137,69 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Eastern Band of Cherokee Indians
+governing_documents:
+- kind: law-code
+  title: Eastern Band of Cherokee Indians
+  link: https://narf.org/nill/codes/eastern_band_cherokee/index.html
+  source: national-indian-law-library-code-codes-eastern-band-cherokee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: law-code
+  title: Tribal code
+  link: http://www.municode.com/resources/gateway.aspx?productid=13359
+  source: national-indian-law-library-eastern-band-cherokee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At publisher''s website
+    . Municode.".'
+- kind: corporate-charter
+  title: 'Part I: Charter and Governing Documents'
+  link: http://www.municode.com/resources/gateway.aspx?productid=13359
+  source: national-indian-law-library-eastern-band-cherokee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At publisher''s
+    website . Part I: Charter and Governing Documents.".'
+- kind: law-code
+  title: Eastern Band of Cherokee Nation Code of Ordinances
+  link: https://library.municode.com/nc/cherokee_indians_eastern_band/codes/code_of_ordinances
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: North Carolina section, entry 'Eastern Band of Cherokee'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://ebci.com/government/judicial/
+  source: national-indian-law-library-eastern-band-cherokee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Eastern Band of Cherokee Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: North Carolina section, entry 'Eastern Band of Cherokee'
+dispute_resolution:
+  provisions:
+  - kind: arbitration
+    title: 94 - Arbitration
+    citation: 94 - Arbitration
+    link: https://narf.org/nill/codes/eastern_band_cherokee/index.html
+    source: national-indian-law-library-code-codes-eastern-band-cherokee
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Table of Contents
+    note: Identified from section headings in the National Indian Law Library table of contents; the provision
+      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
 gaming:
   compacts:
   - state: NC

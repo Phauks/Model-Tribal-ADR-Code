@@ -146,6 +146,91 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Lower Brule Sioux Tribe of the Lower Brule Reservation, South Dakota
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Lower Brule Tribe, South Dakota" among organizations under constitutions approved
+    by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Lower Brule Sioux Tribe of Lower Brule Reservation) (approved 1935) states it
+    was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-brulcons
+  confidence: medium
+  as_of: '1935'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://www.lowerbrulesiouxtribe.com/general-5-1
+  source: national-indian-law-library-lower-brule-sioux
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.lowerbrulesiouxtribe.com/lower-brule-constitution
+  source: national-indian-law-library-lower-brule-sioux
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Constitution
+  link: https://sdtribalrelations.sd.gov/tribes/Lower-Brule-Sioux-Tribe.aspx
+  source: national-indian-law-library-lower-brule-sioux
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At South Dakota
+    Department of Tribal Relations website .".'
+- kind: constitution
+  title: Lower Brule Sioux Tribe Constitution and Bylaws
+  link: https://www.lowerbrulesiouxtribe.com/lower-brule-constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: South Dakota section, entry 'Lower Brule Sioux Tribe – Kul Wicasa Oyate'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Lower Brule Sioux Tribe South Dakota)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/brulchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-brulchrtr
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Lower Brule Sioux Tribe of Lower Brule Reservation)
+  year: '1935'
+  link: https://thorpe.law.ou.edu/IRA/brulcons.html
+  source: university-of-oklahoma-indian-reorganization-act-brulcons
+  confidence: medium
+  as_of: '1935'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-lower-brule-sioux
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Lower Brule Sioux Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: South Dakota section, entry 'Lower Brule Sioux Tribe – Kul Wicasa Oyate'
 gaming:
   compacts:
   - state: SD

@@ -47,6 +47,13 @@ states:
   locator: Pamunkey Indian Tribe
 - state: VA
   presence: land
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9260
+  note: State reservation land.
+- state: VA
+  presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
   as_of: '2020'
@@ -54,6 +61,17 @@ states:
   note: 'Census area with land in this state: Pamunkey (state) Reservation (code 9260). Area matched to
     the nation by name.'
 census_areas:
+- geographic_identifier: '9260'
+  name: Pamunkey (state) Reservation
+  area_type: State American Indian reservation
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9260, GEOID 9260R
+  note: Census class code D4; AIANNHR = S (state). Matched to the federally recognized nation by name
+    comparison. State reservation retained in the 2020 Census; the Pamunkey Indian Tribe is on the 2026
+    federal list, so no recognition fact is given here.
 - geographic_identifier: '9260'
   name: Pamunkey (state) Reservation
   area_type: (state) Reservation

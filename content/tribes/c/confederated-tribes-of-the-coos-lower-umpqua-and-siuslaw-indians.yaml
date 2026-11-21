@@ -142,6 +142,125 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians
+governing_documents:
+- kind: law-code
+  title: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians Tribal Code
+  year: '2024'
+  link: https://narf.org/nill/codes/cooscode/index.html
+  source: national-indian-law-library-code-codes-cooscode
+  confidence: medium
+  as_of: '2024'
+  locator: page heading
+  note: 'Most Recent Update Received: April 2024. Full text linked from the National Indian Law Library
+    page.'
+- kind: law-code
+  title: Tribal code
+  link: https://ctclusi.org/tribalcode/
+  source: national-indian-law-library-confederated-clusi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://ctclusi.org/tribalcode
+  source: national-indian-law-library-confederated-clusi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Constitution and By-laws of the Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians
+  year: '1987'
+  link: https://narf.org/nill/constitutions/confederated_clusi/index.html
+  source: national-indian-law-library-constitution-constitutions-confederated-clusi
+  confidence: medium
+  as_of: '1987'
+  locator: page heading
+  note: 'Adopted: 1987. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians of Oregon Constitution
+  link: https://ctclusi.org/assets/58406a5dc9e22c6130000001.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Confederated Tribes of Coos, Lower Umpqua, and Siuslaw Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians Tribal Code
+  link: https://ctclusi.org/tribalcode
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Confederated Tribes of Coos, Lower Umpqua, and Siuslaw Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: peacemaking-program
+  name: Peacegiving Court
+  source: narf-tribal-peacemaking-laws
+  confidence: medium
+  as_of: '2025-09-29'
+  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked.
+- kind: healing-to-wellness-court
+  name: Wellness Court
+  source: narf-youth-family-peacemaking-laws
+  confidence: medium
+  as_of: '2025-08-25'
+  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked.
+- kind: tribal-court
+  name: Tribal Court
+  link: https://ctclusi.org/tribal-court-peacegiving/
+  source: national-indian-law-library-confederated-clusi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Confederated Tribes of Coos, Lower Umqua, Siuslaw Indians Tribal Court
+  link: http://ctclusi.org/court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Confederated Tribes of Coos, Lower Umpqua, and Siuslaw Indians'
+dispute_resolution:
+  provisions:
+  - kind: peacemaking
+    title: Title 2 – Rules of Procedures, Chapter 14 – Peacegiving Court
+    citation: Title 2 – Rules of Procedures, Chapter 14 – Peacegiving Court
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Confederated-Coos-Ch-2-14-Peacegiving-Court-2-9.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians of Oregon
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      qualifications, standards of conduct, and referrals.'
+  - kind: other
+    title: Title 2 – Rules of Procedure, Chapter 2-13 – Wellness Court Rules
+    citation: Title 2 – Rules of Procedure, Chapter 2-13 – Wellness Court Rules
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Confederated-Coos-Ch-2-13-Wellness-Court.pdf
+    source: narf-youth-family-peacemaking-laws
+    confidence: medium
+    as_of: '2025-08-25'
+    locator: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians of Oregon
+    note: 'Native American Rights Fund description (provision itself not read): Provides procedures, purposes,
+      policies, and sanctions for the Wellness Court to divert offenders with substance abuse issues away
+      from mainstream courts.'
+  - kind: peacemaking
+    title: Arbitration (10/24/12
+    citation: Arbitration (10/24/12; Peacegiving Court (11/13/05
+    link: https://narf.org/nill/codes/cooscode/index.html
+    source: national-indian-law-library-code-codes-cooscode
+    confidence: medium
+    as_of: '2024'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Most
+      Recent Update Received: April 2024); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
 gaming:
   compacts:
   - state: OR

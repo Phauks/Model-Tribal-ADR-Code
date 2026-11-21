@@ -141,6 +141,73 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Native Village of Shaktoolik
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Listed as "The Native Village of Shaktoolik" among organizations under constitutions approved
+    by the Secretary of the Interior (Indian Reorganization Act as extended to Alaska by the Act of May
+    1, 1936), as of 1947
+  source: haas-1947-table-b-alaska
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Alaska Native Communities and Cooperatives, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: alaska-indian-reorganization-act
+  detail: Constitution (Native Village of Shaktoolik, Alaska) (approved 1940) states it was adopted under
+    Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-shakcons
+  confidence: medium
+  as_of: '1940'
+  locator: preamble / approval and certification of adoption
+  note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
+    the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
+    constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Native Village of Shaktoolik
+  year: '2007'
+  link: https://narf.org/nill/codes/native_shaktoolik/index.html
+  source: national-indian-law-library-code-codes-native-shaktoolik
+  confidence: medium
+  as_of: '2007'
+  locator: page heading
+  note: 'Dated: 1986-88, 2007. The National Indian Law Library page gives the table of contents (and may
+    link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution
+  link: https://thorpe.law.ou.edu/IRA/shakcons.html
+  source: national-indian-law-library-native-shaktoolik
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.loc.gov/item/40029065/
+  source: national-indian-law-library-native-shaktoolik
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website .".'
+- kind: corporate-charter
+  title: Corporate charter (Native Village of Shaktoolik, Alaska)
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/shakchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-shakchrtr
+  confidence: medium
+  as_of: '1940'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Native Village of Shaktoolik, Alaska)
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/shakcons.html
+  source: university-of-oklahoma-indian-reorganization-act-shakcons
+  confidence: medium
+  as_of: '1940'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

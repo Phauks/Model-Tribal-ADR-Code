@@ -127,6 +127,31 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Village of Stony River
+governing_documents:
+- kind: constitution
+  title: Village of Stony River - Tribal Constitution
+  year: '2003'
+  link: https://narf.org/nill/constitutions/village_stony_river/index.html
+  source: national-indian-law-library-constitution-constitutions-village-stony-river
+  confidence: medium
+  as_of: '2003'
+  locator: page heading
+  note: 'Received: June 2003. The National Indian Law Library page gives the table of contents (and may
+    link to the nation''s own copy); full text is not hosted there.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-village-stony-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Stony River Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Stony River Traditional Council'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

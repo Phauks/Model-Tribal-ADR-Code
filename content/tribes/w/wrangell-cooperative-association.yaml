@@ -137,6 +137,72 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Wrangell Cooperative Association
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Constitution (Wrangell Cooperative Association Alaska) (approved 1942) states it was adopted
+    under Act of June 18, 1934 (48 Stat. 984); Act of May 1, 1936 (49 Stat. 1250)
+  source: university-of-oklahoma-indian-reorganization-act-wrancons
+  confidence: medium
+  as_of: '1942'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Constitution
+  year: '1951'
+  link: https://thorpe.law.ou.edu/IRA/wrancons.html
+  source: national-indian-law-library-wrangell
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Constitution. (1951)".'
+- kind: constitution
+  title: Constitution
+  year: '1947'
+  link: https://www.loc.gov/item/50061140/
+  source: national-indian-law-library-wrangell
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Constitution. (1947)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1947'
+  link: https://thorpe.law.ou.edu/IRA/wranchrtr.html
+  source: national-indian-law-library-wrangell
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Corporate charter. (1947)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1947'
+  link: https://www.loc.gov/item/50061208/
+  source: national-indian-law-library-wrangell
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Corporate charter. (1947)".'
+- kind: corporate-charter
+  title: Corporate charter (Wrangell Cooperative Association Alaska)
+  year: '1942'
+  link: https://thorpe.law.ou.edu/IRA/wranchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-wranchrtr
+  confidence: medium
+  as_of: '1942'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Wrangell Cooperative Association Alaska)
+  year: '1942'
+  link: https://thorpe.law.ou.edu/IRA/wrancons.html
+  source: university-of-oklahoma-indian-reorganization-act-wrancons
+  confidence: medium
+  as_of: '1942'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

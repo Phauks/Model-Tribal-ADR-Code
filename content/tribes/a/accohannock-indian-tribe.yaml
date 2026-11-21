@@ -12,8 +12,19 @@ names:
     confidence: medium
     as_of: '2013-11-12'
     note: Name used for this group in the cited source; matched to this record by name and state.
-  official_source: ofa-list-of-petitioners-by-state-2013
+  official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
 recognition:
+- type: unrecognized
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1; Table 3
+  note: 'GAO Table 1 lists "Accohannock Indian Tribe" among 26 non-federally recognized tribes that received
+    direct federal funding in FY2007-2010 (total $1,926,000, Table 3). GAO-reported nonprofit status:
+    Yes; state recognition per state officials: No. GAO reports the tribe reported over $1 million in
+    2009 spending from HHS programs (Community Services Block Grant discretionary awards, Job Opportunities
+    for Low-Income Individuals, ANA Social and Economic Development Strategies) and had not filed its
+    2009 single audit report. Not on the 2026 federal list (bia-recognized-entities-2026).'
 - type: unrecognized
   legal_basis: 25 C.F.R. Part 83
   petition_number: '149'
@@ -41,6 +52,13 @@ recognition:
   confidence: high
   as_of: '2025'
 states:
+- state: MD
+  presence: other
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1, State column
+  note: State as listed by GAO.
 - state: MD
   presence: other
   source: ofa-list-of-petitioners-by-state-2013

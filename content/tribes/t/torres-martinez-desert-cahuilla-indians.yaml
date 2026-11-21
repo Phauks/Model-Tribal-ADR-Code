@@ -114,6 +114,34 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Torres Martinez Desert Cahuilla Indians, California
+governing_documents:
+- kind: law-code
+  title: Torres Martinez Desert Cahuilla Indian Tribe, Tribal Code
+  year: '1999'
+  link: https://narf.org/nill/codes/torres_martinez/index.html
+  source: national-indian-law-library-code-codes-torres-martinez
+  confidence: medium
+  as_of: '1999'
+  locator: page heading
+  note: 'Last amended: 1999. Full text linked from the National Indian Law Library page.'
+- kind: constitution
+  title: Constitution of the Torres Martinez Desert Cahuilla Indians, Torres Martinez Reservation, California
+  year: '2004'
+  link: https://narf.org/nill/constitutions/torres_martinez/index.html
+  source: national-indian-law-library-constitution-constitutions-torres-martinez
+  confidence: medium
+  as_of: '2004'
+  locator: page heading
+  note: 'Adopted: November 9, 1997; Amended November 20, 2004 (Articles XXIV; XXV). Full text linked from
+    the National Indian Law Library page.'
+justice_institutions:
+- kind: tribal-court
+  name: Torrez Martinez Tribal Court
+  link: http://www.torresmartinez.org/Government/Commissions/TribalCourt.aspx
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Torres Martinez Desert Cahuilla Indians'
 gaming:
   compacts:
   - state: CA

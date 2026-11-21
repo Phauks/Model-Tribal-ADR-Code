@@ -117,6 +117,66 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Saint Regis Mohawk Tribe
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://www.srmt-nsn.gov/publications
+  source: national-indian-law-library-saint-regis-mohawk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: law-code
+  title: Tribal code
+  link: https://www.narf.org/nill/codes/stregiscode/index.html
+  source: national-indian-law-library-saint-regis-mohawk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.narf.org/nill/constitutions/saint_regis/index.html
+  source: national-indian-law-library-saint-regis-mohawk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At NILL website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://thorpe.law.ou.edu/constitution/stregisconst.html
+  source: national-indian-law-library-saint-regis-mohawk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . See NILL catalog record for all available versions of the constitution.".'
+- kind: law-code
+  title: Saint Regis Mohawk Tribe Rules and Code
+  link: http://www.srmt-nsn.gov/government/tribal_court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New York section, entry 'Saint Regis Mohawk Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.srmt-nsn.gov/tribal_court
+  source: national-indian-law-library-saint-regis-mohawk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Saint Regis Mohawk Tribal Court
+  link: http://www.srmt-nsn.gov/divisions/justice/tribal_court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New York section, entry 'Saint Regis Mohawk Tribe'
 gaming:
   compacts:
   - state: NY

@@ -141,6 +141,25 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Mi'kmaq Nation (previously listed as Aroostook Band of Micmacs)
+governing_documents:
+- kind: law-code
+  title: Election Ordinance
+  year: '2013'
+  link: http://www.micmac-nsn.gov/Election_Ordinance.pdf
+  source: national-indian-law-library-aroostook-micmac
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . 2013 Election Ordinance.".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-aroostook-micmac
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

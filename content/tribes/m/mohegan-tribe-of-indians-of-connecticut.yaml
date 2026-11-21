@@ -124,6 +124,101 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Mohegan Tribe of Indians of Connecticut
+governing_documents:
+- kind: law-code
+  title: Mohegan Tribe of Indians of Connecticut - Code of Ordinances
+  year: '2024'
+  link: https://narf.org/nill/codes/mohegan/index.html
+  source: national-indian-law-library-code-codes-mohegan
+  confidence: medium
+  as_of: '2024'
+  locator: page heading
+  note: 'Table of Contents Updated: January 2024. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Mohegan Tribe of Indians of Connecticut - Tribal Constitution
+  year: '2014'
+  link: https://narf.org/nill/constitutions/mohegan/index.html
+  source: national-indian-law-library-constitution-constitutions-mohegan
+  confidence: medium
+  as_of: '2014'
+  locator: page heading
+  note: 'Amended: February 23, 2014. The National Indian Law Library page gives the table of contents
+    (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://library.municode.com/tribes_and_tribal_nations/mohegan_tribe/codes/code_of_laws
+  source: national-indian-law-library-mohegan
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    (Municode).".'
+- kind: constitution
+  title: Constitution
+  link: https://library.municode.com/tribes_and_tribal_nations/mohegan_tribe/codes/code_of_laws?nodeId=PTICO_COMOTRINCO
+  source: national-indian-law-library-mohegan
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website (Municode).".'
+- kind: constitution
+  title: Mohegan Tribe of Indians of Connecticut Constitution – Muni Code
+  link: https://www.municode.com/library/tribes_and_tribal_nations/mohegan_tribe/codes/code_of_laws?nodeId=PTICO
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Connecticut section, entry 'Mohegan Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Mohegan Tribe Code of Laws – Muni Code
+  link: https://www.municode.com/library/tribes_and_tribal_nations/mohegan_tribe/codes/code_of_laws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Connecticut section, entry 'Mohegan Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.mohegan.nsn.us/about/government/the-tribal-court-sytem
+  source: national-indian-law-library-mohegan
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Mohegan Tribal Court System
+  link: https://www.mohegan.nsn.us/explore/government/tribal-court-system
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Connecticut section, entry 'Mohegan Tribe'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: 2-185. - Dispute Resolution.
+    citation: 2-185. - Dispute Resolution.
+    link: https://narf.org/nill/codes/mohegan/index.html
+    source: national-indian-law-library-code-codes-mohegan
+    confidence: medium
+    as_of: '2024'
+    locator: Table of Contents, under 'ARTICLE V. - GAMING REVENUE ALLOCATION PLAN'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: January 2024); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: other
+    title: 4-410. - Dispute Resolution, Prohibited Practices; Claim; Complaint.
+    citation: 4-410. - Dispute Resolution, Prohibited Practices; Claim; Complaint.
+    link: https://narf.org/nill/codes/mohegan/index.html
+    source: national-indian-law-library-code-codes-mohegan
+    confidence: medium
+    as_of: '2024'
+    locator: Table of Contents, under 'ARTICLE XI. - LABOR RELATIONS'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: January 2024); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
 gaming:
   compacts:
   - state: CT

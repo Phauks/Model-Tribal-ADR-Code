@@ -144,6 +144,59 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Standing Rock Sioux Tribe of North & South Dakota
+governing_documents:
+- kind: law-code
+  title: Standing Rock Sioux - Tribal Code of Justice
+  year: '2018'
+  link: https://narf.org/nill/codes/standingrocksioux/index.html
+  source: national-indian-law-library-code-codes-standingrocksioux
+  confidence: medium
+  as_of: '2018'
+  locator: page heading
+  note: 'Table of Contents Updated: September 2018. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Standing Rock Sioux Tribe - Tribal Constitution
+  year: '2008'
+  link: https://narf.org/nill/constitutions/standingrock/index.html
+  source: national-indian-law-library-constitution-constitutions-standingrock
+  confidence: medium
+  as_of: '2008'
+  locator: page heading
+  note: 'Amended: June 11, 2008. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.standingrock.org/content/titles
+  source: national-indian-law-library-standing-rock
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.standingrock.org/sites/default/files/uploads/standing_rock_sioux_tribe_constitution.pdf
+  source: national-indian-law-library-standing-rock
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website . (pdf)".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-standing-rock
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Standing Rock Sioux Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: North Dakota section, entry 'Standing Rock Sioux Tribe'
 gaming:
   compacts:
   - state: ND

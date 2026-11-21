@@ -107,6 +107,102 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Hopi Tribe of Arizona
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Hopi Tribe, Arizona" among organizations under constitutions approved by the
+    Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Hopi Tribe Arizona) (approved 1936) states it was adopted under Act of June 18,
+    1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-hopicons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Hopi Indian Tribe, Law and Order Code
+  year: '1991'
+  link: https://narf.org/nill/codes/hopicode/index.html
+  source: national-indian-law-library-code-codes-hopicode
+  confidence: medium
+  as_of: '1991'
+  locator: page heading
+  note: 'Dated: 1991. Full text linked from the National Indian Law Library page.'
+- kind: constitution
+  title: Constitution of the Hopi Tribe
+  year: '2007'
+  link: https://narf.org/nill/constitutions/hopi/index.html
+  source: national-indian-law-library-constitution-constitutions-hopi
+  confidence: medium
+  as_of: '2007'
+  locator: page heading
+  note: 'Received: 2007. Full text linked from the National Indian Law Library page.'
+- kind: law-code
+  title: Tribal code
+  link: http://www.hopi-nsn.gov/judicial-branch/hopi-code-of-laws-and-rules-of-civil-procedures/
+  source: national-indian-law-library-hopi-arizona
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: law-code
+  title: Constitution, Code, Ordinances and Court Rules
+  link: https://hopitribalcourts.com/hopi-laws/
+  source: national-indian-law-library-hopi-arizona
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
+    website . Constitution, Code, Ordinances and Court Rules.".'
+- kind: constitution
+  title: Hopi Tribe Constitution and Bylaws
+  link: https://docs.google.com/file/d/0B5iJZdagMNhTOEhVM1ZrMl9QX2M/edit
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Hopi Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Hopi Laws
+  link: http://www.hopitribalcourts.com/hopi-laws/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Hopi Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Hopi Tribe Arizona)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/hopicons.html
+  source: university-of-oklahoma-indian-reorganization-act-hopicons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://hopitribalcourts.com/
+  source: national-indian-law-library-hopi-arizona
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Hopi Tribal Courts
+  link: http://www.hopitribalcourts.com/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Hopi Tribe'
 gaming:
   compacts:
   - state: AZ

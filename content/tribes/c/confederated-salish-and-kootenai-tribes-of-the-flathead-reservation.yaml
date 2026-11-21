@@ -178,6 +178,128 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Confederated Salish and Kootenai Tribes of the Flathead Reservation, Montana"
+    among organizations under constitutions approved by the Secretary of the Interior (Indian Reorganization
+    Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Confederated Salish and Kootenai Tribes of the Flathead Reservation) (approved
+    1948) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-amflatcons
+  confidence: medium
+  as_of: '1948'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+- kind: indian-reorganization-act
+  detail: Constitution (Confederated Salish and Kootenai Tribes of the Flathead Reservation Montana) (approved
+    1935) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-flatcons
+  confidence: medium
+  as_of: '1935'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+  link: https://narf.org/nill/codes/confederated_salish_kootenai/index.html
+  source: national-indian-law-library-code-codes-confederated-salish-kootenai
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: law-code
+  title: Tribal code
+  link: https://cskt.org/cskt-laws-codified/
+  source: national-indian-law-library-confederated-salish-and-kootenai
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribes'' website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://cskt.org/cskt-laws-codified/
+  source: national-indian-law-library-confederated-salish-and-kootenai
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribes''
+    website . Included in CSKT Laws Codified.".'
+- kind: constitution
+  title: Confederated Salish and Kootenai Tribes of the Flathead Reservation - Tribal Constitution
+  year: '2016'
+  link: https://narf.org/nill/constitutions/confederated_salish_kootenai/index.html
+  source: national-indian-law-library-constitution-constitutions-confederated-salish-kootenai
+  confidence: medium
+  as_of: '2016'
+  locator: page heading
+  note: 'Table of Contents Updated: January 2016. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Confederated Salish and Kootenai Tribes Constitution and Bylaws
+  link: http://www.cskt.org/documents/gov/cskt_constitution.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Montana section, entry 'Confederated Salish and Kootenai Tribes'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Confederated Salish and Kootenai Tribes Codified Laws
+  link: http://www.cskt.org/gov/court-triballawcode.htm
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Montana section, entry 'Confederated Salish and Kootenai Tribes'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Confederated Salish and Kootenai Tribes of the Flathead Reservation)
+  year: '1948'
+  link: https://thorpe.law.ou.edu/IRA/amflatcons.html
+  source: university-of-oklahoma-indian-reorganization-act-amflatcons
+  confidence: medium
+  as_of: '1948'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: corporate-charter
+  title: Corporate charter (Salish and Kootenai Tribes of the Flathead Reservation Montana)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/flatchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-flatchrtr
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Confederated Salish and Kootenai Tribes of the Flathead Reservation Montana)
+  year: '1935'
+  link: https://thorpe.law.ou.edu/IRA/flatcons.html
+  source: university-of-oklahoma-indian-reorganization-act-flatcons
+  confidence: medium
+  as_of: '1935'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://cskt.org/tribal-court/
+  source: national-indian-law-library-confederated-salish-and-kootenai
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Confederated Salish and Kootenai Tribal Court
+  link: http://www.cskt.org/gov/court.htm
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Montana section, entry 'Confederated Salish and Kootenai Tribes'
 gaming:
   compacts:
   - state: MT

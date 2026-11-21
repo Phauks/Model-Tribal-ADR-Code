@@ -107,6 +107,56 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Quapaw Nation
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://www.quapawtribe.com/98/Court
+  source: national-indian-law-library-quapaw-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: law-code
+  title: Quapaw Tribe of Oklahoma Criminal Law and Order Code
+  link: https://www.quapawtribe.com/DocumentCenter/View/3700
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Quapaw Tribe of Oklahoma'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Quapaw Dissolution of Marriage Code
+  link: https://www.quapawtribe.com/DocumentCenter/View/5046
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Quapaw Tribe of Oklahoma'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Quapaw Child Welfare Code
+  link: https://www.quapawtribe.com/DocumentCenter/View/5045
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Quapaw Tribe of Oklahoma'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.quapawtribe.com/98/Court
+  source: national-indian-law-library-quapaw-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Quapaw Tribal Court
+  link: http://www.quapawtribe.com/index.aspx?nid=98
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Quapaw Tribe of Oklahoma'
 gaming:
   compacts:
   - state: OK

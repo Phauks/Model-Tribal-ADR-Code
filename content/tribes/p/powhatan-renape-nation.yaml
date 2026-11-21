@@ -7,8 +7,18 @@ names:
     source: new-jersey-commission-american-indian-affairs-about
     confidence: high
     as_of: '2026'
-  official_source: ofa-list-of-petitioners-by-state-2013
+  official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
 recognition:
+- type: unrecognized
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1; Table 3
+  note: 'GAO Table 1 lists "Powhatan Renape Nation" among 26 non-federally recognized tribes that received
+    direct federal funding in FY2007-2010 (total $200,000, Table 3). GAO-reported nonprofit status: No;
+    state recognition per state officials: Disputed (GAO: New Jersey''s official position is that it has
+    no state-recognized tribes). GAO reports $200,342 in HHS Low-Income Home Energy Assistance Program
+    funding in FY2007 and recommended HHS review eligibility. Not on the 2026 federal list (bia-recognized-entities-2026).'
 - type: unrecognized
   legal_basis: 25 C.F.R. Part 83
   petition_number: '171'
@@ -47,6 +57,13 @@ recognition:
   note: The statute provides seats on the Commission on American Indian Affairs; the Attorney General
     calls these the three 'New Jersey tribes of American Indians' referenced in 1990s statutes.
 states:
+- state: NJ
+  presence: other
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1, State column
+  note: State as listed by GAO.
 - state: NJ
   presence: other
   source: ofa-list-of-petitioners-by-state-2013

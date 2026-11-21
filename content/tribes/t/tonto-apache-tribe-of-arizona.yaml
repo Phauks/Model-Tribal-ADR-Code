@@ -123,6 +123,31 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Tonto Apache Tribe of Arizona
+governing_documents:
+- kind: constitution
+  title: Tonto Apache Tribe of Arizona - Tribal Constitution
+  year: '1980'
+  link: https://narf.org/nill/constitutions/tontoapache/index.html
+  source: national-indian-law-library-constitution-constitutions-tontoapache
+  confidence: medium
+  as_of: '1980'
+  locator: page heading
+  note: 'Dated: 1980. The National Indian Law Library page gives the table of contents (and may link to
+    the nation''s own copy); full text is not hosted there.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-tonto-apache
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Tonto Apache Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Tonto Apache Tribe'
 gaming:
   compacts:
   - state: AZ

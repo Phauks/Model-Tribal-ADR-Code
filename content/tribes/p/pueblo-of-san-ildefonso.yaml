@@ -131,6 +131,40 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Pueblo of San Ildefonso, New Mexico
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://law.sanipueblo.org/
+  source: national-indian-law-library-pueblo-san-ildefonso
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: law-code
+  title: Tribal code
+  link: https://www.narf.org/nill/triballaw/us/nsn/san-ildefonso/council/index.html
+  source: national-indian-law-library-pueblo-san-ildefonso
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website .".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.sanipueblo.org/tribal-courts.aspx
+  source: national-indian-law-library-pueblo-san-ildefonso
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Pueblo of San Ildefonso Tribal Court
+  link: http://sanipueblo.org/tribal-courts.aspx
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New Mexico section, entry 'Pueblo of San Ildefonso'
 gaming:
   compacts:
   - state: NM

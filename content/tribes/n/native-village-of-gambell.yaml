@@ -132,6 +132,74 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Native Village of Gambell
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Listed as "The Native Village of Gambell" among organizations under constitutions approved by
+    the Secretary of the Interior (Indian Reorganization Act as extended to Alaska by the Act of May 1,
+    1936), as of 1947
+  source: haas-1947-table-b-alaska
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Alaska Native Communities and Cooperatives, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: alaska-indian-reorganization-act
+  detail: Constitution (Native Village of Gambell) (approved 1939) states it was adopted under Act of
+    June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-gamcons
+  confidence: medium
+  as_of: '1939'
+  locator: preamble / approval and certification of adoption
+  note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
+    the Act of May 1, 1936, so this is recorded as the Alaska amendment. Historical constitution; a later
+    constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Native Village of Gambell
+  year: '2006'
+  link: https://narf.org/nill/codes/native_gambell/index.html
+  source: national-indian-law-library-code-codes-native-gambell
+  confidence: medium
+  as_of: '2006'
+  locator: page heading
+  note: 'Dated: 1986, 2006. The National Indian Law Library page gives the table of contents (and may
+    link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Native Village of Gambell - Constitution and Bylaws
+  year: '2011'
+  link: https://narf.org/nill/constitutions/native_gambell/index.html
+  source: national-indian-law-library-constitution-constitutions-native-gambell
+  confidence: medium
+  as_of: '2011'
+  locator: page heading
+  note: 'Ratified: December 31, 1939 Confirmed current: June 2011. Full text linked from the National
+    Indian Law Library page.'
+- kind: corporate-charter
+  title: Corporate charter
+  link: https://narf.org/nill/codes/native_gambell/chartertoc.html
+  source: national-indian-law-library-native-gambell
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At NILL website
+    . Corporate charter.".'
+- kind: corporate-charter
+  title: Corporate charter (Native Village of Gambell)
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/gamchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-gamchrtr
+  confidence: medium
+  as_of: '1939'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Native Village of Gambell)
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/gamcons.html
+  source: university-of-oklahoma-indian-reorganization-act-gamcons
+  confidence: medium
+  as_of: '1939'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

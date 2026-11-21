@@ -143,6 +143,101 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Hydaburg Cooperative Association
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Listed as "The Hydaburg Cooperative Association of Alaska" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act as extended to Alaska by the
+    Act of May 1, 1936), as of 1947
+  source: haas-1947-table-b-alaska
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Alaska Native Communities and Cooperatives, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: alaska-indian-reorganization-act
+  detail: Constitution (Hydaburg Cooperative Association) (approved 1938) states it was adopted under
+    Act of June 18, 1934 (48 Stat. 984); Act of May 1, 1936 (49 Stat. 1250)
+  source: university-of-oklahoma-indian-reorganization-act-hydacons
+  confidence: medium
+  as_of: '1938'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Hydaburg Cooperative Association - Constitution and Bylaws Table of Contents
+  year: '1938'
+  link: https://narf.org/nill/constitutions/hydaburgcoopconst/index.html
+  source: national-indian-law-library-constitution-constitutions-hydaburgcoopconst
+  confidence: medium
+  as_of: '1938'
+  locator: page heading
+  note: 'Ratified: April 14, 1938. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/hydacons.html
+  source: national-indian-law-library-hydaburg
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Constitution. (1938)".'
+- kind: constitution
+  title: Constitution
+  year: '1938'
+  link: https://www.loc.gov/item/39026290/
+  source: national-indian-law-library-hydaburg
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Constitution. (1938)".'
+- kind: corporate-charter
+  title: Corporate Charter
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/hydachrtr.html
+  source: national-indian-law-library-hydaburg
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Corporate Charter. (1938)".'
+- kind: corporate-charter
+  title: Corporate Charter
+  year: '1938'
+  link: https://www.loc.gov/item/39026249/
+  source: national-indian-law-library-hydaburg
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Corporate Charter. (1938)".'
+- kind: corporate-charter
+  title: Corporate charter (Hydaburg Cooperative Association Alaska)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/hydachrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-hydachrtr
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Hydaburg Cooperative Association)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/hydacons.html
+  source: university-of-oklahoma-indian-reorganization-act-hydacons
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-hydaburg
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

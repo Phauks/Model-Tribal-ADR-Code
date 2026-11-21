@@ -136,6 +136,67 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Coeur D'Alene Tribe
+governing_documents:
+- kind: law-code
+  title: Coeur D'Alene Tribe - Tribal Code - Table of Contents
+  year: '2026'
+  link: https://narf.org/nill/codes/coeur_dalene/index.html
+  source: national-indian-law-library-code-codes-coeur-dalene
+  confidence: medium
+  as_of: '2026'
+  locator: page heading
+  note: 'Most recent update received: September 2026. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Coeur D'Alene Tribe - Tribal Constitution - Table of Contents
+  year: '2012'
+  link: https://narf.org/nill/constitutions/coeur_dalene/index.html
+  source: national-indian-law-library-constitution-constitutions-coeur-dalene
+  confidence: medium
+  as_of: '2012'
+  locator: page heading
+  note: 'Last Amended: November 10, 1984 Confirmed Current: June 2012. The National Indian Law Library
+    page gives the table of contents (and may link to the nation''s own copy); full text is not hosted
+    there.'
+- kind: constitution
+  title: Constitution (Coeur D'Alene Tribe Idaho)
+  year: '1947'
+  link: https://thorpe.law.ou.edu/IRA/coeurcons.html
+  source: university-of-oklahoma-indian-reorganization-act-coeurcons
+  confidence: medium
+  as_of: '1947'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.cdatribe-nsn.gov/justice/
+  source: national-indian-law-library-coeur-dalene
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Coeur d’Alene Tribal Court
+  link: http://www.cdatribe-nsn.gov/tribaldepts/justice.aspx
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Idaho section, entry 'Coeur d’Alene Tribe'
+dispute_resolution:
+  provisions:
+  - kind: arbitration
+    title: Coeur D'Alene Tribal Arbitration Act.
+    citation: Coeur D'Alene Tribal Arbitration Act.; Validity of agreement to arbitrate.; Effect of agreement
+      to arbitrate; nonwaivable provisions.; Initiation of arbitration.; Motion to compel or stay arbitration.;
+      ...
+    link: https://narf.org/nill/codes/coeur_dalene/index.html
+    source: national-indian-law-library-code-codes-coeur-dalene
+    confidence: medium
+    as_of: '2026'
+    locator: Table of Contents, under 'Ch. 4. Civil procedures'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Most
+      recent update received: September 2026); the provision itself was not read. The heading it falls
+      under is taken from the page layout and may be imprecise.'
 gaming:
   compacts:
   - state: ID

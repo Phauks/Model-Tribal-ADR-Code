@@ -2,8 +2,18 @@ id: wyandot-of-anderdon-nation
 entity_type: native-nation
 names:
   official: Wyandot of Anderdon Nation
-  official_source: ofa-list-of-petitioners-by-state-2013
+  official_source: usaspending-award-90na8457
 recognition:
+- type: unrecognized
+  source: usaspending-award-90na8457
+  confidence: medium
+  as_of: '2022-09-30'
+  locator: Award summary
+  note: 'HHS Administration for Native Americans award 90NA8457 (Assistance Listing 93.612, Native American
+    Programs) to recipient "THE WYANDOT OF ANDERDON NATION", start 2022-09-30, amount $939,565; project
+    "SEVEN GENERATIONS: WYANDOT OF ANDERDON NATION CULTURAL AWARENESS, REVITALIZATION, AND PRESERVATION
+    PROJECT". The award record does not state recognition status; not on the 2026 federal list (bia-recognized-entities-2026).
+    Id shared with the state-recognized helper entity by name.'
 - type: unrecognized
   legal_basis: 25 C.F.R. Part 83
   petition_number: '267'
@@ -26,6 +36,13 @@ recognition:
   note: Michigan has no formal state-recognition statute found; the 'State Historic Tribes' designation
     appears only in this older directory, and current state pages list only federally recognized nations.
 states:
+- state: MI
+  presence: other
+  source: usaspending-award-90na8457
+  confidence: medium
+  as_of: '2022-09-30'
+  locator: Place of performance state
+  note: Place of performance state on the award record.
 - state: MI
   presence: other
   source: ofa-list-of-petitioners-by-state-2013

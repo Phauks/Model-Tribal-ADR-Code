@@ -129,6 +129,43 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Coushatta Tribe of Louisiana
+governing_documents:
+- kind: law-code
+  title: Coushatta Tribe of Louisiana Judicial Codes
+  year: '2004'
+  link: https://narf.org/nill/codes/coushatta/index.html
+  source: national-indian-law-library-code-codes-coushatta
+  confidence: medium
+  as_of: '2004'
+  locator: page heading
+  note: 'Approved: 1998; Last amended: 2004. Full text linked from the National Indian Law Library page.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-coushatta
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Coushatta Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Louisiana section, entry 'Coushatta Tribe of Louisiana'
+dispute_resolution:
+  provisions:
+  - kind: arbitration
+    title: Resolution 2000-46 - 11/7/00 - Resolution Establishing an Arbitration Code
+    citation: Resolution 2000-46 - 11/7/00 - Resolution Establishing an Arbitration Code
+    link: https://narf.org/nill/codes/coushatta/index.html
+    source: national-indian-law-library-code-codes-coushatta
+    confidence: medium
+    as_of: '2004'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Approved:
+      1998; Last amended: 2004); the provision itself was not read. The heading it falls under is taken
+      from the page layout and may be imprecise.'
 gaming:
   compacts:
   - state: LA

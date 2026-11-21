@@ -130,6 +130,74 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Tonkawa Tribe of Indians of Oklahoma
+government_structure:
+- kind: oklahoma-indian-welfare-act
+  detail: Listed as "The Tonkawa Tribe of Indians of Oklahoma" among organizations under constitutions
+    approved by the Secretary of the Interior (Oklahoma Indian Welfare Act of June 26, 1936), as of 1947
+  source: haas-1947-table-b-oklahoma
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Oklahoma Tribes, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: oklahoma-indian-welfare-act
+  detail: Constitution (Tonkawa Tribe of Indians of Oklahoma) (approved 1938) states it was adopted under
+    Act of June 26, 1936 (49 Stat. 1967)
+  source: university-of-oklahoma-indian-reorganization-act-tonkcons
+  confidence: medium
+  as_of: '1938'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Tonkawa Tribe of Indians of Oklahoma - Constitution and By-Laws
+  link: https://narf.org/nill/constitutions/tonkawa/index.html
+  source: national-indian-law-library-constitution-constitutions-tonkawa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: constitution
+  title: Constitution
+  link: https://tonkawatribe.com/wp-content/uploads/2022/11/consituiton2022.pdf
+  source: national-indian-law-library-tonkawa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Tonkawa Tribe of Indians of Oklahoma Constitution and By-Laws
+  link: http://www.tonkawatribe.com/government.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Tonkawa Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Tonkawa Tribe of Indians of Oklahoma)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/tonkcons.html
+  source: university-of-oklahoma-indian-reorganization-act-tonkcons
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-tonkawa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Tonkawa Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Tonkawa Tribe'
 gaming:
   compacts:
   - state: OK

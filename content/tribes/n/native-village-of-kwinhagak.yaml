@@ -147,6 +147,80 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Native Village of Kwinhagak (aka Quinhagak)
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Constitution (Native Village of Kwinhagak) (approved 1948) states it was adopted under Act of
+    June 18, 1934 (48 Stat. 984); Act of May 1, 1936 (49 Stat. 1250)
+  source: university-of-oklahoma-indian-reorganization-act-kwincons
+  confidence: medium
+  as_of: '1948'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Constitution
+  year: '1948'
+  link: https://thorpe.law.ou.edu/IRA/kwincons.html
+  source: national-indian-law-library-native-kwinhagak
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Constitution. (1948)".'
+- kind: constitution
+  title: Constitution
+  year: '1948'
+  link: https://www.loc.gov/item/50061146/
+  source: national-indian-law-library-native-kwinhagak
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website. Constitution. (1948)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1948'
+  link: https://thorpe.law.ou.edu/IRA/kwinchrtr.html
+  source: national-indian-law-library-native-kwinhagak
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Corporate charter. (1948)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1948'
+  link: https://www.loc.gov/item/50061126/
+  source: national-indian-law-library-native-kwinhagak
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Corporate charter. (1948)".'
+- kind: corporate-charter
+  title: Corporate charter (Native Village of Kwinhagak)
+  year: '1948'
+  link: https://thorpe.law.ou.edu/IRA/kwinchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-kwinchrtr
+  confidence: medium
+  as_of: '1948'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Native Village of Kwinhagak)
+  year: '1948'
+  link: https://thorpe.law.ou.edu/IRA/kwincons.html
+  source: university-of-oklahoma-indian-reorganization-act-kwincons
+  confidence: medium
+  as_of: '1948'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-native-kwinhagak
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

@@ -114,6 +114,34 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: La Jolla Band of Luiseno Indians, California
+governing_documents:
+- kind: law-code
+  title: La Jolla Band of Luiseno Indians - Enrollment Ordinance (#1)
+  year: '1963'
+  link: https://narf.org/nill/codes/la_jolla_luiseno/index.html
+  source: national-indian-law-library-code-codes-la-jolla-luiseno
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The tribe has not given permission to share the full text of this document online. Please contact
+    the library for more information and assistance.. The National Indian Law Library page gives the table
+    of contents (and may link to the nation's own copy); full text is not hosted there.
+- kind: law-code
+  title: La Jolla Band of Luiseño Indians Ordinances
+  link: http://www.sciljc.org/ordinances--codes---laws.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'La Jolla Band of Luiseno Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: La Jolla Tribal Court - Intertribal Court of Southern California
+  link: http://www.sciljc.org/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'La Jolla Band of Luiseno Indians'
 gaming:
   compacts:
   - state: CA

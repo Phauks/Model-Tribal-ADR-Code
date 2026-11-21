@@ -113,6 +113,70 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Quinault Indian Nation
+governing_documents:
+- kind: law-code
+  title: Quinault Indian Nation
+  year: '2013'
+  link: https://narf.org/nill/codes/quinault/index.html
+  source: national-indian-law-library-code-codes-quinault
+  confidence: medium
+  as_of: '2013'
+  locator: page heading
+  note: 'Received: June 2013. The National Indian Law Library page gives the table of contents (and may
+    link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Quinault Indian Nation - Tribal Constitution
+  year: '2013'
+  link: https://narf.org/nill/constitutions/quinault/index.html
+  source: national-indian-law-library-constitution-constitutions-quinault
+  confidence: medium
+  as_of: '2013'
+  locator: page heading
+  note: Received June 2013. The National Indian Law Library page gives the table of contents (and may
+    link to the nation's own copy); full text is not hosted there.
+- kind: law-code
+  title: Tribal code
+  link: https://www.quinaultindiannation.com/362/Office-of-the-Attorney-General
+  source: national-indian-law-library-quinault
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Selected titles at the Office of the Attorney General.".'
+- kind: law-code
+  title: Fishing and hunting regulations
+  link: https://www.quinaultindiannation.com/238/Fishing-Hunting-Regulations
+  source: national-indian-law-library-quinault
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Fishing and hunting regulations.".'
+- kind: law-code
+  title: Tribal code
+  link: https://www.quinaultindiannation.com/178/Departments-QDNR
+  source: national-indian-law-library-quinault
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Various natural resources regulations.".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://wa-quinaultindiannation.civicplus.com/157/Tribal-Courts
+  source: national-indian-law-library-quinault
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Quinault Tribal Court
+  link: http://www.quinaulttribalcourt.org/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Quinault Indian Nation'
 gaming:
   compacts:
   - state: WA

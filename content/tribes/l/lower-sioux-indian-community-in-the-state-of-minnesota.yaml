@@ -139,6 +139,110 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Lower Sioux Indian Community in the State of Minnesota
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Lower Sioux Tribe in the State of Minnesota" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Lower Sioux Indian Community in Minnesota) (approved 1936) states it was adopted
+    under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-minnsiouxcons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Lower Sioux Indian Community in Minnesota, Judicial Code
+  year: '2000'
+  link: https://narf.org/nill/codes/lower_sioux/index.html
+  source: national-indian-law-library-code-codes-lower-sioux
+  confidence: medium
+  as_of: '2000'
+  locator: page heading
+  note: 'Dated: [2000]. Full text linked from the National Indian Law Library page.'
+- kind: constitution
+  title: Constitution of the Lower Sioux Indian Community in Minnesota
+  year: '2007'
+  link: https://narf.org/nill/constitutions/lower_sioux/index.html
+  source: national-indian-law-library-constitution-constitutions-lower-sioux
+  confidence: medium
+  as_of: '2007'
+  locator: page heading
+  note: 'Date: 2007. Full text linked from the National Indian Law Library page.'
+- kind: law-code
+  title: Tribal code
+  link: https://lowersioux.com/tribal-laws/
+  source: national-indian-law-library-lower-sioux-minnesota
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://lowersioux.com/tribal-laws/
+  source: national-indian-law-library-lower-sioux-minnesota
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Lower Sioux Indian Community Constitution
+  link: http://lowersioux.com/tribal-laws/constitution/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Minnesota section, entry 'Lower Sioux Indian Community'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Lower Sioux Tribal Laws
+  link: http://circle.red/mlbo/statutes/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Minnesota section, entry 'Lower Sioux Indian Community'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Lower Sioux Indian Community in Minnesota)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/lsmnchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-lsmnchrtr
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Lower Sioux Indian Community in Minnesota)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/minnsiouxcons.html
+  source: university-of-oklahoma-indian-reorganization-act-minnsiouxcons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://lowersioux.com/departments/legal/
+  source: national-indian-law-library-lower-sioux-minnesota
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Lower Sioux Indian Community Tribal Court
+  link: http://lowersioux.com/departments/tribal-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Minnesota section, entry 'Lower Sioux Indian Community'
 gaming:
   compacts:
   - state: MN

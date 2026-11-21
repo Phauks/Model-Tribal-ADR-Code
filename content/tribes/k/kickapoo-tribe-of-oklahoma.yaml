@@ -116,6 +116,68 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Kickapoo Tribe of Oklahoma
+government_structure:
+- kind: oklahoma-indian-welfare-act
+  detail: Listed as "The Kickapoo Tribe of Oklahoma" among organizations under constitutions approved
+    by the Secretary of the Interior (Oklahoma Indian Welfare Act of June 26, 1936), as of 1947
+  source: haas-1947-table-b-oklahoma
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Oklahoma Tribes, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: oklahoma-indian-welfare-act
+  detail: Constitution (Kickapoo Tribe of Oklahoma) (approved 1937) states it was adopted under Act of
+    June 26, 1936 (49 Stat. 1967)
+  source: university-of-oklahoma-indian-reorganization-act-okkickcons
+  confidence: medium
+  as_of: '1937'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Criminal Code
+  link: https://www.kickapootribeofoklahoma.com/tribal-court
+  source: national-indian-law-library-kickapoo-oklahoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Criminal Code.".'
+- kind: court-rules
+  title: Kickapoo Tribe of Oklahoma Tribal Court Forms, Rules, and Procedures
+  link: http://www.kickapootribeofoklahoma.com/ktocourtform.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Kickapoo Tribe of Oklahoma'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Kickapoo Tribe of Oklahoma)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/okkickchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-okkickchrtr
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Kickapoo Tribe of Oklahoma)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/okkickcons.html
+  source: university-of-oklahoma-indian-reorganization-act-okkickcons
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.kickapootribeofoklahoma.com/tribal-court
+  source: national-indian-law-library-kickapoo-oklahoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 gaming:
   compacts:
   - state: OK

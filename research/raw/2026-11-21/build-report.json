@@ -25,6 +25,12 @@
    "sources": 82
   },
   {
+   "file": "justice-and-law.json",
+   "session": "2026-11-21-justice-and-law",
+   "facts": 3052,
+   "sources": 1189
+  },
+  {
    "file": "nations-alaska.json",
    "session": "2026-11-21-nations-alaska",
    "facts": 2047,
@@ -41,6 +47,12 @@
    "session": "2026-11-21-nations-contiguous-m-z",
    "facts": 276,
    "sources": 194
+  },
+  {
+   "file": "other-nonfederal-groups.json",
+   "session": "2026-11-21-other-nonfederal-groups",
+   "facts": 235,
+   "sources": 16
   },
   {
    "file": "petitioning.json",
@@ -82,16 +94,18 @@
   "ramapough-mountain-indians-inc -> ramapough-lenape-nation",
   "lipan-apache-band-of-texas-inc -> lipan-apache-tribe-of-texas",
   "grand-river-bands-of-ottawa-indians -> grand-river-band-of-ottawa-indians",
-  "mackinac-bands-of-chippewa-and-ottawa-indians -> mackinaw-bands-of-chippewa-and-ottawa-indians"
+  "mackinac-bands-of-chippewa-and-ottawa-indians -> mackinaw-bands-of-chippewa-and-ottawa-indians",
+  "nanticoke-lenni-lenape-indians-of-new-jersey -> nanticoke-lenni-lenape-tribal-nation",
+  "st-francis-sokoki-band-of-abenakis-of-vermont-abenaki-tribal-council -> st-francis-sokoki-band-of-abenakis-of-vermont"
  ],
  "skipped_profiles": [],
  "invalid_sources": [],
  "missing_sources": {},
  "counts": {
-  "profiles_written": 933,
+  "profiles_written": 948,
   "profiles_skipped": 0,
-  "new_sources": 211,
-  "facts_read": 15925,
+  "new_sources": 0,
+  "facts_read": 19214,
   "facts_dropped": 0,
   "sources_missing": 0
  }

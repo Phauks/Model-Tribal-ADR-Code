@@ -150,6 +150,59 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Native Village of Tanana
+governing_documents:
+- kind: constitution
+  title: Constitution
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/tanacons.html
+  source: national-indian-law-library-native-tanana
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Constitution. (1939)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/tanachrtr.html
+  source: national-indian-law-library-native-tanana
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Corporate charter. (1939)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1939'
+  link: https://www.loc.gov/item/50061124/
+  source: national-indian-law-library-native-tanana
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website. Corporate charter. (1939)".'
+- kind: corporate-charter
+  title: Corporate charter (Native Village of Tanana, Alaska)
+  year: '1939'
+  link: https://thorpe.law.ou.edu/IRA/tanachrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-tanachrtr
+  confidence: medium
+  as_of: '1939'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-native-tanana
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Tanana Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Native Village of Tanana'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

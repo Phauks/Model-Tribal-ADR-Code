@@ -125,6 +125,24 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Chalkyitsik Village
+governing_documents:
+- kind: law-code
+  title: Chalkyitsik Village - Tribal Code (DRAFT) Table of Contents
+  year: '2000'
+  link: https://narf.org/nill/codes/chalkyitsik/index.html
+  source: national-indian-law-library-code-codes-chalkyitsik
+  confidence: medium
+  as_of: '2000'
+  locator: page heading
+  note: 'Date: June 8, 2000. The National Indian Law Library page gives the table of contents (and may
+    link to the nation''s own copy); full text is not hosted there.'
+justice_institutions:
+- kind: tribal-court
+  name: Chalkyitsik Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Alaska section, entry 'Chalkyitsik Village'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

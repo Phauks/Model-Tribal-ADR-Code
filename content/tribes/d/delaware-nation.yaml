@@ -150,6 +150,52 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Delaware Nation, Oklahoma
+governing_documents:
+- kind: constitution
+  title: Delaware Nation, Oklahoma - Tribal Constitution - Table of Contents
+  link: https://narf.org/nill/constitutions/delaware_nation_ok/index.html
+  source: national-indian-law-library-constitution-constitutions-delaware-nation-ok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: law-code
+  title: Citizenship Ordinance
+  link: http://delawarenation.com/wp-content/uploads/2019/01/CitizenshipEnrollment-Ordinance.pdf
+  source: national-indian-law-library-delaware-nation-ok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Citizenship Ordinance.".'
+- kind: law-code
+  title: Election ordinance
+  link: http://delawarenation.com/wp-content/uploads/2019/01/2018-219-Appr-Elect-Ord-Rev-Reso-at-back.pdf
+  source: national-indian-law-library-delaware-nation-ok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Election ordinance.".'
+- kind: constitution
+  title: Constitution
+  link: http://delawarenation.com/wp-content/uploads/2017/03/DN-Constitution.pdf
+  source: national-indian-law-library-delaware-nation-ok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.delawarenation-nsn.gov/delaware-nation-court/
+  source: national-indian-law-library-delaware-nation-ok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
 gaming:
   compacts:
   - state: OK
