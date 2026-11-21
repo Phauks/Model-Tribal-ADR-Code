@@ -28,7 +28,7 @@ not findings from user research, which has not been done (project analysis).
 | --- | --- | --- |
 | Reader: a Tribal council member or court clerk drafting an ordinance | Compare the alternatives in a section and understand what each choice does | They compare alternatives and read the comment without leaving the page |
 | Researcher: a law student or scholar | Find which nations have published dispute resolution or peacemaking law, and cite it | Every fact is one step from its source, and a citation names the version |
-| Nation representative: staff of a nation's court, legal department or cultural office | Check what the project says about the nation, and correct, restrict or remove it | A request takes minutes, needs no account, and protects first |
+| Nation representative: staff of a nation's court, legal department or cultural office | Check what the project says about the nation, and correct, restrict or remove it; or, if the nation is missing, ask to add it with proof from a government source | A request takes minutes, needs no account, and protects first |
 | Contributor: a peacemaker, Indigenous author, reviewer or co-author | Offer sources, review, preferred terms or text, and be credited as they choose | They contribute without a GitHub account |
 
 User research with people in each role is the most important next step for
@@ -147,11 +147,11 @@ published ([repository layout, identifiers](../docs/repository-layout.md#identif
 | Section | Contents rail, text, margin | "Model text, not law in force" notice with the version and last change; hanging section number; status chips; text with alternatives and placeholders; Comment, Illustrations, Source note; previous and next; margin: On this page, notes, "Cite this section," "Adapt this section" |
 | Track landing | One column | What the track is, cited; its chapters; for peacemaking, a step-by-step outline of how a process unfolds |
 | Nation profile | Text and margin | One page for every nation; see [Nation pages](#nation-pages) below |
-| Nations directory | One column | Search and filters (group, state, review status); Map and Table tabs holding the same data; the map's "what this shows" notice |
+| Nations directory | One column | Search and filters (group, state, review status); Map and Table tabs holding the same data; the map's "what this shows" notice; "Is your nation missing? Ask to be added", also shown when a search finds no nation |
 | Glossary entry | Entry rail, text, margin | Term, usage status, definition with sources, how the project uses it, where it appears, see also, "Suggest a change to this term" |
 | Source record | Text and margin | Citation, original link, archived copies, change history, quotation basis, what cites it |
 | Changelog | One column with tabs | Content, Website, Print and Requests log; each version's entries; comparison of a section between versions |
-| Request | One question per page | Start page; what would you like to do; which material; how can we reply; details; credit (contribute only); check your request; request sent |
+| Request | One question per page | Start page; what would you like to do; which material; how can we reply; details; credit (contribute only); check your request; request sent. Adding a missing nation branches to: which nation; which government source names it (kind, citation or upload); how can we reply; who is making this request (statement); check your request; request sent; and later a written decision with reasons and buttons to apply again or ask for reconsideration ([requests.md](../docs/requests.md#adding-a-nation-that-is-missing)) |
 | Read offline | One column | Install the site; save the code, the profiles or both; PDF and EPUB downloads; what is saved and as of when |
 
 ### Nation pages
