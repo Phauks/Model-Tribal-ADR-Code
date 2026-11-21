@@ -21,5 +21,6 @@ and says so.
 | [0008](0008-pull-requests-without-required-approval.md) | Require pull requests and checks, not a second approval | Accepted |
 | [0009](0009-private-requests-from-nations.md) | Take requests from nations privately, not in public issues | Accepted |
 | [0010](0010-glossary-records-and-term-links.md) | Define terms once, as records, and link them from text | Accepted |
+| [0011](0011-ebook-custom-pipeline.md) | Build the ebook with a custom pipeline | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

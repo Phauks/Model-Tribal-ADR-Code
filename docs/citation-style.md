@@ -65,6 +65,10 @@ CC BY-SA, separate from the project's MIT-licensed code (project analysis).
 ## Open tasks
 
 - Obtain and test the CSL-M IndigoBook style with citeproc-js on sample sources.
+- Fix statute citations: in the ebook test build, `bluebook-law-review.csl`
+  dropped a "§ 4" pinpoint from a statute and printed nothing for its short
+  form (citeproc-js reported "reference with no printed form") (measured,
+  2026-11-21).
 - Confirm how the *Indigo Book* treats tribal codes, tribal court decisions and
   web-published tribal materials.
 - Decide the website's footnote display (hover card, side note or end of page).
