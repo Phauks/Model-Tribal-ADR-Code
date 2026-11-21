@@ -1,0 +1,1593 @@
+{
+  "measuredOn": "2026-11-21",
+  "browser": "Chromium (Playwright)",
+  "rows": 1000,
+  "expectedRowsMatching_SampleNation99": 19,
+  "results": [
+    {
+      "route": "/baseline/",
+      "label": "Baseline (no table)",
+      "html": {
+        "bytes": 2267,
+        "gzipBytes": 920,
+        "tableRowsInPrerenderedHtml": 0
+      },
+      "withoutScripts": null,
+      "scripts": {
+        "files": 11,
+        "bytes": 110716,
+        "gzipBytes": 42588,
+        "list": [
+          {
+            "url": "/_app/immutable/entry/start.DcWfaUKi.js",
+            "bytes": 522,
+            "gzipBytes": 312
+          },
+          {
+            "url": "/_app/immutable/entry/payload.DSmR2FwN.js",
+            "bytes": 65,
+            "gzipBytes": 77
+          },
+          {
+            "url": "/_app/immutable/chunks/DclECHGd.js",
+            "bytes": 1630,
+            "gzipBytes": 828
+          },
+          {
+            "url": "/_app/immutable/chunks/C79KqgC3.js",
+            "bytes": 4622,
+            "gzipBytes": 2071
+          },
+          {
+            "url": "/_app/immutable/chunks/DNtKlRM5.js",
+            "bytes": 42137,
+            "gzipBytes": 15421
+          },
+          {
+            "url": "/_app/immutable/entry/app.fQxWhknG.js",
+            "bytes": 2364,
+            "gzipBytes": 879
+          },
+          {
+            "url": "/_app/immutable/nodes/3.BSco9cPK.js",
+            "bytes": 325,
+            "gzipBytes": 263
+          },
+          {
+            "url": "/_app/immutable/nodes/0.DE4MQoDx.js",
+            "bytes": 399,
+            "gzipBytes": 314
+          },
+          {
+            "url": "/_app/immutable/chunks/FfBmQ6CB.js",
+            "bytes": 39,
+            "gzipBytes": 59
+          },
+          {
+            "url": "/_app/immutable/chunks/BvXqPJhV.js",
+            "bytes": 58289,
+            "gzipBytes": 22116
+          },
+          {
+            "url": "/_app/immutable/nodes/1.B3cJyttM.js",
+            "bytes": 324,
+            "gzipBytes": 248
+          }
+        ]
+      },
+      "styles": {
+        "bytes": 3788,
+        "gzipBytes": 1241
+      },
+      "requestsToOtherHosts": [],
+      "timing": {
+        "readyMilliseconds": 55,
+        "domContentLoadedMilliseconds": 37.700000000186265,
+        "elementCount": 24
+      },
+      "timingCpuSlowedFourTimes": {
+        "readyMilliseconds": 137.1000000005588,
+        "domContentLoadedMilliseconds": 77.29999999981374,
+        "elementCount": 24
+      }
+    },
+    {
+      "route": "/no-library/",
+      "label": "No library, Svelte state",
+      "html": {
+        "bytes": 1183014,
+        "gzipBytes": 65910,
+        "tableRowsInPrerenderedHtml": 1000
+      },
+      "withoutScripts": {
+        "visibleRows": 1000,
+        "lastNameFindable": true
+      },
+      "scripts": {
+        "files": 13,
+        "bytes": 115642,
+        "gzipBytes": 45136,
+        "list": [
+          {
+            "url": "/_app/immutable/entry/start.DcWfaUKi.js",
+            "bytes": 522,
+            "gzipBytes": 312
+          },
+          {
+            "url": "/_app/immutable/entry/payload.DSmR2FwN.js",
+            "bytes": 65,
+            "gzipBytes": 77
+          },
+          {
+            "url": "/_app/immutable/chunks/DclECHGd.js",
+            "bytes": 1630,
+            "gzipBytes": 828
+          },
+          {
+            "url": "/_app/immutable/chunks/DNtKlRM5.js",
+            "bytes": 42137,
+            "gzipBytes": 15421
+          },
+          {
+            "url": "/_app/immutable/chunks/C79KqgC3.js",
+            "bytes": 4622,
+            "gzipBytes": 2071
+          },
+          {
+            "url": "/_app/immutable/entry/app.fQxWhknG.js",
+            "bytes": 2364,
+            "gzipBytes": 879
+          },
+          {
+            "url": "/_app/immutable/nodes/0.DE4MQoDx.js",
+            "bytes": 399,
+            "gzipBytes": 314
+          },
+          {
+            "url": "/_app/immutable/nodes/5.D6HBUmDu.js",
+            "bytes": 2058,
+            "gzipBytes": 1016
+          },
+          {
+            "url": "/_app/immutable/chunks/DOmQjifM.js",
+            "bytes": 883,
+            "gzipBytes": 525
+          },
+          {
+            "url": "/_app/immutable/chunks/pDCF3lp7.js",
+            "bytes": 1418,
+            "gzipBytes": 803
+          },
+          {
+            "url": "/_app/immutable/chunks/AtXoACCF.js",
+            "bytes": 931,
+            "gzipBytes": 526
+          },
+          {
+            "url": "/_app/immutable/chunks/BvXqPJhV.js",
+            "bytes": 58289,
+            "gzipBytes": 22116
+          },
+          {
+            "url": "/_app/immutable/nodes/1.B3cJyttM.js",
+            "bytes": 324,
+            "gzipBytes": 248
+          }
+        ]
+      },
+      "styles": {
+        "bytes": 3788,
+        "gzipBytes": 1241
+      },
+      "requestsToOtherHosts": [],
+      "timing": {
+        "readyMilliseconds": 781.8000000007451,
+        "domContentLoadedMilliseconds": 386.80000000074506,
+        "elementCount": 11056
+      },
+      "interaction": {
+        "rowsInDocument": 1000,
+        "firstClickMilliseconds": 196.8,
+        "afterFirstClick": {
+          "ariaSort": "descending",
+          "firstRows": [
+            "Sample Nation Zebra",
+            "Sample Nation Ž",
+            "Sample Nation Ø"
+          ]
+        },
+        "secondClickMilliseconds": 248.4,
+        "afterSecondClick": {
+          "ariaSort": "ascending",
+          "firstRows": [
+            "Sample Nation 2",
+            "Sample Nation 3",
+            "Sample Nation 10"
+          ]
+        },
+        "sortClickMillisecondsMedian": 174,
+        "sortClickMillisecondsAll": [
+          196.8,
+          248.4,
+          174,
+          148,
+          183.7,
+          146.2,
+          144.1
+        ],
+        "descendingNameOrderOfTestRows": [
+          "Sample Nation Zebra",
+          "Sample Nation Ž",
+          "Sample Nation Ø",
+          "sample nation lowercase",
+          "Sample Nation ʻOkina",
+          "Sample Nation É",
+          "Sample Nation Aardvark",
+          "Sample Nation Ä",
+          "Sample Nation Å",
+          "Sample Nation 1000",
+          "Sample Nation 999",
+          "Sample Nation 998",
+          "Sample Nation 997"
+        ],
+        "lastVerifiedAfterOneClick": "January 1, 2025",
+        "searchMilliseconds": 46.6,
+        "rowsMatching_SampleNation99": 19,
+        "rowsMatching_okina": [
+          "Sample Nation ʻOkina"
+        ]
+      },
+      "timingCpuSlowedFourTimes": {
+        "readyMilliseconds": 3412.4000000003725,
+        "domContentLoadedMilliseconds": 1214.6000000005588,
+        "elementCount": 11056
+      },
+      "interactionCpuSlowedFourTimes": {
+        "rowsInDocument": 1000,
+        "firstClickMilliseconds": 741.2,
+        "afterFirstClick": {
+          "ariaSort": "descending",
+          "firstRows": [
+            "Sample Nation Zebra",
+            "Sample Nation Ž",
+            "Sample Nation Ø"
+          ]
+        },
+        "secondClickMilliseconds": 840.1,
+        "afterSecondClick": {
+          "ariaSort": "ascending",
+          "firstRows": [
+            "Sample Nation 2",
+            "Sample Nation 3",
+            "Sample Nation 10"
+          ]
+        },
+        "sortClickMillisecondsMedian": 792.5,
+        "sortClickMillisecondsAll": [
+          741.2,
+          840.1,
+          843.5,
+          792.5,
+          836.5,
+          722.4,
+          769.5
+        ],
+        "searchMilliseconds": 181,
+        "rowsMatching_SampleNation99": 19
+      },
+      "structure": {
+        "tableElements": 1,
+        "captions": 1,
+        "columnHeadersWithScope": 7,
+        "rowHeadersWithScope": 1000,
+        "gridRoles": 0,
+        "rowRoles": 0,
+        "gridcellRoles": 0,
+        "sortButtons": 6,
+        "columnHeadersFocusable": 0,
+        "searchHasLabel": true
+      },
+      "keyboard": {
+        "tabPressesToNationSort": 3,
+        "enterSorts": true,
+        "spaceSorts": true
+      },
+      "axe_light": [],
+      "colors_light": {
+        "page": {
+          "color": "rgb(34, 32, 30)",
+          "background": "rgb(255, 250, 245)"
+        },
+        "header": {
+          "color": "rgb(34, 32, 30)",
+          "background": "rgb(246, 238, 230)"
+        },
+        "cell": {
+          "color": "rgb(34, 32, 30)",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "tokenSurface": "rgb(246, 238, 230)",
+        "tokenInk": "rgb(34, 32, 30)"
+      },
+      "axe_dark": [],
+      "colors_dark": {
+        "page": {
+          "color": "rgb(243, 239, 234)",
+          "background": "rgb(15, 30, 33)"
+        },
+        "header": {
+          "color": "rgb(243, 239, 234)",
+          "background": "rgb(22, 41, 45)"
+        },
+        "cell": {
+          "color": "rgb(243, 239, 234)",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "tokenSurface": "rgb(22, 41, 45)",
+        "tokenInk": "rgb(243, 239, 234)"
+      },
+      "narrowScreen": {
+        "pageScrollsSideways": false,
+        "pageWidth": 320,
+        "tableBoxScrolls": true
+      }
+    },
+    {
+      "route": "/no-library-enhancer/",
+      "label": "No library, small script",
+      "html": {
+        "bytes": 752633,
+        "gzipBytes": 32589,
+        "tableRowsInPrerenderedHtml": 1000
+      },
+      "withoutScripts": {
+        "visibleRows": 1000,
+        "lastNameFindable": true
+      },
+      "scripts": {
+        "files": 1,
+        "bytes": 2298,
+        "gzipBytes": 1130,
+        "list": [
+          {
+            "url": "/enhancers/enhance-table.js",
+            "bytes": 2298,
+            "gzipBytes": 1130
+          }
+        ]
+      },
+      "styles": {
+        "bytes": 3788,
+        "gzipBytes": 1241
+      },
+      "requestsToOtherHosts": [],
+      "timing": {
+        "readyMilliseconds": 377.5,
+        "domContentLoadedMilliseconds": 208.29999999981374,
+        "elementCount": 11042
+      },
+      "interaction": {
+        "rowsInDocument": 1000,
+        "firstClickMilliseconds": 233.1,
+        "afterFirstClick": {
+          "ariaSort": "descending",
+          "firstRows": [
+            "Sample Nation Zebra",
+            "Sample Nation Ž",
+            "Sample Nation Ø"
+          ]
+        },
+        "secondClickMilliseconds": 152.3,
+        "afterSecondClick": {
+          "ariaSort": "ascending",
+          "firstRows": [
+            "Sample Nation 2",
+            "Sample Nation 3",
+            "Sample Nation 10"
+          ]
+        },
+        "sortClickMillisecondsMedian": 124.4,
+        "sortClickMillisecondsAll": [
+          233.1,
+          152.3,
+          117.6,
+          115.4,
+          147.9,
+          124.4,
+          111.2
+        ],
+        "descendingNameOrderOfTestRows": [
+          "Sample Nation Zebra",
+          "Sample Nation Ž",
+          "Sample Nation Ø",
+          "sample nation lowercase",
+          "Sample Nation ʻOkina",
+          "Sample Nation É",
+          "Sample Nation Aardvark",
+          "Sample Nation Ä",
+          "Sample Nation Å",
+          "Sample Nation 1000",
+          "Sample Nation 999",
+          "Sample Nation 998",
+          "Sample Nation 997"
+        ],
+        "lastVerifiedAfterOneClick": "January 1, 2025",
+        "searchMilliseconds": 25.1,
+        "rowsMatching_SampleNation99": 19,
+        "rowsMatching_okina": [
+          "Sample Nation ʻOkina"
+        ]
+      },
+      "timingCpuSlowedFourTimes": {
+        "readyMilliseconds": 1931.9000000003725,
+        "domContentLoadedMilliseconds": 1181.2000000001863,
+        "elementCount": 11042
+      },
+      "interactionCpuSlowedFourTimes": {
+        "rowsInDocument": 1000,
+        "firstClickMilliseconds": 756.1,
+        "afterFirstClick": {
+          "ariaSort": "descending",
+          "firstRows": [
+            "Sample Nation Zebra",
+            "Sample Nation Ž",
+            "Sample Nation Ø"
+          ]
+        },
+        "secondClickMilliseconds": 701.9,
+        "afterSecondClick": {
+          "ariaSort": "ascending",
+          "firstRows": [
+            "Sample Nation 2",
+            "Sample Nation 3",
+            "Sample Nation 10"
+          ]
+        },
+        "sortClickMillisecondsMedian": 641.7,
+        "sortClickMillisecondsAll": [
+          756.1,
+          701.9,
+          559.4,
+          682.1,
+          641.7,
+          515.7,
+          613.2
+        ],
+        "searchMilliseconds": 175.2,
+        "rowsMatching_SampleNation99": 19
+      },
+      "structure": {
+        "tableElements": 1,
+        "captions": 1,
+        "columnHeadersWithScope": 7,
+        "rowHeadersWithScope": 1000,
+        "gridRoles": 0,
+        "rowRoles": 0,
+        "gridcellRoles": 0,
+        "sortButtons": 6,
+        "columnHeadersFocusable": 0,
+        "searchHasLabel": true
+      },
+      "keyboard": {
+        "tabPressesToNationSort": 3,
+        "enterSorts": true,
+        "spaceSorts": true
+      },
+      "axe_light": [],
+      "colors_light": {
+        "page": {
+          "color": "rgb(34, 32, 30)",
+          "background": "rgb(255, 250, 245)"
+        },
+        "header": {
+          "color": "rgb(34, 32, 30)",
+          "background": "rgb(246, 238, 230)"
+        },
+        "cell": {
+          "color": "rgb(34, 32, 30)",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "tokenSurface": "rgb(246, 238, 230)",
+        "tokenInk": "rgb(34, 32, 30)"
+      },
+      "axe_dark": [],
+      "colors_dark": {
+        "page": {
+          "color": "rgb(243, 239, 234)",
+          "background": "rgb(15, 30, 33)"
+        },
+        "header": {
+          "color": "rgb(243, 239, 234)",
+          "background": "rgb(22, 41, 45)"
+        },
+        "cell": {
+          "color": "rgb(243, 239, 234)",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "tokenSurface": "rgb(22, 41, 45)",
+        "tokenInk": "rgb(243, 239, 234)"
+      },
+      "narrowScreen": {
+        "pageScrollsSideways": false,
+        "pageWidth": 320,
+        "tableBoxScrolls": true
+      }
+    },
+    {
+      "route": "/no-library-enhancer-content-visibility/",
+      "label": "No library, small script, off-screen rows skipped",
+      "html": {
+        "bytes": 752702,
+        "gzipBytes": 32625,
+        "tableRowsInPrerenderedHtml": 1000
+      },
+      "withoutScripts": {
+        "visibleRows": 1000,
+        "lastNameFindable": true
+      },
+      "scripts": {
+        "files": 1,
+        "bytes": 2298,
+        "gzipBytes": 1130,
+        "list": [
+          {
+            "url": "/enhancers/enhance-table.js",
+            "bytes": 2298,
+            "gzipBytes": 1130
+          }
+        ]
+      },
+      "styles": {
+        "bytes": 3788,
+        "gzipBytes": 1241
+      },
+      "requestsToOtherHosts": [],
+      "timing": {
+        "readyMilliseconds": 527.5999999996275,
+        "domContentLoadedMilliseconds": 328.40000000037253,
+        "elementCount": 11042
+      },
+      "interaction": {
+        "rowsInDocument": 1000,
+        "firstClickMilliseconds": 141.5,
+        "afterFirstClick": {
+          "ariaSort": "descending",
+          "firstRows": [
+            "Sample Nation Zebra",
+            "Sample Nation Ž",
+            "Sample Nation Ø"
+          ]
+        },
+        "secondClickMilliseconds": 123.6,
+        "afterSecondClick": {
+          "ariaSort": "ascending",
+          "firstRows": [
+            "Sample Nation 2",
+            "Sample Nation 3",
+            "Sample Nation 10"
+          ]
+        },
+        "sortClickMillisecondsMedian": 129,
+        "sortClickMillisecondsAll": [
+          141.5,
+          123.6,
+          119.8,
+          157.2,
+          129,
+          180.7,
+          115.3
+        ],
+        "descendingNameOrderOfTestRows": [
+          "Sample Nation Zebra",
+          "Sample Nation Ž",
+          "Sample Nation Ø",
+          "sample nation lowercase",
+          "Sample Nation ʻOkina",
+          "Sample Nation É",
+          "Sample Nation Aardvark",
+          "Sample Nation Ä",
+          "Sample Nation Å",
+          "Sample Nation 1000",
+          "Sample Nation 999",
+          "Sample Nation 998",
+          "Sample Nation 997"
+        ],
+        "lastVerifiedAfterOneClick": "January 1, 2025",
+        "searchMilliseconds": 40.1,
+        "rowsMatching_SampleNation99": 19,
+        "rowsMatching_okina": [
+          "Sample Nation ʻOkina"
+        ]
+      },
+      "timingCpuSlowedFourTimes": {
+        "readyMilliseconds": 1785.8999999994412,
+        "domContentLoadedMilliseconds": 1036,
+        "elementCount": 11042
+      },
+      "interactionCpuSlowedFourTimes": {
+        "rowsInDocument": 1000,
+        "firstClickMilliseconds": 824.7,
+        "afterFirstClick": {
+          "ariaSort": "descending",
+          "firstRows": [
+            "Sample Nation Zebra",
+            "Sample Nation Ž",
+            "Sample Nation Ø"
+          ]
+        },
+        "secondClickMilliseconds": 623.6,
+        "afterSecondClick": {
+          "ariaSort": "ascending",
+          "firstRows": [
+            "Sample Nation 2",
+            "Sample Nation 3",
+            "Sample Nation 10"
+          ]
+        },
+        "sortClickMillisecondsMedian": 623.6,
+        "sortClickMillisecondsAll": [
+          824.7,
+          623.6,
+          540.2,
+          614.6,
+          642.1,
+          617.2,
+          691.9
+        ],
+        "searchMilliseconds": 124.4,
+        "rowsMatching_SampleNation99": 19
+      },
+      "structure": {
+        "tableElements": 1,
+        "captions": 1,
+        "columnHeadersWithScope": 7,
+        "rowHeadersWithScope": 1000,
+        "gridRoles": 0,
+        "rowRoles": 0,
+        "gridcellRoles": 0,
+        "sortButtons": 6,
+        "columnHeadersFocusable": 0,
+        "searchHasLabel": true
+      },
+      "keyboard": {
+        "tabPressesToNationSort": 3,
+        "enterSorts": true,
+        "spaceSorts": true
+      },
+      "axe_light": [],
+      "colors_light": {
+        "page": {
+          "color": "rgb(34, 32, 30)",
+          "background": "rgb(255, 250, 245)"
+        },
+        "header": {
+          "color": "rgb(34, 32, 30)",
+          "background": "rgb(246, 238, 230)"
+        },
+        "cell": {
+          "color": "rgb(34, 32, 30)",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "tokenSurface": "rgb(246, 238, 230)",
+        "tokenInk": "rgb(34, 32, 30)"
+      },
+      "axe_dark": [],
+      "colors_dark": {
+        "page": {
+          "color": "rgb(243, 239, 234)",
+          "background": "rgb(15, 30, 33)"
+        },
+        "header": {
+          "color": "rgb(243, 239, 234)",
+          "background": "rgb(22, 41, 45)"
+        },
+        "cell": {
+          "color": "rgb(243, 239, 234)",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "tokenSurface": "rgb(22, 41, 45)",
+        "tokenInk": "rgb(243, 239, 234)"
+      },
+      "narrowScreen": {
+        "pageScrollsSideways": false,
+        "pageWidth": 320,
+        "tableBoxScrolls": true
+      }
+    },
+    {
+      "route": "/tanstack/",
+      "label": "TanStack Table v9",
+      "html": {
+        "bytes": 1182998,
+        "gzipBytes": 65904,
+        "tableRowsInPrerenderedHtml": 1000
+      },
+      "withoutScripts": {
+        "visibleRows": 1000,
+        "lastNameFindable": true
+      },
+      "scripts": {
+        "files": 13,
+        "bytes": 154107,
+        "gzipBytes": 56535,
+        "list": [
+          {
+            "url": "/_app/immutable/entry/start.DcWfaUKi.js",
+            "bytes": 522,
+            "gzipBytes": 312
+          },
+          {
+            "url": "/_app/immutable/entry/payload.DSmR2FwN.js",
+            "bytes": 65,
+            "gzipBytes": 77
+          },
+          {
+            "url": "/_app/immutable/chunks/DclECHGd.js",
+            "bytes": 1630,
+            "gzipBytes": 828
+          },
+          {
+            "url": "/_app/immutable/chunks/C79KqgC3.js",
+            "bytes": 4622,
+            "gzipBytes": 2071
+          },
+          {
+            "url": "/_app/immutable/entry/app.fQxWhknG.js",
+            "bytes": 2364,
+            "gzipBytes": 879
+          },
+          {
+            "url": "/_app/immutable/nodes/0.DE4MQoDx.js",
+            "bytes": 399,
+            "gzipBytes": 314
+          },
+          {
+            "url": "/_app/immutable/chunks/BvXqPJhV.js",
+            "bytes": 58289,
+            "gzipBytes": 22116
+          },
+          {
+            "url": "/_app/immutable/chunks/AtXoACCF.js",
+            "bytes": 931,
+            "gzipBytes": 526
+          },
+          {
+            "url": "/_app/immutable/chunks/DOmQjifM.js",
+            "bytes": 883,
+            "gzipBytes": 525
+          },
+          {
+            "url": "/_app/immutable/chunks/pDCF3lp7.js",
+            "bytes": 1418,
+            "gzipBytes": 803
+          },
+          {
+            "url": "/_app/immutable/nodes/10.ChpTkxEk.js",
+            "bytes": 40523,
+            "gzipBytes": 12415
+          },
+          {
+            "url": "/_app/immutable/chunks/DNtKlRM5.js",
+            "bytes": 42137,
+            "gzipBytes": 15421
+          },
+          {
+            "url": "/_app/immutable/nodes/1.B3cJyttM.js",
+            "bytes": 324,
+            "gzipBytes": 248
+          }
+        ]
+      },
+      "styles": {
+        "bytes": 3788,
+        "gzipBytes": 1241
+      },
+      "requestsToOtherHosts": [],
+      "timing": {
+        "readyMilliseconds": 675.0999999996275,
+        "domContentLoadedMilliseconds": 333.09999999962747,
+        "elementCount": 11056
+      },
+      "interaction": {
+        "rowsInDocument": 1000,
+        "firstClickMilliseconds": 169.8,
+        "afterFirstClick": {
+          "ariaSort": "descending",
+          "firstRows": [
+            "Sample Nation Zebra",
+            "Sample Nation Ž",
+            "Sample Nation Ø"
+          ]
+        },
+        "secondClickMilliseconds": 171.5,
+        "afterSecondClick": {
+          "ariaSort": "ascending",
+          "firstRows": [
+            "Sample Nation 2",
+            "Sample Nation 3",
+            "Sample Nation 10"
+          ]
+        },
+        "sortClickMillisecondsMedian": 194.9,
+        "sortClickMillisecondsAll": [
+          169.8,
+          171.5,
+          254.9,
+          162.8,
+          194.9,
+          198.8,
+          221
+        ],
+        "descendingNameOrderOfTestRows": [
+          "Sample Nation Zebra",
+          "Sample Nation Ž",
+          "Sample Nation Ø",
+          "sample nation lowercase",
+          "Sample Nation ʻOkina",
+          "Sample Nation É",
+          "Sample Nation Aardvark",
+          "Sample Nation Ä",
+          "Sample Nation Å",
+          "Sample Nation 1000",
+          "Sample Nation 999",
+          "Sample Nation 998",
+          "Sample Nation 997"
+        ],
+        "lastVerifiedAfterOneClick": "January 1, 2025",
+        "searchMilliseconds": 58.2,
+        "rowsMatching_SampleNation99": 19,
+        "rowsMatching_okina": [
+          "Sample Nation ʻOkina"
+        ]
+      },
+      "timingCpuSlowedFourTimes": {
+        "readyMilliseconds": 2988.5999999996275,
+        "domContentLoadedMilliseconds": 1015.2999999998137,
+        "elementCount": 11056
+      },
+      "interactionCpuSlowedFourTimes": {
+        "rowsInDocument": 1000,
+        "firstClickMilliseconds": 750.7,
+        "afterFirstClick": {
+          "ariaSort": "descending",
+          "firstRows": [
+            "Sample Nation Zebra",
+            "Sample Nation Ž",
+            "Sample Nation Ø"
+          ]
+        },
+        "secondClickMilliseconds": 782.6,
+        "afterSecondClick": {
+          "ariaSort": "ascending",
+          "firstRows": [
+            "Sample Nation 2",
+            "Sample Nation 3",
+            "Sample Nation 10"
+          ]
+        },
+        "sortClickMillisecondsMedian": 782.6,
+        "sortClickMillisecondsAll": [
+          750.7,
+          782.6,
+          912.3,
+          616.1,
+          822.2,
+          697.1,
+          809.2
+        ],
+        "searchMilliseconds": 268,
+        "rowsMatching_SampleNation99": 19
+      },
+      "structure": {
+        "tableElements": 1,
+        "captions": 1,
+        "columnHeadersWithScope": 7,
+        "rowHeadersWithScope": 1000,
+        "gridRoles": 0,
+        "rowRoles": 0,
+        "gridcellRoles": 0,
+        "sortButtons": 6,
+        "columnHeadersFocusable": 0,
+        "searchHasLabel": true
+      },
+      "keyboard": {
+        "tabPressesToNationSort": 3,
+        "enterSorts": true,
+        "spaceSorts": true
+      },
+      "axe_light": [],
+      "colors_light": {
+        "page": {
+          "color": "rgb(34, 32, 30)",
+          "background": "rgb(255, 250, 245)"
+        },
+        "header": {
+          "color": "rgb(34, 32, 30)",
+          "background": "rgb(246, 238, 230)"
+        },
+        "cell": {
+          "color": "rgb(34, 32, 30)",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "tokenSurface": "rgb(246, 238, 230)",
+        "tokenInk": "rgb(34, 32, 30)"
+      },
+      "axe_dark": [],
+      "colors_dark": {
+        "page": {
+          "color": "rgb(243, 239, 234)",
+          "background": "rgb(15, 30, 33)"
+        },
+        "header": {
+          "color": "rgb(243, 239, 234)",
+          "background": "rgb(22, 41, 45)"
+        },
+        "cell": {
+          "color": "rgb(243, 239, 234)",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "tokenSurface": "rgb(22, 41, 45)",
+        "tokenInk": "rgb(243, 239, 234)"
+      },
+      "narrowScreen": {
+        "pageScrollsSideways": false,
+        "pageWidth": 320,
+        "tableBoxScrolls": true
+      }
+    },
+    {
+      "route": "/svar/",
+      "label": "SVAR Svelte DataGrid",
+      "html": {
+        "bytes": 443716,
+        "gzipBytes": 35126,
+        "tableRowsInPrerenderedHtml": 0
+      },
+      "withoutScripts": {
+        "visibleRows": 3,
+        "lastNameFindable": false
+      },
+      "scripts": {
+        "files": 12,
+        "bytes": 233933,
+        "gzipBytes": 83058,
+        "list": [
+          {
+            "url": "/_app/immutable/entry/start.DcWfaUKi.js",
+            "bytes": 522,
+            "gzipBytes": 312
+          },
+          {
+            "url": "/_app/immutable/entry/payload.DSmR2FwN.js",
+            "bytes": 65,
+            "gzipBytes": 77
+          },
+          {
+            "url": "/_app/immutable/chunks/DclECHGd.js",
+            "bytes": 1630,
+            "gzipBytes": 828
+          },
+          {
+            "url": "/_app/immutable/chunks/C79KqgC3.js",
+            "bytes": 4622,
+            "gzipBytes": 2071
+          },
+          {
+            "url": "/_app/immutable/chunks/DNtKlRM5.js",
+            "bytes": 42137,
+            "gzipBytes": 15421
+          },
+          {
+            "url": "/_app/immutable/entry/app.fQxWhknG.js",
+            "bytes": 2364,
+            "gzipBytes": 879
+          },
+          {
+            "url": "/_app/immutable/nodes/0.DE4MQoDx.js",
+            "bytes": 399,
+            "gzipBytes": 314
+          },
+          {
+            "url": "/_app/immutable/chunks/FfBmQ6CB.js",
+            "bytes": 39,
+            "gzipBytes": 59
+          },
+          {
+            "url": "/_app/immutable/chunks/AtXoACCF.js",
+            "bytes": 931,
+            "gzipBytes": 526
+          },
+          {
+            "url": "/_app/immutable/chunks/BvXqPJhV.js",
+            "bytes": 58289,
+            "gzipBytes": 22116
+          },
+          {
+            "url": "/_app/immutable/nodes/9.C750sT3K.js",
+            "bytes": 122611,
+            "gzipBytes": 40207
+          },
+          {
+            "url": "/_app/immutable/nodes/1.B3cJyttM.js",
+            "bytes": 324,
+            "gzipBytes": 248
+          }
+        ]
+      },
+      "styles": {
+        "bytes": 56716,
+        "gzipBytes": 8727
+      },
+      "requestsToOtherHosts": [],
+      "timing": {
+        "readyMilliseconds": 198.80000000074506,
+        "domContentLoadedMilliseconds": 70.40000000037253,
+        "elementCount": 283
+      },
+      "interaction": {
+        "rowsInDocument": 20,
+        "firstClickMilliseconds": 21.5,
+        "afterFirstClick": {
+          "ariaSort": "descending",
+          "firstRows": [
+            "Sample Nation Zebra",
+            "Sample Nation Ž",
+            "Sample Nation Ø"
+          ]
+        },
+        "secondClickMilliseconds": 24.1,
+        "afterSecondClick": {
+          "ariaSort": "ascending",
+          "firstRows": [
+            "Sample Nation 2",
+            "Sample Nation 3",
+            "Sample Nation 10"
+          ]
+        },
+        "sortClickMillisecondsMedian": 19.2,
+        "sortClickMillisecondsAll": [
+          21.5,
+          24.1,
+          14.2,
+          21,
+          16.5,
+          12.8,
+          19.2
+        ],
+        "descendingNameOrderOfTestRows": [
+          "Sample Nation Zebra",
+          "Sample Nation Ž",
+          "Sample Nation Ø",
+          "sample nation lowercase",
+          "Sample Nation ʻOkina",
+          "Sample Nation É",
+          "Sample Nation Aardvark",
+          "Sample Nation Ä",
+          "Sample Nation Å",
+          "Sample Nation 1000",
+          "Sample Nation 999",
+          "Sample Nation 998",
+          "Sample Nation 997"
+        ],
+        "lastVerifiedAfterOneClick": "January 1, 2025",
+        "searchMilliseconds": 14,
+        "rowsMatching_SampleNation99": 19,
+        "rowsMatching_okina": [
+          "Sample Nation ʻOkina"
+        ]
+      },
+      "timingCpuSlowedFourTimes": {
+        "readyMilliseconds": 850.1999999992549,
+        "domContentLoadedMilliseconds": 244.19999999925494,
+        "elementCount": 283
+      },
+      "interactionCpuSlowedFourTimes": {
+        "rowsInDocument": 20,
+        "firstClickMilliseconds": 99.5,
+        "afterFirstClick": {
+          "ariaSort": "descending",
+          "firstRows": [
+            "Sample Nation Zebra",
+            "Sample Nation Ž",
+            "Sample Nation Ø"
+          ]
+        },
+        "secondClickMilliseconds": 85.3,
+        "afterSecondClick": {
+          "ariaSort": "ascending",
+          "firstRows": [
+            "Sample Nation 2",
+            "Sample Nation 3",
+            "Sample Nation 10"
+          ]
+        },
+        "sortClickMillisecondsMedian": 73.6,
+        "sortClickMillisecondsAll": [
+          99.5,
+          85.3,
+          73.6,
+          67.3,
+          59.2,
+          93.9,
+          59
+        ],
+        "searchMilliseconds": 79.3,
+        "rowsMatching_SampleNation99": 19
+      },
+      "structure": {
+        "tableElements": 0,
+        "captions": 0,
+        "columnHeadersWithScope": 0,
+        "rowHeadersWithScope": 0,
+        "gridRoles": 1,
+        "rowRoles": 21,
+        "gridcellRoles": 140,
+        "sortButtons": 0,
+        "columnHeadersFocusable": 6,
+        "searchHasLabel": true
+      },
+      "keyboard": {
+        "tabPressesToNationSort": 2,
+        "enterSorts": true,
+        "spaceSorts": true
+      },
+      "axe_light": [
+        {
+          "id": "aria-valid-attr-value",
+          "impact": "critical",
+          "nodes": 1,
+          "help": "ARIA attributes must conform to valid values",
+          "firstTarget": "div[data-id=\":sample-nation-2-0010\"]",
+          "firstSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-rowindex=\"0\""
+        },
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "nodes": 1,
+          "help": "All touch targets must be 24px large, or leave sufficient space",
+          "firstTarget": "div[data-row-id=\":sample-nation-2-0010\"][data-col-id=\":name\"][aria-colindex=\"1\"] > a[href$=\"sample-nation-2-0010\"]",
+          "firstSummary": "Fix any of the following:\n  Target has insufficient size (103.5px by 16px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 16px instead of at least 24px."
+        }
+      ],
+      "colors_light": {
+        "page": {
+          "color": "rgb(34, 32, 30)",
+          "background": "rgb(255, 250, 245)"
+        },
+        "header": {
+          "color": "rgb(44, 47, 60)",
+          "background": "rgb(242, 243, 247)"
+        },
+        "cell": {
+          "color": "rgb(44, 47, 60)",
+          "background": "rgb(255, 255, 255)"
+        },
+        "tokenSurface": "rgb(246, 238, 230)",
+        "tokenInk": "rgb(34, 32, 30)"
+      },
+      "axe_dark": [
+        {
+          "id": "aria-valid-attr-value",
+          "impact": "critical",
+          "nodes": 1,
+          "help": "ARIA attributes must conform to valid values",
+          "firstTarget": "div[data-id=\":sample-nation-2-0010\"]",
+          "firstSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-rowindex=\"0\""
+        },
+        {
+          "id": "target-size",
+          "impact": "serious",
+          "nodes": 1,
+          "help": "All touch targets must be 24px large, or leave sufficient space",
+          "firstTarget": "div[data-row-id=\":sample-nation-2-0010\"][data-col-id=\":name\"][aria-colindex=\"1\"] > a[href$=\"sample-nation-2-0010\"]",
+          "firstSummary": "Fix any of the following:\n  Target has insufficient size (103.5px by 16px, should be at least 24px by 24px)\n  Target has insufficient space to its closest neighbors. Safe clickable space has a diameter of 16px instead of at least 24px."
+        }
+      ],
+      "colors_dark": {
+        "page": {
+          "color": "rgb(243, 239, 234)",
+          "background": "rgb(15, 30, 33)"
+        },
+        "header": {
+          "color": "rgba(255, 255, 255, 0.9)",
+          "background": "rgb(32, 38, 43)"
+        },
+        "cell": {
+          "color": "rgba(255, 255, 255, 0.9)",
+          "background": "rgb(42, 43, 45)"
+        },
+        "tokenSurface": "rgb(22, 41, 45)",
+        "tokenInk": "rgb(243, 239, 234)"
+      },
+      "narrowScreen": {
+        "pageScrollsSideways": false,
+        "pageWidth": 320,
+        "tableBoxScrolls": false
+      }
+    },
+    {
+      "route": "/simple-datatables/",
+      "label": "simple-datatables",
+      "html": {
+        "bytes": 752680,
+        "gzipBytes": 32577,
+        "tableRowsInPrerenderedHtml": 1000
+      },
+      "withoutScripts": {
+        "visibleRows": 1000,
+        "lastNameFindable": true
+      },
+      "scripts": {
+        "files": 1,
+        "bytes": 80876,
+        "gzipBytes": 23202,
+        "list": [
+          {
+            "url": "/enhancers/simple-datatables.js",
+            "bytes": 80876,
+            "gzipBytes": 23202
+          }
+        ]
+      },
+      "styles": {
+        "bytes": 8687,
+        "gzipBytes": 2341
+      },
+      "requestsToOtherHosts": [],
+      "timing": {
+        "readyMilliseconds": 1022.6999999992549,
+        "domContentLoadedMilliseconds": 874.1999999992549,
+        "elementCount": 11042
+      },
+      "interaction": {
+        "rowsInDocument": 1000,
+        "firstClickMilliseconds": 312.3,
+        "afterFirstClick": {
+          "ariaSort": "descending",
+          "firstRows": [
+            "Sample Nation Zebra",
+            "Sample Nation Ž",
+            "Sample Nation Ø"
+          ]
+        },
+        "secondClickMilliseconds": 216.6,
+        "afterSecondClick": {
+          "ariaSort": "ascending",
+          "firstRows": [
+            "Sample Nation 2",
+            "Sample Nation 3",
+            "Sample Nation 10"
+          ]
+        },
+        "sortClickMillisecondsMedian": 226.7,
+        "sortClickMillisecondsAll": [
+          312.3,
+          216.6,
+          242.8,
+          182.9,
+          187.3,
+          226.7,
+          228.9
+        ],
+        "descendingNameOrderOfTestRows": [
+          "Sample Nation Zebra",
+          "Sample Nation Ž",
+          "Sample Nation Ø",
+          "sample nation lowercase",
+          "Sample Nation ʻOkina",
+          "Sample Nation É",
+          "Sample Nation Aardvark",
+          "Sample Nation Ä",
+          "Sample Nation Å",
+          "Sample Nation 1000",
+          "Sample Nation 999",
+          "Sample Nation 998",
+          "Sample Nation 997"
+        ],
+        "lastVerifiedAfterOneClick": "January 1, 2025",
+        "searchMilliseconds": 49,
+        "rowsMatching_SampleNation99": 19,
+        "rowsMatching_okina": [
+          "Sample Nation ʻOkina"
+        ]
+      },
+      "timingCpuSlowedFourTimes": {
+        "readyMilliseconds": 5449,
+        "domContentLoadedMilliseconds": 4885.600000000559,
+        "elementCount": 11042
+      },
+      "interactionCpuSlowedFourTimes": {
+        "rowsInDocument": 1000,
+        "firstClickMilliseconds": 1172.3,
+        "afterFirstClick": {
+          "ariaSort": "descending",
+          "firstRows": [
+            "Sample Nation Zebra",
+            "Sample Nation Ž",
+            "Sample Nation Ø"
+          ]
+        },
+        "secondClickMilliseconds": 868.4,
+        "afterSecondClick": {
+          "ariaSort": "ascending",
+          "firstRows": [
+            "Sample Nation 2",
+            "Sample Nation 3",
+            "Sample Nation 10"
+          ]
+        },
+        "sortClickMillisecondsMedian": 965.8,
+        "sortClickMillisecondsAll": [
+          1172.3,
+          868.4,
+          903.2,
+          1039.4,
+          892.2,
+          965.8,
+          985.1
+        ],
+        "searchMilliseconds": 181,
+        "rowsMatching_SampleNation99": 19
+      },
+      "structure": {
+        "tableElements": 1,
+        "captions": 1,
+        "columnHeadersWithScope": 7,
+        "rowHeadersWithScope": 0,
+        "gridRoles": 0,
+        "rowRoles": 0,
+        "gridcellRoles": 0,
+        "sortButtons": 6,
+        "columnHeadersFocusable": 0,
+        "searchHasLabel": true
+      },
+      "keyboard": {
+        "tabPressesToNationSort": 3,
+        "enterSorts": true,
+        "spaceSorts": true
+      },
+      "axe_light": [
+        {
+          "id": "scope-attr-valid",
+          "impact": "moderate",
+          "nodes": 1000,
+          "help": "scope attribute should be used correctly",
+          "firstTarget": "tr[data-index=\"0\"] > td[scope=\"row\"]",
+          "firstSummary": "Fix all of the following:\n  In HTML 5, scope attributes may only be used on table header elements (<th>)"
+        }
+      ],
+      "colors_light": {
+        "page": {
+          "color": "rgb(34, 32, 30)",
+          "background": "rgb(255, 250, 245)"
+        },
+        "header": {
+          "color": "rgb(34, 32, 30)",
+          "background": "rgb(246, 238, 230)"
+        },
+        "cell": {
+          "color": "rgb(34, 32, 30)",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "tokenSurface": "rgb(246, 238, 230)",
+        "tokenInk": "rgb(34, 32, 30)"
+      },
+      "axe_dark": [
+        {
+          "id": "scope-attr-valid",
+          "impact": "moderate",
+          "nodes": 1000,
+          "help": "scope attribute should be used correctly",
+          "firstTarget": "tr[data-index=\"0\"] > td[scope=\"row\"]",
+          "firstSummary": "Fix all of the following:\n  In HTML 5, scope attributes may only be used on table header elements (<th>)"
+        }
+      ],
+      "colors_dark": {
+        "page": {
+          "color": "rgb(243, 239, 234)",
+          "background": "rgb(15, 30, 33)"
+        },
+        "header": {
+          "color": "rgb(243, 239, 234)",
+          "background": "rgb(22, 41, 45)"
+        },
+        "cell": {
+          "color": "rgb(243, 239, 234)",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "tokenSurface": "rgb(22, 41, 45)",
+        "tokenInk": "rgb(243, 239, 234)"
+      },
+      "narrowScreen": {
+        "pageScrollsSideways": false,
+        "pageWidth": 320,
+        "tableBoxScrolls": true
+      }
+    },
+    {
+      "route": "/datatables/",
+      "label": "DataTables 3",
+      "html": {
+        "bytes": 752654,
+        "gzipBytes": 32581,
+        "tableRowsInPrerenderedHtml": 1000
+      },
+      "withoutScripts": {
+        "visibleRows": 1000,
+        "lastNameFindable": true
+      },
+      "scripts": {
+        "files": 1,
+        "bytes": 127616,
+        "gzipBytes": 43562,
+        "list": [
+          {
+            "url": "/enhancers/datatables.js",
+            "bytes": 127616,
+            "gzipBytes": 43562
+          }
+        ]
+      },
+      "styles": {
+        "bytes": 33795,
+        "gzipBytes": 5083
+      },
+      "requestsToOtherHosts": [],
+      "timing": {
+        "readyMilliseconds": 754.5999999996275,
+        "domContentLoadedMilliseconds": 634.2000000001863,
+        "elementCount": 11069
+      },
+      "interaction": {
+        "rowsInDocument": 1000,
+        "firstClickMilliseconds": 167.8,
+        "afterFirstClick": {
+          "ariaSort": "descending",
+          "firstRows": [
+            "Sample Nation Zebra",
+            "Sample Nation Ž",
+            "Sample Nation Ø"
+          ]
+        },
+        "secondClickMilliseconds": 183.9,
+        "afterSecondClick": {
+          "ariaSort": null,
+          "firstRows": [
+            "Sample Nation 2",
+            "Sample Nation 3",
+            "Sample Nation 10"
+          ]
+        },
+        "sortClickMillisecondsMedian": 167.8,
+        "sortClickMillisecondsAll": [
+          167.8,
+          183.9,
+          131.6,
+          136.9,
+          113.1,
+          177.5,
+          200.7
+        ],
+        "descendingNameOrderOfTestRows": [
+          "Sample Nation Zebra",
+          "Sample Nation Ž",
+          "Sample Nation Ø",
+          "sample nation lowercase",
+          "Sample Nation ʻOkina",
+          "Sample Nation É",
+          "Sample Nation Aardvark",
+          "Sample Nation Ä",
+          "Sample Nation Å",
+          "Sample Nation 1000",
+          "Sample Nation 999",
+          "Sample Nation 998",
+          "Sample Nation 997"
+        ],
+        "lastVerifiedAfterOneClick": "January 1, 2025",
+        "searchMilliseconds": 18.3,
+        "rowsMatching_SampleNation99": 19,
+        "rowsMatching_okina": [
+          "Sample Nation ʻOkina"
+        ]
+      },
+      "timingCpuSlowedFourTimes": {
+        "readyMilliseconds": 3638.5,
+        "domContentLoadedMilliseconds": 2921.2000000001863,
+        "elementCount": 11069
+      },
+      "interactionCpuSlowedFourTimes": {
+        "rowsInDocument": 1000,
+        "firstClickMilliseconds": 743.3,
+        "afterFirstClick": {
+          "ariaSort": "descending",
+          "firstRows": [
+            "Sample Nation Zebra",
+            "Sample Nation Ž",
+            "Sample Nation Ø"
+          ]
+        },
+        "secondClickMilliseconds": 731.8,
+        "afterSecondClick": {
+          "ariaSort": null,
+          "firstRows": [
+            "Sample Nation 2",
+            "Sample Nation 3",
+            "Sample Nation 10"
+          ]
+        },
+        "sortClickMillisecondsMedian": 746.6,
+        "sortClickMillisecondsAll": [
+          743.3,
+          731.8,
+          779.4,
+          746.6,
+          700.3,
+          901.3,
+          832.5
+        ],
+        "searchMilliseconds": 81.1,
+        "rowsMatching_SampleNation99": 19
+      },
+      "structure": {
+        "tableElements": 1,
+        "captions": 1,
+        "columnHeadersWithScope": 7,
+        "rowHeadersWithScope": 1000,
+        "gridRoles": 0,
+        "rowRoles": 0,
+        "gridcellRoles": 0,
+        "sortButtons": 0,
+        "columnHeadersFocusable": 0,
+        "searchHasLabel": true
+      },
+      "keyboard": {
+        "tabPressesToNationSort": 3,
+        "enterSorts": true,
+        "spaceSorts": false
+      },
+      "axe_light": [],
+      "colors_light": {
+        "page": {
+          "color": "rgb(34, 32, 30)",
+          "background": "rgb(255, 250, 245)"
+        },
+        "header": {
+          "color": "rgb(34, 32, 30)",
+          "background": "rgb(246, 238, 230)"
+        },
+        "cell": {
+          "color": "rgb(34, 32, 30)",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "tokenSurface": "rgb(246, 238, 230)",
+        "tokenInk": "rgb(34, 32, 30)"
+      },
+      "axe_dark": [],
+      "colors_dark": {
+        "page": {
+          "color": "rgb(243, 239, 234)",
+          "background": "rgb(15, 30, 33)"
+        },
+        "header": {
+          "color": "rgb(243, 239, 234)",
+          "background": "rgb(22, 41, 45)"
+        },
+        "cell": {
+          "color": "rgb(243, 239, 234)",
+          "background": "rgba(0, 0, 0, 0)"
+        },
+        "tokenSurface": "rgb(22, 41, 45)",
+        "tokenInk": "rgb(243, 239, 234)"
+      },
+      "narrowScreen": {
+        "pageScrollsSideways": false,
+        "pageWidth": 320,
+        "tableBoxScrolls": true
+      }
+    }
+  ],
+  "ebook": {
+    "axe": [],
+    "rowHeaders": 1000
+  }
+}

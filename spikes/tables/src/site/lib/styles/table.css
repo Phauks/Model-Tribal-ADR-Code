@@ -1,0 +1,95 @@
+/* Shared table look, used by every candidate that renders its own markup.
+   Wide tables scroll inside their own box; the page never scrolls sideways
+   (site/DESIGN.md, sections 6 and 9). */
+
+.table-scroll {
+  /* position: relative keeps the hidden link text (position: absolute) inside
+     the box; without it, that text widens the page at 320 px (measured). */
+  position: relative;
+  overflow-x: auto;
+  max-width: 100%;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-control);
+}
+.table-scroll:focus-visible { background: none; }
+
+table.data-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: var(--font-size-small);
+}
+table.data-table caption {
+  text-align: start;
+  font-weight: 700;
+  padding: var(--space-3) var(--space-3) var(--space-2);
+}
+table.data-table th,
+table.data-table td {
+  text-align: start;
+  vertical-align: top;
+  padding: var(--space-2) var(--space-3);
+  border-top: 1px solid var(--color-line);
+  white-space: nowrap;
+}
+table.data-table thead th {
+  background: var(--color-surface);
+  border-top: none;
+  border-bottom: 2px solid var(--color-control-border);
+}
+table.data-table .align-end { text-align: end; }
+table.data-table th[scope='row'] { font-weight: 700; }
+
+.sort-button {
+  font: inherit;
+  font-weight: 700;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  min-height: 24px;
+  cursor: pointer;
+  display: inline-flex;
+  gap: var(--space-1);
+  align-items: center;
+}
+.sort-indicator { color: var(--color-ink-muted); }
+
+.table-tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  align-items: end;
+  margin-block: var(--space-4);
+}
+.table-tools label { display: block; font-weight: 700; }
+.table-tools input {
+  font: inherit;
+  min-height: var(--layout-target-minimum);
+  padding: 0 var(--space-3);
+  border: 2px solid var(--color-control-border);
+  border-radius: var(--radius-control);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  max-width: 100%;
+  box-sizing: border-box;
+}
+.table-status { margin: 0; color: var(--color-ink-muted); }
+.visually-hidden {
+  position: absolute !important;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Experiment: let the browser skip layout and painting of rows that are
+   off screen. The rows stay in the page, so find-in-page and screen readers
+   still reach them. */
+.skip-offscreen-rows tbody {
+  content-visibility: auto;
+}
+.skip-offscreen-rows tbody tr {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 2.6rem;
+}
