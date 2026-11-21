@@ -4,8 +4,18 @@ nations:
 - southern-ute-indian-tribe-of-the-southern-ute-reservation
 kind: historical-account
 length: book
-summary: The Tribe's 1972 history describes peace meetings and treaties between the Utes and the Spanish, including
-  a meeting at Pecos in 1786 and a treaty in 1789.
+excerpts:
+- telling: tribal-history-1972
+  locator: chapter on Spanish relations
+  text: A peace between the groups was not established until 1786 when the Utes, the Comanches and the Spanish met
+    at Pecos.
+  words: 21
+  sha256: 2f877ffc589ac5db0f7fa50a0e2bb4122d019003a2c5f1edc8486a4ba7b822ba
+- telling: tribal-history-1972
+  locator: same passage
+  text: In support of these alliances a second peace treaty between the Utes and the Spanish was signed in 1789.
+  words: 19
+  sha256: 5b659449fa0327fe779202ea45528fe0b484f43abe81ec18533d58fb8bfe26c6
 methods:
 - negotiation
 topics:
@@ -22,7 +32,7 @@ tellings:
   authority: nation-government
   verification: read-in-full
   permitted_uses:
-    level: reference-only
+    level: quote
     scope:
     - web
     - print

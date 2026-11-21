@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/story.schema.json",
   "title": "Story",
-  "description": "One story, account or teaching about resolving disputes, making peace or restoring relationships, as a Native nation or its people tell it, with every known telling. A telling cites its own published source record directly, or a private contributor filing. The record never holds the story's text: it describes, credits and points. Stored as content/stories/<first letter of id, or _other>/<id>.yaml (decision record 0019).",
+  "description": "One story, account or teaching about resolving disputes, making peace or restoring relationships, as a Native nation or its people tell it, with every known telling. A telling cites its own published source record directly, or a private contributor filing. The project never retells a story in its own words: the record quotes the telling exactly, as far as the rights allow, and otherwise points to it. Stored as content/stories/<first letter of id, or _other>/<id>.yaml (decision record 0019).",
   "type": "object",
   "additionalProperties": false,
   "required": ["id", "title", "nations", "kind", "tellings", "access", "found_in"],
@@ -49,9 +49,22 @@
       "enum": ["paragraph", "short", "long", "book", "audio-video"],
       "description": "Of the longest telling cited. short: under about 1,500 words."
     },
-    "summary": {
-      "type": "string",
-      "description": "One or two neutral sentences, in the project's own words, on what the story concerns and how it bears on resolving disputes. Never a retelling. Leave out when a protocol bars describing the content."
+    "excerpts": {
+      "type": "array",
+      "description": "The story in the nation's or teller's own words, quoted exactly from a telling, with a pinpoint. The project does not retell or summarize stories. Without permission an excerpt is a short passage (50 words or fewer) and only where the telling's permitted_uses allow quotation; otherwise the exact words are kept privately and the record carries only the pinpoint and fingerprint. The whole story is reproduced only with permission (permitted_uses level publish-in-full).",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["telling", "locator", "sha256", "words"],
+        "properties": {
+          "telling": { "type": "string", "description": "Id of the telling quoted." },
+          "locator": { "type": "string", "description": "Where in the telling: page, section, paragraph or the words it begins with." },
+          "text": { "type": "string", "description": "The exact words, unchanged except for whitespace. Present only when the telling's permitted_uses level is quote or publish-in-full." },
+          "held_privately": { "type": "boolean", "description": "True when the exact words are kept in the project's private files (for example a Tribal law, a court opinion, or a publisher that asks to be asked first) and not in the repository." },
+          "words": { "type": "integer", "minimum": 1, "description": "Number of words in the exact excerpt." },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$", "description": "SHA-256 of the exact excerpt (UTF-8, NFC, whitespace collapsed to single spaces), so a private excerpt can be checked without publishing it." }
+        }
+      }
     },
     "methods": { "$ref": "common.schema.json#/$defs/methodIds" },
     "topics": {

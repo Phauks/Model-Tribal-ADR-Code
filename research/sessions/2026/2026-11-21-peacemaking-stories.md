@@ -93,8 +93,11 @@ limits: >-
   This is a first sweep of what nations publish on the open web. Many nations
   keep their stories off the web on purpose, so "none found" says nothing about
   whether a nation has such stories. Books were read at catalog level only.
-  No story text was copied into the repository; the helpers' saved copies stay
-  in the session's private scratch space. The Navajo Nation Judicial Branch's
+  The helpers' saved copies stay in the session's private scratch space. After
+  the lead author asked that stories not be rewritten, the records' summaries
+  were replaced by short exact excerpts, each checked by script against the
+  saved copy; three that come from Tribal law, a court opinion or a publisher
+  that asks to be asked first are kept in the project's private files. The Navajo Nation Judicial Branch's
   peacemaking history page, Sealaska Heritage Institute's War and Peace exhibit
   site and the Oneida Indian Nation's Tree of Peace page were not read. Not
   searched for lack of time: Tonawanda, Cayuga, Tuscarora, Passamaquoddy,
@@ -110,6 +113,8 @@ limits: >-
   agreed with the contributor intake forms thread.
 - Twenty story records in `content/stories/`, from eighteen nations and the
   Native Hawaiian community, and thirty-four new source records.
+- Twenty-five excerpts in the tellers' own words across nineteen of the
+  stories, replacing the project's summaries.
 - The catalog and anthology shortlist in
   [research/analyses/2026-11-21-peacemaking-stories.md](../../analyses/2026-11-21-peacemaking-stories.md).
 - Nine library and database pulls, added as section 10 of the project's single

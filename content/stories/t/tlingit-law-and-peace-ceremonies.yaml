@@ -4,9 +4,18 @@ nations:
 - central-council-of-the-tlingit-and-haida-indian-tribes
 kind: historical-account
 length: book
-summary: 'Sealaska Heritage Institute''s accounts of Tlingit law: the clan, not the individual, answers for a wrong;
-  compensation is owed for injury or death; and peace ceremonies ended conflicts and restored balance. The Institute
-  also describes clashes when Tlingit followed their own law in the nineteenth century.'
+excerpts:
+- telling: shi-worl-2020
+  locator: publisher's description of the booklet
+  text: Tlingit law is based on a group orientation, rather than the individualistic system in American law. The
+    entire clan is responsible for any wrong-doing committed by any individual clan member.
+  words: 30
+  sha256: 8fecaac5be4f3ea2dccfb1b04e760f43c3d97a27b1c31abeecb66cac38609f60
+- telling: shi-war-and-peace-2021
+  locator: '"About the Exhibit", quoting SHI President Rosita Worl'
+  text: less known is the existence of Tlingit law and the traditional mechanisms for resolving conflicts and disputes,
+  words: 17
+  sha256: d267ca80fbb885722bbd39c259ca72bd742999f817b4624500fdebe503df4462
 methods:
 - customary-dispute-resolution
 topics:
@@ -26,7 +35,7 @@ tellings:
   authority: native-organization
   verification: title-only
   permitted_uses: &id001
-    level: reference-only
+    level: quote
     scope:
     - web
     - print
@@ -51,7 +60,13 @@ tellings:
   published_by: Juneau Empire
   authority: outside-recorder
   verification: read-in-full
-  permitted_uses: *id001
+  permitted_uses:
+    level: reference-only
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
   access: *id002
   note: Newspaper report on the exhibit's opening.
 access: *id002

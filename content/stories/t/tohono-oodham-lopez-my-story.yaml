@@ -4,9 +4,13 @@ nations:
 - tohono-oodham-nation-of-arizona
 kind: oral-history
 length: long
-summary: A Tohono O'odham elder's memoir, written for future O'odham, which notes that although matters now go to
-  Tribal court, many O'odham, and even lawyers, still try to settle matters the traditional way, and criticizes
-  how family matters involving women are handled.
+excerpts:
+- telling: aildi-pdf
+  locator: section on tribal court and traditional settlement
+  text: However, many O’odham and even the Anglo lawyers try to go back to the traditional way of settling matters,
+    especially when women are involved.
+  words: 24
+  sha256: d153ebf89f1e80947ae941d2b56d2753d353783610131cb35a300f1e7dbfdce1
 methods:
 - customary-dispute-resolution
 topics:
@@ -25,7 +29,7 @@ tellings:
   authority: member-author
   verification: read-in-full
   permitted_uses:
-    level: reference-only
+    level: quote
     scope:
     - web
     - print

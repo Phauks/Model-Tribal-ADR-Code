@@ -4,9 +4,19 @@ nations:
 - little-traverse-bay-bands-of-odawa-indians
 kind: essay
 length: long
-summary: 'Community members'' views, gathered in interviews and compiled by the Tribe''s court, on reviving Odawa
-  peacemaking: who should serve as peacemakers, ties to family and clan, and the risk that over-formalizing the
-  process strips its cultural approach.'
+excerpts:
+- telling: ltbb-court-page
+  locator: excerpt from the Singel discussion paper
+  text: At the Little Traverse Social Services office, interviewees explained that credibility is linked to tradition,
+    since “peacemaking is a practice since creation.”
+  words: 22
+  sha256: e1e17e965bb797e0736ca67e8ece01300c0028c1b23383cb1215e4265f915965
+- telling: ltbb-court-page
+  locator: excerpt from the Singel discussion paper
+  text: In some cases, over-formalization of the process may strip peacemaking of fundamental cultural approaches
+    to dispute resolution that value flexibility and relativity.
+  words: 22
+  sha256: 666ef82f25e4c9a8a35f232f11604880bb83b07e25b359561b8b6961fdaff2dc
 methods:
 - peacemaking
 topics:
@@ -23,7 +33,7 @@ tellings:
   authority: nation-court
   verification: read-in-full
   permitted_uses:
-    level: reference-only
+    level: quote
     scope:
     - web
     - print

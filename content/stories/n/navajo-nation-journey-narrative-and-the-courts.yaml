@@ -4,9 +4,12 @@ nations:
 - navajo-nation
 kind: teaching
 length: paragraph
-summary: The Judicial Branch's public guide says the history of its judiciary begins in the Journey Narrative, and
-  frames peacemaking as the way problems met on the People's journey were resolved. The narrative itself is not
-  summarized here.
+excerpts:
+- telling: navajo-public-guide
+  locator: part A, History
+  text: The history of our judiciary begins in our ancient history.
+  words: 10
+  sha256: 0ac18f1ab78ac128373851de0ca94d3a86ecd693a72b37d8f679ea94483e44e5
 methods:
 - peacemaking
 topics:
@@ -18,7 +21,7 @@ tellings:
   authority: nation-court
   verification: read-in-full
   permitted_uses:
-    level: reference-only
+    level: quote
     scope:
     - web
     - print

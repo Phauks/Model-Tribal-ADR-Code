@@ -8,10 +8,18 @@ nations:
 - onondaga-nation
 kind: historical-account
 length: short
-summary: 'The Onondaga Nation''s account of the agreement the Haudenosaunee and the Dutch reached after long discussion:
-  a path of peace in which each people travels in its own vessel side by side down the river, neither steering the
-  other''s, recorded in the Two Row Wampum belt. It is a nation''s own account of settling how two peoples would
-  live together.'
+excerpts:
+- telling: onondaga-two-row-page
+  locator: paragraph beginning "It took much time and patience"
+  text: After many discussions, it was decided that the Haudenosaunee and the new people (the Dutch) must create
+    a path of peace in order to live with each other.
+  words: 28
+  sha256: a7f7cb59cbfb00323b92cac0fd035844876645df3ca190fffde1780e049c6dbb
+- telling: onondaga-two-row-page
+  locator: paragraph describing the two purple rows
+  text: Neither of us will try to steer each other’s vessel as we travel side by side down the river of life.
+  words: 21
+  sha256: 591e95f212a37272f12c96302cd4debf7a869ef047bc6a87509577d2ec384b28
 methods:
 - negotiation
 - customary-dispute-resolution
@@ -25,14 +33,14 @@ tellings:
   published_by: Onondaga Nation
   authority: nation-government
   verification: read-in-full
-  permitted_uses: &id001
-    level: reference-only
+  permitted_uses:
+    level: quote
     scope:
     - web
     - print
     - ebook
     - offline-pack
-  access: &id002
+  access: &id001
     level: nation-review-first
 - id: onondaga-timeline
   source: onondaga-nation-timeline-page
@@ -40,10 +48,16 @@ tellings:
   published_by: Onondaga Nation
   authority: nation-government
   verification: read-in-full
-  permitted_uses: *id001
-  access: *id002
+  permitted_uses:
+    level: reference-only
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: *id001
   note: States the Haudenosaunee position that the Two Row Wampum is a binding agreement between separate governments.
-access: *id002
+access: *id001
 anthology:
   candidate: true
   reason: Short, complete and directly about how two peoples agreed to keep peace (project analysis).

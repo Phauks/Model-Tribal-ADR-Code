@@ -4,9 +4,13 @@ nations:
 - onondaga-nation
 kind: teaching
 length: short
-summary: Teachings published by the Onondaga Nation and the Haudenosaunee Confederacy on how wampum belts record
-  agreements and how speakers use them to recall agreements in council. Relevant to how a nation keeps the record
-  of a settlement.
+excerpts:
+- telling: onondaga-wampum-page
+  locator: first section
+  text: Each speaker thereafter uses the wampum to remember the initial agreement and the history that has happened
+    to date. To us, the belts are our living history.
+  words: 27
+  sha256: 15d4dbb19a0766c76fda0ec422c717145ec1d8da004bcaac6ed26a9604c5b1bc
 methods:
 - customary-dispute-resolution
 topics:
@@ -19,29 +23,35 @@ tellings:
   published_by: Onondaga Nation
   authority: nation-government
   verification: read-in-full
-  permitted_uses: &id001
-    level: reference-only
+  permitted_uses:
+    level: quote
     scope:
     - web
     - print
     - ebook
     - offline-pack
-  access: &id002
+  access: &id001
     level: nation-review-first
 - id: confederacy-wampum-page
   source: haudenosaunee-confederacy-wampum-page
   published_by: Haudenosaunee Confederacy
   authority: nation-government
   verification: read-in-full
-  permitted_uses: *id001
-  access: *id002
+  permitted_uses:
+    level: reference-only
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: *id001
 protocols:
 - kind: sacred
   statement: The Confederacy's page says that for the Haudenosaunee, wampum held a more sacred use.
   source: haudenosaunee-confederacy-wampum-page
   how_the_project_follows_it: No belt's content or use in ceremony is recorded; only the published point that belts
     record agreements.
-access: *id002
+access: *id001
 anthology:
   candidate: false
   reason: The Confederacy states wampum has a sacred use; cite and describe only, do not reprint (project analysis).

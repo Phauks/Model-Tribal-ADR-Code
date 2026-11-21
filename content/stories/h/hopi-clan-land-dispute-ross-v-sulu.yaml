@@ -5,9 +5,12 @@ nations:
 community: First Mesa
 kind: court-opinion
 length: long
-summary: The Hopi Appellate Court held that the Tribal Court could not decide which of two clans in a First Mesa
-  village held land, because that question belongs to the village under its traditional organization. The trial
-  court had heard oral testimony on a clan's history.
+excerpts:
+- telling: hopi-appellate-opinion
+  locator: part II (discussion of jurisdiction)
+  held_privately: true
+  words: 27
+  sha256: 7d68dbbc551ff7ca47d6e22759698df7503e74fd4ae199d5ede0149bbb01ba46
 methods:
 - customary-dispute-resolution
 topics:

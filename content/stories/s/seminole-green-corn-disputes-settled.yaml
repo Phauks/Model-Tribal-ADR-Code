@@ -4,8 +4,12 @@ nations:
 - seminole-tribe-of-florida
 kind: teaching
 length: paragraph
-summary: The Tribe's public page says Tribal disputes are settled during the time of the Green Corn Dance. Nothing
-  else about the ceremony is recorded.
+excerpts:
+- telling: semtribe-page
+  locator: second paragraph
+  text: Tribal disputes are also settled during this time.
+  words: 8
+  sha256: bf097fd34e0aa56f1d88b45e0f072ba967ff8e2aa6bb97905ef8e32457e3e17a
 methods:
 - customary-dispute-resolution
 topics:
@@ -17,7 +21,7 @@ tellings:
   authority: nation-cultural-office
   verification: read-in-full
   permitted_uses:
-    level: reference-only
+    level: quote
     scope:
     - web
     - print
