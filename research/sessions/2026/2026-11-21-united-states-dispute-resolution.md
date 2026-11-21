@@ -599,3 +599,14 @@ time. That reading led to two changes:
   "Dispute Resolution Center" (at 131). The annotation now says so.
 - It describes a "screening-adjudication model" (at 128-29), recorded as the
   proposed method `screening-panel`.
+
+## Follow-up: first archive workflow runs
+
+The workflow's first two runs on PR #5 got captures for 7 and 8 of the
+pending records; most other requests had their connections refused while
+several runs were going at once. Six captures were added to records. Three
+were not used: the eCFR page for 43 C.F.R. 30.150 redirected to a Federal
+Register block page, and two Uniform Law Commission downloads redirected to
+signed storage links that carry a temporary access token. The script now
+reports such redirects for a person to check, retries once after a refused
+connection, and the workflow runs one at a time.

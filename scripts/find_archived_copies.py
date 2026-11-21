@@ -9,7 +9,9 @@ and an empty 'archives' list:
     --save, closest to the record's 'retrieved' date).
 
 It prints a YAML snippet per record and, with --report FILE, writes the
-results as JSON. It never edits records: a person or a later commit copies the
+results as JSON. A capture of another site than the original link (a block
+page, or a signed download link that carries a temporary access token) is
+reported for a person to check instead of being offered as a capture. It never edits records: a person or a later commit copies the
 links in, so every change to a record stays reviewable.
 
 Service documentation: https://archive.org/help/wayback_api.php and
@@ -37,9 +39,14 @@ import yaml
 
 AVAILABILITY_SERVICE = "https://archive.org/wayback/available"
 SAVE_SERVICE = "https://web.archive.org/save/"
-CAPTURE_LINK = re.compile(r"/web/(\d{14})/")
+CAPTURE_LINK = re.compile(r"/web/(\d{14})[a-z_]*/(.*)$")
 HEADERS = {"User-Agent": "source-archiver/1.0"}
 SECONDS_BETWEEN_SAVES = 20
+SECONDS_BEFORE_RETRY = 60
+
+
+class RedirectedCapture(Exception):
+    """The capture is of another address, such as a login wall or a signed download link."""
 
 
 def as_capture(link: str, stamp: str) -> dict:
@@ -61,8 +68,17 @@ def closest_capture(link: str, near_date: str):
     return as_capture(closest["url"], closest["timestamp"])
 
 
+def host_of(link: str) -> str:
+    host = urllib.parse.urlsplit(link).hostname or ""
+    return host.removeprefix("www.")
+
+
 def save_capture(link: str):
-    """Request a new capture. Returns it when the service names one, otherwise None."""
+    """Request a new capture. Returns it when the service names one, otherwise None.
+
+    Raises RedirectedCapture when the page redirected to another site, because
+    that capture may be a block page or a signed link that should not be
+    published; a person checks those by hand."""
     request = urllib.request.Request(SAVE_SERVICE + link, headers=HEADERS)
     with urllib.request.urlopen(request, timeout=300) as response:
         final_link = response.geturl()
@@ -70,10 +86,24 @@ def save_capture(link: str):
     for candidate in (final_link, location):
         match = CAPTURE_LINK.search(candidate or "")
         if match:
+            captured_address = match.group(2)
+            if host_of(captured_address) != host_of(link):
+                raise RedirectedCapture(f"the page redirected to {host_of(captured_address)}; check it by hand")
             if candidate.startswith("/"):
                 candidate = "https://web.archive.org" + candidate
             return as_capture(candidate, match.group(1))
     return None
+
+
+def save_with_retry(link: str):
+    """Save Page Now often refuses connections when it is busy, so try once more after a pause."""
+    try:
+        return save_capture(link)
+    except RedirectedCapture:
+        raise
+    except OSError:
+        time.sleep(SECONDS_BEFORE_RETRY)
+        return save_capture(link)
 
 
 def main(arguments: list[str]) -> int:
@@ -102,7 +132,9 @@ def main(arguments: list[str]) -> int:
         capture, problem = None, None
         if save:
             try:
-                capture = save_capture(link)
+                capture = save_with_retry(link)
+            except RedirectedCapture as error:
+                problem = str(error)
             except OSError as error:
                 problem = f"save failed ({error})"
             time.sleep(SECONDS_BETWEEN_SAVES)
