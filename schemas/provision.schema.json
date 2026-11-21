@@ -15,7 +15,11 @@
     "track": {
       "type": "string",
       "enum": ["general", "peacemaking", "mediation", "arbitration", "restorative", "family", "administration"],
-      "description": "Peacemaking is its own track, distinct from Western ADR forms."
+      "description": "The part of the code the provision belongs to. Peacemaking is its own track, distinct from Western ADR forms. Tracks organize the book; the processes a provision governs are listed in 'methods', which is open."
+    },
+    "methods": {
+      "$ref": "common.schema.json#/$defs/methodIds",
+      "description": "Dispute resolution methods the provision governs or allows. A provision may also allow processes not listed, for example through a general clause; see docs/decisions/0012-open-list-of-dispute-resolution-methods.md."
     },
     "alternatives": {
       "type": "array",

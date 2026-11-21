@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/method.schema.json",
+  "title": "Dispute resolution method",
+  "description": "content/methods/<id>.yaml: one way of resolving or handling a dispute, from any tradition. The list of methods is open: a process nobody has recorded yet is added as a new record with status 'proposed', with no change to any schema. Other records refer to methods by id in a 'methods' list. A method is described by what it is called, where it comes from and how it works (its characteristics), so a process that fits no existing name can still be recorded and compared. See docs/decisions/0012-open-list-of-dispute-resolution-methods.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "classification", "definition", "status"],
+  "properties": {
+    "id": {
+      "$ref": "common.schema.json#/$defs/slug",
+      "description": "Stable identifier used in 'methods' lists. Must match the file name. Never reused."
+    },
+    "name": {
+      "type": "string",
+      "description": "The name the project uses in English prose, e.g. 'mediation', 'early neutral evaluation'."
+    },
+    "names_in_language": {
+      "type": "array",
+      "description": "Names the process has in the language of the people who practice it, as they or the cited source write it, with every diacritic kept.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["text", "language"],
+        "properties": {
+          "text": { "type": "string" },
+          "language": { "$ref": "common.schema.json#/$defs/languageTag" },
+          "romanized": { "type": "string", "description": "A romanized form, when the source gives one." },
+          "source": { "$ref": "common.schema.json#/$defs/slug" }
+        }
+      }
+    },
+    "also_known_as": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true,
+      "description": "Other English names and spellings, e.g. 'ombudsman' for ombuds."
+    },
+    "classification": {
+      "type": "string",
+      "enum": [
+        "alternative-dispute-resolution",
+        "own-tradition",
+        "court-process",
+        "governmental-process",
+        "unsettled",
+        "other"
+      ],
+      "description": "How the project classifies the method. alternative-dispute-resolution: a process the sources treat as ADR. own-tradition: a practice of a people or community that the project does not file under ADR, such as peacemaking or customary processes (charter, commitment 3). court-process: a step inside litigation, such as a settlement conference, that sources also discuss with ADR. governmental-process: a process of government decision making, such as negotiated rulemaking. unsettled: sources disagree or the project has not decided; say why in 'classification_note'. other: none of these; say why."
+    },
+    "classification_note": {
+      "type": "string",
+      "description": "Markdown. Required when classification is 'unsettled' or 'other'; otherwise optional."
+    },
+    "tradition": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": ["western-legal", "indigenous", "customary", "religious", "governmental", "community", "hybrid", "other"]
+      },
+      "description": "Where the method comes from. More than one may apply."
+    },
+    "definition": {
+      "type": "string",
+      "description": "Markdown. Cites sources with [@key] and labels the project's own analysis."
+    },
+    "characteristics": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "How the method works, recorded as facets so that any process, including one not seen before, can be described and compared. Every facet is a list, allows 'varies' and 'other', and is explained in 'note' when the short values do not fit.",
+      "properties": {
+        "who_decides": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "enum": ["the-parties", "a-neutral", "a-community-body", "a-traditional-leader", "a-court-or-agency", "varies", "other"] }
+        },
+        "outcome": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "enum": ["binding", "not-binding", "binding-if-parties-agree", "advisory", "varies", "other"] }
+        },
+        "neutral_role": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "enum": ["no-neutral", "facilitative", "evaluative", "advisory", "adjudicative", "guiding-or-teaching", "varies", "other"] }
+        },
+        "participation": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "enum": ["voluntary", "required-by-court-or-law", "required-by-contract", "expected-by-custom", "varies", "other"] }
+        },
+        "settings": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": { "type": "string", "enum": ["private", "court-connected", "agency", "community", "workplace", "online", "religious", "legislative-or-rulemaking", "varies", "other"] }
+        },
+        "note": {
+          "type": "string",
+          "description": "Markdown. Anything the facets cannot say, with citations."
+        }
+      }
+    },
+    "broader": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/slug" },
+      "uniqueItems": true,
+      "description": "Ids of methods this one is a kind of, e.g. evaluative mediation is a kind of mediation. Never used to place an own-tradition method under an ADR method."
+    },
+    "combines": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/slug" },
+      "uniqueItems": true,
+      "description": "For hybrid processes: the ids of the methods it combines, in order, e.g. mediation then arbitration."
+    },
+    "related": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/slug" },
+      "uniqueItems": true
+    },
+    "jurisdictions": {
+      "type": "array",
+      "description": "Where the method is documented in law or practice, when that matters to its definition (for example a process established by one territory's statute).",
+      "items": { "$ref": "common.schema.json#/$defs/jurisdiction" }
+    },
+    "tribes": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/slug" },
+      "uniqueItems": true,
+      "description": "Tribe profile ids, for a process particular to one or more nations. Such a record follows the charter's consultation process."
+    },
+    "glossary": {
+      "$ref": "common.schema.json#/$defs/slug",
+      "description": "Id of the glossary entry for this term, if text links to it with [[id]]."
+    },
+    "sources": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/slug" },
+      "uniqueItems": true,
+      "description": "Keys of source records relied on for the definition and characteristics."
+    },
+    "basis": {
+      "type": "string",
+      "enum": ["source", "project-analysis", "source-and-project-analysis"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["proposed", "adopted", "retired"],
+      "description": "proposed: recorded but not yet reviewed by the lead author. adopted: reviewed. retired: replaced; see redirect_to."
+    },
+    "since": { "$ref": "common.schema.json#/$defs/version" },
+    "redirect_to": { "$ref": "common.schema.json#/$defs/slug" },
+    "sensitivity": { "$ref": "common.schema.json#/$defs/sensitivity" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "classification": { "enum": ["unsettled", "other"] } } },
+      "then": { "required": ["classification_note"] }
+    },
+    {
+      "if": { "properties": { "status": { "const": "retired" } } },
+      "then": { "required": ["redirect_to"] }
+    },
+    {
+      "if": { "properties": { "status": { "const": "adopted" } } },
+      "then": { "required": ["sources"], "properties": { "sources": { "minItems": 1 } } }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+id: arbitration
+name: arbitration
+classification: alternative-dispute-resolution
+tradition: [western-legal]
+definition: >-
+  A process in which the parties submit a dispute to one or more neutrals who decide
+  it. Under the Federal Arbitration Act a written agreement to arbitrate "shall be
+  valid, irrevocable, and enforceable, save upon such grounds as exist at law or
+  in equity for the revocation of any contract" [@usc-9-2], and courts confirm, vacate
+  or modify awards on narrow grounds [@usc-9-9-11]. Most states and Guam have their
+  own statutes; Nevada's is the Uniform Arbitration Act of 2000 [@nevada-revised-statutes-38-206]
+  and Guam's follows the UNCITRAL Model Law [@gca-7-ch-42a-guam-international-arbitration].
+characteristics:
+  who_decides: [a-neutral]
+  outcome: [binding]
+  neutral_role: [adjudicative]
+  participation: [required-by-contract, voluntary]
+  settings: [private, court-connected, agency]
+related: [nonbinding-arbitration, final-offer-selection]
+sources: [usc-9-2, usc-9-9-11, uniform-law-commission-arbitration-act-2000, nevada-revised-statutes-38-206,
+  gca-7-ch-42a-guam-international-arbitration]
+basis: source
+status: proposed

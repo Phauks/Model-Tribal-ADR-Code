@@ -1,0 +1,54 @@
+key: nevada-supreme-court-state-and-tribal-courts-in-nevada
+kind: web-page
+citation:
+  type: webpage
+  title: State and Tribal Courts in Nevada
+  author:
+  - literal: Supreme Court of Nevada, Administrative Office of the Courts
+  container-title: Discover Nevada Justice (nvcourts.gov)
+  URL: >-
+    https://nvcourts.gov/aoc/discover_nevada_justice/discover_nevada_justice_articles/state_and_tribal_courts_in_nevada
+  accessed:
+    date-parts: [[2026, 11, 21]]
+original_link: >-
+  https://nvcourts.gov/aoc/discover_nevada_justice/discover_nevada_justice_articles/state_and_tribal_courts_in_nevada
+retrieved: 2026-11-21
+archives:
+- service: wayback
+  link: >-
+    https://web.archive.org/web/20260421044538/https://nvcourts.gov/aoc/discover_nevada_justice/discover_nevada_justice_articles/state_and_tribal_courts_in_nevada
+  captured: 2026-04-21
+history:
+  status: live
+  last_checked: 2026-11-21
+rights:
+  status: no-permission-needed
+  basis: link-only
+  redistribution: false
+jurisdictions:
+- level: state
+  state: NV
+- level: tribal
+topics: [tribal-state-relations, protection-orders, judicial-education, court-improvement-program]
+annotation: >-
+  A public-education page from the Nevada judiciary. It says Tribal courts operate
+  under the sovereignty of '28 federally recognized tribes' and that protective orders
+  issued by Tribal courts are recognized in state courts. It describes joint education
+  programs (the National Judicial College's National Tribal Judicial Center and the
+  Nevada Court Improvement Program) but no formal Tribal-state court forum. A second
+  document, the Court Improvement Program's 'Tribal Jurisdictions & Resources: Nevada'
+  (undated PDF: https://nvcourts.gov/__data/assets/pdf_file/0031/48496/Nevada_Tribal_Jurisdictions_and_Services_Resource_1.pdf),
+  states 'There are 18 active Tribal Courts in Nevada' and describes the Inter-Tribal
+  Council of Nevada (ITCN) as offering 'trial and appellate court services for member
+  tribes.' (project analysis) Nevada appears to lack the formal Tribal-state court
+  forum found in California, Michigan, New Mexico or Washington. That gap is relevant
+  for the book's Nevada worked example.
+access:
+  open: true
+  pull_from: [free-web]
+  note: >-
+    nvcourts.gov now serves a JavaScript challenge to scripted clients; quotes are
+    WebFetch returns and should be spot-checked in a browser.
+found_in:
+- 2026-11-21-united-states-dispute-resolution
+notes: Read on the original page.

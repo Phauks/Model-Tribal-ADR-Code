@@ -29,6 +29,10 @@ research session ──found──▶ source ◀──cites── provision / co
   state presence.
 - A **glossary entry** defines a term or acronym and cites its sources. Any
   text links to it as `[[id]]` (see [terminology.md](terminology.md)).
+- A **method** record describes one way of resolving a dispute, from any
+  tradition. Sources and provisions name the methods they concern in a
+  `methods` list. The list of methods is open
+  (see below).
 
 ## Record types
 
@@ -40,6 +44,7 @@ research session ──found──▶ source ◀──cites── provision / co
 | Provision | [provision.schema.json](../schemas/provision.schema.json) | `content/provisions/<chapter>-<section>.md` | Model text with alternatives and placeholders |
 | Commentary | [commentary.schema.json](../schemas/commentary.schema.json) | `content/commentary/<chapter>-<section>.md` | Comment, Illustrations and Source Note for one provision |
 | Glossary entry | [glossary.schema.json](../schemas/glossary.schema.json) | `content/glossary/<id>.yaml` | A defined term or acronym, its usage status and sources; linked from text as `[[id]]` |
+| Method | [method.schema.json](../schemas/method.schema.json) | `content/methods/<id>.yaml` | One dispute resolution method: names (including in the community's language), classification, tradition, how it works, sources |
 | Variables | [variable.schema.json](../schemas/variable.schema.json) | `content/variables/<group>.yaml` | Placeholders such as `{{nation.name}}` and their model text |
 | Research session | [research-session.schema.json](../schemas/research-session.schema.json) | `research/sessions/<yyyy>/<yyyy-mm-dd>-<topic>.md` | How research was done and what it produced |
 | Shared types | [common.schema.json](../schemas/common.schema.json) | n/a | Slugs, dates, versions, state codes, review status, sensitivity flags |
@@ -142,6 +147,38 @@ in Unicode Normalization Form C, with a BCP 47 language tag (for example
 The first profiles were generated from cited facts in `research/raw/`
 (see its README) by `scripts/tribes/build_profiles.py`. After that, profiles
 are edited by hand like any other record.
+
+## Source fields for bibliographies
+
+Besides citation data, a source record can carry the fields an annotated
+bibliography needs: `jurisdictions` (federal, state, territory, tribal,
+intertribal, multiple, international), `methods`, free `topics` tags, an
+`annotation`, and `access`, which says whether the full text is free online or
+must be pulled from Westlaw, Lexis, HeinOnline, a library or the publisher.
+
+## Dispute resolution methods: an open list
+
+The project does not fix the list of dispute resolution methods
+([decision record 0012](decisions/0012-open-list-of-dispute-resolution-methods.md)).
+Each method is a record in `content/methods/`, so a process nobody has
+recorded is added as a new file with `status: proposed`, without changing any
+schema. Each record says:
+
+- **what it is called**, in English and in the language of the people who
+  practice it;
+- **how the project classifies it**: as ADR, as its own tradition (such as
+  peacemaking or a customary process, which the project does not call ADR), as
+  a court process, as a governmental process, or as unsettled;
+- **where it comes from** (`tradition`), which may be more than one;
+- **how it works**, as facets that any process can be described by: who
+  decides, whether the outcome binds, what a neutral or leader does, whether
+  taking part is voluntary or required, and where it happens. Every facet
+  allows `varies` and `other`, with a note; and
+- **how it relates** to other methods: a kind of (`broader`), a hybrid of
+  (`combines`), or `related`.
+
+The provision `track` list stays closed because it organizes the book; the
+processes a provision governs are named through `methods`.
 
 ## Permission statuses
 
