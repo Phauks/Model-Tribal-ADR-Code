@@ -112,6 +112,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Hopi Tribe of Arizona
+official_images:
+- kind: logo
+  image_link: https://www.hopi-nsn.gov/wp-content/themes/plus1-child-hopi/library/images/logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 67f4fdb1696cad6bcee3240312c4b9289a6de276e9c299b267840c38613332ea
+  private_copy: nation-images/hopi-tribe-of-arizona/logo-67f4fdb1696c.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 The Hopi Tribe.
+      link: https://www.hopi-nsn.gov/
+      source: hopi-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: hopi-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Hopi Agency
@@ -214,23 +236,27 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: https://hopitribalcourts.com/
+  link: https://www.hopi-nsn.gov/judicial-branch/
   source: national-indian-law-library-hopi-arizona
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
-    site did not respond.'
+    site did not respond. The listed link (https://hopitribalcourts.com/) no longer reached the court
+    on 2026-11-21; the link is the court''s page on the nation''s own site, found in the data gap review
+    (research/reviews/2026-11-21-court-listings.json).'
 - kind: tribal-court
   name: Hopi Tribal Courts
-  link: http://www.hopitribalcourts.com/
+  link: https://www.hopi-nsn.gov/judicial-branch/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Hopi Tribe'
-  note: 'Link check 2026-11-21: the site did not respond.'
+  note: 'Link check 2026-11-21: the site did not respond. The listed link (http://www.hopitribalcourts.com/)
+    no longer reached the court on 2026-11-21; the link is the court''s page on the nation''s own site,
+    found in the data gap review (research/reviews/2026-11-21-court-listings.json).'
 dispute_resolution:
   forums:
   - kind: customary-dispute-resolution
@@ -292,42 +318,38 @@ dispute_resolution:
     source: hopi-constitution-nill
     confidence: medium
     as_of: '1993-12-07'
-  - kind: other
-    title: Alcohol Rehabilitation Program in Lieu of Jail Sentence for Intoxication
+  database_listings:
+  - title: Alcohol Rehabilitation Program in Lieu of Jail Sentence for Intoxication
     citation: 3.15.4 INTOXICATION.
     link: https://ncorj.org/tribal-law/alcohol-rehabilitation-program-in-lieu-of-jail-sentence-for-intoxication/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/alcohol-rehabilitation-program-in-lieu-of-jail-sentence-for-intoxication/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
-  - kind: other
-    title: Alcohol Rehabilitation Program in Lieu of Jail Sentence for Possession
+  - title: Alcohol Rehabilitation Program in Lieu of Jail Sentence for Possession
     citation: 3.15.1 USE OR POSSESSION OFFENSES.
     link: https://ncorj.org/tribal-law/alcohol-rehabilitation-program-in-lieu-of-jail-sentence-for-possession/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/alcohol-rehabilitation-program-in-lieu-of-jail-sentence-for-possession/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
-  - kind: other
-    title: Possibility of Diversion as Penalty
+  - title: Possibility of Diversion as Penalty
     citation: 3.4.4 OTHER CRIMINAL PENALTIES.
     link: https://ncorj.org/tribal-law/possibility-of-diversion-as-penalty/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Alternative; Diversion
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/possibility-of-diversion-as-penalty/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative; Diversion.'
 gaming:
   compacts:
   - state: AZ
@@ -351,16 +373,17 @@ gaming:
       if unresolved within 30 days, either party may request non-binding mediation under CPR Institute
       for Dispute Resolution procedures and may then demand binding arbitration under CPR rules before
       three arbitrators unless both agree to one.
-    dispute_resolution_locator: Section 15 (Dispute Resolution)
-    source: compact-az-ak-chin-indian-community-2003
-    confidence: medium
-    verification: inferred
-    as_of: '2003-02-05'
-    locator: Section 15 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
-      compact approved in 2003; this text is the Ak-Chin Indian Community copy of that form, and the 2021-2022
-      amendments in the list refer back to Section 15. Status copied from this nation's most recent approved
-      or deemed-approved entry for this state in the Office of Indian Gaming list (2018-05-08).
+    dispute_resolution_locator: SECTION 15. DISPUTE RESOLUTION, (c) Arbitration, (2) Arbitrators
+    source: compact-az-hopi-tribe-of-arizona-2018
+    confidence: high
+    verification: read-in-full
+    as_of: '2018-05-08'
+    locator: SECTION 15. DISPUTE RESOLUTION, (c) Arbitration, (2) Arbitrators
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-az-ak-chin-indian-community-2003 without reading; two reviewers found the clause the
+      same in substance (research/reviews/2026-11-21-compact-clauses.json, item 73). Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2018-05-08).
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

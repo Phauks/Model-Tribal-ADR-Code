@@ -119,6 +119,47 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Modoc Nation
+official_images:
+- kind: logo
+  image_link: https://modocnation.com/wp-content/uploads/2020/03/cropped-ModocNation_logo2020_fullcolor.webp
+  retrieved: '2026-11-21'
+  media_type: image/webp
+  sha256: a983c9ca2dcad99824f020cce7d41948033e918c26399c39fe7951888803ebb4
+  private_copy: nation-images/modoc-nation/logo-a983c9ca2dca.webp
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Modoc Nation.
+      link: https://modocnation.com/
+      source: modocnation-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89002895&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89002895'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2022-07-29).
+  source: modocnation-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89002895'
+  wordmark: MODOC NATION
+  filed: '2022-07-29'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89002895&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/modoc-nation/insignia-database-89002895.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89002895
 federal_administration:
   bureau_of_indian_affairs_region: Eastern Oklahoma
   bureau_of_indian_affairs_agency: Miami Agency
@@ -191,17 +232,17 @@ gaming:
       days, and either party may then refer the dispute to arbitration under American Arbitration Association
       rules before a single arbitrator, with de novo review of the award available in federal district
       court under limited waivers of immunity.
-    dispute_resolution_locator: Part 12 (Dispute Resolution)
-    source: compact-ok-cherokee-nation-2005
-    confidence: medium
-    verification: inferred
-    as_of: '2005-01-27'
-    locator: Part 12 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
-      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
-      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
-      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
-      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2019-04-16).
+    dispute_resolution_locator: Part 12. DISPUTE RESOLUTION, paragraph 1
+    source: compact-ok-modoc-nation-2005
+    confidence: high
+    verification: read-in-full
+    as_of: '2005-06-01'
+    locator: Part 12. DISPUTE RESOLUTION, paragraph 1
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-ok-cherokee-nation-2005 without reading; two reviewers found the clause the same in
+      substance (research/reviews/2026-11-21-compact-clauses.json, item 116). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2019-04-16).
   ordinances:
   - approved: '1993-11-08'
     link: https://www.nigc.gov?wpdmdl=10321&ind=10346

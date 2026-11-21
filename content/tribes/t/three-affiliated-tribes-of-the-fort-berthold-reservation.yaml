@@ -128,6 +128,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota
+official_images:
+- kind: logo
+  image_link: https://www.mhanation.com/wp-content/uploads/2024/02/MHA-Nation-3-Chiefs-Logo-Color_3SQ.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: dd09a3acfd65924b0233c5f74ae53c63506a54cf1f760517ea4aea26e2cb6def
+  private_copy: nation-images/three-affiliated-tribes-of-the-fort-berthold-reservation/logo-dd09a3acfd65.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: ©2026 MHA Nation
+      link: https://www.mhanation.com/
+      source: three-affiliated-tribes-of-the-fort-bert-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: three-affiliated-tribes-of-the-fort-bert-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Hidatsa
   language_tag: hid
@@ -315,58 +337,6 @@ justice_institutions:
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
-  - kind: other
-    title: DUI Treatment and Community Service Requirements
-    citation: TAT Criminal Code § 3-26 (DUI provisions)
-    link: https://www.mhanation.com/tribal-code
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dui-treatment-and-community-service-requirements/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication/Sentencing. Database form of practice: Community
-      service; Diversion.'
-  - kind: other
-    title: Restitution and Reparation (Victim Compensation)
-    citation: TAT Criminal Code §§ 3-9-4.1(e), 3-9-8.1, 3-9-8.2
-    link: https://www.mhanation.com/tribal-code
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restitution-and-reparation-victim-compensation/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication/Sentencing. Database form of practice: Making
-      amends; Restitution.'
-  - kind: other
-    title: Sentencing Factor – Making Restitution to Victim
-    citation: TAT Criminal Code § 3-9-3.1(e)
-    link: https://www.mhanation.com/tribal-code
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/sentencing-factor-making-restitution-to-victim/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication/Sentencing. Database form of practice: Making
-      amends; Restitution.'
-  - kind: other
-    title: Treatment in Lieu of Prosecution/Sentence (Diversion)
-    citation: TAT Criminal Code §§ 3-9-7.1, 3-9-7.2
-    link: https://www.mhanation.com/tribal-code
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-prosecution-sentence-diversion/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre or post-adjudication. Database form of practice: Diversion;
-      Rehabilitation.'
   - kind: arbitration
     title: Dispute resolution.
     citation: Dispute resolution.; Controversies to be arbitrated - arbitrators - how named.; Condition
@@ -381,6 +351,51 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Received:
       2004 (no longer current)); the provision itself was not read. The heading it falls under is taken
       from the page layout and may be imprecise.'
+  database_listings:
+  - title: DUI Treatment and Community Service Requirements
+    citation: TAT Criminal Code § 3-26 (DUI provisions)
+    link: https://www.mhanation.com/tribal-code
+    practice_area: Tribal Justice
+    phase: Post-adjudication/Sentencing
+    form_of_practice: Community service; Diversion
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dui-treatment-and-community-service-requirements/
+  - title: Restitution and Reparation (Victim Compensation)
+    citation: TAT Criminal Code §§ 3-9-4.1(e), 3-9-8.1, 3-9-8.2
+    link: https://www.mhanation.com/tribal-code
+    practice_area: Tribal Justice
+    phase: Post-adjudication/Sentencing
+    form_of_practice: Making amends; Restitution
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restitution-and-reparation-victim-compensation/
+  - title: Sentencing Factor – Making Restitution to Victim
+    citation: TAT Criminal Code § 3-9-3.1(e)
+    link: https://www.mhanation.com/tribal-code
+    practice_area: Tribal Justice
+    phase: Post-adjudication/Sentencing
+    form_of_practice: Making amends; Restitution
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-factor-making-restitution-to-victim/
+  - title: Treatment in Lieu of Prosecution/Sentence (Diversion)
+    citation: TAT Criminal Code §§ 3-9-7.1, 3-9-7.2
+    link: https://www.mhanation.com/tribal-code
+    practice_area: Tribal Justice
+    phase: Pre or post-adjudication
+    form_of_practice: Diversion; Rehabilitation
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-prosecution-sentence-diversion/
 gaming:
   compacts:
   - state: ND
@@ -460,16 +475,17 @@ gaming:
       commercial mediation procedures in Bismarck), and once mediation fails or 180 days pass either party
       may sue in the United States District Court for the District of North Dakota under limited waivers
       of immunity.
-    dispute_resolution_locator: Section XXVIII (Dispute Resolution)
-    source: compact-nd-spirit-lake-tribe-2022
-    confidence: medium
-    verification: inferred
+    dispute_resolution_locator: XXVIII. DISPUTE RESOLUTION., 28.1.b
+    source: compact-nd-three-affiliated-tribes-of-the-fort-bert-2022
+    confidence: high
+    verification: read-in-full
     as_of: '2022-12-19'
-    locator: Section XXVIII (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 2022 Spirit Lake Tribe
-      compact; the other North Dakota nations' 2022 compacts were approved the same day but were not checked.
-      Status copied from this nation's most recent approved or deemed-approved entry for this state in
-      the Office of Indian Gaming list (2022-12-19).
+    locator: XXVIII. DISPUTE RESOLUTION., 28.1.b
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-nd-spirit-lake-tribe-2022 without reading; two reviewers found the clause the same
+      in substance (research/reviews/2026-11-21-compact-clauses.json, item 224). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2022-12-19).
   ordinances:
   - approved: '1994-11-17'
     link: https://www.nigc.gov?wpdmdl=11339&ind=11360

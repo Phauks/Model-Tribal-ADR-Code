@@ -80,6 +80,17 @@ census_areas:
   locator: AIANNHCE 9150, GEOID 9150R
   note: Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched
     by name comparison with the state-recognized helper list.
+tribal_insignia_database_entries:
+- serial_number: '89003103'
+  wordmark: HASSANAMISCO NIPMUC
+  filed: '2024-05-17'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89003103&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: not-compared
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89003103
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

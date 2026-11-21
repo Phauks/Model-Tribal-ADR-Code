@@ -140,6 +140,16 @@ contacts:
   locator: 'record "Petersburg Indian Association" (community: Petersburg, object 160)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+tribal_insignia_database_entries:
+- serial_number: '89003004'
+  filed: '2023-06-01'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89003004&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: not-compared
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89003004
 languages:
 - name: Tlingit
   language_tag: tli

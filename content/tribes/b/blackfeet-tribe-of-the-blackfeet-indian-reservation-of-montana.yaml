@@ -153,6 +153,47 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Blackfeet Tribe of the Blackfeet Indian Reservation of Montana
+official_images:
+- kind: logo
+  image_link: https://blackfeetnation.com//wp-content/uploads/2015/08/logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 5b4c0cebf40d201a790f70e1fac0832e62fae197318e14df94fe477287b67568
+  private_copy: nation-images/blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana/logo-5b4c0cebf40d.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Copyright 2025 - Blackfeet Nation - Enfold WordPress Theme by Kriesi Scroll to top .
+      link: https://blackfeetnation.com/
+      source: blackfeetnation-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001941&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001941'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2016-04-07).
+  source: blackfeetnation-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001941'
+  wordmark: BLACKFEET NATION PIKUNI
+  filed: '2016-04-07'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001941&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana/insignia-database-89001941.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001941
 federal_administration:
   bureau_of_indian_affairs_region: Rocky Mountain
   bureau_of_indian_affairs_agency: Blackfeet Agency
@@ -305,20 +346,18 @@ justice_institutions:
   as_of: '2022'
   locator: Montana section, entry 'Blackfeet Nation'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Informal Conference and Disposition in Child Welfare
+  database_listings:
+  - title: Informal Conference and Disposition in Child Welfare
     citation: The Family Code of the Blackfeet Tribe. Section 8 Informal Hearing.
     link: https://narf.org/nill/codes/blackfeetcode/family_code.pdf
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Family conference, Family group conference; Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-conference-and-disposition-in-child-welfare/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Family
-      conference, Family group conference; Restorative justice.'
 gaming:
   compacts:
   - state: MT

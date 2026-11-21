@@ -158,6 +158,29 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+official_images:
+- kind: logo
+  alternative_text: Sappony
+  image_link: https://images.squarespace-cdn.com/content/v1/5b01b63b266c071c1ade20f8/1527634578256-Q4VWC4TK2K70S2RYUQQD/Tribal+Insignia+in+Sepia.png?format=1500w
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: ab098ad1c7b722d0434a4248a5623d6e2d687dfc183d4ab39e4761d1ca28b9dc
+  private_copy: nation-images/sappony/logo-ab098ad1c7b7.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2023 Sappony .
+      link: https://www.sappony.org
+      source: sappony-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: sappony-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

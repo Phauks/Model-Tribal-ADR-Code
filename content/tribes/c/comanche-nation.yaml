@@ -158,6 +158,41 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Comanche Nation, Oklahoma
+official_images:
+- kind: logo
+  alternative_text: Comanche Nation Lords of the Plains
+  image_link: https://www.comanchenation.com/sites/all/themes/aha_compass/logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 241a44fbe4959d6ea3dcab2e2d622193428ce42765e1ae186cc2478265802211
+  private_copy: nation-images/comanche-nation/logo-241a44fbe495.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89002546&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89002546'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2021-10-04).
+  source: comanchenation-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89002546'
+  wordmark: COMANCHE NATION LORDS OF THE PLAINS
+  filed: '2021-10-04'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89002546&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/comanche-nation/insignia-database-89002546.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89002546
 languages:
 - name: Comanche
   language_tag: com
@@ -254,70 +289,61 @@ justice_institutions:
   as_of: '2022'
   locator: Oklahoma section, entry 'Comanche Nation of Oklahoma'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Conference in Child Welfare Cases
+  database_listings:
+  - title: Conference in Child Welfare Cases
     citation: COMANCHE CHILDREN AND FAMILY RELATIONS CODE. Section 610 Pre-Adjudicatory Procedures and
       Services.
     link: https://www.comanchenation.com/sites/default/files/fileattachments/government/page/5648/title_4._children_and_family_code.pdf
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Family conference
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/conference-in-child-welfare-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Family
-      conference.'
-  - kind: other
-    title: Preventive and Treatment Services to At-Risk Families
+  - title: Preventive and Treatment Services to At-Risk Families
     citation: Department.
     link: https://ncorj.org/tribal-law/preventive-and-treatment-services-to-at-risk-families/
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/preventive-and-treatment-services-to-at-risk-families/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: .'
-  - kind: other
-    title: Treatment as Disposition in Child Welfare
+  - title: Treatment as Disposition in Child Welfare
     citation: COMANCHE CHILDREN AND FAMILY RELATIONS CODE. Section 701. Dispositional Hearing.
     link: https://www.comanchenation.com/sites/default/files/fileattachments/government/page/5648/title_4._children_and_family_code.pdf
+    practice_area: Tribal Child Welfare/Family
+    phase: Post-adjudication
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-as-disposition-in-child-welfare/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: .'
-  - kind: other
-    title: Treatment in Protective Orders
+  - title: Treatment in Protective Orders
     citation: COMANCHE NATION DOMESTIC ABUSE ACT TITLE 7. Section 7.121 Hearing, Service of Process, Emergency
       Ex Parte Orders, Protective Orders, Period of Relief, Title to Real Property
     link: https://ncorj.org/tribal-law/treatment-in-protective-orders/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Alternative
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-in-protective-orders/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
-  - kind: other
-    title: Treatment Plan Required for Child Welfare Cases
+  - title: Treatment Plan Required for Child Welfare Cases
     citation: COMANCHE CHILDREN AND FAMILY RELATIONS CODE. Section 703. Treatment Plan.
     link: https://www.comanchenation.com/sites/default/files/fileattachments/government/page/5648/title_4._children_and_family_code.pdf
+    practice_area: Tribal Child Welfare/Family
+    phase: Post-adjudication
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-plan-required-for-child-welfare-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: .'
 gaming:
   compacts:
   - state: OK

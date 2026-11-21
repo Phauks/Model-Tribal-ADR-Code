@@ -132,6 +132,28 @@ contacts:
   locator: 'record "Native Village of Mekoryuk" (community: Mekoryuk, object 123)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+official_images:
+- kind: logo
+  image_link: http://www.mekoryuktc.org/s/misc/logo.gif?t=1790623558
+  retrieved: '2026-11-21'
+  media_type: image/gif
+  sha256: 028174adcf81d47194e528b9c669685b11e50eee74393891245445aa4427b821
+  private_copy: nation-images/native-village-of-mekoryuk/logo-028174adcf81.gif
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2015 Native Village of Mekoryuk .
+      link: http://www.mekoryuktc.org
+      source: mekoryuktc-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: mekoryuktc-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Cup'ig (Central Yup'ik)
   language_tag: esu

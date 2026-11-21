@@ -113,6 +113,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Twenty-Nine Palms Band of Mission Indians of California
+official_images:
+- kind: seal
+  image_link: https://29palmstribe.org/wp-content/uploads/2025/09/29Palms-tribal-seal-150x150.webp
+  retrieved: '2026-11-21'
+  media_type: image/webp
+  sha256: 28a758581afcae59d8f11444495f53b06bd71b4bcbe68cfb510d6fe63e1dbd37
+  private_copy: nation-images/twenty-nine-palms-band-of-mission-indians-of-california/seal-28a758581afc.webp
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Twenty-Nine Palms Band of Mission Indians.
+      link: https://29palmstribe.org/
+      source: 29palmstribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: 29palmstribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Southern California Agency

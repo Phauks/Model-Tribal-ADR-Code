@@ -120,6 +120,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mesa Grande Band of Diegueno Mission Indians of the Mesa Grande Reservation, California
+official_images:
+- kind: logo
+  image_link: https://www.mesagrandeband-nsn.gov/wp-content/uploads/MesaGrande-FinalLogo-2048x2048.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: d4debbde2b042375671fa130e227b8576a37baa47f0fff6fb4fbce1e2b3e4976
+  private_copy: nation-images/mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation/logo-d4debbde2b04.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 Mesa Grande | Privacy Policy .
+      link: https://www.mesagrandeband-nsn.gov/
+      source: mesagrandeband-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: mesagrandeband-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Southern California Agency
@@ -142,21 +164,25 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: http://www.sciljc.org/
+  link: https://www.mesagrandeband-nsn.gov/tribal-government-2/
   source: national-indian-law-library-mesa-grande
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: The page gives a contact for a tribal court without a fuller name. The listed link (http://www.sciljc.org/)
+    no longer reached the court on 2026-11-21; the link is the court's page on the nation's own site,
+    found in the data gap review (research/reviews/2026-11-21-court-listings.json).
 - kind: tribal-court
   name: Mesa Grande Tribal Court - Intertribal Court of Southern California
-  link: http://www.sciljc.org/
+  link: https://www.mesagrandeband-nsn.gov/tribal-government-2/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'Mesa Grande Band of Diegueno Mission Indians'
+  note: The listed link (http://www.sciljc.org/) no longer reached the court on 2026-11-21; the link is
+    the court's page on the nation's own site, found in the data gap review (research/reviews/2026-11-21-court-listings.json).
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

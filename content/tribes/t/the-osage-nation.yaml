@@ -111,6 +111,39 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: The Osage Nation
+official_images:
+- kind: logo
+  alternative_text: Print logo
+  image_link: https://www.osagenation-nsn.gov/themes/custom/de_theme/src/img/print/logo--print.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 1b15e1a4624c643539115d7157ef0c9d62555239cbce3682c1f6e25e12f315ac
+  private_copy: nation-images/the-osage-nation/logo-1b15e1a4624c.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: terms-of-use
+      effect: blocks-reuse
+      quote: 'Permission is granted to temporarily download one copy of the materials (information or
+        software) on Osage Nation''s website for personal, non-commercial transitory viewing only. This
+        is the grant of a license, not a transfer of title, and under this license you may not: modify
+        or copy the materials; use the materials for any commercial purpose, or for any public display
+        (commercial or non-commercial)'
+      link: https://www.osagenation-nsn.gov/terms-use
+      source: osagenation-nsn-terms-use
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Osage Nation .
+      link: https://www.osagenation-nsn.gov/
+      source: osagenation-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: osagenation-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Eastern Oklahoma
   bureau_of_indian_affairs_agency: Osage Agency
@@ -199,185 +232,6 @@ justice_institutions:
 dispute_resolution:
   provisions:
   - kind: other
-    title: Child Abuse/Neglect Diversion Program
-    citation: 2 ONC § 2-133
-    link: https://osage.nation.codes
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/child-abuse-neglect-diversion-program/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Committed to Treatment Facility
-    citation: 6 ONC § 5-136 & § 5-139
-    link: https://osage.nation.codes
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/committed-to-treatment-facility/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Court Diversion by Stipulation for Children
-    citation: 2 ONC § 2-118 & § 2-119
-    link: https://osage.nation.codes
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/court-diversion-by-stipulation-for-children/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Deferred Prosecution Agreements for Juveniles
-    citation: 2 ONC § 5-114 & § 5-115
-    link: https://osage.nation.codes
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/deferred-prosecution-agreements-for-juveniles/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Deferred Prsecution in Juvenile Deliquency Cases
-    citation: 2 ONC § 5-114 & § 5-115
-    link: https://osage.nation.codes
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/deferred-prsecution-in-juvenile-deliquency-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Dismissing a Petition when Child has Completed Treatment
-    citation: 2 ONC § 1-123 & § 5-128
-    link: https://osage.nation.codes
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dismissing-a-petition-when-child-has-completed-treatment/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative justice; Restorative practice.'
-  - kind: other
-    title: Diversion Contracts for Children
-    citation: 2 ONC § 2-109 & § 2-110
-    link: https://osage.nation.codes
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-contracts-for-children/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Mandatory Conditions for Domestic Violence Sentencing
-    citation: 6 ONC § 2-185
-    link: https://osage.nation.codes
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/mandatory-conditions-for-domestic-violence-sentencing/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Penalties for Minors for Sexting
-    citation: 6 ONC § 2-255
-    link: https://osage.nation.codes
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/penalties-for-minors-for-sexting/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Purpose of a Hearing for a Child
-    citation: 2 ONC § 1-135 & § 5-137
-    link: https://osage.nation.codes
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-of-a-hearing-for-a-child/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative justice; Restorative practice.'
-  - kind: other
-    title: Required Rehabilitation Process in an Order of Protection
-    citation: 2 ONC § 2-138
-    link: https://osage.nation.codes
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/required-rehabilitation-process-in-an-order-of-protection/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Sentencing Policy
-    citation: 7 ONC § 4-103
-    link: https://osage.nation.codes
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/sentencing-policy/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Supervised Work Program for Probation for Juveniles
-    citation: 2 ONC § 5-140
-    link: https://osage.nation.codes
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/supervised-work-program-for-probation-for-juveniles/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Victim’s Rights in a Trial
-    citation: 6 ONC § 5-503 & § 5-504
-    link: https://osage.nation.codes
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/victims-rights-in-a-trial/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice;
-      Restorative practice.'
-  - kind: other
     title: Subchapter 8. Dispute Resolution
     citation: Subchapter 8. Dispute Resolution; § 4–801. Arbitration
     link: https://www.narf.org/nill/codes/osage/index.html
@@ -396,6 +250,161 @@ dispute_resolution:
     locator: Table of Contents, under 'TITLE 19. LABOR AND EMPLOYMENT'
     note: Identified from section headings in the National Indian Law Library table of contents; the provision
       itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+  database_listings:
+  - title: Child Abuse/Neglect Diversion Program
+    citation: 2 ONC § 2-133
+    link: https://osage.nation.codes
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/child-abuse-neglect-diversion-program/
+  - title: Committed to Treatment Facility
+    citation: 6 ONC § 5-136 & § 5-139
+    link: https://osage.nation.codes
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/committed-to-treatment-facility/
+  - title: Court Diversion by Stipulation for Children
+    citation: 2 ONC § 2-118 & § 2-119
+    link: https://osage.nation.codes
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-diversion-by-stipulation-for-children/
+  - title: Deferred Prosecution Agreements for Juveniles
+    citation: 2 ONC § 5-114 & § 5-115
+    link: https://osage.nation.codes
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferred-prosecution-agreements-for-juveniles/
+  - title: Deferred Prsecution in Juvenile Deliquency Cases
+    citation: 2 ONC § 5-114 & § 5-115
+    link: https://osage.nation.codes
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferred-prsecution-in-juvenile-deliquency-cases/
+  - title: Dismissing a Petition when Child has Completed Treatment
+    citation: 2 ONC § 1-123 & § 5-128
+    link: https://osage.nation.codes
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dismissing-a-petition-when-child-has-completed-treatment/
+  - title: Diversion Contracts for Children
+    citation: 2 ONC § 2-109 & § 2-110
+    link: https://osage.nation.codes
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-contracts-for-children/
+  - title: Mandatory Conditions for Domestic Violence Sentencing
+    citation: 6 ONC § 2-185
+    link: https://osage.nation.codes
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/mandatory-conditions-for-domestic-violence-sentencing/
+  - title: Penalties for Minors for Sexting
+    citation: 6 ONC § 2-255
+    link: https://osage.nation.codes
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/penalties-for-minors-for-sexting/
+  - title: Purpose of a Hearing for a Child
+    citation: 2 ONC § 1-135 & § 5-137
+    link: https://osage.nation.codes
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-of-a-hearing-for-a-child/
+  - title: Required Rehabilitation Process in an Order of Protection
+    citation: 2 ONC § 2-138
+    link: https://osage.nation.codes
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/required-rehabilitation-process-in-an-order-of-protection/
+  - title: Sentencing Policy
+    citation: 7 ONC § 4-103
+    link: https://osage.nation.codes
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-policy/
+  - title: Supervised Work Program for Probation for Juveniles
+    citation: 2 ONC § 5-140
+    link: https://osage.nation.codes
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/supervised-work-program-for-probation-for-juveniles/
+  - title: Victim’s Rights in a Trial
+    citation: 6 ONC § 5-503 & § 5-504
+    link: https://osage.nation.codes
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/victims-rights-in-a-trial/
 gaming:
   compacts:
   - state: OK
@@ -432,17 +441,17 @@ gaming:
       days, and either party may then refer the dispute to arbitration under American Arbitration Association
       rules before a single arbitrator, with de novo review of the award available in federal district
       court under limited waivers of immunity.
-    dispute_resolution_locator: Part 12 (Dispute Resolution)
-    source: compact-ok-cherokee-nation-2005
-    confidence: medium
-    verification: inferred
-    as_of: '2005-01-27'
-    locator: Part 12 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
-      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
-      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
-      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
-      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-12-04).
+    dispute_resolution_locator: Part 12. DISPUTE RESOLUTION, paragraph 2
+    source: compact-ok-the-osage-nation-2005
+    confidence: high
+    verification: read-in-full
+    as_of: '2005-03-21'
+    locator: Part 12. DISPUTE RESOLUTION, paragraph 2
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-ok-cherokee-nation-2005 without reading; two reviewers found the clause the same in
+      substance (research/reviews/2026-11-21-compact-clauses.json, item 221). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2018-12-04).
   ordinances:
   - approved: '1998-04-16'
     link: https://www.nigc.gov?wpdmdl=10521&ind=10539

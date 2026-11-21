@@ -127,6 +127,21 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yurok Tribe of the Yurok Reservation, California
+official_images:
+- kind: logo
+  image_link: https://static.wixstatic.com/media/23c897_3128a1d364db47b19426eb7d828059e5%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/23c897_3128a1d364db47b19426eb7d828059e5%7Emv2.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 96862cf1e4fc617fdbb4aed11be30bae46b32fcd680497dbc5258dc35b52e2af
+  private_copy: nation-images/yurok-tribe-of-the-yurok-reservation/logo-96862cf1e4fc.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: yuroktribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Pacific Regional Office
@@ -227,71 +242,6 @@ justice_institutions:
 dispute_resolution:
   provisions:
   - kind: other
-    title: Optional Rehabilitation Sentencing for Domestic Violence Offense
-    citation: Sentencing options.
-    link: https://ncorj.org/tribal-law/optional-rehabilitation-sentencing-for-domestic-violence-offense/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/optional-rehabilitation-sentencing-for-domestic-violence-offense/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Process for Dispute Resolution in Parenting Planning
-    citation: Yurok Tribal Code. Title 13 Family Code. 13.25 Child Custody, Parenting Plans, and Visitation.
-      13.25.070 Contents of Parenting Plan.
-    link: https://yurok.tribal.codes/YTC/13.25.070
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/process-for-dispute-resolution-in-parenting-planning/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Family
-      conference, Family group conference; Restorative justice; Restorative practice, Restorative process.'
-  - kind: other
-    title: Restorative Justice Option for Environmental Harms
-    citation: Yurok Tribal Code. Title 21 Environmental Protections. Sections 21.20 Water Pollution Control
-      & 21.55 Wetlands Protection.
-    link: https://yurok.tribal.codes/YTC/21
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restorative-justice-option-for-environmental-harms/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Restorative Options in Judgement and Sentencing
-    citation: Yurok Tribal Code. Title 2 Courts. Chapter 2.10 Yurok Tribal Court — Rules of Court. 2.10.1070
-      Judgement and Sentencing.
-    link: https://yurok.tribal.codes/YTC/2.10.1070
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restorative-options-in-judgement-and-sentencing/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Restorative Reunification Efforts
-    citation: Disposition hearings.
-    link: https://ncorj.org/tribal-law/restorative-reunification-efforts/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restorative-reunification-efforts/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
     title: 9.20 Dispute Resolution
     citation: 9.20 Dispute Resolution
     link: https://narf.org/nill/codes/yurokcode/index.html
@@ -302,6 +252,66 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: March 2018); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Optional Rehabilitation Sentencing for Domestic Violence Offense
+    citation: Sentencing options.
+    link: https://ncorj.org/tribal-law/optional-rehabilitation-sentencing-for-domestic-violence-offense/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/optional-rehabilitation-sentencing-for-domestic-violence-offense/
+  - title: Process for Dispute Resolution in Parenting Planning
+    citation: Yurok Tribal Code. Title 13 Family Code. 13.25 Child Custody, Parenting Plans, and Visitation.
+      13.25.070 Contents of Parenting Plan.
+    link: https://yurok.tribal.codes/YTC/13.25.070
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Family conference, Family group conference; Restorative justice; Restorative practice,
+      Restorative process
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/process-for-dispute-resolution-in-parenting-planning/
+  - title: Restorative Justice Option for Environmental Harms
+    citation: Yurok Tribal Code. Title 21 Environmental Protections. Sections 21.20 Water Pollution Control
+      & 21.55 Wetlands Protection.
+    link: https://yurok.tribal.codes/YTC/21
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-justice-option-for-environmental-harms/
+  - title: Restorative Options in Judgement and Sentencing
+    citation: Yurok Tribal Code. Title 2 Courts. Chapter 2.10 Yurok Tribal Court — Rules of Court. 2.10.1070
+      Judgement and Sentencing.
+    link: https://yurok.tribal.codes/YTC/2.10.1070
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-options-in-judgement-and-sentencing/
+  - title: Restorative Reunification Efforts
+    citation: Disposition hearings.
+    link: https://ncorj.org/tribal-law/restorative-reunification-efforts/
+    practice_area: Tribal Child Welfare/Family
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-reunification-efforts/
 gaming:
   compacts:
   - state: CA

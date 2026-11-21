@@ -26,5 +26,8 @@ and says so.
 | [0012](0012-open-list-of-dispute-resolution-methods.md) | Keep the list of dispute resolution methods open | Accepted |
 | [0013](0013-sign-in-with-auth0.md) | Sign in co-authors with Auth0; keep roles in the site's database | Accepted |
 | [0014](0014-verification-levels-and-record-lint.md) | Record how each fact was checked, and lint for unchecked data | Accepted |
+| [0015](0015-database-listings-apart-from-provisions.md) | Keep bulk database entries apart from dispute resolution provisions | Accepted |
+| [0016](0016-component-bands-own-profiles.md) | Give component bands their own profiles | Accepted |
+| [0017](0017-serve-nation-images-from-the-private-bucket.md) | Serve nations' seals and logos from the private bucket | Accepted |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

@@ -148,6 +148,22 @@ contacts:
   locator: 'record "Native Village of Paimiut" (community: Paimiut, object 156)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+official_images:
+- kind: logo
+  alternative_text: NVP
+  image_link: https://www.nativevillageofpaimiut.org/uploads/1/2/5/5/125573918/nvp-goose-green-of.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 3a4bde7d817cdc4b7818e5745cf0b60d8e4680f00e135d2a893bfa61e41b221a
+  private_copy: nation-images/native-village-of-paimiut/logo-3a4bde7d817c.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: nativevillageofpaimiut-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Central Yup'ik
   language_tag: esu

@@ -93,6 +93,68 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Delaware Tribe of Indians
+official_images:
+- kind: logo
+  alternative_text: Delaware Tribe of Indians logo
+  image_link: https://delawaretribe.org/wp-content/uploads/2025/07/logo-150x150.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 8cf51142e98bcd19beda6134a4a9122803ab92626e56ce831b53db2c288ed814
+  private_copy: nation-images/delaware-tribe-of-indians/logo-8cf51142e98b.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: permission-required
+      effect: allows-with-conditions
+      quote: Any use of text and/or images which is not defined as educational or fair use requires written
+        permission from the Delaware Tribe of Indians.
+      link: https://delawaretribe.org/copyright-notice/
+      source: delawaretribe-copyright-notice
+      verification: read-in-full
+      note: Educational and fair use are allowed without asking; other uses need written permission.
+    - kind: terms-of-use
+      effect: allows-with-conditions
+      quote: Content of this web site may not be used for commercial purposes.
+      link: https://delawaretribe.org/copyright-notice/
+      source: delawaretribe-copyright-notice
+      verification: read-in-full
+      note: The website is not commercial; the printed book is sold, so print needs the Tribe's permission.
+    - kind: tribal-law
+      effect: unverified
+      link: https://delawaretribe.org/wp-content/uploads/Tribal-Seal-Protection-Ordinance-03-17-15-Rev-01-03-16.pdf
+      note: A Tribal Seal Protection Ordinance (2015, revised 2016) is published at this address, but
+        the file returned 404 on 2026-11-21, so its terms could not be read.
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright Notice .
+      link: https://delawaretribe.org/copyright-notice/
+      source: delawaretribe-copyright-notice
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001559&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001559'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2013-02-11).
+  source: delawaretribe-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001559'
+  wordmark: DELAWARE TRIBE OF INDIANS LENAPE
+  filed: '2013-02-11'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001559&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/delaware-tribe-of-indians/insignia-database-89001559.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001559
 languages:
 - name: Lenape
   language_tag: del

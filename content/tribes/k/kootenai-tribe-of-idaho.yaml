@@ -139,6 +139,47 @@ contacts:
   verification: inferred
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+official_images:
+- kind: logo
+  image_link: https://static.wixstatic.com/media/33a7a2_68ccc30ec3484efc8f43a8430ce8fa3e~mv2.png/v1/fill/w_70,h_100,al_c,q_85,enc_avif,quality_auto/33a7a2_68ccc30ec3484efc8f43a8430ce8fa3e~mv2.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 1ac7021e3b29cfabca39e7b607967915f40d8de859ec89276cd0aa196507f974
+  private_copy: nation-images/kootenai-tribe-of-idaho/logo-1ac7021e3b29.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Kootenai Tribe of Idaho.
+      link: https://www.kootenai.org/
+      source: kootenai-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89003035&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89003035'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2023-09-25).
+  source: kootenai-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+  note: Found by rendering the page in a browser; the page draws its logo with JavaScript.
+tribal_insignia_database_entries:
+- serial_number: '89003035'
+  filed: '2023-09-25'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89003035&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/kootenai-tribe-of-idaho/insignia-database-89003035.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89003035
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Northern Idaho Agency
@@ -236,14 +277,15 @@ gaming:
       dispute is not resolved within 60 days either party may pursue binding arbitration before a three-member
       panel selected by the American Arbitration Association, with no judicial review of the decision
       (disputes under Article 6 follow that article's own procedure).
-    dispute_resolution_locator: Article 21 (Dispute Resolution)
-    source: compact-id-coeur-dalene-tribe-1993
-    confidence: medium
-    verification: inferred
-    as_of: '1993-02-12'
-    locator: Article 21 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 1993 Coeur d'Alene Tribe
-      compact; later Idaho compacts and amendments (2003, 2008) were not checked. Status copied from this
+    dispute_resolution_locator: ARTICLE 21. DISPUTE RESOLUTION
+    source: compact-id-kootenai-tribe-of-idaho-1993
+    confidence: high
+    verification: read-in-full
+    as_of: '1993-11-10'
+    locator: ARTICLE 21. DISPUTE RESOLUTION
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-id-coeur-dalene-tribe-1993 without reading; two reviewers found the clause the same
+      in substance (research/reviews/2026-11-21-compact-clauses.json, item 94). Status copied from this
       nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
       list (2003-01-08).
   ordinances:

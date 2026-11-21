@@ -123,6 +123,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Laguna, New Mexico
+official_images:
+- kind: logo
+  alternative_text: Pueblo of Laguna Logo
+  image_link: https://www.lagunapueblo-nsn.gov/wp-content/uploads/2021/01/Pueblo-of-Laguna-Logo-final-150x150.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: a692e8698468af23d88e3e4d9b40176932e94fb7e1b0a7b2707b57cb974cfeac
+  private_copy: nation-images/pueblo-of-laguna/logo-a692e8698468.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: lagunapueblo-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Southwest
   bureau_of_indian_affairs_agency: Southern Pueblos Agency
@@ -252,118 +268,6 @@ justice_institutions:
 dispute_resolution:
   provisions:
   - kind: other
-    title: Community Court Procedures
-    citation: Pueblo of Laguna Appendix C - Rule 39
-    link: https://www.lagunapueblo-nsn.gov/departments/government-affairs-office/pol-codes/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/community-court-procedures/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court.'
-  - kind: other
-    title: CONTENTS RESERVED
-    citation: Title VII, Part XIII. Juvenile Wellness Court; Alternative Sentencing
-    link: https://www.lagunapueblo-nsn.gov/departments/government-affairs-office/pol-codes/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/contents-reserved/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Unknown. Database form of practice: Healing to Wellness
-      Court; Restorative justice.'
-  - kind: other
-    title: Counseling & Treatment for Truancy
-    citation: Pueblo of Laguna 7-2-333, and 7-3-1, and 7-3-7, and 7-3-8
-    link: https://www.lagunapueblo-nsn.gov/departments/government-affairs-office/pol-codes/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/counseling-treatment-for-truancy/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice; Restorative practice.'
-  - kind: other
-    title: Domestic Violence Counseling/Program
-    citation: Pueblo of Laguna 7-4-9
-    link: https://www.lagunapueblo-nsn.gov/departments/government-affairs-office/pol-codes/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/domestic-violence-counseling-program/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Justice. Database phase: Post-adjudication. Database form of
-      practice: Restorative justice.'
-  - kind: other
-    title: Informal Adjustment Conference for Juveniles
-    citation: Pueblo of Laguna 7-2-332
-    link: https://www.lagunapueblo-nsn.gov/departments/government-affairs-office/pol-codes/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-adjustment-conference-for-juveniles-3/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Opportunity for Wellness Court Program
-    citation: Pueblo of Laguna 15-14-16
-    link: https://www.lagunapueblo-nsn.gov/departments/government-affairs-office/pol-codes/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/opportunity-for-wellness-court-program/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court.'
-  - kind: other
-    title: Public Intox Treatment Sentencing
-    citation: Pueblo of Laguna 15-14-14
-    link: https://www.lagunapueblo-nsn.gov/departments/government-affairs-office/pol-codes/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/public-intox-treatment-sentencing/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Treatment Sentencing for Possession of Drug Paraphernalia
-    citation: Pueblo of Laguna 15-15-6
-    link: https://www.lagunapueblo-nsn.gov/departments/government-affairs-office/pol-codes/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-sentencing-for-possession-of-drug-paraphernalia/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Wellness Court Procedures
-    citation: Pueblo of Laguna Appendix C - Rule 38
-    link: https://www.lagunapueblo-nsn.gov/departments/government-affairs-office/pol-codes/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/wellness-court-procedures/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court.'
-  - kind: other
     title: Section 11-2-9. – Dispute resolution.
     citation: Section 11-2-9. – Dispute resolution.
     link: https://narf.org/nill/codes/pueblo_laguna/index.html
@@ -396,6 +300,106 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: May 2018); the provision itself was not read. The heading it falls under is
       taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Community Court Procedures
+    citation: Pueblo of Laguna Appendix C - Rule 39
+    link: https://www.lagunapueblo-nsn.gov/departments/government-affairs-office/pol-codes/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative court
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-court-procedures/
+  - title: CONTENTS RESERVED
+    citation: Title VII, Part XIII. Juvenile Wellness Court; Alternative Sentencing
+    link: https://www.lagunapueblo-nsn.gov/departments/government-affairs-office/pol-codes/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Unknown
+    form_of_practice: Healing to Wellness Court; Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/contents-reserved/
+  - title: Counseling & Treatment for Truancy
+    citation: Pueblo of Laguna 7-2-333, and 7-3-1, and 7-3-7, and 7-3-8
+    link: https://www.lagunapueblo-nsn.gov/departments/government-affairs-office/pol-codes/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/counseling-treatment-for-truancy/
+  - title: Domestic Violence Counseling/Program
+    citation: Pueblo of Laguna 7-4-9
+    link: https://www.lagunapueblo-nsn.gov/departments/government-affairs-office/pol-codes/
+    practice_area: Tribal Child Welfare/Family; Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/domestic-violence-counseling-program/
+  - title: Informal Adjustment Conference for Juveniles
+    citation: Pueblo of Laguna 7-2-332
+    link: https://www.lagunapueblo-nsn.gov/departments/government-affairs-office/pol-codes/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-adjustment-conference-for-juveniles-3/
+  - title: Opportunity for Wellness Court Program
+    citation: Pueblo of Laguna 15-14-16
+    link: https://www.lagunapueblo-nsn.gov/departments/government-affairs-office/pol-codes/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative court
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/opportunity-for-wellness-court-program/
+  - title: Public Intox Treatment Sentencing
+    citation: Pueblo of Laguna 15-14-14
+    link: https://www.lagunapueblo-nsn.gov/departments/government-affairs-office/pol-codes/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/public-intox-treatment-sentencing/
+  - title: Treatment Sentencing for Possession of Drug Paraphernalia
+    citation: Pueblo of Laguna 15-15-6
+    link: https://www.lagunapueblo-nsn.gov/departments/government-affairs-office/pol-codes/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-sentencing-for-possession-of-drug-paraphernalia/
+  - title: Wellness Court Procedures
+    citation: Pueblo of Laguna Appendix C - Rule 38
+    link: https://www.lagunapueblo-nsn.gov/departments/government-affairs-office/pol-codes/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative court
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/wellness-court-procedures/
 gaming:
   compacts:
   - state: NM
@@ -460,16 +464,17 @@ gaming:
       may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
       binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
       Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
-    dispute_resolution_locator: Section 7 (Dispute Resolution)
-    source: compact-nm-pueblo-of-santa-ana-2016
-    confidence: medium
-    verification: inferred
-    as_of: '2016-12-30'
-    locator: Section 7 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
-      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
-      Status copied from this nation's most recent approved or deemed-approved entry for this state in
-      the Office of Indian Gaming list (2015-10-23).
+    dispute_resolution_locator: SECTION 7. Dispute Resolution.
+    source: compact-nm-pueblo-of-laguna-new-mexico-2015
+    confidence: high
+    verification: read-in-full
+    as_of: '2015-10-23'
+    locator: SECTION 7. Dispute Resolution.
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-nm-pueblo-of-santa-ana-2016 without reading; two reviewers found the clause the same
+      in substance (research/reviews/2026-11-21-compact-clauses.json, item 152). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2015-10-23).
   ordinances:
   - approved: '1995-06-29'
     link: https://www.nigc.gov?wpdmdl=10749&ind=10768

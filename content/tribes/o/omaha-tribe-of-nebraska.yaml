@@ -139,6 +139,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Omaha Tribe of Nebraska
+official_images:
+- kind: seal
+  alternative_text: Omaha Tribe Calls on Congress to Strike Title III from BAAJA
+  image_link: https://www.omahatribe.com/wp-content/uploads/2026/10/OTN-Seal-2024_Transparent-BG-410x280.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: c806b958bacd7e23f1a1f33436c73058308a28252c55fdff214f176f192111c1
+  private_copy: nation-images/omaha-tribe-of-nebraska/seal-c806b958bacd.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: omahatribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Great Plains
   bureau_of_indian_affairs_agency: Winnebago Agency
@@ -266,83 +282,6 @@ justice_institutions:
   note: 'Link check 2026-11-21: the site did not respond.'
 dispute_resolution:
   provisions:
-  - kind: other
-    title: Court cannot Order Restorative Justice in Domestic Violence Cases
-    citation: Omaha Tribal Code 11-5-12
-    link: https://www.omahatribe.com/tribal-codes/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/court-cannot-order-restorative-justice-in-domestic-violence-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Justice. Database phase: Pre-adjudication. Database form of
-      practice: Restorative justice.'
-  - kind: other
-    title: Definitions of Treatment Programs for Domestic Violence
-    citation: Omaha Tribal Code 11-1-4
-    link: https://www.omahatribe.com/tribal-codes/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/definitions-of-treatment-programs-for-domestic-violence/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Disposition Options for Child in Need of Care Cases
-    citation: Omaha Tribal Code 12-7-12
-    link: https://www.omahatribe.com/tribal-codes/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/disposition-options-for-child-in-need-of-care-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Disposition Options for Juvenile Delinquency
-    citation: Omaha Tribal Code 12-8-13
-    link: https://www.omahatribe.com/tribal-codes/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/disposition-options-for-juvenile-delinquency/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Rehabilitative Efforts for Curfew Violations
-    citation: Omaha Tribal Code 12-7-3
-    link: https://www.omahatribe.com/tribal-codes/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/rehabilitative-efforts-for-curfew-violations/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Truancy Counseling and Help
-    citation: Omaha Tribal Code 12-11-3
-    link: https://www.omahatribe.com/tribal-codes/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/truancy-counseling-and-help/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative justice.'
   - kind: mediation
     title: SECTION 11-5-12. Mediation Prohibited
     citation: SECTION 11-5-12. Mediation Prohibited
@@ -394,6 +333,73 @@ dispute_resolution:
     locator: Table of Contents
     note: Identified from section headings in the National Indian Law Library table of contents; the provision
       itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+  database_listings:
+  - title: Court cannot Order Restorative Justice in Domestic Violence Cases
+    citation: Omaha Tribal Code 11-5-12
+    link: https://www.omahatribe.com/tribal-codes/
+    practice_area: Tribal Child Welfare/Family; Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-cannot-order-restorative-justice-in-domestic-violence-cases/
+  - title: Definitions of Treatment Programs for Domestic Violence
+    citation: Omaha Tribal Code 11-1-4
+    link: https://www.omahatribe.com/tribal-codes/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/definitions-of-treatment-programs-for-domestic-violence/
+  - title: Disposition Options for Child in Need of Care Cases
+    citation: Omaha Tribal Code 12-7-12
+    link: https://www.omahatribe.com/tribal-codes/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-options-for-child-in-need-of-care-cases/
+  - title: Disposition Options for Juvenile Delinquency
+    citation: Omaha Tribal Code 12-8-13
+    link: https://www.omahatribe.com/tribal-codes/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-options-for-juvenile-delinquency/
+  - title: Rehabilitative Efforts for Curfew Violations
+    citation: Omaha Tribal Code 12-7-3
+    link: https://www.omahatribe.com/tribal-codes/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/rehabilitative-efforts-for-curfew-violations/
+  - title: Truancy Counseling and Help
+    citation: Omaha Tribal Code 12-11-3
+    link: https://www.omahatribe.com/tribal-codes/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/truancy-counseling-and-help/
 gaming:
   compacts:
   - state: IA
@@ -450,15 +456,17 @@ gaming:
       written notice, the complaining party may then make a written demand, a refused demand goes to mediation
       under American Arbitration Association commercial mediation rules, and issues left in the mediator's
       summary report go to binding arbitration under American Arbitration Association rules.
-    dispute_resolution_locator: Section 20 (Binding Dispute Resolution for Non-Material Breach)
-    source: compact-ia-ponca-tribe-of-nebraska-2021
-    confidence: medium
-    verification: inferred
-    as_of: '2021-03-05'
-    locator: Section 20 (Binding Dispute Resolution for Non-Material Breach)
-    note: state model compact; nation-specific text not checked. Read from the 2021 Ponca Tribe of Nebraska
-      compact with Iowa; other Iowa compacts were not checked. Status copied from this nation's most recent
-      approved or deemed-approved entry for this state in the Office of Indian Gaming list (2007-03-19).
+    dispute_resolution_locator: 20. BINDING DISPUTE RESOLUTION FOR NON-MATERIAL BREACH
+    source: compact-ia-omaha-tribe-of-nebraska-2007
+    confidence: high
+    verification: read-in-full
+    as_of: '2007-03-19'
+    locator: 20. BINDING DISPUTE RESOLUTION FOR NON-MATERIAL BREACH
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-ia-ponca-tribe-of-nebraska-2021 without reading; two reviewers found the clause the
+      same in substance (research/reviews/2026-11-21-compact-clauses.json, item 130). Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2007-03-19).
   - state: NE
     status: approved
     approved: '1991-01-08'

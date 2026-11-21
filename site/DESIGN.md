@@ -173,7 +173,10 @@ nation's staff always know where to look, as the Tribal Law Gateway does with
 its fixed sections on each nation's page:
 
 1. Name as the recognizing list gives it, and the nation's own name for
-   itself, exactly as the nation writes it, once the nation confirms it.
+   itself, exactly as the nation writes it, once the nation confirms it. Beside it, the nation's seal or
+   logo when its reuse status allows showing it, credited to the nation's
+   website, with a link to ask for its removal
+   ([official-images.md](../docs/official-images.md)).
 2. Review panel: the review status (drafted from public sources, sent to the
    nation, reviewed by the nation, approved by the nation), what that means,
    and "Is this about your nation? Make a request."
@@ -294,6 +297,16 @@ asked for by Trevor on Nov. 21, 2026):
 - **Text spacing:** Standard or Wide. Wide uses the values WCAG 2.2, 1.4.12
   tests: line height 2 (at least 1.5), paragraph spacing 2 times, letter
   spacing 0.12 times and word spacing 0.16 times the font size.[^wcag-1412]
+- **Text alignment:** Left aligned (the default) or Justified, asked for by
+  Trevor on Nov. 21, 2026. Justified applies to reading text in the page's
+  main area (paragraphs, list items, definitions and quotations), not to
+  headings, tables, forms or the masthead, and turns on automatic hyphenation
+  (`hyphens: auto`), which uses each element's `lang` attribute to pick the
+  hyphenation rules.[^mdn-hyphens] Links are never hyphenated, so nation
+  names, citations and addresses stay whole. Left stays the default because
+  WCAG's enhanced visual presentation criterion asks that text not be
+  justified, since uneven word spacing makes reading harder for some
+  readers.[^wcag-148]
 - **Theme:** Match this device, Light or Dark (see [section 8](#8-themes)).
 - **Contrast:** Standard or More. More turns gray text to ink and light
   dividing lines to the control border color; no new colors are added.
@@ -615,7 +628,13 @@ accessibility statement is published at `/about/accessibility`.
   2026-11-21 to draw the official outlines even though the Navajo Region's
   follows the Navajo Nation's land. `src/lib/map-geometry.ts` projects the
   shapes once, in `vite.config.ts`, so the browser gets SVG paths and no map
-  library. The grayscale print version for the book is not built yet. Each
+  library. `src/lib/nations-map-drawing.ts` turns them into the page's SVG
+  markup, which `/nations/map` shows with `{@html}` from a universal load, so
+  the outlines are sent once, in the page, and not again in the data the page
+  hydrates from; the regions map draws the land as one shape under the
+  regions. A reader who arrives from another page without reloading gets the
+  same markup from `/nations/map/drawings.json`. The grayscale print version
+  for the book is not built yet. Each
 nation's page also draws a small map of its states (see
 [Nation pages](#nation-pages)) from the same shapes, simplified to 5 percent
 of their points and whole map units so that it adds about 14 KB, before
@@ -678,6 +697,8 @@ The interface follows the style guide's voice: plain verbs, sentence case,
 [^mdn-caching]: MDN Web Docs, *Caching (Progressive web apps)*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Caching).
 [^cloudflare-sveltekit]: Cloudflare, *SvelteKit (Workers framework guide)*, [developers.cloudflare.com/workers/framework-guides/web-apps/sveltekit](https://developers.cloudflare.com/workers/framework-guides/web-apps/sveltekit/).
 [^wcag-1412]: W3C, *Understanding Success Criterion 1.4.12: Text Spacing*, [w3.org/WAI/WCAG22/Understanding/text-spacing](https://www.w3.org/WAI/WCAG22/Understanding/text-spacing).
+[^mdn-hyphens]: MDN Web Docs, *hyphens*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/CSS/hyphens).
+[^wcag-148]: W3C, *Understanding Success Criterion 1.4.8: Visual Presentation*, [w3.org/WAI/WCAG22/Understanding/visual-presentation](https://www.w3.org/WAI/WCAG22/Understanding/visual-presentation).
 [^mdn-dialog]: MDN Web Docs, *&lt;dialog&gt;: The Dialog element*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog).
 [^wery]: J. J. Wery and J. A. Diliberto, *The effect of a specialized dyslexia font, OpenDyslexic, on reading rate and accuracy*, 67 Annals of Dyslexia 114 (2017), [doi.org/10.1007/s11881-016-0127-1](https://doi.org/10.1007/s11881-016-0127-1).
 [^ofl-faq]: SIL International, *OFL-FAQ*, entries 2.2 and 2.6, [openfontlicense.org/ofl-faq](https://openfontlicense.org/ofl-faq/) (accessed Nov. 21, 2026).

@@ -119,6 +119,43 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Stillaguamish Tribe of Indians of Washington
+official_images:
+- kind: logo
+  alternative_text: Image
+  image_link: https://www.stillaguamish.com/wp-content/uploads/2022/01/Stillaguamish-Logo_Salmon-Text-Vertical-400px.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 5c1e7918016f603a9f1cdc4827293a2f4a8d65958a806a5690c9ddf9f46a6b3d
+  private_copy: nation-images/stillaguamish-tribe-of-indians-of-washington/logo-5c1e7918016f.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: trademark-notice
+      effect: blocks-reuse
+      quote: All custom graphics, icons, logos and service names are trademarks or service marks of The
+        Stillaguamish Tribe of Indians.
+      link: https://www.stillaguamish.com/terms-of-use/
+      source: stillaguamish-terms-of-use
+      verification: read-in-full
+    - kind: terms-of-use
+      effect: blocks-reuse
+      quote: The use of any Stillaguamish Tribe of Indians trademark or service mark without express written
+        consent is strictly prohibited.
+      link: https://www.stillaguamish.com/terms-of-use/
+      source: stillaguamish-terms-of-use
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright and Trademark Notice .
+      link: https://www.stillaguamish.com/terms-of-use/
+      source: stillaguamish-terms-of-use
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: stillaguamish-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Northern Lushootseed
   language_tag: lut
@@ -154,46 +191,40 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.stillaguamish.com/courtsjustice.asp)
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Juvenile Sentencing Alternatives
+  database_listings:
+  - title: Juvenile Sentencing Alternatives
     citation: Stillaguamish Law and Order Code § 5.20.025
     link: https://www.stillaguamish.com/wp-content/uploads/2022/04/Revised-Law-Order-Code-of-the-Stillaguamish-Tribe-4-7-2022.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication/Sentencing
+    form_of_practice: Alternative; Rehabilitation; Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/juvenile-sentencing-alternatives/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication/Sentencing. Database form of practice:
-      Alternative; Rehabilitation; Restorative justice.'
-  - kind: other
-    title: Sentencing Guidelines – Traditional Remedies and Rehabilitation
+  - title: Sentencing Guidelines – Traditional Remedies and Rehabilitation
     citation: Stillaguamish Law and Order Code § 4.65.005
     link: https://www.stillaguamish.com/wp-content/uploads/2022/04/Revised-Law-Order-Code-of-the-Stillaguamish-Tribe-4-7-2022.pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication/Sentencing
+    form_of_practice: Rehabilitation; Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/sentencing-guidelines-traditional-remedies-and-rehabilitation/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication/Sentencing. Database form of practice: Rehabilitation;
-      Restorative justice.'
-  - kind: other
-    title: Truancy – Community Service and Treatment Alternatives
+  - title: Truancy – Community Service and Treatment Alternatives
     citation: Stillaguamish Law and Order Code § 8.15.050
     link: https://www.stillaguamish.com/wp-content/uploads/2022/04/Revised-Law-Order-Code-of-the-Stillaguamish-Tribe-4-7-2022.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication/Sentencing
+    form_of_practice: Alternative; Program
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/truancy-community-service-and-treatment-alternatives/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication/Sentencing. Database form of practice:
-      Alternative; Program.'
 gaming:
   compacts:
   - state: WA

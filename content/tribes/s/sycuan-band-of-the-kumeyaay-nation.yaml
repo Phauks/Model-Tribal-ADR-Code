@@ -112,6 +112,40 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Sycuan Band of the Kumeyaay Nation
+official_images:
+- kind: logo
+  image_link: https://sycuantribe.com/wp-content/uploads/2022/02/Sycuan-Crest.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: a426cfda8c7a73c5f6d0ecaec06ce901643f94245f982ca099daf5c7395caf0d
+  private_copy: nation-images/sycuan-band-of-the-kumeyaay-nation/logo-a426cfda8c7a.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89003202&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89003202'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2024-08-19).
+  source: sycuantribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89003202'
+  wordmark: SYCUAN BAND OF THE KUMEYAAY NATION
+  filed: '2024-08-19'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89003202&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/sycuan-band-of-the-kumeyaay-nation/insignia-database-89003202.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89003202
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Southern California Agency
@@ -140,19 +174,18 @@ justice_institutions:
   as_of: '2022'
   locator: California section, entry 'Sycuan Band of the Kumeyaay Nation'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Treatment as Penalty Alternative
+  database_listings:
+  - title: Treatment as Penalty Alternative
     citation: Peace and Safety Code. Chapter 2. Civil Violation Penalties. Section 2001 Civil Penalties.
     link: https://ncorj.org/tribal-law/treatment-as-penalty-alternative-2/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-as-penalty-alternative-2/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
 gaming:
   compacts:
   - state: CA

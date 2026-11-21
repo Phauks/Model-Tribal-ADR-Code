@@ -103,6 +103,28 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+official_images:
+- kind: logo
+  image_link: https://primary.jwwb.nl/public/g/v/m/temp-rsswgmnhrylmygcufdqw/gcd-tribal-logo-2026-high.jpg?enable-io=true&enable=upscale&height=60
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: 4cc449b1a8f69e377efb71569cceec6498f456c3fb557b5acf68a433c98a1887
+  private_copy: nation-images/grand-caillou-dulac-band-of-biloxi-chitimacha-choctaw/logo-4cc449b1a8f6.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Grand Caillou/Dulac Tribe .
+      link: https://www.gcdbcc.org/
+      source: gcdbcc-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: gcdbcc-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

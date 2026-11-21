@@ -130,6 +130,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Village of Dot Lake" (community: Dot Lake Village, object 50)'
+official_images:
+- kind: seal
+  image_link: https://www.dotlakevillage.org/wp-content/uploads/2023/08/Dot-Lake-Seal-for-header.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 0587bfc0b24a8ec94b8538c8be57c8afebaeda5c6626bff63157d7e2a0f0cd89
+  private_copy: nation-images/village-of-dot-lake/seal-0587bfc0b24a.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: ©2025 Native Village of Dot Lake Scroll to top .
+      link: https://www.dotlakevillage.org/
+      source: dotlakevillage-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: dotlakevillage-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Nee’aandeg’ (Tanacross)
   language_tag: tcb

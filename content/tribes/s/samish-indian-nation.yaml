@@ -125,6 +125,37 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Samish Indian Nation
+official_images:
+- kind: logo
+  alternative_text: logo
+  image_link: https://www.samishtribe.nsn.us/images/default-source/default-album/logo.png?sfvrsn=926f3381_18
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 8fc12bf339843134f6d40ebd5e0ee76d239df1eda48afa7995c12b1b97596cb7
+  private_copy: nation-images/samish-indian-nation/logo-8fc12bf33984.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: terms-of-use
+      effect: blocks-reuse
+      quote: The Content and all copyrighted material may not be modified, copied, distributed, downloaded,
+        displayed, e-mailed, transmitted, or sold in any form or by any means, in whole or in part, without
+        the prior written consent of the respective copyright owner.
+      link: https://www.samishtribe.nsn.us/gp/legal/terms-of-use
+      source: samishtribe-nsn-terms-of-use
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2017 Samish Indian Nation .
+      link: https://www.samishtribe.nsn.us/
+      source: samish-indian-nation-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: samish-indian-nation-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Samish
   language_tag: str

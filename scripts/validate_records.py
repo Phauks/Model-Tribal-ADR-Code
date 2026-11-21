@@ -16,6 +16,9 @@ Checks:
   - every method id (in 'methods' lists and in a method's 'broader', 'combines',
     'related' and 'redirect_to') names a method record, and no method is a
     broader kind of itself
+  - each official image's reuse status follows from its signals (docs/official-images.md),
+    its private copy sits in the nation's own folder, and each tribal insignia database
+    signal names an entry listed in the profile
   - (warning only) every tribe profile forum 'kind' names a method record
 
 Run from the repository root:  python3 scripts/validate_records.py
@@ -106,6 +109,51 @@ def cited_source_keys(value):
     elif isinstance(value, list):
         for item in value:
             yield from cited_source_keys(item)
+
+
+# Statuses a nation's own answer sets; every other status follows from the signals.
+NATION_DECIDED_STATUSES = {"permission-granted", "permission-denied", "withdrawn-at-request"}
+
+
+def expected_reuse_status(signals: list) -> str:
+    """The display rule in docs/official-images.md: a block wins, then anything
+    unchecked, then conditions; with none of these the image may be shown."""
+    effects = {signal.get("effect") for signal in signals}
+    if "blocks-reuse" in effects:
+        return "restricted"
+    if "unverified" in effects:
+        return "needs-checking"
+    if "allows-with-conditions" in effects:
+        return "conditions-apply"
+    return "no-restriction-found"
+
+
+def check_official_images(path: pathlib.Path, record: dict, errors: list[str]) -> None:
+    """Reuse status, private copy folders and database links in one tribe profile."""
+    nation = record.get("id")
+    serials = {entry.get("serial_number") for entry in record.get("tribal_insignia_database_entries", [])}
+    items = record.get("official_images", []) + record.get("tribal_insignia_database_entries", [])
+    for item in items:
+        copy = item.get("private_copy")
+        if copy and not copy.startswith(f"nation-images/{nation}/"):
+            errors.append(f"{path}: private copy '{copy}' is not in the folder nation-images/{nation}/")
+    for index, image in enumerate(record.get("official_images", [])):
+        reuse = image.get("reuse", {})
+        signals = reuse.get("signals", [])
+        status = reuse.get("status")
+        if status not in NATION_DECIDED_STATUSES and status != expected_reuse_status(signals):
+            errors.append(
+                f"{path}: official_images/{index}: reuse status '{status}' should be "
+                f"'{expected_reuse_status(signals)}' given its signals"
+            )
+        if status == "withdrawn-at-request" and image.get("private_copy"):
+            errors.append(f"{path}: official_images/{index}: a withdrawn image keeps no private copy")
+        for signal in signals:
+            if signal.get("kind") == "tribal-insignia-database" and signal.get("serial_number") not in serials:
+                errors.append(
+                    f"{path}: official_images/{index}: database entry {signal.get('serial_number')} "
+                    "is not listed in tribal_insignia_database_entries"
+                )
 
 
 def check_outreach(outreach: list, errors: list[str]) -> None:
@@ -236,8 +284,14 @@ def main() -> int:
         for key in sorted(set(cited_source_keys(record))):
             if key not in sources:
                 errors.append(f"{path}: cites a missing source record '{key}'")
+        check_official_images(path, record, errors)
 
     check_outreach(records.get("outreach-organization.schema.json", []), errors)
+
+    tribe_ids = {record.get("id") for _, record in records.get("tribe.schema.json", [])}
+    for path, record in records.get("tribe.schema.json", []):
+        if record.get("part_of") and record["part_of"] not in tribe_ids:
+            errors.append(f"{path}: part_of names a missing profile '{record['part_of']}'")
 
     unmatched_kinds: dict[str, int] = {}
     for path, record in records.get("tribe.schema.json", []):

@@ -303,31 +303,28 @@ justice_institutions:
   as_of: '2022'
   locator: Montana section, entry 'Fort Belknap Indian Community'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Assessment and Treatment for Sex Offensers and Victims
+  database_listings:
+  - title: Assessment and Treatment for Sex Offensers and Victims
     citation: Fort Belknap Indian Community Code Title IV, Part 7, Section XVII
     link: https://ftbelknap.org/forms%2Fdocuments
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Program; Substance
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/assessment-and-treatment-for-sex-offensers-and-victims/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Program; Substance.'
-  - kind: other
-    title: Victim Restitution for Sex Offender Victims
+  - title: Victim Restitution for Sex Offender Victims
     citation: Fort Belknap Indian Community Code Title IV, Part 7, Section III
     link: https://ftbelknap.org/forms%2Fdocuments
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/victim-restitution-for-sex-offender-victims/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: .'
 gaming:
   compacts:
   - state: MT

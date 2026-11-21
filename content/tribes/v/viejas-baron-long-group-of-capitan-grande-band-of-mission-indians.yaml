@@ -120,6 +120,51 @@ contacts:
   as_of: '2026-11-20'
   locator: 'Capitan Grande Band of Diegueno Mission Indians of California: Viejas (Baron Long) Group of
     Capitan Grande Band of Mission Indians of the Viejas Reservation, California'
+official_images:
+- kind: seal
+  alternative_text: viejas-official-tribal-seal
+  image_link: https://viejasbandofkumeyaay.org/wp-content/uploads/2026/07/viejas-official-tribal-seal-150x150.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: ce987bb1fee4232b1688fd8c9504f6abc3f986d5f36e8d9857561bbc0cbc9d01
+  private_copy: nation-images/viejas-baron-long-group-of-capitan-grande-band-of-mission-indians/seal-ce987bb1fee4.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Viejas Band of Kumeyaay • 1 Viejas Grade Road, Alpine, CA 91901 • Copyright 2022 Viejas Enterprises
+        .
+      link: https://viejasbandofkumeyaay.org/
+      source: viejasbandofkumeyaay-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89003220&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89003220'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2026-03-20).
+  source: viejasbandofkumeyaay-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89003220'
+  wordmark: 'VIEJAS TRIBAL GOVERNMENT. THE GREAT SEAL OF THE CAPITAN GRANDE BAND OF DIEGUENO MISSION INDIANS
+    OF CALIFORNIA: VIEJAS(BARON LONG) GROUP OF CAPITAN GRANDE BAND OF MISSION INDIANS OF THE VIEJAS RESERVATION,
+    CALIFORNIA'
+  filed: '2026-03-20'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89003220&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/viejas-baron-long-group-of-capitan-grande-band-of-mission-indians/insignia-database-89003220.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89003220
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Southern California Agency

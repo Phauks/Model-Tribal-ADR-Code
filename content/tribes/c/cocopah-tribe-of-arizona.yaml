@@ -133,6 +133,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Cocopah Tribe of Arizona
+official_images:
+- kind: seal
+  alternative_text: Cocopah Indian Tribe seal
+  image_link: https://res.cloudinary.com/mgmimgopt/image/upload/f_auto,q_auto/cocopah/img/cocopah_logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 49149dfcc1d83c6a140d343ab7c4739ff38f4df60a271de93d92e0c03c60bbd2
+  private_copy: nation-images/cocopah-tribe-of-arizona/seal-49149dfcc1d8.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Cocopah Indian Tribe.
+      link: https://cocopah.com/
+      source: cocopah-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: cocopah-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Fort Yuma Agency
@@ -232,16 +255,17 @@ gaming:
       if unresolved within 30 days, either party may request non-binding mediation under CPR Institute
       for Dispute Resolution procedures and may then demand binding arbitration under CPR rules before
       three arbitrators unless both agree to one.
-    dispute_resolution_locator: Section 15 (Dispute Resolution)
-    source: compact-az-ak-chin-indian-community-2003
-    confidence: medium
-    verification: inferred
-    as_of: '2003-02-05'
-    locator: Section 15 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
-      compact approved in 2003; this text is the Ak-Chin Indian Community copy of that form, and the 2021-2022
-      amendments in the list refer back to Section 15. Status copied from this nation's most recent approved
-      or deemed-approved entry for this state in the Office of Indian Gaming list (2022-06-14).
+    dispute_resolution_locator: SECTION 15. DISPUTE RESOLUTION, (c)(2) Arbitrators
+    source: compact-az-cocopah-tribe-of-arizona-2021
+    confidence: high
+    verification: read-in-full
+    as_of: '2021-05-24'
+    locator: SECTION 15. DISPUTE RESOLUTION, (c)(2) Arbitrators
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-az-ak-chin-indian-community-2003 without reading; two reviewers found the clause the
+      same in substance (research/reviews/2026-11-21-compact-clauses.json, item 31). Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2022-06-14).
   ordinances:
   - approved: '1994-02-24'
     link: https://www.nigc.gov?wpdmdl=9519&ind=9531

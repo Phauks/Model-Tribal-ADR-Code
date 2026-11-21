@@ -154,6 +154,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Reno-Sparks Indian Colony, Nevada
+official_images:
+- kind: seal
+  alternative_text: RSIC Seal (002)
+  image_link: https://www.rsic.org/ImageRepository/Document?documentId=928
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 4e7c4525f829b5186a34807722a60b316e018dbdd1beb6f17f314d4e57eb5450
+  private_copy: nation-images/reno-sparks-indian-colony/seal-4e7c4525f829.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright Notices .
+      link: https://www.rsic.org/
+      source: rsic-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: rsic-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Western Nevada Agency
@@ -286,42 +309,6 @@ justice_institutions:
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
-  - kind: other
-    title: Batterers Treatment
-    citation: R.S.I.C. Ordinance 48 1-1-8
-    link: https://www.rsic.org/205/Tribal-Ordinances
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/batterers-treatment/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Pretrial Diversion Conditions
-    citation: R.S.I.C. 3-1-910
-    link: https://www.rsic.org/205/Tribal-Ordinances
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/pretrial-diversion-conditions/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Sentencing Options
-    citation: R.S.I.C. 3-1-1304
-    link: https://www.rsic.org/205/Tribal-Ordinances
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/sentencing-options/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
   - kind: mediation
     title: Part 9. Informal Conference, Mediation or Conflict Resolution Gathering
     citation: Part 9. Informal Conference, Mediation or Conflict Resolution Gathering; (Section 6-1-901.
@@ -355,6 +342,40 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Received:
       July 2012); the provision itself was not read. The heading it falls under is taken from the page
       layout and may be imprecise.'
+  database_listings:
+  - title: Batterers Treatment
+    citation: R.S.I.C. Ordinance 48 1-1-8
+    link: https://www.rsic.org/205/Tribal-Ordinances
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/batterers-treatment/
+  - title: Pretrial Diversion Conditions
+    citation: R.S.I.C. 3-1-910
+    link: https://www.rsic.org/205/Tribal-Ordinances
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/pretrial-diversion-conditions/
+  - title: Sentencing Options
+    citation: R.S.I.C. 3-1-1304
+    link: https://www.rsic.org/205/Tribal-Ordinances
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-options/
 gaming:
   compacts:
   - state: NV

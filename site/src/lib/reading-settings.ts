@@ -1,6 +1,6 @@
 /**
  * Reading settings (site/DESIGN.md, section 6, "Settings"): text size, font,
- * text spacing, theme and contrast. They are kept on the reader's device in
+ * text spacing, text alignment, theme and contrast. They are kept on the reader's device in
  * local storage, so they work offline and are never sent to the server.
  *
  * Each setting other than the theme becomes a data attribute on the root
@@ -22,12 +22,14 @@ export const themeStorageKey = 'theme';
 export const textSizes = ['standard', 'large', 'larger', 'largest'] as const;
 export const fonts = ['atkinson-hyperlegible-next', 'serif', 'opendyslexic', 'device'] as const;
 export const textSpacings = ['standard', 'wide'] as const;
+export const textAlignments = ['left', 'justified'] as const;
 export const contrasts = ['standard', 'more'] as const;
 export const themes = ['device', 'light', 'dark'] as const;
 
 export type TextSize = (typeof textSizes)[number];
 export type Font = (typeof fonts)[number];
 export type TextSpacing = (typeof textSpacings)[number];
+export type TextAlignment = (typeof textAlignments)[number];
 export type Contrast = (typeof contrasts)[number];
 export type Theme = (typeof themes)[number];
 
@@ -36,15 +38,23 @@ export interface ReadingSettings {
 	textSize: TextSize;
 	font: Font;
 	textSpacing: TextSpacing;
+	textAlignment: TextAlignment;
 	contrast: Contrast;
 }
 
-export const settingNames = ['textSize', 'font', 'textSpacing', 'contrast'] as const;
+export const settingNames = [
+	'textSize',
+	'font',
+	'textSpacing',
+	'textAlignment',
+	'contrast'
+] as const;
 
 export const defaultSettings: ReadingSettings = {
 	textSize: 'standard',
 	font: 'atkinson-hyperlegible-next',
 	textSpacing: 'standard',
+	textAlignment: 'left',
 	contrast: 'standard'
 };
 
@@ -52,6 +62,7 @@ const allowedValues: { [Name in keyof ReadingSettings]: readonly ReadingSettings
 	textSize: textSizes,
 	font: fonts,
 	textSpacing: textSpacings,
+	textAlignment: textAlignments,
 	contrast: contrasts
 };
 
@@ -82,6 +93,15 @@ export const fontChoices: Choice<Font>[] = [
 export const textSpacingChoices: Choice<TextSpacing>[] = [
 	{ value: 'standard', label: 'Standard' },
 	{ value: 'wide', label: 'Wide', hint: 'More space between lines, paragraphs, letters and words' }
+];
+
+export const textAlignmentChoices: Choice<TextAlignment>[] = [
+	{ value: 'left', label: 'Left aligned', hint: 'Even space between words, with a ragged right edge' },
+	{
+		value: 'justified',
+		label: 'Justified',
+		hint: 'Straight edges on both sides, with long words hyphenated at line ends'
+	}
 ];
 
 export const themeChoices: Choice<Theme>[] = [

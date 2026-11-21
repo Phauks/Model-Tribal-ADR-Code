@@ -140,6 +140,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Hoonah Indian Association" (community: Hoonah, object 76)'
+official_images:
+- kind: logo
+  image_link: https://static.wixstatic.com/media/fcf9e7_82466639b0b04fd6aeded52a894db4ad%7Emv2.jpg/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/fcf9e7_82466639b0b04fd6aeded52a894db4ad%7Emv2.jpg
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: 11285d4917e12a458f24a3476533ecfe8287be231283d95f50d496ed3d5eeae8
+  private_copy: nation-images/hoonah-indian-association/logo-11285d4917e1.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2035 by Autono.
+      link: https://www.hoonahindianassociation.org/
+      source: hoonahindianassociation-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: hoonahindianassociation-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Tlingit
   language_tag: tli

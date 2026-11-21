@@ -122,6 +122,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Santa Rosa Indian Community of the Santa Rosa Rancheria, California
+official_images:
+- kind: logo
+  image_link: https://static.wixstatic.com/media/c62a49_83663d03aac54ecabb90300330d3b158%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/c62a49_83663d03aac54ecabb90300330d3b158%7Emv2.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 19e437d355f4a7157762adae94a785e067d5bf63d7a37535954ce072d8adfee6
+  private_copy: nation-images/santa-rosa-indian-community-of-the-santa-rosa-rancheria/logo-19e437d355f4.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: 2025 Copyright | Rights Reserved .
+      link: https://www.tachi-yokut-nsn.gov/
+      source: tachi-yokut-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: tachi-yokut-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency
@@ -211,17 +233,19 @@ gaming:
       District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
       or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
       or other methods may be used by mutual agreement.
-    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
-    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
-    confidence: medium
-    verification: inferred
-    as_of: '2026-01-26'
-    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
-    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
-      Community compact, which follows the form California has used in its recent compacts; many California
-      nations still operate under 1999-era compacts with a different dispute section. Status copied from
-      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
-      Gaming list (2022-11-23).
+    dispute_resolution_locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS., Sec. 13.1. Voluntary Resolution;
+      Court Resolution., (d)
+    source: compact-ca-santa-rosa-indian-community-of-the-santa-2022
+    confidence: high
+    verification: read-in-full
+    as_of: '2022-11-23'
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS., Sec. 13.1. Voluntary Resolution; Court Resolution.,
+      (d)
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-ca-cher-ae-heights-indian-community-of-the-2026 without reading; two reviewers found
+      the clause the same in substance (research/reviews/2026-11-21-compact-clauses.json, item 188). Status
+      copied from this nation's most recent approved or deemed-approved entry for this state in the Office
+      of Indian Gaming list (2022-11-23).
   ordinances:
   - approved: '1994-06-27'
     link: https://www.nigc.gov?wpdmdl=11009&ind=11031

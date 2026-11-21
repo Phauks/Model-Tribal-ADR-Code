@@ -130,6 +130,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Knik Tribe" (community: Wasilla, object 226)'
+official_images:
+- kind: logo
+  image_link: https://static.wixstatic.com/media/d8a3e1_95beffd1cfd44adc90bca1cde694a084~mv2.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: c5bdfeba8320f52f2da36e39f98900ba6539e46e6e9331d6b9fcadf0ec892e70
+  private_copy: nation-images/knik-tribe/logo-c5bdfeba8320.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2025 by Knik Tribe.
+      link: https://www.kniktribe.org/
+      source: kniktribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: kniktribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Alaska
   bureau_of_indian_affairs_agency: Alaska Regional Office

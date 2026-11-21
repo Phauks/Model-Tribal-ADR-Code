@@ -119,6 +119,21 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ely Shoshone Tribe of Nevada
+official_images:
+- kind: logo
+  image_link: https://images.squarespace-cdn.com/content/v1/5e5ed940e85ead40980fbd14/1626195476220-9Q6FG4BEOFR2QF92NW7H/ElyShoshoneTribeNevadalogoweb.png?format=2500w
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: b75f1562e45cde749405d09d691fe8777f8c10a73b6502bbb06589824de2d3cc
+  private_copy: nation-images/ely-shoshone-tribe-of-nevada/logo-b75f1562e45c.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: elyshoshonetribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Eastern Nevada Agency
@@ -170,69 +185,62 @@ justice_institutions:
   locator: Nevada section, entry 'Ely Shoshone Tribe'
   note: 'Link check 2026-11-21: the site did not respond.'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Probation Orders Requiring Programs or Treatment
+  database_listings:
+  - title: Probation Orders Requiring Programs or Treatment
     citation: ESTC-176A.400
     link: https://www.narf.org/nill/codes/ely_shoshone/index.html
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Alternative; Program
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/probation-orders-requiring-programs-or-treatment/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative; Program.'
-  - kind: other
-    title: Rehabilitation and Treatment for Category C&D Offenses
+  - title: Rehabilitation and Treatment for Category C&D Offenses
     citation: ESTC-453.336
     link: https://www.narf.org/nill/codes/ely_shoshone/index.html
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Program; Rehabilitation; Substance
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/rehabilitation-and-treatment-for-category-cd-offenses/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Program; Rehabilitation;
-      Substance.'
-  - kind: other
-    title: Restitution for Victim Substance Abuse Program
+  - title: Restitution for Victim Substance Abuse Program
     citation: ESTC-453.332
     link: https://www.narf.org/nill/codes/ely_shoshone/index.html
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Program; Substance
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/restitution-for-victim-substance-abuse-program/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Program; Substance.'
-  - kind: other
-    title: Sex Offender Program of Professional Counseling
+  - title: Sex Offender Program of Professional Counseling
     citation: ESTC-176A.410
     link: https://www.narf.org/nill/codes/ely_shoshone/index.html
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Counseling; Program
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/sex-offender-program-of-professional-counseling/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Counseling; Program.'
-  - kind: other
-    title: Suspention of Proceedings for First Time Offenders
+  - title: Suspention of Proceedings for First Time Offenders
     citation: ESTC-453.3363
     link: https://www.narf.org/nill/codes/ely_shoshone/index.html
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Program; Rehabilitation; Substance
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/suspention-of-proceedings-for-first-time-offenders/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Program; Rehabilitation;
-      Substance.'
 gaming:
   ordinances:
   - approved: '2004-10-22'

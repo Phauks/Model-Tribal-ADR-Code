@@ -157,6 +157,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kiowa Tribe (previously listed as Kiowa Indian Tribe of Oklahoma)
+official_images:
+- kind: logo
+  alternative_text: Home
+  image_link: https://www.kiowatribe.org/sites/default/files/logo_0_0.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 691e13ba8861682915ceac418a6a6494b94ed2b2351f56e0605b7d3fef07b5c3
+  private_copy: nation-images/kiowa-tribe/logo-691e13ba8861.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 - Kiowa Tribe, All Rights Reserved.
+      link: https://www.kiowatribe.org/
+      source: kiowatribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: kiowatribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Kiowa
   language_tag: kio
@@ -293,54 +316,49 @@ dispute_resolution:
     confidence: medium
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/kiowa-tribe-peacemaking-act/
-  - kind: peacemaking
-    title: Kiowa Tribe Peacemaking Act
+  database_listings:
+  - title: Kiowa Tribe Peacemaking Act
     citation: KIOWA TRIBE PEACEMAKING ACT
     link: https://www.kiowatribe.org/sites/default/files/2023-03/Kiowa%20Tribe%20-%20KCC%20Code%20of%20Law.pdf
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Peacemaking
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/kiowa-tribe-peacemaking-act/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
-  - kind: other
-    title: Treatment in Lieu of Imprisonment or Fines
+  - title: Treatment in Lieu of Imprisonment or Fines
     citation: KIOWA CODE. TITLE Ill CRIMINAL CODE.
     link: https://www.kiowatribe.org/sites/default/files/2023-03/Kiowa%20Tribe%20-%20KCC%20Code%20of%20Law.pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Alternative
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-imprisonment-or-fines/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
-  - kind: other
-    title: Treatment in Lieu of Jail Sentence for Intoxication
+  - title: Treatment in Lieu of Jail Sentence for Intoxication
     citation: OFFENSES
     link: https://ncorj.org/tribal-law/treatment-in-lieu-of-jail-sentence-for-intoxication/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-jail-sentence-for-intoxication/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
-  - kind: other
-    title: Treatment in Lieu of Jail Sentence for Possession
+  - title: Treatment in Lieu of Jail Sentence for Possession
     citation: OFFENSES
     link: https://ncorj.org/tribal-law/treatment-in-lieu-of-jail-sentence-for-possession/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-jail-sentence-for-possession/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
 gaming:
   compacts:
   - state: OK
@@ -377,17 +395,17 @@ gaming:
       days, and either party may then refer the dispute to arbitration under American Arbitration Association
       rules before a single arbitrator, with de novo review of the award available in federal district
       court under limited waivers of immunity.
-    dispute_resolution_locator: Part 12 (Dispute Resolution)
-    source: compact-ok-cherokee-nation-2005
-    confidence: medium
-    verification: inferred
-    as_of: '2005-01-27'
-    locator: Part 12 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
-      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
-      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
-      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
-      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2019-04-16).
+    dispute_resolution_locator: Part 12. DISPUTE RESOLUTION, paragraph 2
+    source: compact-ok-kiowa-tribe-2006
+    confidence: high
+    verification: read-in-full
+    as_of: '2006-10-23'
+    locator: Part 12. DISPUTE RESOLUTION, paragraph 2
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-ok-cherokee-nation-2005 without reading; two reviewers found the clause the same in
+      substance (research/reviews/2026-11-21-compact-clauses.json, item 92). Status copied from this nation's
+      most recent approved or deemed-approved entry for this state in the Office of Indian Gaming list
+      (2019-04-16).
   ordinances:
   - approved: '1995-08-25'
     link: https://www.nigc.gov?wpdmdl=10086&ind=10102

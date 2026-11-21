@@ -130,6 +130,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
+official_images:
+- kind: logo
+  alternative_text: Official Tribal Website Logo
+  image_link: https://www.fortmojaveindiantribe.com/wp-content/uploads/2018/05/fmit-logo2X.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 366a477735ca974603d303db2416f897e60f12083c8d90a77223e268c269364c
+  private_copy: nation-images/fort-mojave-indian-tribe/logo-366a477735ca.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Copyright - | Fort Mojave Indian Tribe | All Rights Reserved Page load link .
+      link: https://www.fortmojaveindiantribe.com/
+      source: fortmojaveindiantribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: fortmojaveindiantribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Colorado River Agency
@@ -269,16 +292,17 @@ gaming:
       if unresolved within 30 days, either party may request non-binding mediation under CPR Institute
       for Dispute Resolution procedures and may then demand binding arbitration under CPR rules before
       three arbitrators unless both agree to one.
-    dispute_resolution_locator: Section 15 (Dispute Resolution)
-    source: compact-az-ak-chin-indian-community-2003
-    confidence: medium
-    verification: inferred
-    as_of: '2003-02-05'
-    locator: Section 15 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
-      compact approved in 2003; this text is the Ak-Chin Indian Community copy of that form, and the 2021-2022
-      amendments in the list refer back to Section 15. Status copied from this nation's most recent approved
-      or deemed-approved entry for this state in the Office of Indian Gaming list (2022-06-14).
+    dispute_resolution_locator: SECTION 15. DISPUTE RESOLUTION, (c) Arbitration, (2) Arbitrators
+    source: compact-az-fort-mojave-indian-tribe-of-arizona-cali-2021
+    confidence: high
+    verification: read-in-full
+    as_of: '2021-05-24'
+    locator: SECTION 15. DISPUTE RESOLUTION, (c) Arbitration, (2) Arbitrators
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-az-ak-chin-indian-community-2003 without reading; two reviewers found the clause the
+      same in substance (research/reviews/2026-11-21-compact-clauses.json, item 61). Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2022-06-14).
   - state: CA
     status: approved
     dispute_resolution_summary: The parties exchange written notice and a written response within 15 days

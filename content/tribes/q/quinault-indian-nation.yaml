@@ -111,6 +111,41 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Quinault Indian Nation
+official_images:
+- kind: logo
+  alternative_text: Home Page
+  image_link: https://www.quinaultindiannation.com/ImageRepository/Document?documentID=65
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 7a42752164893181299fc2a96f61890a0cbe24cf3dfce68e82d56ffb231ca59b
+  private_copy: nation-images/quinault-indian-nation/logo-7a4275216489.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright Notices .
+      link: https://www.quinaultindiannation.com/
+      source: quinault-indian-nation-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: quinault-indian-nation-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89000633'
+  wordmark: QUINAULT INDIAN NATION
+  filed: '2002-08-23'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89000633&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: different-design
+  private_copy: nation-images/quinault-indian-nation/insignia-database-89000633.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89000633
 languages:
 - name: Quinault
   language_tag: qun
@@ -199,43 +234,40 @@ justice_institutions:
   as_of: '2022'
   locator: Washington section, entry 'Quinault Indian Nation'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Convictions for Domestic Violence Cases
+  database_listings:
+  - title: Convictions for Domestic Violence Cases
     citation: Quinault Indian Nation 12.06.320 and 12.06.325
     link: https://www.quinaultindiannation.com/362/Office-of-the-Attorney-General
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/convictions-for-domestic-violence-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Domestic Violence Perpetrator Program
+  - title: Domestic Violence Perpetrator Program
     citation: Quinault Indian Nation 12.06.315
     link: https://www.quinaultindiannation.com/362/Office-of-the-Attorney-General
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/domestic-violence-perpetrator-program/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Sentencing Policies
+  - title: Sentencing Policies
     citation: Quinault Indian Nation 12.01.810
     link: https://www.quinaultindiannation.com/362/Office-of-the-Attorney-General
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/sentencing-policies/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
 gaming:
   compacts:
   - state: WA

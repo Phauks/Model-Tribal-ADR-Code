@@ -112,6 +112,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Torres Martinez Desert Cahuilla Indians, California
+official_images:
+- kind: logo
+  alternative_text: Torres Martinez Desert Cahuilla Indians
+  image_link: https://torresmartinez.org/wp-content/uploads/2025/11/logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 25cee1a4e25fde2baa8bd38ab952cc611a0f07ab062bb75b25b097040e3dbe1b
+  private_copy: nation-images/torres-martinez-desert-cahuilla-indians/logo-25cee1a4e25f.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 Torres Martinez Desert Cahuilla Indians.
+      link: https://torresmartinez.org/
+      source: torres-martinez-desert-cahuilla-indians-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: torres-martinez-desert-cahuilla-indians-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Cahuilla
   language_tag: chl
@@ -161,22 +184,20 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.torresmartinez.org/Government/Commissions/TribalCourt.aspx)
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
-  provisions:
-  - kind: peacemaking
-    title: Peacemaking and Family Conference Preference in Child Welfare
+  database_listings:
+  - title: Peacemaking and Family Conference Preference in Child Welfare
     citation: Torres Martinez Desert Cahuilla Indians Tribal Children's Code. Chapter 3 Petitions; Hearings;
       Traditional Dispute Resolution. Section 6 Peacemaker Mediation; Talking Circles; Traditional Dispute
       Resolution
     link: https://www.intertribalcourt.org/_files/ugd/2aaf94_423cf4df889f4cab912f98a6c29f9ea9.pdf
+    practice_area: Peacemaking; Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Family conference, Family group conference; Peacemaking
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/peacemaking-and-family-conference-preference-in-child-welfare/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Peacemaking; Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice:
-      Family conference, Family group conference; Peacemaking.'
 gaming:
   compacts:
   - state: CA

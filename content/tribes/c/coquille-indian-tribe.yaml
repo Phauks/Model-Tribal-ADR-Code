@@ -128,6 +128,31 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Coquille Indian Tribe
+official_images:
+- kind: logo
+  alternative_text: Coquille Indian Tribe
+  image_link: https://www.coquilletribe.org/wp-content/uploads/2017/03/Homepage-Banner-1E-3.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: b93260c21d55432c8404c7e04ea0ed8813cd523d91f73cba14b331e175f33f4d
+  private_copy: nation-images/coquille-indian-tribe/logo-b93260c21d55.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: tribal-law
+      effect: blocks-reuse
+      quote: Any person or entity wishing to use the official Coquille Tribal seal must contact the Tribal
+        Council Chairperson in writing to request permission to use it.
+      source: coquille-tribal-seal
+      link: https://www.coquilletribe.org/wp-content/uploads/2018/09/196-Tribal-Seal-9_2018.pdf
+      verification: read-in-full
+      locator: § 196.160(1)
+      note: The banner image includes the Tribal seal.
+  source: coquilletribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Miluk
   source: coquilletribe-our-heritage-our-languages
@@ -224,12 +249,14 @@ justice_institutions:
     recorded.'
 - kind: tribal-court
   name: Coquille Indian Tribal Court
-  link: http://52.27.76.203/?page_id=1733
+  link: https://www.coquilletribe.org/our-people/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Oregon section, entry 'Coquille Indian Tribe'
+  note: The listed link (http://52.27.76.203/?page_id=1733) no longer reached the court on 2026-11-21;
+    the link is the court's page on the nation's own site, found in the data gap review (research/reviews/2026-11-21-court-listings.json).
 dispute_resolution:
   forums:
   - kind: peacemaking
@@ -270,82 +297,6 @@ dispute_resolution:
     source: coquille-ordinance-655-peacegiving
     confidence: medium
     as_of: '2005-04-23'
-  - kind: other
-    title: Court Authority Over Remedial Services for Parents and Children
-    citation: CITC 641.550
-    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/court-authority-over-remedial-services-for-parents-and-children/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: N/A. Database form of practice: Counseling; Rehabilitation.'
-  - kind: other
-    title: 'Dependency Code Purpose: Family Preservation and Rehabilitation'
-    citation: CITC 641.010(2)
-    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dependency-code-purpose-family-preservation-and-rehabilitation/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: N/A. Database form of practice: Rehabilitation; Restorative
-      practice.'
-  - kind: other
-    title: Informal Resolution in Juvenile Dependency Cases
-    citation: CITC 641.400
-    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-resolution-in-juvenile-dependency-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Alternative;
-      Conflict resolution; Informal resolution.'
-  - kind: mediation
-    title: Mediation Encouraged in Termination of Parental Rights
-    citation: CITC 642.420
-    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/mediation-encouraged-in-termination-of-parental-rights/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: N/A. Database form of practice: Alternative; Conflict
-      resolution; Mediation.'
-  - kind: peacemaking
-    title: Peacegiving Process
-    citation: CITC 655 Peacegiving
-    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/peacegiving-process/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: N/A. Database form of practice: Peacemaking.'
-  - kind: other
-    title: Remedial Efforts and Rehabilitation Programs
-    citation: CITC 641.510
-    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/remedial-efforts-and-rehabilitation-programs/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: N/A. Database form of practice: Rehabilitation; Remedial
-      services.'
   - kind: mediation
     title: 642.420 Mediation Encouraged
     citation: 642.420 Mediation Encouraged
@@ -378,6 +329,73 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: November 2014); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Court Authority Over Remedial Services for Parents and Children
+    citation: CITC 641.550
+    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
+    practice_area: Tribal Child Welfare/Family
+    phase: N/A
+    form_of_practice: Counseling; Rehabilitation
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-authority-over-remedial-services-for-parents-and-children/
+  - title: 'Dependency Code Purpose: Family Preservation and Rehabilitation'
+    citation: CITC 641.010(2)
+    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
+    practice_area: Tribal Child Welfare/Family
+    phase: N/A
+    form_of_practice: Rehabilitation; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dependency-code-purpose-family-preservation-and-rehabilitation/
+  - title: Informal Resolution in Juvenile Dependency Cases
+    citation: CITC 641.400
+    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Alternative; Conflict resolution; Informal resolution
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-resolution-in-juvenile-dependency-cases/
+  - title: Mediation Encouraged in Termination of Parental Rights
+    citation: CITC 642.420
+    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
+    practice_area: Tribal Child Welfare/Family
+    phase: N/A
+    form_of_practice: Alternative; Conflict resolution; Mediation
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/mediation-encouraged-in-termination-of-parental-rights/
+  - title: Peacegiving Process
+    citation: CITC 655 Peacegiving
+    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
+    practice_area: Tribal Justice
+    phase: N/A
+    form_of_practice: Peacemaking
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacegiving-process/
+  - title: Remedial Efforts and Rehabilitation Programs
+    citation: CITC 641.510
+    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
+    practice_area: Tribal Child Welfare/Family
+    phase: N/A
+    form_of_practice: Rehabilitation; Remedial services
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/remedial-efforts-and-rehabilitation-programs/
 gaming:
   compacts:
   - state: OR
@@ -540,16 +558,17 @@ gaming:
       meet within 30 days; if unresolved within 90 days either party may sue in the United States District
       Court for the District of Oregon (or a state court if federal jurisdiction is declined), and other
       dispute resolution methods remain available by mutual agreement.
-    dispute_resolution_locator: Section 17 (Dispute Resolution)
-    source: compact-or-confederated-tribes-of-the-grand-ronde-c-2023
-    confidence: medium
-    verification: inferred
-    as_of: '2023-02-08'
-    locator: Section 17 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 2023 Confederated Tribes
-      of the Grand Ronde Community compact; other Oregon compacts were not checked. Status copied from
-      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
-      Gaming list (2020-05-20).
+    dispute_resolution_locator: SECTION 16. DISPUTE RESOLUTION.
+    source: compact-or-coquille-indian-tribe-2000
+    confidence: high
+    verification: read-in-full
+    as_of: '2000-12-06'
+    locator: SECTION 16. DISPUTE RESOLUTION.
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-or-confederated-tribes-of-the-grand-ronde-c-2023 without reading; two reviewers found
+      the clause the same in substance (research/reviews/2026-11-21-compact-clauses.json, item 41). Status
+      copied from this nation's most recent approved or deemed-approved entry for this state in the Office
+      of Indian Gaming list (2020-05-20).
   ordinances:
   - approved: '1995-04-28'
     link: https://www.nigc.gov?wpdmdl=9669&ind=9681

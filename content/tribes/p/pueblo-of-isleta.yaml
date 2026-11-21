@@ -122,6 +122,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Isleta, New Mexico
+official_images:
+- kind: logo
+  image_link: https://www.isletapueblo.com/wp-content/uploads/2018/07/Pueblo-of-Isleta-logomark-300x300.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 7b348be8b7bf641a0815f4a5bd74f369ff8f69454111c3a925fcb5ab4e4a7176
+  private_copy: nation-images/pueblo-of-isleta/logo-7b348be8b7bf.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: terms-of-use
+      effect: blocks-reuse
+      quote: All rights reserved, all content contained herein is property of the Pueblo of Isleta and
+        may not be reproduced or copied without the expressed written permission from the Pueblo of Isleta.
+      link: https://www.isletapueblo.com/
+      source: isletapueblo-home-page
+      verification: read-in-full
+  source: isletapueblo-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Tiwa
   language_tag: tix
@@ -267,84 +289,6 @@ dispute_resolution:
     source: isleta-resolution-2020-028-peacemaking
     confidence: high
     as_of: '2020-06-11'
-  - kind: other
-    title: Alternative Programs for Parents Charged with Neglect
-    citation: Pueblo of Isleta Law and Order Code 31-06-15
-    link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-programs-for-parents-charged-with-neglect/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Justice. Database phase: Pre-adjudication. Database form of
-      practice: Restorative justice.'
-  - kind: other
-    title: Attendance Review Conference for Truancy
-    citation: Pueblo of Isleta Law and Order Code 31-04-06
-    link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/attendance-review-conference-for-truancy/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative justice; Restorative practice.'
-  - kind: other
-    title: Dispositional Hearings for Truancy Cases
-    citation: Pueblo of Isleta Law and Order Code 31-04-11
-    link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dispositional-hearings-for-truancy-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Dispositional Options for Familes in Need
-    citation: Pueblo of Isleta Law and Order Code 31-05-09
-    link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dispositional-options-for-familes-in-need/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Diversion Program for Juvenile Delinquency
-    citation: Pueblo of Isleta Law and Order Code 31-03-10 and 31-03-11
-    link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-program-for-juvenile-delinquency/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Purpose and Goals with Juvenile Delinquency
-    citation: Pueblo of Isleta Law and Order Code 31-03-02
-    link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-and-goals-with-juvenile-delinquency/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
   - kind: peacemaking
     title: Resolution Establishing Pueblo of Isleta Peacemaking Program
     citation: Resolution Establishing Pueblo of Isleta Peacemaking Program
@@ -367,6 +311,73 @@ dispute_resolution:
     locator: Rule 3(d)-(f)
     note: The rules require training and pay a flat fee for meeting or training attendance; the training
       curriculum is not described.
+  database_listings:
+  - title: Alternative Programs for Parents Charged with Neglect
+    citation: Pueblo of Isleta Law and Order Code 31-06-15
+    link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
+    practice_area: Tribal Child Welfare/Family; Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-programs-for-parents-charged-with-neglect/
+  - title: Attendance Review Conference for Truancy
+    citation: Pueblo of Isleta Law and Order Code 31-04-06
+    link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/attendance-review-conference-for-truancy/
+  - title: Dispositional Hearings for Truancy Cases
+    citation: Pueblo of Isleta Law and Order Code 31-04-11
+    link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispositional-hearings-for-truancy-cases/
+  - title: Dispositional Options for Familes in Need
+    citation: Pueblo of Isleta Law and Order Code 31-05-09
+    link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispositional-options-for-familes-in-need/
+  - title: Diversion Program for Juvenile Delinquency
+    citation: Pueblo of Isleta Law and Order Code 31-03-10 and 31-03-11
+    link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-program-for-juvenile-delinquency/
+  - title: Purpose and Goals with Juvenile Delinquency
+    citation: Pueblo of Isleta Law and Order Code 31-03-02
+    link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-and-goals-with-juvenile-delinquency/
 gaming:
   compacts:
   - state: NM
@@ -445,16 +456,17 @@ gaming:
       may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
       binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
       Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
-    dispute_resolution_locator: Section 7 (Dispute Resolution)
-    source: compact-nm-pueblo-of-santa-ana-2016
-    confidence: medium
-    verification: inferred
-    as_of: '2016-12-30'
-    locator: Section 7 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
-      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
-      Status copied from this nation's most recent approved or deemed-approved entry for this state in
-      the Office of Indian Gaming list (2015-07-28).
+    dispute_resolution_locator: SECTION 7. Dispute Resolution.
+    source: compact-nm-pueblo-of-isleta-new-mexico-2015
+    confidence: high
+    verification: read-in-full
+    as_of: '2015-07-28'
+    locator: SECTION 7. Dispute Resolution.
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-nm-pueblo-of-santa-ana-2016 without reading; two reviewers found the clause the same
+      in substance (research/reviews/2026-11-21-compact-clauses.json, item 150). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2015-07-28).
   ordinances:
   - approved: '1994-04-22'
     link: https://www.nigc.gov?wpdmdl=10726&ind=10761

@@ -189,6 +189,29 @@ contacts:
   as_of: '2026-11-20'
   locator: Fort Sill—Chiricahua—Warm Springs—Apache Tribe (previously listed as Fort Sill Apache Tribe
     of Oklahoma)
+official_images:
+- kind: seal
+  image_link: https://fortsillapache-nsn.gov/wp-content/uploads/2024/05/fort_sill_apache_seal.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: c9301353fd0168bd24e7dd3a0e4fe53bf6da480c0b34872944ffca587722987b
+  private_copy: nation-images/fort-sill-chiricahua-warm-springs-apache-tribe/seal-c9301353fd01.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Fort Sill Apache Tribe .
+      link: https://fortsillapache-nsn.gov/
+      source: fortsillapache-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: fortsillapache-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+  note: Found by rendering the page in a browser; the page draws its logo with JavaScript.
 languages:
 - name: Chiricahua
   language_tag: apm
@@ -269,17 +292,17 @@ gaming:
       days, and either party may then refer the dispute to arbitration under American Arbitration Association
       rules before a single arbitrator, with de novo review of the award available in federal district
       court under limited waivers of immunity.
-    dispute_resolution_locator: Part 12 (Dispute Resolution)
-    source: compact-ok-cherokee-nation-2005
-    confidence: medium
-    verification: inferred
-    as_of: '2005-01-27'
-    locator: Part 12 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
-      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
-      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
-      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
-      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-08-17).
+    dispute_resolution_locator: Part 12. DISPUTE RESOLUTION, paragraph 2
+    source: compact-ok-fort-sill-chiricahua-warm-springs-apache-2007
+    confidence: high
+    verification: read-in-full
+    as_of: '2007-04-02'
+    locator: Part 12. DISPUTE RESOLUTION, paragraph 2
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-ok-cherokee-nation-2005 without reading; two reviewers found the clause the same in
+      substance (research/reviews/2026-11-21-compact-clauses.json, item 64). Status copied from this nation's
+      most recent approved or deemed-approved entry for this state in the Office of Indian Gaming list
+      (2018-08-17).
   ordinances:
   - approved: '1999-09-09'
     link: https://www.nigc.gov?wpdmdl=9851&ind=9879

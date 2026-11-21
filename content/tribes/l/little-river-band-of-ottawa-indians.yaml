@@ -134,6 +134,40 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Little River Band of Ottawa Indians, Michigan
+official_images:
+- kind: seal
+  alternative_text: Home
+  image_link: https://www.lrboi-nsn.gov/themes/custom/provus_lrboi/logo.svg
+  retrieved: '2026-11-21'
+  media_type: image/svg+xml
+  sha256: 43ad27a90f3f43aaef377de5a259a69b8eff268a7d575fc7cc32423bfdb7ad2f
+  private_copy: nation-images/little-river-band-of-ottawa-indians/seal-43ad27a90f3f.svg
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: tribal-law
+      effect: blocks-reuse
+      quote: No facsimiles, reproductions or impressions of the Tribal Seal shall be used in a manner
+        unconnected with official functions or communications of the Tribe, or in any manner not specifically
+        authorized by resolution of the Tribal Council.
+      source: little-river-band-tribal-seal-ordinance
+      link: https://lrboi-nsn.gov/sites/default/files/pages/96-0107-01-Tribal-Seal_0.pdf
+      verification: read-in-full
+      locator: Section 4
+      note: Section 5 sets a civil fine of up to $5,000 for each violation. The quotation corrects obvious
+        scanning errors in the published copy.
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2024.
+      link: https://www.lrboi-nsn.gov/
+      source: lrboi-nsn-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: lrboi-nsn-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Anishinaabemowin
   language_tag: oj
@@ -303,108 +337,6 @@ dispute_resolution:
     source: little-river-900-02-juvenile-code-2011
     confidence: medium
     as_of: '2011-07-27'
-  - kind: other
-    title: Alternative Permanent Placement Plans
-    citation: 'Little River Band of Ottawa Indians Ordinance #98-900-01: 20.04'
-    link: https://www.lrboi-nsn.gov/government/tribal-code
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-permanent-placement-plans/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice; Restorative practice.'
-  - kind: other
-    title: Case Plan with Dispositional Alternatives for Minors
-    citation: 'Little River Band of Ottawa Indians Ordinance #98-900-01: 18.02; 18.03; and, 18.04.'
-    link: https://www.lrboi-nsn.gov/government/tribal-code
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/case-plan-with-dispositional-alternatives-for-minors/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice; Restorative practice.'
-  - kind: other
-    title: Domestic Violence Program
-    citation: 'Little River Band of Ottawa Indians Ordinance #04-400-05: 4.03; 4.06; and, 8.06.'
-    link: https://www.lrboi-nsn.gov/government/tribal-code
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/domestic-violence-program/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice;
-      Restorative practice.'
-  - kind: other
-    title: Informal Adjustment Conference for Minors
-    citation: 'Little River Band of Ottawa Indians Ordinance #98-900-01: 13.05.'
-    link: https://www.lrboi-nsn.gov/government/tribal-code
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-adjustment-conference-for-minors/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice; Restorative practice.'
-  - kind: other
-    title: Least Restrictive Aternative Apporach to Elder Protection Orders
-    citation: 'Little River Band of Ottawa Indians Ordinance #11-900-03: 10.1; and, 10.03'
-    link: https://www.lrboi-nsn.gov/government/tribal-code
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/least-restrictive-aternative-apporach-to-elder-protection-orders/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Family; Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice; Restorative practice.'
-  - kind: other
-    title: Purpose and Intent of the Children’s Protection Code
-    citation: 'Little River Band of Ottawa Indians Ordinance #98-900-01: 2.01'
-    link: https://www.lrboi-nsn.gov/government/tribal-code
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-and-intent-of-the-childrens-protection-code/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice; Restorative practice.'
-  - kind: other
-    title: Rehabilitative Measures Penalty in Sentencing
-    citation: 'Little River Band of Ottawa Indians Ordinance #03-300-03: 8-03'
-    link: https://www.lrboi-nsn.gov/government/tribal-code
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/rehabilitative-measures-penalty-in-sentencing/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
-  - kind: other
-    title: Treatment and Counseling for Substance Abuse Perpetrators
-    citation: 'Little River Band of Ottawa Indians Ordinance #04-400-05: 5:01; 5.02; and, 5:05'
-    link: https://www.lrboi-nsn.gov/government/tribal-code
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-and-counseling-for-substance-abuse-perpetrators/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
   - kind: arbitration
     title: Title 02 - Arbitration Ordinance
     citation: Title 02 - Arbitration Ordinance
@@ -511,6 +443,93 @@ dispute_resolution:
     verification: read-in-full
     as_of: '2001-06-18'
     locator: Sections 4.03(a)-(c), 10.02
+  database_listings:
+  - title: Alternative Permanent Placement Plans
+    citation: 'Little River Band of Ottawa Indians Ordinance #98-900-01: 20.04'
+    link: https://www.lrboi-nsn.gov/government/tribal-code
+    practice_area: Tribal Child Welfare/Family
+    phase: Post-adjudication
+    form_of_practice: Restorative justice; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-permanent-placement-plans/
+  - title: Case Plan with Dispositional Alternatives for Minors
+    citation: 'Little River Band of Ottawa Indians Ordinance #98-900-01: 18.02; 18.03; and, 18.04.'
+    link: https://www.lrboi-nsn.gov/government/tribal-code
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/case-plan-with-dispositional-alternatives-for-minors/
+  - title: Domestic Violence Program
+    citation: 'Little River Band of Ottawa Indians Ordinance #04-400-05: 4.03; 4.06; and, 8.06.'
+    link: https://www.lrboi-nsn.gov/government/tribal-code
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/domestic-violence-program/
+  - title: Informal Adjustment Conference for Minors
+    citation: 'Little River Band of Ottawa Indians Ordinance #98-900-01: 13.05.'
+    link: https://www.lrboi-nsn.gov/government/tribal-code
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-adjustment-conference-for-minors/
+  - title: Least Restrictive Aternative Apporach to Elder Protection Orders
+    citation: 'Little River Band of Ottawa Indians Ordinance #11-900-03: 10.1; and, 10.03'
+    link: https://www.lrboi-nsn.gov/government/tribal-code
+    practice_area: Family; Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/least-restrictive-aternative-apporach-to-elder-protection-orders/
+  - title: Purpose and Intent of the Children’s Protection Code
+    citation: 'Little River Band of Ottawa Indians Ordinance #98-900-01: 2.01'
+    link: https://www.lrboi-nsn.gov/government/tribal-code
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-and-intent-of-the-childrens-protection-code/
+  - title: Rehabilitative Measures Penalty in Sentencing
+    citation: 'Little River Band of Ottawa Indians Ordinance #03-300-03: 8-03'
+    link: https://www.lrboi-nsn.gov/government/tribal-code
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/rehabilitative-measures-penalty-in-sentencing/
+  - title: Treatment and Counseling for Substance Abuse Perpetrators
+    citation: 'Little River Band of Ottawa Indians Ordinance #04-400-05: 5:01; 5.02; and, 5:05'
+    link: https://www.lrboi-nsn.gov/government/tribal-code
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-and-counseling-for-substance-abuse-perpetrators/
 gaming:
   compacts:
   - state: MI

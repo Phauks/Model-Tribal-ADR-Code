@@ -128,6 +128,35 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pauma Band of Luiseno Mission Indians of the Pauma & Yuima Reservation, California
+official_images:
+- kind: logo
+  image_link: https://www.paumatribe.com/wp-content/uploads/2023/08/logo-pauma.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 51a4087a7aa5592b464ceadad5d6337f60aa21c4e1329f1ebed51d36f8e46e6e
+  private_copy: nation-images/pauma-band-of-luiseno-mission-indians-of-the-pauma-and-yuima-reservation/logo-51a4087a7aa5.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: terms-of-use
+      effect: blocks-reuse
+      quote: All content, including text, images, and graphics on our website, is owned by us or used
+        with permission and may not be copied, modified, or distributed without our express consent.
+      link: https://www.paumatribe.com/privacy-policy-and-terms-of-service/
+      source: paumatribe-privacy-policy-and-terms-of-service
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © Pauma Tribe 2024 Privacy Policy and Terms of Service
+      link: https://www.paumatribe.com/
+      source: paumatribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: paumatribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Luiseño
   language_tag: lui
@@ -174,20 +203,19 @@ justice_institutions:
   as_of: '2022'
   locator: California section, entry 'Pauma Band of Luiseno Indians'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Referral for Treatment
+  database_listings:
+  - title: Referral for Treatment
     citation: Pauma Band of Mission Indians' Peace and Security Ordinance. Section 6 Civil Penalties.
       D Referral for Treatment.
     link: https://www.intertribalcourt.org/_files/ugd/f5e5d2_993c07c8f9b840b2aedf24e6f3d18e14.pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/referral-for-treatment-3/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
 gaming:
   compacts:
   - state: CA

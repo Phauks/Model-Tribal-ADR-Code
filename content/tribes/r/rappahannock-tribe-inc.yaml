@@ -161,6 +161,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Rappahannock Tribe, Inc.
+official_images:
+- kind: seal
+  image_link: https://www.rappahannocktribe.org/wp-content/uploads/2019/07/Rappahannock-Tribe-Logo-2.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: ba33997c8162ab0dedeaffa7d61e0b9b82a138c5d7c3dbe95dcea7543bd4db10
+  private_copy: nation-images/rappahannock-tribe-inc/seal-ba33997c8162.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright 2026.
+      link: https://www.rappahannocktribe.org/
+      source: rappahannocktribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: rappahannocktribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office

@@ -124,6 +124,48 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Saginaw Chippewa Indian Tribe of Michigan
+official_images:
+- kind: logo
+  alternative_text: logo
+  image_link: https://www.sagchip.org/img/thumbnails/logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 01a1df1a79b7a0e8f584ef7b2addc73a8bbd7d1826d3d4343b07e1eacbca5c53
+  private_copy: nation-images/saginaw-chippewa-indian-tribe-of-michigan/logo-01a1df1a79b7.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright .
+      link: https://www.sagchip.org/
+      source: sagchip-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001534&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001534'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2011-01-04).
+  source: sagchip-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001534'
+  wordmark: SAGINAW CHIPPEWA INDIAN TRIBE OF MICHIGAN
+  filed: '2011-01-04'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001534&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/saginaw-chippewa-indian-tribe-of-michigan/insignia-database-89001534.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001534
 languages:
 - name: Anishinabemowin
   language_tag: ciw
@@ -259,33 +301,29 @@ justice_institutions:
   as_of: '2022'
   locator: Michigan section, entry 'Saginaw Chippewa Indian Tribe'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Child Abuse and Child Neglect Diversion Program
+  database_listings:
+  - title: Child Abuse and Child Neglect Diversion Program
     citation: Title II Children's Code § 2.810
     link: https://www.sagchip.org/tribalcourt/ordinances.htm#.VHOWa8k8B34
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Diversion; Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/child-abuse-and-child-neglect-diversion-program/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Diversion;
-      Restorative justice.'
-  - kind: other
-    title: Informal Adjustment Conference (Alternative to Filing Petition)
+  - title: Informal Adjustment Conference (Alternative to Filing Petition)
     citation: Title II Children's Code § 2.712
     link: https://www.sagchip.org/tribalcourt/ordinances.htm#.VHOWa8k8B34
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Diversion; Informal adjustment; Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-adjustment-conference-alternative-to-filing-petition/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Diversion; Informal adjustment; Restorative justice.'
 gaming:
   compacts:
   - state: MI
@@ -305,15 +343,15 @@ gaming:
       may either stop them or invoke arbitration under American Arbitration Association commercial rules
       before three attorney arbitrators while play continues, and a tribe may likewise invoke arbitration
       on its own unresolved allegations.
-    dispute_resolution_locator: Section 7 (Dispute Resolution)
-    source: compact-mi-bay-mills-indian-community-1993
-    confidence: medium
-    verification: inferred
+    dispute_resolution_locator: SECTION 7. Dispute Resolution., (A)(2)
+    source: compact-mi-saginaw-chippewa-indian-tribe-of-michiga-1993
+    confidence: high
+    verification: read-in-full
     as_of: '1993-11-30'
-    locator: Section 7 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. The same Section 7 text appears in the
-      1993 Bay Mills Indian Community compact and the 1999 Little River Band compact (both read); other
-      Michigan nations signed the 1993 or 1998 forms, and later amendments were not checked. Status copied
+    locator: SECTION 7. Dispute Resolution., (A)(2)
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-mi-bay-mills-indian-community-1993 without reading; two reviewers found the clause
+      the same in substance (research/reviews/2026-11-21-compact-clauses.json, item 181). Status copied
       from this nation's most recent approved or deemed-approved entry for this state in the Office of
       Indian Gaming list (1993-11-30).
   ordinances:

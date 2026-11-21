@@ -95,6 +95,47 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+official_images:
+- kind: seal
+  image_link: https://Mattaponi.gov/sites/default/files/inline-images/tribal-seal-sans-text-preweb.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: e6e8608a355e31f8fc57fd0632f21e8fdd80a4a446593b7e5ed96feaf13880d1
+  private_copy: nation-images/mattaponi-indian-tribe/seal-e6e8608a355e.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 The Mattaponi Indian Reservation.
+      link: https://Mattaponi.gov/
+      source: mattaponi-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89003222&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89003222'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2026-10-29).
+  source: mattaponi-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89003222'
+  wordmark: MATTAPONI INDIAN TRIBE AND RESERVATION 1658
+  filed: '2026-10-29'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89003222&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/mattaponi-indian-tribe/insignia-database-89003222.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89003222
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

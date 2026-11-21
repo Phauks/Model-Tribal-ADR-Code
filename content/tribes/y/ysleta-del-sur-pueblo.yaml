@@ -137,6 +137,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ysleta del Sur Pueblo
+official_images:
+- kind: logo
+  image_link: https://www.ysletadelsurpueblo.org/images/YDSP-logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: fa665b2655106e6439a15b1c3630fa600e2b1b9c09cd755e14da45d15d93c027
+  private_copy: nation-images/ysleta-del-sur-pueblo/logo-fa665b265510.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: YDSP E-Mail --> © 2026 — Ysleta del Sur Pueblo .
+      link: https://www.ysletadelsurpueblo.org/
+      source: ysleta-del-sur-pueblo-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: ysleta-del-sur-pueblo-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Southwest
   bureau_of_indian_affairs_agency: Southern Pueblos Agency
@@ -168,59 +190,61 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Judicial Facility
-  link: http://www.ysletadelsurpueblo.org/html_pages.sstg?id=14&amp;sub1=80
+  link: https://www.ysletadelsurpueblo.org/tribal-services/department-of-tribal-court-records
   source: national-indian-law-library-ysleta-pueblo
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
+  note: The listed link (http://www.ysletadelsurpueblo.org/html_pages.sstg?id=14&amp;sub1=80) no longer
+    reached the court on 2026-11-21; the link is the court's page on the nation's own site, found in the
+    data gap review (research/reviews/2026-11-21-court-listings.json).
 - kind: tribal-court
   name: Ysleta Del Sur Pueblo Tribal Court
-  link: http://www.ysletadelsurpueblo.org/html_pages.sstg?id=14&amp;sub1=188
+  link: https://www.ysletadelsurpueblo.org/tribal-services/department-of-tribal-court-records
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Texas section, entry 'Ysleta del Sur Pueblo'
+  note: The listed link (http://www.ysletadelsurpueblo.org/html_pages.sstg?id=14&amp;sub1=188) no longer
+    reached the court on 2026-11-21; the link is the court's page on the nation's own site, found in the
+    data gap review (research/reviews/2026-11-21-court-listings.json).
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Dispositional Alternatives for Child in Need of Care
+  database_listings:
+  - title: Dispositional Alternatives for Child in Need of Care
     citation: Ysleta Der Sur Pueblo Code of Laws 5.11.20
     link: https://www.narf.org/nill/codes/ysletacode/index.html
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/dispositional-alternatives-for-child-in-need-of-care/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Genalty Penalty Provisions
+  - title: Genalty Penalty Provisions
     citation: Ysleta Der Sur Pueblo Code of Laws 4.2.10
     link: https://www.narf.org/nill/codes/ysletacode/index.html
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/genalty-penalty-provisions/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Referral for Treatment by Court
+  - title: Referral for Treatment by Court
     citation: Ysleta Der Sur Pueblo Code of Laws 4.2.70
     link: https://www.narf.org/nill/codes/ysletacode/index.html
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/referral-for-treatment-by-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
 gaming:
   ordinances:
   - approved: '1993-10-19'

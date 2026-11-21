@@ -114,6 +114,21 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Keweenaw Bay Indian Community, Michigan
+official_images:
+- kind: logo
+  image_link: https://www.kbic-nsn.gov/wp-content/uploads/2023/07/KBIC_logo-no-vines.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 82821b4372e0d8fd615df16248f14741938d25bbd7f01211e4098fc719574f64
+  private_copy: nation-images/keweenaw-bay-indian-community/logo-82821b4372e0.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: kbic-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Michigan Agency
@@ -243,93 +258,83 @@ justice_institutions:
   as_of: '2022'
   locator: Michigan section, entry 'Keweenaw Bay Indian Community'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Cooperation with Other Jurisdictions – Diversion, Rehabilitation, and Training Programs
+  database_listings:
+  - title: Cooperation with Other Jurisdictions – Diversion, Rehabilitation, and Training Programs
     citation: Title 14 § 14-34(a)
     link: https://www.kbic-nsn.gov/tribal-governance/tribal-code/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: General provision
+    form_of_practice: Diversion; Rehabilitation
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/cooperation-with-other-jurisdictions-diversion-rehabilitation-and-training-programs/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: General provision. Database form of practice: Diversion;
-      Rehabilitation.'
-  - kind: other
-    title: Least Restrictive Alternative and Family Rehabilitation in Dispositional Reports
+  - title: Least Restrictive Alternative and Family Rehabilitation in Dispositional Reports
     citation: Title 14 § 14-134(a),(c)
     link: https://www.kbic-nsn.gov/tribal-governance/tribal-code/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication (dispositional hearing)
+    form_of_practice: Alternative; Rehabilitation
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/least-restrictive-alternative-and-family-rehabilitation-in-dispositional-reports/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication (dispositional hearing). Database
-      form of practice: Alternative; Rehabilitation.'
-  - kind: other
-    title: Pre-Adjudication Diversionary Program for Delinquency Cases
+  - title: Pre-Adjudication Diversionary Program for Delinquency Cases
     citation: Title 14 § 14-137(a)(1)(b)
     link: https://www.kbic-nsn.gov/tribal-governance/tribal-code/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Diversion
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/pre-adjudication-diversionary-program-for-delinquency-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Diversion.'
-  - kind: other
-    title: Pre-Adjudication Voluntary Diversion for Parents in Dependency/Neglect Cases
+  - title: Pre-Adjudication Voluntary Diversion for Parents in Dependency/Neglect Cases
     citation: Title 14 § 14-137(b)(1)(a)
     link: https://www.kbic-nsn.gov/tribal-governance/tribal-code/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Diversion
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/pre-adjudication-voluntary-diversion-for-parents-in-dependency-neglect-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Diversion.'
-  - kind: other
-    title: Rehabilitation Prospects as Factor in Waiver to Adult Court
+  - title: Rehabilitation Prospects as Factor in Waiver to Adult Court
     citation: Title 14 §§ 14-226(2), 14-227(1)
     link: https://www.kbic-nsn.gov/tribal-governance/tribal-code/
+    practice_area: Tribal Juvenile/Youth Justice
+    form_of_practice: Rehabilitation
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/rehabilitation-prospects-as-factor-in-waiver-to-adult-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: . Database form of practice: Rehabilitation.'
-  - kind: other
-    title: TSS Monitoring and Completion of Diversionary Programs
+  - title: TSS Monitoring and Completion of Diversionary Programs
     citation: Title 14 § 14-106
     link: https://www.kbic-nsn.gov/tribal-governance/tribal-code/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Diversion
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/tss-monitoring-and-completion-of-diversionary-programs/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Diversion.'
-  - kind: other
-    title: Voluntary Diversionary Program for Parents in Dependency/Neglect Cases
+  - title: Voluntary Diversionary Program for Parents in Dependency/Neglect Cases
     citation: Title 14 § 14-105(b)(2)
     link: https://www.kbic-nsn.gov/tribal-governance/tribal-code/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Diversion
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/voluntary-diversionary-program-for-parents-in-dependency-neglect-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Diversion.'
 gaming:
   compacts:
   - state: MI
@@ -349,15 +354,15 @@ gaming:
       may either stop them or invoke arbitration under American Arbitration Association commercial rules
       before three attorney arbitrators while play continues, and a tribe may likewise invoke arbitration
       on its own unresolved allegations.
-    dispute_resolution_locator: Section 7 (Dispute Resolution)
-    source: compact-mi-bay-mills-indian-community-1993
-    confidence: medium
-    verification: inferred
+    dispute_resolution_locator: SECTION 7. Dispute Resolution, subdivisions (A)(1) and (A)(2)
+    source: compact-mi-keweenaw-bay-indian-community-michigan-1993
+    confidence: high
+    verification: read-in-full
     as_of: '1993-11-30'
-    locator: Section 7 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. The same Section 7 text appears in the
-      1993 Bay Mills Indian Community compact and the 1999 Little River Band compact (both read); other
-      Michigan nations signed the 1993 or 1998 forms, and later amendments were not checked. Status copied
+    locator: SECTION 7. Dispute Resolution, subdivisions (A)(1) and (A)(2)
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-mi-bay-mills-indian-community-1993 without reading; two reviewers found the clause
+      the same in substance (research/reviews/2026-11-21-compact-clauses.json, item 88). Status copied
       from this nation's most recent approved or deemed-approved entry for this state in the Office of
       Indian Gaming list (1993-11-30).
   ordinances:

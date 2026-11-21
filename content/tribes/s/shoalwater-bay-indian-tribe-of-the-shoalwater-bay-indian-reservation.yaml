@@ -125,6 +125,23 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation
+official_images:
+- kind: logo
+  alternative_text: Shoalwater Bay Tribe Logo
+  image_link: https://www.shoalwaterbay-nsn.gov/public/images/shoalwaterbaytribelogo.svg
+  retrieved: '2026-11-21'
+  media_type: image/svg+xml
+  sha256: 1dc471256d46b49e935228c5c5ee6e753db92239b0658c01183d0a19a3a51ce6
+  private_copy: nation-images/shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation/logo-1dc471256d46.svg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: shoalwaterbay-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+  note: Found by rendering the page in a browser; the page draws its logo with JavaScript.
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Olympic Peninsula Agency
@@ -216,46 +233,40 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.shoalwaterbay-nsn.gov/home/tribal-government/tribal-court/)
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Deferred Prosecution and Deferred Judgment Program for Alcohol/Drug Offenses
+  database_listings:
+  - title: Deferred Prosecution and Deferred Judgment Program for Alcohol/Drug Offenses
     citation: Shoalwater Bay Code Title 21 § 21.09.01-21.09.09
     link: https://www.shoalwaterbay-nsn.gov/tribal-court/shoalwater-bay-tribal-court/
+    practice_area: Tribal Criminal Justice
+    phase: Pre-trial
+    form_of_practice: Deferred Prosecution; Diversion; Rehabilitation
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/deferred-prosecution-and-deferred-judgment-program-for-alcohol-drug-offenses/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Criminal Justice. Database phase: Pre-trial. Database form of practice: Deferred Prosecution;
-      Diversion; Rehabilitation.'
-  - kind: other
-    title: Restitution/Compensation to Victim
+  - title: Restitution/Compensation to Victim
     citation: Shoalwater Bay Code Title 21 § 21.07.01(f)
     link: https://www.shoalwaterbay-nsn.gov/tribal-court/shoalwater-bay-tribal-court/
+    practice_area: Tribal Criminal Justice
+    phase: Post-Conviction Sentencing
+    form_of_practice: Restitution; Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/restitution-compensation-to-victim/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Criminal Justice. Database phase: Post-Conviction Sentencing. Database form of practice:
-      Restitution; Restorative justice.'
-  - kind: other
-    title: Treatment Program as Sentencing Option
+  - title: Treatment Program as Sentencing Option
     citation: Shoalwater Bay Code Title 21 § 21.07.01(e)
     link: https://www.shoalwaterbay-nsn.gov/tribal-court/shoalwater-bay-tribal-court/
+    practice_area: Tribal Criminal Justice
+    phase: Post-Conviction Sentencing
+    form_of_practice: Alternative to incarceration; Rehabilitation
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-program-as-sentencing-option/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Criminal Justice. Database phase: Post-Conviction Sentencing. Database form of practice:
-      Alternative to incarceration; Rehabilitation.'
 gaming:
   compacts:
   - state: WA

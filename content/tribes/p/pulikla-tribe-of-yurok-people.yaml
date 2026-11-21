@@ -123,6 +123,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pulikla Tribe of Yurok People (previously listed as Resighini Rancheria, California)
+official_images:
+- kind: logo
+  alternative_text: Pulikla Tribe of Yurok People
+  image_link: https://puliklatribe.gov/wp-content/uploads/2026/02/logo-1.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 1d56a5a16340bae5eccb5dd006557bc75ea2388e250479c00aa59399f34e50dd
+  private_copy: nation-images/pulikla-tribe-of-yurok-people/logo-1d56a5a16340.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Pulikla Tribe of Yurok People .
+      link: https://puliklatribe.gov/
+      source: puliklatribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: puliklatribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Northern California Agency
@@ -232,17 +255,17 @@ gaming:
       District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
       or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
       or other methods may be used by mutual agreement.
-    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
-    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
-    confidence: medium
-    verification: inferred
-    as_of: '2026-01-26'
-    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
-    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
-      Community compact, which follows the form California has used in its recent compacts; many California
-      nations still operate under 1999-era compacts with a different dispute section. Status copied from
-      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
-      Gaming list (2024-01-23).
+    dispute_resolution_locator: Sec. 13.1. Voluntary Resolution; Court Resolution.
+    source: compact-ca-pulikla-tribe-of-yurok-people-2024
+    confidence: high
+    verification: read-in-full
+    as_of: '2024-01-23'
+    locator: Sec. 13.1. Voluntary Resolution; Court Resolution.
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-ca-cher-ae-heights-indian-community-of-the-2026 without reading; two reviewers found
+      the clause the same in substance (research/reviews/2026-11-21-compact-clauses.json, item 162). Status
+      copied from this nation's most recent approved or deemed-approved entry for this state in the Office
+      of Indian Gaming list (2024-01-23).
   ordinances:
   - approved: '1994-12-12'
     link: https://www.nigc.gov?wpdmdl=10909&ind=10927

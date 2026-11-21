@@ -1,7 +1,13 @@
 import { error } from '@sveltejs/kit';
 import geometry from 'virtual:map-geometry';
 import { emailLink, mapSearchLink, phoneLink, webLink } from '#lib/contact-links.ts';
-import { nations, type CitedFact, type NationRecord } from '#lib/server/content.ts';
+import { imageMayBeShown, imagePath } from '#lib/official-images.ts';
+import {
+	nations,
+	sources as sourceRecords,
+	type CitedFact,
+	type NationRecord
+} from '#lib/server/content.ts';
 import { SourceUses } from '#lib/server/source-uses.ts';
 import { humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
@@ -40,10 +46,24 @@ function cited(sources: SourceUses, section: string, fact: CitedFact, item: Fact
 }
 
 /** A contact as the page shows it, with a link a reader can act on where one makes sense. */
-function contactItem(fact: { kind: string; value: string; label?: string }): FactItem {
+function contactItem(fact: {
+	kind: string;
+	value: string;
+	label?: string;
+	link_status?: string;
+	link_checked?: string;
+}): FactItem {
 	const detail = fact.label;
 	switch (fact.kind) {
 		case 'website':
+			// A lapsed domain no longer belongs to the nation, so it is never linked.
+			if (fact.link_status === 'lapsed') {
+				const checked = fact.link_checked ? ` (checked ${fact.link_checked})` : '';
+				return {
+					text: fact.value,
+					detail: [detail, `No longer the nation's website${checked}`].filter(Boolean).join('; ')
+				};
+			}
 			return { text: fact.value, link: webLink(fact.value), detail };
 		case 'physical-address':
 		case 'mailing-address':
@@ -277,6 +297,7 @@ export const load: PageServerLoad = ({ params }) => {
 	if (page.withdrawn) {
 		return {
 			page,
+			image: undefined,
 			selfDesignations: [],
 			pronunciations: [],
 			features: [],
@@ -321,8 +342,22 @@ export const load: PageServerLoad = ({ params }) => {
 		};
 	});
 
+	// The nation's seal or logo, only when its reuse status allows showing it
+	// (docs/official-images.md). The Worker serves it from the private bucket.
+	const shownImage = (record.official_images ?? []).find(
+		(image) => image.private_copy && imageMayBeShown(image)
+	);
+	let image: { src: string; kind: string; foundOn?: string } | undefined;
+	if (shownImage) {
+		const kind = humanize(shownImage.kind);
+		sources.use(shownImage, kind, 'As the nation’s website publishes it');
+		const foundOn = shownImage.source ? sourceRecords().get(shownImage.source) : undefined;
+		image = { src: imagePath(record.id), kind, foundOn: webLink(foundOn?.original_link) };
+	}
+
 	return {
 		page,
+		image,
 		selfDesignations,
 		pronunciations,
 		features: recordedFeatures(record, sources),

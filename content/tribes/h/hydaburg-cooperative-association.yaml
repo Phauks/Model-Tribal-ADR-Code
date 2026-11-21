@@ -142,6 +142,28 @@ contacts:
   locator: 'record "Hydaburg Cooperative Association" (community: Hydaburg, object 80)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+official_images:
+- kind: logo
+  image_link: https://hydaburgtribe.org/037c67838f7acfdc54c697fb1e54701e-AccessKeyId-C56360A89AA29CBD8E8E-disposition-0-alloworigin-1.jpg
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: c16156c405b75c430a2ec802107989372d639bfe6451bcc484e0d710f8ef7b47
+  private_copy: nation-images/hydaburg-cooperative-association/logo-c16156c405b7.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright @ Hydaburg Cooperative Assoc..
+      link: https://hydaburgtribe.org/
+      source: hydaburgtribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: hydaburgtribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Xaat Kíl (Haida)
   language_tag: hai

@@ -127,6 +127,41 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Upper Sioux Community, Minnesota
+official_images:
+- kind: logo
+  alternative_text: Upper Sioux Community Pezihutazizi Oyate - Any Estimate, Anywhere, Any Time
+  image_link: https://www.unitedstatesbd.com/images/unitedstatesbdcom/bizcategories/4960/image/logo-1.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 0e4aaab9897aab56d061263227fdca7888503eab84b904d8295c0b1ccaa77a1a
+  private_copy: nation-images/upper-sioux-community/logo-0e4aaab9897a.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89000953&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89000953'
+      note: The nation filed a closely similar design as its official insignia with the USPTO (filed 2003-11-11).
+  source: uppersiouxcommunity-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89000953'
+  wordmark: UPPER SIOUX COMMUNITY - PEJUHUTAZIZI OYATE
+  filed: '2003-11-11'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89000953&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: similar-design
+  private_copy: nation-images/upper-sioux-community/insignia-database-89000953.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89000953
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Midwest Regional Office

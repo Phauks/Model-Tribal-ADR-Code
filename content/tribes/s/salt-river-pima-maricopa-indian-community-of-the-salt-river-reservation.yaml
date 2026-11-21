@@ -193,6 +193,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona
+official_images:
+- kind: seal
+  image_link: https://srpmic-nsn.gov/wp-content/uploads/2017/04/Logo_test-1.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 25a048c885882d3e55cc77ff45633d2be4f62bddd42f29ba2c614a599d239ddd
+  private_copy: nation-images/salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation/seal-25a048c88588.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: ©2026 Salt River Pima-Maricopa Indian Community .
+      link: https://srpmic-nsn.gov/
+      source: srpmic-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: srpmic-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: O’odham Ñiokĭ (Pima)
   language_tag: ood
@@ -343,45 +365,6 @@ dispute_resolution:
     locator: https://ncorj.org/tribal-law/family-group-conferencing-peacemaking-juvenile-justice/
   provisions:
   - kind: other
-    title: Diversion/Informal Adjustment – Juvenile Offenses
-    citation: STBC 11-130
-    link: https://srpmic-nsn.gov/government/ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-informal-adjustment-juvenile-offenses/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-Adjudication Diversion. Database form of practice:
-      Alternative to Prosecution; Deferred Prosecution; Diversion; Informal hearing.'
-  - kind: peacemaking
-    title: Family Group Conferencing/Peacemaking – Juvenile Justice
-    citation: STBC 11-31
-    link: https://srpmic-nsn.gov/government/ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/family-group-conferencing-peacemaking-juvenile-justice/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: . Database form of practice: Alternative; Circle;
-      Family conferencing; Peacemaking.'
-  - kind: other
-    title: Probation with Rehabilitative Conditions
-    citation: STBC 8-6(b)
-    link: https://srpmic-nsn.gov/government/ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/probation-with-rehabilitative-conditions/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-Conviction Sentencing. Database form of practice: Counseling;
-      Probation; Rehabilitation.'
-  - kind: other
     title: DIVISION 2. DISPUTE RESOLUTION; APPEAL AND SETTLEMENT
     citation: DIVISION 2. DISPUTE RESOLUTION; APPEAL AND SETTLEMENT
     link: https://www.narf.org/nill/codes/salt-river/index.html
@@ -401,6 +384,39 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: April 2019); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Diversion/Informal Adjustment – Juvenile Offenses
+    citation: STBC 11-130
+    link: https://srpmic-nsn.gov/government/ordinances/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-Adjudication Diversion
+    form_of_practice: Alternative to Prosecution; Deferred Prosecution; Diversion; Informal hearing
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-informal-adjustment-juvenile-offenses/
+  - title: Family Group Conferencing/Peacemaking – Juvenile Justice
+    citation: STBC 11-31
+    link: https://srpmic-nsn.gov/government/ordinances/
+    practice_area: Tribal Juvenile/Youth Justice
+    form_of_practice: Alternative; Circle; Family conferencing; Peacemaking
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-group-conferencing-peacemaking-juvenile-justice/
+  - title: Probation with Rehabilitative Conditions
+    citation: STBC 8-6(b)
+    link: https://srpmic-nsn.gov/government/ordinances/
+    practice_area: Tribal Justice
+    phase: Post-Conviction Sentencing
+    form_of_practice: Counseling; Probation; Rehabilitation
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/probation-with-rehabilitative-conditions/
 gaming:
   compacts:
   - state: AZ
@@ -485,16 +501,17 @@ gaming:
       if unresolved within 30 days, either party may request non-binding mediation under CPR Institute
       for Dispute Resolution procedures and may then demand binding arbitration under CPR rules before
       three arbitrators unless both agree to one.
-    dispute_resolution_locator: Section 15 (Dispute Resolution)
-    source: compact-az-ak-chin-indian-community-2003
-    confidence: medium
-    verification: inferred
-    as_of: '2003-02-05'
-    locator: Section 15 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
-      compact approved in 2003; this text is the Ak-Chin Indian Community copy of that form, and the 2021-2022
-      amendments in the list refer back to Section 15. Status copied from this nation's most recent approved
-      or deemed-approved entry for this state in the Office of Indian Gaming list (2022-06-14).
+    dispute_resolution_locator: SECTION 15. DISPUTE RESOLUTION, (c) Arbitration
+    source: compact-az-salt-river-pima-maricopa-indian-communit-2021
+    confidence: high
+    verification: read-in-full
+    as_of: '2021-05-24'
+    locator: SECTION 15. DISPUTE RESOLUTION, (c) Arbitration
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-az-ak-chin-indian-community-2003 without reading; two reviewers found the clause the
+      same in substance (research/reviews/2026-11-21-compact-clauses.json, item 183). Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2022-06-14).
   ordinances:
   - approved: '1996-08-23'
     link: https://www.nigc.gov?wpdmdl=10955&ind=10985

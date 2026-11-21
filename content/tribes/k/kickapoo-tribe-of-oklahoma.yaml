@@ -122,6 +122,21 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kickapoo Tribe of Oklahoma
+official_images:
+- kind: seal
+  image_link: https://static1.squarespace.com/static/60537f312b9e3a557fca2b4f/t/60538285af0c4d2c1e6ab61b/1616085637122/kickapoo-tribe-ok-seal-300x300.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: dee262fede7ea0c3d25cb871a0ebe5d02983b987d4db82ae8bf53f9f510e2c6e
+  private_copy: nation-images/kickapoo-tribe-of-oklahoma/seal-dee262fede7e.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: kickapootribeofoklahoma-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Southern Plains
   bureau_of_indian_affairs_agency: Southern Plains Regional Office
@@ -201,59 +216,49 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Child Abuse/Neglect Diversion to Treatment
+  database_listings:
+  - title: Child Abuse/Neglect Diversion to Treatment
     citation: Kickapoo Tribe of Oklahoma Juvenile Ordinance, Article 186
     link: https://www.kickapootribeofoklahoma.com/tribal-court
+    practice_area: Tribal Child Welfare/Family
+    form_of_practice: Alternative to Criminal Prosecution; Diversion
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/child-abuse-neglect-diversion-to-treatment/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: . Database form of practice: Alternative to Criminal
-      Prosecution; Diversion.'
-  - kind: other
-    title: General Sentencing Provisions – Restorative Justice Policy
+  - title: General Sentencing Provisions – Restorative Justice Policy
     citation: Kickapoo Criminal Procedure § 403
     link: https://www.kickapootribeofoklahoma.com/tribal-court
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Reconciliation; Restitution; Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/general-sentencing-provisions-restorative-justice-policy/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Reconciliation; Restitution;
-      Restorative justice.'
-  - kind: other
-    title: Mandatory Treatment Plans
+  - title: Mandatory Treatment Plans
     citation: Kickapoo Tribe of Oklahoma Juvenile Ordinance, Article 102
     link: https://www.kickapootribeofoklahoma.com/tribal-court
+    practice_area: Tribal Child Welfare/Family
+    phase: Post-adjudication (Dispositional)
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/mandatory-treatment-plans/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Post-adjudication (Dispositional). Database form of
-      practice: .'
-  - kind: other
-    title: Supervised Work Program as Probation Condition
+  - title: Supervised Work Program as Probation Condition
     citation: Kickapoo Tribe of Oklahoma Juvenile Ordinance, Article 122(c)
     link: https://www.kickapootribeofoklahoma.com/tribal-court
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication (Dispositional)
+    form_of_practice: Alternative to incarceration; Program; Rehabilitation
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/supervised-work-program-as-probation-condition/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication (Dispositional). Database form
-      of practice: Alternative to incarceration; Program; Rehabilitation.'
 gaming:
   compacts:
   - state: OK
@@ -276,17 +281,17 @@ gaming:
       days, and either party may then refer the dispute to arbitration under American Arbitration Association
       rules before a single arbitrator, with de novo review of the award available in federal district
       court under limited waivers of immunity.
-    dispute_resolution_locator: Part 12 (Dispute Resolution)
-    source: compact-ok-cherokee-nation-2005
-    confidence: medium
-    verification: inferred
-    as_of: '2005-01-27'
-    locator: Part 12 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
-      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
-      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
-      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
-      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2005-03-11).
+    dispute_resolution_locator: Part 12. DISPUTE RESOLUTION, paragraph 2
+    source: compact-ok-kickapoo-tribe-of-oklahoma-2005
+    confidence: high
+    verification: read-in-full
+    as_of: '2005-03-11'
+    locator: Part 12. DISPUTE RESOLUTION, paragraph 2
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-ok-cherokee-nation-2005 without reading; two reviewers found the clause the same in
+      substance (research/reviews/2026-11-21-compact-clauses.json, item 91). Status copied from this nation's
+      most recent approved or deemed-approved entry for this state in the Office of Indian Gaming list
+      (2005-03-11).
   ordinances:
   - approved: '2001-07-03'
     link: https://www.nigc.gov?wpdmdl=10068&ind=10098

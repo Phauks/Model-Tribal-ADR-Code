@@ -156,6 +156,48 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pamunkey Indian Tribe
+official_images:
+- kind: logo
+  alternative_text: logo
+  image_link: https://www.pamunkey.org/themes/pamunkey/assets/images/Homepage/PamunkeySeal-Full.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 72a2b5737ec38d007d47fa8d64ddee0e22c1e5d195ddfee1db06a8cbccd0d3e2
+  private_copy: nation-images/pamunkey-indian-tribe/logo-72a2b5737ec3.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2025 Pamunkey Indian Tribe
+      link: https://www.pamunkey.org/
+      source: pamunkey-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001890&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001890'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2015-01-21).
+  source: pamunkey-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001890'
+  wordmark: PAMUNKEY INDIAN TRIBE & RESERVATION VIRGINIA
+  filed: '2015-01-21'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001890&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/pamunkey-indian-tribe/insignia-database-89001890.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001890
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office

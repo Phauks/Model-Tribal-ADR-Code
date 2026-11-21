@@ -158,6 +158,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ute Mountain Ute Tribe
+official_images:
+- kind: seal
+  alternative_text: none
+  image_link: https://www.utemountainutetribe.com/images/great-seal.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 38ef7161fa87650796b551d6ae56139f6b8cbdd7bad91dbfd827982eb43dd86a
+  private_copy: nation-images/ute-mountain-ute-tribe/seal-38ef7161fa87.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2020 Ute Mountain Ute Tribe.
+      link: https://www.utemountainutetribe.com/
+      source: ute-mountain-ute-tribe-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: ute-mountain-ute-tribe-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Ute
   language_tag: ute
@@ -259,58 +282,54 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Forebearance on Eviction or Termination
+  database_listings:
+  - title: Forebearance on Eviction or Termination
     citation: Ute Indian Tribe Law and Order Code. Title 19 Homeownership Program. 19-11-8 Forebearance
       regarding eviction or termination.
     link: https://ute.tribal.codes
+    practice_area: Tribal Justice
+    phase: N/A
+    form_of_practice: Rehabilitation
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/forebearance-on-eviction-or-termination/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: N/A. Database form of practice: Rehabilitation.'
-  - kind: other
-    title: Rehabilitative Treatment as Probation Instead of Sentence
+  - title: Rehabilitative Treatment as Probation Instead of Sentence
     citation: Ute Indian Tribe Law and Order Code. Title 13 Ute Indian Criminal Code.
     link: https://ute.tribal.codes
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Alternative; Rehabilitation
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/rehabilitative-treatment-as-probation-instead-of-sentence/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative; Rehabilitation.'
-  - kind: other
-    title: Ute Healing and Wellness Court
+  - title: Ute Healing and Wellness Court
     citation: Ute Indian Tribe Law and Order Code. Title 13 Ute Indian Criminal Code. 13-4-152 Ute Healing
       and Wellness Court.
     link: https://ute.tribal.codes
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Healing to Wellness
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/ute-healing-and-wellness-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Healing to Wellness.'
-  - kind: other
-    title: Victim Impact Statements in Domestic Violence Cases
+  - title: Victim Impact Statements in Domestic Violence Cases
     citation: Ute Indian Tribe Law and Order Code. Title 18 Domestic Violence Code. 18-6-4 Victim impact
       statement.
     link: https://ute.tribal.codes
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/victim-impact-statements-in-domestic-violence-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative.'
 gaming:
   compacts:
   - state: CO

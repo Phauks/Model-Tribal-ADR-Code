@@ -122,6 +122,21 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Acoma, New Mexico
+official_images:
+- kind: seal
+  image_link: https://www.puebloofacoma.org/wp-content/uploads/2021/01/cropped-pueblo-of-acoma-seal-180x180.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 21fd0773002edf8bd5e5a4a9937fbff8e785dc8be82fd70df2434ef8d719b337
+  private_copy: nation-images/pueblo-of-acoma/seal-21fd0773002e.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: puebloofacoma-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Southwest
   bureau_of_indian_affairs_agency: Southern Pueblos Agency
@@ -161,70 +176,62 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://puebloofacoma.org/Tribal_Courts.aspx)
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Goal of Treatment/Recovery for Controlled Substances Cases
+  database_listings:
+  - title: Goal of Treatment/Recovery for Controlled Substances Cases
     citation: Pueblo of Acoma Laws 6-12-1 and 6-12-10
     link: https://www.puebloofacoma.org/departments/acoma-tribal-court/poa-laws/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/goal-of-treatment-recovery-for-controlled-substances-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Purpose of the Juvenile Delinquency Chapter
+  - title: Purpose of the Juvenile Delinquency Chapter
     citation: Pueblo of Acoma Laws 4-5-1
     link: https://www.puebloofacoma.org/departments/acoma-tribal-court/poa-laws/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/purpose-of-the-juvenile-delinquency-chapter/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Restorative Justice Policy of Sentencing
+  - title: Restorative Justice Policy of Sentencing
     citation: Pueblo of Acoma Laws 5-1-24
     link: https://www.puebloofacoma.org/departments/acoma-tribal-court/poa-laws/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/restorative-justice-policy-of-sentencing/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Treatment Mandated in a Protective Order
+  - title: Treatment Mandated in a Protective Order
     citation: Pueblo of Acoma Laws 4-4-12
     link: https://www.puebloofacoma.org/departments/acoma-tribal-court/poa-laws/
+    practice_area: Tribal Child Welfare/Family
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-mandated-in-a-protective-order/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Treatment Programs for Juvenile Offenders
+  - title: Treatment Programs for Juvenile Offenders
     citation: Pueblo of Acoma Laws 4-5-16
     link: https://www.puebloofacoma.org/departments/acoma-tribal-court/poa-laws/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-programs-for-juvenile-offenders/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
 gaming:
   compacts:
   - state: NM
@@ -275,16 +282,17 @@ gaming:
       may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
       binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
       Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
-    dispute_resolution_locator: Section 7 (Dispute Resolution)
-    source: compact-nm-pueblo-of-santa-ana-2016
-    confidence: medium
-    verification: inferred
-    as_of: '2016-12-30'
-    locator: Section 7 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
-      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
-      Status copied from this nation's most recent approved or deemed-approved entry for this state in
-      the Office of Indian Gaming list (2015-06-22).
+    dispute_resolution_locator: SECTION 7. Dispute Resolution.
+    source: compact-nm-pueblo-of-acoma-new-mexico-2015
+    confidence: high
+    verification: read-in-full
+    as_of: '2015-06-22'
+    locator: SECTION 7. Dispute Resolution.
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-nm-pueblo-of-santa-ana-2016 without reading; two reviewers found the clause the same
+      in substance (research/reviews/2026-11-21-compact-clauses.json, item 149). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2015-06-22).
   ordinances:
   - approved: '1994-11-03'
     link: https://www.nigc.gov?wpdmdl=10721&ind=10736

@@ -133,6 +133,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Village of Kaltag
+official_images:
+- kind: logo
+  image_link: https://www.kaltagtribe.com/wp-content/uploads/2023/09/cropped-Kaltag-logo.jpg
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: 38dd514a1a0ba7332bb8553523429ee7d7db3dc4796076c3e027d494c88edf65
+  private_copy: nation-images/village-of-kaltag/logo-38dd514a1a0b.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 Kaltag Tribal Council .
+      link: https://www.kaltagtribe.com/
+      source: kaltagtribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: kaltagtribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Denaakk'e (Koyukon)
   language_tag: koy

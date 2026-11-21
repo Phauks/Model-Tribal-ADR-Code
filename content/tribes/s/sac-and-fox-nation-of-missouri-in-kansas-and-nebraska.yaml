@@ -210,83 +210,74 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.sacandfoxks.com/sacfox.nsf/ContentPage.xsp?action=openDocument&amp;documentId=34E543F62D49B32D86257721007294A1)
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Diversion for Juveniles
+  database_listings:
+  - title: Diversion for Juveniles
     citation: Sac & Fox Nation of Missouri in Kansas and Nebraska Title 20, Section 312 & Section 313
       & Section 314
     link: https://www.sacandfoxks.com/entities/tribal-court
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/diversion-for-juveniles/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Limitations of Court in Domestic Violence Cases
+  - title: Limitations of Court in Domestic Violence Cases
     citation: Sac & Fox Nation of Missouri in Kansas and Nebraska Title 30, Section 311 & Section 407
     link: https://www.sacandfoxks.com/entities/tribal-court
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative practice, Restorative process
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/limitations-of-court-in-domestic-violence-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative practice,
-      Restorative process.'
-  - kind: other
-    title: Purpose of the Juvenile Procedure Code
+  - title: Purpose of the Juvenile Procedure Code
     citation: Sac & Fox Nation of Missouri in Kansas and Nebraska Title 20, Section 101
     link: https://www.sacandfoxks.com/entities/tribal-court
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/purpose-of-the-juvenile-procedure-code/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Requirement for Sac and Fox Domestic Violence Offender’s Program
+  - title: Requirement for Sac and Fox Domestic Violence Offender’s Program
     citation: Sac & Fox Nation of Missouri in Kansas and Nebraska Title 30, Section 307
     link: https://www.sacandfoxks.com/entities/tribal-court
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/requirement-for-sac-and-fox-domestic-violence-offenders-program/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Senetncing Policy for Criminal Offenses
+  - title: Senetncing Policy for Criminal Offenses
     citation: Sac & Fox Nation of Missouri in Kansas and Nebraska Title 11, Section 403
     link: https://www.sacandfoxks.com/entities/tribal-court
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/senetncing-policy-for-criminal-offenses/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Sentencing Policy for Domestic Violence Cases
+  - title: Sentencing Policy for Domestic Violence Cases
     citation: Sac & Fox Nation of Missouri in Kansas and Nebraska Title 30, Section 231
     link: https://www.sacandfoxks.com/entities/tribal-court
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/sentencing-policy-for-domestic-violence-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
 gaming:
   compacts:
   - state: KS
@@ -337,15 +328,17 @@ gaming:
     dispute_resolution_summary: The parties must use best efforts to negotiate for at least 14 days, after
       which either party may refer the dispute to binding arbitration before a sole agreed arbitrator
       or a three-member panel, with judicial enforcement in the United States District Court for Kansas.
-    dispute_resolution_locator: Section 29 (Dispute Resolution)
-    source: compact-ks-wyandotte-nation-2026
-    confidence: medium
-    verification: inferred
-    as_of: '2026-07-14'
-    locator: Section 29 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 2026 Wyandotte Nation compact;
-      other Kansas compacts were not checked. Status copied from this nation's most recent approved or
-      deemed-approved entry for this state in the Office of Indian Gaming list (2025-11-24).
+    dispute_resolution_locator: 'section 31: Dispute Resolution., (A) General.'
+    source: compact-ks-sac-fox-nation-of-missouri-in-kansas-and-1995
+    confidence: high
+    verification: read-in-full
+    as_of: '1995-11-14'
+    locator: 'section 31: Dispute Resolution., (A) General.'
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-ks-wyandotte-nation-2026 without reading; two reviewers found the clause the same in
+      substance (research/reviews/2026-11-21-compact-clauses.json, item 178). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2025-11-24).
   ordinances:
   - approved: '1995-08-09'
     link: https://www.nigc.gov?wpdmdl=10953&ind=10971

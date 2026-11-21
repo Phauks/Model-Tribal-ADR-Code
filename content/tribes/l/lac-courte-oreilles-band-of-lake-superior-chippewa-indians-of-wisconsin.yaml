@@ -121,6 +121,47 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin
+official_images:
+- kind: logo
+  image_link: https://lco-nsn.gov/wp-content/uploads/2025/11/lco-logo12b-286x300.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 9e91e0b5e97a13cd2f607c57bc0e392d17d748e49b22b3a1ae1b40f8f6d7edf4
+  private_copy: nation-images/lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin/logo-9e91e0b5e97a.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 LCO Tribal Government.
+      link: https://lco-nsn.gov/
+      source: lco-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001053&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001053'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2005-07-11).
+  source: lco-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001053'
+  wordmark: LAC COURTE OREILLES TRIBAL GOVERNING BOARD
+  filed: '2005-07-11'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001053&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin/insignia-database-89001053.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001053
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Great Lakes Agency
@@ -229,44 +270,40 @@ dispute_resolution:
     as_of: '2016'
     locator: TCT.1.3.030(b)-(e)
     note: 'Context: Sovereign immunity code; waiver may be granted in employment agreements.'
-  provisions:
-  - kind: other
-    title: AODA Dispositional Hearing – Treatment and Culturally Appropriate Services
+  database_listings:
+  - title: AODA Dispositional Hearing – Treatment and Culturally Appropriate Services
     citation: DMR.1.10.090
     link: https://law.lco-nsn.gov
+    practice_area: Tribal Child Welfare/Family
+    phase: Post-adjudication
+    form_of_practice: Rehabilitation
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/aoda-dispositional-hearing-treatment-and-culturally-appropriate-services/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Rehabilitation.'
-  - kind: peacemaking
-    title: Informal Disposition and Peacemaking
+  - title: Informal Disposition and Peacemaking
     citation: DMR.1.3.120
     link: https://law.lco-nsn.gov
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication (informal)
+    form_of_practice: Peacemaking
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-disposition-and-peacemaking/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication (informal). Database form of practice:
-      Peacemaking.'
-  - kind: other
-    title: Truancy Disposition – Counseling and Community Service
+  - title: Truancy Disposition – Counseling and Community Service
     citation: GNC.5.3.020
     link: https://law.lco-nsn.gov
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Alternative
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/truancy-disposition-counseling-and-community-service/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
 gaming:
   compacts:
   - state: WI

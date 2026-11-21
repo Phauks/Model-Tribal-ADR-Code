@@ -148,6 +148,31 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kaw Nation, Oklahoma
+official_images:
+- kind: seal
+  alternative_text: www.kawnation.gov
+  image_link: https://www.kawnation.gov/wp-content/uploads/2022/05/kaw-nation-seal-300x300-1.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: d9835581c88c564ec6bc669916fb5a0ccf07918c776f53882fcde446c8155f23
+  private_copy: nation-images/kaw-nation/seal-d9835581c88c.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: 'Copyright © 2003 - 2023 All Rights Reserved - Welcome to the Kaw Nation Mailing Address:
+        Drawer 50 - Kaw City, OK 74641 | Physical Address: 698 Grandview Drive - Kaw City, OK 74641 T:
+        580-269-2552 | F: 580-269-2301 | Business Hours: M-F 8:00 am - 4:00 pm CST |'
+      link: https://www.kawnation.gov/
+      source: kawnation-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: kawnation-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Kanza (Kaáⁿze Íe)
   language_tag: ksk
@@ -215,67 +240,57 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://kawnation.com/?page_id=2820) returned
     HTTP 404, so it is not recorded.'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Counseling, Therapy, and Services as Disposition Condition
+  database_listings:
+  - title: Counseling, Therapy, and Services as Disposition Condition
     citation: 30 KNTC § 3-105(A)(1)
     link: https://kawnation.tribal.codes
+    practice_area: Tribal Child Welfare/Family
+    form_of_practice: Alternative
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/counseling-therapy-and-services-as-disposition-condition/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: . Database form of practice: Alternative.'
-  - kind: other
-    title: Probation as Alternative to Incarceration
+  - title: Probation as Alternative to Incarceration
     citation: 8 KNTC § 9-113
     link: https://kawnation.tribal.codes
+    practice_area: Tribal Justice
+    form_of_practice: Alternative to incarceration; Program
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/probation-as-alternative-to-incarceration/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: . Database form of practice: Alternative to incarceration; Program.'
-  - kind: other
-    title: Restitution
+  - title: Restitution
     citation: 8 KNTC § 9-107
     link: https://kawnation.tribal.codes
+    practice_area: Tribal Justice
+    form_of_practice: Restitution; Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/restitution/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: . Database form of practice: Restitution; Restorative justice.'
-  - kind: other
-    title: Sentencing Considerations Including Rehabilitation
+  - title: Sentencing Considerations Including Rehabilitation
     citation: 8 KNTC § 9-102
     link: https://kawnation.tribal.codes
+    practice_area: Tribal Justice
+    form_of_practice: Alternative to incarceration; Rehabilitation
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/sentencing-considerations-including-rehabilitation/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: . Database form of practice: Alternative to incarceration; Rehabilitation.'
-  - kind: other
-    title: Traditional Punishment as Sentencing Alternative
+  - title: Traditional Punishment as Sentencing Alternative
     citation: 8 KNTC § 9-101
     link: https://kawnation.tribal.codes
+    practice_area: Tribal Justice
+    form_of_practice: Alternative
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/traditional-punishment-as-sentencing-alternative/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: . Database form of practice: Alternative.'
 gaming:
   compacts:
   - state: OK
@@ -340,17 +355,17 @@ gaming:
       days, and either party may then refer the dispute to arbitration under American Arbitration Association
       rules before a single arbitrator, with de novo review of the award available in federal district
       court under limited waivers of immunity.
-    dispute_resolution_locator: Part 12 (Dispute Resolution)
-    source: compact-ok-cherokee-nation-2005
-    confidence: medium
-    verification: inferred
-    as_of: '2005-01-27'
-    locator: Part 12 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
-      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
-      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
-      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
-      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-12-27).
+    dispute_resolution_locator: Part 12. DISPUTE RESOLUTION, paragraph 2
+    source: compact-ok-kaw-nation-oklahoma-2005
+    confidence: high
+    verification: read-in-full
+    as_of: '2005-03-11'
+    locator: Part 12. DISPUTE RESOLUTION, paragraph 2
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-ok-cherokee-nation-2005 without reading; two reviewers found the clause the same in
+      substance (research/reviews/2026-11-21-compact-clauses.json, item 87). Status copied from this nation's
+      most recent approved or deemed-approved entry for this state in the Office of Indian Gaming list
+      (2018-12-27).
   ordinances:
   - approved: '1993-12-27'
     link: https://www.nigc.gov?wpdmdl=10033&ind=10046

@@ -144,6 +144,49 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: The Seminole Nation of Oklahoma
+official_images:
+- kind: logo
+  alternative_text: The Great Seminole Nation of Oklahoma Logo
+  image_link: https://pictures.fasthealth.com/pictures/306903.png?last_modified=1646664570
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: b56fbc3f308a9e51e5880dfab1cab06c6dce3031dc7bc3d5556f94e2c1e8d718
+  private_copy: nation-images/the-seminole-nation-of-oklahoma/logo-b56fbc3f308a.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright 2026 | Site Designed & Powered By FastPages | All Rights Reserved | Terms | Privacy
+        .
+      link: https://www.sno-nsn.gov/
+      source: sno-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89002388&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89002388'
+      note: The nation filed a closely similar design as its official insignia with the USPTO (filed 2020-10-12).
+  source: sno-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89002388'
+  wordmark: THE GREAT SEMINOLE NATION OF OKLAHOMA
+  filed: '2020-10-12'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89002388&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: similar-design
+  private_copy: nation-images/the-seminole-nation-of-oklahoma/insignia-database-89002388.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89002388
 federal_administration:
   bureau_of_indian_affairs_region: Eastern Oklahoma
   bureau_of_indian_affairs_agency: Wewoka Agency
@@ -237,44 +280,6 @@ justice_institutions:
 dispute_resolution:
   provisions:
   - kind: other
-    title: Community Court – Deferred and Alternative Adjudication
-    citation: SNC Title 5, Sections 5-3-301 through 5-3-306
-    link: https://seminolenationofoklahoma.municipalcodeonline.com/book?type=ordinances#name=CONSTITUTION_OF_THE_SEMINOLE_NATION_OF_OKLAHOMA
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/community-court-deferred-and-alternative-adjudication/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Alternative to conviction; Pre-adjudication. Database form of practice:
-      Alternative adjudication; Deferred adjudication.'
-  - kind: other
-    title: Juvenile Health and Wellness Court
-    citation: SNC Title 19, Chapter 19-4A
-    link: https://seminolenationofoklahoma.municipalcodeonline.com/book?type=ordinances#name=CONSTITUTION_OF_THE_SEMINOLE_NATION_OF_OKLAHOMA
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/juvenile-health-and-wellness-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: .'
-  - kind: other
-    title: Pre-Filing Juvenile Diversion Contract (For Parents/Guardians)
-    citation: SNC Title 19, Section 19-3-303
-    link: https://seminolenationofoklahoma.municipalcodeonline.com/book?type=ordinances#name=CONSTITUTION_OF_THE_SEMINOLE_NATION_OF_OKLAHOMA
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/pre-filing-juvenile-diversion-contract-for-parents-guardians/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication; Pre-filing. Database form of practice:
-      Diversion.'
-  - kind: other
     title: Section 809. Internal Dispute Resolution Policy
     citation: Section 809. Internal Dispute Resolution Policy
     link: https://narf.org/nill/codes/seminole_nation_ok/index.html
@@ -286,6 +291,39 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: February 2017); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Community Court – Deferred and Alternative Adjudication
+    citation: SNC Title 5, Sections 5-3-301 through 5-3-306
+    link: https://seminolenationofoklahoma.municipalcodeonline.com/book?type=ordinances#name=CONSTITUTION_OF_THE_SEMINOLE_NATION_OF_OKLAHOMA
+    practice_area: Tribal Justice
+    phase: Alternative to conviction; Pre-adjudication
+    form_of_practice: Alternative adjudication; Deferred adjudication
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-court-deferred-and-alternative-adjudication/
+  - title: Juvenile Health and Wellness Court
+    citation: SNC Title 19, Chapter 19-4A
+    link: https://seminolenationofoklahoma.municipalcodeonline.com/book?type=ordinances#name=CONSTITUTION_OF_THE_SEMINOLE_NATION_OF_OKLAHOMA
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/juvenile-health-and-wellness-court/
+  - title: Pre-Filing Juvenile Diversion Contract (For Parents/Guardians)
+    citation: SNC Title 19, Section 19-3-303
+    link: https://seminolenationofoklahoma.municipalcodeonline.com/book?type=ordinances#name=CONSTITUTION_OF_THE_SEMINOLE_NATION_OF_OKLAHOMA
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication; Pre-filing
+    form_of_practice: Diversion
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/pre-filing-juvenile-diversion-contract-for-parents-guardians/
 gaming:
   compacts:
   - state: OK
@@ -324,17 +362,17 @@ gaming:
       days, and either party may then refer the dispute to arbitration under American Arbitration Association
       rules before a single arbitrator, with de novo review of the award available in federal district
       court under limited waivers of immunity.
-    dispute_resolution_locator: Part 12 (Dispute Resolution)
-    source: compact-ok-cherokee-nation-2005
-    confidence: medium
-    verification: inferred
-    as_of: '2005-01-27'
-    locator: Part 12 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
-      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
-      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
-      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
-      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2005-04-26).
+    dispute_resolution_locator: Part 12. DISPUTE RESOLUTION
+    source: compact-ok-the-seminole-nation-of-oklahoma-2005
+    confidence: high
+    verification: read-in-full
+    as_of: '2005-04-26'
+    locator: Part 12. DISPUTE RESOLUTION
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-ok-cherokee-nation-2005 without reading; two reviewers found the clause the same in
+      substance (research/reviews/2026-11-21-compact-clauses.json, item 222). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2005-04-26).
   ordinances:
   - approved: '1994-05-31'
     link: https://www.nigc.gov?wpdmdl=11050&ind=11081

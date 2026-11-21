@@ -479,6 +479,24 @@ sup {
 	margin-bottom: var(--font-paragraph-spacing-wide);
 }
 
+/*
+ * Justified text: reading text only, not headings, tables, forms or the
+ * masthead. Automatic hyphenation follows each element's lang attribute
+ * (the page is lang="en"), so justified lines do not open wide gaps between
+ * words. Links keep whole words, so names, citations and addresses are never
+ * broken with English rules.
+ */
+:root[data-text-alignment='justified'] main :is(p, li, dd, blockquote) {
+	text-align: justify;
+	hyphens: auto;
+	-webkit-hyphens: auto;
+}
+
+:root[data-text-alignment='justified'] main :is(p, li, dd, blockquote) a {
+	hyphens: manual;
+	-webkit-hyphens: manual;
+}
+
 /* More contrast: gray text becomes ink, and light dividing lines take the
    darker control border color. */
 :root:root[data-contrast='more'] {

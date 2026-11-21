@@ -133,6 +133,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Sokaogon Chippewa Community, Wisconsin
+official_images:
+- kind: logo
+  alternative_text: Mole Lake Logo no background
+  image_link: https://sokaogonchippewa.com/wp-content/uploads/2025/01/Mole-Lake-Logo-no-background.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: a3ea4ded342b5eade1df048ecf9c646e0625373be829c9daecaed5f0cbd4431e
+  private_copy: nation-images/sokaogon-chippewa-community/logo-a3ea4ded342b.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Sokaogon Chippewa Community.
+      link: https://sokaogonchippewa.com/
+      source: sokaogonchippewa-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: sokaogonchippewa-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Great Lakes Agency

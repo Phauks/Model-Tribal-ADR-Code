@@ -129,6 +129,34 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Oneida Nation
+official_images:
+- kind: logo
+  alternative_text: Oneida Nation
+  image_link: https://oneida-nsn.gov/wp-content/themes/Stellar_Responsive/images/logos/oneida-logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: aae3e88c45b4bf8df747abf7e690186a5564c7bb12ac15d5aeb581fe2b02b5da
+  private_copy: nation-images/oneida-nation/logo-aae3e88c45b4.png
+  reuse:
+    status: needs-checking
+    checked: '2026-11-21'
+    signals:
+    - kind: tribal-law
+      effect: unverified
+      link: https://oneida-nsn.gov/wp-content/uploads/2016/02/01-11-17-C-Oneida-Nation-Seal-and-Flag-Law.pdf
+      note: The Nation has a Seal and Flag Law. Its published copy could not be read from the cloud on
+        2026-11-21, so whether it covers this logo is unknown.
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: ©2026 Oneida Nation of Wisconsin.
+      link: https://oneida-nsn.gov/
+      source: oneida-nation-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: oneida-nation-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Great Lakes Agency
@@ -258,13 +286,15 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Oneida Nation of Wisconsin Judiciary
-  link: http://www.oneida-nsn.gov/judiciary/
+  link: https://oneida-nsn.gov/judiciary/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Wisconsin section, entry 'Oneida Nation of Wisconsin'
-  note: 'Link check 2026-11-21: the site did not respond.'
+  note: 'Link check 2026-11-21: the site did not respond. The listed link (http://www.oneida-nsn.gov/judiciary/)
+    no longer reached the court on 2026-11-21; the link is the court''s page on the nation''s own site,
+    found in the data gap review (research/reviews/2026-11-21-court-listings.json).'
 dispute_resolution:
   forums:
   - kind: peacemaking
@@ -341,144 +371,6 @@ dispute_resolution:
     as_of: '2014-05-15'
     note: Section heading confirmed; contents not reviewed in detail. NARF summarizes 702.6 and 705.7
       together as providing authorization, procedures, appeals policies and referral standards.
-  - kind: other
-    title: Alternative Dispositional Recommendations for a Child in Need of Protection or Services
-    citation: 7 O.C. 708.22-1 & 708.22-3
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-dispositional-recommendations-for-a-child-in-need-of-protection-or-services/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Community Service and Counseling as a Penalty (Curfew)
-    citation: 7 O.C. 308.7-1
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/community-service-and-counseling-as-a-penalty-curfew/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Community Service and Counseling as a Penalty (Public Peace)
-    citation: 7 O.C. 309.11-2
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/community-service-and-counseling-as-a-penalty-public-peace/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Confidentiality of the Healing to Wellness Court
-    citation: 7 O.C. 808.5-7
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/confidentiality-of-the-healing-to-wellness-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative court.'
-  - kind: other
-    title: Healing to Wellness Ocurt Program
-    citation: 7 O.C. 808.4-3
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/healing-to-wellness-ocurt-program/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court.'
-  - kind: other
-    title: Jurisdiction of the Healing to Wellness Court
-    citation: 7 O.C. 808.4-2
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/jurisdiction-of-the-healing-to-wellness-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court.'
-  - kind: other
-    title: Peacemaking and Mediation
-    citation: 7 O.C. 708.45-1 & 708.45-2
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/peacemaking-and-mediation/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Justice. Database phase: Pre-adjudication. Database form of
-      practice: Restorative justice; Restorative practice.'
-  - kind: other
-    title: Peacemaking for Termination of Parental Rights
-    citation: 7 O.C. 708.33-6
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/peacemaking-for-termination-of-parental-rights/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Justice. Database phase: Pre-adjudication. Database form of
-      practice: Restorative justice; Restorative practice.'
-  - kind: other
-    title: Purpose and Policy of the Healing to Wellness Court
-    citation: 7 O.C. 808.1-1 & 808.1-2
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-and-policy-of-the-healing-to-wellness-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court.'
-  - kind: other
-    title: Service Plan for Child Welfare Cases
-    citation: 7 O.C. 708.22-5
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/service-plan-for-child-welfare-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
-      practice, Restorative process.'
-  - kind: other
-    title: Use of Cultural Wellness Facilitator and Healer for Child Welfare Proceedings
-    citation: 7 O.C. 708.10-1 & 708.10-2
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/use-of-cultural-wellness-facilitator-and-healer-for-child-welfare-proceedings/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      practice, Restorative process.'
   - kind: peacemaking
     title: Title 8. Judicial System, Chapter 801 – Judiciary, Rule 1.10 – Peacemaking and Mediation
     citation: Title 8. Judicial System, Chapter 801 – Judiciary, Rule 1.10 – Peacemaking and Mediation
@@ -556,6 +448,128 @@ dispute_resolution:
     note: Rule 1.10 governs applications from prospective peacemakers and mediators outside the Judiciary
       (application, background check, interview). It is a qualification process rather than a training
       course.
+  database_listings:
+  - title: Alternative Dispositional Recommendations for a Child in Need of Protection or Services
+    citation: 7 O.C. 708.22-1 & 708.22-3
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-dispositional-recommendations-for-a-child-in-need-of-protection-or-services/
+  - title: Community Service and Counseling as a Penalty (Curfew)
+    citation: 7 O.C. 308.7-1
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-service-and-counseling-as-a-penalty-curfew/
+  - title: Community Service and Counseling as a Penalty (Public Peace)
+    citation: 7 O.C. 309.11-2
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-service-and-counseling-as-a-penalty-public-peace/
+  - title: Confidentiality of the Healing to Wellness Court
+    citation: 7 O.C. 808.5-7
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative court
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/confidentiality-of-the-healing-to-wellness-court/
+  - title: Healing to Wellness Ocurt Program
+    citation: 7 O.C. 808.4-3
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative court
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/healing-to-wellness-ocurt-program/
+  - title: Jurisdiction of the Healing to Wellness Court
+    citation: 7 O.C. 808.4-2
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative court
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/jurisdiction-of-the-healing-to-wellness-court/
+  - title: Peacemaking and Mediation
+    citation: 7 O.C. 708.45-1 & 708.45-2
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    practice_area: Tribal Child Welfare/Family; Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaking-and-mediation/
+  - title: Peacemaking for Termination of Parental Rights
+    citation: 7 O.C. 708.33-6
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    practice_area: Tribal Child Welfare/Family; Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaking-for-termination-of-parental-rights/
+  - title: Purpose and Policy of the Healing to Wellness Court
+    citation: 7 O.C. 808.1-1 & 808.1-2
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative court
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-and-policy-of-the-healing-to-wellness-court/
+  - title: Service Plan for Child Welfare Cases
+    citation: 7 O.C. 708.22-5
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    practice_area: Tribal Child Welfare/Family
+    phase: Post-adjudication
+    form_of_practice: Restorative practice, Restorative process
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/service-plan-for-child-welfare-cases/
+  - title: Use of Cultural Wellness Facilitator and Healer for Child Welfare Proceedings
+    citation: 7 O.C. 708.10-1 & 708.10-2
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative practice, Restorative process
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/use-of-cultural-wellness-facilitator-and-healer-for-child-welfare-proceedings/
 gaming:
   compacts:
   - state: WI

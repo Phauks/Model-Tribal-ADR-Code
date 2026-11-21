@@ -121,6 +121,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Absentee-Shawnee Tribe of Indians of Oklahoma
+official_images:
+- kind: logo
+  alternative_text: logo2.png
+  image_link: https://www.astribe.com/assets/logo2.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 5c136f21ac227eefb2a0f7f624664dd68d76c528ac52594550eea4c79854a0ed
+  private_copy: nation-images/absentee-shawnee-tribe-of-indians-of-oklahoma/logo-5c136f21ac22.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2021 Absentee Shawnee Tribe of Indians of Oklahoma.
+      link: https://www.astribe.com/
+      source: astribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: astribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Shawnee
   language_tag: sjw
@@ -241,91 +264,83 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Absentee-Shawnee Tribal Court
-  link: http://www.astribe.com/astribe/?reload
+  link: https://www.astribe.com/court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Oklahoma section, entry 'Absentee-Shawnee Tribe of Indians of Oklahoma'
+  note: The listed link (http://www.astribe.com/astribe/?reload) no longer reached the court on 2026-11-21;
+    the link is the court's page on the nation's own site, found in the data gap review (research/reviews/2026-11-21-court-listings.json).
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Child Abuse and Child Neglect Diversion Progam
+  database_listings:
+  - title: Child Abuse and Child Neglect Diversion Progam
     citation: AST Juvenile Code § 319
     link: https://www.astribe.com/court
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/child-abuse-and-child-neglect-diversion-progam-2/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Court Diversion by Stipulation (For Tribal Youth/Juveniles)
+  - title: Court Diversion by Stipulation (For Tribal Youth/Juveniles)
     citation: AST Juvenile Code § 516-517; 529
     link: https://www.astribe.com/court
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/court-diversion-by-stipulation-for-tribal-youth-juveniles/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Deferred Prosecution Agreements/Contracts (For Tribal Parents/Legal Guardians Investigated
+  - title: Deferred Prosecution Agreements/Contracts (For Tribal Parents/Legal Guardians Investigated
       in Juvenile case)
     citation: AST Juvenile Code § 514-515
     link: https://www.astribe.com/court
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/deferred-prosecution-agreements-contracts-for-tribal-parents-legal-guardians-investigated-in-juvenile-case/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Dispostional Hearing for Case Plan/Service Plan (Tribal Youth/Juveniles & Families)
+  - title: Dispostional Hearing for Case Plan/Service Plan (Tribal Youth/Juveniles & Families)
     citation: AST Juvenile Code § 533-538
     link: https://www.astribe.com/court
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative practice, Restorative process
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/dispostional-hearing-for-case-plan-service-plan-tribal-youth-juveniles-families/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
-      form of practice: Restorative practice, Restorative process.'
-  - kind: other
-    title: Domestic Violence Treatment Program
+  - title: Domestic Violence Treatment Program
     citation: AST Domestic Violence Code § 3; 5
     link: https://www.astribe.com/court
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/domestic-violence-treatment-program/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Wellbriety Court Program Code (Tribal Treatment Court Program)
+  - title: Wellbriety Court Program Code (Tribal Treatment Court Program)
     citation: Wellbriety Code
     link: https://www.astribe.com/court
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative court
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/wellbriety-court-program-code-tribal-treatment-court-program/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative court.'
 gaming:
   compacts:
   - state: OK
@@ -376,17 +391,17 @@ gaming:
       days, and either party may then refer the dispute to arbitration under American Arbitration Association
       rules before a single arbitrator, with de novo review of the award available in federal district
       court under limited waivers of immunity.
-    dispute_resolution_locator: Part 12 (Dispute Resolution)
-    source: compact-ok-cherokee-nation-2005
-    confidence: medium
-    verification: inferred
+    dispute_resolution_locator: Part 12. DISPUTE RESOLUTION, paragraph 2
+    source: compact-ok-absentee-shawnee-tribe-of-indians-of-okl-2005
+    confidence: high
+    verification: read-in-full
     as_of: '2005-01-27'
-    locator: Part 12 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
-      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
-      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
-      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
-      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-08-17).
+    locator: Part 12. DISPUTE RESOLUTION, paragraph 2
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-ok-cherokee-nation-2005 without reading; two reviewers found the clause the same in
+      substance (research/reviews/2026-11-21-compact-clauses.json, item 1). Status copied from this nation's
+      most recent approved or deemed-approved entry for this state in the Office of Indian Gaming list
+      (2018-08-17).
   ordinances:
   - approved: '1995-01-10'
     link: https://www.nigc.gov?wpdmdl=3252&ind=3246

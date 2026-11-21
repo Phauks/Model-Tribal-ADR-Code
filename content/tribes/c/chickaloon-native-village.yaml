@@ -140,6 +140,28 @@ contacts:
   locator: 'record "Chickaloon Native Village" (community: Chickaloon, object 32)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+official_images:
+- kind: logo
+  image_link: https://www.chickaloon.org/wp-content/uploads/2024/02/CVTC-logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 2976560d219aba02026b0b52854c5e8fa09f2ecb28c08c6056901d22b41c7b51
+  private_copy: nation-images/chickaloon-native-village/logo-2976560d219a.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Nay’dini’aa Na’ Kayax | Chickaloon Village Tribal Council | All Rights Reserved .
+      link: https://www.chickaloon.org/
+      source: chickaloon-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: chickaloon-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Atnakenaege’ (Ahtna)
   language_tag: aht

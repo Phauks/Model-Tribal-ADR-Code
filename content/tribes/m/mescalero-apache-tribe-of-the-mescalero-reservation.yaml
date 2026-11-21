@@ -131,6 +131,35 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico
+official_images:
+- kind: logo
+  image_link: https://mescaleroapachetribe.com/wp-content/uploads/cropped-Gahe-copy-180x180.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 55b0f8d72274c171479b7f7a29ab76e79555ce3d33066e5d3b162fd07228cb29
+  private_copy: nation-images/mescalero-apache-tribe-of-the-mescalero-reservation/logo-55b0f8d72274.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: terms-of-use
+      effect: blocks-reuse
+      quote: As such, information on this website cannot be reproduced cannot be reproduced without the
+        explicit written permission of the Mescalero Apache Tribe.
+      link: https://mescaleroapachetribe.com/disclaimer-and-terms-of-use/
+      source: mescaleroapachetribe-disclaimer-and-terms-of-use
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 · Parallax Pro Theme on Genesis Framework · WordPress · Log in .
+      link: https://mescaleroapachetribe.com/
+      source: mescaleroapachetribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: mescaleroapachetribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Southwest
   bureau_of_indian_affairs_agency: Mescalero Agency
@@ -258,146 +287,128 @@ justice_institutions:
   as_of: '2022'
   locator: New Mexico section, entry 'Mescalero Apache Tribe'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Alternative Sentencing Requirements
+  database_listings:
+  - title: Alternative Sentencing Requirements
     citation: Mescalero Apache Tribal Code 9-5-1
     link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/alternative-sentencing-requirements/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Combating Truancy through Infromal Adjustment and Treatment
+  - title: Combating Truancy through Infromal Adjustment and Treatment
     citation: Mescalero Apache Tribal Code 11-15-7
     link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/combating-truancy-through-infromal-adjustment-and-treatment/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Dispostion Options for Children Courts
+  - title: Dispostion Options for Children Courts
     citation: Mescalero Apache Tribal Code 11-8-17
     link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/dispostion-options-for-children-courts/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Domestic Violence Treatment Prorgram
+  - title: Domestic Violence Treatment Prorgram
     citation: Mescalero Apache Tribal Code 9-6-1
     link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/domestic-violence-treatment-prorgram/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Mandatory Case Plan for Children’s Court Cases
+  - title: Mandatory Case Plan for Children’s Court Cases
     citation: Mescalero Apache Tribal Code 11-10-1 and 11-10-14 and 11-8-17
     link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/mandatory-case-plan-for-childrens-court-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Policy for the Children’s Code
+  - title: Policy for the Children’s Code
     citation: Mescalero Apache Tribal Code 11-1-2
     link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative practice, Restorative process
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/policy-for-the-childrens-code/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative practice, Restorative process.'
-  - kind: other
-    title: Powers and Duties of the Children’s Court
+  - title: Powers and Duties of the Children’s Court
     citation: Mescalero Apache Tribal Code 11-3-1 and 11-4-5
     link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative practice, Restorative process
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/powers-and-duties-of-the-childrens-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      practice, Restorative process.'
-  - kind: other
-    title: Psychiatric Care and Treatment for Theft Crimes
+  - title: Psychiatric Care and Treatment for Theft Crimes
     citation: Mescalero Apache Tribal Code 10-14-10
     link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/psychiatric-care-and-treatment-for-theft-crimes/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Requiring Pregnant Women to Comply with In-Patient Treatment Program
+  - title: Requiring Pregnant Women to Comply with In-Patient Treatment Program
     citation: Mescalero Apache Tribal Code 11-2-2
     link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative practice, Restorative process
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/requiring-pregnant-women-to-comply-with-in-patient-treatment-program/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
-      form of practice: Restorative practice, Restorative process.'
-  - kind: other
-    title: Residential Treatment and Habilitation of Minors
+  - title: Residential Treatment and Habilitation of Minors
     citation: Mescalero Apache Tribal Code 25-1-9
     link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative practice, Restorative process
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/residential-treatment-and-habilitation-of-minors/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      practice, Restorative process.'
-  - kind: other
-    title: Treatment and Rehabilitation of Drug Abuse Crimes
+  - title: Treatment and Rehabilitation of Drug Abuse Crimes
     citation: Mescalero Apache Tribal Code 10-10-3
     link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-and-rehabilitation-of-drug-abuse-crimes/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
 gaming:
   compacts:
   - state: NM
@@ -466,16 +477,17 @@ gaming:
       may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
       binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
       Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
-    dispute_resolution_locator: Section 7 (Dispute Resolution)
-    source: compact-nm-pueblo-of-santa-ana-2016
-    confidence: medium
-    verification: inferred
-    as_of: '2016-12-30'
-    locator: Section 7 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
-      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
-      Status copied from this nation's most recent approved or deemed-approved entry for this state in
-      the Office of Indian Gaming list (2015-06-22).
+    dispute_resolution_locator: SECTION 7. Dispute Resolution., subdivision A(4)
+    source: compact-nm-mescalero-apache-tribe-of-the-mescalero-2015
+    confidence: high
+    verification: read-in-full
+    as_of: '2015-06-22'
+    locator: SECTION 7. Dispute Resolution., subdivision A(4)
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-nm-pueblo-of-santa-ana-2016 without reading; two reviewers found the clause the same
+      in substance (research/reviews/2026-11-21-compact-clauses.json, item 111). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2015-06-22).
   ordinances:
   - approved: '1996-01-11'
     link: https://www.nigc.gov?wpdmdl=10265&ind=10281

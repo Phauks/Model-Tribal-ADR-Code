@@ -137,6 +137,41 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Nez Perce Tribe
+official_images:
+- kind: logo
+  alternative_text: Nez Perce Tribe
+  image_link: https://nezperce.org/wp-content/themes/NezPerce/img/logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: f52130ec6d2a655af7ed692d3c9855cade940c157d7879a479b1306d795042da
+  private_copy: nation-images/nez-perce-tribe/logo-f52130ec6d2a.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © Nez Perce Tribe.
+      link: https://nezperce.org/
+      source: nez-perce-tribe-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: nez-perce-tribe-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89000954'
+  wordmark: NEZ PERCE TRIBE TREATY OF 1855
+  filed: '2004-02-12'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89000954&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: different-design
+  private_copy: nation-images/nez-perce-tribe/insignia-database-89000954.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89000954
 languages:
 - name: Nimipuutímt
   language_tag: nez
@@ -267,30 +302,6 @@ dispute_resolution:
       Nimiipuu language. Peacemakers are unpaid volunteers unless a program funds a stipend. The court's
       guidelines are set out in a Peacemaker Court Handbook (§ 1-8-7).
   provisions:
-  - kind: other
-    title: Available Sentences for All Criminal Offenses
-    citation: N.P.T.R.C. Section 4.10.039
-    link: https://nezperce.org/resources/tribal-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/available-sentences-for-all-criminal-offenses/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Reducing a Sec Offender Registration Period with Intervention and Treatment
-    citation: N.P.T.R.C. Section 4.10.055; and Section 4.10.061
-    link: https://nezperce.org/resources/tribal-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/reducing-a-sec-offender-registration-period-with-intervention-and-treatment/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
   - kind: mediation
     title: '''1-2-3 Mediation and Hearings'
     citation: '''1-2-3 Mediation and Hearings'
@@ -367,6 +378,29 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: Feburary 2019); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Available Sentences for All Criminal Offenses
+    citation: N.P.T.R.C. Section 4.10.039
+    link: https://nezperce.org/resources/tribal-code/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/available-sentences-for-all-criminal-offenses/
+  - title: Reducing a Sec Offender Registration Period with Intervention and Treatment
+    citation: N.P.T.R.C. Section 4.10.055; and Section 4.10.061
+    link: https://nezperce.org/resources/tribal-code/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/reducing-a-sec-offender-registration-period-with-intervention-and-treatment/
 gaming:
   compacts:
   - state: ID

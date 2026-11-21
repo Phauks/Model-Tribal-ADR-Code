@@ -143,6 +143,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Pojoaque, New Mexico
+official_images:
+- kind: logo
+  alternative_text: Pueblo of Pojoaque
+  image_link: https://pojoaque.org/wp-content/uploads/2015/01/Pojoaque_LOGO_wide_redwhitetext100w.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: be8821880cf57b47b564ecd406b243efe19ba1e9cbaf8fb867105811034b74d8
+  private_copy: nation-images/pueblo-of-pojoaque/logo-be8821880cf5.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Copyright - Pueblo of Pojoaque .
+      link: https://pojoaque.org/
+      source: pueblo-of-pojoaque-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: pueblo-of-pojoaque-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Tewa
   language_tag: tew
@@ -200,69 +223,62 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://pojoaque.org/community/tribal-courts/)
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Deferral and Treatment Programs for DUI Cases
+  database_listings:
+  - title: Deferral and Treatment Programs for DUI Cases
     citation: Pueblo of Pojoaque Law and Order Code M-49
     link: https://pojoaque.org/legal/law-order-code/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/deferral-and-treatment-programs-for-dui-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Deferral of Penalties for Ilegal Opiods and Stimulants Control Act
+  - title: Deferral of Penalties for Ilegal Opiods and Stimulants Control Act
     citation: Pueblo of Pojoaque Law and Order Code J-25 and M-59
     link: https://pojoaque.org/legal/law-order-code/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/deferral-of-penalties-for-ilegal-opiods-and-stimulants-control-act/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Family Plan after Adjudication of Abuse of Neglect
+  - title: Family Plan after Adjudication of Abuse of Neglect
     citation: Pueblo of Pojoaque Law and Order Code L-16
     link: https://pojoaque.org/legal/law-order-code/
+    practice_area: Tribal Child Welfare/Family
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/family-plan-after-adjudication-of-abuse-of-neglect/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Path to Wellness Court
+  - title: Path to Wellness Court
     citation: Pueblo of Pojoaque Law and Order Code B-6 and C-10
     link: https://pojoaque.org/legal/law-order-code/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative court
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/path-to-wellness-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court.'
-  - kind: other
-    title: Youth Path to Wellness Court
+  - title: Youth Path to Wellness Court
     citation: Pueblo of Pojoaque Law and Order Code B-7 and C-11
     link: https://pojoaque.org/legal/law-order-code/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative court
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/youth-path-to-wellness-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative court.'
 gaming:
   compacts:
   - state: NM
@@ -327,16 +343,17 @@ gaming:
       may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
       binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
       Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
-    dispute_resolution_locator: Section 7 (Dispute Resolution)
-    source: compact-nm-pueblo-of-santa-ana-2016
-    confidence: medium
-    verification: inferred
-    as_of: '2016-12-30'
-    locator: Section 7 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
-      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
-      Status copied from this nation's most recent approved or deemed-approved entry for this state in
-      the Office of Indian Gaming list (2017-10-26).
+    dispute_resolution_locator: SECTION 7. Dispute Resolution.
+    source: compact-nm-pueblo-of-pojoaque-new-mexico-2017
+    confidence: high
+    verification: read-in-full
+    as_of: '2017-10-26'
+    locator: SECTION 7. Dispute Resolution.
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-nm-pueblo-of-santa-ana-2016 without reading; two reviewers found the clause the same
+      in substance (research/reviews/2026-11-21-compact-clauses.json, item 155). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2017-10-26).
   ordinances:
   - approved: '1994-06-13'
     link: https://www.nigc.gov?wpdmdl=10756&ind=10776

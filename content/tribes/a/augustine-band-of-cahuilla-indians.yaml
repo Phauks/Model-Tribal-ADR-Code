@@ -130,6 +130,28 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+official_images:
+- kind: logo
+  image_link: https://tribe.augustinetribe-nsn.gov/wp-content/uploads/2024/02/Logo-Tribe-768x768.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: e5feb81a67bd3d6f35c2b163749a76c89196c4e945e5b7dc4ec5d32c53ae617e
+  private_copy: nation-images/augustine-band-of-cahuilla-indians/logo-e5feb81a67bd.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: ©2025 Augustine Band of Cahuilla Indians.
+      link: https://tribe.augustinetribe-nsn.gov/
+      source: tribe-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: tribe-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Cahuilla
   language_tag: chl

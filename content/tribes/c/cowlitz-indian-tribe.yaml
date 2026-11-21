@@ -141,6 +141,36 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+official_images:
+- kind: logo
+  image_link: https://www.cowlitz.org/themes/custom/cowlitz_bootstrap/images/cowlitz-seal.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 00ac2f7aecfcdad6e8a5da6546df981bfa2c1af3d9d4e798a84d78b36cdc45a0
+  private_copy: nation-images/cowlitz-indian-tribe/logo-00ac2f7aecfc.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: terms-of-use
+      effect: blocks-reuse
+      quote: You may not modify, copy, distribute, display, reproduce, publish, license, create derivative
+        works from, sell, or transfer information, products, services, images, designs, or logos obtained
+        from Cowlitz.org unless the law otherwise provides or the Tribe gives you prior written permission.
+      link: https://www.cowlitz.org/terms-use
+      source: cowlitz-terms-use
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Copyright Cowlitz Indian Tribe 2026.
+      link: https://www.cowlitz.org/
+      source: cowlitz-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: cowlitz-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Cowlitz Coast Salish
   language_tag: cow
@@ -180,33 +210,29 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Disposition Alternatives with Preference for Least Restrictive Options
+  database_listings:
+  - title: Disposition Alternatives with Preference for Least Restrictive Options
     citation: CTC Title 37, Section 37.03.120(5) - Juvenile Code
     link: https://cowlitz.tribal.codes
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Alternative to incarceration; Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/disposition-alternatives-with-preference-for-least-restrictive-options/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative
-      to incarceration; Restorative justice.'
-  - kind: other
-    title: Juvenile Code Purpose – Rehabilitation Over Punishment
+  - title: Juvenile Code Purpose – Rehabilitation Over Punishment
     citation: CTC Title 37, Section 37.01.030(5)-(7) - Juvenile Code
     link: https://cowlitz.tribal.codes
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: All phases
+    form_of_practice: Rehabilitation; Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/juvenile-code-purpose-rehabilitation-over-punishment/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: All phases. Database form of practice: Rehabilitation;
-      Restorative justice.'
 gaming:
   compacts:
   - state: WA
@@ -298,16 +324,19 @@ gaming:
     dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
       days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
       use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
-    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
-    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
-    confidence: medium
-    verification: inferred
-    as_of: '2021-09-01'
-    locator: Section XIV (Dispute Resolution), subsection B
-    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
-      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
-      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
-      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2024-08-27).
+    dispute_resolution_locator: XII. DISPUTE RESOLUTION, B. Dispute Resolution Alternatives, (1) Meet
+      and Confer, (2) Mediation, (3)(a) Arbitration
+    source: compact-wa-cowlitz-indian-tribe-2014
+    confidence: high
+    verification: read-in-full
+    as_of: '2014-08-07'
+    locator: XII. DISPUTE RESOLUTION, B. Dispute Resolution Alternatives, (1) Meet and Confer, (2) Mediation,
+      (3)(a) Arbitration
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-wa-stillaguamish-tribe-of-indians-of-washin-2021 without reading; two reviewers found
+      the clause the same in substance (research/reviews/2026-11-21-compact-clauses.json, item 44). Status
+      copied from this nation's most recent approved or deemed-approved entry for this state in the Office
+      of Indian Gaming list (2024-08-27).
   ordinances:
   - approved: '2005-11-23'
     link: https://www.nigc.gov?wpdmdl=9676&ind=9705

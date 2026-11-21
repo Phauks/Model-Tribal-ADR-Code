@@ -120,6 +120,21 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Bay Mills Indian Community, Michigan
+official_images:
+- kind: logo
+  image_link: https://static.wixstatic.com/media/869f65_1a6cba5c85844d838199016c9d71b35e%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/869f65_1a6cba5c85844d838199016c9d71b35e%7Emv2.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 4928cc541dee12b7b593204c264460201bba0df3a8b780eca28204580681ba3d
+  private_copy: nation-images/bay-mills-indian-community/logo-4928cc541dee.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: baymills-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Anishinaabe (Ojibwe)
   language_tag: oj
@@ -260,45 +275,6 @@ justice_institutions:
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
-  - kind: other
-    title: Dismissal or Deferral for Tribal Elder and Adult Protection
-    citation: Bay Mills Tribal Code. Chapter XV Tribal Elder and Adult Protection Code. Section 1518 Criminal
-      Prosecutions.
-    link: https://baymillstribalcourt.org/wp-content/uploads/2018/10/Chapter-XV-15.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dismissal-or-deferral-for-tribal-elder-and-adult-protection/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Informal Adjustment Conferences for Child Welfare
-    citation: Bay Mills Tribal Code. Chapter VII Juvenile Code. Section 715 Informal Adjustment Conferences.
-    link: https://baymillstribalcourt.org/wp-content/uploads/2024/06/7-compressed.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-adjustment-conferences-for-child-welfare/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Family
-      conference, Family group conference; Restorative justice.'
-  - kind: other
-    title: Treatment as Alternative Sentence for Substance Use and Possession
-    citation: Bay Mills Tribal Code. Chapter VI Criminal Code. Section 641 Possession, Use, or Misuse
-      of a Controlled Substance.
-    link: https://baymillstribalcourt.org/wp-content/uploads/2024/12/Chapter-VI-November-2024-Update.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-as-alternative-sentence-for-substance-use-and-possession/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative court.'
   - kind: arbitration
     title: 1803. PROCEDURE FOR ARBITRATION ACTION AGAINST THE TRIBE
     citation: 1803. PROCEDURE FOR ARBITRATION ACTION AGAINST THE TRIBE; 1804. PROCEDURE FOR ENFORCEMENT
@@ -311,6 +287,42 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: June 2017); the provision itself was not read. The heading it falls under is
       taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Dismissal or Deferral for Tribal Elder and Adult Protection
+    citation: Bay Mills Tribal Code. Chapter XV Tribal Elder and Adult Protection Code. Section 1518 Criminal
+      Prosecutions.
+    link: https://baymillstribalcourt.org/wp-content/uploads/2018/10/Chapter-XV-15.pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dismissal-or-deferral-for-tribal-elder-and-adult-protection/
+  - title: Informal Adjustment Conferences for Child Welfare
+    citation: Bay Mills Tribal Code. Chapter VII Juvenile Code. Section 715 Informal Adjustment Conferences.
+    link: https://baymillstribalcourt.org/wp-content/uploads/2024/06/7-compressed.pdf
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Family conference, Family group conference; Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-adjustment-conferences-for-child-welfare/
+  - title: Treatment as Alternative Sentence for Substance Use and Possession
+    citation: Bay Mills Tribal Code. Chapter VI Criminal Code. Section 641 Possession, Use, or Misuse
+      of a Controlled Substance.
+    link: https://baymillstribalcourt.org/wp-content/uploads/2024/12/Chapter-VI-November-2024-Update.pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative court
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-as-alternative-sentence-for-substance-use-and-possession/
 gaming:
   compacts:
   - state: MI

@@ -121,6 +121,21 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ramona Band of Cahuilla, California
+official_images:
+- kind: logo
+  image_link: https://ramona-nsn.gov/wp-content/uploads/2025/06/apple-touch-icon.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 16161e4906ec5a88105fbb8b6740c8bca02d7790a6a4bf7564ab58605c65739f
+  private_copy: nation-images/ramona-band-of-cahuilla/logo-16161e4906ec.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: ramona-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Southern California Agency

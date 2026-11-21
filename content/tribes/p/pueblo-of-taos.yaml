@@ -112,6 +112,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Taos, New Mexico
+official_images:
+- kind: logo
+  alternative_text: Taos Pueblo
+  image_link: https://taospueblo.com/wp-content/uploads/2024/03/133.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 12b763307adbc5cd0e5834a04db09948a6279f33d4759b1c0be2964c0e3b3f17
+  private_copy: nation-images/pueblo-of-taos/logo-12b763307adb.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Copyright 2026 Taos Pueblo | All Rights Reserved - Powered By WebWorm .
+      link: https://taospueblo.com/
+      source: taospueblo-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: taospueblo-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Southwest
   bureau_of_indian_affairs_agency: Northern Pueblos Agency
@@ -217,16 +240,17 @@ gaming:
       may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
       binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
       Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
-    dispute_resolution_locator: Section 7 (Dispute Resolution)
-    source: compact-nm-pueblo-of-santa-ana-2016
-    confidence: medium
-    verification: inferred
-    as_of: '2016-12-30'
-    locator: Section 7 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
-      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
-      Status copied from this nation's most recent approved or deemed-approved entry for this state in
-      the Office of Indian Gaming list (2015-07-29).
+    dispute_resolution_locator: SECTION 7. Dispute Resolution.
+    source: compact-nm-pueblo-of-taos-new-mexico-2015
+    confidence: high
+    verification: read-in-full
+    as_of: '2015-07-29'
+    locator: SECTION 7. Dispute Resolution.
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-nm-pueblo-of-santa-ana-2016 without reading; two reviewers found the clause the same
+      in substance (research/reviews/2026-11-21-compact-clauses.json, item 160). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2015-07-29).
   ordinances:
   - approved: '1995-05-26'
     link: https://www.nigc.gov?wpdmdl=10818&ind=10836

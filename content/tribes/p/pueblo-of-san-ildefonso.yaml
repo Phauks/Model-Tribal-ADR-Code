@@ -139,6 +139,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of San Ildefonso, New Mexico
+official_images:
+- kind: logo
+  image_link: https://sanipueblo.org/wp-content/uploads/2021/07/SANILOGO-white-100x100.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 8519aa4e8445dc4c6b0aaa79cac56e1ad85578646f6f022f38a55de39ffe0b13
+  private_copy: nation-images/pueblo-of-san-ildefonso/logo-8519aa4e8445.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2023 San Ildefonso Pueblo.
+      link: https://sanipueblo.org/
+      source: pueblo-of-san-ildefonso-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: pueblo-of-san-ildefonso-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Southwest
   bureau_of_indian_affairs_agency: Northern Pueblos Agency
@@ -189,32 +211,29 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://sanipueblo.org/tribal-courts.aspx) returned
     HTTP 404, so it is not recorded.'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Judge Diverts to Treatment or Rehabilitation Center
+  database_listings:
+  - title: Judge Diverts to Treatment or Rehabilitation Center
     citation: S.I.C. 8.2.1.020, and 8.2.1.120
     link: https://law.sanipueblo.org
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/judge-diverts-to-treatment-or-rehabilitation-center/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Substance Abuse Treatment for Elder Abuse Cases
+  - title: Substance Abuse Treatment for Elder Abuse Cases
     citation: S.I.C. 10.1.7.050
     link: https://law.sanipueblo.org
+    practice_area: Tribal Child Welfare/Family; Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/substance-abuse-treatment-for-elder-abuse-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Justice. Database phase: Post-adjudication. Database form of
-      practice: Restorative justice.'
 gaming:
   compacts:
   - state: NM

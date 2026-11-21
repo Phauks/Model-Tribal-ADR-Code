@@ -110,6 +110,16 @@ contacts:
   locator: 'record "Native Village of Afognak" (community: Afognak, object 1)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+tribal_insignia_database_entries:
+- serial_number: '89001536'
+  filed: '2011-04-21'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001536&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: not-compared
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001536
 languages:
 - name: Sugt'stun (Alutiiq)
   language_tag: ems

@@ -141,6 +141,41 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona
+official_images:
+- kind: seal
+  alternative_text: Hualapai Tribe, AZ Logo
+  image_link: https://webgen1files.revize.com/hualapaitribeaz/logo/Hualapai-Seal_Approved-2024_Transparent.jpg?t=202511071937470
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: 78d19daff4122fbd6694ae88682ee351b9418942fea1080b15707602c9b99144
+  private_copy: nation-images/hualapai-indian-tribe-of-the-hualapai-indian-reservation/seal-78d19daff412.jpg
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001401&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001401'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2008-12-02).
+  source: hualapai-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001401'
+  wordmark: GREAT SEAL OF HUALAPAI TRIBE PEACH SPRINGS, ARIZONA 1883
+  filed: '2008-12-02'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001401&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/hualapai-indian-tribe-of-the-hualapai-indian-reservation/insignia-database-89001401.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001401
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Truxton Canon Agency
@@ -269,12 +304,15 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Hualapai Tribal Court
-  link: http://hualapai-nsn.gov/government/tribal-court/
+  link: https://www.hualapai-nsn.gov/judicial_branch_of_government/tribal_court/index.php
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Hualapai Tribe'
+  note: The listed link (http://hualapai-nsn.gov/government/tribal-court/) no longer reached the court
+    on 2026-11-21; the link is the court's page on the nation's own site, found in the data gap review
+    (research/reviews/2026-11-21-court-listings.json).
 gaming:
   compacts:
   - state: AZ
@@ -353,16 +391,17 @@ gaming:
       if unresolved within 30 days, either party may request non-binding mediation under CPR Institute
       for Dispute Resolution procedures and may then demand binding arbitration under CPR rules before
       three arbitrators unless both agree to one.
-    dispute_resolution_locator: Section 15 (Dispute Resolution)
-    source: compact-az-ak-chin-indian-community-2003
-    confidence: medium
-    verification: inferred
-    as_of: '2003-02-05'
-    locator: Section 15 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
-      compact approved in 2003; this text is the Ak-Chin Indian Community copy of that form, and the 2021-2022
-      amendments in the list refer back to Section 15. Status copied from this nation's most recent approved
-      or deemed-approved entry for this state in the Office of Indian Gaming list (2022-06-14).
+    dispute_resolution_locator: SECTION 15. DISPUTE RESOLUTION, (c) Arbitration, (2) Arbitrators
+    source: compact-az-hualapai-indian-tribe-of-the-hualapai-in-2021
+    confidence: high
+    verification: read-in-full
+    as_of: '2021-05-24'
+    locator: SECTION 15. DISPUTE RESOLUTION, (c) Arbitration, (2) Arbitrators
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-az-ak-chin-indian-community-2003 without reading; two reviewers found the clause the
+      same in substance (research/reviews/2026-11-21-compact-clauses.json, item 75). Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2022-06-14).
   ordinances:
   - approved: '1995-09-28'
     link: https://www.nigc.gov?wpdmdl=9929&ind=9944

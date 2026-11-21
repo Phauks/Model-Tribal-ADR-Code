@@ -137,6 +137,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Coeur D'Alene Tribe
+official_images:
+- kind: logo
+  alternative_text: Coeur d'Alene Tribe Logo
+  image_link: https://www.cdatribe-nsn.gov/wp-content/uploads/2019/08/logo-cdatribe-300x300.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: c7315a3c2975c45af025300a98b8146abff7f770257d51f4916c8b5723ce2123
+  private_copy: nation-images/coeur-dalene-tribe/logo-c7315a3c2975.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Coeur d'Alene Tribe & Red-Spectrum Communications | Privacy Policy | Remote Workspace
+      link: https://www.cdatribe-nsn.gov/
+      source: cdatribe-nsn-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: cdatribe-nsn-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Coeur d’Alene (snchitsu’umshtsn)
   language_tag: crd

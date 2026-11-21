@@ -111,6 +111,21 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yomba Shoshone Tribe of the Yomba Reservation, Nevada
+official_images:
+- kind: logo
+  image_link: https://static.wixstatic.com/media/dfee40_b90761c69ee044ad806269ee294fb32d%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/dfee40_b90761c69ee044ad806269ee294fb32d%7Emv2.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 331e0b7d686efbfba9dd1628a95104f999e28cca510a4286f874f4cc9d2c2305
+  private_copy: nation-images/yomba-shoshone-tribe-of-the-yomba-reservation/logo-331e0b7d686e.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: yombatribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Western Nevada Agency
@@ -222,20 +237,19 @@ justice_institutions:
   note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
     Indian Affairs list.
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Rehabilitation Program in Lieu of Imprisonment or Fine for Substance Use
+  database_listings:
+  - title: Rehabilitation Program in Lieu of Imprisonment or Fine for Substance Use
     citation: YOMBA SHOSHONE TRIBE LAW AND ORDER CODE. Title 5 Code of Criminal Offenses. Sec. 11 Misuse
       of Controlled or Hypnotic Substance
     link: https://www.narf.org/nill/codes/yombacode/index.html
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Rehabilitation
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/rehabilitation-program-in-lieu-of-imprisonment-or-fine-for-substance-use/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Rehabilitation.'
 jurisdiction:
 - topic: public-law-280
   value: retroceded

@@ -141,6 +141,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Orutsararmiut Traditional Native Council
+official_images:
+- kind: logo
+  image_link: https://orutsararmiut.org/wp-content/uploads/logo-reverse.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: bd97e6326644855f2ad130e040628a999b71ade8403edec6fb704096f1a170ce
+  private_copy: nation-images/orutsararmiut-traditional-native-council/logo-bd97e6326644.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Orutsararmiut Native Council - Bethel, Alaska • All Rights Reserved • Privacy Policy
+        • Cookie Policy • Website by Sundog Media .
+      link: https://orutsararmiut.org/
+      source: orutsararmiut-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: orutsararmiut-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Central Yup'ik
   language_tag: esu

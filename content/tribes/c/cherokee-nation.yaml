@@ -127,6 +127,22 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Directory URL still works but redirects to cherokee.gov.
+official_images:
+- kind: seal
+  alternative_text: Seal of the Cherokee Nation, September 6, 1839
+  image_link: https://www.cherokee.gov/media/10idszgp/seal.svg
+  retrieved: '2026-11-21'
+  media_type: image/svg+xml
+  sha256: c383ea689182d18e00d423f72c90aab4ffa4eea6ec45f465e2999e201f890c02
+  private_copy: nation-images/cherokee-nation/seal-c383ea689182.svg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: cherokee-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Cherokee
   language_tag: chr
@@ -266,60 +282,6 @@ justice_institutions:
   locator: Oklahoma section, entry 'Cherokee Nation'
 dispute_resolution:
   provisions:
-  - kind: other
-    title: Community Service Sentencing Program (Alternative to Incarceration)
-    citation: completion—Immunity from tort liability.
-    link: https://ncorj.org/tribal-law/community-service-sentencing-program-alternative-to-incarceration/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/community-service-sentencing-program-alternative-to-incarceration/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Deferral for Juvenile Delinquency
-    citation: Cherokee Nation Tribal Code. Title 10A - Juvenile Code Amendments. § 2-2-404. Deferral of
-      delinquency proceedings.
-    link: https://attorneygeneral.cherokee.org/media/czgnd5j1/title-10a-amendment-updated-2021-03-18.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/deferral-for-juvenile-delinquency/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Diversion Services for Child-In-Need-Of-Supervision
-    citation: Cherokee Nation Tribal Code. Title 10A - Juvenile Code Amendments. § 2-2-104.1. Diversion
-      services.
-    link: https://attorneygeneral.cherokee.org/media/czgnd5j1/title-10a-amendment-updated-2021-03-18.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-services-for-child-in-need-of-supervision/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Informal Adjustment for Juveniles
-    citation: Cherokee Nation Tribal Code. Title 10A - Juvenile Code Amendments. § 2-2-104. Preliminary
-      inquiry--Petition.
-    link: https://attorneygeneral.cherokee.org/media/czgnd5j1/title-10a-amendment-updated-2021-03-18.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-adjustment-for-juveniles/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
   - kind: arbitration
     title: CHAPTER 8 UNIFORM ARBITRATION ACT
     citation: CHAPTER 8 UNIFORM ARBITRATION ACT; § 1304. Effect of agreement to arbitrate—Nonwaivable
@@ -387,6 +349,54 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Published:
       2014); the provision itself was not read. The heading it falls under is taken from the page layout
       and may be imprecise.'
+  database_listings:
+  - title: Community Service Sentencing Program (Alternative to Incarceration)
+    citation: completion—Immunity from tort liability.
+    link: https://ncorj.org/tribal-law/community-service-sentencing-program-alternative-to-incarceration/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-service-sentencing-program-alternative-to-incarceration/
+  - title: Deferral for Juvenile Delinquency
+    citation: Cherokee Nation Tribal Code. Title 10A - Juvenile Code Amendments. § 2-2-404. Deferral of
+      delinquency proceedings.
+    link: https://attorneygeneral.cherokee.org/media/czgnd5j1/title-10a-amendment-updated-2021-03-18.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferral-for-juvenile-delinquency/
+  - title: Diversion Services for Child-In-Need-Of-Supervision
+    citation: Cherokee Nation Tribal Code. Title 10A - Juvenile Code Amendments. § 2-2-104.1. Diversion
+      services.
+    link: https://attorneygeneral.cherokee.org/media/czgnd5j1/title-10a-amendment-updated-2021-03-18.pdf
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-services-for-child-in-need-of-supervision/
+  - title: Informal Adjustment for Juveniles
+    citation: Cherokee Nation Tribal Code. Title 10A - Juvenile Code Amendments. § 2-2-104. Preliminary
+      inquiry--Petition.
+    link: https://attorneygeneral.cherokee.org/media/czgnd5j1/title-10a-amendment-updated-2021-03-18.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-adjustment-for-juveniles/
 gaming:
   compacts:
   - state: OK

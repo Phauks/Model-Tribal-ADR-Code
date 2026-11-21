@@ -120,6 +120,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Colville Reservation
+official_images:
+- kind: logo
+  alternative_text: Colville Tribes
+  image_link: https://images.squarespace-cdn.com/content/v1/56a24f7f841aba12ab7ecfa9/1536329572239-NMGXDK5PCLQK2MXNLW0A/Colville_TribalLogoSeal.png?format=1500w
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 01a57435e610256388cacc75fa147f7424de00fa0b192d0fea059eddeb3d1aa1
+  private_copy: nation-images/confederated-tribes-of-the-colville-reservation/logo-01a57435e610.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright ©
+      link: https://www.colvilletribes.com/
+      source: colvilletribes-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: colvilletribes-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: nsəlxcin (Colville-Okanagan Salish)
   language_tag: oka
@@ -247,49 +270,6 @@ dispute_resolution:
     as_of: '2025-08-25'
     note: Summary from NARF's description; code text not read (link returned 404).
   - kind: peacemaking
-    title: Defintion of Peacemaking
-    citation: Colville Tribal Law and Order Code. Title 5 Domestic Relations. 5-2 Juveniles. Section 5-2-30
-      Defintions.
-    link: https://static1.squarespace.com/static/572d09c54c2f85ddda868946/t/5824abab46c3c490442cb43d/1478798271978/5-2.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/defintion-of-peacemaking/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
-  - kind: other
-    title: Informal Conference/Hearing in Child Welfare
-    citation: Colville Tribal Law and Order Code. Title 5 Domestic Relations. 5-2 Juveniles. Section 5-2-252
-      Informal Hearing, 5-2-253 Informal Hearing—Evidence, 5-2-254 Informal Hearing—Disposition, 5-2-255
-      Informal Hearing—Post Disposition.
-    link: https://static1.squarespace.com/static/572d09c54c2f85ddda868946/t/5824abab46c3c490442cb43d/1478798271978/5-2.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-conference-hearing-in-child-welfare/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Family
-      conference, Family group conference.'
-  - kind: peacemaking
-    title: Peacemaking Circles in Juvenile Justice
-    citation: Colville Tribal Law and Order Code. Title 5 Domestic Relations. 5-2 Juveniles. Section 5-2-191
-      Investigation by Probation Officer, 5-2-192 Peacemaking Circle, 5-2-193 Peacemaking Circle—Evidence,
-      5-2-194 Peacemaking Circle— Disposition, 5-2-195 Peacemaking Circle—Post Disposition, 5-2-197 Setting
-      of Hearing.
-    link: https://static1.squarespace.com/static/572d09c54c2f85ddda868946/t/5824abab46c3c490442cb43d/1478798271978/5-2.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/peacemaking-circles-in-juvenile-justice/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
-  - kind: peacemaking
     title: 'Title 5 Domestic Relations: 5-2 Juveniles: 5-2-192-195 Peacemaking Circle'
     citation: 'Title 5 Domestic Relations: 5-2 Juveniles: 5-2-192-195 Peacemaking Circle'
     source: narf-ipi-youth-family-peacemaking-laws
@@ -301,6 +281,46 @@ dispute_resolution:
       confidentiality, and enforcement of disposition. Link check 2026-11-21: the link the source gives
       (https://peacemaking.narf.org/wp-content/uploads/2025/07/Colville-Juvenile-Peacemaking-Circle-Code.pdf)
       returned HTTP 404, so it is not recorded.'
+  database_listings:
+  - title: Defintion of Peacemaking
+    citation: Colville Tribal Law and Order Code. Title 5 Domestic Relations. 5-2 Juveniles. Section 5-2-30
+      Defintions.
+    link: https://static1.squarespace.com/static/572d09c54c2f85ddda868946/t/5824abab46c3c490442cb43d/1478798271978/5-2.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Peacemaking
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/defintion-of-peacemaking/
+  - title: Informal Conference/Hearing in Child Welfare
+    citation: Colville Tribal Law and Order Code. Title 5 Domestic Relations. 5-2 Juveniles. Section 5-2-252
+      Informal Hearing, 5-2-253 Informal Hearing—Evidence, 5-2-254 Informal Hearing—Disposition, 5-2-255
+      Informal Hearing—Post Disposition.
+    link: https://static1.squarespace.com/static/572d09c54c2f85ddda868946/t/5824abab46c3c490442cb43d/1478798271978/5-2.pdf
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Family conference, Family group conference
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-conference-hearing-in-child-welfare/
+  - title: Peacemaking Circles in Juvenile Justice
+    citation: Colville Tribal Law and Order Code. Title 5 Domestic Relations. 5-2 Juveniles. Section 5-2-191
+      Investigation by Probation Officer, 5-2-192 Peacemaking Circle, 5-2-193 Peacemaking Circle—Evidence,
+      5-2-194 Peacemaking Circle— Disposition, 5-2-195 Peacemaking Circle—Post Disposition, 5-2-197 Setting
+      of Hearing.
+    link: https://static1.squarespace.com/static/572d09c54c2f85ddda868946/t/5824abab46c3c490442cb43d/1478798271978/5-2.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Peacemaking
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaking-circles-in-juvenile-justice/
 gaming:
   compacts:
   - state: WA

@@ -273,14 +273,16 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: https://www.northerncheyennecourt.com/
+  link: https://www.cheyennenation.com/judicial.html
   source: national-indian-law-library-northern-cheyenne
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
-    site did not respond.'
+    site did not respond. The listed link (https://www.northerncheyennecourt.com/) no longer reached the
+    court on 2026-11-21; the link is the court''s page on the nation''s own site, found in the data gap
+    review (research/reviews/2026-11-21-court-listings.json).'
 - kind: tribal-court
   name: Northern Cheyenne Judicial Branch
   link: http://www.cheyennenation.com/judicial.html
@@ -290,96 +292,84 @@ justice_institutions:
   as_of: '2022'
   locator: Montana section, entry 'Northern Cheyenne Tribe'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Disposition Permitted at Informal Conference
+  database_listings:
+  - title: Disposition Permitted at Informal Conference
     citation: N.C.T.N.C. Juvenile Code 3-2-8
     link: http://www.cheyennenation.com/nct/legislative/minutes/2022/Law%20&%20Order%20Code%20(w%20amendments).pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/disposition-permitted-at-informal-conference/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Dispositional Hearings and Dispositions Permissible
+  - title: Dispositional Hearings and Dispositions Permissible
     citation: N.C.T.N.C. Juvenile Code 3-2-17 and 3-2-19
     link: http://www.cheyennenation.com/nct/legislative/minutes/2022/Law%20&%20Order%20Code%20(w%20amendments).pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/dispositional-hearings-and-dispositions-permissible/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Informal Conference to Discuss Alternatives for Juvenile Cases
+  - title: Informal Conference to Discuss Alternatives for Juvenile Cases
     citation: N.C.T.N.C. Juvenile Code 3-2-7
     link: http://www.cheyennenation.com/nct/legislative/minutes/2022/Law%20&%20Order%20Code%20(w%20amendments).pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-conference-to-discuss-alternatives-for-juvenile-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Juvenile Cases Regarded as Civil Proceedings
+  - title: Juvenile Cases Regarded as Civil Proceedings
     citation: N.C.T.N.C. Juvenile Code 3-1-4
     link: http://www.cheyennenation.com/nct/legislative/minutes/2022/Law%20&%20Order%20Code%20(w%20amendments).pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative practice, Restorative process
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/juvenile-cases-regarded-as-civil-proceedings/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      practice, Restorative process.'
-  - kind: other
-    title: Kings of Rehabilitative Punishment for Benefit of Tribe
+  - title: Kings of Rehabilitative Punishment for Benefit of Tribe
     citation: N.C.T.N.C. Civil Code Rule 33
     link: http://www.cheyennenation.com/nct/legislative/minutes/2022/Law%20&%20Order%20Code%20(w%20amendments).pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/kings-of-rehabilitative-punishment-for-benefit-of-tribe/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Least Restrictive Treatment Program Approach
+  - title: Least Restrictive Treatment Program Approach
     citation: N.C.T.N.C. Civil Code Rule 2.1
     link: http://www.cheyennenation.com/nct/legislative/minutes/2022/Law%20&%20Order%20Code%20(w%20amendments).pdf
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/least-restrictive-treatment-program-approach/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice;
-      Restorative practice.'
-  - kind: other
-    title: Rehabilitation for Substance Abuse
+  - title: Rehabilitation for Substance Abuse
     citation: N.C.T.N.C. Offense Code 7-9-3
     link: http://www.cheyennenation.com/nct/legislative/minutes/2022/Law%20&%20Order%20Code%20(w%20amendments).pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/rehabilitation-for-substance-abuse/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
 gaming:
   compacts:
   - state: MT

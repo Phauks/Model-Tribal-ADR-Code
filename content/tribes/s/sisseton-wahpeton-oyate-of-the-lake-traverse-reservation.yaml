@@ -138,6 +138,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South Dakota
+official_images:
+- kind: logo
+  image_link: https://www.swo-nsn.gov/media/gidjegez/swo-shield-triangle-combo-logo.png?format=webp
+  retrieved: '2026-11-21'
+  media_type: image/webp
+  sha256: 6322a596df5a7c78a34400f44f9612a308b94243053a3998e3d7649a5efd3105
+  private_copy: nation-images/sisseton-wahpeton-oyate-of-the-lake-traverse-reservation/logo-6322a596df5a.webp
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 SISSETON WAHPETON OYATE - ALL RIGHTS RESERVED .
+      link: https://www.swo-nsn.gov/
+      source: sisseton-wahpeton-oyate-of-the-lake-trav-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: sisseton-wahpeton-oyate-of-the-lake-trav-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Dakota
   language_tag: dak
@@ -461,16 +483,17 @@ gaming:
       commercial mediation procedures in Bismarck), and once mediation fails or 180 days pass either party
       may sue in the United States District Court for the District of North Dakota under limited waivers
       of immunity.
-    dispute_resolution_locator: Section XXVIII (Dispute Resolution)
-    source: compact-nd-spirit-lake-tribe-2022
-    confidence: medium
-    verification: inferred
+    dispute_resolution_locator: XXVIII. DISPUTE RESOLUTION, 28.1, A. b.
+    source: compact-nd-sisseton-wahpeton-oyate-of-the-lake-trav-2022
+    confidence: high
+    verification: read-in-full
     as_of: '2022-12-19'
-    locator: Section XXVIII (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 2022 Spirit Lake Tribe
-      compact; the other North Dakota nations' 2022 compacts were approved the same day but were not checked.
-      Status copied from this nation's most recent approved or deemed-approved entry for this state in
-      the Office of Indian Gaming list (2022-12-19).
+    locator: XXVIII. DISPUTE RESOLUTION, 28.1, A. b.
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-nd-spirit-lake-tribe-2022 without reading; two reviewers found the clause the same
+      in substance (research/reviews/2026-11-21-compact-clauses.json, item 200). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2022-12-19).
   - state: SD
     status: approved
     approved: '2019-04-01'

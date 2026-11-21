@@ -111,6 +111,48 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Redding Rancheria, California
+official_images:
+- kind: logo
+  alternative_text: Redding Rancheria Logo
+  image_link: https://www.reddingrancheria-nsn.gov/wp-content/uploads/2019/04/headerimage.jpg
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: 6c94dba487f387c05a166da362b449c343bebda8479652a1f479cc68a28420cc
+  private_copy: nation-images/redding-rancheria/logo-6c94dba487f3.jpg
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Redding Rancheria | All rights reserved .
+      link: https://www.reddingrancheria-nsn.gov/
+      source: redding-rancheria-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89000518&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89000518'
+      note: The nation filed a closely similar design as its official insignia with the USPTO (filed 2001-10-16).
+  source: redding-rancheria-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89000518'
+  wordmark: REDDING RANCHERIA WINTU YANA PIT RIVER
+  filed: '2001-10-16'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89000518&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: similar-design
+  private_copy: nation-images/redding-rancheria/insignia-database-89000518.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89000518
 languages:
 - name: Wintu
   language_tag: wnw
@@ -230,17 +272,19 @@ gaming:
       District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
       or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
       or other methods may be used by mutual agreement.
-    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
-    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
-    confidence: medium
-    verification: inferred
-    as_of: '2026-01-26'
-    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
-    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
-      Community compact, which follows the form California has used in its recent compacts; many California
-      nations still operate under 1999-era compacts with a different dispute section. Status copied from
-      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
-      Gaming list (2023-11-30).
+    dispute_resolution_locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS., Sec.13.1. Voluntary Resolution;
+      Court Resolution., (d)
+    source: compact-ca-redding-rancheria-california-2023
+    confidence: high
+    verification: read-in-full
+    as_of: '2023-11-30'
+    locator: SECTION 13.0. DISPUTE RESOLUTION PROVISIONS., Sec.13.1. Voluntary Resolution; Court Resolution.,
+      (d)
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-ca-cher-ae-heights-indian-community-of-the-2026 without reading; two reviewers found
+      the clause the same in substance (research/reviews/2026-11-21-compact-clauses.json, item 173). Status
+      copied from this nation's most recent approved or deemed-approved entry for this state in the Office
+      of Indian Gaming list (2023-11-30).
   ordinances:
   - approved: '1994-01-04'
     link: https://www.nigc.gov?wpdmdl=10888&ind=10921

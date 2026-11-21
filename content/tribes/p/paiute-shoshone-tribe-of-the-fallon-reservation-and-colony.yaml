@@ -150,6 +150,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Paiute-Shoshone Tribe of the Fallon Reservation and Colony, Nevada
+official_images:
+- kind: logo
+  alternative_text: Fallon Paiute-Shoshone Tribe Home Page
+  image_link: https://www.fpst.org/ImageRepository/Document?documentID=229
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: aa45bf02771adfe917cc5b15c69e5e67206a54b5ad98564762e08d68d4d8741c
+  private_copy: nation-images/paiute-shoshone-tribe-of-the-fallon-reservation-and-colony/logo-aa45bf02771a.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright Notices .
+      link: https://www.fpst.org/
+      source: fpst-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: fpst-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Northern Paiute
   language_tag: pao
@@ -226,70 +249,63 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.fpst.org/departments/tribal-court/)
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Additional Potential Conditions of Probation
+  database_listings:
+  - title: Additional Potential Conditions of Probation
     citation: FPST 4-70-100
     link: https://www.fpst.org/departments/tribal-court/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/additional-potential-conditions-of-probation/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Alternative Senrencing to Rehabilitation Program for First Offense for Public Intoxication
+  - title: Alternative Senrencing to Rehabilitation Program for First Offense for Public Intoxication
       and Misuse of Controlled or Hypnotic Substance.
     citation: FPST 5-70-015 & 5-70-100
     link: https://www.fpst.org/departments/tribal-court/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/alternative-senrencing-to-rehabilitation-program-for-first-offense-for-public-intoxication-and-misuse-of-controlled-or-hypnotic-substance/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Informal Conference, Mediation, or Conflict Resolution for Juvenile Delinquent
+  - title: Informal Conference, Mediation, or Conflict Resolution for Juvenile Delinquent
     citation: FPST 9-40-040 & 9-40-050 & 9-50-010
     link: https://www.fpst.org/departments/tribal-court/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-conference-mediation-or-conflict-resolution-for-juvenile-delinquent/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: No Diversion or Deferred Sentencing for Domestic Violence Cases
+  - title: No Diversion or Deferred Sentencing for Domestic Violence Cases
     citation: FPST 13-20-170
     link: https://www.fpst.org/departments/tribal-court/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative practice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/no-diversion-or-deferred-sentencing-for-domestic-violence-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative practice.'
-  - kind: other
-    title: Restriction on Court Ordering Restorative Justice for Domestic Violence Cases
+  - title: Restriction on Court Ordering Restorative Justice for Domestic Violence Cases
     citation: FPST 13-30-110 & 13-40-060
     link: https://www.fpst.org/departments/tribal-court/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/restriction-on-court-ordering-restorative-justice-for-domestic-violence-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice;
-      Restorative practice.'
 gaming:
   ordinances:
   - approved: '1995-05-03'

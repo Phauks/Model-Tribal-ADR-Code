@@ -120,6 +120,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Warm Springs Reservation of Oregon
+official_images:
+- kind: logo
+  alternative_text: Confederated Tribes of the Warm Springs
+  image_link: https://warmsprings-nsn.gov/wp-content/themes/wstribe16/assets/images/logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 285ae142b6d771f9de271c0ec443f6a2c42059de8ab73c9158258550b832d514
+  private_copy: nation-images/confederated-tribes-of-the-warm-springs-reservation-of-oregon/logo-285ae142b6d7.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © copyright 2021 confederated tribes of warm springs
+      link: https://warmsprings-nsn.gov/
+      source: warmsprings-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: warmsprings-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Warm Springs Agency
@@ -237,71 +260,62 @@ justice_institutions:
   as_of: '2022'
   locator: Oregon section, entry 'The Confederated Tribes of Warm Springs'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Informal Resolution of Delinquency Cases
+  database_listings:
+  - title: Informal Resolution of Delinquency Cases
     citation: WSTC 360.210
     link: https://warmsprings-nsn.gov/?s=tribal+code
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: N/A
+    form_of_practice: Alternative; Diversion; Informal resolution
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-resolution-of-delinquency-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: N/A. Database form of practice: Alternative; Diversion;
-      Informal resolution.'
-  - kind: other
-    title: Informal Resolution of Supervision Cases
+  - title: Informal Resolution of Supervision Cases
     citation: WSTC 360.330
     link: https://warmsprings-nsn.gov/?s=tribal+code
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: N/A
+    form_of_practice: Alternative; Diversion; Informal resolution
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-resolution-of-supervision-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: N/A. Database form of practice: Alternative; Diversion;
-      Informal resolution.'
-  - kind: other
-    title: Juvenile Court Rehabilitation Goal and Least Restrictive Alternative
+  - title: Juvenile Court Rehabilitation Goal and Least Restrictive Alternative
     citation: WSTC 360.105
     link: https://warmsprings-nsn.gov/?s=tribal+code
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: N/A
+    form_of_practice: Alternative; Rehabilitation
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/juvenile-court-rehabilitation-goal-and-least-restrictive-alternative/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: N/A. Database form of practice: Alternative; Rehabilitation.'
-  - kind: other
-    title: Victim Conference with Prosecutor and Victim Advocate
+  - title: Victim Conference with Prosecutor and Victim Advocate
     citation: WSTC 376.210
     link: https://warmsprings-nsn.gov/?s=tribal+code
+    practice_area: Tribal Justice
+    phase: N/A
+    form_of_practice: Restorative practice, Restorative process
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/victim-conference-with-prosecutor-and-victim-advocate/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: N/A. Database form of practice: Restorative practice, Restorative
-      process.'
-  - kind: other
-    title: Victim Participation Rights in Criminal Proceedings
+  - title: Victim Participation Rights in Criminal Proceedings
     citation: WSTC 376.200-376.225
     link: https://warmsprings-nsn.gov/?s=tribal+code
+    practice_area: Tribal Justice
+    phase: N/A
+    form_of_practice: Restorative practice, Restorative process
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/victim-participation-rights-in-criminal-proceedings/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: N/A. Database form of practice: Restorative practice, Restorative
-      process.'
 gaming:
   compacts:
   - state: OR

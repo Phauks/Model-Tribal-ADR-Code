@@ -118,6 +118,28 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: 2026-10
+official_images:
+- kind: logo
+  image_link: https://i0.wp.com/echotacherokee.org/wp-content/uploads/2026/03/echota.webp?resize=300%2C286&ssl=1
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 8db1c9e99f7ca58c81ca0828c9da281e496d21a7fcec6067389b653b7d74bc82
+  private_copy: nation-images/echota-cherokee-tribe-of-alabama/logo-8db1c9e99f7c.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2020-2026.
+      link: https://echotacherokee.org
+      source: echotacherokee-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: echotacherokee-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

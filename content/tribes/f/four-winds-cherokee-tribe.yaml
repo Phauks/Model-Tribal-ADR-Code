@@ -104,6 +104,17 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+tribal_insignia_database_entries:
+- serial_number: '89002568'
+  wordmark: FOUR WINDS TRIBE LOUISIANA CHEROKEE
+  filed: '2021-07-26'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89002568&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: not-compared
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89002568
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

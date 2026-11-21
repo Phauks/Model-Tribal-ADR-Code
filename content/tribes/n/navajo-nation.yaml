@@ -139,6 +139,17 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Navajo Nation, Arizona, New Mexico, & Utah
+tribal_insignia_database_entries:
+- serial_number: '89003209'
+  wordmark: GREAT SEAL OF THE NAVAJO NATION
+  filed: '2025-02-11'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89003209&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: not-compared
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89003209
 federal_administration:
   bureau_of_indian_affairs_region: Navajo
   bureau_of_indian_affairs_agency: Navajo Regional Office
@@ -304,155 +315,6 @@ dispute_resolution:
     source: navajo-title-7-courts-and-procedures
     confidence: medium
     as_of: '2003-10-24'
-  - kind: other
-    title: Community Services and Programs for Substance/Alcohol Abuse in Education
-    citation: N.C.C. Title 10, § 119
-    link: https://www.nnols.org/navajo-nation-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/community-services-and-programs-for-substance-alcohol-abuse-in-education/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice; Restorative practice.'
-  - kind: other
-    title: Counseling & Substance Abuse Counseling for Domestic Violence Perpetrators
-    citation: N.C.C. Title 9, § 1660
-    link: https://www.nnols.org/navajo-nation-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/counseling-substance-abuse-counseling-for-domestic-violence-perpetrators/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Least Restrictive Alternative Available Approach for Elder Protection
-    citation: N.C.C. Title 9, § 1805
-    link: https://www.nnols.org/navajo-nation-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/least-restrictive-alternative-available-approach-for-elder-protection/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      practice, Restorative process.'
-  - kind: other
-    title: Ordered Rehabilitative Treatment for Possession of Liquor
-    citation: N.C.C. Title 17, § 410
-    link: https://www.nnols.org/navajo-nation-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/ordered-rehabilitative-treatment-for-possession-of-liquor/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Ordered Rehabilitative Treatment for Possession/Sale of Controlled Substances
-    citation: N.C.C. Title 17, § 394
-    link: https://www.nnols.org/navajo-nation-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/ordered-rehabilitative-treatment-for-possession-sale-of-controlled-substances/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Probation to Promote Rehabilitation
-    citation: N.C.C. Title 17, § 1881
-    link: https://www.nnols.org/navajo-nation-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/probation-to-promote-rehabilitation/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Purpose of the Navajo Nation Children’s Code
-    citation: N.C.C. Title 9, § 1001
-    link: https://www.nnols.org/navajo-nation-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-of-the-navajo-nation-childrens-code/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative practice, Restorative process.'
-  - kind: other
-    title: Purpose of the Peacemaking Program
-    citation: N.C.C. Title 7, § 409, and § 410
-    link: https://www.nnols.org/navajo-nation-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-of-the-peacemaking-program/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Rehabilitation fo Delinquent Children
-    citation: N.C.C. Title 9, § 1152
-    link: https://www.nnols.org/navajo-nation-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/rehabilitation-fo-delinquent-children/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Responsibility and Authority of the Peacemaking Program
-    citation: N.C.C. Title 7, § 411
-    link: https://www.nnols.org/navajo-nation-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/responsibility-and-authority-of-the-peacemaking-program/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Sentencing for Rehabilitation
-    citation: N.C.C.Title 17, § 220
-    link: https://www.nnols.org/navajo-nation-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/sentencing-for-rehabilitation/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Treatment Plan in Family Court
-    citation: N.C.C. Title 9, § 1117
-    link: https://www.nnols.org/navajo-nation-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-plan-in-family-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Justice. Database phase: Pre-adjudication. Database form of
-      practice: Restorative justice.'
   - kind: peacemaking
     title: 'Title 7 – Courts and Procedures, Chapter 3: Judicial Branch, Subchapter 10: Navajo Nation
       Peacemaking Program (Hózh==jí Naat’áanii)'
@@ -502,6 +364,139 @@ dispute_resolution:
     as_of: '2012-07-30'
     note: Opened (69 pages). The Plan implements 7 N.N.C. §§ 409-413. Copy hosted by Tribal Justice (tribaljustice.org);
       the Judicial Branch also publishes the Plan as web pages.
+  database_listings:
+  - title: Community Services and Programs for Substance/Alcohol Abuse in Education
+    citation: N.C.C. Title 10, § 119
+    link: https://www.nnols.org/navajo-nation-code/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-services-and-programs-for-substance-alcohol-abuse-in-education/
+  - title: Counseling & Substance Abuse Counseling for Domestic Violence Perpetrators
+    citation: N.C.C. Title 9, § 1660
+    link: https://www.nnols.org/navajo-nation-code/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/counseling-substance-abuse-counseling-for-domestic-violence-perpetrators/
+  - title: Least Restrictive Alternative Available Approach for Elder Protection
+    citation: N.C.C. Title 9, § 1805
+    link: https://www.nnols.org/navajo-nation-code/
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative practice, Restorative process
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/least-restrictive-alternative-available-approach-for-elder-protection/
+  - title: Ordered Rehabilitative Treatment for Possession of Liquor
+    citation: N.C.C. Title 17, § 410
+    link: https://www.nnols.org/navajo-nation-code/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/ordered-rehabilitative-treatment-for-possession-of-liquor/
+  - title: Ordered Rehabilitative Treatment for Possession/Sale of Controlled Substances
+    citation: N.C.C. Title 17, § 394
+    link: https://www.nnols.org/navajo-nation-code/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/ordered-rehabilitative-treatment-for-possession-sale-of-controlled-substances/
+  - title: Probation to Promote Rehabilitation
+    citation: N.C.C. Title 17, § 1881
+    link: https://www.nnols.org/navajo-nation-code/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/probation-to-promote-rehabilitation/
+  - title: Purpose of the Navajo Nation Children’s Code
+    citation: N.C.C. Title 9, § 1001
+    link: https://www.nnols.org/navajo-nation-code/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative practice, Restorative process
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-of-the-navajo-nation-childrens-code/
+  - title: Purpose of the Peacemaking Program
+    citation: N.C.C. Title 7, § 409, and § 410
+    link: https://www.nnols.org/navajo-nation-code/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-of-the-peacemaking-program/
+  - title: Rehabilitation fo Delinquent Children
+    citation: N.C.C. Title 9, § 1152
+    link: https://www.nnols.org/navajo-nation-code/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/rehabilitation-fo-delinquent-children/
+  - title: Responsibility and Authority of the Peacemaking Program
+    citation: N.C.C. Title 7, § 411
+    link: https://www.nnols.org/navajo-nation-code/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/responsibility-and-authority-of-the-peacemaking-program/
+  - title: Sentencing for Rehabilitation
+    citation: N.C.C.Title 17, § 220
+    link: https://www.nnols.org/navajo-nation-code/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-for-rehabilitation/
+  - title: Treatment Plan in Family Court
+    citation: N.C.C. Title 9, § 1117
+    link: https://www.nnols.org/navajo-nation-code/
+    practice_area: Tribal Child Welfare/Family; Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-plan-in-family-court/
 gaming:
   compacts:
   - state: AZ
@@ -595,32 +590,34 @@ gaming:
       if unresolved within 30 days, either party may request non-binding mediation under CPR Institute
       for Dispute Resolution procedures and may then demand binding arbitration under CPR rules before
       three arbitrators unless both agree to one.
-    dispute_resolution_locator: Section 15 (Dispute Resolution)
-    source: compact-az-ak-chin-indian-community-2003
-    confidence: medium
-    verification: inferred
-    as_of: '2003-02-05'
-    locator: Section 15 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
-      compact approved in 2003; this text is the Ak-Chin Indian Community copy of that form, and the 2021-2022
-      amendments in the list refer back to Section 15. Status copied from this nation's most recent approved
-      or deemed-approved entry for this state in the Office of Indian Gaming list (2022-06-14).
+    dispute_resolution_locator: SECTION 15. DISPUTE RESOLUTION, subdivision (c)(2)
+    source: compact-az-navajo-nation-arizona-new-mexico-utah-2021
+    confidence: high
+    verification: read-in-full
+    as_of: '2021-05-24'
+    locator: SECTION 15. DISPUTE RESOLUTION, subdivision (c)(2)
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-az-ak-chin-indian-community-2003 without reading; two reviewers found the clause the
+      same in substance (research/reviews/2026-11-21-compact-clauses.json, item 120). Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2022-06-14).
   - state: NM
     status: deemed-approved
     dispute_resolution_summary: Within two years of a discovered violation a party serves written notice,
       may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
       binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
       Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
-    dispute_resolution_locator: Section 7 (Dispute Resolution)
-    source: compact-nm-pueblo-of-santa-ana-2016
-    confidence: medium
-    verification: inferred
-    as_of: '2016-12-30'
-    locator: Section 7 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
-      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
-      Status copied from this nation's most recent approved or deemed-approved entry for this state in
-      the Office of Indian Gaming list (2015-06-22).
+    dispute_resolution_locator: SECTION 7. Dispute Resolution., subdivision A(4)
+    source: compact-nm-navajo-nation-arizona-new-mexico-utah-2015
+    confidence: high
+    verification: read-in-full
+    as_of: '2015-06-22'
+    locator: SECTION 7. Dispute Resolution., subdivision A(4)
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-nm-pueblo-of-santa-ana-2016 without reading; two reviewers found the clause the same
+      in substance (research/reviews/2026-11-21-compact-clauses.json, item 121). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2015-06-22).
   ordinances:
   - approved: '2003-12-09'
     link: https://www.nigc.gov?wpdmdl=10399&ind=10414

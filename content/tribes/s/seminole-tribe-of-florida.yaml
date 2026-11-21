@@ -260,6 +260,84 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Seminole Tribe of Florida
+official_images:
+- kind: logo
+  alternative_text: Seminole Tribe Logo
+  image_link: https://www.semtribe.com/ResourcePackages/MVC-STOF/assets/dist/images/stoflogo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 1e26511ab270739481b97c0e0e177f8653c1b2ff404a300137edc3df33566ed7
+  private_copy: nation-images/seminole-tribe-of-florida/logo-1e26511ab270.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: trademark-notice
+      effect: blocks-reuse
+      quote: The Seminole Tribe of Florida and all related names, logos, product and service names, designs,
+        and slogans are trademarks of the Seminole Tribe or its affiliates or licensors.
+      link: https://www.semtribe.com/site-info/terms-and-conditions
+      source: semtribe-terms-and-conditions
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: COPYRIGHT INFRINGEMENT .
+      link: https://www.semtribe.com/site-info/terms-and-conditions
+      source: semtribe-terms-and-conditions
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001948&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001948'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2017-01-10).
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001000&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001000'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2004-05-03).
+  source: semtribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001885'
+  wordmark: SEMINOLE TRIBE OF FLORIDA, INC. IN GOD WE TRUST
+  filed: '2014-06-19'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001885&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: different-design
+  private_copy: nation-images/seminole-tribe-of-florida/insignia-database-89001885.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001885
+- serial_number: '89001948'
+  wordmark: SEMINOLE TRIBE OF FLORIDA TRIBAL COUNCIL IN GOD WE TRUST
+  filed: '2017-01-10'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001948&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/seminole-tribe-of-florida/insignia-database-89001948.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001948
+- serial_number: '89001000'
+  wordmark: SEMINOLE TRIBE OF FLORIDA, INC. IN GOD WE TRUST
+  filed: '2004-05-03'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001000&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/seminole-tribe-of-florida/insignia-database-89001000.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001000
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Seminole Agency
@@ -309,12 +387,15 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Seminole Tribal Court
-  link: http://www.semtribe.com/Government/TribalCourt/TribalCourt.aspx
+  link: https://www.semtribe.com/government/tribal-court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Florida section, entry 'Seminole Tribe of Florida'
+  note: The listed link (http://www.semtribe.com/Government/TribalCourt/TribalCourt.aspx) no longer reached
+    the court on 2026-11-21; the link is the court's page on the nation's own site, found in the data
+    gap review (research/reviews/2026-11-21-court-listings.json).
 gaming:
   compacts:
   - state: FL

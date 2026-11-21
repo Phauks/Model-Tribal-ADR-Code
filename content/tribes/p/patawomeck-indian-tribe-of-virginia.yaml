@@ -64,6 +64,38 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+official_images:
+- kind: logo
+  alternative_text: Patawomeck_Logo_Hi_Res_1604111720__1_-removebg-preview.png
+  image_link: https://static.wixstatic.com/media/beca36_37f8f00b28964777bea83c771666ec05~mv2.png/v1/crop/x_0,y_0,w_470,h_459/fill/w_118,h_115,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Patawomeck_Logo_Hi_Res_1604111720__1_-removebg-preview.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 0e4dd3129a913cc3ab27cda253b25aff6c2c62b482eb09390699279651e0e28c
+  private_copy: nation-images/patawomeck-indian-tribe-of-virginia/logo-0e4dd3129a91.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: terms-of-use
+      effect: blocks-reuse
+      quote: You will use protected content solely for your personal use, and will make no other use of
+        the content without the express written permission of the Patawomeck Indian Tribe Of Virginia
+        and the copyright owner.
+      link: https://www.patawomeckindiantribeofvirginia.org/policies-terms-and-conditions
+      source: patawomeckindiantribeofvirginia-policies-terms-and-conditions
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Patawomeck Indian Tribe of Virginia © 2023 .
+      link: https://www.patawomeckindiantribeofvirginia.org/
+      source: patawomeckindiantribeofvirginia-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: patawomeckindiantribeofvirginia-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+  note: Found by rendering the page in a browser; the page draws its logo with JavaScript.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

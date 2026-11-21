@@ -79,6 +79,13 @@ community has availed itself of this opportunity"
 records these sources side by side without resolving the question (project
 choice).
 
+Where the list of recognized entities names bands only inside another
+entity's entry, as it does for the six component reservations of the
+Minnesota Chippewa Tribe, each band has its own profile with `part_of` set to
+that entity's id. Its recognition cites the same entry, and counts of
+recognized entities leave it out so that no entity is counted twice
+([decision record 0016](decisions/0016-component-bands-own-profiles.md)).
+
 ### Every fact is cited
 
 Every value in a profile carries the same citation fields
@@ -149,6 +156,12 @@ code provisions, dispute resolution clauses and waivers of sovereign immunity
 in commercial and other codes, training programs, and published rules and
 forms. Gaming compact dispute terms are kept with each compact under `gaming`.
 
+Entries copied in bulk from a database of tribal laws, without opening the law
+itself, go in `database_listings`, not `provisions`. They keep the database's
+own tags (`practice_area`, `phase`, `form_of_practice`) as it writes them and
+carry `verification: bulk-import`. A listing becomes a provision only after the
+law is read ([decision record 0015](decisions/0015-database-listings-apart-from-provisions.md)).
+
 The vocabularies for kinds of forum, case types, participation, provisions
 and clauses are open: any lowercase hyphenated term validates, so a method the
 project has not anticipated can be recorded in its own terms. The schema lists
@@ -172,6 +185,18 @@ gives it. A pronunciation is never worked out from the spelling, and the
 field is left out when no such source is found. A nation can ask for an entry
 to be corrected or removed like any other fact
 ([charter, commitment 6](charter.md#6-the-right-to-correct-restrict-or-withdraw)).
+
+### Seals, emblems, flags and logos
+
+`official_images` records the nation's seal, emblem, flag or logo as its own
+website publishes it: the link, the retrieval date, a SHA-256 fingerprint and
+the path of a private copy that is never committed. Its `reuse` object lists
+every signal about reusing the image (terms of use, trademark notices and
+symbols, the nation's laws, the USPTO tribal insignia database, the nation's
+own requests) and a status that follows from them; only some statuses allow the
+image to be shown. `tribal_insignia_database_entries` lists the nation's
+entries in that database. How signals are detected and the display rule are in
+[official-images.md](official-images.md).
 
 ### Building profiles
 

@@ -112,6 +112,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Skokomish Indian Tribe
+official_images:
+- kind: logo
+  image_link: https://skokomish.org/wp-content/uploads/2021/06/cropped-skokomish-logo.jpg
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: b69891af8f357bb02a5b45295b78b8eac88ef4f6af903f288e29c31ed7eaeaf2
+  private_copy: nation-images/skokomish-indian-tribe/logo-b69891af8f35.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2022 Skokomish Indian Tribe.
+      link: https://skokomish.org/
+      source: skokomish-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: skokomish-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Puget Sound Agency
@@ -263,68 +285,6 @@ dispute_resolution:
     confidence: medium
     as_of: '2017-07-05'
   - kind: other
-    title: Family Group Conference
-    citation: S.T.C. 3.03.095
-    link: http://skokomish.org/skokomish-codes-and-ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/family-group-conference/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: . Database form of practice: Alternative; Family conferencing.'
-  - kind: other
-    title: Juvenile Alternative Sentencing
-    citation: S.T.C. 9.12.050
-    link: http://skokomish.org/skokomish-codes-and-ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/juvenile-alternative-sentencing/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: . Database form of practice: Alternative; Rehabilitation;
-      Restorative justice.'
-  - kind: other
-    title: Purpose Statement – Restorative Justice Framework
-    citation: S.T.C. 3.03.002
-    link: http://skokomish.org/skokomish-codes-and-ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/purpose-statement-restorative-justice-framework/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: . Database form of practice: Restorative justice.'
-  - kind: other
-    title: Restitution-Based Sentencing Policy
-    citation: S.T.C. 9.11.010
-    link: http://skokomish.org/skokomish-codes-and-ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restitution-based-sentencing-policy/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: . Database form of practice: Alternative; Restitution; Restorative
-      justice.'
-  - kind: peacemaking
-    title: Traditional Peacemaking Forum
-    citation: S.T.C. 9.11.030
-    link: http://skokomish.org/skokomish-codes-and-ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/traditional-peacemaking-forum/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: . Database form of practice: Alternative; Peacemaking.'
-  - kind: other
     title: FAMILY GROUP CONFERENCE
     citation: FAMILY GROUP CONFERENCE; 3.03.095 Family Group Conference; PATRON DISPUTE RESOLUTION; 4.02.118
       Patron Dispute Resolution
@@ -380,6 +340,57 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Amended:
       March 17, 1980); the provision itself was not read. The heading it falls under is taken from the
       page layout and may be imprecise.'
+  database_listings:
+  - title: Family Group Conference
+    citation: S.T.C. 3.03.095
+    link: http://skokomish.org/skokomish-codes-and-ordinances/
+    practice_area: Tribal Child Welfare/Family
+    form_of_practice: Alternative; Family conferencing
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-group-conference/
+  - title: Juvenile Alternative Sentencing
+    citation: S.T.C. 9.12.050
+    link: http://skokomish.org/skokomish-codes-and-ordinances/
+    practice_area: Tribal Juvenile/Youth Justice
+    form_of_practice: Alternative; Rehabilitation; Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/juvenile-alternative-sentencing/
+  - title: Purpose Statement – Restorative Justice Framework
+    citation: S.T.C. 3.03.002
+    link: http://skokomish.org/skokomish-codes-and-ordinances/
+    practice_area: Tribal Child Welfare/Family
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-statement-restorative-justice-framework/
+  - title: Restitution-Based Sentencing Policy
+    citation: S.T.C. 9.11.010
+    link: http://skokomish.org/skokomish-codes-and-ordinances/
+    practice_area: Tribal Justice
+    form_of_practice: Alternative; Restitution; Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restitution-based-sentencing-policy/
+  - title: Traditional Peacemaking Forum
+    citation: S.T.C. 9.11.030
+    link: http://skokomish.org/skokomish-codes-and-ordinances/
+    practice_area: Tribal Justice
+    form_of_practice: Alternative; Peacemaking
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/traditional-peacemaking-forum/
 gaming:
   compacts:
   - state: WA

@@ -120,6 +120,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pawnee Nation of Oklahoma
+official_images:
+- kind: seal
+  alternative_text: Approved Pawnee Nation Seal[1085]
+  image_link: https://b2131152.assetcdn.net/2.0/2131152/wp-content/uploads/2020/12/Approved-Pawnee-Nation-Seal1085-e1609779163393-100x100.png?lossy=1&strip=1&webp=1
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: f4a7246b6a433f4d567146400be527ecdaf6cc0a0b9f2c66684a2a5540cddacc
+  private_copy: nation-images/pawnee-nation-of-oklahoma/seal-f4a7246b6a43.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Pawnee Nation of Oklahoma .
+      link: https://pawneenation.org/
+      source: pawneenation-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: pawneenation-pawnee-nation-flag-and-seal
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Southern Plains
   bureau_of_indian_affairs_agency: Pawnee Agency
@@ -261,17 +284,17 @@ gaming:
       days, and either party may then refer the dispute to arbitration under American Arbitration Association
       rules before a single arbitrator, with de novo review of the award available in federal district
       court under limited waivers of immunity.
-    dispute_resolution_locator: Part 12 (Dispute Resolution)
-    source: compact-ok-cherokee-nation-2005
-    confidence: medium
-    verification: inferred
-    as_of: '2005-01-27'
-    locator: Part 12 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
-      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
-      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
-      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
-      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2005-03-21).
+    dispute_resolution_locator: PART 12 DISPUTE RESOLUTION
+    source: compact-ok-pawnee-nation-of-oklahoma-2005
+    confidence: high
+    verification: read-in-full
+    as_of: '2005-03-21'
+    locator: PART 12 DISPUTE RESOLUTION
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-ok-cherokee-nation-2005 without reading; two reviewers found the clause the same in
+      substance (research/reviews/2026-11-21-compact-clauses.json, item 139). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2005-03-21).
   ordinances:
   - approved: '1999-02-19'
     link: https://www.nigc.gov?wpdmdl=10594&ind=10611

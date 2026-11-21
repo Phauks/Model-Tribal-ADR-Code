@@ -138,6 +138,21 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yankton Sioux Tribe of South Dakota
+official_images:
+- kind: logo
+  image_link: https://images.squarespace-cdn.com/content/v1/536a55bce4b02107859b5875/923ff04d-6bbb-4f58-b4a9-36cd4f8a2926/YST_Logo2017.jpg?format=2500w
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: b439fc6fdec64d43e98f3119c5082c0156509387f6ff9f5f8fb7c42b66d7ddb8
+  private_copy: nation-images/yankton-sioux-tribe-of-south-dakota/logo-b439fc6fdec6.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: yanktonsiouxtribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Dakota
   language_tag: dak
@@ -204,82 +219,73 @@ justice_institutions:
   as_of: '2022'
   locator: South Dakota section, entry 'Yankton Sioux Tribe'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Dispositional Alternatives and Modifications for Juvenile Offenders
+  database_listings:
+  - title: Dispositional Alternatives and Modifications for Juvenile Offenders
     citation: Yankton Sioux Tribal Code Title V, Sec. 5-5-22 and Sec. 5-5-23
     link: https://www.narf.org/nill/codes/yanktoncode/index.html
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/dispositional-alternatives-and-modifications-for-juvenile-offenders/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Diversion Program for Child Abuse and Neglect Crimes
+  - title: Diversion Program for Child Abuse and Neglect Crimes
     citation: Yankton Sioux Tribal Code Title V, Sec. 5-9-31
     link: https://www.narf.org/nill/codes/yanktoncode/index.html
+    practice_area: Tribal Justice; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/diversion-program-for-child-abuse-and-neglect-crimes/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of
-      practice: Restorative justice.'
-  - kind: other
-    title: Informal Adjustement for Juvenile Offenders
+  - title: Informal Adjustement for Juvenile Offenders
     citation: Yankton Sioux Tribal Code Title V, Sec. 5-5-17
     link: https://www.narf.org/nill/codes/yanktoncode/index.html
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-adjustement-for-juvenile-offenders/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Mandated Program for Domestic Violence Perpetrators
+  - title: Mandated Program for Domestic Violence Perpetrators
     citation: Yankton Sioux Tribal Code Title III, Sec. 3-48-1 Subsection 3
     link: https://www.narf.org/nill/codes/yanktoncode/index.html
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/mandated-program-for-domestic-violence-perpetrators/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Relied by the Court for Elder Absue Crimes
+  - title: Relied by the Court for Elder Absue Crimes
     citation: Yankton Sioux Tribal Code Title XIV, Sec. 14-6-1
     link: https://www.narf.org/nill/codes/yanktoncode/index.html
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/relied-by-the-court-for-elder-absue-crimes/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Relief by the Court for Domestic Violence Crimes
+  - title: Relief by the Court for Domestic Violence Crimes
     citation: Yankton Sioux Tribal Code Title III, Sec. 3-48-1 Subsection 6
     link: https://www.narf.org/nill/codes/yanktoncode/index.html
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/relief-by-the-court-for-domestic-violence-crimes/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
 gaming:
   compacts:
   - state: SD

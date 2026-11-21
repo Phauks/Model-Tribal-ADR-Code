@@ -111,6 +111,37 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Cahuilla Band of Indians
+official_images:
+- kind: logo
+  alternative_text: Cahuilla Band of Indians | Tribal Sovereign Nation
+  image_link: https://cahuilla-nsn.gov/wp-content/uploads/2023/03/cahuilla-band-of-indians-logo-448x377.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: ace98fd63c833eb3be4be4598ca794bd5a55c2eabb53b252fac1597c7aaa8af0
+  private_copy: nation-images/cahuilla-band-of-indians/logo-ace98fd63c83.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: terms-of-use
+      effect: blocks-reuse
+      quote: You may not modify, copy, distribute, transmit, display, perform, reproduce, publish, license,
+        create derivative works from, transfer, or sell any content, software, products, or services obtained
+        from this website without our prior written permission.
+      link: https://cahuilla-nsn.gov/terms/
+      source: cahuilla-nsn-terms
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © .
+      link: https://cahuilla-nsn.gov/
+      source: cahuilla-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: cahuilla-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Cahuilla
   language_tag: chl

@@ -131,6 +131,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada
+official_images:
+- kind: logo
+  alternative_text: Picture
+  image_link: https://www.paiutetribelovelock.org/uploads/1/3/7/5/137574358/editor/lpt-logo-color.png?1687378954
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 753b8480f4390c985ce85919cc18a39d3cbb1af8771b8087a6ec6edde5976499
+  private_copy: nation-images/lovelock-paiute-tribe-of-the-lovelock-indian-colony/logo-753b8480f439.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: paiutetribelovelock-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Western Nevada Agency
@@ -162,12 +178,15 @@ justice_institutions:
   note: The page gives a contact for a tribal court without a fuller name.
 - kind: tribal-court
   name: Lovelock Paiute Tribal Court
-  link: http://lovelockpaiutetribe.com/TribalCourt.html
+  link: https://www.paiutetribelovelock.org/tribal-court.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Nevada section, entry 'Lovelock Paiute Tribe'
+  note: The listed link (http://lovelockpaiutetribe.com/TribalCourt.html) no longer reached the court
+    on 2026-11-21; the link is the court's page on the nation's own site, found in the data gap review
+    (research/reviews/2026-11-21-court-listings.json).
 jurisdiction:
 - topic: public-law-280
   value: retroceded

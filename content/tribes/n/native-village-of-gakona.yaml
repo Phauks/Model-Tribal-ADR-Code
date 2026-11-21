@@ -132,6 +132,22 @@ contacts:
   locator: 'record "Native Village of Gakona" (community: Gakona, object 64)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+official_images:
+- kind: logo
+  alternative_text: Native Village of Gakona
+  image_link: https://nvgakona.com/wp-content/uploads/2024/08/nvg-logo.png?w=1440&h=1260
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: a321dfece5e725ec9b14520b013cb6c4f538fd83faa2ff035b4ef160c29c05db
+  private_copy: nation-images/native-village-of-gakona/logo-a321dfece5e7.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: nvgakona-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Atnakenaege’ (Ahtna)
   language_tag: aht

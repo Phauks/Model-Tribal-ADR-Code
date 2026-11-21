@@ -12,6 +12,7 @@
 import { existsSync, readdirSync, readFileSync, statSync } from 'node:fs';
 import path from 'node:path';
 import { parse } from 'yaml';
+import { imageMayBeShown, type OfficialImageRecord, type ServableImage } from '../official-images.ts';
 
 export const repositoryRoot = path.resolve(process.cwd(), '..');
 
@@ -142,7 +143,14 @@ export interface NationRecord {
 	};
 	recognition?: (CitedFact & { type: string; legal_basis?: string })[];
 	states?: (CitedFact & { state: string; presence?: string })[];
-	contacts?: (CitedFact & { kind: string; value: string; label?: string })[];
+	contacts?: (CitedFact & {
+		kind: string;
+		value: string;
+		label?: string;
+		link_status?: 'live' | 'lapsed';
+		link_checked?: string;
+	})[];
+	official_images?: (CitedFact & OfficialImageRecord)[];
 	languages?: (CitedFact & { name?: string })[];
 	federal_administration?: CitedFact & {
 		bureau_of_indian_affairs_region?: string;
@@ -218,4 +226,24 @@ export function glossaryForReview(): { id: string; term: string; file: string }[
 		const record = readYaml<GlossaryRecord>(file);
 		return { id: record.id, term: record.term, file };
 	});
+}
+
+/**
+ * The official images the Worker may serve: those of published records whose
+ * reuse status allows showing them and that have a private copy. Bundled into
+ * the Worker by vite.config.ts, because the Worker cannot read content/.
+ */
+export function servableImages(): ServableImage[] {
+	return nations().flatMap((record) =>
+		(record.official_images ?? [])
+			.filter((image) => image.private_copy && imageMayBeShown(image))
+			.slice(0, 1)
+			.map((image) => ({
+				nation: record.id,
+				key: image.private_copy as string,
+				link: image.image_link,
+				mediaType: image.media_type ?? 'application/octet-stream',
+				sha256: image.sha256
+			}))
+	);
 }

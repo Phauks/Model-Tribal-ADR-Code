@@ -130,6 +130,40 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Little Traverse Bay Bands of Odawa Indians, Michigan
+official_images:
+- kind: emblem
+  alternative_text: Logo
+  image_link: https://ltbbodawa-nsn.gov/wp-content/uploads/2020/10/LTBBLogoHeader.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 4a45890d13f61fc74849fd0f0d6571c3e5e331c30f74c000a9bbd3271a8f9b60
+  private_copy: nation-images/little-traverse-bay-bands-of-odawa-indians/emblem-4a45890d13f6.png
+  reuse:
+    status: conditions-apply
+    checked: '2026-11-21'
+    signals:
+    - kind: tribal-law
+      effect: allows-with-conditions
+      quote: The Emblem may be used by any Tribal Citizen, person, or entity, provided that its use does
+        not mislead or convey any impression of official action or endorsement by the Tribe unless the
+        Tribe has specifically authorized and/or approved the use of the Emblem.
+      source: little-traverse-bay-bands-tribal-emblem-and-seal
+      link: https://ltbbodawa-nsn.gov/wp-content/uploads/2023/04/Vol-6-Title-VI-Chapter_21.pdf
+      verification: read-in-full
+      locator: § 6.2106
+      note: The image is the Tribal Emblem (§ 6.2103). The embossed Tribal Seal is for official business
+        only (§ 6.2104).
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Copyright Qode Interactive .
+      link: https://ltbbodawa-nsn.gov/
+      source: ltbbodawa-nsn-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: ltbbodawa-nsn-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Anishinaabemowin
   language_tag: oj
@@ -345,83 +379,6 @@ dispute_resolution:
     source: little-traverse-civil-rules-2015
     confidence: medium
     as_of: 2015-08
-  - kind: mediation
-    title: Court Ordered Mediation in Child Protection
-    citation: WOTCL 5.118(J) - Court Ordered Mediation
-    link: https://ltbbodawa-nsn.gov/tribal-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/court-ordered-mediation-in-child-protection/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Alternative
-      dispute resolution - Mediation.'
-  - kind: other
-    title: Delayed/Deferred Sentencing – Opportunity for Rehabilitation
-    citation: WOTCL 9.106(B)(5) - Delayed/Deferred Sentencing
-    link: https://ltbbodawa-nsn.gov/tribal-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/delayed-deferred-sentencing-opportunity-for-rehabilitation/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Deferred sentencing;
-      Rehabilitation.'
-  - kind: other
-    title: Family Preservation Court (Therapeutic/Problem-Solving Court)
-    citation: WOTCL 5.119 - Family Preservation Court
-    link: https://ltbbodawa-nsn.gov/tribal-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/family-preservation-court-therapeutic-problem-solving-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Post-adjudication; Pre-adjudication. Database form
-      of practice: Collaborative approach; Family conferencing.'
-  - kind: other
-    title: Family Strengthening Plan in FPC Cases
-    citation: WOTCL 5.120 - Family Strengthening Plan
-    link: https://ltbbodawa-nsn.gov/tribal-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/family-strengthening-plan-in-fpc-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Post-adjudication; Pre-adjudication. Database form
-      of practice: Family conferencing; service plan.'
-  - kind: peacemaking
-    title: Peacemaking in Child Protection Cases
-    citation: WOTCL 5.118(K) - Peacemaking
-    link: https://ltbbodawa-nsn.gov/tribal-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/peacemaking-in-child-protection-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
-  - kind: other
-    title: Sentencing Philosophy – Rehabilitation and Healing Over Incarceration
-    citation: WOTCL 9.106(A) - Sentencing Considerations
-    link: https://ltbbodawa-nsn.gov/tribal-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/sentencing-philosophy-rehabilitation-and-healing-over-incarceration/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication/Sentencing. Database form of practice: Alternatives
-      to incarceration; Healing; Rehabilitation; Restorative justice.'
   - kind: other
     title: 7.412 PATRON DISPUTE RESOLUTION
     citation: 7.412 PATRON DISPUTE RESOLUTION
@@ -549,6 +506,73 @@ dispute_resolution:
       AUTHORIZING TRIBAL APPROPRIATIONS FOR PAYMENTS OF THE LOAN, CONFIRMING ADOPTION OF LAW GOVERNING
       THE ARBITRATION OF DISPUTES RELATED TO THE LOAN, CONFIRMING ADOPTION OF LAW REGARDING SECURITY INTERESTS
       AND ADDRESSING RELATED MATTERS.'
+  database_listings:
+  - title: Court Ordered Mediation in Child Protection
+    citation: WOTCL 5.118(J) - Court Ordered Mediation
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Alternative dispute resolution - Mediation
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-ordered-mediation-in-child-protection/
+  - title: Delayed/Deferred Sentencing – Opportunity for Rehabilitation
+    citation: WOTCL 9.106(B)(5) - Delayed/Deferred Sentencing
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Deferred sentencing; Rehabilitation
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/delayed-deferred-sentencing-opportunity-for-rehabilitation/
+  - title: Family Preservation Court (Therapeutic/Problem-Solving Court)
+    citation: WOTCL 5.119 - Family Preservation Court
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    practice_area: Tribal Child Welfare/Family
+    phase: Post-adjudication; Pre-adjudication
+    form_of_practice: Collaborative approach; Family conferencing
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-preservation-court-therapeutic-problem-solving-court/
+  - title: Family Strengthening Plan in FPC Cases
+    citation: WOTCL 5.120 - Family Strengthening Plan
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    practice_area: Tribal Child Welfare/Family
+    phase: Post-adjudication; Pre-adjudication
+    form_of_practice: Family conferencing; service plan
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-strengthening-plan-in-fpc-cases/
+  - title: Peacemaking in Child Protection Cases
+    citation: WOTCL 5.118(K) - Peacemaking
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Peacemaking
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaking-in-child-protection-cases/
+  - title: Sentencing Philosophy – Rehabilitation and Healing Over Incarceration
+    citation: WOTCL 9.106(A) - Sentencing Considerations
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    practice_area: Tribal Justice
+    phase: Post-adjudication/Sentencing
+    form_of_practice: Alternatives to incarceration; Healing; Rehabilitation; Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-philosophy-rehabilitation-and-healing-over-incarceration/
 gaming:
   compacts:
   - state: MI
@@ -602,15 +626,15 @@ gaming:
       may either stop them or invoke arbitration under American Arbitration Association commercial rules
       before three attorney arbitrators while play continues, and a tribe may likewise invoke arbitration
       on its own unresolved allegations.
-    dispute_resolution_locator: Section 7 (Dispute Resolution)
-    source: compact-mi-bay-mills-indian-community-1993
-    confidence: medium
-    verification: inferred
-    as_of: '1993-11-30'
-    locator: Section 7 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. The same Section 7 text appears in the
-      1993 Bay Mills Indian Community compact and the 1999 Little River Band compact (both read); other
-      Michigan nations signed the 1993 or 1998 forms, and later amendments were not checked. Status copied
+    dispute_resolution_locator: SECTION 7. Dispute Resolution.
+    source: compact-mi-little-traverse-bay-bands-of-odawa-india-1999
+    confidence: high
+    verification: read-in-full
+    as_of: '1999-02-18'
+    locator: SECTION 7. Dispute Resolution.
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-mi-bay-mills-indian-community-1993 without reading; two reviewers found the clause
+      the same in substance (research/reviews/2026-11-21-compact-clauses.json, item 101). Status copied
       from this nation's most recent approved or deemed-approved entry for this state in the Office of
       Indian Gaming list (2008-04-21).
   ordinances:

@@ -113,6 +113,17 @@ contacts:
   verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Saint Paul Island" (community: St. Paul Island, object 195)'
+tribal_insignia_database_entries:
+- serial_number: '89002169'
+  wordmark: ALEUT COMMUNITY OF ST. PAUL TRIBAL GOVERNMENT
+  filed: '2018-03-09'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89002169&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: not-compared
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89002169
 federal_administration:
   bureau_of_indian_affairs_region: Alaska
   bureau_of_indian_affairs_agency: Alaska Regional Office

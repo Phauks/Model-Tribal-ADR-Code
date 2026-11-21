@@ -99,6 +99,47 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Wilton Rancheria, California
+official_images:
+- kind: seal
+  image_link: https://wiltonrancheria-nsn.gov/wp-content/uploads/2024/11/tribal-logo-slider.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 4f6db65466a12da893ac6c4a3c339da84f714d63a1c1ff5772ac8d23b47ed5b5
+  private_copy: nation-images/wilton-rancheria/seal-4f6db65466a1.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2024 by Wilton Rancheria | Privacy Policy .
+      link: https://wiltonrancheria-nsn.gov/
+      source: wiltonrancheria-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89002387&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89002387'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2019-08-01).
+  source: wiltonrancheria-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89002387'
+  wordmark: THE GREAT SEAL OF WILTON RANCHERIA
+  filed: '2019-08-01'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89002387&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/wilton-rancheria/insignia-database-89002387.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89002387
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency
@@ -188,42 +229,39 @@ dispute_resolution:
     confidence: medium
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/traditional-court-peacemaking-court-establishment/
-  - kind: peacemaking
-    title: Traditional Court/Peacemaking Court , Establishment
+  database_listings:
+  - title: Traditional Court/Peacemaking Court , Establishment
     citation: TRIBAL COURT. Chapter 1, Tribal Court. Article V Traditional Court.
     link: https://ncorj.org/tribal-law/traditional-court-peacemaking-court-establishment/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Peacemaking
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/traditional-court-peacemaking-court-establishment/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
-  - kind: peacemaking
-    title: Traditional Court/Peacemaking Court, Rules of Procedure
+  - title: Traditional Court/Peacemaking Court, Rules of Procedure
     citation: RULES OF PROCEDURE FOR THE TRADITIONAL COURT
     link: https://ncorj.org/tribal-law/traditional-court-peacemaking-court-rules-of-procedure/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Peacemaking
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/traditional-court-peacemaking-court-rules-of-procedure/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
-  - kind: other
-    title: Wellness Plan as Remedy for Protection Orders
+  - title: Wellness Plan as Remedy for Protection Orders
     citation: FAMILY PROTECTION ACT OF 2023.
     link: https://ncorj.org/tribal-law/wellness-plan-as-remedy-for-protection-orders/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/wellness-plan-as-remedy-for-protection-orders/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
 gaming:
   compacts:
   - state: CA

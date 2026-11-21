@@ -137,6 +137,83 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ponca Tribe of Nebraska
+official_images:
+- kind: logo
+  image_link: https://poncatribe-ne.gov/wp-content/uploads/2026/06/apple-touch-icon.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 6b15147d68e103be5b70789d2e68219ca26cc8a5a9d85c9359834456dc461a48
+  private_copy: nation-images/ponca-tribe-of-nebraska/logo-6b15147d68e1.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Ponca Tribe of Nebraska.
+      link: https://poncatribe-ne.gov/
+      source: ponca-tribe-of-nebraska-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001886&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001886'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2014-09-02).
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001888&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001888'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2014-09-02).
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001889&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001889'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2014-09-02).
+  source: ponca-tribe-of-nebraska-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001886'
+  wordmark: PONCA TRIBE OF NEBRASKA
+  filed: '2014-09-02'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001886&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/ponca-tribe-of-nebraska/insignia-database-89001886.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001886
+- serial_number: '89001888'
+  wordmark: PONCA TRIBE OF NEBRASKA
+  filed: '2014-09-02'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001888&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/ponca-tribe-of-nebraska/insignia-database-89001888.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001888
+- serial_number: '89001889'
+  wordmark: PONCA TRIBE OF NEBRASKA
+  filed: '2014-09-02'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001889&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/ponca-tribe-of-nebraska/insignia-database-89001889.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001889
 languages:
 - name: Ponca
   language_tag: oma
@@ -276,58 +353,6 @@ justice_institutions:
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
-  - kind: other
-    title: Dispositional Options for Child Offenders and their family
-    citation: Ponca Tribe of Nebraska Law and Order Code Sec. 3-7-24
-    link: https://poncatribe-ne.gov/tribal-documents/law-and-order-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dispositional-options-for-child-offenders-and-their-family/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Dispotional Hearings for Child Offenders
-    citation: Ponca Tribe of Nebraska Law and Order Code Sec. 3-7-23
-    link: https://poncatribe-ne.gov/tribal-documents/law-and-order-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dispotional-hearings-for-child-offenders/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Informal Conference for Juveniles
-    citation: Ponca Tribe of Nebraska Law and Order Code Sec. 3-7-15
-    link: https://poncatribe-ne.gov/tribal-documents/law-and-order-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-conference-for-juveniles/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Methods for Dispute Resolution for a Parenting Plan
-    citation: Ponca Tribe of Nebraska Law and Order Code Sec. 4-5-15
-    link: https://poncatribe-ne.gov/tribal-documents/law-and-order-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/methods-for-dispute-resolution-for-a-parenting-plan/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice; Restorative practice.'
   - kind: mediation
     title: Section 4-3-4. Waiting Period Before Trial of Divorce, Annulment or Separate Maintenance/Mediation
     citation: Section 4-3-4. Waiting Period Before Trial of Divorce, Annulment or Separate Maintenance/Mediation
@@ -339,6 +364,51 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: May 2015); the provision itself was not read. The heading it falls under is
       taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Dispositional Options for Child Offenders and their family
+    citation: Ponca Tribe of Nebraska Law and Order Code Sec. 3-7-24
+    link: https://poncatribe-ne.gov/tribal-documents/law-and-order-code/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispositional-options-for-child-offenders-and-their-family/
+  - title: Dispotional Hearings for Child Offenders
+    citation: Ponca Tribe of Nebraska Law and Order Code Sec. 3-7-23
+    link: https://poncatribe-ne.gov/tribal-documents/law-and-order-code/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispotional-hearings-for-child-offenders/
+  - title: Informal Conference for Juveniles
+    citation: Ponca Tribe of Nebraska Law and Order Code Sec. 3-7-15
+    link: https://poncatribe-ne.gov/tribal-documents/law-and-order-code/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-conference-for-juveniles/
+  - title: Methods for Dispute Resolution for a Parenting Plan
+    citation: Ponca Tribe of Nebraska Law and Order Code Sec. 4-5-15
+    link: https://poncatribe-ne.gov/tribal-documents/law-and-order-code/
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/methods-for-dispute-resolution-for-a-parenting-plan/
 gaming:
   compacts:
   - state: IA

@@ -140,6 +140,41 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin
+official_images:
+- kind: logo
+  alternative_text: navigation logo
+  image_link: https://cms9files.revize.com/redcliffband/_assets_/images/logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 3364ad0ff5b7f4ec58409472ee7bf2f1cc5d27187e5209eb19654aceba98c3ed
+  private_copy: nation-images/red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin/logo-3364ad0ff5b7.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89003055&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89003055'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2024-01-22).
+  source: redcliff-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89003055'
+  wordmark: RED CLIFF BAND OF LAKE SUPERIOR CHIPPEWA HUB OF THE CHIPPEWA NATION
+  filed: '2024-01-22'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89003055&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/red-cliff-band-of-lake-superior-chippewa-indians-of-wisconsin/insignia-database-89003055.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89003055
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Great Lakes Agency
@@ -283,31 +318,6 @@ justice_institutions:
 dispute_resolution:
   provisions:
   - kind: other
-    title: Informal Hearings for Child Welfare Cases
-    citation: Red Cliff Band of Lake Superior Chippewa Code of Laws 26.18.1`
-    link: https://www.redcliff-nsn.gov/government/tribal_government/code_of_laws.php#outer-23
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-hearings-for-child-welfare-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Remedies for Emergency Protection Orders for Domestic Violence Cases
-    citation: Red Cliff Band of Lake Superior Chippewa Code of Laws 41.3.N
-    link: https://www.redcliff-nsn.gov/government/tribal_government/code_of_laws.php#outer-31
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/remedies-for-emergency-protection-orders-for-domestic-violence-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
     title: 17.12 SECTION 12- DISPUTE RESOLUTION
     citation: 17.12 SECTION 12- DISPUTE RESOLUTION
     link: https://narf.org/nill/codes/redcliffcode/index.html
@@ -318,6 +328,29 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Updated:
       8/25/2017); the provision itself was not read. The heading it falls under is taken from the page
       layout and may be imprecise.'
+  database_listings:
+  - title: Informal Hearings for Child Welfare Cases
+    citation: Red Cliff Band of Lake Superior Chippewa Code of Laws 26.18.1`
+    link: https://www.redcliff-nsn.gov/government/tribal_government/code_of_laws.php#outer-23
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-hearings-for-child-welfare-cases/
+  - title: Remedies for Emergency Protection Orders for Domestic Violence Cases
+    citation: Red Cliff Band of Lake Superior Chippewa Code of Laws 41.3.N
+    link: https://www.redcliff-nsn.gov/government/tribal_government/code_of_laws.php#outer-31
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/remedies-for-emergency-protection-orders-for-domestic-violence-cases/
 gaming:
   compacts:
   - state: WI

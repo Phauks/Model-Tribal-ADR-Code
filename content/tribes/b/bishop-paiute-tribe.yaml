@@ -149,6 +149,30 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Directory URL redirects to bishoppaiute.net.
+official_images:
+- kind: logo
+  alternative_text: Bishop Paiute Tribe
+  image_link: https://bishoppaiute.net/wp-content/uploads/2026/09/BPT_Logo_Badge.svg
+  retrieved: '2026-11-21'
+  media_type: image/svg+xml
+  sha256: de5bd1026c08400c2d6a712044a9567c5d742a01f497029ef1d7dc387f73275e
+  private_copy: nation-images/bishop-paiute-tribe/logo-de5bd1026c08.svg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Bishop Paiute Tribe.
+      link: https://bishoppaiute.net/
+      source: bishoppaiute-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: bishoppaiute-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+  note: Found by rendering the page in a browser; the page draws its logo with JavaScript.
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency
@@ -191,37 +215,28 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: https://www.bishoppaiutetribe.com/tribal-court/
+  link: https://bishoppaiute.net/tribal-court/
   source: national-indian-law-library-bishop-paiute
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: The page gives a contact for a tribal court without a fuller name. The listed link (https://www.bishoppaiutetribe.com/tribal-court/)
+    no longer reached the court on 2026-11-21; the link is the court's page on the nation's own site,
+    found in the data gap review (research/reviews/2026-11-21-court-listings.json).
 - kind: tribal-court
   name: Bishop Paiute Tribal Court
-  link: http://www.bishoppaiutetribe.com/tribal-court.html
+  link: https://bishoppaiute.net/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'Bishop Paiute Tribe'
+  note: The listed link (http://www.bishoppaiutetribe.com/tribal-court.html) no longer reached the court
+    on 2026-11-21; the link is the court's page on the nation's own site, found in the data gap review
+    (research/reviews/2026-11-21-court-listings.json).
 dispute_resolution:
   provisions:
-  - kind: other
-    title: Juvenile Healing to Wellness Court
-    citation: Bishop Paiute Tribal Code. Title 3 Tribal Court and Judicial Department. Chapter 3.2 Juvenile
-      Healing to Wellness Court.
-    link: https://bishoppaiute.net/wp-content/uploads/2022/01/2021-01-20-TJHWC-CODE-alena-draft-003-sr-edits.docx.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/juvenile-healing-to-wellness-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
   - kind: other
     title: Section XIV. Dispute Resolution
     citation: 'Section XIV. Dispute Resolution; Section 13: Binding dispute resolution mechanism'
@@ -277,6 +292,19 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: September 2018); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Juvenile Healing to Wellness Court
+    citation: Bishop Paiute Tribal Code. Title 3 Tribal Court and Judicial Department. Chapter 3.2 Juvenile
+      Healing to Wellness Court.
+    link: https://bishoppaiute.net/wp-content/uploads/2022/01/2021-01-20-TJHWC-CODE-alena-draft-003-sr-edits.docx.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/juvenile-healing-to-wellness-court/
 gaming:
   compacts:
   - state: CA

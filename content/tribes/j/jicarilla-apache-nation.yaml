@@ -123,6 +123,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Jicarilla Apache Nation, New Mexico
+official_images:
+- kind: seal
+  alternative_text: Great Seal of the Jicarilla Apache Nation
+  image_link: https://jicarillaoga.com/wp-content/uploads/2026/08/jan-great-seal.webp
+  retrieved: '2026-11-21'
+  media_type: image/webp
+  sha256: 125b06e2bd24ccb7978582b91e7bc74abd2cc32816b4885f696784904676c605
+  private_copy: nation-images/jicarilla-apache-nation/seal-125b06e2bd24.webp
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Jicarilla Oil & Gas Administration — Jicarilla Apache Nation.
+      link: https://jicarillaoga.com/
+      source: jicarillaoga-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: jicarillaoga-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Southwest
   bureau_of_indian_affairs_agency: Jicarilla Agency
@@ -286,16 +309,17 @@ gaming:
       may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
       binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
       Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
-    dispute_resolution_locator: Section 7 (Dispute Resolution)
-    source: compact-nm-pueblo-of-santa-ana-2016
-    confidence: medium
-    verification: inferred
-    as_of: '2016-12-30'
-    locator: Section 7 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
-      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
-      Status copied from this nation's most recent approved or deemed-approved entry for this state in
-      the Office of Indian Gaming list (2015-06-22).
+    dispute_resolution_locator: SECTION 7. Dispute Resolution, paragraph A.4
+    source: compact-nm-jicarilla-apache-nation-new-mexico-2015
+    confidence: high
+    verification: read-in-full
+    as_of: '2015-06-22'
+    locator: SECTION 7. Dispute Resolution, paragraph A.4
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-nm-pueblo-of-santa-ana-2016 without reading; two reviewers found the clause the same
+      in substance (research/reviews/2026-11-21-compact-clauses.json, item 83). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2015-06-22).
   ordinances:
   - approved: '1994-04-11'
     link: https://www.nigc.gov?wpdmdl=10003&ind=10019

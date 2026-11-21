@@ -120,6 +120,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Spokane Tribe of the Spokane Reservation
+official_images:
+- kind: logo
+  image_link: https://www.spokanetribe.com/wp-content/uploads/2020/01/Spokane-Tribe-of-Indians-Footer-Logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 0c662e7b19cf2b99b4d892c3b2b25f3b5aa0450860f91618a5ec49f81654f904
+  private_copy: nation-images/spokane-tribe-of-the-spokane-reservation/logo-0c662e7b19cf.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: '© Copyright - Spokane Tribe | Website By: WELL DRESSED WALRUS Scroll to top .'
+      link: https://www.spokanetribe.com/
+      source: spokane-tribe-of-the-spokane-reservation-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: spokane-tribe-of-the-spokane-reservation-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Spokane (SNXʷMENEʔ NQʷLQʷELTN)
   language_tag: spo
@@ -225,69 +247,6 @@ justice_institutions:
   locator: Washington section, entry 'Spokane Tribe of Indians'
 dispute_resolution:
   provisions:
-  - kind: other
-    title: Dispute Resolution in Parenting Plans
-    citation: RSLOC Chapter 7 § 7-3.12(b)(1)
-    link: https://www.spokanetribe.com/government/legal/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dispute-resolution-in-parenting-plans/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Conflict
-      resolution.'
-  - kind: other
-    title: Domestic Violence Treatment Program (Deferred Sentence Option)
-    citation: RSLOC Chapter 29 § 29-4.10
-    link: https://www.spokanetribe.com/government/legal/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/domestic-violence-treatment-program-deferred-sentence-option/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
-  - kind: other
-    title: Informal Dispute Resolution in Domestic Relations
-    citation: RSLOC Chapter 7 § 7-3.04
-    link: https://www.spokanetribe.com/government/legal/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-dispute-resolution-in-domestic-relations/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Conflict
-      resolution.'
-  - kind: other
-    title: Restitution to Victims
-    citation: RSLOC Chapter 16 § 16-1.04, § 16-2.05
-    link: https://www.spokanetribe.com/government/legal/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restitution-to-victims/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Youth Restitution and Community Service
-    citation: RSLOC Chapter 6 § 6-7.07(a)(5)
-    link: https://www.spokanetribe.com/government/legal/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/youth-restitution-and-community-service/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
   - kind: arbitration
     title: Section 4-26 Arbitration.
     citation: Section 4-26 Arbitration.; 4-26.02 Agreements to Arbitrate are Enforceable.
@@ -322,6 +281,61 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Dated:
       2001); the provision itself was not read. The heading it falls under is taken from the page layout
       and may be imprecise.'
+  database_listings:
+  - title: Dispute Resolution in Parenting Plans
+    citation: RSLOC Chapter 7 § 7-3.12(b)(1)
+    link: https://www.spokanetribe.com/government/legal/
+    practice_area: Tribal Child Welfare/Family
+    phase: Post-adjudication
+    form_of_practice: Conflict resolution
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispute-resolution-in-parenting-plans/
+  - title: Domestic Violence Treatment Program (Deferred Sentence Option)
+    citation: RSLOC Chapter 29 § 29-4.10
+    link: https://www.spokanetribe.com/government/legal/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/domestic-violence-treatment-program-deferred-sentence-option/
+  - title: Informal Dispute Resolution in Domestic Relations
+    citation: RSLOC Chapter 7 § 7-3.04
+    link: https://www.spokanetribe.com/government/legal/
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Conflict resolution
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-dispute-resolution-in-domestic-relations/
+  - title: Restitution to Victims
+    citation: RSLOC Chapter 16 § 16-1.04, § 16-2.05
+    link: https://www.spokanetribe.com/government/legal/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restitution-to-victims/
+  - title: Youth Restitution and Community Service
+    citation: RSLOC Chapter 6 § 6-7.07(a)(5)
+    link: https://www.spokanetribe.com/government/legal/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/youth-restitution-and-community-service/
 gaming:
   compacts:
   - state: WA

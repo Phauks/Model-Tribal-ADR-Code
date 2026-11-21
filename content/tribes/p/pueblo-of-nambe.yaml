@@ -139,6 +139,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Nambe, New Mexico
+official_images:
+- kind: logo
+  alternative_text: Nambé Pueblo | Nambé Falls
+  image_link: http://www.nambepueblo.org/wp-content/uploads/2014/03/Nambe-Pueblo-Logo-22-150x128.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: a780e8a5942060663657723c348fbc3f113396c7c131b4d919d43cc8cf596f4d
+  private_copy: nation-images/pueblo-of-nambe/logo-a780e8a59420.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright 2014 | Nambé Pueblo | All Rights Reserved | Powered by WordPress | Theme Fusion
+      link: https://www.nambepueblo.org/about-nambe-pueblo/
+      source: pueblo-of-nambe-about-nambe-pueblo
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: pueblo-of-nambe-about-nambe-pueblo
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Southwest
   bureau_of_indian_affairs_agency: Northern Pueblos Agency
@@ -243,16 +266,17 @@ gaming:
       may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
       binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
       Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
-    dispute_resolution_locator: Section 7 (Dispute Resolution)
-    source: compact-nm-pueblo-of-santa-ana-2016
-    confidence: medium
-    verification: inferred
-    as_of: '2016-12-30'
-    locator: Section 7 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
-      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
-      Status copied from this nation's most recent approved or deemed-approved entry for this state in
-      the Office of Indian Gaming list (2015-12-29).
+    dispute_resolution_locator: SECTION 7. Dispute Resolution.
+    source: compact-nm-pueblo-of-nambe-new-mexico-2015
+    confidence: high
+    verification: read-in-full
+    as_of: '2015-12-29'
+    locator: SECTION 7. Dispute Resolution.
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-nm-pueblo-of-santa-ana-2016 without reading; two reviewers found the clause the same
+      in substance (research/reviews/2026-11-21-compact-clauses.json, item 153). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2015-12-29).
   ordinances:
   - approved: '2005-07-06'
     link: https://www.nigc.gov?wpdmdl=10751&ind=10771

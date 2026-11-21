@@ -99,6 +99,17 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: 2026-10
+tribal_insignia_database_entries:
+- serial_number: '89003203'
+  wordmark: SOUTHEASTERN MVSKOKE NATION PEOPLE OF ONE FIRE
+  filed: '2024-08-23'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89003203&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: not-compared
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89003203
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

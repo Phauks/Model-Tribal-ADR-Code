@@ -130,6 +130,40 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Prairie Band Potawatomi Nation
+official_images:
+- kind: logo
+  image_link: https://www.pbpindiantribe.com/media/Favicon/fav-iconPBPN.ico?v=jjMgCmiRsyB8t2KYexVtVcttws4pzRInhffD1qhvero
+  retrieved: '2026-11-21'
+  media_type: image/x-icon
+  sha256: 8e33200a6891b3207cb762987b156d55cb6dc2ce29cd122785f7c3d6a86f7aba
+  private_copy: nation-images/prairie-band-potawatomi-nation/logo-8e33200a6891.ico
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001055&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001055'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2005-11-08).
+  source: prairie-band-potawatomi-nation-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001055'
+  wordmark: PRAIRIE BAND POTAWATOMI NATION
+  filed: '2005-11-08'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001055&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/prairie-band-potawatomi-nation/insignia-database-89001055.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001055
 languages:
 - name: Potawatomi
   language_tag: pot
@@ -220,20 +254,26 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: judicial-council.aspx
-  link: http://www.pbpindiantribe.com/judicial-council.aspx
+  link: https://www.pbpindiantribe.com/tribal-court
   source: national-indian-law-library-prairie-band-potawatomi
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
+  note: The listed link (http://www.pbpindiantribe.com/judicial-council.aspx) no longer reached the court
+    on 2026-11-21; the link is the court's page on the nation's own site, found in the data gap review
+    (research/reviews/2026-11-21-court-listings.json).
 - kind: tribal-court
   name: Prairie Band Potawatomi Nation Judicial Council
-  link: http://www.pbpindiantribe.com/contact_member/tribal-court/
+  link: https://www.pbpindiantribe.com/tribal-court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
   verification: bulk-import
   as_of: '2022'
   locator: Kansas section, entry 'Prairie Band of Potawatomi Nation'
+  note: The listed link (http://www.pbpindiantribe.com/contact_member/tribal-court/) no longer reached
+    the court on 2026-11-21; the link is the court's page on the nation's own site, found in the data
+    gap review (research/reviews/2026-11-21-court-listings.json).
 dispute_resolution:
   forums:
   - kind: peacemaking
@@ -287,56 +327,6 @@ dispute_resolution:
     source: prairie-band-potawatomi-constitution-2007
     confidence: medium
     as_of: '2007-12-06'
-  - kind: other
-    title: Disposition Options for Juvenile Offenders
-    citation: Potawatomi Law and Order Code 27-6-13 and 27-6-15
-    link: https://www.codepublishing.com/KS/Potawatomi/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/disposition-options-for-juvenile-offenders/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Peacemaker Circles
-    citation: Potawatomi Law and Order Code 2-1-1 and 2-5-1
-    link: https://www.codepublishing.com/KS/Potawatomi/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/peacemaker-circles/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative practice,
-      Restorative process.'
-  - kind: other
-    title: Sentencing Policy of the Nation
-    citation: Potawatomi Law and Order Code 16-4-3
-    link: https://www.codepublishing.com/KS/Potawatomi/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/sentencing-policy-of-the-nation/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Sex Offender Treatment Program for Sentence Reduction
-    citation: Potawatomi Law and Order Code 15-11-21
-    link: https://www.codepublishing.com/KS/Potawatomi/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/sex-offender-treatment-program-for-sentence-reduction/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
   - kind: mediation
     title: 3-3 MEDIATION
     citation: 3-3 MEDIATION
@@ -386,6 +376,51 @@ dispute_resolution:
     note: Identified from section headings in the National Indian Law Library table of contents (Approved
       December 6, 2007); the provision itself was not read. The heading it falls under is taken from the
       page layout and may be imprecise.
+  database_listings:
+  - title: Disposition Options for Juvenile Offenders
+    citation: Potawatomi Law and Order Code 27-6-13 and 27-6-15
+    link: https://www.codepublishing.com/KS/Potawatomi/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-options-for-juvenile-offenders/
+  - title: Peacemaker Circles
+    citation: Potawatomi Law and Order Code 2-1-1 and 2-5-1
+    link: https://www.codepublishing.com/KS/Potawatomi/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative practice, Restorative process
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaker-circles/
+  - title: Sentencing Policy of the Nation
+    citation: Potawatomi Law and Order Code 16-4-3
+    link: https://www.codepublishing.com/KS/Potawatomi/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-policy-of-the-nation/
+  - title: Sex Offender Treatment Program for Sentence Reduction
+    citation: Potawatomi Law and Order Code 15-11-21
+    link: https://www.codepublishing.com/KS/Potawatomi/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sex-offender-treatment-program-for-sentence-reduction/
 gaming:
   compacts:
   - state: KS
@@ -421,15 +456,17 @@ gaming:
     dispute_resolution_summary: The parties must use best efforts to negotiate for at least 14 days, after
       which either party may refer the dispute to binding arbitration before a sole agreed arbitrator
       or a three-member panel, with judicial enforcement in the United States District Court for Kansas.
-    dispute_resolution_locator: Section 29 (Dispute Resolution)
-    source: compact-ks-wyandotte-nation-2026
-    confidence: medium
-    verification: inferred
-    as_of: '2026-07-14'
-    locator: Section 29 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 2026 Wyandotte Nation compact;
-      other Kansas compacts were not checked. Status copied from this nation's most recent approved or
-      deemed-approved entry for this state in the Office of Indian Gaming list (2023-07-18).
+    dispute_resolution_locator: 'Section 31: Dispute Resolution.'
+    source: compact-ks-prairie-band-potawatomi-nation-1995
+    confidence: high
+    verification: read-in-full
+    as_of: '1995-07-06'
+    locator: 'Section 31: Dispute Resolution.'
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-ks-wyandotte-nation-2026 without reading; two reviewers found the clause the same in
+      substance (research/reviews/2026-11-21-compact-clauses.json, item 148). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2023-07-18).
   ordinances:
   - approved: '1994-07-25'
     link: https://www.nigc.gov?wpdmdl=10688&ind=10702

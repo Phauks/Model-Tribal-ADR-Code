@@ -150,6 +150,30 @@ contacts:
   locator: 'record "Village of Clarks Point" (community: Clarks Point, object 41)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+official_images:
+- kind: logo
+  alternative_text: CLPVC Logo - No background.png
+  image_link: https://static.wixstatic.com/media/48a3cf_f050efc7d07d48ccb6f3ebbcec2b2221~mv2.png/v1/fill/w_167,h_160,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/CLPVC%20Logo%20-%20No%20background.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: a9187ac8b5c1a2596716ea3d13a763e997e1e212c32eb30d8f8e6023c7d56472
+  private_copy: nation-images/village-of-clarks-point/logo-a9187ac8b5c1.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: ©2021 by Clarks Point Village Council.
+      link: https://www.clarkspointvillagecouncil.org/
+      source: clarkspointvillagecouncil-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: clarkspointvillagecouncil-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+  note: Found by rendering the page in a browser; the page draws its logo with JavaScript.
 languages:
 - name: Central Yup'ik
   language_tag: esu

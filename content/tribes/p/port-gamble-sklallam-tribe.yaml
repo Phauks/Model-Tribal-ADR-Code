@@ -128,6 +128,39 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Port Gamble S'Klallam Tribe
+official_images:
+- kind: logo
+  image_link: https://pgst.nsn.us/wp-content/uploads/2022/07/logo-header-480x95.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 8e7ccaeb1fd265c31c0662396015d53c0b8d1604f30d270cb9367c22ccf1933d
+  private_copy: nation-images/port-gamble-sklallam-tribe/logo-8e7ccaeb1fd2.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: ©2026 Port Gamble S'Klallam Tribe.
+      link: https://pgst.nsn.us/
+      source: port-gamble-sklallam-tribe-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: port-gamble-sklallam-tribe-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001262'
+  filed: '2008-05-21'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001262&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: different-design
+  private_copy: nation-images/port-gamble-sklallam-tribe/insignia-database-89001262.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001262
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Puget Sound Agency
@@ -258,99 +291,6 @@ justice_institutions:
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
-  - kind: other
-    title: Alcohol and/or Drug Treatment Plan Sentences
-    citation: Drugs.
-    link: https://ncorj.org/tribal-law/alcohol-and-or-drug-treatment-plan-sentences/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alcohol-and-or-drug-treatment-plan-sentences/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Family Protection Plan for Child in Need of Care
-    citation: Port Gamble S'Klallam Tribe Law and Order Code. Title 16 Family Protection Code. Chapter
-      16.02 Child in Need of Care. Sections 16.02.24-16.02.29 Family Protection Plan.
-    link: https://pgst.nsn.us/wp-content/uploads/2022/09/Title_16_-Family-Protection-Code_9-17-18-updated.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/family-protection-plan-for-child-in-need-of-care/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Mediation for Domestic Violence Upon Request
-    citation: Port Gamble S'Klallam Tribe Law and Order Code. Title 15 Domestic Violence. Chapter 15.10
-      Special Rules of Court and Other Matters. Section 15.10.04 Mediation Not Allowed.
-    link: https://pgst.nsn.us/wp-content/uploads/2023/03/Title-15-1.24.23.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/mediation-for-domestic-violence-upon-request/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Rehabilitation Sentencing for Juvenile Offenders in Domestic Violence
-    citation: Port Gamble S'Klallam Tribe Law and Order Code. Title 15 Domestic Violence. Chapter 15.06
-      Criminal Actions and Remedies. 15.06.04 Violations by Juveniles.
-    link: https://pgst.nsn.us/wp-content/uploads/2023/03/Title-15-1.24.23.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/rehabilitation-sentencing-for-juvenile-offenders-in-domestic-violence/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Restorative Probation Pupose
-    citation: Port Gamble S'Klallam Tribe Law and Order Code. Title 2 Criminal Actions. Chapter 2.08 Probation.
-      2.08.02 Purpose and Policy.
-    link: https://pgst.nsn.us/wp-content/uploads/2023/03/Title-02-1.24.23.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restorative-probation-pupose/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: N/A. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Treatment for Domestic Violence
-    citation: Port Gamble S'Klallam Tribe Law and Order Code. Title 15 Domestic Violence. Chapter 15.05
-      Power and Duties of Court. Section 15.05.04 Special Court Rules for Domestic Violence or Family
-      Violence Crimes.
-    link: https://pgst.nsn.us/wp-content/uploads/2023/03/Title-15-1.24.23.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-for-domestic-violence-3/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Vulnerable Adult Protection Plan
-    citation: Port Gamble S'Klallam Tribe Law and Order Code. Title 16 Family Protection Code. Chapter
-      16.07 Protection of Vulnerable Adult. Sections 16.07.22-16.07.27 Vulnerable Adult Protection Plan.
-    link: https://pgst.nsn.us/wp-content/uploads/2022/09/Title_16_-Family-Protection-Code_9-17-18-updated.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/vulnerable-adult-protection-plan/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
   - kind: mediation
     title: 15.10.04 Mediation Not Allowed
     citation: 15.10.04 Mediation Not Allowed
@@ -373,6 +313,91 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: May 2025); the provision itself was not read. The heading it falls under is
       taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Alcohol and/or Drug Treatment Plan Sentences
+    citation: Drugs.
+    link: https://ncorj.org/tribal-law/alcohol-and-or-drug-treatment-plan-sentences/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alcohol-and-or-drug-treatment-plan-sentences/
+  - title: Family Protection Plan for Child in Need of Care
+    citation: Port Gamble S'Klallam Tribe Law and Order Code. Title 16 Family Protection Code. Chapter
+      16.02 Child in Need of Care. Sections 16.02.24-16.02.29 Family Protection Plan.
+    link: https://pgst.nsn.us/wp-content/uploads/2022/09/Title_16_-Family-Protection-Code_9-17-18-updated.pdf
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-protection-plan-for-child-in-need-of-care/
+  - title: Mediation for Domestic Violence Upon Request
+    citation: Port Gamble S'Klallam Tribe Law and Order Code. Title 15 Domestic Violence. Chapter 15.10
+      Special Rules of Court and Other Matters. Section 15.10.04 Mediation Not Allowed.
+    link: https://pgst.nsn.us/wp-content/uploads/2023/03/Title-15-1.24.23.pdf
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/mediation-for-domestic-violence-upon-request/
+  - title: Rehabilitation Sentencing for Juvenile Offenders in Domestic Violence
+    citation: Port Gamble S'Klallam Tribe Law and Order Code. Title 15 Domestic Violence. Chapter 15.06
+      Criminal Actions and Remedies. 15.06.04 Violations by Juveniles.
+    link: https://pgst.nsn.us/wp-content/uploads/2023/03/Title-15-1.24.23.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/rehabilitation-sentencing-for-juvenile-offenders-in-domestic-violence/
+  - title: Restorative Probation Pupose
+    citation: Port Gamble S'Klallam Tribe Law and Order Code. Title 2 Criminal Actions. Chapter 2.08 Probation.
+      2.08.02 Purpose and Policy.
+    link: https://pgst.nsn.us/wp-content/uploads/2023/03/Title-02-1.24.23.pdf
+    practice_area: Tribal Justice
+    phase: N/A
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-probation-pupose/
+  - title: Treatment for Domestic Violence
+    citation: Port Gamble S'Klallam Tribe Law and Order Code. Title 15 Domestic Violence. Chapter 15.05
+      Power and Duties of Court. Section 15.05.04 Special Court Rules for Domestic Violence or Family
+      Violence Crimes.
+    link: https://pgst.nsn.us/wp-content/uploads/2023/03/Title-15-1.24.23.pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-for-domestic-violence-3/
+  - title: Vulnerable Adult Protection Plan
+    citation: Port Gamble S'Klallam Tribe Law and Order Code. Title 16 Family Protection Code. Chapter
+      16.07 Protection of Vulnerable Adult. Sections 16.07.22-16.07.27 Vulnerable Adult Protection Plan.
+    link: https://pgst.nsn.us/wp-content/uploads/2022/09/Title_16_-Family-Protection-Code_9-17-18-updated.pdf
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/vulnerable-adult-protection-plan/
 gaming:
   compacts:
   - state: WA

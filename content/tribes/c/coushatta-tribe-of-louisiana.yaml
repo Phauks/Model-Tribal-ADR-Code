@@ -129,6 +129,30 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Coushatta Tribe of Louisiana
+official_images:
+- kind: seal
+  alternative_text: Coushatta Tribe of Louisiana
+  image_link: https://www.coushatta.org/img/footer-logo-seal-2025.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 723706976d2e959860fa2de91beadd447f262c898f3bfe14e46e6805f9c9bf2d
+  private_copy: nation-images/coushatta-tribe-of-louisiana/seal-723706976d2e.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Coushatta Tribe of Louisiana, All Rights Reserved Sitemap Public Notices Cookie Settings
+        Privacy Policy .
+      link: https://www.coushatta.org/
+      source: coushatta-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: coushatta-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Koasati
   language_tag: cku
@@ -174,58 +198,6 @@ justice_institutions:
   locator: Louisiana section, entry 'Coushatta Tribe of Louisiana'
 dispute_resolution:
   provisions:
-  - kind: other
-    title: Assistance for Intoxicated Persons – Non-Criminal Intervention
-    citation: Title V, Section 3 - Alcoholism and Drug Abuse Treatment
-    link: https://www.narf.org/nill/codes/coushatta/index.html
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/assistance-for-intoxicated-persons-non-criminal-intervention/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Alternative to incarceration;
-      Restorative justice.'
-  - kind: other
-    title: Disposition Hearing with Rehabilitative Focus for Juveniles
-    citation: Title VI, Chapter 3, Section 7 - Juveniles
-    link: https://www.narf.org/nill/codes/coushatta/index.html
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/disposition-hearing-with-rehabilitative-focus-for-juveniles/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Rehabilitation;
-      Restorative practice.'
-  - kind: other
-    title: Diversion Program for First-Time Juvenile Misdemeanor Offenders
-    citation: Title VI, Chapter 3, Section 2(d)(2) - Juveniles
-    link: https://www.narf.org/nill/codes/coushatta/index.html
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-program-for-first-time-juvenile-misdemeanor-offenders/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Diversion;
-      Restorative justice.'
-  - kind: other
-    title: Informal Resolution for Abandoned/Neglected/Abused Children and Status Offenders
-    citation: Title VI, Chapter 3, Section 2(d)(1) - Juveniles
-    link: https://www.narf.org/nill/codes/coushatta/index.html
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-resolution-for-abandoned-neglected-abused-children-and-status-offenders/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Informal hearing; Restorative justice.'
   - kind: arbitration
     title: Resolution 2000-46 - 11/7/00 - Resolution Establishing an Arbitration Code
     citation: Resolution 2000-46 - 11/7/00 - Resolution Establishing an Arbitration Code
@@ -237,6 +209,51 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Approved:
       1998; Last amended: 2004); the provision itself was not read. The heading it falls under is taken
       from the page layout and may be imprecise.'
+  database_listings:
+  - title: Assistance for Intoxicated Persons – Non-Criminal Intervention
+    citation: Title V, Section 3 - Alcoholism and Drug Abuse Treatment
+    link: https://www.narf.org/nill/codes/coushatta/index.html
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Alternative to incarceration; Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/assistance-for-intoxicated-persons-non-criminal-intervention/
+  - title: Disposition Hearing with Rehabilitative Focus for Juveniles
+    citation: Title VI, Chapter 3, Section 7 - Juveniles
+    link: https://www.narf.org/nill/codes/coushatta/index.html
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Rehabilitation; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-hearing-with-rehabilitative-focus-for-juveniles/
+  - title: Diversion Program for First-Time Juvenile Misdemeanor Offenders
+    citation: Title VI, Chapter 3, Section 2(d)(2) - Juveniles
+    link: https://www.narf.org/nill/codes/coushatta/index.html
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Diversion; Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-program-for-first-time-juvenile-misdemeanor-offenders/
+  - title: Informal Resolution for Abandoned/Neglected/Abused Children and Status Offenders
+    citation: Title VI, Chapter 3, Section 2(d)(1) - Juveniles
+    link: https://www.narf.org/nill/codes/coushatta/index.html
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Informal hearing; Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-resolution-for-abandoned-neglected-abused-children-and-status-offenders/
 gaming:
   compacts:
   - state: LA
@@ -355,14 +372,16 @@ gaming:
       period with a meeting within 10 days (45 days in all unless extended), then mandatory mediation
       under American Arbitration Association commercial mediation rules, and then binding arbitration
       under American Arbitration Association rules limited to the issues in the mediator's summary report.
-    dispute_resolution_locator: Section 14(D) (Dispute Resolution)
-    source: compact-la-tunica-biloxi-indian-tribe-2019
-    confidence: medium
-    verification: inferred
-    as_of: '2019-12-27'
-    locator: Section 14(D) (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. Read from the 2019 Tunica-Biloxi Indian
-      Tribe compact; the Coushatta, Chitimacha and Jena Band compacts were not checked. Status copied
+    dispute_resolution_locator: 'SECTION 14: DISPUTE RESOLUTION, paragraph printed as (0) [i.e. (D)],
+      item (3)'
+    source: compact-la-coushatta-tribe-of-louisiana-2001
+    confidence: high
+    verification: read-in-full
+    as_of: '2001-09-25'
+    locator: 'SECTION 14: DISPUTE RESOLUTION, paragraph printed as (0) [i.e. (D)], item (3)'
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-la-tunica-biloxi-indian-tribe-2019 without reading; two reviewers found the clause
+      the same in substance (research/reviews/2026-11-21-compact-clauses.json, item 42). Status copied
       from this nation's most recent approved or deemed-approved entry for this state in the Office of
       Indian Gaming list (2024-01-29).
   ordinances:

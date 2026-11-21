@@ -174,6 +174,40 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Shinnecock Indian Nation
+official_images:
+- kind: seal
+  image_link: https://static.wixstatic.com/media/9f9e68_8f62436c93be4d23b0c3b8e0d5ccaa65%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/9f9e68_8f62436c93be4d23b0c3b8e0d5ccaa65%7Emv2.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: ef6c7a6eb172bfca3ba5f5ddc62a7e7772b8ca5b96156145cde3900c81db54ce
+  private_copy: nation-images/shinnecock-indian-nation/seal-ef6c7a6eb172.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001509&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001509'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2009-12-08).
+  source: shinnecock-indian-nation-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001509'
+  wordmark: THE GREAT SEAL OF SHINNECOCK INDIAN NATION ALWAYS SOVEREIGN ALGONQUIAN
+  filed: '2009-12-08'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001509&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/shinnecock-indian-nation/insignia-database-89001509.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001509
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office

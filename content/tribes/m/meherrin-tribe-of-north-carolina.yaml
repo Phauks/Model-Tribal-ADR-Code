@@ -112,6 +112,36 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+official_images:
+- kind: seal
+  image_link: https://meherrinnation.org/wp-content/uploads/2022/11/logo9-367x457.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: e52e97e07fcce8e864802762e7d13d33cc461f6efd095ad4927b1f289155de81
+  private_copy: nation-images/meherrin-tribe-of-north-carolina/seal-e52e97e07fcc.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: permission-required
+      effect: blocks-reuse
+      quote: You may use this Site, and download or print Site content, only for your personal, non-commercial
+        use only after first requesting permission from the Meherrin Indian Tribe, then by receiving authorization
+        from the Meherrin Indian Tribe in writing.
+      link: https://meherrinnation.org/terms-of-use/
+      source: meherrinnation-terms-of-use
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Meherrin Indian Tribe © 2022.
+      link: https://meherrinnation.org/
+      source: meherrinnation-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: meherrinnation-tribal-seal
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -146,6 +146,23 @@ contacts:
   locator: 'record "Native Village of Nuiqsut" (community: Nuiqsut, object 148)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+official_images:
+- kind: seal
+  alternative_text: Nuiqsut_Seal_A_Color.png
+  image_link: https://static.wixstatic.com/media/036882_f8dac77f754b476989a88b6b636a708c~mv2.png/v1/fill/w_149,h_148,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Nuiqsut_Seal_A_Color.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 8e4e4044e9e9cc27b1f2e628dbde83672f2ec330bf28c55fb55a81f5d38f4596
+  private_copy: nation-images/native-village-of-nuiqsut/seal-8e4e4044e9e9.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: nvnuiqsut-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+  note: Found by rendering the page in a browser; the page draws its logo with JavaScript.
 languages:
 - name: Iñupiaq
   language_tag: ipk

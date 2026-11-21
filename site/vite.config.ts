@@ -5,7 +5,7 @@ import { sveltekit } from '@sveltejs/kit/vite';
 import { defineConfig, type Plugin } from 'vite';
 import { designTokensToCss } from './src/lib/design-tokens.ts';
 import { buildMapGeometry } from './src/lib/map-geometry.ts';
-import { glossaryForReview, nationsForReview } from './src/lib/server/content.ts';
+import { glossaryForReview, nationsForReview, servableImages } from './src/lib/server/content.ts';
 
 const designTokensPath = fileURLToPath(new URL('./design-tokens.json', import.meta.url));
 const designTokensModule = 'virtual:design-tokens.css';
@@ -96,6 +96,28 @@ function reviewSubjects(): Plugin {
 	};
 }
 
+const nationImagesModule = 'virtual:nation-images';
+const resolvedNationImagesModule = `\0${nationImagesModule}`;
+
+/**
+ * Lists the nations' official images the Worker may serve, as a small module
+ * bundled into the Worker: only images whose reuse status allows showing them
+ * (docs/official-images.md). An image left off this list is never served,
+ * whatever the private bucket holds.
+ */
+function nationImages(): Plugin {
+	return {
+		name: 'model-tribal-adr-code:nation-images',
+		resolveId(identifier) {
+			return identifier === nationImagesModule ? resolvedNationImagesModule : undefined;
+		},
+		load(identifier) {
+			if (identifier !== resolvedNationImagesModule) return undefined;
+			return `export const nationImages = ${JSON.stringify(servableImages())};`;
+		}
+	};
+}
+
 const buildModule = 'virtual:build';
 const resolvedBuildModule = `\0${buildModule}`;
 
@@ -123,6 +145,7 @@ export default defineConfig({
 		designTokens(),
 		mapGeometry(),
 		reviewSubjects(),
+		nationImages(),
 		buildInformation(),
 		sveltekit({
 			compilerOptions: {

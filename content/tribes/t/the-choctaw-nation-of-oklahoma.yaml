@@ -141,6 +141,17 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: The Choctaw Nation of Oklahoma
+tribal_insignia_database_entries:
+- serial_number: '89002386'
+  wordmark: THE GREAT SEAL OF THE CHOCTAW NATION
+  filed: '2019-07-24'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89002386&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: not-compared
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89002386
 federal_administration:
   bureau_of_indian_affairs_region: Eastern Oklahoma
   bureau_of_indian_affairs_agency: Talihina Agency
@@ -277,95 +288,6 @@ dispute_resolution:
     as_of: 2022-10
   provisions:
   - kind: other
-    title: Alternative Dispute Resolution & Family Group Conferencing
-    citation: 'Title 45: Children and Juvenile Code'
-    link: https://ncorj.org/tribal-law/alternative-dispute-resolution-family-group-conferencing/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-dispute-resolution-family-group-conferencing/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Alternative;
-      Conflict resolution.'
-  - kind: other
-    title: Alternative Problem-Solving Court Program for Child Support
-    citation: CRIMES AND PUNISHMENT
-    link: https://ncorj.org/tribal-law/alternative-problem-solving-court-program-for-child-support/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-problem-solving-court-program-for-child-support/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Alternative;
-      Program.'
-  - kind: other
-    title: Choctaw Nation Healing to Wellness Court Program
-    citation: Choctaw Nation Criminal Procedure Code
-    link: https://ncorj.org/tribal-law/choctaw-nation-healing-to-wellness-court-program/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/choctaw-nation-healing-to-wellness-court-program/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication; Pre-adjudication. Database form of practice:
-      Healing to Wellness Court.'
-  - kind: peacemaking
-    title: Choctaw Nation Peacemaking Act
-    citation: Choctaw Nation Peacemaking Act
-    link: https://www.choctawnation.com/wp-content/uploads/2022/04/peacemaking-act.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/choctaw-nation-peacemaking-act/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
-  - kind: other
-    title: Community -Based Programs in Juvenlie Justice
-    citation: Choctaw Nation Juvenile Code
-    link: https://www.choctawnation.com/wp-content/uploads/2022/04/juvenile-code.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/community-based-programs-in-juvenlie-justice/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: N/A. Database form of practice: Alternative; Diversion;
-      Program.'
-  - kind: other
-    title: Deferral of Delinquency Proceedings
-    citation: Choctaw Nation Juvenile Code
-    link: https://www.choctawnation.com/wp-content/uploads/2022/04/juvenile-code.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/deferral-of-delinquency-proceedings/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Alternative;
-      Diversion; Program.'
-  - kind: other
-    title: Diversion for Children-In-Need-Of-Supervision
-    citation: Choctaw Nation Juvenile Code
-    link: https://www.choctawnation.com/wp-content/uploads/2022/04/juvenile-code.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-for-children-in-need-of-supervision/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Diversion.'
-  - kind: other
     title: Section 1-4-504. Alternative Dispute Resolution
     citation: Section 1-4-504. Alternative Dispute Resolution
     link: https://narf.org/nill/codes/choctaw/index.html
@@ -443,6 +365,84 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: October 2018); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Alternative Dispute Resolution & Family Group Conferencing
+    citation: 'Title 45: Children and Juvenile Code'
+    link: https://ncorj.org/tribal-law/alternative-dispute-resolution-family-group-conferencing/
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Alternative; Conflict resolution
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-dispute-resolution-family-group-conferencing/
+  - title: Alternative Problem-Solving Court Program for Child Support
+    citation: CRIMES AND PUNISHMENT
+    link: https://ncorj.org/tribal-law/alternative-problem-solving-court-program-for-child-support/
+    practice_area: Tribal Child Welfare/Family
+    phase: Post-adjudication
+    form_of_practice: Alternative; Program
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-problem-solving-court-program-for-child-support/
+  - title: Choctaw Nation Healing to Wellness Court Program
+    citation: Choctaw Nation Criminal Procedure Code
+    link: https://ncorj.org/tribal-law/choctaw-nation-healing-to-wellness-court-program/
+    practice_area: Tribal Justice
+    phase: Post-adjudication; Pre-adjudication
+    form_of_practice: Healing to Wellness Court
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/choctaw-nation-healing-to-wellness-court-program/
+  - title: Choctaw Nation Peacemaking Act
+    citation: Choctaw Nation Peacemaking Act
+    link: https://www.choctawnation.com/wp-content/uploads/2022/04/peacemaking-act.pdf
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Peacemaking
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/choctaw-nation-peacemaking-act/
+  - title: Community -Based Programs in Juvenlie Justice
+    citation: Choctaw Nation Juvenile Code
+    link: https://www.choctawnation.com/wp-content/uploads/2022/04/juvenile-code.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: N/A
+    form_of_practice: Alternative; Diversion; Program
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-based-programs-in-juvenlie-justice/
+  - title: Deferral of Delinquency Proceedings
+    citation: Choctaw Nation Juvenile Code
+    link: https://www.choctawnation.com/wp-content/uploads/2022/04/juvenile-code.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Alternative; Diversion; Program
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferral-of-delinquency-proceedings/
+  - title: Diversion for Children-In-Need-Of-Supervision
+    citation: Choctaw Nation Juvenile Code
+    link: https://www.choctawnation.com/wp-content/uploads/2022/04/juvenile-code.pdf
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Diversion
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-for-children-in-need-of-supervision/
 gaming:
   compacts:
   - state: OK
@@ -535,17 +535,17 @@ gaming:
       days, and either party may then refer the dispute to arbitration under American Arbitration Association
       rules before a single arbitrator, with de novo review of the award available in federal district
       court under limited waivers of immunity.
-    dispute_resolution_locator: Part 12 (Dispute Resolution)
-    source: compact-ok-cherokee-nation-2005
-    confidence: medium
-    verification: inferred
-    as_of: '2005-01-27'
-    locator: Part 12 (Dispute Resolution)
-    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
-      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
-      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
-      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
-      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-08-17).
+    dispute_resolution_locator: Part 12. DISPUTE RESOLUTION, paragraph 2
+    source: compact-ok-the-choctaw-nation-of-oklahoma-2005
+    confidence: high
+    verification: read-in-full
+    as_of: '2005-02-09'
+    locator: Part 12. DISPUTE RESOLUTION, paragraph 2
+    note: Checked on 2026-11-21 against this nation's own compact, which the summary was first copied
+      from compact-ok-cherokee-nation-2005 without reading; two reviewers found the clause the same in
+      substance (research/reviews/2026-11-21-compact-clauses.json, item 219). Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2018-08-17).
   ordinances:
   - approved: '1995-12-21'
     link: https://www.nigc.gov?wpdmdl=9500&ind=9524

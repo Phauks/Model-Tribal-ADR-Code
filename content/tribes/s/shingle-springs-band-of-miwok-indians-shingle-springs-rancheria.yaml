@@ -125,6 +125,65 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California
+official_images:
+- kind: logo
+  image_link: https://shinglespringsrancheria.com/wp-content/uploads/2025/08/cropped-Shingle-Springs-Band-of-Miwok-Indians-Tribal-Logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: f20a902dceb53725ee1a9da28894f59feb7eaeccda358b35dbe389fb21946c4a
+  private_copy: nation-images/shingle-springs-band-of-miwok-indians-shingle-springs-rancheria/logo-f20a902dceb5.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Shingle Springs Band of Miwok Indians | Accessibility Statement | Privacy Policy |
+        Sitemap | This Website is RAD .
+      link: https://shinglespringsrancheria.com/
+      source: shinglespringsrancheria-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001883&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001883'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2014-06-16).
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001884&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001884'
+      note: The nation filed a closely similar design as its official insignia with the USPTO (filed 2014-06-16).
+  source: shinglespringsrancheria-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001883'
+  wordmark: SHINGLE SPRINGS BAND OF MIWOK INDIANS
+  filed: '2014-06-16'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001883&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/shingle-springs-band-of-miwok-indians-shingle-springs-rancheria/insignia-database-89001883.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001883
+- serial_number: '89001884'
+  filed: '2014-06-16'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001884&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: similar-design
+  private_copy: nation-images/shingle-springs-band-of-miwok-indians-shingle-springs-rancheria/insignia-database-89001884.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001884
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency
@@ -168,13 +227,15 @@ governing_documents:
 justice_institutions:
 - kind: tribal-court
   name: Tribal Court
-  link: http://shinglespringsrancheria.com/content/index.php?option=com_content&amp;view=article&amp;id=158:tribal-court&amp;catid=37:departments-a-programs&amp;Itemid=57
+  link: https://shinglespringsrancheria.com/tribal-court/
   source: national-indian-law-library-shingle-springs
   confidence: medium
   verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
-  note: The page gives a contact for a tribal court without a fuller name.
+  note: The page gives a contact for a tribal court without a fuller name. The listed link (http://shinglespringsrancheria.com/content/index.php?option=com_content&amp;view=article&amp;id=158:tribal-court&amp;catid=37:departments-a-programs&amp;Itemid=57)
+    no longer reached the court on 2026-11-21; the link is the court's page on the nation's own site,
+    found in the data gap review (research/reviews/2026-11-21-court-listings.json).
 - kind: tribal-court
   name: Shingle Springs Tribal Court
   link: http://www.shinglespringsrancheria.com/tribal-court/
@@ -185,48 +246,6 @@ justice_institutions:
   locator: California section, entry 'Shingle Springs Band of Miwok Indians'
 dispute_resolution:
   provisions:
-  - kind: other
-    title: Alternative Remedies for Abuse
-    citation: Shingle Springs Band of Miwok Indians Family Code. Title III Abuse Ordinance. Article 10
-      Penalties. Section 2 Other Remedies.
-    link: https://www.shinglespringsrancheria.com/wp-content/uploads/Family-Code-Title-VI-Customary-Adoptions-as-Approved-by-Tribal-Counci....pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-remedies-for-abuse/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Justice. Database phase: Post-adjudication. Database form of
-      practice: Restorative court; Restorative justice; Restorative practice, Restorative process.'
-  - kind: other
-    title: Child/Elder Abuse Referred to Wellness Board
-    citation: Shingle Springs Band of Miwok Indians Family Code. Title III Abuse Ordinance. Article 7
-      Referral to Wellness Board.
-    link: https://www.shinglespringsrancheria.com/wp-content/uploads/Family-Code-Title-VI-Customary-Adoptions-as-Approved-by-Tribal-Counci....pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/child-elder-abuse-referred-to-wellness-board/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Justice. Database phase: Post-adjudication. Database form of
-      practice: Restorative court; Restorative justice; Restorative practice, Restorative process.'
-  - kind: other
-    title: Removed Child Referred to Family Wellness Court
-    citation: Shingle Springs Band of Miwok Indians Family Code. Title III Abuse Ordinance. Article 5
-      Emergency Removal/Placement & Article 10 Modification or Change of Guardianship.
-    link: https://www.shinglespringsrancheria.com/wp-content/uploads/Family-Code-Title-VI-Customary-Adoptions-as-Approved-by-Tribal-Counci....pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/removed-child-referred-to-family-wellness-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      court; Restorative justice; Restorative practice, Restorative process.'
   - kind: other
     title: SECTION 5. DISPUTE RESOLUTION
     citation: SECTION 5. DISPUTE RESOLUTION
@@ -271,6 +290,43 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: May 2019); the provision itself was not read. The heading it falls under is
       taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Alternative Remedies for Abuse
+    citation: Shingle Springs Band of Miwok Indians Family Code. Title III Abuse Ordinance. Article 10
+      Penalties. Section 2 Other Remedies.
+    link: https://www.shinglespringsrancheria.com/wp-content/uploads/Family-Code-Title-VI-Customary-Adoptions-as-Approved-by-Tribal-Counci....pdf
+    practice_area: Tribal Child Welfare/Family; Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative court; Restorative justice; Restorative practice, Restorative process
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-remedies-for-abuse/
+  - title: Child/Elder Abuse Referred to Wellness Board
+    citation: Shingle Springs Band of Miwok Indians Family Code. Title III Abuse Ordinance. Article 7
+      Referral to Wellness Board.
+    link: https://www.shinglespringsrancheria.com/wp-content/uploads/Family-Code-Title-VI-Customary-Adoptions-as-Approved-by-Tribal-Counci....pdf
+    practice_area: Tribal Child Welfare/Family; Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative court; Restorative justice; Restorative practice, Restorative process
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/child-elder-abuse-referred-to-wellness-board/
+  - title: Removed Child Referred to Family Wellness Court
+    citation: Shingle Springs Band of Miwok Indians Family Code. Title III Abuse Ordinance. Article 5
+      Emergency Removal/Placement & Article 10 Modification or Change of Guardianship.
+    link: https://www.shinglespringsrancheria.com/wp-content/uploads/Family-Code-Title-VI-Customary-Adoptions-as-Approved-by-Tribal-Counci....pdf
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative court; Restorative justice; Restorative practice, Restorative process
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/removed-child-referred-to-family-wellness-court/
 gaming:
   compacts:
   - state: CA

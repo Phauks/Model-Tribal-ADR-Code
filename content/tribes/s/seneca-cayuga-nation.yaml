@@ -112,6 +112,34 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Seneca-Cayuga Nation
+official_images:
+- kind: logo
+  alternative_text: Home
+  image_link: https://sctribe.com/themes/custom/sctribe/images/seneca-cayuga-logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: fdc422eb72b9e5553774ca53bfee74b55ce1fce8718aff5e1c12403043336b49
+  private_copy: nation-images/seneca-cayuga-nation/logo-fdc422eb72b9.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: sctribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89000710'
+  wordmark: SENECA-CAYUGA TRIBE OF OKLAHOMA
+  filed: '2003-05-30'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89000710&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: different-design
+  private_copy: nation-images/seneca-cayuga-nation/insignia-database-89000710.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89000710
 federal_administration:
   bureau_of_indian_affairs_region: Eastern Oklahoma
   bureau_of_indian_affairs_agency: Miami Agency

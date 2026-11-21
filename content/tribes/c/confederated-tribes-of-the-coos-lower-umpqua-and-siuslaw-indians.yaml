@@ -130,6 +130,30 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians
+official_images:
+- kind: logo
+  alternative_text: Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians
+  image_link: https://ctclusi.org/wp-content/uploads/2024/05/Conf.-Tribe-Logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 24579aa1106df63a26f2a814536f2e12af9f72c0fb01e6493822e7282271083f
+  private_copy: nation-images/confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians/logo-24579aa1106d.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2025 Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians | All Rights Reserved
+        | Privacy | Site by Dahotra | Report a Website Problem TOP
+      link: https://ctclusi.org/
+      source: ctclusi-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: ctclusi-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Hanis
   language_tag: csz
@@ -308,135 +332,6 @@ dispute_resolution:
     confidence: medium
     as_of: '2025-08-25'
     note: Summary from NARF's description; listed among NARF's youth and family peacemaking laws.
-  - kind: peacemaking
-    title: Alternative Penalties
-    citation: CTCLUSI TC Ch 3-3 § 3-3-6(c)
-    link: https://ctclusi.org/tribalcode/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-penalties-2/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative; Diversion;
-      Peacemaking; Restorative justice.'
-  - kind: other
-    title: Alternative Processes in Lieu of Incarceration or Fines
-    citation: CONFEDERATED TRIBES OF COOS, LOWER UMPQUA AND SIUSLAW INDIANS TRIBAL CODE. TITLE 3 - OFFENSES.
-      CHAPTER 3-3 VIOLATIONS. 3-3-6 Classification of Violations; Penalties
-    link: https://ctclusi.org/wp-content/uploads/2023/01/Ch-3-3-Violations1-30-2023.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/alternative-processes-in-lieu-of-incarceration-or-fines/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative; Restorative.'
-  - kind: peacemaking
-    title: Informal Adjustment for Juvenile Offenders
-    citation: CTCLUSI TC Ch 4-2 § 4-2-11(b)-©
-    link: https://ctclusi.org/tribalcode/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-adjustment-for-juvenile-offenders-2/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Diversion;
-      Informal hearing; Peacegiving; Restorative.'
-  - kind: other
-    title: Informal Conference for Child in Need of Supervision
-    citation: CTCLUSI TC Ch 4-2 § 4-2-18(b)
-    link: https://ctclusi.org/tribalcode/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-conference-for-child-in-need-of-supervision/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Alternative;
-      Diversion; informal conference; Informal hearing; Restorative.'
-  - kind: other
-    title: Informal Resolution for Juvenile Dependency Cases
-    citation: CTCLUSI TC Ch 4-4 § 4-4-19
-    link: https://ctclusi.org/tribalcode/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-resolution-for-juvenile-dependency-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Alternative;
-      Conflict resolution; Informal resolution.'
-  - kind: peacemaking
-    title: Peacegiving Court for Child in Need of Supervision
-    citation: CTCLUSI TC Ch 4-2 § 4-2-19
-    link: https://ctclusi.org/tribalcode/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/peacegiving-court-for-child-in-need-of-supervision/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Alternative;
-      Peacemaking.'
-  - kind: peacemaking
-    title: Peacegiving Court for Juvenile Offenders
-    citation: CTCLUSI TC Ch 4-2 § 4-2-12
-    link: https://ctclusi.org/tribalcode/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/peacegiving-court-for-juvenile-offenders/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Alternative;
-      Peacemaking.'
-  - kind: peacemaking
-    title: Peacegiving Court Procedures
-    citation: CHAPTER 2-14 PEACEGIVING COURT.
-    link: https://ncorj.org/tribal-law/peacegiving-court-procedures/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/peacegiving-court-procedures/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
-  - kind: other
-    title: Remedial Efforts for Families in Dependency Cases
-    citation: CTCLUSI TC Ch 4-4 § 4-4-22
-    link: https://ctclusi.org/tribalcode/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/remedial-efforts-for-families-in-dependency-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: All phases. Database form of practice: Rehabilitation;
-      Remedial.'
-  - kind: other
-    title: Wellness Court Procedures
-    citation: CHAPTER 2-13 WELLNESS COURT.
-    link: https://ncorj.org/tribal-law/wellness-court-procedures-2/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/wellness-court-procedures-2/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication; Pre-adjudication. Database form of practice:
-      Healing to Wellness Court.'
   - kind: arbitration
     title: Chapter 2-3. Arbitration (10/24/12)
     citation: Chapter 2-3. Arbitration (10/24/12)
@@ -478,6 +373,118 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Most
       Recent Update Received: April 2024); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Alternative Penalties
+    citation: CTCLUSI TC Ch 3-3 § 3-3-6(c)
+    link: https://ctclusi.org/tribalcode/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Alternative; Diversion; Peacemaking; Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-penalties-2/
+  - title: Alternative Processes in Lieu of Incarceration or Fines
+    citation: CONFEDERATED TRIBES OF COOS, LOWER UMPQUA AND SIUSLAW INDIANS TRIBAL CODE. TITLE 3 - OFFENSES.
+      CHAPTER 3-3 VIOLATIONS. 3-3-6 Classification of Violations; Penalties
+    link: https://ctclusi.org/wp-content/uploads/2023/01/Ch-3-3-Violations1-30-2023.pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Alternative; Restorative
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-processes-in-lieu-of-incarceration-or-fines/
+  - title: Informal Adjustment for Juvenile Offenders
+    citation: CTCLUSI TC Ch 4-2 § 4-2-11(b)-©
+    link: https://ctclusi.org/tribalcode/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Diversion; Informal hearing; Peacegiving; Restorative
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-adjustment-for-juvenile-offenders-2/
+  - title: Informal Conference for Child in Need of Supervision
+    citation: CTCLUSI TC Ch 4-2 § 4-2-18(b)
+    link: https://ctclusi.org/tribalcode/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Alternative; Diversion; informal conference; Informal hearing; Restorative
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-conference-for-child-in-need-of-supervision/
+  - title: Informal Resolution for Juvenile Dependency Cases
+    citation: CTCLUSI TC Ch 4-4 § 4-4-19
+    link: https://ctclusi.org/tribalcode/
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Alternative; Conflict resolution; Informal resolution
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-resolution-for-juvenile-dependency-cases/
+  - title: Peacegiving Court for Child in Need of Supervision
+    citation: CTCLUSI TC Ch 4-2 § 4-2-19
+    link: https://ctclusi.org/tribalcode/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Alternative; Peacemaking
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacegiving-court-for-child-in-need-of-supervision/
+  - title: Peacegiving Court for Juvenile Offenders
+    citation: CTCLUSI TC Ch 4-2 § 4-2-12
+    link: https://ctclusi.org/tribalcode/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Alternative; Peacemaking
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacegiving-court-for-juvenile-offenders/
+  - title: Peacegiving Court Procedures
+    citation: CHAPTER 2-14 PEACEGIVING COURT.
+    link: https://ncorj.org/tribal-law/peacegiving-court-procedures/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Peacemaking
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacegiving-court-procedures/
+  - title: Remedial Efforts for Families in Dependency Cases
+    citation: CTCLUSI TC Ch 4-4 § 4-4-22
+    link: https://ctclusi.org/tribalcode/
+    practice_area: Tribal Child Welfare/Family
+    phase: All phases
+    form_of_practice: Rehabilitation; Remedial
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/remedial-efforts-for-families-in-dependency-cases/
+  - title: Wellness Court Procedures
+    citation: CHAPTER 2-13 WELLNESS COURT.
+    link: https://ncorj.org/tribal-law/wellness-court-procedures-2/
+    practice_area: Tribal Justice
+    phase: Post-adjudication; Pre-adjudication
+    form_of_practice: Healing to Wellness Court
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/wellness-court-procedures-2/
 gaming:
   compacts:
   - state: OR
