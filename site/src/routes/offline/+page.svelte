@@ -23,6 +23,7 @@
 		device yet. Connect to the internet and open it once to save it.
 	</p>
 	<p class="muted">
-		Choosing which parts to save, and downloading the PDF and ebook, will be added in a later version.
+		Choosing which parts to save will be added in a later version. The PDF and the ebook will be on
+		the <a href="/downloads">Downloads</a> page.
 	</p>
 </div>
