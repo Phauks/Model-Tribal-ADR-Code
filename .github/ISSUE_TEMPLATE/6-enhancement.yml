@@ -1,0 +1,22 @@
+name: Idea or improvement
+description: Suggest a feature or improvement for the website, book or project
+title: "Idea: "
+labels: ["type: enhancement", "status: needs triage"]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like, and who would it help?
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - Website
+        - Print or ebook
+        - Content structure
+        - Project process
+    validations:
+      required: true

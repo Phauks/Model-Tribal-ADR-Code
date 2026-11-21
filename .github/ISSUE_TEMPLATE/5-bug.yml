@@ -1,0 +1,35 @@
+name: Bug
+description: Something is broken on the website or in the print or ebook build
+title: "Bug: "
+labels: ["type: bug", "status: needs triage"]
+body:
+  - type: dropdown
+    id: where
+    attributes:
+      label: Where?
+      options:
+        - Website
+        - Print PDF
+        - Ebook
+        - Build or tooling
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: input
+    id: location
+    attributes:
+      label: Page URL, file or build step
+  - type: input
+    id: versions
+    attributes:
+      label: Versions
+      description: The content and site versions shown at the bottom of the page, or the edition of the PDF or ebook.
+  - type: input
+    id: device
+    attributes:
+      label: Device and browser or reader app
