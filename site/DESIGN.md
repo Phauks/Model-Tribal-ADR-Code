@@ -146,13 +146,76 @@ published ([repository layout, identifiers](../docs/repository-layout.md#identif
 | Home | One column, then a four-part contents band | Purpose in one sentence; search; reserved art space; contents by part, with the two tracks side by side; "For Native nations" panel; recent changes |
 | Section | Contents rail, text, margin | "Model text, not law in force" notice with the version and last change; hanging section number; status chips; text with alternatives and placeholders; Comment, Illustrations, Source note; previous and next; margin: On this page, notes, "Cite this section," "Adapt this section" |
 | Track landing | One column | What the track is, cited; its chapters; for peacemaking, a step-by-step outline of how a process unfolds |
-| Nation profile | Text and margin | Review status panel with the four review steps and "Is this about your nation?"; at a glance (a summary list); courts and dispute resolution, as a table; published law, linked not reproduced; Local Contexts Notices and Labels; sources; margin: On this page, small state grid, where the nation appears in the code, "Cite this profile" |
+| Nation profile | Text and margin | One page for every nation; see [Nation pages](#nation-pages) below |
 | Nations directory | One column | Search and filters (group, state, review status); Map and Table tabs holding the same data; the map's "what this shows" notice |
 | Glossary entry | Entry rail, text, margin | Term, usage status, definition with sources, how the project uses it, where it appears, see also, "Suggest a change to this term" |
 | Source record | Text and margin | Citation, original link, archived copies, change history, quotation basis, what cites it |
 | Changelog | One column with tabs | Content, Website, Print and Requests log; each version's entries; comparison of a section between versions |
 | Request | One question per page | Start page; what would you like to do; which material; how can we reply; details; credit (contribute only); check your request; request sent |
 | Read offline | One column | Install the site; save the code, the profiles or both; PDF and EPUB downloads; what is saved and as of when |
+
+### Nation pages
+
+Every nation and community with a record in `content/tribes/` gets its own
+page, built from that record at build time: 575 federally recognized nations
+today, plus the Native Hawaiian community and territorial Indigenous peoples
+in their own groups, never described as tribes. Trevor asked for this so that
+each page makes it easy to report information and to show what is
+distinctive about each nation.
+
+**Order of sections.** Every page uses the same order, so readers and the
+nation's staff always know where to look, as the Tribal Law Gateway does with
+its fixed sections on each nation's page:
+
+1. Name as the recognizing list gives it, and the nation's own name for
+   itself, exactly as the nation writes it, once the nation confirms it.
+2. Review panel: the review status (drafted from public sources, sent to the
+   nation, reviewed by the nation, approved by the nation), what that means,
+   and "Is this about your nation? Make a request."
+3. What is distinctive here (below).
+4. At a glance: recognition, states with a presence, government contacts,
+   federal region.
+5. Courts and dispute resolution: each forum with its kind, source and date.
+6. Published dispute resolution law: linked, not reproduced, until the nation
+   permits more ([data model, permission statuses](../docs/data-model.md#permission-statuses)).
+7. Notices and Labels from Local Contexts.
+8. Sources, and the date the page was last checked.
+
+**What is distinctive here** has two parts:
+
+- **In the nation's own words.** A short description the nation writes or
+  approves. Until then the space says so and offers a link to contribute;
+  the project never writes it for the nation.
+- **Recorded features.** Short sentences generated from the record's cited
+  facts, each with its citation, for example: a peacemaking program beside the
+  Tribal court (`justice_institutions`, `dispute_resolution.forums`); a
+  published peacemaking or mediation law (`dispute_resolution_law`); a court
+  of appeals; presence in more than one state (`states`); a heritage language
+  as the nation writes it (`languages`); jurisdiction facts such as Public Law
+  280 (`jurisdiction`). A feature appears only when a source documents it,
+  never inferred from silence, and features describe the one nation without
+  comparing it with others
+  ([style guide, section 1](../docs/style-guide.md#1-voice-and-tone)).
+
+**Reporting a problem.** Every fact and every table row carries a small
+"Report a problem" link. It opens the request form with the record and the
+field already filled in, for example `/requests?record=tribes/<id>&field=states`,
+so a nation's staff can point at the exact fact without describing it. Each
+link has hidden text naming the fact, so screen reader users hear "Report a
+problem with states," not a list of identical links.
+
+**Missing information.** Empty fields are left out rather than shown as
+"unknown," so a page never suggests a nation lacks something it may simply
+not have published. A single line at the end offers: "Know of a published
+source we have missed? Add it."
+
+**Restricted and withdrawn records.** A record marked restricted gets no page
+at all. A withdrawn record's page says only that the material was withdrawn
+at the nation's request ([charter, commitment 6](../docs/charter.md#6-the-right-to-correct-restrict-or-withdraw)).
+
+**In print.** The book's profiles follow the same order, so the website and
+Part III read alike. The page template uses relative units and no fixed page
+size, because the book's trim size is not yet decided (project choice).
 
 ## 6. Components
 
