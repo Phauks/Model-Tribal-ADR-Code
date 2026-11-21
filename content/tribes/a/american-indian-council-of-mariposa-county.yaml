@@ -1,0 +1,39 @@
+id: american-indian-council-of-mariposa-county
+entity_type: native-nation
+names:
+  official: American Indian Council of Mariposa County
+  alternate:
+  - name: Southern Sierra Miwuk Nation
+    source: gao-12-348-federal-funding-non-federally-recognized-tribes
+    confidence: medium
+    as_of: 2012-04
+    locator: Table 1
+    note: 'GAO: petitioned as Southern Sierra Miwuk Nation.'
+  official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
+recognition:
+- type: unrecognized
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1; Table 3
+  note: 'GAO Table 1 lists "American Indian Council of Mariposa County" among 26 non-federally recognized
+    tribes that received direct federal funding in FY2007-2010 (total $260,000, Table 3). GAO-reported
+    nonprofit status: Yes; state recognition per state officials: No. GAO notes the group petitioned for
+    federal acknowledgment as the Southern Sierra Miwuk Nation. Not on the 2026 federal list (bia-recognized-entities-2026).
+    Possible match with the petitioning helper record for the Southern Sierra Miwuk Nation (name given
+    by GAO).'
+states:
+- state: CA
+  presence: other
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1, State column
+  note: State as listed by GAO.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false
