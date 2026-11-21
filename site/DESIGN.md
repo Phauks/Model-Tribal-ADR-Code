@@ -233,8 +233,9 @@ size, because the book's trim size is not yet decided (project choice).
 
 ## 6. Components
 
-**Masthead.** Wordmark and edition, main menu, theme button, Contribute.
-Menu items are at least 44 px tall. The current section is marked with
+**Masthead.** Wordmark and edition, main menu, Contribute, then the theme
+button and the Settings button at the right end. Menu items are at least
+44 px tall. The current section is marked with
 `aria-current="page"` and a 3 px underline.
 
 **Icons.** All icons come from Lucide,[^lucide-license] chosen on Nov. 21,
@@ -254,6 +255,34 @@ exactly. Rules:
   `feather`, `tent`, `tent-tree` and `bow-arrow`.
 - In print, Typst draws `currentColor` as black, which suits the black-and-white
   interior.
+
+**Settings.** A "Settings" button with Lucide's `settings` icon at the right
+end of the masthead opens a dialog where the reader picks (project choice,
+asked for by Trevor on Nov. 21, 2026):
+
+- **Text size:** Standard, Large, Larger or Largest (100, 112.5, 125 or 150
+  percent). Every size on the site is in rem, so the whole page scales.
+- **Font:** Atkinson Hyperlegible Next (the default), Noto Serif,
+  OpenDyslexic or the device's own font (see [Type](#type)).
+- **Text spacing:** Standard or Wide. Wide uses the values WCAG 2.2, 1.4.12
+  tests: line height 2 (at least 1.5), paragraph spacing 2 times, letter
+  spacing 0.12 times and word spacing 0.16 times the font size.[^wcag-1412]
+- **Theme:** Match this device, Light or Dark (see [section 8](#8-themes)).
+- **Contrast:** Standard or More. More turns gray text to ink and light
+  dividing lines to the control border color; no new colors are added.
+
+Each change applies at once and is kept in the browser's local storage on
+that device only, so it works offline and nothing is sent to the server. An
+inline script in `app.html` applies the stored settings before the page
+paints. "Reset to defaults" clears them. The dialog is the browser's own
+modal `<dialog>`: focus moves into it, stays in it, Escape closes it, and
+focus returns to the button.[^mdn-dialog] Choices are radio buttons in
+fieldsets, labels above hints. Without scripts the Settings and theme buttons
+are hidden, since they cannot work. The theme stays a one-press button in the
+masthead as well as a choice in the dialog, because the button is the faster
+way for the most common change and Trevor chose it on Nov. 21, 2026; the
+dialog adds "Match this device," which the button lacks. When glossary hover
+cards are built, the setting that turns them off goes in this dialog.
 
 **Notices.** One style for status: "This is a working draft" on the home
 page; "Model text, not law in force" with the version and last change on
@@ -436,6 +465,18 @@ uses 400, 600 and 700 only.
   ([style guide, section 3](../docs/style-guide.md#3-writing-about-native-nations-and-people)).
   Text in a Native language carries a `lang` attribute where the language is
   known.
+- **Reader's choice:** in Settings a reader can switch to Noto Serif,
+  OpenDyslexic or the device's own interface font. Noto Serif was picked over
+  Literata and Source Serif 4 because it covers ʻ, ō, ʷ and ʔ and matches the
+  Noto fallbacks. OpenDyslexic was asked for by Trevor; a study found it did
+  not improve reading rate or accuracy for students with dyslexia,[^wery] so
+  the site only says it is "designed for readers with dyslexia." Both are
+  under the SIL Open Font License; OpenDyslexic reserves its name, and the
+  site serves its files whole and unchanged, which the license FAQ says keeps
+  the name usable.[^ofl-faq] Details are in the research session
+  [2026-11-21-reading-settings-fonts](../research/sessions/2026/2026-11-21-reading-settings-fonts.md).
+  Each choice points the `--font-family-reading` custom property at another
+  font token, so the map labels follow too.
 - **Hosting:** the font files are served by the site itself, not by a
   third-party font service, so offline reading works and no reader's address
   goes to another company (project choice). Its license is the SIL Open Font
@@ -453,7 +494,8 @@ are in [design-tokens.json](design-tokens.json).
   shows a sun in the light theme and a moon in the dark theme (Trevor, Nov. 21,
   2026). Until the reader presses it, the device's `prefers-color-scheme`
   setting decides.[^mdn-color-scheme] Once pressed, the choice stays on that
-  device; clearing the site's data returns to the device's setting.
+  device. "Match this device" in Settings, or clearing the site's data,
+  returns to the device's setting.
 - **How:** the root element carries `data-theme="light"` or `"dark"` when the
   reader picks one; otherwise the `prefers-color-scheme` media query decides.
   A small inline script sets the attribute before the page paints, so there is
@@ -494,8 +536,12 @@ accessibility statement is published at `/about/accessibility`.
 
 - **Install:** a web app manifest and a service worker make the site
   installable.
-- **Caching:** the app shell and fonts are cached first; sections, profiles,
-  the glossary and sources use stale-while-revalidate, following web.dev's
+- **Caching:** the app shell and Atkinson Hyperlegible Next are cached
+  first; Noto fallbacks and the fonts picked in Settings are cached the first
+  time they are used, and picking a font downloads all its weights at once so
+  it also works on pages read later offline. A new build keeps saved font
+  files whose names (which carry a hash of the content) have not changed.
+  Sections, profiles, the glossary and sources use stale-while-revalidate, following web.dev's
   and MDN's caching guidance.[^webdev-caching][^mdn-caching] Cache names carry
   the content version so a release replaces the old copy.
 - **What is saved:** on `/offline`, a reader saves the code, the nation
@@ -587,6 +633,10 @@ The interface follows the style guide's voice: plain verbs, sentence case,
 [^webdev-caching]: web.dev, *Learn PWA: Caching*, [web.dev/learn/pwa/caching](https://web.dev/learn/pwa/caching).
 [^mdn-caching]: MDN Web Docs, *Caching (Progressive web apps)*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Caching).
 [^cloudflare-sveltekit]: Cloudflare, *SvelteKit (Workers framework guide)*, [developers.cloudflare.com/workers/framework-guides/web-apps/sveltekit](https://developers.cloudflare.com/workers/framework-guides/web-apps/sveltekit/).
+[^wcag-1412]: W3C, *Understanding Success Criterion 1.4.12: Text Spacing*, [w3.org/WAI/WCAG22/Understanding/text-spacing](https://www.w3.org/WAI/WCAG22/Understanding/text-spacing).
+[^mdn-dialog]: MDN Web Docs, *&lt;dialog&gt;: The Dialog element*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog).
+[^wery]: J. J. Wery and J. A. Diliberto, *The effect of a specialized dyslexia font, OpenDyslexic, on reading rate and accuracy*, 67 Annals of Dyslexia 114 (2017), [doi.org/10.1007/s11881-016-0127-1](https://doi.org/10.1007/s11881-016-0127-1).
+[^ofl-faq]: SIL International, *OFL-FAQ*, entries 2.2 and 2.6, [openfontlicense.org/ofl-faq](https://openfontlicense.org/ofl-faq/) (accessed Nov. 21, 2026).
 [^lucide-license]: Lucide, *License*, [lucide.dev/license](https://lucide.dev/license) (accessed Nov. 21, 2026). ISC License, with the MIT License for icons drawn from Feather; full text in [`LICENSES/Lucide.txt`](../LICENSES/Lucide.txt).
 [^lucide-svelte]: Lucide, *Lucide for Svelte*, [lucide.dev/guide/svelte](https://lucide.dev/guide/svelte) (accessed Nov. 21, 2026).
 [^lucide-a11y]: Lucide, *Accessibility* (Svelte), [lucide.dev/guide/svelte/advanced/accessibility](https://lucide.dev/guide/svelte/advanced/accessibility) (accessed Nov. 21, 2026).

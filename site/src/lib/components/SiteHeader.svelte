@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { siteName } from '#lib';
+	import SettingsPanel from './SettingsPanel.svelte';
 	import ThemeSetting from './ThemeSetting.svelte';
 
 	let { contentVersion }: { contentVersion: string } = $props();
@@ -38,7 +39,10 @@
 				<li><a class="button contribute" href="/requests?kind=contribute">Contribute</a></li>
 			</ul>
 		</nav>
-		<ThemeSetting />
+		<div class="masthead-tools">
+			<ThemeSetting />
+			<SettingsPanel />
+		</div>
 	</div>
 </header>
 
@@ -63,10 +67,6 @@
 		color: var(--color-band-text);
 	}
 
-	.masthead :global(label) {
-		color: var(--color-band-text);
-	}
-
 	.masthead-inner {
 		display: flex;
 		flex-wrap: wrap;
@@ -88,6 +88,14 @@
 		font-size: var(--font-size-lead);
 		color: var(--color-band-text);
 		text-decoration: none;
+	}
+
+	.masthead-tools {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: var(--space-2);
+		margin-left: auto;
 	}
 
 	.edition {

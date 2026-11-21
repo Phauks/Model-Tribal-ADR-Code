@@ -236,7 +236,39 @@
           "system-ui",
           "sans-serif"
         ],
-        "$description": "One family for everything. Noto fonts load only for the characters Atkinson Hyperlegible Next lacks, through unicode-range."
+        "$description": "The default for everything. Noto fonts load only for the characters Atkinson Hyperlegible Next lacks, through unicode-range. A reader can pick one of the other families in Settings; the site then points --font-family-reading at it."
+      },
+      "serif": {
+        "$value": [
+          "Noto Serif",
+          "Noto Sans Cherokee",
+          "Noto Sans Osage",
+          "Noto Sans Canadian Aboriginal",
+          "serif"
+        ],
+        "$description": "Reader's choice in Settings. Noto Serif covers the letters in nation names that Atkinson Hyperlegible Next lacks, such as ʻ, ō, ʷ and ʔ."
+      },
+      "opendyslexic": {
+        "$value": [
+          "OpenDyslexic",
+          "Noto Sans",
+          "Noto Sans Cherokee",
+          "Noto Sans Osage",
+          "Noto Sans Canadian Aboriginal",
+          "sans-serif"
+        ],
+        "$description": "Reader's choice in Settings."
+      },
+      "device": {
+        "$value": [
+          "system-ui",
+          "Noto Sans",
+          "Noto Sans Cherokee",
+          "Noto Sans Osage",
+          "Noto Sans Canadian Aboriginal",
+          "sans-serif"
+        ],
+        "$description": "Reader's choice in Settings: the device's own interface font. Nothing is downloaded."
       }
     },
     "weight": {
@@ -306,6 +338,43 @@
       },
       "heading": {
         "$value": 1.25
+      },
+      "reading-wide": {
+        "$value": 2,
+        "$description": "Wide text spacing in Settings. WCAG 2.2, 1.4.12 asks that text still work at 1.5."
+      },
+      "heading-wide": {
+        "$value": 1.5
+      }
+    },
+    "letter-spacing": {
+      "$type": "dimension",
+      "wide": {
+        "$value": {
+          "value": 0.12,
+          "unit": "em"
+        },
+        "$description": "Wide text spacing in Settings, the value WCAG 2.2, 1.4.12 tests."
+      }
+    },
+    "word-spacing": {
+      "$type": "dimension",
+      "wide": {
+        "$value": {
+          "value": 0.16,
+          "unit": "em"
+        },
+        "$description": "Wide text spacing in Settings, the value WCAG 2.2, 1.4.12 tests."
+      }
+    },
+    "paragraph-spacing": {
+      "$type": "dimension",
+      "wide": {
+        "$value": {
+          "value": 2,
+          "unit": "em"
+        },
+        "$description": "Wide text spacing in Settings, the value WCAG 2.2, 1.4.12 tests."
       }
     }
   },
