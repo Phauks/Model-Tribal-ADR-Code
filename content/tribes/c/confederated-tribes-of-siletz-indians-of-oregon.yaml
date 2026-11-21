@@ -1,0 +1,582 @@
+id: confederated-tribes-of-siletz-indians-of-oregon
+entity_type: native-nation
+names:
+  official: Confederated Tribes of Siletz Indians of Oregon
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: OR
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of Siletz Indians of Oregon
+- state: OR
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3795
+  note: 'Census area with land in this state: Siletz Reservation and Off-Reservation Trust Land (code
+    3795). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '3795'
+  name: Siletz Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3795
+  note: Matched by name. Census class code D1.
+population:
+- count: 5080
+  kind: citizens
+  source: oregon-department-of-education-native-americans-in-oregon-by-the-numbers-2020
+  confidence: medium
+  as_of: 2020-02
+  note: Oregon Department of Education table 'Number of tribal members'; PDF dated February 2020.
+- count: 685
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3795, field POP100
+  note: 'Census area: Siletz Reservation and Off-Reservation Trust Land (code 3795). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 5074
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2944 (Confederated Tribes of Siletz Indians of Oregon alone or in any
+    combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Confederated Tribes of Siletz Indians of Oregon' (race
+    code 6293) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 5650
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Confederated Tribes of Siletz Indians', PDF page 8, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://ctsi.nsn.us/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of Siletz Indians of Oregon
+- kind: physical-address
+  value: 201 SE Swan Avenue, Siletz, OR 97380
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of Siletz Indians of Oregon
+- kind: mailing-address
+  value: P.O. Box 549, Siletz, OR 97380
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of Siletz Indians of Oregon
+- kind: phone
+  value: (541) 444-2532
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of Siletz Indians of Oregon
+- kind: fax
+  value: (541) 444-2307
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of Siletz Indians of Oregon
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Northwest Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of Siletz Indians of Oregon
+governing_documents:
+- kind: law-code
+  title: Confederated Tribes of Siletz Indians of Oregon
+  year: '2015'
+  link: https://narf.org/nill/codes/confederated_siletz/index.html
+  source: national-indian-law-library-code-codes-confederated-siletz
+  confidence: medium
+  as_of: '2015'
+  locator: page heading
+  note: 'Table of Contents Updated: March 2015. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: http://www.ctsi.nsn.us/warm-springs-umpqua-tillamook-siletz-government/tribal-ordinances#content
+  source: national-indian-law-library-confederated-siletz
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  source: national-indian-law-library-confederated-siletz
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .". Link check 2026-11-21: the link the source gives (http://www.ctsi.nsn.us/uploads/downloads/Ordinances/Constitution%2004-17-09.pdf)
+    returned HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Confederated Tribes of Siletz Indians of Oregon - Tribal Constitution
+  year: '2008'
+  link: https://narf.org/nill/constitutions/confederated_siletz/index.html
+  source: national-indian-law-library-constitution-constitutions-confederated-siletz
+  confidence: medium
+  as_of: '2008'
+  locator: page heading
+  note: 'Amended: May 16, 2008. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Confederated Tribes of Siletz Indians of Oregon Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Confederated Tribes of Siletz Indians'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.ctsi.nsn.us/uploads/downloads/Ordinances/Constitution%2004-17-09.pdf)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Confederated Tribes of Siletz Indians Tribal Ordinances
+  link: http://www.ctsi.nsn.us/warm-springs-umpqua-tillamook-siletz-government/tribal-ordinances#content
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Confederated Tribes of Siletz Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.ctsi.nsn.us/warm-springs-umpqua-tillamook-siletz-government/court-and-justice/judges
+  source: national-indian-law-library-confederated-siletz
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Confederated Tribes of Siletz Tribal Court
+  link: http://www.ctsi.nsn.us/warm-springs-umpqua-tillamook-siletz-government/court-and-justice/judges
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Confederated Tribes of Siletz Indians'
+dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Siletz Community Law Court
+    own_term:
+      name: Gwe-shvt-naga
+      language_tag: und
+      romanized: GWAY-SHUT-NAH-GAH (pronunciation as printed)
+      translation: in between he, she, or it walks (title for the peacemaker)
+    description: Part of the Tribal Court system giving formal support, structure and enforcement to traditional
+      Siletz methods of resolving disputes through mediation and traditional ways; peacemakers are titled
+      Gwe-shvt-naga.
+    legal_basis: Siletz Tribal Code § 3.300 and following (Siletz Community Law Court)
+    case_types:
+    - family
+    - civil
+    - commercial
+    - criminal-diversion
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: The Community Law Court Judge supervises the peacemakers; civil and criminal
+      actions may be transferred from Tribal Court where all parties consent in writing.
+    enforcement: Judgments may be enforced as any Tribal Court judgment; they may not be appealed, but
+      a party may move to modify for a $30 fee.
+    link: https://ctsi.nsn.us/wp-content/uploads/2025/06/Siletz-Community-Law-Court-06-20-2025.pdf
+    source: siletz-code-3-300-community-law-court-2025
+    confidence: high
+    as_of: '2025-06-20'
+    locator: § 3.300, 3.301, 3.302, 3.319, 3.320, 3.325-3.326
+    note: Language of the term is not named in the source, so language_tag is 'und'. Listed matters include
+      marital disputes and family strife, extended family disputes, minor neighbor disputes, alcohol use,
+      and minor community business transactions of $2,500 or less. Peacemakers must be enrolled Siletz
+      members certified by Tribal Council. Attorneys barred. Updated from the 2005 version on NARF (peacemaking.narf.org/wp-content/uploads/2025/07/Siletz-Comm-Law-Court-09-16-2005.pdf);
+      the 2005 text said the court was not yet authorized for divorce, separation or annulment, and that
+      sentence does not appear in the 2025 text read.
+  - kind: arbitration
+    name: Agreed arbitration by Gwe-shvt-naga/Peacemaker
+    description: Peacemakers may decide a disputed matter only if all parties agree in writing or before
+      the Tribal Court.
+    legal_basis: Siletz Tribal Code § 3.305 (Limitations; Gwe-shvt-naga/Peacemakers Not Judges; Agreed
+      Arbitration)
+    case_types:
+    - civil
+    - family
+    - other
+    participation: voluntary
+    relationship_to_court: Decision is entered by the Siletz Community Law Court Judge.
+    enforcement: Has the effect of a court judgment when entered.
+    link: https://ctsi.nsn.us/wp-content/uploads/2025/06/Siletz-Community-Law-Court-06-20-2025.pdf
+    source: siletz-code-3-300-community-law-court-2025
+    confidence: high
+    as_of: '2025-06-20'
+    locator: § 3.305
+  provisions:
+  - kind: peacemaking
+    title: Siletz Community Law Court
+    citation: Siletz Tribal Code § 3.300 and following
+    summary: Establishes the Community Law Court and Gwe-shvt-naga/Peacemakers, subject matter, consent-based
+      transfer, judgments and their enforcement.
+    link: https://ctsi.nsn.us/wp-content/uploads/2025/06/Siletz-Community-Law-Court-06-20-2025.pdf
+    source: siletz-code-3-300-community-law-court-2025
+    confidence: high
+    as_of: '2025-06-20'
+  - kind: arbitration
+    title: Dispute Resolution; Mediation; Request for Arbitration or Mediation; Discovery; Conduct of
+      Hearing; Burden of Proof; Law to Apply; Effect of Request for Hearing; Severability; Sovereign Immunity.
+    citation: Dispute Resolution; Mediation; Request for Arbitration or Mediation; Discovery; Conduct
+      of Hearing; Burden of Proof; Law to Apply; Effect of Request for Hearing; Severability; Sovereign
+      Immunity.
+    link: https://www.narf.org/nill/codes/confederated_siletz/index.html
+    source: national-indian-law-library-code-index-confederated-siletz
+    confidence: medium
+    as_of: 2015-03
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: mediation
+    title: '2 COURT PERSONNEL: Judicial Officers; Chief Judge; Associate Judges; Pro-Tem Judges; Mediators;
+      Removal of Judges; Court Clerk; Legal Interns; Court Interpreters; Tribal Bar.'
+    citation: '2 COURT PERSONNEL: Judicial Officers; Chief Judge; Associate Judges; Pro-Tem Judges; Mediators;
+      Removal of Judges; Court Clerk; Legal Interns; Court Interpreters; Tribal Bar.'
+    link: https://www.narf.org/nill/codes/confederated_siletz/index.html
+    source: national-indian-law-library-code-index-confederated-siletz
+    confidence: medium
+    as_of: 2015-03
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: traditional-dispute-resolution
+    title: Siletz Tribal Code Sec. 3.300
+    citation: Siletz Tribal Code Sec. 3.300
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Siletz-Comm-Law-Court-09-16-2005.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Confederated Tribes of Siletz Indians of Oregon
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization
+      and civil process authority, referral standards and standards of conduct, and authority to use traditional
+      ways and lecture on tribal teachings.'
+  - kind: peacemaking
+    title: '2: GWE-SHVT-NAGA/PEACEMAKERS:'
+    citation: '2: GWE-SHVT-NAGA/PEACEMAKERS:'
+    link: https://narf.org/nill/codes/confederated_siletz/index.html
+    source: national-indian-law-library-code-codes-confederated-siletz
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: March 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: '3 PEACEMAKING:'
+    citation: '3 PEACEMAKING:'
+    link: https://narf.org/nill/codes/confederated_siletz/index.html
+    source: national-indian-law-library-code-codes-confederated-siletz
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: March 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: '5 CONDUCT OF GWE-SHVT-NAGA/PEACEMAKERS:'
+    citation: '5 CONDUCT OF GWE-SHVT-NAGA/PEACEMAKERS:'
+    link: https://narf.org/nill/codes/confederated_siletz/index.html
+    source: national-indian-law-library-code-codes-confederated-siletz
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: March 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: other
+    title: Judicial Officers; Chief Judge; Associate Judges; Pro-Tem Judges; Mediators; Removal of Judges;
+      Court Clerk; Legal Interns; Court Interpreters; Tribal Bar.
+    citation: Judicial Officers; Chief Judge; Associate Judges; Pro-Tem Judges; Mediators; Removal of
+      Judges; Court Clerk; Legal Interns; Court Interpreters; Tribal Bar.
+    link: https://narf.org/nill/codes/confederated_siletz/index.html
+    source: national-indian-law-library-code-codes-confederated-siletz
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents, under '2 COURT PERSONNEL:'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: March 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: OR
+    status: approved
+    approved: '2000-12-06'
+    federal_register_citation: 65 FR 76278
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-12-06'
+    locator: result page 30 (?page=30), row 10
+    note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Confederated Tribes of Siletz Indians of Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.12.06%20%20Confederated%20Tribes%20of%20Siletz%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/12/06/00-31025/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1998-02-27'
+    federal_register_citation: 63 FR 10035
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-02-27'
+    locator: result page 30 (?page=30), row 11
+    note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Confederated Tribes of Siletz Indians of Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.02.27%20Confederated%20Tribes%20of%20Siletz%20Indians%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/02/27/98-5072/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1996-02-06'
+    federal_register_citation: 61 FR 4477
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-02-06'
+    locator: result page 30 (?page=30), row 12
+    note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Confederated Tribes of Siletz Indians of Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201996.02.06%20Confederated%20Tribes%20of%20Siletz%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/02/06/96-2450/indian-gaming-oregan.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1999-07-07'
+    federal_register_citation: 64 FR 36713
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-07-07'
+    locator: result page 30 (?page=30), row 13
+    note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Confederated Tribes of Siletz Indians of Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.07.07%20Confederated%20Tribes%20of%20Siletz%20Indians%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/07/07/99-17117/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1999-06-01'
+    federal_register_citation: 64 FR 29333
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-06-01'
+    locator: result page 30 (?page=30), row 14
+    note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Confederated Tribes of Siletz Indians of Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.06.01%20Confederated%20Tribes%20of%20Siletz%20Indians%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/06/01/99-13727/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2008-03-17'
+    federal_register_citation: 73 FR 14267
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2008-03-17'
+    locator: result page 30 (?page=30), row 15
+    note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Confederated Tribes of Siletz Indians of Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202008.03.17%20Confederated%20Tribes%20of%20Siletz%20Indians%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/03/17/E8-5198/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1995-03-22'
+    federal_register_citation: 60 FR 15194
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1995-03-22'
+    locator: result page 30 (?page=30), row 16
+    note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Confederated Tribes of Siletz Indians of Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201995.03.22%20%20Confederated%20Tribes%20of%20Siletz%20Indians%20Tribal%20State%20Gaming%20Compact.pdf.
+      (Source federal-register-api-gaming-notices.) Federal Register citation found by matching the listed
+      date to the only Indian Gaming notice published that day (not linked in the list).'
+  - state: OR
+    status: approved
+    approved: '1998-05-19'
+    federal_register_citation: 63 FR 27585
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-05-19'
+    locator: result page 30 (?page=30), row 17
+    note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Confederated Tribes of Siletz Indians of Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.05.19%20Confederated%20Tribes%20of%20the%20Siletz%20Indians%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/05/19/98-13218/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1999-11-12'
+    federal_register_citation: 64 FR 61658
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-11-12'
+    locator: result page 30 (?page=30), row 18
+    note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Confederated Tribes of Siletz Indians of Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.11.12%20Confederated%20Tribes%20of%20Siletz%20Indians%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/11/12/99-29547/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2010-11-09'
+    federal_register_citation: 75 FR 68823
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2010-11-09'
+    locator: result page 30 (?page=30), row 19
+    note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Confederated Tribes of Siletz Indians of Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202010.11.09%20Confederated%20Tribes%20of%20the%20Siletz%20Indians%20of%20Oregon%20Tribal%20State%20Gaming%20Compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2010/11/09/2010-28267/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1996-09-04'
+    federal_register_citation: 61 FR 46662
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-09-04'
+    locator: result page 30 (?page=30), row 20
+    note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Confederated Tribes of Siletz Indians of Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201996.09.04%20Confederated%20Tribes%20of%20Siletz%20Indians%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/09/04/96-22440/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance and the parties
+      meet within 30 days; if unresolved within 90 days either party may sue in the United States District
+      Court for the District of Oregon (or a state court if federal jurisdiction is declined), and other
+      dispute resolution methods remain available by mutual agreement.
+    dispute_resolution_locator: Section 17 (Dispute Resolution)
+    source: compact-or-confederated-tribes-of-the-grand-ronde-c-2023
+    confidence: medium
+    as_of: '2023-02-08'
+    locator: Section 17 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2023 Confederated Tribes
+      of the Grand Ronde Community compact; other Oregon compacts were not checked. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2010-11-09).
+  ordinances:
+  - approved: '1994-12-15'
+    link: https://www.nigc.gov?wpdmdl=9630&ind=9654
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-12-15'
+    locator: table row 58, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 58 lists the nation
+      as "Confederated Tribes of the Siletz Reservation". Name matched to roster by spelling variant.
+  - approved: '1999-09-13'
+    link: https://www.nigc.gov?wpdmdl=9643&ind=9655
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1999-09-13'
+    locator: table row 58, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 58 lists the nation
+      as "Confederated Tribes of the Siletz Reservation". Name matched to roster by spelling variant.
+  - approved: '2016-06-03'
+    link: https://www.nigc.gov?wpdmdl=9644&ind=9656
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2016-06-03'
+    locator: table row 58, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 58 lists the nation
+      as "Confederated Tribes of the Siletz Reservation". Name matched to roster by spelling variant.
+  - approved: '2023-07-10'
+    link: https://www.nigc.gov?wpdmdl=9645&ind=9657
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2023-07-10'
+    locator: table row 58, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 58 lists the nation
+      as "Confederated Tribes of the Siletz Reservation". Name matched to roster by spelling variant.
+  - approved: '2024-09-24'
+    link: https://www.nigc.gov?wpdmdl=9646&ind=9658
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2024-09-24'
+    locator: table row 58, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 58 lists the nation
+      as "Confederated Tribes of the Siletz Reservation". Name matched to roster by spelling variant.
+  - approved: '2026-09-15'
+    link: https://www.nigc.gov?wpdmdl=14546&ind=14547
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2026-09-15'
+    locator: table row 58, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 58 lists the nation
+      as "Confederated Tribes of the Siletz Reservation". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Confederated Tribes of Siletz
+      Indians of Oregon". Facilities as machine-extracted from the report text (verify): Chinook Winds
+      Casino Resort. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Oregon is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Oregon. Applies to the nation''s Indian country
+    within Oregon; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Oregon"
+  note: Statute is primary; nation matched to Oregon by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Confederated Tribes of Siletz Indians of Oregon Confidence lowered from high by the
+    lead session: the notice prints its table as page images, so nation names were read from images and
+    matched to the roster.'
+memberships:
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Confederated Tribes of Siletz Indians". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

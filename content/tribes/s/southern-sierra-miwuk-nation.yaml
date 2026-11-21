@@ -1,0 +1,45 @@
+id: southern-sierra-miwuk-nation
+entity_type: native-nation
+names:
+  official: Southern Sierra Miwuk Nation
+  former:
+  - name: American Indian Council of Mariposa County
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    locator: 'Petitioner #82'
+  alternate:
+  - name: Yosemite
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    locator: 'Petitioner #82'
+  official_source: ofa-petitions-in-process
+recognition:
+- type: petitioning
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: 082
+  petition_stage: Awaiting Supplement
+  source: ofa-petitions-in-process
+  confidence: high
+  as_of: '2026-11-21'
+  locator: Current Petitions Status table, row 82; detail page https://www.bia.gov/as-ia/ofa/petitions-in-process/southern-sierra-miwuk-nation
+  note: 'Federal Register history: Proposed Finding Against Federal Acknowledgment of the Southern Sierra
+    Miwuk Nation, 83 FR 59409 (2018-11-23). Office of Federal Acknowledgment list entry #82 (2013 edition):
+    Southern Sierra Miwuk Nation (formerly American Indian Council of Mariposa County, aka Yosemite) -
+    Letter of Intent to Petition 04/24/1982.'
+states:
+- state: CA
+  presence: other
+  source: ofa-petitions-in-process
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

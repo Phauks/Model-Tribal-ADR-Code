@@ -1,0 +1,32 @@
+id: munsee-tribe-in-kansas
+entity_type: native-nation
+names:
+  official: The Munsee Tribe in Kansas, Inc.
+  official_source: usaspending-award-90na8504
+recognition:
+- type: unrecognized
+  source: usaspending-award-90na8504
+  confidence: low
+  as_of: '2024-09-30'
+  locator: Award summary
+  note: HHS Administration for Native Americans award 90NA8504 (Assistance Listing 93.612, Native American
+    Programs) to recipient "THE MUNSEE TRIBE IN KANSAS, INC.", start 2024-09-30, amount $900,000; project
+    "THE MUNSEE TRIBE IN KANSAS HISTORICAL AND GENEALOGICAL PROGRAM". The award record does not state
+    recognition status; not on the 2026 federal list (bia-recognized-entities-2026). Known to this dataset
+    only from this federal award record; the record classifies the recipient as private higher education
+    and does not characterize its status.
+states:
+- state: KS
+  presence: other
+  source: usaspending-award-90na8504
+  confidence: low
+  as_of: '2024-09-30'
+  locator: Place of performance state
+  note: Place of performance state on the award record.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,34 @@
+id: chinook-indian-tribe-chinook-nation
+entity_type: native-nation
+names:
+  official: Chinook Indian Tribe / Chinook Nation
+  official_source: federal-register-02-17551
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 67 FR 46204 (2002-07-12)
+  petition_number: '57'
+  petition_stage: Denied (Petitions Resolved page); Denied acknowledgment through 25 CFR 83 (eff. 7/5/02)
+  source: federal-register-02-17551
+  confidence: high
+  as_of: '2002-07-12'
+  locator: 'Petitioner #57'
+  note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
+    Denied acknowledgment through 25 CFR 83 (eff. 7/5/02). Other Federal Register history: Proposed Finding
+    Against Federal Acknowledgment of the Chinook Indian Tribe, 62 FR 44714 (1997-08-22); Final Determination
+    to Acknowledge the Chinook Indian Tribe/Chinook Nation (Formerly: Chinook Indian Tribe, Inc.), 66
+    FR 1690 (2001-01-09).'
+states:
+- state: WA
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

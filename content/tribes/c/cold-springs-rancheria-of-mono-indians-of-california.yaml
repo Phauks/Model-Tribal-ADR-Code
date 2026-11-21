@@ -1,0 +1,156 @@
+id: cold-springs-rancheria-of-mono-indians-of-california
+entity_type: native-nation
+names:
+  official: Cold Springs Rancheria of Mono Indians of California
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cold Springs Rancheria of Mono Indians of California
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0720
+  note: 'Census area with land in this state: Cold Springs Rancheria (code 0720). Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '0720'
+  name: Cold Springs Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0720
+  note: Matched by name. Census class code D2.
+population:
+- count: 79
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0720, field POP100
+  note: 'Census area: Cold Springs Rancheria (code 0720). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 113
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2937 (Cold Springs Rancheria of Mono Indians alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Cold Springs Rancheria of Mono Indians' (race code 5990)
+    alone or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 213
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Cold Springs Rancheria of Mono Indians', PDF page 7, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://caltribalfamilies.org/places/cold-springs-rancheria-of-mono-indians/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cold Springs Rancheria of Mono Indians of California
+- kind: physical-address
+  value: '32861 Sycamore Road #300, Tollhouse, CA May'
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cold Springs Rancheria of Mono Indians of California
+- kind: mailing-address
+  value: P.O. Box 209, Tollhouse, CA 93667
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cold Springs Rancheria of Mono Indians of California
+- kind: phone
+  value: (559) 214-1738
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cold Springs Rancheria of Mono Indians of California
+- kind: fax
+  value: (559) 855-4445
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cold Springs Rancheria of Mono Indians of California
+- kind: website
+  value: https://coldspringsrancheria.gov/
+  label: Official website (found by web search)
+  source: coldspringsrancheria-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: The directory lists a page on caltribalfamilies.org, which is not the nation's own site. The coldspringsrancheria.gov
+    site loads its content by script, so only the page title 'Cold Springs Rancheria' could be read.
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Central California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cold Springs Rancheria of Mono Indians of California
+governing_documents:
+- kind: constitution
+  title: Constitution and By-laws of the Cold Springs Rancheria, Fresno County, California
+  year: '2001'
+  link: https://narf.org/nill/constitutions/cold_springs/index.html
+  source: national-indian-law-library-constitution-constitutions-cold-springs
+  confidence: medium
+  as_of: '2001'
+  locator: page heading
+  note: 'Amended: 2001. Full text linked from the National Indian Law Library page.'
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Cold Springs Rancheria of Mono Indians of California Confidence lowered from high
+    by the lead session: the notice prints its table as page images, so nation names were read from images
+    and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

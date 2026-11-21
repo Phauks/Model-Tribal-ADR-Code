@@ -1,0 +1,61 @@
+id: juaneno-band-of-mission-indians
+entity_type: native-nation
+names:
+  official: Juaneno Band of Mission Indians
+  alternate:
+  - name: Juaneno (Acjachemem)
+    source: census-2020-ddhca-popgroup-codes
+    confidence: low
+    as_of: '2020'
+    locator: POPGROUP code 1842
+    note: Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting
+      source.
+  official_source: usaspending-award-90na8343
+recognition:
+- type: unrecognized
+  source: usaspending-award-90na8343
+  confidence: low
+  as_of: '2018-09-30'
+  locator: Award summary
+  note: HHS Administration for Native Americans award 90NA8343 (Assistance Listing 93.612, Native American
+    Programs) to recipient "JUANENO BAND OF MISSION INDIANS", start 2018-09-30, amount $520,949.22; project
+    "ACJACHEMEN NATION FEDERAL ACKNOWLEDGMENT PROJECT". The award record does not state recognition status;
+    not on the 2026 federal list (bia-recognized-entities-2026). Recipient name as recorded is "JUANENO
+    BAND OF MISSION INDIANS" while the project title names the "Acjachemen Nation". Two federal acknowledgment
+    petitioners use these names (petitioners 84A and 84B, per Federal Register notices held by the petitioning
+    helper); this record does not show which one.
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 76 FR 15335 (2011-03-21)
+  petition_number: 84B
+  petition_stage: Denied (Petitions Resolved page); Letter of Intent to Petition 03/08/1996; Declined
+    Acknowledgment 03/15/2011 76 FR 15335
+  source: federal-register-2011-6472
+  confidence: high
+  as_of: '2011-03-21'
+  locator: 'Petitioner #84B'
+  note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
+    Letter of Intent to Petition 03/08/1996; Declined Acknowledgment 03/15/2011 76 FR 15335. Other Federal
+    Register history: Proposed Finding Against Acknowledgment of the Juaneno Band of Mission Indians (Petitioner
+    #84B), 72 FR 67951 (2007-12-03).'
+states:
+- state: CA
+  presence: other
+  source: usaspending-award-90na8343
+  confidence: low
+  as_of: '2018-09-30'
+  locator: Place of performance state
+  note: Place of performance state on the award record.
+- state: CA
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

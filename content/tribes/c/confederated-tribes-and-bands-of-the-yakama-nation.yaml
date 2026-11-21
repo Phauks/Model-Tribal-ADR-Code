@@ -1,0 +1,342 @@
+id: confederated-tribes-and-bands-of-the-yakama-nation
+entity_type: native-nation
+names:
+  official: Confederated Tribes and Bands of the Yakama Nation
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: WA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes and Bands of the Yakama Nation
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4690
+  note: 'Census area with land in this state: Yakama Nation Reservation and Off-Reservation Trust Land
+    (code 4690). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '4690'
+  name: Yakama Nation Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4690
+  note: Matched by name. Census class code D1.
+population:
+- count: 10000
+  kind: citizens
+  source: yakama-nation-fisheries-about-the-yakama-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Yakama Nation Fisheries page: ''Over 10,000 Yakama Nation Tribal Members.'' Undated. Read via
+    WebFetch.'
+- count: 31591
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4690, field POP100
+  note: 'Census area: Yakama Nation Reservation and Off-Reservation Trust Land (code 4690). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 13117
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2943 (Confederated Tribes and Bands of the Yakama Nation alone or in
+    any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Confederated Tribes and Bands of the Yakama Nation'
+    (race code 6419) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 10984
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Confederated Tribes and Bands of the Yakama Nation', PDF page
+    8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 16172
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 77, row T07900 'Confederated Tribes and Bands of the Yakama Nation'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://www.yakama.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes and Bands of the Yakama Nation
+- kind: physical-address
+  value: 401 Fort Road, Toppenish, WA 98948
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes and Bands of the Yakama Nation
+- kind: mailing-address
+  value: P.O. Box 151, Toppenish, WA 98948
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes and Bands of the Yakama Nation
+- kind: phone
+  value: (509) 865-5121
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes and Bands of the Yakama Nation
+- kind: fax
+  value: (509) 865-5528
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes and Bands of the Yakama Nation
+languages:
+- name: Ichi Skiin Sinwit (Sahaptin)
+  language_tag: yak
+  source: yakama-nation-fisheries-about-the-yakama-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Page refers to the language as 'Ichi Skiin Sinwit (the words we speak), termed by linguists as
+    Sahaptin.' Tag yak (Yakima) assigned by researcher. Read via WebFetch; spelling as extracted.
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Yakama Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes and Bands of the Yakama Nation
+governing_documents:
+- kind: law-code
+  title: Confederated Tribes and Bands of the Yakama Nation - Tribal Codes and Resolutions
+  year: '2009'
+  link: https://narf.org/nill/codes/confederatedyakama/index.html
+  source: national-indian-law-library-code-codes-confederatedyakama
+  confidence: medium
+  as_of: '2009'
+  locator: page heading
+  note: October 2009 edition. The National Indian Law Library page gives the table of contents (and may
+    link to the nation's own copy); full text is not hosted there.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-confederated-yakama
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Yakama Nation Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Confederated Tribes and Bands of Yakama Nation'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.yakamanation-nsn.gov/programs.php)
+    returned HTTP 404, so it is not recorded.'
+gaming:
+  compacts:
+  - state: WA
+    status: approved
+    approved: '2022-11-25'
+    federal_register_citation: 87 FR 72505
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-11-25'
+    locator: result page 37 (?page=37), row 18
+    note: 'Listed as: "Confederated Tribes and Bands of the Yakama Nation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes and Bands of the Yakama Nation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.11.17_confederated_tribes_and_bands_of_the_yakama_nation_gaming_compact_4th_amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/11/25/2022-25634/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-washington.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2015-06-04'
+    federal_register_citation: 80 FR 31918
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-04'
+    locator: result page 37 (?page=37), row 19
+    note: 'Listed as: "Confederated Tribes and Bands of the Yakama Nation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes and Bands of the Yakama Nation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2015.06.04_confederated_tribes_and_band_of_the_yakama_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/04/2015-13712/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1999-01-28'
+    federal_register_citation: 64 FR 4461
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-01-28'
+    locator: result page 37 (?page=37), row 20
+    note: 'Listed as: "Confederated Tribes and Bands of the Yakama Nation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes and Bands of the Yakama Nation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.01.28%20Confederated%20Tribes%20and%20Bands%20of%20the%20Yakama%20Nation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/01/28/99-1934/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2007-05-31'
+    federal_register_citation: 72 FR 30392
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-05-31'
+    locator: result page 37 (?page=37), row 21
+    note: 'Listed as: "Confederated Tribes and Bands of the Yakama Nation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes and Bands of the Yakama Nation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.05.31_confederated_tribes_and_bands_of_the_yakama_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/05/31/E7-10397/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1996-08-02'
+    federal_register_citation: 61 FR 40429
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-08-02'
+    locator: result page 37 (?page=37), row 22
+    note: 'Listed as: "Confederated Tribes and Bands of the Yakama Nation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes and Bands of the Yakama Nation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1996.08.02_confederated_tribes_and_bands_of_the_yakama_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/08/02/96-19679/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2022-11-25).
+  ordinances:
+  - approved: '1994-09-12'
+    link: https://www.nigc.gov?wpdmdl=9602&ind=9614
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-09-12'
+    locator: table row 53, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 53 lists the nation
+      as "Confederated Tribes and Bands of the Yakama Indian Nation". Name matched to roster by spelling
+      variant.
+  - approved: '2016-03-02'
+    link: https://www.nigc.gov?wpdmdl=9603&ind=9615
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2016-03-02'
+    locator: table row 53, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 53 lists the nation
+      as "Confederated Tribes and Bands of the Yakama Indian Nation". Name matched to roster by spelling
+      variant.
+  - approved: '2020-03-18'
+    link: https://www.nigc.gov?wpdmdl=9604&ind=9616
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2020-03-18'
+    locator: table row 53, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 53 lists the nation
+      as "Confederated Tribes and Bands of the Yakama Indian Nation". Name matched to roster by spelling
+      variant.
+  - approved: '2025-09-17'
+    link: https://www.nigc.gov?wpdmdl=13707&ind=13708
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2025-09-17'
+    locator: table row 53, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 53 lists the nation
+      as "Confederated Tribes and Bands of the Yakama Indian Nation". Name matched to roster by spelling
+      variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Confederated Tribes and Bands
+      of the Yakama Nation, Washington". Facilities as machine-extracted from the report text (verify):
+      Yakama Nation Legends Casino. Name extracted from the PDF by the page-fetch tool and matched to
+      the roster.'
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: 'Washington assumed partial jurisdiction (RCW 37.12.010, 1957 and 1963): it does not apply to
+    Indians on trust or restricted tribal or allotted lands within a reservation except for eight subjects
+    (compulsory school attendance, public assistance, domestic relations, mental illness, juvenile delinquency,
+    adoption, dependent children, motor vehicles on public roads), unless the tribe requested full state
+    jurisdiction under RCW 37.12.021.'
+  source: revised-code-of-washington-37-12-010
+  confidence: medium
+  as_of: '1963'
+  locator: RCW 37.12.010
+  note: Nation matched to Washington by office state. Check for later retrocession facts.
+- topic: public-law-280
+  value: retroceded
+  detail: Interior accepted retrocession of partial civil and criminal jurisdiction acquired by Washington
+    under Public Law 280 and RCW 37.12; accepted October 19, 2015, fully effective April 19, 2016. (80
+    FR 63583)
+  source: federal-register-2015-yakama-retrocession
+  confidence: high
+  as_of: '2016-04-19'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Confederated Tribes and Bands of the Yakama Nation Confidence lowered from high by
+    the lead session: the notice prints its table as page images, so nation names were read from images
+    and matched to the roster.'
+memberships:
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Confederated Tribes and Bands of the Yakama Nation".
+- organization: Columbia River Inter-Tribal Fish Commission
+  source: columbia-river-inter-tribal-fish-commission-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Confederated Tribes and Bands of the Yakama Nation".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

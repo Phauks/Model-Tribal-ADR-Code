@@ -1,0 +1,487 @@
+id: organized-village-of-kake
+entity_type: native-nation
+names:
+  official: Organized Village of Kake
+  alternate:
+  - name: Ḵéex̱ʼ
+    source: alaska-dcra-native-place-names
+    confidence: medium
+    as_of: '2018-10-15'
+    locator: community row "Kake"
+    note: Native place name for the community of Kake in Tlingit (State of Alaska, from the Alaska Native
+      Language Center); it names the place, and the source does not state it is the tribal government's
+      self-designation.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4106
+states:
+- state: AK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Organized Village of Kake
+- state: AK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 6670
+  note: 'Census area with land in this state: Kake ANVSA (code 6670). Statistical area only (not a land
+    holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '6670'
+  name: Kake ANVSA
+  area_type: Alaska Native Village Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US6670
+  note: Matched by name. Census class code E1.
+population:
+- count: 465
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: ALASKA row "Kake", Enrollment column
+  note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
+    tribe to the Department of Housing and Urban Development); row name matched to the roster by the researcher.
+- count: 543
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US6670, field POP100
+  note: 'Census area: Kake ANVSA (code 6670). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. The area is a Census
+    statistical area, not a land holding.'
+- count: 346
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2760 (Organized Village of Kake alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Organized Village of Kake' (race code 5331) alone or
+    in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 416
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 85, row T35500 'Organized Village of Kake'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://www.kake-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Organized Village of Kake
+- kind: physical-address
+  value: 541 Keku Road, Kake, AK 99830
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Organized Village of Kake
+- kind: mailing-address
+  value: P.O. Box 316, Kake, AK 99830
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Organized Village of Kake
+- kind: phone
+  value: (907) 785-6471
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Organized Village of Kake
+- kind: fax
+  value: (907) 785-4902
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Organized Village of Kake
+- kind: mailing-address
+  value: PO Box 316, Kake, AK 99830-0316
+  label: Tribal office address listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Organized Village of Kake" (community: Kake, object 86)'
+languages:
+- name: Tlingit
+  language_tag: tli
+  source: alaska-dcra-native-place-names
+  confidence: medium
+  as_of: '2018-10-15'
+  locator: community row "Kake"
+  note: Language of the Native place name for the community (Kake), as listed by the State of Alaska from
+    the Alaska Native Language Center place-names map; ISO 639-3 tag assigned by the researcher.
+federal_administration:
+  bureau_of_indian_affairs_region: Alaska
+  bureau_of_indian_affairs_agency: Alaska Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Organized Village of Kake
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Constitution (Organized Village of Kake, Alaska) (approved 1947) states it was adopted under
+    Act of June 18, 1934 (48 Stat. 984); Act of May 1, 1936 (49 Stat. 1250)
+  source: university-of-oklahoma-indian-reorganization-act-kakecons
+  confidence: medium
+  as_of: '1947'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: At tribal court's website . Judicial Peacemaking Code; Keex Kwaan Domestic Relations Code
+  link: https://kake-nsn.gov/tribal-court/
+  source: national-indian-law-library-organized-kake
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
+    website . Judicial Peacemaking Code; Keex Kwaan Domestic Relations Code.".'
+- kind: constitution
+  title: Constitution
+  year: '1947'
+  link: https://thorpe.law.ou.edu/IRA/kakecons.html
+  source: national-indian-law-library-organized-kake
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Constitution. (1947)".'
+- kind: constitution
+  title: Constitution
+  year: '1947'
+  link: https://www.loc.gov/item/50061131/
+  source: national-indian-law-library-organized-kake
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website. Constitution. (1947)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1947'
+  link: https://thorpe.law.ou.edu/IRA/kakechrtr.html
+  source: national-indian-law-library-organized-kake
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Corporate charter. (1947)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1947'
+  link: https://www.loc.gov/item/50061206/
+  source: national-indian-law-library-organized-kake
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website. Corporate charter. (1947)".'
+- kind: corporate-charter
+  title: Corporate charter (Organized Village of Kake, Alaska)
+  year: '1948'
+  link: https://thorpe.law.ou.edu/IRA/kakechrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-kakechrtr
+  confidence: medium
+  as_of: '1948'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Organized Village of Kake, Alaska)
+  year: '1947'
+  link: https://thorpe.law.ou.edu/IRA/kakecons.html
+  source: university-of-oklahoma-indian-reorganization-act-kakecons
+  confidence: medium
+  as_of: '1947'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://kake-nsn.gov/tribal-court/
+  source: national-indian-law-library-organized-kake
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Keex’ Kwaan Peacemaking Court (Standing Peacemaking Panels and Peacemaking Circles)
+    own_term:
+      name: Keex’ Kwaan
+      language_tag: tli
+      translation: Kake (the code uses it as the Tribe's own name for Kake, Alaska)
+    description: 'The Tribe''s court, in which its judicial powers are vested, organized as peacemaking:
+      a standing pool of at least twelve peacemakers (Council members and resident citizens) sitting in
+      panels of three, Peacemaking Circles led by a Keeper of the Circle recognized by the Council, a
+      Court of Appeals, and other courts the Council may create. The code applies written tribal laws
+      and Keex’ Kwaan cultural values and traditions, and states that the ancestors formed the clan of
+      Guwakaan, the Deer People, as the process of peacemaking, which no moiety claims.'
+    legal_basis: Keex’ Kwaan Judicial Peacemaking Code, Chapter 1, Sections 1-12 (under Article V of the
+      OVK Constitution)
+    case_types:
+    - family
+    - civil
+    - criminal-sentencing
+    - juvenile
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: The peacemaking court is the Tribe's judiciary; a review team of peacemakers
+      decides whether to take a petition and whether to use a circle or a panel.
+    enforcement: Panels decide by consensus when possible and otherwise by majority vote; circles decide
+      by consensus written as Consensus Agreements of the court, with set follow-up; if a circle cannot
+      reach consensus the case goes to a panel.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Kake-judical_peacemaking_code.pdf
+    source: kake-keex-kwaan-judicial-peacemaking-code
+    confidence: medium
+    as_of: '2025'
+    locator: Chapter 1, Sections 1, 2, 3, 7, 8, 9
+    note: Read from OCR of a scanned copy. Peacemakers may consult Elders and Council members (Section
+      9). NARF notes the code includes a Peacemaker Appellate Court and a Circle Peacemaking flow chart.
+      as_of is NARF posting year.
+  - kind: restorative-justice
+    name: Kake Youth Circle Peacemaking (Kake Youth Community Restorative Peacemaking)
+    description: Part of the OVK Tribal Court system, encouraging responsible choices among youth, involving
+      them in decisions about peers' problems, and producing Consensus Agreements designed to help and
+      heal victims, wrongdoers and the Village; options include community service, restitution, apologies,
+      essays, events, counseling by professionals, Elders or peers, talking circles and traditional activities.
+    legal_basis: Keex’ Kwaan Judicial Peacemaking Code, Chapter 4, Sections 1-13
+    case_types:
+    - juvenile
+    participation: court-referred
+    relationship_to_court: Established by the OVK Council as part of the Tribal Court system, with a youth
+      coordinator, youth panel and mentors.
+    enforcement: Consensus agreements with proof-of-compliance provisions and consequences for failure
+      to comply (Section 12); appeals under Section 13.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Kake-judical_peacemaking_code.pdf
+    source: kake-keex-kwaan-judicial-peacemaking-code
+    confidence: medium
+    as_of: '2025'
+    locator: Chapter 4, Sections 1, 2, 11, 12
+    note: Participation recorded as court-referred because the chapter is part of the court system; voluntariness
+      was not confirmed in the pages read.
+  published_materials:
+  - kind: guide
+    title: Kake Peacemaking Handbook (2005)
+    link: https://peacemaking.narf.org/wp-content/uploads/2016/09/2005kake_peacemaking_handbook.pdf
+    source: narf-ipi-other-tribal-materials
+    confidence: medium
+    as_of: '2005'
+  provisions:
+  - kind: other
+    title: Appealing the Kake Youth Circle Peacemaking
+    citation: Keex' Kwaan Judicial Peacemaking Code Chapter 4, Section 13
+    link: https://kake-nsn.gov/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/appealing-the-kake-youth-circle-peacemaking/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Counseling as Part of Protective Orders
+    citation: Keex' Kwaan Domestic Relations Code Chapter 6, Section 7
+    link: https://kake-nsn.gov/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/counseling-as-part-of-protective-orders/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Creative Sentencing Options for Juveniles
+    citation: Keex' Kwaan Judicial Peacemaking Code Chapter 4, Section 11
+    link: https://kake-nsn.gov/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/creative-sentencing-options-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice; Restorative practice.'
+  - kind: other
+    title: Kake Youth Circle Peacemaking
+    citation: Keex' Kwaan Judicial Peacemaking Code Chapter 4, Section 1 & Section 2 & Section 3
+    link: https://kake-nsn.gov/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/kake-youth-circle-peacemaking/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice; Restorative practice.'
+  - kind: other
+    title: Notice of Circle Hearings for Juveniles
+    citation: Keex' Kwaan Judicial Peacemaking Code Chapter 4, Section 7
+    link: https://kake-nsn.gov/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/notice-of-circle-hearings-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Options for Orders and Sentences
+    citation: Keex' Kwaan Judicial Peacemaking Code Chapter 2, Section 18
+    link: https://kake-nsn.gov/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/options-for-orders-and-sentences/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Procedures for Peacemaking Circles
+    citation: Keex' Kwaan Judicial Peacemaking Code Chapter 2, Section 18
+    link: https://kake-nsn.gov/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/procedures-for-peacemaking-circles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Process of the Kake Youth Circle Peacemaking
+    citation: Keex' Kwaan Judicial Peacemaking Code Chapter 4, Section 8
+    link: https://kake-nsn.gov/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/process-of-the-kake-youth-circle-peacemaking/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice; Restorative practice.'
+  - kind: other
+    title: Purpose of the Keex’ Kwaan Peacemaking Court
+    citation: Keex' Kwaan Judicial Peacemaking Code Chapter 1, Section 1
+    link: https://kake-nsn.gov/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-of-the-keex-kwaan-peacemaking-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: peacemaking
+    title: Keex’ Kwaan Judicial Peacemaking Code
+    citation: Keex’ Kwaan Judicial Peacemaking Code
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Kake-judical_peacemaking_code.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Organized Village of Kake, Alaska
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization
+      and place in the clan system, referral standards, procedures, juvenile matters, and a Peacemaker
+      Appellate Court. See also the Circle Peacemaking powerpoint and Kake Circle Peacemaking Flow Chart.'
+gaming:
+  ordinances:
+  - approved: '2000-04-18'
+    link: https://www.nigc.gov?wpdmdl=10520&ind=10538
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-04-18'
+    locator: table row 178, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 178 lists the nation
+      as "Organized Village of Kake".
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Alaska is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Alaska. Applies to the nation''s Indian country
+    within Alaska; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Alaska"
+  note: Statute is primary; nation matched to Alaska by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Organized Village of Kake Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+related_entities:
+- name: Sealaska Corp.
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Organized Village of Kake
+  note: Regional corporation for the area, as listed in the directory.
+- name: Sealaska Corporation
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Kake"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Kake), not
+    for the tribal government by name.
+- name: Central Council of the Tlingit and Haida Indian Tribes of Alaska
+  relation: alaska-native-claims-settlement-act-regional-nonprofit
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Kake"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Kake), not
+    for the tribal government by name.
+- name: Southeast Alaska Regional Health Consortium
+  relation: native-regional-health-care-provider
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Kake"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Kake), not
+    for the tribal government by name.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

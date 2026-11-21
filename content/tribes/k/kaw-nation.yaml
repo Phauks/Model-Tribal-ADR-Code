@@ -1,0 +1,399 @@
+id: kaw-nation
+entity_type: native-nation
+names:
+  official: Kaw Nation, Oklahoma
+  alternate:
+  - name: People of The Southwind
+    source: kawnation-home
+    confidence: medium
+    as_of: '2026-11-21'
+    note: Homepage tagline 'Kaw Nation People of The Southwind'.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: OK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kaw Nation, Oklahoma
+- state: OK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5690, 5950
+  note: 'Census area with land in this state: Kaw OTSA (code 5690); Kaw/Ponca joint-use OTSA (code 5950).
+    Statistical area only (not a land holding), so presence is recorded as other. Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '5690'
+  name: Kaw OTSA
+  area_type: Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5690
+  note: Matched by name. Census class code D6.
+- geographic_identifier: '5950'
+  name: Kaw/Ponca joint-use OTSA
+  area_type: joint-use Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5950
+  note: 'Matched by name. Shared with: Ponca Tribe of Indians of Oklahoma. Census class code D0.'
+population:
+- count: 3376
+  kind: citizens
+  source: kawnation-history-of-kaw-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''The tribe currently consists of 3,376 enrolled members''. Undated; as_of is access date.'
+- count: 5692
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5690, field POP100
+  note: 'Census area: Kaw OTSA (code 5690). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. The area is a Census
+    statistical area, not a land holding.'
+- count: 26146
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5950, field POP100
+  note: 'Census area: Kaw/Ponca joint-use OTSA (code 5950). Everyone counted as living in the area in
+    the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    The area is a Census statistical area, not a land holding. The area is shared with: Ponca Tribe of
+    Indians of Oklahoma; the same count applies to the whole area.'
+- count: 3862
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3051 (Kaw Nation alone or in any combination), GEOID 0100000US (United
+    States)
+  note: People in the United States who reported 'Kaw Nation' (race code 5884) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 3403
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Kaw Nation', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.kawnation.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kaw Nation, Oklahoma
+- kind: physical-address
+  value: 698 Grandview Drive, Kaw City, OK 74641
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kaw Nation, Oklahoma
+- kind: mailing-address
+  value: Drawer 50, Kaw City, OK 74641
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kaw Nation, Oklahoma
+- kind: phone
+  value: (580) 269-2552
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kaw Nation, Oklahoma
+- kind: fax
+  value: (580) 269-1157
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kaw Nation, Oklahoma
+languages:
+- name: Kanza (Kaáⁿze Íe)
+  language_tag: ksk
+  source: kawnation-language
+  confidence: high
+  as_of: '2026-11-21'
+  note: Page heading 'Kaáⁿze Íe KANZA LANGUAGE'; 'Kanza (also known as Kaw, Kansa, Konze, or Kansas)'.
+federal_administration:
+  bureau_of_indian_affairs_region: Southern Plains
+  bureau_of_indian_affairs_agency: Southern Plains Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kaw Nation, Oklahoma
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  source: national-indian-law-library-kaw-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .". Link check 2026-11-21: the link the source gives (https://www.kawnation.gov/tribal-codes/) returned
+    HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Constitution
+  link: https://www.kawnation.gov/kaw-nation-constitution-2/
+  source: national-indian-law-library-kaw-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Kaw Nation Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Kaw Nation'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://kawnation.com/?page_id=3312) returned HTTP 404, so it
+    is not recorded.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.kawnation.gov/judicial-branch/
+  source: national-indian-law-library-kaw-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Kaw Nation Judicial Branch
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Kaw Nation'
+  note: 'Link check 2026-11-21: the link the source gives (http://kawnation.com/?page_id=2820) returned
+    HTTP 404, so it is not recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Counseling, Therapy, and Services as Disposition Condition
+    citation: 30 KNTC § 3-105(A)(1)
+    link: https://kawnation.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/counseling-therapy-and-services-as-disposition-condition/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: . Database form of practice: Alternative.'
+  - kind: other
+    title: Probation as Alternative to Incarceration
+    citation: 8 KNTC § 9-113
+    link: https://kawnation.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/probation-as-alternative-to-incarceration/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Alternative to incarceration; Program.'
+  - kind: other
+    title: Restitution
+    citation: 8 KNTC § 9-107
+    link: https://kawnation.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restitution/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Restitution; Restorative justice.'
+  - kind: other
+    title: Sentencing Considerations Including Rehabilitation
+    citation: 8 KNTC § 9-102
+    link: https://kawnation.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-considerations-including-rehabilitation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Alternative to incarceration; Rehabilitation.'
+  - kind: other
+    title: Traditional Punishment as Sentencing Alternative
+    citation: 8 KNTC § 9-101
+    link: https://kawnation.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/traditional-punishment-as-sentencing-alternative/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Alternative.'
+gaming:
+  compacts:
+  - state: OK
+    status: deemed-approved
+    approved: '2005-03-11'
+    federal_register_citation: 70 FR 12230
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-03-11'
+    locator: result page 27 (?page=27), row 20
+    note: 'Listed as: "Kaw Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Kaw Nation, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.03.11%20Kaw%20Nation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/03/11/05-4885/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2001-06-07'
+    federal_register_citation: 66 FR 30748
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-06-07'
+    locator: result page 27 (?page=27), row 21
+    note: 'Listed as: "Kaw Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Kaw Nation,
+      Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202001.06.07%20Kaw%20Nation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/06/07/01-14307/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2018-08-17'
+    federal_register_citation: 83 FR 41101
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-08-17'
+    locator: result page 27 (?page=27), row 22
+    note: 'Listed as: "Kaw Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Kaw Nation,
+      Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.17%20Kaw%20Nation%20Compact%20Amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/08/17/2018-17729/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of-oklahoma.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    approved: '2018-12-27'
+    federal_register_citation: 83 FR 66742
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-12-27'
+    locator: result page 27 (?page=27), row 23
+    note: 'Listed as: "Kaw Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Kaw Nation, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.12.27%20Kaw%20signed%20deemed%20approved%20compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/12/27/2018-28134/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-in-the-state-of-oklahoma.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-12-27).
+  ordinances:
+  - approved: '1993-12-27'
+    link: https://www.nigc.gov?wpdmdl=10033&ind=10046
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-12-27'
+    locator: table row 116, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 116 lists the nation
+      as "Kaw Nation, Oklahoma".
+  - approved: '2002-08-21'
+    link: https://www.nigc.gov?wpdmdl=10034&ind=10047
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-08-21'
+    locator: table row 116, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 116 lists the nation
+      as "Kaw Nation, Oklahoma".
+  - approved: '2004-04-13'
+    link: https://www.nigc.gov?wpdmdl=10035&ind=10048
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-04-13'
+    locator: table row 116, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 116 lists the nation
+      as "Kaw Nation, Oklahoma".
+  - approved: '2004-06-18'
+    link: https://www.nigc.gov?wpdmdl=10036&ind=10049
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-06-18'
+    locator: table row 116, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 116 lists the nation
+      as "Kaw Nation, Oklahoma".
+  - approved: '2016-12-01'
+    link: https://www.nigc.gov?wpdmdl=10037&ind=10050
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2016-12-01'
+    locator: table row 116, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 116 lists the nation
+      as "Kaw Nation, Oklahoma".
+  - approved: '2022-01-12'
+    link: https://www.nigc.gov?wpdmdl=10038&ind=10051
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2022-01-12'
+    locator: table row 116, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 116 lists the nation
+      as "Kaw Nation, Oklahoma".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Kaw Nation, Oklahoma". Facilities
+      as machine-extracted from the report text (verify): Rock and Brews Casino; Kanza Casino. Name extracted
+      from the PDF by the page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Kaw Nation, Oklahoma Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

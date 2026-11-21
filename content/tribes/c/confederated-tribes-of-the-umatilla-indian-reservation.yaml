@@ -1,0 +1,763 @@
+id: confederated-tribes-of-the-umatilla-indian-reservation
+entity_type: native-nation
+names:
+  official: Confederated Tribes of the Umatilla Indian Reservation
+  self_designation:
+  - name: Weyíiletpuu
+    language_tag: nez
+    source: ctuir-about-language
+    confidence: medium
+    as_of: '2026-11-21'
+    note: Name given for the Cayuse on the language page ('Weyíiletpuu (Cayuse)'). One of the three constituent
+      peoples.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: OR
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Umatilla Indian Reservation
+- state: OR
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4405
+  note: 'Census area with land in this state: Umatilla Reservation and Off-Reservation Trust Land (code
+    4405). Area matched to the nation by name.'
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4405
+  note: 'Census area with land in this state: Umatilla Reservation and Off-Reservation Trust Land (code
+    4405). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '4405'
+  name: Umatilla Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4405
+  note: Matched by name. Census class code D1.
+population:
+- count: 3100
+  kind: citizens
+  source: ctuir-about
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''over 3,100 tribal members. Nearly half of those tribal members live on or near the Umatilla
+    Reservation''. Undated; as_of is access date.'
+- count: 2861
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4405, field POP100
+  note: 'Census area: Umatilla Reservation and Off-Reservation Trust Land (code 4405). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 3604
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2950 (Confederated Tribes of the Umatilla Indian Reservation alone
+    or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Confederated Tribes of the Umatilla Indian Reservation'
+    (race code 6355) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 3158
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Confederated Tribes of the Umatilla Indian Reservation', PDF
+    page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 4343
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: low
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 77, row T08600 'Confederated Tribes of the Umatilla Reservation'
+  note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
+    in the vicinity of the nation (2010), used by Indian Affairs as the nation's population indicator;
+    a broad proxy that includes people of any tribe; not enrollment. Report published 2014-01-16; row
+    name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://ctuir.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Umatilla Indian Reservation
+- kind: physical-address
+  value: 46411 Timine Way, Pendleton, OR 97801
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Umatilla Indian Reservation
+- kind: mailing-address
+  value: Nixyaawii Governance Center 46411 Ti'míne Way, Pendleton, OR 97801
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Umatilla Indian Reservation
+- kind: phone
+  value: (541) 276-3165
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Umatilla Indian Reservation
+- kind: fax
+  value: (541) 276-3095
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Umatilla Indian Reservation
+languages:
+- name: Umatilla (Sahaptin)
+  language_tag: uma
+  source: ctuir-about-language
+  confidence: high
+  as_of: '2026-11-21'
+  note: Page teaches 'the languages of Umatilla, Walla Walla and Weyíiletpuu (Cayuse)'.
+- name: Walla Walla (Sahaptin)
+  language_tag: waa
+  source: ctuir-about-language
+  confidence: high
+  as_of: '2026-11-21'
+  note: Page teaches 'the languages of Umatilla, Walla Walla and Weyíiletpuu (Cayuse)'.
+- name: Weyíiletpuu (Cayuse dialect of Nez Perce)
+  language_tag: nez
+  source: ctuir-about-language
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Page: ''Weyíiletpuu is a dialect of the Nez Perce language as used by the Cayuse''.'
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Umatilla Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Tribes of the Umatilla Indian Reservation
+government_structure:
+- kind: indian-reorganization-act
+  detail: Constitution (Umatilla Reservation in Oregon) (approved 1949) states it was adopted under Act
+    of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-umacons
+  confidence: medium
+  as_of: '1949'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Statutes of the Confederated Tribes of the Umatilla Indian Reservation
+  year: '2014'
+  link: https://narf.org/nill/codes/confederated_umatilla/index.html
+  source: national-indian-law-library-code-codes-confederated-umatilla
+  confidence: medium
+  as_of: '2014'
+  locator: page heading
+  note: 'Table of Contents Updated: October 2014. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://ctuir.org/departments/office-of-legal-counsel/codesstatuteslaws/
+  source: national-indian-law-library-confederated-umatilla
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://ctuir.org/departments/office-of-legal-counsel/codesstatuteslaws/ctuir-constitution/
+  source: national-indian-law-library-confederated-umatilla
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Confederated Tribes of the Umatilla Indian Reservation Constitution
+  year: '2014'
+  link: https://narf.org/nill/constitutions/confederated_umatilla/index.html
+  source: national-indian-law-library-constitution-constitutions-confederated-umatilla
+  confidence: medium
+  as_of: '2014'
+  locator: page heading
+  note: 'Table of Contents Updated: October 2014. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Confederated Tribes of the Umatilla Indian Reservation Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Confederated Tribes of the Umatilla Indian Reservation'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://ctuir.org/ctuir-constitution) returned HTTP 404, so
+    it is not recorded.'
+- kind: law-code
+  title: Confederated Tribes of the Umatilla Indian Reservation Codes/Statutes/Laws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Confederated Tribes of the Umatilla Indian Reservation'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://ctuir.org/about-us/ctuir-codesstatuteslaws) returned
+    HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Constitution (Umatilla Reservation in Oregon)
+  year: '1949'
+  link: https://thorpe.law.ou.edu/IRA/umacons.html
+  source: university-of-oklahoma-indian-reorganization-act-umacons
+  confidence: medium
+  as_of: '1949'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://ctuir.org/our-government/tribal-court/
+  source: national-indian-law-library-confederated-umatilla
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Confederated Tribes of the Umatilla Indian Reservation Tribal Court
+  link: http://ctuir.org/government/tribal-court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Confederated Tribes of the Umatilla Indian Reservation'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Community Accountability Board Diversion
+    citation: Juvenile Code § 4.05; § 8.04
+    link: https://ctuir.org/departments/office-of-legal-counsel/codesstatuteslaws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-accountability-board-diversion/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Community
+      accountability; Diversion; Restorative justice.'
+  - kind: other
+    title: Disposition Goals – Rehabilitation and Least Restrictive Alternative
+    citation: Juvenile Code § 8.09; § 8.11
+    link: https://ctuir.org/departments/office-of-legal-counsel/codesstatuteslaws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-goals-rehabilitation-and-least-restrictive-alternative/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative
+      to incarceration; Rehabilitation; Restorative practice.'
+  - kind: other
+    title: Informal Adjustment Conferences (Minor-In-Need-Of-Care)
+    citation: Juvenile Code § 11.02
+    link: https://ctuir.org/departments/office-of-legal-counsel/codesstatuteslaws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-adjustment-conferences-minor-in-need-of-care/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Diversion;
+      Informal adjustment; Restorative practice.'
+  - kind: other
+    title: Informal Diversion Conferences (Juvenile Offenders)
+    citation: Juvenile Code § 8.02
+    link: https://ctuir.org/departments/office-of-legal-counsel/codesstatuteslaws/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-diversion-conferences-juvenile-offenders/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Diversion;
+      Informal adjustment; Restorative justice.'
+  - kind: mediation
+    title: Section 5.01. Mediation
+    citation: Section 5.01. Mediation
+    link: https://www.narf.org/nill/codes/confederated_umatilla/index.html
+    source: national-indian-law-library-code-index-confederated-umatilla
+    confidence: medium
+    as_of: 2014-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: Section 2.05. Dispute Resolution
+    citation: Section 2.05. Dispute Resolution
+    link: https://www.narf.org/nill/codes/confederated_umatilla/index.html
+    source: national-indian-law-library-code-index-confederated-umatilla
+    confidence: medium
+    as_of: 2014-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: Section 3.07. Dispute Resolution
+    citation: Section 3.07. Dispute Resolution
+    link: https://www.narf.org/nill/codes/confederated_umatilla/index.html
+    source: national-indian-law-library-code-index-confederated-umatilla
+    confidence: medium
+    as_of: 2014-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: mediation
+    title: Section 4.03. Mediation
+    citation: Section 4.03. Mediation
+    link: https://www.narf.org/nill/codes/confederated_umatilla/index.html
+    source: national-indian-law-library-code-index-confederated-umatilla
+    confidence: medium
+    as_of: 2014-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: Section 7.06. Dispute Resolution Included in Plan
+    citation: Section 7.06. Dispute Resolution Included in Plan
+    link: https://www.narf.org/nill/codes/confederated_umatilla/index.html
+    source: national-indian-law-library-code-index-confederated-umatilla
+    confidence: medium
+    as_of: 2014-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: Chapter 6. Dispute Resolution
+    citation: Chapter 6. Dispute Resolution
+    link: https://www.narf.org/nill/codes/confederated_umatilla/index.html
+    source: national-indian-law-library-code-index-confederated-umatilla
+    confidence: medium
+    as_of: 2014-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: arbitration
+    title: Section 9.03. Claimant Attorney's Fees and Other Related Arbitration Costs
+    citation: Section 9.03. Claimant Attorney's Fees and Other Related Arbitration Costs
+    link: https://www.narf.org/nill/codes/confederated_umatilla/index.html
+    source: national-indian-law-library-code-index-confederated-umatilla
+    confidence: medium
+    as_of: 2014-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: mediation
+    title: Mediation
+    citation: Mediation
+    link: https://narf.org/nill/codes/confederated_umatilla/index.html
+    source: national-indian-law-library-code-codes-confederated-umatilla
+    confidence: medium
+    as_of: '2014'
+    locator: Table of Contents, under 'Chapter 5. Disputes'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2014); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: other
+    title: Dispute Resolution
+    citation: Dispute Resolution
+    link: https://narf.org/nill/codes/confederated_umatilla/index.html
+    source: national-indian-law-library-code-codes-confederated-umatilla
+    confidence: medium
+    as_of: '2014'
+    locator: Table of Contents, under 'Chapter 2. Tribal Elders Retirement Program'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2014); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: other
+    title: Dispute Resolution Included in Plan
+    citation: Dispute Resolution Included in Plan
+    link: https://narf.org/nill/codes/confederated_umatilla/index.html
+    source: national-indian-law-library-code-codes-confederated-umatilla
+    confidence: medium
+    as_of: '2014'
+    locator: Table of Contents, under 'Chapter 7. Child Custody and Parenting Plans'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2014); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: other
+    title: Chapter 6. Dispute Resolution
+    citation: Chapter 6. Dispute Resolution
+    link: https://narf.org/nill/codes/confederated_umatilla/index.html
+    source: national-indian-law-library-code-codes-confederated-umatilla
+    confidence: medium
+    as_of: '2014'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2014); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: arbitration
+    title: Claimant Attorney's Fees and Other Related Arbitration Costs
+    citation: Claimant Attorney's Fees and Other Related Arbitration Costs
+    link: https://narf.org/nill/codes/confederated_umatilla/index.html
+    source: national-indian-law-library-code-codes-confederated-umatilla
+    confidence: medium
+    as_of: '2014'
+    locator: Table of Contents, under 'Chapter 9. Adjudication of Disputes'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: October 2014); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: OR
+    status: approved
+    approved: '1999-06-01'
+    federal_register_citation: 64 FR 29333
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-06-01'
+    locator: result page 31 (?page=31), row 8
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.06.01Confederated%20Tribes%20of%20the%20%20Umatilla%20Indian%20Reservation%20and%20State%20of%20Oregon%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/06/01/99-13730/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1996-09-09'
+    federal_register_citation: 61 FR 47525
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-09-09'
+    locator: result page 31 (?page=31), row 9
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201996.09.09%20Confederated%20Tribes%20of%20the%20Umatilla%20Reservation%20Tribal%20State%20Gaming%20%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/09/09/96-22950/indian-gaming-bureau-of-indian-affairs-interior.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1995-12-14'
+    federal_register_citation: 60 FR 64176
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-12-14'
+    locator: result page 31 (?page=31), row 10
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201995.12.14%20Confederated%20Tribes%20of%20the%20Umatilla%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/12/14/95-30467/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1994-02-15'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1994-02-15'
+    locator: result page 31 (?page=31), row 11
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201994.02.15%20Confederated%20Tribes%20of%20Umatilla%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1994/02/15/94-3397/indian-gaming-notice-department-of-the-interior.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1998-02-27'
+    federal_register_citation: 63 FR 10035
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-02-27'
+    locator: result page 31 (?page=31), row 12
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.02.27%20Confederated%20Tribes%20of%20the%20Umatilla%20Indian%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/02/27/98-5071/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2009-02-19'
+    federal_register_citation: 74 FR 7699
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2009-02-19'
+    locator: result page 31 (?page=31), row 13
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202009.02.19%20Confederated%20Tribes%20of%20the%20Umatilla%20Indian%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2009/02/19/E9-3501/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2008-03-04'
+    federal_register_citation: 73 FR 11661
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2008-03-04'
+    locator: result page 31 (?page=31), row 14
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202008.03.04Confederated%20Tribes%20of%20the%20Umatilla%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/03/04/E8-4059/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1994-10-18'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1994-10-18'
+    locator: result page 31 (?page=31), row 15
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201994.10.18%20Confederated%20Tribes%20of%20the%20Umatilla%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1994/10/18/94-25705/indian-gaming-notice.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1997-12-05'
+    federal_register_citation: 62 FR 64397
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1997-12-05'
+    locator: result page 31 (?page=31), row 16
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201997.12.05%20Confederated%20Tribes%20of%20the%20Umatilla%20%20Indian%20Reservation%20Tribal%20State%20%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1997/12/05/97-31918/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2014-06-11'
+    federal_register_citation: 79 FR 33592
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2014-06-11'
+    locator: result page 31 (?page=31), row 17
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202014.06.11%20Confederated%20Tribes%20of%20%20the%20Umatilla%20Indian%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2014/06/11/2014-13645/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2007-03-19'
+    federal_register_citation: 72 FR 12813
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-03-19'
+    locator: result page 31 (?page=31), row 18
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202007.03.19%20Confederated%20Tribes%20of%20the%20Umatilla%20Indian%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/03/19/E7-4905/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2020-09-09'
+    federal_register_citation: 85 FR 55686
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2020-09-09'
+    locator: result page 31 (?page=31), row 19
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202020.09.09%20Umatilla%20Compact%20Amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2020/09/09/2020-19928/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-in-the-state-of-oregon.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2000-04-03'
+    federal_register_citation: 65 FR 17527
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-04-03'
+    locator: result page 31 (?page=31), row 20
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.04.03%20Confederated%20Tribes%20of%20the%20Umatilla%20Indian%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/04/03/00-8067/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance and the parties
+      meet within 30 days; if unresolved within 90 days either party may sue in the United States District
+      Court for the District of Oregon (or a state court if federal jurisdiction is declined), and other
+      dispute resolution methods remain available by mutual agreement.
+    dispute_resolution_locator: Section 17 (Dispute Resolution)
+    source: compact-or-confederated-tribes-of-the-grand-ronde-c-2023
+    confidence: medium
+    as_of: '2023-02-08'
+    locator: Section 17 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2023 Confederated Tribes
+      of the Grand Ronde Community compact; other Oregon compacts were not checked. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2020-09-09).
+  ordinances:
+  - approved: '1994-04-07'
+    link: https://www.nigc.gov?wpdmdl=9647&ind=9659
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-04-07'
+    locator: table row 59, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 59 lists the nation
+      as "Confederated Tribes of the Umatilla Indian Reservation".
+  - approved: '2000-09-08'
+    link: https://www.nigc.gov?wpdmdl=9648&ind=9660
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-09-08'
+    locator: table row 59, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 59 lists the nation
+      as "Confederated Tribes of the Umatilla Indian Reservation".
+  - approved: '2002-01-02'
+    link: https://www.nigc.gov?wpdmdl=9649&ind=9661
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-01-02'
+    locator: table row 59, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 59 lists the nation
+      as "Confederated Tribes of the Umatilla Indian Reservation".
+  - approved: '2004-09-28'
+    link: https://www.nigc.gov?wpdmdl=9650&ind=9662
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-09-28'
+    locator: table row 59, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 59 lists the nation
+      as "Confederated Tribes of the Umatilla Indian Reservation".
+  - approved: '2008-04-18'
+    link: https://www.nigc.gov?wpdmdl=9651&ind=9663
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-04-18'
+    locator: table row 59, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 59 lists the nation
+      as "Confederated Tribes of the Umatilla Indian Reservation".
+  - approved: '2011-08-09'
+    link: https://www.nigc.gov?wpdmdl=9652&ind=9664
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2011-08-09'
+    locator: table row 59, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 59 lists the nation
+      as "Confederated Tribes of the Umatilla Indian Reservation".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Confederated Tribes of the
+      Umatilla Indian Reservation". Facilities as machine-extracted from the report text (verify): Wildhorse
+      Gaming Resort and Casino. Name extracted from the PDF by the page-fetch tool and matched to the
+      roster.'
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Oregon is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Oregon. Applies to the nation''s Indian country
+    within Oregon; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Oregon"
+  note: Statute is primary; nation matched to Oregon by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: public-law-280
+  value: retroceded
+  detail: All criminal jurisdiction exercised by Oregon over the Confederated Tribes of the Umatilla Indian
+    Reservation returned to the United States as of January 2, 1981. Civil jurisdiction not covered. (46
+    FR 2195)
+  source: federal-register-1981-umatilla-retrocession
+  confidence: high
+  as_of: '1981-01-02'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Confederated Tribes of the Umatilla Indian Reservation Confidence lowered from high
+    by the lead session: the notice prints its table as page images, so nation names were read from images
+    and matched to the roster.'
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Exercising jurisdiction since 2014-02-20 (start date given by NCAI; jurisdiction began under
+    the 2013 special domestic violence criminal jurisdiction provision). Listed by NCAI as implementing
+    (list updated May 2022).
+  source: national-congress-of-american-indians-implementing-tribe-profile-confederated-tribes-of-the-umatilla-indian-reservation
+  confidence: medium
+  as_of: 2022-05
+  locator: '"Exercising jurisdiction since" line'
+  note: Listed as "Confederated Tribes of the Umatilla Indian Reservation (CTUIR)". Also on the NCAI implementing
+    tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Department of Justice granted the nation's Violence Against Women Act 2013 Pilot Project application,
+    approved February 2014 (pilot project).
+  source: department-of-justice-violence-against-women-act-2013-pilot-project
+  confidence: medium
+  as_of: '2014-02-06'
+  locator: List of granted Pilot Project applications
+  note: Primary source but describes the 2014-2015 pilot period; page updated April 7, 2023.
+- topic: tribal-law-and-order-act-enhanced-sentencing
+  value: implementing
+  detail: Listed among tribes exercising enhanced sentencing and incarcerating inmates under the Tribal
+    Law and Order Act (as of 2013 interviews).
+  source: bureau-of-justice-assistance-enhanced-sentencing-in-tribal-courts-2015
+  confidence: medium
+  as_of: '2013'
+  locator: p. 3, list of tribes exercising enhanced sentencing
+  note: Listed as "Confederated Tribes of the Umatilla Reservation".
+- topic: tribal-law-and-order-act-enhanced-sentencing
+  value: implementing
+  detail: 'NCAI profile: "CTUIR implemented felony sentencing under TLOA in 2011."'
+  source: national-congress-of-american-indians-implementing-tribe-profile-confederated-tribes-of-the-umatilla-indian-reservation
+  confidence: medium
+  as_of: '2011'
+  note: Statement on an individual NCAI implementing-tribe profile page, not a list.
+memberships:
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Confederated Tribes of the Umatilla Indian Reservation".
+- organization: Columbia River Inter-Tribal Fish Commission
+  source: columbia-river-inter-tribal-fish-commission-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Confederated Tribes of the Umatilla Indian Reservation".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

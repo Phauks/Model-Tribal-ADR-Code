@@ -4,13 +4,15 @@ Checks:
   - each schema is a valid draft 2020-12 schema
   - each example in schemas/examples/ and each record in content/ and
     research/sessions/ validates against its schema
-  - file names match record ids and keys
+  - file names match record ids and keys, and tribe profiles and source records
+    sit in the folder named for their first letter ('_other' for any other first character)
   - every [@key] and every glossary 'sources' entry names a source record
   - every [[id]], 'see_also', 'use_instead' and 'redirect_to' names a glossary entry
   - every 'found_in' names a research session
   - each outreach record's source ids resolve within the record, 'part_of'
     names another outreach record, and a Native nation record names a Tribe
     profile (checked against content/tribes/ once profiles exist)
+  - every source a tribe profile cites names a source record
 
 Run from the repository root:  python3 scripts/validate_records.py
 Requires the packages in scripts/requirements.txt.
@@ -44,9 +46,9 @@ EXAMPLES = {
     "outreach-plan.example.yaml": "outreach-plan.schema.json",
 }
 RECORD_FOLDERS = [
-    ("content/sources/*.yaml", "source.schema.json"),
+    ("content/sources/*/*.yaml", "source.schema.json"),
     ("content/glossary/*.yaml", "glossary.schema.json"),
-    ("content/tribes/*.yaml", "tribe.schema.json"),
+    ("content/tribes/*/*.yaml", "tribe.schema.json"),
     ("content/variables/*.yaml", "variable.schema.json"),
     ("content/provisions/*.md", "provision.schema.json"),
     ("content/commentary/*.md", "commentary.schema.json"),
@@ -74,6 +76,30 @@ def dates_as_text(value):
     if isinstance(value, datetime.date):
         return value.isoformat()
     return value
+
+
+def letter_folder(name: str) -> str:
+    """Folder for a tribe profile or source record: its first letter, or '_other' when
+    the name starts with anything else (ids and keys allow only a-z and 0-9, so in
+    practice a digit)."""
+    first = name[:1]
+    return first if "a" <= first <= "z" else "_other"
+
+
+def cited_source_keys(value):
+    """Every source key a tribe profile cites: each fact's 'source', the official name's
+    'official_source', and the keys listed in 'dispute_resolution_law'."""
+    if isinstance(value, dict):
+        for field, item in value.items():
+            if field in ("source", "official_source") and isinstance(item, str):
+                yield item
+            elif field == "dispute_resolution_law":
+                yield from item
+            else:
+                yield from cited_source_keys(item)
+    elif isinstance(value, list):
+        for item in value:
+            yield from cited_source_keys(item)
 
 
 def check_outreach(outreach: list, errors: list[str]) -> None:
@@ -141,6 +167,10 @@ def main() -> int:
     glossary = {path.stem for path, _ in records.get("glossary.schema.json", [])}
     sessions = {path.stem for path, _ in records.get("research-session.schema.json", [])}
 
+    for path, record in records.get("source.schema.json", []) + records.get("tribe.schema.json", []):
+        if path.parent.name != letter_folder(path.stem):
+            errors.append(f"{path}: belongs in the folder '{letter_folder(path.stem)}/'")
+
     for path, record in records.get("source.schema.json", []):
         if record.get("key") != path.stem:
             errors.append(f"{path}: key does not match the file name")
@@ -160,6 +190,13 @@ def main() -> int:
         for key in record.get("sources", []):
             if key not in sources:
                 errors.append(f"{path}: sources names a missing source record '{key}'")
+
+    for path, record in records.get("tribe.schema.json", []):
+        if record.get("id") != path.stem:
+            errors.append(f"{path}: id does not match the file name")
+        for key in sorted(set(cited_source_keys(record))):
+            if key not in sources:
+                errors.append(f"{path}: cites a missing source record '{key}'")
 
     check_outreach(records.get("outreach-organization.schema.json", []), errors)
 

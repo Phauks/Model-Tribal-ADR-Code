@@ -1,0 +1,245 @@
+id: cahuilla-band-of-indians
+entity_type: native-nation
+names:
+  official: Cahuilla Band of Indians
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cahuilla Band of Indians
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0435
+  note: 'Census area with land in this state: Cahuilla Reservation (code 0435). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '0435'
+  name: Cahuilla Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0435
+  note: Matched by name. Census class code D2.
+population:
+- count: 229
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0435, field POP100
+  note: 'Census area: Cahuilla Reservation (code 0435). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 406
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2889 (Cahuilla Band of Indians alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Cahuilla Band of Indians' (race code 5965) alone or
+    in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 397
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Cahuilla Band of Indians', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://cahuilla-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cahuilla Band of Indians
+- kind: physical-address
+  value: 52701 Highway 371, Anza, CA 92539
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cahuilla Band of Indians
+- kind: mailing-address
+  value: 52701 Highway 371, Anza, CA 92539
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cahuilla Band of Indians
+- kind: phone
+  value: (951) 763-5549
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cahuilla Band of Indians
+- kind: fax
+  value: (951) 763-2808
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cahuilla Band of Indians
+languages:
+- name: Cahuilla
+  language_tag: chl
+  source: cahuilla-nsn-tribal-government-committees-cultural
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Cultural committee page: ''Paui means living water in the Cahuilla language.'''
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Southern California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cahuilla Band of Indians
+gaming:
+  compacts:
+  - state: CA
+    status: secretarial-procedures
+    approved: '2024-05-10'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-05-10'
+    locator: result page 5 (?page=5), row 20
+    note: 'Listed as: "Cahuilla Band of Indians Secretarial Procedures" (Secretarial Procedures); list''s
+      Tribe column: "Cahuilla Band of Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.05.10_cahuilla_band_of_indians_secretarial_procedures.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: CA
+    status: approved
+    approved: '2022-06-30'
+    federal_register_citation: 87 FR 39115
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-06-30'
+    locator: result page 5 (?page=5), row 21
+    note: 'Listed as: "Cahuilla Band of Indians Tribal State Gaming Compact" (Extensions); list''s Tribe
+      column: "Cahuilla Band of Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.30_cahuilla_band_of_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/30/2022-14054/indian-gaming-extension-of-tribal-state-class-iii-gaming-compacts-in-california.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2023-12-22'
+    federal_register_citation: 88 FR 88640
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2023-12-22'
+    locator: result page 5 (?page=5), row 22
+    note: 'Listed as: "Cahuilla Band of Indians Tribal State Gaming Compact" (Extensions); list''s Tribe
+      column: "Cahuilla Band of Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2023.12.22_cahuilla_band_of_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2023/12/22/2023-28198/indian-gaming-extension-of-tribal-state-class-iii-gaming-compacts-in-california.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-16'
+    locator: result page 5 (?page=5), row 23
+    note: 'Listed as: "Cahuilla Band of Indians Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Cahuilla Band of Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.05.16_cahuilla_band_of_mission_indians_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2023-12-22).
+  ordinances:
+  - approved: '2002-01-15'
+    link: https://www.nigc.gov?wpdmdl=9447&ind=9459
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2002-01-15'
+    locator: table row 30, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 30 lists the nation
+      as "Cahuilla Band of Mission Indians". Name matched to roster by spelling variant.
+  - approved: '1996-02-29'
+    link: https://www.nigc.gov?wpdmdl=9448&ind=9460
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1996-02-29'
+    locator: table row 30, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 30 lists the nation
+      as "Cahuilla Band of Mission Indians". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Cahuilla Band of Mission Indians
+      of the Cahuilla Reservation". Facilities as machine-extracted from the report text (verify): Cahuilla
+      Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Cahuilla Band of Indians Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: Southern California Tribal Chairmen's Association
+  source: southern-california-tribal-chairmens-association-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Cahuilla Band of Indians".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

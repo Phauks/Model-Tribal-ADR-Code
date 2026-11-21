@@ -1,0 +1,189 @@
+id: tejon-indian-tribe
+entity_type: native-nation
+names:
+  official: Tejon Indian Tribe
+  alternate:
+  - name: Kitanemuk
+    source: tejon-indian-tribe-who-we-are-today
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"they were known as the Kitanemuk people"'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+- type: federal
+  legal_basis: Status confirmed by the Assistant Secretary - Indian Affairs (as stated in the Office of
+    Federal Acknowledgment list)
+  petition_number: '230'
+  petition_stage: Letter of Intent to Petition 10/27/2000; Status confirmed by Assistant Secretary - Indian
+    Affairs 12/30/2011
+  since: '2011-12-30'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2011-12-30'
+  locator: 'Petitioner #230'
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tejon Indian Tribe
+population:
+- count: 1250
+  kind: citizens
+  source: tejon-indian-tribe-who-we-are-today
+  confidence: high
+  as_of: 2022-01
+  note: '"As of January 2022, there are 1,250 members enrolled"; home page gives 1,205 for the same date
+    (conflict)'
+- count: 911
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3357 (Tejon Indian Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Tejon Indian Tribe' (race code 6434) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 1250
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Tejon Indian Tribe', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 211
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 89, row T49300 'Tejon Indian Tribe'
+  note: Column 4, population information from other sources (2010), as given by Indian Affairs; not described
+    further in the report. Report published 2014-01-16; row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.tejonindiantribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tejon Indian Tribe
+- kind: physical-address
+  value: 4941 David Road, Bakersfield, CA 93307
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tejon Indian Tribe
+- kind: mailing-address
+  value: Post Office Box 640, Arvin, CA 93203
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tejon Indian Tribe
+- kind: phone
+  value: (661) 834-8566
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tejon Indian Tribe
+- kind: fax
+  value: (661) 834-8564
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tejon Indian Tribe
+languages:
+- name: Kitanemuk (Kitanemuic)
+  source: tejon-indian-tribe-who-we-are-today
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"the reclamation of the Kitanemuk language. The language itself is called Kitanemuic"'
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Central California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tejon Indian Tribe
+gaming:
+  compacts:
+  - state: CA
+    status: approved
+    approved: '2022-11-23'
+    federal_register_citation: 87 FR 71666
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-11-23'
+    locator: result page 12 (?page=12), row 11
+    note: 'Listed as: "Tejon Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Tejon Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.11.17_tejon_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/11/23/2022-25615/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-california.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2022-11-23).
+  ordinances:
+  - approved: '2024-02-21'
+    link: https://www.nigc.gov?wpdmdl=11333&ind=11357
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2024-02-21'
+    locator: table row 283, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 283 lists the nation
+      as "Tejon Indian Tribe".
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Tejon Indian Tribe Confidence lowered from high by the lead session: the notice prints
+    its table as page images, so nation names were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

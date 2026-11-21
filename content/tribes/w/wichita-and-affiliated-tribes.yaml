@@ -1,0 +1,270 @@
+id: wichita-and-affiliated-tribes
+entity_type: native-nation
+names:
+  official: Wichita and Affiliated Tribes , Oklahoma
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+  note: 'The notice adds in parentheses: Wichita, Keechi, Waco, & Tawakonie.'
+states:
+- state: OK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Wichita and Affiliated Tribes (Wichita, Keechi, Waco, & Tawakonie), Oklahoma
+- state: OK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5540, 5955
+  note: 'Census area with land in this state: Caddo-Wichita-Delaware OTSA (code 5540); Kiowa-Comanche-Apache-Ft
+    Sill Apache/Caddo-Wichita-Delaware joint-use OTSA (code 5955). Statistical area only (not a land holding),
+    so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '5540'
+  name: Caddo-Wichita-Delaware OTSA
+  area_type: Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5540
+  note: 'Matched by name. Statistical area shared by the Caddo Nation, the Wichita and Affiliated Tribes
+    and the Delaware Nation (the Delaware named in the area is the Delaware Nation of Anadarko). Shared
+    with: Caddo Nation of Oklahoma; Delaware Nation, Oklahoma. Census class code D6.'
+- geographic_identifier: '5955'
+  name: Kiowa-Comanche-Apache-Ft Sill Apache/Caddo-Wichita-Delaware joint-use OTSA
+  area_type: joint-use Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5955
+  note: 'Matched by name. Shared with: Kiowa Tribe; Comanche Nation, Oklahoma; Apache Tribe of Oklahoma;
+    Fort Sill--Chiricahua--Warm Springs--Apache Tribe; Caddo Nation of Oklahoma; Delaware Nation, Oklahoma.
+    Census class code D0.'
+population:
+- count: 3481
+  kind: citizens
+  source: wichita-and-affiliated-tribes-justice
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'justice program page: "Tribal Enrollment of 3,481 tribal members"; undated statement on the official
+    site; as_of is the access date'
+- count: 15107
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5540, field POP100
+  note: 'Census area: Caddo-Wichita-Delaware OTSA (code 5540). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    The area is a Census statistical area, not a land holding. The area is shared with: Caddo Nation of
+    Oklahoma; Delaware Nation, Oklahoma; the same count applies to the whole area. Statistical area shared
+    by the Caddo Nation, the Wichita and Affiliated Tribes and the Delaware Nation (the Delaware named
+    in the area is the Delaware Nation of Anadarko).'
+- count: 9690
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5955, field POP100
+  note: 'Census area: Kiowa-Comanche-Apache-Ft Sill Apache/Caddo-Wichita-Delaware joint-use OTSA (code
+    5955). Everyone counted as living in the area in the 2020 Census, of any race or tribal affiliation;
+    this is not a count of the nation''s citizens. The area is a Census statistical area, not a land holding.
+    The area is shared with: Kiowa Tribe; Comanche Nation, Oklahoma; Apache Tribe of Oklahoma; Fort Sill--Chiricahua--Warm
+    Springs--Apache Tribe; Caddo Nation of Oklahoma; Delaware Nation, Oklahoma; the same count applies
+    to the whole area.'
+- count: 3177
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3422 (Wichita and Affiliated Tribes, Oklahoma alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Wichita and Affiliated Tribes, Oklahoma' (race code
+    6395) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 3279
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Wichita and Affiliated Tribes', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://wichitatribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Wichita and Affiliated Tribes (Wichita, Keechi, Waco, & Tawakonie), Oklahoma
+- kind: physical-address
+  value: 1 1/4 Mile North of Anadarko on Highway 281, Anadarko, OK 73005
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Wichita and Affiliated Tribes (Wichita, Keechi, Waco, & Tawakonie), Oklahoma
+- kind: mailing-address
+  value: P.O. Box 729, Anadarko, OK 73005
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Wichita and Affiliated Tribes (Wichita, Keechi, Waco, & Tawakonie), Oklahoma
+- kind: phone
+  value: (405) 247-2425
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Wichita and Affiliated Tribes (Wichita, Keechi, Waco, & Tawakonie), Oklahoma
+- kind: fax
+  value: (405) 247-2430
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Wichita and Affiliated Tribes (Wichita, Keechi, Waco, & Tawakonie), Oklahoma
+languages:
+- name: Wichita
+  language_tag: wic
+  source: wichita-and-affiliated-tribes-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: English to Wichita dictionary page
+federal_administration:
+  bureau_of_indian_affairs_region: Southern Plains
+  bureau_of_indian_affairs_agency: Anadarko Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Wichita and Affiliated Tribes (Wichita, Keechi, Waco, & Tawakonie), Oklahoma
+governing_documents:
+- kind: constitution
+  title: Wichita Governing Resolution
+  year: '1992'
+  link: https://narf.org/nill/constitutions/wichita/index.html
+  source: national-indian-law-library-constitution-constitutions-wichita
+  confidence: medium
+  as_of: '1992'
+  locator: page heading
+  note: 'Dated: April 11, 1992. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Wichita Governing Resolution
+  link: http://www.wichitatribe.com/government/governing-resolution.aspx
+  source: national-indian-law-library-wichita
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website . Wichita Governing Resolution.".'
+justice_institutions:
+- kind: court-of-indian-offenses
+  name: Southern Plains CFR Court (Court of Indian Offenses)
+  link: https://www.bia.gov/CFRCourts
+  source: bia-courts-of-indian-offenses
+  confidence: high
+  as_of: '2026-11-21'
+  locator: List of CFR Courts and the Tribes they Serve
+  note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
+    Indian Affairs list.
+- kind: tribal-court
+  name: Wichita Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Wichita and Affiliated Tribes'
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '2018-08-17'
+    federal_register_citation: 83 FR 41101
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-08-17'
+    locator: result page 29 (?page=29), row 18
+    note: 'Listed as: "Wichita and Affiliated Tribes Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Wichita and Affiliated Tribes (Wichita, Keechi, Waco, & Tawakonie), Oklahoma". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.17%20Wichita%20and%20Affiliated%20Tribes%20compact%20amendments.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/08/17/2018-17729/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of-oklahoma.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    approved: '2006-09-12'
+    federal_register_citation: 71 FR 53706
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2006-09-12'
+    locator: result page 29 (?page=29), row 19
+    note: 'Listed as: "Wichita and Affiliated Tribes Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "Wichita and Affiliated Tribes (Wichita, Keechi, Waco, & Tawakonie), Oklahoma". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2006.09.12_wichita_affiliated_tribes_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2006/09/12/E6-15027/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-08-17).
+  ordinances:
+  - approved: '2002-08-21'
+    link: https://www.nigc.gov?wpdmdl=11522&ind=11546
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-08-21'
+    locator: table row 309, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 309 lists the nation
+      as "Wichita and Affiliated Tribes".
+  - approved: '2014-10-27'
+    link: https://www.nigc.gov?wpdmdl=11523&ind=11547
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2014-10-27'
+    locator: table row 309, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 309 lists the nation
+      as "Wichita and Affiliated Tribes".
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Wichita and Affiliated Tribes (Wichita, Keechi, Waco & Tawakonie), Oklahoma Confidence
+    lowered from high by the lead session: the notice prints its table as page images, so nation names
+    were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

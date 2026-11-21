@@ -1,0 +1,101 @@
+id: santee-indian-organization
+entity_type: native-nation
+names:
+  official: Santee Indian Organization
+  former:
+  - name: White Oak Indian Community
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    locator: 'Petitioner #53'
+  alternate:
+  - name: The Santee Indian Organization
+    source: south-carolina-recognized-tribes-advance-sc
+    confidence: high
+    as_of: '2026'
+  official_source: census-aian-geography-definitions
+recognition:
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: low
+  as_of: '2020'
+  locator: Definition of State Designated Tribal Statistical Area; area 9875
+  note: The 2020 Census delineated "Santee SDTSA" (State Designated Tribal Statistical Area). The Census
+    Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally recognized
+    and have no reservation or off-reservation trust land, delineated with a governor-appointed state
+    liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area
+    fact).
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '53'
+  petition_stage: Letter of Intent to Petition 06/04/1979
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  locator: 'Petitioner #53'
+  note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
+    Additional Resources page says groups on the 2013 list may no longer be active petitioners under the
+    current regulations.
+- type: state
+  state: SC
+  legal_basis: 'South Carolina Code of Laws Section 1-31-40(A)(10); South Carolina Code of Regulations
+    Chapter 139 (category: State Recognized Native American Indian Tribe)'
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  as_of: '2026'
+  note: Listed under 'State Recognized Tribes'.
+states:
+- state: SC
+  presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: low
+  as_of: '2020'
+  locator: AIANNHCE 9875
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: SC
+  presence: other
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+- state: SC
+  presence: other
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  as_of: '2026'
+  note: State-recognized entity with a South Carolina contact address.
+census_areas:
+- geographic_identifier: '9875'
+  name: Santee SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: low
+  as_of: '2020'
+  locator: AIANNHCE 9875, GEOID 9875R
+  note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list. Census area name "Santee"; linked by name
+    comparison to the only South Carolina state-recognized group with Santee in its name in the state-recognized
+    helper list. Census DDHC-A lists both "Santee Indian Organization" and "Santee Indian Nation of South
+    Carolina".
+contacts:
+- kind: email-general
+  value: santeetribesc@yahoo.com
+  label: Tribal email listed by the South Carolina commission
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: high
+  as_of: '2026'
+- kind: website
+  value: https://www.facebook.com/profile.php?id=100075698375955
+  label: Social media page listed by the state
+  source: south-carolina-recognized-tribes-advance-sc
+  confidence: medium
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

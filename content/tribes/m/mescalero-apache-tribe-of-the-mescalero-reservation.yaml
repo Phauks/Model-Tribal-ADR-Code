@@ -1,0 +1,497 @@
+id: mescalero-apache-tribe-of-the-mescalero-reservation
+entity_type: native-nation
+names:
+  official: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: NM
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico
+- state: NM
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2205
+  note: 'Census area with land in this state: Mescalero Reservation (code 2205). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '2205'
+  name: Mescalero Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2205
+  note: Matched by name. Census class code D2.
+population:
+- count: 5230
+  kind: citizens
+  source: mescalero-apache-tribe-of-the-mescalero-handouts-iac-20071323-20item-205-20mat-2
+  confidence: high
+  as_of: '2023-07-13'
+  note: 'tribe''s 150th anniversary presentation to the New Mexico Legislature Indian Affairs Committee:
+    "Today, there are a total 5,230 members enrolled with the Mescalero Apache Tribe"'
+- count: 4022
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2205, field POP100
+  note: 'Census area: Mescalero Reservation (code 2205). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 11161
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3117 (Mescalero Apache Tribe of the Mescalero Reservation, New Mexico
+    alone or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Mescalero Apache Tribe of the Mescalero Reservation,
+    New Mexico' (race code 5519) alone or in combination with other tribes or races in the 2020 Census;
+    self-identification, not enrollment. Includes noise added for disclosure avoidance. Census label exact
+    name match.
+- count: 5231
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Mescalero Apache Tribe', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 7569
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: low
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 81, row T21900 'Mescalero Apache Tribe of the Mescalero Reservation'
+  note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
+    in the vicinity of the nation (2010), used by Indian Affairs as the nation's population indicator;
+    a broad proxy that includes people of any tribe; not enrollment. Report published 2014-01-16; row
+    name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://mescaleroapachetribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico
+- kind: physical-address
+  value: 108 Central Avenue, Mescalero, NM 88340
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico
+- kind: mailing-address
+  value: P.O. Box 227, Mescalero, NM 88340
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico
+- kind: phone
+  value: (575) 464-4494
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico
+- kind: fax
+  value: (575) 464-9191
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico
+federal_administration:
+  bureau_of_indian_affairs_region: Southwest
+  bureau_of_indian_affairs_agency: Mescalero Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Apache Tribe of the Mescalero Reservation, New Mexico" among organizations under
+    constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934),
+    as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution and Bylaws of the Apache Tribe of the Mescalero Reservation New Mexico (approved
+    1936) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-consapache
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico
+  link: https://narf.org/nill/codes/mescalero_apache/index.html
+  source: national-indian-law-library-code-codes-mescalero-apache
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: 'Dated: Various. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico - Tribal Constitution
+  year: '1988'
+  link: https://narf.org/nill/constitutions/mescalero_apache/index.html
+  source: national-indian-law-library-constitution-constitutions-mescalero-apache
+  confidence: medium
+  as_of: '1988'
+  locator: page heading
+  note: 'As Amended Through: October 18, 1988. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://mescaleroapachetribe.com/tribal-codes/
+  source: national-indian-law-library-mescalero-apache
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://mescaleroapachetribe.com/constitution/
+  source: national-indian-law-library-mescalero-apache
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Mescalero Apache Tribe Constitution
+  link: http://mescaleroapachetribe.com/constitution/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New Mexico section, entry 'Mescalero Apache Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Mescalero Apache Tribal Code
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New Mexico section, entry 'Mescalero Apache Tribe'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-101116-for-tabbing.pdf)
+    returned HTTP 404, so it is not recorded.'
+- kind: corporate-charter
+  title: Corporate Charter of the Apache Tribe of the Mescalero Reservation New Mexico
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/chtrapache.pdf
+  source: university-of-oklahoma-indian-reorganization-act-chtrapache
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution and Bylaws of the Apache Tribe of the Mescalero Reservation New Mexico
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/consapache.pdf
+  source: university-of-oklahoma-indian-reorganization-act-consapache
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-mescalero-apache
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Mescalero Apache Tribal Court
+  link: http://www.mescaleroapache.com/area/government.htm
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New Mexico section, entry 'Mescalero Apache Tribe'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Alternative Sentencing Requirements
+    citation: Mescalero Apache Tribal Code 9-5-1
+    link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-sentencing-requirements/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Combating Truancy through Infromal Adjustment and Treatment
+    citation: Mescalero Apache Tribal Code 11-15-7
+    link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/combating-truancy-through-infromal-adjustment-and-treatment/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Dispostion Options for Children Courts
+    citation: Mescalero Apache Tribal Code 11-8-17
+    link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispostion-options-for-children-courts/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Domestic Violence Treatment Prorgram
+    citation: Mescalero Apache Tribal Code 9-6-1
+    link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/domestic-violence-treatment-prorgram/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Mandatory Case Plan for Children’s Court Cases
+    citation: Mescalero Apache Tribal Code 11-10-1 and 11-10-14 and 11-8-17
+    link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/mandatory-case-plan-for-childrens-court-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Policy for the Children’s Code
+    citation: Mescalero Apache Tribal Code 11-1-2
+    link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/policy-for-the-childrens-code/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative practice, Restorative process.'
+  - kind: other
+    title: Powers and Duties of the Children’s Court
+    citation: Mescalero Apache Tribal Code 11-3-1 and 11-4-5
+    link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/powers-and-duties-of-the-childrens-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      practice, Restorative process.'
+  - kind: other
+    title: Psychiatric Care and Treatment for Theft Crimes
+    citation: Mescalero Apache Tribal Code 10-14-10
+    link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/psychiatric-care-and-treatment-for-theft-crimes/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Requiring Pregnant Women to Comply with In-Patient Treatment Program
+    citation: Mescalero Apache Tribal Code 11-2-2
+    link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/requiring-pregnant-women-to-comply-with-in-patient-treatment-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative practice, Restorative process.'
+  - kind: other
+    title: Residential Treatment and Habilitation of Minors
+    citation: Mescalero Apache Tribal Code 25-1-9
+    link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/residential-treatment-and-habilitation-of-minors/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      practice, Restorative process.'
+  - kind: other
+    title: Treatment and Rehabilitation of Drug Abuse Crimes
+    citation: Mescalero Apache Tribal Code 10-10-3
+    link: https://mescaleroapachetribe.com/wp-content/uploads/Tribal-Code-FINAL-092716-for-tabbing-372018.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-and-rehabilitation-of-drug-abuse-crimes/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+gaming:
+  compacts:
+  - state: NM
+    status: deemed-approved
+    approved: '1997-08-29'
+    federal_register_citation: 62 FR 45867
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1997-08-29'
+    locator: result page 22 (?page=22), row 4
+    note: 'Listed as: "Mescalero Apache Tribe of the Mescalero Reservation Tribal State Gaming Compact"
+      (Deemed Approved); list''s Tribe column: "Mescalero Apache Tribe of the Mescalero Reservation, New
+      Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1997.08.23_mescalero_apache_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1997/08/29/97-22989/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: approved
+    approved: '2004-08-05'
+    federal_register_citation: 69 FR 47459
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2004-08-05'
+    locator: result page 22 (?page=22), row 5
+    note: 'Listed as: "Mescalero Apache Tribe of the Mescalero Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Mescalero Apache Tribe of the Mescalero Reservation, New Mexico".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2004.08.05_mescalero_apache_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2004/08/05/04-17882/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: deemed-approved
+    approved: '2015-06-22'
+    federal_register_citation: 80 FR 35668
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-22'
+    locator: result page 22 (?page=22), row 6
+    note: 'Listed as: "Mescalero Apache Tribe of the Mescalero Reservation Tribal State Gaming Compact"
+      (Deemed Approved); list''s Tribe column: "Mescalero Apache Tribe of the Mescalero Reservation, New
+      Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2015.06.22_mescalero_apache_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/22/2015-15207/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: approved
+    approved: '1995-03-22'
+    federal_register_citation: 60 FR 15194
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-03-22'
+    locator: result page 22 (?page=22), row 7
+    note: 'Listed as: "Mescalero Apache Tribe of the Mescalero Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Mescalero Apache Tribe of the Mescalero Reservation, New Mexico".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1995.03.22_mescalero_apache_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/03/22/95-6966/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: deemed-approved
+    dispute_resolution_summary: Within two years of a discovered violation a party serves written notice,
+      may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
+      binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
+      Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-nm-pueblo-of-santa-ana-2016
+    confidence: medium
+    as_of: '2016-12-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
+      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
+      Status copied from this nation's most recent approved or deemed-approved entry for this state in
+      the Office of Indian Gaming list (2015-06-22).
+  ordinances:
+  - approved: '1996-01-11'
+    link: https://www.nigc.gov?wpdmdl=10265&ind=10281
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1996-01-11'
+    locator: table row 149, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 149 lists the nation
+      as "Mescalero Apache Tribe". Name matched to roster by spelling variant.
+  - approved: '2001-09-04'
+    link: https://www.nigc.gov?wpdmdl=10266&ind=10282
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2001-09-04'
+    locator: table row 149, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 149 lists the nation
+      as "Mescalero Apache Tribe". Name matched to roster by spelling variant.
+  - approved: '2003-09-17'
+    link: https://www.nigc.gov?wpdmdl=10267&ind=10283
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2003-09-17'
+    locator: table row 149, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 149 lists the nation
+      as "Mescalero Apache Tribe". Name matched to roster by spelling variant.
+  - approved: '2009-12-17'
+    link: https://www.nigc.gov?wpdmdl=10268&ind=10284
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2009-12-17'
+    locator: table row 149, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 149 lists the nation
+      as "Mescalero Apache Tribe". Name matched to roster by spelling variant.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico Confidence lowered
+    from high by the lead session: the notice prints its table as page images, so nation names were read
+    from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,516 @@
+id: prairie-band-potawatomi-nation
+entity_type: native-nation
+names:
+  official: Prairie Band Potawatomi Nation
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: KS
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Prairie Band Potawatomi Nation
+- state: KS
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2980
+  note: 'Census area with land in this state: Prairie Band of Potawatomi Nation Reservation (code 2980).
+    Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2980'
+  name: Prairie Band of Potawatomi Nation Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2980
+  note: Matched by name. Census class code D2.
+population:
+- count: 4570
+  kind: citizens
+  source: prairie-band-potawatomi-nation-pbpn-member-services-the-official-hub-of
+  confidence: medium
+  as_of: '2019-07-26'
+  note: 'news article dated 7/26/2019: "The Nation’s membership currently stands at approximately 4,570
+    living members, with about 800 residing on the common land"'
+- count: 1529
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2980, field POP100
+  note: 'Census area: Prairie Band of Potawatomi Nation Reservation (code 2980). Everyone counted as living
+    in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s
+    citizens.'
+- count: 2957
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3230 (Prairie Band Potawatomi Nation alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Prairie Band Potawatomi Nation' (race code 6159) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 4841
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Prairie Band Potawatomi Nation', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 733
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 86, row T39200 'Prairie Band of Potawatomi Nation'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://www.pbpindiantribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Prairie Band Potawatomi Nation
+- kind: physical-address
+  value: 16281 Q Road, Mayetta, KS 66509
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Prairie Band Potawatomi Nation
+- kind: mailing-address
+  value: 16281 Q Road, Mayetta, KS 66509
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Prairie Band Potawatomi Nation
+- kind: phone
+  value: (785) 966-4000
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Prairie Band Potawatomi Nation
+- kind: fax
+  value: (785) 966-4009
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Prairie Band Potawatomi Nation
+languages:
+- name: Potawatomi
+  language_tag: pot
+  source: prairie-band-potawatomi-nation-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Language and Culture Department revitalization of the Potawatomi language
+federal_administration:
+  bureau_of_indian_affairs_region: Southern Plains
+  bureau_of_indian_affairs_agency: Horton Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Prairie Band Potawatomi Nation
+governing_documents:
+- kind: law-code
+  title: Prairie Band Potawatomi Nation - Law and Order Code
+  year: '2019'
+  link: https://narf.org/nill/codes/prairie_band_potawatomi/index.html
+  source: national-indian-law-library-code-codes-prairie-band-potawatomi
+  confidence: medium
+  as_of: '2019'
+  locator: page heading
+  note: 'Current Through : January 24, 2019. The National Indian Law Library page gives the table of contents
+    (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Prairie Band Potawatomi Nation - Tribal Constitution
+  year: '2007'
+  link: https://narf.org/nill/constitutions/prairie_band_potawatomi/index.html
+  source: national-indian-law-library-constitution-constitutions-prairie-band-potawatomi
+  confidence: medium
+  as_of: '2007'
+  locator: page heading
+  note: Approved December 6, 2007. The National Indian Law Library page gives the table of contents (and
+    may link to the nation's own copy); full text is not hosted there.
+- kind: law-code
+  title: Tribal code
+  link: http://www.pbpindiantribe.com/government/law-and-order-codes/
+  source: national-indian-law-library-prairie-band-potawatomi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    / Code Publishing Co. website .".'
+- kind: law-code
+  title: Tribal code
+  link: http://www.codepublishing.com/KS/Potawatomi
+  source: national-indian-law-library-prairie-band-potawatomi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    / Code Publishing Co. website .".'
+- kind: constitution
+  title: Constitution
+  link: http://www.pbpindiantribe.com/our-constitution.aspx
+  source: national-indian-law-library-prairie-band-potawatomi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Prairie Band of Potawatomi Nation Constitution
+  link: http://www.pbpindiantribe.com/our-constitution.aspx
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Kansas section, entry 'Prairie Band of Potawatomi Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Prairie Band Potawatomi Nation Law and Order Code – Code Publishing
+  link: http://www.codepublishing.com/KS/Potawatomi/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Kansas section, entry 'Prairie Band of Potawatomi Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: judicial-council.aspx
+  link: http://www.pbpindiantribe.com/judicial-council.aspx
+  source: national-indian-law-library-prairie-band-potawatomi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: tribal-court
+  name: Prairie Band Potawatomi Nation Judicial Council
+  link: http://www.pbpindiantribe.com/contact_member/tribal-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Kansas section, entry 'Prairie Band of Potawatomi Nation'
+dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemakers Circle
+    description: A separate mediating branch established in the constitution's Dispute Resolution System;
+      peacemakers are selected by the Nation's members at a General Council meeting and are responsible
+      for mediating disputes voluntarily submitted by the parties.
+    legal_basis: Constitution of the Prairie Band Potawatomi Nation, Article VI (Dispute Resolution System),
+      Sections 1-3
+    case_types:
+    - civil
+    - other
+    participation: voluntary
+    relationship_to_court: Established alongside, and separate from, the Judicial Council (District Court,
+      Court of Appeals and Employment Disputes Tribunal); procedures are to be defined by Nation law.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Prarie-Band-Constitution.pdf
+    source: prairie-band-potawatomi-constitution-2007
+    confidence: medium
+    as_of: '2007-12-06'
+    locator: Article VI, Sections 1-3
+    note: NARF's summary adds that the provision covers foreclosure of further District Court proceedings
+      and an attorney ban; those details were not located in the Article VI text reviewed and may be in
+      implementing law.
+  - kind: employment-tribunal
+    name: Employment Disputes Tribunal
+    description: A five-magistrate tribunal within the Judicial Council responsible for deciding all government
+      employment related disputes; two magistrates are appointed by the Tribal Council, two by the Nation's
+      employees, and one by the other four.
+    legal_basis: Constitution of the Prairie Band Potawatomi Nation, Article VI, Sections 1-3
+    case_types:
+    - employment
+    participation: required
+    relationship_to_court: Part of the Judicial Council; the District Court's powers exclude government
+      employment related disputes, which go to the Tribunal.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Prarie-Band-Constitution.pdf
+    source: prairie-band-potawatomi-constitution-2007
+    confidence: medium
+    as_of: '2007-12-06'
+    locator: Article VI
+    note: 'Coined kind ''employment-tribunal'': an adjudicative forum with jointly appointed members,
+      not a consensual process.'
+  provisions:
+  - kind: peacemaking
+    title: Article VI – Dispute Resolution System
+    citation: Constitution of the Prairie Band Potawatomi Nation, Art. VI
+    summary: Establishes the Judicial Council (District Court, Court of Appeals, Employment Disputes Tribunal)
+      and a separate Peacemakers Circle to mediate disputes voluntarily submitted.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Prarie-Band-Constitution.pdf
+    source: prairie-band-potawatomi-constitution-2007
+    confidence: medium
+    as_of: '2007-12-06'
+  - kind: other
+    title: Disposition Options for Juvenile Offenders
+    citation: Potawatomi Law and Order Code 27-6-13 and 27-6-15
+    link: https://www.codepublishing.com/KS/Potawatomi/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-options-for-juvenile-offenders/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Peacemaker Circles
+    citation: Potawatomi Law and Order Code 2-1-1 and 2-5-1
+    link: https://www.codepublishing.com/KS/Potawatomi/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaker-circles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative practice,
+      Restorative process.'
+  - kind: other
+    title: Sentencing Policy of the Nation
+    citation: Potawatomi Law and Order Code 16-4-3
+    link: https://www.codepublishing.com/KS/Potawatomi/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-policy-of-the-nation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Sex Offender Treatment Program for Sentence Reduction
+    citation: Potawatomi Law and Order Code 15-11-21
+    link: https://www.codepublishing.com/KS/Potawatomi/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sex-offender-treatment-program-for-sentence-reduction/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: mediation
+    title: 3-3 MEDIATION
+    citation: 3-3 MEDIATION
+    link: https://www.narf.org/nill/codes/prairie_band_potawatomi/index.html
+    source: national-indian-law-library-code-index-prairie-band-potawatomi
+    confidence: medium
+    as_of: 2019-10
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: peacemaking
+    title: Constitution of the Prairie Band of Potawatomi Nation, Article VI – Dispute Resolution System
+    citation: Constitution of the Prairie Band of Potawatomi Nation, Article VI – Dispute Resolution System
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Prarie-Band-Constitution.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Prairie Band Potawatomi Nation of Kansas
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      peacemaker duties, foreclosure of further District Court proceedings, and procedures (including
+      attorney ban).'
+  - kind: peacemaking
+    title: 2-2 JUDICIAL COUNCIL AND PEACEMAKERS CIRCLE GENERALLY.
+    citation: 2-2 JUDICIAL COUNCIL AND PEACEMAKERS CIRCLE GENERALLY.; 2-5 PEACEMAKERS; 2-5-1 Peacemakers
+      Circle.
+    link: https://narf.org/nill/codes/prairie_band_potawatomi/index.html
+    source: national-indian-law-library-code-codes-prairie-band-potawatomi
+    confidence: medium
+    as_of: '2019'
+    locator: Table of Contents, under 'Title 2. Courts'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Current
+      Through : January 24, 2019); the provision itself was not read. The heading it falls under is taken
+      from the page layout and may be imprecise.'
+  - kind: mediation
+    title: 3-3 MEDIATION
+    citation: 3-3 MEDIATION
+    link: https://narf.org/nill/codes/prairie_band_potawatomi/index.html
+    source: national-indian-law-library-code-codes-prairie-band-potawatomi
+    confidence: medium
+    as_of: '2019'
+    locator: Table of Contents, under 'Title 3. Grievance Committee'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Current
+      Through : January 24, 2019); the provision itself was not read. The heading it falls under is taken
+      from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: ARTICLE VI DISPUTE RESOLUTION SYSTEM
+    citation: ARTICLE VI DISPUTE RESOLUTION SYSTEM; A separate mediating branch known as Peacemakers Circle
+      shall also be established.; Peacemakers shall be of such number as may be determined by the General
+      Council and shall have the responsibility for mediating disputes voluntarily submitted to them by
+      the parties.; Peacemakers shall be selected by the Nation’s members at a General Council Meeting.;
+      Magistrates and peacemakers may be removed by their appointing authority.; ...
+    link: https://narf.org/nill/constitutions/prairie_band_potawatomi/index.html
+    source: national-indian-law-library-constitution-constitutions-prairie-band-potawatomi
+    confidence: medium
+    as_of: '2007'
+    locator: Table of Contents
+    note: Identified from section headings in the National Indian Law Library table of contents (Approved
+      December 6, 2007); the provision itself was not read. The heading it falls under is taken from the
+      page layout and may be imprecise.
+gaming:
+  compacts:
+  - state: KS
+    status: approved
+    approved: '1995-07-06'
+    federal_register_citation: 60 FR 35320
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-07-06'
+    locator: result page 15 (?page=15), row 2
+    note: 'Listed as: "Prairie Band Potawatomi Nation Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Prairie Band Potawatomi Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1995.07.06_prairie_band_of_potawatomi_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/07/06/95-16598/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: KS
+    status: deemed-approved
+    approved: '2023-07-18'
+    federal_register_citation: 88 FR 45909
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2023-07-18'
+    locator: result page 15 (?page=15), row 3
+    note: 'Listed as: "Prairie Band Potawatomi Nation Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Prairie Band Potawatomi Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2023.07.18_prairie_band_potawatomi_nation_tribal_state_gamigncompact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2023/07/18/2023-15139/indian-gaming-approval-by-operation-of-law-of-amendment-to-class-iii-tribal-state-gaming-compact.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: KS
+    status: deemed-approved
+    dispute_resolution_summary: The parties must use best efforts to negotiate for at least 14 days, after
+      which either party may refer the dispute to binding arbitration before a sole agreed arbitrator
+      or a three-member panel, with judicial enforcement in the United States District Court for Kansas.
+    dispute_resolution_locator: Section 29 (Dispute Resolution)
+    source: compact-ks-wyandotte-nation-2026
+    confidence: medium
+    as_of: '2026-07-14'
+    locator: Section 29 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2026 Wyandotte Nation compact;
+      other Kansas compacts were not checked. Status copied from this nation's most recent approved or
+      deemed-approved entry for this state in the Office of Indian Gaming list (2023-07-18).
+  ordinances:
+  - approved: '1994-07-25'
+    link: https://www.nigc.gov?wpdmdl=10688&ind=10702
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-07-25'
+    locator: table row 199, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 199 lists the nation
+      as "Prairie Band of Potawatomi Nation". Name matched to roster by spelling variant.
+  - approved: '2000-06-02'
+    link: https://www.nigc.gov?wpdmdl=10689&ind=10703
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2000-06-02'
+    locator: table row 199, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 199 lists the nation
+      as "Prairie Band of Potawatomi Nation". Name matched to roster by spelling variant.
+  - approved: '2003-06-17'
+    link: https://www.nigc.gov?wpdmdl=10690&ind=10704
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2003-06-17'
+    locator: table row 199, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 199 lists the nation
+      as "Prairie Band of Potawatomi Nation". Name matched to roster by spelling variant.
+  - approved: '2004-08-10'
+    link: https://www.nigc.gov?wpdmdl=10691&ind=10705
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2004-08-10'
+    locator: table row 199, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 199 lists the nation
+      as "Prairie Band of Potawatomi Nation". Name matched to roster by spelling variant.
+  - approved: '2005-04-21'
+    link: https://www.nigc.gov?wpdmdl=10692&ind=10706
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2005-04-21'
+    locator: table row 199, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 199 lists the nation
+      as "Prairie Band of Potawatomi Nation". Name matched to roster by spelling variant.
+  - approved: '2005-05-24'
+    link: https://www.nigc.gov?wpdmdl=10693&ind=10707
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2005-05-24'
+    locator: table row 199, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 199 lists the nation
+      as "Prairie Band of Potawatomi Nation". Name matched to roster by spelling variant.
+  - approved: '2006-07-13'
+    link: https://www.nigc.gov?wpdmdl=10694&ind=10708
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2006-07-13'
+    locator: table row 199, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 199 lists the nation
+      as "Prairie Band of Potawatomi Nation". Name matched to roster by spelling variant.
+  - approved: '2012-02-24'
+    link: https://www.nigc.gov?wpdmdl=10695&ind=10709
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2012-02-24'
+    locator: table row 199, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 199 lists the nation
+      as "Prairie Band of Potawatomi Nation". Name matched to roster by spelling variant.
+  - approved: '2021-03-22'
+    link: https://www.nigc.gov?wpdmdl=10696&ind=10710
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2021-03-22'
+    locator: table row 199, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 199 lists the nation
+      as "Prairie Band of Potawatomi Nation". Name matched to roster by spelling variant.
+  - approved: '2021-10-14'
+    link: https://www.nigc.gov?wpdmdl=10697&ind=10711
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2021-10-14'
+    locator: table row 199, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 199 lists the nation
+      as "Prairie Band of Potawatomi Nation". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Prairie Band Potawatomi Nation".
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Prairie Band Potawatomi Nation Confidence lowered from high by the lead session: the
+    notice prints its table as page images, so nation names were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

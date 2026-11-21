@@ -1,0 +1,172 @@
+id: pamunkey-indian-tribe
+entity_type: native-nation
+names:
+  official: Pamunkey Indian Tribe
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: 25 C.F.R. Part 83; final determination 80 FR 39144 (2015-07-08)
+  petition_number: '323'
+  petition_stage: Acknowledged (Petitions Resolved page); final determination 80 FR 39144
+  since: '2015-07-08'
+  source: federal-register-2015-16711
+  confidence: high
+  as_of: '2015-07-08'
+  locator: 'Petitioner #323'
+  note: 'The since date is the publication date of the final determination; the sources read do not give
+    its effective date. Also see source(s): ofa-petitions-resolved.'
+- type: state
+  state: VA
+  legal_basis: Listed by the Secretary of the Commonwealth among the 11 Virginia Indian tribes the Commonwealth
+    recognizes (also federally recognized)
+  source: virginia-report-status-of-indian-tribes-2025
+  confidence: high
+  as_of: '2025-12-30'
+- type: state
+  state: VA
+  legal_basis: Virginia House Joint Resolution 54 (1983) reaffirmed recognition; treaty relationship (1677
+    Treaty of Middle Plantation)
+  source: virginiaplaces-state-recognition
+  confidence: medium
+  as_of: '1983'
+  note: Year from a secondary source; resolution number not confirmed from the legislature's own record
+    except where stated.
+states:
+- state: VA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pamunkey Indian Tribe
+- state: VA
+  presence: land
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9260
+  note: State reservation land.
+- state: VA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 9260
+  note: 'Census area with land in this state: Pamunkey (state) Reservation (code 9260). Area matched to
+    the nation by name.'
+census_areas:
+- geographic_identifier: '9260'
+  name: Pamunkey (state) Reservation
+  area_type: State American Indian reservation
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9260, GEOID 9260R
+  note: Census class code D4; AIANNHR = S (state). Matched to the federally recognized nation by name
+    comparison. State reservation retained in the 2020 Census; the Pamunkey Indian Tribe is on the 2026
+    federal list, so no recognition fact is given here.
+- geographic_identifier: '9260'
+  name: Pamunkey (state) Reservation
+  area_type: (state) Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US9260
+  note: Matched by name. Census classifies this as a state reservation (Pamunkey (state) Reservation);
+    the Pamunkey Indian Tribe is federally recognized. Census class code D4.
+population:
+- count: 114
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US9260, field POP100
+  note: 'Census area: Pamunkey (state) Reservation (code 9260). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    Census classifies this as a state reservation (Pamunkey (state) Reservation); the Pamunkey Indian
+    Tribe is federally recognized.'
+- count: 2330
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3187 (Pamunkey Indian Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Pamunkey Indian Tribe' (race code 6078) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+- count: 398
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Pamunkey Indian Tribe', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.pamunkey.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pamunkey Indian Tribe
+- kind: physical-address
+  value: 1054 Pocahontas Trail, King William, VA 23086
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pamunkey Indian Tribe
+- kind: mailing-address
+  value: 1054 Pocahontas Trail, King William, VA 23086
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pamunkey Indian Tribe
+- kind: phone
+  value: 804-339-1629
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pamunkey Indian Tribe
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern
+  bureau_of_indian_affairs_agency: Eastern Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pamunkey Indian Tribe
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Pamunkey Indian Tribe Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: United South and Eastern Tribes
+  source: united-south-and-eastern-tribes-member-tribal-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Pamunkey Indian Tribe".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

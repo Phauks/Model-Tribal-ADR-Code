@@ -1,0 +1,573 @@
+id: menominee-indian-tribe-of-wisconsin
+entity_type: native-nation
+names:
+  official: Menominee Indian Tribe of Wisconsin
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: WI
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Menominee Indian Tribe of Wisconsin
+- state: WI
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2175
+  note: 'Census area with land in this state: Menominee Reservation and Off-Reservation Trust Land (code
+    2175). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2175'
+  name: Menominee Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2175
+  note: Matched by name. Census class code D1.
+population:
+- count: 8720
+  kind: citizens
+  source: menominee-indian-tribe-of-wisconsin-amind-tribalnationswi-menominee
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"There are currently 8,720 Menominee tribal members"; Wisconsin Department of Public Instruction
+    tribal nation profile (state agency); undated'
+- count: 3293
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2175, field POP100
+  note: 'Census area: Menominee Reservation and Off-Reservation Trust Land (code 2175). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 14682
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3115 (Menominee Indian Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Menominee Indian Tribe' (race code 5948) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label matched by name variant.
+- count: 9090
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Menominee Indian Tribe', PDF page 4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.menominee-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Menominee Indian Tribe of Wisconsin
+- kind: physical-address
+  value: W2908 Tribal Office Loop Road, Keshena, WI 54135
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Menominee Indian Tribe of Wisconsin
+- kind: mailing-address
+  value: P.O. Box 910, Keshena, WI 54135
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Menominee Indian Tribe of Wisconsin
+- kind: phone
+  value: (715) 799-5100
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Menominee Indian Tribe of Wisconsin
+- kind: fax
+  value: (715) 799-3373
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Menominee Indian Tribe of Wisconsin
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Midwest Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Menominee Indian Tribe of Wisconsin
+governing_documents:
+- kind: law-code
+  title: Menominee Indian Tribe of Wisconsin
+  year: '2015'
+  link: https://narf.org/nill/codes/menominee/index.html
+  source: national-indian-law-library-code-codes-menominee
+  confidence: medium
+  as_of: '2015'
+  locator: page heading
+  note: 'Table of Contents Updated: June 2015. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Menominee Indian Tribe of Wisconsin - Tribal Constitution
+  year: '1991'
+  link: https://narf.org/nill/constitutions/menominee/index.html
+  source: national-indian-law-library-constitution-constitutions-menominee
+  confidence: medium
+  as_of: '1991'
+  locator: page heading
+  note: 'Amended: 1991. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://ecode360.com/ME2727
+  source: national-indian-law-library-menominee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    (eCode360).".'
+- kind: law-code
+  title: Tribal code
+  link: http://courts.menominee-nsn.gov/CyberLibrary.aspx
+  source: national-indian-law-library-menominee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  source: national-indian-law-library-menominee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website (pdf).". Link check 2026-11-21: the link the source gives (https://www.menominee-nsn.gov/Documents/Tribal%20Constitution.pdf)
+    returned HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Menominee Indian Tribe Constitution & Bylaws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Menominee Indian Tribe of Wisconsin'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://courts.menominee-nsn.gov/pdf/constitutionAndBylaws.pdf)
+    returned HTTP 404, so it is not recorded.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://courts.menominee-nsn.gov/
+  source: national-indian-law-library-menominee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Menominee Indian Tribal Court
+  link: http://courts.menominee-nsn.gov/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Menominee Indian Tribe of Wisconsin'
+- kind: tribal-court
+  name: Wilmer M Peters Judicial Center
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Menominee Indian Tribe of Wisconsin'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Delinquent Child Detainment for Treatment or Detox
+    citation: Menominee Indian Tribe of Wisconsin Section 278-168
+    link: https://ecode360.com/ME2740
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/delinquent-child-detainment-for-treatment-or-detox/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Diversion Program Resources for Juveniles
+    citation: Menominee Indian Tribe of Wisconsin Section 278-176
+    link: https://ecode360.com/ME2746
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-program-resources-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Expected Mother Treatment Programs for Ubstance Abuse
+    citation: Menominee Indian Tribe of Wisconsin Section 278-44
+    link: https://ecode360.com/ME2733
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/expected-mother-treatment-programs-for-ubstance-abuse/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Family; Tribal Justice. Database phase: Post-adjudication. Database form of practice: Family & Tribal
+      Juvenile.'
+  - kind: other
+    title: Imposing Sanctions on Deliqnuent Juveniles
+    citation: Menominee Indian Tribe of Wisconsin Section 278-187
+    link: https://ecode360.com/ME2743
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/imposing-sanctions-on-deliqnuent-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Informal Disposition for Child-in-Need-of-Care Cases
+    citation: Menominee Indian Tribe of Wisconsin Section 278-30 & Section 278-44
+    link: https://ecode360.com/ME2735
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-disposition-for-child-in-need-of-care-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Family & Tribal Juvenile.'
+  - kind: other
+    title: Informal Dispositions for Juveniles in Need of Protection
+    citation: Menominee Indian Tribe of Wisconsin Section 278-48 and section 278-49
+    link: https://ecode360.com/ME2737
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-dispositions-for-juveniles-in-need-of-protection/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Netāēnawemākanak services for families
+    citation: Menominee Indian Tribe of Wisconsin Section 278-26
+    link: https://ecode360.com/ME2732
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/netaenawemakanak-services-for-families/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Family; Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Family & Tribal
+      Juvenile.'
+  - kind: other
+    title: Purpose and Goals of Child Delinquency Proceedings
+    citation: Menominee Indian Tribe of Wisconsin Section 278-160 & Section 278-162
+    link: https://ecode360.com/ME2739
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-and-goals-of-child-delinquency-proceedings/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Required Treatment for Domestic Violence Perpetrators
+    citation: Menominee Indian Tribe of Wisconsin Section 368-33
+    link: https://ecode360.com/ME2727
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/required-treatment-for-domestic-violence-perpetrators/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Sex Offender Treatment Program
+    citation: Menominee Indian Tribe of Wisconsin Section 368-58
+    link: https://ecode360.com/ME2729
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sex-offender-treatment-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: arbitration
+    title: Chapter 15 ARBITRATION
+    citation: Chapter 15 ARBITRATION; � 15-3. Validity and enforcement of agreements to arbitrate; � 15-5.
+      Failure to arbitrate under agreement; � 15-6. Appointment of arbitrator; � 15-7. Witnesses before
+      arbitrators; � 15-8. Confirmation of award of arbitration
+    link: https://www.narf.org/nill/codes/menominee/index.html
+    source: national-indian-law-library-code-index-menominee
+    confidence: medium
+    as_of: 2015-06
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: Chapter 50 DISPUTE RESOLUTION
+    citation: Chapter 50 DISPUTE RESOLUTION
+    link: https://www.narf.org/nill/codes/menominee/index.html
+    source: national-indian-law-library-code-index-menominee
+    confidence: medium
+    as_of: 2015-06
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: arbitration
+    title: Chapter 15 ARBITRATION
+    citation: Chapter 15 ARBITRATION
+    link: https://narf.org/nill/codes/menominee/index.html
+    source: national-indian-law-library-code-codes-menominee
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: June 2015); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
+  - kind: other
+    title: Chapter 50 DISPUTE RESOLUTION
+    citation: Chapter 50 DISPUTE RESOLUTION
+    link: https://narf.org/nill/codes/menominee/index.html
+    source: national-indian-law-library-code-codes-menominee
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: June 2015); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: WI
+    status: approved
+    approved: '1999-02-01'
+    federal_register_citation: 64 FR 4890
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-02-01'
+    locator: result page 46 (?page=46), row 9
+    note: 'Listed as: "Menominee Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Menominee Indian Tribe of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.02.01%20Menominee%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/02/01/99-2278/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1999-04-29'
+    federal_register_citation: 64 FR 23096
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-04-29'
+    locator: result page 46 (?page=46), row 10
+    note: 'Listed as: "Menominee Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Menominee Indian Tribe of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.04.29%20Menominee%20Indian%20Tribe%20Gaming%20Compact%20Amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/04/29/99-10676/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1992-08-10'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-08-10'
+    locator: result page 46 (?page=46), row 11
+    note: 'Listed as: "Menominee Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Menominee Indian Tribe of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201992.08.10%20Menominee%20Indian%20Tribe%20Gaming%20Compact.pdf.'
+  - state: WI
+    status: approved
+    approved: '2011-01-03'
+    federal_register_citation: 76 FR 165
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2011-01-03'
+    locator: result page 46 (?page=46), row 12
+    note: 'Listed as: "Menominee Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Menominee Indian Tribe of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202011.01.03%20Menominee%20Indian%20Tribe%20of%20Wisconsin%202010%20Amendments%20to%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2011/01/03/2010-33094/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: deemed-approved
+    approved: '2003-07-22'
+    federal_register_citation: 68 FR 43366
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-07-22'
+    locator: result page 46 (?page=46), row 13
+    note: 'Listed as: "Menominee Indian Tribe Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "Menominee Indian Tribe of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202003.07.22%20Menominee%20Indian%20Tribe%20Gaming%20Compact%20Amendments.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/07/22/03-18631/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: disapproved
+    approved: '2015-03-12'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-03-12'
+    locator: result page 46 (?page=46), row 14
+    note: 'Listed as: "Menominee Indian Tribe Tribal State Gaming Compact" (Disapproved); list''s Tribe
+      column: "Menominee Indian Tribe of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%20Menominee%20Indian%20Tribe%20Disapproved%202015%20Compact%20Amendment.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: WI
+    status: approved
+    approved: '2013-05-08'
+    federal_register_citation: 78 FR 26801
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2013-05-08'
+    locator: result page 46 (?page=46), row 15
+    note: 'Listed as: "Menominee Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Menominee Indian Tribe of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202013.05.08%20Menominee%20Indian%20Tribe%20Compact%20Amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2013/05/08/2013-10923/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '2000-10-19'
+    federal_register_citation: 65 FR 62749
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-10-19'
+    locator: result page 46 (?page=46), row 16
+    note: 'Listed as: "Menominee Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Menominee Indian Tribe of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.10.19%20Menominee%20Indian%20Tribe%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/10/19/00-26882/indian-gaming-notice-of-approved-amended-tribal-state-compact.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '2022-10-05'
+    federal_register_citation: 87 FR 60409
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-10-05'
+    locator: result page 46 (?page=46), row 17
+    note: 'Listed as: "Menominee Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Menominee Indian Tribe of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.10.05_menominee_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/10/05/2022-21607/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-wisconsin.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1992-08-10'
+    dispute_resolution_summary: After written notice the State and Tribe meet within 30 days, and if the
+      dispute is unresolved after 90 days either party may pursue any otherwise available remedy, with
+      mediation or arbitration only by mutual agreement.
+    dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
+    confidence: medium
+    as_of: '1992-08-10'
+    locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the 1992 Menominee Indian Tribe
+      compact; later amendments renumbered this section XXIV and revised it for at least some nations
+      (for example the Ho-Chunk Nation fourth amendment), so the current text may differ.
+  ordinances:
+  - approved: '1994-02-02'
+    link: https://www.nigc.gov?wpdmdl=10260&ind=10276
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-02-02'
+    locator: table row 148, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 148 lists the nation
+      as "Menominee Indian Tribe of Wisconsin".
+  - approved: '1996-01-03'
+    link: https://www.nigc.gov?wpdmdl=10261&ind=10277
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-01-03'
+    locator: table row 148, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 148 lists the nation
+      as "Menominee Indian Tribe of Wisconsin".
+  - approved: '2000-09-08'
+    link: https://www.nigc.gov?wpdmdl=10262&ind=10278
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-09-08'
+    locator: table row 148, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 148 lists the nation
+      as "Menominee Indian Tribe of Wisconsin".
+  - approved: '2008-05-29'
+    link: https://www.nigc.gov?wpdmdl=10263&ind=10279
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-05-29'
+    locator: table row 148, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 148 lists the nation
+      as "Menominee Indian Tribe of Wisconsin".
+  - approved: '2014-04-24'
+    link: https://www.nigc.gov?wpdmdl=10264&ind=10280
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2014-04-24'
+    locator: table row 148, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 148 lists the nation
+      as "Menominee Indian Tribe of Wisconsin".
+jurisdiction:
+- topic: public-law-280
+  value: retroceded
+  detail: Interior accepted Wisconsin's offer to retrocede all civil and criminal jurisdiction acquired
+    under Public Law 280 (as amended by Pub. L. 83-661) over the Menominee Indian Reservation, effective
+    March 1, 1976. Wisconsin is otherwise a mandatory state. (41 FR 8516)
+  source: federal-register-1976-menominee-retrocession
+  confidence: high
+  as_of: '1976-03-01'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Menominee Indian Tribe of Wisconsin Confidence lowered from high by the lead session:
+    the notice prints its table as page images, so nation names were read from images and matched to the
+    roster.'
+memberships:
+- organization: Midwest Alliance of Sovereign Tribes
+  source: midwest-alliance-of-sovereign-tribes-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Menominee Indian Tribe of Wisconsin".
+- organization: Great Lakes Inter-Tribal Council
+  source: great-lakes-inter-tribal-council-tribes-served
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Menominee Indian Tribe of Wisconsin".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

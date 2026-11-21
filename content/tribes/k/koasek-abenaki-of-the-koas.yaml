@@ -1,0 +1,32 @@
+id: koasek-abenaki-of-the-koas
+entity_type: native-nation
+names:
+  official: Koasek Abenaki of the Koas
+  alternate:
+  - name: Koasek Traditional Band of Abenaki Nation
+    source: alabama-indian-affairs-commission-state-recognized-tribes-compilation
+    confidence: low
+    as_of: '2001'
+  official_source: vermont-statutes-title-1-chapter-23
+recognition:
+- type: state
+  state: VT
+  legal_basis: 1 V.S.A. Section 855 (Added 2011, No. 106 (Adj. Sess.), Section 1)
+  since: '2012-05-07'
+  source: vermont-statutes-title-1-chapter-23
+  confidence: high
+  as_of: '2026'
+  locator: Section 855
+states:
+- state: VT
+  presence: other
+  source: vermont-statutes-title-1-chapter-23
+  confidence: high
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,773 @@
+id: tulalip-tribes-of-washington
+entity_type: native-nation
+names:
+  official: Tulalip Tribes of Washington
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: WA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tulalip Tribes of Washington
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4290
+  note: 'Census area with land in this state: Tulalip Reservation and Off-Reservation Trust Land (code
+    4290). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '4290'
+  name: Tulalip Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4290
+  note: Matched by name. Census class code D1.
+population:
+- count: 5100
+  kind: tribal-population-estimate
+  source: tulalip-tribes-of-washington-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"Our tribal population is over 5,100 and growing, with 2,700 members residing on the ... Tulalip
+    Indian Reservation"; About page says over 5,000'
+- count: 10969
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4290, field POP100
+  note: 'Census area: Tulalip Reservation and Off-Reservation Trust Land (code 4290). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 4358
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3381 (Tulalip Tribes of Washington alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Tulalip Tribes of Washington' (race code 6209) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 5308
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Tulalip Tribes', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 2331
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 89, row T50400 'Tulalip Tribes of the Tulalip Reservation'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://www.tulaliptribes-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tulalip Tribes of Washington
+- kind: physical-address
+  value: 6406 Marine Drive, Tulalip, WA 98271
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tulalip Tribes of Washington
+- kind: mailing-address
+  value: 6406 Marine Drive, Tulalip, WA 98271
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tulalip Tribes of Washington
+- kind: phone
+  value: (360) 716-4000
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tulalip Tribes of Washington
+- kind: fax
+  value: (360) 716-0606
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tulalip Tribes of Washington
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Puget Sound Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tulalip Tribes of Washington
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Tulalip Tribes, Washington" among organizations under constitutions approved
+    by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Tulalip Tribes of the Tulalip Reservation Washington) (approved 1936) states it
+    was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-tulacons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Tulalip Tribes of Washington Tribal Codes
+  year: '2024'
+  link: https://narf.org/nill/codes/tulalipcode/index.html
+  source: national-indian-law-library-code-codes-tulalipcode
+  confidence: medium
+  as_of: '2024'
+  locator: page heading
+  note: 'Current Through Legislation Passed: November 1, 2024. The National Indian Law Library page gives
+    the table of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution and By-laws of the Tulalip Tribes of Washington
+  year: '2015'
+  link: https://narf.org/nill/constitutions/tulalipconst/index.html
+  source: national-indian-law-library-constitution-constitutions-tulalipconst
+  confidence: medium
+  as_of: '2015'
+  locator: page heading
+  note: 'Table of Contents Updated: March 2015. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: CodePublishing Inc
+  link: http://www.codepublishing.com/wa/Tulalip/
+  source: national-indian-law-library-tulalip
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website.
+    (CodePublishing Inc.)".'
+- kind: constitution
+  title: CodePublishing Inc
+  link: http://www.codepublishing.com/WA/Tulalip/?TulalipCT.html
+  source: national-indian-law-library-tulalip
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website . (CodePublishing Inc.)".'
+- kind: constitution
+  title: Tulalip Tribes of Washington Constitution and Bylaws – Code Publishing, Inc.
+  link: http://www.codepublishing.com/WA/Tulalip/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Tulalip Tribes'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Tulalip Tribal Code
+  link: http://codepublishing.com/wa/tulalip/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Tulalip Tribes'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Tulalip Tribes of the Tulalip Reservation Washington)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/tulachrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-tulachrtr
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Tulalip Tribes of the Tulalip Reservation Washington)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/tulacons.html
+  source: university-of-oklahoma-indian-reorganization-act-tulacons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-tulalip
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://www.tulaliptribes-nsn.gov/Home/Government/Departments/TribalCourt.aspx)
+    returned HTTP 404, so it is not recorded.'
+- kind: tribal-court
+  name: Tulalip Tribes Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Tulalip Tribes'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.tulaliptribes-nsn.gov/Home/Government/Departments/TribalCourt.aspx)
+    returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  forums:
+  - kind: mediation-program
+    name: Mediation Services (Tulalip Tribal Court)
+    description: An out-of-court mediation process, conducted by Volunteers of America at the Tulalip
+      Tribal Courthouse, in which a mediator helps disputants air the dispute and agree on a satisfactory
+      solution.
+    case_types:
+    - civil
+    participation: court-referred
+    relationship_to_court: Arranged through the Tribal Court main line; the page states a $400 fine for
+      failing to appear without 48 hours' notice of cancellation.
+    link: https://www.tulaliptribalcourt-nsn.gov/GeneralCourtInfo/MediationServices
+    source: tulalip-tribal-court-mediation-services
+    confidence: high
+    as_of: '2026-11-21'
+    note: Participation recorded as court-referred because the page describes a no-show fine imposed through
+      the court; the page does not state the legal basis. Case types not enumerated on the page; 'civil'
+      reflects the description of disputants avoiding court.
+  - kind: elders-council
+    name: Tribal Court Elders Panel
+    description: A culturally based program in which tribal elders volunteer on a panel that meets at
+      the court every two weeks with young (18 to 25), first-time, non-violent offenders charged with
+      minor offenses, favoring reparative over punitive justice.
+    case_types:
+    - criminal-diversion
+    participation: voluntary
+    relationship_to_court: Offenders volunteer; on completing one year of panel-imposed requirements their
+      charges are dismissed in court.
+    enforcement: Requirements may include regular appearances, apology letters, community service, treatment,
+      curfews, testing, family history research, spiritual activity, classes and evaluations; completion
+      leads to dismissal.
+    link: https://www.tulaliptribalcourt-nsn.gov/ProgramsAndServices/TribalCourtEldersPanel
+    source: tulalip-tribal-court-elders-panel
+    confidence: high
+    as_of: '2026-11-21'
+  - kind: restorative-justice
+    name: Community Accountability Board (Juvenile Diversion Panel)
+    description: A volunteer community panel, operating since July 2010, that meets monthly with tribal
+      member youths under 18 arrested for minor offenses to hold them accountable and increase awareness
+      of their behavior.
+    case_types:
+    - juvenile
+    - criminal-diversion
+    participation: voluntary
+    relationship_to_court: A juvenile diversion program of the Tribal Court; meets at the Tribal Court.
+    link: https://www.tulaliptribalcourt-nsn.gov/ProgramsAndServices/JuvenileDiversion
+    source: tulalip-tribal-court-juvenile-diversion
+    confidence: high
+    as_of: '2026-11-21'
+    note: Participation as 'voluntary' is not stated explicitly; the page says eligible youth participate.
+      Individual volunteer names on the page are not recorded.
+  provisions:
+  - kind: other
+    title: Amendment to Tulalip Tribal Code 2.25, adding 2.25.200 enacting an Alternative Court Code (Resolution
+      2024-473)
+    citation: Tulalip Tribal Code 2.25.200 (Resolution 2024-473)
+    link: https://tulaliptribes-nsn.gov/Base/File/Reso-2024-473-Amendment-to-Tulalip-Tribal-Code-2-25-Adding-200-Enacting-Alternative-Court-Code-BIA-APPROVA-20241030
+    source: web-search-tulalip-alternative-court-2026-11-21
+    confidence: low
+    as_of: '2024-10-30'
+    note: Known from a search result title only; the file returned 404 and contents were not read.
+  - kind: other
+    title: Alternative Sentencing Program – Holistic Restorative Approach
+    citation: Tulalip Tribal Court Alternative Sentencing Program
+    link: https://www.codepublishing.com/WA/Tulalip/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-sentencing-program-holistic-restorative-approach/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Alternative; cultural healing); Healing;
+      Rehabilitation (therapeutic sentencing; Restorative.'
+  - kind: other
+    title: Community Custody – Rehabilitative Supervision and Healing Focus
+    citation: TTC 2.05 Tribal Court - Community Custody for Felonies, Sex Offenses, Serious Misdemeanors,
+      and Crimes of Addiction
+    link: https://www.codepublishing.com/WA/Tulalip/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-custody-rehabilitative-supervision-and-healing-focus/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Healing; Rehabilitation; reintegration).'
+  - kind: other
+    title: Deferred Prosecution Agreement – Rehabilitation and Treatment
+    citation: TTC 2.25 Criminal Procedures - Deferred Prosecution Agreement
+    link: https://www.codepublishing.com/WA/Tulalip/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferred-prosecution-agreement-rehabilitation-and-treatment/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Counseling (alternative to prosecution);
+      Deferred Prosecution; Diversion; Rehabilitation.'
+  - kind: other
+    title: Elders Panel Diversion Program
+    citation: 'TTC Title 2: Tribal Justice System - Criminal Procedures (Referenced in external documentation)'
+    link: https://www.codepublishing.com/WA/Tulalip/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/elders-panel-diversion-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: . Database form of practice: Alternative; cultural
+      healing); Diversion; Restorative (deferred prosecution.'
+  - kind: other
+    title: Express Rehabilitative and Restorative Goals of Tribal Criminal Law
+    citation: TTC 3.05.010(3) and (4) - Express Rehabilitative and Restorative Goals (cited in Williams
+      v. TTT appellate decision)
+    link: https://www.codepublishing.com/WA/Tulalip/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/express-rehabilitative-and-restorative-goals-of-tribal-criminal-law/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Alternative (statutory policy goals);
+      Rehabilitation; Restorative.'
+  - kind: other
+    title: Family Wellness Court
+    citation: Family Wellness Court (implementation began 2020-2021)
+    link: https://www.codepublishing.com/WA/Tulalip/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-wellness-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: . Database form of practice: Healing; Rehabilitation
+      (family reunification.'
+  - kind: other
+    title: Healing to Wellness Court (Adult Drug Court)
+    citation: Tulalip Healing to Wellness Court Program (operational since 2016/2017)
+    link: https://www.codepublishing.com/WA/Tulalip/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/healing-to-wellness-court-adult-drug-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Diversion; drug treatment); Healing;
+      Rehabilitation (therapeutic court.'
+gaming:
+  compacts:
+  - state: WA
+    status: approved
+    approved: '2007-12-10'
+    federal_register_citation: 72 FR 69706
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-12-10'
+    locator: result page 44 (?page=44), row 11
+    note: 'Listed as: "Tulalip Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Tulalip
+      Tribes of Washington". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202007.12.10%20Tulalip%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/12/10/E7-23886/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2007-05-31'
+    federal_register_citation: 72 FR 30392
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-05-31'
+    locator: result page 44 (?page=44), row 12
+    note: 'Listed as: "Tulalip Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Tulalip
+      Tribes of Washington". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202007.05.31%20Tulalip%20Tribes%20Tribal%20State%20Gaming%20Compact.%20Amdt%20VII.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/05/31/E7-10397/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2009-10-08'
+    federal_register_citation: 74 FR 51874
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2009-10-08'
+    locator: result page 44 (?page=44), row 13
+    note: 'Listed as: "Tulalip Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Tulalip
+      Tribes of Washington". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202009.10.08%20Tulalip%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2009/10/08/E9-24300/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: deemed-approved
+    approved: '1993-12-20'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-12-20'
+    locator: result page 44 (?page=44), row 14
+    note: 'Listed as: "Tulalip Tribes Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Tulalip Tribes of Washington". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201993.12.20%20Tulalip%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.'
+  - state: WA
+    status: approved
+    approved: '1999-01-28'
+    federal_register_citation: 64 FR 4460
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-01-28'
+    locator: result page 44 (?page=44), row 15
+    note: 'Listed as: "Tulalip Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Tulalip
+      Tribes of Washington". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.01.28%20Tulalip%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/01/28/99-1928/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1992-07-24'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-07-24'
+    locator: result page 44 (?page=44), row 16
+    note: 'Listed as: "Tulalip Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Tulalip
+      Tribes of Washington". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201992.07.24%20Tulalip%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.'
+  - state: WA
+    status: approved
+    approved: '2002-08-09'
+    federal_register_citation: 67 FR 51868
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2002-08-09'
+    locator: result page 44 (?page=44), row 17
+    note: 'Listed as: "Tulalip Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Tulalip
+      Tribes of Washington". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202002.08.09%20Tulalip%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2002/08/09/02-20142/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1995-03-31'
+    federal_register_citation: 60 FR 16764
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-03-31'
+    locator: result page 44 (?page=44), row 18
+    note: 'Listed as: "Tulalip Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Tulalip
+      Tribes of Washington". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant1995.03.31%20Tulalip%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/03/31/95-7940/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1991-10-03'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1991-10-03'
+    locator: result page 44 (?page=44), row 19
+    note: 'Listed as: "Tulalip Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Tulalip
+      Tribes of Washington". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201991.10.03%20Tulalip%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.'
+  - state: WA
+    status: approved
+    approved: '2015-06-04'
+    federal_register_citation: 80 FR 31918
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-04'
+    locator: result page 44 (?page=44), row 20
+    note: 'Listed as: "Tulalip Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Tulalip
+      Tribes of Washington". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%2006.04.2015%20Tulalip%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/04/2015-13712/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2021-09-01'
+    federal_register_citation: 86 FR 49054
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-09-01'
+    locator: result page 44 (?page=44), row 21
+    note: 'Listed as: "Tulalip Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Tulalip
+      Tribes of Washington". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2021.09.01_tulalip_tribes_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/09/01/2021-18821/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-washington.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2003-04-08'
+    federal_register_citation: 68 FR 17072
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-04-08'
+    locator: result page 44 (?page=44), row 22
+    note: 'Listed as: "Tulalip Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Tulalip
+      Tribes of Washington". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2003.04.08_tulalip_tribes_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/04/08/03-8560/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2024-02-06'
+    federal_register_citation: 89 FR 8238
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-02-06'
+    locator: result page 44 (?page=44), row 23
+    note: 'Listed as: "Tulalip Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Tulalip
+      Tribes of Washington". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.02.06_tulalip_tribes_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/02/06/2024-02350/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-between-the-tulalip-tribes.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2024-02-06).
+  ordinances:
+  - approved: '1995-03-13'
+    link: https://www.nigc.gov?wpdmdl=11394&ind=11443
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-03-13'
+    locator: table row 292, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 292 lists the nation
+      as "Tulalip Tribes of the Tulalip Reservation". Name matched to roster by spelling variant.
+  - approved: '1995-06-21'
+    link: https://www.nigc.gov?wpdmdl=11419&ind=11444
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-06-21'
+    locator: table row 292, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 292 lists the nation
+      as "Tulalip Tribes of the Tulalip Reservation". Name matched to roster by spelling variant.
+  - approved: '1995-10-24'
+    link: https://www.nigc.gov?wpdmdl=11423&ind=11445
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-10-24'
+    locator: table row 292, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 292 lists the nation
+      as "Tulalip Tribes of the Tulalip Reservation". Name matched to roster by spelling variant.
+  - approved: '1999-05-12'
+    link: https://www.nigc.gov?wpdmdl=11422&ind=11446
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1999-05-12'
+    locator: table row 292, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 292 lists the nation
+      as "Tulalip Tribes of the Tulalip Reservation". Name matched to roster by spelling variant.
+  - approved: '1999-09-13'
+    link: https://www.nigc.gov?wpdmdl=11421&ind=11447
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1999-09-13'
+    locator: table row 292, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 292 lists the nation
+      as "Tulalip Tribes of the Tulalip Reservation". Name matched to roster by spelling variant.
+  - approved: '2004-04-29'
+    link: https://www.nigc.gov?wpdmdl=11420&ind=11448
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2004-04-29'
+    locator: table row 292, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 292 lists the nation
+      as "Tulalip Tribes of the Tulalip Reservation". Name matched to roster by spelling variant.
+  - approved: '2005-11-17'
+    link: https://www.nigc.gov?wpdmdl=11424&ind=11449
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2005-11-17'
+    locator: table row 292, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 292 lists the nation
+      as "Tulalip Tribes of the Tulalip Reservation". Name matched to roster by spelling variant.
+  - approved: '2006-04-03'
+    link: https://www.nigc.gov?wpdmdl=11425&ind=11450
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2006-04-03'
+    locator: table row 292, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 292 lists the nation
+      as "Tulalip Tribes of the Tulalip Reservation". Name matched to roster by spelling variant.
+  - approved: '2007-06-28'
+    link: https://www.nigc.gov?wpdmdl=11426&ind=11451
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2007-06-28'
+    locator: table row 292, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 292 lists the nation
+      as "Tulalip Tribes of the Tulalip Reservation". Name matched to roster by spelling variant.
+  - approved: '2007-12-17'
+    link: https://www.nigc.gov?wpdmdl=11427&ind=11452
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2007-12-17'
+    locator: table row 292, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 292 lists the nation
+      as "Tulalip Tribes of the Tulalip Reservation". Name matched to roster by spelling variant.
+  - approved: '2008-05-28'
+    link: https://www.nigc.gov?wpdmdl=11428&ind=11453
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2008-05-28'
+    locator: table row 292, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 292 lists the nation
+      as "Tulalip Tribes of the Tulalip Reservation". Name matched to roster by spelling variant.
+  - approved: '2015-03-24'
+    link: https://www.nigc.gov?wpdmdl=11429&ind=11454
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2015-03-24'
+    locator: table row 292, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 292 lists the nation
+      as "Tulalip Tribes of the Tulalip Reservation". Name matched to roster by spelling variant.
+  - approved: '2022-05-09'
+    link: https://www.nigc.gov?wpdmdl=11430&ind=11455
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2022-05-09'
+    locator: table row 292, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 292 lists the nation
+      as "Tulalip Tribes of the Tulalip Reservation". Name matched to roster by spelling variant.
+  - approved: '2023-12-07'
+    link: https://www.nigc.gov?wpdmdl=11431&ind=11456
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2023-12-07'
+    locator: table row 292, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 292 lists the nation
+      as "Tulalip Tribes of the Tulalip Reservation". Name matched to roster by spelling variant.
+  - approved: '2025-10-17'
+    link: https://www.nigc.gov?wpdmdl=13220&ind=13221
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2025-10-17'
+    locator: table row 292, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 292 lists the nation
+      as "Tulalip Tribes of the Tulalip Reservation". Name matched to roster by spelling variant.
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: 'Washington assumed partial jurisdiction (RCW 37.12.010, 1957 and 1963): it does not apply to
+    Indians on trust or restricted tribal or allotted lands within a reservation except for eight subjects
+    (compulsory school attendance, public assistance, domestic relations, mental illness, juvenile delinquency,
+    adoption, dependent children, motor vehicles on public roads), unless the tribe requested full state
+    jurisdiction under RCW 37.12.021.'
+  source: revised-code-of-washington-37-12-010
+  confidence: medium
+  as_of: '1963'
+  locator: RCW 37.12.010
+  note: Nation matched to Washington by office state. Check for later retrocession facts.
+- topic: public-law-280
+  value: optional-state
+  detail: Listed as a tribe that consented to (requested) full Washington state jurisdiction; some of
+    this jurisdiction was later retroceded for several of these nations (see retrocession facts).
+  source: department-of-justice-federally-recognized-indian-nations-under-state-jurisdiction-2016
+  confidence: medium
+  as_of: '2016-06-29'
+  locator: Washington section, footnote 4
+  note: From a 2016 Office of Tribal Justice compilation hosted by the National Indian Justice Center.
+- topic: public-law-280
+  value: retroceded
+  detail: Interior accepted retrocession of partial criminal jurisdiction acquired by Washington under
+    Public Law 280, as of November 21, 2000. (65 FR 75948; 65 FR 77905)
+  source: federal-register-2000-tulalip-retrocession
+  confidence: high
+  as_of: '2000-11-21'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Tulalip Tribes of Washington Confidence lowered from high by the lead session: the
+    notice prints its table as page images, so nation names were read from images and matched to the roster.'
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Exercising jurisdiction since 2014-02-20 (start date given by NCAI; jurisdiction began under
+    the 2013 special domestic violence criminal jurisdiction provision). Listed by NCAI as implementing
+    (list updated May 2022).
+  source: national-congress-of-american-indians-implementing-tribe-profile-tulalip-tribes-of-washington
+  confidence: medium
+  as_of: 2022-05
+  locator: '"Exercising jurisdiction since" line'
+  note: Listed as "Tulalip Tribes in Washington". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Department of Justice granted the nation's Violence Against Women Act 2013 Pilot Project application,
+    approved February 6, 2014 (pilot project).
+  source: department-of-justice-violence-against-women-act-2013-pilot-project
+  confidence: medium
+  as_of: '2014-02-06'
+  locator: List of granted Pilot Project applications
+  note: Primary source but describes the 2014-2015 pilot period; page updated April 7, 2023.
+- topic: tribal-law-and-order-act-enhanced-sentencing
+  value: implementing
+  detail: Listed among tribes exercising enhanced sentencing and incarcerating inmates under the Tribal
+    Law and Order Act (as of 2013 interviews).
+  source: bureau-of-justice-assistance-enhanced-sentencing-in-tribal-courts-2015
+  confidence: medium
+  as_of: '2013'
+  locator: p. 3, list of tribes exercising enhanced sentencing
+  note: Listed as "Tulalip Tribes".
+- topic: tribal-law-and-order-act-enhanced-sentencing
+  value: implementing
+  detail: 'NCAI profile: the Tribes "implemented TLOA enhanced sentencing provisions prior to the passage
+    of VAWA 2013."'
+  source: national-congress-of-american-indians-implementing-tribe-profile-tulalip-tribes-of-washington
+  confidence: medium
+  as_of: '2013'
+  note: Statement on an individual NCAI implementing-tribe profile page, not a list.
+memberships:
+- organization: Northwest Indian Fisheries Commission
+  source: northwest-indian-fisheries-commission-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Tulalip Tribes". Name matched to the roster entry.
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Tulalip Tribes". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

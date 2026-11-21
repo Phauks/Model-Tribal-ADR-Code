@@ -1,0 +1,408 @@
+id: match-e-be-nash-she-wish-band-of-pottawatomi
+entity_type: native-nation
+names:
+  official: Match-E-Be-Nash-She-Wish Band of Pottawatomi
+  former:
+  - name: Match-E-Be-Nash-She-Wish Band of Pottawatomi Indians of Michigan
+    source: bia-recognized-entities-2026
+    confidence: high
+    as_of: '2026-01-30'
+    locator: 91 Fed. Reg. 4104
+    note: Listed in the notice as a previous name.
+  alternate:
+  - name: Gun Lake Tribe
+    source: match-e-be-nash-she-wish-band-of-pottawa-home-tribes-match-e-be-nash-she-wish-ban
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Inter-Tribal Council of Michigan: "commonly referred to as the Gun Lake Tribe"; the nation''s
+      own site domain is gunlaketribe-nsn.gov'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: 25 C.F.R. Part 83; final determination 63 FR 56936 (1998-10-23)
+  petition_number: 9A
+  petition_stage: Letter of Intent to Petition 06/24/1992; Acknowledgment effective 8/23/1999 63 FR 56936
+  since: '1999-08-23'
+  source: federal-register-98-28438
+  confidence: high
+  as_of: '1999-08-23'
+  locator: 'Petitioner #9A'
+  note: 'Also see source(s): ofa-list-of-petitioners-by-state-2013.'
+states:
+- state: MI
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Match-E-Be-Nash-She-Wish Band of Pottawatomi (previously listed as Match-E-Be-Nash-She-Wish
+    Band of Pottawatomi Indians of Michigan)
+- state: MI
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2150
+  note: 'Census area with land in this state: Match-e-be-nash-she-wish Band of Pottawatomi Reservation
+    and Off-Reservation Trust Land (code 2150). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2150'
+  name: Match-e-be-nash-she-wish Band of Pottawatomi Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2150
+  note: Matched by name. Census class code D1.
+population:
+- count: 18
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2150, field POP100
+  note: 'Census area: Match-e-be-nash-she-wish Band of Pottawatomi Reservation and Off-Reservation Trust
+    Land (code 2150). Everyone counted as living in the area in the 2020 Census, of any race or tribal
+    affiliation; this is not a count of the nation''s citizens.'
+- count: 368
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3109 (Match-e-be-nash-she-wish Band of Pottawatomi Indians alone or
+    in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Match-e-be-nash-she-wish Band of Pottawatomi Indians'
+    (race code 6156) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 418
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Match-e-be-nash-she-wish Band of Pottawatomi Indians', PDF
+    page 4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 211
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 80, row T21300 'Match-e-be-nash-she-wish Band of Pottawatomi Indians
+    of Michigan'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://gunlaketribe-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Match-E-Be-Nash-She-Wish Band of Pottawatomi (previously listed as Match-E-Be-Nash-She-Wish
+    Band of Pottawatomi Indians of Michigan)
+- kind: physical-address
+  value: 2872 Mission Drive, Shelbyville, MI 49344
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Match-E-Be-Nash-She-Wish Band of Pottawatomi (previously listed as Match-E-Be-Nash-She-Wish
+    Band of Pottawatomi Indians of Michigan)
+- kind: mailing-address
+  value: 2872 Mission Drive, Shelbyville, MI 49344
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Match-E-Be-Nash-She-Wish Band of Pottawatomi (previously listed as Match-E-Be-Nash-She-Wish
+    Band of Pottawatomi Indians of Michigan)
+- kind: phone
+  value: (269) 397-1780
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Match-E-Be-Nash-She-Wish Band of Pottawatomi (previously listed as Match-E-Be-Nash-She-Wish
+    Band of Pottawatomi Indians of Michigan)
+- kind: fax
+  value: (269) 397-1781
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Match-E-Be-Nash-She-Wish Band of Pottawatomi (previously listed as Match-E-Be-Nash-She-Wish
+    Band of Pottawatomi Indians of Michigan)
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Michigan Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Match-E-Be-Nash-She-Wish Band of Pottawatomi (previously listed as Match-E-Be-Nash-She-Wish
+    Band of Pottawatomi Indians of Michigan)
+governing_documents:
+- kind: law-code
+  title: Match-e-be-nash-she-wish Band of Pottawatomi Indians of Michigan
+  year: '2018'
+  link: https://narf.org/nill/codes/match-e-be-nash-she-wish/index.html
+  source: national-indian-law-library-code-codes-match-e-be-nash-she-wish
+  confidence: medium
+  as_of: '2018'
+  locator: page heading
+  note: 'Table of Contents Updated: June 2018. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal Court Rules and Ordinances
+  source: national-indian-law-library-match-e-be-nash-she-wish
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
+    website . Tribal Court Rules and Ordinances.". Link check 2026-11-21: the link the source gives (https://gunlaketribe-nsn.gov/departments/tribal-justice/tribal-court/rules-ordinances-forms-court-opinions/)
+    returned HTTP 404, so it is not recorded.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-match-e-be-nash-she-wish
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (https://gunlaketribe-nsn.gov/departments/tribal-justice/tribal-court/) returned
+    HTTP 404, so it is not recorded.'
+- kind: tribal-court
+  name: Match-E-Be-Nash-She-Wish Band of Pottawatomi Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Michigan section, entry 'Match-E-Be-Nash-She-Wish Band of Pottawatomi Gun Lake Tribe'
+  note: 'Link check 2026-11-21: the link the source gives (https://gunlaketribe-nsn.gov/departments/tribal-justice/tribal-court/)
+    returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Court purpose and goals for Children Cases
+    citation: Gun Lake Tribal Code 5.2-2 & 5.2-5
+    link: https://ecode360.com/GU6659
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-purpose-and-goals-for-children-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice; Restorative practice.'
+  - kind: other
+    title: Disposition and Alternatives for Juveniles
+    citation: Gun Lake Tribal Code 5.2-8
+    link: https://ecode360.com/GU6660
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-and-alternatives-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Diversion Procedures for Juveniles
+    citation: Gun Lake Tribal Code 5.2-8 & 5.2-5
+    link: https://ecode360.com/GU6662
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-procedures-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Possibility for Alternative Dispositions for Children
+    citation: Gun Lake Tribal Code 5.1-22
+    link: https://ecode360.com/GU6657
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/possibility-for-alternative-dispositions-for-children/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Substance Abuse Treatment in Sentencing
+    citation: Gun Lake Tribal Code 8.3-28
+    link: https://ecode360.com/GU6664
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/substance-abuse-treatment-in-sentencing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+gaming:
+  compacts:
+  - state: MI
+    status: deemed-approved
+    approved: '2009-04-22'
+    federal_register_citation: 74 FR 18397
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2009-04-22'
+    locator: result page 16 (?page=16), row 18
+    note: 'Listed as: "Match-e-be-nash-she-wish Band of Pottawatomi Indians Tribal State Gaming Compact"
+      (Deemed Approved); list''s Tribe column: "Match-E-Be-Nash-She-Wish Band of Pottawatomi (previously
+      listed as Match-E-Be-Nash-She-Wish Band of Pottawatomi Indians of Michigan)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2009.04.22_match-e-be-nash-she-wish_band_of_pottawatomi_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2009/04/22/E9-9260/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: MI
+    status: deemed-approved
+    dispute_resolution_summary: After written notice the parties meet within 30 days; if a State allegation
+      is unresolved after 90 days the State may serve a notice to cease the disputed games and the tribe
+      may either stop them or invoke arbitration under American Arbitration Association commercial rules
+      before three attorney arbitrators while play continues, and a tribe may likewise invoke arbitration
+      on its own unresolved allegations.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-mi-bay-mills-indian-community-1993
+    confidence: medium
+    as_of: '1993-11-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The same Section 7 text appears in the
+      1993 Bay Mills Indian Community compact and the 1999 Little River Band compact (both read); other
+      Michigan nations signed the 1993 or 1998 forms, and later amendments were not checked. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2009-04-22).
+  ordinances:
+  - approved: '2003-08-06'
+    link: https://www.nigc.gov?wpdmdl=10221&ind=10247
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2003-08-06'
+    locator: table row 146, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 146 lists the nation
+      as "Match-E-Be-Nash-She-Wish Band of Potawatomi Indians". Name matched to roster by spelling variant.
+  - approved: '2010-02-22'
+    link: https://www.nigc.gov?wpdmdl=10236&ind=10248
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2010-02-22'
+    locator: table row 146, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 146 lists the nation
+      as "Match-E-Be-Nash-She-Wish Band of Potawatomi Indians". Name matched to roster by spelling variant.
+  - approved: '2013-04-29'
+    link: https://www.nigc.gov?wpdmdl=10237&ind=10249
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2013-04-29'
+    locator: table row 146, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 146 lists the nation
+      as "Match-E-Be-Nash-She-Wish Band of Potawatomi Indians". Name matched to roster by spelling variant.
+  - approved: '2013-09-03'
+    link: https://www.nigc.gov?wpdmdl=10238&ind=10250
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2013-09-03'
+    locator: table row 146, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 146 lists the nation
+      as "Match-E-Be-Nash-She-Wish Band of Potawatomi Indians". Name matched to roster by spelling variant.
+  - approved: '2014-02-26'
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2014-02-26'
+    locator: table row 146, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 146 lists the nation
+      as "Match-E-Be-Nash-She-Wish Band of Potawatomi Indians". Name matched to roster by spelling variant.
+  - approved: '2014-04-24'
+    link: https://www.nigc.gov?wpdmdl=10240&ind=10251
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2014-04-24'
+    locator: table row 146, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 146 lists the nation
+      as "Match-E-Be-Nash-She-Wish Band of Potawatomi Indians". Name matched to roster by spelling variant.
+  - approved: '2015-05-04'
+    link: https://www.nigc.gov?wpdmdl=10241&ind=10252'
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2015-05-04'
+    locator: table row 146, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 146 lists the nation
+      as "Match-E-Be-Nash-She-Wish Band of Potawatomi Indians". Name matched to roster by spelling variant.
+  - approved: '2017-10-13'
+    link: https://www.nigc.gov?wpdmdl=10242&ind=10253
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2017-10-13'
+    locator: table row 146, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 146 lists the nation
+      as "Match-E-Be-Nash-She-Wish Band of Potawatomi Indians". Name matched to roster by spelling variant.
+  - approved: '2018-07-20'
+    link: https://www.nigc.gov?wpdmdl=10243&ind=10254
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2018-07-20'
+    locator: table row 146, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 146 lists the nation
+      as "Match-E-Be-Nash-She-Wish Band of Potawatomi Indians". Name matched to roster by spelling variant.
+  - approved: '2020-04-23'
+    link: https://www.nigc.gov?wpdmdl=10244&ind=10255
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2020-04-23'
+    locator: table row 146, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 146 lists the nation
+      as "Match-E-Be-Nash-She-Wish Band of Potawatomi Indians". Name matched to roster by spelling variant.
+  - approved: '2024-10-18'
+    link: https://www.nigc.gov?wpdmdl=10245&ind=10256
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2024-10-18'
+    locator: table row 146, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 146 lists the nation
+      as "Match-E-Be-Nash-She-Wish Band of Potawatomi Indians". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Match-E-Be-Nash-She-Wish Band of
+      Potawatomi Indians". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Match-E-Be-Nash-She-Wish Band of Pottawatomi Confidence lowered from high by the lead
+    session: the notice prints its table as page images, so nation names were read from images and matched
+    to the roster.'
+memberships:
+- organization: Midwest Alliance of Sovereign Tribes
+  source: midwest-alliance-of-sovereign-tribes-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Match-e-be-nash-shewish Band of Pottawatomi Indians of Michigan". Name matched to the
+    roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

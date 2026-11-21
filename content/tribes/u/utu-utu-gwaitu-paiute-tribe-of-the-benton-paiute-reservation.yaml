@@ -1,0 +1,184 @@
+id: utu-utu-gwaitu-paiute-tribe-of-the-benton-paiute-reservation
+entity_type: native-nation
+names:
+  official: Utu Utu Gwaitu Paiute Tribe of the Benton Paiute Reservation, California
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Utu Utu Gwaitu Paiute Tribe of the Benton Paiute Reservation, California
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0185
+  note: 'Census area with land in this state: Benton Paiute Reservation and Off-Reservation Trust Land
+    (code 0185). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: 0185
+  name: Benton Paiute Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0185
+  note: Matched by name. Census class code D1.
+population:
+- count: 138
+  kind: citizens
+  source: utu-utu-gwaitu-paiute-tribe-of-the-bento-tribal-history-htm
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"Tribal enrollment is 138 members"; undated statement on the official site; as_of is the access
+    date'
+- count: 84
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0185, field POP100
+  note: 'Census area: Benton Paiute Reservation and Off-Reservation Trust Land (code 0185). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 74
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3402 (Utu Utu Gwaitu Paiute Tribe of the Benton Paiute Reservation,
+    California alone or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Utu Utu Gwaitu Paiute Tribe of the Benton Paiute Reservation,
+    California' (race code 6061) alone or in combination with other tribes or races in the 2020 Census;
+    self-identification, not enrollment. Includes noise added for disclosure avoidance. Census label exact
+    name match.
+- count: 136
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Utu Utu Gwaiti Paiute Tribe', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.bentonpaiutereservation.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Utu Utu Gwaitu Paiute Tribe of the Benton Paiute Reservation, California
+- kind: physical-address
+  value: 555 Yellow Jacket Road, Benton, CA 93512
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Utu Utu Gwaitu Paiute Tribe of the Benton Paiute Reservation, California
+- kind: mailing-address
+  value: 25669 Highway 6, PMB 1, Benton, CA 93512
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Utu Utu Gwaitu Paiute Tribe of the Benton Paiute Reservation, California
+- kind: phone
+  value: (760) 933-2321
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Utu Utu Gwaitu Paiute Tribe of the Benton Paiute Reservation, California
+- kind: fax
+  value: (760) 933-2412
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Utu Utu Gwaitu Paiute Tribe of the Benton Paiute Reservation, California
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Central California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Utu Utu Gwaitu Paiute Tribe of the Benton Paiute Reservation, California
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: http://www.bentonpaiutereservation.org/governing-documents.htm
+  source: national-indian-law-library-utu-utu-gwaitu
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website.
+    Exclusion Ordinance .".'
+- kind: constitution
+  title: Constitution
+  link: http://www.bentonpaiutereservation.org/governing-documents.htm
+  source: national-indian-law-library-utu-utu-gwaitu
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Constitution
+  link: https://narf.org/nill/constitutions/utuutuconst/UTU_UTU_GWAITU_CONST.pdf
+  source: national-indian-law-library-utu-utu-gwaitu
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At NILL website
+    .".'
+gaming:
+  ordinances:
+  - approved: '1996-04-10'
+    link: https://www.nigc.gov?wpdmdl=11471&ind=11494
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1996-04-10'
+    locator: table row 298, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 298 lists the nation
+      as "U-tu Utu Gwaitu Paiute Tribe". Name matched to roster by spelling variant.
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Utu Utu Gwaitu Paiute Tribe of the Benton Paiute Reservation, California Confidence
+    lowered from high by the lead session: the notice prints its table as page images, so nation names
+    were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

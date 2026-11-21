@@ -1,0 +1,462 @@
+id: spirit-lake-tribe
+entity_type: native-nation
+names:
+  official: Spirit Lake Tribe, North Dakota
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: ND
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Spirit Lake Tribe, North Dakota
+- state: ND
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3935
+  note: 'Census area with land in this state: Spirit Lake Reservation (code 3935). Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '3935'
+  name: Spirit Lake Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3935
+  note: Matched by name. Census class code D2.
+population:
+- count: 7933
+  kind: citizens
+  source: spirit-lake-tribe-our-tribe
+  confidence: high
+  as_of: '2026-04-12'
+  note: '"As of April 12, 2026, we have a total enrollment of 7,933 members"'
+- count: 3949
+  kind: resident-population
+  source: spirit-lake-tribe-our-tribe
+  confidence: high
+  as_of: '2026-04-12'
+  note: '"Total enrolled members living on the Spirit Lake reservation is 3,949"'
+- count: 3787
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3935, field POP100
+  note: 'Census area: Spirit Lake Reservation (code 3935). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 4646
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3337 (Spirit Lake Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Spirit Lake Tribe' (race code 6311) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 5927
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Denver, row 'Spirit Lake Tribe', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 5002
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: low
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 88, row T47500 'Spirit Lake Tribe'
+  note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
+    in the vicinity of the nation (2010), used by Indian Affairs as the nation's population indicator;
+    a broad proxy that includes people of any tribe; not enrollment. Report published 2014-01-16; row
+    name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.spiritlakenation.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Spirit Lake Tribe, North Dakota
+- kind: physical-address
+  value: 816 -  3rd Avenue North, Fort Totten, ND 58335
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Spirit Lake Tribe, North Dakota
+- kind: mailing-address
+  value: P.O. Box 359, Fort Totten, ND 58335
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Spirit Lake Tribe, North Dakota
+- kind: phone
+  value: (701) 381-2006
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Spirit Lake Tribe, North Dakota
+- kind: fax
+  value: (701) 766-4126
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Spirit Lake Tribe, North Dakota
+federal_administration:
+  bureau_of_indian_affairs_region: Great Plains
+  bureau_of_indian_affairs_agency: Fort Totten Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Spirit Lake Tribe, North Dakota
+governing_documents:
+- kind: law-code
+  title: Spirit Lake Tribe, North Dakota
+  year: '2014'
+  link: https://narf.org/nill/codes/spirit_lake/index.html
+  source: national-indian-law-library-code-codes-spirit-lake
+  confidence: medium
+  as_of: '2014'
+  locator: page heading
+  note: 'Last Amended: March 24, 2014. The National Indian Law Library page gives the table of contents
+    (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Spirit Lake Tribe, North Dakota - Constitution & Bylaws
+  year: '1996'
+  link: https://narf.org/nill/constitutions/spirit_lake/index.html
+  source: national-indian-law-library-constitution-constitutions-spirit-lake
+  confidence: medium
+  as_of: '1996'
+  locator: page heading
+  note: 'Amended: August 19, 1996. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
+  source: national-indian-law-library-spirit-lake
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.spiritlakenation.com/programs/tribal-council/
+  source: national-indian-law-library-spirit-lake
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Spirit Lake Tribe Constitutions and Bylaws
+  link: http://www.spiritlakenation.com/data/upfiles/media/SLT%20Constittution%202016.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: North Dakota section, entry 'Spirit Lake Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Spirit Lake Tribe Law & Order Code
+  link: http://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: North Dakota section, entry 'Spirit Lake Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Devil's Lake Sioux Tribe North Dakota)
+  year: '1946'
+  link: https://thorpe.law.ou.edu/IRA/devcons.html
+  source: university-of-oklahoma-indian-reorganization-act-devcons
+  confidence: low
+  as_of: '1946'
+  note: Matched by former name (Devil's Lake Sioux Tribe); confirm. Historical text as originally approved;
+    the nation may have amended or replaced it since.
+justice_institutions:
+- kind: traditional-forum
+  name: 'Wodakota: Traditional Court'
+  source: narf-tribal-peacemaking-laws
+  confidence: medium
+  as_of: '2025-09-29'
+  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked.
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.spiritlakenation.com/programs/spirit-lake-tribal-court/
+  source: national-indian-law-library-spirit-lake
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Spirit Lake Tribal Court
+  link: http://www.spiritlakenation.com/programs/spirit-lake-tribal-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: North Dakota section, entry 'Spirit Lake Tribe'
+dispute_resolution:
+  forums:
+  - kind: traditional-forum
+    name: 'Wodakota: Traditional Court'
+    own_term:
+      name: Wodakota
+      language_tag: dak
+      translation: The code describes the Wodakota way as the Dakota way of balance in dealings with oneself,
+        the Creator and relatives; no single-word gloss is given.
+    description: Part of the Tribal Court system providing a non-adversarial, culturally appropriate mediation
+      alternative to court-imposed sanctions; uses Peacemaking Circles drawing on elders, spiritual leaders
+      and community members, and produces written peacemaking compacts.
+    legal_basis: Spirit Lake Law and Order Code, Title 21, §§ 21-1-101 to 21-1-110 and following
+    case_types:
+    - juvenile
+    - civil
+    - criminal-sentencing
+    - other
+    participation: voluntary
+    relationship_to_court: Cases may come informally, formally, by memorandum of agreement, or voluntarily;
+      informal and formal matters remain under Tribal Court jurisdiction. All persons involved must consent
+      through a memorandum of agreement. The court also offers peacemaking to community programs, schools
+      and agencies under memoranda of agreement.
+    enforcement: A peacemaking compact signed by the parties and peacemaker becomes an order and judgment
+      of the Tribal Court when the parties so intend and the Chief Judge signs it; peacemakers monitor
+      compliance.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Spirit-Lake-Title-21-WODAKOTA.pdf
+    source: spirit-lake-title-21-wodakota
+    confidence: medium
+    as_of: '2014-03-24'
+    locator: §§ 21-1-101, 21-1-104, 21-1-107(9)-(10), 21-1-108, 21-1-109, 21-1-110
+    note: The Title incorporates a tribal prayer adopted by elders, in English and Dakota, as a guideline
+      (§ 21-1-105), and lists Dakota values with Dakota terms (§ 21-1-106); these are not reproduced here.
+      Peacemaking Circles also serve as an alternative sentencing route for youth offenders. Language
+      tag dak (Dakota).
+  provisions:
+  - kind: other
+    title: Domestic Abuse – Mandatory Counseling and Traditional Healing
+    citation: Title 3, § 3-7-430(G)
+    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/domestic-abuse-mandatory-counseling-and-traditional-healing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Healing.'
+  - kind: other
+    title: Informal Adjustments for Juveniles
+    citation: Title 23, §§ 23-6-111 to 23-6-114
+    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-adjustments-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Conflict resolution; Informal hearing.'
+  - kind: other
+    title: Juvenile Diversion Agreements
+    citation: Title 23, §§ 23-6-108 to 23-6-110
+    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/juvenile-diversion-agreements/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Diversion;
+      Program.'
+  - kind: other
+    title: Suspended Sentences with Rehabilitative and Restorative Conditions
+    citation: Title 3, § 3-6-107(F)
+    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/suspended-sentences-with-rehabilitative-and-restorative-conditions/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Rehabilitation; Restitution.'
+  - kind: peacemaking
+    title: Traditional Court
+    citation: 'SPIRIT LAKE LAW AND ORDER CODE Title 21: WODAKOTA: TRADITIONAL COURT ORDINANCE'
+    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/traditional-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
+  - kind: other
+    title: Traditional Restitution and Custom Law Recognition
+    citation: Title 3, § 3-7-020(OO), (ZZ)
+    link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/traditional-restitution-and-custom-law-recognition/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: traditional-dispute-resolution
+    title: 'Title 21: Wodakota: Traditional Court Ordinance'
+    citation: 'Title 21: Wodakota: Traditional Court Ordinance'
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Spirit-Lake-Title-21-WODAKOTA.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Spirit Lake Tribe of North Dakota
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      philosophy, values, and tribal prayer, standards of conduct, authority to use traditional ways and
+      instruct on tribal teachings, referral standards, and procedures.'
+  - kind: peacemaking
+    title: 'Peacemakers: Qualifications, Appointments, Authorities'
+    citation: 'Peacemakers: Qualifications, Appointments, Authorities; Peacemaker Process'
+    link: https://narf.org/nill/codes/spirit_lake/index.html
+    source: national-indian-law-library-code-codes-spirit-lake
+    confidence: medium
+    as_of: '2014'
+    locator: Table of Contents, under 'Chapter Three. Community Notification'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Last
+      Amended: March 24, 2014); the provision itself was not read. The heading it falls under is taken
+      from the page layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: ND
+    status: approved
+    approved: '2022-12-19'
+    federal_register_citation: 87 FR 77633
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-12-19'
+    locator: result page 21 (?page=21), row 5
+    note: 'Listed as: "Spirit Lake Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Spirit Lake Tribe, North Dakota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.12.19_spirit_lake_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/12/19/2022-27471/indian-gaming-approval-of-tribal-state-class-iii-gaming-compacts-in-the-state-of-north-dakota.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: ND
+    status: approved
+    approved: '1993-08-18'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-08-18'
+    locator: result page 21 (?page=21), row 6
+    note: 'Listed as: "Spirit Lake Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Spirit Lake Tribe, North Dakota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.08.18_spirit_lake_tribe_tribal_gaming_compact.pdf.'
+  - state: ND
+    status: approved
+    approved: '1992-12-30'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-12-30'
+    locator: result page 21 (?page=21), row 7
+    note: 'Listed as: "Spirit Lake Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Spirit Lake Tribe, North Dakota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1992.12.30_spirit_lake_tribe_tribal_state_gaming_compact.pdf.'
+  - state: ND
+    status: approved
+    approved: '2013-03-21'
+    federal_register_citation: 78 FR 17427
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2013-03-21'
+    locator: result page 21 (?page=21), row 8
+    note: 'Listed as: "Spirit Lake Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Spirit Lake Tribe, North Dakota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2013.03.21_spirit_lake_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2013/03/21/2013-06446/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: ND
+    status: approved
+    approved: '1999-11-26'
+    federal_register_citation: 64 FR 66488
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-11-26'
+    locator: result page 21 (?page=21), row 9
+    note: 'Listed as: "Spirit Lake Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Spirit Lake Tribe, North Dakota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1999.11.26_spirit_lake_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/11/26/99-30727/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: ND
+    status: approved
+    approved: '2022-12-19'
+    dispute_resolution_summary: After written notice the parties meet within 30 days; if unresolved after
+      90 days they must first try mediation (by an agreed mediator or under American Arbitration Association
+      commercial mediation procedures in Bismarck), and once mediation fails or 180 days pass either party
+      may sue in the United States District Court for the District of North Dakota under limited waivers
+      of immunity.
+    dispute_resolution_locator: Section XXVIII (Dispute Resolution)
+    source: compact-nd-spirit-lake-tribe-2022
+    confidence: high
+    as_of: '2022-12-19'
+    locator: Section XXVIII (Dispute Resolution)
+    note: Dispute-resolution clause read from this nation's own compact document. Read from the 2022 Spirit
+      Lake Tribe compact; the other North Dakota nations' 2022 compacts were approved the same day but
+      were not checked.
+  ordinances:
+  - approved: '1994-06-24'
+    link: https://www.nigc.gov?wpdmdl=11213&ind=11237
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-06-24'
+    locator: table row 269, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 269 lists the nation
+      as "Spirit Lake Tribe".
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Spirit Lake Tribe, North Dakota Confidence lowered from high by the lead session:
+    the notice prints its table as page images, so nation names were read from images and matched to the
+    roster.'
+memberships:
+- organization: Great Plains Tribal Leaders Health Board
+  source: great-plains-tribal-leaders-health-board-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Spirit Lake Tribe". Name matched to the roster entry.
+- organization: Coalition of Large Tribes
+  source: coalition-of-large-tribes-home
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Spirit Lake Tribe". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

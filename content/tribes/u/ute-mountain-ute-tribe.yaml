@@ -1,0 +1,365 @@
+id: ute-mountain-ute-tribe
+entity_type: native-nation
+names:
+  official: Ute Mountain Ute Tribe
+  self_designation:
+  - name: Weenuche
+    language_tag: ute
+    source: ute-mountain-ute-tribe-home
+    confidence: medium
+    as_of: '2026-11-21'
+    note: '"The Ute Mountain Ute Tribe are the Weenuche band of the Ute"'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: CO
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ute Mountain Ute Tribe
+- state: CO
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4470
+  note: 'Census area with land in this state: Ute Mountain Reservation and Off-Reservation Trust Land
+    (code 4470). Area matched to the nation by name.'
+- state: NM
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4470
+  note: 'Census area with land in this state: Ute Mountain Reservation and Off-Reservation Trust Land
+    (code 4470). Area matched to the nation by name.'
+- state: UT
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4470
+  note: 'Census area with land in this state: Ute Mountain Reservation and Off-Reservation Trust Land
+    (code 4470). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '4470'
+  name: Ute Mountain Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4470
+  note: Matched by name. Census class code D1.
+population:
+- count: 2000
+  kind: citizens
+  source: ute-mountain-ute-tribe-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"Currently we are populated at a litle over 2,000 members"; undated statement on the official
+    site; as_of is the access date'
+- count: 1656
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4470, field POP100
+  note: 'Census area: Ute Mountain Reservation and Off-Reservation Trust Land (code 4470). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 1994
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3401 (Ute Mountain Ute Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Ute Mountain Ute Tribe' (race code 6365) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+- count: 2070
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Denver, row 'Ute Mountain Ute Tribe', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 1701
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 89, row T52000 'Ute Mountain Tribe of the Ute Mountain Reservation,
+    Colorado, New Mexico & Utah'
+  note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
+    Census tribal statistical area (2010), used by Indian Affairs as the nation's population indicator;
+    includes people of any tribe; not enrollment. Report published 2014-01-16; row name matched to the
+    nation by name.
+contacts:
+- kind: website
+  value: https://www.utemountainutetribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ute Mountain Ute Tribe
+- kind: physical-address
+  value: 125 Mike Wash Road Tribal Complex, Towaoc, CO 81334
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ute Mountain Ute Tribe
+- kind: mailing-address
+  value: P.O. Box JJ, Towaoc, CO 81334
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ute Mountain Ute Tribe
+- kind: phone
+  value: (970) 564-5600
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ute Mountain Ute Tribe
+- kind: fax
+  value: (970) 565-5790
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ute Mountain Ute Tribe
+languages:
+- name: Ute
+  language_tag: ute
+  source: ute-mountain-ute-tribe-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"The Ute language is vital to our Ute members"'
+federal_administration:
+  bureau_of_indian_affairs_region: Southwest
+  bureau_of_indian_affairs_agency: Ute Mountain Ute Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ute Mountain Ute Tribe
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Ute Mountain Tribe of the Ute Mountain Reservation, Colorado" among organizations
+    under constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18,
+    1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Ute Mountain Tribe Ute Mountain Reservation Colorado, New Mexico, Utah) (approved
+    1940) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-utemtcons
+  confidence: medium
+  as_of: '1940'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Ute Mountain Tribe of the Ute Mountain Reservation, Colorado, New Mexico & Utah
+  year: '1988'
+  link: https://narf.org/nill/codes/utemtnutecode/index.html
+  source: national-indian-law-library-code-codes-utemtnutecode
+  confidence: medium
+  as_of: '1988'
+  locator: page heading
+  note: 'Dated: 1988. The National Indian Law Library page gives the table of contents (and may link to
+    the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Ute Mountain Tribe of the Ute Mountain Reservation, Colorado, New Mexico & Utah - Tribal Constitution
+  year: '1976'
+  link: https://narf.org/nill/constitutions/utemtnmute/index.html
+  source: national-indian-law-library-constitution-constitutions-utemtnmute
+  confidence: medium
+  as_of: '1976'
+  locator: page heading
+  note: 'Dated: 1976. The National Indian Law Library page gives the table of contents (and may link to
+    the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution
+  year: '1940'
+  link: http://thorpe.ou.edu/IRA/utemtcons.html
+  source: national-indian-law-library-ute-mtn-ute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Oklahoma
+    University Law Center website . 1940 version.". Link check 2026-11-21: the site did not respond.'
+- kind: constitution
+  title: Constitution (Ute Mountain Tribe Ute Mountain Reservation Colorado, New Mexico, Utah)
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/utemtcons.html
+  source: university-of-oklahoma-indian-reorganization-act-utemtcons
+  confidence: medium
+  as_of: '1940'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: court-of-indian-offenses
+  name: Southwest Region CFR Court (Court of Indian Offenses)
+  link: https://www.bia.gov/CFRCourts
+  source: bia-courts-of-indian-offenses
+  confidence: high
+  as_of: '2026-11-21'
+  locator: List of CFR Courts and the Tribes they Serve
+  note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
+    Indian Affairs list.
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-ute-mtn-ute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Forebearance on Eviction or Termination
+    citation: Ute Indian Tribe Law and Order Code. Title 19 Homeownership Program. 19-11-8 Forebearance
+      regarding eviction or termination.
+    link: https://ute.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/forebearance-on-eviction-or-termination/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: N/A. Database form of practice: Rehabilitation.'
+  - kind: other
+    title: Rehabilitative Treatment as Probation Instead of Sentence
+    citation: Ute Indian Tribe Law and Order Code. Title 13 Ute Indian Criminal Code.
+    link: https://ute.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/rehabilitative-treatment-as-probation-instead-of-sentence/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative; Rehabilitation.'
+  - kind: other
+    title: Ute Healing and Wellness Court
+    citation: Ute Indian Tribe Law and Order Code. Title 13 Ute Indian Criminal Code. 13-4-152 Ute Healing
+      and Wellness Court.
+    link: https://ute.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/ute-healing-and-wellness-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Healing to Wellness.'
+  - kind: other
+    title: Victim Impact Statements in Domestic Violence Cases
+    citation: Ute Indian Tribe Law and Order Code. Title 18 Domestic Violence Code. 18-6-4 Victim impact
+      statement.
+    link: https://ute.tribal.codes
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/victim-impact-statements-in-domestic-violence-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative.'
+gaming:
+  compacts:
+  - state: CO
+    status: approved
+    approved: '1992-07-10'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-07-10'
+    locator: result page 13 (?page=13), row 21
+    note: 'Listed as: "Ute Mountain Ute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Ute Mountain Ute Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1992.07.10_ute_mountain_ute_tribe_tribal_state_gaming_compact.pdf.'
+  - state: CO
+    status: approved
+    approved: '1996-03-19'
+    federal_register_citation: 61 FR 11217
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-03-19'
+    locator: result page 13 (?page=13), row 22
+    note: 'Listed as: "Ute Mountain Ute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Ute Mountain Ute Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1996.03.19_ute_mountian_ute_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/03/19/96-6534/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CO
+    status: approved
+    dispute_resolution_summary: A complaining party gives written notice and the parties have 20 days
+      to resolve the matter informally, after which the complaining party may invoke arbitration under
+      American Arbitration Association commercial rules before one agreed arbitrator or a three-member
+      panel experienced in Indian gaming law, which may declare rights and enjoin violating conduct.
+    dispute_resolution_locator: Section 12 (Remedies for Breach of Compact Provisions)
+    source: compact-co-southern-ute-indian-tribe-of-the-souther-1995
+    confidence: medium
+    as_of: '1995-08-21'
+    locator: Section 12 (Remedies for Breach of Compact Provisions)
+    note: state model compact; nation-specific text not checked. Read from the 1995 Southern Ute Indian
+      Tribe compact; the Ute Mountain Ute compact was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (1996-03-19).
+  ordinances:
+  - approved: '1995-03-03'
+    link: https://www.nigc.gov?wpdmdl=11480&ind=11527
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-03-03'
+    locator: table row 303, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 303 lists the nation
+      as "Ute Mountain Ute Tribe".
+  - approved: '2003-07-21'
+    link: https://www.nigc.gov?wpdmdl=11504&ind=11528
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-07-21'
+    locator: table row 303, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 303 lists the nation
+      as "Ute Mountain Ute Tribe".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Ute Mountain Ute Tribe". Name extracted
+      from the PDF by the page-fetch tool and matched to the roster.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Ute Mountain Ute Tribe Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

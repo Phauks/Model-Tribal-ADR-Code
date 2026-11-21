@@ -1,0 +1,83 @@
+id: burt-lake-band-of-ottawa-and-chippewa-indians
+entity_type: native-nation
+names:
+  official: Burt Lake Band of Ottawa and Chippewa Indians, Inc.
+  alternate:
+  - name: Burt Lake Band of Ottawa and Chippewa Indians, Inc.
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    locator: 'Petitioner #101'
+    note: Name as printed on the Office of Federal Acknowledgment list by state.
+  official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
+recognition:
+- type: unrecognized
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1; Table 3
+  note: 'GAO Table 1 lists "Burt Lake Band of Ottawa and Chippewa Indians, Inc." among 26 non-federally
+    recognized tribes that received direct federal funding in FY2007-2010 (total $467,000, Table 3). GAO-reported
+    nonprofit status: Yes; state recognition per state officials: No. Not on the 2026 federal list (bia-recognized-entities-2026).
+    Same name (without "Inc.") as the state-recognized helper entity; id shared.'
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 71 FR 57995 (2006-10-02)
+  petition_number: '101'
+  petition_stage: Denied (Petitions Resolved page); Letter of Intent to Petition 09/12/1985; Declined
+    Acknowledgment effective 1/23/2007 71 FR 57995
+  source: federal-register-e6-16191
+  confidence: high
+  as_of: '2006-10-02'
+  locator: 'Petitioner #101'
+  note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
+    Letter of Intent to Petition 09/12/1985; Declined Acknowledgment effective 1/23/2007 71 FR 57995.
+    Other Federal Register history: Proposed Finding Against Federal Acknowledgment of the Burt Lake Band
+    of Ottawa and Chippewa Indians, Inc., 69 FR 20027 (2004-04-15).'
+- type: petitioning
+  legal_basis: 25 C.F.R. Part 83, subpart D (re-petition authorization); notice 90 FR 60736 (2025-12-29)
+  petition_number: R002
+  petition_stage: 'Re-petition request: Awaiting Active Consideration'
+  source: ofa-re-petition-requests
+  confidence: high
+  as_of: '2026-11-21'
+  locator: Current Re-Petition Requests, row R002
+  note: 'Request for authorization to re-petition; Federal Register notice Receipt of Request for Authorization
+    To Re-Petition for Federal Acknowledgment as an American Indian Tribe, 90 FR 60736 (2025-12-29) (source
+    key federal-register-2025-23904). Earlier petition #101 was denied.'
+- type: state
+  state: MI
+  legal_basis: Listed as a 'State Historic Tribe' in the Michigan Department of Civil Rights Indian Directory
+    (2016-2017); no statute or executive order identified
+  source: michigan-civil-rights-indian-directory-2016
+  confidence: low
+  as_of: '2016-12-14'
+  locator: Page 6
+  note: Michigan has no formal state-recognition statute found; the 'State Historic Tribes' designation
+    appears only in this older directory, and current state pages list only federally recognized nations.
+states:
+- state: MI
+  presence: other
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1, State column
+  note: State as listed by GAO.
+- state: MI
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+- state: MI
+  presence: other
+  source: michigan-civil-rights-indian-directory-2016
+  confidence: low
+  as_of: '2016-12-14'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

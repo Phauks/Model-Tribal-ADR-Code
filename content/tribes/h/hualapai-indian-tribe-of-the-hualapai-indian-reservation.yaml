@@ -1,0 +1,354 @@
+id: hualapai-indian-tribe-of-the-hualapai-indian-reservation
+entity_type: native-nation
+names:
+  official: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: AZ
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona
+- state: AZ
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1545
+  note: 'Census area with land in this state: Hualapai Indian Reservation and Off-Reservation Trust Land
+    (code 1545). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1545'
+  name: Hualapai Indian Reservation and Off-Reservation Trust Land
+  area_type: Indian Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1545
+  note: Matched by name. Census class code D1.
+population:
+- count: 2300
+  kind: citizens
+  source: hualapai-nsn-community-about-the-hualapai-tribe-index
+  confidence: low
+  as_of: '2026-11-21'
+  note: 'Page: ''Total tribal membership, including members not residing on the reservation, is approximately
+    2,300.'' The surrounding text cites 2000 U.S. Census figures, so the membership figure may be old.
+    Undated.'
+- count: 1299
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1545, field POP100
+  note: 'Census area: Hualapai Indian Reservation and Off-Reservation Trust Land (code 1545). Everyone
+    counted as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a
+    count of the nation''s citizens.'
+- count: 2258
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3028 (Hualapai Indian Tribe of the Hualapai Indian Reservation alone
+    or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Hualapai Indian Tribe of the Hualapai Indian Reservation'
+    (race code 6448) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 2133
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Hualapai Indian Tribe', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 986
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 79, row T14500 'Hualapai Indian Tribe of the Hualapai Indian Reservation'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://www.hualapai-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona
+- kind: physical-address
+  value: 941 Hualapai Way, Peach Springs, AZ 86434
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona
+- kind: mailing-address
+  value: P.O. Box 179, Peach Springs, AZ 86434
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona
+- kind: phone
+  value: (928) 769-2216
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona
+- kind: fax
+  value: (928) 769-2343
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona
+federal_administration:
+  bureau_of_indian_affairs_region: Western
+  bureau_of_indian_affairs_agency: Truxton Canon Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Hualapai Tribe of the Hualapai Reservation, Arizona" among organizations under
+    constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934),
+    as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Hualapai Tribe of the Hualapai Reservation Arizona) (approved 1955) states it
+    was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-amhuacons
+  confidence: medium
+  as_of: '1955'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+- kind: indian-reorganization-act
+  detail: Constitution (Hualapai Tribe of the Hualapai Reservation Arizona) (approved 1938) states it
+    was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-huacons
+  confidence: medium
+  as_of: '1938'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Law and Order Code
+  link: https://hualapai-nsn.gov/Documents/Government/Tribal%20Court/Law-and-Order-Code.pdf
+  source: national-indian-law-library-hualapai
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    . Law and Order Code.".'
+- kind: law-code
+  title: Tribal Council Ordinances
+  link: https://hualapai-nsn.gov/government/tribal_council/hualapai_tribal_council_ordinances.php
+  source: national-indian-law-library-hualapai
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    . Tribal Council Ordinances.".'
+- kind: constitution
+  title: Constitution
+  link: https://hualapai-nsn.gov/Documents/Community/Election/CONSTITUTION-OF-THE-HUALAPAI-INDIAN-TRIBE.pdf
+  source: national-indian-law-library-hualapai
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Hualapai Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Hualapai Tribe'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://hualapai-nsn.gov/wp-content/uploads/2013/07/HualapaiConstitution.pdf)
+    returned HTTP 404, so it is not recorded.'
+- kind: corporate-charter
+  title: Corporate charter (Hualapai Tribe of the Hualapai Reservation Arizona)
+  year: '1955'
+  link: https://thorpe.law.ou.edu/IRA/amhuachrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-amhuachrtr
+  confidence: medium
+  as_of: '1955'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Hualapai Tribe of the Hualapai Reservation Arizona)
+  year: '1955'
+  link: https://thorpe.law.ou.edu/IRA/amhuacons.html
+  source: university-of-oklahoma-indian-reorganization-act-amhuacons
+  confidence: medium
+  as_of: '1955'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: corporate-charter
+  title: Corporate charter (Hualapai Tribe of the Hualapai Reservation, Arizona)
+  year: '1943'
+  link: https://thorpe.law.ou.edu/IRA/huachrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-huachrtr
+  confidence: medium
+  as_of: '1943'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Hualapai Tribe of the Hualapai Reservation Arizona)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/huacons.html
+  source: university-of-oklahoma-indian-reorganization-act-huacons
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://hualapai-nsn.gov/judicial_branch_of_government/tribal_court/index.php
+  source: national-indian-law-library-hualapai
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Hualapai Tribal Court
+  link: http://hualapai-nsn.gov/government/tribal-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Hualapai Tribe'
+gaming:
+  compacts:
+  - state: AZ
+    status: approved
+    approved: '2009-03-25'
+    federal_register_citation: 74 FR 12889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2009-03-25'
+    locator: result page 1 (?page=1), row 7
+    note: 'Listed as: "Hualapai Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2009.03.25_hualapai_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2009/03/25/E9-6585/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2021-05-24'
+    federal_register_citation: 86 FR 27889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2021-05-24'
+    locator: result page 1 (?page=1), row 8
+    note: 'Listed as: "Hualapai Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202021.05.24%20Hulapai%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/05/24/2021-10877/indian-gaming-approval-of-tribal-state-class-iii-gaming-compacts-in-the-state-of-arizona.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2022-06-14'
+    federal_register_citation: 87 FR 35992
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2022-06-14'
+    locator: result page 1 (?page=1), row 9
+    note: 'Listed as: "Hualapai Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.14_hualapai_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/14/2022-12743/indian-gaming-approval-of-20-tribal-state-class-iii-gaming-compact-amendments-with-the-state-of.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '1994-04-26'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1994-04-26'
+    locator: result page 1 (?page=1), row 10
+    note: 'Listed as: "Hualapai Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1994.04.26_hualapai_indian_tribe_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1994/04/26/X94-10426/contents.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2003-02-05'
+    federal_register_citation: 68 FR 5912
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2003-02-05'
+    locator: result page 1 (?page=1), row 11
+    note: 'Listed as: "Hualapai Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2003.02.05_hualapai_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/02/05/03-2787/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance or an interpretation
+      dispute, after which agency heads and then designated tribal and gubernatorial representatives negotiate;
+      if unresolved within 30 days, either party may request non-binding mediation under CPR Institute
+      for Dispute Resolution procedures and may then demand binding arbitration under CPR rules before
+      three arbitrators unless both agree to one.
+    dispute_resolution_locator: Section 15 (Dispute Resolution)
+    source: compact-az-ak-chin-indian-community-2003
+    confidence: medium
+    as_of: '2003-02-05'
+    locator: Section 15 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
+      compact approved in 2003; this text is the Ak-Chin Indian Community copy of that form, and the 2021-2022
+      amendments in the list refer back to Section 15. Status copied from this nation's most recent approved
+      or deemed-approved entry for this state in the Office of Indian Gaming list (2022-06-14).
+  ordinances:
+  - approved: '1995-09-28'
+    link: https://www.nigc.gov?wpdmdl=9929&ind=9944
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-09-28'
+    locator: table row 101, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 101 lists the nation
+      as "Hualapai Indian Tribe". Name matched to roster by spelling variant.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Hualapai Indian Tribe of the Hualapai Indian Reservation, Arizona Confidence lowered
+    from high by the lead session: the notice prints its table as page images, so nation names were read
+    from images and matched to the roster.'
+memberships:
+- organization: Inter Tribal Council of Arizona
+  source: inter-tribal-council-of-arizona-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Hualapai Tribe". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

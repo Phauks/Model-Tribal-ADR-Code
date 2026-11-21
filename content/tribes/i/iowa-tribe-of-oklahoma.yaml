@@ -1,0 +1,357 @@
+id: iowa-tribe-of-oklahoma
+entity_type: native-nation
+names:
+  official: Iowa Tribe of Oklahoma
+  self_designation:
+  - name: Baxoje
+    language_tag: iow
+    romanized: Bah Kho-je
+    source: iowanation-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Homepage: ''In the Iowa language, we call ourselves Baxoje (Bah Kho-je), meaning, “People of
+      the Grey Snow.”'''
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: OK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Iowa Tribe of Oklahoma
+- state: OK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5670
+  note: 'Census area with land in this state: Iowa OTSA (code 5670). Statistical area only (not a land
+    holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '5670'
+  name: Iowa OTSA
+  area_type: Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5670
+  note: Matched by name. Census class code D6.
+population:
+- count: 800
+  kind: citizens
+  source: iowanation-about-us
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''over 800 members enrolled within the tribe''. Undated; as_of is access date.'
+- count: 6602
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5670, field POP100
+  note: 'Census area: Iowa OTSA (code 5670). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. The area is a Census
+    statistical area, not a land holding.'
+- count: 400
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3037 (Iowa Tribe of Oklahoma alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Iowa Tribe of Oklahoma' (race code 5860) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+- count: 983
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Iowa Tribe of Oklahoma', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://iowanation.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Iowa Tribe of Oklahoma
+- kind: physical-address
+  value: 335588 East 750 Road, Perkins, OK 74059
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Iowa Tribe of Oklahoma
+- kind: mailing-address
+  value: 335588 East 750 Road, Perkins, OK 74059
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Iowa Tribe of Oklahoma
+- kind: phone
+  value: (405) 547-2402
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Iowa Tribe of Oklahoma
+- kind: fax
+  value: (405) 547-1032
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Iowa Tribe of Oklahoma
+languages:
+- name: Iowa
+  language_tag: iow
+  source: iowanation-about-us-language
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Site has a language page with lessons.
+federal_administration:
+  bureau_of_indian_affairs_region: Southern Plains
+  bureau_of_indian_affairs_agency: Southern Plains Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Iowa Tribe of Oklahoma
+government_structure:
+- kind: oklahoma-indian-welfare-act
+  detail: Listed as "The Iowa Tribe of Oklahoma" among organizations under constitutions approved by the
+    Secretary of the Interior (Oklahoma Indian Welfare Act of June 26, 1936), as of 1947
+  source: haas-1947-table-b-oklahoma
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Oklahoma Tribes, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: oklahoma-indian-welfare-act
+  detail: Constitution (Iowa Tribe of Oklahoma) (approved 1937) states it was adopted under Act of June
+    26, 1936 (49 Stat. 1967)
+  source: university-of-oklahoma-indian-reorganization-act-iowaokcons
+  confidence: medium
+  as_of: '1937'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://iowanation.org/government/tribal-court/
+  source: national-indian-law-library-iowa-oklahoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://iowanation.org/government/constitution-bylaws/
+  source: national-indian-law-library-iowa-oklahoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website . See NILL catalog records for the constitution and corporate charter.".'
+- kind: constitution
+  title: Iowa Tribe of Oklahoma Constitution & Bylaws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Iowa Tribe of Oklahoma'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://bahkhoje.com/government/constitution-bylaws/) returned
+    HTTP 404, so it is not recorded.'
+- kind: corporate-charter
+  title: Corporate charter (Iowa Tribe of Oklahoma)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/iowaokchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-iowaokchrtr
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Iowa Tribe of Oklahoma)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/iowaokcons.html
+  source: university-of-oklahoma-indian-reorganization-act-iowaokcons
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://iowanation.org/government/tribal-court/
+  source: national-indian-law-library-iowa-oklahoma
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Iowa Tribe of Oklahoma Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Iowa Tribe of Oklahoma'
+  note: 'Link check 2026-11-21: the link the source gives (http://bahkhoje.com/government/tribal-court/)
+    returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Restorative Sentencing Policy – Restitution, Reconciliation, and Restoration
+    citation: Title 5, Section 403
+    link: https://iowanation.org/government/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-sentencing-policy-restitution-reconciliation-and-restoration/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: . Database form of practice: Alternative sentencing; Deferred Prosecution;
+      Probation; Reconciliation; Restitution; Restore.'
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '2018-08-17'
+    federal_register_citation: 83 FR 41101
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-08-17'
+    locator: result page 27 (?page=27), row 17
+    note: 'Listed as: "Iowa Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Iowa
+      Tribe of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.17%20Iowa%20Tribe%20compact%20amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/08/17/2018-17729/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of-oklahoma.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '1997-02-05'
+    federal_register_citation: 62 FR 5483
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1997-02-05'
+    locator: result page 27 (?page=27), row 18
+    note: 'Listed as: "Iowa Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Iowa
+      Tribe of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201997.02.05%20Iowa%20Tribe%20Off%20Track%20Wagering%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1997/02/05/97-2824/bureau-of-indian-affairs.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    approved: '2005-06-01'
+    federal_register_citation: 70 FR 31499
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-06-01'
+    locator: result page 27 (?page=27), row 19
+    note: 'Listed as: "Iowa Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Iowa Tribe of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.06.01%20Iowa%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/06/01/05-10877/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-08-17).
+  ordinances:
+  - approved: '1995-12-18'
+    link: https://www.nigc.gov?wpdmdl=9961&ind=9968
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-12-18'
+    locator: table row 106, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 106 lists the nation
+      as "Iowa Tribe of Oklahoma".
+  - approved: '2003-03-06'
+    link: https://www.nigc.gov?wpdmdl=9960&ind=9969
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-03-06'
+    locator: table row 106, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 106 lists the nation
+      as "Iowa Tribe of Oklahoma".
+  - approved: '2005-11-29'
+    link: https://www.nigc.gov?wpdmdl=9959&ind=9970
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2005-11-29'
+    locator: table row 106, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 106 lists the nation
+      as "Iowa Tribe of Oklahoma".
+  - approved: '2002-11-06'
+    link: https://www.nigc.gov?wpdmdl=9958&ind=9971
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-11-06'
+    locator: table row 106, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 106 lists the nation
+      as "Iowa Tribe of Oklahoma".
+  - approved: '2006-11-20'
+    link: https://www.nigc.gov?wpdmdl=9957&ind=9972
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2006-11-20'
+    locator: table row 106, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 106 lists the nation
+      as "Iowa Tribe of Oklahoma".
+  - approved: '2025-10-24'
+    link: https://www.nigc.gov?wpdmdl=14501&ind=14502
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2025-10-24'
+    locator: table row 106, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 106 lists the nation
+      as "Iowa Tribe of Oklahoma".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Iowa Tribe of Oklahoma". Facilities
+      as machine-extracted from the report text (verify): Cimarron Casino; Ioway Travel Plaza Casino;
+      Ioway Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Iowa Tribe of Oklahoma Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

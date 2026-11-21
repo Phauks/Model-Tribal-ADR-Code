@@ -1,0 +1,303 @@
+id: klawock-cooperative-association
+entity_type: native-nation
+names:
+  official: Klawock Cooperative Association
+  alternate:
+  - name: Lawaak
+    source: alaska-dcra-native-place-names
+    confidence: medium
+    as_of: '2018-10-15'
+    locator: community row "Klawock"
+    note: Native place name for the community of Klawock in Tlingit (State of Alaska, from the Alaska
+      Native Language Center); it names the place, and the source does not state it is the tribal government's
+      self-designation.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: AK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Klawock Cooperative Association
+- state: AK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 6765
+  note: 'Census area with land in this state: Klawock ANVSA (code 6765). Statistical area only (not a
+    land holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '6765'
+  name: Klawock ANVSA
+  area_type: Alaska Native Village Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US6765
+  note: Matched by name. Census class code E1.
+population:
+- count: 497
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: ALASKA row "Klawock", Enrollment column
+  note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
+    tribe to the Department of Housing and Urban Development); row name matched to the roster by the researcher.
+- count: 528
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US6765, field POP100
+  note: 'Census area: Klawock ANVSA (code 6765). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. The area is a Census
+    statistical area, not a land holding.'
+- count: 126
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2639 (Klawock Cooperative Association alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Klawock Cooperative Association' (race code 5330) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+contacts:
+- kind: physical-address
+  value: 310 Bayview Boulevard, Klawock, AK 99925
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Klawock Cooperative Association
+- kind: mailing-address
+  value: P.O. Box 430, Klawock, AK 99925
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Klawock Cooperative Association
+- kind: phone
+  value: 907-401-4068
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Klawock Cooperative Association
+- kind: fax
+  value: (907) 755-8800
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Klawock Cooperative Association
+- kind: mailing-address
+  value: PO Box 430, Klawock, AK 99925-0430
+  label: Tribal office address listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Klawock Cooperative Association" (community: Klawock, object 101)'
+- kind: phone
+  value: +1 (907) 755-2265
+  label: Tribal office main phone
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Klawock Cooperative Association" (community: Klawock, object 101)'
+- kind: email-general
+  value: tribaladmin@klawocktribe.org
+  label: Tribal office email listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: medium
+  as_of: '2026-04-02'
+  locator: 'record "Klawock Cooperative Association" (community: Klawock, object 101)'
+  note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
+    left out.
+languages:
+- name: Tlingit
+  language_tag: tli
+  source: alaska-dcra-native-place-names
+  confidence: medium
+  as_of: '2018-10-15'
+  locator: community row "Klawock"
+  note: Language of the Native place name for the community (Klawock), as listed by the State of Alaska
+    from the Alaska Native Language Center place-names map; ISO 639-3 tag assigned by the researcher.
+federal_administration:
+  bureau_of_indian_affairs_region: Alaska
+  bureau_of_indian_affairs_agency: Alaska Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Klawock Cooperative Association
+government_structure:
+- kind: alaska-indian-reorganization-act
+  detail: Listed as "The Klawock Cooperative Association of Alaska" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act as extended to Alaska by the
+    Act of May 1, 1936), as of 1947
+  source: haas-1947-table-b-alaska
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, Alaska Native Communities and Cooperatives, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: alaska-indian-reorganization-act
+  detail: klawock cooperative association alaska (approved 1938) states it was adopted under Act of June
+    18, 1934 (48 Stat. 984); Act of May 1, 1936 (49 Stat. 1250)
+  source: university-of-oklahoma-indian-reorganization-act-klawockchrtr
+  confidence: medium
+  as_of: '1938'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+- kind: alaska-indian-reorganization-act
+  detail: klawock cooperative association alaska (approved 1938) states it was adopted under Act of June
+    18, 1934 (48 Stat. 984); Act of May 1, 1936 (49 Stat. 1250)
+  source: university-of-oklahoma-indian-reorganization-act-klawockcons
+  confidence: medium
+  as_of: '1938'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Constitution
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/klawockcons.html
+  source: national-indian-law-library-klawock
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Constitution. (1938)".'
+- kind: corporate-charter
+  title: Corporate Charter
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/klawockchrtr.html
+  source: national-indian-law-library-klawock
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Corporate Charter. (1938)".'
+- kind: constitution
+  title: klawock cooperative association alaska
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/klawockchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-klawockchrtr
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: klawock cooperative association alaska
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/klawockcons.html
+  source: university-of-oklahoma-indian-reorganization-act-klawockcons
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-klawock
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+gaming:
+  ordinances:
+  - approved: '1993-11-16'
+    link: https://www.nigc.gov?wpdmdl=10095&ind=10111
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-11-16'
+    locator: table row 124, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 124 lists the nation
+      as "Klawock Cooperative Association".
+  - approved: '2022-12-08'
+    link: https://www.nigc.gov?wpdmdl=10096&ind=10112
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2022-12-08'
+    locator: table row 124, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 124 lists the nation
+      as "Klawock Cooperative Association".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Klawock Cooperative Association".
+      Facilities as machine-extracted from the report text (verify): Klawock Casino. Name extracted from
+      the PDF by the page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Alaska is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Alaska. Applies to the nation''s Indian country
+    within Alaska; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Alaska"
+  note: Statute is primary; nation matched to Alaska by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Klawock Cooperative Association Confidence lowered from high by the lead session:
+    the notice prints its table as page images, so nation names were read from images and matched to the
+    roster.'
+related_entities:
+- name: Sealaska Corp.
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Klawock Cooperative Association
+  note: Regional corporation for the area, as listed in the directory.
+- name: Sealaska Corporation
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Klawock"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Klawock),
+    not for the tribal government by name.
+- name: Central Council of the Tlingit and Haida Indian Tribes of Alaska
+  relation: alaska-native-claims-settlement-act-regional-nonprofit
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Klawock"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Klawock),
+    not for the tribal government by name.
+- name: Southeast Alaska Regional Health Consortium
+  relation: native-regional-health-care-provider
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Klawock"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Klawock),
+    not for the tribal government by name.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

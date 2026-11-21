@@ -1,0 +1,202 @@
+id: miccosukee-tribe-of-indians
+entity_type: native-nation
+names:
+  official: Miccosukee Tribe of Indians
+  self_designation:
+  - name: Elaposhneechałe
+    language_tag: mik
+    source: miccosukee-tribe-of-indians-miccosukee-tribe-history
+    confidence: medium
+    as_of: '2026-11-21'
+    note: elders identify past Tribal Towns as inhabited by "the Elaposhneechałe, or 'speakers of our
+      language'"; used for ancestral towns, not necessarily the present tribe; page read through the WebFetch
+      tool because the site blocked the plain HTTP client
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: FL
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Miccosukee Tribe of Indians
+- state: FL
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2240
+  note: 'Census area with land in this state: Miccosukee Reservation and Off-Reservation Trust Land (code
+    2240). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2240'
+  name: Miccosukee Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2240
+  note: Matched by name. Census class code D1.
+population:
+- count: 535
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2240, field POP100
+  note: 'Census area: Miccosukee Reservation and Off-Reservation Trust Land (code 2240). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 448
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3121 (Miccosukee Tribe of Indians of Florida alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Miccosukee Tribe of Indians of Florida' (race code 5957)
+    alone or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 400
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Miccosukee Tribe', PDF page 4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 589
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 81, row T22200 'Miccosukee Tribe of Indians of Florida'
+  note: Column 4, population information from other sources (2010), as given by Indian Affairs; not described
+    further in the report. Report published 2014-01-16; row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://miccosukee.com/miccosukee-tribe-history/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Miccosukee Tribe of Indians
+- kind: physical-address
+  value: US 41 Mile Marker 70, Miami, FL 33194
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Miccosukee Tribe of Indians
+- kind: mailing-address
+  value: Tamiami Station,  P.O. Box 440021, Miami, FL 33144
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Miccosukee Tribe of Indians
+- kind: phone
+  value: (305) 223-8380
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Miccosukee Tribe of Indians
+- kind: fax
+  value: (305) 223-1011
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Miccosukee Tribe of Indians
+languages:
+- name: Elaponke
+  language_tag: mik
+  source: miccosukee-tribe-of-indians-miccosukee-tribe-history
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"The Elaponke-speaking people comprise today’s Miccosukee Tribe of Indians of Florida"; page
+    read through the WebFetch tool because the site blocked the plain HTTP client'
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern
+  bureau_of_indian_affairs_agency: Eastern Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Miccosukee Tribe of Indians
+governing_documents:
+- kind: constitution
+  title: Constitution
+  link: http://www.indigenouspeople.net/micconst.htm
+  source: national-indian-law-library-miccosukee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-miccosukee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+gaming:
+  ordinances:
+  - approved: '1994-01-21'
+    link: https://www.nigc.gov?wpdmdl=10290&ind=10305
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-01-21'
+    locator: table row 152, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 152 lists the nation
+      as "Miccosukee Tribe of Indians of Florida".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Miccosukee Tribe of Indians of
+      Florida". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: Florida assumed full criminal and civil jurisdiction over Indian reservations in the state (Fla.
+    Stat. § 285.16, ch. 61-252, 1961) under the former section 7 option of Public Law 280.
+  source: florida-statutes-285-16
+  confidence: medium
+  as_of: '1961'
+  locator: § 285.16(1)-(2)
+  note: Nation matched to Florida by office state. The Bureau of Indian Affairs lists Florida (1961) among
+    optional states (bia-faq-public-law-280).
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Miccosukee Tribe of Indians Confidence lowered from high by the lead session: the
+    notice prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: United South and Eastern Tribes
+  source: united-south-and-eastern-tribes-member-tribal-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Miccosukee Tribe of Indians of Florida". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

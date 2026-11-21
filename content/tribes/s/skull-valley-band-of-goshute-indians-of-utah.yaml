@@ -1,0 +1,149 @@
+id: skull-valley-band-of-goshute-indians-of-utah
+entity_type: native-nation
+names:
+  official: Skull Valley Band of Goshute Indians of Utah
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: UT
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Skull Valley Band of Goshute Indians of Utah
+- state: UT
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3840
+  note: 'Census area with land in this state: Skull Valley Reservation (code 3840). Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '3840'
+  name: Skull Valley Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3840
+  note: Matched by name. Census class code D2.
+population:
+- count: 13
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3840, field POP100
+  note: 'Census area: Skull Valley Reservation (code 3840). Everyone counted as living in the area in
+    the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 88
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3326 (Skull Valley Band of Goshute Indians of Utah alone or in any
+    combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Skull Valley Band of Goshute Indians of Utah' (race
+    code 6290) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 162
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Denver, row 'Skull Valley Band of Goshute Indians', PDF page 5, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://skullvalleygoshutes.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Skull Valley Band of Goshute Indians of Utah
+- kind: physical-address
+  value: 1198 N. Main Street, Tooele, UT 84029
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Skull Valley Band of Goshute Indians of Utah
+- kind: mailing-address
+  value: 407 Skull Valley Road, Skull Valley, UT 84029
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Skull Valley Band of Goshute Indians of Utah
+- kind: phone
+  value: (435) 831-4079
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Skull Valley Band of Goshute Indians of Utah
+- kind: fax
+  value: (435) 882-4889
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Skull Valley Band of Goshute Indians of Utah
+federal_administration:
+  bureau_of_indian_affairs_region: Western
+  bureau_of_indian_affairs_agency: Uintah & Ouray Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Skull Valley Band of Goshute Indians of Utah
+governing_documents:
+- kind: constitution
+  title: Constitution and By-laws of the Confederated Tribes of the Goshute Reservation, Utah
+  year: '1940'
+  link: http://thorpe.ou.edu/IRA/goshcons.html
+  source: national-indian-law-library-skull-valley
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Oklahoma
+    University Law Center''s website . 1940 Constitution and By-laws of the Confederated Tribes of the
+    Goshute Reservation, Utah.". Link check 2026-11-21: the site did not respond.'
+justice_institutions:
+- kind: court-of-indian-offenses
+  name: Western Region CFR Court (Court of Indian Offenses)
+  link: https://www.bia.gov/CFRCourts
+  source: bia-courts-of-indian-offenses
+  confidence: high
+  as_of: '2026-11-21'
+  locator: List of CFR Courts and the Tribes they Serve
+  note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
+    Indian Affairs list.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Skull Valley Band of Goshute Indians of Utah Confidence lowered from high by the lead
+    session: the notice prints its table as page images, so nation names were read from images and matched
+    to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

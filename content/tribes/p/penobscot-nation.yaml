@@ -1,0 +1,202 @@
+id: penobscot-nation
+entity_type: native-nation
+names:
+  official: Penobscot Nation
+  self_designation:
+  - name: Panawahpskek
+    language_tag: aaq
+    source: passamaquoddy-tribe-doe-sites-maine-gov-doe-files-inline-fil
+    confidence: medium
+    as_of: 2024-09
+    note: '"Panawahpskek (Penobscot) Nation"; "The name Penobscot comes from panawahpskek, ''the place
+      of the white rocks''"; Maine Department of Education, "Wabanaki Studies: About Wabanaki Nations",
+      updated September 2024 (state agency)'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: ME
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Penobscot Nation
+- state: ME
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2760
+  note: 'Census area with land in this state: Penobscot Reservation and Off-Reservation Trust Land (code
+    2760). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2760'
+  name: Penobscot Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2760
+  note: Matched by name. Census class code D1.
+population:
+- count: 379
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2760, field POP100
+  note: 'Census area: Penobscot Reservation and Off-Reservation Trust Land (code 2760). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 6103
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3199 (Penobscot Nation alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Penobscot Nation' (race code 6090) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 2367
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Penobscot Nation', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.penobscotnation.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Penobscot Nation
+- kind: physical-address
+  value: 12 Wabanaki Way, Indian Island, ME 04468
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Penobscot Nation
+- kind: mailing-address
+  value: 12 Wabanaki Way, Indian Island, ME 04468
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Penobscot Nation
+- kind: phone
+  value: (207) 817-7349
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Penobscot Nation
+- kind: fax
+  value: (207) 827-6042
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Penobscot Nation
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern
+  bureau_of_indian_affairs_agency: Eastern Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Penobscot Nation
+governing_documents:
+- kind: law-code
+  title: Penobscot Nation - Laws and Ordinances
+  year: '2025'
+  link: https://narf.org/nill/codes/penobscot/index.html
+  source: national-indian-law-library-code-codes-penobscot
+  confidence: medium
+  as_of: '2025'
+  locator: page heading
+  note: 'Most Recent Update Received: June 2025. Full text linked from the National Indian Law Library
+    page.'
+- kind: law-code
+  title: Penobscot Tribal Laws and Ordinances
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Maine section, entry 'Penobscot Indian Nation'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.penobscotnation.org/departments/tribal-court/tribal-laws-and-ordinances)
+    returned HTTP 404, so it is not recorded.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-penobscot
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (https://www.penobscotnation.org/departments/tribal-court/) returned HTTP 404,
+    so it is not recorded.'
+- kind: tribal-court
+  name: Penobscot Indian Nation Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Maine section, entry 'Penobscot Indian Nation'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.penobscotnation.org/departments/tribal-court)
+    returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Early Intervention Program with Resiliency Plan
+    citation: Penobscot Nation Child Welfare Code, Subchapter 3, §2 Early Intervention Program
+    link: https://www.narf.org/nill/codes/penobscot/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/early-intervention-program-with-resiliency-plan/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Program; Restorative practice.'
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Penobscot Nation Confidence lowered from high by the lead session: the notice prints
+    its table as page images, so nation names were read from images and matched to the roster.'
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Listed by NCAI as implementing special Tribal criminal jurisdiction (list updated May 2022).
+  source: national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction
+  confidence: medium
+  as_of: 2022-05
+  locator: Implementing Tribes list
+  note: Listed as "Penobscot Nation".
+memberships:
+- organization: United South and Eastern Tribes
+  source: united-south-and-eastern-tribes-member-tribal-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Penobscot Indian Nation". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

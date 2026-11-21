@@ -1,0 +1,34 @@
+id: piscataway-indian-nation
+entity_type: native-nation
+names:
+  official: Piscataway Indian Nation
+  official_source: maryland-executive-order-01-01-2012-02
+recognition:
+- type: state
+  state: MD
+  legal_basis: Maryland Executive Order 01.01.2012.02
+  since: '2012-01-09'
+  source: maryland-executive-order-01-01-2012-02
+  confidence: high
+  as_of: '2012-01-09'
+  note: '''The State formally recognizes the Piscataway Indian Nations Maryland Indian status''.'
+- type: state
+  state: MD
+  legal_basis: Maryland Executive Orders 01.01.2012.01, 01.01.2012.02 and 01.01.2017.31 as summarized
+    by the Maryland State Archives
+  source: maryland-manual-indigenous-peoples-2025
+  confidence: high
+  as_of: '2025'
+states:
+- state: MD
+  presence: other
+  source: maryland-manual-indigenous-peoples-2025
+  confidence: high
+  as_of: '2025'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

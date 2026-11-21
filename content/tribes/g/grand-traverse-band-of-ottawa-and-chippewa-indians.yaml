@@ -1,0 +1,522 @@
+id: grand-traverse-band-of-ottawa-and-chippewa-indians
+entity_type: native-nation
+names:
+  official: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+- type: federal
+  legal_basis: 25 C.F.R. Part 83; final determination 45 FR 19322
+  petition_number: '3'
+  petition_stage: Letter of Intent to Petition 05/05/1935; Acknowledgment effective 05/27/1980 45 FR 19322
+  since: '1980-05-27'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '1980-05-27'
+  locator: 'Petitioner #3'
+states:
+- state: MI
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
+- state: MI
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1370
+  note: 'Census area with land in this state: Grand Traverse Reservation and Off-Reservation Trust Land
+    (code 1370). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1370'
+  name: Grand Traverse Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1370
+  note: Matched by name. Census class code D1.
+population:
+- count: 4189
+  kind: citizens
+  source: grand-traverse-band-media-kit-2019
+  confidence: medium
+  as_of: 2019-09
+  note: 'Media kit: ''The Grand Traverse Band Currently has 4,189 Tribal members.'' Dated 2019 (PDF metadata).'
+- count: 595
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1370, field POP100
+  note: 'Census area: Grand Traverse Reservation and Off-Reservation Trust Land (code 1370). Everyone
+    counted as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a
+    count of the nation''s citizens.'
+- count: 2601
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3009 (Grand Traverse Band of Ottawa and Chippewa Indians alone or in
+    any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Grand Traverse Band of Ottawa and Chippewa Indians'
+    (race code 5655) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 4101
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Grand Traverse Band of Ottawa and Chippewa Indians', PDF page
+    4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.gtbindians.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
+- kind: physical-address
+  value: 2605 N. West Bay Shore Drive, Peshawbestown, MI 49682
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
+- kind: mailing-address
+  value: 2605 N. West Bay Shore Drive, Peshawbestown, MI 49682
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
+- kind: phone
+  value: (231) 534-7129
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
+- kind: fax
+  value: (231) 534-7010
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
+languages:
+- name: Anishinaabemowin
+  language_tag: oj
+  source: gtbindians-tribal-council-asp
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Page: ''Increase Anishinaabemowin (original people''s language) being spoken in the communities''.'
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Michigan Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
+governing_documents:
+- kind: law-code
+  title: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
+  year: '2020'
+  link: https://narf.org/nill/codes/grand_traverse/index.html
+  source: national-indian-law-library-code-codes-grand-traverse
+  confidence: medium
+  as_of: '2020'
+  locator: page heading
+  note: 'Most Recent Update Received : July 2020. Full text linked from the National Indian Law Library
+    page.'
+- kind: constitution
+  title: Constitution of the Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
+  year: '2007'
+  link: https://narf.org/nill/constitutions/grandtraverseconst/index.html
+  source: national-indian-law-library-constitution-constitutions-grandtraverseconst
+  confidence: medium
+  as_of: '2007'
+  locator: page heading
+  note: 'Confirmed Current: May 2007. The National Indian Law Library page gives the table of contents
+    (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: court-rules
+  title: Tribal Court Rules and Advice
+  link: http://www.gtbindians.org/rules_advice.asp
+  source: national-indian-law-library-grand-traverse
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Tribal Court Rules and Advice.".'
+- kind: law-code
+  title: Grand Traverse Tribal Code
+  link: http://www.gtbindians.org/legal_department.asp
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Michigan section, entry 'Grand Traverse Band of Ottawa and Chippewa Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.gtbindians.org/tribal_court.asp
+  source: national-indian-law-library-grand-traverse
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Grand Traverse Band Tribal Court
+  link: http://www.gtbindians.org/tribal_court.asp
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Michigan section, entry 'Grand Traverse Band of Ottawa and Chippewa Indians'
+dispute_resolution:
+  forums:
+  - kind: restorative-justice
+    name: Juvenile diversion conference with the Peacemaker coordinator
+    description: The Tribal prosecutor, with the concurrence of the juvenile probation officer and the
+      Peacemaker coordinator, may divert a juvenile instead of filing a juvenile offender petition, holding
+      an informal conference with the juvenile and parents or guardians on alternatives.
+    legal_basis: Grand Traverse Band Tribal Code, Title 10, Chapter 4, Sec. 415 (Diversion)
+    case_types:
+    - juvenile
+    - criminal-diversion
+    participation: voluntary
+    relationship_to_court: Occurs before a petition is filed; if positive results are not achieved after
+      30 days, the probation officer may recommend filing a petition.
+    enforcement: Conference findings and the agreed disposition are set out in writing and monitored by
+      the juvenile probation officer; dispositions must conclude within six months unless extended by
+      agreement; statements are inadmissible at a later trial.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/GTB-Juvenile-Code-Diversion.pdf
+    source: grand-traverse-band-title-10-juvenile-code-415
+    confidence: medium
+    as_of: '1999-10-01'
+    locator: Title 10, Sec. 415(a)-(g)
+    note: Parents or guardians must voluntarily consent after an explanation of rights; the prosecutor
+      cannot compel involuntary action.
+  - kind: peacemaking
+    name: Peacemaking (Tribal Court)
+    description: The Tribal Court uses peacemaking to mediate cases where dispute resolution is preferred
+      over an adversarial approach; the Honoring Nations report says it has helped resolve contentious
+      issues while keeping community ties. The court's current staff list includes a peacemaker and program
+      director position.
+    relationship_to_court: Used by the Tribal Court as part of its handling of disputes.
+    link: https://nnigovernance.arizona.edu/grand-traverse-band-tribal-court
+    source: nni-honoring-nations-gtb-tribal-court
+    confidence: medium
+    as_of: '2000'
+    note: Secondary source (Honoring Nations 1999 report). The staff position is from the Band's Tribal
+      Court web page (https://gtbindians.org/tribal_court.asp, read 2026-11-21); no staff names recorded.
+      Case types for peacemaking are not stated, so none are recorded.
+  provisions:
+  - kind: peacemaking
+    title: Juvenile Code – Diversion
+    citation: Grand Traverse Band Tribal Code, Title 10, Chapter 4, Sec. 415
+    summary: Authorizes pre-petition juvenile diversion conferences involving the prosecutor, juvenile
+      probation officer and Peacemaker coordinator, with written agreed dispositions.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/GTB-Juvenile-Code-Diversion.pdf
+    source: grand-traverse-band-title-10-juvenile-code-415
+    confidence: medium
+    as_of: '1999-10-01'
+  - kind: other
+    title: Alcohol or Substance Abuse Treatment Program
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 16 § 107
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alcohol-or-substance-abuse-treatment-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Program; Substance.'
+  - kind: other
+    title: Alternative Sentencing Options
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 16 § 106
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-sentencing-options/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Delayed Sentencing;
+      Rehabilitation.'
+  - kind: peacemaking
+    title: Anishinaabek Family Services Informal Preventative Intervention & Case Service Plan
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 10 § 117, § 122.
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/anishinaabek-family-services-informal-preventative-intervention-case-service-plan/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Peacemaking; Program.'
+  - kind: other
+    title: Confidentiality of Substance Abuse by Pregnant Woman
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 10 § 113
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/confidentiality-of-substance-abuse-by-pregnant-woman/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Substance.'
+  - kind: other
+    title: Disposition Alternatives for Juvenile Offenders
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 10 § 420
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-alternatives-for-juvenile-offenders/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative;
+      Restorative.'
+  - kind: other
+    title: Domestic Violence Perpetrator Programs, Treatment and Drig Court
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 16 § 311, § 354
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/domestic-violence-perpetrator-programs-treatment-and-drig-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Drug; Program; Rehabilitation.'
+  - kind: other
+    title: Informal Hearing Diversion Process for Juveniles
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 10 § 415
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-hearing-diversion-process-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Diversion; Informal hearing.'
+  - kind: other
+    title: Offenses Against the Family Rehabilitation Program
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 16 § 107
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/offenses-against-the-family-rehabilitation-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Program; Rehabilitation.'
+  - kind: other
+    title: Reaonable Alternative Approach by Court
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 16 § 358, § 503
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/reaonable-alternative-approach-by-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Alternative.'
+  - kind: other
+    title: Reasonable Alternative Dispositions for Juvenile Probation
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 10 § 418, § 420
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/reasonable-alternative-dispositions-for-juvenile-probation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative;
+      Program.'
+  - kind: other
+    title: Religious and Traditional Healing Considerations by the Court for Children
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 10 § 126
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/religious-and-traditional-healing-considerations-by-the-court-for-children/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Healing.'
+  - kind: other
+    title: Treatment for Sustance Abuse by Pregnant Woman
+    citation: Grand Traverse Band of Ottawa and Chippewa Indians - Tribal Code Title 10 § 110, § 113.
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-for-sustance-abuse-by-pregnant-woman/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Program;
+      Substance.'
+  - kind: arbitration
+    title: Ch. 4. Grand Traverse Band Arbitration Code
+    citation: Ch. 4. Grand Traverse Band Arbitration Code
+    link: https://www.narf.org/nill/codes/grand_traverse/index.html
+    source: national-indian-law-library-code-index-grand-traverse
+    confidence: medium
+    as_of: '2026-11-21'
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title. No date on the
+      index; as_of is the access date.
+  - kind: peacemaking
+    title: Title 10. Children, Families and Elders, Chapter 4. Juvenile Code Revisited, Sec. 415. Diversion
+    citation: Title 10. Children, Families and Elders, Chapter 4. Juvenile Code Revisited, Sec. 415. Diversion
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/GTB-Juvenile-Code-Diversion.pdf
+    source: narf-youth-family-peacemaking-laws
+    confidence: medium
+    as_of: '2025-08-25'
+    locator: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
+    note: 'Native American Rights Fund description (provision itself not read): Provides referral standards,
+      procedures, and the collaboration of Tribal prosecutors, juvenile probation officers, and peacemaker
+      coordinators.'
+  - kind: arbitration
+    title: Grand Traverse Band Arbitration Code
+    citation: Grand Traverse Band Arbitration Code
+    link: https://narf.org/nill/codes/grand_traverse/index.html
+    source: national-indian-law-library-code-codes-grand-traverse
+    confidence: medium
+    as_of: '2020'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Most
+      Recent Update Received : July 2020); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: MI
+    status: approved
+    approved: '1993-11-30'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-11-30'
+    locator: result page 16 (?page=16), row 9
+    note: 'Listed as: "Grand Traverse Band of Ottawa and Chippewa Indians Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Grand Traverse Band of Ottawa and Chippewa Indians, Michigan".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.11.30_grand_traverse_band_tribal_state_gaming_compact.pdf.'
+  - state: MI
+    status: approved
+    dispute_resolution_summary: After written notice the parties meet within 30 days; if a State allegation
+      is unresolved after 90 days the State may serve a notice to cease the disputed games and the tribe
+      may either stop them or invoke arbitration under American Arbitration Association commercial rules
+      before three attorney arbitrators while play continues, and a tribe may likewise invoke arbitration
+      on its own unresolved allegations.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-mi-bay-mills-indian-community-1993
+    confidence: medium
+    as_of: '1993-11-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The same Section 7 text appears in the
+      1993 Bay Mills Indian Community compact and the 1999 Little River Band compact (both read); other
+      Michigan nations signed the 1993 or 1998 forms, and later amendments were not checked. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (1993-11-30).
+  ordinances:
+  - approved: '1994-06-13'
+    link: https://www.nigc.gov?wpdmdl=9874&ind=9890
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-06-13'
+    locator: table row 92, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 92 lists the nation
+      as "Grand Traverse Band of Ottawa/Chippewa Indians". Name matched to roster by spelling variant.
+  - approved: '1995-12-15'
+    link: https://www.nigc.gov?wpdmdl=9875&ind=9891
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-12-15'
+    locator: table row 92, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 92 lists the nation
+      as "Grand Traverse Band of Ottawa/Chippewa Indians". Name matched to roster by spelling variant.
+  - approved: '1997-07-28'
+    link: https://www.nigc.gov?wpdmdl=9876&ind=9892
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1997-07-28'
+    locator: table row 92, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 92 lists the nation
+      as "Grand Traverse Band of Ottawa/Chippewa Indians". Name matched to roster by spelling variant.
+  - approved: '2018-06-28'
+    link: https://www.nigc.gov?wpdmdl=9877&ind=9893
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2018-06-28'
+    locator: table row 92, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 92 lists the nation
+      as "Grand Traverse Band of Ottawa/Chippewa Indians". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Grand Traverse Band of Ottawa
+      and Chippewa Indians, Michigan". Facilities as machine-extracted from the report text (verify):
+      Crystal Shores Casino; Turtle Creek Casino; Leelanau Sands Casino. Name extracted from the PDF by
+      the page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Grand Traverse Band of Ottawa & Chippewa Indians, Michigan Confidence lowered from
+    high by the lead session: the notice prints its table as page images, so nation names were read from
+    images and matched to the roster.'
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Exercising jurisdiction since 2018-10-31 (start date given by NCAI; jurisdiction began under
+    the 2013 special domestic violence criminal jurisdiction provision). Listed by NCAI as implementing
+    (list updated May 2022).
+  source: national-congress-of-american-indians-implementing-tribe-profile-grand-traverse-band-of-ottawa-and-chippewa-indians
+  confidence: medium
+  as_of: 2022-05
+  locator: '"Exercising jurisdiction since" line'
+  note: Listed as "Grand Traverse Band of Ottawa and Chippewa Indians". Also on the NCAI implementing
+    tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+memberships:
+- organization: Midwest Alliance of Sovereign Tribes
+  source: midwest-alliance-of-sovereign-tribes-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Grand Traverse Band of Ottawa and Chippewa Indians". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

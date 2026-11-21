@@ -1,0 +1,658 @@
+id: little-traverse-bay-bands-of-odawa-indians
+entity_type: native-nation
+names:
+  official: Little Traverse Bay Bands of Odawa Indians, Michigan
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: Legislatively acknowledged (as stated in the Office of Federal Acknowledgment list)
+  petition_number: '115'
+  petition_stage: Letter of Intent to Petition 09/27/1989; Legislatively acknowledged 09/21/1994
+  since: '1994-09-21'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '1994-09-21'
+  locator: 'Petitioner #115'
+states:
+- state: MI
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Little Traverse Bay Bands of Odawa Indians, Michigan
+- state: MI
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1963
+  note: 'Census area with land in this state: Little Traverse Bay Reservation and Off-Reservation Trust
+    Land (code 1963). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1963'
+  name: Little Traverse Bay Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1963
+  note: Matched by name. Census class code D1.
+population:
+- count: 4000
+  kind: citizens
+  source: ltbbodawa-nsn-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Homepage: ''The Tribe has over 4,000 members''. Undated; as_of is access date.'
+- count: 92
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1963, field POP100
+  note: 'Census area: Little Traverse Bay Reservation and Off-Reservation Trust Land (code 1963). Everyone
+    counted as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a
+    count of the nation''s citizens.'
+- count: 2740
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3084 (Little Traverse Bay Bands of Odawa Indians alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Little Traverse Bay Bands of Odawa Indians' (race code
+    6036) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 4073
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Little Traverse Bay Band of Odawa Indians', PDF page 4, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://ltbbodawa-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Little Traverse Bay Bands of Odawa Indians, Michigan
+- kind: physical-address
+  value: 7500 Odawa Circle, Harbor Springs, MI 49740
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Little Traverse Bay Bands of Odawa Indians, Michigan
+- kind: mailing-address
+  value: 7500 Odawa Circle, Harbor Springs, MI 49740
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Little Traverse Bay Bands of Odawa Indians, Michigan
+- kind: phone
+  value: (231) 242-1418
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Little Traverse Bay Bands of Odawa Indians, Michigan
+- kind: fax
+  value: (231) 242-1411
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Little Traverse Bay Bands of Odawa Indians, Michigan
+languages:
+- name: Anishinaabemowin
+  language_tag: oj
+  source: ltbbodawa-nsn-tribal-council-and-legislative-office-le
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Legislation history lists 'Gijigowi Anishinaabemowin' statutes.
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Michigan Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Little Traverse Bay Bands of Odawa Indians, Michigan
+governing_documents:
+- kind: law-code
+  title: 'Waganakising Odawa Tribal Code : Little Traverse Bay Bands of Odawa Indians'
+  year: '2024'
+  link: https://narf.org/nill/codes/ltraverse/index.html
+  source: national-indian-law-library-code-codes-ltraverse
+  confidence: medium
+  as_of: '2024'
+  locator: page heading
+  note: 'Table of Contents Updated: March 2024. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Little Traverse Bay Bands of Odawa Indians - Constitution
+  year: '2005'
+  link: https://narf.org/nill/constitutions/little_traverse/index.html
+  source: national-indian-law-library-constitution-constitutions-little-traverse
+  confidence: medium
+  as_of: '2005'
+  locator: page heading
+  note: 'Adopted: February 1, 2005. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://ltbbodawa-nsn.gov/tribal-code/
+  source: national-indian-law-library-little-traverse
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: law-code
+  title: Tribal code
+  link: https://ltbbodawa-nsn.gov/
+  source: national-indian-law-library-little-traverse
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "See also the Government
+    -> Executive and Government -> Legislative tabs on the tribe''s website . They include Code of Regulations,
+    Regulations Log, Vetoed Statutes, Vetoed Resolutions, Executive Directives, Adopted Resolutions, Legislative
+    Directives, Legislation History, Statute History, etc.".'
+- kind: constitution
+  title: Constitution
+  link: https://ltbbodawa-nsn.gov/
+  source: national-indian-law-library-little-traverse
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website (pdf). Choose Government tab -> Legislative -> Constitution.".'
+- kind: constitution
+  title: Title 1 of Waganakising Odawa Tribal Code of Law) (pdf). Choose Government tab -> Judicial Branch
+    -> Tribal Code
+  link: https://ltbbodawa-nsn.gov/
+  source: national-indian-law-library-little-traverse
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website (Title 1 of Waganakising Odawa Tribal Code of Law) (pdf). Choose Government tab -> Judicial
+    Branch -> Tribal Code.".'
+- kind: constitution
+  title: Little Traverse Bay Bands of Odawa Indians Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Michigan section, entry 'Little Traverse Bay Band of Odawa Indians'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.ltbbodawa-nsn.gov/OdawaRegister/LTBB%20Constitution.pdf)
+    returned HTTP 410, so it is not recorded.'
+- kind: law-code
+  title: Little Traverse Bay Bands of Odawa Indians Waganakising Odawak Tribal Code
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Michigan section, entry 'Little Traverse Bay Band of Odawa Indians'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.ltbbodawa-nsn.gov/TribalCode.pdf) returned HTTP
+    404, so it is not recorded.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://ltbbodawa-nsn.gov/judicial-branch/
+  source: national-indian-law-library-little-traverse
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Little Traverse Bay Band of Odawa Indians Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Michigan section, entry 'Little Traverse Bay Band of Odawa Indians'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.ltbbodawa-nsn.gov/Tribal%20Court/TribaCourtStart.html)
+    returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Mnodaawin
+    own_term:
+      name: Mnodaawin
+      language_tag: otw
+      translation: Odawa peacemaking (as glossed in the rule)
+    description: The Odawa peacemaking program to which Tribal Court cases may be transferred.
+    legal_basis: Little Traverse Bay Bands Rules of Civil Procedure, Rule XXIX (Mnodaawin)
+    case_types:
+    - civil
+    - other
+    participation: voluntary
+    relationship_to_court: A party may request transfer of a Tribal Court case at any time on evidence
+      that all parties voluntarily consent and the Mnodaawin program has affirmed it can accept the case.
+    enforcement: Parties must consent to be bound by any agreement reached in Mnodaawin.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-Traverse-Civil-Rules-of-Procedure-Amended-August-2015.pdf
+    source: little-traverse-civil-rules-2015
+    confidence: medium
+    as_of: 2015-08
+    locator: Rule XXIX
+    note: Language tag otw (Ottawa/Odawa) assigned because the rule glosses the term as Odawa peacemaking.
+  - kind: mediation-program
+    name: Court-ordered mediation in child protection
+    description: After finding probable cause at a preliminary hearing the court may order custodians
+      to participate in mediation; statements are not part of the record or used against them, except
+      new abuse or neglect allegations, which are reported.
+    legal_basis: Waganakising Odawak Tribal Code of Law (WOTCL) 5.118(J)
+    case_types:
+    - child-welfare
+    participation: required
+    relationship_to_court: Ordered by the court within child protection proceedings.
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026'
+    locator: https://ncorj.org/tribal-law/court-ordered-mediation-in-child-protection/
+  - kind: peacemaking
+    name: Peacemaking in child protection cases
+    description: In lieu of mediation, parties may request peacemaking, a voluntary and confidential process
+      using cultural approaches to dispute resolution; statements cannot be used in court except new abuse
+      or neglect allegations, which are reported.
+    legal_basis: Waganakising Odawak Tribal Code of Law (WOTCL) 5.118(K)
+    case_types:
+    - child-welfare
+    participation: voluntary
+    relationship_to_court: Available as an alternative to court-ordered mediation within child protection
+      proceedings.
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026'
+    locator: https://ncorj.org/tribal-law/peacemaking-in-child-protection-cases/
+  - kind: family-or-talking-circle
+    name: Mnodaawin Peacemaking Circles (juvenile)
+    own_term:
+      name: Mnodaawin
+      language_tag: otw
+    description: Tribal Court alternative to the usual judicial process, first offered for juvenile cases
+      such as truancy, curfew, incorrigibility and minor offenses. Trained facilitators lead circles of
+      the juvenile, parents, family, elders and community members (the victim may take part or be represented)
+      until they reach a written consensus agreement signed by all, followed by monitoring circles over
+      several months. The page says the Tribal Court plans similar processes for civil disputes.
+    case_types:
+    - juvenile
+    participation: voluntary
+    relationship_to_court: Used in place of going before the judge; available only where the juvenile
+      admits wrongdoing and the juvenile and a parent or guardian agree.
+    enforcement: Follow-up circles over several months monitor compliance with the signed agreement.
+    link: https://ltbbodawa-nsn.gov/judicial-branch/peacemaking/
+    source: ltbb-judicial-branch-peacemaking-page
+    confidence: low
+    as_of: '2026-11-21'
+    note: Official page but undated (as_of is the access date), so confidence is low under the contract;
+      it reads as a program description from the program's start. Agreements may include school, community
+      service, cultural activities, counseling and restitution commitments. Contact person on the page
+      not recorded.
+  provisions:
+  - kind: peacemaking
+    title: 'Rule XXIX: Mnodaawin'
+    citation: Little Traverse Bay Bands Rules of Civil Procedure, Rule XXIX
+    summary: Allows a party to request transfer of a Tribal Court case to Mnodaawin on all parties' voluntary
+      consent to participate and be bound and the program's acceptance.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-Traverse-Civil-Rules-of-Procedure-Amended-August-2015.pdf
+    source: little-traverse-civil-rules-2015
+    confidence: medium
+    as_of: 2015-08
+  - kind: mediation
+    title: Court Ordered Mediation in Child Protection
+    citation: WOTCL 5.118(J) - Court Ordered Mediation
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-ordered-mediation-in-child-protection/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Alternative
+      dispute resolution - Mediation.'
+  - kind: other
+    title: Delayed/Deferred Sentencing – Opportunity for Rehabilitation
+    citation: WOTCL 9.106(B)(5) - Delayed/Deferred Sentencing
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/delayed-deferred-sentencing-opportunity-for-rehabilitation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Deferred sentencing;
+      Rehabilitation.'
+  - kind: other
+    title: Family Preservation Court (Therapeutic/Problem-Solving Court)
+    citation: WOTCL 5.119 - Family Preservation Court
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-preservation-court-therapeutic-problem-solving-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication; Pre-adjudication. Database form
+      of practice: Collaborative approach; Family conferencing.'
+  - kind: other
+    title: Family Strengthening Plan in FPC Cases
+    citation: WOTCL 5.120 - Family Strengthening Plan
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-strengthening-plan-in-fpc-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication; Pre-adjudication. Database form
+      of practice: Family conferencing; service plan.'
+  - kind: peacemaking
+    title: Peacemaking in Child Protection Cases
+    citation: WOTCL 5.118(K) - Peacemaking
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaking-in-child-protection-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
+  - kind: other
+    title: Sentencing Philosophy – Rehabilitation and Healing Over Incarceration
+    citation: WOTCL 9.106(A) - Sentencing Considerations
+    link: https://ltbbodawa-nsn.gov/tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-philosophy-rehabilitation-and-healing-over-incarceration/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication/Sentencing. Database form of practice: Alternatives
+      to incarceration; Healing; Rehabilitation; Restorative justice.'
+  - kind: other
+    title: 7.412 PATRON DISPUTE RESOLUTION
+    citation: 7.412 PATRON DISPUTE RESOLUTION
+    link: https://www.narf.org/nill/codes/ltraverse/index.html
+    source: national-indian-law-library-code-index-ltraverse
+    confidence: medium
+    as_of: 2024-03
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: traditional-dispute-resolution
+    title: 'Chapter 3 – Rules of Civil Procedure, Rule XXIX: Mnodaawin'
+    citation: 'Chapter 3 – Rules of Civil Procedure, Rule XXIX: Mnodaawin'
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-Traverse-Civil-Rules-of-Procedure-Amended-August-2015.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Little Traverse Bay Bands of Odawa Indians, Michigan
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization
+      and procedures for transferring a case to Mnodaawin.'
+  - kind: other
+    title: 7.412 PATRON DISPUTE RESOLUTION
+    citation: 7.412 PATRON DISPUTE RESOLUTION
+    link: https://narf.org/nill/codes/ltraverse/index.html
+    source: national-indian-law-library-code-codes-ltraverse
+    confidence: medium
+    as_of: '2024'
+    locator: Table of Contents, under 'Chapter 4. Gaming Regulatory Statute'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: March 2024); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: arbitration
+    title: LIMITED WAIVER OF SOVEREIGN IMMUNITY OF THE LITTLE TRAVERSE BAY BANDS OF ODAWA INDIANS TO AUTHORIZE
+      ARBITRATION WITH DROPBOX
+    citation: LIMITED WAIVER OF SOVEREIGN IMMUNITY OF THE LITTLE TRAVERSE BAY BANDS OF ODAWA INDIANS TO
+      AUTHORIZE ARBITRATION WITH DROPBOX
+    link: https://narf.org/nill/codes/ltraverse/index.html
+    source: national-indian-law-library-code-codes-ltraverse
+    confidence: medium
+    as_of: '2024'
+    locator: Table of Contents, under '18.400(6.23)(a)'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: March 2024); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  clauses:
+  - context: other
+    kind: arbitration-clause
+    citation: 18.278 (Waganakising Odawak statute, as listed by NILL)
+    summary: Statute title states that it authorizes a bank loan or related swap and adopts law governing
+      arbitration of disputes related to the loan, along with law on security interests.
+    link: https://www.narf.org/nill/codes/ltraverse/index.html
+    source: national-indian-law-library-code-index-ltraverse
+    confidence: medium
+    as_of: 2024-03
+    note: 'From the statute title in the National Indian Law Library table of contents; the statute text
+      was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.278 AUTHORIZING
+      SWAP DOCUMENTS AND RELATED DOCUMENTS FROM WELLS FARGO BANK, NATIONAL ASSOCIATION, AUTHORIZING TRIBAL
+      APPROPRIATIONS FOR PAYMENTS OF THE SWAP OBLIGATIONS, AFFIRMING ADOPTION OF LAW GOVERNING THE ARBITRATION
+      OF DISPUTES RELATED TO THE LOAN (INCLUDING THE SWAP), AND LAW REGARDING SECURITY INTERESTS AND ADDRESSING
+      RELATED MATTERS.'
+  - context: other
+    kind: arbitration-clause
+    citation: 18.400(7.20)(a) (Waganakising Odawak statute, as listed by NILL)
+    summary: Statute title states that it authorizes a bank loan or related swap and adopts law governing
+      arbitration of disputes related to the loan, along with law on security interests.
+    link: https://www.narf.org/nill/codes/ltraverse/index.html
+    source: national-indian-law-library-code-index-ltraverse
+    confidence: medium
+    as_of: 2024-03
+    note: 'From the statute title in the National Indian Law Library table of contents; the statute text
+      was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.400(7.20)(a)
+      AUTHORIZING LOAN FROM PNC BANK, NATIONAL ASSOCIATION, AND RELATED DOCUMENTS, AUTHORIZING TRIBAL
+      APPROPRIATIONS FOR PAYMENTS OF THE LOAN, ADOPTING LAW GOVERNING THE ARBITRATION OF DISPUTES RELATED
+      TO THE LOAN, ADOPTING LAW REGARDING SECURITY INTERESTS AND ADDRESSING RELATED MATTERS.'
+  - context: other
+    kind: waiver-of-sovereign-immunity
+    citation: 18.400(6.23)(a) (Waganakising Odawak statute, as listed by NILL)
+    summary: Statute title states a limited waiver of the Bands' sovereign immunity to authorize arbitration
+      with a named company.
+    link: https://www.narf.org/nill/codes/ltraverse/index.html
+    source: national-indian-law-library-code-index-ltraverse
+    confidence: medium
+    as_of: 2024-03
+    note: 'From the statute title in the National Indian Law Library table of contents; the statute text
+      was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.400(6.23)(a)
+      LIMITED WAIVER OF SOVEREIGN IMMUNITY OF THE LITTLE TRAVERSE BAY BANDS OF ODAWA INDIANS TO AUTHORIZE
+      ARBITRATION WITH DROPBOX.'
+  - context: other
+    kind: arbitration-clause
+    citation: 18.507 (Waganakising Odawak statute, as listed by NILL)
+    summary: Statute title states that it authorizes a bank loan or related swap and adopts law governing
+      arbitration of disputes related to the loan, along with law on security interests.
+    link: https://www.narf.org/nill/codes/ltraverse/index.html
+    source: national-indian-law-library-code-index-ltraverse
+    confidence: medium
+    as_of: 2024-03
+    note: 'From the statute title in the National Indian Law Library table of contents; the statute text
+      was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.507 AUTHORIZING
+      LOAN FROM WELLS FARGO BANK, NATIONAL ASSOCIATION AND RELATED DOCUMENTS, AUTHORIZING TRIBAL APPROPRIATIONS
+      FOR PAYMENTS OF THE LOAN, ADOPTING LAW GOVERNING THE ARBITRATION OF DISPUTES RELATED TO THE LOAN,
+      ADOPTING LAW REGARDING SECURITY INTERESTS AND ADDRESSING RELATED MATTERS.'
+  - context: other
+    kind: arbitration-clause
+    citation: 18.511(3.17)(a) (Waganakising Odawak statute, as listed by NILL)
+    summary: Statute title states that it authorizes a bank loan or related swap and adopts law governing
+      arbitration of disputes related to the loan, along with law on security interests.
+    link: https://www.narf.org/nill/codes/ltraverse/index.html
+    source: national-indian-law-library-code-index-ltraverse
+    confidence: medium
+    as_of: 2024-03
+    note: 'From the statute title in the National Indian Law Library table of contents; the statute text
+      was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.511(3.17)(a)
+      AUTHORIZING REFINANCING LOAN FROM WELLS FARGO BANK, NATIONAL ASSOCIATION AND RELATED DOCUMENTS,
+      AUTHORIZING TRIBAL APPROPRIATIONS FOR PAYMENTS OF THE LOAN, REAFFIRMING AND RE-ADOPTING LAW GOVERNING
+      THE ARBITRATION OF DISPUTES RELATED TO THE LOAN, REAFFIRMING AND RE-ADOPTING LAW REGARDING SECURITY
+      INTERESTS AND ADDRESSING RELATED MATTERS.'
+  - context: other
+    kind: arbitration-clause
+    citation: 18.528(1.22)(a) (Waganakising Odawak statute, as listed by NILL)
+    summary: Statute title states that it authorizes a bank loan or related swap and adopts law governing
+      arbitration of disputes related to the loan, along with law on security interests.
+    link: https://www.narf.org/nill/codes/ltraverse/index.html
+    source: national-indian-law-library-code-index-ltraverse
+    confidence: medium
+    as_of: 2024-03
+    note: 'From the statute title in the National Indian Law Library table of contents; the statute text
+      was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.528(1.22)(a)
+      AUTHORIZING FIRST AMENDMENT TO LOAN AGREEMENT FROM PNC BANK, NATIONAL ASSOCIATION, AND RELATED DOCUMENTS,
+      AUTHORIZING TRIBAL APPROPRIATIONS FOR PAYMENTS OF THE LOAN, CONFIRMING ADOPTION OF LAW GOVERNING
+      THE ARBITRATION OF DISPUTES RELATED TO THE LOAN, CONFIRMING ADOPTION OF LAW REGARDING SECURITY INTERESTS
+      AND ADDRESSING RELATED MATTERS.'
+gaming:
+  compacts:
+  - state: MI
+    status: deemed-approved
+    approved: '2008-04-21'
+    federal_register_citation: 73 FR 21361
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2008-04-21'
+    locator: result page 16 (?page=16), row 15
+    note: 'Listed as: "Little Traverse Bay Bands of Odawa Indians Tribal State Gaming Compact" (Deemed
+      Approved); list''s Tribe column: "Little Traverse Bay Bands of Odawa Indians, Michigan". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2008.04.21_little_traverse_bay_bands_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/04/21/E8-8494/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MI
+    status: approved
+    approved: '1999-02-18'
+    federal_register_citation: 64 FR 8111
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-02-18'
+    locator: result page 16 (?page=16), row 16
+    note: 'Listed as: "Little Traverse Bay Bands of Odawa Indians Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Little Traverse Bay Bands of Odawa Indians, Michigan". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1999.02.18_little_traverse_bay_bands_of_odawa_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/02/18/99-4005/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MI
+    status: deemed-approved
+    approved: '2003-12-10'
+    federal_register_citation: 68 FR 68944
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-12-10'
+    locator: result page 16 (?page=16), row 17
+    note: 'Listed as: "Little Traverse Bay Bands of Odawa Indians Tribal State Gaming Compact" (Deemed
+      Approved); list''s Tribe column: "Little Traverse Bay Bands of Odawa Indians, Michigan". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2003.12.10_little_traverse_bay_bands_of_odawa_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/12/10/03-30634/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MI
+    status: deemed-approved
+    dispute_resolution_summary: After written notice the parties meet within 30 days; if a State allegation
+      is unresolved after 90 days the State may serve a notice to cease the disputed games and the tribe
+      may either stop them or invoke arbitration under American Arbitration Association commercial rules
+      before three attorney arbitrators while play continues, and a tribe may likewise invoke arbitration
+      on its own unresolved allegations.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-mi-bay-mills-indian-community-1993
+    confidence: medium
+    as_of: '1993-11-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The same Section 7 text appears in the
+      1993 Bay Mills Indian Community compact and the 1999 Little River Band compact (both read); other
+      Michigan nations signed the 1993 or 1998 forms, and later amendments were not checked. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2008-04-21).
+  ordinances:
+  - approved: '1996-04-30'
+    link: https://www.nigc.gov?wpdmdl=10159&ind=10194
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-04-30'
+    locator: table row 135, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 135 lists the nation
+      as "Little Traverse Bay Bands of Odawa Indians".
+  - approved: '2001-05-18'
+    link: https://www.nigc.gov?wpdmdl=10180&ind=10195
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-05-18'
+    locator: table row 135, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 135 lists the nation
+      as "Little Traverse Bay Bands of Odawa Indians".
+  - approved: '2005-07-25'
+    link: https://www.nigc.gov?wpdmdl=10181&ind=10196
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2005-07-25'
+    locator: table row 135, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 135 lists the nation
+      as "Little Traverse Bay Bands of Odawa Indians".
+  - approved: '2011-03-28'
+    link: https://www.nigc.gov?wpdmdl=10182&ind=10197
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2011-03-28'
+    locator: table row 135, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 135 lists the nation
+      as "Little Traverse Bay Bands of Odawa Indians".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Little Traverse Bay Band of Odawa
+      Indians". Name extracted from the PDF by the page-fetch tool and matched to the roster.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Little Traverse Bay Bands of Odawa Indians, Michigan Confidence lowered from high
+    by the lead session: the notice prints its table as page images, so nation names were read from images
+    and matched to the roster.'
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Exercising jurisdiction since 2015-03-07 (start date given by NCAI; jurisdiction began under
+    the 2013 special domestic violence criminal jurisdiction provision). Listed by NCAI as implementing
+    (list updated May 2022).
+  source: national-congress-of-american-indians-implementing-tribe-profile-little-traverse-bay-bands-of-odawa-indians
+  confidence: medium
+  as_of: 2022-05
+  locator: '"Exercising jurisdiction since" line'
+  note: Listed as "Little Traverse Bay Band of Odawa Indians". Also on the NCAI implementing tribes list
+    (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+memberships:
+- organization: Midwest Alliance of Sovereign Tribes
+  source: midwest-alliance-of-sovereign-tribes-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Little Traverse Bay Bands of Odawa Indians". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,385 @@
+id: bad-river-band-of-the-lake-superior-tribe-of-chippewa-indians-of-the-bad-river-reservation
+entity_type: native-nation
+names:
+  official: Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation,
+    Wisconsin
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: WI
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation,
+    Wisconsin
+- state: WI
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0140
+  note: 'Census area with land in this state: Bad River Reservation (code 0140). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '0140'
+  name: Bad River Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0140
+  note: Matched by name. Census class code D2.
+population:
+- count: 6945
+  kind: citizens
+  source: wisconsin-dpi-tribal-nations-bad-river
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'State page, Tribal Statistics: ''There are currently 6,945 Bad River tribal members''. Undated;
+    as_of is access date.'
+- count: 1545
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0140, field POP100
+  note: 'Census area: Bad River Reservation (code 0140). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 4621
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2859 (Bad River Band of the Lake Superior Tribe alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Bad River Band of the Lake Superior Tribe' (race code
+    5650) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 8236
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Bad River Band of the Lake Superior Tribe of Chippewa', PDF
+    page 4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.badriver-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation,
+    Wisconsin
+- kind: physical-address
+  value: 72682 Maple Street, Ashland, WI 54806
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation,
+    Wisconsin
+- kind: mailing-address
+  value: Post Office Box 39, Odanah, WI 54861
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation,
+    Wisconsin
+- kind: phone
+  value: (715) 682-7111
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation,
+    Wisconsin
+- kind: fax
+  value: (715) 682-7118
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation,
+    Wisconsin
+languages:
+- name: Ojibwe Anishinaabemowin
+  language_tag: oj
+  source: badriver-nsn-history
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'History page: ''the native language is known as Ojibwe Anishinaabemowin.'''
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Great Lakes Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation,
+    Wisconsin
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Bad River Band of the Lake Superior Tribe of Chippewa Indians Wisconsin" among
+    organizations under constitutions approved by the Secretary of the Interior (Indian Reorganization
+    Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Bad River Band of the Lake Superior Tribe of the Chippewa Indians of the State
+    of Wisconsin) (approved 1936) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-badrivcons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://law.badriver-nsn.gov/
+  source: national-indian-law-library-bad-river-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: law-code
+  title: Tribal code
+  link: https://www.narf.org/nill/triballaw/us/nsn/badriver/council/index.html
+  source: national-indian-law-library-bad-river-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website .".'
+- kind: constitution
+  title: Constitution
+  link: https://law.badriver-nsn.gov/us/nsn/badriver/council/constitution-and-bylaws
+  source: national-indian-law-library-bad-river-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.narf.org/nill/triballaw/us/nsn/badriver/council/constitution-and-bylaws/
+  source: national-indian-law-library-bad-river-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At NILL website
+    .".'
+- kind: constitution
+  title: Bad River Band of Lake Superior Chippewa Tribe Constitution and Bylaws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Bad River Band of Lake Superior Chippewa Tribe'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.badriver-nsn.gov/legislative/bad-river-constitution-a-bylaws)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Bad River Band of the Lake Superior Tribe of Chippewa Indians Tribal Court Code
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Bad River Band of Lake Superior Chippewa Tribe'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.badriver-nsn.gov/legislative/tribal-court-code)
+    returned HTTP 404, so it is not recorded.'
+- kind: corporate-charter
+  title: Corporate charter (Bad River Band of Chippewa Indians of the Bad River Reservation Wisconsin)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/badrivchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-badrivchrtr
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Bad River Band of the Lake Superior Tribe of the Chippewa Indians of the State
+    of Wisconsin)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/badrivcons.html
+  source: university-of-oklahoma-indian-reorganization-act-badrivcons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.badriver-nsn.gov/tribal-court-legal/
+  source: national-indian-law-library-bad-river-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Bad River Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Bad River Band of Lake Superior Chippewa Tribe'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.badriver-nsn.gov/2013-08-14-17-05-42/legal-a-court)
+    returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Restorative Options for Dispositions in Child Welfare
+    citation: Bad River Band of the Lake Superior Chippewa Indians Code. Title 1 Tribal Court Code. Chapter
+      1.25 Children's Code. Section 1.25.190 Disposition.
+    link: https://law.badriver-nsn.gov/us/nsn/badriver/council/code/1.25.180#(c)
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-options-for-dispositions-in-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+gaming:
+  compacts:
+  - state: WI
+    status: approved
+    approved: '1998-08-21'
+    federal_register_citation: 63 FR 44920
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-08-21'
+    locator: result page 45 (?page=45), row 5
+    note: 'Listed as: "Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River
+      Reservation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Bad River Band of the
+      Lake Superior Tribe of Chippewa Indians of the Bad River Reservation, Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.08.21%20Bad%20River%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/08/21/98-22493/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: deemed-approved
+    approved: '2003-07-22'
+    federal_register_citation: 68 FR 43366
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-07-22'
+    locator: result page 45 (?page=45), row 6
+    note: 'Listed as: "Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River
+      Reservation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column: "Bad River Band
+      of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation, Wisconsin". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202003.07.22%20Bad%20River%20DEEMED%20APPROVED%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/07/22/03-18631/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1992-04-03'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-04-03'
+    locator: result page 45 (?page=45), row 7
+    note: 'Listed as: "Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River
+      Reservation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Bad River Band of the
+      Lake Superior Tribe of Chippewa Indians of the Bad River Reservation, Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201992.04.03%20%20Bad%20River%20Band%20of%20Lake%20Superior%20Chippewa%20Indians%20Gaming%20Compact.pdf.'
+  - state: WI
+    status: deemed-approved
+    dispute_resolution_summary: After written notice the State and Tribe meet within 30 days, and if the
+      dispute is unresolved after 90 days either party may pursue any otherwise available remedy, with
+      mediation or arbitration only by mutual agreement.
+    dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
+    confidence: medium
+    as_of: '1992-08-10'
+    locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
+      compact; later amendments renumbered this section XXIV and revised it for at least some nations
+      (for example the Ho-Chunk Nation fourth amendment), so the current text may differ. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2003-07-22).
+  ordinances:
+  - approved: '1993-11-10'
+    link: https://www.nigc.gov?wpdmdl=3319&ind=3321
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1993-11-10'
+    locator: table row 10, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 10 lists the nation
+      as "Bad River Band of Lake Superior Tribe of Chippewa Indians". Name matched to roster by spelling
+      variant.
+  - approved: '2019-01-08'
+    link: https://www.nigc.gov?wpdmdl=3320&ind=3322
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2019-01-08'
+    locator: table row 10, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 10 lists the nation
+      as "Bad River Band of Lake Superior Tribe of Chippewa Indians". Name matched to roster by spelling
+      variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Bad River Band of Lake Superior
+      Tribe of Chippewa Indians". Facilities as machine-extracted from the report text (verify): Bad River
+      Lodge & Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Wisconsin is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Wisconsin. Applies to the nation''s Indian
+    country within Wisconsin; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Wisconsin"
+  note: Statute is primary; nation matched to Wisconsin by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation,
+    Wisconsin Confidence lowered from high by the lead session: the notice prints its table as page images,
+    so nation names were read from images and matched to the roster.'
+memberships:
+- organization: Midwest Alliance of Sovereign Tribes
+  source: midwest-alliance-of-sovereign-tribes-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Bad River Band of Lake Superior Tribe of Chippewa Indians". Name matched to the roster
+    entry.
+- organization: Great Lakes Inter-Tribal Council
+  source: great-lakes-inter-tribal-council-tribes-served
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Bad River Band of the Lake Superior Tribe of Chippewa Indians". Name matched to the
+    roster entry.
+- organization: Great Lakes Indian Fish and Wildlife Commission
+  source: great-lakes-indian-fish-and-wildlife-commission-commission
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Mashkiiziibiing" (link https://www.badriver-nsn.gov/).
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

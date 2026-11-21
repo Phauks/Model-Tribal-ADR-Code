@@ -1,0 +1,36 @@
+key: alaska-dcra-native-place-names
+kind: dataset
+citation:
+  type: dataset
+  title: Native Place Name (Community_Overview layer 1)
+  author:
+  - literal: State of Alaska, Department of Commerce, Community, and Economic Development, Division of
+      Community and Regional Affairs
+  container-title: Alaska Community Database / DCRA Open Data (ArcGIS REST)
+  URL: https://maps.commerce.alaska.gov/server/rest/services/Community_Related/Community_Overview/MapServer/1
+  issued:
+    date-parts:
+    - - 2018
+      - 10
+      - 15
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 21
+original_link: https://maps.commerce.alaska.gov/server/rest/services/Community_Related/Community_Overview/MapServer/1
+retrieved: '2026-11-21'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-21'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Only facts are recorded from this source; it is cited and linked, not quoted or reproduced.
+  redistribution: false
+found_in:
+- 2026-11-21-nations-alaska
+notes: 'Each row cites the Alaska Native Language Center (University of Alaska Fairbanks) place-names
+  map, http://www.uaf.edu/anla/collections/map/names/, as its source. Fields used: NativeCommunityName,
+  IndigenousLanguage.'

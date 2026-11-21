@@ -1,0 +1,441 @@
+id: kiowa-tribe
+entity_type: native-nation
+names:
+  official: Kiowa Tribe
+  former:
+  - name: Kiowa Indian Tribe of Oklahoma
+    source: bia-recognized-entities-2026
+    confidence: high
+    as_of: '2026-01-30'
+    locator: 91 Fed. Reg. 4104
+    note: Listed in the notice as a previous name.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: OK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kiowa Tribe (previously listed as Kiowa Indian Tribe of Oklahoma)
+- state: OK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5720, 5955
+  note: 'Census area with land in this state: Kiowa-Comanche-Apache-Fort Sill Apache OTSA (code 5720);
+    Kiowa-Comanche-Apache-Ft Sill Apache/Caddo-Wichita-Delaware joint-use OTSA (code 5955). Statistical
+    area only (not a land holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '5720'
+  name: Kiowa-Comanche-Apache-Fort Sill Apache OTSA
+  area_type: Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5720
+  note: 'Matched by name. Shared with: Comanche Nation, Oklahoma; Apache Tribe of Oklahoma; Fort Sill--Chiricahua--Warm
+    Springs--Apache Tribe. Census class code D6.'
+- geographic_identifier: '5955'
+  name: Kiowa-Comanche-Apache-Ft Sill Apache/Caddo-Wichita-Delaware joint-use OTSA
+  area_type: joint-use Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5955
+  note: 'Matched by name. Shared with: Comanche Nation, Oklahoma; Apache Tribe of Oklahoma; Fort Sill--Chiricahua--Warm
+    Springs--Apache Tribe; Caddo Nation of Oklahoma; Wichita and Affiliated Tribes , Oklahoma; Delaware
+    Nation, Oklahoma. Census class code D0.'
+population:
+- count: 10300
+  kind: citizens
+  source: kiowa-tribe-annual-report-fiscal-year-2025-2026
+  confidence: high
+  as_of: '2026-04-01'
+  note: 'Annual report, Enrollment section: ''Kiowa Tribal Population Total Enrolled = 10,300''; ''Oklahoma
+    Members 6,957''.'
+- count: 187646
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5720, field POP100
+  note: 'Census area: Kiowa-Comanche-Apache-Fort Sill Apache OTSA (code 5720). Everyone counted as living
+    in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s
+    citizens. The area is a Census statistical area, not a land holding. The area is shared with: Comanche
+    Nation, Oklahoma; Apache Tribe of Oklahoma; Fort Sill--Chiricahua--Warm Springs--Apache Tribe; the
+    same count applies to the whole area.'
+- count: 9690
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5955, field POP100
+  note: 'Census area: Kiowa-Comanche-Apache-Ft Sill Apache/Caddo-Wichita-Delaware joint-use OTSA (code
+    5955). Everyone counted as living in the area in the 2020 Census, of any race or tribal affiliation;
+    this is not a count of the nation''s citizens. The area is a Census statistical area, not a land holding.
+    The area is shared with: Comanche Nation, Oklahoma; Apache Tribe of Oklahoma; Fort Sill--Chiricahua--Warm
+    Springs--Apache Tribe; Caddo Nation of Oklahoma; Wichita and Affiliated Tribes , Oklahoma; Delaware
+    Nation, Oklahoma; the same count applies to the whole area.'
+- count: 3831
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3062 (Kiowa Indian Tribe of Oklahoma alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Kiowa Indian Tribe of Oklahoma' (race code 5892) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 11000
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Kiowa Indian Tribe', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://kiowatribe.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kiowa Tribe (previously listed as Kiowa Indian Tribe of Oklahoma)
+- kind: physical-address
+  value: 100 Kiowa Way, Carnegie, OK 73015
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kiowa Tribe (previously listed as Kiowa Indian Tribe of Oklahoma)
+- kind: mailing-address
+  value: P.O. Box 369, Carnegie, OK 73015
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kiowa Tribe (previously listed as Kiowa Indian Tribe of Oklahoma)
+- kind: phone
+  value: (580) 654-2300
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kiowa Tribe (previously listed as Kiowa Indian Tribe of Oklahoma)
+- kind: fax
+  value: (580) 654-1788
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kiowa Tribe (previously listed as Kiowa Indian Tribe of Oklahoma)
+languages:
+- name: Kiowa
+  language_tag: kio
+  source: kiowatribe-department-kiowa-language-department
+  confidence: high
+  as_of: '2026-11-21'
+  note: Kiowa Language Department page.
+federal_administration:
+  bureau_of_indian_affairs_region: Southern Plains
+  bureau_of_indian_affairs_agency: Anadarko Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kiowa Tribe (previously listed as Kiowa Indian Tribe of Oklahoma)
+governing_documents:
+- kind: constitution
+  title: Kiowa Indian Tribe of Oklahoma - Tribal Constitution
+  year: '2017'
+  link: https://narf.org/nill/constitutions/kiowa/index.html
+  source: national-indian-law-library-constitution-constitutions-kiowa
+  confidence: medium
+  as_of: '2017'
+  locator: page heading
+  note: 'Approved: 2017. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Court Codes (KCC Code of Law
+  link: https://www.kiowatribe.org/judicial
+  source: national-indian-law-library-kiowa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
+    website . Court Codes (KCC Code of Law).".'
+- kind: law-code
+  title: Legislative Business
+  link: https://kiowatribe.org/legislative
+  source: national-indian-law-library-kiowa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Legislative Business.".'
+- kind: law-code
+  title: Tribal code
+  link: https://law.kiowatribe.org/
+  source: national-indian-law-library-kiowa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    (Open Law Library).".'
+- kind: constitution
+  title: Constitution
+  link: https://www.kiowatribe.org/legislative
+  source: national-indian-law-library-kiowa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Constitution
+  link: https://law.kiowatribe.org/
+  source: national-indian-law-library-kiowa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website (Open Law Library).".'
+- kind: constitution
+  title: Kiowa Indian Tribe Constitution
+  link: https://nebula.wsimg.com/01e4bef267704e46f0aa16463f02e170?AccessKeyId=B5606416FE67A0E216FA&amp;disposition=0&amp;alloworigin=1
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Kiowa Indian Tribe of Oklahoma'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: court-of-indian-offenses
+  name: Southern Plains CFR Court (Court of Indian Offenses)
+  link: https://www.bia.gov/CFRCourts
+  source: bia-courts-of-indian-offenses
+  confidence: high
+  as_of: '2026-11-21'
+  locator: List of CFR Courts and the Tribes they Serve
+  note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
+    Indian Affairs list.
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.kiowatribe.org/judicial
+  source: national-indian-law-library-kiowa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemakers of the District Court (Kiowa Tribe Peacemaking Act)
+    description: The Act authorizes the District Court of the Kiowa Tribe to use peacemakers and provides
+      for use of Kiowa Tribe traditions and customs, referral of existing actions, agreements and proposed
+      orders, and enforcement of orders.
+    legal_basis: Kiowa Tribe Peacemaking Act, Sections 1-18
+    case_types:
+    - civil
+    - other
+    participation: voluntary-or-court-referred
+    link: https://www.kiowatribe.org/sites/default/files/2023-03/Kiowa%20Tribe%20-%20KCC%20Code%20of%20Law.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026'
+    locator: https://ncorj.org/tribal-law/kiowa-tribe-peacemaking-act/
+    note: Details from the Act's table of contents and opening section as quoted by NCORJ; the structure
+      parallels the Choctaw Nation and Chickasaw Nation acts.
+  provisions:
+  - kind: peacemaking
+    title: Kiowa Tribe Peacemaking Act
+    citation: Kiowa Tribe Peacemaking Act, Sections 1-18
+    link: https://www.kiowatribe.org/sites/default/files/2023-03/Kiowa%20Tribe%20-%20KCC%20Code%20of%20Law.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026'
+    locator: https://ncorj.org/tribal-law/kiowa-tribe-peacemaking-act/
+  - kind: peacemaking
+    title: Kiowa Tribe Peacemaking Act
+    citation: KIOWA TRIBE PEACEMAKING ACT
+    link: https://www.kiowatribe.org/sites/default/files/2023-03/Kiowa%20Tribe%20-%20KCC%20Code%20of%20Law.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/kiowa-tribe-peacemaking-act/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
+  - kind: other
+    title: Treatment in Lieu of Imprisonment or Fines
+    citation: KIOWA CODE. TITLE Ill CRIMINAL CODE.
+    link: https://www.kiowatribe.org/sites/default/files/2023-03/Kiowa%20Tribe%20-%20KCC%20Code%20of%20Law.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-imprisonment-or-fines/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
+  - kind: other
+    title: Treatment in Lieu of Jail Sentence for Intoxication
+    citation: OFFENSES
+    link: https://ncorj.org/tribal-law/treatment-in-lieu-of-jail-sentence-for-intoxication/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-jail-sentence-for-intoxication/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
+  - kind: other
+    title: Treatment in Lieu of Jail Sentence for Possession
+    citation: OFFENSES
+    link: https://ncorj.org/tribal-law/treatment-in-lieu-of-jail-sentence-for-possession/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-jail-sentence-for-possession/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '2006-10-23'
+    federal_register_citation: 71 FR 62120
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2006-10-23'
+    locator: result page 28 (?page=28), row 2
+    note: 'Listed as: "Kiowa Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Kiowa Tribe (previously listed as Kiowa Indian Tribe of Oklahoma)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202006.10.23%20Kiowa%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2006/10/23/E6-17703/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2019-04-16'
+    federal_register_citation: 84 FR 15634
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2019-04-16'
+    locator: result page 28 (?page=28), row 3
+    note: 'Listed as: "Kiowa Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Kiowa Tribe (previously listed as Kiowa Indian Tribe of Oklahoma)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%2004.16.2019%20Kiowa%20Tribe%20Oklahoma%20Model%20Tribal%20Gaming%20Compact%20Supplement.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2019/04/16/2019-07470/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-in-the-state-of-oklahoma.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2019-04-16).
+  ordinances:
+  - approved: '1995-08-25'
+    link: https://www.nigc.gov?wpdmdl=10086&ind=10102
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-08-25'
+    locator: table row 122, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 122 lists the nation
+      as "Kiowa Indian Tribe of Oklahoma". Name matched to roster by spelling variant.
+  - approved: '2001-09-07'
+    link: https://www.nigc.gov?wpdmdl=10087&ind=10103
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2001-09-07'
+    locator: table row 122, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 122 lists the nation
+      as "Kiowa Indian Tribe of Oklahoma". Name matched to roster by spelling variant.
+  - approved: '2005-09-08'
+    link: https://www.nigc.gov?wpdmdl=10088&ind=10104
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2005-09-08'
+    locator: table row 122, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 122 lists the nation
+      as "Kiowa Indian Tribe of Oklahoma". Name matched to roster by spelling variant.
+  - approved: '2007-04-13'
+    link: https://www.nigc.gov?wpdmdl=10089&ind=10105
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2007-04-13'
+    locator: table row 122, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 122 lists the nation
+      as "Kiowa Indian Tribe of Oklahoma". Name matched to roster by spelling variant.
+  - approved: '2009-04-09'
+    link: https://www.nigc.gov?wpdmdl=10090&ind=10106
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2009-04-09'
+    locator: table row 122, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 122 lists the nation
+      as "Kiowa Indian Tribe of Oklahoma". Name matched to roster by spelling variant.
+  - approved: '2009-08-17'
+    link: https://www.nigc.gov?wpdmdl=10091&ind=10107
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2009-08-17'
+    locator: table row 122, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 122 lists the nation
+      as "Kiowa Indian Tribe of Oklahoma". Name matched to roster by spelling variant.
+  - approved: '2011-07-29'
+    link: https://www.nigc.gov?wpdmdl=10092&ind=10108
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2011-07-29'
+    locator: table row 122, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 122 lists the nation
+      as "Kiowa Indian Tribe of Oklahoma". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Kiowa Tribe of Oklahoma".
+      Facilities as machine-extracted from the report text (verify): Kiowa Casino Carnegie; Kiowa Casino
+      Red River. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Kiowa Tribe Confidence lowered from high by the lead session: the notice prints its
+    table as page images, so nation names were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

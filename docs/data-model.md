@@ -34,9 +34,9 @@ research session ──found──▶ source ◀──cites── provision / co
 
 | Record | Schema | Stored as | Purpose |
 | --- | --- | --- | --- |
-| Source | [source.schema.json](../schemas/source.schema.json) | `content/sources/<key>.yaml` | Citation data (CSL-JSON), original URL, archives, change history, citator check, rights |
+| Source | [source.schema.json](../schemas/source.schema.json) | `content/sources/<letter>/<key>.yaml` | Citation data (CSL-JSON), original URL, archives, change history, citator check, rights |
 | Rights | [permission.schema.json](../schemas/permission.schema.json) | the `rights` field of a source | Permission status, legal basis, redistribution, request log |
-| Tribe profile | [tribe.schema.json](../schemas/tribe.schema.json) | `content/tribes/<id>.yaml` | Names, recognition, state presence, justice institutions, published ADR law, review status |
+| Tribe profile | [tribe.schema.json](../schemas/tribe.schema.json) | `content/tribes/<letter>/<id>.yaml` | One Native nation or community: names, legal status, state presence, population, official contacts, government, justice institutions, dispute resolution practice, gaming, jurisdiction, consultation history; every fact cited with a confidence level |
 | Provision | [provision.schema.json](../schemas/provision.schema.json) | `content/provisions/<chapter>-<section>.md` | Model text with alternatives and placeholders |
 | Commentary | [commentary.schema.json](../schemas/commentary.schema.json) | `content/commentary/<chapter>-<section>.md` | Comment, Illustrations and Source Note for one provision |
 | Glossary entry | [glossary.schema.json](../schemas/glossary.schema.json) | `content/glossary/<id>.yaml` | A defined term or acronym, its usage status and sources; linked from text as `[[id]]` |
@@ -45,6 +45,105 @@ research session ──found──▶ source ◀──cites── provision / co
 | Outreach organization | [outreach-organization.schema.json](../schemas/outreach-organization.schema.json) | `research/outreach/<id>.yaml` | An organization, office or nation the project may ask for help, why it matters, and its public contact path; not published on the website |
 | Outreach plan (private) | [outreach-plan.schema.json](../schemas/outreach-plan.schema.json) | Outside git ([decision record 0012](decisions/0012-outreach-list-split-public-and-private.md)) | Named people, suggested asks, priority and contact log, keyed to outreach records |
 | Shared types | [common.schema.json](../schemas/common.schema.json) | n/a | Slugs, dates, versions, state codes, review status, sensitivity flags |
+
+## Tribe profiles
+
+A profile describes one Native nation or community. Its folder is called
+`tribes/` for continuity, but not every record is a Tribe: `entity_type` says
+what the record is (project design).
+
+| `entity_type` | Used for | Status recorded as |
+| --- | --- | --- |
+| `native-nation` | Tribal nations, bands, pueblos, rancherias, communities and Alaska Native villages, whatever their recognition | `federal`, `state`, `petitioning` or `unrecognized` |
+| `native-hawaiian` | The Native Hawaiian community, which has no government in a formal government-to-government relationship with the United States | `congressional-special-relationship`, and Hawaiʻi state law as `state` |
+| `territorial-indigenous-people` | Indigenous peoples of U.S. territories, such as CHamoru, Refaluwasch and Samoan people | `territorial-law` |
+| `alaska-native-corporation` | Corporations formed under the Alaska Native Claims Settlement Act, which are not governments | Reserved; not yet used |
+
+Native Hawaiians are never described with Tribal status categories. The
+federal and state laws that describe their status are cited in their own
+`recognition` entries. The Department of the Interior's 2016 rule sets a
+procedure for reestablishing a government-to-government relationship and says
+Native Hawaiians would not be added to the list of federally recognized
+tribes, while also taking the view that Congress has treated the community as
+an Indian tribe for constitutional purposes
+([81 Fed. Reg. 71278](https://www.govinfo.gov/content/pkg/FR-2016-10-14/pdf/2016-23720.pdf)).
+No government has been reestablished under it; the Justice Department's
+Office of Legal Counsel wrote in December 2025 that "no Native Hawaiian
+community has availed itself of this opportunity"
+([slip opinion](https://www.justice.gov/media/1421576/dl)). The profile
+records these sources side by side without resolving the question (project
+choice).
+
+### Every fact is cited
+
+Every value in a profile carries the same citation fields
+(`common.schema.json#/$defs/cited`):
+
+| Field | Meaning |
+| --- | --- |
+| `source` | Key of the source record the value comes from |
+| `confidence` | `high`, `medium` or `low`, defined below |
+| `as_of` | When the value was true or published: a year, year and month, or full date |
+| `locator` | Where in the source: page, section, table or row |
+| `note` | Anything a reader needs to weigh the value, such as a name match or a conflict |
+
+Confidence levels (project choice):
+
+- **high**: stated directly by a primary official source (the nation itself, a
+  statute, a regulation, the Federal Register, or a federal or state agency
+  list) published or updated within about five years.
+- **medium**: a reputable secondary source, a primary source older than about
+  five years, or a value that needed names matched between sources.
+- **low**: a single unofficial source, an undated source, conflicting sources
+  (explained in the note), or a search-result snippet.
+
+A value no source supports is left out. An empty field means "not found", not
+"none".
+
+### Contacts
+
+Contacts are the government's official, publicly published office contact
+points only: website, street and mailing address, main telephone and fax, and
+a general office email address. Names, personal email addresses and personal
+telephone numbers of officials are never recorded (charter, commitment 1).
+
+### Population
+
+Population figures measure different things and are never added together:
+`citizens` (the nation's own count of its citizens or enrolled members),
+`resident-population` (everyone living in an area, Native or not), census
+self-identification counts, and service-area figures. Each figure keeps its
+date.
+
+### Dispute resolution
+
+The `dispute_resolution` section records how a nation resolves disputes
+outside, alongside or within its courts: its forums (with the nation's own
+name for each, its legal basis, the kinds of cases it hears, how cases arrive,
+how it relates to the Tribal court and how agreements are enforced), specific
+code provisions, dispute resolution clauses and waivers of sovereign immunity
+in commercial and other codes, training programs, and published rules and
+forms. Gaming compact dispute terms are kept with each compact under `gaming`.
+
+The vocabularies for kinds of forum, case types, participation, provisions
+and clauses are open: any lowercase hyphenated term validates, so a method the
+project has not anticipated can be recorded in its own terms. The schema lists
+suggested terms; a term that becomes common gets a glossary record rather than
+a schema change (project design). Traditional or ceremonial practice is
+recorded only as far as the nation itself has made it public
+([charter, commitment 5](charter.md#5-cultural-knowledge-and-restricted-material)).
+
+### Names and languages
+
+Names in a nation's own language are kept exactly as the nation writes them,
+in Unicode Normalization Form C, with a BCP 47 language tag (for example
+`chr`, `nv`, `haw`) and a romanized form only when the source gives one.
+
+### Building profiles
+
+The first profiles were generated from cited facts in `research/raw/`
+(see its README) by `scripts/tribes/build_profiles.py`. After that, profiles
+are edited by hand like any other record.
 
 ## Permission statuses
 

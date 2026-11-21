@@ -1,0 +1,327 @@
+id: otoe-missouria-tribe-of-indians
+entity_type: native-nation
+names:
+  official: Otoe-Missouria Tribe of Indians, Oklahoma
+  self_designation:
+  - name: Jiwere
+    language_tag: iow
+    source: otoe-missouria-tribe-of-indians-who-we-are-history
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"The Otoes also call themselves Jiwere (jee-WEH-ray)"'
+  - name: Nutachi
+    language_tag: iow
+    source: otoe-missouria-tribe-of-indians-who-we-are-history
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"the Missourias who call themselves Nutachi (noo-TAH-chi)"'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: OK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Otoe-Missouria Tribe of Indians, Oklahoma
+- state: OK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5760
+  note: 'Census area with land in this state: Otoe-Missouria OTSA (code 5760). Statistical area only (not
+    a land holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '5760'
+  name: Otoe-Missouria OTSA
+  area_type: Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5760
+  note: Matched by name. Census class code D6.
+population:
+- count: 3300
+  kind: citizens
+  source: otoe-missouria-tribe-of-indians-who-we-are-history
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"the nearly 3,300 tribal members"; undated statement on the official site; as_of is the access
+    date'
+- count: 810
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5760, field POP100
+  note: 'Census area: Otoe-Missouria OTSA (code 5760). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. The area
+    is a Census statistical area, not a land holding.'
+- count: 4082
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3180 (Otoe-Missouria Tribe of Indians alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Otoe-Missouria Tribe of Indians' (race code 6031) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 3283
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Otoe-Missouria Tribe', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.omtribe.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Otoe-Missouria Tribe of Indians, Oklahoma
+- kind: physical-address
+  value: 8151 Highway 177, Red Rock, OK 74651
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Otoe-Missouria Tribe of Indians, Oklahoma
+- kind: mailing-address
+  value: 8151 Highway 177, Red Rock, OK 74651
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Otoe-Missouria Tribe of Indians, Oklahoma
+- kind: phone
+  value: (580) 723-4466
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Otoe-Missouria Tribe of Indians, Oklahoma
+- kind: fax
+  value: (580) 723-4273
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Otoe-Missouria Tribe of Indians, Oklahoma
+languages:
+- name: Jiwere-Nut’achi
+  language_tag: iow
+  source: otoe-missouria-tribe-of-indians-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"Jiwere-Nut’achi language learners"'
+federal_administration:
+  bureau_of_indian_affairs_region: Southern Plains
+  bureau_of_indian_affairs_agency: Pawnee Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Otoe-Missouria Tribe of Indians, Oklahoma
+governing_documents:
+- kind: constitution
+  title: Otoe-Missouria Tribe of Indians, Oklahoma - Constitution
+  link: https://narf.org/nill/constitutions/otoe-missouria/index.html
+  source: national-indian-law-library-constitution-constitutions-otoe-missouria
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: law-code
+  title: Minutes and Resolutions -
+  year: '2009'
+  source: national-indian-law-library-otoe-missouria
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "Minutes and Resolutions
+    (2009-).". Link check 2026-11-21: the link the source gives (http://www.omtribe.org/who-we-are-government-minutes-and-resolutions)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Election and Voting Ordinance  (pdf
+  year: '2016'
+  source: national-indian-law-library-otoe-missouria
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "Election and Voting
+    Ordinance (2016) (pdf).". Link check 2026-11-21: the link the source gives (http://www.omtribe.org/useruploads/files/2016_election_&_voting_ordinance_resolution.pdf)
+    returned HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Constitution
+  link: https://www.omtribe.org/who-we-are/government/constitution/
+  source: national-indian-law-library-otoe-missouria
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Otoe-Missouria Tribe of Oklahoma Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Otoe Missouria Tribe'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.omtribe.org/who-we-are-government-constitution)
+    returned HTTP 404, so it is not recorded.'
+justice_institutions:
+- kind: court-of-indian-offenses
+  name: Southern Plains CFR Court (Court of Indian Offenses)
+  link: https://www.bia.gov/CFRCourts
+  source: bia-courts-of-indian-offenses
+  confidence: high
+  as_of: '2026-11-21'
+  locator: List of CFR Courts and the Tribes they Serve
+  note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
+    Indian Affairs list.
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.omtribe.org/what-we-do/police-tribal-court/cfr-court/
+  source: national-indian-law-library-otoe-missouria
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+gaming:
+  compacts:
+  - state: OK
+    status: deemed-approved
+    approved: '2020-06-29'
+    federal_register_citation: 85 FR 38919
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2020-06-29'
+    locator: result page 28 (?page=28), row 13
+    note: 'Listed as: "Otoe-Missouria Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Kiowa Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202020.06.29%20Otoe%20Missouria%20Tribe%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2020/06/29/2020-13886/indian-gaming-tribal-state-class-iii-gaming-compacts-taking-effect-in-the-state-of-oklahoma.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Name matched
+      to roster by spelling variant. Federal Register citation converted from the linked document number
+      through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2018-08-27'
+    federal_register_citation: 83 FR 43704
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2018-08-27'
+    locator: result page 28 (?page=28), row 14
+    note: 'Listed as: "Otoe-Missouria Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Kiowa Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.27%20Otoe%20Missouria%202018%20Compact%20Amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/08/27/2018-18424/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of-oklahoma.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Name matched
+      to roster by spelling variant. Federal Register citation converted from the linked document number
+      through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '1997-03-11'
+    federal_register_citation: 62 FR 11219
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1997-03-11'
+    locator: result page 28 (?page=28), row 15
+    note: 'Listed as: "Otoe-Missouria Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Kiowa Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1997.03.11_otoe-missouria_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1997/03/11/97-5885/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Name matched
+      to roster by spelling variant. Federal Register citation converted from the linked document number
+      through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2005-06-23'
+    federal_register_citation: 70 FR 36407
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2005-06-23'
+    locator: result page 28 (?page=28), row 16
+    note: 'Listed as: "Otoe-Missouria Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Kiowa Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.06.23%20Otoe%20Missouria%20Tribe%20of%20Indians%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/06/23/05-12400/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Name matched
+      to roster by spelling variant. Federal Register citation converted from the linked document number
+      through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2020-06-29).
+  ordinances:
+  - approved: '1994-06-02'
+    link: https://www.nigc.gov?wpdmdl=10527&ind=10544
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-06-02'
+    locator: table row 180, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 180 lists the nation
+      as "Otoe-Missouria Tribe of Indians".
+  - approved: '1998-03-23'
+    link: https://www.nigc.gov?wpdmdl=10528&ind=10548
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1998-03-23'
+    locator: table row 180, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 180 lists the nation
+      as "Otoe-Missouria Tribe of Indians".
+  - approved: '2009-03-20'
+    link: https://www.nigc.gov?wpdmdl=10529&ind=10549
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2009-03-20'
+    locator: table row 180, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 180 lists the nation
+      as "Otoe-Missouria Tribe of Indians".
+  - approved: '2018-04-30'
+    link: https://www.nigc.gov?wpdmdl=10530&ind=10550
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2018-04-30'
+    locator: table row 180, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 180 lists the nation
+      as "Otoe-Missouria Tribe of Indians".
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Otoe-Missouria Tribe of Indians, Oklahoma Confidence lowered from high by the lead
+    session: the notice prints its table as page images, so nation names were read from images and matched
+    to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

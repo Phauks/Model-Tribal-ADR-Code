@@ -1,0 +1,57 @@
+id: st-francis-sokoki-band-of-abenakis-of-vermont
+entity_type: native-nation
+names:
+  official: St. Francis/Sokoki Band of Abenakis of Vermont
+  alternate:
+  - name: St. Francis/Sokoki Band of Abenakis of Vermont Abenaki Tribal Council
+    source: gao-12-348-federal-funding-non-federally-recognized-tribes
+    confidence: medium
+    as_of: 2012-04
+    note: Name used for this group in the cited source; matched to this record by name and state.
+  official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
+recognition:
+- type: unrecognized
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1; Table 3
+  note: 'GAO Table 1 lists "St. Francis/Sokoki Band of Abenakis of Vermont Abenaki Tribal Council" among
+    26 non-federally recognized tribes that received direct federal funding in FY2007-2010 (total $314,000,
+    Table 3). GAO-reported nonprofit status: Yes; state recognition per state officials: No (as of GAO''s
+    2011 inquiry). Not on the 2026 federal list (bia-recognized-entities-2026). Possible match with the
+    state-recognized helper entity missisquoi-st-francis-sokoki-band and the petitioning helper record
+    for the St. Francis/Sokoki Band of Abenakis of Vermont; not verified.'
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 72 FR 36022 (2007-07-02)
+  petition_number: '68'
+  petition_stage: Denied (Petitions Resolved page); Denied acknowledgment through 25 CFR 83 (eff. 10/1/07)
+  source: federal-register-e7-12727
+  confidence: high
+  as_of: '2007-07-02'
+  locator: 'Petitioner #68'
+  note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
+    Denied acknowledgment through 25 CFR 83 (eff. 10/1/07). Other Federal Register history: Proposed Finding
+    Against Federal Acknowledgment of the St. Francis/Sokoki Band of Abenakis of Vermont, 70 FR 69776
+    (2005-11-17).'
+states:
+- state: VT
+  presence: other
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1, State column
+  note: State as listed by GAO.
+- state: VT
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

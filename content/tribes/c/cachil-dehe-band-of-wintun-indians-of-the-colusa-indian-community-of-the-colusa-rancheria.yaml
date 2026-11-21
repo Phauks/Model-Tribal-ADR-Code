@@ -1,0 +1,324 @@
+id: cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria
+entity_type: native-nation
+names:
+  official: Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa Rancheria,
+    California
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa Rancheria,
+    California
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0750
+  note: 'Census area with land in this state: Colusa Rancheria (code 0750). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '0750'
+  name: Colusa Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0750
+  note: Matched by name. Census class code D2.
+population:
+- count: 91
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0750, field POP100
+  note: 'Census area: Colusa Rancheria (code 0750). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 211
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2883 (Cachil Dehe Band of Wintun Indians of the Colusa Rancheria alone
+    or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Cachil Dehe Band of Wintun Indians of the Colusa Rancheria'
+    (race code 6408) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 69
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Cachil DeHe Band of Wintun Indians, Colusa Rancheria', PDF
+    page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.colusa-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa Rancheria,
+    California
+- kind: physical-address
+  value: 3730 Highway 45, Colusa, CA 95932
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa Rancheria,
+    California
+- kind: mailing-address
+  value: 3730 Highway 45, Colusa, CA 95932
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa Rancheria,
+    California
+- kind: phone
+  value: (530) 458-8231
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa Rancheria,
+    California
+- kind: fax
+  value: (530) 458-3866
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa Rancheria,
+    California
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Central California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa Rancheria,
+    California
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Cachil Dehe Band of Wintun Indians, California" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Cahil Dehe Band of Wintun Indians of the Colusa Indian Community California) (approved
+    1941) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-wincons
+  confidence: medium
+  as_of: '1941'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Liquor ordinance
+  year: '2000'
+  link: https://www.federalregister.gov/articles/2000/04/05/00-8347/colusa-indian-community-council-liquor-ordinance-resolution-no-08-02-99-01
+  source: national-indian-law-library-cachil-dehe-wintun
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Federal Register
+    . Liquor ordinance (2000)".'
+- kind: constitution
+  title: Constitution
+  year: '1941'
+  link: https://thorpe.law.ou.edu/IRA/wincons.html
+  source: national-indian-law-library-cachil-dehe-wintun
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Constitution. (1941)".'
+- kind: constitution
+  title: Constitution
+  year: '1941'
+  link: https://www.loc.gov/item/42038591/
+  source: national-indian-law-library-cachil-dehe-wintun
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website. Constitution. (1941)".'
+- kind: law-code
+  title: Cachil DeHe Band of Wintun Indians of the Colusa Indian Community
+  year: '1995'
+  link: https://narf.org/nill/codes/cachil_dehe_wintun/index.html
+  source: national-indian-law-library-code-codes-cachil-dehe-wintun
+  confidence: medium
+  as_of: '1995'
+  locator: page heading
+  note: 'Dated: December 11, 1995. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: corporate-charter
+  title: Corporate charter (Cahil Dehe Band of Wintun Indians of the Colusa Indian Community)
+  year: '1941'
+  link: https://thorpe.law.ou.edu/IRA/winchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-winchrtr
+  confidence: medium
+  as_of: '1941'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Cahil Dehe Band of Wintun Indians of the Colusa Indian Community California)
+  year: '1941'
+  link: https://thorpe.law.ou.edu/IRA/wincons.html
+  source: university-of-oklahoma-indian-reorganization-act-wincons
+  confidence: medium
+  as_of: '1941'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+gaming:
+  compacts:
+  - state: CA
+    status: secretarial-procedures
+    approved: '2024-05-10'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2024-05-10'
+    locator: result page 5 (?page=5), row 12
+    note: 'Listed as: "Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa
+      Rancheria Secretarial Procedures" (Secretarial Procedures); list''s Tribe column: "Cabazon Band
+      of Cahuilla Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.05.10_cachil_dehe_band_of_wintun_indians_of_the_colusa_indian_community_secretarial_procedures.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact. The Tribe column and the compact title disagree; the
+      nation named in the title was used.'
+  - state: CA
+    status: approved
+    approved: '2022-06-30'
+    federal_register_citation: 87 FR 39115
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-06-30'
+    locator: result page 5 (?page=5), row 13
+    note: 'Listed as: "Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa
+      Rancheria Tribal State Gaming Compact" (Extensions); list''s Tribe column: "Cachil DeHe Band of
+      Wintun Indians of the Colusa Indian Community of the Colusa Rancheria, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.30_cachil_dehe_band_of_wintun_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/30/2022-14054/indian-gaming-extension-of-tribal-state-class-iii-gaming-compacts-in-california.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2023-12-22'
+    federal_register_citation: 88 FR 88640
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2023-12-22'
+    locator: result page 5 (?page=5), row 14
+    note: 'Listed as: "Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa
+      Rancheria Tribal State Gaming Compact" (Extensions); list''s Tribe column: "Cachil DeHe Band of
+      Wintun Indians of the Colusa Indian Community of the Colusa Rancheria, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2023.12.22_cachil_dehe_band_of_wintun_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2023/12/22/2023-28198/indian-gaming-extension-of-tribal-state-class-iii-gaming-compacts-in-california.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-16'
+    locator: result page 5 (?page=5), row 15
+    note: 'Listed as: "Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa
+      Rancheria, Tribal State Gaming Compact" (Approve); list''s Tribe column: "Cachil DeHe Band of Wintun
+      Indians of the Colusa Indian Community of the Colusa Rancheria, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.05.16_cachil_dehe_band_colusa_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2023-12-22).
+  ordinances:
+  - approved: '1994-06-13'
+    link: https://www.nigc.gov?wpdmdl=9425&ind=9435
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-06-13'
+    locator: table row 27, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 27 lists the nation
+      as "Cachil DeHe Band of Wintun Indians". Name matched to roster by spelling variant.
+  - approved: '1996-04-10'
+    link: https://www.nigc.gov?wpdmdl=9424&ind=9436
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1996-04-10'
+    locator: table row 27, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 27 lists the nation
+      as "Cachil DeHe Band of Wintun Indians". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Cachil Dehe Band of Wintun
+      Indians of the Colusa Indian Community". Facilities as machine-extracted from the report text (verify):
+      Wintun Mini Mart; Colusa Casino Resort. Name extracted from the PDF by the page-fetch tool and matched
+      to the roster.'
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa Rancheria,
+    California Confidence lowered from high by the lead session: the notice prints its table as page images,
+    so nation names were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

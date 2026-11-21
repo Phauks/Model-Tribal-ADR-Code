@@ -1,0 +1,128 @@
+id: little-shell-tribe-of-chippewa-indians-of-montana
+entity_type: native-nation
+names:
+  official: Little Shell Tribe of Chippewa Indians of Montana
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: Public Law 116-92, section 2870; earlier 25 C.F.R. Part 83 final determination against
+    acknowledgment 74 FR 56861 (2009-11-03)
+  petition_number: '31'
+  petition_stage: Letter of Intent to Petition 04/28/1978; Declined Acknowledgment on 10/27/2009, 74 FR
+    56861; Before IBIA
+  since: '2019-12-20'
+  source: public-law-116-92-section-2870
+  confidence: high
+  as_of: '2019-12-20'
+  locator: 'Petitioner #31'
+  note: 'Also see source(s): federal-register-e9-26373.'
+states:
+- state: MT
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Little Shell Tribe of Chippewa Indians of Montana
+population:
+- count: 5400
+  kind: citizens
+  source: montanalittleshelltribe-government
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''on behalf of the tribe''s 5400 members''. Undated; as_of is access date.'
+- count: 3576
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3083 (Little Shell Tribe of Chippewa Indians of Montana alone or in
+    any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Little Shell Tribe of Chippewa Indians of Montana' (race
+    code 5662) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 5375
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Denver, row 'Little Shell Tribe of Chippewa Indians', PDF page 5, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://montanalittleshelltribe.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Little Shell Tribe of Chippewa Indians of Montana
+- kind: physical-address
+  value: 511 Central Avenue West, Great Falls, MT 59404
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Little Shell Tribe of Chippewa Indians of Montana
+- kind: phone
+  value: 406 315-2399
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Little Shell Tribe of Chippewa Indians of Montana
+- kind: fax
+  value: 406 315-2401
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Little Shell Tribe of Chippewa Indians of Montana
+federal_administration:
+  bureau_of_indian_affairs_region: Rocky Mountain
+  bureau_of_indian_affairs_agency: Rocky Mountain Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Little Shell Tribe of Chippewa Indians of Montana
+governing_documents:
+- kind: constitution
+  title: Constitution
+  source: national-indian-law-library-little-shell-chippewa-montana
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Montana
+    Indian Law website .". Link check 2026-11-21: the link the source gives (http://indianlaw.mt.gov/ls/constitution)
+    returned HTTP 404, so it is not recorded.'
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Little Shell Tribe of Chippewa Indians of Montana Confidence lowered from high by
+    the lead session: the notice prints its table as page images, so nation names were read from images
+    and matched to the roster.'
+memberships:
+- organization: Rocky Mountain Tribal Leaders Council
+  source: rocky-mountain-tribal-leaders-council-who-we-are
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Little Shell Tribe of Montana". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,452 @@
+id: tohono-oodham-nation-of-arizona
+entity_type: native-nation
+names:
+  official: Tohono O'odham Nation of Arizona
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: AZ
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tohono O'odham Nation of Arizona
+- state: AZ
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4200
+  note: 'Census area with land in this state: Tohono O''odham Nation Reservation and Off-Reservation Trust
+    Land (code 4200). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '4200'
+  name: Tohono O'odham Nation Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4200
+  note: Matched by name. Census class code D1.
+population:
+- count: 28000
+  kind: citizens
+  source: tohono-oodham-nation-of-arizona-about-tohono-oodham-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"approximately 28,000 members"; undated statement on the official site; as_of is the access date'
+- count: 9561
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4200, field POP100
+  note: 'Census area: Tohono O''odham Nation Reservation and Off-Reservation Trust Land (code 4200). Everyone
+    counted as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a
+    count of the nation''s citizens.'
+- count: 25895
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3372 (Tohono O'odham Nation of Arizona alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Tohono O'odham Nation of Arizona' (race code 6341) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 35386
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Tohono O'odham Nation', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 9278
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 89, row T49800 'Tohono O'odham Nation of Arizona'
+  note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
+    Census tribal statistical area (2010), used by Indian Affairs as the nation's population indicator;
+    includes people of any tribe; not enrollment. Report published 2014-01-16; row name matched to the
+    nation by name.
+contacts:
+- kind: website
+  value: https://www.tonation-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tohono O'odham Nation of Arizona
+- kind: physical-address
+  value: Tohono O'odham Nation Main Tribal Business Loop, Sells, AZ 85634
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tohono O'odham Nation of Arizona
+- kind: mailing-address
+  value: P.O. Box 837, Sells, AZ 85634
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tohono O'odham Nation of Arizona
+- kind: phone
+  value: (520) 383-2028
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tohono O'odham Nation of Arizona
+- kind: fax
+  value: (520) 383-3379
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tohono O'odham Nation of Arizona
+languages:
+- name: O’odham
+  language_tag: ood
+  source: tohono-oodham-nation-of-arizona-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"All of the groups still speak the O’odham language"'
+federal_administration:
+  bureau_of_indian_affairs_region: Western
+  bureau_of_indian_affairs_agency: Tohono O'odham Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tohono O'odham Nation of Arizona
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Papago Tribe, Arizona" among organizations under constitutions approved by the
+    Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: low
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Matched by former name (Papago Tribe); confirm. Historical status in 1947; the nation may since
+    have adopted a different constitution. The act is assigned from the table (main table: Indian Reorganization
+    Act; Oklahoma table: Oklahoma Indian Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Papago Tribe of Arizona) (approved 1937) states it was adopted under Act of June
+    18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-papcons
+  confidence: low
+  as_of: '1937'
+  locator: preamble / approval and certification of adoption
+  note: Matched by former name (Papago Tribe); confirm. Historical constitution; a later constitution
+    may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Tohono O'odham
+  year: '2023'
+  link: https://narf.org/nill/codes/tohono/index.html
+  source: national-indian-law-library-code-codes-tohono
+  confidence: medium
+  as_of: '2023'
+  locator: page heading
+  note: 'Most Recent Update Received: August 2023. Full text linked from the National Indian Law Library
+    page.'
+- kind: constitution
+  title: Tohono O'odham Nation - Tribal Constitution
+  year: '2012'
+  link: https://narf.org/nill/constitutions/tohono/index.html
+  source: national-indian-law-library-constitution-constitutions-tohono
+  confidence: medium
+  as_of: '2012'
+  locator: page heading
+  note: 'Amended: March 6, 1986; Published in the 2012 online tribal code. Full text linked from the National
+    Indian Law Library page.'
+- kind: law-code
+  title: Tribal Code
+  link: https://www.tolc-nsn.gov/tohono-oodham-code/
+  source: national-indian-law-library-tohono
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Tribal Code.".'
+- kind: law-code
+  title: Legislative updates
+  source: national-indian-law-library-tohono
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Legislative updates.". Link check 2026-11-21: the link the source gives (https://www.tolc-nsn.gov/council-actions-2024/)
+    returned HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Constitution
+  source: national-indian-law-library-tohono
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .". Link check 2026-11-21: the link the source gives (https://www.tolc-nsn.gov/docs/Constitution.pdf)
+    returned HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Tohono O’odham Nation Constitution
+  link: http://www.tolc-nsn.org/docs/Constitution.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Tohono O’odham Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Tohono O’odham Code
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Tohono O’odham Nation'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.tolc-nsn.org/tocode.htm) returned HTTP 404, so it
+    is not recorded.'
+- kind: constitution
+  title: Constitution (Papago Tribe of Arizona)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/papcons.html
+  source: university-of-oklahoma-indian-reorganization-act-papcons
+  confidence: low
+  as_of: '1937'
+  note: Matched by former name (Papago Tribe); confirm. Historical text as originally approved; the nation
+    may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.tonation-nsn.gov/tribal_government.aspx
+  source: national-indian-law-library-tohono
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Tohono O’odham Nation Judicial Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Tohono O’odham Nation'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.tolc-nsn.org/opinions.htm) returned
+    HTTP 404, so it is not recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Informal, Non-Adversarial Child in Need of Care Proceedings
+    citation: 3 T.O.C. Ch. 1, § 1506(B)
+    link: https://tolc-nsn.org/tohono-oodham-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-non-adversarial-child-in-need-of-care-proceedings/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Adjudication. Database form of practice: Informal hearing;
+      Restorative justice.'
+  - kind: other
+    title: Juvenile Justice Code Purpose — Rehabilitation, Prevention, Early Intervention, and Community-Based
+      Alternatives
+    citation: 3 T.O.C. Ch. 2, § 2101
+    link: https://tolc-nsn.org/tohono-oodham-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/juvenile-justice-code-purpose-rehabilitation-prevention-early-intervention-and-community-based-alternatives/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: General/Policy. Database form of practice: Alternative
+      (community-based); Early intervention; Program; Rehabilitation.'
+gaming:
+  compacts:
+  - state: AZ
+    status: approved
+    approved: '2022-06-14'
+    federal_register_citation: 87 FR 35992
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-06-14'
+    locator: result page 2 (?page=2), row 16
+    note: 'Listed as: "Tohono O''odham Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Tohono O''odham Nation of Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.14_tohono_o_odham_nation_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/14/2022-12743/indian-gaming-approval-of-20-tribal-state-class-iii-gaming-compact-amendments-with-the-state-of.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2021-05-24'
+    federal_register_citation: 86 FR 27889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-05-24'
+    locator: result page 2 (?page=2), row 17
+    note: 'Listed as: "Tohono O''odham Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Tohono O''odham Nation of Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202021.05.24%20Tohono%20O%27odham%20Nation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/05/24/2021-10877/indian-gaming-approval-of-tribal-state-class-iii-gaming-compacts-in-the-state-of-arizona.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2003-02-05'
+    federal_register_citation: 68 FR 5912
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-02-05'
+    locator: result page 2 (?page=2), row 18
+    note: 'Listed as: "Tohono O''odham Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Tohono O''odham Nation of Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%20%202003.02.05%20Tohono%20Oodham%20Nation%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/02/05/03-2787/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2009-03-25'
+    federal_register_citation: 74 FR 12889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2009-03-25'
+    locator: result page 2 (?page=2), row 19
+    note: 'Listed as: "Tohono O''odham Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Tohono O''odham Nation of Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2009.03.25_tohono_oodham_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2009/03/25/E9-6585/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2017-07-17'
+    federal_register_citation: 82 FR 32720
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2017-07-17'
+    locator: result page 2 (?page=2), row 20
+    note: 'Listed as: "Tohono O''odham Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Tohono O''odham Nation of Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2017.07.17_tohono_o_odham_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2017/07/17/2017-14881/indian-gaming-approval-of-an-amendment-to-a-tribal-state-class-iii-gaming-compact-in-the-state-of.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '1993-08-18'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-08-18'
+    locator: result page 2 (?page=2), row 21
+    note: 'Listed as: "Tohono O''odham Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Tohono O''odham Nation of Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.08.18_tohono_oodham_tribal_state_gaming_compact_2.pdf.'
+  - state: AZ
+    status: approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance or an interpretation
+      dispute, after which agency heads and then designated tribal and gubernatorial representatives negotiate;
+      if unresolved within 30 days, either party may request non-binding mediation under CPR Institute
+      for Dispute Resolution procedures and may then demand binding arbitration under CPR rules before
+      three arbitrators unless both agree to one.
+    dispute_resolution_locator: Section 15 (Dispute Resolution)
+    source: compact-az-ak-chin-indian-community-2003
+    confidence: medium
+    as_of: '2003-02-05'
+    locator: Section 15 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
+      compact approved in 2003; this text is the Ak-Chin Indian Community copy of that form, and the 2021-2022
+      amendments in the list refer back to Section 15. Status copied from this nation's most recent approved
+      or deemed-approved entry for this state in the Office of Indian Gaming list (2022-06-14).
+  ordinances:
+  - approved: '1993-10-15'
+    link: https://www.nigc.gov?wpdmdl=11343&ind=11365
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-10-15'
+    locator: table row 287, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 287 lists the nation
+      as "Tohono O’odham Nation".
+  - approved: '1997-09-29'
+    link: https://www.nigc.gov?wpdmdl=11346&ind=11366
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-09-29'
+    locator: table row 287, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 287 lists the nation
+      as "Tohono O’odham Nation".
+  - approved: '1999-07-30'
+    link: https://www.nigc.gov?wpdmdl=11345&ind=11367
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1999-07-30'
+    locator: table row 287, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 287 lists the nation
+      as "Tohono O’odham Nation".
+  - approved: '2003-05-07'
+    link: https://www.nigc.gov?wpdmdl=11344&ind=11368
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-05-07'
+    locator: table row 287, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 287 lists the nation
+      as "Tohono O’odham Nation".
+  - approved: '2007-08-17'
+    link: https://www.nigc.gov?wpdmdl=11347&ind=11369
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2007-08-17'
+    locator: table row 287, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 287 lists the nation
+      as "Tohono O’odham Nation".
+  - approved: '2009-12-17'
+    link: https://www.nigc.gov?wpdmdl=11348&ind=11370
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2009-12-17'
+    locator: table row 287, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 287 lists the nation
+      as "Tohono O’odham Nation".
+  - approved: '2021-09-20'
+    link: https://www.nigc.gov?wpdmdl=11349&ind=11371
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2021-09-20'
+    locator: table row 287, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 287 lists the nation
+      as "Tohono O’odham Nation".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Tohono O'odham Nation of Arizona".
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Tohono O''odham Nation of Arizona Confidence lowered from high by the lead session:
+    the notice prints its table as page images, so nation names were read from images and matched to the
+    roster.'
+memberships:
+- organization: Inter Tribal Council of Arizona
+  source: inter-tribal-council-of-arizona-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Tohono O’odham Nation". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

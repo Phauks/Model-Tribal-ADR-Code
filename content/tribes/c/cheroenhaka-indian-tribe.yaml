@@ -1,0 +1,83 @@
+id: cheroenhaka-indian-tribe
+entity_type: native-nation
+names:
+  official: Cheroenhaka (Nottoway) Indian Tribe
+  alternate:
+  - name: Cheroenhaka (Nottoway)
+    source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
+    confidence: high
+    as_of: '2026'
+  official_source: ofa-list-of-petitioners-by-state-2008
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '264'
+  petition_stage: Letter of Intent to Petition 12/30/2002
+  source: ofa-list-of-petitioners-by-state-2008
+  confidence: medium
+  as_of: '2008-09-22'
+  locator: 'Petitioner #264'
+  note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
+    Additional Resources page says groups on the 2013 list may no longer be active petitioners under the
+    current regulations.
+- type: state
+  state: VA
+  legal_basis: Listed by the Secretary of the Commonwealth among the 11 Virginia Indian tribes the Commonwealth
+    recognizes
+  source: virginia-report-status-of-indian-tribes-2025
+  confidence: high
+  as_of: '2025-12-30'
+- type: state
+  state: VA
+  legal_basis: House Joint Resolution 171 and Senate Joint Resolution 127, Virginia General Assembly 2010
+    Session
+  source: virginia-legislative-index-2010-indians
+  confidence: high
+  as_of: '2010'
+  note: 'Index titles: ''Cheroenhaka (Nottoway) Indian Tribe of Southampton County; General Assembly to
+    extend state recognition thereto''; both marked passed.'
+states:
+- state: VA
+  presence: other
+  source: ofa-list-of-petitioners-by-state-2008
+  confidence: medium
+  as_of: '2008-09-22'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+- state: VA
+  presence: government-office
+  source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+contacts:
+- kind: physical-address
+  value: Cattashowrock Town, 27345 Aquia Path, Courtland, VA 23837
+  label: Tribal contact address
+  source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+- kind: mailing-address
+  value: P.O. Box 397, Courtland, VA 23837
+  label: Tribal contact address
+  source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+- kind: phone
+  value: 757-562-7760
+  label: Tribal contact phone
+  source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+- kind: website
+  value: https://www.cheroenhaka-nottoway.org/
+  label: Official website
+  source: virginia-secretary-of-the-commonwealth-state-recognized-tribes
+  confidence: high
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false
