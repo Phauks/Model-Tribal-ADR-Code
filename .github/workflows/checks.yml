@@ -58,10 +58,52 @@ jobs:
       - name: Check the built pages, manifest and service worker
         run: npm run check:built-site
 
+  print:
+    name: Print build
+    runs-on: ubuntu-latest
+    env:
+      TYPST_VERSION: "0.15.1"
+      TYPST_SHA256: a6d077d0a95eed5a2eba715b2dae06be954f624ccbf85758a03f389ded33118c
+    defaults:
+      run:
+        working-directory: pdf
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: pdf/package-lock.json
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install Typst
+        run: |
+          archive=typst-x86_64-unknown-linux-musl.tar.xz
+          curl --fail --location --silent --show-error --output "$RUNNER_TEMP/$archive" \
+            "https://github.com/typst/typst/releases/download/v$TYPST_VERSION/$archive"
+          echo "$TYPST_SHA256  $RUNNER_TEMP/$archive" | sha256sum --check
+          tar --extract --file "$RUNNER_TEMP/$archive" --directory "$RUNNER_TEMP"
+          echo "$RUNNER_TEMP/typst-x86_64-unknown-linux-musl" >> "$GITHUB_PATH"
+      - run: pip install -r requirements.txt
+      - run: npm ci
+      - run: npm test
+      - run: npm run build:every-size
+      - run: npm run build
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: print-interior
+          path: |
+            pdf/output/**/interior.pdf
+            pdf/output/**/report.json
+            pdf/output/every-size/summary.md
+          if-no-files-found: ignore
+
   all-checks:
     name: All checks
     if: always()
-    needs: [text, records, site]
+    needs: [text, records, site, print]
     runs-on: ubuntu-latest
     steps:
       - name: Fail if any check failed or was cancelled

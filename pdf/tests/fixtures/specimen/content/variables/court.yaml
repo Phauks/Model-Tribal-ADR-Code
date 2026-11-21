@@ -1,0 +1,5 @@
+group: court
+variables:
+  name:
+    description: The court that hears disputes under the nation's law.
+    model: "[Tribal Court]"
