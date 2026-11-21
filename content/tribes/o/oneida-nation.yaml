@@ -1,0 +1,686 @@
+id: oneida-nation
+entity_type: native-nation
+names:
+  official: Oneida Nation
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: WI
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oneida Nation
+- state: WI
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2560
+  note: 'Census area with land in this state: Oneida (WI) Reservation and Off-Reservation Trust Land (code
+    2560). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2560'
+  name: Oneida (WI) Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2560
+  note: Matched by name. Census class code D1.
+population:
+- count: 17000
+  kind: citizens
+  source: oneida-nation-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"17,000 citizens worldwide"; undated statement on the official site; as_of is the access date'
+- count: 27110
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2560, field POP100
+  note: 'Census area: Oneida (WI) Reservation and Off-Reservation Trust Land (code 2560). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 10114
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3176 (Oneida Nation alone or in any combination), GEOID 0100000US (United
+    States)
+  note: People in the United States who reported 'Oneida Nation' (race code 6025) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 17129
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Oneida Nation, Wisconsin', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 6946
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 84, row T35200 'Oneida Tribe of Indians of Wisconsin'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://oneida-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oneida Nation
+- kind: physical-address
+  value: N7210 Seminary Rd., Oneida, WI 54155
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oneida Nation
+- kind: mailing-address
+  value: P.O. Box 365, Oneida, WI 54155
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oneida Nation
+- kind: phone
+  value: (800) 236-2214
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oneida Nation
+- kind: fax
+  value: (920) 869-4040
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oneida Nation
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Great Lakes Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oneida Nation
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Oneida Tribe of Indians of Wisconsin" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Oneida Tribe of Indians of Wisconsin) (approved 1936) states it was adopted under
+    Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-oneidacons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Oneida Nation - Code of Laws
+  year: '2019'
+  link: https://narf.org/nill/codes/oneidacode_wi/index.html
+  source: national-indian-law-library-code-codes-oneidacode-wi
+  confidence: medium
+  as_of: '2019'
+  locator: page heading
+  note: 'Table of Contents Updated: April 2019. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution and By-laws of the Oneida Nation
+  year: '2015'
+  link: https://narf.org/nill/constitutions/oneida_wisconsin/index.html
+  source: national-indian-law-library-constitution-constitutions-oneida-wisconsin
+  confidence: medium
+  as_of: '2015'
+  locator: page heading
+  note: 'Amended: 2015. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://oneida-nsn.gov/government/register/laws/
+  source: national-indian-law-library-oneida-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://oneida-nsn.gov/government/register/laws/#ONEIDA-NATION-CONSTITUTION
+  source: national-indian-law-library-oneida-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Oneida Nation Constitution and By-Laws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Oneida Nation of Wisconsin'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://oneida-nsn.gov/dl-file.php?file=2016/02/CONSTITUTION-AND-BY.pdf)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Oneida Nation Code of Laws
+  link: https://oneida-nsn.gov/government/register/laws/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Oneida Nation of Wisconsin'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Oneida Tribe of Indians of Wisconsin of the Oneida Reservation)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/oneidachrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-oneidachrtr
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Oneida Tribe of Indians of Wisconsin)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/oneidacons.html
+  source: university-of-oklahoma-indian-reorganization-act-oneidacons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: peacemaking-program
+  name: Peacemaking and Mediation Division
+  source: narf-tribal-peacemaking-laws
+  confidence: medium
+  as_of: '2025-09-29'
+  note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
+    whether it currently operates was not checked.
+- kind: tribal-court
+  name: Tribal Court
+  link: https://oneida-nsn.gov/government/judiciary/
+  source: national-indian-law-library-oneida-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Oneida Nation of Wisconsin Judiciary
+  link: http://www.oneida-nsn.gov/judiciary/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Oneida Nation of Wisconsin'
+  note: 'Link check 2026-11-21: the site did not respond.'
+dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemaking and Mediation Division of the Trial Court (peacemaking)
+    description: A division of the Trial Court providing peacemaking at all stages of litigation, including
+      appeals, by peacemakers recognized either by the Nation's Cultural Heritage Department or by the
+      Trial Court, as the parties choose; the law states culturally sensitive information may be omitted
+      from the procedural rules.
+    legal_basis: 8 O.C. 801.6 (Peacemaking and Mediation Division); 7 O.C. 702.6; 7 O.C. 705.7
+    case_types:
+    - family
+    - civil
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: Judges must inform parties in every case of peacemaking and mediation and may
+      refer parties who agree to attend, except where attendance would cause undue hardship or endanger
+      a party; the court bears the cost of referred sessions.
+    enforcement: A written agreement certified by the peacemaker is submitted to the judge and included
+      in the order as a stipulation; violation of the resulting order is punishable as contempt.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Chapter-801-Judiciary.pdf
+    source: oneida-wi-8-oc-801-judiciary
+    confidence: medium
+    as_of: '2025'
+    locator: 8 O.C. 801.4-2, 801.6-1 to 801.6-5
+    note: Peacemakers may not act in contempt matters or issue process. Proceedings are closed to the
+      public (801.4-4). as_of is NARF posting year.
+  - kind: mediation-program
+    name: Peacemaking and Mediation Division of the Trial Court (mediation)
+    description: Mediation provided by persons or entities recognized and contracted by the Trial Court;
+      each mediator must have at least 25 hours of mediation training or 3 years of dispute resolution
+      experience, and in divorce matters training on domestic violence.
+    legal_basis: 8 O.C. 801.6-4; 7 O.C. 702.6-3; 7 O.C. 705.7
+    case_types:
+    - family
+    - civil
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: Available at all stages of litigation on court referral with the parties' agreement;
+      parties may instead use a private mediator at their own expense after filing notice with the clerk.
+    enforcement: Agreement is written, reviewed by counsel if any, certified by the mediator, and included
+      in the court's order as a stipulation; violation is punishable as contempt.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Chapter-801-Judiciary.pdf
+    source: oneida-wi-8-oc-801-judiciary
+    confidence: medium
+    as_of: '2025'
+    locator: 8 O.C. 801.6-4, 801.6-5
+  provisions:
+  - kind: peacemaking
+    title: Peacemaking and Mediation Division
+    citation: Oneida Code of Laws 8 O.C. 801.6
+    summary: Establishes the Peacemaking and Mediation Division of the Trial Court, referral rules, peacemaker
+      and mediator standards, and entry of agreements as stipulated orders.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Chapter-801-Judiciary.pdf
+    source: oneida-wi-8-oc-801-judiciary
+    confidence: medium
+    as_of: '2025'
+  - kind: mediation
+    title: Divorce, Annulment, Legal Separation – Peacemaking and Mediation
+    citation: Oneida Code of Laws 7 O.C. 702.6
+    summary: Allows referral of divorce, annulment and legal separation parties to peacemaking or mediation
+      with their agreement, with a domestic abuse screen and mediator training requirements.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Chapter-702-Divorce-Annulment-Legal-Separation-BC-05-15-14-B.pdf
+    source: oneida-wi-7-oc-702-divorce
+    confidence: medium
+    as_of: '2014-05-15'
+  - kind: mediation
+    title: Child Custody, Placement and Visitation – Peacemaking and Mediation
+    citation: Oneida Code of Laws 7 O.C. 705.7
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Chapter-705-Child-Custody-Placement-and-Visitation-BC-05-15-14-E.pdf
+    source: oneida-wi-7-oc-705-custody
+    confidence: medium
+    as_of: '2014-05-15'
+    note: Section heading confirmed; contents not reviewed in detail. NARF summarizes 702.6 and 705.7
+      together as providing authorization, procedures, appeals policies and referral standards.
+  - kind: other
+    title: Alternative Dispositional Recommendations for a Child in Need of Protection or Services
+    citation: 7 O.C. 708.22-1 & 708.22-3
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-dispositional-recommendations-for-a-child-in-need-of-protection-or-services/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Community Service and Counseling as a Penalty (Curfew)
+    citation: 7 O.C. 308.7-1
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-service-and-counseling-as-a-penalty-curfew/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Community Service and Counseling as a Penalty (Public Peace)
+    citation: 7 O.C. 309.11-2
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-service-and-counseling-as-a-penalty-public-peace/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Confidentiality of the Healing to Wellness Court
+    citation: 7 O.C. 808.5-7
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/confidentiality-of-the-healing-to-wellness-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative court.'
+  - kind: other
+    title: Healing to Wellness Ocurt Program
+    citation: 7 O.C. 808.4-3
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/healing-to-wellness-ocurt-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court.'
+  - kind: other
+    title: Jurisdiction of the Healing to Wellness Court
+    citation: 7 O.C. 808.4-2
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/jurisdiction-of-the-healing-to-wellness-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court.'
+  - kind: other
+    title: Peacemaking and Mediation
+    citation: 7 O.C. 708.45-1 & 708.45-2
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaking-and-mediation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Justice. Database phase: Pre-adjudication. Database form of
+      practice: Restorative justice; Restorative practice.'
+  - kind: other
+    title: Peacemaking for Termination of Parental Rights
+    citation: 7 O.C. 708.33-6
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaking-for-termination-of-parental-rights/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Justice. Database phase: Pre-adjudication. Database form of
+      practice: Restorative justice; Restorative practice.'
+  - kind: other
+    title: Purpose and Policy of the Healing to Wellness Court
+    citation: 7 O.C. 808.1-1 & 808.1-2
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-and-policy-of-the-healing-to-wellness-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court.'
+  - kind: other
+    title: Service Plan for Child Welfare Cases
+    citation: 7 O.C. 708.22-5
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/service-plan-for-child-welfare-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
+      practice, Restorative process.'
+  - kind: other
+    title: Use of Cultural Wellness Facilitator and Healer for Child Welfare Proceedings
+    citation: 7 O.C. 708.10-1 & 708.10-2
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/use-of-cultural-wellness-facilitator-and-healer-for-child-welfare-proceedings/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      practice, Restorative process.'
+  - kind: peacemaking
+    title: Title 8. Judicial System, Chapter 801 – Judiciary, Rule 1.10 – Peacemaking and Mediation
+    citation: Title 8. Judicial System, Chapter 801 – Judiciary, Rule 1.10 – Peacemaking and Mediation
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Chapter-801-Judiciary.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Oneida Nation of Wisconsin
+    note: 'Native American Rights Fund description (provision itself not read): Provides procedures, qualifications,
+      referral procedures, standards of conduct, and authority of Tribal Court or Cultural Heritage Department
+      to appoint peacemakers.'
+  - kind: peacemaking
+    title: Title 8. Judicial System, Chapter 801.6. Peacemaking and Mediation Division
+    citation: Title 8. Judicial System, Chapter 801.6. Peacemaking and Mediation Division
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Oneida-Trial-Court-Rules.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Oneida Nation of Wisconsin
+    note: 'Native American Rights Fund description (provision itself not read): Provides procedures, qualifications,
+      referral procedures, standards of conduct, and authority of Tribal Court or Cultural Heritage Department
+      to appoint peacemakers.'
+  - kind: peacemaking
+    title: Chapter 702. Divorce, Annulment, Legal Separation, 702.6. Peacemaking and Mediation
+    citation: Chapter 702. Divorce, Annulment, Legal Separation, 702.6. Peacemaking and Mediation
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Chapter-702-Divorce-Annulment-Legal-Separation-BC-05-15-14-B.pdf
+    source: narf-youth-family-peacemaking-laws
+    confidence: medium
+    as_of: '2025-08-25'
+    locator: Oneida Nation of Wisconsin
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      procedures, appeals policies, and referral standards.'
+  - kind: peacemaking
+    title: Chapter 705. Child Custody, Placement and Visitation, 705.7. Peacemaking and Mediation
+    citation: Chapter 705. Child Custody, Placement and Visitation, 705.7. Peacemaking and Mediation
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Chapter-705-Child-Custody-Placement-and-Visitation-BC-05-15-14-E.pdf
+    source: narf-youth-family-peacemaking-laws
+    confidence: medium
+    as_of: '2025-08-25'
+    locator: Oneida Nation of Wisconsin
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      procedures, appeals policies, and referral standards.'
+  - kind: peacemaking
+    title: Peacemaking and Mediation
+    citation: Peacemaking and Mediation
+    link: https://narf.org/nill/codes/oneidacode_wi/index.html
+    source: national-indian-law-library-code-codes-oneidacode-wi
+    confidence: medium
+    as_of: '2019'
+    locator: Table of Contents, under 'TITLE 7. CHILDREN, ELDERS & FAMILY'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: April 2019); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: Peacemaking and Mediation Division
+    citation: Peacemaking and Mediation Division; Peacemaking and Mediation; Former Judge, Mediator, or
+      Peacemaker
+    link: https://narf.org/nill/codes/oneidacode_wi/index.html
+    source: national-indian-law-library-code-codes-oneidacode-wi
+    confidence: medium
+    as_of: '2019'
+    locator: Table of Contents, under 'TITLE 8. JUDICIAL SYSTEM'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: April 2019); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  training_programs:
+  - name: Application to serve as Peacemaker/Mediator (background check and interview process)
+    provider: Oneida Judiciary Trial Court
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Oneida-Trial-Court-Rules.pdf
+    source: oneida-wi-trial-court-rules
+    confidence: medium
+    as_of: '2018'
+    locator: Trial Court Rule 1.10
+    note: Rule 1.10 governs applications from prospective peacemakers and mediators outside the Judiciary
+      (application, background check, interview). It is a qualification process rather than a training
+      course.
+gaming:
+  compacts:
+  - state: WI
+    status: deemed-approved
+    approved: '2025-06-30'
+    federal_register_citation: 90 FR 27874
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2025-06-30'
+    locator: result page 46 (?page=46), row 18
+    note: 'Listed as: "Oneida Nation and State of Wisconsin Gaming Compact of 1991 Fourth Amendment" (Deemed
+      Approved); list''s Tribe column: "Oneida Nation". Document: https://www.bia.gov/sites/default/files/media_document/508_compliant_4th_amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2025/06/30/2025-12057/indian-gaming-approval-by-operation-of-law-of-the-fourth-amendment-to-the-oneida-nation-and-the.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '2021-08-20'
+    federal_register_citation: 86 FR 46866
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-08-20'
+    locator: result page 46 (?page=46), row 19
+    note: 'Listed as: "Oneida Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Oneida
+      Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202021.08.20%20Oneida%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/08/20/2021-17858/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-wisconsin.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1998-08-21'
+    federal_register_citation: 63 FR 44920
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1998-08-21'
+    locator: result page 46 (?page=46), row 20
+    note: 'Listed as: "Oneida Tribe of Indians Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Oneida Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.08.21%20Oneida%20Nation%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/08/21/98-22495/indian-gaming.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1992-01-30'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1992-01-30'
+    locator: result page 46 (?page=46), row 21
+    note: 'Listed as: "Oneida Tribe of Indians Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Oneida Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201992.01.30%20Oneida%20Nation%20Gaming%20Compact.pdf.
+      Matched on the Tribe column because the title spelling did not match the roster.'
+  - state: WI
+    status: deemed-approved
+    approved: '2003-07-22'
+    federal_register_citation: 68 FR 43366
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2003-07-22'
+    locator: result page 46 (?page=46), row 22
+    note: 'Listed as: "Oneida Tribe of Indians Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "Oneida Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202003.07.22%20Oneida%20Nation%20Gaming%20Compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/07/22/03-18631/indian-gaming.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: deemed-approved
+    dispute_resolution_summary: After written notice the State and Tribe meet within 30 days, and if the
+      dispute is unresolved after 90 days either party may pursue any otherwise available remedy, with
+      mediation or arbitration only by mutual agreement.
+    dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
+    confidence: medium
+    as_of: '1992-08-10'
+    locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
+      compact; later amendments renumbered this section XXIV and revised it for at least some nations
+      (for example the Ho-Chunk Nation fourth amendment), so the current text may differ. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2025-06-30).
+  ordinances:
+  - approved: '1994-05-11'
+    link: https://www.nigc.gov?wpdmdl=10499&ind=10515
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-05-11'
+    locator: table row 176, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 176 lists the nation
+      as "Oneida Nation".
+  - approved: '2004-10-15'
+    link: https://www.nigc.gov?wpdmdl=10500&ind=10516
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-10-15'
+    locator: table row 176, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 176 lists the nation
+      as "Oneida Nation".
+  - approved: '2009-12-09'
+    link: https://www.nigc.gov?wpdmdl=10501&ind=10517
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2009-12-09'
+    locator: table row 176, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 176 lists the nation
+      as "Oneida Nation".
+  - approved: '2015-12-22'
+    link: https://www.nigc.gov?wpdmdl=10502&ind=10518
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2015-12-22'
+    locator: table row 176, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 176 lists the nation
+      as "Oneida Nation".
+  - approved: '1994-01-03'
+    link: https://www.nigc.gov?wpdmdl=10503&ind=10537
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-01-03'
+    locator: table row 177, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 177 lists the nation
+      as "Oneida Nation of New York".
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Wisconsin is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Wisconsin. Applies to the nation''s Indian
+    country within Wisconsin; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Wisconsin"
+  note: Statute is primary; nation matched to Wisconsin by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Oneida Nation Confidence lowered from high by the lead session: the notice prints
+    its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: Midwest Alliance of Sovereign Tribes
+  source: midwest-alliance-of-sovereign-tribes-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Oneida Tribe of Indians of Wisconsin". Name matched to the roster entry.
+- organization: Great Lakes Inter-Tribal Council
+  source: great-lakes-inter-tribal-council-tribes-served
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Oneida Nation".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

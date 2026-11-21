@@ -1,0 +1,246 @@
+id: ute-indian-tribe-of-the-uintah-and-ouray-reservation
+entity_type: native-nation
+names:
+  official: Ute Indian Tribe of the Uintah & Ouray Reservation, Utah
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: UT
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ute Indian Tribe of the Uintah & Ouray Reservation, Utah
+- state: UT
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4390
+  note: 'Census area with land in this state: Uintah and Ouray Reservation and Off-Reservation Trust Land
+    (code 4390). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '4390'
+  name: Uintah and Ouray Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4390
+  note: Matched by name. Census class code D1.
+population:
+- count: 2400
+  kind: citizens
+  source: ute-indian-tribe-of-the-uintah-and-ouray-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"has a tribal membership of 2,400"; undated statement on the official site; as_of is the access
+    date'
+- count: 25192
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4390, field POP100
+  note: 'Census area: Uintah and Ouray Reservation and Off-Reservation Trust Land (code 4390). Everyone
+    counted as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a
+    count of the nation''s citizens.'
+- count: 1878
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3400 (Ute Indian Tribe of the Uintah and Ouray Reservation, Utah alone
+    or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Ute Indian Tribe of the Uintah and Ouray Reservation,
+    Utah' (race code 6364) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 3174
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Denver, row 'Ute Indian Tribe of the Uintah & Ouray Reservation', PDF page
+    5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 3125
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 89, row T51900 'Ute Indian Tribe of the Uintah & Ouray Reservation'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://utetribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ute Indian Tribe of the Uintah & Ouray Reservation, Utah
+- kind: physical-address
+  value: 6964 E 1000 South, Ft. Duchesne, UT 84026
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ute Indian Tribe of the Uintah & Ouray Reservation, Utah
+- kind: mailing-address
+  value: P.O. Box 190, Ft. Duchesne, UT 84026
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ute Indian Tribe of the Uintah & Ouray Reservation, Utah
+- kind: phone
+  value: (435) 722-5141
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ute Indian Tribe of the Uintah & Ouray Reservation, Utah
+- kind: fax
+  value: (435) 722-2374
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ute Indian Tribe of the Uintah & Ouray Reservation, Utah
+federal_administration:
+  bureau_of_indian_affairs_region: Western
+  bureau_of_indian_affairs_agency: Uintah & Ouray Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ute Indian Tribe of the Uintah & Ouray Reservation, Utah
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Ute Indian Tribe of the Uintah and Ouray Reservation, Utah" among organizations
+    under constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18,
+    1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Ute Indian Tribe of the Unitah and Ouray Reservation Utah) (approved 1937) states
+    it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-utecons
+  confidence: medium
+  as_of: '1937'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: The Law and Order Code of the Ute Indian Tribe of the Uintah and Ouray Reservation Utah
+  year: '2013'
+  link: https://narf.org/nill/codes/ute_uintah_ouray/index.html
+  source: national-indian-law-library-code-codes-ute-uintah-ouray
+  confidence: medium
+  as_of: '2013'
+  locator: page heading
+  note: 'Dated: 1988, amended 2013. Full text linked from the National Indian Law Library page.'
+- kind: constitution
+  title: Constitution and By-laws of the Ute Indian Tribe of the Uintah and Ouray Reservation
+  year: '1937'
+  link: https://narf.org/nill/constitutions/ute_uintah_ouray/index.html
+  source: national-indian-law-library-constitution-constitutions-ute-uintah-ouray
+  confidence: medium
+  as_of: '1937'
+  locator: page heading
+  note: 'Approved: 1937. Full text linked from the National Indian Law Library page.'
+- kind: corporate-charter
+  title: Corporate charter (Ute Indian Tribe of the Uintah and Ouray Reservation Utah)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/utechrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-utechrtr
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Ute Indian Tribe of the Unitah and Ouray Reservation Utah)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/utecons.html
+  source: university-of-oklahoma-indian-reorganization-act-utecons
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-ute-uintah-ouray
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Ute Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Utah section, entry 'Ute Indian Tribe Uintah & Ouray Reservation'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Disposition Options for Juvenile Cases
+    citation: Ute Indian Tribe 4-13-1
+    link: https://www.narf.org/nill/codes/ute_uintah_ouray/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-options-for-juvenile-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Suspension of Sentence and Probation
+    citation: Ute Indian Tribe 13-3-15 and 13-3-16
+    link: https://www.narf.org/nill/codes/ute_uintah_ouray/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/suspension-of-sentence-and-probation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Ute Indian Tribe of the Uintah & Ouray Reservation, Utah Confidence lowered from high
+    by the lead session: the notice prints its table as page images, so nation names were read from images
+    and matched to the roster.'
+memberships:
+- organization: Coalition of Large Tribes
+  source: coalition-of-large-tribes-home
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Ute Indian Tribe". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

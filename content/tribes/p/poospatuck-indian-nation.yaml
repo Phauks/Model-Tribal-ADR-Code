@@ -1,0 +1,63 @@
+id: poospatuck-indian-nation
+entity_type: native-nation
+names:
+  official: Poospatuck (Unkechauge) Indian Nation
+  alternate:
+  - name: Poospatuck
+    source: alabama-indian-affairs-commission-state-recognized-tribes-compilation
+    confidence: low
+    as_of: '2001'
+  - name: Unkechauge Indian Nation
+    source: new-york-indian-law
+    confidence: high
+    as_of: '2026'
+    note: Name in the statute's article heading without the parenthetical.
+  official_source: census-aian-geography-definitions
+recognition:
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State American Indian reservation; area 9300
+  note: The 2020 Census delineated "Poospatuck (state) Reservation" (State American Indian reservation).
+    The Census Bureau defines state American Indian reservations as reservations of state-recognized tribes,
+    delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area
+    to group is by name comparison (see census-area fact).
+- type: state
+  state: NY
+  legal_basis: New York Indian Law Article 10, The Poospatuck (Unkechauge) Indian Nation (sections 150-153)
+  source: new-york-indian-law
+  confidence: high
+  as_of: '2026'
+  locator: Article 10
+states:
+- state: NY
+  presence: land
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9300
+  note: State reservation land.
+- state: NY
+  presence: other
+  source: new-york-indian-law
+  confidence: high
+  as_of: '2026'
+census_areas:
+- geographic_identifier: '9300'
+  name: Poospatuck (state) Reservation
+  area_type: State American Indian reservation
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9300, GEOID 9300R
+  note: Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

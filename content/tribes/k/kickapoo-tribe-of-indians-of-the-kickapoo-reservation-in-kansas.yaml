@@ -1,0 +1,272 @@
+id: kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas
+entity_type: native-nation
+names:
+  official: Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: KS
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas
+- state: KS
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1770
+  note: 'Census area with land in this state: Kickapoo (KS) Reservation (code 1770). Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '1770'
+  name: Kickapoo (KS) Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1770
+  note: Matched by name. Census class code D2.
+population:
+- count: 1600
+  kind: citizens
+  source: ktik-nsn-history-and-language-resource
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''approximately 1,600 enrolled members''. Undated; as_of is access date.'
+- count: 3849
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1770, field POP100
+  note: 'Census area: Kickapoo (KS) Reservation (code 1770). Everyone counted as living in the area in
+    the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 856
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3058 (Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas
+    alone or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Kickapoo Tribe of Indians of the Kickapoo Reservation
+    in Kansas' (race code 5888) alone or in combination with other tribes or races in the 2020 Census;
+    self-identification, not enrollment. Includes noise added for disclosure avoidance. Census label exact
+    name match.
+- count: 1654
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Kickapoo Tribe of Kansas', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.ktik-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas
+- kind: physical-address
+  value: 824 111th Drive, Horton, KS 66439
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas
+- kind: mailing-address
+  value: 824 111th Drive, Horton, KS 66439
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas
+- kind: phone
+  value: (785) 486-3419
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas
+- kind: fax
+  value: (7850 486-2801
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas
+federal_administration:
+  bureau_of_indian_affairs_region: Southern Plains
+  bureau_of_indian_affairs_agency: Southern Plains Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Kickapoo Tribe in Kansas" among organizations under constitutions approved by
+    the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas) (approved 1937)
+    states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-kskickcons
+  confidence: medium
+  as_of: '1937'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Kansas Kickapoo Tribal Codes and Ordinances
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Kansas section, entry 'Kickapoo Tribe in Kansas'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (https://www.ktik-nsn.gov/programs/kickapoo-judicial-center/useful-links-and-documents/)
+    returned HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Constitution (Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/kskickcons.html
+  source: university-of-oklahoma-indian-reorganization-act-kskickcons
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-kickapoo-kansas
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Kickapoo District Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Kansas section, entry 'Kickapoo Tribe in Kansas'
+  note: 'Link check 2026-11-21: the link the source gives (https://www.ktik-nsn.gov/programs/kickapoo-judicial-center/district-court/)
+    returned HTTP 404, so it is not recorded.'
+gaming:
+  compacts:
+  - state: KS
+    status: approved
+    approved: '1995-08-21'
+    federal_register_citation: 60 FR 43512
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-08-21'
+    locator: result page 15 (?page=15), row 1
+    note: 'Listed as: "Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas Tribal State Gaming
+      Compact" (Approve); list''s Tribe column: "Kickapoo Tribe of Indians of the Kickapoo Reservation
+      in Kansas". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1995.08.21_kickapoo_tribe_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/08/21/95-20653/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: KS
+    status: approved
+    dispute_resolution_summary: The parties must use best efforts to negotiate for at least 14 days, after
+      which either party may refer the dispute to binding arbitration before a sole agreed arbitrator
+      or a three-member panel, with judicial enforcement in the United States District Court for Kansas.
+    dispute_resolution_locator: Section 29 (Dispute Resolution)
+    source: compact-ks-wyandotte-nation-2026
+    confidence: medium
+    as_of: '2026-07-14'
+    locator: Section 29 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2026 Wyandotte Nation compact;
+      other Kansas compacts were not checked. Status copied from this nation's most recent approved or
+      deemed-approved entry for this state in the Office of Indian Gaming list (1995-08-21).
+  ordinances:
+  - approved: '1994-07-15'
+    link: https://www.nigc.gov?wpdmdl=10062&ind=10076
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-07-15'
+    locator: table row 120, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 120 lists the nation
+      as "Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas".
+  - approved: '1995-07-31'
+    link: https://www.nigc.gov?wpdmdl=10063&ind=10077
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-07-31'
+    locator: table row 120, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 120 lists the nation
+      as "Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas".
+  - approved: '1996-08-01'
+    link: https://www.nigc.gov?wpdmdl=10064&ind=10078
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-08-01'
+    locator: table row 120, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 120 lists the nation
+      as "Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas".
+  - approved: '1997-02-20'
+    link: https://www.nigc.gov?wpdmdl=10065&ind=10079
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-02-20'
+    locator: table row 120, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 120 lists the nation
+      as "Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas".
+  - approved: '2007-06-01'
+    link: https://www.nigc.gov?wpdmdl=10066&ind=10080
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2007-06-01'
+    locator: table row 120, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 120 lists the nation
+      as "Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas".
+  - approved: '2010-11-24'
+    link: https://www.nigc.gov?wpdmdl=10067&ind=10081
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2010-11-24'
+    locator: table row 120, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 120 lists the nation
+      as "Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Kickapoo Tribe of Indians
+      of the Kickapoo Reservation in Kansas". Facilities as machine-extracted from the report text (verify):
+      Golden Eagle Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas Confidence lowered
+    from high by the lead session: the notice prints its table as page images, so nation names were read
+    from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

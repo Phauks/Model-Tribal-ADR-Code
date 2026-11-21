@@ -1,0 +1,419 @@
+id: prairie-island-indian-community-in-the-state-of-minnesota
+entity_type: native-nation
+names:
+  official: Prairie Island Indian Community in the State of Minnesota
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: MN
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Prairie Island Indian Community in the State of Minnesota
+- state: MN
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2985
+  note: 'Census area with land in this state: Prairie Island Indian Community and Off-Reservation Trust
+    Land (code 2985). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2985'
+  name: Prairie Island Indian Community and Off-Reservation Trust Land
+  area_type: Indian Community and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2985
+  note: Matched by name. Census class code D1.
+population:
+- count: 1100
+  kind: citizens
+  source: prairie-island-indian-community-in-the-s-tribaltraining-prairie-island-html
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"Citizenship: 1,100 enrolled members"; Minnesota Department of Transportation Tribal-State Relations
+    Training nation profile (state agency); undated'
+- count: 310
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2985, field POP100
+  note: 'Census area: Prairie Island Indian Community and Off-Reservation Trust Land (code 2985). Everyone
+    counted as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a
+    count of the nation''s citizens.'
+- count: 641
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3231 (Prairie Island Indian Community alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Prairie Island Indian Community' (race code 6306) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 715
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Prairie Island Indian Community', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 819
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 86, row T39300 'Prairie Island Indian Community of the State of
+    Minnesota'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://prairieisland.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Prairie Island Indian Community in the State of Minnesota
+- kind: physical-address
+  value: 5636 Sturgeon Lake Road, Welch, MN 55089
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Prairie Island Indian Community in the State of Minnesota
+- kind: mailing-address
+  value: 5636 Sturgeon Lake Road, Welch, MN 55089
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Prairie Island Indian Community in the State of Minnesota
+- kind: phone
+  value: (651) 385-4100
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Prairie Island Indian Community in the State of Minnesota
+- kind: fax
+  value: (651) 385-4180
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Prairie Island Indian Community in the State of Minnesota
+languages:
+- name: Dakota
+  language_tag: dak
+  source: prairie-island-indian-community-in-the-s-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"Recapturing the beauty and power of our Dakota language"'
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Midwest Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Prairie Island Indian Community in the State of Minnesota
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Prairie Island Indian Community in the State of Minnesota" among organizations
+    under constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18,
+    1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Prairie Island Indian Community in Minnesota) (approved 1936) states it was adopted
+    under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-picons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://prairieisland.org/our-government/ordinances
+  source: national-indian-law-library-prairie-island
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://prairieisland.org/our-government/constitution
+  source: national-indian-law-library-prairie-island
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Prairie Island Indian Community Constitution and By-Laws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Minnesota section, entry 'Prairie Island Indian Community'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://prairieisland.org/wp-content/uploads/2017/02/Current_Constitution_and_Bylaws_as_Amended_02-22-2017.pdf)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Prairie Island Indian Community Ordinances
+  link: http://prairieisland.org/government/#squelch-taas-accordion-shortcode-content-8
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Minnesota section, entry 'Prairie Island Indian Community'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Prairie Island Indian Community in the state of Minnesota)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/pichrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-pichrtr
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Prairie Island Indian Community in Minnesota)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/picons.html
+  source: university-of-oklahoma-indian-reorganization-act-picons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-prairie-island
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (https://narf.org/nill/tribes/prairieisland.org/our-government/tribal-court)
+    returned HTTP 404, so it is not recorded.'
+- kind: tribal-court
+  name: Prairie Island Indian Community Tribal Court
+  link: http://prairieisland.org/government/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Minnesota section, entry 'Prairie Island Indian Community'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Authorization to Create a Healing to Wellness Court
+    citation: Prairie Island Indian Community Child Welfare Ordinance Section 6
+    link: https://prairieisland.org/our-government/ordinances
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/authorization-to-create-a-healing-to-wellness-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      court.'
+  - kind: other
+    title: Purpose and Goals when Treating Child Welfare Cases
+    citation: Prairie Island Indian Community Child Welfare Ordinance Section 2
+    link: https://prairieisland.org/our-government/ordinances
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-and-goals-when-treating-child-welfare-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      practice, Restorative process.'
+gaming:
+  compacts:
+  - state: MN
+    status: approved
+    approved: '1990-04-02'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1990-04-02'
+    locator: result page 18 (?page=18), row 3
+    note: 'Listed as: "Prairie Island Indian Community Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Prairie Island Indian Community in the State of Minnesota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1990.04.02_prairie_island_sopix_community_tribal_state_gaming_compact.pdf.
+      Name matched to roster by spelling variant.'
+  - state: MN
+    status: approved
+    approved: '1991-10-03'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1991-10-03'
+    locator: result page 18 (?page=18), row 4
+    note: 'Listed as: "Prairie Island Indian Community Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Prairie Island Indian Community in the State of Minnesota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1991.10.03_prairie_island_indian_community_tribal_state_gaming_compact.pdf.
+      Name matched to roster by spelling variant.'
+  - state: MN
+    status: approved
+    approved: '1991-04-30'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1991-04-30'
+    locator: result page 18 (?page=18), row 5
+    note: 'Listed as: "Prairie Island Indian Community Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Prairie Island Indian Community in the State of Minnesota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1991.04.30_prairie_island_gaming_tribal_state_gaming_compact.pdf.
+      Name matched to roster by spelling variant.'
+  - state: MN
+    status: approved
+    approved: '2023-10-04'
+    federal_register_citation: 88 FR 68663
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2023-10-04'
+    locator: result page 18 (?page=18), row 6
+    note: 'Listed as: "Prairie Island Indian Community Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Prairie Island Indian Community in the State of Minnesota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2023.10.04_prairie_island_indian_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2023/10/04/2023-22027/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-between-prairie-island.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: MN
+    status: approved
+    approved: '1990-04-02'
+    dispute_resolution_summary: The video games of chance compact has no general arbitration or mediation
+      clause; when the State designates a machine as non-compliant, the nation may accept the finding,
+      submit the device to an independent gaming test laboratory, or contest the finding in federal district
+      court (or before the National Indian Gaming Commission or another court if jurisdiction is declined).
+    dispute_resolution_locator: Section 4.6 (Demand for Remedies for Non-Complying Video Games of Chance)
+    source: compact-mn-prairie-island-indian-community-in-the-s-1990
+    confidence: medium
+    as_of: '1990-04-02'
+    locator: Section 4.6 (Demand for Remedies for Non-Complying Video Games of Chance)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the 1990 Prairie Island Indian
+      Community video games of chance compact; Minnesota nations also hold separate blackjack compacts,
+      which were not summarized.
+  ordinances:
+  - approved: '1994-01-21'
+    link: https://www.nigc.gov?wpdmdl=10698&ind=10727
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-01-21'
+    locator: table row 200, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 200 lists the nation
+      as "Prairie Island Indian Community". Name matched to roster by spelling variant.
+  - approved: '1994-05-23'
+    link: https://www.nigc.gov?wpdmdl=10713&ind=10728
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-05-23'
+    locator: table row 200, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 200 lists the nation
+      as "Prairie Island Indian Community". Name matched to roster by spelling variant.
+  - approved: '1996-10-08'
+    link: https://www.nigc.gov?wpdmdl=10714&ind=10729
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1996-10-08'
+    locator: table row 200, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 200 lists the nation
+      as "Prairie Island Indian Community". Name matched to roster by spelling variant.
+  - approved: '1998-06-12'
+    link: https://www.nigc.gov?wpdmdl=10715&ind=10730
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1998-06-12'
+    locator: table row 200, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 200 lists the nation
+      as "Prairie Island Indian Community". Name matched to roster by spelling variant.
+  - approved: '2002-12-17'
+    link: https://www.nigc.gov?wpdmdl=10716&ind=10731
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2002-12-17'
+    locator: table row 200, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 200 lists the nation
+      as "Prairie Island Indian Community". Name matched to roster by spelling variant.
+  - approved: '2005-01-04'
+    link: https://www.nigc.gov?wpdmdl=10717&ind=10732
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2005-01-04'
+    locator: table row 200, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 200 lists the nation
+      as "Prairie Island Indian Community". Name matched to roster by spelling variant.
+  - approved: '2010-11-03'
+    link: https://www.nigc.gov?wpdmdl=10718&ind=10733
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2010-11-03'
+    locator: table row 200, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 200 lists the nation
+      as "Prairie Island Indian Community". Name matched to roster by spelling variant.
+  - approved: '2015-02-24'
+    link: https://www.nigc.gov?wpdmdl=10719&ind=10734
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2015-02-24'
+    locator: table row 200, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 200 lists the nation
+      as "Prairie Island Indian Community". Name matched to roster by spelling variant.
+  - approved: '2025-01-03'
+    link: https://www.nigc.gov?wpdmdl=10720&ind=10735
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2025-01-03'
+    locator: table row 200, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 200 lists the nation
+      as "Prairie Island Indian Community". Name matched to roster by spelling variant.
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Minnesota is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Minnesota. Applies to the nation''s Indian
+    country within Minnesota; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Minnesota"
+  note: Statute is primary; nation matched to Minnesota by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Prairie Island Indian Community in the State of Minnesota Confidence lowered from
+    high by the lead session: the notice prints its table as page images, so nation names were read from
+    images and matched to the roster.'
+memberships:
+- organization: Midwest Alliance of Sovereign Tribes
+  source: midwest-alliance-of-sovereign-tribes-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Prairie Island Indian Community". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

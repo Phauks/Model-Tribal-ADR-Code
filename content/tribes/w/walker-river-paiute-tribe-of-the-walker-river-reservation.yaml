@@ -1,0 +1,293 @@
+id: walker-river-paiute-tribe-of-the-walker-river-reservation
+entity_type: native-nation
+names:
+  official: Walker River Paiute Tribe of the Walker River Reservation, Nevada
+  self_designation:
+  - name: Agai Dicutta
+    language_tag: pao
+    source: walker-river-paiute-tribe-of-the-walker-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"traditionally called the Agai Dicutta (Trout Eaters)"'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: NV
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Walker River Paiute Tribe of the Walker River Reservation, Nevada
+- state: NV
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4515
+  note: 'Census area with land in this state: Walker River Reservation (code 4515). Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '4515'
+  name: Walker River Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4515
+  note: Matched by name. Census class code D2.
+population:
+- count: 830
+  kind: resident-population
+  source: walker-river-paiute-tribe-of-the-walker-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"The population is roughly 830 community members, most of which are citizens of the Walker River
+    Paiute Tribe"; undated statement on the official site; as_of is the access date'
+- count: 814
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4515, field POP100
+  note: 'Census area: Walker River Reservation (code 4515). Everyone counted as living in the area in
+    the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 1398
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3408 (Walker River Paiute Tribe of the Walker River Reservation, Nevada
+    alone or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Walker River Paiute Tribe of the Walker River Reservation,
+    Nevada' (race code 6062) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 3008
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Walker River Paiute Tribe', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.wrpt.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Walker River Paiute Tribe of the Walker River Reservation, Nevada
+- kind: physical-address
+  value: 1022 Hospital Rd, Schurz, NV 89427
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Walker River Paiute Tribe of the Walker River Reservation, Nevada
+- kind: mailing-address
+  value: P.O. Box 220, Schurz, NV 89427
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Walker River Paiute Tribe of the Walker River Reservation, Nevada
+- kind: phone
+  value: (775) 773-2306
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Walker River Paiute Tribe of the Walker River Reservation, Nevada
+- kind: fax
+  value: (775) 773-2585
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Walker River Paiute Tribe of the Walker River Reservation, Nevada
+federal_administration:
+  bureau_of_indian_affairs_region: Western
+  bureau_of_indian_affairs_agency: Western Nevada Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Walker River Paiute Tribe of the Walker River Reservation, Nevada
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Walker River Paiute Tribe, Nevada" among organizations under constitutions approved
+    by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Walker River Paiute Tribe of Nevada) (approved 1937) states it was adopted under
+    Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  as_of: '1937'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Walker River Paiute Tribe of the Walker River Reservation, Nevada - Tribal Constitution
+  year: '1979'
+  link: https://narf.org/nill/constitutions/walkerriverpaiute/index.html
+  source: national-indian-law-library-constitution-constitutions-walkerriverpaiute
+  confidence: medium
+  as_of: '1979'
+  locator: page heading
+  note: 'Last amended: 1979. The National Indian Law Library page gives the table of contents (and may
+    link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Law & Order
+  link: https://www.wrpt.org/law-order/
+  source: national-indian-law-library-walker-river-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    . Law & Order.".'
+- kind: law-code
+  title: By-laws & Ordinances
+  link: https://www.wrpt.org/tribal-government/#Bylaws
+  source: national-indian-law-library-walker-river-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    . By-laws & Ordinances.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.wrpt.org/tribal-government/#Constitution
+  source: national-indian-law-library-walker-river-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: corporate-charter
+  title: Corporate charter (Walker River Pauite Tribe of the Walker Reservation Nevada)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/walkchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-walkchrtr
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Walker River Paiute Tribe of Nevada)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/walkcons.html
+  source: university-of-oklahoma-indian-reorganization-act-walkcons
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.wrpt.org/tribal-court/
+  source: national-indian-law-library-walker-river-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Walker River Paiute Tribe Civil Court
+  link: http://www.wrpt.us/court.htm
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Nevada section, entry 'Walker River Paiute – Agai-Dicutta Numu'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Criminal Sentencing
+    citation: WRLOC 4-70-110 and 4-70-120
+    link: https://www.wrpt.org/law-order/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/criminal-sentencing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Informal Conference for Juvenile Delinquency
+    citation: WRLOC 10-30-060 and 10-30-070
+    link: https://www.wrpt.org/law-order/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-conference-for-juvenile-delinquency/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+gaming:
+  compacts:
+  - state: NV
+    status: approved
+    approved: '1996-08-02'
+    federal_register_citation: 61 FR 40429
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-08-02'
+    locator: result page 25 (?page=25), row 14
+    note: 'Listed as: "Walker River Paiute Tribe of the Walker River Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Walker River Paiute Tribe of the Walker River Reservation, Nevada".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1996.08.02_walker_river_paiute_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/08/02/X96-20802/indian-gaming-walker-river-paiute-tribe.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NV
+    status: approved
+    dispute_resolution_summary: A party alleging substantial default gives written notice with 90 days
+      to cure, the parties then meet within 30 days, and unresolved disputes may be brought in federal
+      court with venue in Washoe County for declaratory or injunctive relief only under a limited waiver
+      of sovereign immunity, with mediation or arbitration available by mutual written agreement.
+    dispute_resolution_locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver
+      of Sovereign Immunity)
+    source: compact-nv-washoe-tribe-of-nevada-and-california-2018
+    confidence: medium
+    as_of: '2018-01-18'
+    locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver of Sovereign Immunity)
+    note: state model compact; nation-specific text not checked. Read from the 2018 Washoe Tribe compact;
+      other Nevada compacts were not checked. Status copied from this nation's most recent approved or
+      deemed-approved entry for this state in the Office of Indian Gaming list (1996-08-02).
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Walker River Paiute Tribe of the Walker River Reservation, Nevada Confidence lowered
+    from high by the lead session: the notice prints its table as page images, so nation names were read
+    from images and matched to the roster.'
+memberships:
+- organization: Inter-Tribal Council of Nevada
+  source: inter-tribal-council-of-nevada-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Walker River Paiute Tribe". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

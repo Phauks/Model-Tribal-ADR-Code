@@ -1,0 +1,409 @@
+id: lac-courte-oreilles-band-of-lake-superior-chippewa-indians-of-wisconsin
+entity_type: native-nation
+names:
+  official: Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: WI
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin
+- state: WI
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1815
+  note: 'Census area with land in this state: Lac Courte Oreilles Reservation and Off-Reservation Trust
+    Land (code 1815). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1815'
+  name: Lac Courte Oreilles Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1815
+  note: Matched by name. Census class code D1.
+population:
+- count: 7275
+  kind: citizens
+  source: wisconsin-dpi-tribal-nations-lac-courte-oreilles
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'State page, Tribal Statistics: ''There are currently 7,275 Lac Courte Oreilles(LCO) tribal members.''
+    Undated; as_of is access date.'
+- count: 2968
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1815, field POP100
+  note: 'Census area: Lac Courte Oreilles Reservation and Off-Reservation Trust Land (code 1815). Everyone
+    counted as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a
+    count of the nation''s citizens.'
+- count: 4758
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3073 (Lac Courte Oreilles Band of Lake Superior Chippewa alone or in
+    any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Lac Courte Oreilles Band of Lake Superior Chippewa'
+    (race code 5657) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 6230
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Lac Courte Oreilles Band of Lake Superior Chippewa', PDF page
+    4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://lco-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin
+- kind: physical-address
+  value: '13394 West Trepania Road Building #1, Hayward, WI 54843'
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin
+- kind: mailing-address
+  value: '13394 West Trepania Road Building #1, Hayward, WI 54843'
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin
+- kind: phone
+  value: (715) 634-8934
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin
+- kind: fax
+  value: (715) 634-4797
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Great Lakes Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://law.lco-nsn.gov
+  source: national-indian-law-library-lac-courte-oreilles-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: law-code
+  title: Tribal code
+  link: https://www.narf.org/nill/triballaw/us/nsn/lco/council/index.html
+  source: national-indian-law-library-lac-courte-oreilles-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website .".'
+- kind: constitution
+  title: Constitution
+  link: https://law.lco-nsn.gov/us/nsn/lco/council/constitution
+  source: national-indian-law-library-lac-courte-oreilles-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.narf.org/nill/triballaw/us/nsn/lco/council/constitution/
+  source: national-indian-law-library-lac-courte-oreilles-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At NILL website
+    .".'
+- kind: constitution
+  title: Lac Courte Oreilles Lake Superior Chippewa Indians Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Lac Courte Oreilles Band of Ojibwe'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.lco-nsn.gov/lac-courte-oreilles-constitution.php)
+    returned HTTP 404, so it is not recorded.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.lcotribalcourt.org/
+  source: national-indian-law-library-lac-courte-oreilles-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Lac Courte Oreilles Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Lac Courte Oreilles Band of Ojibwe'
+dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacemaking in child-in-need-of-care matters
+    description: The Child Welfare Director and affected parties (including a child 12 or older) may,
+      by mutual consent, petition the Children's Court to institute peacemaking, conducted under rules
+      set by peacemakers appointed by the Tribal Court.
+    legal_basis: LCO Code DMR.1.3.120 (Informal Disposition)
+    case_types:
+    - child-welfare
+    participation: voluntary
+    relationship_to_court: Occurs at the direction of the Children's Court; formal proceedings may be
+      instituted at any time the Child Welfare Director deems appropriate.
+    link: https://law.lco-nsn.gov
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026'
+    locator: https://ncorj.org/tribal-law/informal-disposition-and-peacemaking/
+  clauses:
+  - context: other
+    kind: waiver-of-sovereign-immunity
+    citation: LCO Tribal Code of Law TCT.1.3.030
+    summary: Allows limited waivers of immunity only by express Tribal Governing Board resolution or motion,
+      including a waiver in an employment agreement to enforce its terms in tribal court, and requires
+      each waiver to be specific as to duration, grantee, transaction, assets, court and applicable law.
+    link: https://narf.org/nill/triballaw/us/nsn/lco/council/code/TCT.1.3.030
+    source: lco-tct-1-3-030-nill
+    confidence: medium
+    as_of: '2016'
+    locator: TCT.1.3.030(b)-(e)
+    note: 'Context: Sovereign immunity code; waiver may be granted in employment agreements.'
+  provisions:
+  - kind: other
+    title: AODA Dispositional Hearing – Treatment and Culturally Appropriate Services
+    citation: DMR.1.10.090
+    link: https://law.lco-nsn.gov
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/aoda-dispositional-hearing-treatment-and-culturally-appropriate-services/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Rehabilitation.'
+  - kind: peacemaking
+    title: Informal Disposition and Peacemaking
+    citation: DMR.1.3.120
+    link: https://law.lco-nsn.gov
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-disposition-and-peacemaking/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication (informal). Database form of practice:
+      Peacemaking.'
+  - kind: other
+    title: Truancy Disposition – Counseling and Community Service
+    citation: GNC.5.3.020
+    link: https://law.lco-nsn.gov
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/truancy-disposition-counseling-and-community-service/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
+gaming:
+  compacts:
+  - state: WI
+    status: deemed-approved
+    approved: '1992-04-20'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-04-20'
+    locator: result page 45 (?page=45), row 22
+    note: 'Listed as: "Lac Courte Oreilles Band of Lake Superior Chippewa Indians Tribal State Gaming
+      Compact" (Deemed Approved); list''s Tribe column: "Lac Courte Oreilles Band of Lake Superior Chippewa
+      Indians of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201992.04.20%20Lac%20Courte%20Oreilles%20Gaming%20Compact.pdf.'
+  - state: WI
+    status: approved
+    approved: '2003-04-08'
+    federal_register_citation: 68 FR 17072
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-04-08'
+    locator: result page 45 (?page=45), row 23
+    note: 'Listed as: "Lac Courte Oreilles Band of Lake Superior Chippewa Indians Tribal State Gaming
+      Compact" (Approve); list''s Tribe column: "Lac Courte Oreilles Band of Lake Superior Chippewa Indians
+      of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202003.04.08%20Lac%20Courte%20Oreilles%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/04/08/03-8561/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1998-04-20'
+    federal_register_citation: 63 FR 19508
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-04-20'
+    locator: result page 45 (?page=45), row 24
+    note: 'Listed as: "Lac Courte Oreilles Band of Lake Superior Chippewa Indians Tribal State Gaming
+      Compact" (Approve); list''s Tribe column: "Lac Courte Oreilles Band of Lake Superior Chippewa Indians
+      of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1998.04.20_lac_courte_oreilles_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/04/20/98-10261/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '2022-09-20'
+    federal_register_citation: 87 FR 57507
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-09-20'
+    locator: result page 45 (?page=45), row 25
+    note: 'Listed as: "Lac Courte Oreilles Band of Lake Superior Chippewa Indians Tribal State Gaming
+      Compact" (Approve); list''s Tribe column: "Lac Courte Oreilles Band of Lake Superior Chippewa Indians
+      of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_comp_liant_2022.09.20_lac_courte_oreilles_band_fo_lake_superior_chippewa_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/09/20/2022-20319/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-wisconsin.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: deemed-approved
+    approved: '2003-07-22'
+    federal_register_citation: 68 FR 43366
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-07-22'
+    locator: result page 46 (?page=46), row 1
+    note: 'Listed as: "Lac Courte Oreilles Band of Lake Superior Chippewa Indians Tribal State Gaming
+      Compact" (Deemed Approved); list''s Tribe column: "Lac Courte Oreilles Band of Lake Superior Chippewa
+      Indians of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2003.07.22_lac_courte_oreilles_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/07/22/03-18631/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    dispute_resolution_summary: After written notice the State and Tribe meet within 30 days, and if the
+      dispute is unresolved after 90 days either party may pursue any otherwise available remedy, with
+      mediation or arbitration only by mutual agreement.
+    dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
+    confidence: medium
+    as_of: '1992-08-10'
+    locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
+      compact; later amendments renumbered this section XXIV and revised it for at least some nations
+      (for example the Ho-Chunk Nation fourth amendment), so the current text may differ. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2022-09-20).
+  ordinances:
+  - approved: '1995-09-19'
+    link: https://www.nigc.gov?wpdmdl=10123&ind=10135
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-09-19'
+    locator: table row 129, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 129 lists the nation
+      as "Lac Courte Oreilles Band of Lake Superior Chippewas". Name matched to roster by spelling variant.
+  - approved: '2011-08-22'
+    link: https://www.nigc.gov?wpdmdl=10124&ind=10136
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2011-08-22'
+    locator: table row 129, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 129 lists the nation
+      as "Lac Courte Oreilles Band of Lake Superior Chippewas". Name matched to roster by spelling variant.
+  - approved: '2001-02-05'
+    link: https://www.nigc.gov?wpdmdl=10883&ind=10898
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2001-02-05'
+    locator: table row 224, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 224 lists the nation
+      as "Red Cliff, Sokogon, Chippewa Lac Court Orielles Band Tribe". Name matched to roster by spelling
+      variant. This row names three nations jointly (Red Cliff, Sokaogon and Lac Courte Oreilles); the
+      fact is repeated for each.
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Wisconsin is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Wisconsin. Applies to the nation''s Indian
+    country within Wisconsin; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Wisconsin"
+  note: Statute is primary; nation matched to Wisconsin by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin Confidence
+    lowered from high by the lead session: the notice prints its table as page images, so nation names
+    were read from images and matched to the roster.'
+- topic: indian-child-welfare-act
+  value: reassumed-jurisdiction
+  detail: Approval of petition under 25 U.S.C. § 1918 to reassume exclusive jurisdiction over child custody
+    proceedings involving Indian children residing or domiciled on the Lac Courte Oreilles Reservation.
+    (46 FR 15579)
+  source: federal-register-1981-lac-courte-oreilles-icwa-reassumption
+  confidence: high
+  as_of: '1981-03-06'
+memberships:
+- organization: Midwest Alliance of Sovereign Tribes
+  source: midwest-alliance-of-sovereign-tribes-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin".
+- organization: Great Lakes Inter-Tribal Council
+  source: great-lakes-inter-tribal-council-tribes-served
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin".
+- organization: Great Lakes Indian Fish and Wildlife Commission
+  source: great-lakes-indian-fish-and-wildlife-commission-commission
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Odaawaa-zaaga'iganiing" (link https://lco-nsn.gov/).
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

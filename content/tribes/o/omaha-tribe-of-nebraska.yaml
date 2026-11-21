@@ -1,0 +1,561 @@
+id: omaha-tribe-of-nebraska
+entity_type: native-nation
+names:
+  official: Omaha Tribe of Nebraska
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: NE
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Omaha Tribe of Nebraska
+- state: IA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2550
+  note: 'Census area with land in this state: Omaha Reservation (code 2550). Area matched to the nation
+    by name.'
+- state: NE
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2550
+  note: 'Census area with land in this state: Omaha Reservation (code 2550). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '2550'
+  name: Omaha Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2550
+  note: Matched by name. Census class code D2.
+population:
+- count: 7491
+  kind: citizens
+  source: omaha-tribe-of-nebraska-p-4596
+  confidence: high
+  as_of: 2026-05
+  note: '"Omaha: 7,491"; Omaha Tribe news post "Enrollment Roundtable" on the May 18-19, 2026 quarterly
+    enrollment training attended by Nebraska tribes'' enrollment staff: "Total Tribal Membership for Each
+    Tribe"'
+- count: 4526
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2550, field POP100
+  note: 'Census area: Omaha Reservation (code 2550). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 7374
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3173 (Omaha Tribe of Nebraska alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Omaha Tribe of Nebraska' (race code 6023) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+- count: 5853
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Denver, row 'Omaha Tribe', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 1852
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 84, row T35000 'Omaha Tribe of Nebraska'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://www.omahatribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Omaha Tribe of Nebraska
+- kind: physical-address
+  value: 497 Main Street, Macy, NE 68039
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Omaha Tribe of Nebraska
+- kind: mailing-address
+  value: P.O. Box 368, Macy, NE 68039
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Omaha Tribe of Nebraska
+- kind: phone
+  value: (402) 837-5391
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Omaha Tribe of Nebraska
+- kind: fax
+  value: (402) 837-5308
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Omaha Tribe of Nebraska
+federal_administration:
+  bureau_of_indian_affairs_region: Great Plains
+  bureau_of_indian_affairs_agency: Winnebago Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Omaha Tribe of Nebraska
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Omaha Tribe of Nebraska" among organizations under constitutions approved by
+    the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Omaha Tribe of Nebraska) (approved 1936) states it was adopted under Act of June
+    18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-omahacons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Omaha Tribe of Nebraska
+  link: https://narf.org/nill/codes/omaha_of_nebraska/index.html
+  source: national-indian-law-library-code-codes-omaha-of-nebraska
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: constitution
+  title: Omaha Tribe of Nebraska - Tribal Constitution
+  link: https://narf.org/nill/constitutions/omaha_of_nebraska/index.html
+  source: national-indian-law-library-constitution-constitutions-omaha-of-nebraska
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: law-code
+  title: Tribal code
+  link: https://www.omahatribe.com/tribal-codes/
+  source: national-indian-law-library-omaha-of-nebraska
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.omahatribe.com/otn-constitution/
+  source: national-indian-law-library-omaha-of-nebraska
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Omaha Tribe of Nebraska Constitution and Bylaws
+  link: http://omaha-nsn.gov/wp-content/uploads/2015/10/Constitution-Bylaws-of-OTON-Aug-7-2015.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Nebraska section, entry 'Omaha Tribe of Nebraska'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the site did not respond.'
+- kind: law-code
+  title: Omaha Tribal Code
+  link: http://omaha-nsn.gov/tribe/tribal-law/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Nebraska section, entry 'Omaha Tribe of Nebraska'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the site did not respond.'
+- kind: corporate-charter
+  title: Corporate charter (Omaha Tribe of Nebraska)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/omahachrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-omahachrtr
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Omaha Tribe of Nebraska)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/omahacons.html
+  source: university-of-oklahoma-indian-reorganization-act-omahacons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-omaha-of-nebraska
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Omaha Tribal Court
+  link: http://omaha-nsn.gov/tribe/government/tribal-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Nebraska section, entry 'Omaha Tribe of Nebraska'
+  note: 'Link check 2026-11-21: the site did not respond.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Court cannot Order Restorative Justice in Domestic Violence Cases
+    citation: Omaha Tribal Code 11-5-12
+    link: https://www.omahatribe.com/tribal-codes/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-cannot-order-restorative-justice-in-domestic-violence-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Justice. Database phase: Pre-adjudication. Database form of
+      practice: Restorative justice.'
+  - kind: other
+    title: Definitions of Treatment Programs for Domestic Violence
+    citation: Omaha Tribal Code 11-1-4
+    link: https://www.omahatribe.com/tribal-codes/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/definitions-of-treatment-programs-for-domestic-violence/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Disposition Options for Child in Need of Care Cases
+    citation: Omaha Tribal Code 12-7-12
+    link: https://www.omahatribe.com/tribal-codes/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-options-for-child-in-need-of-care-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Disposition Options for Juvenile Delinquency
+    citation: Omaha Tribal Code 12-8-13
+    link: https://www.omahatribe.com/tribal-codes/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-options-for-juvenile-delinquency/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Rehabilitative Efforts for Curfew Violations
+    citation: Omaha Tribal Code 12-7-3
+    link: https://www.omahatribe.com/tribal-codes/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/rehabilitative-efforts-for-curfew-violations/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Truancy Counseling and Help
+    citation: Omaha Tribal Code 12-11-3
+    link: https://www.omahatribe.com/tribal-codes/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/truancy-counseling-and-help/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: mediation
+    title: SECTION 11-5-12. Mediation Prohibited
+    citation: SECTION 11-5-12. Mediation Prohibited
+    link: https://www.narf.org/nill/codes/omaha_of_nebraska/index.html
+    source: national-indian-law-library-code-index-omaha-of-nebraska
+    confidence: medium
+    as_of: 2016-01
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: arbitration
+    title: Title 49 Arbitration Ordinance
+    citation: Title 49 Arbitration Ordinance
+    link: https://www.narf.org/nill/codes/omaha_of_nebraska/index.html
+    source: national-indian-law-library-code-index-omaha-of-nebraska
+    confidence: medium
+    as_of: 2016-01
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: arbitration
+    title: CHAPTER 1. ARBITRATION
+    citation: CHAPTER 1. ARBITRATION; SECTION 49-1-3. Enforceability of Agreements to Arbitrate; SECTION
+      49-1-5. Stay of Proceedings in Tribal Court and Order to Proceed with Arbitration; SECTION 49-1-9.
+      Arbitration Award Not
+    link: https://www.narf.org/nill/codes/omaha_of_nebraska/index.html
+    source: national-indian-law-library-code-index-omaha-of-nebraska
+    confidence: medium
+    as_of: 2016-01
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: Binding Dispute Resolution for Non-Material Breach
+    citation: Binding Dispute Resolution for Non-Material Breach
+    link: https://www.narf.org/nill/codes/omaha_of_nebraska/index.html
+    source: national-indian-law-library-code-index-omaha-of-nebraska
+    confidence: medium
+    as_of: 2016-01
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: mediation
+    title: Mediation Prohibited
+    citation: Mediation Prohibited
+    link: https://narf.org/nill/codes/omaha_of_nebraska/index.html
+    source: national-indian-law-library-code-codes-omaha-of-nebraska
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Table of Contents, under 'CHAPTER 5. PROTECTION ORDERS'
+    note: Identified from section headings in the National Indian Law Library table of contents; the provision
+      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+  - kind: arbitration
+    title: Title 49 Arbitration Ordinance
+    citation: Title 49 Arbitration Ordinance
+    link: https://narf.org/nill/codes/omaha_of_nebraska/index.html
+    source: national-indian-law-library-code-codes-omaha-of-nebraska
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Table of Contents
+    note: Identified from section headings in the National Indian Law Library table of contents; the provision
+      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+  - kind: arbitration
+    title: CHAPTER 1. ARBITRATION
+    citation: CHAPTER 1. ARBITRATION
+    link: https://narf.org/nill/codes/omaha_of_nebraska/index.html
+    source: national-indian-law-library-code-codes-omaha-of-nebraska
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Table of Contents
+    note: Identified from section headings in the National Indian Law Library table of contents; the provision
+      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+  - kind: other
+    title: Binding Dispute Resolution for Non-Material Breach
+    citation: Binding Dispute Resolution for Non-Material Breach
+    link: https://narf.org/nill/codes/omaha_of_nebraska/index.html
+    source: national-indian-law-library-code-codes-omaha-of-nebraska
+    confidence: medium
+    as_of: '2026-11-21'
+    locator: Table of Contents, under 'Appendix D 2006 Gaming Compact with State of Iowa'
+    note: Identified from section headings in the National Indian Law Library table of contents; the provision
+      itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+gaming:
+  compacts:
+  - state: IA
+    status: approved
+    approved: '1992-02-28'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-02-28'
+    locator: result page 14 (?page=14), row 5
+    note: 'Listed as: "Omaha Tribe of Nebraska Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Omaha Tribe of Nebraska". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1992.02.28_omaha_tribe_tribal_state_gaming_compact.pdf.'
+  - state: IA
+    status: approved
+    approved: '2007-03-19'
+    federal_register_citation: 72 FR 12813
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-03-19'
+    locator: result page 14 (?page=14), row 6
+    note: 'Listed as: "Omaha Tribe of Nebraska Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Omaha Tribe of Nebraska". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.03.19_omaha_tribe_tribal_state_gaming_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/03/19/E7-4904/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: IA
+    status: approved
+    approved: '1999-02-08'
+    federal_register_citation: 64 FR 6112
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-02-08'
+    locator: result page 14 (?page=14), row 7
+    note: 'Listed as: "Omaha Tribe of Nebraska, Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Omaha Tribe of Nebraska". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1999.02.08_omaha_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/02/08/99-2912/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NE
+    status: approved
+    approved: '1991-01-08'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1991-01-08'
+    locator: result page 21 (?page=21), row 24
+    note: 'Listed as: "Omaha Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Omaha
+      Tribe of Nebraska". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1991.01.08_omaha_tribe_tribal_state_gaming_compact.pdf.'
+  - state: IA
+    status: approved
+    dispute_resolution_summary: For a non-material breach the parties meet and confer within 15 days of
+      written notice, the complaining party may then make a written demand, a refused demand goes to mediation
+      under American Arbitration Association commercial mediation rules, and issues left in the mediator's
+      summary report go to binding arbitration under American Arbitration Association rules.
+    dispute_resolution_locator: Section 20 (Binding Dispute Resolution for Non-Material Breach)
+    source: compact-ia-ponca-tribe-of-nebraska-2021
+    confidence: medium
+    as_of: '2021-03-05'
+    locator: Section 20 (Binding Dispute Resolution for Non-Material Breach)
+    note: state model compact; nation-specific text not checked. Read from the 2021 Ponca Tribe of Nebraska
+      compact with Iowa; other Iowa compacts were not checked. Status copied from this nation's most recent
+      approved or deemed-approved entry for this state in the Office of Indian Gaming list (2007-03-19).
+  - state: NE
+    status: approved
+    approved: '1991-01-08'
+    dispute_resolution_summary: After written notice the parties meet within 7 days to negotiate, and
+      if the dispute is unresolved within 30 days they may elect a binding or non-binding non-judicial
+      process such as arbitration before three attorney arbitrators experienced in Indian gaming, mediation,
+      or a private judicial-resolution service.
+    dispute_resolution_locator: Section 33(A) (Remedies for Breach of Compact; Dispute Resolution)
+    source: compact-ne-omaha-tribe-of-nebraska-1991
+    confidence: medium
+    as_of: '1991-01-08'
+    locator: Section 33(A) (Remedies for Breach of Compact; Dispute Resolution)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the 1991 Omaha Tribe compact,
+      the only Nebraska compact in the list.
+  ordinances:
+  - approved: '1995-08-25'
+    link: https://www.nigc.gov?wpdmdl=10494&ind=10510
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-08-25'
+    locator: table row 175, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 175 lists the nation
+      as "Omaha Tribe of Nebraska".
+  - approved: '1997-04-07'
+    link: https://www.nigc.gov?wpdmdl=10495&ind=10511
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-04-07'
+    locator: table row 175, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 175 lists the nation
+      as "Omaha Tribe of Nebraska".
+  - approved: '1997-07-24'
+    link: https://www.nigc.gov?wpdmdl=10496&ind=10512
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-07-24'
+    locator: table row 175, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 175 lists the nation
+      as "Omaha Tribe of Nebraska".
+  - approved: '2005-08-08'
+    link: https://www.nigc.gov?wpdmdl=10497&ind=10513
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2005-08-08'
+    locator: table row 175, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 175 lists the nation
+      as "Omaha Tribe of Nebraska".
+  - approved: '2013-07-23'
+    link: https://www.nigc.gov?wpdmdl=10498&ind=10514
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2013-07-23'
+    locator: table row 175, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 175 lists the nation
+      as "Omaha Tribe of Nebraska".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Omaha Tribe of Nebraska". Name
+      extracted from the PDF by the page-fetch tool and matched to the roster.
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Nebraska is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Nebraska. Applies to the nation''s Indian country
+    within Nebraska; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Nebraska"
+  note: Statute is primary; nation matched to Nebraska by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: public-law-280
+  value: retroceded
+  detail: Interior accepted retrocession, effective October 25, 1970, of jurisdiction exercised by Nebraska
+    over offenses committed by or against Indians on the Omaha Indian Reservation, except offenses involving
+    the operation of motor vehicles on public roads or highways. Nebraska is a mandatory state; civil
+    jurisdiction not covered by this notice. (35 FR 16598)
+  source: federal-register-1970-omaha-retrocession
+  confidence: high
+  as_of: '1970-10-25'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Omaha Tribe of Nebraska Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: Great Plains Tribal Leaders Health Board
+  source: great-plains-tribal-leaders-health-board-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Omaha Tribe of Nebraska".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

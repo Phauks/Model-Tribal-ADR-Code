@@ -1,0 +1,300 @@
+id: delaware-nation
+entity_type: native-nation
+names:
+  official: Delaware Nation, Oklahoma
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: OK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Delaware Nation, Oklahoma
+- state: OK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5540, 5955
+  note: 'Census area with land in this state: Caddo-Wichita-Delaware OTSA (code 5540); Kiowa-Comanche-Apache-Ft
+    Sill Apache/Caddo-Wichita-Delaware joint-use OTSA (code 5955). Statistical area only (not a land holding),
+    so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '5540'
+  name: Caddo-Wichita-Delaware OTSA
+  area_type: Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5540
+  note: 'Matched by name. Statistical area shared by the Caddo Nation, the Wichita and Affiliated Tribes
+    and the Delaware Nation (the Delaware named in the area is the Delaware Nation of Anadarko). Shared
+    with: Caddo Nation of Oklahoma; Wichita and Affiliated Tribes , Oklahoma. Census class code D6.'
+- geographic_identifier: '5955'
+  name: Kiowa-Comanche-Apache-Ft Sill Apache/Caddo-Wichita-Delaware joint-use OTSA
+  area_type: joint-use Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5955
+  note: 'Matched by name. Shared with: Kiowa Tribe; Comanche Nation, Oklahoma; Apache Tribe of Oklahoma;
+    Fort Sill--Chiricahua--Warm Springs--Apache Tribe; Caddo Nation of Oklahoma; Wichita and Affiliated
+    Tribes , Oklahoma. Census class code D0.'
+population:
+- count: 2233
+  kind: citizens
+  source: oklahoma-education-tribal-guide-delaware-nation
+  confidence: low
+  as_of: '2026-11-21'
+  note: 'State education guide: ''Total tribal enrollment - 2233''; ''Tribal enrollment in Oklahoma -
+    1270''. Undated content.'
+- count: 15107
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5540, field POP100
+  note: 'Census area: Caddo-Wichita-Delaware OTSA (code 5540). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    The area is a Census statistical area, not a land holding. The area is shared with: Caddo Nation of
+    Oklahoma; Wichita and Affiliated Tribes , Oklahoma; the same count applies to the whole area. Statistical
+    area shared by the Caddo Nation, the Wichita and Affiliated Tribes and the Delaware Nation (the Delaware
+    named in the area is the Delaware Nation of Anadarko).'
+- count: 9690
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5955, field POP100
+  note: 'Census area: Kiowa-Comanche-Apache-Ft Sill Apache/Caddo-Wichita-Delaware joint-use OTSA (code
+    5955). Everyone counted as living in the area in the 2020 Census, of any race or tribal affiliation;
+    this is not a count of the nation''s citizens. The area is a Census statistical area, not a land holding.
+    The area is shared with: Kiowa Tribe; Comanche Nation, Oklahoma; Apache Tribe of Oklahoma; Fort Sill--Chiricahua--Warm
+    Springs--Apache Tribe; Caddo Nation of Oklahoma; Wichita and Affiliated Tribes , Oklahoma; the same
+    count applies to the whole area.'
+- count: 1349
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2967 (Delaware Nation alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Delaware Nation' (race code 5763) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 2306
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Delaware Nation (Western)', PDF page 6, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.delawarenation-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Delaware Nation, Oklahoma
+- kind: physical-address
+  value: 31064 State Highway 281, Building 100, Anadarko, OK 73005
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Delaware Nation, Oklahoma
+- kind: mailing-address
+  value: P.O. Box 825, Anadarko, OK 73005
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Delaware Nation, Oklahoma
+- kind: phone
+  value: (405) 247-2448
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Delaware Nation, Oklahoma
+- kind: fax
+  value: (405) 247-9393
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Delaware Nation, Oklahoma
+languages:
+- name: Lenape
+  language_tag: del
+  source: delawarenation-nsn-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Homepage news item: ''Lenape Language Classes'' (2019).'
+federal_administration:
+  bureau_of_indian_affairs_region: Southern Plains
+  bureau_of_indian_affairs_agency: Southern Plains Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Delaware Nation, Oklahoma
+governing_documents:
+- kind: constitution
+  title: Delaware Nation, Oklahoma - Tribal Constitution - Table of Contents
+  link: https://narf.org/nill/constitutions/delaware_nation_ok/index.html
+  source: national-indian-law-library-constitution-constitutions-delaware-nation-ok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: law-code
+  title: Citizenship Ordinance
+  link: http://delawarenation.com/wp-content/uploads/2019/01/CitizenshipEnrollment-Ordinance.pdf
+  source: national-indian-law-library-delaware-nation-ok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Citizenship Ordinance.".'
+- kind: law-code
+  title: Election ordinance
+  link: http://delawarenation.com/wp-content/uploads/2019/01/2018-219-Appr-Elect-Ord-Rev-Reso-at-back.pdf
+  source: national-indian-law-library-delaware-nation-ok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Election ordinance.".'
+- kind: constitution
+  title: Constitution
+  link: http://delawarenation.com/wp-content/uploads/2017/03/DN-Constitution.pdf
+  source: national-indian-law-library-delaware-nation-ok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.delawarenation-nsn.gov/delaware-nation-court/
+  source: national-indian-law-library-delaware-nation-ok
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+gaming:
+  compacts:
+  - state: OK
+    status: deemed-approved
+    approved: '2005-06-01'
+    federal_register_citation: 70 FR 31499
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-06-01'
+    locator: result page 27 (?page=27), row 10
+    note: 'Listed as: "Delaware Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Delaware Nation, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/2005.06.01%20Delaware%20Nation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/06/01/05-10877/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2023-01-24'
+    federal_register_citation: 88 FR 4204
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2023-01-24'
+    locator: result page 27 (?page=27), row 11
+    note: 'Listed as: "Delaware Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Delaware
+      Nation, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2023_01.24_delaware_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2023/01/24/2023-01279/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-oklahoma.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2023-01-24).
+  ordinances:
+  - approved: '1995-08-10'
+    link: https://www.nigc.gov?wpdmdl=9704&ind=9739
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-08-10'
+    locator: table row 68, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 68 lists the nation
+      as "Delaware Nation, Oklahoma".
+  - approved: '2011-10-11'
+    link: https://www.nigc.gov?wpdmdl=9723&ind=9740
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2011-10-11'
+    locator: table row 68, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 68 lists the nation
+      as "Delaware Nation, Oklahoma".
+  - approved: '2017-01-13'
+    link: https://www.nigc.gov?wpdmdl=9724&ind=9741
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2017-01-13'
+    locator: table row 68, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 68 lists the nation
+      as "Delaware Nation, Oklahoma".
+  - approved: '2019-10-23'
+    link: https://www.nigc.gov?wpdmdl=9725&ind=9742
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2019-10-23'
+    locator: table row 68, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 68 lists the nation
+      as "Delaware Nation, Oklahoma".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Delaware Nation, Oklahoma".
+      Facilities as machine-extracted from the report text (verify): Casino Oklahoma; Gold River Casino.
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Delaware Nation, Oklahoma Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

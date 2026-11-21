@@ -1,0 +1,275 @@
+id: lumbee-tribe-of-north-carolina
+entity_type: native-nation
+names:
+  official: Lumbee Tribe of North Carolina
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a); National Defense Authorization Act for Fiscal
+    Year 2026, Pub. L. No. 119-60, § 8803
+  since: '2025-12-18'
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+  note: The notice states that the Act sets conditions on eligibility for federal services, including
+    verification of the roll and a delay in services until the third fiscal year after enactment.
+- type: federal
+  legal_basis: Public Law 119-60, section 8803 (National Defense Authorization Act for Fiscal Year 2026),
+    as stated in 91 FR 4102
+  petition_number: '65'
+  petition_stage: Letter of Intent to Petition 01/07/1980; determined ineligible to petition (Solicitor
+    opinion of 10/23/1989)
+  since: '2025-12-18'
+  source: bia-recognized-entities-2026
+  confidence: medium
+  as_of: '2025-12-18'
+  locator: 'Petitioner #65'
+  note: 'Petitioner names on the 2013 list: Lumbee Regional Development Association Inc. / Lumbee Tribe
+    of Cheraw Indians; matched to the roster Lumbee Tribe of North Carolina by name. Also see source(s):
+    ofa-list-of-petitioners-by-state-2013.'
+- type: state
+  state: NC
+  legal_basis: North Carolina General Statutes Section 71A-3 (1953, c. 874; 1977, 2nd Sess., c. 1193;
+    2003-54; 2019-162)
+  since: '1953-04-20'
+  source: north-carolina-general-statutes-chapter-71a
+  confidence: high
+  as_of: '2026'
+  locator: Section 71A-3
+  note: State recognition predates federal recognition; the Commission page says the Lumbee became federally
+    recognized with the Lumbee Fairness Act in 2025.
+states:
+- state: NC
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lumbee Tribe of North Carolina
+- state: NC
+  presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9815
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: NC
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 9815
+  note: 'Census area with land in this state: Lumbee SDTSA (code 9815). Statistical area only (not a land
+    holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '9815'
+  name: Lumbee SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9815, GEOID 9815R
+  note: Census class code D9; AIANNHR = S (state). Matched to the federally recognized nation by name
+    comparison. Area delineated as an SDTSA for 2020; the Lumbee Tribe of North Carolina is on the 2026
+    federal list, so no recognition fact is given here.
+- geographic_identifier: '9815'
+  name: Lumbee SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US9815
+  note: Matched by name. Lumbee State Designated Tribal Statistical Area, defined for the state-recognized
+    Lumbee before federal recognition; it is a statistical area, not land. Census class code D9.
+population:
+- count: 55000
+  kind: citizens
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'State page: ''The more than 55,000 members of the Lumbee Tribe reside primarily in Robeson, Hoke,
+    Cumberland and Scotland counties.'' Undated (mentions the 2025 Lumbee Fairness Act); as_of is access
+    date.'
+- count: 510711
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US9815, field POP100
+  note: 'Census area: Lumbee SDTSA (code 9815). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. The area is a Census
+    statistical area, not a land holding. Lumbee State Designated Tribal Statistical Area, defined for
+    the state-recognized Lumbee before federal recognition; it is a statistical area, not land.'
+- count: 79424
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3095 (Lumbee Tribe of North Carolina alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Lumbee Tribe of North Carolina' (race code 5922) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 62610
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Lumbee Tribe of North Carolina', PDF page 4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.lumbeetribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lumbee Tribe of North Carolina
+- kind: physical-address
+  value: 6984 NC Highway 711, Pembroke, NC 28372
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lumbee Tribe of North Carolina
+- kind: mailing-address
+  value: 6984 NC Highway 711, Pembroke, NC 28372
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lumbee Tribe of North Carolina
+- kind: phone
+  value: (910) 521-7861
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lumbee Tribe of North Carolina
+- kind: fax
+  value: (910) 521-2278
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lumbee Tribe of North Carolina
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern
+  bureau_of_indian_affairs_agency: Eastern Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lumbee Tribe of North Carolina
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://www.lumbeetribe.com/tribal-ordinances
+  source: national-indian-law-library-lumbee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: law-code
+  title: Tribal code
+  link: https://narf.org/nill/tribes/lumbee.html
+  source: national-indian-law-library-lumbee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.lumbeetribe.com/_files/ugd/756e16_72e7de6efe2f40549c0c49fcc88c8ad3.pdf
+  source: national-indian-law-library-lumbee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: At University of Oklahoma Law Library website . Constitution
+  year: '1950'
+  link: https://narf.org/nill/tribes/lumbee.html
+  source: national-indian-law-library-lumbee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At NILL website
+    . At University of Oklahoma Law Library website . Constitution. (1950)".'
+- kind: constitution
+  title: Constitution
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/buckcons.html
+  source: national-indian-law-library-lumbee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At NILL website
+    . At University of Oklahoma Law Library website . Constitution. (1950)".'
+- kind: constitution
+  title: Constitution
+  year: '1950'
+  link: https://www.loc.gov/item/51061618/
+  source: national-indian-law-library-lumbee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Constitution. (1950)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1950'
+  link: https://thorpe.law.ou.edu/IRA/buckchrtr.html
+  source: national-indian-law-library-lumbee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma Law Library website . Corporate charter. (1950)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1950'
+  link: https://www.loc.gov/item/51061567/
+  source: national-indian-law-library-lumbee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Corporate charter. (1950)".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.lumbeetribe.com/government
+  source: national-indian-law-library-lumbee
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Lumbee Tribe of North Carolina Confidence lowered from high by the lead session: the
+    notice prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: United South and Eastern Tribes
+  source: united-south-and-eastern-tribes-member-tribal-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Lumbee Tribe of North Carolina".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,30 @@
+id: eel-river-tribe-of-indiana
+entity_type: native-nation
+names:
+  official: Eel River Tribe of Indiana
+  official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
+recognition:
+- type: unrecognized
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1; Table 3
+  note: 'GAO Table 1 lists "Eel River Tribe of Indiana" among 26 non-federally recognized tribes that
+    received direct federal funding in FY2007-2010 (total $274,000, Table 3). GAO-reported nonprofit status:
+    No; state recognition per state officials: No. GAO reports Department of Commerce Remote Community
+    Alert Systems Program funding. Not on the 2026 federal list (bia-recognized-entities-2026).'
+states:
+- state: IN
+  presence: other
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1, State column
+  note: State as listed by GAO.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

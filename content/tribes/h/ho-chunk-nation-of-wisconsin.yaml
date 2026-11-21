@@ -1,0 +1,614 @@
+id: ho-chunk-nation-of-wisconsin
+entity_type: native-nation
+names:
+  official: Ho-Chunk Nation of Wisconsin
+  alternate:
+  - name: People of the Big Voice
+    source: ho-chunknation-home
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'Homepage: ''the nation reclaimed their original name: Ho-Chunk or “People of the Big Voice.”''
+      Page header also says ''People of the Sacred Voice''.'
+  former:
+  - name: Wisconsin Winnebago Tribe
+    source: ho-chunknation-home
+    confidence: high
+    as_of: '1994'
+    note: 'Homepage: ''were first recorded as the Wisconsin Winnebago Tribe. This name was given to them
+      by early European explorers. In 1994 ... the nation reclaimed their original name: Ho-Chunk''.'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: WI
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ho-Chunk Nation of Wisconsin
+- state: MN
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1450
+  note: 'Census area with land in this state: Ho-Chunk Nation Reservation and Off-Reservation Trust Land
+    (code 1450). Area matched to the nation by name.'
+- state: WI
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1450
+  note: 'Census area with land in this state: Ho-Chunk Nation Reservation and Off-Reservation Trust Land
+    (code 1450). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1450'
+  name: Ho-Chunk Nation Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1450
+  note: Matched by name. Census class code D1.
+population:
+- count: 7752
+  kind: citizens
+  source: ho-chunknation-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Homepage: ''this group of 7,752 citizens''. Undated; as_of is access date.'
+- count: 1577
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1450, field POP100
+  note: 'Census area: Ho-Chunk Nation Reservation and Off-Reservation Trust Land (code 1450). Everyone
+    counted as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a
+    count of the nation''s citizens.'
+- count: 8749
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3021 (Ho-Chunk Nation alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Ho-Chunk Nation' (race code 5842) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label matched by name variant.
+- count: 7823
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Ho-Chunk Nation', PDF page 4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 7109
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 78, row T13700 'Ho-Chunk Nation of Wisconsin'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://ho-chunknation.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ho-Chunk Nation of Wisconsin
+- kind: physical-address
+  value: W9814 Airport Road, Black River Falls, WI 54615
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ho-Chunk Nation of Wisconsin
+- kind: mailing-address
+  value: P.O. Box 667 W9814 Airport Road, Black River Falls, WI 54615
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ho-Chunk Nation of Wisconsin
+- kind: phone
+  value: (715) 284-9343
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ho-Chunk Nation of Wisconsin
+- kind: fax
+  value: (715) 284-3172
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ho-Chunk Nation of Wisconsin
+languages:
+- name: Hocak
+  language_tag: win
+  source: ho-chunknation-home
+  confidence: low
+  as_of: '2026-11-21'
+  note: Homepage directory lists 'Hocak Wazija Haci Language Programs' and several Language Offices; the
+    language name is inferred from that program name.
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Great Lakes Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ho-Chunk Nation of Wisconsin
+governing_documents:
+- kind: law-code
+  title: Ho-Chunk Nation Code (HCC)
+  year: '2019'
+  link: https://narf.org/nill/codes/hochunkcode/index.html
+  source: national-indian-law-library-code-codes-hochunkcode
+  confidence: medium
+  as_of: '2019'
+  locator: page heading
+  note: 'Updated: April 2019 Downloaded with permission from the tribe''s website . Individual sections
+    include dates of amendments. Disclaimer: Although every effort is made to present current and accurate
+    information, if you need an official version of the tribe’s laws, please contact the tribe.. Full
+    text linked from the National Indian Law Library page.'
+- kind: constitution
+  title: Constitution of the Ho-Chunk Nation
+  year: '2016'
+  link: https://narf.org/nill/constitutions/hochunkconst/index.html
+  source: national-indian-law-library-constitution-constitutions-hochunkconst
+  confidence: medium
+  as_of: '2016'
+  locator: page heading
+  note: 'Amended: January 26, 2016, effective on February 11, 2016. The National Indian Law Library page
+    gives the table of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://ho-chunknation.com/government/legislative-branch/ho-chunk-nation-laws/
+  source: national-indian-law-library-ho-chunk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://ho-chunknation.com/wp-content/uploads/2019/10/Final-HCN-Constitution-July-2019-1.pdf
+  source: national-indian-law-library-ho-chunk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website (pdf).".'
+- kind: constitution
+  title: Ho-Chunk Nation Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Ho-Chunk Nation'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.ho-chunknation.com/Constitution.htm) returned HTTP
+    404, so it is not recorded.'
+- kind: law-code
+  title: Ho Chunk Nation Laws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Ho-Chunk Nation'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.ho-chunknation.com/HCNLaws.aspx) returned HTTP 404,
+    so it is not recorded.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Courts
+  link: https://ho-chunknation.com/government/judicial-branch/
+  source: national-indian-law-library-ho-chunk
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: tribal-court
+  name: Ho-Chunk Nation Judiciary
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Wisconsin section, entry 'Ho-Chunk Nation'
+dispute_resolution:
+  forums:
+  - kind: elders-council
+    name: Traditional Court
+    description: A court of Ho-Chunk elders for traditional dispute resolution within the Judiciary; per
+      the Judiciary's page it provides knowledge of custom, traditions and Ho-Chunk core values to members
+      referred by court processes, through social services programming, or by self-referral.
+    legal_basis: 1 HCC § 1 (Judiciary Establishment and Organization Act), Sections 3(c) and 13
+    case_types:
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: Part of the Ho-Chunk Judiciary, established to assist the Judiciary whenever
+      possible with cases or controversies involving Tribal members; a Traditional Court representative
+      also sits on the Healing to Wellness Court and Family Wellness Court treatment teams.
+    link: https://ho-chunknation.com/government/judicial-branch/courts/traditional-court-2/
+    source: ho-chunk-1-hcc-1-judiciary-act
+    confidence: high
+    as_of: '2017-06-05'
+    locator: 1 HCC § 1, Sections 3(c), 3(d)-(e), 13
+    note: Case types are not enumerated in the sources reviewed. Referral routes are from the Judiciary's
+      Traditional Court web page (accessed 2026-11-21).
+  - kind: peacemaking
+    name: Peacemaking Circle (custody and placement)
+    description: The court may refer a custody and placement case to the Peacemaking Circle when it believes
+      the parties would benefit; the circle is completely voluntary and both parties must agree before
+      transfer.
+    legal_basis: 4 HCC § 18 (Custody and Placement Ordinance), Section 9
+    case_types:
+    - family
+    participation: voluntary-or-court-referred
+    relationship_to_court: The court must consider domestic abuse issues when deciding whether referral
+      is appropriate.
+    link: https://ho-chunknation.com/wp-content/uploads/2024/01/01.23.24-4-HCC-18-Custody-and-Placement-Ordinance-1.23.24-1.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026'
+    locator: https://ncorj.org/tribal-law/peacemaking-circles-for-child-welfare/
+  provisions:
+  - kind: traditional-dispute-resolution
+    title: Traditional Dispute Resolution
+    citation: 1 HCC § 1, Section 13
+    summary: Directs the Judiciary to provide for the establishment, operation and funding of the Traditional
+      Court to assist with resolving cases involving Tribal members.
+    link: https://ho-chunknation.com/wp-content/uploads/2025/02/06.05.17-1HCC1-Judiciary-Est-Org-Act.Technical-Correction-1.pdf
+    source: ho-chunk-1-hcc-1-judiciary-act
+    confidence: high
+    as_of: '2017-06-05'
+  - kind: other
+    title: Considering Alternatives to Incarceration in Bifurcated Sentences
+    citation: SECTION 973 – SENTENCING
+    link: https://ncorj.org/tribal-law/considering-alternatives-to-incarceration-in-bifurcated-sentences/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/considering-alternatives-to-incarceration-in-bifurcated-sentences/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: N/A. Database form of practice: Alternative.'
+  - kind: other
+    title: Domestic Abuse Treatment Program In Lieu of Fines for Stalking
+    citation: HO-CHUNK NATION CODE (HCC) CODE SECTION 5 – DOMESTIC ABUSE ACT OF 2000
+    link: https://ncorj.org/tribal-law/domestic-abuse-treatment-program-in-lieu-of-fines-for-stalking/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/domestic-abuse-treatment-program-in-lieu-of-fines-for-stalking/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative; Program;
+      Rehabilitation.'
+  - kind: other
+    title: Domestic Abuse Treatment Program
+    citation: HO-CHUNK NATION CODE (HCC) CODE SECTION 5 – DOMESTIC ABUSE ACT OF 2000
+    link: https://ncorj.org/tribal-law/domestic-abuse-treatment-program/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/domestic-abuse-treatment-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Program; Rehabilitation.'
+  - kind: other
+    title: Ho-Chunk Nation Family Healing to Wellness Court
+    citation: HO-CHUNK NATION CODE (HCC) ELDER WELFARE SECTION 16 – FAMILY WELLNESS COURT CODE
+    link: https://ncorj.org/tribal-law/ho-chunk-nation-family-healing-to-wellness-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/ho-chunk-nation-family-healing-to-wellness-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Ho-Chunk Nation Healing to Wellness Court
+    citation: HO-CHUNK NATION CODE (HCC) ELDER WELFARE SECTION 15 – HEALING TO WELLNESS COURT CODE
+    link: https://ncorj.org/tribal-law/ho-chunk-nation-healing-to-wellness-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/ho-chunk-nation-healing-to-wellness-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Informal Agreements in Child Welfare
+    citation: SECTION 3 – HOOCAK NATION CHILDREN AND FAMILY ACT
+    link: https://ncorj.org/tribal-law/informal-agreements-in-child-welfare/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-agreements-in-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Restorative justice.'
+  - kind: peacemaking
+    title: Peacemaking Circles for Child Welfare
+    citation: SECTION 18 – CUSTODY AND PLACEMENT ORDINANCE
+    link: https://ncorj.org/tribal-law/peacemaking-circles-for-child-welfare/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaking-circles-for-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Circle;
+      Peacemaking.'
+  - kind: other
+    title: Preventative and Community Purposes of Hoocak Nation Children and Family Act
+    citation: GENERAL PROVISIONS, POLICIES AND DEFINITIONS,
+    link: https://ncorj.org/tribal-law/preventative-and-community-purposes-of-hoocak-nation-children-and-family-act/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/preventative-and-community-purposes-of-hoocak-nation-children-and-family-act/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: N/A. Database form of practice: Alternative; Restorative
+      justice.'
+  - kind: other
+    title: Rehabilitation Intent in Substance Use Convictions
+    citation: SECTION 961 – CONTROLLED SUBSTANCES ACT
+    link: https://ncorj.org/tribal-law/rehabilitation-intent-in-substance-use-convictions/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/rehabilitation-intent-in-substance-use-convictions/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
+  - kind: other
+    title: Sentence to Alternative to Incarceration Program
+    citation: SECTION 973 – SENTENCING
+    link: https://ncorj.org/tribal-law/sentence-to-alternative-to-incarceration-program/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentence-to-alternative-to-incarceration-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative; Restorative
+      justice.'
+  - kind: other
+    title: Voluntary Domestic Abuse Treatment for Orders of Protection
+    citation: HO-CHUNK NATION CODE (HCC) CODE SECTION 5 – DOMESTIC ABUSE ACT OF 2000
+    link: https://ncorj.org/tribal-law/voluntary-domestic-abuse-treatment-for-orders-of-protection/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/voluntary-domestic-abuse-treatment-for-orders-of-protection/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Program; Rehabilitation.'
+  - kind: arbitration
+    title: 13. Arbitration Ordinance
+    citation: 13. Arbitration Ordinance
+    link: https://www.narf.org/nill/codes/hochunkcode/index.html
+    source: national-indian-law-library-code-index-hochunkcode
+    confidence: medium
+    as_of: 2019-04
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: arbitration
+    title: Arbitration Ordinance
+    citation: Arbitration Ordinance
+    link: https://narf.org/nill/codes/hochunkcode/index.html
+    source: national-indian-law-library-code-codes-hochunkcode
+    confidence: medium
+    as_of: '2019'
+    locator: Table of Contents, under 'Remarks'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Updated:
+      April 2019 Downloaded with permission from the tribe''s website . Individual sections include dates
+      of amendments. Disclaimer: Although every effort is made to present current and accurate information,
+      if you need an official version of the tribe’s laws, please contact the tribe.); the provision itself
+      was not read. The heading it falls under is taken from the page layout and may be imprecise.'
+  clauses:
+  - context: commercial-code
+    kind: arbitration-clause
+    citation: 2 HCC § 13 (Arbitration Ordinance)
+    summary: Makes written agreements to arbitrate enforceable, provides for confirmation of awards by
+      the Tribal Forum with no appeal, and allows actions against the Nation or its entities only where
+      the instrument explicitly waives immunity; the ordinance itself waives no immunity.
+    link: https://ho-chunknation.com/wp-content/uploads/2019/10/2HCC13-Arbitration-Ordinance-12.28.04.pdf
+    source: ho-chunk-2-hcc-13-arbitration
+    confidence: medium
+    as_of: '2004-12-28'
+    locator: §§ 2-3, 8-10, 12-13
+gaming:
+  compacts:
+  - state: WI
+    status: deemed-approved
+    approved: '2025-01-08'
+    federal_register_citation: 90 FR 1539
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2025-01-08'
+    locator: result page 45 (?page=45), row 17
+    note: 'Listed as: "Ho-Chunk Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Ho-Chunk Nation of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2025.01.08_ho-chunk_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2025/01/08/2025-00121/indian-gaming-approval-by-operation-of-law-tribal-state-class-iii-gaming-compact-amendment-between.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: deemed-approved
+    approved: '2003-07-03'
+    federal_register_citation: 68 FR 39964
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-07-03'
+    locator: result page 45 (?page=45), row 18
+    note: 'Listed as: "Ho-Chunk Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Ho-Chunk Nation of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202003.07.03%20Ho%20Chunk%20Nation%20Gaming%20Compact.DEEMED%20APPROVED.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/07/03/03-16824/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1992-08-05'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-08-05'
+    locator: result page 45 (?page=45), row 19
+    note: 'Listed as: "Ho-Chunk Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Ho-Chunk
+      Nation of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201992.08.05%20Wisconsin%20Winnebago%20Tribe%20Gaming%20Compact%201992.pdf.'
+  - state: WI
+    status: approved
+    approved: '2008-12-12'
+    federal_register_citation: 73 FR 75764
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2008-12-12'
+    locator: result page 45 (?page=45), row 20
+    note: 'Listed as: "Ho-Chunk Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Ho-Chunk
+      Nation of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2008.12.12_ho_chunk_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/12/12/E8-29420/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1999-02-01'
+    federal_register_citation: 64 FR 4890
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-02-01'
+    locator: result page 45 (?page=45), row 21
+    note: 'Listed as: "Ho-Chunk Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Ho-Chunk
+      Nation of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.02.01%20Ho%20Chunk%20Nation%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/02/01/99-2278/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: deemed-approved
+    dispute_resolution_summary: After written notice the State and Tribe meet within 30 days, and if the
+      dispute is unresolved after 90 days either party may pursue any otherwise available remedy, with
+      mediation or arbitration only by mutual agreement.
+    dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
+    confidence: medium
+    as_of: '1992-08-10'
+    locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
+      compact; later amendments renumbered this section XXIV and revised it for at least some nations
+      (for example the Ho-Chunk Nation fourth amendment), so the current text may differ. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2025-01-08).
+  ordinances:
+  - approved: '1994-05-19'
+    link: https://www.nigc.gov?wpdmdl=9902&ind=9916
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-05-19'
+    locator: table row 98, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 98 lists the nation
+      as "Ho-Chunk Nation".
+  - approved: '1996-12-17'
+    link: https://www.nigc.gov?wpdmdl=9903&ind=9917
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-12-17'
+    locator: table row 98, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 98 lists the nation
+      as "Ho-Chunk Nation".
+  - approved: '1999-09-07'
+    link: https://www.nigc.gov?wpdmdl=9904&ind=9918
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1999-09-07'
+    locator: table row 98, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 98 lists the nation
+      as "Ho-Chunk Nation".
+  - approved: '2000-02-14'
+    link: https://www.nigc.gov?wpdmdl=9905&ind=9919
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-02-14'
+    locator: table row 98, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 98 lists the nation
+      as "Ho-Chunk Nation".
+  - approved: '2008-02-07'
+    link: https://www.nigc.gov?wpdmdl=9906&ind=9920
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-02-07'
+    locator: table row 98, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 98 lists the nation
+      as "Ho-Chunk Nation".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Ho-Chunk Nation of Wisconsin".
+      Facilities as machine-extracted from the report text (verify): Ho-Chunk Gaming - Madison; Ho-Chunk
+      Gaming - Wittenberg; Ho-Chunk Gaming - Tomah; Ho-Chunk Gaming - Nekoosa; Ho-Chunk Gaming - Black
+      River Falls; Ho-Chunk Gaming - Wisconsin Dells. Name extracted from the PDF by the page-fetch tool
+      and matched to the roster.'
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Wisconsin is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Wisconsin. Applies to the nation''s Indian
+    country within Wisconsin; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Wisconsin"
+  note: Statute is primary; nation matched to Wisconsin by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Ho-Chunk Nation of Wisconsin Confidence lowered from high by the lead session: the
+    notice prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: Midwest Alliance of Sovereign Tribes
+  source: midwest-alliance-of-sovereign-tribes-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Ho-Chunk Nation". Name matched to the roster entry.
+- organization: Great Lakes Inter-Tribal Council
+  source: great-lakes-inter-tribal-council-tribes-served
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Ho-Chunk Nation". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

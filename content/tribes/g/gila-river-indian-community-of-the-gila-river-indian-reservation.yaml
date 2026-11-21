@@ -1,0 +1,424 @@
+id: gila-river-indian-community-of-the-gila-river-indian-reservation
+entity_type: native-nation
+names:
+  official: Gila River Indian Community of the Gila River Indian Reservation, Arizona
+  self_designation:
+  - name: Akimel O’otham
+    language_tag: ood
+    source: gilariver-index-php-about-history
+    confidence: medium
+    as_of: '2026-11-21'
+    note: History page refers to the Akimel O’otham (Pima) people of the Community.
+  - name: Pee Posh
+    language_tag: mrc
+    source: gilariver-index-php-about-history
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'History page: ''The Maricopa, who called themselves the “Pee Posh,” settled in with the Akimel
+      O’otham''.'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: AZ
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
+- state: AZ
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1310
+  note: 'Census area with land in this state: Gila River Indian Reservation (code 1310). Area matched
+    to the nation by name.'
+census_areas:
+- geographic_identifier: '1310'
+  name: Gila River Indian Reservation
+  area_type: Indian Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1310
+  note: Matched by name. Census class code D2.
+population:
+- count: 14000
+  kind: resident-population
+  source: itca-gila-river-indian-community
+  confidence: low
+  as_of: '2026-11-21'
+  note: 'Inter Tribal Council of Arizona profile: ''The Community is home to 14,000 people.'' Refers to
+    people living in the Community, not enrollment. Undated secondary source.'
+- count: 14053
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1310, field POP100
+  note: 'Census area: Gila River Indian Reservation (code 1310). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 15301
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3005 (Gila River Indian Community of the Gila River Indian Reservation
+    alone or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Gila River Indian Community of the Gila River Indian
+    Reservation' (race code 6103) alone or in combination with other tribes or races in the 2020 Census;
+    self-identification, not enrollment. Includes noise added for disclosure avoidance. Census label exact
+    name match.
+- count: 20479
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Gila River Indian Community', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 11251
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 78, row T12700 'Gila River Indian Community of the Gila River Indian
+    Reservation'
+  note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
+    Census tribal statistical area (2010), used by Indian Affairs as the nation's population indicator;
+    includes people of any tribe; not enrollment. Report published 2014-01-16; row name matched to the
+    nation by name.
+contacts:
+- kind: website
+  value: https://www.gilariver.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
+- kind: physical-address
+  value: 525 West Gu u Ki, Sacaton, AZ 85147
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
+- kind: mailing-address
+  value: P.O. Box 97, Sacaton, AZ 85147
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
+- kind: phone
+  value: (520) 562-9841
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
+- kind: fax
+  value: (520) 562-9849
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
+federal_administration:
+  bureau_of_indian_affairs_region: Western
+  bureau_of_indian_affairs_agency: Pima Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
+government_structure:
+- kind: indian-reorganization-act
+  detail: Constitution (Gila River Indian Community, Arizona) (approved 1960) states it was adopted under
+    Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-gilacons
+  confidence: medium
+  as_of: '1960'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+- kind: indian-reorganization-act
+  detail: Constitution (Gila River Pima-Maricopa Indian Community, Arizona) (approved 1936) states it
+    was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-gilapmcons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: constitution
+  title: Gila River Indian Community of Arizona - Tribal Constitution - Table of Contents
+  year: '2013'
+  link: https://narf.org/nill/constitutions/gila_river/index.html
+  source: national-indian-law-library-constitution-constitutions-gila-river
+  confidence: medium
+  as_of: '2013'
+  locator: page heading
+  note: 'Last Amended: July 9, 2013. The National Indian Law Library page gives the table of contents
+    (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.gilariver.org/index.php/government/judical-branch
+  source: national-indian-law-library-gila-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Selected Ordinances available at bottom of the page.".'
+- kind: law-code
+  title: Gila River Indian Community Ordinances
+  link: http://www.gilariver.org/index.php/government/judical-branch
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Gila River Indian Community'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Gila River Indian Community, Arizona)
+  year: '1960'
+  link: https://thorpe.law.ou.edu/IRA/gilacons.html
+  source: university-of-oklahoma-indian-reorganization-act-gilacons
+  confidence: medium
+  as_of: '1960'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: corporate-charter
+  title: Corporate charter (Gila River Pima-Maricopa Indian Community, Arizona)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/gilapmchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-gilapmchrtr
+  confidence: medium
+  as_of: '1938'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Gila River Pima-Maricopa Indian Community, Arizona)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/gilapmcons.html
+  source: university-of-oklahoma-indian-reorganization-act-gilapmcons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Gila River Indian Community Court
+  source: national-indian-law-library-gila-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: tribal-court
+  name: Westend Judicial Center
+  source: national-indian-law-library-gila-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+- kind: tribal-court
+  name: Gila River Indian Community Judicial Branch
+  link: http://www.gilariver.org/index.php/government/judical-branch
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Gila River Indian Community'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Diversionary Prosecution
+    citation: Gila River Indian Community Ordinance GR-03-13, § 405, § 406 & GR-97-13, § 5.401, Rule 33.
+    link: https://www.gilariver.org/index.php/government/judical-branch
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-27'
+    locator: https://ncorj.org/tribal-law/diversionary-prosecution-2/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Diversion; Drug; Rehabilitation.'
+  - kind: other
+    title: Limitations and Guidelines for Diversionary Prosecution
+    citation: Gila River Indian Community Ordinance GR-03-13, Chapter 4 (Sentencing) Revisions
+    link: https://www.gilariver.org/index.php/government/judical-branch
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/limitations-and-guidelines-for-diversionary-prosecution/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Diversion.'
+  - kind: other
+    title: Notice to Domestic Violence Victims
+    citation: Gila River Indian Community Ordinance GR-03-13, § 710
+    link: https://www.gilariver.org/index.php/government/judical-branch
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/notice-to-domestic-violence-victims/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Program.'
+  - kind: other
+    title: Probation Must Include Programs to Promote Rehabilitation
+    citation: Gila River Indian Community Ordinance GR-03-13, § 406
+    link: https://www.gilariver.org/index.php/government/judical-branch
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/probation-must-include-programs-to-promote-rehabilitation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Program; Rehabilitation.'
+gaming:
+  compacts:
+  - state: AZ
+    status: approved
+    approved: '2022-06-14'
+    federal_register_citation: 87 FR 35992
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2022-06-14'
+    locator: result page 0 (?page=0), row 25
+    note: 'Listed as: "Gila River Indian Community Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Gila River Indian Community of the Gila River Indian Reservation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.14_gila_river_indian_community_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/14/2022-12743/indian-gaming-approval-of-20-tribal-state-class-iii-gaming-compact-amendments-with-the-state-of.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2021-05-24'
+    federal_register_citation: 86 FR 27889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2021-05-24'
+    locator: result page 1 (?page=1), row 1
+    note: 'Listed as: "Gila River Indian Community Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Gila River Indian Community of the Gila River Indian Reservation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2021.05.24_gila_river_indian_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/05/24/2021-10877/indian-gaming-approval-of-tribal-state-class-iii-gaming-compacts-in-the-state-of-arizona.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance or an interpretation
+      dispute, after which agency heads and then designated tribal and gubernatorial representatives negotiate;
+      if unresolved within 30 days, either party may request non-binding mediation under CPR Institute
+      for Dispute Resolution procedures and may then demand binding arbitration under CPR rules before
+      three arbitrators unless both agree to one.
+    dispute_resolution_locator: Section 15 (Dispute Resolution)
+    source: compact-az-ak-chin-indian-community-2003
+    confidence: medium
+    as_of: '2003-02-05'
+    locator: Section 15 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
+      compact approved in 2003; this text is the Ak-Chin Indian Community copy of that form, and the 2021-2022
+      amendments in the list refer back to Section 15. Status copied from this nation's most recent approved
+      or deemed-approved entry for this state in the Office of Indian Gaming list (2022-06-14).
+  ordinances:
+  - approved: '1994-03-30'
+    link: https://www.nigc.gov?wpdmdl=9866&ind=9882
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-03-30'
+    locator: table row 90, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 90 lists the nation
+      as "Gila River Indian Community". Name matched to roster by spelling variant.
+  - approved: '1995-03-27'
+    link: https://www.nigc.gov?wpdmdl=9867&ind=9883
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-03-27'
+    locator: table row 90, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 90 lists the nation
+      as "Gila River Indian Community". Name matched to roster by spelling variant.
+  - approved: '1997-06-27'
+    link: https://www.nigc.gov?wpdmdl=9868&ind=9884
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1997-06-27'
+    locator: table row 90, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 90 lists the nation
+      as "Gila River Indian Community". Name matched to roster by spelling variant.
+  - approved: '2003-12-17'
+    link: https://www.nigc.gov?wpdmdl=9869&ind=9885
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2003-12-17'
+    locator: table row 90, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 90 lists the nation
+      as "Gila River Indian Community". Name matched to roster by spelling variant.
+  - approved: '2009-09-28'
+    link: https://www.nigc.gov?wpdmdl=9870&ind=9886
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2009-09-28'
+    locator: table row 90, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 90 lists the nation
+      as "Gila River Indian Community". Name matched to roster by spelling variant.
+  - approved: '2016-12-16'
+    link: https://www.nigc.gov?wpdmdl=9871&ind=9887
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2016-12-16'
+    locator: table row 90, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 90 lists the nation
+      as "Gila River Indian Community". Name matched to roster by spelling variant.
+  - approved: '2017-04-24'
+    link: https://www.nigc.gov?wpdmdl=9872&ind=9888
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2017-04-24'
+    locator: table row 90, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 90 lists the nation
+      as "Gila River Indian Community". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Gila River Indian Community
+      of the Gila River Indian Reservation, Arizona". Facilities as machine-extracted from the report
+      text (verify): San Tan Mountain Casino; Vee Quiva Casino; Wild Horse Pass Casino; Lone Butte Casino.
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Gila River Indian Community of the Gila River Indian Reservation, Arizona Confidence
+    lowered from high by the lead session: the notice prints its table as page images, so nation names
+    were read from images and matched to the roster.'
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Exercising jurisdiction since 2018-08-01 (start date given by NCAI; jurisdiction began under
+    the 2013 special domestic violence criminal jurisdiction provision). Listed by NCAI as implementing
+    (list updated May 2022).
+  source: national-congress-of-american-indians-implementing-tribe-profile-gila-river-indian-community-of-the-gila-river-indian-reservation
+  confidence: medium
+  as_of: 2022-05
+  locator: '"Exercising jurisdiction since" line'
+  note: Listed as "Gila River Indian Community". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+memberships:
+- organization: Inter Tribal Council of Arizona
+  source: inter-tribal-council-of-arizona-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Gila River Indian Community". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

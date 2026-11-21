@@ -1,0 +1,399 @@
+id: shingle-springs-band-of-miwok-indians-shingle-springs-rancheria
+entity_type: native-nation
+names:
+  official: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria , California
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+  note: 'The notice adds in parentheses: Verona Tract.'
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3750
+  note: 'Census area with land in this state: Shingle Springs Rancheria and Off-Reservation Trust Land
+    (code 3750). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '3750'
+  name: Shingle Springs Rancheria and Off-Reservation Trust Land
+  area_type: Rancheria and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3750
+  note: Matched by name. Census class code D1.
+population:
+- count: 108
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US3750, field POP100
+  note: 'Census area: Shingle Springs Rancheria and Off-Reservation Trust Land (code 3750). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 280
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3315 (Shingle Springs Band of Miwok Indians  alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Shingle Springs Band of Miwok Indians ' (race code 5974)
+    alone or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 449
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Shingle Springs Band of Miwok Indians', PDF page 8, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 4704
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: low
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 87, row T45800 'Shingle Springs Band of Miwok Indians'
+  note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
+    in the vicinity of the nation (2010), used by Indian Affairs as the nation's population indicator;
+    a broad proxy that includes people of any tribe; not enrollment. Report published 2014-01-16; row
+    name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://shinglespringsrancheria.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California
+- kind: physical-address
+  value: 5281 Honpie Road, Placerville, CA 95667
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California
+- kind: mailing-address
+  value: Post Office Box 1340, Shingle Springs, CA 95682
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California
+- kind: phone
+  value: (530) 698-1400
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California
+- kind: fax
+  value: (530) 387-8064
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Central California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California
+governing_documents:
+- kind: law-code
+  title: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California -
+    Tribal Codes, Policies and Bylaws
+  year: '2019'
+  link: https://narf.org/nill/codes/shingle_springs_miwok/index.html
+  source: national-indian-law-library-code-codes-shingle-springs-miwok
+  confidence: medium
+  as_of: '2019'
+  locator: page heading
+  note: 'Table of Contents Updated: May 2019. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Codes, Policies and Bylaws
+  link: http://www.shinglespringsrancheria.com/government/codes-policies-and-bylaws/
+  source: national-indian-law-library-shingle-springs
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Codes, Policies and Bylaws.".'
+- kind: constitution
+  title: Shingle Springs Band of Miwok Indians Codes, Polices and Bylaws
+  link: http://www.shinglespringsrancheria.com/government/codes-policies-and-bylaws/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Shingle Springs Band of Miwok Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://shinglespringsrancheria.com/content/index.php?option=com_content&amp;view=article&amp;id=158:tribal-court&amp;catid=37:departments-a-programs&amp;Itemid=57
+  source: national-indian-law-library-shingle-springs
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Shingle Springs Tribal Court
+  link: http://www.shinglespringsrancheria.com/tribal-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: California section, entry 'Shingle Springs Band of Miwok Indians'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Alternative Remedies for Abuse
+    citation: Shingle Springs Band of Miwok Indians Family Code. Title III Abuse Ordinance. Article 10
+      Penalties. Section 2 Other Remedies.
+    link: https://www.shinglespringsrancheria.com/wp-content/uploads/Family-Code-Title-VI-Customary-Adoptions-as-Approved-by-Tribal-Counci....pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-remedies-for-abuse/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Justice. Database phase: Post-adjudication. Database form of
+      practice: Restorative court; Restorative justice; Restorative practice, Restorative process.'
+  - kind: other
+    title: Child/Elder Abuse Referred to Wellness Board
+    citation: Shingle Springs Band of Miwok Indians Family Code. Title III Abuse Ordinance. Article 7
+      Referral to Wellness Board.
+    link: https://www.shinglespringsrancheria.com/wp-content/uploads/Family-Code-Title-VI-Customary-Adoptions-as-Approved-by-Tribal-Counci....pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/child-elder-abuse-referred-to-wellness-board/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Justice. Database phase: Post-adjudication. Database form of
+      practice: Restorative court; Restorative justice; Restorative practice, Restorative process.'
+  - kind: other
+    title: Removed Child Referred to Family Wellness Court
+    citation: Shingle Springs Band of Miwok Indians Family Code. Title III Abuse Ordinance. Article 5
+      Emergency Removal/Placement & Article 10 Modification or Change of Guardianship.
+    link: https://www.shinglespringsrancheria.com/wp-content/uploads/Family-Code-Title-VI-Customary-Adoptions-as-Approved-by-Tribal-Counci....pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/removed-child-referred-to-family-wellness-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      court; Restorative justice; Restorative practice, Restorative process.'
+  - kind: other
+    title: SECTION 5. DISPUTE RESOLUTION
+    citation: SECTION 5. DISPUTE RESOLUTION
+    link: https://www.narf.org/nill/codes/shingle_springs_miwok/index.html
+    source: national-indian-law-library-code-index-shingle-springs-miwok
+    confidence: medium
+    as_of: 2019-05
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: arbitration
+    title: TITLE VI. ARBITRATION ORDINANCE
+    citation: TITLE VI. ARBITRATION ORDINANCE; Section 3. Enforceability of Agreements to Arbitrate; Section
+      5. Stay of Proceedings in Tribal Court and Order to Proceed with Arbitration; Section 9. Arbitration
+      Award Not Appealable
+    link: https://www.narf.org/nill/codes/shingle_springs_miwok/index.html
+    source: national-indian-law-library-code-index-shingle-springs-miwok
+    confidence: medium
+    as_of: 2019-05
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: Section 3. Tribal Dispute Resolution Process
+    citation: Section 3. Tribal Dispute Resolution Process; Section 5. Resolution by Arbitration
+    link: https://www.narf.org/nill/codes/shingle_springs_miwok/index.html
+    source: national-indian-law-library-code-index-shingle-springs-miwok
+    confidence: medium
+    as_of: 2019-05
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: DISPUTE RESOLUTION
+    citation: DISPUTE RESOLUTION
+    link: https://narf.org/nill/codes/shingle_springs_miwok/index.html
+    source: national-indian-law-library-code-codes-shingle-springs-miwok
+    confidence: medium
+    as_of: '2019'
+    locator: Table of Contents, under 'IGRA Trust Agreement'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: May 2019); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
+  - kind: arbitration
+    title: ARBITRATION ORDINANCE
+    citation: ARBITRATION ORDINANCE; Enforceability of Agreements to Arbitrate; Stay of Proceedings in
+      Tribal Court and Order to Proceed with Arbitration; Arbitration Award Not Appealable; Tribal Dispute
+      Resolution Process; ...
+    link: https://narf.org/nill/codes/shingle_springs_miwok/index.html
+    source: national-indian-law-library-code-codes-shingle-springs-miwok
+    confidence: medium
+    as_of: '2019'
+    locator: Table of Contents, under 'Tribal Gaming Authority Bylaws'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: May 2019); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2000-05-16'
+    locator: result page 11 (?page=11), row 16
+    note: 'Listed as: "Shingle Springs Band of Miwok Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract),
+      California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.05.16%20Shingle%20Springs%20Band%20of%20Miwok%20Indians%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    approved: '2008-12-12'
+    federal_register_citation: 73 FR 75764
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2008-12-12'
+    locator: result page 11 (?page=11), row 17
+    note: 'Listed as: "Shingle Springs Band of Miwok Indians Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona
+      Tract), California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2008.12.12_shingle_springs_band_of_miwok_indians_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/12/12/E8-29500/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    approved: '2013-07-23'
+    federal_register_citation: 78 FR 44146
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2013-07-23'
+    locator: result page 11 (?page=11), row 18
+    note: 'Listed as: "Shingle Springs Band of Miwok Indians Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona
+      Tract), California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2013.07.23_shingle_springs_band_of_miwok_indians_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2013/07/23/2013-17680/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    approved: '2020-12-11'
+    federal_register_citation: 85 FR 80142
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2020-12-11'
+    locator: result page 11 (?page=11), row 19
+    note: 'Listed as: "Shingle Springs Band of Miwok Indians Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona
+      Tract), California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2020.12.11_shingle_spring_band_of_miwok_indians_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2020/12/11/2020-27221/indian-gaming-tribal-state-class-iii-gaming-compacts-taking-effect-in-the-state-of-california.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2020-12-11).
+  ordinances:
+  - approved: '1996-08-06'
+    link: https://www.nigc.gov?wpdmdl=11115&ind=11139
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1996-08-06'
+    locator: table row 257, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 257 lists the nation
+      as "Shingle Springs Band of Miwok Indians". Name matched to roster by spelling variant.
+  - approved: '2010-11-04'
+    link: https://www.nigc.gov?wpdmdl=11114&ind=11140
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2010-11-04'
+    locator: table row 257, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 257 lists the nation
+      as "Shingle Springs Band of Miwok Indians". Name matched to roster by spelling variant.
+  - approved: '2014-08-27'
+    link: https://www.nigc.gov?wpdmdl=11118&ind=11141
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2014-08-27'
+    locator: table row 257, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 257 lists the nation
+      as "Shingle Springs Band of Miwok Indians". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Shingle Springs Band of Miwok Indians".
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California
+    Confidence lowered from high by the lead session: the notice prints its table as page images, so nation
+    names were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,469 @@
+id: colorado-river-indian-tribes-of-the-colorado-river-indian-reservation
+entity_type: native-nation
+names:
+  official: Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: AZ
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California
+- state: AZ
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0735
+  note: 'Census area with land in this state: Colorado River Indian Reservation (code 0735). Area matched
+    to the nation by name.'
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0735
+  note: 'Census area with land in this state: Colorado River Indian Reservation (code 0735). Area matched
+    to the nation by name.'
+census_areas:
+- geographic_identifier: '0735'
+  name: Colorado River Indian Reservation
+  area_type: Indian Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0735
+  note: Matched by name. Census class code D2.
+population:
+- count: 8431
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0735, field POP100
+  note: 'Census area: Colorado River Indian Reservation (code 0735). Everyone counted as living in the
+    area in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 3146
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2938 (Colorado River Indian Tribe alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Colorado River Indian Tribe' (race code 5712) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 4634
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Colorado River Indian Tribes', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.crit-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California
+- kind: physical-address
+  value: 26600 Mohave Road, Parker, AZ 85344
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California
+- kind: mailing-address
+  value: 26600 Mohave Road, Parker, AZ 85344
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California
+- kind: phone
+  value: (928) 669-9211
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California
+- kind: fax
+  value: (928) 669-1216
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California
+federal_administration:
+  bureau_of_indian_affairs_region: Western
+  bureau_of_indian_affairs_agency: Colorado River Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Colorado River Indian Tribes of the Colorado River Reservation, Arizona and California"
+    among organizations under constitutions approved by the Secretary of the Interior (Indian Reorganization
+    Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Colorado River Indian Tribes of the Colorado River Reservation Arizona and Colorado)
+    (approved 1937) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-colcons
+  confidence: medium
+  as_of: '1937'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Colorado River Indian Tribes
+  year: '2014'
+  link: https://narf.org/nill/codes/colorado_river/index.html
+  source: national-indian-law-library-code-codes-colorado-river
+  confidence: medium
+  as_of: '2014'
+  locator: page heading
+  note: 'Table of Contents Updated: June 2014. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: http://www.crit-nsn.gov/crit_contents/ordinances/
+  source: national-indian-law-library-colorado-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: http://www.crit-nsn.gov/crit_contents/ordinances/
+  source: national-indian-law-library-colorado-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Colorado River Indian Tribes - Tribal Constitution
+  link: https://narf.org/nill/constitutions/colorado_river/index.html
+  source: national-indian-law-library-constitution-constitutions-colorado-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+- kind: constitution
+  title: Colorado River Indian Tribes of the Colorado River Indian Reservation Constitution and Bylaws
+  link: http://www.crit-nsn.gov/crit_contents/ordinances/constitution.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Colorado River Indian Tribes'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Colorado River Indian Tribes Tribal Laws and Ordinances
+  link: http://www.crit-nsn.gov/crit_contents/ordinances/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Colorado River Indian Tribes'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Colorado River Indian Tribes of the Colorado River Reservation Arizona and Colorado)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/colcons.html
+  source: university-of-oklahoma-indian-reorganization-act-colcons
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.crit-nsn.gov/critcourt/
+  source: national-indian-law-library-colorado-river
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Colorado River Indian Tribal Court
+  link: http://www.crit-nsn.gov/critcourt/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Colorado River Indian Tribes'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Alternative Sentencing
+    citation: COURTS AND PROCEDURES. CHAPTER A, TRIBAL COURT. Section 206. Judgment and Sentencing in
+      Criminal Cases.
+    link: https://ncorj.org/tribal-law/alternative-sentencing/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-sentencing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
+  - kind: other
+    title: Diversion for Child Offenders
+    citation: Children's Code. Chapter 3, CHILD OFFENDERS. Section 1-302. Probation Officer; Authority;
+      Taking a Child into Custody.
+    link: https://www.crit-nsn.gov/crit_contents/ordinances/C_Childrens%20Code%20Paternity_08112016%20(1).pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-for-child-offenders/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Diversion.'
+  - kind: other
+    title: Rehabilitative Probation in Dependency & Child Welfare
+    citation: Children's Code. Chapter 1, General Provisions. Section 1-325. Dispositional Order.
+    link: https://www.crit-nsn.gov/crit_contents/ordinances/C_Childrens%20Code%20Paternity_08112016%20(1).pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/rehabilitative-probation-in-dependency-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Alternative.'
+  - kind: other
+    title: Treament in Protection Orders
+    citation: Domestic and Family Violence Code, Article IV. Chapter 5, CIVIL, PROTECTION ORDERS, PENALTIES.
+      Section 1-506. Protection Order; Contents.
+    link: https://www.crit-nsn.gov/crit_contents/ordinances/Domestic_And_Family_Violence_Code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treament-in-protection-orders/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
+  - kind: other
+    title: Treatment as Sentence for Domestic Violence
+    citation: Domestic and Family Violence Code, Article IV. Chapter 4, Criminal Procedures, Penalties.
+      Section 1-407. Special Court Rules.
+    link: https://www.crit-nsn.gov/crit_contents/ordinances/Domestic_And_Family_Violence_Code.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-as-sentence-for-domestic-violence/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
+gaming:
+  compacts:
+  - state: AZ
+    status: approved
+    approved: '2022-06-14'
+    federal_register_citation: 87 FR 35992
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2022-06-14'
+    locator: result page 0 (?page=0), row 11
+    note: 'Listed as: "Colorado River Indian Tribes Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.14_colorado_river_indian_tribes_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/14/2022-12743/indian-gaming-approval-of-20-tribal-state-class-iii-gaming-compact-amendments-with-the-state-of.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2021-05-24'
+    federal_register_citation: 86 FR 27889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2021-05-24'
+    locator: result page 0 (?page=0), row 12
+    note: 'Listed as: "Colorado River Indian Tribes Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202021.05.24%20Colorado%20River%20Indian%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/05/24/2021-10877/indian-gaming-approval-of-tribal-state-class-iii-gaming-compacts-in-the-state-of-arizona.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2009-03-25'
+    federal_register_citation: 74 FR 12889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2009-03-25'
+    locator: result page 0 (?page=0), row 13
+    note: 'Listed as: "Colorado River Indian Tribes Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2009.03.25.colorado_river_indiantribal_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2009/03/25/E9-6585/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2003-07-03'
+    federal_register_citation: 68 FR 39964
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2003-07-03'
+    locator: result page 0 (?page=0), row 14
+    note: 'Listed as: "Colorado River Indian Tribes Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2003.07.03.colorado_river_indian_tribes_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/07/03/03-16826/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance or an interpretation
+      dispute, after which agency heads and then designated tribal and gubernatorial representatives negotiate;
+      if unresolved within 30 days, either party may request non-binding mediation under CPR Institute
+      for Dispute Resolution procedures and may then demand binding arbitration under CPR rules before
+      three arbitrators unless both agree to one.
+    dispute_resolution_locator: Section 15 (Dispute Resolution)
+    source: compact-az-ak-chin-indian-community-2003
+    confidence: medium
+    as_of: '2003-02-05'
+    locator: Section 15 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
+      compact approved in 2003; this text is the Ak-Chin Indian Community copy of that form, and the 2021-2022
+      amendments in the list refer back to Section 15. Status copied from this nation's most recent approved
+      or deemed-approved entry for this state in the Office of Indian Gaming list (2022-06-14).
+  ordinances:
+  - approved: '1994-09-14'
+    link: https://www.nigc.gov?wpdmdl=9541&ind=9557
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-09-14'
+    locator: table row 50, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 50 lists the nation
+      as "Colorado River Indian Tribes". Name matched to roster by spelling variant.
+  - approved: '1995-06-22'
+    link: https://www.nigc.gov?wpdmdl=9542&ind=9558
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-06-22'
+    locator: table row 50, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 50 lists the nation
+      as "Colorado River Indian Tribes". Name matched to roster by spelling variant.
+  - approved: '1995-07-22'
+    link: https://www.nigc.gov?wpdmdl=9543&ind=9559
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-07-22'
+    locator: table row 50, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 50 lists the nation
+      as "Colorado River Indian Tribes". Name matched to roster by spelling variant.
+  - approved: '2000-12-28'
+    link: https://www.nigc.gov?wpdmdl=9544&ind=9560
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2000-12-28'
+    locator: table row 50, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 50 lists the nation
+      as "Colorado River Indian Tribes". Name matched to roster by spelling variant.
+  - approved: '2001-09-06'
+    link: https://www.nigc.gov?wpdmdl=9545&ind=9561
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2001-09-06'
+    locator: table row 50, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 50 lists the nation
+      as "Colorado River Indian Tribes". Name matched to roster by spelling variant.
+  - approved: '2003-07-29'
+    link: https://www.nigc.gov?wpdmdl=9546&ind=9562
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2003-07-29'
+    locator: table row 50, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 50 lists the nation
+      as "Colorado River Indian Tribes". Name matched to roster by spelling variant.
+  - approved: '2004-07-20'
+    link: https://www.nigc.gov?wpdmdl=9547&ind=9563
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2004-07-20'
+    locator: table row 50, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 50 lists the nation
+      as "Colorado River Indian Tribes". Name matched to roster by spelling variant.
+  - approved: '2009-10-09'
+    link: https://www.nigc.gov?wpdmdl=9548&ind=9564
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2009-10-09'
+    locator: table row 50, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 50 lists the nation
+      as "Colorado River Indian Tribes". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Colorado River Indian Tribes
+      of the Colorado River Indian Reservation, AZ and CA". Facilities as machine-extracted from the report
+      text (verify): Blue Water Casino. Name extracted from the PDF by the page-fetch tool and matched
+      to the roster.'
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by state named in the nation's official name
+    in the 2026 list (multi-state nation), so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and
+    California Confidence lowered from high by the lead session: the notice prints its table as page images,
+    so nation names were read from images and matched to the roster.'
+memberships:
+- organization: Inter Tribal Council of Arizona
+  source: inter-tribal-council-of-arizona-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Colorado River Indian Tribes". Name matched to the roster entry.
+- organization: Southern California Tribal Chairmen's Association
+  source: southern-california-tribal-chairmens-association-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Colorado River Indian Tribes". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

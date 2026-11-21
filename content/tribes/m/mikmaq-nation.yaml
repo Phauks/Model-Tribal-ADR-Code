@@ -1,0 +1,185 @@
+id: mikmaq-nation
+entity_type: native-nation
+names:
+  official: Mi'kmaq Nation
+  former:
+  - name: Aroostook Band of Micmacs
+    source: bia-recognized-entities-2026
+    confidence: high
+    as_of: '2026-01-30'
+    locator: 91 Fed. Reg. 4104
+    note: Listed in the notice as a previous name.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: Legislative recognition (as stated in the Office of Federal Acknowledgment list)
+  petition_number: '103'
+  petition_stage: Letter of Intent to Petition 11/29/1985; Legislative Recognition 11/26/1991
+  since: '1991-11-26'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '1991-11-26'
+  locator: 'Petitioner #103'
+  note: 'Petitioner name: Aroostook Band of Micmacs; the roster lists Mi''kmaq Nation as previously listed
+    as Aroostook Band of Micmacs.'
+states:
+- state: ME
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mi'kmaq Nation (previously listed as Aroostook Band of Micmacs)
+- state: ME
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0115
+  note: 'Census area with land in this state: Aroostook Band of Micmac Trust Land (code 0115). Area matched
+    to the nation by name.'
+census_areas:
+- geographic_identifier: '0115'
+  name: Aroostook Band of Micmac Trust Land
+  area_type: Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0115
+  note: Matched by name. Census area keeps the former name Aroostook Band of Micmacs; the 2026 list gives
+    Mi'kmaq Nation (previously listed as Aroostook Band of Micmacs). Census class code D3.
+population:
+- count: 1500
+  kind: citizens
+  source: mikmaq-nation-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"The majority of the 1,500 + members of the Mi''kmaq Nation live within Aroostook County"; undated
+    statement on the official site; as_of is the access date'
+- count: 202
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0115, field POP100
+  note: 'Census area: Aroostook Band of Micmac Trust Land (code 0115). Everyone counted as living in the
+    area in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    Census area keeps the former name Aroostook Band of Micmacs; the 2026 list gives Mi''kmaq Nation (previously
+    listed as Aroostook Band of Micmacs).'
+- count: 285
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2852 (Aroostook Band of Micmacs alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Aroostook Band of Micmacs' (race code 5960) alone or
+    in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 1684
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Mi'Kmaq Nation (Aroostook)', PDF page 4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://micmac-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mi'kmaq Nation (previously listed as Aroostook Band of Micmacs)
+- kind: physical-address
+  value: 7 Northern Road, Presque Isle, ME 04769
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mi'kmaq Nation (previously listed as Aroostook Band of Micmacs)
+- kind: mailing-address
+  value: 7 Northern Road, Presque Isle, ME 04769
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mi'kmaq Nation (previously listed as Aroostook Band of Micmacs)
+- kind: phone
+  value: (207) 764-1972
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mi'kmaq Nation (previously listed as Aroostook Band of Micmacs)
+- kind: fax
+  value: (207) 764-7667
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mi'kmaq Nation (previously listed as Aroostook Band of Micmacs)
+languages:
+- name: Micmac
+  language_tag: mic
+  source: mikmaq-nation-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"The Micmac language is an Algonquin one"'
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern
+  bureau_of_indian_affairs_agency: Eastern Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mi'kmaq Nation (previously listed as Aroostook Band of Micmacs)
+governing_documents:
+- kind: law-code
+  title: Election Ordinance
+  year: '2013'
+  link: http://www.micmac-nsn.gov/Election_Ordinance.pdf
+  source: national-indian-law-library-aroostook-micmac
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . 2013 Election Ordinance.".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-aroostook-micmac
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Mi''kmaq Nation Confidence lowered from high by the lead session: the notice prints
+    its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: United South and Eastern Tribes
+  source: united-south-and-eastern-tribes-member-tribal-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Mi'kmaq Nation".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

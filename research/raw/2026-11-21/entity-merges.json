@@ -1,0 +1,97 @@
+{
+ "note": "Groups that the state-recognition and petition lists name differently but that are the same group, merged by the lead session after comparing names and states. Each merged name is kept as an alternate name, cited to the source that used it. Medium confidence: the match is by name and state, not a source that states the two are the same. 'renames' maps profile ids that changed after research files were written to the current id.",
+ "merges": [
+  {
+   "from": "echota-cherokee-tribe-of-alabama-inc",
+   "into": "echota-cherokee-tribe-of-alabama"
+  },
+  {
+   "from": "cher-o-creek-intra-tribal-indians",
+   "into": "cher-o-creek-intratribal-indians"
+  },
+  {
+   "from": "machis-lower-alabama-creek-indian-tribe",
+   "into": "ma-chis-lower-creek-indian-tribe-of-alabama"
+  },
+  {
+   "from": "haliwa-saponi-indian-tribe-inc",
+   "into": "haliwa-saponi-indian-tribe"
+  },
+  {
+   "from": "occaneechi-band-of-saponi-nation",
+   "into": "occaneechi-band-of-the-saponi-nation-of-north-carolina"
+  },
+  {
+   "from": "choctaw-apache-community-of-ebarb-inc",
+   "into": "choctaw-apache-tribe-of-ebarb"
+  },
+  {
+   "from": "clifton-choctaw-indians",
+   "into": "clifton-choctaw-tribe-of-louisiana"
+  },
+  {
+   "from": "united-houma-nation-inc",
+   "into": "united-houma-nation"
+  },
+  {
+   "from": "beaver-creek-band-of-pee-dee-indians",
+   "into": "beaver-creek-indians"
+  },
+  {
+   "from": "piedmont-american-indian-association",
+   "into": "piedmont-american-indian-association-lower-eastern-cherokee-nation-of-south-carolina"
+  },
+  {
+   "from": "golden-hill-paugussett-tribe",
+   "into": "golden-hill-paugussett"
+  },
+  {
+   "from": "lower-muscogee-creek-tribe-east-of-the-mississippi",
+   "into": "lower-muscogee-creek-tribe"
+  },
+  {
+   "from": "accohannock-indian-tribal-association-inc",
+   "into": "accohannock-indian-tribe"
+  },
+  {
+   "from": "nanticoke-lenni-lenape-indians",
+   "into": "nanticoke-lenni-lenape-tribal-nation"
+  },
+  {
+   "from": "ramapough-mountain-indians-inc",
+   "into": "ramapough-lenape-nation"
+  },
+  {
+   "from": "lipan-apache-band-of-texas-inc",
+   "into": "lipan-apache-tribe-of-texas"
+  },
+  {
+   "from": "grand-river-bands-of-ottawa-indians",
+   "into": "grand-river-band-of-ottawa-indians"
+  },
+  {
+   "from": "mackinac-bands-of-chippewa-and-ottawa-indians",
+   "into": "mackinaw-bands-of-chippewa-and-ottawa-indians"
+  },
+  {
+   "from": "nanticoke-lenni-lenape-indians-of-new-jersey",
+   "into": "nanticoke-lenni-lenape-tribal-nation"
+  },
+  {
+   "from": "st-francis-sokoki-band-of-abenakis-of-vermont-abenaki-tribal-council",
+   "into": "st-francis-sokoki-band-of-abenakis-of-vermont"
+  }
+ ],
+ "renames": [
+  {
+   "from": "navajo-nation-arizona-new-mexico-and-utah",
+   "into": "navajo-nation",
+   "reason": "The first import kept the states in the id; research files written before the fix use the old id."
+  },
+  {
+   "from": "fort-mojave-indian-tribe-of-arizona",
+   "into": "fort-mojave-indian-tribe",
+   "reason": "The first import kept part of the states in the id; research files written before the fix use the old id."
+  }
+ ]
+}

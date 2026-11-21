@@ -1,0 +1,327 @@
+id: tuolumne-band-of-me-wuk-indians-of-the-tuolumne-rancheria-of-california
+entity_type: native-nation
+names:
+  official: Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of California
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of California
+- state: CA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4330
+  note: 'Census area with land in this state: Tuolumne Rancheria (code 4330). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '4330'
+  name: Tuolumne Rancheria
+  area_type: Rancheria
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4330
+  note: Matched by name. Census class code D2.
+population:
+- count: 400
+  kind: tribal-population-estimate
+  source: tuolumne-band-of-me-wuk-indians-of-the-t-cultural-history
+  confidence: low
+  as_of: '2026-11-21'
+  note: '"approximately 200 residents living on the Rancheria and an additional 200 non-resident members"
+    (sum 400); undated statement on the official site; as_of is the access date'
+- count: 154
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4330, field POP100
+  note: 'Census area: Tuolumne Rancheria (code 4330). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 270
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3384 (Tuolumne Band of Me-Wuk Indians of California alone or in any
+    combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Tuolumne Band of Me-Wuk Indians of California' (race
+    code 5975) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 363
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Tuolumne Band of Me-Wuk Indians', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://mewuk.com//
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of California
+- kind: physical-address
+  value: 19595 Mi-wu Street, Tuolumne, CA 95379
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of California
+- kind: mailing-address
+  value: P.O. Box 699, Tuolumne, CA 95379
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of California
+- kind: phone
+  value: (209) 928-5300
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of California
+- kind: fax
+  value: (209) 928-1677
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of California
+languages:
+- name: Me-Wuk
+  language_tag: csm
+  source: tuolumne-band-of-me-wuk-indians-of-the-t-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Me-Wuk language classes; tag (Central Sierra Miwok) applied by researcher
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Central California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of California
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Tuolumne of Me-wuk Indians of the Tuolumne Rancheria, California" among organizations
+    under constitutions approved by the Secretary of the Interior (Indian Reorganization Act of June 18,
+    1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Tuolumne Band of Me-wuk Indians of the Tuolumne Rancheria California) (approved
+    1936) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-tuocons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: 'From GPO: Federal Register : Alcoholic Beverage Control Ordinance'
+  year: '2001'
+  link: http://www.gpo.gov/fdsys/pkg/FR-2001-08-03/pdf/01-19404.pdf
+  source: national-indian-law-library-tuolumne
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "From GPO: Federal Register
+    : Alcoholic Beverage Control Ordinance (2001).".'
+- kind: constitution
+  title: Constitution
+  link: https://www.narf.org/nill/constitutions/tuolumne/index.html
+  source: national-indian-law-library-tuolumne
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At NILL website
+    . Table of contents only.".'
+- kind: constitution
+  title: Constitution
+  year: '1940'
+  link: https://thorpe.law.ou.edu/IRA/tuocons.html
+  source: national-indian-law-library-tuolumne
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website. Constitution. (1940)".'
+- kind: constitution
+  title: Constitution
+  year: '1936'
+  link: https://www.loc.gov/item/36026265/
+  source: national-indian-law-library-tuolumne
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website. Constitution. (1936)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/tuochrtr.html
+  source: national-indian-law-library-tuolumne
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website . Corporate charter. (1937)".'
+- kind: corporate-charter
+  title: Corporate charter
+  year: '1937'
+  link: https://www.loc.gov/item/38026377/
+  source: national-indian-law-library-tuolumne
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
+    of Congress website . Corporate charter. (1937)".'
+- kind: corporate-charter
+  title: Corporate charter (Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria California)
+  year: '1937'
+  link: https://thorpe.law.ou.edu/IRA/tuochrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-tuochrtr
+  confidence: medium
+  as_of: '1937'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Tuolumne Band of Me-wuk Indians of the Tuolumne Rancheria California)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/tuocons.html
+  source: university-of-oklahoma-indian-reorganization-act-tuocons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+gaming:
+  compacts:
+  - state: CA
+    status: deemed-approved
+    approved: '2018-01-22'
+    federal_register_citation: 83 FR 3015
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-01-22'
+    locator: result page 12 (?page=12), row 21
+    note: 'Listed as: "Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria Tribal State Gaming Compact"
+      (Deemed Approved); list''s Tribe column: "Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria
+      of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2018.01.22_tuolumne_band_of_me-wuk_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/01/22/2018-01058/indian-gaming-tribal-state-class-iii-gaming-compacts-taking-effect-in-the-state-of-california.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-16'
+    locator: result page 12 (?page=12), row 22
+    note: 'Listed as: "Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of California".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.05.16_tuolumne_band_of_me-wuk_indians_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2018-01-22).
+  ordinances:
+  - approved: '1999-10-27'
+    link: https://www.nigc.gov?wpdmdl=11440&ind=11484
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1999-10-27'
+    locator: table row 295, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 295 lists the nation
+      as "Tuolumne Band of MeWuk Indians". Name matched to roster by spelling variant.
+  - approved: '2001-06-26'
+    link: https://www.nigc.gov?wpdmdl=11439&ind=11485
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2001-06-26'
+    locator: table row 295, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 295 lists the nation
+      as "Tuolumne Band of MeWuk Indians". Name matched to roster by spelling variant.
+  - approved: '2012-02-03'
+    link: https://www.nigc.gov?wpdmdl=11438&ind=11486
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2012-02-03'
+    locator: table row 295, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 295 lists the nation
+      as "Tuolumne Band of MeWuk Indians". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Tuolumne Band of Me-Wuk Indians
+      of the Tuolumne Rancheria". Name extracted from the PDF by the page-fetch tool and matched to the
+      roster.
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'California is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within California. Applies to the nation''s Indian
+    country within California; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
+  note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Tuolumne Band of Me-Wuk Indians of the Tuolumne Rancheria of California Confidence
+    lowered from high by the lead session: the notice prints its table as page images, so nation names
+    were read from images and matched to the roster.'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

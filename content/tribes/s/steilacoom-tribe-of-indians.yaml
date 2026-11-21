@@ -1,0 +1,39 @@
+id: steilacoom-tribe-of-indians
+entity_type: native-nation
+names:
+  official: Steilacoom Tribe of Indians
+  alternate:
+  - name: Steilacoom Tribe
+    source: ofa-list-of-petitioners-by-state-2008
+    confidence: medium
+    as_of: '2008-09-22'
+    locator: 'Petitioner #11'
+    note: Name as printed on the Office of Federal Acknowledgment list by state.
+  official_source: federal-register-e8-5551
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 73 FR 14833 (2008-03-19)
+  petition_number: '11'
+  petition_stage: Denied (Petitions Resolved page); Denied acknowledgment through 25 CFR 83 (eff. 6/17/08)
+  source: federal-register-e8-5551
+  confidence: high
+  as_of: '2008-03-19'
+  locator: 'Petitioner #11'
+  note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
+    Denied acknowledgment through 25 CFR 83 (eff. 6/17/08). Other Federal Register history: Proposed Finding
+    Against Federal Acknowledgment of the Steilacoom Tribe of Indians, 65 FR 5880 (2000-02-07).'
+states:
+- state: WA
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

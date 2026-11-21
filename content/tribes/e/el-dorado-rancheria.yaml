@@ -1,0 +1,41 @@
+id: el-dorado-rancheria
+entity_type: native-nation
+names:
+  official: El Dorado Rancheria
+  official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
+recognition:
+- type: unrecognized
+  legal_basis: Act of Aug. 18, 1958, Pub. L. 85-671, 72 Stat. 619, as amended by Pub. L. 88-419, 78 Stat.
+    390 (1964); termination notice 31 Fed. Reg. 9685, 9686
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Appendix II, Table 6
+  note: GAO Table 6 lists "El Dorado Rancheria" among nine California tribes whose recognition was terminated
+    and not restored; terminated 1966-07-16 (31 Fed. Reg. 9685, 9686). Name not found on the 2026 federal
+    list (bia-recognized-entities-2026), checked by name. GAO cautions that a comprehensive list of terminated,
+    unrestored tribes is not possible.
+- type: unrecognized
+  legal_basis: Pub. L. 88-419, 78 Stat. 390 (1964), amending Pub. L. 85-671
+  source: public-law-88-419-california-rancheria-act-amendment
+  confidence: low
+  as_of: '1964-08-11'
+  locator: Section 1(a)
+  note: The 1964 amendment extended the 1958 Act to any rancheria or reservation wholly within California
+    on majority request; it does not name this group. GAO Table 6 gives the termination notice. Cited
+    for the legal basis only.
+states:
+- state: CA
+  presence: other
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Appendix II, Table 6
+  note: Former rancheria or reservation in California named by GAO.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

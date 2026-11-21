@@ -1,0 +1,56 @@
+id: muscogee-nation-of-florida
+entity_type: native-nation
+names:
+  official: Muscogee Nation of Florida, Inc.
+  former:
+  - name: Florida Tribe of Eastern Creek Indians
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    locator: 'Petitioner #32'
+  official_source: usaspending-award-90na8516
+recognition:
+- type: unrecognized
+  source: usaspending-award-90na8516
+  confidence: medium
+  as_of: '2025-09-30'
+  locator: Award summary
+  note: HHS Administration for Native Americans award 90NA8516 (Assistance Listing 93.612, Native American
+    Programs) to recipient "MUSCOGEE NATION OF FLORIDA, INC.", start 2025-09-30, amount $699,670; project
+    "MUSCOGEE NATION OF FLORIDA TRIBAL MUSEUM". The award record does not state recognition status; not
+    on the 2026 federal list (bia-recognized-entities-2026). Award summary refers to 604 tribal citizens
+    (as stated in the award description). Possible match with a petitioning helper record; not verified.
+- type: petitioning
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '032'
+  petition_stage: Awaiting Active Consideration
+  source: ofa-petitions-in-process
+  confidence: high
+  as_of: '2026-11-21'
+  locator: Current Petitions Status table, row 32; detail page https://www.bia.gov/as-ia/ofa/petitions-in-process/muscogee-nation-florida
+  note: 'Federal Register history: Receipt of Documented Petitions for Federal Acknowledgment of American
+    Indian Tribes, 80 FR 74123 (2015-11-27). Office of Federal Acknowledgment list entry #32 (2013 edition):
+    Muscogee Nation of Florida (formerly Florida Tribe of Eastern Creek Indians) - Letter of Intent to
+    Petition 06/02/1978.'
+states:
+- state: FL
+  presence: other
+  source: usaspending-award-90na8516
+  confidence: medium
+  as_of: '2025-09-30'
+  locator: Place of performance state
+  note: Place of performance state on the award record.
+- state: FL
+  presence: other
+  source: ofa-petitions-in-process
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

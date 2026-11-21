@@ -1,0 +1,40 @@
+id: southeastern-cherokee-confederacy
+entity_type: native-nation
+names:
+  official: Southeastern Cherokee Confederacy
+  alternate:
+  - name: Southeastern Cherokee Confederacy, Inc.
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    locator: 'Petitioner #29'
+    note: Name as printed on the Office of Federal Acknowledgment list by state.
+  official_source: ofa-list-of-petitioners-by-state-2013
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 50 FR 39047 (as printed in the Office of Federal
+    Acknowledgment list)
+  petition_number: '29'
+  petition_stage: Denied (Petitions Resolved page); Letter of Intent to Petition 03/09/1978; Declined
+    Acknowledgment effective 11/25/1985 50 FR 39047
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  locator: 'Petitioner #29'
+  note: Decision from the Petitions Resolved page; citation and date from the Office of Federal Acknowledgment
+    list.
+states:
+- state: GA
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,153 @@
+id: haliwa-saponi-indian-tribe
+entity_type: native-nation
+names:
+  official: Haliwa-Saponi Indian Tribe of North Carolina
+  alternate:
+  - name: Haliwa-Saponi Indian Tribe, Inc.
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    note: Name used for this group in the cited source; matched to this record by name and state.
+  official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
+recognition:
+- type: unrecognized
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1; Table 3
+  note: 'GAO Table 1 lists "Haliwa-Saponi Indian Tribe of North Carolina" among 26 non-federally recognized
+    tribes that received direct federal funding in FY2007-2010 (total $4,128,000, Table 3). GAO-reported
+    nonprofit status: Yes; state recognition per state officials: Yes. GAO names it as one of five Indian
+    Housing Block Grant (HUD) recipients and reports a Department of Education Small, Rural School Achievement
+    grant because it is organized as a local educational agency. Not on the 2026 federal list (bia-recognized-entities-2026).
+    GAO name differs from the state-recognized helper entity only by "of North Carolina"; id shared.'
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: medium
+  as_of: '2020'
+  locator: Definition of State Designated Tribal Statistical Area; area 9745
+  note: The 2020 Census delineated "Haliwa-Saponi SDTSA" (State Designated Tribal Statistical Area). The
+    Census Bureau defines SDTSAs as statistical areas for state-recognized tribes that are not federally
+    recognized and have no reservation or off-reservation trust land, delineated with a governor-appointed
+    state liaison. Not on the 2026 federal list. Linking of area to group is by name comparison (see census-area
+    fact).
+- type: unrecognized
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  as_of: 2026-04
+  locator: NC section, recipient "Haliwa-Saponi Indian Tribe"
+  note: HUD lists "Haliwa-Saponi Indian Tribe" (Hollister, NC) as an FY2026 Indian Housing Block Grant
+    formula recipient with a final allocation of $1,571,604. The HUD list does not state recognition status;
+    not on the 2026 federal list (bia-recognized-entities-2026).
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '63'
+  petition_stage: Letter of Intent to Petition 11/27/1979
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  locator: 'Petitioner #63'
+  note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
+    Additional Resources page says groups on the 2013 list may no longer be active petitioners under the
+    current regulations.
+- type: state
+  state: NC
+  legal_basis: North Carolina General Statutes Section 71A-5 (1965, c. 254; 1977, 2nd Sess., c. 1193;
+    1997-293; 2006-111)
+  since: '1965-04-15'
+  source: north-carolina-general-statutes-chapter-71a
+  confidence: high
+  as_of: '2026'
+  locator: Section 71A-5
+  note: Statute says the tribe is designated and officially recognized 'from and after' this date.
+- type: state
+  state: NC
+  legal_basis: Listed among North Carolina tribal communities by the North Carolina Commission of Indian
+    Affairs
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+states:
+- state: NC
+  presence: other
+  source: gao-12-348-federal-funding-non-federally-recognized-tribes
+  confidence: medium
+  as_of: 2012-04
+  locator: Table 1, State column
+  note: State as listed by GAO.
+- state: NC
+  presence: other
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9745
+  note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
+- state: NC
+  presence: other
+  source: hud-ihbg-fy2026-formula-allocations
+  confidence: high
+  as_of: 2026-04
+  locator: NC section
+  note: HUD gives recipient city Hollister.
+- state: NC
+  presence: other
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+- state: NC
+  presence: government-office
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+census_areas:
+- geographic_identifier: '9745'
+  name: Haliwa-Saponi SDTSA
+  area_type: State Designated Tribal Statistical Area
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9745, GEOID 9745R
+  note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list.
+population:
+- count: 3800
+  kind: citizens
+  source: north-carolina-tribal-communities-2026
+  confidence: medium
+  as_of: '2026'
+  note: 'Source: ''At 3,800 members''.'
+contacts:
+- kind: physical-address
+  value: 39021 NC Hwy 561, Hollister, NC 27844
+  label: Tribal physical address
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: mailing-address
+  value: PO Box 99, Hollister, NC 27844
+  label: Tribal mailing address
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: phone
+  value: 252-586-4017
+  label: Tribal office phone
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+- kind: website
+  value: https://www.haliwa-saponi.org/
+  label: Official website
+  source: north-carolina-tribal-communities-2026
+  confidence: high
+  as_of: '2026'
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

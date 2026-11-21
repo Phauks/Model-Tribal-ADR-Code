@@ -1,0 +1,369 @@
+id: seneca-nation-of-indians
+entity_type: native-nation
+names:
+  official: Seneca Nation of Indians
+  self_designation:
+  - name: O-non-dowa-gah
+    language_tag: see
+    source: seneca-nation-of-indians-culture-history
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"In the Seneca language we are known as O-non-dowa-gah ... or ''Great Hill People.''"'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: NY
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Seneca Nation of Indians
+- state: NY
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0080, 0540, 2535
+  note: 'Census area with land in this state: Allegany Reservation (code 0080); Cattaraugus Reservation
+    (code 0540); Oil Springs Reservation (code 2535). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: 0080
+  name: Allegany Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0080
+  note: Matched by name. Reservation of the Seneca Nation of Indians; matched by reservation name. Census
+    class code D2.
+- geographic_identifier: '0540'
+  name: Cattaraugus Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0540
+  note: Matched by name. Reservation of the Seneca Nation of Indians; matched by reservation name. Census
+    class code D2.
+- geographic_identifier: '2535'
+  name: Oil Springs Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2535
+  note: Matched by name. Reservation of the Seneca Nation of Indians; matched by reservation name. Census
+    class code D2.
+population:
+- count: 8500
+  kind: citizens
+  source: seneca-nation-of-indians-about
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"more than 8,500 Seneca citizens"; undated statement on the official site; as_of is the access
+    date'
+- count: 6664
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0080, field POP100
+  note: 'Census area: Allegany Reservation (code 0080). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Reservation
+    of the Seneca Nation of Indians; matched by reservation name.'
+- count: 2676
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0540, field POP100
+  note: 'Census area: Cattaraugus Reservation (code 0540). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Reservation
+    of the Seneca Nation of Indians; matched by reservation name.'
+- count: 20
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2535, field POP100
+  note: 'Census area: Oil Springs Reservation (code 2535). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens. Reservation
+    of the Seneca Nation of Indians; matched by reservation name.'
+- count: 20025
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3305 (Seneca Nation of Indians alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Seneca Nation of Indians' (race code 5870) alone or
+    in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 8124
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Seneca Nation of New York', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://sni.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Seneca Nation of Indians
+- kind: physical-address
+  value: 12837 Route 438, Irving, NY 14081
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Seneca Nation of Indians
+- kind: mailing-address
+  value: 12837 Route 438, Irving, NY 14081
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Seneca Nation of Indians
+- kind: phone
+  value: (716) 532-4900
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Seneca Nation of Indians
+- kind: fax
+  value: (716) 945-0150
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Seneca Nation of Indians
+languages:
+- name: Seneca
+  language_tag: see
+  source: seneca-nation-of-indians-culture-history
+  confidence: high
+  as_of: '2026-11-21'
+  note: Seneca language programs
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern
+  bureau_of_indian_affairs_agency: Eastern Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Seneca Nation of Indians
+governing_documents:
+- kind: constitution
+  title: Constitution
+  link: https://www.sni.org/culture/seneca-nation-constitution/
+  source: national-indian-law-library-seneca-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Seneca Nation Constitution
+  link: https://sni.org/culture/seneca-nation-constitution/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New York section, entry 'Seneca Nation of New York'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://sni.org/government/
+  source: national-indian-law-library-seneca-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: court-of-appeals
+  name: Seneca Nation of New York – Allegany Reservation Court of Appeals
+  link: http://sni.org/government/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New York section, entry 'Seneca Nation of New York'
+- kind: peacemaking-program
+  name: Seneca Nation of New York – Allegany Reservation Peacemaker’s Court
+  link: http://sni.org/government/peacemakers-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New York section, entry 'Seneca Nation of New York'
+- kind: tribal-court
+  name: Seneca Nation of New York – Allegany Reservation Surrogate Court
+  link: http://sni.org/government/surrogates-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New York section, entry 'Seneca Nation of New York'
+- kind: court-of-appeals
+  name: Seneca Nation of New York – Cattaraugus Reservation Court of Appeals
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New York section, entry 'Seneca Nation of New York'
+  note: 'Link check 2026-11-21: the link the source gives (http://sni.org/government/court-of-appeal/)
+    returned HTTP 404, so it is not recorded.'
+- kind: peacemaking-program
+  name: Seneca Nation of New York – Cattaraugus Reservation Peacemaker’s Court
+  link: http://sni.org/government/peacemakers-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New York section, entry 'Seneca Nation of New York'
+- kind: tribal-court
+  name: Seneca Nation of New York – Cattaraugus Reservation Surrogate Court
+  link: http://sni.org/government/surrogates-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: New York section, entry 'Seneca Nation of New York'
+gaming:
+  compacts:
+  - state: NY
+    status: deemed-approved
+    approved: '2002-12-09'
+    federal_register_citation: 67 FR 72968
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2002-12-09'
+    locator: result page 25 (?page=25), row 25
+    note: 'Listed as: "Seneca Nation of Indians Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "Seneca Nation of Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2002.12.09_seneca_nation_of_indians_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2002/12/09/02-30967/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NY
+    status: approved
+    approved: '2023-12-22'
+    federal_register_citation: 88 FR 88640
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2023-12-22'
+    locator: result page 26 (?page=26), row 1
+    note: 'Listed as: "Seneca Nation of Indians Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Seneca Nation of Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2023.22.01_seneca_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2023/12/22/2023-28295/indian-gaming-amendment-to-the-tribal-state-class-iii-gaming-compact-for-seneca-nation-of-indians.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NY
+    status: deemed-approved
+    approved: '2002-12-09'
+    dispute_resolution_summary: After written notice the parties meet within 14 days to negotiate, and
+      if no solution is reached within 30 days either party may submit the dispute to binding arbitration
+      under American Arbitration Association rules before three arbitrators, without monetary damages.
+    dispute_resolution_locator: Section 14 (Party Dispute Resolution)
+    source: compact-ny-seneca-nation-of-indians-2002
+    confidence: medium
+    as_of: '2002-12-09'
+    locator: Section 14 (Party Dispute Resolution)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the 2002 Seneca Nation of Indians
+      compact; the Saint Regis Mohawk Tribe and Oneida Indian Nation compacts were not checked.
+  ordinances:
+  - approved: '1994-09-16'
+    link: https://www.nigc.gov?wpdmdl=11079&ind=11121
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-09-16'
+    locator: table row 252, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 252 lists the nation
+      as "Seneca Nation of New York". Name matched to roster by spelling variant.
+  - approved: '1995-06-21'
+    link: https://www.nigc.gov?wpdmdl=11080&ind=11122
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-06-21'
+    locator: table row 252, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 252 lists the nation
+      as "Seneca Nation of New York". Name matched to roster by spelling variant.
+  - approved: '2002-11-26'
+    link: https://www.nigc.gov?wpdmdl=11100&ind=11123
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2002-11-26'
+    locator: table row 252, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 252 lists the nation
+      as "Seneca Nation of New York". Name matched to roster by spelling variant.
+  - approved: '2004-05-20'
+    link: https://www.nigc.gov?wpdmdl=11101&ind=11124
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2004-05-20'
+    locator: table row 252, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 252 lists the nation
+      as "Seneca Nation of New York". Name matched to roster by spelling variant.
+  - approved: '2006-11-06'
+    link: https://www.nigc.gov?wpdmdl=11104&ind=11125
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2006-11-06'
+    locator: table row 252, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 252 lists the nation
+      as "Seneca Nation of New York". Name matched to roster by spelling variant.
+  - approved: '2007-07-02'
+    link: https://www.nigc.gov?wpdmdl=11103&ind=11126
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2007-07-02'
+    locator: table row 252, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 252 lists the nation
+      as "Seneca Nation of New York". Name matched to roster by spelling variant.
+  - approved: '2009-01-20'
+    link: https://www.nigc.gov?wpdmdl=11102&ind=11127
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2009-01-20'
+    locator: table row 252, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 252 lists the nation
+      as "Seneca Nation of New York". Name matched to roster by spelling variant.
+  - approved: '2021-03-01'
+    link: https://www.nigc.gov?wpdmdl=11105&ind=11128
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2021-03-01'
+    locator: table row 252, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 252 lists the nation
+      as "Seneca Nation of New York". Name matched to roster by spelling variant.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Seneca Nation of Indians Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: United South and Eastern Tribes
+  source: united-south-and-eastern-tribes-member-tribal-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Seneca Nation of Indians".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

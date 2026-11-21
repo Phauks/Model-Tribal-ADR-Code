@@ -1,0 +1,257 @@
+id: ely-shoshone-tribe-of-nevada
+entity_type: native-nation
+names:
+  official: Ely Shoshone Tribe of Nevada
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: NV
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ely Shoshone Tribe of Nevada
+- state: NV
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1040
+  note: 'Census area with land in this state: Ely Reservation (code 1040). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '1040'
+  name: Ely Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1040
+  note: Matched by name. Census class code D2.
+population:
+- count: 763
+  kind: citizens
+  source: elyshoshonetribe-about
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''Total membership is 763. Of those members, 319 live in the service area which is White
+    Pine County.'' Undated; as_of is access date.'
+- count: 240
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1040, field POP100
+  note: 'Census area: Ely Reservation (code 1040). Everyone counted as living in the area in the 2020
+    Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 187
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2985 (Ely Shoshone Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Ely Shoshone Tribe' (race code 6288) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label matched by name variant.
+- count: 599
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Ely Shoshone Tribe', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.elyshoshonetribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ely Shoshone Tribe of Nevada
+- kind: physical-address
+  value: 505 S. Pioche Highway, Ely, NV 89301
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ely Shoshone Tribe of Nevada
+- kind: mailing-address
+  value: 505 S. Pioche Highway, Ely, NV 89301
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ely Shoshone Tribe of Nevada
+- kind: phone
+  value: (775) 289-3013
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ely Shoshone Tribe of Nevada
+- kind: fax
+  value: (775) 289-3156
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ely Shoshone Tribe of Nevada
+federal_administration:
+  bureau_of_indian_affairs_region: Western
+  bureau_of_indian_affairs_agency: Eastern Nevada Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Ely Shoshone Tribe of Nevada
+governing_documents:
+- kind: law-code
+  title: Ely Shoshone Tribe of Nevada
+  year: '2017'
+  link: https://narf.org/nill/codes/ely_shoshone/index.html
+  source: national-indian-law-library-code-codes-ely-shoshone
+  confidence: medium
+  as_of: '2017'
+  locator: page heading
+  note: 'Most Recent Update Received: November 2017. Full text linked from the National Indian Law Library
+    page.'
+- kind: constitution
+  title: Ely Shoshone Tribe of Nevada - Tribal Constitution
+  year: '2017'
+  link: https://narf.org/nill/constitutions/ely_shoshone/index.html
+  source: national-indian-law-library-constitution-constitutions-ely-shoshone
+  confidence: medium
+  as_of: '2017'
+  locator: page heading
+  note: 'Confirmed Current: November 7, 2017 Amended: March 23, 2002. The National Indian Law Library
+    page gives the table of contents (and may link to the nation''s own copy); full text is not hosted
+    there.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-ely-shoshone
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Ely Shoshone Judicial Center
+  link: http://elyshoshonetribe-nsn.gov/departments.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Nevada section, entry 'Ely Shoshone Tribe'
+  note: 'Link check 2026-11-21: the site did not respond.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Probation Orders Requiring Programs or Treatment
+    citation: ESTC-176A.400
+    link: https://www.narf.org/nill/codes/ely_shoshone/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/probation-orders-requiring-programs-or-treatment/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative; Program.'
+  - kind: other
+    title: Rehabilitation and Treatment for Category C&D Offenses
+    citation: ESTC-453.336
+    link: https://www.narf.org/nill/codes/ely_shoshone/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/rehabilitation-and-treatment-for-category-cd-offenses/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Program; Rehabilitation;
+      Substance.'
+  - kind: other
+    title: Restitution for Victim Substance Abuse Program
+    citation: ESTC-453.332
+    link: https://www.narf.org/nill/codes/ely_shoshone/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restitution-for-victim-substance-abuse-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Program; Substance.'
+  - kind: other
+    title: Sex Offender Program of Professional Counseling
+    citation: ESTC-176A.410
+    link: https://www.narf.org/nill/codes/ely_shoshone/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sex-offender-program-of-professional-counseling/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Counseling; Program.'
+  - kind: other
+    title: Suspention of Proceedings for First Time Offenders
+    citation: ESTC-453.3363
+    link: https://www.narf.org/nill/codes/ely_shoshone/index.html
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/suspention-of-proceedings-for-first-time-offenders/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Program; Rehabilitation;
+      Substance.'
+gaming:
+  ordinances:
+  - approved: '2004-10-22'
+    link: https://www.nigc.gov?wpdmdl=9769&ind=9800
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-10-22'
+    locator: table row 76, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 76 lists the nation
+      as "Ely Shoshone Tribe".
+jurisdiction:
+- topic: public-law-280
+  value: retroceded
+  detail: Interior accepted retrocession of all civil and criminal jurisdiction over the Ely Indian Colony
+    acquired by Nevada under Public Law 280, as of March 1, 1987. (53 FR 5837)
+  source: federal-register-1988-ely-retrocession
+  confidence: high
+  as_of: '1987-03-01'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Ely Shoshone Tribe of Nevada Confidence lowered from high by the lead session: the
+    notice prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: Inter-Tribal Council of Nevada
+  source: inter-tribal-council-of-nevada-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Ely Shoshone Tribe". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

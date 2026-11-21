@@ -1,0 +1,241 @@
+id: passamaquoddy-tribe
+entity_type: native-nation
+names:
+  official: Passamaquoddy Tribe
+  self_designation:
+  - name: Peskotomuhkati
+    language_tag: pqm
+    source: passamaquoddy-tribe-doe-sites-maine-gov-doe-files-inline-fil
+    confidence: medium
+    as_of: 2024-09
+    note: '"Peskotomuhkati (Passamaquoddy) Tribe"; "The name Passamaquoddy comes from pestomuhkatiyik,
+      meaning ''people of the pollock-spearing place.''"; Maine Department of Education, "Wabanaki Studies:
+      About Wabanaki Nations", updated September 2024 (state agency)'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: ME
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Passamaquoddy Tribe
+- state: ME
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1575, 2695, 2850
+  note: 'Census area with land in this state: Indian Township Reservation (code 1575); Passamaquoddy Trust
+    Land (code 2695); Pleasant Point Reservation (code 2850). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1575'
+  name: Indian Township Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1575
+  note: Matched by name. Indian Township Reservation is one of the two Passamaquoddy reservations. Census
+    class code D2.
+- geographic_identifier: '2695'
+  name: Passamaquoddy Trust Land
+  area_type: Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2695
+  note: Matched by name. Census class code D3.
+- geographic_identifier: '2850'
+  name: Pleasant Point Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2850
+  note: Matched by name. Pleasant Point Reservation (Sipayik) is one of the two Passamaquoddy reservations.
+    Census class code D2.
+population:
+- count: 3369
+  kind: citizens
+  source: passamaquoddy-tribe-page-id-14
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"A total of 3,369 tribal members are listed on the tribal census rolls with 1,364 on the Indian
+    Township census and 2,005 listed on Pleasant Point census"; undated statement on the official site;
+    as_of is the access date'
+- count: 760
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1575, field POP100
+  note: 'Census area: Indian Township Reservation (code 1575). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    Indian Township Reservation is one of the two Passamaquoddy reservations.'
+- count: 4
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2695, field POP100
+  note: 'Census area: Passamaquoddy Trust Land (code 2695). Everyone counted as living in the area in
+    the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 692
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2850, field POP100
+  note: 'Census area: Pleasant Point Reservation (code 2850). Everyone counted as living in the area in
+    the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    Pleasant Point Reservation (Sipayik) is one of the two Passamaquoddy reservations.'
+- count: 5306
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3190 (Passamaquoddy Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Passamaquoddy Tribe' (race code 6081) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+contacts:
+- kind: website
+  value: https://www.passamaquoddy.com/
+  label: Passamaquoddy Tribe at Indian Township (Motahkomikuk)
+  source: passamaquoddy-tribe-doe-sites-maine-gov-doe-files-inline-fil
+  confidence: high
+  as_of: 2024-09
+  note: 'BIA directory lists no website; Maine Department of Education, "Wabanaki Studies: About Wabanaki
+    Nations", updated September 2024 (state agency) links this site; site confirmed reachable'
+- kind: website
+  value: https://wabanaki.com/
+  label: Passamaquoddy Tribe at Sipayik (Pleasant Point) tribal government
+  source: passamaquoddy-tribe-doe-sites-maine-gov-doe-files-inline-fil
+  confidence: high
+  as_of: 2024-09
+  note: 'BIA directory lists no website; Maine Department of Education, "Wabanaki Studies: About Wabanaki
+    Nations", updated September 2024 (state agency) links this site; page title "Sipayik Tribal Government"'
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern
+  bureau_of_indian_affairs_agency: Eastern Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Passamaquoddy Tribe
+governing_documents:
+- kind: law-code
+  title: Fish and Game Ordinances; Tribal Ordinances
+  link: https://www.pleasantpointpolice.gov/wardens
+  source: national-indian-law-library-passamaquoddy-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Pleasant Point police
+    department website . Fish and Game Ordinances; Tribal Ordinances.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.passamaquoddy.com/?page_id=884
+  source: national-indian-law-library-passamaquoddy-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website (Indian Township) .".'
+- kind: constitution
+  title: Constitution
+  link: https://wabanaki.com/tribal_constitution/
+  source: national-indian-law-library-passamaquoddy-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website (Pleasant Point) .".'
+- kind: constitution
+  title: Constitution
+  link: http://www.narf.org/nill/constitutions/passamaquoddy/index.html
+  source: national-indian-law-library-passamaquoddy-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At NILL website
+    .".'
+- kind: constitution
+  title: Draft Constitution, August 9, . See NILL catalog record for all available versions of the constitution
+  year: '1990'
+  link: https://thorpe.law.ou.edu/constitution/passama/index.html
+  source: national-indian-law-library-passamaquoddy-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
+    of Oklahoma website (Draft Constitution, August 9, 1990). See NILL catalog record for all available
+    versions of the constitution.".'
+- kind: constitution
+  title: Passamaquoddy Tribe Constitution
+  link: https://www.passamaquoddy.com/?page_id=884
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Maine section, entry 'Passamaquoddy Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://wabanaki.com/tribal_court/
+  source: national-indian-law-library-passamaquoddy-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Passamaquoddy Tribal Court
+  link: http://www.wabanaki.com/wabanaki_new/Tribal_Court.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Maine section, entry 'Passamaquoddy Tribe'
+gaming:
+  ordinances:
+  - approved: '1995-07-19'
+    link: https://www.nigc.gov?wpdmdl=10571&ind=10585
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-07-19'
+    locator: table row 186, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 186 lists the nation
+      as "Passamaquoddy Tribe".
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Passamaquoddy Tribe - Indian Township; Passamaquoddy Tribe - Pleasant Point'
+memberships:
+- organization: United South and Eastern Tribes
+  source: united-south-and-eastern-tribes-member-tribal-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Passamaquoddy Tribe – Pleasant Point; Passamaquoddy Tribe – Indian Township". Name
+    matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

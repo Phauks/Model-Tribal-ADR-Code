@@ -1,0 +1,93 @@
+id: schaghticoke-tribe
+entity_type: native-nation
+names:
+  official: Schaghticoke Tribe
+  alternate:
+  - name: Schaghticoke Tribal Nation
+    source: connecticut-deep-tribal-affairs
+    confidence: high
+    as_of: '2026'
+    note: One of two factions the state agency names; the other is the Schaghticoke Indian Tribe.
+  - name: Schaghticoke Indian Tribe
+    source: connecticut-deep-tribal-affairs
+    confidence: high
+    as_of: '2026'
+    note: One of two factions the state agency names; the agency says this faction has an active federal
+      acknowledgment petition.
+  official_source: census-aian-geography-definitions
+recognition:
+- type: unrecognized
+  source: census-aian-geography-definitions
+  confidence: low
+  as_of: '2020'
+  locator: Definition of State American Indian reservation; area 9350
+  note: The 2020 Census delineated "Schaghticoke (state) Reservation" (State American Indian reservation).
+    The Census Bureau defines state American Indian reservations as reservations of state-recognized tribes,
+    delineated with a governor-appointed state liaison. Not on the 2026 federal list. Linking of area
+    to group is by name comparison (see census-area fact).
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83
+  petition_number: '245'
+  petition_stage: Letter of Intent to Petition 9/27/2001
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  locator: 'Petitioner #245'
+  note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
+    Additional Resources page says groups on the 2013 list may no longer be active petitioners under the
+    current regulations.
+- type: state
+  state: CT
+  legal_basis: Connecticut General Statutes Section 47-59a(b) (Public Act 89-368), naming 'the Schaghticoke'
+  source: connecticut-general-statutes-47-59a
+  confidence: high
+  as_of: '2020'
+  locator: Section 47-59a(b)
+- type: state
+  state: CT
+  legal_basis: Described as a State recognized tribe by the Connecticut Department of Energy and Environmental
+    Protection
+  source: connecticut-deep-tribal-affairs
+  confidence: high
+  as_of: '2026'
+states:
+- state: CT
+  presence: land
+  source: census-aiannh-codes-by-state-2020
+  confidence: low
+  as_of: '2020'
+  locator: AIANNHCE 9350
+  note: State reservation land.
+- state: CT
+  presence: other
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+- state: CT
+  presence: land
+  source: connecticut-deep-tribal-affairs
+  confidence: high
+  as_of: '2026'
+  note: Reservation of about 300 acres in Kent, west of the Housatonic River.
+census_areas:
+- geographic_identifier: '9350'
+  name: Schaghticoke (state) Reservation
+  area_type: State American Indian reservation
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: low
+  as_of: '2020'
+  locator: AIANNHCE 9350, GEOID 9350R
+  note: Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched
+    by name comparison with the state-recognized helper list. Census area name "Schaghticoke (state) Reservation";
+    linked by name comparison to the state-recognized helper entity. The Census file does not name the
+    group that holds the reservation.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

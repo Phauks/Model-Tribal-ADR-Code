@@ -1,0 +1,198 @@
+id: shinnecock-indian-nation
+entity_type: native-nation
+names:
+  official: Shinnecock Indian Nation
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+- type: federal
+  legal_basis: 25 C.F.R. Part 83; final determination 75 FR 34760 (2010-06-18)
+  petition_number: '4'
+  petition_stage: Letter of Intent to Petition 02/08/1978; Acknowledged 6/13/2010, 75 FR 34760, effective
+    on 10/1/2010
+  since: '2010-10-01'
+  source: federal-register-2010-14733
+  confidence: high
+  as_of: '2010-10-01'
+  locator: 'Petitioner #4'
+  note: 'Also see source(s): ofa-list-of-petitioners-by-state-2013.'
+- type: state
+  state: NY
+  legal_basis: New York Indian Law Article 9, The Shinnecock Tribe (sections 120-122)
+  source: new-york-indian-law
+  confidence: medium
+  as_of: '2026'
+  locator: Article 9
+  note: State statute addresses the nation; also federally recognized (2010).
+states:
+- state: NY
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Shinnecock Indian Nation
+- state: NY
+  presence: land
+  source: census-aiannh-codes-by-state-2020
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9370
+  note: State reservation land.
+- state: NY
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 9370
+  note: 'Census area with land in this state: Shinnecock (state) Reservation (code 9370). Area matched
+    to the nation by name.'
+census_areas:
+- geographic_identifier: '9370'
+  name: Shinnecock (state) Reservation
+  area_type: State American Indian reservation
+  vintage: '2020'
+  source: census-tiger-2020-aiannh
+  confidence: medium
+  as_of: '2020'
+  locator: AIANNHCE 9370, GEOID 9370R
+  note: Census class code D4; AIANNHR = S (state). Matched to the federally recognized nation by name
+    comparison. State reservation in the 2020 Census; the Shinnecock Indian Nation is on the 2026 federal
+    list, so no recognition fact is given here.
+- geographic_identifier: '9370'
+  name: Shinnecock (state) Reservation
+  area_type: (state) Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US9370
+  note: Matched by name. Census classifies this as a state reservation (Shinnecock (state) Reservation);
+    the Shinnecock Indian Nation is federally recognized. Census class code D4.
+population:
+- count: 1589
+  kind: citizens
+  source: shinnecock-indian-nation-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"over 1,589 enrolled tribal members"; undated statement on the official site; as_of is the access
+    date'
+- count: 819
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US9370, field POP100
+  note: 'Census area: Shinnecock (state) Reservation (code 9370). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.
+    Census classifies this as a state reservation (Shinnecock (state) Reservation); the Shinnecock Indian
+    Nation is federally recognized.'
+- count: 5044
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3316 (Shinnecock Indian Nation alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Shinnecock Indian Nation' (race code 6279) alone or
+    in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 1292
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Shinnecock Indian Nation', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 584
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: low
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 88, row T45900 'Shinnecock Indian Nation'
+  note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
+    in the vicinity of the nation (2010), used by Indian Affairs as the nation's population indicator;
+    a broad proxy that includes people of any tribe; not enrollment. Report published 2014-01-16; row
+    name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.shinnecock-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Shinnecock Indian Nation
+- kind: physical-address
+  value: 100 Church Street, Community Center Shinnecock Reservation, Southampton, NY 11968
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Shinnecock Indian Nation
+- kind: mailing-address
+  value: Shinnecock Indian Nation Tribal Office P.O. Box 5006, Southampton, NY 11969
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Shinnecock Indian Nation
+- kind: phone
+  value: 631-283-6143
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Shinnecock Indian Nation
+- kind: fax
+  value: 631-283-0751
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Shinnecock Indian Nation
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern
+  bureau_of_indian_affairs_agency: Eastern Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Shinnecock Indian Nation
+gaming:
+  ordinances:
+  - approved: '2020-07-17'
+    link: https://www.nigc.gov?wpdmdl=11119&ind=11142
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2020-07-17'
+    locator: table row 258, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 258 lists the nation
+      as "Shinnecock Indian Nation".
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Shinnecock Indian Nation Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: United South and Eastern Tribes
+  source: united-south-and-eastern-tribes-member-tribal-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Shinnecock Indian Nation".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

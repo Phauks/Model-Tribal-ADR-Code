@@ -1,0 +1,45 @@
+id: the-central-band-of-cherokee
+entity_type: native-nation
+names:
+  official: The Central Band of Cherokee
+  former:
+  - name: Cherokee's of Lawrence County, Tennessee, Sugar Creek Band of the SECCI
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    locator: 'Petitioner #227'
+  alternate:
+  - name: Central Band of Cherokee
+    source: ofa-list-of-petitioners-by-state-2013
+    confidence: medium
+    as_of: '2013-11-12'
+    locator: 'Petitioner #227'
+    note: Name as printed on the Office of Federal Acknowledgment list by state.
+  official_source: federal-register-2012-7646
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 77 FR 19315 (2012-03-30)
+  petition_number: '227'
+  petition_stage: Denied (Petitions Resolved page); Denied acknowledgment through 25 CFR 83 (eff. 7/24/12)
+  source: federal-register-2012-7646
+  confidence: high
+  as_of: '2012-03-30'
+  locator: 'Petitioner #227'
+  note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
+    Denied acknowledgment through 25 CFR 83 (eff. 7/24/12). Other Federal Register history: Proposed Finding
+    Against Federal Acknowledgment of the Central Band of Cherokee, 75 FR 51105 (2010-08-18).'
+states:
+- state: TN
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

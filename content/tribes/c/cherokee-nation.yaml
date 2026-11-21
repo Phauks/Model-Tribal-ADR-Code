@@ -1,0 +1,496 @@
+id: cherokee-nation
+entity_type: native-nation
+names:
+  official: Cherokee Nation
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: OK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cherokee Nation
+- state: OK
+  presence: other
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5550
+  note: 'Census area with land in this state: Cherokee OTSA (code 5550). Statistical area only (not a
+    land holding), so presence is recorded as other. Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '5550'
+  name: Cherokee OTSA
+  area_type: Oklahoma Tribal Statistical Area
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5550
+  note: Matched by name. Census class code D6.
+population:
+- count: 470000
+  kind: citizens
+  source: cherokee-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Homepage: ''more than 470,000 citizens worldwide''. Rounded figure; as_of is access date.'
+- count: 513178
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US5550, field POP100
+  note: 'Census area: Cherokee OTSA (code 5550). Everyone counted as living in the area in the 2020 Census,
+    of any race or tribal affiliation; this is not a count of the nation''s citizens. The area is a Census
+    statistical area, not a land holding.'
+- count: 77232
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2909 (Cherokee Nation alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Cherokee Nation' (race code 5603) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 319558
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Oklahoma, row 'Cherokee Nation', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.cherokee.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cherokee Nation
+- kind: physical-address
+  value: 17675 South Muskogee Avenue, Tahlequah, OK 74464
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cherokee Nation
+- kind: mailing-address
+  value: P.O. Box 948, Tahlequah, OK 74465
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cherokee Nation
+- kind: phone
+  value: (800) 256-0671
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cherokee Nation
+- kind: fax
+  value: (918) 458-5580
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cherokee Nation
+- kind: website
+  value: https://www.cherokee.gov/
+  label: Official website (the directory address https://www.cherokee.org/ redirects here)
+  source: cherokee-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Directory URL still works but redirects to cherokee.gov.
+languages:
+- name: Cherokee
+  language_tag: chr
+  source: cherokee-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Homepage links a Cherokee Language Hub and Cherokee language classes.
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern Oklahoma
+  bureau_of_indian_affairs_agency: Eastern Oklahoma Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Cherokee Nation
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: https://attorneygeneral.cherokee.org/Tribal-Code
+  source: national-indian-law-library-cherokee-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal Attorney
+    General''s website .".'
+- kind: law-code
+  title: Tribal code
+  link: https://www.cherokeecourts.org/
+  source: national-indian-law-library-cherokee-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
+    website . (See CNCA- Searchable PDF in left-hand column).".'
+- kind: law-code
+  title: Legislative Research Center
+  link: https://cherokee.legistar.com/Legislation.aspx
+  source: national-indian-law-library-cherokee-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Legislative Research Center.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.cherokee.org/our-government/cherokee-nation-constitution/
+  source: national-indian-law-library-cherokee-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Constitution
+  link: https://attorneygeneral.cherokee.org/Tribal-Code
+  source: national-indian-law-library-cherokee-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribal Attorney
+    General''s website as part of tribal code.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.cherokeecourts.org/
+  source: national-indian-law-library-cherokee-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribal court''s
+    website as part of tribal code (See CNCA- Searchable PDF in left-hand column).".'
+- kind: law-code
+  title: Cherokee Nation
+  year: '2014'
+  link: https://narf.org/nill/codes/cherokee_nation/index.html
+  source: national-indian-law-library-code-codes-cherokee-nation
+  confidence: medium
+  as_of: '2014'
+  locator: page heading
+  note: 'Published: 2014. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Cherokee Nation - Constitution
+  year: '2006'
+  link: https://narf.org/nill/constitutions/cherokee_nation/index.html
+  source: national-indian-law-library-constitution-constitutions-cherokee-nation
+  confidence: medium
+  as_of: '2006'
+  locator: page heading
+  note: 'Adopted: 1999 / Enacted: 2006. The National Indian Law Library page gives the table of contents
+    (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Cherokee Nation Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Cherokee Nation'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.cherokee.org/Portals/AttorneyGeneral/Users/213/13/213/Word%20Searchable%20Full%20Code.pdf?ver=2015-10-22-083614-130)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Cherokee Nation Full Code
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Cherokee Nation'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.cherokee.org/Portals/AttorneyGeneral/Users/213/13/213/Word%20Searchable%20Full%20Code.pdf?ver=2015-10-22-083614-130)
+    returned HTTP 404, so it is not recorded.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: http://www.cherokeecourts.org/
+  source: national-indian-law-library-cherokee-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Cherokee Nation Judicial Branch
+  link: http://www.cherokeecourts.org/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oklahoma section, entry 'Cherokee Nation'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Community Service Sentencing Program (Alternative to Incarceration)
+    citation: completion—Immunity from tort liability.
+    link: https://ncorj.org/tribal-law/community-service-sentencing-program-alternative-to-incarceration/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-service-sentencing-program-alternative-to-incarceration/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Deferral for Juvenile Delinquency
+    citation: Cherokee Nation Tribal Code. Title 10A - Juvenile Code Amendments. § 2-2-404. Deferral of
+      delinquency proceedings.
+    link: https://attorneygeneral.cherokee.org/media/czgnd5j1/title-10a-amendment-updated-2021-03-18.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferral-for-juvenile-delinquency/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Diversion Services for Child-In-Need-Of-Supervision
+    citation: Cherokee Nation Tribal Code. Title 10A - Juvenile Code Amendments. § 2-2-104.1. Diversion
+      services.
+    link: https://attorneygeneral.cherokee.org/media/czgnd5j1/title-10a-amendment-updated-2021-03-18.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-services-for-child-in-need-of-supervision/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Informal Adjustment for Juveniles
+    citation: Cherokee Nation Tribal Code. Title 10A - Juvenile Code Amendments. § 2-2-104. Preliminary
+      inquiry--Petition.
+    link: https://attorneygeneral.cherokee.org/media/czgnd5j1/title-10a-amendment-updated-2021-03-18.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-adjustment-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: arbitration
+    title: CHAPTER 8 UNIFORM ARBITRATION ACT
+    citation: CHAPTER 8 UNIFORM ARBITRATION ACT; § 1304. Effect of agreement to arbitrate—Nonwaivable
+      provisions; § 1306. Validity of agreement to arbitrate; § 1307. Petition to compel or stay arbitration;
+      § 1309. Initiation of arbitration; § 1310. Consolidation of separate arbitration proceedings; §
+      1311. Appointment of arbitrator—Service as a neutral arbitrator; § 1312. Disclosure by arbitrator;
+      § 1314. Immunity of arbitrator—Competency to testify—Attorney fees and costs; § 1315. Arbitration
+      process; § 1...
+    link: https://www.narf.org/nill/codes/cherokee_nation/index.html
+    source: national-indian-law-library-code-index-cherokee-nation
+    confidence: medium
+    as_of: 2016-07
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: Rule 93. Settlement conference
+    citation: Rule 93. Settlement conference; XVII. ARBITRATORS
+    link: https://www.narf.org/nill/codes/cherokee_nation/index.html
+    source: national-indian-law-library-code-index-cherokee-nation
+    confidence: medium
+    as_of: 2016-07
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: CHAPTER 2 DISPUTE RESOLUTION
+    citation: Title 85 (Workers' Compensation), CHAPTER 2 DISPUTE RESOLUTION; § 47. Arbitration
+    link: https://www.narf.org/nill/codes/cherokee_nation/index.html
+    source: national-indian-law-library-code-index-cherokee-nation
+    confidence: medium
+    as_of: 2016-07
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: arbitration
+    title: CHAPTER 8 UNIFORM ARBITRATION ACT
+    citation: CHAPTER 8 UNIFORM ARBITRATION ACT; Effect of agreement to arbitrate—Nonwaivable provisions;
+      Validity of agreement to arbitrate; Petition to compel or stay arbitration; Initiation of arbitration;
+      ...
+    link: https://narf.org/nill/codes/cherokee_nation/index.html
+    source: national-indian-law-library-code-codes-cherokee-nation
+    confidence: medium
+    as_of: '2014'
+    locator: Table of Contents, under 'Title 12. Civil Procedures'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Published:
+      2014); the provision itself was not read. The heading it falls under is taken from the page layout
+      and may be imprecise.'
+  - kind: arbitration
+    title: ARBITRATORS
+    citation: ARBITRATORS
+    link: https://narf.org/nill/codes/cherokee_nation/index.html
+    source: national-indian-law-library-code-codes-cherokee-nation
+    confidence: medium
+    as_of: '2014'
+    locator: Table of Contents, under 'APPENDIX I TO TITLE 20'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Published:
+      2014); the provision itself was not read. The heading it falls under is taken from the page layout
+      and may be imprecise.'
+  - kind: arbitration
+    title: CHAPTER 2 DISPUTE RESOLUTION
+    citation: CHAPTER 2 DISPUTE RESOLUTION; Arbitration
+    link: https://narf.org/nill/codes/cherokee_nation/index.html
+    source: national-indian-law-library-code-codes-cherokee-nation
+    confidence: medium
+    as_of: '2014'
+    locator: Table of Contents, under 'TITLE 85 WORKERS' COMPENSATION'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Published:
+      2014); the provision itself was not read. The heading it falls under is taken from the page layout
+      and may be imprecise.'
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '2010-10-05'
+    federal_register_citation: 75 FR 61511
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2010-10-05'
+    locator: result page 26 (?page=26), row 8
+    note: 'Listed as: "Cherokee Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Cherokee
+      Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2010.10.05_cherokee_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2010/10/05/2010-25005/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2018-08-17'
+    federal_register_citation: 83 FR 41101
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-08-17'
+    locator: result page 26 (?page=26), row 9
+    note: 'Listed as: "Cherokee Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Cherokee
+      Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.17%20Cherokee%20%20compact%20amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/08/17/2018-17729/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of-oklahoma.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2005-01-27'
+    federal_register_citation: 70 FR 3942
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-01-27'
+    locator: result page 26 (?page=26), row 10
+    note: 'Listed as: "Cherokee Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Cherokee
+      Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.01.27%20Cherokee%20Nation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/01/27/05-1468/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2005-01-27'
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked.
+  ordinances:
+  - approved: '1994-06-02'
+    link: https://www.nigc.gov?wpdmdl=9473&ind=9484
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-06-02'
+    locator: table row 38, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 38 lists the nation
+      as "Cherokee Nation, Oklahoma".
+  - approved: '2008-01-22'
+    link: https://www.nigc.gov?wpdmdl=9474&ind=9485
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-01-22'
+    locator: table row 38, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 38 lists the nation
+      as "Cherokee Nation, Oklahoma".
+  - approved: '2014-10-27'
+    link: https://www.nigc.gov?wpdmdl=9475&ind=9486
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2014-10-27'
+    locator: table row 38, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 38 lists the nation
+      as "Cherokee Nation, Oklahoma".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Cherokee Nation, Oklahoma".
+      Facilities as machine-extracted from the report text (verify): Cherokee Casino - Fort Gibson; Cherokee
+      Casino - Roland; Cherokee Casino - Sallisaw; Roland Travel Plaza; Cherokee Casino - Tahlequah; Cherokee
+      Casino - West Siloam Springs; Cherokee Nation Grove Casino; Cherokee Casino Ramona; Cherokee Casino
+      - South Coffeyville. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Cherokee Nation Confidence lowered from high by the lead session: the notice prints
+    its table as page images, so nation names were read from images and matched to the roster.'
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Exercising jurisdiction since 2018-05-17 (start date given by NCAI; jurisdiction began under
+    the 2013 special domestic violence criminal jurisdiction provision). Listed by NCAI as implementing
+    (list updated May 2022).
+  source: national-congress-of-american-indians-implementing-tribe-profile-cherokee-nation
+  confidence: medium
+  as_of: 2022-05
+  locator: '"Exercising jurisdiction since" line'
+  note: Listed as "Cherokee Nation of Oklahoma". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+- topic: tribal-law-and-order-act-enhanced-sentencing
+  value: implementing
+  detail: Listed among tribes exercising enhanced sentencing and incarcerating inmates under the Tribal
+    Law and Order Act (as of 2013 interviews).
+  source: bureau-of-justice-assistance-enhanced-sentencing-in-tribal-courts-2015
+  confidence: medium
+  as_of: '2013'
+  locator: p. 3, list of tribes exercising enhanced sentencing
+  note: Listed as "Cherokee Nation of Oklahoma".
+memberships:
+- organization: Inter-Tribal Council of the Five Civilized Tribes
+  source: inter-tribal-council-of-the-five-civilized-tribes-home
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Cherokee". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

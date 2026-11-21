@@ -1,0 +1,118 @@
+{
+ "raw_files": [
+  {
+   "file": "federal-list-and-directory.json",
+   "session": "2026-11-21-federal-list-import",
+   "facts": 5071,
+   "sources": 0
+  },
+  {
+   "file": "dispute-resolution-practice.json",
+   "session": "2026-11-21-dispute-resolution-practice",
+   "facts": 1236,
+   "sources": 145
+  },
+  {
+   "file": "gaming.json",
+   "session": "2026-11-21-gaming",
+   "facts": 2822,
+   "sources": 35
+  },
+  {
+   "file": "hawaiian-and-territorial.json",
+   "session": "2026-11-21-hawaiian-and-territorial",
+   "facts": 78,
+   "sources": 40
+  },
+  {
+   "file": "jurisdiction-and-memberships.json",
+   "session": "2026-11-21-jurisdiction-and-memberships",
+   "facts": 1411,
+   "sources": 82
+  },
+  {
+   "file": "justice-and-law.json",
+   "session": "2026-11-21-justice-and-law",
+   "facts": 3050,
+   "sources": 1189
+  },
+  {
+   "file": "nations-alaska.json",
+   "session": "2026-11-21-nations-alaska",
+   "facts": 2047,
+   "sources": 11
+  },
+  {
+   "file": "nations-contiguous-a-l.json",
+   "session": "2026-11-21-nations-contiguous-a-l",
+   "facts": 235,
+   "sources": 177
+  },
+  {
+   "file": "nations-contiguous-m-z.json",
+   "session": "2026-11-21-nations-contiguous-m-z",
+   "facts": 276,
+   "sources": 194
+  },
+  {
+   "file": "other-nonfederal-groups.json",
+   "session": "2026-11-21-other-nonfederal-groups",
+   "facts": 235,
+   "sources": 16
+  },
+  {
+   "file": "petitioning.json",
+   "session": "2026-11-21-petitioning",
+   "facts": 741,
+   "sources": 101
+  },
+  {
+   "file": "population-bulk.json",
+   "session": "2026-11-21-population-bulk",
+   "facts": 2848,
+   "sources": 5
+  },
+  {
+   "file": "state-recognized.json",
+   "session": "2026-11-21-state-recognized",
+   "facts": 378,
+   "sources": 47
+  }
+ ],
+ "dropped_facts": [],
+ "unknown_nations": {},
+ "renamed_sources": [],
+ "merged_entities": [
+  "echota-cherokee-tribe-of-alabama-inc -> echota-cherokee-tribe-of-alabama",
+  "cher-o-creek-intra-tribal-indians -> cher-o-creek-intratribal-indians",
+  "machis-lower-alabama-creek-indian-tribe -> ma-chis-lower-creek-indian-tribe-of-alabama",
+  "haliwa-saponi-indian-tribe-inc -> haliwa-saponi-indian-tribe",
+  "occaneechi-band-of-saponi-nation -> occaneechi-band-of-the-saponi-nation-of-north-carolina",
+  "choctaw-apache-community-of-ebarb-inc -> choctaw-apache-tribe-of-ebarb",
+  "clifton-choctaw-indians -> clifton-choctaw-tribe-of-louisiana",
+  "united-houma-nation-inc -> united-houma-nation",
+  "beaver-creek-band-of-pee-dee-indians -> beaver-creek-indians",
+  "piedmont-american-indian-association -> piedmont-american-indian-association-lower-eastern-cherokee-nation-of-south-carolina",
+  "golden-hill-paugussett-tribe -> golden-hill-paugussett",
+  "lower-muscogee-creek-tribe-east-of-the-mississippi -> lower-muscogee-creek-tribe",
+  "accohannock-indian-tribal-association-inc -> accohannock-indian-tribe",
+  "nanticoke-lenni-lenape-indians -> nanticoke-lenni-lenape-tribal-nation",
+  "ramapough-mountain-indians-inc -> ramapough-lenape-nation",
+  "lipan-apache-band-of-texas-inc -> lipan-apache-tribe-of-texas",
+  "grand-river-bands-of-ottawa-indians -> grand-river-band-of-ottawa-indians",
+  "mackinac-bands-of-chippewa-and-ottawa-indians -> mackinaw-bands-of-chippewa-and-ottawa-indians",
+  "nanticoke-lenni-lenape-indians-of-new-jersey -> nanticoke-lenni-lenape-tribal-nation",
+  "st-francis-sokoki-band-of-abenakis-of-vermont-abenaki-tribal-council -> st-francis-sokoki-band-of-abenakis-of-vermont"
+ ],
+ "skipped_profiles": [],
+ "invalid_sources": [],
+ "missing_sources": {},
+ "counts": {
+  "profiles_written": 948,
+  "profiles_skipped": 0,
+  "new_sources": 145,
+  "facts_read": 20448,
+  "facts_dropped": 0,
+  "sources_missing": 0
+ }
+}

@@ -1,0 +1,416 @@
+id: winnebago-tribe-of-nebraska
+entity_type: native-nation
+names:
+  official: Winnebago Tribe of Nebraska
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: NE
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Winnebago Tribe of Nebraska
+- state: IA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4625
+  note: 'Census area with land in this state: Winnebago Reservation and Off-Reservation Trust Land (code
+    4625). Area matched to the nation by name.'
+- state: NE
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4625
+  note: 'Census area with land in this state: Winnebago Reservation and Off-Reservation Trust Land (code
+    4625). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '4625'
+  name: Winnebago Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4625
+  note: Matched by name. Census class code D1.
+population:
+- count: 5000
+  kind: citizens
+  source: winnebago-tribe-of-nebraska-tribal-council
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"Currently, the Tribe has over 5,000 enrolled members"; undated statement on the official site;
+    as_of is the access date'
+- count: 5829
+  kind: citizens
+  source: omaha-tribe-of-nebraska-p-4596
+  confidence: medium
+  as_of: 2026-05
+  note: '"Winnebago Tribe of Nebraska: 5,829"; figure published by the Omaha Tribe; Winnebago site says
+    "over 5,000"; Omaha Tribe news post "Enrollment Roundtable" on the May 18-19, 2026 quarterly enrollment
+    training attended by Nebraska tribes'' enrollment staff: "Total Tribal Membership for Each Tribe"'
+- count: 2737
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4625, field POP100
+  note: 'Census area: Winnebago Reservation and Off-Reservation Trust Land (code 4625). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 2111
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3428 (Winnebago Tribe of Nebraska alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Winnebago Tribe of Nebraska' (race code 6403) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 5300
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Denver, row 'Winnebago Tribe', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 1450
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 90, row T55100 'Winnebago Tribe of Nebraska'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://winnebagotribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Winnebago Tribe of Nebraska
+- kind: physical-address
+  value: 100 Bluff Street, Winnebago, NE 68071
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Winnebago Tribe of Nebraska
+- kind: mailing-address
+  value: P.O. Box 687, Winnebago, NE 68071
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Winnebago Tribe of Nebraska
+- kind: phone
+  value: (402) 878-2272
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Winnebago Tribe of Nebraska
+- kind: fax
+  value: (402) 878-2963
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Winnebago Tribe of Nebraska
+federal_administration:
+  bureau_of_indian_affairs_region: Great Plains
+  bureau_of_indian_affairs_agency: Winnebago Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Winnebago Tribe of Nebraska
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Winnebago Tribe of Nebraska" among organizations under constitutions approved
+    by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Winnebago Tribe Winnebago Reservation in the State of Nebraska) (approved 1936)
+    states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-winncons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Winnebago Tribe of Nebraska - Code
+  year: '2023'
+  link: https://narf.org/nill/codes/winnebagocode/index.html
+  source: national-indian-law-library-code-codes-winnebagocode
+  confidence: medium
+  as_of: '2023'
+  locator: page heading
+  note: 'Table of Contents Updated : August 2023. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Winnebago Tribe of Nebraska - Tribal Constitution
+  year: '2009'
+  link: https://narf.org/nill/constitutions/winnebago_nebraska/index.html
+  source: national-indian-law-library-constitution-constitutions-winnebago-nebraska
+  confidence: medium
+  as_of: '2009'
+  locator: page heading
+  note: 'Amended: March 10, 2009. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://winnebagotribe.com/tribal-court/
+  source: national-indian-law-library-winnebago
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://winnebagotribe.com/tribal-constitution-bylaws/
+  source: national-indian-law-library-winnebago
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Winnebago Tribe Constitution and Bylaws
+  link: http://www.winnebagotribe.com/index.php/government/tribal-constitution-bylaws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Nebraska section, entry 'Winnebago Tribe of Nebraska'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Winnebago Tribal Code
+  link: http://www.winnebagotribe.com/index.php/government/tribal-court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Nebraska section, entry 'Winnebago Tribe of Nebraska'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Winnebago Tribe of Nebraska)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/winnchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-winnchrtr
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Winnebago Tribe Winnebago Reservation in the State of Nebraska)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/winncons.html
+  source: university-of-oklahoma-indian-reorganization-act-winncons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://winnebagotribe.com/tribal-court/
+  source: national-indian-law-library-winnebago
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Winnebago Tribal Court
+  link: http://www.winnebagotribe.com/index.php/government/tribal-court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Nebraska section, entry 'Winnebago Tribe of Nebraska'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Child Abuse and Child Neglect Diversion Progam
+    citation: Winnebago Tribal Code Title 4; 4-511
+    link: https://winnebagotribe.com/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/child-abuse-and-child-neglect-diversion-progam/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Justice. Database phase: Pre-adjudication. Database form of
+      practice: Restorative justice.'
+  - kind: other
+    title: Dispositions for Child-in-need-of-supervision
+    citation: Winnebago Tribal Code Title 4; 4-411
+    link: https://winnebagotribe.com/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispositions-for-child-in-need-of-supervision/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Prohibited Diversion for Domestic or Family Violence
+    citation: Winnebago Tribal Code Title 12; 12-218
+    link: https://winnebagotribe.com/tribal-court/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/prohibited-diversion-for-domestic-or-family-violence/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Justice. Database phase: Pre-adjudication. Database form of
+      practice: Restorative justice.'
+gaming:
+  compacts:
+  - state: IA
+    status: approved
+    approved: '2005-02-22'
+    federal_register_citation: 70 FR 8608
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-02-22'
+    locator: result page 14 (?page=14), row 12
+    note: 'Listed as: "Winnebago Tribe of Nebraska Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Winnebago Tribe of Nebraska". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2005.02.22_winnebago_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/02/22/05-3227/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: IA
+    status: approved
+    approved: '1995-12-18'
+    federal_register_citation: 60 FR 65064
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-12-18'
+    locator: result page 14 (?page=14), row 13
+    note: 'Listed as: "Winnebago Tribe of Nebraska Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Winnebago Tribe of Nebraska". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1995.12.18_winnebago_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/12/18/95-30655/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: IA
+    status: approved
+    approved: '1998-10-19'
+    federal_register_citation: 63 FR 55888
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-10-19'
+    locator: result page 14 (?page=14), row 14
+    note: 'Listed as: "Winnebago Tribe of Nebraska Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Winnebago Tribe of Nebraska". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1998.10.19_winnebago_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/10/19/98-27935/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: IA
+    status: approved
+    dispute_resolution_summary: For a non-material breach the parties meet and confer within 15 days of
+      written notice, the complaining party may then make a written demand, a refused demand goes to mediation
+      under American Arbitration Association commercial mediation rules, and issues left in the mediator's
+      summary report go to binding arbitration under American Arbitration Association rules.
+    dispute_resolution_locator: Section 20 (Binding Dispute Resolution for Non-Material Breach)
+    source: compact-ia-ponca-tribe-of-nebraska-2021
+    confidence: medium
+    as_of: '2021-03-05'
+    locator: Section 20 (Binding Dispute Resolution for Non-Material Breach)
+    note: state model compact; nation-specific text not checked. Read from the 2021 Ponca Tribe of Nebraska
+      compact with Iowa; other Iowa compacts were not checked. Status copied from this nation's most recent
+      approved or deemed-approved entry for this state in the Office of Indian Gaming list (2005-02-22).
+  ordinances:
+  - approved: '1994-03-23'
+    link: https://www.nigc.gov?wpdmdl=11526&ind=11571
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-03-23'
+    locator: table row 311, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 311 lists the nation
+      as "Winnebago Tribe of Nebraska".
+  - approved: '1997-01-13'
+    link: https://www.nigc.gov?wpdmdl=11551&ind=11572
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-01-13'
+    locator: table row 311, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 311 lists the nation
+      as "Winnebago Tribe of Nebraska".
+  - approved: '2009-01-27'
+    link: https://www.nigc.gov?wpdmdl=11554&ind=11573
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2009-01-27'
+    locator: table row 311, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 311 lists the nation
+      as "Winnebago Tribe of Nebraska".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Winnebago Tribe of Nebraska". Name
+      extracted from the PDF by the page-fetch tool and matched to the roster.
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Nebraska is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Nebraska. Applies to the nation''s Indian country
+    within Nebraska; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Nebraska"
+  note: Statute is primary; nation matched to Nebraska by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: public-law-280
+  value: retroceded
+  detail: Interior accepted retrocession of all criminal jurisdiction exercised by Nebraska over the Winnebago
+    Reservation (acquired under Public Law 280). Civil jurisdiction not covered. (51 FR 24234)
+  source: federal-register-1986-winnebago-retrocession
+  confidence: high
+  as_of: '1986-07-03'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Winnebago Tribe of Nebraska Confidence lowered from high by the lead session: the
+    notice prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: Great Plains Tribal Leaders Health Board
+  source: great-plains-tribal-leaders-health-board-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Winnebago Tribe of Nebraska".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,440 @@
+id: pokagon-band-of-potawatomi-indians
+entity_type: native-nation
+names:
+  official: Pokagon Band of Potawatomi Indians, Michigan and Indiana
+  self_designation:
+  - name: Bodéwadmi
+    language_tag: pot
+    source: pokagon-band-of-potawatomi-indians-departments-education-higher-education-l
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'site: "the ancestral language of the Bodéwadmi people"'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: Legislatively acknowledged (as stated in the Office of Federal Acknowledgment list)
+  petition_number: '75'
+  petition_stage: Letter of Intent to Petition 05/03/1981; Legislatively acknowledged 9/21/1994
+  since: '1994-09-21'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '1994-09-21'
+  locator: 'Petitioner #75'
+  note: 'Petitioners #75 (Potawatomi Indians of Indiana and Michigan, Inc.) and #78 (Pokagon Band of Potawatomi
+    Indians) were combined and legislatively acknowledged as a single group.'
+- type: federal
+  legal_basis: Legislatively acknowledged (as stated in the Office of Federal Acknowledgment list)
+  petition_number: '78'
+  petition_stage: Letter of Intent to Petition 11/23/1981; Legislatively acknowledged 09/21/1994
+  since: '1994-09-21'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '1994-09-21'
+  locator: 'Petitioner #78'
+states:
+- state: MI
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pokagon Band of Potawatomi Indians, Michigan and Indiana
+- state: IN
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2890
+  note: 'Census area with land in this state: Pokagon Reservation and Off-Reservation Trust Land (code
+    2890). Area matched to the nation by name.'
+- state: MI
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2890
+  note: 'Census area with land in this state: Pokagon Reservation and Off-Reservation Trust Land (code
+    2890). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2890'
+  name: Pokagon Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2890
+  note: Matched by name. Census class code D1.
+population:
+- count: 202
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2890, field POP100
+  note: 'Census area: Pokagon Reservation and Off-Reservation Trust Land (code 2890). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 3260
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3218 (Pokagon Band of Potawatomi Indians alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Pokagon Band of Potawatomi Indians' (race code 6158)
+    alone or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 6261
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Pokagon Band of Potawatomi Indians', PDF page 5, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 1826
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 85, row T38600 'Pokagon Band of Potawatomi Indians'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://www.pokagonband-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pokagon Band of Potawatomi Indians, Michigan and Indiana
+- kind: physical-address
+  value: 58620 Sink Road, Dowagiac, MI 49047
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pokagon Band of Potawatomi Indians, Michigan and Indiana
+- kind: mailing-address
+  value: P.O. Box 180, Dowagiac, MI 49047
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pokagon Band of Potawatomi Indians, Michigan and Indiana
+- kind: phone
+  value: (269) 782-6323
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pokagon Band of Potawatomi Indians, Michigan and Indiana
+- kind: fax
+  value: (269) 782-9625
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pokagon Band of Potawatomi Indians, Michigan and Indiana
+languages:
+- name: Bodwéwadmimwen (Potawatomi)
+  language_tag: pot
+  source: pokagon-band-of-potawatomi-indians-departments-education-higher-education-l
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"Bodwéwadmimwen is the ancestral language of the Bodéwadmi people"'
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Michigan Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pokagon Band of Potawatomi Indians, Michigan and Indiana
+governing_documents:
+- kind: law-code
+  title: Pokagon Band of Potawatomi Indians - Code Table of Contents
+  year: '2012'
+  link: https://narf.org/nill/codes/pokagon_potawatomi/index.html
+  source: national-indian-law-library-code-codes-pokagon-potawatomi
+  confidence: medium
+  as_of: '2012'
+  locator: page heading
+  note: 'Received: July 2012. Full text linked from the National Indian Law Library page.'
+- kind: constitution
+  title: Pokagon Band of Potawatomi Indians - Constitution Table of Contents
+  year: '2012'
+  link: https://narf.org/nill/constitutions/pokagon_potawatomie/index.html
+  source: national-indian-law-library-constitution-constitutions-pokagon-potawatomie
+  confidence: medium
+  as_of: '2012'
+  locator: page heading
+  note: 'Amended: 2010; Received: July 2012. The National Indian Law Library page gives the table of contents
+    (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  source: national-indian-law-library-pokagon-potawatomi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .". Link check 2026-11-21: the link the source gives (http://www.pokagonband-nsn.gov/Codes_and_Ordinances.aspx)
+    returned HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Constitution
+  link: http://www.pokagonband-nsn.gov/Government/Constitution/
+  source: national-indian-law-library-pokagon-potawatomi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Pokagon Band of Potawatomi Constitution
+  link: http://www.pokagonband-nsn.gov/government/constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Indiana section, entry 'Pokagon Band of Potawatomi Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Pokagon Band of Potawatomi Tribal Code
+  link: http://www.pokagonband-nsn.gov/government/codes-and-ordinances
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Indiana section, entry 'Pokagon Band of Potawatomi Indians'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-pokagon-potawatomi
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://www.pokagonband-nsn.gov/Government/TribalCourt/) returned HTTP 404,
+    so it is not recorded.'
+- kind: tribal-court
+  name: Pokagon Tribal Court
+  link: http://www.pokagonband-nsn.gov/government/tribal-court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Indiana section, entry 'Pokagon Band of Potawatomi Indians'
+dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Native Justice Community Conflict and Dispute Resolution Forum
+    description: 'Native Justice, which the Band says is commonly referred to as peacemaking, uses talking
+      circles and circle keepers to bring people in a dispute to common ground; circle keepers facilitate
+      but do not decide, and participants set their own solution and consequences. The program has three
+      strands: Native Justice for Court, the Community Conflict and Dispute Resolution Forum, and Community
+      Education and Awareness.'
+    case_types:
+    - civil
+    participation: voluntary
+    relationship_to_court: Citizens may use the forum for civil disputes before coming to court; the court
+      continues to handle criminal cases and encourages use of the forum for civil disputes.
+    enforcement: Participants design the consequences if standards they set are not met.
+    link: https://www.pokagonband-nsn.gov/government/tribal-courts/native-justice/
+    source: pokagon-native-justice-page
+    confidence: high
+    as_of: '2026-11-21'
+    note: The page says the process uses ceremonial traditions; no further detail is recorded.
+  published_materials:
+  - kind: guide
+    title: Native Justice Resources (list of resources)
+    link: https://www.pokagonband-nsn.gov/wp-content/uploads/2023/04/Native-Justice-Resources.pdf
+    source: pokagon-native-justice-page
+    confidence: high
+    as_of: 2023-04
+  training_programs:
+  - name: Peacemaking training at the Pokagon Band (Dowagiac, Michigan, June 2019)
+    provider: Indigenous Peacemaking Initiative (Native American Rights Fund)
+    link: https://peacemaking.narf.org/2019/06/photos-pokagon-pm-training-2019/
+    source: narf-ipi-news-pokagon-training-2019
+    confidence: medium
+    as_of: 2019-06
+    note: NARF news listing also describes a June 2018 joint Pokagon Band and NARF workshop combining
+      basket weaving and peacemaking principles.
+  provisions:
+  - kind: other
+    title: Purpose of the Child Protection Code
+    citation: P.B.P.I. Child Protection Code Sec. 1
+    link: https://www.pokagonband-nsn.gov/government/codes-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-of-the-child-protection-code/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      practice, Restorative process.'
+  - kind: arbitration
+    title: Arbitration Ordinance -- 1.
+    citation: Arbitration Ordinance -- 1.; Agreements to arbitrate are enforceable.; Stay of proceedings
+      and order to proceed with arbitration.; Arbitration award not appealable.
+    link: https://narf.org/nill/codes/pokagon_potawatomi/index.html
+    source: national-indian-law-library-code-codes-pokagon-potawatomi
+    confidence: medium
+    as_of: '2012'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Received:
+      July 2012); the provision itself was not read. The heading it falls under is taken from the page
+      layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: IN
+    status: deemed-approved
+    approved: '2021-07-02'
+    federal_register_citation: 86 FR 35328
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2021-07-02'
+    locator: result page 14 (?page=14), row 23
+    note: 'Listed as: "Pokagon Band of Potawatomi Indians Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Pokagon Band of Potawatomi Indians, Michigan and Indiana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202020.07.02%20Pokagon%20Band%20of%20Potawatomi%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/07/02/2021-14217/indian-gaming-approval-by-operation-of-law-of-tribal-state-class-iii-gaming-compact-in-the-state-of.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: MI
+    status: approved
+    approved: '1999-02-18'
+    federal_register_citation: 64 FR 8111
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1999-02-18'
+    locator: result page 16 (?page=16), row 22
+    note: 'Listed as: "Pokagon Band of Potawatomi Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Pokagon Band of Potawatomi Indians, Michigan and Indiana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1999.02.18_pokagon_band_of_potawatomi_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/02/18/99-4005/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: MI
+    status: deemed-approved
+    approved: '2008-10-23'
+    federal_register_citation: 73 FR 63193
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2008-10-23'
+    locator: result page 16 (?page=16), row 23
+    note: 'Listed as: "Pokagon Band of Potawatomi Indians Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Pokagon Band of Potawatomi Indians, Michigan and Indiana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2008.10.23_pokagon_band_of_potowatomi_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/10/23/E8-25208/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: IN
+    status: deemed-approved
+    approved: '2021-07-02'
+    dispute_resolution_summary: After written notice, representatives meet within 30 days; if unresolved
+      within 90 days the complaining party may sue in United States District Court under mutual waivers
+      of sovereign immunity, or the parties may by mutual written consent use binding arbitration under
+      American Arbitration Association commercial rules before three attorney arbitrators.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-in-pokagon-band-of-potawatomi-indians-2021
+    confidence: medium
+    as_of: '2021-07-02'
+    locator: Section 7 (Dispute Resolution)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the Pokagon Band compact, the
+      only Indiana compact in the list.
+  - state: MI
+    status: deemed-approved
+    dispute_resolution_summary: After written notice the parties meet within 30 days; if a State allegation
+      is unresolved after 90 days the State may serve a notice to cease the disputed games and the tribe
+      may either stop them or invoke arbitration under American Arbitration Association commercial rules
+      before three attorney arbitrators while play continues, and a tribe may likewise invoke arbitration
+      on its own unresolved allegations.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-mi-bay-mills-indian-community-1993
+    confidence: medium
+    as_of: '1993-11-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The same Section 7 text appears in the
+      1993 Bay Mills Indian Community compact and the 1999 Little River Band compact (both read); other
+      Michigan nations signed the 1993 or 1998 forms, and later amendments were not checked. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2008-10-23).
+  ordinances:
+  - approved: '2003-12-05'
+    link: https://www.nigc.gov?wpdmdl=10656&ind=10673
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2003-12-05'
+    locator: table row 195, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 195 lists the nation
+      as "Pokagon Band of Potawatomi Indians of Michigan". Name matched to roster by spelling variant.
+  - approved: '2007-06-01'
+    link: https://www.nigc.gov?wpdmdl=10657&ind=10674
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2007-06-01'
+    locator: table row 195, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 195 lists the nation
+      as "Pokagon Band of Potawatomi Indians of Michigan". Name matched to roster by spelling variant.
+  - approved: '2019-06-03'
+    link: https://www.nigc.gov?wpdmdl=10658&ind=10675
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2019-06-03'
+    locator: table row 195, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 195 lists the nation
+      as "Pokagon Band of Potawatomi Indians of Michigan". Name matched to roster by spelling variant.
+  - approved: '2021-07-01'
+    link: https://www.nigc.gov?wpdmdl=13172&ind=13173
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2021-07-01'
+    locator: table row 195, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 195 lists the nation
+      as "Pokagon Band of Potawatomi Indians of Michigan". Name matched to roster by spelling variant.
+  - approved: '2025-10-21'
+    link: https://www.nigc.gov?wpdmdl=13226&ind=13227
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2025-10-21'
+    locator: table row 195, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 195 lists the nation
+      as "Pokagon Band of Potawatomi Indians of Michigan". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Pokagon Band of Potawatomi Indians
+      of Michigan and Indiana". Name extracted from the PDF by the page-fetch tool and matched to the
+      roster.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Pokagon Band of Potawatomi Indians, Michigan & Indiana Confidence lowered from high
+    by the lead session: the notice prints its table as page images, so nation names were read from images
+    and matched to the roster.'
+memberships:
+- organization: Midwest Alliance of Sovereign Tribes
+  source: midwest-alliance-of-sovereign-tribes-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Pokagon Band of Potawatomi Indians". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

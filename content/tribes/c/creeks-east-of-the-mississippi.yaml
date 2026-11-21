@@ -1,0 +1,33 @@
+id: creeks-east-of-the-mississippi
+entity_type: native-nation
+names:
+  official: Creeks East of the Mississippi
+  official_source: ofa-list-of-petitioners-by-state-2013
+recognition:
+- type: unrecognized
+  legal_basis: 25 C.F.R. Part 83; final determination 46 FR 51652, 47 FR 14783 (as printed in the Office
+    of Federal Acknowledgment list)
+  petition_number: '10'
+  petition_stage: Denied (Petitions Resolved page); Letter of Intent to Petition 03/21/1973; Declined
+    Acknowledgment effective 12/21/1981 46 FR 51652, see also 47 FR 14783
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '2013-11-12'
+  locator: 'Petitioner #10'
+  note: 'Source remark: Petitioned as part of #8 Lower Muscogee Creek. Decision from the Petitions Resolved
+    page; citation and date from the Office of Federal Acknowledgment list.'
+states:
+- state: FL
+  presence: other
+  source: ofa-petitions-resolved
+  confidence: high
+  as_of: '2026-11-21'
+  note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
+    not a statement about land or offices.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

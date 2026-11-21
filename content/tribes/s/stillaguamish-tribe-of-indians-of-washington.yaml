@@ -1,0 +1,375 @@
+id: stillaguamish-tribe-of-indians-of-washington
+entity_type: native-nation
+names:
+  official: Stillaguamish Tribe of Indians of Washington
+  alternate:
+  - name: Stoluck-wha-mish
+    source: stillaguamish-tribe-of-indians-of-washin-our-history-faqs
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"The name Stoluck-wha-mish or Stillaguamish, has been used since 1850"'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: WA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Stillaguamish Tribe of Indians of Washington
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4000
+  note: 'Census area with land in this state: Stillaguamish Reservation and Off-Reservation Trust Land
+    (code 4000). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '4000'
+  name: Stillaguamish Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4000
+  note: Matched by name. Census class code D1.
+population:
+- count: 16
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4000, field POP100
+  note: 'Census area: Stillaguamish Reservation and Off-Reservation Trust Land (code 4000). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 325
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3343 (Stillaguamish Tribes of Indians of Washington  alone or in any
+    combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Stillaguamish Tribes of Indians of Washington ' (race
+    code 6206) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 247
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Stillaguamish Tribe', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.stillaguamish.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Stillaguamish Tribe of Indians of Washington
+- kind: physical-address
+  value: 3322 236th Street NE, Arlington, WA 98223
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Stillaguamish Tribe of Indians of Washington
+- kind: mailing-address
+  value: P.O. Box 277, Arlington, WA 98223
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Stillaguamish Tribe of Indians of Washington
+- kind: phone
+  value: (360) 652-7362
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Stillaguamish Tribe of Indians of Washington
+- kind: fax
+  value: (360) 659-3113
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Stillaguamish Tribe of Indians of Washington
+languages:
+- name: Northern Lushootseed
+  language_tag: lut
+  source: stillaguamish-tribe-of-indians-of-washin-our-history
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"Stulekʷ means river in our language, Northern Lushootseed."'
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Puget Sound Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Stillaguamish Tribe of Indians of Washington
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-stillaguamish
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Stillaguamish Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Stillaguamish Tribe of Indians'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.stillaguamish.com/courtsjustice.asp)
+    returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Juvenile Sentencing Alternatives
+    citation: Stillaguamish Law and Order Code § 5.20.025
+    link: https://www.stillaguamish.com/wp-content/uploads/2022/04/Revised-Law-Order-Code-of-the-Stillaguamish-Tribe-4-7-2022.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/juvenile-sentencing-alternatives/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication/Sentencing. Database form of practice:
+      Alternative; Rehabilitation; Restorative justice.'
+  - kind: other
+    title: Sentencing Guidelines – Traditional Remedies and Rehabilitation
+    citation: Stillaguamish Law and Order Code § 4.65.005
+    link: https://www.stillaguamish.com/wp-content/uploads/2022/04/Revised-Law-Order-Code-of-the-Stillaguamish-Tribe-4-7-2022.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-guidelines-traditional-remedies-and-rehabilitation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication/Sentencing. Database form of practice: Rehabilitation;
+      Restorative justice.'
+  - kind: other
+    title: Truancy – Community Service and Treatment Alternatives
+    citation: Stillaguamish Law and Order Code § 8.15.050
+    link: https://www.stillaguamish.com/wp-content/uploads/2022/04/Revised-Law-Order-Code-of-the-Stillaguamish-Tribe-4-7-2022.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/truancy-community-service-and-treatment-alternatives/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication/Sentencing. Database form of practice:
+      Alternative; Program.'
+gaming:
+  compacts:
+  - state: WA
+    status: deemed-approved
+    approved: '2026-10-14'
+    federal_register_citation: 91 FR 65252
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2026-10-14'
+    locator: result page 43 (?page=43), row 13
+    note: 'Listed as: "Stillaguamish Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Stillaguamish Tribe of Indians of Washington". Document: https://www.bia.gov/sites/default/files/media_document/2026_stillaguamish_tribe_gaming_compact_508.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2026/10/14/2026-20896/indian-gaming-approval-by-operation-of-law-of-the-stillaguamish-tribe-and-state-of-washington-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2021-09-01'
+    federal_register_citation: 86 FR 49051
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-09-01'
+    locator: result page 43 (?page=43), row 14
+    note: 'Listed as: "Stillaguamish Tribe of Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Stillaguamish Tribe of Indians of Washington". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2021.09.01_stillaguamish_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/09/01/2021-18822/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: disapproved
+    approved: '2024-07-24'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-07-24'
+    locator: result page 43 (?page=43), row 15
+    note: 'Listed as: "Stillaguamish Tribe of Indians Tribal State Gaming Compact" (Disapproved); list''s
+      Tribe column: "Stillaguamish Tribe of Indians of Washington". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.07.24_stillaguamish_indian_tribe_tribal_state_gaming_compact.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: WA
+    status: approved
+    approved: '2025-01-15'
+    federal_register_citation: 90 FR 3908
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2025-01-15'
+    locator: result page 43 (?page=43), row 16
+    note: 'Listed as: "Stillaguamish Tribe of Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Stillaguamish Tribe of Indians of Washington". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2025.01.15_stillaguamish_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2025/01/15/2025-00772/indian-gaming-approval-of-the-fifth-amendment-to-the-tribal-state-class-iii-gaming-compact-amendment.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2007-05-31'
+    federal_register_citation: 72 FR 30392
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-05-31'
+    locator: result page 43 (?page=43), row 17
+    note: 'Listed as: "Stillaguamish Tribe of Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Stillaguamish Tribe of Indians of Washington". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202007.05.31%20Stillaguamish%20Tribe%20of%20Indians%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/05/31/E7-10397/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2001-03-21'
+    federal_register_citation: 66 FR 15882
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-03-21'
+    locator: result page 43 (?page=43), row 18
+    note: 'Listed as: "Stillaguamish Tribe of Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Stillaguamish Tribe of Indians of Washington". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202001.03.21%20Stillaguamish%20Tribe%20of%20Indians%20Tribal%20State%20Gaming%20Compact%202001_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/03/21/01-6934/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2015-06-04'
+    federal_register_citation: 80 FR 31918
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-04'
+    locator: result page 43 (?page=43), row 19
+    note: 'Listed as: "Stillaguamish Tribe of Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Stillaguamish Tribe of Indians of Washington". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202015.06.04%20Stillaquamish%20Tribe%20of%20Indians%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/04/2015-13712/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2021-09-01'
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked.
+  ordinances:
+  - approved: '2001-01-08'
+    link: https://www.nigc.gov?wpdmdl=11257&ind=11278
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-01-08'
+    locator: table row 275, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 275 lists the nation
+      as "Stillaguamish Tribe of Indians".
+  - approved: '2008-02-04'
+    link: https://www.nigc.gov?wpdmdl=11258&ind=11279
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-02-04'
+    locator: table row 275, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 275 lists the nation
+      as "Stillaguamish Tribe of Indians".
+  - approved: '2009-04-28'
+    link: https://www.nigc.gov?wpdmdl=11259&ind=11280
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2009-04-28'
+    locator: table row 275, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 275 lists the nation
+      as "Stillaguamish Tribe of Indians".
+  - approved: '2017-12-05'
+    link: https://www.nigc.gov?wpdmdl=11260&ind=11281
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2017-12-05'
+    locator: table row 275, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 275 lists the nation
+      as "Stillaguamish Tribe of Indians".
+  - approved: '2022-06-27'
+    link: https://www.nigc.gov?wpdmdl=11261&ind=11282
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2022-06-27'
+    locator: table row 275, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 275 lists the nation
+      as "Stillaguamish Tribe of Indians".
+  - approved: '2024-11-13'
+    link: https://www.nigc.gov?wpdmdl=11262&ind=11283
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2024-11-13'
+    locator: table row 275, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 275 lists the nation
+      as "Stillaguamish Tribe of Indians".
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: 'Washington assumed partial jurisdiction (RCW 37.12.010, 1957 and 1963): it does not apply to
+    Indians on trust or restricted tribal or allotted lands within a reservation except for eight subjects
+    (compulsory school attendance, public assistance, domestic relations, mental illness, juvenile delinquency,
+    adoption, dependent children, motor vehicles on public roads), unless the tribe requested full state
+    jurisdiction under RCW 37.12.021.'
+  source: revised-code-of-washington-37-12-010
+  confidence: medium
+  as_of: '1963'
+  locator: RCW 37.12.010
+  note: Nation matched to Washington by office state. Check for later retrocession facts.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Stillaguamish Tribe of Indians of Washington Confidence lowered from high by the lead
+    session: the notice prints its table as page images, so nation names were read from images and matched
+    to the roster.'
+memberships:
+- organization: Northwest Indian Fisheries Commission
+  source: northwest-indian-fisheries-commission-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Stillaguamish Tribe of Indians". Name matched to the roster entry.
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Stillaguamish Tribe of Indians". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

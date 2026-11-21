@@ -1,0 +1,526 @@
+id: burns-paiute-tribe
+entity_type: native-nation
+names:
+  official: Burns Paiute Tribe
+  self_designation:
+  - name: Wadatika
+    language_tag: pao
+    source: burnspaiute-nsn-about-bpt
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'About page: ''primarily comprised of the descendants of the Wadatika Band of Northern Paiutes''.
+      Band name.'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: OR
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Burns Paiute Tribe
+- state: OR
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0400
+  note: 'Census area with land in this state: Burns Paiute Indian Colony and Off-Reservation Trust Land
+    (code 0400). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '0400'
+  name: Burns Paiute Indian Colony and Off-Reservation Trust Land
+  area_type: Indian Colony and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0400
+  note: Matched by name. Census class code D1.
+population:
+- count: 402
+  kind: citizens
+  source: burnspaiute-nsn-about-bpt
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''currently has 402 enrolled members of which 142 people call the Reservation their home''.
+    The homepage separately describes ''a community of 210 people''. Undated page; as_of is access date.'
+- count: 133
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0400, field POP100
+  note: 'Census area: Burns Paiute Indian Colony and Off-Reservation Trust Land (code 0400). Everyone
+    counted as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a
+    count of the nation''s citizens.'
+- count: 257
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2880 (Burns Paiute Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Burns Paiute Tribe' (race code 6046) alone or in combination
+    with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes noise
+    added for disclosure avoidance. Census label exact name match.
+- count: 410
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Burns Paiute Tribe', PDF page 8, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 310
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 75, row T03800 'Burns Paiute Tribe of the Burns Pauite Indian Colony
+    of Oregon'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://burnspaiute-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Burns Paiute Tribe
+- kind: physical-address
+  value: 100 Pasigo Street, Burns, OR 97720
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Burns Paiute Tribe
+- kind: mailing-address
+  value: 100 Pasigo Street, Burns, OR 97720
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Burns Paiute Tribe
+- kind: phone
+  value: (541) 573-2088
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Burns Paiute Tribe
+- kind: fax
+  value: (541) 573-2323
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Burns Paiute Tribe
+- kind: email-general
+  value: info@burnspaiute-nsn.gov
+  label: General office email shown on the nation's website
+  source: burnspaiute-nsn-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
+languages:
+- name: Northern Paiute (Wadatika)
+  language_tag: pao
+  source: burnspaiute-nsn-language-traditional-culture-program
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Language & Traditional Culture Program page refers to the Wadatika Paiute language.
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Warm Springs Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Burns Paiute Tribe
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: http://www.burnspaiute-nsn.gov/index.php/resources/online-documents/documents/tribal-code
+  source: national-indian-law-library-burns-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: http://www.burnspaiute-nsn.gov/index.php/resources/online-documents/documents/tribal-code
+  source: national-indian-law-library-burns-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website . Included in Tribal Code Part 1 (cover - PL 280) .".'
+- kind: law-code
+  title: Burns Paiute Tribe
+  year: '2009'
+  link: https://narf.org/nill/codes/burns_paiute/index.html
+  source: national-indian-law-library-code-codes-burns-paiute
+  confidence: medium
+  as_of: '2009'
+  locator: page heading
+  note: 'Adopted: August 25, 2009. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Burns Paiute Tribe - Constitution
+  year: '2017'
+  link: https://narf.org/nill/constitutions/burns_paiute/index.html
+  source: national-indian-law-library-constitution-constitutions-burns-paiute
+  confidence: medium
+  as_of: '2017'
+  locator: page heading
+  note: 'Table of Contents Updated: February 2017. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Burns Paiute Tribe Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Burns Paiute Tribe'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.burnspaiute-nsn.gov/index.php/resources/online-documents/documents/tribal-code/49-tribal-code-part-1-cover-pl-280/file)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Burns Paiute Tribal Code
+  link: http://www.burnspaiute-nsn.gov/index.php/resources/online-documents/documents/tribal-code
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Burns Paiute Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-burns-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (https://burnspaiute-nsn.gov/departments/tribal-police-courts/) returned HTTP
+    404, so it is not recorded.'
+- kind: tribal-court
+  name: Burns Paiute Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Burns Paiute Tribe'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.burnspaiute-nsn.gov/index.php/departments/police-department-home)
+    returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Conditional and Contingent Orders of Exclusion
+    citation: Burns Paiute Tribal Code. Title 2 Rules of Procedure. Chapter 2.4 Exclusion. Section 2.4.64
+      Conditional and Contingent Orders of Exclusion.
+    link: https://burnspaiute-nsn.gov/wp-content/uploads/2020/09/Tribal-Code-Part-3-Title-1-Title-2.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/conditional-and-contingent-orders-of-exclusion/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Informal Conference & Adjustment in Juvenile Proceedings
+    citation: Burns Paiute Tribal Code. Title 5 Family Law. Chapter 5.2 Juveniles. Section. 5.2.150 Informal
+      Conferences, Section 5.2.151 Informal Conferences - Disposition, & Section 5.2.152 Informal Conference
+      - Post-Disposition.
+    link: https://burnspaiute-nsn.gov/wp-content/uploads/2020/09/Tribal-Code-Part-4-Title-3-Title-5.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-conference-adjustment-in-juvenile-proceedings/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Family
+      conference, Family group conference; Restorative justice.'
+  - kind: other
+    title: Informal Conference in Child Welfare
+    citation: Burns Paiute Tribal Code. Title 5 Family Law. Chapter 5.2 Juveniles. Section 5.2.260 Informal
+      Conferences, 5.2.261 Informal Conference—Disposition, 5.2.262 Informal Conference—Post-Disposition.
+    link: https://burnspaiute-nsn.gov/wp-content/uploads/2020/09/Tribal-Code-Part-4-Title-3-Title-5.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-conference-in-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Family
+      conference, Family group conference.'
+  - kind: other
+    title: Restorative Alternatives in Child In Need of Care Predispositional Reports
+    citation: Burns Paiute Tribal Code. Title 5 Family Law. Chapter 5.2 Juveniles. Section 5.2.290 Predispositional
+      Report.
+    link: https://burnspaiute-nsn.gov/wp-content/uploads/2020/09/Tribal-Code-Part-4-Title-3-Title-5.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-alternatives-in-child-in-need-of-care-predispositional-reports/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Restorative Alternatives in Juvenile Predispositional Reports
+    citation: Burns Paiute Tribal Code. Title 5 Family Law. Chapter 5.2 Juveniles. Section 5.2.173 Predispositional
+      Report.
+    link: https://burnspaiute-nsn.gov/wp-content/uploads/2020/09/Tribal-Code-Part-4-Title-3-Title-5.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-alternatives-in-juvenile-predispositional-reports/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Restorative Dispositional Alternatives in Child In Need of Care
+    citation: Burns Paiute Tribal Code. Title 5 Family Law. Chapter 5.2 Juveniles. Section 5.2.293 Dispositional
+      Alternatives.
+    link: https://burnspaiute-nsn.gov/wp-content/uploads/2020/09/Tribal-Code-Part-4-Title-3-Title-5.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-dispositional-alternatives-in-child-in-need-of-care/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Restorative Options for Orders
+    citation: 'Burns Paiute Tribal Code. Title 5 Family Law. Chapter 5.2 Juveniles. Section 5.2.175 Dispositional
+      Hearing: Findings and Order.'
+    link: https://burnspaiute-nsn.gov/wp-content/uploads/2020/09/Tribal-Code-Part-4-Title-3-Title-5.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-options-for-orders/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+gaming:
+  compacts:
+  - state: OR
+    status: approved
+    approved: '2002-09-17'
+    federal_register_citation: 67 FR 58633
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2002-09-17'
+    locator: result page 29 (?page=29), row 22
+    note: 'Listed as: "Burns Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico & Utah". Federal Register link: https://www.federalregister.gov/documents/2002/09/17/02-23597/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1999-09-01'
+    federal_register_citation: 64 FR 47857
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1999-09-01'
+    locator: result page 29 (?page=29), row 23
+    note: 'Listed as: "Burns Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.09.01%20Burns%20Paiute%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/09/01/99-22706/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1997-02-25'
+    federal_register_citation: 62 FR 8456
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1997-02-25'
+    locator: result page 29 (?page=29), row 24
+    note: 'Listed as: "Burns Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201997.02.12%20Burns%20Paiute%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1997/02/25/97-4597/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2003-03-18'
+    federal_register_citation: 68 FR 12931
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2003-03-18'
+    locator: result page 29 (?page=29), row 25
+    note: 'Listed as: "Burns Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202003.03.18%20Burns%20Paiute%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/03/18/03-6350/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2002-02-19'
+    federal_register_citation: 67 FR 7393
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2002-02-19'
+    locator: result page 30 (?page=30), row 1
+    note: 'Listed as: "Burns Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202002.02.19%20Burns%20Paiute%20Tribe%20Tribal%20State%20GamingCompact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2002/02/19/02-3860/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2008-03-17'
+    federal_register_citation: 73 FR 14267
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2008-03-17'
+    locator: result page 30 (?page=30), row 2
+    note: 'Listed as: "Burns Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202008.03.17%20Burns%20Paiute%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/03/17/E8-5198/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2000-05-31'
+    federal_register_citation: 65 FR 34726
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2000-05-31'
+    locator: result page 30 (?page=30), row 3
+    note: 'Listed as: "Burns Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.05.31%20Burns%20Paiute%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/31/00-13494/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1998-11-24'
+    federal_register_citation: 63 FR 64968
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1998-11-24'
+    locator: result page 30 (?page=30), row 4
+    note: 'Listed as: "Burns Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.11.24%20Burns%20Paiute%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/11/24/98-31405/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2002-12-18'
+    federal_register_citation: 67 FR 77509
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2002-12-18'
+    locator: result page 30 (?page=30), row 5
+    note: 'Listed as: "Burns Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202002.12.18%20Burns%20Paiute%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2002/12/18/02-31874/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1998-10-19'
+    federal_register_citation: 63 FR 55887
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1998-10-19'
+    locator: result page 30 (?page=30), row 6
+    note: 'Listed as: "Burns Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.10.19%20Burns%20Paiute%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/10/19/98-27932/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance and the parties
+      meet within 30 days; if unresolved within 90 days either party may sue in the United States District
+      Court for the District of Oregon (or a state court if federal jurisdiction is declined), and other
+      dispute resolution methods remain available by mutual agreement.
+    dispute_resolution_locator: Section 17 (Dispute Resolution)
+    source: compact-or-confederated-tribes-of-the-grand-ronde-c-2023
+    confidence: medium
+    as_of: '2023-02-08'
+    locator: Section 17 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2023 Confederated Tribes
+      of the Grand Ronde Community compact; other Oregon compacts were not checked. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2008-03-17).
+  ordinances:
+  - approved: '1997-09-12'
+    link: https://www.nigc.gov?wpdmdl=3449&ind=3451
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-09-12'
+    locator: table row 25, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 25 lists the nation
+      as "Burns Paiute Tribe".
+  - approved: '2004-11-03'
+    link: https://www.nigc.gov?wpdmdl=14494&ind=14495
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-11-03'
+    locator: table row 25, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 25 lists the nation
+      as "Burns Paiute Tribe".
+jurisdiction:
+- topic: public-law-280
+  value: retroceded
+  detail: Interior accepted retrocession of civil and criminal jurisdiction exercised by Oregon over the
+    Burns-Paiute Indian Reservation, offered by Oregon Executive Order EO-79-04. Oregon is otherwise a
+    mandatory state. (44 FR 26169)
+  source: federal-register-1979-burns-paiute-retrocession
+  confidence: high
+  as_of: '1979-05-04'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Burns Paiute Tribe Confidence lowered from high by the lead session: the notice prints
+    its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Burns Paiute Tribe".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,276 @@
+id: lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan
+entity_type: native-nation
+names:
+  official: Lac Vieux Desert Band of Lake Superior Chippewa Indians of Michigan
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+- type: federal
+  legal_basis: Legislative clarification of recognition, P.L. 100-420
+  petition_number: '6'
+  petition_stage: Letter of Intent to Petition 06/01/1971; Legislative Clarification of Recognition 09/08/1988
+    P.L.100-420
+  since: '1988-09-08'
+  source: ofa-list-of-petitioners-by-state-2013
+  confidence: medium
+  as_of: '1988-09-08'
+  locator: 'Petitioner #6'
+states:
+- state: MI
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lac Vieux Desert Band of Lake Superior Chippewa Indians of Michigan
+- state: MI
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1830
+  note: 'Census area with land in this state: Lac Vieux Desert Reservation (code 1830). Area matched to
+    the nation by name.'
+census_areas:
+- geographic_identifier: '1830'
+  name: Lac Vieux Desert Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1830
+  note: Matched by name. Census class code D2.
+population:
+- count: 221
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1830, field POP100
+  note: 'Census area: Lac Vieux Desert Reservation (code 1830). Everyone counted as living in the area
+    in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 467
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3075 (Lac Vieux Desert Band of Lake Superior Chippewa Indians alone
+    or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Lac Vieux Desert Band of Lake Superior Chippewa Indians'
+    (race code 5659) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label matched by name variant.
+- count: 672
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Lac Vieux Desert Band of Lake Superior Chippewa Indians',
+    PDF page 4, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 426
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 80, row T19200 'Lac Vieux Desert Band of Lake Superior Chippewa
+    Indians'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://lvd-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lac Vieux Desert Band of Lake Superior Chippewa Indians of Michigan
+- kind: physical-address
+  value: N4698 US HWY 45, Watersmeet, MI 49969
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lac Vieux Desert Band of Lake Superior Chippewa Indians of Michigan
+- kind: mailing-address
+  value: P.O. Box 249, Watersmeet, MI 49969
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lac Vieux Desert Band of Lake Superior Chippewa Indians of Michigan
+- kind: phone
+  value: (906) 358-4577
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lac Vieux Desert Band of Lake Superior Chippewa Indians of Michigan
+- kind: fax
+  value: (906) 358-4785
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lac Vieux Desert Band of Lake Superior Chippewa Indians of Michigan
+languages:
+- name: Anishinaabe (Ojibwe)
+  language_tag: oj
+  source: lvd-nsn-content-history-cfm
+  confidence: medium
+  as_of: '2026-11-21'
+  note: History page cites a place name 'in the Anishinaabe language'.
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Michigan Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lac Vieux Desert Band of Lake Superior Chippewa Indians of Michigan
+governing_documents:
+- kind: constitution
+  title: Constitution
+  link: https://lvd-nsn.gov///media/banners/LVD%20Constitution.pdf
+  source: national-indian-law-library-lac-vieux-desert-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .".'
+- kind: constitution
+  title: Lac Vieux Desert Band of Lake Superior Chippewa Indians Constitution
+  link: http://www.lvdtribal.com/pdf/constitution.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Michigan section, entry 'Lac Vieux Desert Band of Lake Superior Chippewa Indians'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the site did not respond.'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://lvd-nsn.gov/Content/Court.cfm
+  source: national-indian-law-library-lac-vieux-desert-chippewa
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Lac Vieux Tribal Court
+  link: http://www.lvdtribal.com/court.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Michigan section, entry 'Lac Vieux Desert Band of Lake Superior Chippewa Indians'
+  note: 'Link check 2026-11-21: the site did not respond.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Informal Adjustment Conference – Pre-Petition Diversion
+    citation: Lac Vieux Desert Band Section 14
+    link: https://lvd-nsn.gov/Content/Codes--Ordinances.cfm
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-adjustment-conference-pre-petition-diversion/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication (informal). Database form of practice:
+      Alternative; Diversion; Informal hearing.'
+gaming:
+  compacts:
+  - state: MI
+    status: approved
+    approved: '1993-11-30'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-11-30'
+    locator: result page 16 (?page=16), row 12
+    note: 'Listed as: "Lac Vieux Desert Band of Lake Superior Chippewa Indians Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Lac Vieux Desert Band of Lake Superior Chippewa Indians of Michigan".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.11.30_lac_vieux_desert_band_tribal_state_gaming_compact.pdf.'
+  - state: MI
+    status: approved
+    dispute_resolution_summary: After written notice the parties meet within 30 days; if a State allegation
+      is unresolved after 90 days the State may serve a notice to cease the disputed games and the tribe
+      may either stop them or invoke arbitration under American Arbitration Association commercial rules
+      before three attorney arbitrators while play continues, and a tribe may likewise invoke arbitration
+      on its own unresolved allegations.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-mi-bay-mills-indian-community-1993
+    confidence: medium
+    as_of: '1993-11-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The same Section 7 text appears in the
+      1993 Bay Mills Indian Community compact and the 1999 Little River Band compact (both read); other
+      Michigan nations signed the 1993 or 1998 forms, and later amendments were not checked. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (1993-11-30).
+  ordinances:
+  - approved: '1994-04-15'
+    link: https://www.nigc.gov?wpdmdl=10130&ind=10160
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-04-15'
+    locator: table row 131, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 131 lists the nation
+      as "Lac Vieux Desert Band of Lake Superior Chippewa Indians".
+  - approved: '2003-08-05'
+    link: https://www.nigc.gov?wpdmdl=10122&ind=10161
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-08-05'
+    locator: table row 131, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 131 lists the nation
+      as "Lac Vieux Desert Band of Lake Superior Chippewa Indians".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Lac Vieux Desert Tribe". Name extracted
+      from the PDF by the page-fetch tool and matched to the roster.
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Lac Vieux Desert Band of Lake Superior Chippewa Indians of Michigan Confidence lowered
+    from high by the lead session: the notice prints its table as page images, so nation names were read
+    from images and matched to the roster.'
+memberships:
+- organization: Midwest Alliance of Sovereign Tribes
+  source: midwest-alliance-of-sovereign-tribes-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Lac Vieux Desert Band of Lake Superior Chippewa Indians". Name matched to the roster
+    entry.
+- organization: Great Lakes Inter-Tribal Council
+  source: great-lakes-inter-tribal-council-tribes-served
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Lac Vieux Desert Band of Lake Superior Chippewa Indians". Name matched to the roster
+    entry.
+- organization: Great Lakes Indian Fish and Wildlife Commission
+  source: great-lakes-indian-fish-and-wildlife-commission-commission
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Getegitigaaning" (link https://lvd-nsn.gov/).
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

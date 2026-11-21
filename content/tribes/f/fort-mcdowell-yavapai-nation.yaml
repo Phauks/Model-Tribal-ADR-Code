@@ -1,0 +1,560 @@
+id: fort-mcdowell-yavapai-nation
+entity_type: native-nation
+names:
+  official: Fort McDowell Yavapai Nation, Arizona
+  self_designation:
+  - name: Abaja
+    language_tag: yuf
+    source: fmyn-about-fmyn
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'About page: ''Abaja'' – ''the people''. Tag yuf (Havasupai-Walapai-Yavapai) assigned by researcher.
+      Read via the WebFetch tool because plain fetching was refused (HTTP 403); quote is as extracted
+      by that tool.'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: AZ
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort McDowell Yavapai Nation, Arizona
+- state: AZ
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1220
+  note: 'Census area with land in this state: Fort McDowell Yavapai Nation Reservation (code 1220). Area
+    matched to the nation by name.'
+census_areas:
+- geographic_identifier: '1220'
+  name: Fort McDowell Yavapai Nation Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1220
+  note: Matched by name. Census class code D2.
+population:
+- count: 950
+  kind: citizens
+  source: fmyn-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Homepage: ''a 950-member Native American tribe''. Undated. Read via the WebFetch tool because
+    plain fetching was refused (HTTP 403); quote is as extracted by that tool.'
+- count: 1152
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US1220, field POP100
+  note: 'Census area: Fort McDowell Yavapai Nation Reservation (code 1220). Everyone counted as living
+    in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of the nation''s
+    citizens.'
+- count: 761
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2998 (Fort McDowell Yavapai Nation alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Fort McDowell Yavapai Nation' (race code 5827) alone
+    or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 927
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Fort McDowell Yavapai Nation', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 891
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 78, row T12300 'Fort McDowell Yavapai Nation'
+  note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
+    Census tribal statistical area (2010), used by Indian Affairs as the nation's population indicator;
+    includes people of any tribe; not enrollment. Report published 2014-01-16; row name matched to the
+    nation by name.
+contacts:
+- kind: website
+  value: https://www.fmyn.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort McDowell Yavapai Nation, Arizona
+- kind: physical-address
+  value: 17661 East Yavapai Road, Fort McDowell, AZ 85264
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort McDowell Yavapai Nation, Arizona
+- kind: mailing-address
+  value: P.O. Box 17779, Fountain Hills, AZ 85269
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort McDowell Yavapai Nation, Arizona
+- kind: phone
+  value: (480) 789-7000
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort McDowell Yavapai Nation, Arizona
+- kind: fax
+  value: (480) 837-7957
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort McDowell Yavapai Nation, Arizona
+federal_administration:
+  bureau_of_indian_affairs_region: Western
+  bureau_of_indian_affairs_agency: Salt River Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Fort McDowell Yavapai Nation, Arizona
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Fort McDowell Mohave-Apache Community Arizona" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: low
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Matched by former name (Fort McDowell Mohave-Apache Community); confirm. Historical status in
+    1947; the nation may since have adopted a different constitution. The act is assigned from the table
+    (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian Welfare Act; Alaska table:
+    Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Fort McDowell Mohave-Apache Community Arizona) (approved 1936) states it was adopted
+    under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-ftmcdowcons
+  confidence: low
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Matched by former name (Fort McDowell Mohave-Apache Community); confirm. Historical constitution;
+    a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Law and Order Code of the Fort McDowell Yavapai Community, Arizona
+  year: '2018'
+  link: https://narf.org/nill/codes/fort_mcdowell/index.html
+  source: national-indian-law-library-code-codes-fort-mcdowell
+  confidence: medium
+  as_of: '2018'
+  locator: page heading
+  note: 'Updated: December 2018. Full text linked from the National Indian Law Library page.'
+- kind: constitution
+  title: Constitution of the Fort McDowell Yavapai Nation
+  year: '1999'
+  link: https://narf.org/nill/constitutions/fort_mcdowell/index.html
+  source: national-indian-law-library-constitution-constitutions-fort-mcdowell
+  confidence: medium
+  as_of: '1999'
+  locator: page heading
+  note: 'Received: 1999. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://library.municode.com/tribes_and_tribal_nations/fort_mcdowell_yavapai_nation/codes/the_law_and_order_code
+  source: national-indian-law-library-fort-mcdowell
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Municode website
+    .".'
+- kind: constitution
+  title: Fort McDowell Yavapai Nation Constitution
+  link: http://www.fmyn.org/tribal-government/fmyn-constitution/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Fort McDowell Yavapai Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Fort McDowell Yavapai Nation Law and Order Code
+  link: http://www.fmyn.org/tribal-government/law-and-order-code/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Fort McDowell Yavapai Nation'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: constitution
+  title: Constitution (Fort McDowell Mohave-Apache Community Arizona)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/ftmcdowcons.html
+  source: university-of-oklahoma-indian-reorganization-act-ftmcdowcons
+  confidence: low
+  as_of: '1936'
+  note: Matched by former name (Fort McDowell Mohave-Apache Community); confirm. Historical text as originally
+    approved; the nation may have amended or replaced it since.
+- kind: corporate-charter
+  title: Corporate charter (Fort McDowell Mohave-Apache Community Arizona)
+  year: '1938'
+  link: https://thorpe.law.ou.edu/IRA/mpchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-mpchrtr
+  confidence: low
+  as_of: '1938'
+  note: Matched by former name (Fort McDowell Mohave-Apache Community); confirm. Historical text as originally
+    approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-fort-mcdowell
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Fort McDowell Tribal Court
+  link: http://www.fmyn.org/tribal-court/
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Arizona section, entry 'Fort McDowell Yavapai Nation'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Disposition Alternatives for Juvenile Deliquency
+    citation: Fort McDowell Yavapai Nation Code Chapter 11, Article IV., Sec. 11-24 A., Sec. 11-24 D.,
+      Sec. 11-24 F., & Sec. 11-24 G.
+    link: https://library.municode.com/tribes_and_tribal_nations/fort_mcdowell_yavapai_nation/codes/the_law_and_order_code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-alternatives-for-juvenile-deliquency/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Disposition Alternatives for Juveniles for Rehabilitation
+    citation: Fort McDowell Yavapai Nation Code Article IV. Sec. 11-24 F.
+    link: https://library.municode.com/tribes_and_tribal_nations/fort_mcdowell_yavapai_nation/codes/the_law_and_order_code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-alternatives-for-juveniles-for-rehabilitation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Divsersion Program at Discretion of Court
+    citation: Fort McDowell Yavapai Nation Code Chapter 5, Article III., Rule 80, Rule 81, Rule 82, &
+      Rule 83.
+    link: https://library.municode.com/tribes_and_tribal_nations/fort_mcdowell_yavapai_nation/codes/the_law_and_order_code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/divsersion-program-at-discretion-of-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Probation and Sentencing Terms
+    citation: Fort McDowell Yavapai Nation Code Article X; Sec. 6-142; and, Sec. 6-143.
+    link: https://library.municode.com/tribes_and_tribal_nations/fort_mcdowell_yavapai_nation/codes/the_law_and_order_code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/probation-and-sentencing-terms/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Purpose and Goals of Juvenile Court/Codes
+    citation: Fort McDowell Yavapai Nation Code Article I. Sec. 11-1 A. AND Sec. 11-1 B.
+    link: https://library.municode.com/tribes_and_tribal_nations/fort_mcdowell_yavapai_nation/codes/the_law_and_order_code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-and-goals-of-juvenile-court-codes/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      practice, Restorative process.'
+  - kind: other
+    title: Release Prior to Trial Treatment Conditions
+    citation: Fort McDowell Yavapai Nation Code Chapter 5, Article III., Rule 17.
+    link: https://library.municode.com/tribes_and_tribal_nations/fort_mcdowell_yavapai_nation/codes/the_law_and_order_code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/release-prior-to-trial-treatment-conditions/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Truancy Diversion Program & Fines
+    citation: Fort McDowell Yavapai Nation Code Chapter 11, Article V., Sec. 11-56.
+    link: https://library.municode.com/tribes_and_tribal_nations/fort_mcdowell_yavapai_nation/codes/the_law_and_order_code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/truancy-diversion-program-fines/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Truancy Diversion Program or Fines
+    citation: Fort McDowell Yavapai Nation Code Article V. Sec. 11-56.
+    link: https://library.municode.com/tribes_and_tribal_nations/fort_mcdowell_yavapai_nation/codes/the_law_and_order_code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/truancy-diversion-program-or-fines/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Wellness Court Program
+    citation: Fort McDowell Yavapai Nation Code Chapter 5, Article III., Rule 84, Rule 85, Rule 86, &
+      Rule 87.
+    link: https://library.municode.com/tribes_and_tribal_nations/fort_mcdowell_yavapai_nation/codes/the_law_and_order_code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/wellness-court-program/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court.'
+  - kind: other
+    title: Sec. 5-21. - Conciliation and settlement of dispute.
+    citation: Sec. 5-21. - Conciliation and settlement of dispute.
+    link: https://www.narf.org/nill/codes/fort_mcdowell/index.html
+    source: national-indian-law-library-code-index-fort-mcdowell
+    confidence: medium
+    as_of: 2018-12
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: CHAPTER 8. PATRON DISPUTE RESOLUTION
+    citation: CHAPTER 8. PATRON DISPUTE RESOLUTION
+    link: https://www.narf.org/nill/codes/fort_mcdowell/index.html
+    source: national-indian-law-library-code-index-fort-mcdowell
+    confidence: medium
+    as_of: 2018-12
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: PATRON DISPUTE RESOLUTION
+    citation: PATRON DISPUTE RESOLUTION
+    link: https://narf.org/nill/codes/fort_mcdowell/index.html
+    source: national-indian-law-library-code-codes-fort-mcdowell
+    confidence: medium
+    as_of: '2018'
+    locator: Table of Contents, under 'Chapter 21 - TRIBAL GAMING ORDINANCE'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Updated:
+      December 2018); the provision itself was not read. The heading it falls under is taken from the
+      page layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: AZ
+    status: approved
+    approved: '1992-12-30'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1992-12-30'
+    locator: result page 0 (?page=0), row 15
+    note: 'Listed as: "Fort McDowell Mohave-Apache Indian Community of Arizona Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Fort McDowell Yavapai Nation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1992.12.30_fort_mcdowell_mohave-apache_indian_community_tribal_state_gaming_compact.pdf.
+      Matched on the Tribe column because the title spelling did not match the roster.'
+  - state: AZ
+    status: approved
+    approved: '1993-08-18'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1993-08-18'
+    locator: result page 0 (?page=0), row 16
+    note: 'Listed as: "Fort McDowell Mohave-Apache Indian Community Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Fort McDowell Yavapai Nation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.08.18_fort_mcdowell_mohave_apache_tribal_state_gaming_compact.pdf.
+      Matched on the Tribe column because the title spelling did not match the roster.'
+  - state: AZ
+    status: approved
+    approved: '2022-06-14'
+    federal_register_citation: 87 FR 35992
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-06-14'
+    locator: result page 0 (?page=0), row 17
+    note: 'Listed as: "Fort McDowell Yavapai Nation Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Fort McDowell Yavapai Nation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.14_fort_mcdowell_yavapai_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/14/2022-12743/indian-gaming-approval-of-20-tribal-state-class-iii-gaming-compact-amendments-with-the-state-of.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2009-03-25'
+    federal_register_citation: 74 FR 12889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2009-03-25'
+    locator: result page 0 (?page=0), row 18
+    note: 'Listed as: "Fort McDowell Yavapai Nation Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Fort McDowell Yavapai Nation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2009.03.25_fort_mcdowell_tribal_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2009/03/25/E9-6585/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2021-05-24'
+    federal_register_citation: 86 FR 27889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-05-24'
+    locator: result page 0 (?page=0), row 19
+    note: 'Listed as: "Fort McDowell Yavapai Nation Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Fort McDowell Yavapai Nation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202021.05.24%20Fort%20McDowell%20Yavapai%20Nation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/05/24/2021-10877/indian-gaming-approval-of-tribal-state-class-iii-gaming-compacts-in-the-state-of-arizona.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2003-02-05'
+    federal_register_citation: 68 FR 5912
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-02-05'
+    locator: result page 0 (?page=0), row 20
+    note: 'Listed as: "Fort McDowell Yavapai Nation Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Fort McDowell Yavapai Nation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2003.02.05_fort_mcdowell_tribal_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/02/05/03-2787/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance or an interpretation
+      dispute, after which agency heads and then designated tribal and gubernatorial representatives negotiate;
+      if unresolved within 30 days, either party may request non-binding mediation under CPR Institute
+      for Dispute Resolution procedures and may then demand binding arbitration under CPR rules before
+      three arbitrators unless both agree to one.
+    dispute_resolution_locator: Section 15 (Dispute Resolution)
+    source: compact-az-ak-chin-indian-community-2003
+    confidence: medium
+    as_of: '2003-02-05'
+    locator: Section 15 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
+      compact approved in 2003; this text is the Ak-Chin Indian Community copy of that form, and the 2021-2022
+      amendments in the list refer back to Section 15. Status copied from this nation's most recent approved
+      or deemed-approved entry for this state in the Office of Indian Gaming list (2022-06-14).
+  ordinances:
+  - approved: '1993-12-17'
+    link: https://www.nigc.gov?wpdmdl=9827&ind=9852
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-12-17'
+    locator: table row 87, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 87 lists the nation
+      as "Fort McDowell Yavapai Nation".
+  - approved: '2002-04-11'
+    link: https://www.nigc.gov?wpdmdl=9841&ind=9853
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-04-11'
+    locator: table row 87, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 87 lists the nation
+      as "Fort McDowell Yavapai Nation".
+  - approved: '2003-05-19'
+    link: https://www.nigc.gov?wpdmdl=9842&ind=9854
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-05-19'
+    locator: table row 87, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 87 lists the nation
+      as "Fort McDowell Yavapai Nation".
+  - approved: '2003-07-31'
+    link: https://www.nigc.gov?wpdmdl=9843&ind=9855
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-07-31'
+    locator: table row 87, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 87 lists the nation
+      as "Fort McDowell Yavapai Nation".
+  - approved: '2004-04-26'
+    link: https://www.nigc.gov?wpdmdl=9844&ind=9856
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-04-26'
+    locator: table row 87, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 87 lists the nation
+      as "Fort McDowell Yavapai Nation".
+  - approved: '2007-01-29'
+    link: https://www.nigc.gov?wpdmdl=9845&ind=9857
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2007-01-29'
+    locator: table row 87, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 87 lists the nation
+      as "Fort McDowell Yavapai Nation".
+  - approved: '2020-05-11'
+    link: https://www.nigc.gov?wpdmdl=9846&ind=9858
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2020-05-11'
+    locator: table row 87, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 87 lists the nation
+      as "Fort McDowell Yavapai Nation".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Fort McDowell Yavapai Nation
+      of Arizona". Facilities as machine-extracted from the report text (verify): We-Ko-Pa Casino Resort.
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Fort McDowell Yavapai Nation, Arizona Confidence lowered from high by the lead session:
+    the notice prints its table as page images, so nation names were read from images and matched to the
+    roster.'
+memberships:
+- organization: Inter Tribal Council of Arizona
+  source: inter-tribal-council-of-arizona-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Fort McDowell Yavapai Nation". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

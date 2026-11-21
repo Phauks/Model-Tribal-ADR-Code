@@ -1,0 +1,607 @@
+id: nisqually-indian-tribe
+entity_type: native-nation
+names:
+  official: Nisqually Indian Tribe
+  self_designation:
+  - name: Squalli-absch
+    language_tag: lut
+    source: nisqually-indian-tribe-home
+    confidence: medium
+    as_of: '2026-11-21'
+    note: '"the Squalli-absch (ancestors of the modern Nisqually Indian Tribe)"'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: WA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nisqually Indian Tribe
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2460
+  note: 'Census area with land in this state: Nisqually Reservation (code 2460). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '2460'
+  name: Nisqually Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2460
+  note: Matched by name. Census class code D2.
+population:
+- count: 650
+  kind: citizens
+  source: nisqually-indian-tribe-heritage
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"Today, our tribe has more than 650 enrolled members"; same page cites a 2005 service-area population
+    of 5,719; undated statement on the official site; as_of is the access date'
+- count: 639
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2460, field POP100
+  note: 'Census area: Nisqually Reservation (code 2460). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 1288
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3157 (Nisqually Indian Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Nisqually Indian Tribe' (race code 6195) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+- count: 833
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Nisqually Indian Tribe', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.nisqually-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nisqually Indian Tribe
+- kind: physical-address
+  value: 4820 She-Nah-Num Drive SE, Olympia, WA 98513
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nisqually Indian Tribe
+- kind: mailing-address
+  value: 4820 She-Nah-Num Drive SE, Olympia, WA 98513
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nisqually Indian Tribe
+- kind: phone
+  value: (360) 456-5221
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nisqually Indian Tribe
+- kind: fax
+  value: (360) 486-9553
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nisqually Indian Tribe
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Puget Sound Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nisqually Indian Tribe
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Nisqually Indian Community, Washington" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Nisqually Indian Community of the Nisqually Reservation Washington) (approved
+    1946) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-nisqcons
+  confidence: medium
+  as_of: '1946'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Nisqually Indian Tribe
+  year: '2016'
+  link: https://narf.org/nill/codes/nisqually/index.html
+  source: national-indian-law-library-code-codes-nisqually
+  confidence: medium
+  as_of: '2016'
+  locator: page heading
+  note: 'Table of Contents Updated: May 2016. The National Indian Law Library page gives the table of
+    contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution and Bylaws of the Nisqually Indian Tribe
+  year: '1994'
+  link: https://narf.org/nill/constitutions/nisqconst/index.html
+  source: national-indian-law-library-constitution-constitutions-nisqconst
+  confidence: medium
+  as_of: '1994'
+  locator: page heading
+  note: 'Amended: October 28, 1994. The National Indian Law Library page gives the table of contents (and
+    may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  source: national-indian-law-library-nisqually
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .". Link check 2026-11-21: the link the source gives (http://www.nisqually-nsn.gov/index.php/council/tribal-code/)
+    returned HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Constitution
+  source: national-indian-law-library-nisqually
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .". Link check 2026-11-21: the link the source gives (http://www.nisqually-nsn.gov/index.php/council/constitution/)
+    returned HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Nisqually Indian Tribe Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Nisqually Indian Tribe'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.nisqually-nsn.gov/index.php/council/constitution/)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Nisqually Tribal Code
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Nisqually Indian Tribe'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.nisqually-nsn.gov/index.php/council/tribal-code/)
+    returned HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Constitution (Nisqually Indian Community of the Nisqually Reservation Washington)
+  year: '1946'
+  link: https://thorpe.law.ou.edu/IRA/nisqcons.html
+  source: university-of-oklahoma-indian-reorganization-act-nisqcons
+  confidence: medium
+  as_of: '1946'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-nisqually
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://www.nisqually-nsn.gov/index.php/administration/tribal-services/judicial-services/tribal-court/)
+    returned HTTP 404, so it is not recorded.'
+- kind: tribal-court
+  name: Nisqually Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Nisqually Indian Tribe'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.nisqually-nsn.gov/index.php/administration/tribal-services/judicial-services/tribal-court/)
+    returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  forums:
+  - kind: family-or-talking-circle
+    name: Peacemaker Conference (Youth Code)
+    description: An informal conference in youth proceedings, conducted according to a process established
+      by the Court, aimed at a written agreed disposition such as a Family Preservation Plan.
+    legal_basis: Nisqually Tribal Code, Title 50 – Youth, Sections 50.20.01 to 50.20.06
+    case_types:
+    - child-welfare
+    - juvenile
+    - family
+    participation: voluntary-or-court-referred
+    relationship_to_court: After a preliminary hearing any party may request a conference or the Court
+      may provisionally transfer a case on its own motion; if no agreement is reached, a fact-finding
+      hearing follows. Parties may also reach agreement outside a conference and present it to the Court.
+    enforcement: Written agreement for a fixed period signed by the child, parents or guardian, child
+      advocate and the Tribe; Nisqually Children and Family Services monitors compliance; parties may
+      present a draft order to formalize the agreement as a court order.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Nisqually-Title_50_Youth_Code.pdf
+    source: nisqually-title-50-youth-code
+    confidence: high
+    as_of: '2023-06-08'
+    locator: Sections 50.20.01-50.20.06
+  provisions:
+  - kind: peacemaking
+    title: Peacemaker Conference
+    citation: Nisqually Tribal Code, Title 50, Section 50.20
+    summary: Provides for Peacemaker Conferences in youth cases, with notice, informal procedure, written
+      agreements, monitoring and formalization as court orders.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Nisqually-Title_50_Youth_Code.pdf
+    source: nisqually-title-50-youth-code
+    confidence: high
+    as_of: '2023-06-08'
+  - kind: other
+    title: Alternative Dispositions for Juvenile Offenders
+    citation: Nisqually Tribal Code. Title 50 Youth. Chapter 50.39 Court Proceedings. Section 50.39.06
+      Predisposition Report, 50.39.07 Disposition Hearing, 50.39.08 Disposition Alternatives, & 50.39.09
+      Modification of Disposition Order.
+    link: https://www.nisqually-nsn.gov/files/1616/9446/2537/Title_50_Youth_Code_Amendments_enacted_8.17.2023_-_clean_version_-_final.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-dispositions-for-juvenile-offenders/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Deferred Court Procedures for Alcohol and Drug Offenses for Juveniles
+    citation: Nisqually Tribal Code. Title 50 Youth. Chapter 50.39 Court Proceedings. Section 50.39.10
+      Deferred Court Procedures for Alcohol and Drug Offenses.
+    link: https://www.nisqually-nsn.gov/files/1616/9446/2537/Title_50_Youth_Code_Amendments_enacted_8.17.2023_-_clean_version_-_final.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferred-court-procedures-for-alcohol-and-drug-offenses-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: .'
+  - kind: other
+    title: Deferred Penalty for Juvenile Curfew
+    citation: Nisqually Tribal Code. Title 50 Youth. Chapter 50.28 Juvenile Curfew. Section 50.28.06 Penalties
+      for Children Ages Twelve to Seventeen.
+    link: https://www.nisqually-nsn.gov/files/1616/9446/2537/Title_50_Youth_Code_Amendments_enacted_8.17.2023_-_clean_version_-_final.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferred-penalty-for-juvenile-curfew/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Family Conference and Proection Plans in Elder Abuse Cases
+    citation: Nisqually Tribal Code. Title 51 Nisqually Elder Abuse Code. Chapter 51.08 Agreed Voluntary
+      Protective Services and Family Conference. Section 51.08.01 Agreed Voluntary Protective Services
+      and Family Conference.
+    link: https://www.nisqually-nsn.gov/files/9416/4557/0524/TITLE_51-ELDER_ABUSE_CODE-WITH_TABLE_OF_CONTENTS.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-conference-and-proection-plans-in-elder-abuse-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Family conference,
+      Family group conference; Restorative justice.'
+  - kind: other
+    title: Family Preservation Plan for Child In Need Of Care
+    citation: Nisqually Tribal Code. Title 50 Youth. Chapter 50.07 Committee Meetings. Section 50.07.07
+      Family Preservation Plan.
+    link: https://www.nisqually-nsn.gov/files/1616/9446/2537/Title_50_Youth_Code_Amendments_enacted_8.17.2023_-_clean_version_-_final.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-preservation-plan-for-child-in-need-of-care-2/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Mediation of Disputes in Juvenile Justice
+    citation: Nisqually Tribal Code. Title 50 Youth. Chapter 50.40 Mediation of Disputes.
+    link: https://www.nisqually-nsn.gov/files/1616/9446/2537/Title_50_Youth_Code_Amendments_enacted_8.17.2023_-_clean_version_-_final.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/mediation-of-disputes-in-juvenile-justice/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice; Restorative practice, Restorative process.'
+  - kind: peacemaking
+    title: Peacemaker Conference for Child Welfare
+    citation: Nisqually Tribal Code. Title 50 Youth. Chapter 50.20 Peacemaker Conference.
+    link: https://www.nisqually-nsn.gov/files/1616/9446/2537/Title_50_Youth_Code_Amendments_enacted_8.17.2023_-_clean_version_-_final.pdf
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaker-conference-for-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
+  - kind: arbitration
+    title: 8.50.290 Arbitration Agreements
+    citation: 8.50.290 Arbitration Agreements
+    link: https://www.narf.org/nill/codes/nisqually/index.html
+    source: national-indian-law-library-code-index-nisqually
+    confidence: medium
+    as_of: 2016-05
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: mediation
+    title: 24.19 MEDIATION OF DISPUTES
+    citation: 24.19 MEDIATION OF DISPUTES; 24.19.01 Request for Mediation; 24.19.02 Mediator
+    link: https://www.narf.org/nill/codes/nisqually/index.html
+    source: national-indian-law-library-code-index-nisqually
+    confidence: medium
+    as_of: 2016-05
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: mediation
+    title: 50.27.03 Mediator
+    citation: 50.27.03 Mediator; 50.33 MEDIATION OF DISPUTES; 50.33.01 Request for Mediation; 50.33.02
+      Mediator; 50.33.03 Time of Mediation Hearing; 50.33.04 Mediation Hearing; 50.33.05 Results of Mediation
+      Hearing
+    link: https://www.narf.org/nill/codes/nisqually/index.html
+    source: national-indian-law-library-code-index-nisqually
+    confidence: medium
+    as_of: 2016-05
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: Title 50 – Youth
+    citation: Title 50 – Youth
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Nisqually-Title_50_Youth_Code.pdf
+    source: narf-youth-family-peacemaking-laws
+    confidence: medium
+    as_of: '2025-08-25'
+    locator: Nisqually Indian Tribe of Washington
+    note: 'Native American Rights Fund description (provision itself not read): Provides referral procedures,
+      procedures, and formalization of agreement requirements.'
+  - kind: arbitration
+    title: 8.50.290 Arbitration Agreements
+    citation: 8.50.290 Arbitration Agreements
+    link: https://narf.org/nill/codes/nisqually/index.html
+    source: national-indian-law-library-code-codes-nisqually
+    confidence: medium
+    as_of: '2016'
+    locator: Table of Contents, under 'CHAPTER II - GOVERNMENTAL CORPORATIONS'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: May 2016); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
+  - kind: mediation
+    title: 24.19 MEDIATION OF DISPUTES
+    citation: 24.19 MEDIATION OF DISPUTES; 24.19.01 Request for Mediation; 24.19.02 Mediator
+    link: https://narf.org/nill/codes/nisqually/index.html
+    source: national-indian-law-library-code-codes-nisqually
+    confidence: medium
+    as_of: '2016'
+    locator: Table of Contents, under 'CHAPTER II – RULUES OF CIVIL PROCEDURES'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: May 2016); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: 50.16 PEACEMAKER CONFERENCE
+    citation: 50.16 PEACEMAKER CONFERENCE; 50.16.01 Request for Peacemaker Conference; 50.16.02 Setting
+      the Peacemaker Conference; 50.16.03 Peacemaker Conference - Required Notice; 50.16.04 Peacemaker
+      Conference - Procedure
+    link: https://narf.org/nill/codes/nisqually/index.html
+    source: national-indian-law-library-code-codes-nisqually
+    confidence: medium
+    as_of: '2016'
+    locator: Table of Contents, under 'CHAPTER I - NISQUALLY YOUTH CODE'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: May 2016); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
+  - kind: mediation
+    title: 50.27.03 Mediator
+    citation: 50.27.03 Mediator; 50.33 MEDIATION OF DISPUTES; 50.33.01 Request for Mediation; 50.33.02
+      Mediator; 50.33.03 Time of Mediation Hearing; ...
+    link: https://narf.org/nill/codes/nisqually/index.html
+    source: national-indian-law-library-code-codes-nisqually
+    confidence: medium
+    as_of: '2016'
+    locator: Table of Contents, under 'CHAPTER II – JUVENILE JUSTICE'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: May 2016); the provision itself was not read. The heading it falls under is
+      taken from the page layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: WA
+    status: approved
+    approved: '2022-07-05'
+    federal_register_citation: 87 FR 39866
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-07-05'
+    locator: result page 40 (?page=40), row 7
+    note: 'Listed as: "Nisqually Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Nisqually Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.07.05_nisqually_indian_tribe_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/07/05/2022-14351/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-between-nisqually-indian.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2023-09-27'
+    federal_register_citation: 88 FR 66500
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2023-09-27'
+    locator: result page 40 (?page=40), row 8
+    note: 'Listed as: "Nisqually Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Nisqually Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2023.09.27_nisqually_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2023/09/27/2023-20968/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-between-nisqually-indian.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1999-08-13'
+    federal_register_citation: 64 FR 44234
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-08-13'
+    locator: result page 40 (?page=40), row 9
+    note: 'Listed as: "Nisqually Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Nisqually Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.08.13%20Nisqually%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact%20Amdt%20I_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/08/13/99-20932/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2007-05-31'
+    federal_register_citation: 72 FR 30392
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-05-31'
+    locator: result page 40 (?page=40), row 10
+    note: 'Listed as: "Nisqually Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Nisqually Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202007.05.31%20Nisqually%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact%20Amdt%20II.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/05/31/E7-10397/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1998-03-30'
+    federal_register_citation: 63 FR 15211
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-03-30'
+    locator: result page 40 (?page=40), row 11
+    note: 'Listed as: "Nisqually Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Nisqually Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.03.30%20Nisqually%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact%20Amendment%201998.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/03/30/98-8274/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2015-06-04'
+    federal_register_citation: 80 FR 31918
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-04'
+    locator: result page 40 (?page=40), row 12
+    note: 'Listed as: "Nisqually Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Nisqually Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202015.06.04%20Nisqually%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/04/2015-13712/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2023-09-27).
+  ordinances:
+  - approved: '1995-08-10'
+    link: https://www.nigc.gov?wpdmdl=10411&ind=10442
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-08-10'
+    locator: table row 167, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 167 lists the nation
+      as "Nisqually Indian Tribe".
+  - approved: '1995-10-24'
+    link: https://www.nigc.gov?wpdmdl=10427&ind=10443
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-10-24'
+    locator: table row 167, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 167 lists the nation
+      as "Nisqually Indian Tribe".
+  - approved: '2012-08-06'
+    link: https://www.nigc.gov?wpdmdl=10428&ind=10444
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2012-08-06'
+    locator: table row 167, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 167 lists the nation
+      as "Nisqually Indian Tribe".
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: 'Washington assumed partial jurisdiction (RCW 37.12.010, 1957 and 1963): it does not apply to
+    Indians on trust or restricted tribal or allotted lands within a reservation except for eight subjects
+    (compulsory school attendance, public assistance, domestic relations, mental illness, juvenile delinquency,
+    adoption, dependent children, motor vehicles on public roads), unless the tribe requested full state
+    jurisdiction under RCW 37.12.021.'
+  source: revised-code-of-washington-37-12-010
+  confidence: medium
+  as_of: '1963'
+  locator: RCW 37.12.010
+  note: Nation matched to Washington by office state. Check for later retrocession facts.
+- topic: public-law-280
+  value: optional-state
+  detail: Listed as a tribe that consented to (requested) full Washington state jurisdiction; some of
+    this jurisdiction was later retroceded for several of these nations (see retrocession facts).
+  source: department-of-justice-federally-recognized-indian-nations-under-state-jurisdiction-2016
+  confidence: medium
+  as_of: '2016-06-29'
+  locator: Washington section, footnote 4
+  note: From a 2016 Office of Tribal Justice compilation hosted by the National Indian Justice Center.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Nisqually Indian Tribe Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: Northwest Indian Fisheries Commission
+  source: northwest-indian-fisheries-commission-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Nisqually Indian Tribe".
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Nisqually Indian Tribe".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

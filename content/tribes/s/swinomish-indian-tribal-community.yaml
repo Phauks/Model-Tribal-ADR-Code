@@ -1,0 +1,619 @@
+id: swinomish-indian-tribal-community
+entity_type: native-nation
+names:
+  official: Swinomish Indian Tribal Community
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: WA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Swinomish Indian Tribal Community
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4075
+  note: 'Census area with land in this state: Swinomish Reservation and Off-Reservation Trust Land (code
+    4075). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '4075'
+  name: Swinomish Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4075
+  note: Matched by name. Census class code D1.
+population:
+- count: 3228
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4075, field POP100
+  note: 'Census area: Swinomish Reservation and Off-Reservation Trust Land (code 4075). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 1193
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3351 (Swinomish Indian Tribal Community alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Swinomish Indian Tribal Community' (race code 6207)
+    alone or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 837
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Swinomish Indian Tribal Community', PDF page 9, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.swinomish-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Swinomish Indian Tribal Community
+- kind: physical-address
+  value: 11404 Moorage Way, LaConner, WA 98257
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Swinomish Indian Tribal Community
+- kind: mailing-address
+  value: 11404 Moorage Way, LaConner, WA 98257
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Swinomish Indian Tribal Community
+- kind: phone
+  value: (360) 466-3163
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Swinomish Indian Tribal Community
+- kind: fax
+  value: (360) 466-5309
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Swinomish Indian Tribal Community
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Puget Sound Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Swinomish Indian Tribal Community
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Swinomish Indian Tribal Community, Washington" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Swinomish Indians of the Swinomish Reservation Washington) (approved 1936) states
+    it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-swincons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Swinomish Tribal Code
+  year: '2024'
+  link: https://narf.org/nill/codes/swinomishcode/index.html
+  source: national-indian-law-library-code-codes-swinomishcode
+  confidence: medium
+  as_of: '2024'
+  locator: page heading
+  note: 'Most Recent Update Received : April 2024. Full text linked from the National Indian Law Library
+    page.'
+- kind: constitution
+  title: Constitution and By-laws of the Swinomish Indian Tribal Community
+  year: '2017'
+  link: https://narf.org/nill/constitutions/swinomish/index.html
+  source: national-indian-law-library-constitution-constitutions-swinomish
+  confidence: medium
+  as_of: '2017'
+  locator: page heading
+  note: 'Amended: 2017. Full text linked from the National Indian Law Library page.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.swinomish-nsn.gov/tribal-code
+  source: national-indian-law-library-swinomish
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: constitution
+  title: Constitution
+  link: https://www.swinomish-nsn.gov/tribal-code
+  source: national-indian-law-library-swinomish
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
+    website .".'
+- kind: constitution
+  title: Swinomish Indian Tribal Community Constitution and By-Laws
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Swinomish Indian Tribal Community'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.swinomish-nsn.gov/media/3383/constitutionbylaws.pdf)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Swinomish Tribal Code
+  link: http://www.swinomish.org/government/tribal-code.aspx
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Swinomish Indian Tribal Community'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: corporate-charter
+  title: Corporate charter (Swinomish Indian Tribal Community Washington)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/swinchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-swinchrtr
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Swinomish Indians of the Swinomish Reservation Washington)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/swincons.html
+  source: university-of-oklahoma-indian-reorganization-act-swincons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.swinomish-nsn.gov/tribal-court
+  source: national-indian-law-library-swinomish
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Swinomish Tribal Court
+  link: http://www.swinomish.org/resources/tribal-court.aspx
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Swinomish Indian Tribal Community'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Alternative Sentencing for Youth Offenders
+    citation: STC 8-12.060
+    link: https://www.swinomish-nsn.gov/tribal-code/page/tribal-code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-sentencing-for-youth-offenders/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Alternative
+      sentencing; Rehabilitation.'
+  - kind: other
+    title: Community Service (Alternative to Incarceration)
+    citation: STC Title 4, Chapter 12, § 4-12.010(A), (C); § 4-12.020
+    link: https://www.swinomish-nsn.gov/tribal-code/page/tribal-code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-service-alternative-to-incarceration/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication/Sentencing. Database form of practice: Alternative
+      to incarceration.'
+  - kind: other
+    title: Court-Facilitated Truancy Agreements
+    citation: STC 8-14.070(J)-(K)
+    link: https://www.swinomish-nsn.gov/tribal-code/page/tribal-code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-facilitated-truancy-agreements/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Conflict
+      resolution; Deferred adjudication; Informal hearing.'
+  - kind: other
+    title: Domestic Violence Protection Orders – Treatment/Counseling Requirement
+    citation: STC Title 7, Chapter 11, § 7-11.100(A)(3)
+    link: https://www.swinomish-nsn.gov/tribal-code/page/tribal-code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/domestic-violence-protection-orders-treatment-counseling-requirement/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
+  - kind: other
+    title: Interim Orders for Treatment and Services
+    citation: STC 8-07.090
+    link: https://www.swinomish-nsn.gov/tribal-code/page/tribal-code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/interim-orders-for-treatment-and-services/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Family
+      services; Rehabilitation.'
+  - kind: mediation
+    title: Mediation in Juvenile Matters
+    citation: STC 8-06.250 - 8-06.310
+    link: https://www.swinomish-nsn.gov/tribal-code/page/tribal-code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/mediation-in-juvenile-matters/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Conflict
+      resolution; Mediation.'
+  - kind: other
+    title: Restitution to Injured Parties
+    citation: STC Title 4, Chapter 12, § 4-12.040
+    link: https://www.swinomish-nsn.gov/tribal-code/page/tribal-code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restitution-to-injured-parties/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication/Sentencing. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Therapeutic Justice – Court Philosophy
+    citation: STC Title 4, Chapter 12, § 4-12.070 (Annotation 3)
+    link: https://www.swinomish-nsn.gov/tribal-code/page/tribal-code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/therapeutic-justice-court-philosophy/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
+  - kind: other
+    title: Truancy Intervention and Family Conferencing
+    citation: STC 8-14.060
+    link: https://www.swinomish-nsn.gov/tribal-code/page/tribal-code
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/truancy-intervention-and-family-conferencing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Alternative
+      intervention; Diversion; Family conferencing.'
+  - kind: arbitration
+    title: 7 - Arbitration of Disputes (4/5/05)
+    citation: 7 - Arbitration of Disputes (4/5/05)
+    link: https://www.narf.org/nill/codes/swinomishcode/index.html
+    source: national-indian-law-library-code-index-swinomishcode
+    confidence: medium
+    as_of: '2026-11-21'
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title. No date on the
+      index; as_of is the access date.
+  - kind: mediation
+    title: '- Court Hearings, Parties and Mediation (9/7/04)'
+    citation: '- Court Hearings, Parties and Mediation (9/7/04)'
+    link: https://www.narf.org/nill/codes/swinomishcode/index.html
+    source: national-indian-law-library-code-index-swinomishcode
+    confidence: medium
+    as_of: '2026-11-21'
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title. No date on the
+      index; as_of is the access date.
+  - kind: mediation
+    title: 7 - Arbitration of Disputes (4/5/05
+    citation: 7 - Arbitration of Disputes (4/5/05; 6 - Court Hearings, Parties and Mediation (9/7/04
+    link: https://narf.org/nill/codes/swinomishcode/index.html
+    source: national-indian-law-library-code-codes-swinomishcode
+    confidence: medium
+    as_of: '2024'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Most
+      Recent Update Received : April 2024); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: WA
+    status: approved
+    approved: '2021-10-22'
+    federal_register_citation: 86 FR 58685
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2021-10-22'
+    locator: result page 44 (?page=44), row 2
+    note: 'Listed as: "Swinomish Indian Tribal Community Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Swinomish Indian Tribal Community". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2021.10.22_swinomish_indian_tribal_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/10/22/2021-23064/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-washington.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: deemed-approved
+    approved: '2024-08-22'
+    federal_register_citation: 89 FR 67959
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2024-08-22'
+    locator: result page 44 (?page=44), row 3
+    note: 'Listed as: "Swinomish Indian Tribal Community Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Swinomish Indian Tribal Community". Document: https://www.bia.gov/sites/default/files/media_document/508_compliant_2024.08.14_swinomish_compact_rescan%29.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/08/22/2024-18836/indian-gaming-approval-by-operation-of-law-of-amendment-to-class-iii-gaming-compact-swinomish-indian.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2014-07-23'
+    federal_register_citation: 79 FR 42808
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2014-07-23'
+    locator: result page 44 (?page=44), row 4
+    note: 'Listed as: "Swinomish Indian Tribal Community Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Swinomish Indian Tribal Community". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202014.07.23%20Swinomish%20Indian%20Tribal%20Community%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2014/07/23/2014-17374/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1993-02-19'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1993-02-19'
+    locator: result page 44 (?page=44), row 5
+    note: 'Listed as: "Swinomish Indian Tribal Community Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Swinomish Indian Tribal Community". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201993.02.19%20Swinomish%20Indian%20Tribal%20Community%20Tribal%20State%20Gaming%20Compact.pdf.
+      Name matched to roster by spelling variant.'
+  - state: WA
+    status: approved
+    approved: '1999-01-28'
+    federal_register_citation: 64 FR 4460
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1999-01-28'
+    locator: result page 44 (?page=44), row 6
+    note: 'Listed as: "Swinomish Indian Tribal Community Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Swinomish Indian Tribal Community". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.01.28%20Swinomish%20Indian%20Tribal%20Community%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/01/28/99-1925/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1995-03-31'
+    federal_register_citation: 60 FR 16764
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1995-03-31'
+    locator: result page 44 (?page=44), row 7
+    note: 'Listed as: "Swinomish Indian Tribal Community Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Swinomish Indian Tribal Community". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201995.03.31%20Swinomish%20Indian%20Tribal%20Community%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/03/31/95-7939/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1997-01-07'
+    federal_register_citation: 62 FR 997
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1997-01-07'
+    locator: result page 44 (?page=44), row 8
+    note: 'Listed as: "Swinomish Indian Tribal Community Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Swinomish Indian Tribal Community". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201997.01.07%20Swinomish%20Indian%20Tribal%20Community%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1997/01/07/97-244/indian-gaming-notice-of-approved-second-amendment-to-tribal--state-compact.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2007-05-31'
+    federal_register_citation: 72 FR 30392
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2007-05-31'
+    locator: result page 44 (?page=44), row 9
+    note: 'Listed as: "Swinomish Indian Tribal Community Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Swinomish Indian Tribal Community". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.05.31_swinomish_indian_tribal_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/05/31/E7-10397/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2015-06-04'
+    federal_register_citation: 80 FR 31918
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2015-06-04'
+    locator: result page 44 (?page=44), row 10
+    note: 'Listed as: "Swinomish Indian Tribal Community Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Swinomish Indian Tribal Community". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202015.06.04%20Swinomish%20Indian%20Tribal%20Community%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/04/2015-13712/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: deemed-approved
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2024-08-22).
+  ordinances:
+  - approved: '1993-11-10'
+    link: https://www.nigc.gov?wpdmdl=11300&ind=11320
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1993-11-10'
+    locator: table row 279, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 279 lists the nation
+      as "Swinomish Indians". Name matched to roster by spelling variant.
+  - approved: '1999-03-10'
+    link: https://www.nigc.gov?wpdmdl=11301&ind=11321
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1999-03-10'
+    locator: table row 279, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 279 lists the nation
+      as "Swinomish Indians". Name matched to roster by spelling variant.
+  - approved: '2002-07-17'
+    link: https://www.nigc.gov?wpdmdl=11302&ind=11322
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2002-07-17'
+    locator: table row 279, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 279 lists the nation
+      as "Swinomish Indians". Name matched to roster by spelling variant.
+  - approved: '2003-10-03'
+    link: https://www.nigc.gov?wpdmdl=11303&ind=11323
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2003-10-03'
+    locator: table row 279, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 279 lists the nation
+      as "Swinomish Indians". Name matched to roster by spelling variant.
+  - approved: '2010-11-05'
+    link: https://www.nigc.gov?wpdmdl=11306&ind=11324
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2010-11-05'
+    locator: table row 279, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 279 lists the nation
+      as "Swinomish Indians". Name matched to roster by spelling variant.
+  - approved: '2012-07-30'
+    link: https://www.nigc.gov?wpdmdl=11305&ind=11325
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2012-07-30'
+    locator: table row 279, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 279 lists the nation
+      as "Swinomish Indians". Name matched to roster by spelling variant.
+  - approved: '2013-03-05'
+    link: https://www.nigc.gov?wpdmdl=11304&ind=11326
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2013-03-05'
+    locator: table row 279, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 279 lists the nation
+      as "Swinomish Indians". Name matched to roster by spelling variant.
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: 'Washington assumed partial jurisdiction (RCW 37.12.010, 1957 and 1963): it does not apply to
+    Indians on trust or restricted tribal or allotted lands within a reservation except for eight subjects
+    (compulsory school attendance, public assistance, domestic relations, mental illness, juvenile delinquency,
+    adoption, dependent children, motor vehicles on public roads), unless the tribe requested full state
+    jurisdiction under RCW 37.12.021.'
+  source: revised-code-of-washington-37-12-010
+  confidence: medium
+  as_of: '1963'
+  locator: RCW 37.12.010
+  note: Nation matched to Washington by office state. Check for later retrocession facts.
+- topic: public-law-280
+  value: optional-state
+  detail: Listed as a tribe that consented to (requested) full Washington state jurisdiction; some of
+    this jurisdiction was later retroceded for several of these nations (see retrocession facts).
+  source: department-of-justice-federally-recognized-indian-nations-under-state-jurisdiction-2016
+  confidence: medium
+  as_of: '2016-06-29'
+  locator: Washington section, footnote 4
+  note: From a 2016 Office of Tribal Justice compilation hosted by the National Indian Justice Center.
+- topic: public-law-280
+  value: retroceded
+  detail: Interior accepted retrocession of all criminal jurisdiction exercised by Washington over the
+    Chehalis Reservation, Quileute Indian Reservation and Swinomish Tribal Community, except as provided
+    in RCW 37.12.010 and related 1986 and 1988 Washington laws. (54 FR 19959)
+  source: federal-register-1989-chehalis-quileute-swinomish-retrocession
+  confidence: high
+  as_of: '1989-05-10'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Swinomish Indian Tribal Community Confidence lowered from high by the lead session:
+    the notice prints its table as page images, so nation names were read from images and matched to the
+    roster.'
+- topic: violence-against-women-act-special-tribal-criminal-jurisdiction
+  value: exercising
+  detail: Exercising jurisdiction since 2021-01-01 (start date given by NCAI; jurisdiction began under
+    the 2013 special domestic violence criminal jurisdiction provision). Listed by NCAI as implementing
+    (list updated May 2022).
+  source: national-congress-of-american-indians-implementing-tribe-profile-swinomish-indian-tribal-community
+  confidence: medium
+  as_of: 2022-05
+  locator: '"Exercising jurisdiction since" line'
+  note: Listed as "Swinomish Indian Tribal Community". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
+memberships:
+- organization: Northwest Indian Fisheries Commission
+  source: northwest-indian-fisheries-commission-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Swinomish Indian Tribal Community".
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Swinomish Indian Tribal Community".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

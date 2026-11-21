@@ -1,0 +1,564 @@
+id: coquille-indian-tribe
+entity_type: native-nation
+names:
+  official: Coquille Indian Tribe
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: OR
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Coquille Indian Tribe
+- state: OR
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0775
+  note: 'Census area with land in this state: Coquille Reservation (code 0775). Area matched to the nation
+    by name.'
+census_areas:
+- geographic_identifier: '0775'
+  name: Coquille Reservation
+  area_type: Reservation
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0775
+  note: Matched by name. Census class code D2.
+population:
+- count: 1200
+  kind: citizens
+  source: coquilletribe-our-people
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''Today we number over 1,200 members''. Undated; as_of is access date.'
+- count: 343
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US0775, field POP100
+  note: 'Census area: Coquille Reservation (code 0775). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 989
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 2953 (Coquille Indian Tribe alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Coquille Indian Tribe' (race code 5722) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+- count: 1195
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Coquille Indian Tribe', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.coquilletribe.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Coquille Indian Tribe
+- kind: physical-address
+  value: 1340 North Bayshore Drive, Coos Bay, OR 97420
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Coquille Indian Tribe
+- kind: mailing-address
+  value: 3050 Tremont Street, North Bend, OR 97459
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Coquille Indian Tribe
+- kind: phone
+  value: (541) 756-0904
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Coquille Indian Tribe
+- kind: fax
+  value: (541) 756-0847
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Coquille Indian Tribe
+languages:
+- name: Miluk
+  source: coquilletribe-our-heritage-our-languages
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Page: Miluk was spoken by Coquille ancestors; Athabaskan dialects were also spoken. Tribe runs
+    Miluk workshops.'
+- name: Upper Coquille (Athabaskan)
+  source: coquilletribe-our-heritage-our-living-culture
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Page cites the Upper Coquille greeting 'Jii-la!' alongside Miluk 'Dai s’la!'.
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Northwest Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Coquille Indian Tribe
+governing_documents:
+- kind: law-code
+  title: Coquille Indian Tribe
+  year: '2014'
+  link: https://narf.org/nill/codes/coquillecode/index.html
+  source: national-indian-law-library-code-codes-coquillecode
+  confidence: medium
+  as_of: '2014'
+  locator: page heading
+  note: 'Table of Contents Updated: November 2014. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution of the Coquille Indian Tribe
+  year: '2014'
+  link: https://narf.org/nill/constitutions/coquilleconst/index.html
+  source: national-indian-law-library-constitution-constitutions-coquilleconst
+  confidence: medium
+  as_of: '2014'
+  locator: page heading
+  note: 'Table of Contents Updated: November 2014. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://www.coquilletribe.org/?page_id=1326
+  source: national-indian-law-library-coquille
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    . Choose Ordinances.".'
+- kind: constitution
+  title: Constitution
+  link: https://www.coquilletribe.org/?page_id=1326
+  source: national-indian-law-library-coquille
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website . Choose Consitution and the Coquille Indian Tribe.".'
+- kind: constitution
+  title: Coquille Indian Tribe Constitution
+  link: http://52.27.76.203/wp-content/uploads/2017/04/Constitution.pdf
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Coquille Indian Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+- kind: law-code
+  title: Coquille Tribe Ordinances
+  link: http://www.coquilletribe.org/?page_id=1326
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Coquille Indian Tribe'
+  note: Title is the link text in the directory; link not re-checked and may be out of date.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-coquille
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://www.coquilletribe.org/?page_id=4007) returned HTTP 404, so it is not
+    recorded.'
+- kind: tribal-court
+  name: Coquille Indian Tribal Court
+  link: http://52.27.76.203/?page_id=1733
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Oregon section, entry 'Coquille Indian Tribe'
+dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Peacegiving Program
+    own_term:
+      name: Peacegiving
+      language_tag: en
+      translation: English term used by the Tribe; facilitators are called Peacegivers
+    description: A program under supervision of the Chief Judge in which Peacegivers resolve disputes
+      using restorative justice principles and traditional Tribal dispute resolution and community integration
+      values and practices.
+    legal_basis: Coquille Tribal Ordinance Chapter 655 (Peacegiving Procedures), 655.010-655.900
+    case_types:
+    - juvenile
+    - civil
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: With the parties' consent the Tribal Court may transfer any case or dispute;
+      the code also provides that cases involving a juvenile party may be transferred with or without
+      consent.
+    enforcement: Agreements must be in writing and have no legal force until approved by the Tribal Court;
+      confidentiality breaches may be treated as contempt.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Coquille-655-Peacegiving.pdf
+    source: coquille-ordinance-655-peacegiving
+    confidence: medium
+    as_of: '2005-04-23'
+    locator: 655.050, 655.070, 655.110, 655.200, 655.700
+    note: Section 655.110(2) as printed names the Tribal Council as the body that may transfer juvenile
+      cases without consent. Ordinance states it does not waive sovereign immunity (655.800).
+  provisions:
+  - kind: peacemaking
+    title: Chapter 655 – Peacegiving
+    citation: Coquille Tribal Ordinance Chapter 655
+    summary: Establishes the Peacegiving program, Peacegiver qualifications and duties, transfer of cases,
+      confidentiality and court approval of agreements.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Coquille-655-Peacegiving.pdf
+    source: coquille-ordinance-655-peacegiving
+    confidence: medium
+    as_of: '2005-04-23'
+  - kind: other
+    title: Court Authority Over Remedial Services for Parents and Children
+    citation: CITC 641.550
+    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/court-authority-over-remedial-services-for-parents-and-children/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: N/A. Database form of practice: Counseling; Rehabilitation.'
+  - kind: other
+    title: 'Dependency Code Purpose: Family Preservation and Rehabilitation'
+    citation: CITC 641.010(2)
+    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dependency-code-purpose-family-preservation-and-rehabilitation/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: N/A. Database form of practice: Rehabilitation; Restorative
+      practice.'
+  - kind: other
+    title: Informal Resolution in Juvenile Dependency Cases
+    citation: CITC 641.400
+    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-resolution-in-juvenile-dependency-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Alternative;
+      Conflict resolution; Informal resolution.'
+  - kind: mediation
+    title: Mediation Encouraged in Termination of Parental Rights
+    citation: CITC 642.420
+    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/mediation-encouraged-in-termination-of-parental-rights/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: N/A. Database form of practice: Alternative; Conflict
+      resolution; Mediation.'
+  - kind: peacemaking
+    title: Peacegiving Process
+    citation: CITC 655 Peacegiving
+    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacegiving-process/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: N/A. Database form of practice: Peacemaking.'
+  - kind: other
+    title: Remedial Efforts and Rehabilitation Programs
+    citation: CITC 641.510
+    link: https://www.coquilletribe.org/2-19-constitution-and-ordinances/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/remedial-efforts-and-rehabilitation-programs/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: N/A. Database form of practice: Rehabilitation; Remedial
+      services.'
+  - kind: mediation
+    title: 642.420 Mediation Encouraged
+    citation: 642.420 Mediation Encouraged
+    link: https://www.narf.org/nill/codes/coquillecode/index.html
+    source: national-indian-law-library-code-index-coquillecode
+    confidence: medium
+    as_of: 2014-11
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: peacemaking
+    title: Ordinance Chapter 655 – Peacegiving
+    citation: Ordinance Chapter 655 – Peacegiving
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Coquille-655-Peacegiving.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Coquille Indian Tribe of Oregon
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      qualifications, referral standards, and authority to use traditional tribal practices.'
+  - kind: peacemaking
+    title: 642.420 Mediation Encouraged
+    citation: 642.420 Mediation Encouraged; 651.130 Referral to Peacegiving; Withdrawal from Peacegiving;
+      651.140 Peacegiving Commencement; 651.160 Conclusion of Peacegiving; Chapter 655 - Peacegiving Procedures;
+      ...
+    link: https://narf.org/nill/codes/coquillecode/index.html
+    source: national-indian-law-library-code-codes-coquillecode
+    confidence: medium
+    as_of: '2014'
+    locator: Table of Contents, under 'Appeals To The Tribal Court'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: November 2014); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: OR
+    status: approved
+    approved: '2000-12-06'
+    federal_register_citation: 65 FR 76278
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-12-06'
+    locator: result page 32 (?page=32), row 14
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.12.06%20Coquille%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/12/06/00-31026/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2008-03-17'
+    federal_register_citation: 73 FR 14267
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2008-03-17'
+    locator: result page 32 (?page=32), row 15
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202008.03.17%20Coquille%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/03/17/E8-5198/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2016-10-31'
+    federal_register_citation: 81 FR 75428
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2016-10-31'
+    locator: result page 32 (?page=32), row 16
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202016.10.31%20Coquille%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2016/10/31/2016-26252/indian-gaming-approval-of-amendment-to-tribal-state-class-iii-gaming-compact-in-the-state-of-oregon.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: deemed-approved
+    approved: '1996-02-06'
+    federal_register_citation: 61 FR 4477
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-02-06'
+    locator: result page 32 (?page=32), row 17
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
+      column: "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201996.02.06%20Coquille%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/02/06/96-2452/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1995-02-16'
+    federal_register_citation: 60 FR 9258
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-02-16'
+    locator: result page 32 (?page=32), row 18
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201995.02.16%20Coquille%20Indian%20Tribe%20Tribal%20State%20GamingCompact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/02/16/95-3841/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1998-05-19'
+    federal_register_citation: 63 FR 27585
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-05-19'
+    locator: result page 32 (?page=32), row 19
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.05.19%20Coquille%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/05/19/98-13219/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1996-09-04'
+    federal_register_citation: 61 FR 46662
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-09-04'
+    locator: result page 32 (?page=32), row 20
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201996.09.04%20Coquille%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/09/04/96-22438/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1998-02-27'
+    federal_register_citation: 63 FR 10035
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-02-27'
+    locator: result page 32 (?page=32), row 21
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.02.27%20Coquille%20Indina%20Tribe%20Tribal%20State%20Gaming%20Compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/02/27/98-5074/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2000-05-31'
+    federal_register_citation: 65 FR 34727
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-31'
+    locator: result page 32 (?page=32), row 22
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.05.31%20Coquille%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/31/00-13495/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1999-06-01'
+    federal_register_citation: 64 FR 29334
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-06-01'
+    locator: result page 32 (?page=32), row 23
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.06.01%20Coquille%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/06/01/99-13726/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2020-05-20'
+    federal_register_citation: 85 FR 30732
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2020-05-20'
+    locator: result page 32 (?page=32), row 24
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202020.05.20%20Coquille%20Tribe%20and%20State%20of%20Oregon%20Compact%20Amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2020/05/20/2020-10823/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-in-the-state-of-oregon.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance and the parties
+      meet within 30 days; if unresolved within 90 days either party may sue in the United States District
+      Court for the District of Oregon (or a state court if federal jurisdiction is declined), and other
+      dispute resolution methods remain available by mutual agreement.
+    dispute_resolution_locator: Section 17 (Dispute Resolution)
+    source: compact-or-confederated-tribes-of-the-grand-ronde-c-2023
+    confidence: medium
+    as_of: '2023-02-08'
+    locator: Section 17 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2023 Confederated Tribes
+      of the Grand Ronde Community compact; other Oregon compacts were not checked. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2020-05-20).
+  ordinances:
+  - approved: '1995-04-28'
+    link: https://www.nigc.gov?wpdmdl=9669&ind=9681
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-04-28'
+    locator: table row 61, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 61 lists the nation
+      as "Coquille Tribe of Oregon". Name matched to roster by spelling variant.
+  - approved: '2020-01-30'
+    link: https://www.nigc.gov?wpdmdl=9670&ind=9682
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2020-01-30'
+    locator: table row 61, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 61 lists the nation
+      as "Coquille Tribe of Oregon". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Coquille Indian Tribe". Facilities
+      as machine-extracted from the report text (verify): Ko-Kwell Casino Resort Medford; The Mill Casino.
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.'
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Oregon is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Oregon. Applies to the nation''s Indian country
+    within Oregon; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Oregon"
+  note: Statute is primary; nation matched to Oregon by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Coquille Indian Tribe Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Coquille Indian Tribe".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

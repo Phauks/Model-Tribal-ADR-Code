@@ -1,0 +1,282 @@
+id: upper-sioux-community
+entity_type: native-nation
+names:
+  official: Upper Sioux Community, Minnesota
+  self_designation:
+  - name: Pezihutazizi Oyate
+    language_tag: dak
+    source: upper-sioux-community-history
+    confidence: high
+    as_of: '2026-11-21'
+    note: '"the Pezihutazizi Oyate"; "the People of Yellow Medicine"'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: MN
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Upper Sioux Community, Minnesota
+- state: MN
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4445
+  note: 'Census area with land in this state: Upper Sioux Community and Off-Reservation Trust Land (code
+    4445). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '4445'
+  name: Upper Sioux Community and Off-Reservation Trust Land
+  area_type: Community and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4445
+  note: Matched by name. Census class code D1.
+population:
+- count: 577
+  kind: citizens
+  source: upper-sioux-community-history
+  confidence: medium
+  as_of: '2024'
+  note: '"Tribal membership, which now stands at 577" (text follows a March 2024 land return)'
+- count: 120
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US4445, field POP100
+  note: 'Census area: Upper Sioux Community and Off-Reservation Trust Land (code 4445). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 396
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3397 (Upper Sioux Community alone or in any combination), GEOID 0100000US
+    (United States)
+  note: People in the United States who reported 'Upper Sioux Community' (race code 6314) alone or in
+    combination with other tribes or races in the 2020 Census; self-identification, not enrollment. Includes
+    noise added for disclosure avoidance. Census label exact name match.
+- count: 483
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Upper Sioux Community', PDF page 5, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.uppersiouxcommunity-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Upper Sioux Community, Minnesota
+- kind: physical-address
+  value: 5722 Travers Lane, Granite Falls, MN 56241
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Upper Sioux Community, Minnesota
+- kind: mailing-address
+  value: P.O. Box 147, Granite Falls, MN 56241
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Upper Sioux Community, Minnesota
+- kind: phone
+  value: (320) 564-6372
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Upper Sioux Community, Minnesota
+- kind: fax
+  value: (320) 564-4482
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Upper Sioux Community, Minnesota
+federal_administration:
+  bureau_of_indian_affairs_region: Midwest
+  bureau_of_indian_affairs_agency: Midwest Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Upper Sioux Community, Minnesota
+governing_documents:
+- kind: law-code
+  title: Tribal code
+  link: http://maiba.org/pdf/UpperSioux-JudicialCode.PDF
+  source: national-indian-law-library-upper-sioux
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Minnesota American
+    Indian Bar Association (MAIBA) website. Judicial Code.".'
+- kind: constitution
+  title: Constitution
+  year: '1996'
+  link: http://isites.harvard.edu/fs/docs/icb.topic177572.files/Winds_of_Change_UpperSioux_membership.pdf
+  source: national-indian-law-library-upper-sioux
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Harvard
+    website : Winds of Change; Constitutional Reform and the Upper Sioux Community, prepared by Kyle E.
+    Scherer & Gideon A. Valkin. 1996 constitution and draft 2004 constitution provided in appendices.".'
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-upper-sioux
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Upper Sioux Community Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Minnesota section, entry 'Upper Sioux Community'
+gaming:
+  compacts:
+  - state: MN
+    status: approved
+    approved: '1991-04-30'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1991-04-30'
+    locator: result page 18 (?page=18), row 18
+    note: 'Listed as: "Upper Sioux Community Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Upper Sioux Community, Minnesota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1991.04.30_upper_sioux_community_tribal_state_gaming_compact.pdf.'
+  - state: MN
+    status: approved
+    approved: '1991-10-03'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1991-10-03'
+    locator: result page 18 (?page=18), row 19
+    note: 'Listed as: "Upper Sioux Community Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Upper Sioux Community, Minnesota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1991.10.03_upper_sioux_community_tribal_state_gaming_compact.pdf.'
+  - state: MN
+    status: approved
+    approved: '1990-11-26'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1990-11-26'
+    locator: result page 18 (?page=18), row 20
+    note: 'Listed as: "Upper Sioux Community Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Upper Sioux Community, Minnesota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1990.11.26_upper_sioux_community_tribal_state_gaming_compact.pdf.'
+  - state: MN
+    status: approved
+    approved: '2024-09-05'
+    federal_register_citation: 89 FR 72419
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-09-05'
+    locator: result page 18 (?page=18), row 21
+    note: 'Listed as: "Upper Sioux Community Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Upper Sioux Community, Minnesota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.09.05_upper_sioux_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/09/05/2024-19946/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-between-the-upper-sioux-community.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MN
+    status: approved
+    dispute_resolution_summary: The video games of chance compact has no general arbitration or mediation
+      clause; when the State designates a machine as non-compliant, the nation may accept the finding,
+      submit the device to an independent gaming test laboratory, or contest the finding in federal district
+      court (or before the National Indian Gaming Commission or another court if jurisdiction is declined).
+    dispute_resolution_locator: Section 4.6 (Demand for Remedies for Non-Complying Video Games of Chance)
+    source: compact-mn-prairie-island-indian-community-in-the-s-1990
+    confidence: medium
+    as_of: '1990-04-02'
+    locator: Section 4.6 (Demand for Remedies for Non-Complying Video Games of Chance)
+    note: state model compact; nation-specific text not checked. Read from the 1990 Prairie Island Indian
+      Community video games of chance compact; Minnesota nations also hold separate blackjack compacts,
+      which were not summarized. Status copied from this nation's most recent approved or deemed-approved
+      entry for this state in the Office of Indian Gaming list (2024-09-05).
+  ordinances:
+  - approved: '1995-01-10'
+    link: https://www.nigc.gov?wpdmdl=11476&ind=11498
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-01-10'
+    locator: table row 301, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 301 lists the nation
+      as "Upper Sioux Community".
+  - approved: '1997-07-22'
+    link: https://www.nigc.gov?wpdmdl=11475&ind=11499
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-07-22'
+    locator: table row 301, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 301 lists the nation
+      as "Upper Sioux Community".
+  - approved: '2003-11-12'
+    link: https://www.nigc.gov?wpdmdl=11474&ind=11500
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-11-12'
+    locator: table row 301, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 301 lists the nation
+      as "Upper Sioux Community".
+  - approved: '2013-05-20'
+    link: https://www.nigc.gov?wpdmdl=11478&ind=11501
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2013-05-20'
+    locator: table row 301, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 301 lists the nation
+      as "Upper Sioux Community".
+jurisdiction:
+- topic: public-law-280
+  value: mandatory-state
+  detail: 'Minnesota is a mandatory state: 18 U.S.C. § 1162(a) (criminal) and 28 U.S.C. § 1360(a) (civil)
+    extend state jurisdiction to all Indian country within Minnesota. Applies to the nation''s Indian
+    country within Minnesota; the statute itself does not identify which lands are Indian country.'
+  source: us-code-title-18-section-1162
+  confidence: medium
+  as_of: '2010-07-29'
+  locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Minnesota"
+  note: Statute is primary; nation matched to Minnesota by office state in the BIA Tribal Leaders Directory,
+    so confidence is medium. Cited jointly with us-code-title-28-section-1360.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Upper Sioux Community, Minnesota Confidence lowered from high by the lead session:
+    the notice prints its table as page images, so nation names were read from images and matched to the
+    roster.'
+memberships:
+- organization: Midwest Alliance of Sovereign Tribes
+  source: midwest-alliance-of-sovereign-tribes-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Upper Sioux Community". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,682 @@
+id: mississippi-band-of-choctaw-indians
+entity_type: native-nation
+names:
+  official: Mississippi Band of Choctaw Indians
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: MS
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mississippi Band of Choctaw Indians
+- state: MS
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2300
+  note: 'Census area with land in this state: Mississippi Choctaw Reservation and Off-Reservation Trust
+    Land (code 2300). Area matched to the nation by name.'
+- state: TN
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2300
+  note: 'Census area with land in this state: Mississippi Choctaw Reservation and Off-Reservation Trust
+    Land (code 2300). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2300'
+  name: Mississippi Choctaw Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2300
+  note: Matched by name. Census class code D1.
+population:
+- count: 11000
+  kind: citizens
+  source: mississippi-band-of-choctaw-indians-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: '"more than 11,000 Tribal members"; undated statement on the official site; as_of is the access
+    date'
+- count: 8080
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2300, field POP100
+  note: 'Census area: Mississippi Choctaw Reservation and Off-Reservation Trust Land (code 2300). Everyone
+    counted as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a
+    count of the nation''s citizens.'
+- count: 10216
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3127 (Mississippi Band of Choctaw Indians alone or in any combination),
+    GEOID 0100000US (United States)
+  note: People in the United States who reported 'Mississippi Band of Choctaw Indians' (race code 5694)
+    alone or in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 11047
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Chicago, row 'Mississippi Band of Choctaw Indians', PDF page 4, Enrollment
+    column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 9199
+  kind: service-area-population
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: medium
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 81, row T22500 'Mississippi Band of Choctaw Indians'
+  note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
+    of American Indians and Alaska Natives living on or near its area and eligible for Indian Affairs
+    services; not enrollment. Report published 2014-01-16; row name matched to the nation by name.'
+contacts:
+- kind: website
+  value: https://www.choctaw.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mississippi Band of Choctaw Indians
+- kind: physical-address
+  value: 101 Industrial Road, Choctaw, MS 39350
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mississippi Band of Choctaw Indians
+- kind: mailing-address
+  value: P.O. Box 6010 Choctaw Branch, Choctaw, MS 39350
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mississippi Band of Choctaw Indians
+- kind: phone
+  value: (601) 656-5251
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mississippi Band of Choctaw Indians
+- kind: fax
+  value: (601) 650-1606
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mississippi Band of Choctaw Indians
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern
+  bureau_of_indian_affairs_agency: Choctaw Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mississippi Band of Choctaw Indians
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Mississippi Band of Choctaw Indians" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Mississippi Band of Choctaw Indians) (approved 1945) states it was adopted under
+    Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-misschoccons
+  confidence: medium
+  as_of: '1945'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Mississippi Band of Choctaw Indians Tribal Code
+  year: '2015'
+  link: https://narf.org/nill/codes/mississippichoctaw/index.html
+  source: national-indian-law-library-code-codes-mississippichoctaw
+  confidence: medium
+  as_of: '2015'
+  locator: page heading
+  note: 'Table of Contents Updated: February 2015. The National Indian Law Library page gives the table
+    of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Constitution and Bylaws of the Mississippi Band of Choctaw Indians
+  year: '2013'
+  link: https://narf.org/nill/constitutions/misschoctawconst/index.html
+  source: national-indian-law-library-constitution-constitutions-misschoctawconst
+  confidence: medium
+  as_of: '2013'
+  locator: page heading
+  note: 'Amended: 2013. The National Indian Law Library page gives the table of contents (and may link
+    to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  source: national-indian-law-library-mississippi-choctaw
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
+    .". Link check 2026-11-21: the link the source gives (http://www.choctaw.org/government/court/code.html)
+    returned HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Constitution
+  source: national-indian-law-library-mississippi-choctaw
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Constitution section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
+    website .". Link check 2026-11-21: the link the source gives (http://www.choctaw.org/government/court/constitution.html)
+    returned HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Mississippi Band of Choctaw Indians Tribal Constitution
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Mississippi section, entry 'Mississippi Band of Choctaw Indians'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.choctaw.org/government/court/constitution.html)
+    returned HTTP 404, so it is not recorded.'
+- kind: law-code
+  title: Mississippi Band of Choctaw Indians Tribal Code
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Mississippi section, entry 'Mississippi Band of Choctaw Indians'
+  note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
+    2026-11-21: the link the source gives (http://www.choctaw.org/government/court/code.html) returned
+    HTTP 404, so it is not recorded.'
+- kind: constitution
+  title: Constitution (Mississippi Band of Choctaw Indians)
+  year: '1945'
+  link: https://thorpe.law.ou.edu/IRA/misschoccons.html
+  source: university-of-oklahoma-indian-reorganization-act-misschoccons
+  confidence: medium
+  as_of: '1945'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-mississippi-choctaw
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
+    link the source gives (http://www.choctaw.org/government/court/index.html) returned HTTP 404, so it
+    is not recorded.'
+- kind: tribal-court
+  name: Mississippi Band of Choctaw Indians Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Mississippi section, entry 'Mississippi Band of Choctaw Indians'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.choctaw.org/government/court/index.html)
+    returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  forums:
+  - kind: peacemaking
+    name: Choctaw Itti-kāna-ikbi Court (Choctaw Peacemaker Court)
+    own_term:
+      name: Itti-kāna-ikbi
+      language_tag: cho
+      translation: peacemaker (the code uses the term for the Choctaw Peacemaker Court and its peacemakers;
+        spelling fixed by Tribal Council Resolution 42-81(A))
+    description: A division of the Tribal Court providing a forum for traditional Choctaw methods of peacemaking
+      to resolve disputes fairly, informally and inexpensively, supervised by the Senior Itti-kāna-ikbi.
+    legal_basis: Choctaw Tribal Code, Title XXIV, Chapter 1, §§ 24-1-1 to 24-1-17
+    case_types:
+    - civil
+    - criminal-diversion
+    - juvenile
+    - other
+    participation: voluntary-or-court-referred
+    relationship_to_court: Has original jurisdiction over cases filed by joint petition of all parties
+      and over matters referred by the Choctaw Criminal, Civil or Youth Court; a referred case moves to
+      the Itti-kāna-ikbi Court's docket and returns to the referring court if no agreed resolution is
+      possible.
+    enforcement: A signed agreement and proposed dismissal order are reviewed by the Itti-kāna-ikbi Judge
+      and entered; the code provides for enforcement of judgments (§ 24-1-12). The court may compel attendance
+      and seek contempt.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Miss-Choctaw-Title-24-Choctaw-Peacemaker-Code.pdf
+    source: mississippi-choctaw-title-24-peacemaker-code
+    confidence: high
+    as_of: 2024-02
+    locator: §§ 24-1-1, 24-1-2, 24-1-3, 24-1-4, 24-1-5, 24-1-10 to 24-1-12
+    note: Peacemakers on the roster are called Itti-kāna-ikbi aliha (as printed); they are selected from
+      the Choctaw community and approved by the Tribal Council. Case types reflect referral from criminal,
+      civil and youth courts. Language tag cho (Choctaw). as_of is NARF posting year. Confidence high
+      because the same file is published on the nation's own website (upload date used as as_of).
+  provisions:
+  - kind: peacemaking
+    title: Title XXIV – Choctaw Peacemaker Code (Choctaw Itti-kāna-ikbi Code)
+    citation: Choctaw Tribal Code, Title XXIV, Chapter 1
+    summary: Creates the Itti-kāna-ikbi Court, sets its jurisdiction, peacemaker roster, use of tribal
+      traditions, procedures, form and enforcement of agreements.
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Miss-Choctaw-Title-24-Choctaw-Peacemaker-Code.pdf
+    source: mississippi-choctaw-title-24-peacemaker-code
+    confidence: high
+    as_of: 2024-02
+    note: Confidence high because the same file is published on the nation's own website (upload date
+      used as as_of).
+  - kind: other
+    title: Alternative Response Procedure for Minor in Need of Care Proceedings
+    citation: Choctaw Rules Title XI, §11-4-2 AND §11-4-3
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-response-procedure-for-minor-in-need-of-care-proceedings/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative practice, Restorative process.'
+  - kind: other
+    title: Conditions for Release and Probation for Crimes Involving Domestic Violence
+    citation: Choctaw Rules Title III, §3-10-3 AND §3-10-12 AND §3-10-18
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/conditions-for-release-and-probation-for-crimes-involving-domestic-violence/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Deferring Criminal Prosecution in a Vlnerable Adult Abuse Case
+    citation: Choctaw Rules Title XXXI, §31-1-16
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferring-criminal-prosecution-in-a-vlnerable-adult-abuse-case/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Dispostional Options for Youth Court
+    citation: Choctaw Rules Title XI, §11-3-16
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dispostional-options-for-youth-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Electronic Hearing and Disposition Alternatives for Minor in Need or Care Proceedings
+    citation: Choctaw Rules Title XI, §11-4-13
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/electronic-hearing-and-disposition-alternatives-for-minor-in-need-or-care-proceedings/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Informal Conferences for Juvenile Cases
+    citation: Choctaw Rules Title XI, §11-3-2 AND §11-3-3
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-conferences-for-juvenile-cases/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      practice, Restorative process.'
+  - kind: other
+    title: Program for Batterers for Juvenile Offenders
+    citation: Choctaw Rules Title III, §3-10-21
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/program-for-batterers-for-juvenile-offenders/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Purpose and Authority of Youth Court
+    citation: Choctaw Rules Title XI, §11-1-1 AND §11-1-6
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-and-authority-of-youth-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Purpose of Codes for Crimes Involving Domestic Violence
+    citation: Choctaw Rules Title III, §3-10-1 AND §3-10-20
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/purpose-of-codes-for-crimes-involving-domestic-violence/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
+      form of practice: Restorative justice.'
+  - kind: other
+    title: Referral of Domestic Violence Cases to Peacemaker Court
+    citation: Choctaw Rules Title III, §3-10-15
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/referral-of-domestic-violence-cases-to-peacemaker-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative court;
+      Restorative justice.'
+  - kind: other
+    title: Requiring Defendant to Pay Abused Person Monetary Compesation for Treatment
+    citation: Choctaw Rules Title XXIII, §23-1-7
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/requiring-defendant-to-pay-abused-person-monetary-compesation-for-treatment/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
+      form of practice: Restorative practice, Restorative process.'
+  - kind: other
+    title: Substance Abuse and Rehabilitation Treatment for Repeat Inoxication/Impairment Offenses
+    citation: Choctaw Rules Title III, §3‐6-21
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/substance-abuse-and-rehabilitation-treatment-for-repeat-inoxication-impairment-offenses/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Transfer to Peace Maker Court for Alternative Disposition
+    citation: Choctaw Rules Title II, §2‐1-11
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/transfer-to-peace-maker-court-for-alternative-disposition/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Transfering a Juvenine to Peacemaker Court
+    citation: Choctaw Rules Title XI, §11-2-7 AND §11-3-1
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/transfering-a-juvenine-to-peacemaker-court/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      court; Restorative justice.'
+  - kind: other
+    title: Treatment Program for Parole
+    citation: Choctaw Rules Title II, §2‐1-22
+    link: https://www.choctaw.org/choctaw-tribal-code/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-program-for-parole/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: SECTION 10. DISPUTE RESOLUTION
+    citation: SECTION 10. DISPUTE RESOLUTION
+    link: https://www.narf.org/nill/codes/mississippichoctaw/index.html
+    source: national-indian-law-library-code-index-mississippichoctaw
+    confidence: medium
+    as_of: 2015-02
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: peacemaking
+    title: Title XXIV – Choctaw Peacemaker Code, Chapter 1
+    citation: Title XXIV – Choctaw Peacemaker Code, Chapter 1
+    link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Miss-Choctaw-Title-24-Choctaw-Peacemaker-Code.pdf
+    source: narf-tribal-peacemaking-laws
+    confidence: medium
+    as_of: '2025-09-29'
+    locator: Mississippi Band of Choctaw Indians, Mississippi
+    note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
+      authority to use tribal traditions and customary law, qualifications, civil process authority, procedures,
+      and authority of Tribal Court to limit.'
+  - kind: peacemaking
+    title: § 3-10-15 Referral of Domestic Violence Cases to Peacemaker Court
+    citation: § 3-10-15 Referral of Domestic Violence Cases to Peacemaker Court
+    link: https://narf.org/nill/codes/mississippichoctaw/index.html
+    source: national-indian-law-library-code-codes-mississippichoctaw
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents, under 'CHAPTER 10. CRIMES INVOLVING DOMESTIC VIOLENCE'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: February 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: CHAPTER 2. TRANSFER PROCEDURES FOR JUVENILE OFFENDERS TO ADULT COURT OR PEACEMAKER COURT
+    citation: CHAPTER 2. TRANSFER PROCEDURES FOR JUVENILE OFFENDERS TO ADULT COURT OR PEACEMAKER COURT
+    link: https://narf.org/nill/codes/mississippichoctaw/index.html
+    source: national-indian-law-library-code-codes-mississippichoctaw
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: February 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: § 11-4-14 Informal Hearing or Transfer to Peacemaker Court
+    citation: § 11-4-14 Informal Hearing or Transfer to Peacemaker Court
+    link: https://narf.org/nill/codes/mississippichoctaw/index.html
+    source: national-indian-law-library-code-codes-mississippichoctaw
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents, under 'CHAPTER 4. MINOR IN NEED OF CARE PROCEEDINGS'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: February 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: other
+    title: DISPUTE RESOLUTION
+    citation: DISPUTE RESOLUTION
+    link: https://narf.org/nill/codes/mississippichoctaw/index.html
+    source: national-indian-law-library-code-codes-mississippichoctaw
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents, under 'CHAPTER 3. CLASS III (CASINO-TYPE) GAMING'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: February 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: Title XXIV - Choctaw Peacemaker Code
+    citation: Title XXIV - Choctaw Peacemaker Code
+    link: https://narf.org/nill/codes/mississippichoctaw/index.html
+    source: national-indian-law-library-code-codes-mississippichoctaw
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents, under 'CHAPTER 1. DOMESTIC ABUSE'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: February 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+  - kind: peacemaking
+    title: CHAPTER 1. CHOCTAW PEACEMAKER CODE
+    citation: CHAPTER 1. CHOCTAW PEACEMAKER CODE
+    link: https://narf.org/nill/codes/mississippichoctaw/index.html
+    source: national-indian-law-library-code-codes-mississippichoctaw
+    confidence: medium
+    as_of: '2015'
+    locator: Table of Contents
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Table
+      of Contents Updated: February 2015); the provision itself was not read. The heading it falls under
+      is taken from the page layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: MS
+    status: approved
+    approved: '1993-01-29'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-01-29'
+    locator: result page 18 (?page=18), row 25
+    note: 'Listed as: "Mississippi Band of Choctaw Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Mississippi Band of Choctaw Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.01.29_mississippi_choctaw_band_of_indians_tribal_state_gaming_compact.pdf.'
+  - state: MS
+    status: approved
+    approved: '1996-07-15'
+    federal_register_citation: 61 FR 36892
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-07-15'
+    locator: result page 19 (?page=19), row 1
+    note: 'Listed as: "Mississippi Band of Choctaw Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Mississippi Band of Choctaw Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1996.07.15_mississippi_choctaw_band_of_choctaw_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/07/15/96-17944/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MS
+    status: approved
+    approved: '1994-11-09'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1994-11-09'
+    locator: result page 19 (?page=19), row 2
+    note: 'Listed as: "Mississippi Band of Choctaw Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Mississippi Band of Choctaw Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1994.11.09_mississippi_band_of_choctaw_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1994/11/09/94-27729/indian-gaming-notice-department-of-the-interior.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MS
+    status: approved
+    approved: '1993-01-29'
+    dispute_resolution_summary: After written notice the Governor and Tribal Chief or their designees
+      meet within 30 days, and a dispute unresolved after 90 days goes to arbitration before one agreed
+      arbitrator or a three-member panel, with the American Arbitration Association appointing the third
+      arbitrator if needed.
+    dispute_resolution_locator: Section 10 (Dispute Resolution)
+    source: compact-ms-mississippi-band-of-choctaw-indians-1993
+    confidence: medium
+    as_of: '1993-01-29'
+    locator: Section 10 (Dispute Resolution)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the 1993 Mississippi Band of
+      Choctaw Indians compact, the only Mississippi compact in the list; later amendments were not checked.
+  ordinances:
+  - approved: '1993-11-18'
+    link: https://www.nigc.gov?wpdmdl=10299&ind=10339
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-11-18'
+    locator: table row 155, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 155 lists the nation
+      as "Mississippi Band of Choctaw Indians".
+  - approved: '2009-07-10'
+    link: https://www.nigc.gov?wpdmdl=10315&ind=10340
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2009-07-10'
+    locator: table row 155, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 155 lists the nation
+      as "Mississippi Band of Choctaw Indians".
+  - approved: '2010-06-21'
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2010-06-21'
+    locator: table row 155, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). Date text is split by markup on
+      the page (2010-06-2 1); read as 2010-06-21. NIGC table row 155 lists the nation as "Mississippi
+      Band of Choctaw Indians".
+  - approved: '2016-06-15'
+    link: https://www.nigc.gov?wpdmdl=10317&ind=10342
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2016-06-15'
+    locator: table row 155, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 155 lists the nation
+      as "Mississippi Band of Choctaw Indians".
+  - approved: '2021-04-20'
+    link: https://www.nigc.gov?wpdmdl=10318&ind=10343
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2021-04-20'
+    locator: table row 155, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 155 lists the nation
+      as "Mississippi Band of Choctaw Indians".
+  - approved: '2025-04-22'
+    link: https://www.nigc.gov?wpdmdl=13562&ind=13563
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2025-04-22'
+    locator: table row 155, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 155 lists the nation
+      as "Mississippi Band of Choctaw Indians".
+jurisdiction:
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Mississippi Band of Choctaw Indians Confidence lowered from high by the lead session:
+    the notice prints its table as page images, so nation names were read from images and matched to the
+    roster.'
+memberships:
+- organization: United South and Eastern Tribes
+  source: united-south-and-eastern-tribes-member-tribal-nations
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Mississippi Band of Choctaw Indians".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

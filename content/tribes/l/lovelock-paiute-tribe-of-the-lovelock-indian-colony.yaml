@@ -1,0 +1,184 @@
+id: lovelock-paiute-tribe-of-the-lovelock-indian-colony
+entity_type: native-nation
+names:
+  official: Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada
+  self_designation:
+  - name: Koop Ticutta
+    language_tag: pao
+    source: paiutetribelovelock-home
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'Homepage history: ''The people who lived around the area of present day Lovelock, Nevada called
+      themselves Koop Ticutta, Ground Squirrel Eater''. Historical band name.'
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: NV
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada
+- state: NV
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2015
+  note: 'Census area with land in this state: Lovelock Indian Colony (code 2015). Area matched to the
+    nation by name.'
+census_areas:
+- geographic_identifier: '2015'
+  name: Lovelock Indian Colony
+  area_type: Indian Colony
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2015
+  note: Matched by name. Census class code D2.
+population:
+- count: 95
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2015, field POP100
+  note: 'Census area: Lovelock Indian Colony (code 2015). Everyone counted as living in the area in the
+    2020 Census, of any race or tribal affiliation; this is not a count of the nation''s citizens.'
+- count: 105
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3088 (Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada alone
+    or in any combination), GEOID 0100000US (United States)
+  note: People in the United States who reported 'Lovelock Paiute Tribe of the Lovelock Indian Colony,
+    Nevada' (race code 6052) alone or in combination with other tribes or races in the 2020 Census; self-identification,
+    not enrollment. Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 282
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Phoenix, row 'Lovelock Paiute Tribe', PDF page 7, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+- count: 316
+  kind: other
+  source: bia-american-indian-population-and-labor-force-report-2013
+  confidence: low
+  as_of: '2010'
+  locator: Appendix Table 2, PDF page 80, row T19900 'Lovelock Paiute Tribe of the Lovelock Indian Colony'
+  note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
+    in the vicinity of the nation (2010), used by Indian Affairs as the nation's population indicator;
+    a broad proxy that includes people of any tribe; not enrollment. Report published 2014-01-16; row
+    name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.paiutetribelovelock.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada
+- kind: physical-address
+  value: 201 Bowean St, Lovelock, NV 89419
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada
+- kind: mailing-address
+  value: P.O. Box 878, Lovelock, NV 89419
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada
+- kind: phone
+  value: (775) 273-7861
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada
+- kind: fax
+  value: (775) 273-7629
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada
+federal_administration:
+  bureau_of_indian_affairs_region: Western
+  bureau_of_indian_affairs_agency: Western Nevada Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada
+governing_documents:
+- kind: constitution
+  title: Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada - Tribal Constitution
+  link: https://narf.org/nill/constitutions/lovelock_paiute/index.html
+  source: national-indian-law-library-constitution-constitutions-lovelock-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: page heading
+  note: The National Indian Law Library page gives the table of contents (and may link to the nation's
+    own copy); full text is not hosted there.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  link: https://www.paiutetribelovelock.org/tribal-court.html
+  source: national-indian-law-library-lovelock-paiute
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Lovelock Paiute Tribal Court
+  link: http://lovelockpaiutetribe.com/TribalCourt.html
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Nevada section, entry 'Lovelock Paiute Tribe'
+jurisdiction:
+- topic: public-law-280
+  value: retroceded
+  detail: Interior accepted Nevada's offer to retrocede all civil and criminal jurisdiction acquired under
+    Public Law 280 (Nevada was an optional state, 1955) over the Lovelock Colony, effective July 1, 1975.
+    (40 FR 27501)
+  source: federal-register-1975-nevada-retrocession
+  confidence: high
+  as_of: '1975-07-01'
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Lovelock Paiute Tribe of the Lovelock Indian Colony, Nevada Confidence lowered from
+    high by the lead session: the notice prints its table as page images, so nation names were read from
+    images and matched to the roster.'
+memberships:
+- organization: Inter-Tribal Council of Nevada
+  source: inter-tribal-council-of-nevada-member-tribes
+  confidence: medium
+  as_of: 2026-11
+  note: Listed as "Lovelock Paiute Tribe". Name matched to the roster entry.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

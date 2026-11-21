@@ -1,0 +1,642 @@
+id: muckleshoot-indian-tribe
+entity_type: native-nation
+names:
+  official: Muckleshoot Indian Tribe
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: WA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Muckleshoot Indian Tribe
+- state: WA
+  presence: land
+  source: census-2020-tribal-area-to-county-relationship-file
+  confidence: medium
+  as_of: '2020'
+  locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2375
+  note: 'Census area with land in this state: Muckleshoot Reservation and Off-Reservation Trust Land (code
+    2375). Area matched to the nation by name.'
+census_areas:
+- geographic_identifier: '2375'
+  name: Muckleshoot Reservation and Off-Reservation Trust Land
+  area_type: Reservation and Off-Reservation Trust Land
+  vintage: '2020'
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2375
+  note: Matched by name. Census class code D1.
+population:
+- count: 4391
+  kind: resident-population
+  source: census-2020-redistricting-data-national-summary-file
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: usgeo2020.npl, summary level 250, GEOID 2500000US2375, field POP100
+  note: 'Census area: Muckleshoot Reservation and Off-Reservation Trust Land (code 2375). Everyone counted
+    as living in the area in the 2020 Census, of any race or tribal affiliation; this is not a count of
+    the nation''s citizens.'
+- count: 2835
+  kind: census-american-indian-alaska-native-alone-or-in-combination
+  source: census-2020-detailed-demographic-and-housing-characteristics-file-a
+  confidence: medium
+  as_of: '2020-04-01'
+  locator: Table T01001, iteration 3143 (Muckleshoot Indian Tribe alone or in any combination), GEOID
+    0100000US (United States)
+  note: People in the United States who reported 'Muckleshoot Indian Tribe' (race code 6194) alone or
+    in combination with other tribes or races in the 2020 Census; self-identification, not enrollment.
+    Includes noise added for disclosure avoidance. Census label exact name match.
+- count: 2901
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: HUD office section Seattle, row 'Muckleshoot Indian Tribe', PDF page 9, Enrollment column
+  note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
+    not a count published by the nation. Row name matched to the nation by name.
+contacts:
+- kind: website
+  value: https://www.muckleshoot.nsn.us/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Muckleshoot Indian Tribe
+- kind: physical-address
+  value: 39015 172nd Avenue SE, Auburn, WA 98092
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Muckleshoot Indian Tribe
+- kind: mailing-address
+  value: 39015 172nd Avenue SE, Auburn, WA 98092
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Muckleshoot Indian Tribe
+- kind: phone
+  value: (253) 939-3311
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Muckleshoot Indian Tribe
+- kind: fax
+  value: (253) 939-5311
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Muckleshoot Indian Tribe
+languages:
+- name: Lushootseed (Puget Salish)
+  language_tag: lut
+  source: muckleshoot-indian-tribe-about
+  confidence: high
+  as_of: '2026-11-21'
+  note: '"The Muckleshoot language is a dialect of Puget Salish, or Lushootseed."'
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Puget Sound Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Muckleshoot Indian Tribe
+government_structure:
+- kind: indian-reorganization-act
+  detail: Listed as "The Muckleshoot Indian Tribe, Washington" among organizations under constitutions
+    approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
+  source: haas-1947-table-b
+  confidence: medium
+  as_of: '1947'
+  locator: Table B, column Official Name of Organization
+  note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
+    is assigned from the table (main table: Indian Reorganization Act; Oklahoma table: Oklahoma Indian
+    Welfare Act; Alaska table: Alaska amendment).'
+- kind: indian-reorganization-act
+  detail: Constitution (Muckleshoot Indian Tribe of the Muckleshoot Reservation Washington) (approved
+    1936) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
+  source: university-of-oklahoma-indian-reorganization-act-muckcons
+  confidence: medium
+  as_of: '1936'
+  locator: preamble / approval and certification of adoption
+  note: Historical constitution; a later constitution may have replaced it.
+governing_documents:
+- kind: law-code
+  title: Muckleshoot Indian Tribe
+  year: '2012'
+  link: https://narf.org/nill/codes/muckleshoot/index.html
+  source: national-indian-law-library-code-codes-muckleshoot
+  confidence: medium
+  as_of: '2012'
+  locator: page heading
+  note: 'Received: July 2012. The National Indian Law Library page gives the table of contents (and may
+    link to the nation''s own copy); full text is not hosted there.'
+- kind: constitution
+  title: Muckleshoot Indian Tribe - Tribal Constitution
+  year: '1977'
+  link: https://narf.org/nill/constitutions/muckleshoot/index.html
+  source: national-indian-law-library-constitution-constitutions-muckleshoot
+  confidence: medium
+  as_of: '1977'
+  locator: page heading
+  note: 'Last amended: June 28, 1977, though Amendment 13. The National Indian Law Library page gives
+    the table of contents (and may link to the nation''s own copy); full text is not hosted there.'
+- kind: law-code
+  title: Tribal code
+  link: https://muckleshoot.tribal.codes/
+  source: national-indian-law-library-muckleshoot
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Tribal Code section
+  note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
+    .".'
+- kind: corporate-charter
+  title: Corporate charter (Muckleshoot Indian Tribe of the Muckleshoot Reservation Washington)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/muckchrtr.html
+  source: university-of-oklahoma-indian-reorganization-act-muckchrtr
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+- kind: constitution
+  title: Constitution (Muckleshoot Indian Tribe of the Muckleshoot Reservation Washington)
+  year: '1936'
+  link: https://thorpe.law.ou.edu/IRA/muckcons.html
+  source: university-of-oklahoma-indian-reorganization-act-muckcons
+  confidence: medium
+  as_of: '1936'
+  note: Historical text as originally approved; the nation may have amended or replaced it since.
+justice_institutions:
+- kind: tribal-court
+  name: Tribal Court
+  source: national-indian-law-library-muckleshoot
+  confidence: medium
+  as_of: '2026-11-21'
+  locator: Contact Info, Tribal Court
+  note: The page gives a contact for a tribal court without a fuller name.
+- kind: tribal-court
+  name: Muckleshoot Tribal Court
+  source: tribal-law-policy-institute-justice-systems
+  confidence: medium
+  as_of: '2022'
+  locator: Washington section, entry 'Muckleshoot Indian Tribe'
+  note: 'Link check 2026-11-21: the link the source gives (http://www.muckleshoot.nsn.us/services/tribal-court.aspx)
+    returned HTTP 404, so it is not recorded.'
+dispute_resolution:
+  provisions:
+  - kind: other
+    title: Alternative Sentencing for Criminal Penalties in Fish, Shellfish, and Marine Mammals Code
+    citation: Muckleshoot Tribal Code. Title 6 Fish, Shellfish, and Marine Mammals. Chapter 6.15 Violations
+      and Penalties. Section 6.15.200 Criminal Penalties.
+    link: https://muckleshoot.tribal.codes/Code/6.15.190
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-sentencing-for-criminal-penalties-in-fish-shellfish-and-marine-mammals-code/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Alternative Sentencing for Juveniles
+    citation: Muckleshoot Tribal Code. Title 7 Juvenile Delinquency Code. Chapter 7.12 Disposition.
+    link: https://muckleshoot.tribal.codes/Code/7.12.010
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/alternative-sentencing-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Deferred Sentencing
+    citation: Muckleshoot Tribal Code. Title 5 Law and Order Code. Chapter 5.29 Judgment an Sentencing.
+      Section 5.29.040 Deferred Judgment and Sentence.
+    link: https://muckleshoot.tribal.codes/Code/5.29.040
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/deferred-sentencing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication; Pre-adjudication. Database form of practice:
+      Restorative justice.'
+  - kind: peacemaking
+    title: Dismissal for Alternative Processes in Juvenile Justice
+    citation: Muckleshoot Tribal Code. Title 7 Juvenile Delinquency Code. 7.09.040 Discretionary Dismissal.
+    link: https://muckleshoot.tribal.codes/Code/7.09.040
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dismissal-for-alternative-processes-in-juvenile-justice/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking;
+      Restorative justice.'
+  - kind: peacemaking
+    title: Diversion Agreements for Juveniles
+    citation: Muckleshoot Tribal Code. Title 7 Juvenile Delinquency Code. 7.06.060 Diversion Agreement
+      & 7.06.070 Conditions of a Diversion Agreement.
+    link: https://muckleshoot.tribal.codes/Code/7.06.060
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-agreements-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Community
+      or Elder Panel; Peacemaking; Restorative justice.'
+  - kind: other
+    title: Family Conference in Elder and Vulnerable Adult Protection
+    citation: Muckleshoot Tribal Code. Title 10 Muckleshoot Elder and Vulnerable Adult Protection Code.
+      Chapter 10.01 Muckleshoot Elder and Vulnerable Adult Protection. Section 10.01.110 Agreed Voluntary
+      Protective Service Plan – Family Conference.
+    link: https://muckleshoot.tribal.codes/Code/10.01.110
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-conference-in-elder-and-vulnerable-adult-protection/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Family conference,
+      Family group conference.'
+  - kind: other
+    title: Family Meeting and Safety Plan in Child Welfare
+    citation: Muckleshoot Tribal Code. Title 12 Child and Family Welfare Ordinance. Chapter 12.06 Family
+      Meeting and Safety Plan.
+    link: https://muckleshoot.tribal.codes/Code/12.06
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-meeting-and-safety-plan-in-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Family
+      conference, Family group conference; Restorative justice.'
+  - kind: other
+    title: Family Protection Plan for Child Welfare
+    citation: Family Protection Orders.
+    link: https://ncorj.org/tribal-law/family-protection-plan-for-child-welfare/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-protection-plan-for-child-welfare/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Informal Conference for Juveniles
+    citation: Muckleshoot Tribal Code. Title 7 Juvenile Delinquency Code. 7.06.020 Informal Conference
+      & 7.06.030 Attendance and Rights at an Informal Conference.
+    link: https://muckleshoot.tribal.codes/Code/7.06.010
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-conference-for-juveniles-2/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Family
+      conference, Family group conference.'
+  - kind: other
+    title: Judicial Diversion for Juveniles
+    citation: Muckleshoot Tribal Code. Title 7 Juvenile Delinquency Code. 7.09.030 Judicial Diversion.
+    link: https://muckleshoot.tribal.codes/Code/7.09.030
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/judicial-diversion-for-juveniles/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
+      justice.'
+  - kind: other
+    title: Mediation/Alternative Dispute Resolution In Lieu Of Hearing
+    citation: Muckleshoot Tribal Code. Title 14 Domestic Relations Code. Chapter 14.05 Child Custody.
+      Section 14.05.075 Mediation.
+    link: https://muckleshoot.tribal.codes/search?q=alternative&mode=smart&scope=all
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/mediation-alternative-dispute-resolution-in-lieu-of-hearing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
+      practice, Restorative process.'
+  - kind: other
+    title: Prosecutorial Discretion to Recommend Deferment or Alternative Sentence
+    citation: Prosecutorial Discretion.
+    link: https://ncorj.org/tribal-law/prosecutorial-discretion-to-recommend-deferment-or-alternative-sentence/
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/prosecutorial-discretion-to-recommend-deferment-or-alternative-sentence/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Restorative Criminal Penalties
+    citation: Muckleshoot Tribal Code. Title 5 Law and Order Code. Chapter 5.29 Judgment an Sentencing.
+      Section 5.29.037 Penalties and Consequences.
+    link: https://muckleshoot.tribal.codes/Code/5.29.037
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-criminal-penalties/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Substance Abuse Treatment
+    citation: Muckleshoot Tribal Code. Title 5 Law and Order Code. Chapter 5.14 Penalties. Section 5.14.020
+      Substance Abuse Evaluation Required.
+    link: https://muckleshoot.tribal.codes/Code/5.14.020
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/substance-abuse-treatment/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication; Pre-adjudication. Database form of practice:
+      .'
+  - kind: other
+    title: Traditional Sentencing
+    citation: Muckleshoot Tribal Code. Title 5 Law and Order Code. Chapter 5.29 Judgment an Sentencing.
+      Section 5.29.030 Traditional Punishments.
+    link: https://muckleshoot.tribal.codes/Code/5.29.030
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/traditional-sentencing/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
+  - kind: other
+    title: Treatment for Domestic Violence Crimes in Lieu of Confinement or Fine
+    citation: Muckleshoot Tribal Code. Title 22 Domestic Violence — Criminal and Civil. Chapter 22.03
+      Court Requirements. Section 22.03.020 Special Court rules for domestic violence or family violence
+      crimes.
+    link: https://muckleshoot.tribal.codes/Code/22.03.020
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-for-domestic-violence-crimes-in-lieu-of-confinement-or-fine/
+    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
+      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
+      everything else as other). Not individually reviewed; no summary written. Database practice area:
+      Tribal Justice. Database phase: Post-adjudication; Pre-adjudication. Database form of practice:
+      Restorative justice.'
+  - kind: other
+    title: 12.06.090 Additional Family Group Conferences
+    citation: 12.06.090 Additional Family Group Conferences
+    link: https://www.narf.org/nill/codes/muckleshoot/index.html
+    source: national-indian-law-library-code-index-muckleshoot
+    confidence: medium
+    as_of: 2012-07
+    note: Section or chapter title(s) from the National Indian Law Library table of contents; the provision
+      text was not read, so there is no summary. Kind assigned from words in the title.
+  - kind: other
+    title: 12.06.090 Additional Family Group Conferences
+    citation: 12.06.090 Additional Family Group Conferences
+    link: https://narf.org/nill/codes/muckleshoot/index.html
+    source: national-indian-law-library-code-codes-muckleshoot
+    confidence: medium
+    as_of: '2012'
+    locator: Table of Contents, under 'Chapter 12.06 Voluntary Safety Plans and Agreements'
+    note: 'Identified from section headings in the National Indian Law Library table of contents (Received:
+      July 2012); the provision itself was not read. The heading it falls under is taken from the page
+      layout and may be imprecise.'
+gaming:
+  compacts:
+  - state: WA
+    status: approved
+    approved: '1995-08-21'
+    federal_register_citation: 60 FR 43512
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-08-21'
+    locator: result page 39 (?page=39), row 24
+    note: 'Listed as: "Muckleshoot Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Muckleshoot Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201995.08.21%20Muckleshoot%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact%20Amdt%20I.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/08/21/95-20652/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1993-05-06'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-05-06'
+    locator: result page 39 (?page=39), row 25
+    note: 'Listed as: "Muckleshoot Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Muckleshoot Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201993.05.06%20Muckleshoot%20Indian%20Tribe%20Gaming%20Compact.pdf.'
+  - state: WA
+    status: approved
+    approved: '2002-02-19'
+    federal_register_citation: 67 FR 7393
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2002-02-19'
+    locator: result page 40 (?page=40), row 1
+    note: 'Listed as: "Muckleshoot Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Muckleshoot Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202002.02.19%20%20Muckleshoot%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact%20Amdt%20III.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2002/02/19/02-3858/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1999-01-28'
+    federal_register_citation: 64 FR 4459
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-01-28'
+    locator: result page 40 (?page=40), row 2
+    note: 'Listed as: "Muckleshoot Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Muckleshoot Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1999.01.28_muckleshoot_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/01/28/99-1929/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2007-05-31'
+    federal_register_citation: 72 FR 30392
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-05-31'
+    locator: result page 40 (?page=40), row 3
+    note: 'Listed as: "Muckleshoot Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Muckleshoot Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202007.05.31%20Muckleshoot%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/05/31/E7-10397/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2019-04-16'
+    federal_register_citation: 84 FR 15630
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2019-04-16'
+    locator: result page 40 (?page=40), row 4
+    note: 'Listed as: "Muckleshoot Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Muckleshoot Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2019.04.16_muckleshoot_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2019/04/16/2019-07473/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-in-the-state-of-washington.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2021-09-15'
+    federal_register_citation: 86 FR 51370
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-09-15'
+    locator: result page 40 (?page=40), row 5
+    note: 'Listed as: "Muckleshoot Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Muckleshoot Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202021.09.15%20Muckleshoot%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/09/15/2021-19844/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-washington.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2021-12-27'
+    federal_register_citation: 86 FR 73313
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-12-27'
+    locator: result page 40 (?page=40), row 6
+    note: 'Listed as: "Muckleshoot Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Muckleshoot Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202021.12.20%20Muckleshoot%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/12/27/2021-27976/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-washington.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2021-12-27).
+  ordinances:
+  - approved: '1994-03-21'
+    link: https://www.nigc.gov?wpdmdl=10330&ind=10361
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-03-21'
+    locator: table row 161, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 161 lists the nation
+      as "Muckleshoot Indian Tribe".
+  - approved: '1995-07-10'
+    link: https://www.nigc.gov?wpdmdl=10356&ind=10362
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-07-10'
+    locator: table row 161, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 161 lists the nation
+      as "Muckleshoot Indian Tribe".
+  - approved: '1996-06-21'
+    link: https://www.nigc.gov?wpdmdl=10359&ind=10363
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-06-21'
+    locator: table row 161, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 161 lists the nation
+      as "Muckleshoot Indian Tribe".
+  - approved: '2002-04-19'
+    link: https://www.nigc.gov?wpdmdl=10358&ind=10364
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-04-19'
+    locator: table row 161, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 161 lists the nation
+      as "Muckleshoot Indian Tribe".
+  - approved: '2016-09-19'
+    link: https://www.nigc.gov?wpdmdl=10357&ind=10365
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2016-09-19'
+    locator: table row 161, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 161 lists the nation
+      as "Muckleshoot Indian Tribe".
+jurisdiction:
+- topic: public-law-280
+  value: optional-state
+  detail: 'Washington assumed partial jurisdiction (RCW 37.12.010, 1957 and 1963): it does not apply to
+    Indians on trust or restricted tribal or allotted lands within a reservation except for eight subjects
+    (compulsory school attendance, public assistance, domestic relations, mental illness, juvenile delinquency,
+    adoption, dependent children, motor vehicles on public roads), unless the tribe requested full state
+    jurisdiction under RCW 37.12.021.'
+  source: revised-code-of-washington-37-12-010
+  confidence: medium
+  as_of: '1963'
+  locator: RCW 37.12.010
+  note: Nation matched to Washington by office state. Check for later retrocession facts.
+- topic: public-law-280
+  value: optional-state
+  detail: Listed as a tribe that consented to (requested) full Washington state jurisdiction; some of
+    this jurisdiction was later retroceded for several of these nations (see retrocession facts).
+  source: department-of-justice-federally-recognized-indian-nations-under-state-jurisdiction-2016
+  confidence: medium
+  as_of: '2016-06-29'
+  locator: Washington section, footnote 4
+  note: From a 2016 Office of Tribal Justice compilation hosted by the National Indian Justice Center.
+- topic: indian-child-welfare-act
+  value: designated-agent-listed
+  detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
+  source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
+  confidence: medium
+  as_of: '2026-05-26'
+  locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
+  note: 'Listed as: Muckleshoot Indian Tribe Confidence lowered from high by the lead session: the notice
+    prints its table as page images, so nation names were read from images and matched to the roster.'
+memberships:
+- organization: Northwest Indian Fisheries Commission
+  source: northwest-indian-fisheries-commission-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Muckleshoot Indian Tribe".
+- organization: Northwest Portland Area Indian Health Board
+  source: northwest-portland-area-indian-health-board-member-tribes
+  confidence: high
+  as_of: 2026-11
+  note: Listed as "Muckleshoot Indian Tribe".
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false
