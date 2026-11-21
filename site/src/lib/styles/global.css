@@ -109,6 +109,24 @@ a:visited:focus-visible {
 	text-decoration: none;
 }
 
+/*
+ * Elements that take focus only from a script or a skip link, such as the
+ * main landmark and the error summary, are not controls: they keep their
+ * own colors so the text inside them stays readable (WCAG 1.4.3). Table
+ * boxes that scroll sideways take focus so a keyboard can scroll them
+ * (WCAG 2.1.1); they show the ring without the yellow fill.
+ */
+[tabindex='-1']:focus-visible,
+.table-scroll:focus-visible {
+	background-color: transparent;
+	color: inherit;
+	box-shadow: none;
+}
+
+[tabindex='-1']:focus-visible {
+	outline: none;
+}
+
 .visually-hidden {
 	position: absolute !important;
 	width: 1px !important;
@@ -213,6 +231,10 @@ a:visited:focus-visible {
 
 .summary-list dt,
 .summary-list dd {
+	/* Long addresses and links wrap instead of widening the page when the
+	   reader enlarges the text (WCAG 1.4.4 and 1.4.10). */
+	min-width: 0;
+	overflow-wrap: anywhere;
 	margin: 0;
 	padding: var(--space-3) var(--space-3) var(--space-3) 0;
 	border-bottom: 1px solid var(--color-line);

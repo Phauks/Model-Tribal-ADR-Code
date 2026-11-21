@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { keyboardScroll } from '#lib/keyboard-scroll.ts';
 	import { requestKindLabels, requestOutcomeLabels, requestStatusLabels } from '#lib/requests.ts';
 	import type { PageProps } from './$types';
 
@@ -48,7 +49,7 @@
 {#if data.requests.length === 0}
 	<p>No requests here.</p>
 {:else}
-	<div class="table-scroll" role="region" aria-label="Table: requests" tabindex="-1">
+	<div class="table-scroll" role="region" aria-label="Table: requests" {@attach keyboardScroll}>
 		<table>
 			<thead>
 				<tr>
