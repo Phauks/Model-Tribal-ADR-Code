@@ -1,0 +1,100 @@
+{
+ "provisions": 1327,
+ "verdict": {
+  "drop-candidate": 671,
+  "merge-duplicate": 180,
+  "scope-question": 161,
+  "keep": 145,
+  "keep-relabel": 129,
+  "check-source": 41
+ },
+ "verdict_by_tier": {
+  "bulk_database_record": {
+   "drop-candidate": 657,
+   "scope-question": 150,
+   "keep-relabel": 65,
+   "keep": 42,
+   "merge-duplicate": 22,
+   "check-source": 2
+  },
+  "section_title_only": {
+   "merge-duplicate": 128,
+   "keep": 70,
+   "keep-relabel": 47,
+   "check-source": 31,
+   "drop-candidate": 8,
+   "scope-question": 7
+  },
+  "text_read": {
+   "keep": 33,
+   "merge-duplicate": 30,
+   "keep-relabel": 17,
+   "check-source": 8,
+   "drop-candidate": 6,
+   "scope-question": 4
+  }
+ },
+ "confidence": {
+  "high": 970,
+  "medium": 340,
+  "low": 17
+ },
+ "exists": {
+  "found": 1303,
+  "not-checked": 22,
+  "not-found": 2
+ },
+ "accurate": {
+  "partly": 781,
+  "yes": 487,
+  "no": 36,
+  "unknown": 23
+ },
+ "is_dispute_resolution": {
+  "no": 680,
+  "yes": 432,
+  "borderline": 215
+ },
+ "practice_category": {
+  "treatment-or-services": 222,
+  "other": 215,
+  "dispute-resolution-process": 184,
+  "court-procedure": 180,
+  "peacemaking": 163,
+  "diversion-to-consensual-process": 129,
+  "diversion-to-services": 110,
+  "arbitration-or-immunity": 84,
+  "restorative-sentencing": 40
+ },
+ "method_for_dispute_resolution_records": {
+  "peacemaking": 209,
+  "none": 171,
+  "arbitration": 86,
+  "mediation": 71,
+  "family-group-conference": 30,
+  "settlement-conference": 18,
+  "conciliation": 15,
+  "administrative-adjudication": 12,
+  "elders-council": 12,
+  "customary-dispute-resolution": 6,
+  "circle-process": 5,
+  "restorative-justice": 4,
+  "negotiation": 3,
+  "government-to-government-issue-resolution": 2,
+  "council-hearing": 1,
+  "facilitation": 1,
+  "fact-finding": 1
+ },
+ "nations_with_a_kept_record": 99,
+ "nations_with_any_record": 182,
+ "second_pass_records": 114,
+ "second_pass_agreed": 64,
+ "second_pass_verdict": {
+  "check-source": 41,
+  "drop-candidate": 30,
+  "keep": 18,
+  "keep-relabel": 12,
+  "scope-question": 12,
+  "merge-duplicate": 1
+ }
+}

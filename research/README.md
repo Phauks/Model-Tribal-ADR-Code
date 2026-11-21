@@ -17,3 +17,7 @@ Organizations the project may ask for help are kept as records in
 
 The website will generate a browsable index of sessions by month, tool and
 topic.
+
+Reviews of the project's own data, done to help the lead author's review, are
+kept in [`reviews/`](reviews/README.md). They record findings and suggested
+actions; they never change a record by themselves.

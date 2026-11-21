@@ -32,3 +32,11 @@ Run by hand, never in continuous integration:
 | Script | Does | Needs |
 | --- | --- | --- |
 | `build_outreach_overview.py` | Checks the private outreach plan against its schema and the public records in `research/outreach/`, and writes a private overview next to the plan ([decision record 0012](../docs/decisions/0012-outreach-list-split-public-and-private.md)) | `pip install -r scripts/requirements.txt` |
+
+## Provision pre-review
+
+Run by hand, never in continuous integration:
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `review/provision_pre_review.py` | `gather` fetches the source cited by every provision record in `content/tribes/` into a local cache and writes evidence batches for reviewers; `merge` combines the reviewers' verdicts into the reviewable files in [`research/reviews/`](../research/reviews/README.md). It never changes a profile | `pip install -r scripts/requirements.txt`, plus `curl` and `pdftotext` for `gather` |
