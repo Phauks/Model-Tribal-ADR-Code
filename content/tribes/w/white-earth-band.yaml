@@ -62,6 +62,38 @@ population:
     the nation''s citizens. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names
     six component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille
     Lacs, White Earth).'
+contacts:
+- kind: website
+  value: https://whiteearth.com/
+  label: Band government website
+  source: whiteearth-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-21'
+  locator: home page
+official_images:
+- kind: logo
+  alternative_text: White Earth Nation
+  image_link: https://www.whiteearth.com/assets/img/wen-logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 3734fd49e15341eace1e97ea94177f653ba70a809975a09dd17004b4e814f8e0
+  private_copy: nation-images/white-earth-band/logo-3734fd49e153.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 White Earth Reservation.
+      link: https://www.whiteearth.com/
+      source: whiteearth-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: whiteearth-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Minnesota Agency

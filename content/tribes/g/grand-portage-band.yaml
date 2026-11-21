@@ -60,6 +60,30 @@ population:
     the nation''s citizens. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names
     six component reservations: Bois Forte (Nett Lake), Fond du Lac, Grand Portage, Leech Lake, Mille
     Lacs, White Earth).'
+contacts:
+- kind: website
+  value: https://www.grandportageband.com/
+  label: Band government website
+  source: grandportageband-home-page
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-21'
+  locator: home page
+official_images:
+- kind: logo
+  image_link: https://www.grandportageband.com/wp-content/uploads/2020/11/logo-grand-portage.webp
+  retrieved: '2026-11-21'
+  media_type: image/webp
+  sha256: 13090afb08cc852fa5a909e1df8797449f9b1408c26decbe8d23e71a848e61f2
+  private_copy: nation-images/grand-portage-band/logo-13090afb08cc.webp
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: grandportageband-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Minnesota Agency
