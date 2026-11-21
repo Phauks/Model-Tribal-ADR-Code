@@ -4,8 +4,13 @@ nations:
 - navajo-nation
 kind: program-story
 length: short
-summary: A 1996 magazine account of a paternity matter that a family brought to Navajo peacemaking, as described
-  by a Navajo district judge, with comments from the then Chief Justice and the court administrator.
+excerpts:
+- telling: tribal-college-journal-1996
+  locator: opening paragraph
+  text: 'Concerned grandparents of a soon to be born baby request a hozhooii naat’aanii , the Navajo peacemaking
+    ceremony, to resolve the issue at hand: acknowledgment of paternity.'
+  words: 27
+  sha256: a3c7d633d518e385140ee5d84c1bf4607b3a24549d1ff76fdb9a7ffc74e0a3a6
 methods:
 - peacemaking
 topics:
@@ -22,7 +27,7 @@ tellings:
   authority: outside-recorder
   verification: read-in-full
   permitted_uses:
-    level: reference-only
+    level: quote
     scope:
     - web
     - print

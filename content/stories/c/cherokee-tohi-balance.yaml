@@ -8,8 +8,13 @@ nations:
 - eastern-band-of-cherokee-indians
 kind: teaching
 length: paragraph
-summary: The Museum of the Cherokee People explains tohi, a Cherokee idea it says is often rendered in English as
-  balance or peace, and the intention to keep that balance.
+excerpts:
+- telling: motcp-history-page
+  locator: opening section
+  text: Tohi has no one direct translation to English but has often been most commonly associated with the English
+    words balance or peace.
+  words: 22
+  sha256: 63419b87204c3ad1718d4ee5cf1ab576b96885f740479c4fdab4bd8e39f26797
 methods: []
 topics:
 - balance
@@ -21,7 +26,7 @@ tellings:
   authority: native-organization
   verification: read-in-full
   permitted_uses:
-    level: reference-only
+    level: quote
     scope:
     - web
     - print

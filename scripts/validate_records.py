@@ -25,9 +25,10 @@ Checks:
     'document_version' (on a source record or a profile fact) names an existing
     document history and one of its versions (decision record 0018)
   - each story's tellings have unique ids and name existing source records; its
-    nations, methods, protocol sources and anthology telling exist; and the
-    story's access is at least as restrictive as its most restrictive telling
-    (decision record 0019)
+    nations, methods, protocol sources and anthology telling exist; the
+    story's access is at least as restrictive as its most restrictive telling;
+    and each excerpt quotes a telling that allows quotation, within the word
+    limit, with a fingerprint that matches its words (decision record 0019)
   - (warning only) every tribe profile forum 'kind' names a method record
 
 Run from the repository root:  python3 scripts/validate_records.py
@@ -35,10 +36,12 @@ Requires the packages in scripts/requirements.txt.
 """
 
 import datetime
+import hashlib
 import json
 import pathlib
 import re
 import sys
+import unicodedata
 
 import yaml
 from jsonschema import Draft202012Validator
@@ -234,6 +237,7 @@ def check_documents(documents: list, sources: set, tribe_ids: set, sessions: set
 
 
 ACCESS_ORDER = ["public", "nation-review-first", "embargoed", "restricted"]
+STORY_EXCERPT_WORDS = 50  # a short passage, quoted without permission (decision record 0019)
 
 
 def check_stories(stories: list, sources: set, tribe_ids: set, sessions: set, methods: dict,
@@ -270,6 +274,30 @@ def check_stories(stories: list, sources: set, tribe_ids: set, sessions: set, me
                 errors.append(f"{path}: telling '{telling.get('id')}' is '{level}', more restricted than the story's access '{story_level}'")
         if (record.get("sensitivity") or {}).get("restricted") and story_level != "restricted":
             errors.append(f"{path}: sensitivity says restricted but access is '{story_level}'")
+        levels = {telling.get("id"): (telling.get("permitted_uses") or {}).get("level") for telling in record.get("tellings", [])}
+        for number, excerpt in enumerate(record.get("excerpts", []), start=1):
+            name = f"{path}: excerpt {number}"
+            if excerpt.get("telling") not in levels:
+                errors.append(f"{name} names a telling '{excerpt.get('telling')}' this record does not list")
+                continue
+            text = excerpt.get("text")
+            if text is None:
+                if not excerpt.get("held_privately"):
+                    errors.append(f"{name} has no text and is not marked held_privately")
+                continue
+            if excerpt.get("held_privately"):
+                errors.append(f"{name} is marked held_privately but carries its text")
+            level = levels[excerpt["telling"]]
+            if level not in ("quote", "publish-in-full"):
+                errors.append(f"{name} quotes a telling whose permitted_uses level is '{level}'")
+            normalized = " ".join(unicodedata.normalize("NFC", text).split())
+            words = len(normalized.split())
+            if words != excerpt.get("words"):
+                errors.append(f"{name} has {words} words but says {excerpt.get('words')}")
+            if words > STORY_EXCERPT_WORDS and level != "publish-in-full":
+                errors.append(f"{name} is {words} words; without permission to publish in full an excerpt is at most {STORY_EXCERPT_WORDS}")
+            if hashlib.sha256(normalized.encode("utf-8")).hexdigest() != excerpt.get("sha256"):
+                errors.append(f"{name}: sha256 does not match its text")
 
 
 def check_outreach(outreach: list, errors: list[str]) -> None:

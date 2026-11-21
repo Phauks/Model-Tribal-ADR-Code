@@ -6,8 +6,11 @@ peace or restoring relationships, as a Native nation or its people tell it
 [`story.schema.json`](../../schemas/story.schema.json)).
 
 - Path: `stories/<first letter of id, or _other>/<id>.yaml`.
-- A record never holds a story's text. Each telling cites its own source
-  record in `content/sources/`, or a private contributor filing.
+- The project never retells a story. A record quotes the telling exactly,
+  in short excerpts (50 words or fewer) with a pinpoint, where the rights
+  allow; otherwise it keeps the words privately and records only the
+  pinpoint and a fingerprint. Each telling cites its own source record in
+  `content/sources/`, or a private contributor filing.
 - Credit, permitted uses, access and cultural authority use the shapes in
   `schemas/common.schema.json`, shared with contributor records.
 - Protocols (season, setting, clan or family ownership, ceremony, names not

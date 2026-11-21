@@ -9,9 +9,13 @@ nations:
 - standing-rock-sioux-tribe-of-north-and-south-dakota
 kind: teaching
 length: short
-summary: A Lakota code of behavior that two nations publish, which teaches that leaders seek compromise between
-  irreconcilable forces, do not take sides, and mediate for the good of the people, and that respect keeps the people
-  in harmony.
+excerpts:
+- telling: rosebud-history-culture
+  locator: 'Wolakota: Code of Behavior, on leaders'
+  text: Leaders should always look for a compromise between two irreconcilable forces. Never take sides because
+    a leader should be able to mediate in order to make the best decision for the people.
+  words: 32
+  sha256: 02d50e73d72ffe2339ddcd900647ed4c9bbaf5ef2dd09a4a21e6a59b948ff9b8
 methods:
 - mediation
 - customary-dispute-resolution
@@ -24,14 +28,14 @@ tellings:
   published_by: Rosebud Sioux Tribe
   authority: nation-government
   verification: read-in-full
-  permitted_uses: &id001
-    level: reference-only
+  permitted_uses:
+    level: quote
     scope:
     - web
     - print
     - ebook
     - offline-pack
-  access: &id002
+  access: &id001
     level: nation-review-first
 - id: standing-rock-handout
   source: standing-rock-wolakota-information-for-participants
@@ -39,9 +43,15 @@ tellings:
   published_by: Standing Rock Sioux Tribe
   authority: nation-government
   verification: read-in-full
-  permitted_uses: *id001
-  access: *id002
-access: *id002
+  permitted_uses:
+    level: reference-only
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: *id001
+access: *id001
 anthology:
   candidate: true
   reason: Short, complete, published by two nations, and directly about the mediator's role (project analysis).

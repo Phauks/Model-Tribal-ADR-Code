@@ -4,9 +4,13 @@ nations:
 - onondaga-nation
 kind: historical-account
 length: long
-summary: The Onondaga Nation's account of how a messenger the Nation calls the Peacemaker, with Jikonhsaseh and
-  Hiawatha, brought warring nations together under the Great Peace. It is one nation's own telling of how a confederacy
-  was founded to end conflict.
+excerpts:
+- telling: onondaga-history-page
+  locator: opening of the account
+  text: The people of the five nations had forgotten their original ways and their actions saddened the Creator.
+    The Creator decided to send a messenger to the people so that the five nations could live in peace.
+  words: 36
+  sha256: 475ab4691c3dd3379d2dea1366fb5421f57163bca51c63c9ffa494e6149c57e8
 methods:
 - peacemaking
 - customary-dispute-resolution
@@ -21,7 +25,7 @@ tellings:
   authority: nation-government
   verification: read-in-full
   permitted_uses:
-    level: reference-only
+    level: quote
     scope:
     - web
     - print

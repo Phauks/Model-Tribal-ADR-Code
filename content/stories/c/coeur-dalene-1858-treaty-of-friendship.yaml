@@ -4,8 +4,14 @@ nations:
 - coeur-dalene-tribe
 kind: historical-account
 length: paragraph
-summary: The Tribe's timeline describes a treaty negotiated with the United States after the Battle of Steptoe,
-  framed as a peaceful resolution of the conflict.
+excerpts:
+- telling: cdatribe-timeline
+  locator: timeline, "Treaty of Friendship September 17th, 1858"
+  text: After the Battle between the Tribes and Steptoe, later that year a Treaty was negotiated between the Tribal
+    Nations and the U.S. Government to bring about a peaceful resolution to the conflict and ensure amicable future
+    relations between the Nations involved.
+  words: 41
+  sha256: 39be0571deae3764afcf10c8d5971a75073c1d2ab35531d251490d2ca26d5828
 methods:
 - negotiation
 topics:
@@ -19,7 +25,7 @@ tellings:
   authority: nation-government
   verification: read-in-full
   permitted_uses:
-    level: reference-only
+    level: quote
     scope:
     - web
     - print

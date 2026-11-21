@@ -1,7 +1,8 @@
 # Example story record using the fictitious nation from tribe.example.yaml,
 # to show structure only. The record never holds the story's text. Each
 # telling cites its own source record directly, or a private contributor
-# filing for a story that came to the project from a person.
+# filing for a story that came to the project from a person. The project
+# quotes the teller's own words instead of retelling the story.
 id: example-nation-river-peace
 title: How the Two Towns Made Peace at the River
 titles_in_language:
@@ -12,10 +13,12 @@ nations: [example-nation]
 community: River Town
 kind: historical-account
 length: short
-summary: >-
-  An account of how two towns of the nation ended a dispute over fishing
-  places by meeting at the river with elders as go-betweens, and the
-  agreement that followed.
+excerpts:
+  - telling: cultural-office-2024
+    locator: first paragraph
+    text: Example words exactly as the cultural office published them, quoted with a pinpoint instead of retold.
+    words: 16
+    sha256: 129ffe31f92b41ec9c14d3baaafcf2dcd957fe1d6a9b1e9e1747906f47572046
 methods: [peacemaking]
 topics: [peace-between-communities, role-of-elders]
 tellings:
@@ -32,7 +35,7 @@ tellings:
     authority: nation-cultural-office
     verification: read-in-full
     permitted_uses:
-      level: reference-only
+      level: quote
       scope: [web, print, ebook, offline-pack]
     access:
       level: nation-review-first

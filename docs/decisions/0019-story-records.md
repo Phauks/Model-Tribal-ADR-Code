@@ -1,4 +1,4 @@
-# 0019. Record stories as pointers with credit, permissions and protocols, never as text
+# 0019. Record stories in their tellers' own words, with credit, permissions and protocols
 
 - **Status:** Proposed
 - **Date:** 2026-11-21
@@ -28,8 +28,21 @@ forms being drafted in a separate thread of the project.
 - **A story record** (`schemas/story.schema.json`, stored in
   `content/stories/<letter>/<id>.yaml`) describes one story across all its
   known tellings. It names the nations and, where given, the community; its
-  kind (an open list); its length; a neutral one or two sentence summary in
-  the project's words, never a retelling; methods and topics.
+  kind (an open list); its length; its methods and topics; and excerpts of
+  the story in the teller's own words.
+- **Quote, never retell.** The lead author asked on Nov. 21, 2026 that the
+  project not rewrite the stories but cite them directly as they are told.
+  So the project writes no summary or paraphrase of a story. Each excerpt is
+  the telling's exact words with a pinpoint (`locator`), a word count and a
+  SHA-256 fingerprint. Without permission an excerpt is a short passage of
+  50 words or fewer, quoted only where the telling's rights allow quotation,
+  a limit chosen to stay within fair use (17 U.S.C. § 107; project analysis,
+  not legal advice). Where the rights do not allow it (Tribal law, which the
+  project treats as link-only until a nation says otherwise; a court
+  opinion; or a publisher that asks to be asked first), the exact words are
+  kept in the project's private files and the record carries only the
+  pinpoint and fingerprint. The whole story is reproduced only with
+  permission (`publish-in-full`).
 - **Every telling is cited directly.** A telling points to one source record
   (the nation's page, court opinion, book or recording) or to one private
   contributor filing (`filing-YYYY-NNNN`), never both. The nation's own
@@ -37,10 +50,6 @@ forms being drafted in a separate thread of the project.
   the nation's government, court, cultural office, press or newspaper down to
   an outside recorder, so a reader can see at a glance how close the telling
   is to the nation.
-- **The record holds no story text.** Quotation follows the cited source's
-  `rights` record as for any other source. Where a story may be reprinted in
-  full, the text is kept privately with the permission, not in the
-  repository.
 - **Credit, permissions and access** use five shapes shared with contributor
   records, defined once in `schemas/common.schema.json`: `credit` (the form
   the teller or contributor chose: name, name and nation, role, pseudonym or
@@ -53,19 +62,23 @@ forms being drafted in a separate thread of the project.
   setting, teller, clan- or family-owned, ceremonial, sacred, name avoidance
   or permission required, each with the source that states it and how the
   project follows it. A story whose content is sacred or ceremonial is
-  recorded, if at all, without a summary and with access `restricted`.
+  recorded, if at all, with no excerpt of that content and with access
+  `restricted`.
 - **Anthology candidates** carry who must grant permission, separately for
   copyright and for cultural authority, even when one office holds both, and
   where to ask.
 - **Validation.** `scripts/validate_records.py` checks that a story's
   tellings, protocols and titles cite existing source records, its nations
   and methods exist, its telling ids are unique, the anthology telling is one
-  of its tellings, and its access is not looser than any telling's.
+  of its tellings, its access is not looser than any telling's, and each
+  excerpt quotes a telling that allows it, within the word limit, with a
+  fingerprint that matches its words.
 
 ## Consequences
 
-- Stories can be cited in essays with `[@source-key]` as now, and listed on a
-  nation's page later, without copying any story into public git history.
+- Stories can be cited in essays with `[@source-key]` and quoted in the
+  teller's own words, and listed on a nation's page later. Only short
+  excerpts enter public git history until a nation or publisher grants more.
 - A nation's request to restrict or remove a story changes one field, and
   the website, exports and offline copies follow it (commitment 6).
 - Collecting stories is slower: each needs its rights and any protocol

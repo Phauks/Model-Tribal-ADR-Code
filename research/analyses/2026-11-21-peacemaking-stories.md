@@ -5,7 +5,8 @@ and the essays. It lists stories, accounts and teachings about resolving
 disputes and making peace that Native nations, or Native institutions, have
 published, and says who would have to agree before any of them is reprinted.
 It is not a finding about any nation's law or practice, and it retells no
-story. Judgments are labeled project analysis. The search method and its
+story: where a story's content is given, it is quoted in the teller's own
+words. Judgments are labeled project analysis. The search method and its
 limits are in the session log,
 [2026-11-21-peacemaking-stories](../sessions/2026/2026-11-21-peacemaking-stories.md).
 It builds on the program survey in
@@ -34,8 +35,13 @@ collection followed five rules (project analysis):
 - **The nation's own telling first.** A nation's government, court, cultural
   office, press or newspaper outranks a Native institution, which outranks a
   member writing in their own name, which outranks an outside recorder.
-- **Cite, do not copy.** Each story is cited directly to the page, opinion or
-  book where it was published. No story text is kept in the repository.
+- **Quote, never retell.** Each story is cited directly to the page, opinion
+  or book where it was published, and told only in its teller's exact words:
+  short excerpts (50 words or fewer) with a pinpoint, as the lead author asked
+  on Nov. 21, 2026. Where a telling is Tribal law, a court opinion, or from a
+  publisher that asks to be asked first, the exact words are kept in the
+  project's private files and the record carries only the pinpoint and a
+  fingerprint. The whole story is reprinted only with permission.
 - **Record a protocol only when a source states it**, and follow it.
 - **Leave out what may be sacred** when the page does not say otherwise.
 - **Two permissions for a reprint.** Copyright and cultural authority are
@@ -48,8 +54,12 @@ format. Decision record [0019](../../docs/decisions/0019-story-records.md)
 (status: proposed) answers with one YAML file per story in
 `content/stories/`, checked against `schemas/story.schema.json`. In short:
 
-- A **story** has a title, the nations, a one or two sentence summary in the
-  project's own words, its kind and length, and its methods and topics.
+- A **story** has a title, the nations, its kind and length, its methods and
+  topics, and **excerpts**: exact passages from a telling, each with a
+  pinpoint, a word count and a SHA-256 fingerprint. The project writes no
+  summary of its own. The validator checks that each public excerpt matches
+  its fingerprint, stays within 50 words unless the telling may be published
+  in full, and comes from a telling whose permitted uses allow quotation.
 - Each **telling** cites one source record, or one private contributor filing
   for a story that reaches the project from a person. It says whose voice it
   is (`authority`), how the teller is credited (`credit`), what the project
@@ -111,13 +121,17 @@ cell means no source read stated one, not that none exists.
   found are in a memoir, a magazine account and a court's community
   interviews.
 - **Courts and codes are a source of stories.** The Kake code opens with the
-  Tribe's own account of where its peacemaking comes from, and the Navajo
-  Judicial Branch traces its courts to the Journey Narrative.[^kake][^nn-guide]
+  Tribe's own account of where its peacemaking comes from (§ 1.01.010; the
+  words are held privately because the code is Tribal law), and the Navajo
+  Judicial Branch writes that "[t]he history of our judiciary begins in our
+  ancient history."[^kake][^nn-guide]
   The Hopi Appellate Court's decision shows a court sending a clan dispute
   back to the village.[^ross]
 - **Several nations tell the same lesson about the mediator.** The Lakota
-  Wolakota teaching, which two nations publish, says a leader should not take
-  sides but mediate for the people.[^rosebud][^wolakota-sr] This is the
+  Wolakota teaching, which two nations publish, says: "Leaders should always
+  look for a compromise between two irreconcilable forces. Never take sides
+  because a leader should be able to mediate in order to make the best
+  decision for the people."[^rosebud][^wolakota-sr] This is the
   closest thing in the catalog to a nation's own statement of a mediator's
   duty. It is one teaching from one people, not a general Native view.
 
