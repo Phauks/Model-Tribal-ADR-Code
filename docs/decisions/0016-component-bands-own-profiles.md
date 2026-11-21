@@ -44,9 +44,10 @@ linked to the Tribe's profile, and to move band records to them.
   from their notes, as decision record 0014 requires of changed facts: a
   written summary as `read-in-full`, section headings as `title-only`, and a
   list's description with the provision not read as `bulk-import`.
-- The band profiles have no self-designation yet. Each band's own name for
-  itself (for example "White Earth Nation" or "Mille Lacs Band of Ojibwe")
-  should be added from the band's own publications, with a citation.
+- Each band's own name for itself (for example "White Earth Nation" or
+  "Mille Lacs Band of Ojibwe") is recorded as its self-designation, cited to
+  the band's official website (research session
+  `2026-11-21-band-self-designations`).
 - The same field can serve any other entry that names components only in
   parentheses, if one is found.
 - The band profiles are drafted from public sources and have not been sent to
