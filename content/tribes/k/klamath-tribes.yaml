@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Klamath Tribes
 - state: OR
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1785
   note: 'Census area with land in this state: Klamath Reservation (code 1785). Area matched to the nation
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1785
   note: Matched by name. Census class code D2.
@@ -41,12 +45,14 @@ population:
   kind: citizens
   source: klamathtribes-tribal-council
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'Page: ''representing more than 5,800 enrolled members''. Undated; as_of is access date.'
 - count: 25
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1785, field POP100
   note: 'Census area: Klamath Reservation (code 1785). Everyone counted as living in the area in the 2020
@@ -55,6 +61,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3064 (Klamath Tribes alone or in any combination), GEOID 0100000US
     (United States)
@@ -65,6 +72,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Seattle, row 'Klamath Tribes', PDF page 9, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -73,6 +81,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 80, row T18200 'Klamath Tribes'
   note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
@@ -84,6 +93,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Klamath Tribes
 - kind: physical-address
@@ -91,6 +101,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Klamath Tribes
 - kind: mailing-address
@@ -98,6 +109,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Klamath Tribes
 - kind: phone
@@ -105,6 +117,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Klamath Tribes
 - kind: fax
@@ -112,6 +125,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Klamath Tribes
 languages:
@@ -119,18 +133,21 @@ languages:
   language_tag: kla
   source: klamathtribes-language
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: 'Language page: ''our Paiute, Modoc, and Klamath languages''.'
 - name: Modoc
   language_tag: kla
   source: klamathtribes-language
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: 'Language page: ''our Paiute, Modoc, and Klamath languages''. Tag kla covers Klamath-Modoc.'
 - name: Paiute (Yahooskin)
   language_tag: pao
   source: klamathtribes-language
   confidence: medium
+  verification: inferred
   as_of: '2026-11-21'
   note: 'Language page: ''our Paiute, Modoc, and Klamath languages''. Tag pao (Northern Paiute) assigned
     by researcher.'
@@ -139,6 +156,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Northwest Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Klamath Tribes
 governing_documents:
@@ -148,6 +166,7 @@ governing_documents:
   link: https://narf.org/nill/codes/klamath/index.html
   source: national-indian-law-library-code-codes-klamath
   confidence: medium
+  verification: title-only
   as_of: '2015'
   locator: page heading
   note: 'Table of Contents Updated: October 2015. The National Indian Law Library page gives the table
@@ -158,6 +177,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/klamath/index.html
   source: national-indian-law-library-constitution-constitutions-klamath
   confidence: medium
+  verification: title-only
   as_of: '2011'
   locator: page heading
   note: 'Amended: November 19, 2011. The National Indian Law Library page gives the table of contents
@@ -167,6 +187,7 @@ governing_documents:
   link: http://klamathtribalcourts.com/tribal-laws/
   source: national-indian-law-library-klamath
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -176,6 +197,7 @@ governing_documents:
   link: http://klamathtribalcourts.com/tribal-laws/
   source: national-indian-law-library-klamath
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -184,6 +206,7 @@ governing_documents:
   title: Klamath Tribes Constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Oregon section, entry 'Klamath Tribes'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -194,6 +217,7 @@ governing_documents:
   link: http://klamathtribalcourts.com/tribal-laws/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Oregon section, entry 'Klamath Tribes'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -203,6 +227,7 @@ justice_institutions:
   link: http://klamathtribalcourts.com/
   source: national-indian-law-library-klamath
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -211,6 +236,7 @@ justice_institutions:
   link: http://www.klamathtribalcourts.com/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Oregon section, entry 'Klamath Tribes'
 dispute_resolution:
@@ -235,6 +261,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Klamath-Title_2_Chapter_18_-_The_Klamath_Peacemaker_Ordinance.pdf
     source: klamath-title-2-chapter-18-peacemaker-ordinance
     confidence: medium
+    verification: read-in-full
     as_of: '2008-11-15'
     locator: 18.01-18.06, 18.12
     note: Read from OCR. The court keeps a roster of at least three contracted peacemakers. Additional
@@ -393,6 +420,7 @@ gaming:
     federal_register_citation: 73 FR 14267
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2008-03-17'
     locator: result page 33 (?page=33), row 9
     note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
@@ -406,6 +434,7 @@ gaming:
     federal_register_citation: 62 FR 996
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1997-01-07'
     locator: result page 33 (?page=33), row 10
     note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
@@ -419,6 +448,7 @@ gaming:
     federal_register_citation: 63 FR 10036
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1998-02-27'
     locator: result page 33 (?page=33), row 11
     note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
@@ -432,6 +462,7 @@ gaming:
     federal_register_citation: 60 FR 10472
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1995-02-24'
     locator: result page 33 (?page=33), row 12
     note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
@@ -445,6 +476,7 @@ gaming:
     federal_register_citation: 67 FR 7393
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2002-02-19'
     locator: result page 33 (?page=33), row 13
     note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
@@ -458,6 +490,7 @@ gaming:
     federal_register_citation: 81 FR 44039
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2016-07-06'
     locator: result page 33 (?page=33), row 14
     note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
@@ -471,6 +504,7 @@ gaming:
     federal_register_citation: 64 FR 29334
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-06-01'
     locator: result page 33 (?page=33), row 15
     note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
@@ -484,6 +518,7 @@ gaming:
     federal_register_citation: 61 FR 30635
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1996-06-17'
     locator: result page 33 (?page=33), row 16
     note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
@@ -497,6 +532,7 @@ gaming:
     federal_register_citation: 62 FR 27619
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1997-05-20'
     locator: result page 33 (?page=33), row 17
     note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
@@ -510,6 +546,7 @@ gaming:
     federal_register_citation: 65 FR 34727
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-05-31'
     locator: result page 33 (?page=33), row 18
     note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
@@ -523,6 +560,7 @@ gaming:
     federal_register_citation: 63 FR 29746
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1998-06-01'
     locator: result page 33 (?page=33), row 19
     note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
@@ -536,6 +574,7 @@ gaming:
     federal_register_citation: 67 FR 58633
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2002-09-17'
     locator: result page 33 (?page=33), row 20
     note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
@@ -549,6 +588,7 @@ gaming:
     federal_register_citation: 84 FR 15629
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2019-04-16'
     locator: result page 33 (?page=33), row 21
     note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
@@ -565,6 +605,7 @@ gaming:
     dispute_resolution_locator: Section 17 (Dispute Resolution)
     source: compact-or-confederated-tribes-of-the-grand-ronde-c-2023
     confidence: medium
+    verification: inferred
     as_of: '2023-02-08'
     locator: Section 17 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Read from the 2023 Confederated Tribes
@@ -576,6 +617,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10093&ind=10109
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1995-05-31'
     locator: table row 123, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 123 lists the nation
@@ -584,6 +626,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10094&ind=10110
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2006-04-24'
     locator: table row 123, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 123 lists the nation
@@ -592,6 +635,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Klamath Tribes, Oregon". Facilities
       as machine-extracted from the report text (verify): Kla-Mo-Ya Casino. Name extracted from the PDF
@@ -604,6 +648,7 @@ jurisdiction:
     within Oregon; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Oregon"
   note: Statute is primary; nation matched to Oregon by office state in the BIA Tribal Leaders Directory,
@@ -613,6 +658,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Klamath Tribes Confidence lowered from high by the lead session: the notice prints
@@ -621,6 +667,7 @@ memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes
   confidence: high
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Klamath Tribes".
 review:

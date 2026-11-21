@@ -20,6 +20,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 - type: federal
@@ -31,6 +32,7 @@ recognition:
   since: '2019-12-20'
   source: public-law-116-92-section-2870
   confidence: high
+  verification: bulk-import
   as_of: '2019-12-20'
   locator: 'Petitioner #31'
   note: 'Also see source(s): federal-register-e9-26373.'
@@ -39,6 +41,7 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Little Shell Tribe of Chippewa Indians of Montana
 population:
@@ -46,12 +49,14 @@ population:
   kind: citizens
   source: montanalittleshelltribe-government
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'Page: ''on behalf of the tribe''s 5400 members''. Undated; as_of is access date.'
 - count: 3576
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3083 (Little Shell Tribe of Chippewa Indians of Montana alone or in
     any combination), GEOID 0100000US (United States)
@@ -62,6 +67,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Denver, row 'Little Shell Tribe of Chippewa Indians', PDF page 5, Enrollment
     column
@@ -73,6 +79,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Little Shell Tribe of Chippewa Indians of Montana
 - kind: physical-address
@@ -80,6 +87,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Little Shell Tribe of Chippewa Indians of Montana
 - kind: phone
@@ -87,6 +95,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Little Shell Tribe of Chippewa Indians of Montana
 - kind: fax
@@ -94,6 +103,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Little Shell Tribe of Chippewa Indians of Montana
 federal_administration:
@@ -101,6 +111,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Rocky Mountain Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Little Shell Tribe of Chippewa Indians of Montana
 governing_documents:
@@ -108,6 +119,7 @@ governing_documents:
   title: Constitution
   source: national-indian-law-library-little-shell-chippewa-montana
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Montana
@@ -119,6 +131,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Little Shell Tribe of Chippewa Indians of Montana Confidence lowered from high by
@@ -128,6 +141,7 @@ memberships:
 - organization: Rocky Mountain Tribal Leaders Council
   source: rocky-mountain-tribal-leaders-council-who-we-are
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Little Shell Tribe of Montana". Name matched to the roster entry.
 review:

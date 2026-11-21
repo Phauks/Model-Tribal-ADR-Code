@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Keweenaw Bay Indian Community, Michigan
 - state: MI
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1880
   note: 'Census area with land in this state: L''Anse Reservation and Off-Reservation Trust Land (code
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1880
   note: Matched by name. L'Anse Reservation is the reservation of the Keweenaw Bay Indian Community; matched
@@ -42,6 +46,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1880, field POP100
   note: 'Census area: L''Anse Reservation and Off-Reservation Trust Land (code 1880). Everyone counted
@@ -52,6 +57,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3054 (Keweenaw Bay Indian Community alone or in any combination), GEOID
     0100000US (United States)
@@ -62,6 +68,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Keweenaw Bay Indian Community', PDF page 4, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -72,6 +79,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Keweenaw Bay Indian Community, Michigan
 - kind: physical-address
@@ -79,6 +87,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Keweenaw Bay Indian Community, Michigan
 - kind: mailing-address
@@ -86,6 +95,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Keweenaw Bay Indian Community, Michigan
 - kind: phone
@@ -93,6 +103,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Keweenaw Bay Indian Community, Michigan
 - kind: fax
@@ -100,6 +111,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Keweenaw Bay Indian Community, Michigan
 federal_administration:
@@ -107,6 +119,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Michigan Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Keweenaw Bay Indian Community, Michigan
 government_structure:
@@ -115,6 +128,7 @@ government_structure:
     approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -125,6 +139,7 @@ government_structure:
     under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-kewecons
   confidence: medium
+  verification: read-in-full
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -135,6 +150,7 @@ governing_documents:
   link: https://narf.org/nill/codes/keweenaw_bay/index.html
   source: national-indian-law-library-code-codes-keweenaw-bay
   confidence: medium
+  verification: title-only
   as_of: '2015'
   locator: page heading
   note: 'Table of Contents Updated: October 2015. The National Indian Law Library page gives the table
@@ -145,6 +161,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/keweenaw_bay/index.html
   source: national-indian-law-library-constitution-constitutions-keweenaw-bay
   confidence: medium
+  verification: title-only
   as_of: '2014'
   locator: page heading
   note: 'Approved: 1936 Re-typed version: 3-14-2014. The National Indian Law Library page gives the table
@@ -154,6 +171,7 @@ governing_documents:
   link: https://www.kbic-nsn.gov/tribal-governance/tribal-code/
   source: national-indian-law-library-keweenaw-bay
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -163,6 +181,7 @@ governing_documents:
   link: https://www.kbic-nsn.gov/tribal-governance/constitution/
   source: national-indian-law-library-keweenaw-bay
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -171,6 +190,7 @@ governing_documents:
   title: Keweenaw Bay Indian Community Constitution and Bylaws
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Michigan section, entry 'Keweenaw Bay Indian Community'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -180,6 +200,7 @@ governing_documents:
   title: Keweenaw Bay Indian Community Tribal Code
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Michigan section, entry 'Keweenaw Bay Indian Community'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -191,6 +212,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/kewechrtr.html
   source: university-of-oklahoma-indian-reorganization-act-kewechrtr
   confidence: medium
+  verification: title-only
   as_of: '1937'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -199,6 +221,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/kewecons.html
   source: university-of-oklahoma-indian-reorganization-act-kewecons
   confidence: medium
+  verification: title-only
   as_of: '1936'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -207,6 +230,7 @@ justice_institutions:
   link: http://www.kbic-nsn.gov/index.php/departments/court
   source: national-indian-law-library-keweenaw-bay
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -215,6 +239,7 @@ justice_institutions:
   link: http://www.kbic-nsn.gov/content/court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Michigan section, entry 'Keweenaw Bay Indian Community'
 dispute_resolution:
@@ -312,6 +337,7 @@ gaming:
     approved: '1993-11-30'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-11-30'
     locator: result page 16 (?page=16), row 11
     note: 'Listed as: "Keweenaw Bay Indian Community Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -326,6 +352,7 @@ gaming:
     dispute_resolution_locator: Section 7 (Dispute Resolution)
     source: compact-mi-bay-mills-indian-community-1993
     confidence: medium
+    verification: inferred
     as_of: '1993-11-30'
     locator: Section 7 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. The same Section 7 text appears in the
@@ -338,6 +365,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10039&ind=10052
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1994-02-14'
     locator: table row 117, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 117 lists the nation
@@ -346,6 +374,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10040&ind=10053
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2006-09-13'
     locator: table row 117, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 117 lists the nation
@@ -354,6 +383,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10041&ind=10054
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2010-11-29'
     locator: table row 117, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 117 lists the nation
@@ -362,6 +392,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Keweenaw Bay Indian Community".
       Facilities as machine-extracted from the report text (verify): Ojibwa Casino II; Ojibwa Casino and
@@ -372,6 +403,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Keweenaw Bay Indian Community, Michigan Confidence lowered from high by the lead session:
@@ -381,11 +413,13 @@ memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Keweenaw Bay Indian Community". Name matched to the roster entry.
 - organization: Great Lakes Indian Fish and Wildlife Commission
   source: great-lakes-indian-fish-and-wildlife-commission-commission
   confidence: medium
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Gakiiwe'onaning" (link https://www.kbic-nsn.gov).
 review:

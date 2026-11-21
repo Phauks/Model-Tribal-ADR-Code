@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation, California
 - state: CA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0020
   note: 'Census area with land in this state: Agua Caliente Indian Reservation and Off-Reservation Trust
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0020
   note: Matched by name. Census class code D1.
@@ -41,6 +45,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0020, field POP100
   note: 'Census area: Agua Caliente Indian Reservation and Off-Reservation Trust Land (code 0020). Everyone
@@ -50,6 +55,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2837 (Agua Caliente Band of Cahuilla Indians alone or in any combination),
     GEOID 0100000US (United States)
@@ -60,6 +66,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Agua Caliente Band of Cahuilla Indians', PDF page 6, Enrollment
     column
@@ -71,6 +78,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation, California
 - kind: physical-address
@@ -78,6 +86,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation, California
 - kind: mailing-address
@@ -85,6 +94,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation, California
 - kind: phone
@@ -92,6 +102,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation, California
 - kind: fax
@@ -99,6 +110,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation, California
 federal_administration:
@@ -106,6 +118,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Palm Springs Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation, California
 governing_documents:
@@ -114,6 +127,7 @@ governing_documents:
   link: https://library.municode.com/tribes_and_tribal_nations/agua_caliente_band_of_cahuilla_indians/codes/code_of_ordinances
   source: national-indian-law-library-agua-caliente
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
@@ -123,6 +137,7 @@ governing_documents:
   link: https://www.aguacaliente.org/legal-Department
   source: national-indian-law-library-agua-caliente
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
@@ -132,6 +147,7 @@ governing_documents:
   link: https://library.municode.com/tribes_and_tribal_nations/agua_caliente_band_of_cahuilla_indians/codes/code_of_ordinances
   source: national-indian-law-library-agua-caliente
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
@@ -142,6 +158,7 @@ governing_documents:
   link: https://narf.org/nill/codes/agua_caliente/index.html
   source: national-indian-law-library-code-codes-agua-caliente
   confidence: medium
+  verification: title-only
   as_of: '2001'
   locator: page heading
   note: 'Updated: 2001. The National Indian Law Library page gives the table of contents (and may link
@@ -152,6 +169,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/aguacalcons.html
   source: university-of-oklahoma-indian-reorganization-act-aguacalcons
   confidence: medium
+  verification: title-only
   as_of: '1957'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -160,6 +178,7 @@ justice_institutions:
   link: https://www.aguacaliente.org/tribalcourt
   source: national-indian-law-library-agua-caliente
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -199,6 +218,7 @@ gaming:
     federal_register_citation: 72 FR 71939
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-12-19'
     locator: result page 3 (?page=3), row 18
     note: 'Listed as: "Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation
@@ -213,6 +233,7 @@ gaming:
     federal_register_citation: 65 FR 31189
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-05-16'
     locator: result page 3 (?page=3), row 19
     note: 'Listed as: "Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation
@@ -227,6 +248,7 @@ gaming:
     federal_register_citation: 81 FR 75427
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2016-10-31'
     locator: result page 3 (?page=3), row 20
     note: 'Listed as: "Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation
@@ -245,6 +267,7 @@ gaming:
     dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     source: compact-ca-cher-ae-heights-indian-community-of-the-2026
     confidence: medium
+    verification: inferred
     as_of: '2026-01-26'
     locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
@@ -257,6 +280,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=3257&ind=3258
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1993-11-15'
     locator: table row 2, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 2 lists the nation
@@ -265,6 +289,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=3261&ind=3262
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2017-03-17'
     locator: table row 2, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 2 lists the nation
@@ -273,6 +298,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=3263&ind=3264
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2018-04-02'
     locator: table row 2, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 2 lists the nation
@@ -281,6 +307,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=3265&ind=3266
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2020-06-08'
     locator: table row 2, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 2 lists the nation
@@ -289,6 +316,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Agua Caliente Band of Cahuilla
       Indians". Facilities as machine-extracted from the report text (verify): Agua Caliente Casino Rancho
@@ -302,6 +330,7 @@ jurisdiction:
     country within California; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
   note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
@@ -311,6 +340,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation, California
@@ -320,6 +350,7 @@ memberships:
 - organization: Southern California Tribal Chairmen's Association
   source: southern-california-tribal-chairmens-association-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Agua Caliente Band of Cahuilla Indians". Name matched to the roster entry.
 review:

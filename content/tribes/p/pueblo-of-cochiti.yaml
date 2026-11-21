@@ -7,6 +7,7 @@ names:
     language_tag: kee
     source: pueblo-of-cochiti-home
     confidence: medium
+    verification: inferred
     as_of: '2026-11-21'
     note: '"Originally known in the Keresan language as ''ko-tyīt''''"'
   official_source: bia-recognized-entities-2026
@@ -16,6 +17,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -23,12 +25,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Cochiti, New Mexico
 - state: NM
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0680
   note: 'Census area with land in this state: Pueblo de Cochiti (code 0680). Area matched to the nation
@@ -40,6 +44,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0680
   note: Matched by name. Census class code D2.
@@ -48,6 +53,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0680, field POP100
   note: 'Census area: Pueblo de Cochiti (code 0680). Everyone counted as living in the area in the 2020
@@ -56,6 +62,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3235 (Pueblo of Cochiti alone or in any combination), GEOID 0100000US
     (United States)
@@ -66,6 +73,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Cochiti Pueblo', PDF page 6, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -74,6 +82,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 86, row T39500 'Pueblo of Cochiti'
   note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
@@ -85,6 +94,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Cochiti, New Mexico
 - kind: physical-address
@@ -92,6 +102,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Cochiti, New Mexico
 - kind: mailing-address
@@ -99,6 +110,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Cochiti, New Mexico
 - kind: phone
@@ -106,6 +118,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Cochiti, New Mexico
 - kind: fax
@@ -113,6 +126,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Cochiti, New Mexico
 languages:
@@ -120,6 +134,7 @@ languages:
   language_tag: kee
   source: pueblo-of-cochiti-home
   confidence: medium
+  verification: inferred
   as_of: '2026-11-21'
   note: site refers to "the Keresan language"
 federal_administration:
@@ -127,6 +142,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Southern Pueblos Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Cochiti, New Mexico
 justice_institutions:
@@ -135,6 +151,7 @@ justice_institutions:
   link: http://www.pueblodecochiti.org/departments/tribal-administration/tribal-court
   source: national-indian-law-library-pueblo-cochiti
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
@@ -144,6 +161,7 @@ justice_institutions:
   link: http://www.pueblodecochiti.org/departments/tribal-administration/tribal-court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: New Mexico section, entry 'Pueblo de Cochiti'
   note: 'Link check 2026-11-21: the site did not respond.'
@@ -153,6 +171,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Pueblo of Cochiti, New Mexico Confidence lowered from high by the lead session: the
@@ -161,6 +180,7 @@ memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Pueblo of Cochiti". Name matched to the roster entry.
 review:

@@ -8,6 +8,7 @@ names:
     romanized: NUH-MUH-NUH
     source: comanchenation-about-page-history
     confidence: high
+    verification: inferred
     as_of: '2026-11-21'
     note: 'Page: ''in our native language, “Nʉmʉnʉʉ” (NUH-MUH-NUH), which means “The People”''.'
   official_source: bia-recognized-entities-2026
@@ -17,6 +18,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -24,12 +26,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Comanche Nation, Oklahoma
 - state: OK
   presence: other
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5720, 5955
   note: 'Census area with land in this state: Kiowa-Comanche-Apache-Fort Sill Apache OTSA (code 5720);
@@ -42,6 +46,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5720
   note: 'Matched by name. Shared with: Kiowa Tribe; Apache Tribe of Oklahoma; Fort Sill--Chiricahua--Warm
@@ -52,6 +57,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5955
   note: 'Matched by name. Shared with: Kiowa Tribe; Apache Tribe of Oklahoma; Fort Sill--Chiricahua--Warm
@@ -62,6 +68,7 @@ population:
   kind: citizens
   source: comanchenation-about-page-history
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'Page: ''approximately 17,000 enrolled tribal members, with around 7,000 residing in the tribal
     jurisdiction area''. Undated page; as_of is access date.'
@@ -69,6 +76,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5720, field POP100
   note: 'Census area: Kiowa-Comanche-Apache-Fort Sill Apache OTSA (code 5720). Everyone counted as living
@@ -80,6 +88,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5955, field POP100
   note: 'Census area: Kiowa-Comanche-Apache-Ft Sill Apache/Caddo-Wichita-Delaware joint-use OTSA (code
@@ -92,6 +101,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2941 (Comanche Nation, Oklahoma alone or in any combination), GEOID
     0100000US (United States)
@@ -102,6 +112,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Oklahoma, row 'Comanche Nation', PDF page 6, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -112,6 +123,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Comanche Nation, Oklahoma
 - kind: physical-address
@@ -119,6 +131,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Comanche Nation, Oklahoma
 - kind: mailing-address
@@ -126,6 +139,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Comanche Nation, Oklahoma
 - kind: phone
@@ -133,6 +147,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Comanche Nation, Oklahoma
 - kind: fax
@@ -140,6 +155,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Comanche Nation, Oklahoma
 languages:
@@ -147,6 +163,7 @@ languages:
   language_tag: com
   source: comanchenation-culture-page-language
   confidence: medium
+  verification: inferred
   as_of: '2026-11-21'
   note: Site has a Comanche language page.
 federal_administration:
@@ -154,6 +171,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Anadarko Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Comanche Nation, Oklahoma
 governing_documents:
@@ -163,6 +181,7 @@ governing_documents:
   link: https://narf.org/nill/codes/comanche/index.html
   source: national-indian-law-library-code-codes-comanche
   confidence: medium
+  verification: title-only
   as_of: '2019'
   locator: page heading
   note: 'Table of Contents Updated: February 2019. The National Indian Law Library page gives the table
@@ -172,6 +191,7 @@ governing_documents:
   link: https://comanchenation.com/our-nation/court-codes
   source: national-indian-law-library-comanche
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website.".
@@ -181,6 +201,7 @@ governing_documents:
   link: https://comanchenation.com/sites/default/files/Comanche_Constitution_March18.pdf
   source: national-indian-law-library-comanche
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -191,6 +212,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/comanche/index.html
   source: national-indian-law-library-constitution-constitutions-comanche
   confidence: medium
+  verification: title-only
   as_of: '2018'
   locator: page heading
   note: 'Amended: March 21, 2018. The National Indian Law Library page gives the table of contents (and
@@ -200,6 +222,7 @@ governing_documents:
   link: http://comanchenation.com/Document/constitution.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Oklahoma section, entry 'Comanche Nation of Oklahoma'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -209,6 +232,7 @@ justice_institutions:
   link: https://comanchenation.com/departments/family-services/tribal-court
   source: national-indian-law-library-comanche
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
@@ -218,6 +242,7 @@ justice_institutions:
   link: http://www.comanchenation.com/index.php?option=com_k2&amp;view=itemlist&amp;layout=category&amp;task=category&amp;id=82&amp;Itemid=194
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Oklahoma section, entry 'Comanche Nation of Oklahoma'
 - kind: tribal-court
@@ -225,6 +250,7 @@ justice_institutions:
   link: http://www.potawatomi.org/government/judicial-branch/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Oklahoma section, entry 'Comanche Nation of Oklahoma'
 dispute_resolution:
@@ -299,6 +325,7 @@ gaming:
     approved: '1999-04-02'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-04-02'
     locator: result page 27 (?page=27), row 5
     note: 'Listed as: "Comanche Nation Tribal State Gaming Compact" (Disapproved); list''s Tribe column:
@@ -311,6 +338,7 @@ gaming:
     federal_register_citation: 83 FR 47187
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2018-09-18'
     locator: result page 27 (?page=27), row 6
     note: 'Listed as: "Comanche Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Comanche
@@ -324,6 +352,7 @@ gaming:
     federal_register_citation: 85 FR 38919
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2020-06-29'
     locator: result page 27 (?page=27), row 7
     note: 'Listed as: "Comanche Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
@@ -337,6 +366,7 @@ gaming:
     federal_register_citation: 70 FR 3942
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2005-01-27'
     locator: result page 27 (?page=27), row 8
     note: 'Listed as: "Comanche Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Comanche
@@ -350,6 +380,7 @@ gaming:
     federal_register_citation: 64 FR 36713
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-07-07'
     locator: result page 27 (?page=27), row 9
     note: 'Listed as: "Comanche Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Comanche
@@ -366,6 +397,7 @@ gaming:
     dispute_resolution_locator: Part 12 (Dispute Resolution)
     source: compact-ok-cherokee-nation-2005
     confidence: medium
+    verification: inferred
     as_of: '2005-01-27'
     locator: Part 12 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
@@ -378,6 +410,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9549&ind=9582
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1996-04-10'
     locator: table row 51, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 51 lists the nation
@@ -386,6 +419,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9566&ind=9583
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2001-02-05'
     locator: table row 51, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
@@ -394,6 +428,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9567&ind=9584
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2002-02-27'
     locator: table row 51, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
@@ -402,6 +437,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9568&ind=9585
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2005-12-19'
     locator: table row 51, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
@@ -410,6 +446,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9569&ind=9586
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2006-09-08'
     locator: table row 51, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
@@ -418,6 +455,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9570&ind=9587
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-01-08'
     locator: table row 51, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
@@ -426,6 +464,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9571&ind=9588
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-02-15'
     locator: table row 51, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
@@ -434,6 +473,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9572&ind=9589
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-07-30'
     locator: table row 51, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
@@ -442,6 +482,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9573&ind=9590
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2009-09-21'
     locator: table row 51, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
@@ -449,6 +490,7 @@ gaming:
   - approved: '2009-05-18'
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2009-05-18'
     locator: table row 51, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
@@ -457,6 +499,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9575&ind=9591
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-01-09'
     locator: table row 51, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
@@ -465,6 +508,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9576&ind=9592
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2017-10-05'
     locator: table row 51, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
@@ -473,6 +517,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9577&ind=9593
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2018-10-19'
     locator: table row 51, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
@@ -481,6 +526,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9578&ind=9594
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2019-05-07'
     locator: table row 51, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
@@ -489,6 +535,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9579&ind=9595
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2019-10-16'
     locator: table row 51, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
@@ -497,6 +544,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9580&ind=9596
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2022-01-31'
     locator: table row 51, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
@@ -505,6 +553,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=13530&ind=13531
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2024-12-10'
     locator: table row 51, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
@@ -513,6 +562,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Comanche Nation, Oklahoma".
       Facilities as machine-extracted from the report text (verify): Comanche Spur Casino; Comanche Star
@@ -525,6 +575,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Comanche Nation, Oklahoma Confidence lowered from high by the lead session: the notice

@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Northfork Rancheria of Mono Indians of California
 - state: CA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2495
   note: 'Census area with land in this state: North Fork Rancheria and Off-Reservation Trust Land (code
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2495
   note: Matched by name. Census class code D1.
@@ -41,6 +45,7 @@ population:
   kind: citizens
   source: northfork-rancheria-of-mono-indians-of-c-our-people-history-timeline
   confidence: low
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'timeline: "more than 3,000 tribal citizens"; conflicting figures on the same site: history page
     "nearly 1,800", lands page "nearly 2,000"'
@@ -48,6 +53,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2495, field POP100
   note: 'Census area: North Fork Rancheria and Off-Reservation Trust Land (code 2495). Everyone counted
@@ -57,6 +63,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3160 (North Fork Rancheria of Mono Indians alone or in any combination),
     GEOID 0100000US (United States)
@@ -67,6 +74,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Northfork Rancheria of Mono Indians', PDF page 7, Enrollment
     column
@@ -78,6 +86,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Northfork Rancheria of Mono Indians of California
 - kind: physical-address
@@ -85,6 +94,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Northfork Rancheria of Mono Indians of California
 - kind: mailing-address
@@ -92,6 +102,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Northfork Rancheria of Mono Indians of California
 - kind: phone
@@ -99,6 +110,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Northfork Rancheria of Mono Indians of California
 - kind: fax
@@ -106,6 +118,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Northfork Rancheria of Mono Indians of California
 languages:
@@ -113,6 +126,7 @@ languages:
   language_tag: mnr
   source: northfork-rancheria-of-mono-indians-of-c-our-people-history-culture
   confidence: medium
+  verification: inferred
   as_of: '2026-11-21'
   note: site mentions an elder who "spoke only the Nim language"; Mono tag applied by researcher
 federal_administration:
@@ -120,6 +134,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Central California Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Northfork Rancheria of Mono Indians of California
 gaming:
@@ -129,6 +144,7 @@ gaming:
     approved: '2016-07-29'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2016-07-29'
     locator: result page 8 (?page=8), row 25
     note: 'Listed as: "Northfork Rancheria of Mono Indians of California Secretarial Procedures" (Secretarial
@@ -142,6 +158,7 @@ gaming:
     federal_register_citation: 78 FR 62649
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2013-10-22'
     locator: result page 9 (?page=9), row 1
     note: 'Listed as: "Northfork Rancheria of Mono Indians Tribal State Gaming Compact" (Deemed Approved);
@@ -159,6 +176,7 @@ gaming:
     dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     source: compact-ca-cher-ae-heights-indian-community-of-the-2026
     confidence: medium
+    verification: inferred
     as_of: '2026-01-26'
     locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
@@ -171,6 +189,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10430&ind=10446
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2017-01-13'
     locator: table row 169, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 169 lists the nation
@@ -183,6 +202,7 @@ jurisdiction:
     country within California; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
   note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
@@ -192,6 +212,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Northfork Rancheria of Mono Indians of California Confidence lowered from high by

@@ -6,6 +6,7 @@ names:
   - name: Mandan, Hidatsa, and Arikara Nation
     source: three-affiliated-tribes-of-the-fort-bert-home
     confidence: high
+    verification: read-in-full
     as_of: '2026-11-21'
     note: '"the Mandan, Hidatsa, and Arikara Nation, also known as the Three Affiliated Tribes"'
   official_source: bia-recognized-entities-2026
@@ -15,6 +16,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -22,12 +24,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota
 - state: ND
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1160
   note: 'Census area with land in this state: Fort Berthold Reservation (code 1160). Area matched to the
@@ -39,6 +43,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1160
   note: Matched by name. Census class code D2.
@@ -47,6 +52,7 @@ population:
   kind: citizens
   source: three-affiliated-tribes-of-the-fort-bert-home
   confidence: high
+  verification: read-in-full
   as_of: '2026-08-20'
   note: '"As of August 20, 2026, 17,825 members are currently enrolled in the Mandan, Hidatsa, and Arikara
     Nation"'
@@ -54,6 +60,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1160, field POP100
   note: 'Census area: Fort Berthold Reservation (code 1160). Everyone counted as living in the area in
@@ -62,6 +69,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3369 (Three Affiliated Tribes of the Ft. Berthold Reservation, North
     Dakota alone or in any combination), GEOID 0100000US (United States)
@@ -73,6 +81,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Denver, row 'Three Affiliated Tribes of Fort Berthold', PDF page 5, Enrollment
     column
@@ -84,6 +93,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota
 - kind: physical-address
@@ -91,6 +101,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota
 - kind: mailing-address
@@ -98,6 +109,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota
 - kind: phone
@@ -105,6 +117,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota
 - kind: fax
@@ -112,6 +125,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota
 languages:
@@ -119,18 +133,21 @@ languages:
   language_tag: hid
   source: three-affiliated-tribes-of-the-fort-bert-home
   confidence: medium
+  verification: inferred
   as_of: '2026-11-21'
   note: MHA Nation language resources list Hidatsa, Arikara, and Mandan projects
 - name: Mandan
   language_tag: mhq
   source: three-affiliated-tribes-of-the-fort-bert-home
   confidence: medium
+  verification: inferred
   as_of: '2026-11-21'
   note: MHA Nation language resources list Hidatsa, Arikara, and Mandan projects
 - name: Arikara
   language_tag: ari
   source: three-affiliated-tribes-of-the-fort-bert-home
   confidence: medium
+  verification: inferred
   as_of: '2026-11-21'
   note: MHA Nation language resources list Hidatsa, Arikara, and Mandan projects
 federal_administration:
@@ -138,6 +155,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Fort Berthold Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota
 government_structure:
@@ -147,6 +165,7 @@ government_structure:
     Act of June 18, 1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -157,6 +176,7 @@ government_structure:
     1936) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-ftbertcons
   confidence: medium
+  verification: read-in-full
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -167,6 +187,7 @@ governing_documents:
   link: https://narf.org/nill/codes/threeaffiliated/index.html
   source: national-indian-law-library-code-codes-threeaffiliated
   confidence: medium
+  verification: title-only
   as_of: '2004'
   locator: page heading
   note: 'Received: 2004 (no longer current). The National Indian Law Library page gives the table of contents
@@ -177,6 +198,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/threeaffiliated/index.html
   source: national-indian-law-library-constitution-constitutions-threeaffiliated
   confidence: medium
+  verification: title-only
   as_of: '2010'
   locator: page heading
   note: 'Amended: 2010. The National Indian Law Library page gives the table of contents (and may link
@@ -186,6 +208,7 @@ governing_documents:
   link: https://www.mhanation.com/tribal-code
   source: national-indian-law-library-three-affiliated-fort-berthold
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -195,6 +218,7 @@ governing_documents:
   link: https://www.mhanation.com/tat-records-office
   source: national-indian-law-library-three-affiliated-fort-berthold
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -204,6 +228,7 @@ governing_documents:
   year: '2018'
   source: national-indian-law-library-three-affiliated-fort-berthold
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "MHA Nation Water Use
@@ -215,6 +240,7 @@ governing_documents:
   year: '2016'
   source: national-indian-law-library-three-affiliated-fort-berthold
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "Enrollment Ordinance
@@ -226,6 +252,7 @@ governing_documents:
   year: '2009'
   source: national-indian-law-library-three-affiliated-fort-berthold
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "Animal Control Ordinance
@@ -235,6 +262,7 @@ governing_documents:
   title: Election Ordinance (14-117-VJB
   source: national-indian-law-library-three-affiliated-fort-berthold
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "Election Ordinance
@@ -244,6 +272,7 @@ governing_documents:
   title: Constitution
   source: national-indian-law-library-three-affiliated-fort-berthold
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
@@ -255,6 +284,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/ftbertchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-ftbertchrtr
   confidence: medium
+  verification: title-only
   as_of: '1937'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -263,6 +293,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/ftbertcons.html
   source: university-of-oklahoma-indian-reorganization-act-ftbertcons
   confidence: medium
+  verification: title-only
   as_of: '1936'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -270,12 +301,14 @@ justice_institutions:
   name: Tribal Court:-
   source: national-indian-law-library-three-affiliated-fort-berthold
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
 - kind: tribal-court
   name: Three Affiliated Tribes of the Fort Berthold Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: 'North Dakota section, entry ''Three Affiliated Tribes: Mandan, Hidatsa & Arikara Nation'''
   note: 'Link check 2026-11-21: the link the source gives (http://www.mhanation.com/main2/departments/fort-berthold-district-court/fort-berthold-district-court.html)
@@ -356,6 +389,7 @@ gaming:
     federal_register_citation: 87 FR 77628
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2022-12-19'
     locator: result page 21 (?page=21), row 14
     note: 'Listed as: "Three Affiliated Tribes of the Fort Berthold Reservation Tribal State Gaming Compact"
@@ -369,6 +403,7 @@ gaming:
     approved: '1994-03-10'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1994-03-10'
     locator: result page 21 (?page=21), row 15
     note: 'Listed as: "Three Affiliated Tribes of the Fort Berthold Reservation Tribal State Gaming Compact"
@@ -382,6 +417,7 @@ gaming:
     approved: '1992-12-11'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1992-12-11'
     locator: result page 21 (?page=21), row 16
     note: 'Listed as: "Three Affiliated Tribes of the Fort Berthold Reservation Tribal State Gaming Compact"
@@ -393,6 +429,7 @@ gaming:
     federal_register_citation: 64 FR 65722
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-11-23'
     locator: result page 21 (?page=21), row 17
     note: 'Listed as: "Three Affiliated Tribes of the Fort Berthold Reservation Tribal State Gaming Compact"
@@ -407,6 +444,7 @@ gaming:
     federal_register_citation: 78 FR 17427
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2013-03-21'
     locator: result page 21 (?page=21), row 18
     note: 'Listed as: "Three Affiliated Tribes of the Fort Berthold Reservation Tribal State Gaming Compact"
@@ -425,6 +463,7 @@ gaming:
     dispute_resolution_locator: Section XXVIII (Dispute Resolution)
     source: compact-nd-spirit-lake-tribe-2022
     confidence: medium
+    verification: inferred
     as_of: '2022-12-19'
     locator: Section XXVIII (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Read from the 2022 Spirit Lake Tribe
@@ -436,6 +475,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11339&ind=11360
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1994-11-17'
     locator: table row 285, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 285 lists the nation
@@ -444,6 +484,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11340&ind=11361
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-10-19'
     locator: table row 285, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 285 lists the nation
@@ -452,6 +493,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11341&ind=11362
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2008-03-24'
     locator: table row 285, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 285 lists the nation
@@ -460,6 +502,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=14498&ind=14499
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2026-06-26'
     locator: table row 285, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 285 lists the nation
@@ -470,6 +513,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota Confidence
@@ -479,11 +523,13 @@ memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Mandan, Hidatsa & Arikara Nation". Name matched to the roster entry.
 - organization: Coalition of Large Tribes
   source: coalition-of-large-tribes-home
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Mandan, Hidatsa and Arikara Nation". Name matched to the roster entry.
 review:

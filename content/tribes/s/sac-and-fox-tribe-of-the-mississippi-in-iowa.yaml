@@ -6,12 +6,14 @@ names:
   - name: Meskwaki Nation
     source: sac-and-fox-tribe-of-the-mississippi-in-home
     confidence: high
+    verification: read-in-full
     as_of: '2026-11-21'
     note: name used throughout the official site; page read through the WebFetch tool because the site
       blocked the plain HTTP client
   - name: People of the Red Earth
     source: sac-and-fox-tribe-of-the-mississippi-in-home
     confidence: medium
+    verification: read-in-full
     as_of: '2026-11-21'
     note: English designation on the official site; page read through the WebFetch tool because the site
       blocked the plain HTTP client
@@ -22,6 +24,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -29,12 +32,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sac & Fox Tribe of the Mississippi in Iowa
 - state: IA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3280
   note: 'Census area with land in this state: Sac and Fox/Meskwaki Settlement and Off-Reservation Trust
@@ -46,6 +51,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3280
   note: Matched by name. Census class code D1.
@@ -54,6 +60,7 @@ population:
   kind: citizens
   source: sac-and-fox-tribe-of-the-mississippi-in-home
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"We have more than 1,450 enrolled tribal members"; also more than 1,230 Meskwaki descendants;
     undated statement on the official site; as_of is the access date; page read through the WebFetch tool
@@ -62,6 +69,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3280, field POP100
   note: 'Census area: Sac and Fox/Meskwaki Settlement and Off-Reservation Trust Land (code 3280). Everyone
@@ -71,6 +79,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3275 (Sac and Fox Tribe of the Mississippi in Iowa alone or in any
     combination), GEOID 0100000US (United States)
@@ -81,6 +90,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Sac & Fox Tribe of the Mississippi, IA', PDF page 5, Enrollment
     column
@@ -90,6 +100,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 87, row T43300 'Sac & Fox Tribe of the Mississippi in Iowa'
   note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
@@ -101,6 +112,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sac & Fox Tribe of the Mississippi in Iowa
 - kind: physical-address
@@ -108,6 +120,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sac & Fox Tribe of the Mississippi in Iowa
 - kind: mailing-address
@@ -115,6 +128,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sac & Fox Tribe of the Mississippi in Iowa
 - kind: phone
@@ -122,6 +136,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sac & Fox Tribe of the Mississippi in Iowa
 - kind: fax
@@ -129,6 +144,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sac & Fox Tribe of the Mississippi in Iowa
 federal_administration:
@@ -136,6 +152,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Midwest Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sac & Fox Tribe of the Mississippi in Iowa
 government_structure:
@@ -144,6 +161,7 @@ government_structure:
     approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -154,6 +172,7 @@ government_structure:
     under Act of June 18, 1934 (48 Stat. 984); Act of June 26, 1936 (49 Stat. 1967)
   source: university-of-oklahoma-indian-reorganization-act-ias-fcons
   confidence: medium
+  verification: read-in-full
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: The text also cites the Act of June 26, 1936 (49 Stat. 1967); because the nation is outside Oklahoma
@@ -166,6 +185,7 @@ governing_documents:
   link: https://narf.org/nill/codes/sac_fox_miss_ia/index.html
   source: national-indian-law-library-code-codes-sac-fox-miss-ia
   confidence: medium
+  verification: title-only
   as_of: '2017'
   locator: page heading
   note: 'Table of Contents Updated: September 2017. The National Indian Law Library page gives the table
@@ -176,6 +196,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/sac_fox_mississippi_iowa/index.html
   source: national-indian-law-library-constitution-constitutions-sac-fox-mississippi-iowa
   confidence: medium
+  verification: title-only
   as_of: '1937'
   locator: page heading
   note: 'Ratified: November 13, 1937. The National Indian Law Library page gives the table of contents
@@ -185,6 +206,7 @@ governing_documents:
   link: https://www.meskwaki.org/constitution/
   source: national-indian-law-library-sac-fox-mississippi-iowa
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
@@ -194,6 +216,7 @@ governing_documents:
   link: https://meskwakicourt.org/tribal-code-%26-court-rules
   source: national-indian-law-library-sac-fox-mississippi-iowa
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribal Court''s
@@ -203,6 +226,7 @@ governing_documents:
   link: https://www.meskwaki.org/constitution/
   source: national-indian-law-library-sac-fox-mississippi-iowa
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
@@ -212,6 +236,7 @@ governing_documents:
   link: https://meskwakicourt.org/tribal-code-%26-court-rules
   source: national-indian-law-library-sac-fox-mississippi-iowa
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribal Court''s
@@ -221,6 +246,7 @@ governing_documents:
   link: http://www.meskwaki.org/Constitution.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Iowa section, entry 'Sac & Fox Tribe of the Mississippi in Iowa/Meskwaki'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -229,6 +255,7 @@ governing_documents:
   link: http://www.meskwaki.org/Constitution.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Iowa section, entry 'Sac & Fox Tribe of the Mississippi in Iowa/Meskwaki'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -238,6 +265,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/ias&fcons.html
   source: university-of-oklahoma-indian-reorganization-act-ias-fcons
   confidence: medium
+  verification: title-only
   as_of: '1937'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -246,6 +274,7 @@ justice_institutions:
   link: https://meskwakicourt.org/
   source: national-indian-law-library-sac-fox-mississippi-iowa
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -254,6 +283,7 @@ justice_institutions:
   link: http://www.meskwakicourt.org/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Iowa section, entry 'Sac & Fox Tribe of the Mississippi in Iowa/Meskwaki'
   note: 'Link check 2026-11-21: the site did not respond.'
@@ -376,6 +406,7 @@ gaming:
     federal_register_citation: 69 FR 76004
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2004-12-20'
     locator: result page 14 (?page=14), row 9
     note: 'Listed as: "Sac & Fox Tribe of the Mississippi Tribal State Gaming Compact" (Approve); list''s
@@ -389,6 +420,7 @@ gaming:
     federal_register_citation: 60 FR 32898
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '1995-06-23'
     locator: result page 14 (?page=14), row 10
     note: 'Listed as: "Sac & Fox Tribe of the Mississippi Tribal State Gaming Compact" (Approve); list''s
@@ -401,6 +433,7 @@ gaming:
     approved: '1992-04-30'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '1992-04-30'
     locator: result page 14 (?page=14), row 11
     note: 'Listed as: "Sac and Fox Tribe of the Mississippi Tribal State Gaming Compact" (Deemed Approved);
@@ -415,6 +448,7 @@ gaming:
     dispute_resolution_locator: Section 20 (Binding Dispute Resolution for Non-Material Breach)
     source: compact-ia-ponca-tribe-of-nebraska-2021
     confidence: medium
+    verification: inferred
     as_of: '2021-03-05'
     locator: Section 20 (Binding Dispute Resolution for Non-Material Breach)
     note: state model compact; nation-specific text not checked. Read from the 2021 Ponca Tribe of Nebraska
@@ -425,6 +459,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10948&ind=10969
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2008-12-08'
     locator: table row 235, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 235 lists the nation
@@ -433,6 +468,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10949&ind=10970
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1995-02-09'
     locator: table row 235, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 235 lists the nation
@@ -441,6 +477,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Sac & Fox Tribe of the Mississippi
       in Iowa". Name extracted from the PDF by the page-fetch tool and matched to the roster.
@@ -451,6 +488,7 @@ jurisdiction:
     settlement in Tama County (Iowa Code § 1.12). Civil only; this statute does not address criminal jurisdiction.
   source: iowa-code-1-12
   confidence: medium
+  verification: inferred
   as_of: '1967'
   locator: § 1.12
   note: The Bureau of Indian Affairs lists Iowa (1967) among optional states.
@@ -459,6 +497,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Sac and Fox Tribe of the Mississippi in Iowa Confidence lowered from high by the lead
@@ -468,12 +507,14 @@ memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Sac & Fox Tribe of the Mississippi in Iowa (Meskwaki Nation)". Name matched to the
     roster entry.
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Sac and Fox Tribe of the Mississippi in Iowa". Name matched to the roster entry.
 review:

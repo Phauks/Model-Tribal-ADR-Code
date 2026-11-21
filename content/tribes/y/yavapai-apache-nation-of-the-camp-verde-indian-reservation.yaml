@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yavapai-Apache Nation of the Camp Verde Indian Reservation, Arizona
 - state: AZ
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4708
   note: 'Census area with land in this state: Yavapai-Apache Nation Reservation and Off-Reservation Trust
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4708
   note: Matched by name. Census class code D1.
@@ -41,6 +45,7 @@ population:
   kind: citizens
   source: yavapai-apache-nation-of-the-camp-verde-yavapai-apache-nation
   confidence: medium
+  verification: read-in-full
   as_of: 2019-04
   note: '"2,596 total enrolled tribal members (April 2019 numbers) with over 750 residents living in the
     five (5) tribal communities"'
@@ -48,6 +53,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4708, field POP100
   note: 'Census area: Yavapai-Apache Nation Reservation and Off-Reservation Trust Land (code 4708). Everyone
@@ -57,6 +63,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3439 (Yavapai Apache Nation of the Camp Verde Indian Reservation alone
     or in any combination), GEOID 0100000US (United States)
@@ -67,6 +74,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Yavapai-Apache Nation (Camp Verde)', PDF page 8, Enrollment
     column
@@ -78,6 +86,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yavapai-Apache Nation of the Camp Verde Indian Reservation, Arizona
 - kind: physical-address
@@ -85,6 +94,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yavapai-Apache Nation of the Camp Verde Indian Reservation, Arizona
 - kind: mailing-address
@@ -92,6 +102,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yavapai-Apache Nation of the Camp Verde Indian Reservation, Arizona
 - kind: phone
@@ -99,6 +110,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yavapai-Apache Nation of the Camp Verde Indian Reservation, Arizona
 - kind: fax
@@ -106,6 +118,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yavapai-Apache Nation of the Camp Verde Indian Reservation, Arizona
 federal_administration:
@@ -113,6 +126,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Truxton Canon Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yavapai-Apache Nation of the Camp Verde Indian Reservation, Arizona
 government_structure:
@@ -121,6 +135,7 @@ government_structure:
     approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -131,6 +146,7 @@ government_structure:
     under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-yavcons
   confidence: medium
+  verification: read-in-full
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -141,6 +157,7 @@ governing_documents:
   link: https://narf.org/nill/codes/yavapai-apache/index.html
   source: national-indian-law-library-code-codes-yavapai-apache
   confidence: medium
+  verification: title-only
   as_of: '2016'
   locator: page heading
   note: 'Table of Contents Updated: October 2016. The National Indian Law Library page gives the table
@@ -151,6 +168,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/yavapai_apache/index.html
   source: national-indian-law-library-constitution-constitutions-yavapai-apache
   confidence: medium
+  verification: title-only
   as_of: '1992'
   locator: page heading
   note: 'Amended: 1992. The National Indian Law Library page gives the table of contents (and may link
@@ -160,6 +178,7 @@ governing_documents:
   link: https://yavapai-apache.org/tribal-codes/
   source: national-indian-law-library-yavapai-apache
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
@@ -169,6 +188,7 @@ governing_documents:
   link: https://yavapai-apache.org/documents/yavapai-apache-nation-constitution/
   source: national-indian-law-library-yavapai-apache
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
@@ -177,6 +197,7 @@ governing_documents:
   title: Yavapai-Apache Nation Constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Arizona section, entry 'Yavapai-Apache Nation'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -188,6 +209,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/Yavapai.html
   source: university-of-oklahoma-indian-reorganization-act-yavapai
   confidence: medium
+  verification: title-only
   as_of: '1948'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -196,6 +218,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/yavcons.html
   source: university-of-oklahoma-indian-reorganization-act-yavcons
   confidence: medium
+  verification: title-only
   as_of: '1937'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -204,6 +227,7 @@ justice_institutions:
   link: https://yavapai-apache.org/tribal-court/
   source: national-indian-law-library-yavapai-apache
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -212,6 +236,7 @@ justice_institutions:
   link: http://www.yavapai-apache.org/administration/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Yavapai-Apache Nation'
 gaming:
@@ -222,6 +247,7 @@ gaming:
     federal_register_citation: 87 FR 35992
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2022-06-14'
     locator: result page 3 (?page=3), row 6
     note: 'Listed as: "Yavapai Apache Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -234,6 +260,7 @@ gaming:
     approved: '1993-08-18'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '1993-08-18'
     locator: result page 3 (?page=3), row 7
     note: 'Listed as: "Yavapai Apache Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -245,6 +272,7 @@ gaming:
     federal_register_citation: 86 FR 27889
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2021-05-24'
     locator: result page 3 (?page=3), row 8
     note: 'Listed as: "Yavapai Apache Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -258,6 +286,7 @@ gaming:
     federal_register_citation: 68 FR 5912
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2003-02-05'
     locator: result page 3 (?page=3), row 9
     note: 'Listed as: "Yavapai Apache Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -271,6 +300,7 @@ gaming:
     federal_register_citation: 74 FR 12889
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2009-03-25'
     locator: result page 3 (?page=3), row 10
     note: 'Listed as: "Yavapai Apache Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -288,6 +318,7 @@ gaming:
     dispute_resolution_locator: Section 15 (Dispute Resolution)
     source: compact-az-ak-chin-indian-community-2003
     confidence: medium
+    verification: inferred
     as_of: '2003-02-05'
     locator: Section 15 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
@@ -299,6 +330,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11559&ind=11580
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1993-10-22'
     locator: table row 315, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 315 lists the nation
@@ -307,6 +339,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11560&ind=11581
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1998-07-17'
     locator: table row 315, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 315 lists the nation
@@ -315,6 +348,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11561&ind=11582
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2004-08-27'
     locator: table row 315, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 315 lists the nation
@@ -323,6 +357,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11562&ind=11583
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2005-05-23'
     locator: table row 315, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 315 lists the nation
@@ -331,6 +366,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11563&ind=11584
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2006-07-21'
     locator: table row 315, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 315 lists the nation
@@ -339,6 +375,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11564&ind=11585
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2016-11-21'
     locator: table row 315, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 315 lists the nation
@@ -347,6 +384,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11567&ind=11586
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2022-02-28'
     locator: table row 315, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 315 lists the nation
@@ -355,6 +393,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Yavapai Apache Nation of the Camp
       Verde Indian Reservation, AZ". Name extracted from the PDF by the page-fetch tool and matched to
@@ -365,6 +404,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Yavapai-Apache Nation of the Camp Verde Indian Reservation, Arizona Confidence lowered
@@ -374,6 +414,7 @@ memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Yavapai-Apache Nation". Name matched to the roster entry.
 review:

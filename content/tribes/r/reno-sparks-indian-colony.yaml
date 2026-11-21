@@ -7,6 +7,7 @@ names:
     language_tag: pao
     source: reno-sparks-indian-colony-27-about-us
     confidence: high
+    verification: inferred
     as_of: '2026-11-21'
     note: '"The Numa, Washeshu, & Newe ... In each language, these names meant ''the People.''"; site
       uses both Numa and Numu'
@@ -14,12 +15,14 @@ names:
     language_tag: shh
     source: reno-sparks-indian-colony-27-about-us
     confidence: high
+    verification: inferred
     as_of: '2026-11-21'
     note: see Numu entry
   - name: Washeshu
     language_tag: was
     source: reno-sparks-indian-colony-27-about-us
     confidence: high
+    verification: inferred
     as_of: '2026-11-21'
     note: see Numu entry
   official_source: bia-recognized-entities-2026
@@ -29,6 +32,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -36,12 +40,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Reno-Sparks Indian Colony, Nevada
 - state: NV
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3130
   note: 'Census area with land in this state: Reno-Sparks Indian Colony and Off-Reservation Trust Land
@@ -53,6 +59,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3130
   note: Matched by name. Census class code D1.
@@ -61,6 +68,7 @@ population:
   kind: citizens
   source: reno-sparks-indian-colony-182-enrollment
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"maintaining accurate records of the 1,303 members of the Colony"; undated statement on the official
     site; as_of is the access date'
@@ -68,6 +76,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3130, field POP100
   note: 'Census area: Reno-Sparks Indian Colony and Off-Reservation Trust Land (code 3130). Everyone counted
@@ -77,6 +86,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3266 (Reno-Sparks Indian Colony, Nevada alone or in any combination),
     GEOID 0100000US (United States)
@@ -87,6 +97,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Reno-Sparks Indian Colony', PDF page 8, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -95,6 +106,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 87, row T42500 'Reno-Sparks Indian Colony'
   note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
@@ -107,6 +119,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Reno-Sparks Indian Colony, Nevada
 - kind: physical-address
@@ -114,6 +127,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Reno-Sparks Indian Colony, Nevada
 - kind: mailing-address
@@ -121,6 +135,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Reno-Sparks Indian Colony, Nevada
 - kind: phone
@@ -128,6 +143,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Reno-Sparks Indian Colony, Nevada
 - kind: fax
@@ -135,6 +151,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Reno-Sparks Indian Colony, Nevada
 federal_administration:
@@ -142,6 +159,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Western Nevada Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Reno-Sparks Indian Colony, Nevada
 government_structure:
@@ -150,6 +168,7 @@ government_structure:
     by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -160,6 +179,7 @@ government_structure:
     Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-rscons
   confidence: medium
+  verification: read-in-full
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -170,6 +190,7 @@ governing_documents:
   link: https://narf.org/nill/codes/reno-sparks/index.html
   source: national-indian-law-library-code-codes-reno-sparks
   confidence: medium
+  verification: title-only
   as_of: '2012'
   locator: page heading
   note: 'Received: July 2012. The National Indian Law Library page gives the table of contents (and may
@@ -180,6 +201,7 @@ governing_documents:
   link: https://narf.org/nill/codes/reno-sparks/index.html
   source: national-indian-law-library-code-codes-reno-sparks
   confidence: medium
+  verification: title-only
   as_of: '2012'
   locator: page heading
   note: 'Received: July 2012. The National Indian Law Library page gives the table of contents (and may
@@ -189,6 +211,7 @@ governing_documents:
   link: https://www.rsic.org/205/Tribal-Ordinances
   source: national-indian-law-library-reno-sparks
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
@@ -198,6 +221,7 @@ governing_documents:
   link: https://www.rsic.org/205/Tribal-Ordinances
   source: national-indian-law-library-reno-sparks
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
@@ -206,6 +230,7 @@ governing_documents:
   title: Reno-Sparks Indian Colony Constitution and Bylaws
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Nevada section, entry 'Reno-Sparks Indian Colony'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -215,6 +240,7 @@ governing_documents:
   title: Reno-Sparks Indian Colony Tribal Ordinances
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Nevada section, entry 'Reno-Sparks Indian Colony'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -226,6 +252,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/rschrtr.html
   source: university-of-oklahoma-indian-reorganization-act-rschrtr
   confidence: medium
+  verification: title-only
   as_of: '1938'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -234,6 +261,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/rscons.html
   source: university-of-oklahoma-indian-reorganization-act-rscons
   confidence: medium
+  verification: title-only
   as_of: '1936'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -241,6 +269,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-reno-sparks
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
@@ -250,6 +279,7 @@ justice_institutions:
   name: Reno-Sparks Indian Colony Court Services
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Nevada section, entry 'Reno-Sparks Indian Colony'
   note: 'Link check 2026-11-21: the link the source gives (http://www.rsic.org/rsic-services/court-services/)
@@ -333,6 +363,7 @@ gaming:
     federal_register_citation: 61 FR 4478
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1996-02-06'
     locator: result page 25 (?page=25), row 10
     note: 'Listed as: "Reno-Sparks Indian Colony Tribal State Gaming Compact" (Deemed Approved); list''s
@@ -346,6 +377,7 @@ gaming:
     federal_register_citation: 70 FR 13536
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2005-03-21'
     locator: result page 25 (?page=25), row 11
     note: 'Listed as: "Reno-Sparks Indian Colony Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -363,6 +395,7 @@ gaming:
       of Sovereign Immunity)
     source: compact-nv-washoe-tribe-of-nevada-and-california-2018
     confidence: medium
+    verification: inferred
     as_of: '2018-01-18'
     locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver of Sovereign Immunity)
     note: state model compact; nation-specific text not checked. Read from the 2018 Washoe Tribe compact;
@@ -373,6 +406,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10908&ind=10926
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-11-08'
     locator: table row 228, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 228 lists the nation
@@ -385,12 +419,14 @@ jurisdiction:
     1975. (40 FR 27501)
   source: federal-register-1975-nevada-retrocession
   confidence: high
+  verification: read-in-full
   as_of: '1975-07-01'
 - topic: indian-child-welfare-act
   value: designated-agent-listed
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Reno-Sparks Indian Colony, Nevada Confidence lowered from high by the lead session:
@@ -400,6 +436,7 @@ memberships:
 - organization: Inter-Tribal Council of Nevada
   source: inter-tribal-council-of-nevada-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Reno Sparks Indian Colony". Name matched to the roster entry.
 review:

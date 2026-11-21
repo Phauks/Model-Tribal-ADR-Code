@@ -6,11 +6,13 @@ names:
   - name: Hayfork Band
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     locator: 'Petitioner #93'
   - name: Nor-El-Muk Band of Wintu Indians
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     locator: 'Petitioner #93'
   official_source: ofa-list-of-petitioners-by-state-2013
@@ -21,6 +23,7 @@ recognition:
   petition_stage: Letter of Intent to Petition 01/05/1984
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   locator: 'Petitioner #93'
   note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
@@ -31,6 +34,7 @@ states:
   presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.

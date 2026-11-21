@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Isleta, New Mexico
 - state: NM
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1625
   note: 'Census area with land in this state: Isleta Pueblo (code 1625). Area matched to the nation by
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1625
   note: Matched by name. Census class code D2.
@@ -41,6 +45,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1625, field POP100
   note: 'Census area: Isleta Pueblo (code 1625). Everyone counted as living in the area in the 2020 Census,
@@ -49,6 +54,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3236 (Pueblo of Isleta alone or in any combination), GEOID 0100000US
     (United States)
@@ -59,6 +65,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Isleta Pueblo', PDF page 7, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -67,6 +74,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 86, row T39600 'Pueblo of Isleta'
   note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
@@ -79,6 +87,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Isleta, New Mexico
 - kind: physical-address
@@ -86,6 +95,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Isleta, New Mexico
 - kind: mailing-address
@@ -93,6 +103,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Isleta, New Mexico
 - kind: phone
@@ -100,6 +111,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Isleta, New Mexico
 - kind: fax
@@ -107,6 +119,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Isleta, New Mexico
 languages:
@@ -114,6 +127,7 @@ languages:
   language_tag: tix
   source: pueblo-of-isleta-tribal-programs-tiwa-language-program
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: '"The Tiwa Language Program offers Tiwa language instruction"'
 federal_administration:
@@ -121,6 +135,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Southern Pueblos Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Isleta, New Mexico
 government_structure:
@@ -129,6 +144,7 @@ government_structure:
     18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-isnmcons
   confidence: medium
+  verification: read-in-full
   as_of: '1947'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -137,6 +153,7 @@ governing_documents:
   title: Tribal code
   source: national-indian-law-library-pueblo-isleta
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
@@ -147,6 +164,7 @@ governing_documents:
   link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
   source: national-indian-law-library-pueblo-isleta
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
@@ -156,6 +174,7 @@ governing_documents:
   link: https://www.isletapueblo.com/government/tribal-council/poi-regulations-ordinances-standards/
   source: national-indian-law-library-pueblo-isleta
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
@@ -164,6 +183,7 @@ governing_documents:
   title: Pueblo of Isleta Tribal Constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: New Mexico section, entry 'Pueblo of Isleta'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -175,6 +195,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/isnmcons.html
   source: university-of-oklahoma-indian-reorganization-act-isnmcons
   confidence: medium
+  verification: title-only
   as_of: '1947'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -182,6 +203,7 @@ justice_institutions:
   name: Pueblo of Isleta Peacemaking Program
   source: narf-ipi-tribal-peacemaking-laws
   confidence: medium
+  verification: title-only
   as_of: '2025-09-29'
   note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
     whether it currently operates was not checked.
@@ -189,6 +211,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-pueblo-isleta
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
@@ -198,6 +221,7 @@ justice_institutions:
   name: Pueblo of Isleta Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: New Mexico section, entry 'Pueblo of Isleta'
   note: 'Link check 2026-11-21: the link the source gives (http://www.isletapueblo.com/tribal-court.html)
@@ -227,6 +251,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Isleta-Pueblo-Resolution-for-Peacemaking-Program-and-Rules.pdf
     source: isleta-resolution-2020-028-peacemaking
     confidence: high
+    verification: read-in-full
     as_of: '2020-06-11'
     locator: Resolution 2020-028; Rules 1, 2, 3, 4, 5(b)-(f), 6
     note: Peacemakers must be enrolled members who understand Pueblo customs and traditions, are contracted
@@ -337,6 +362,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Isleta-Pueblo-Resolution-for-Peacemaking-Program-and-Rules.pdf
     source: isleta-resolution-2020-028-peacemaking
     confidence: high
+    verification: read-in-full
     as_of: '2020-06-11'
     locator: Rule 3(d)-(f)
     note: The rules require training and pay a flat fee for meeting or training attendance; the training
@@ -349,6 +375,7 @@ gaming:
     federal_register_citation: 80 FR 44992
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-07-28'
     locator: result page 22 (?page=22), row 18
     note: 'Listed as: "Pueblo of Isleta Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
@@ -362,6 +389,7 @@ gaming:
     federal_register_citation: 72 FR 36717
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-07-05'
     locator: result page 22 (?page=22), row 19
     note: 'Listed as: "Pueblo of Isleta Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -375,6 +403,7 @@ gaming:
     federal_register_citation: 62 FR 45867
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1997-08-29'
     locator: result page 22 (?page=22), row 20
     note: 'Listed as: "Pueblo of Isleta Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
@@ -388,6 +417,7 @@ gaming:
     federal_register_citation: 60 FR 15194
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1995-03-22'
     locator: result page 22 (?page=22), row 21
     note: 'Listed as: "Pueblo of Isleta Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -401,6 +431,7 @@ gaming:
     federal_register_citation: 66 FR 64856
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2001-12-14'
     locator: result page 22 (?page=22), row 22
     note: 'Listed as: "Pueblo of Isleta Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -417,6 +448,7 @@ gaming:
     dispute_resolution_locator: Section 7 (Dispute Resolution)
     source: compact-nm-pueblo-of-santa-ana-2016
     confidence: medium
+    verification: inferred
     as_of: '2016-12-30'
     locator: Section 7 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
@@ -428,6 +460,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10726&ind=10761
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1994-04-22'
     locator: table row 202, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 202 lists the nation
@@ -436,6 +469,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10743&ind=10762
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1995-04-11'
     locator: table row 202, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 202 lists the nation
@@ -444,6 +478,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10744&ind=10763
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1995-05-31'
     locator: table row 202, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 202 lists the nation
@@ -452,6 +487,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10745&ind=10764
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-04-18'
     locator: table row 202, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 202 lists the nation
@@ -460,6 +496,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10746&ind=10765
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2002-03-06'
     locator: table row 202, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 202 lists the nation
@@ -468,6 +505,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=14192&ind=14193
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2024-11-26'
     locator: table row 202, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 202 lists the nation
@@ -478,6 +516,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Pueblo of Isleta, New Mexico Confidence lowered from high by the lead session: the
@@ -486,6 +525,7 @@ memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Pueblo of Isleta". Name matched to the roster entry.
 review:

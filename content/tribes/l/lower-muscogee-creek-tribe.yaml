@@ -6,6 +6,7 @@ names:
   - name: Lower Muscogee Creek Tama Tribal Town
     source: census-2020-ddhca-popgroup-codes
     confidence: low
+    verification: inferred
     as_of: '2020'
     locator: POPGROUP code 06B
     note: Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting
@@ -13,16 +14,19 @@ names:
   - name: Lower Muskogee Creek Tribe - East of the Mississippi, Inc.
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     locator: 'Petitioner #8'
     note: Name as printed on the Office of Federal Acknowledgment list by state.
   - name: Lower Muskogee Creek Tribe
     source: alabama-indian-affairs-commission-state-recognized-tribes-compilation
     confidence: low
+    verification: bulk-import
     as_of: '2001'
   - name: Lower Muscogee Creek Tribe -- East of the Mississippi
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     note: Name used for this group in the cited source; matched to this record by name and state.
   official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
@@ -30,6 +34,7 @@ recognition:
 - type: unrecognized
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1; Table 3
   note: 'GAO Table 1 lists "Lower Muskogee Creek Tribe" among 26 non-federally recognized tribes that
@@ -41,6 +46,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: low
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State American Indian reservation; area 9400
   note: The 2020 Census delineated "Tama (state) Reservation" (State American Indian reservation). The
@@ -55,6 +61,7 @@ recognition:
     Acknowledgment effective 12/21/1981 46 FR 51652
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   locator: 'Petitioner #8'
   note: Decision from the Petitions Resolved page; citation and date from the Office of Federal Acknowledgment
@@ -65,6 +72,7 @@ recognition:
     by House Bill 43, 2024)
   source: georgia-code-44-12-300
   confidence: high
+  verification: read-in-full
   as_of: '2022'
   locator: Section 44-12-300(a)
   note: '''The State of Georgia officially recognizes as legitimate American Indian tribes of Georgia
@@ -74,6 +82,7 @@ recognition:
   legal_basis: Official Code of Georgia Annotated Section 44-12-300(a) as amended by House Bill 43 (2024)
   source: georgia-house-bill-43-2024
   confidence: high
+  verification: read-in-full
   as_of: '2024'
   locator: Section 2
 states:
@@ -81,6 +90,7 @@ states:
   presence: other
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1, State column
   note: State as listed by GAO.
@@ -88,6 +98,7 @@ states:
   presence: land
   source: census-aiannh-codes-by-state-2020
   confidence: low
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9400
   note: State reservation land.
@@ -95,6 +106,7 @@ states:
   presence: other
   source: ofa-petitions-resolved
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
@@ -102,6 +114,7 @@ states:
   presence: other
   source: georgia-code-44-12-300
   confidence: high
+  verification: inferred
   as_of: '2022'
 census_areas:
 - geographic_identifier: '9400'
@@ -110,6 +123,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: low
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9400, GEOID 9400R
   note: Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched

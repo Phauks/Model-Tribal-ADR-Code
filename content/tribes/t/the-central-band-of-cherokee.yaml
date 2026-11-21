@@ -6,12 +6,14 @@ names:
   - name: Cherokee's of Lawrence County, Tennessee, Sugar Creek Band of the SECCI
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     locator: 'Petitioner #227'
   alternate:
   - name: Central Band of Cherokee
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     locator: 'Petitioner #227'
     note: Name as printed on the Office of Federal Acknowledgment list by state.
@@ -23,6 +25,7 @@ recognition:
   petition_stage: Denied (Petitions Resolved page); Denied acknowledgment through 25 CFR 83 (eff. 7/24/12)
   source: federal-register-2012-7646
   confidence: high
+  verification: bulk-import
   as_of: '2012-03-30'
   locator: 'Petitioner #227'
   note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
@@ -33,6 +36,7 @@ states:
   presence: other
   source: ofa-petitions-resolved
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.

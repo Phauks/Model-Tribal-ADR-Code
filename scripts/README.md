@@ -51,3 +51,14 @@ Run by hand, never in continuous integration:
 | Script | Does | Needs |
 | --- | --- | --- |
 | `review/provision_pre_review.py` | `gather` fetches the source cited by every provision record in `content/tribes/` into a local cache and writes evidence batches for reviewers; `merge` combines the reviewers' verdicts into the reviewable files in [`research/reviews/`](../research/reviews/README.md). It never changes a profile | `pip install -r scripts/requirements.txt`, plus `curl` and `pdftotext` for `gather` |
+
+## Data gap review
+
+Run by hand, never in continuous integration. They follow up rows 1, 7 and
+11 of the [dataset gap audit](../research/analyses/2026-11-21-dataset-gap-audit.md)
+and fill in the `verification` level from [decision record 0014](../docs/decisions/0014-verification-levels-and-record-lint.md).
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `review/name_matches.py` | `gather` lists every profile fact joined to a nation by name, beside the label its source uses, and marks the exact matches; it never changes a profile | `pip install -r scripts/requirements.txt` |
+| `review/gap_review.py` | `merge` combines the reviewers' verdicts into the reviewable files in [`research/reviews/`](../research/reviews/README.md); `levels` sets `verification` on every profile fact that has none (except provisions) from the fact's note or its group's level in `research/reviews/2026-11-21-verification-levels.json`, adding only that key | `pip install -r scripts/requirements.txt` |

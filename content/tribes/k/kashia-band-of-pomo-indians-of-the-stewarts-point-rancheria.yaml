@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kashia Band of Pomo Indians of the Stewarts Point Rancheria, California
 - state: CA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3985
   note: 'Census area with land in this state: Stewarts Point Rancheria and Off-Reservation Trust Land
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3985
   note: Matched by name. Census class code D1.
@@ -41,12 +45,14 @@ population:
   kind: citizens
   source: stewartspoint-wp2
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'Homepage: ''approximately 860 members''. Undated; as_of is access date.'
 - count: 86
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3985, field POP100
   note: 'Census area: Stewarts Point Rancheria and Off-Reservation Trust Land (code 3985). Everyone counted
@@ -56,6 +62,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3049 (Kashia Band of Pomo Indians of the Stewarts Point Rancheria alone
     or in any combination), GEOID 0100000US (United States)
@@ -66,6 +73,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Kashia Band of Pomo Indians, Stewarts Point Rancheria', PDF
     page 7, Enrollment column
@@ -77,6 +85,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kashia Band of Pomo Indians of the Stewarts Point Rancheria, California
 - kind: physical-address
@@ -84,6 +93,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kashia Band of Pomo Indians of the Stewarts Point Rancheria, California
 - kind: mailing-address
@@ -91,6 +101,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kashia Band of Pomo Indians of the Stewarts Point Rancheria, California
 - kind: phone
@@ -98,6 +109,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kashia Band of Pomo Indians of the Stewarts Point Rancheria, California
 - kind: fax
@@ -105,6 +117,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kashia Band of Pomo Indians of the Stewarts Point Rancheria, California
 - kind: email-general
@@ -112,6 +125,7 @@ contacts:
   label: General office email shown on the nation's website
   source: stewartspoint-wp2
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
 federal_administration:
@@ -119,6 +133,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Central California Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kashia Band of Pomo Indians of the Stewarts Point Rancheria, California
 government_structure:
@@ -128,6 +143,7 @@ government_structure:
     Act of June 18, 1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -138,6 +154,7 @@ government_structure:
     1936) states it was adopted under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-pomocons
   confidence: medium
+  verification: read-in-full
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -147,6 +164,7 @@ governing_documents:
   link: https://narf.org/nill/codes/kashia_pomo/index.html
   source: national-indian-law-library-code-codes-kashia-pomo
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: page heading
   note: The National Indian Law Library page gives the table of contents (and may link to the nation's
@@ -156,6 +174,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/kashia_pomo/index.html
   source: national-indian-law-library-constitution-constitutions-kashia-pomo
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: page heading
   note: The National Indian Law Library page gives the table of contents (and may link to the nation's
@@ -165,6 +184,7 @@ governing_documents:
   link: http://stewartspoint.org/wp/tribal-codes/
   source: national-indian-law-library-kashia-pomo
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -174,6 +194,7 @@ governing_documents:
   link: http://stewartspoint.org/wp/tribal-codes/
   source: national-indian-law-library-kashia-pomo
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -184,6 +205,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/pomocons.html
   source: university-of-oklahoma-indian-reorganization-act-pomocons
   confidence: medium
+  verification: title-only
   as_of: '1936'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 gaming:
@@ -192,6 +214,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10032&ind=10045
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2009-10-27'
     locator: table row 115, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 115 lists the nation
@@ -205,6 +228,7 @@ jurisdiction:
     country within California; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
   note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
@@ -214,6 +238,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Kashia Band of Pomo Indians of the Stewarts Point Rancheria, California Confidence

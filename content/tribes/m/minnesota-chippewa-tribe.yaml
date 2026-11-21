@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
   note: 'The notice adds in parentheses: Six component reservations: Bois Forte Band (Nett Lake); Fond
@@ -18,6 +19,7 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake);
     Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
@@ -25,6 +27,7 @@ states:
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0335, 1125, 1355, 1940, 2270, 2285,
     4595
@@ -38,6 +41,7 @@ states:
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1125
   note: 'Census area with land in this state: Fond du Lac Reservation and Off-Reservation Trust Land (code
@@ -49,6 +53,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0335
   note: 'Matched by name. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six
@@ -60,6 +65,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1125
   note: 'Matched by name. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six
@@ -71,6 +77,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1355
   note: 'Matched by name. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six
@@ -82,6 +89,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1940
   note: 'Matched by name. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six
@@ -93,6 +101,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2270
   note: 'Matched by name. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six
@@ -104,6 +113,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2285
   note: 'Matched by name. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six
@@ -115,6 +125,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4595
   note: 'Matched by name. Component reservation of the Minnesota Chippewa Tribe (the 2026 list names six
@@ -125,6 +136,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0335, field POP100
   note: 'Census area: Bois Forte Reservation and Off-Reservation Trust Land (code 0335). Everyone counted
@@ -136,6 +148,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1125, field POP100
   note: 'Census area: Fond du Lac Reservation and Off-Reservation Trust Land (code 1125). Everyone counted
@@ -147,6 +160,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1355, field POP100
   note: 'Census area: Grand Portage Reservation and Off-Reservation Trust Land (code 1355). Everyone counted
@@ -158,6 +172,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1940, field POP100
   note: 'Census area: Leech Lake Reservation and Off-Reservation Trust Land (code 1940). Everyone counted
@@ -169,6 +184,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2270, field POP100
   note: 'Census area: Mille Lacs Reservation and Off-Reservation Trust Land (code 2270). Everyone counted
@@ -180,6 +196,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2285, field POP100
   note: 'Census area: Minnesota Chippewa Trust Land (code 2285). Everyone counted as living in the area
@@ -190,6 +207,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4595, field POP100
   note: 'Census area: White Earth Reservation and Off-Reservation Trust Land (code 4595). Everyone counted
@@ -203,6 +221,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake);
     Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
@@ -211,6 +230,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake);
     Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
@@ -219,6 +239,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake);
     Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
@@ -227,6 +248,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake);
     Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
@@ -235,6 +257,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake);
     Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
@@ -243,6 +266,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Minnesota Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: 'Minnesota Chippewa Tribe, Minnesota (Six component reservations: Bois Forte Band (Nett Lake);
     Fond du Lac Band; Grand Portage Band; Leech Lake Band; Mille Lacs Band; White Earth Band)'
@@ -252,6 +276,7 @@ government_structure:
     the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -262,6 +287,7 @@ government_structure:
     Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-mnchipcons
   confidence: medium
+  verification: read-in-full
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -272,6 +298,7 @@ governing_documents:
   link: https://narf.org/nill/codes/mille_lacs_band/index.html
   source: national-indian-law-library-code-codes-mille-lacs-band
   confidence: medium
+  verification: title-only
   as_of: '2015'
   locator: page heading
   note: 'Component reservation of the Minnesota Chippewa Tribe: Mille Lacs Band of the Minnesota Chippewa
@@ -283,6 +310,7 @@ governing_documents:
   link: https://narf.org/nill/codes/MN_chippewa_leech_lake/index.html
   source: national-indian-law-library-code-codes-mn-chippewa-leech-lake
   confidence: medium
+  verification: title-only
   as_of: '2014'
   locator: page heading
   note: 'Component reservation of the Minnesota Chippewa Tribe: Leech Lake Band of the Minnesota Chippewa
@@ -294,6 +322,7 @@ governing_documents:
   link: https://narf.org/nill/codes/white_earth/index.html
   source: national-indian-law-library-code-codes-white-earth
   confidence: medium
+  verification: title-only
   as_of: '2014'
   locator: page heading
   note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band of the Minnesota Chippewa
@@ -305,6 +334,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/minn_chippewa/index.html
   source: national-indian-law-library-constitution-constitutions-minn-chippewa
   confidence: medium
+  verification: title-only
   as_of: '1972'
   locator: page heading
   note: 'Copyright: 2000; last amended: 1972. The National Indian Law Library page gives the table of
@@ -315,6 +345,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/minn_chippewa_white_earth/index.html
   source: national-indian-law-library-constitution-constitutions-minn-chippewa-white-earth
   confidence: medium
+  verification: title-only
   as_of: '2013'
   locator: page heading
   note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band of the Minnesota Chippewa
@@ -326,6 +357,7 @@ governing_documents:
   link: https://mnchippewatribe.org/governance/constitution/
   source: national-indian-law-library-minn-chiippewa-bois-forte
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Minnesota
@@ -335,6 +367,7 @@ governing_documents:
   link: https://www.fdlband.org/government/ordinances.php
   source: national-indian-law-library-minn-chippewa-fond-du-lac
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Component reservation of the Minnesota Chippewa Tribe: Fond du Lac Band of the Minnesota Chippewa
@@ -345,6 +378,7 @@ governing_documents:
   link: https://www.epa.gov/wqs-tech/epa-approvals-tribal-water-quality-standards
   source: national-indian-law-library-minn-chippewa-fond-du-lac
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Component reservation of the Minnesota Chippewa Tribe: Fond du Lac Band of the Minnesota Chippewa
@@ -355,6 +389,7 @@ governing_documents:
   link: https://mnchippewatribe.org/governance/constitution/
   source: national-indian-law-library-minn-chippewa-fond-du-lac
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Component reservation of the Minnesota Chippewa Tribe: Fond du Lac Band of the Minnesota Chippewa
@@ -365,6 +400,7 @@ governing_documents:
   link: https://web.archive.org/web/20211019172320/https://maiba.org/pdf/GrandPortageJudicialCode.pdf
   source: national-indian-law-library-minn-chippewa-grand-portage
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Component reservation of the Minnesota Chippewa Tribe: Grand Portage Band of the Minnesota Chippewa
@@ -375,6 +411,7 @@ governing_documents:
   link: http://water.epa.gov/scitech/swguidance/standards/upload/2006_11_06_standards_wqslibrary_tribes_grand-portage-band.pdf
   source: national-indian-law-library-minn-chippewa-grand-portage
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Component reservation of the Minnesota Chippewa Tribe: Grand Portage Band of the Minnesota Chippewa
@@ -384,6 +421,7 @@ governing_documents:
   title: Constitution
   source: national-indian-law-library-minn-chippewa-grand-portage
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Component reservation of the Minnesota Chippewa Tribe: Grand Portage Band of the Minnesota Chippewa
@@ -395,6 +433,7 @@ governing_documents:
   link: https://www.llojibwe.org/
   source: national-indian-law-library-minn-chippewa-leech-lake
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Component reservation of the Minnesota Chippewa Tribe: Leech Lake Band of the Minnesota Chippewa
@@ -405,6 +444,7 @@ governing_documents:
   link: https://mnchippewatribe.org/governance/constitution/
   source: national-indian-law-library-minn-chippewa-leech-lake
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Component reservation of the Minnesota Chippewa Tribe: Leech Lake Band of the Minnesota Chippewa
@@ -415,6 +455,7 @@ governing_documents:
   link: https://millelacsband.com/government/tribal-register/constitution-and-band-statutes
   source: national-indian-law-library-minn-chippewa-mille-lacs
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Component reservation of the Minnesota Chippewa Tribe: Mille Lacs Band of the Minnesota Chippewa
@@ -425,6 +466,7 @@ governing_documents:
   link: https://mnchippewatribe.org/governance/constitution/
   source: national-indian-law-library-minn-chippewa-mille-lacs
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Component reservation of the Minnesota Chippewa Tribe: Mille Lacs Band of the Minnesota Chippewa
@@ -435,6 +477,7 @@ governing_documents:
   link: https://www.whiteearth.com/divisions/judicial-services/codes-ordinances
   source: national-indian-law-library-minn-chippewa-white-earth
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band of the Minnesota Chippewa
@@ -445,6 +488,7 @@ governing_documents:
   link: https://whiteearth.com/rbc/resolutions
   source: national-indian-law-library-minn-chippewa-white-earth
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band of the Minnesota Chippewa
@@ -454,6 +498,7 @@ governing_documents:
   title: Constitution
   source: national-indian-law-library-minn-chippewa-white-earth
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band of the Minnesota Chippewa
@@ -465,6 +510,7 @@ governing_documents:
   link: https://mnchippewatribe.org/governance/constitution/
   source: national-indian-law-library-minnesota-chippewa
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -473,6 +519,7 @@ governing_documents:
   title: Minnesota Chippewa Tribe Constitution and Bylaws
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Minnesota section, entry 'Bois Forte Band of Chippewa'
   note: 'Component reservation of the Minnesota Chippewa Tribe: Bois Forte Band. Title is the link text
@@ -484,6 +531,7 @@ governing_documents:
   link: http://www.mnchippewatribe.org/constitution.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Minnesota section, entry 'Bois Forte Band of Chippewa'
   note: 'Component reservation of the Minnesota Chippewa Tribe: Bois Forte Band. Title is the link text
@@ -493,6 +541,7 @@ governing_documents:
   link: http://www.fdlrez.com/government/fdlordinances.htm
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Minnesota section, entry 'Fond du Lac Band of Lake Superior Chippewa'
   note: 'Component reservation of the Minnesota Chippewa Tribe: Fond du Lac Band. Title is the link text
@@ -502,6 +551,7 @@ governing_documents:
   link: http://www.llojibwe.org/court/tcCodes.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Minnesota section, entry 'Leech Lake Band of Ojibwe'
   note: 'Component reservation of the Minnesota Chippewa Tribe: Leech Lake Band. Title is the link text
@@ -510,6 +560,7 @@ governing_documents:
   title: White Earth Nation Codes/Resolutions
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Minnesota section, entry 'White Earth Nation'
   note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band. Title is the link text
@@ -522,6 +573,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/millefnl.html
   source: university-of-oklahoma-indian-reorganization-act-millefnl
   confidence: medium
+  verification: title-only
   as_of: '1936'
   note: 'Component reservation of the Minnesota Chippewa Tribe: Mille Lacs Band. Historical text as originally
     approved; the nation may have amended or replaced it since.'
@@ -531,6 +583,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/mnchipchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-mnchipchrtr
   confidence: medium
+  verification: title-only
   as_of: '1937'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -539,6 +592,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/mnchipcons.html
   source: university-of-oklahoma-indian-reorganization-act-mnchipcons
   confidence: medium
+  verification: title-only
   as_of: '1936'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -546,6 +600,7 @@ justice_institutions:
   name: Peacemaker Tribunal (BaMeNim Anishinaabeg Program), Leech Lake Band
   source: narf-ipi-tribal-peacemaking-laws
   confidence: medium
+  verification: title-only
   as_of: '2025-09-29'
   note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
     whether it currently operates was not checked.
@@ -553,6 +608,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-minn-chiippewa-bois-forte
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
@@ -563,6 +619,7 @@ justice_institutions:
   link: https://www.fdlband.org/government/tribal_court/index.php
   source: national-indian-law-library-minn-chippewa-fond-du-lac
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'Component reservation of the Minnesota Chippewa Tribe: Fond du Lac Band of the Minnesota Chippewa
@@ -571,6 +628,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-minn-chippewa-grand-portage
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'Component reservation of the Minnesota Chippewa Tribe: Grand Portage Band of the Minnesota Chippewa
@@ -579,6 +637,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-minn-chippewa-leech-lake
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'Component reservation of the Minnesota Chippewa Tribe: Leech Lake Band of the Minnesota Chippewa
@@ -588,6 +647,7 @@ justice_institutions:
   link: https://millelacsband.com/government/judicial
   source: national-indian-law-library-minn-chippewa-mille-lacs
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'Component reservation of the Minnesota Chippewa Tribe: Mille Lacs Band of the Minnesota Chippewa
@@ -596,6 +656,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-minn-chippewa-white-earth
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band of the Minnesota Chippewa
@@ -606,6 +667,7 @@ justice_institutions:
   name: Bois Forte Band of Chippewa Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Minnesota section, entry 'Bois Forte Band of Chippewa'
   note: 'Component reservation of the Minnesota Chippewa Tribe: Bois Forte Band Link check 2026-11-21:
@@ -616,6 +678,7 @@ justice_institutions:
   link: http://www.fdlrez.com/government/courtmain.htm
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Minnesota section, entry 'Fond du Lac Band of Lake Superior Chippewa'
   note: 'Component reservation of the Minnesota Chippewa Tribe: Fond du Lac Band'
@@ -623,6 +686,7 @@ justice_institutions:
   name: Grand Portage Band of Chippewa Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Minnesota section, entry 'Grand Portage Band of Chippewa Indians'
   note: 'Component reservation of the Minnesota Chippewa Tribe: Grand Portage Band'
@@ -631,6 +695,7 @@ justice_institutions:
   link: http://www.llojibwe.org/court/court.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Minnesota section, entry 'Leech Lake Band of Ojibwe'
   note: 'Component reservation of the Minnesota Chippewa Tribe: Leech Lake Band'
@@ -638,6 +703,7 @@ justice_institutions:
   name: Mille Lacs Band of Ojibwe Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Minnesota section, entry 'Mille Lacs Band of Ojibwe Tribe'
   note: 'Component reservation of the Minnesota Chippewa Tribe: Mille Lacs Band Link check 2026-11-21:
@@ -646,6 +712,7 @@ justice_institutions:
   name: White Earth Nation Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Minnesota section, entry 'White Earth Nation'
   note: 'Component reservation of the Minnesota Chippewa Tribe: White Earth Band Link check 2026-11-21:
@@ -673,6 +740,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/White-Earth-juvenile.justice.code_.pdf
     source: white-earth-juvenile-justice-code
     confidence: medium
+    verification: read-in-full
     as_of: '2025'
     locator: Chapter 12A; definitions 30 and 36
     note: 'White Earth is a component band of the Minnesota Chippewa Tribe on the federal list; recorded
@@ -698,6 +766,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Leech-Lake-tc_coTITLE02-RulesofProcedure.pdf
     source: leech-lake-judicial-code-title-2-rules
     confidence: medium
+    verification: inferred
     as_of: '2000-11-21'
     locator: Title 2, Rule 58
     note: 'Leech Lake is a component band of the Minnesota Chippewa Tribe on the federal list. Kind recorded
@@ -720,6 +789,7 @@ dispute_resolution:
     link: https://mlbo.dev/content/3-government/17-statutes-policies/mltitle05judbranch.pdf
     source: mille-lacs-title-5-judicial-branch
     confidence: medium
+    verification: read-in-full
     as_of: '2011-06-27'
     locator: 5 MLBSA §§ 103, 111(c), 114(h)
     note: 'The statute text read does not say how a case reaches a panel of elders, how elders are chosen,
@@ -745,6 +815,7 @@ dispute_resolution:
     link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/5dcba5f024-1727297538/judicial.code.pdf
     source: white-earth-judicial-code
     confidence: medium
+    verification: read-in-full
     as_of: '2021-05-04'
     locator: Chapter I § 1; Chapter III § 6; Chapter VII § 6(b); Chapter VIII §§ 1-7
     note: 'Read by OCR. The chapter applies to all actions within the court''s jurisdiction; only juveniles
@@ -1159,6 +1230,7 @@ dispute_resolution:
     link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/f836051d7d-1794247063/tribal-housing-ordinance-revised-june-17-2019.pdf
     source: white-earth-tribal-housing-ordinance-2019
     confidence: medium
+    verification: read-in-full
     as_of: '2019-06-17'
     locator: Article IX, Sections 1-2
     note: 'Scanned text with OCR errors; meaning read from the garbled text layer. Component band: White
@@ -1172,6 +1244,7 @@ dispute_resolution:
     link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/f836051d7d-1794247063/tribal-housing-ordinance-revised-june-17-2019.pdf
     source: white-earth-tribal-housing-ordinance-2019
     confidence: medium
+    verification: read-in-full
     as_of: '2019-06-17'
     locator: Article IX, Sections 1-2
     note: 'Scanned text with OCR errors; meaning read from the garbled text layer. Component band: White
@@ -1184,6 +1257,7 @@ dispute_resolution:
     link: https://www.whiteearth.com/media/pages/divisions/judicial-services/codes-ordinances/17cff66928-1727297550/tribal-utilities-code.pdf
     source: white-earth-title-23-utilities-code
     confidence: medium
+    verification: read-in-full
     as_of: 2022-02
     locator: § 1.11(1)-(3)
     note: 'Component band: White Earth Band of Ojibwe. Context: Utilities code (regulatory commission
@@ -1196,6 +1270,7 @@ gaming:
     federal_register_citation: 89 FR 77170
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '2024-09-20'
     locator: result page 17 (?page=17), row 1
     note: 'Listed as: "Bois Forte Band of Minnesota Chippew Tribe (Nett Lake) Tribal State Gaming Compact"
@@ -1211,6 +1286,7 @@ gaming:
     approved: '1990-04-02'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '1990-04-02'
     locator: result page 17 (?page=17), row 2
     note: 'Listed as: "Bois Forte Band of Minnesota Chippewa Tribe (Nett Lake) Tribal State Gaming Compact"
@@ -1224,6 +1300,7 @@ gaming:
     approved: '1991-10-03'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '1991-10-03'
     locator: result page 17 (?page=17), row 3
     note: 'Listed as: "Bois Forte Band of Minnesota Chippewa Tribe (Nett Lake) Tribal State Gaming Compact"
@@ -1238,6 +1315,7 @@ gaming:
     federal_register_citation: 89 FR 83698
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2024-10-17'
     locator: result page 17 (?page=17), row 6
     note: 'Listed as: "Fond du Lac Band of Minnesota Chippewa Tribe Tribal State Gaming Compact" (Approve);
@@ -1251,6 +1329,7 @@ gaming:
     approved: '1990-08-20'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '1990-08-20'
     locator: result page 17 (?page=17), row 9
     note: 'Listed as: "Leech Lake Band of Minnesota Chippewa Tribe Tribal State Gaming Compact" (Approve);
@@ -1264,6 +1343,7 @@ gaming:
     federal_register_citation: 88 FR 88639
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '2023-12-22'
     locator: result page 17 (?page=17), row 11
     note: 'Listed as: "Leech Lake Band of Minnesota Chippewa Tribe Tribal State Gaming Compact" (Approve);
@@ -1279,6 +1359,7 @@ gaming:
     federal_register_citation: 89 FR 67958
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '2024-08-22'
     locator: result page 18 (?page=18), row 1
     note: 'Listed as: "Mille Lacs Band of Minnesota Chippewa Tribe Tribal State Gaming Compact" (Approve);
@@ -1293,6 +1374,7 @@ gaming:
     approved: '1990-06-29'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '1990-06-29'
     locator: result page 18 (?page=18), row 2
     note: 'Listed as: "Mille Lacs Band of Minnesota Chippewa Tribes Tribal State Gaming Compact" (Approve);
@@ -1305,6 +1387,7 @@ gaming:
     approved: '1991-11-13'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '1991-11-13'
     locator: result page 18 (?page=18), row 22
     note: 'Listed as: "White Earth Band of Minnesota Chippewa Tribe Tribal Gaming Compact" (Approve);
@@ -1318,6 +1401,7 @@ gaming:
     federal_register_citation: 89 FR 66136
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '2024-08-14'
     locator: result page 18 (?page=18), row 24
     note: 'Listed as: "White Earth Band of Minnesota Chippewa Tribe Tribal State Gaming Compact" (Approve);
@@ -1336,6 +1420,7 @@ gaming:
     dispute_resolution_locator: Section 4.6 (Demand for Remedies for Non-Complying Video Games of Chance)
     source: compact-mn-prairie-island-indian-community-in-the-s-1990
     confidence: medium
+    verification: inferred
     as_of: '1990-04-02'
     locator: Section 4.6 (Demand for Remedies for Non-Complying Video Games of Chance)
     note: state model compact; nation-specific text not checked. Read from the 1990 Prairie Island Indian
@@ -1347,6 +1432,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=3432&ind=3434
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1993-12-10'
     locator: table row 22, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 22 lists the nation
@@ -1357,6 +1443,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=3433&ind=3435
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2004-03-10'
     locator: table row 22, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 22 lists the nation
@@ -1367,6 +1454,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9799&ind=9828
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1993-09-23'
     locator: table row 82, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 82 lists the nation
@@ -1377,6 +1465,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9816&ind=9829
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2003-06-24'
     locator: table row 82, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 82 lists the nation
@@ -1387,6 +1476,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9817&ind=9830
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2016-07-12'
     locator: table row 82, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 82 lists the nation
@@ -1397,6 +1487,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9873&ind=9889
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1993-11-23'
     locator: table row 91, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 91 lists the nation
@@ -1407,6 +1498,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10144&ind=10163
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1993-12-10'
     locator: table row 133, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 133 lists the nation
@@ -1417,6 +1509,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10145&ind=10164
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2004-02-24'
     locator: table row 133, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 133 lists the nation
@@ -1427,6 +1520,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10158&ind=10165
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2023-05-22'
     locator: table row 133, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 133 lists the nation
@@ -1437,6 +1531,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10296&ind=10311
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1995-05-26'
     locator: table row 154, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 154 lists the nation
@@ -1447,6 +1542,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10297&ind=10312
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2003-09-05'
     locator: table row 154, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 154 lists the nation
@@ -1457,6 +1553,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10298&ind=10313
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2024-02-22'
     locator: table row 154, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 154 lists the nation
@@ -1467,6 +1564,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11515&ind=11539
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1993-11-08'
     locator: table row 307, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 307 lists the nation
@@ -1477,6 +1575,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11516&ind=11540
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1999-12-22'
     locator: table row 307, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 307 lists the nation
@@ -1487,6 +1586,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11517&ind=11541
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2006-11-17'
     locator: table row 307, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 307 lists the nation
@@ -1497,6 +1597,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11520&ind=11542
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2009-10-23'
     locator: table row 307, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 307 lists the nation
@@ -1507,6 +1608,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11519&ind=11543
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2019-08-20'
     locator: table row 307, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 307 lists the nation
@@ -1517,6 +1619,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=14195&ind=14196
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2026-02-12'
     locator: table row 307, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 307 lists the nation
@@ -1527,6 +1630,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Bois Forte Band of Minnesota
       Chippewa Tribe". Facilities as machine-extracted from the report text (verify): Fortune Bay Casino.
@@ -1541,6 +1645,7 @@ jurisdiction:
     country within Minnesota; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Minnesota"
   note: Statute is primary; nation matched to Minnesota by office state in the BIA Tribal Leaders Directory,
@@ -1552,6 +1657,7 @@ jurisdiction:
     of the Minnesota Chippewa Tribe are not covered. (40 FR 4026)'
   source: federal-register-1975-bois-forte-retrocession
   confidence: medium
+  verification: inferred
   as_of: '1975-01-27'
 - topic: public-law-280
   value: concurrent-federal-jurisdiction-accepted
@@ -1560,6 +1666,7 @@ jurisdiction:
     effective January 1, 2017 (81 FR 4335).'
   source: federal-register-2016-mille-lacs-concurrent-federal-jurisdiction
   confidence: high
+  verification: inferred
   as_of: '2017-01-01'
 - topic: public-law-280
   value: concurrent-federal-jurisdiction-accepted
@@ -1567,6 +1674,7 @@ jurisdiction:
     jurisdiction under 18 U.S.C. § 1162(d).'
   source: tribal-court-clearinghouse-public-law-280
   confidence: medium
+  verification: inferred
   as_of: '2013'
   note: Secondary source; the 2016 Office of Tribal Justice compilation (footnote 3) gives June 1, 2013.
 - topic: indian-child-welfare-act
@@ -1575,6 +1683,7 @@ jurisdiction:
     for each of the six component bands.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: bulk-import
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Minnesota Chippewa Tribe - Bois Forte Band (Nett Lake); Minnesota Chippewa Tribe -
@@ -1584,6 +1693,7 @@ memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Bois Forte Reservation Business Committee; Fond du Lac Reservation Business Committee;
     Grand Portage Reservation Business Committee; Leech Lake Reservation Business Committee; Mille Lacs
@@ -1593,6 +1703,7 @@ memberships:
 - organization: Great Lakes Indian Fish and Wildlife Commission
   source: great-lakes-indian-fish-and-wildlife-commission-commission
   confidence: medium
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Nagaajiwanaang" (link https://www.fdlrez.com/); "Misi-zaaga'iganiing" (link https://www.millelacsband.com/).
     Fond du Lac Band and Mille Lacs Band, component bands of the Minnesota Chippewa Tribe.

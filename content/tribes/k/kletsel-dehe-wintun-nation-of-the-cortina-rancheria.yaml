@@ -6,6 +6,7 @@ names:
   - name: Kletsel Dehe Band of Wintun Indians
     source: bia-recognized-entities-2026
     confidence: high
+    verification: bulk-import
     as_of: '2026-01-30'
     locator: 91 Fed. Reg. 4104
     note: Listed in the notice as a previous name.
@@ -16,6 +17,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -23,6 +25,7 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kletsel Dehe Wintun Nation of the Cortina Rancheria (previously listed as Kletsel Dehe Band
     of Wintun Indians)
@@ -30,6 +33,7 @@ states:
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0780
   note: 'Census area with land in this state: Cortina Indian Rancheria (code 0780). Area matched to the
@@ -41,6 +45,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0780
   note: Matched by name. Census class code D2.
@@ -49,6 +54,7 @@ population:
   kind: citizens
   source: kletseldehe-tribal-history
   confidence: low
+  verification: read-in-full
   as_of: '2026-11-21'
   note: Tribal history page says '297 enrolled tribal citizens'; the homepage of the same site says '249
     tribal citizens'. Conflicting; undated.
@@ -56,6 +62,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0780, field POP100
   note: 'Census area: Cortina Indian Rancheria (code 0780). Everyone counted as living in the area in
@@ -64,6 +71,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3065 (Kletsel Dehe Band of Wintun Indians alone or in any combination),
     GEOID 0100000US (United States)
@@ -74,6 +82,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Kletsel Dehe Wintun Nation of the Cortina Rancheria', PDF
     page 7, Enrollment column
@@ -85,6 +94,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kletsel Dehe Wintun Nation of the Cortina Rancheria (previously listed as Kletsel Dehe Band
     of Wintun Indians)
@@ -93,6 +103,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kletsel Dehe Wintun Nation of the Cortina Rancheria (previously listed as Kletsel Dehe Band
     of Wintun Indians)
@@ -101,6 +112,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kletsel Dehe Wintun Nation of the Cortina Rancheria (previously listed as Kletsel Dehe Band
     of Wintun Indians)
@@ -109,6 +121,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kletsel Dehe Wintun Nation of the Cortina Rancheria (previously listed as Kletsel Dehe Band
     of Wintun Indians)
@@ -117,6 +130,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kletsel Dehe Wintun Nation of the Cortina Rancheria (previously listed as Kletsel Dehe Band
     of Wintun Indians)
@@ -125,6 +139,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Central California Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kletsel Dehe Wintun Nation of the Cortina Rancheria (previously listed as Kletsel Dehe Band
     of Wintun Indians)
@@ -136,6 +151,7 @@ jurisdiction:
     country within California; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
   note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
@@ -145,6 +161,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Kletsel Dehe Wintun Nation of the Cortina Rancheria Confidence lowered from high by

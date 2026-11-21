@@ -6,17 +6,20 @@ names:
   - name: Grand River Band Ottawa Council
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     locator: 'Petitioner #146'
   alternate:
   - name: Grand River Bands of Ottawa Indians
     source: alabama-indian-affairs-commission-state-recognized-tribes-compilation
     confidence: low
+    verification: bulk-import
     as_of: '2001'
     note: Plural 'Bands' form; same name used by a federal acknowledgment petitioner.
   - name: Grand River Bands of Ottawa Indians
     source: ofa-petitions-in-process
     confidence: medium
+    verification: bulk-import
     as_of: '2026-11-21'
     note: Name used for this group in the cited source; matched to this record by name and state.
   official_source: ofa-petitions-in-process
@@ -27,6 +30,7 @@ recognition:
   petition_stage: Phase I TA Review
   source: ofa-petitions-in-process
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Current Petitions Status table, row 146; detail page https://www.bia.gov/as-ia/ofa/petitions-in-process/grand-river-bands-ottawa-indians
   note: 'Federal Register history: Proposed Finding Against Federal Acknowledgment of the Grand River
@@ -40,6 +44,7 @@ recognition:
     (2016-2017); no statute or executive order identified
   source: michigan-civil-rights-indian-directory-2016
   confidence: low
+  verification: bulk-import
   as_of: '2016-12-14'
   locator: Page 6
   note: Michigan has no formal state-recognition statute found; the 'State Historic Tribes' designation
@@ -49,6 +54,7 @@ states:
   presence: other
   source: ofa-petitions-in-process
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
@@ -56,6 +62,7 @@ states:
   presence: other
   source: michigan-civil-rights-indian-directory-2016
   confidence: low
+  verification: bulk-import
   as_of: '2016-12-14'
 review:
   status: drafted-from-public-sources

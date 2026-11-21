@@ -6,6 +6,7 @@ names:
   - name: Stoluck-wha-mish
     source: stillaguamish-tribe-of-indians-of-washin-our-history-faqs
     confidence: high
+    verification: read-in-full
     as_of: '2026-11-21'
     note: '"The name Stoluck-wha-mish or Stillaguamish, has been used since 1850"'
   official_source: bia-recognized-entities-2026
@@ -15,6 +16,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -22,12 +24,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Stillaguamish Tribe of Indians of Washington
 - state: WA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4000
   note: 'Census area with land in this state: Stillaguamish Reservation and Off-Reservation Trust Land
@@ -39,6 +43,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4000
   note: Matched by name. Census class code D1.
@@ -47,6 +52,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4000, field POP100
   note: 'Census area: Stillaguamish Reservation and Off-Reservation Trust Land (code 4000). Everyone counted
@@ -56,6 +62,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3343 (Stillaguamish Tribes of Indians of Washington  alone or in any
     combination), GEOID 0100000US (United States)
@@ -66,6 +73,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Seattle, row 'Stillaguamish Tribe', PDF page 9, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -76,6 +84,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Stillaguamish Tribe of Indians of Washington
 - kind: physical-address
@@ -83,6 +92,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Stillaguamish Tribe of Indians of Washington
 - kind: mailing-address
@@ -90,6 +100,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Stillaguamish Tribe of Indians of Washington
 - kind: phone
@@ -97,6 +108,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Stillaguamish Tribe of Indians of Washington
 - kind: fax
@@ -104,6 +116,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Stillaguamish Tribe of Indians of Washington
 languages:
@@ -111,6 +124,7 @@ languages:
   language_tag: lut
   source: stillaguamish-tribe-of-indians-of-washin-our-history
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: '"Stulekʷ means river in our language, Northern Lushootseed."'
 federal_administration:
@@ -118,6 +132,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Puget Sound Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Stillaguamish Tribe of Indians of Washington
 justice_institutions:
@@ -125,6 +140,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-stillaguamish
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -132,6 +148,7 @@ justice_institutions:
   name: Stillaguamish Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Stillaguamish Tribe of Indians'
   note: 'Link check 2026-11-21: the link the source gives (http://www.stillaguamish.com/courtsjustice.asp)
@@ -185,6 +202,7 @@ gaming:
     federal_register_citation: 91 FR 65252
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2026-10-14'
     locator: result page 43 (?page=43), row 13
     note: 'Listed as: "Stillaguamish Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
@@ -198,6 +216,7 @@ gaming:
     federal_register_citation: 86 FR 49051
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-09-01'
     locator: result page 43 (?page=43), row 14
     note: 'Listed as: "Stillaguamish Tribe of Indians Tribal State Gaming Compact" (Approve); list''s
@@ -210,6 +229,7 @@ gaming:
     approved: '2024-07-24'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2024-07-24'
     locator: result page 43 (?page=43), row 15
     note: 'Listed as: "Stillaguamish Tribe of Indians Tribal State Gaming Compact" (Disapproved); list''s
@@ -222,6 +242,7 @@ gaming:
     federal_register_citation: 90 FR 3908
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2025-01-15'
     locator: result page 43 (?page=43), row 16
     note: 'Listed as: "Stillaguamish Tribe of Indians Tribal State Gaming Compact" (Approve); list''s
@@ -235,6 +256,7 @@ gaming:
     federal_register_citation: 72 FR 30392
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-05-31'
     locator: result page 43 (?page=43), row 17
     note: 'Listed as: "Stillaguamish Tribe of Indians Tribal State Gaming Compact" (Approve); list''s
@@ -248,6 +270,7 @@ gaming:
     federal_register_citation: 66 FR 15882
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2001-03-21'
     locator: result page 43 (?page=43), row 18
     note: 'Listed as: "Stillaguamish Tribe of Indians Tribal State Gaming Compact" (Approve); list''s
@@ -261,6 +284,7 @@ gaming:
     federal_register_citation: 80 FR 31918
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-06-04'
     locator: result page 43 (?page=43), row 19
     note: 'Listed as: "Stillaguamish Tribe of Indians Tribal State Gaming Compact" (Approve); list''s
@@ -277,6 +301,7 @@ gaming:
     dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
     source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
     confidence: medium
+    verification: bulk-import
     as_of: '2021-09-01'
     locator: Section XIV (Dispute Resolution), subsection B
     note: Dispute-resolution clause read from this nation's own compact document. Document is older than
@@ -288,6 +313,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11257&ind=11278
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2001-01-08'
     locator: table row 275, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 275 lists the nation
@@ -296,6 +322,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11258&ind=11279
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2008-02-04'
     locator: table row 275, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 275 lists the nation
@@ -304,6 +331,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11259&ind=11280
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2009-04-28'
     locator: table row 275, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 275 lists the nation
@@ -312,6 +340,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11260&ind=11281
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2017-12-05'
     locator: table row 275, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 275 lists the nation
@@ -320,6 +349,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11261&ind=11282
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2022-06-27'
     locator: table row 275, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 275 lists the nation
@@ -328,6 +358,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11262&ind=11283
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2024-11-13'
     locator: table row 275, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 275 lists the nation
@@ -342,6 +373,7 @@ jurisdiction:
     jurisdiction under RCW 37.12.021.'
   source: revised-code-of-washington-37-12-010
   confidence: medium
+  verification: inferred
   as_of: '1963'
   locator: RCW 37.12.010
   note: Nation matched to Washington by office state. Check for later retrocession facts.
@@ -350,6 +382,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Stillaguamish Tribe of Indians of Washington Confidence lowered from high by the lead
@@ -359,11 +392,13 @@ memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Stillaguamish Tribe of Indians". Name matched to the roster entry.
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Stillaguamish Tribe of Indians". Name matched to the roster entry.
 review:

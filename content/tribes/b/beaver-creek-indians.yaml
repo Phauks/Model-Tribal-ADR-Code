@@ -6,6 +6,7 @@ names:
   - name: Beaver Creek Band of Pee Dee Indians
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     note: Name used for this group in the cited source; matched to this record by name and state.
   official_source: ofa-list-of-petitioners-by-state-2013
@@ -16,6 +17,7 @@ recognition:
   petition_stage: Letter of Intent to Petition 01/26/1998
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   locator: 'Petitioner #184'
   note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
@@ -27,6 +29,7 @@ recognition:
     Chapter 139 (category: State Recognized Native American Indian Tribe)'
   source: south-carolina-recognized-tribes-advance-sc
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   note: Listed under 'State Recognized Tribes'.
 states:
@@ -34,6 +37,7 @@ states:
   presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
@@ -41,6 +45,7 @@ states:
   presence: other
   source: south-carolina-recognized-tribes-advance-sc
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   note: State-recognized entity with a South Carolina contact address.
 contacts:
@@ -49,6 +54,7 @@ contacts:
   label: Official website
   source: south-carolina-recognized-tribes-advance-sc
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 review:
   status: drafted-from-public-sources

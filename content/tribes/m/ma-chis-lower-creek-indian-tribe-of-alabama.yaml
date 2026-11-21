@@ -6,10 +6,12 @@ names:
   - name: Machis Lower Creek Indian Tribe of AL
     source: alabama-indian-affairs-commission-tribes-list-2026
     confidence: high
+    verification: inferred
     as_of: 2026-10
   - name: MaChis Lower Alabama Creek Indian Tribe
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     note: Name used for this group in the cited source; matched to this record by name and state.
   official_source: census-aian-geography-definitions
@@ -17,6 +19,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State Designated Tribal Statistical Area; area 9820
   note: The 2020 Census delineated "MaChis Lower Creek SDTSA" (State Designated Tribal Statistical Area).
@@ -27,6 +30,7 @@ recognition:
 - type: unrecognized
   source: usaspending-award-90xn0025
   confidence: medium
+  verification: inferred
   as_of: '2021-09-01'
   locator: Award summary
   note: HHS Administration for Native Americans award 90XN0025 (Assistance Listing 93.587, Promote the
@@ -42,6 +46,7 @@ recognition:
     Acknowledgment effective 08/22/1988 52 FR 34319
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   locator: 'Petitioner #87'
   note: Decision from the Petitions Resolved page; citation and date from the Office of Federal Acknowledgment
@@ -52,6 +57,7 @@ recognition:
     1992, No. 92-134)
   source: alabama-code-41-9-708
   confidence: high
+  verification: read-in-full
   as_of: '2025'
   locator: Section 41-9-708(b)
   note: Statute names the group as 'the Ma-Chis Lower Creek Indian Tribe' among the Indian tribes, bands
@@ -62,6 +68,7 @@ recognition:
     2026-09-14)
   source: alabama-administrative-code-475-x-1-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-07-31'
   locator: Rule 475-X-1-.02 Members
 - type: state
@@ -69,12 +76,14 @@ recognition:
   legal_basis: Listed by the Alabama Indian Affairs Commission as a tribe recognized by the State of Alabama
   source: alabama-indian-affairs-commission-tribes-list-2026
   confidence: high
+  verification: bulk-import
   as_of: 2026-10
 states:
 - state: AL
   presence: other
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9820
   note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
@@ -82,6 +91,7 @@ states:
   presence: other
   source: usaspending-award-90xn0025
   confidence: medium
+  verification: bulk-import
   as_of: '2021-09-01'
   locator: Place of performance state
   note: Place of performance state on the award record.
@@ -89,6 +99,7 @@ states:
   presence: other
   source: ofa-petitions-resolved
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
@@ -96,6 +107,7 @@ states:
   presence: other
   source: alabama-indian-affairs-commission-tribes-list-2026
   confidence: high
+  verification: bulk-import
   as_of: 2026-10
   note: State-recognized in Alabama; Alabama contact address listed.
 census_areas:
@@ -105,6 +117,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9820, GEOID 9820R
   note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
@@ -115,6 +128,7 @@ contacts:
   label: Official website
   source: alabama-indian-affairs-commission-tribes-list-2026
   confidence: high
+  verification: bulk-import
   as_of: 2026-10
 review:
   status: drafted-from-public-sources

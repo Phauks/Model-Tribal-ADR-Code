@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ak-Chin Indian Community
 - state: AZ
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2130
   note: 'Census area with land in this state: Maricopa (Ak Chin) Indian Reservation and Off-Reservation
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2130
   note: Matched by name. Census names the area Maricopa (Ak Chin) Indian Reservation. Census class code
@@ -42,6 +46,7 @@ population:
   kind: citizens
   source: ak-chin-about
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: Page says 'just over 1,100 tribal members'; homepage says 'enrollment of more than 1,100'. Undated
     page; as_of is access date.
@@ -49,6 +54,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2130, field POP100
   note: 'Census area: Maricopa (Ak Chin) Indian Reservation and Off-Reservation Trust Land (code 2130).
@@ -58,6 +64,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2838 (Ak-Chin Indian Community alone or in any combination), GEOID
     0100000US (United States)
@@ -68,6 +75,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Ak-Chin Indian Community', PDF page 6, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -76,6 +84,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 75, row T00400 'Ak Chin Indian Community of the Maricopa Indian
     Reservation'
@@ -89,6 +98,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ak-Chin Indian Community
 - kind: physical-address
@@ -96,6 +106,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ak-Chin Indian Community
 - kind: mailing-address
@@ -103,6 +114,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ak-Chin Indian Community
 - kind: phone
@@ -110,6 +122,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ak-Chin Indian Community
 - kind: email-general
@@ -117,6 +130,7 @@ contacts:
   label: General office email shown on the nation's website
   source: ak-chin-home
   confidence: high
+  verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
 languages:
@@ -124,6 +138,7 @@ languages:
   language_tag: ood
   source: ak-chin-about
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: 'Page: ''The Native American language for Ak-Chin Indian Community is O’odham.'''
 federal_administration:
@@ -131,6 +146,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Pima Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ak-Chin Indian Community
 governing_documents:
@@ -140,6 +156,7 @@ governing_documents:
   link: https://narf.org/nill/codes/ak-chin/index.html
   source: national-indian-law-library-code-codes-ak-chin
   confidence: medium
+  verification: title-only
   as_of: '1975'
   locator: page heading
   note: 'Revised: 1975. The National Indian Law Library page gives the table of contents (and may link
@@ -150,6 +167,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/ak_chin/index.html
   source: national-indian-law-library-constitution-constitutions-ak-chin
   confidence: medium
+  verification: title-only
   as_of: '1978'
   locator: page heading
   note: 'Amended: 1978. The National Indian Law Library page gives the table of contents (and may link
@@ -159,6 +177,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-ak-chin
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -166,6 +185,7 @@ justice_institutions:
   name: Ak-Chin Indian Community Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Ak-Chin Indian Community'
 gaming:
@@ -176,6 +196,7 @@ gaming:
     federal_register_citation: 87 FR 35992
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2022-06-14'
     locator: result page 0 (?page=0), row 1
     note: 'Listed as: "Ak-Chin Indian Community Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -188,6 +209,7 @@ gaming:
     approved: '1993-03-31'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-03-31'
     locator: result page 0 (?page=0), row 2
     note: 'Listed as: "Ak-Chin Indian Community Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -198,6 +220,7 @@ gaming:
     federal_register_citation: 68 FR 5912
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2003-02-05'
     locator: result page 0 (?page=0), row 3
     note: 'Listed as: "Ak-Chin Indian Community Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -211,6 +234,7 @@ gaming:
     federal_register_citation: 86 FR 27889
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-05-24'
     locator: result page 0 (?page=0), row 4
     note: 'Listed as: "Ak-Chin Indian Community Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -224,6 +248,7 @@ gaming:
     federal_register_citation: 74 FR 12889
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2009-03-25'
     locator: result page 0 (?page=0), row 5
     note: 'Listed as: "Ak-Chin Indian Community Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -242,6 +267,7 @@ gaming:
     dispute_resolution_locator: Section 15 (Dispute Resolution)
     source: compact-az-ak-chin-indian-community-2003
     confidence: medium
+    verification: bulk-import
     as_of: '2003-02-05'
     locator: Section 15 (Dispute Resolution)
     note: Dispute-resolution clause read from this nation's own compact document. Document is older than
@@ -253,6 +279,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=3268&ind=3273
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-12-07'
     locator: table row 3, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 3 lists the nation
@@ -261,6 +288,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=3269&ind=3274
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-03-27'
     locator: table row 3, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 3 lists the nation
@@ -269,6 +297,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=3270&ind=3275
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2003-02-11'
     locator: table row 3, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 3 lists the nation
@@ -277,6 +306,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=3271&ind=3276
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2003-07-31'
     locator: table row 3, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 3 lists the nation
@@ -285,6 +315,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=3272&ind=3277
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2008-07-28'
     locator: table row 3, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 3 lists the nation
@@ -293,6 +324,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=13737&ind=13738
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2026-01-12'
     locator: table row 3, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 3 lists the nation
@@ -301,6 +333,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Ak-Chin Indian Community of
       the Maricopa Indian Reservation". Facilities as machine-extracted from the report text (verify):
@@ -312,6 +345,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Ak-Chin Indian Community Confidence lowered from high by the lead session: the notice
@@ -320,6 +354,7 @@ memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes
   confidence: high
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Ak-Chin Indian Community".
 review:

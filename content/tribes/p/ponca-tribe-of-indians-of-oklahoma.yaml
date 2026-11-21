@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ponca Tribe of Indians of Oklahoma
 - state: OK
   presence: other
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5800, 5950
   note: 'Census area with land in this state: Ponca OTSA (code 5800); Kaw/Ponca joint-use OTSA (code 5950).
@@ -34,6 +37,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5800
   note: Matched by name. Census class code D6.
@@ -43,6 +47,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5950
   note: 'Matched by name. Shared with: Kaw Nation, Oklahoma. Census class code D0.'
@@ -51,6 +56,7 @@ population:
   kind: citizens
   source: ponca-tribe-of-indians-of-oklahoma-home
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"more than 3,500 registered members"; undated statement on the official site; as_of is the access
     date'
@@ -58,6 +64,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5800, field POP100
   note: 'Census area: Ponca OTSA (code 5800). Everyone counted as living in the area in the 2020 Census,
@@ -67,6 +74,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5950, field POP100
   note: 'Census area: Kaw/Ponca joint-use OTSA (code 5950). Everyone counted as living in the area in
@@ -77,6 +85,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3222 (Ponca Tribe of Indians of Oklahoma alone or in any combination),
     GEOID 0100000US (United States)
@@ -87,6 +96,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Oklahoma, row 'Ponca Tribe of Indians of Oklahoma', PDF page 6, Enrollment
     column
@@ -98,6 +108,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ponca Tribe of Indians of Oklahoma
 - kind: physical-address
@@ -105,6 +116,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ponca Tribe of Indians of Oklahoma
 - kind: mailing-address
@@ -112,6 +124,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ponca Tribe of Indians of Oklahoma
 - kind: phone
@@ -119,6 +132,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ponca Tribe of Indians of Oklahoma
 - kind: fax
@@ -126,6 +140,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ponca Tribe of Indians of Oklahoma
 federal_administration:
@@ -133,6 +148,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Southern Plains Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ponca Tribe of Indians of Oklahoma
 government_structure:
@@ -141,6 +157,7 @@ government_structure:
     of June 26, 1936 (49 Stat. 1967)
   source: university-of-oklahoma-indian-reorganization-act-okponcons
   confidence: medium
+  verification: read-in-full
   as_of: '1950'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -151,6 +168,7 @@ governing_documents:
   link: https://narf.org/nill/codes/ponca_oklahoma/index.html
   source: national-indian-law-library-code-codes-ponca-oklahoma
   confidence: medium
+  verification: title-only
   as_of: '2013'
   locator: page heading
   note: 'Received: April 2013. The National Indian Law Library page gives the table of contents (and may
@@ -161,6 +179,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/ponca_oklahoma/index.html
   source: national-indian-law-library-constitution-constitutions-ponca-oklahoma
   confidence: medium
+  verification: title-only
   as_of: '1979'
   locator: page heading
   note: 'Amended: 1979. The National Indian Law Library page gives the table of contents (and may link
@@ -170,6 +189,7 @@ governing_documents:
   link: https://www.ponca-nsn.gov/constitution.html
   source: national-indian-law-library-ponca-oklahoma
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
@@ -180,6 +200,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/okponchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-okponchrtr
   confidence: medium
+  verification: title-only
   as_of: '1950'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -188,6 +209,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/okponcons.html
   source: university-of-oklahoma-indian-reorganization-act-okponcons
   confidence: medium
+  verification: title-only
   as_of: '1950'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -196,6 +218,7 @@ justice_institutions:
   link: https://www.ponca-nsn.gov/tribal-district-court.html
   source: national-indian-law-library-ponca-oklahoma
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -204,6 +227,7 @@ justice_institutions:
   link: http://www.ponca.com/121500/123500.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Oklahoma section, entry 'Ponca Tribe of Oklahoma'
 dispute_resolution:
@@ -229,6 +253,7 @@ gaming:
     federal_register_citation: 67 FR 6050
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2002-02-08'
     locator: result page 28 (?page=28), row 22
     note: 'Listed as: "Ponca Tribe of Indians Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -242,6 +267,7 @@ gaming:
     federal_register_citation: 70 FR 57617
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2005-10-03'
     locator: result page 28 (?page=28), row 23
     note: 'Listed as: "Ponca Tribe of Indians Tribal State Gaming Compact" (Deemed Approved); list''s
@@ -258,6 +284,7 @@ gaming:
     dispute_resolution_locator: Part 12 (Dispute Resolution)
     source: compact-ok-cherokee-nation-2005
     confidence: medium
+    verification: inferred
     as_of: '2005-01-27'
     locator: Part 12 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
@@ -270,6 +297,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10659&ind=10676
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1995-05-03'
     locator: table row 196, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 196 lists the nation
@@ -278,6 +306,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10660&ind=10677
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2008-12-15'
     locator: table row 196, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 196 lists the nation
@@ -286,6 +315,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10661&ind=10678
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2010-10-25'
     locator: table row 196, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 196 lists the nation
@@ -294,6 +324,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10662&ind=10679
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2017-06-21'
     locator: table row 196, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 196 lists the nation
@@ -304,6 +335,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Ponca Tribe of Indians of Oklahoma Confidence lowered from high by the lead session:

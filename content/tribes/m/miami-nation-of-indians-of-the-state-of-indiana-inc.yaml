@@ -12,6 +12,7 @@ recognition:
     Acknowledgment effective 08/17/1992 57 FR 27312
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   locator: 'Petitioner #66'
   note: Decision from the Petitions Resolved page; citation and date from the Office of Federal Acknowledgment
@@ -22,6 +23,7 @@ recognition:
   petition_stage: 'Re-petition request: Awaiting Active Consideration'
   source: ofa-re-petition-requests
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Current Re-Petition Requests, row R001
   note: 'Request for authorization to re-petition; Federal Register notice Receipt of Request for Authorization
@@ -32,6 +34,7 @@ states:
   presence: other
   source: ofa-petitions-resolved
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.

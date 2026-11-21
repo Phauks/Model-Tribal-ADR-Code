@@ -6,17 +6,20 @@ names:
   - name: High Plains Indians
     source: gao-12-348-federal-funding-non-federally-recognized-tribes
     confidence: medium
+    verification: bulk-import
     as_of: 2012-04
     locator: Table 1
   - name: Indians of Person County
     source: gao-12-348-federal-funding-non-federally-recognized-tribes
     confidence: medium
+    verification: bulk-import
     as_of: 2012-04
     locator: Table 1
     note: 'GAO: petitioned as Indians of Person County.'
   - name: Sappony (Indians of Person County)
     source: census-2020-ddhca-popgroup-codes
     confidence: low
+    verification: inferred
     as_of: '2020'
     locator: POPGROUP code 07W
     note: Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting
@@ -24,11 +27,13 @@ names:
   - name: Sappony Indians of Person County
     source: alabama-indian-affairs-commission-state-recognized-tribes-compilation
     confidence: low
+    verification: bulk-import
     as_of: '2001'
   former:
   - name: Indians of Person County
     source: north-carolina-general-statutes-chapter-71a
     confidence: high
+    verification: read-in-full
     as_of: '2026'
     locator: Section 71A-7
   official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
@@ -36,6 +41,7 @@ recognition:
 - type: unrecognized
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1; Table 3
   note: 'GAO Table 1 lists "Sappony" among 26 non-federally recognized tribes that received direct federal
@@ -45,6 +51,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State Designated Tribal Statistical Area; area 9865
   note: The 2020 Census delineated "Sappony SDTSA" (State Designated Tribal Statistical Area). The Census
@@ -59,6 +66,7 @@ recognition:
   since: '1913-02-03'
   source: north-carolina-general-statutes-chapter-71a
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: Section 71A-7
   note: Statute says the tribe is designated and officially recognized 'from and after' this date.
@@ -68,12 +76,14 @@ recognition:
     Affairs
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 states:
 - state: NC
   presence: other
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1, State column
   note: State as listed by GAO.
@@ -81,6 +91,7 @@ states:
   presence: other
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9865
   note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
@@ -88,11 +99,13 @@ states:
   presence: government-office
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: inferred
   as_of: '2026'
 - state: VA
   presence: government-office
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: inferred
   as_of: '2026'
   note: Physical address in Virgilina, Virginia; source says part of the High Plains community is in Halifax
     County, Virginia.
@@ -103,6 +116,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9865, GEOID 9865R
   note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
@@ -112,6 +126,7 @@ population:
   kind: citizens
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: medium
+  verification: read-in-full
   as_of: '2026'
   note: 'Source: ''the tribe''s 850 members''.'
 contacts:
@@ -120,24 +135,28 @@ contacts:
   label: Tribal mailing address
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: physical-address
   value: 4218 Virgilina Rd. Virgilina, VA 24598
   label: Tribal physical address
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: phone
   value: 434-585-3352
   label: Tribal phone
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: website
   value: https://www.sappony.org
   label: Official website
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 review:
   status: drafted-from-public-sources

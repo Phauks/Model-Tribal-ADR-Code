@@ -6,6 +6,7 @@ names:
   - name: The People of the Oreille
     source: kalispeltribe-home
     confidence: medium
+    verification: read-in-full
     as_of: '2026-11-21'
     note: 'Homepage: ''Even today we are known as “The People of the Oreille,”''.'
   official_source: bia-recognized-entities-2026
@@ -15,6 +16,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -22,12 +24,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kalispel Indian Community of the Kalispel Reservation
 - state: WA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1735
   note: 'Census area with land in this state: Kalispel Reservation and Off-Reservation Trust Land (code
@@ -39,6 +43,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1735
   note: Matched by name. Census class code D1.
@@ -47,6 +52,7 @@ population:
   kind: citizens
   source: kalispeltribe-our-story
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'Page, ''Current Demographics'': ''470 Kalispel Tribal Members. 34 percent of current Tribal membership
     is under age 18''. Undated; as_of is access date.'
@@ -54,6 +60,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1735, field POP100
   note: 'Census area: Kalispel Reservation and Off-Reservation Trust Land (code 1735). Everyone counted
@@ -63,6 +70,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3047 (Kalispel Indian Community alone or in any combination), GEOID
     0100000US (United States)
@@ -73,6 +81,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Seattle, row 'Kalispel Indian Community', PDF page 9, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -83,6 +92,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kalispel Indian Community of the Kalispel Reservation
 - kind: physical-address
@@ -90,6 +100,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kalispel Indian Community of the Kalispel Reservation
 - kind: mailing-address
@@ -97,6 +108,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kalispel Indian Community of the Kalispel Reservation
 - kind: phone
@@ -104,6 +116,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kalispel Indian Community of the Kalispel Reservation
 - kind: fax
@@ -111,6 +124,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kalispel Indian Community of the Kalispel Reservation
 languages:
@@ -118,6 +132,7 @@ languages:
   language_tag: fla
   source: kalispeltribe-our-language
   confidence: high
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'Page: Kalispel Language Program to ''reclaim and preserve our Salish Language''.'
 federal_administration:
@@ -125,6 +140,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Spokane Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Kalispel Indian Community of the Kalispel Reservation
 government_structure:
@@ -134,6 +150,7 @@ government_structure:
     1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -144,6 +161,7 @@ government_structure:
     states it was adopted under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-kalcons
   confidence: medium
+  verification: read-in-full
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -154,6 +172,7 @@ governing_documents:
   link: https://narf.org/nill/codes/kalispelcode/index.html
   source: national-indian-law-library-code-codes-kalispelcode
   confidence: medium
+  verification: title-only
   as_of: '2015'
   locator: page heading
   note: 'Table of Contents Updated: August 2015. The National Indian Law Library page gives the table
@@ -164,6 +183,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/kalispelconst/index.html
   source: national-indian-law-library-constitution-constitutions-kalispelconst
   confidence: medium
+  verification: title-only
   as_of: '2019'
   locator: page heading
   note: 'Amended: November 11, 2019. The National Indian Law Library page gives the table of contents
@@ -173,6 +193,7 @@ governing_documents:
   link: https://kalispeltribalcourt.org/law-order-code
   source: national-indian-law-library-kalispel
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
@@ -182,6 +203,7 @@ governing_documents:
   link: https://sakteaprodwus2web.blob.core.windows.net/files/assets/assets/Kalispel-Constitution-and-Bylaws.pdf
   source: national-indian-law-library-kalispel
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -190,6 +212,7 @@ governing_documents:
   title: Kalispel Tribe’s Constitution and Bylaws
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Washington section, entry 'Kalispel Tribe of Indians'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -200,6 +223,7 @@ governing_documents:
   link: http://www.kalispeltribe.com/government/tribal-court/law-order-code
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Washington section, entry 'Kalispel Tribe of Indians'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -209,6 +233,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/kalchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-kalchrtr
   confidence: medium
+  verification: title-only
   as_of: '1938'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -217,6 +242,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/kalcons.html
   source: university-of-oklahoma-indian-reorganization-act-kalcons
   confidence: medium
+  verification: title-only
   as_of: '1938'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -225,6 +251,7 @@ justice_institutions:
   link: https://kalispeltribalcourt.org/
   source: national-indian-law-library-kalispel
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -233,6 +260,7 @@ justice_institutions:
   link: http://www.kalispeltribe.com/government/tribal-court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Kalispel Tribe of Indians'
 dispute_resolution:
@@ -253,6 +281,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Kalispel-Chapter-3-Civil-Actions-4.9.2025.pdf
     source: kalispel-law-and-order-code-chapter-3-civil-actions
     confidence: medium
+    verification: inferred
     as_of: '2025-04-09'
     locator: Sections 3-1.04, 3-5.01, 3-21.01-3-21.03
     note: Kind 'other' because the chapter shows the panel acting in an adjudicative and enforcement role
@@ -418,6 +447,7 @@ gaming:
     federal_register_citation: 86 FR 51374
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-09-15'
     locator: result page 39 (?page=39), row 1
     note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal State Gaming Compact"
@@ -432,6 +462,7 @@ gaming:
     federal_register_citation: 88 FR 38889
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2023-06-14'
     locator: result page 39 (?page=39), row 2
     note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal State Gaming Compact"
@@ -446,6 +477,7 @@ gaming:
     federal_register_citation: 89 FR 11311
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2024-02-14'
     locator: result page 39 (?page=39), row 3
     note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal State Gaming Compact"
@@ -460,6 +492,7 @@ gaming:
     federal_register_citation: 64 FR 29874
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-06-03'
     locator: result page 39 (?page=39), row 4
     note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal State Gaming Compact"
@@ -474,6 +507,7 @@ gaming:
     federal_register_citation: 72 FR 30392
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-05-31'
     locator: result page 39 (?page=39), row 5
     note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal State Gaming Compact"
@@ -488,6 +522,7 @@ gaming:
     federal_register_citation: 63 FR 68787
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1998-12-14'
     locator: result page 39 (?page=39), row 6
     note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal State Gaming Compact"
@@ -502,6 +537,7 @@ gaming:
     federal_register_citation: 80 FR 31918
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-06-04'
     locator: result page 39 (?page=39), row 7
     note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal-State Gaming Compact"
@@ -518,6 +554,7 @@ gaming:
     dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
     source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
     confidence: medium
+    verification: inferred
     as_of: '2021-09-01'
     locator: Section XIV (Dispute Resolution), subsection B
     note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
@@ -529,6 +566,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10008&ind=10024
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1997-09-26'
     locator: table row 113, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 113 lists the nation
@@ -537,6 +575,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10009&ind=10025
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2001-02-13'
     locator: table row 113, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 113 lists the nation
@@ -545,6 +584,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10010&ind=10026
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2002-11-04'
     locator: table row 113, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 113 lists the nation
@@ -553,6 +593,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10011&ind=10027
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2008-08-15'
     locator: table row 113, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 113 lists the nation
@@ -561,6 +602,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10012&ind=10028
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2019-05-08'
     locator: table row 113, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 113 lists the nation
@@ -569,6 +611,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10013&ind=10029
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2022-06-02'
     locator: table row 113, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 113 lists the nation
@@ -577,6 +620,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=14550&ind=14551
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2026-09-17'
     locator: table row 113, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 113 lists the nation
@@ -585,6 +629,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Kalispel Indian Community
       of the Kalispel Reservation". Facilities as machine-extracted from the report text (verify): Kalispel
@@ -600,6 +645,7 @@ jurisdiction:
     jurisdiction under RCW 37.12.021.'
   source: revised-code-of-washington-37-12-010
   confidence: medium
+  verification: inferred
   as_of: '1963'
   locator: RCW 37.12.010
   note: Nation matched to Washington by office state. Check for later retrocession facts.
@@ -608,6 +654,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Kalispel Indian Community of the Kalispel Reservation Confidence lowered from high
@@ -617,6 +664,7 @@ memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Kalispel Tribe of Indians". Name matched to the roster entry.
 review:

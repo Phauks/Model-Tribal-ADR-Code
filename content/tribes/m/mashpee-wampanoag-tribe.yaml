@@ -6,6 +6,7 @@ names:
   - name: People of the First Light
     source: mashpee-wampanoag-tribe-home
     confidence: high
+    verification: read-in-full
     as_of: '2026-11-21'
     note: 'site: "also known as the People of the First Light"'
   official_source: bia-recognized-entities-2026
@@ -15,6 +16,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 - type: federal
@@ -24,6 +26,7 @@ recognition:
   since: '2007-05-23'
   source: federal-register-e7-2966
   confidence: high
+  verification: bulk-import
   as_of: '2007-05-23'
   locator: 'Petitioner #15'
   note: 'Also see source(s): ofa-list-of-petitioners-by-state-2013.'
@@ -33,6 +36,7 @@ recognition:
   since: '1976-07-08'
   source: massachusetts-executive-order-126
   confidence: medium
+  verification: read-in-full
   as_of: '1976-07-08'
   note: Directs state agencies to deal directly with the Mashpee Wampanoag Indian Tribal Council; Executive
     Order No. 637 (2024) refers to the Mashpee Wampanoag Tribe as recognized by the Commonwealth. Also
@@ -42,12 +46,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mashpee Wampanoag Tribe
 - state: MA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2147
   note: 'Census area with land in this state: Mashpee Wampanoag Trust Land (code 2147). Area matched to
@@ -59,6 +65,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2147
   note: Matched by name. Census class code D3.
@@ -67,6 +74,7 @@ population:
   kind: citizens
   source: mashpee-wampanoag-tribe-home
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"approximately 3,200 enrolled citizens"; undated statement on the official site; as_of is the
     access date'
@@ -74,6 +82,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2147, field POP100
   note: 'Census area: Mashpee Wampanoag Trust Land (code 2147). Everyone counted as living in the area
@@ -82,6 +91,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3108 (Mashpee Wampanoag Tribe alone or in any combination), GEOID 0100000US
     (United States)
@@ -92,6 +102,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Mashpee Wampanoag Tribe', PDF page 4, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -100,6 +111,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: low
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 80, row T21200 'Mashpee Wampanoag Tribe'
   note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
@@ -112,6 +124,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mashpee Wampanoag Tribe
 - kind: physical-address
@@ -119,6 +132,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mashpee Wampanoag Tribe
 - kind: mailing-address
@@ -126,6 +140,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mashpee Wampanoag Tribe
 - kind: phone
@@ -133,6 +148,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mashpee Wampanoag Tribe
 - kind: fax
@@ -140,6 +156,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mashpee Wampanoag Tribe
 languages:
@@ -147,6 +164,7 @@ languages:
   language_tag: wam
   source: mashpee-wampanoag-tribe-language
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: site names the Wampanoag language, also spelled Wôpanâak and Wopanaotaok on the same page
 federal_administration:
@@ -154,6 +172,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Eastern Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mashpee Wampanoag Tribe
 governing_documents:
@@ -163,6 +182,7 @@ governing_documents:
   link: https://narf.org/nill/codes/mashpee_wampanoag/index.html
   source: national-indian-law-library-code-codes-mashpee-wampanoag
   confidence: medium
+  verification: title-only
   as_of: '2007'
   locator: page heading
   note: 'Received: circa 2007. The National Indian Law Library page gives the table of contents (and may
@@ -173,6 +193,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/mashpee_wampanoag/index.html
   source: national-indian-law-library-constitution-constitutions-mashpee-wampanoag
   confidence: medium
+  verification: title-only
   as_of: '2004'
   locator: page heading
   note: 'Cerified: June 28, 2004. The National Indian Law Library page gives the table of contents (and
@@ -182,6 +203,7 @@ governing_documents:
   link: http://www.mwtribejudicial.com/amendments
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Massachusetts section, entry 'Mashpee Wampanoag Tribe'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -191,6 +213,7 @@ justice_institutions:
   name: Peacemaker Court
   source: narf-ipi-tribal-peacemaking-laws
   confidence: medium
+  verification: title-only
   as_of: '2025-09-29'
   note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
     whether it currently operates was not checked.
@@ -198,6 +221,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-mashpee-wampanoag
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -206,6 +230,7 @@ justice_institutions:
   link: http://www.mwtribejudicial.com/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Massachusetts section, entry 'Mashpee Wampanoag Tribe'
   note: 'Link check 2026-11-21: the site did not respond.'
@@ -231,6 +256,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Mashpee-Chapter-3-OPERATION-OF-PEACEMAKER-COURT.pdf
     source: mashpee-chapter-3-peacemaker-court
     confidence: medium
+    verification: read-in-full
     as_of: '2025'
     locator: Chapter 3, Sections 1, 2(a)-(f), 3
     note: Eligible matters include family and other relationships, community relations among neighbors,
@@ -262,6 +288,7 @@ dispute_resolution:
     link: https://www.mashpeewampanoagtribe-nsn.gov/s/PM-Brochure-updated1.pdf
     source: mashpee-peacemakers-court-brochure
     confidence: medium
+    verification: inferred
     as_of: '2015'
     note: The numeral 8 is part of the Wampanoag spelling as printed and is kept exactly. Language tag
       wam (Wampanoag) assigned because the brochure gives Wampanoag terms beside English; the brochure
@@ -273,12 +300,14 @@ dispute_resolution:
     link: https://www.mashpeewampanoagtribe-nsn.gov/s/PM-Brochure-updated1.pdf
     source: mashpee-peacemakers-court-brochure
     confidence: medium
+    verification: title-only
     as_of: '2015'
   - kind: guide
     title: A Participant's Guide to Peacemaking
     link: https://www.mashpeewampanoagtribe-nsn.gov/s/Participants-Guide-to-Peacemaking-final.pdf
     source: mashpee-peacemakers-court-pages
     confidence: low
+    verification: inferred
     as_of: '2026-11-21'
     note: Link listed on the Tribe's Peacemakers Court page; the guide itself was not opened. Page undated.
   - kind: rules
@@ -286,6 +315,7 @@ dispute_resolution:
     link: https://www.mashpeewampanoagtribe-nsn.gov/s/OPERATION-OF-PEACEMAKER-COURT.pdf
     source: mashpee-peacemakers-court-pages
     confidence: low
+    verification: inferred
     as_of: '2026-11-21'
     note: Link listed on the Tribe's Peacemakers Court page; the NARF copy of Chapter 3 was read (source
       mashpee-chapter-3-peacemaker-court). Page undated.
@@ -309,6 +339,7 @@ gaming:
     federal_register_citation: 79 FR 6213
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '2014-02-03'
     locator: result page 16 (?page=16), row 6
     note: 'Listed as: "Mashpee Wampanoag Tribe Tribal State Gaming Compact" (Deemed Approved); list''s
@@ -322,6 +353,7 @@ gaming:
     approved: '2012-10-12'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '2012-10-12'
     locator: result page 16 (?page=16), row 7
     note: 'Listed as: "Mashpee Wampanoag Tribe Tribal State Gaming Compact" (Disapproved); list''s Tribe
@@ -339,6 +371,7 @@ gaming:
     dispute_resolution_locator: Part 21 (Dispute Resolution)
     source: compact-ma-mashpee-wampanoag-tribe-2014
     confidence: medium
+    verification: read-in-full
     as_of: '2014-02-03'
     locator: Part 21 (Dispute Resolution)
     note: Dispute-resolution clause read from this nation's own compact document. Document is older than
@@ -349,6 +382,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10220&ind=10234
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2012-06-05'
     locator: table row 145, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 145 lists the nation
@@ -359,6 +393,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Mashpee Wampanoag Tribe Confidence lowered from high by the lead session: the notice
@@ -367,6 +402,7 @@ memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations
   confidence: medium
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Mashpee Wampanoag Tribe".
 review:

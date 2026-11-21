@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Spirit Lake Tribe, North Dakota
 - state: ND
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3935
   note: 'Census area with land in this state: Spirit Lake Reservation (code 3935). Area matched to the
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3935
   note: Matched by name. Census class code D2.
@@ -41,18 +45,21 @@ population:
   kind: citizens
   source: spirit-lake-tribe-our-tribe
   confidence: high
+  verification: read-in-full
   as_of: '2026-04-12'
   note: '"As of April 12, 2026, we have a total enrollment of 7,933 members"'
 - count: 3949
   kind: resident-population
   source: spirit-lake-tribe-our-tribe
   confidence: high
+  verification: read-in-full
   as_of: '2026-04-12'
   note: '"Total enrolled members living on the Spirit Lake reservation is 3,949"'
 - count: 3787
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3935, field POP100
   note: 'Census area: Spirit Lake Reservation (code 3935). Everyone counted as living in the area in the
@@ -61,6 +68,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3337 (Spirit Lake Tribe alone or in any combination), GEOID 0100000US
     (United States)
@@ -71,6 +79,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Denver, row 'Spirit Lake Tribe', PDF page 5, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -79,6 +88,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: low
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 88, row T47500 'Spirit Lake Tribe'
   note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
@@ -91,6 +101,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Spirit Lake Tribe, North Dakota
 - kind: physical-address
@@ -98,6 +109,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Spirit Lake Tribe, North Dakota
 - kind: mailing-address
@@ -105,6 +117,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Spirit Lake Tribe, North Dakota
 - kind: phone
@@ -112,6 +125,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Spirit Lake Tribe, North Dakota
 - kind: fax
@@ -119,6 +133,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Spirit Lake Tribe, North Dakota
 federal_administration:
@@ -126,6 +141,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Fort Totten Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Spirit Lake Tribe, North Dakota
 governing_documents:
@@ -135,6 +151,7 @@ governing_documents:
   link: https://narf.org/nill/codes/spirit_lake/index.html
   source: national-indian-law-library-code-codes-spirit-lake
   confidence: medium
+  verification: title-only
   as_of: '2014'
   locator: page heading
   note: 'Last Amended: March 24, 2014. The National Indian Law Library page gives the table of contents
@@ -145,6 +162,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/spirit_lake/index.html
   source: national-indian-law-library-constitution-constitutions-spirit-lake
   confidence: medium
+  verification: title-only
   as_of: '1996'
   locator: page heading
   note: 'Amended: August 19, 1996. The National Indian Law Library page gives the table of contents (and
@@ -154,6 +172,7 @@ governing_documents:
   link: https://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
   source: national-indian-law-library-spirit-lake
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
@@ -163,6 +182,7 @@ governing_documents:
   link: https://www.spiritlakenation.com/programs/tribal-council/
   source: national-indian-law-library-spirit-lake
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
@@ -172,6 +192,7 @@ governing_documents:
   link: http://www.spiritlakenation.com/data/upfiles/media/SLT%20Constittution%202016.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: North Dakota section, entry 'Spirit Lake Tribe'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -180,6 +201,7 @@ governing_documents:
   link: http://www.spiritlakenation.com/programs/spirit-lake-tribal-court/law--order-code/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: North Dakota section, entry 'Spirit Lake Tribe'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -189,6 +211,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/devcons.html
   source: university-of-oklahoma-indian-reorganization-act-devcons
   confidence: low
+  verification: inferred
   as_of: '1946'
   note: Matched by former name (Devil's Lake Sioux Tribe); confirm. Historical text as originally approved;
     the nation may have amended or replaced it since.
@@ -197,6 +220,7 @@ justice_institutions:
   name: 'Wodakota: Traditional Court'
   source: narf-ipi-tribal-peacemaking-laws
   confidence: medium
+  verification: title-only
   as_of: '2025-09-29'
   note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
     whether it currently operates was not checked.
@@ -205,6 +229,7 @@ justice_institutions:
   link: http://www.spiritlakenation.com/programs/spirit-lake-tribal-court/
   source: national-indian-law-library-spirit-lake
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -213,6 +238,7 @@ justice_institutions:
   link: http://www.spiritlakenation.com/programs/spirit-lake-tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: North Dakota section, entry 'Spirit Lake Tribe'
 dispute_resolution:
@@ -244,6 +270,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Spirit-Lake-Title-21-WODAKOTA.pdf
     source: spirit-lake-title-21-wodakota
     confidence: medium
+    verification: read-in-full
     as_of: '2014-03-24'
     locator: §§ 21-1-101, 21-1-104, 21-1-107(9)-(10), 21-1-108, 21-1-109, 21-1-110
     note: The Title incorporates a tribal prayer adopted by elders, in English and Dakota, as a guideline
@@ -355,6 +382,7 @@ gaming:
     federal_register_citation: 87 FR 77633
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2022-12-19'
     locator: result page 21 (?page=21), row 5
     note: 'Listed as: "Spirit Lake Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -367,6 +395,7 @@ gaming:
     approved: '1993-08-18'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-08-18'
     locator: result page 21 (?page=21), row 6
     note: 'Listed as: "Spirit Lake Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -376,6 +405,7 @@ gaming:
     approved: '1992-12-30'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1992-12-30'
     locator: result page 21 (?page=21), row 7
     note: 'Listed as: "Spirit Lake Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -386,6 +416,7 @@ gaming:
     federal_register_citation: 78 FR 17427
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2013-03-21'
     locator: result page 21 (?page=21), row 8
     note: 'Listed as: "Spirit Lake Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -399,6 +430,7 @@ gaming:
     federal_register_citation: 64 FR 66488
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-11-26'
     locator: result page 21 (?page=21), row 9
     note: 'Listed as: "Spirit Lake Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -417,6 +449,7 @@ gaming:
     dispute_resolution_locator: Section XXVIII (Dispute Resolution)
     source: compact-nd-spirit-lake-tribe-2022
     confidence: high
+    verification: read-in-full
     as_of: '2022-12-19'
     locator: Section XXVIII (Dispute Resolution)
     note: Dispute-resolution clause read from this nation's own compact document. Read from the 2022 Spirit
@@ -427,6 +460,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11213&ind=11237
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1994-06-24'
     locator: table row 269, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 269 lists the nation
@@ -437,6 +471,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Spirit Lake Tribe, North Dakota Confidence lowered from high by the lead session:
@@ -446,11 +481,13 @@ memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Spirit Lake Tribe". Name matched to the roster entry.
 - organization: Coalition of Large Tribes
   source: coalition-of-large-tribes-home
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Spirit Lake Tribe". Name matched to the roster entry.
 review:

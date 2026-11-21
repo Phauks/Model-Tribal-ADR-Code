@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cher-Ae Heights Indian Community of the Trinidad Rancheria, California
 - state: CA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4275
   note: 'Census area with land in this state: Trinidad Rancheria and Off-Reservation Trust Land (code
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4275
   note: Matched by name. Census class code D1.
@@ -41,6 +45,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4275, field POP100
   note: 'Census area: Trinidad Rancheria and Off-Reservation Trust Land (code 4275). Everyone counted
@@ -50,6 +55,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2904 (Cher-Ae Heights Indian Community of the Trinidad Rancheria alone
     or in any combination), GEOID 0100000US (United States)
@@ -60,6 +66,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Cher-Ae Heights Indian Community (Trinidad Rancheria)', PDF
     page 6, Enrollment column
@@ -71,6 +78,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cher-Ae Heights Indian Community of the Trinidad Rancheria, California
 - kind: physical-address
@@ -78,6 +86,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cher-Ae Heights Indian Community of the Trinidad Rancheria, California
 - kind: mailing-address
@@ -85,6 +94,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cher-Ae Heights Indian Community of the Trinidad Rancheria, California
 - kind: phone
@@ -92,6 +102,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cher-Ae Heights Indian Community of the Trinidad Rancheria, California
 - kind: fax
@@ -99,6 +110,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cher-Ae Heights Indian Community of the Trinidad Rancheria, California
 federal_administration:
@@ -106,6 +118,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Northern California Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Cher-Ae Heights Indian Community of the Trinidad Rancheria, California
 governing_documents:
@@ -115,6 +128,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/cher-ae_heights/index.html
   source: national-indian-law-library-constitution-constitutions-cher-ae-heights
   confidence: medium
+  verification: title-only
   as_of: '1961'
   locator: page heading
   note: 'Dated: 1961. The National Indian Law Library page gives the table of contents (and may link to
@@ -125,6 +139,7 @@ justice_institutions:
   link: https://trinidad-rancheria.org/tribal-court/
   source: national-indian-law-library-cher-ae-heights
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -133,6 +148,7 @@ justice_institutions:
   link: http://trinidad-rancheria.org/tribal-court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'Cher-Ae Heights Indian Community of the Trinidad Rancheria'
 gaming:
@@ -143,6 +159,7 @@ gaming:
     federal_register_citation: 65 FR 31189
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-05-16'
     locator: result page 6 (?page=6), row 6
     note: 'Listed as: "Cher-Ae Heights Indian Community of the Trinidad Rancheria Tribal State Gaming
@@ -157,6 +174,7 @@ gaming:
     federal_register_citation: 63 FR 56659
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1998-10-22'
     locator: result page 6 (?page=6), row 7
     note: 'Listed as: "Cher-Ae Heights Indian Community of the Trinidad Rancheria Tribal State Gaming
@@ -171,6 +189,7 @@ gaming:
     federal_register_citation: 87 FR 39115
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2022-06-30'
     locator: result page 6 (?page=6), row 8
     note: 'Listed as: "Cher-Ae Heights Indian Community of the Trinidad Rancheria Tribal State Gaming
@@ -186,6 +205,7 @@ gaming:
     federal_register_citation: 88 FR 88640
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2023-12-22'
     locator: result page 6 (?page=6), row 9
     note: 'Listed as: "Cher-Ae Heights Indian Community of the Trinidad Rancheria Tribal State Gaming
@@ -201,6 +221,7 @@ gaming:
     federal_register_citation: 90 FR 9973
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2025-02-20'
     locator: result page 6 (?page=6), row 10
     note: 'Listed as: "Cher-Ae Heights Indian Community of the Trinidad Rancheria Tribal State Gaming
@@ -216,6 +237,7 @@ gaming:
     federal_register_citation: 91 FR 3213
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2026-01-26'
     locator: result page 6 (?page=6), row 11
     note: 'Listed as: "Cher-Ae Heights Indian Community of the Trinidad Rancheria Tribal State Gaming
@@ -235,6 +257,7 @@ gaming:
     dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     source: compact-ca-cher-ae-heights-indian-community-of-the-2026
     confidence: high
+    verification: bulk-import
     as_of: '2026-01-26'
     locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     note: Dispute-resolution clause read from this nation's own compact document. Read from the 2026 Cher-Ae
@@ -245,6 +268,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9471&ind=9482
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-11-16'
     locator: table row 37, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 37 lists the nation
@@ -253,6 +277,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9472&ind=9483
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1998-12-18'
     locator: table row 37, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 37 lists the nation
@@ -261,6 +286,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Cher-Ae Heights Indian Community
       of the Trinidad Rancheria". Facilities as machine-extracted from the report text (verify): Cher-Ae-Heights
@@ -273,6 +299,7 @@ jurisdiction:
     country within California; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
   note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
@@ -282,6 +309,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Cher-Ae Heights Indian Community of the Trinidad Rancheria, California Confidence

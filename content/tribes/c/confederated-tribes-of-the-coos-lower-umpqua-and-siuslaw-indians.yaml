@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 - type: federal
@@ -18,6 +19,7 @@ recognition:
   since: '1984-10-17'
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '1984-10-17'
   locator: 'Petitioner #17'
 states:
@@ -25,12 +27,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians
 - state: OR
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0770
   note: 'Census area with land in this state: Coos, Lower Umpqua, and Siuslaw Reservation and Off-Reservation
@@ -42,6 +46,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0770
   note: Matched by name. Census class code D1.
@@ -50,12 +55,14 @@ population:
   kind: citizens
   source: oregon-department-of-education-native-americans-in-oregon-by-the-numbers-2020
   confidence: medium
+  verification: bulk-import
   as_of: 2020-02
   note: Oregon Department of Education table 'Number of tribal members'; PDF dated February 2020.
 - count: 77
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0770, field POP100
   note: 'Census area: Coos, Lower Umpqua, and Siuslaw Reservation and Off-Reservation Trust Land (code
@@ -65,6 +72,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2947 (Confederated Tribes of the Coos, Lower Umpqua, and Siuslaw Indians
     alone or in any combination), GEOID 0100000US (United States)
@@ -75,6 +83,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Seattle, row 'Confederated Tribes of the Coos, Lower Umpqua, and Siuslaw
     In', PDF page 9, Enrollment column
@@ -86,6 +95,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians
 - kind: physical-address
@@ -93,6 +103,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians
 - kind: mailing-address
@@ -100,6 +111,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians
 - kind: phone
@@ -107,6 +119,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians
 - kind: fax
@@ -114,6 +127,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians
 languages:
@@ -121,18 +135,21 @@ languages:
   language_tag: csz
   source: ctclusi-languagepublic
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: 'Page: ''We are the living descendants of the Miluk, Hanis, Siuslaw and Lower Umpqua people.''
     History page notes Hanis- and Miluk-speaking Coos. Tag csz (Coos) assigned by researcher.'
 - name: Miluk
   source: ctclusi-history
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: 'History page: ''the Miluk speaking Coos lived on the South Slough''.'
 - name: Siuslaw
   language_tag: sis
   source: ctclusi-history
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: 'History page: Lower Umpqua and Siuslaw bands shared ''the Siuslaw language''.'
 federal_administration:
@@ -140,6 +157,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Northwest Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians
 governing_documents:
@@ -149,6 +167,7 @@ governing_documents:
   link: https://narf.org/nill/codes/cooscode/index.html
   source: national-indian-law-library-code-codes-cooscode
   confidence: medium
+  verification: title-only
   as_of: '2024'
   locator: page heading
   note: 'Most Recent Update Received: April 2024. Full text linked from the National Indian Law Library
@@ -158,6 +177,7 @@ governing_documents:
   link: https://ctclusi.org/tribalcode/
   source: national-indian-law-library-confederated-clusi
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -167,6 +187,7 @@ governing_documents:
   link: https://ctclusi.org/tribalcode
   source: national-indian-law-library-confederated-clusi
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -177,6 +198,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/confederated_clusi/index.html
   source: national-indian-law-library-constitution-constitutions-confederated-clusi
   confidence: medium
+  verification: title-only
   as_of: '1987'
   locator: page heading
   note: 'Adopted: 1987. The National Indian Law Library page gives the table of contents (and may link
@@ -185,6 +207,7 @@ governing_documents:
   title: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians of Oregon Constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Oregon section, entry 'Confederated Tribes of Coos, Lower Umpqua, and Siuslaw Indians'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -195,6 +218,7 @@ governing_documents:
   link: https://ctclusi.org/tribalcode
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Oregon section, entry 'Confederated Tribes of Coos, Lower Umpqua, and Siuslaw Indians'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -203,6 +227,7 @@ justice_institutions:
   name: Peacegiving Court
   source: narf-ipi-tribal-peacemaking-laws
   confidence: medium
+  verification: title-only
   as_of: '2025-09-29'
   note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
     whether it currently operates was not checked.
@@ -210,6 +235,7 @@ justice_institutions:
   name: Wellness Court
   source: narf-ipi-youth-family-peacemaking-laws
   confidence: medium
+  verification: title-only
   as_of: '2025-08-25'
   note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
     whether it currently operates was not checked.
@@ -218,6 +244,7 @@ justice_institutions:
   link: https://ctclusi.org/tribal-court-peacegiving/
   source: national-indian-law-library-confederated-clusi
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -225,6 +252,7 @@ justice_institutions:
   name: Confederated Tribes of Coos, Lower Umqua, Siuslaw Indians Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Oregon section, entry 'Confederated Tribes of Coos, Lower Umpqua, and Siuslaw Indians'
   note: 'Link check 2026-11-21: the link the source gives (http://ctclusi.org/court) returned HTTP 404,
@@ -255,6 +283,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Confederated-Coos-Ch-2-14-Peacegiving-Court-2-9.pdf
     source: coos-lower-umpqua-siuslaw-ch-2-14-peacegiving-court
     confidence: medium
+    verification: read-in-full
     as_of: '2005-11-13'
     locator: Sections 2-14-1, 2-14-3, 2-14-7, 2-14-9, 2-14-17
     note: Peacegivers may accept gifts of nominal value after the case ends, described in the code as
@@ -457,6 +486,7 @@ gaming:
     federal_register_citation: 68 FR 11123
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2003-03-07'
     locator: result page 30 (?page=30), row 7
     note: 'Listed as: "Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians Tribal State Gaming
@@ -471,6 +501,7 @@ gaming:
     federal_register_citation: 86 FR 46867
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2021-08-20'
     locator: result page 30 (?page=30), row 8
     note: 'Listed as: "Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians Tribal State Gaming
@@ -485,6 +516,7 @@ gaming:
     federal_register_citation: 84 FR 15629
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2019-04-16'
     locator: result page 30 (?page=30), row 9
     note: 'Listed as: "Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians Tribal State Gaming
@@ -499,6 +531,7 @@ gaming:
     federal_register_citation: 60 FR 9258
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1995-02-16'
     locator: result page 30 (?page=30), row 21
     note: 'Listed as: "Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians Tribal State
@@ -513,6 +546,7 @@ gaming:
     federal_register_citation: 73 FR 14267
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2008-03-17'
     locator: result page 30 (?page=30), row 22
     note: 'Listed as: "Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians Tribal State
@@ -530,6 +564,7 @@ gaming:
     dispute_resolution_locator: Section 17 (Dispute Resolution)
     source: compact-or-confederated-tribes-of-the-grand-ronde-c-2023
     confidence: medium
+    verification: inferred
     as_of: '2023-02-08'
     locator: Section 17 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Read from the 2023 Confederated Tribes
@@ -541,6 +576,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9605&ind=9617
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2004-01-05'
     locator: table row 54, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 54 lists the nation
@@ -549,6 +585,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9606&ind=9618
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2016-06-15'
     locator: table row 54, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 54 lists the nation
@@ -557,6 +594,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Confederated Tribes of Coos,
       Lower Umpqua & Siuslaw Indians of Oregon". Facilities as machine-extracted from the report text
@@ -570,6 +608,7 @@ jurisdiction:
     within Oregon; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Oregon"
   note: Statute is primary; nation matched to Oregon by office state in the BIA Tribal Leaders Directory,
@@ -579,6 +618,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians Confidence lowered
@@ -588,6 +628,7 @@ memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Confederated Tribes of Coos, Lower Umpqua, and Siuslaw Indians". Name matched to the
     roster entry.

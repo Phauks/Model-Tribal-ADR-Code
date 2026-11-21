@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ohkay Owingeh, New Mexico
 - state: NM
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2510
   note: 'Census area with land in this state: Ohkay Owingeh (code 2510). Area matched to the nation by
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2510
   note: Matched by name. Census class code D2.
@@ -41,6 +45,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2510, field POP100
   note: 'Census area: Ohkay Owingeh (code 2510). Everyone counted as living in the area in the 2020 Census,
@@ -49,6 +54,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3172 (Ohkay Owingeh, New Mexico alone or in any combination), GEOID
     0100000US (United States)
@@ -59,6 +65,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Ohkay Owingeh (San Juan Pueblo)', PDF page 7, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -67,6 +74,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 84, row T34900 'Ohkay Owingeh'
   note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
@@ -79,6 +87,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ohkay Owingeh, New Mexico
 - kind: physical-address
@@ -86,6 +95,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ohkay Owingeh, New Mexico
 - kind: mailing-address
@@ -93,6 +103,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ohkay Owingeh, New Mexico
 - kind: phone
@@ -100,6 +111,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ohkay Owingeh, New Mexico
 - kind: fax
@@ -107,6 +119,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ohkay Owingeh, New Mexico
 languages:
@@ -114,6 +127,7 @@ languages:
   language_tag: tew
   source: ohkay-owingeh-home
   confidence: high
+  verification: title-only
   as_of: '2026-11-21'
   note: '"Tewa Language Program" listed under Education; page read through the WebFetch tool because the
     site blocked the plain HTTP client'
@@ -122,6 +136,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Northern Pueblos Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ohkay Owingeh, New Mexico
 justice_institutions:
@@ -130,6 +145,7 @@ justice_institutions:
   link: http://ohkay.org/ohkay-owingeh-tribal-court/
   source: national-indian-law-library-ohkay-owingeh
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -137,6 +153,7 @@ justice_institutions:
   name: Ohkay Owingeh Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: New Mexico section, entry 'Ohkay Owingeh Pueblo (formerly Pueblo of San Juan)'
 gaming:
@@ -147,6 +164,7 @@ gaming:
     federal_register_citation: 80 FR 48559
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-08-13'
     locator: result page 22 (?page=22), row 10
     note: 'Listed as: "Ohkay Owingeh Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
@@ -160,6 +178,7 @@ gaming:
     federal_register_citation: 72 FR 36717
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-07-05'
     locator: result page 22 (?page=22), row 11
     note: 'Listed as: "Ohkay Owingeh Tribal State Gaming Compact" (Approve); list''s Tribe column: "Ohkay
@@ -173,6 +192,7 @@ gaming:
     federal_register_citation: 66 FR 64856
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2001-12-14'
     locator: result page 22 (?page=22), row 12
     note: 'Listed as: "Ohkay Owingeh Tribal State Gaming Compact" (Approve); list''s Tribe column: "Ohkay
@@ -186,6 +206,7 @@ gaming:
     federal_register_citation: 60 FR 15194
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1995-03-22'
     locator: result page 22 (?page=22), row 13
     note: 'Listed as: "Ohkay Owingeh Tribal State Gaming Compact" (Approve); list''s Tribe column: "Ohkay
@@ -199,6 +220,7 @@ gaming:
     federal_register_citation: 62 FR 53650
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1997-10-15'
     locator: result page 22 (?page=22), row 14
     note: 'Listed as: "Ohkay Owingeh Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
@@ -215,6 +237,7 @@ gaming:
     dispute_resolution_locator: Section 7 (Dispute Resolution)
     source: compact-nm-pueblo-of-santa-ana-2016
     confidence: medium
+    verification: inferred
     as_of: '2016-12-30'
     locator: Section 7 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
@@ -226,6 +249,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10471&ind=10504
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1994-07-15'
     locator: table row 174, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 174 lists the nation
@@ -234,6 +258,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10489&ind=10505
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1995-07-05'
     locator: table row 174, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 174 lists the nation
@@ -242,6 +267,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10490&ind=10506
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2002-09-03'
     locator: table row 174, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 174 lists the nation
@@ -250,6 +276,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10491&ind=10507
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2005-10-04'
     locator: table row 174, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 174 lists the nation
@@ -258,6 +285,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10492&ind=10508
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2009-03-17'
     locator: table row 174, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 174 lists the nation
@@ -266,6 +294,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10493&ind=10509
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2016-08-04'
     locator: table row 174, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 174 lists the nation
@@ -276,6 +305,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Ohkay Owingeh, New Mexico Confidence lowered from high by the lead session: the notice
@@ -284,6 +314,7 @@ memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Ohkay Owingeh". Name matched to the roster entry.
 review:

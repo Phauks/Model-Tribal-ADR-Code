@@ -6,17 +6,20 @@ names:
   - name: Golden Hill
     source: connecticut-olr-report-2026-r-0029
     confidence: medium
+    verification: read-in-full
     as_of: '2026'
     note: Added 1974 as the Golden Hill tribe; renamed Golden Hill Paugussett in 1981 per the report.
   alternate:
   - name: Golden Hill Paugussett Tribal Nation
     source: connecticut-deep-tribal-affairs
     confidence: medium
+    verification: title-only
     as_of: '2026'
     note: Name used in the title of the linked state education page.
   - name: Golden Hill Paugussett Tribe
     source: federal-register-04-13871
     confidence: medium
+    verification: inferred
     as_of: '2004-06-21'
     note: Name used for this group in the cited source; matched to this record by name and state.
   official_source: census-aian-geography-definitions
@@ -24,6 +27,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State American Indian reservation; area 9100
   note: The 2020 Census delineated "Golden Hill Paugussett (state) Reservation" (State American Indian
@@ -37,6 +41,7 @@ recognition:
     Acknowledgment effective 3/18/2005 69 FR 34388
   source: federal-register-04-13871
   confidence: high
+  verification: bulk-import
   as_of: '2004-06-21'
   locator: 'Petitioner #81'
   note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
@@ -50,6 +55,7 @@ recognition:
     Hill Paugussett'
   source: connecticut-general-statutes-47-59a
   confidence: high
+  verification: inferred
   as_of: '2020'
   locator: Section 47-59a(b)
 - type: state
@@ -58,12 +64,14 @@ recognition:
     Protection
   source: connecticut-deep-tribal-affairs
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 states:
 - state: CT
   presence: land
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9100
   note: State reservation land.
@@ -71,6 +79,7 @@ states:
   presence: other
   source: ofa-petitions-resolved
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
@@ -78,6 +87,7 @@ states:
   presence: land
   source: connecticut-deep-tribal-affairs
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   note: Two reservations, in Trumbull and Colchester.
 census_areas:
@@ -87,6 +97,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9100, GEOID 9100R
   note: Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched

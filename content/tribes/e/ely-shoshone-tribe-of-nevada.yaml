@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ely Shoshone Tribe of Nevada
 - state: NV
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1040
   note: 'Census area with land in this state: Ely Reservation (code 1040). Area matched to the nation
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1040
   note: Matched by name. Census class code D2.
@@ -41,6 +45,7 @@ population:
   kind: citizens
   source: elyshoshonetribe-about
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'Page: ''Total membership is 763. Of those members, 319 live in the service area which is White
     Pine County.'' Undated; as_of is access date.'
@@ -48,6 +53,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1040, field POP100
   note: 'Census area: Ely Reservation (code 1040). Everyone counted as living in the area in the 2020
@@ -56,6 +62,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2985 (Ely Shoshone Tribe alone or in any combination), GEOID 0100000US
     (United States)
@@ -66,6 +73,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Ely Shoshone Tribe', PDF page 7, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -76,6 +84,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ely Shoshone Tribe of Nevada
 - kind: physical-address
@@ -83,6 +92,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ely Shoshone Tribe of Nevada
 - kind: mailing-address
@@ -90,6 +100,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ely Shoshone Tribe of Nevada
 - kind: phone
@@ -97,6 +108,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ely Shoshone Tribe of Nevada
 - kind: fax
@@ -104,6 +116,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ely Shoshone Tribe of Nevada
 federal_administration:
@@ -111,6 +124,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Eastern Nevada Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ely Shoshone Tribe of Nevada
 governing_documents:
@@ -120,6 +134,7 @@ governing_documents:
   link: https://narf.org/nill/codes/ely_shoshone/index.html
   source: national-indian-law-library-code-codes-ely-shoshone
   confidence: medium
+  verification: title-only
   as_of: '2017'
   locator: page heading
   note: 'Most Recent Update Received: November 2017. Full text linked from the National Indian Law Library
@@ -130,6 +145,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/ely_shoshone/index.html
   source: national-indian-law-library-constitution-constitutions-ely-shoshone
   confidence: medium
+  verification: title-only
   as_of: '2017'
   locator: page heading
   note: 'Confirmed Current: November 7, 2017 Amended: March 23, 2002. The National Indian Law Library
@@ -140,6 +156,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-ely-shoshone
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -148,6 +165,7 @@ justice_institutions:
   link: http://elyshoshonetribe-nsn.gov/departments.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Nevada section, entry 'Ely Shoshone Tribe'
   note: 'Link check 2026-11-21: the site did not respond.'
@@ -221,6 +239,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9769&ind=9800
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2004-10-22'
     locator: table row 76, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 76 lists the nation
@@ -232,12 +251,14 @@ jurisdiction:
     acquired by Nevada under Public Law 280, as of March 1, 1987. (53 FR 5837)
   source: federal-register-1988-ely-retrocession
   confidence: high
+  verification: read-in-full
   as_of: '1987-03-01'
 - topic: indian-child-welfare-act
   value: designated-agent-listed
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Ely Shoshone Tribe of Nevada Confidence lowered from high by the lead session: the
@@ -246,6 +267,7 @@ memberships:
 - organization: Inter-Tribal Council of Nevada
   source: inter-tribal-council-of-nevada-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Ely Shoshone Tribe". Name matched to the roster entry.
 review:

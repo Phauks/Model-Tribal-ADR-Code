@@ -6,6 +6,7 @@ names:
   - name: Georgia Tribe of Eastern Cherokees, Inc.
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     locator: 'Petitioner #41'
     note: Name as printed on the Office of Federal Acknowledgment list by state.
@@ -14,6 +15,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State Designated Tribal Statistical Area; area 9730
   note: The 2020 Census delineated "Georgia Tribe of Eastern Cherokee SDTSA" (State Designated Tribal
@@ -27,6 +29,7 @@ recognition:
   petition_stage: Denied (Petitions Resolved page); Letter of Intent to Petition 01/09/1979
   source: federal-register-2017-27764
   confidence: high
+  verification: bulk-import
   as_of: '2017-12-26'
   locator: 'Petitioner #41'
   note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
@@ -38,6 +41,7 @@ recognition:
     by House Bill 43, 2024)
   source: georgia-code-44-12-300
   confidence: high
+  verification: read-in-full
   as_of: '2022'
   locator: Section 44-12-300(a)
   note: '''The State of Georgia officially recognizes as legitimate American Indian tribes of Georgia
@@ -47,6 +51,7 @@ recognition:
   legal_basis: Official Code of Georgia Annotated Section 44-12-300(a) as amended by House Bill 43 (2024)
   source: georgia-house-bill-43-2024
   confidence: high
+  verification: read-in-full
   as_of: '2024'
   locator: Section 2
 states:
@@ -54,6 +59,7 @@ states:
   presence: other
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9730
   note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
@@ -61,6 +67,7 @@ states:
   presence: other
   source: ofa-petitions-resolved
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
@@ -68,6 +75,7 @@ states:
   presence: other
   source: georgia-code-44-12-300
   confidence: high
+  verification: inferred
   as_of: '2022'
 census_areas:
 - geographic_identifier: '9730'
@@ -76,6 +84,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9730, GEOID 9730R
   note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
@@ -86,6 +95,7 @@ contacts:
   label: Address given in the statute (2022 edition)
   source: georgia-code-44-12-300
   confidence: medium
+  verification: inferred
   as_of: '2022'
   note: House Bill 43 (2024) revised the addresses in the statute; the updated address was not confirmed.
 review:

@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yerington Paiute Tribe of the Yerington Colony & Campbell Ranch, Nevada
 - state: NV
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0440, 4725
   note: 'Census area with land in this state: Campbell Ranch (code 0440); Yerington Colony (code 4725).
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0440
   note: Matched by name. Census class code D2.
@@ -42,6 +46,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4725
   note: Matched by name. Census class code D2.
@@ -50,6 +55,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0440, field POP100
   note: 'Census area: Campbell Ranch (code 0440). Everyone counted as living in the area in the 2020 Census,
@@ -58,6 +64,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4725, field POP100
   note: 'Census area: Yerington Colony (code 4725). Everyone counted as living in the area in the 2020
@@ -66,6 +73,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3441 (Yerington Paiute Tribe of the Yerington Colony and Campbell Ranch,
     Nevada alone or in any combination), GEOID 0100000US (United States)
@@ -77,6 +85,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Yerington Paiute Tribe', PDF page 8, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -87,6 +96,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yerington Paiute Tribe of the Yerington Colony & Campbell Ranch, Nevada
 - kind: physical-address
@@ -94,6 +104,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yerington Paiute Tribe of the Yerington Colony & Campbell Ranch, Nevada
 - kind: mailing-address
@@ -101,6 +112,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yerington Paiute Tribe of the Yerington Colony & Campbell Ranch, Nevada
 - kind: phone
@@ -108,6 +120,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yerington Paiute Tribe of the Yerington Colony & Campbell Ranch, Nevada
 - kind: fax
@@ -115,6 +128,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yerington Paiute Tribe of the Yerington Colony & Campbell Ranch, Nevada
 federal_administration:
@@ -122,6 +136,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Western Nevada Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Yerington Paiute Tribe of the Yerington Colony & Campbell Ranch, Nevada
 government_structure:
@@ -130,6 +145,7 @@ government_structure:
     by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -140,6 +156,7 @@ government_structure:
     of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-yercons
   confidence: medium
+  verification: read-in-full
   as_of: '1937'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -150,6 +167,7 @@ governing_documents:
   link: https://narf.org/nill/codes/yeringtonpaiutecode/index.html
   source: national-indian-law-library-code-codes-yeringtonpaiutecode
   confidence: medium
+  verification: title-only
   as_of: '1984'
   locator: page heading
   note: 'Dated: 1984. The National Indian Law Library page gives the table of contents (and may link to
@@ -160,6 +178,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/yeringtonpaiute/index.html
   source: national-indian-law-library-constitution-constitutions-yeringtonpaiute
   confidence: medium
+  verification: title-only
   as_of: '1976'
   locator: page heading
   note: 'Approved: 1976. The National Indian Law Library page gives the table of contents (and may link
@@ -170,6 +189,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/yerchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-yerchrtr
   confidence: medium
+  verification: title-only
   as_of: '1937'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: corporate-charter
@@ -178,6 +198,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/yerchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-yerchrtr
   confidence: medium
+  verification: title-only
   as_of: '1937'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -186,6 +207,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/yercons.html
   source: university-of-oklahoma-indian-reorganization-act-yercons
   confidence: medium
+  verification: title-only
   as_of: '1937'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -193,6 +215,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-yerington-paiute
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Review 2026-11-21: the link
@@ -203,6 +226,7 @@ justice_institutions:
   link: http://yeringtonpaiute.us/index.php/tribal-court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Nevada section, entry 'Yerington Paiute Tribe'
 gaming:
@@ -213,6 +237,7 @@ gaming:
     federal_register_citation: 79 FR 63436
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2014-10-23'
     locator: result page 25 (?page=25), row 17
     note: 'Listed as: "Yerington Paiute Tribe of the Yerington Colony & Campbell Ranch Tribal State Gaming
@@ -231,6 +256,7 @@ gaming:
       of Sovereign Immunity)
     source: compact-nv-washoe-tribe-of-nevada-and-california-2018
     confidence: medium
+    verification: inferred
     as_of: '2018-01-18'
     locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver of Sovereign Immunity)
     note: state model compact; nation-specific text not checked. Read from the 2018 Washoe Tribe compact;
@@ -241,6 +267,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11570&ind=11600
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2015-12-09'
     locator: table row 317, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 317 lists the nation
@@ -251,6 +278,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Yerington Paiute Tribe of the Yerington Colony and Campbell Ranch, Nevada Confidence
@@ -260,6 +288,7 @@ memberships:
 - organization: Inter-Tribal Council of Nevada
   source: inter-tribal-council-of-nevada-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Yerington Paiute Tribe". Name matched to the roster entry.
 review:

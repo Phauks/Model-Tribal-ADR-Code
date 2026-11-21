@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Oneida Nation
 - state: WI
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2560
   note: 'Census area with land in this state: Oneida (WI) Reservation and Off-Reservation Trust Land (code
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2560
   note: Matched by name. Census class code D1.
@@ -41,12 +45,14 @@ population:
   kind: citizens
   source: oneida-nation-home
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"17,000 citizens worldwide"; undated statement on the official site; as_of is the access date'
 - count: 27110
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2560, field POP100
   note: 'Census area: Oneida (WI) Reservation and Off-Reservation Trust Land (code 2560). Everyone counted
@@ -56,6 +62,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3176 (Oneida Nation alone or in any combination), GEOID 0100000US (United
     States)
@@ -66,6 +73,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Oneida Nation, Wisconsin', PDF page 5, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -74,6 +82,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 84, row T35200 'Oneida Tribe of Indians of Wisconsin'
   note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
@@ -85,6 +94,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Oneida Nation
 - kind: physical-address
@@ -92,6 +102,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Oneida Nation
 - kind: mailing-address
@@ -99,6 +110,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Oneida Nation
 - kind: phone
@@ -106,6 +118,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Oneida Nation
 - kind: fax
@@ -113,6 +126,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Oneida Nation
 federal_administration:
@@ -120,6 +134,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Great Lakes Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Oneida Nation
 government_structure:
@@ -128,6 +143,7 @@ government_structure:
     approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -138,6 +154,7 @@ government_structure:
     Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-oneidacons
   confidence: medium
+  verification: read-in-full
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -148,6 +165,7 @@ governing_documents:
   link: https://narf.org/nill/codes/oneidacode_wi/index.html
   source: national-indian-law-library-code-codes-oneidacode-wi
   confidence: medium
+  verification: title-only
   as_of: '2019'
   locator: page heading
   note: 'Table of Contents Updated: April 2019. The National Indian Law Library page gives the table of
@@ -158,6 +176,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/oneida_wisconsin/index.html
   source: national-indian-law-library-constitution-constitutions-oneida-wisconsin
   confidence: medium
+  verification: title-only
   as_of: '2015'
   locator: page heading
   note: 'Amended: 2015. The National Indian Law Library page gives the table of contents (and may link
@@ -167,6 +186,7 @@ governing_documents:
   link: https://oneida-nsn.gov/government/register/laws/
   source: national-indian-law-library-oneida-nation
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
@@ -176,6 +196,7 @@ governing_documents:
   link: https://oneida-nsn.gov/government/register/laws/#ONEIDA-NATION-CONSTITUTION
   source: national-indian-law-library-oneida-nation
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
@@ -184,6 +205,7 @@ governing_documents:
   title: Oneida Nation Constitution and By-Laws
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Wisconsin section, entry 'Oneida Nation of Wisconsin'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -194,6 +216,7 @@ governing_documents:
   link: https://oneida-nsn.gov/government/register/laws/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Wisconsin section, entry 'Oneida Nation of Wisconsin'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -203,6 +226,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/oneidachrtr.html
   source: university-of-oklahoma-indian-reorganization-act-oneidachrtr
   confidence: medium
+  verification: title-only
   as_of: '1937'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -211,6 +235,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/oneidacons.html
   source: university-of-oklahoma-indian-reorganization-act-oneidacons
   confidence: medium
+  verification: title-only
   as_of: '1936'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -218,6 +243,7 @@ justice_institutions:
   name: Peacemaking and Mediation Division
   source: narf-ipi-tribal-peacemaking-laws
   confidence: medium
+  verification: title-only
   as_of: '2025-09-29'
   note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
     whether it currently operates was not checked.
@@ -226,6 +252,7 @@ justice_institutions:
   link: https://oneida-nsn.gov/government/judiciary/
   source: national-indian-law-library-oneida-nation
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -234,6 +261,7 @@ justice_institutions:
   link: http://www.oneida-nsn.gov/judiciary/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Wisconsin section, entry 'Oneida Nation of Wisconsin'
   note: 'Link check 2026-11-21: the site did not respond.'
@@ -259,6 +287,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Chapter-801-Judiciary.pdf
     source: oneida-wi-8-oc-801-judiciary
     confidence: medium
+    verification: read-in-full
     as_of: '2025'
     locator: 8 O.C. 801.4-2, 801.6-1 to 801.6-5
     note: Peacemakers may not act in contempt matters or issue process. Proceedings are closed to the
@@ -281,6 +310,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Chapter-801-Judiciary.pdf
     source: oneida-wi-8-oc-801-judiciary
     confidence: medium
+    verification: read-in-full
     as_of: '2025'
     locator: 8 O.C. 801.6-4, 801.6-5
   provisions:
@@ -520,6 +550,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-Oneida-Trial-Court-Rules.pdf
     source: oneida-wi-trial-court-rules
     confidence: medium
+    verification: read-in-full
     as_of: '2018'
     locator: Trial Court Rule 1.10
     note: Rule 1.10 governs applications from prospective peacemakers and mediators outside the Judiciary
@@ -533,6 +564,7 @@ gaming:
     federal_register_citation: 90 FR 27874
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '2025-06-30'
     locator: result page 46 (?page=46), row 18
     note: 'Listed as: "Oneida Nation and State of Wisconsin Gaming Compact of 1991 Fourth Amendment" (Deemed
@@ -546,6 +578,7 @@ gaming:
     federal_register_citation: 86 FR 46866
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-08-20'
     locator: result page 46 (?page=46), row 19
     note: 'Listed as: "Oneida Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Oneida
@@ -559,6 +592,7 @@ gaming:
     federal_register_citation: 63 FR 44920
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '1998-08-21'
     locator: result page 46 (?page=46), row 20
     note: 'Listed as: "Oneida Tribe of Indians Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -571,6 +605,7 @@ gaming:
     approved: '1992-01-30'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '1992-01-30'
     locator: result page 46 (?page=46), row 21
     note: 'Listed as: "Oneida Tribe of Indians Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -582,6 +617,7 @@ gaming:
     federal_register_citation: 68 FR 43366
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '2003-07-22'
     locator: result page 46 (?page=46), row 22
     note: 'Listed as: "Oneida Tribe of Indians Tribal State Gaming Compact" (Deemed Approved); list''s
@@ -597,6 +633,7 @@ gaming:
     dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
     source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
     confidence: medium
+    verification: inferred
     as_of: '1992-08-10'
     locator: Section XXIII (Dispute Resolution) of the 1992 compact
     note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
@@ -609,6 +646,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10499&ind=10515
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1994-05-11'
     locator: table row 176, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 176 lists the nation
@@ -617,6 +655,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10500&ind=10516
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2004-10-15'
     locator: table row 176, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 176 lists the nation
@@ -625,6 +664,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10501&ind=10517
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2009-12-09'
     locator: table row 176, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 176 lists the nation
@@ -633,6 +673,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10502&ind=10518
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-12-22'
     locator: table row 176, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 176 lists the nation
@@ -641,6 +682,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10503&ind=10537
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1994-01-03'
     locator: table row 177, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 177 lists the nation
@@ -653,6 +695,7 @@ jurisdiction:
     country within Wisconsin; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Wisconsin"
   note: Statute is primary; nation matched to Wisconsin by office state in the BIA Tribal Leaders Directory,
@@ -662,6 +705,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Oneida Nation Confidence lowered from high by the lead session: the notice prints
@@ -670,11 +714,13 @@ memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Oneida Tribe of Indians of Wisconsin". Name matched to the roster entry.
 - organization: Great Lakes Inter-Tribal Council
   source: great-lakes-inter-tribal-council-tribes-served
   confidence: high
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Oneida Nation".
 review:

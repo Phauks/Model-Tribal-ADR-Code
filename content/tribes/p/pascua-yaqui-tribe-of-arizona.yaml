@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pascua Yaqui Tribe of Arizona
 - state: AZ
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2680
   note: 'Census area with land in this state: Pascua Pueblo Yaqui Reservation and Off-Reservation Trust
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2680
   note: Matched by name. Census class code D1.
@@ -41,6 +45,7 @@ population:
   kind: citizens
   source: pascua-yaqui-tribe-of-arizona-wp-content-uploads-2023-10-membership-st
   confidence: high
+  verification: read-in-full
   as_of: 2023-10
   note: 'Enrollment Department "Membership Study October 2023": "Members Living (Active) 21307"; deceased
     2839; total living and deceased 24146'
@@ -48,6 +53,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2680, field POP100
   note: 'Census area: Pascua Pueblo Yaqui Reservation and Off-Reservation Trust Land (code 2680). Everyone
@@ -57,6 +63,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3188 (Pascua Yaqui Tribe of Arizona alone or in any combination), GEOID
     0100000US (United States)
@@ -67,6 +74,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Pascua Yaqui Tribe', PDF page 7, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -75,6 +83,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 85, row T36900 'Pascua Yaqui Tribe of Arizona'
   note: Column 2, American Indian and Alaska Native alone-or-in-combination population living in the nation's
@@ -87,6 +96,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pascua Yaqui Tribe of Arizona
 - kind: physical-address
@@ -94,6 +104,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pascua Yaqui Tribe of Arizona
 - kind: mailing-address
@@ -101,6 +112,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pascua Yaqui Tribe of Arizona
 - kind: phone
@@ -108,6 +120,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pascua Yaqui Tribe of Arizona
 - kind: fax
@@ -115,6 +128,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pascua Yaqui Tribe of Arizona
 federal_administration:
@@ -122,6 +136,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Salt River Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pascua Yaqui Tribe of Arizona
 governing_documents:
@@ -131,6 +146,7 @@ governing_documents:
   link: https://narf.org/nill/codes/pascua-yaqui/index.html
   source: national-indian-law-library-code-codes-pascua-yaqui
   confidence: medium
+  verification: title-only
   as_of: '2018'
   locator: page heading
   note: 'Table of Contents Updated: October 2018. The National Indian Law Library page gives the table
@@ -141,6 +157,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/pascua-yaqui/index.html
   source: national-indian-law-library-constitution-constitutions-pascua-yaqui
   confidence: medium
+  verification: title-only
   as_of: '2015'
   locator: page heading
   note: 'Amended: July 2015. The National Indian Law Library page gives the table of contents (and may
@@ -150,6 +167,7 @@ governing_documents:
   link: https://www.pascuayaqui-nsn.gov/tribal-code-v1/
   source: national-indian-law-library-pascua-yaqui
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -159,6 +177,7 @@ governing_documents:
   link: https://www.pascuayaqui-nsn.gov/tribal-code-v1/
   source: national-indian-law-library-pascua-yaqui
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -168,6 +187,7 @@ governing_documents:
   link: http://www.pascuayaqui-nsn.gov/_static_pages/tribalcodes/index.php
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Arizona section, entry 'Pascua Yaqui Tribe'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -175,6 +195,7 @@ governing_documents:
   title: Pascua Yaqui Tribe Tribal Codes
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Arizona section, entry 'Pascua Yaqui Tribe'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -186,6 +207,7 @@ justice_institutions:
   link: https://www.pascuayaqui-nsn.gov/judicial-branch/
   source: national-indian-law-library-pascua-yaqui
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -194,6 +216,7 @@ justice_institutions:
   link: http://www.pycourts.org/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Pascua Yaqui Tribe'
 dispute_resolution:
@@ -216,6 +239,7 @@ dispute_resolution:
     link: https://www.pascuayaqui-nsn.gov/tribal-code-v1/
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/mandatory-mediation/
     note: 'Mandatory case types listed: marriage, dissolution of marriage, child custody and visitation,
@@ -412,6 +436,7 @@ dispute_resolution:
     link: https://www.pascuayaqui-nsn.gov/wp-content/legacy-tribalcodes/docs/7_PYTC/6_Arbitration.pdf
     source: pascua-yaqui-7-pytc-6-arbitration
     confidence: medium
+    verification: read-in-full
     as_of: '2010-03-24'
     locator: §§ 6-40, 6-90, 6-100, 6-110, 6-130, 6-140
 gaming:
@@ -421,6 +446,7 @@ gaming:
     approved: '1993-08-18'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-08-18'
     locator: result page 1 (?page=1), row 21
     note: 'Listed as: "Pascua Yaqui Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -431,6 +457,7 @@ gaming:
     federal_register_citation: 68 FR 5912
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2003-02-05'
     locator: result page 1 (?page=1), row 22
     note: 'Listed as: "Pascua Yaqui Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -444,6 +471,7 @@ gaming:
     federal_register_citation: 86 FR 27889
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-05-24'
     locator: result page 1 (?page=1), row 23
     note: 'Listed as: "Pascua Yaqui Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -457,6 +485,7 @@ gaming:
     federal_register_citation: 87 FR 35992
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2022-06-14'
     locator: result page 1 (?page=1), row 24
     note: 'Listed as: "Pascua Yaqui Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -474,6 +503,7 @@ gaming:
     dispute_resolution_locator: Section 15 (Dispute Resolution)
     source: compact-az-ak-chin-indian-community-2003
     confidence: medium
+    verification: inferred
     as_of: '2003-02-05'
     locator: Section 15 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
@@ -485,6 +515,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10536&ind=10573
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-10-12'
     locator: table row 184, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 184 lists the nation
@@ -493,6 +524,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10560&ind=10574
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1994-06-13'
     locator: table row 184, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 184 lists the nation
@@ -501,6 +533,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10561&ind=10575
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-07-18'
     locator: table row 184, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 184 lists the nation
@@ -509,6 +542,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10562&ind=10576
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2004-01-14'
     locator: table row 184, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 184 lists the nation
@@ -517,6 +551,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10563&ind=10577
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2004-09-20'
     locator: table row 184, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 184 lists the nation
@@ -525,6 +560,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10564&ind=10578
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2009-03-05'
     locator: table row 184, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 184 lists the nation
@@ -533,6 +569,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10565&ind=10579
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2012-01-13'
     locator: table row 184, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 184 lists the nation
@@ -541,6 +578,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10566&ind=10580
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2013-04-15'
     locator: table row 184, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 184 lists the nation
@@ -549,6 +587,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10567&ind=10581
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-08-27'
     locator: table row 184, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 184 lists the nation
@@ -557,6 +596,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Pascua Yaqui Tribe of Arizona".
       Name extracted from the PDF by the page-fetch tool and matched to the roster.
@@ -569,12 +609,14 @@ jurisdiction:
     rather than an assumption under Public Law 280 section 7. (50 FR 34555)
   source: federal-register-1985-pascua-yaqui-retrocession
   confidence: high
+  verification: inferred
   as_of: '1985-08-27'
 - topic: indian-child-welfare-act
   value: designated-agent-listed
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Pascua Yaqui Tribe of Arizona Confidence lowered from high by the lead session: the
@@ -586,6 +628,7 @@ jurisdiction:
     (list updated May 2022).
   source: national-congress-of-american-indians-implementing-tribe-profile-pascua-yaqui-tribe-of-arizona
   confidence: medium
+  verification: bulk-import
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Pascua Yaqui Tribe". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
@@ -595,6 +638,7 @@ jurisdiction:
     approved February 6, 2014 (pilot project).
   source: department-of-justice-violence-against-women-act-2013-pilot-project
   confidence: medium
+  verification: bulk-import
   as_of: '2014-02-06'
   locator: List of granted Pilot Project applications
   note: Primary source but describes the 2014-2015 pilot period; page updated April 7, 2023.
@@ -604,6 +648,7 @@ jurisdiction:
     Law and Order Act (as of 2013 interviews).
   source: bureau-of-justice-assistance-enhanced-sentencing-in-tribal-courts-2015
   confidence: medium
+  verification: bulk-import
   as_of: '2013'
   locator: p. 3, list of tribes exercising enhanced sentencing
   note: Listed as "Pascua Yaqui".
@@ -611,6 +656,7 @@ memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Pascua Yaqui Tribe". Name matched to the roster entry.
 review:

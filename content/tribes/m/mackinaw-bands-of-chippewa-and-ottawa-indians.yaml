@@ -6,6 +6,7 @@ names:
   - name: Mackinac Bands of Chippewa and Ottawa Indians
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     note: Name used for this group in the cited source; matched to this record by name and state.
   official_source: ofa-list-of-petitioners-by-state-2013
@@ -16,6 +17,7 @@ recognition:
   petition_stage: Letter of Intent to Petition 5/13/1998
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   locator: 'Petitioner #186'
   note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
@@ -27,6 +29,7 @@ recognition:
     (2016-2017); no statute or executive order identified
   source: michigan-civil-rights-indian-directory-2016
   confidence: low
+  verification: bulk-import
   as_of: '2016-12-14'
   locator: Page 6
   note: Michigan has no formal state-recognition statute found; the 'State Historic Tribes' designation
@@ -36,6 +39,7 @@ states:
   presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
@@ -43,6 +47,7 @@ states:
   presence: other
   source: michigan-civil-rights-indian-directory-2016
   confidence: low
+  verification: bulk-import
   as_of: '2016-12-14'
 review:
   status: drafted-from-public-sources

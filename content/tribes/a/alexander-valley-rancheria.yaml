@@ -8,6 +8,7 @@ recognition:
   legal_basis: Act of Aug. 18, 1958, Pub. L. 85-671, 72 Stat. 619; termination notice 26 Fed. Reg. 6875
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Appendix II, Table 6
   note: GAO Table 6 lists "Alexander Valley Rancheria" among nine California tribes whose recognition
@@ -18,6 +19,7 @@ recognition:
   legal_basis: Act of Aug. 18, 1958, Pub. L. 85-671, sec. 1, 72 Stat. 619
   source: public-law-85-671-california-rancheria-act
   confidence: medium
+  verification: inferred
   as_of: '1958-08-18'
   locator: Section 1, list of rancherias and reservations
   note: Section 1 names "Alexander Valley" among the California rancherias and reservations whose lands
@@ -28,6 +30,7 @@ states:
   presence: other
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Appendix II, Table 6
   note: Former rancheria or reservation in California named by GAO.

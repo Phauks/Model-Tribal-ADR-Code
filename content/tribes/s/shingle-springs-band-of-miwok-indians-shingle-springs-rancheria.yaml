@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
   note: 'The notice adds in parentheses: Verona Tract.'
@@ -17,12 +18,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California
 - state: CA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3750
   note: 'Census area with land in this state: Shingle Springs Rancheria and Off-Reservation Trust Land
@@ -34,6 +37,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3750
   note: Matched by name. Census class code D1.
@@ -42,6 +46,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3750, field POP100
   note: 'Census area: Shingle Springs Rancheria and Off-Reservation Trust Land (code 3750). Everyone counted
@@ -51,6 +56,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3315 (Shingle Springs Band of Miwok Indians  alone or in any combination),
     GEOID 0100000US (United States)
@@ -61,6 +67,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Shingle Springs Band of Miwok Indians', PDF page 8, Enrollment
     column
@@ -70,6 +77,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: low
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 87, row T45800 'Shingle Springs Band of Miwok Indians'
   note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
@@ -82,6 +90,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California
 - kind: physical-address
@@ -89,6 +98,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California
 - kind: mailing-address
@@ -96,6 +106,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California
 - kind: phone
@@ -103,6 +114,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California
 - kind: fax
@@ -110,6 +122,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California
 federal_administration:
@@ -117,6 +130,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Central California Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California
 governing_documents:
@@ -127,6 +141,7 @@ governing_documents:
   link: https://narf.org/nill/codes/shingle_springs_miwok/index.html
   source: national-indian-law-library-code-codes-shingle-springs-miwok
   confidence: medium
+  verification: title-only
   as_of: '2019'
   locator: page heading
   note: 'Table of Contents Updated: May 2019. The National Indian Law Library page gives the table of
@@ -136,6 +151,7 @@ governing_documents:
   link: http://www.shinglespringsrancheria.com/government/codes-policies-and-bylaws/
   source: national-indian-law-library-shingle-springs
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -145,6 +161,7 @@ governing_documents:
   link: http://www.shinglespringsrancheria.com/government/codes-policies-and-bylaws/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: California section, entry 'Shingle Springs Band of Miwok Indians'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -154,6 +171,7 @@ justice_institutions:
   link: http://shinglespringsrancheria.com/content/index.php?option=com_content&amp;view=article&amp;id=158:tribal-court&amp;catid=37:departments-a-programs&amp;Itemid=57
   source: national-indian-law-library-shingle-springs
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -162,6 +180,7 @@ justice_institutions:
   link: http://www.shinglespringsrancheria.com/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'Shingle Springs Band of Miwok Indians'
 dispute_resolution:
@@ -260,6 +279,7 @@ gaming:
     federal_register_citation: 65 FR 31189
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2000-05-16'
     locator: result page 11 (?page=11), row 16
     note: 'Listed as: "Shingle Springs Band of Miwok Indians Tribal State Gaming Compact" (Approve); list''s
@@ -274,6 +294,7 @@ gaming:
     federal_register_citation: 73 FR 75764
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2008-12-12'
     locator: result page 11 (?page=11), row 17
     note: 'Listed as: "Shingle Springs Band of Miwok Indians Tribal State Gaming Compact" (Deemed Approved);
@@ -288,6 +309,7 @@ gaming:
     federal_register_citation: 78 FR 44146
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2013-07-23'
     locator: result page 11 (?page=11), row 18
     note: 'Listed as: "Shingle Springs Band of Miwok Indians Tribal State Gaming Compact" (Deemed Approved);
@@ -302,6 +324,7 @@ gaming:
     federal_register_citation: 85 FR 80142
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2020-12-11'
     locator: result page 11 (?page=11), row 19
     note: 'Listed as: "Shingle Springs Band of Miwok Indians Tribal State Gaming Compact" (Deemed Approved);
@@ -320,6 +343,7 @@ gaming:
     dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     source: compact-ca-cher-ae-heights-indian-community-of-the-2026
     confidence: medium
+    verification: inferred
     as_of: '2026-01-26'
     locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
@@ -332,6 +356,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11115&ind=11139
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1996-08-06'
     locator: table row 257, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 257 lists the nation
@@ -340,6 +365,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11114&ind=11140
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2010-11-04'
     locator: table row 257, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 257 lists the nation
@@ -348,6 +374,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11118&ind=11141
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2014-08-27'
     locator: table row 257, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 257 lists the nation
@@ -356,6 +383,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Shingle Springs Band of Miwok Indians".
       Name extracted from the PDF by the page-fetch tool and matched to the roster.
@@ -367,6 +395,7 @@ jurisdiction:
     country within California; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
   note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
@@ -376,6 +405,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California

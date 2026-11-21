@@ -7,12 +7,14 @@ names:
     language_tag: chr
     source: united-keetoowah-band-of-cherokee-indian-about-us
     confidence: high
+    verification: inferred
     as_of: '2026-11-21'
     note: '"''Ani-gi-du-wa-gi'' is our original name"; site also writes "Anigiduwagi"'
   alternate:
   - name: Western Cherokee
     source: united-keetoowah-band-of-cherokee-indian-about-us
     confidence: high
+    verification: read-in-full
     as_of: '2026-11-21'
     note: '"We are also known as the Western Cherokee, or Old Settlers"'
   official_source: bia-recognized-entities-2026
@@ -33,6 +35,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -40,6 +43,7 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: United Keetoowah Band of Cherokee Indians in Oklahoma
 population:
@@ -47,6 +51,7 @@ population:
   kind: citizens
   source: united-keetoowah-band-of-cherokee-indian-about-us
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"Today we number more than 14,000 tribal members"; undated statement on the official site; as_of
     is the access date'
@@ -54,6 +59,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3394 (United Keetoowah Band of Cherokee Indians in Oklahoma alone or
     in any combination), GEOID 0100000US (United States)
@@ -64,6 +70,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Oklahoma, row 'United Keetoowah Band of Cherokee Indians', PDF page 6, Enrollment
     column
@@ -73,6 +80,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 89, row T51600 'United Keetoowah Band of Cherokee Indians in Oklahoma'
   note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
@@ -84,6 +92,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: United Keetoowah Band of Cherokee Indians in Oklahoma
 - kind: physical-address
@@ -91,6 +100,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: United Keetoowah Band of Cherokee Indians in Oklahoma
 - kind: mailing-address
@@ -98,6 +108,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: United Keetoowah Band of Cherokee Indians in Oklahoma
 - kind: phone
@@ -105,6 +116,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: United Keetoowah Band of Cherokee Indians in Oklahoma
 - kind: fax
@@ -112,6 +124,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: United Keetoowah Band of Cherokee Indians in Oklahoma
 languages:
@@ -119,6 +132,7 @@ languages:
   language_tag: chr
   source: united-keetoowah-band-of-cherokee-indian-about-us
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: '"Giduwa Language ... represented by the Cherokee Syllabary"'
 federal_administration:
@@ -126,6 +140,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Eastern Oklahoma Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: United Keetoowah Band of Cherokee Indians in Oklahoma
 government_structure:
@@ -134,6 +149,7 @@ government_structure:
     adopted under Act of June 18, 1934 (48 Stat. 984); Act of June 26, 1936 (49 Stat. 1967)
   source: university-of-oklahoma-indian-reorganization-act-keecons
   confidence: medium
+  verification: read-in-full
   as_of: '1950'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -143,6 +159,7 @@ governing_documents:
   link: https://www.ukb-nsn.gov/ukbtribalcourt
   source: national-indian-law-library-united-keetoowah-cherokee
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
@@ -152,6 +169,7 @@ governing_documents:
   link: https://www.ukb-nsn.gov/constitution-and-by-laws
   source: national-indian-law-library-united-keetoowah-cherokee
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
@@ -162,6 +180,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/keecons.html
   source: national-indian-law-library-united-keetoowah-cherokee
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
@@ -172,6 +191,7 @@ governing_documents:
   link: https://www.loc.gov/item/51061558/
   source: national-indian-law-library-united-keetoowah-cherokee
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
@@ -182,6 +202,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/keechrtr.html
   source: national-indian-law-library-united-keetoowah-cherokee
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
@@ -192,6 +213,7 @@ governing_documents:
   link: https://www.loc.gov/item/51061613/
   source: national-indian-law-library-united-keetoowah-cherokee
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
@@ -200,6 +222,7 @@ governing_documents:
   title: United Keetoowah Band of Cherokee Indians in Oklahoma Constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Oklahoma section, entry 'United Keetoowah Band of Cherokee Indians in Oklahoma'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -211,6 +234,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/keechrtr.html
   source: university-of-oklahoma-indian-reorganization-act-keechrtr
   confidence: medium
+  verification: title-only
   as_of: '1950'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -219,6 +243,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/keecons.html
   source: university-of-oklahoma-indian-reorganization-act-keecons
   confidence: medium
+  verification: title-only
   as_of: '1950'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -227,6 +252,7 @@ justice_institutions:
   link: https://www.ukb-nsn.gov/ukbtribalcourt
   source: national-indian-law-library-united-keetoowah-cherokee
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -235,6 +261,7 @@ justice_institutions:
   link: http://www.keetoowahcherokee.org/government/tribal-courts
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Oklahoma section, entry 'United Keetoowah Band of Cherokee Indians in Oklahoma'
 dispute_resolution:
@@ -259,6 +286,7 @@ gaming:
     federal_register_citation: 85 FR 55472
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2020-09-08'
     locator: result page 29 (?page=29), row 16
     note: 'Listed as: "United Keetoowah Band of Cherokee Indians Tribal State Gaming Compact" (Deemed
@@ -273,6 +301,7 @@ gaming:
     federal_register_citation: 85 FR 36609
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2020-06-17'
     locator: result page 29 (?page=29), row 17
     note: 'Listed as: "United Keetoowah Band of Cherokee Indians Tribal State Gaming Compact" (Extensions);
@@ -290,6 +319,7 @@ gaming:
     dispute_resolution_locator: Part 12 (Dispute Resolution)
     source: compact-ok-cherokee-nation-2005
     confidence: medium
+    verification: inferred
     as_of: '2005-01-27'
     locator: Part 12 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
@@ -302,6 +332,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11477&ind=11497
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1995-03-22'
     locator: table row 300, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 300 lists the nation
@@ -312,6 +343,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: United Keetoowah Band of Cherokee Indians in Oklahoma Confidence lowered from high

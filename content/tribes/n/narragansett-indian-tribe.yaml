@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 - type: federal
@@ -18,6 +19,7 @@ recognition:
   since: '1983-04-11'
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '1983-04-11'
   locator: 'Petitioner #59'
 states:
@@ -25,12 +27,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Narragansett Indian Tribe
 - state: RI
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2415
   note: 'Census area with land in this state: Narragansett Reservation (code 2415). Area matched to the
@@ -42,6 +46,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2415
   note: Matched by name. Census class code D2.
@@ -50,6 +55,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2415, field POP100
   note: 'Census area: Narragansett Reservation (code 2415). Everyone counted as living in the area in
@@ -58,6 +64,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3149 (Narragansett Indian Tribe alone or in any combination), GEOID
     0100000US (United States)
@@ -68,6 +75,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Narragansett Indian Tribe', PDF page 4, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -76,6 +84,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: low
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 81, row T23400 'Narragansett Indian Tribe of Rhode Island'
   note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
@@ -88,6 +97,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Narragansett Indian Tribe
 - kind: physical-address
@@ -95,6 +105,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Narragansett Indian Tribe
 - kind: mailing-address
@@ -102,6 +113,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Narragansett Indian Tribe
 - kind: phone
@@ -109,6 +121,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Narragansett Indian Tribe
 - kind: fax
@@ -116,6 +129,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Narragansett Indian Tribe
 federal_administration:
@@ -123,6 +137,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Eastern Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Narragansett Indian Tribe
 justice_institutions:
@@ -130,6 +145,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-narragansett
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -140,6 +156,7 @@ gaming:
     approved: '1994-12-16'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '1994-12-16'
     locator: result page 33 (?page=33), row 22
     note: 'Listed as: "Narragansett Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -158,6 +175,7 @@ gaming:
     dispute_resolution_locator: Section 12(c) (Enforcement by parties)
     source: compact-ri-narragansett-indian-tribe-1994
     confidence: medium
+    verification: read-in-full
     as_of: '1994-12-16'
     locator: Section 12(c) (Enforcement by parties)
     note: Dispute-resolution clause read from this nation's own compact document. Document is older than
@@ -168,6 +186,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10381&ind=10412
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1995-11-20'
     locator: table row 163, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 163 lists the nation
@@ -178,6 +197,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Narragansett Indian Tribe Confidence lowered from high by the lead session: the notice
@@ -186,6 +206,7 @@ memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations
   confidence: medium
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Narragansett Indian Tribe".
 review:

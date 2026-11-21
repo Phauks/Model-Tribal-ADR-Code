@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Crow Creek Sioux Tribe of the Crow Creek Reservation, South Dakota
 - state: SD
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0855
   note: 'Census area with land in this state: Crow Creek Reservation (code 0855). Area matched to the
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0855
   note: Matched by name. Census class code D2.
@@ -41,6 +45,7 @@ population:
   kind: citizens
   source: sd-tribal-relations-crow-creek-sioux-tribe
   confidence: medium
+  verification: inferred
   as_of: '2026-11-21'
   note: 'State profile page: ''Total Population: 2,176 Estimated Tribal Enrollment: 4,600''. ''Estimated''
     per the page; undated (page links a 2019 statistical profile); as_of is access date.'
@@ -48,6 +53,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0855, field POP100
   note: 'Census area: Crow Creek Reservation (code 0855). Everyone counted as living in the area in the
@@ -56,6 +62,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2962 (Crow Creek Sioux Tribe of the Crow Creek Reservation, South Dakota
     alone or in any combination), GEOID 0100000US (United States)
@@ -67,6 +74,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Denver, row 'Crow Creek Sioux Tribe', PDF page 5, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -75,6 +83,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: low
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 77, row T09500 'Crow Creek Sioux Tribe of the Crow Creek Reservation'
   note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
@@ -87,6 +96,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Crow Creek Sioux Tribe of the Crow Creek Reservation, South Dakota
 - kind: physical-address
@@ -94,6 +104,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Crow Creek Sioux Tribe of the Crow Creek Reservation, South Dakota
 - kind: mailing-address
@@ -101,6 +112,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Crow Creek Sioux Tribe of the Crow Creek Reservation, South Dakota
 - kind: phone
@@ -108,6 +120,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Crow Creek Sioux Tribe of the Crow Creek Reservation, South Dakota
 - kind: fax
@@ -115,6 +128,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Crow Creek Sioux Tribe of the Crow Creek Reservation, South Dakota
 languages:
@@ -122,6 +136,7 @@ languages:
   language_tag: dak
   source: sd-tribal-relations-crow-creek-sioux-tribe
   confidence: medium
+  verification: inferred
   as_of: '2026-11-21'
   note: 'State profile page: ''Traditional Language: Dakota''.'
 federal_administration:
@@ -129,6 +144,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Crow Creek Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Crow Creek Sioux Tribe of the Crow Creek Reservation, South Dakota
 governing_documents:
@@ -138,6 +154,7 @@ governing_documents:
   link: https://narf.org/nill/codes/crow_creek_sioux/index.html
   source: national-indian-law-library-code-codes-crow-creek-sioux
   confidence: medium
+  verification: title-only
   as_of: '2005'
   locator: page heading
   note: 'Received: March 2005, On the cover: 1997 revisions. The National Indian Law Library page gives
@@ -147,6 +164,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/crow_creek_sioux/index.html
   source: national-indian-law-library-constitution-constitutions-crow-creek-sioux
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: page heading
   note: The National Indian Law Library page gives the table of contents (and may link to the nation's
@@ -156,6 +174,7 @@ governing_documents:
   link: http://www.crowcreekconnections.org/CCST.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: South Dakota section, entry 'Crow Creek Sioux Tribe'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -165,6 +184,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/crowcscons.html
   source: university-of-oklahoma-indian-reorganization-act-crowcscons
   confidence: medium
+  verification: title-only
   as_of: '1949'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -172,6 +192,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-crow-creek-sioux
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -179,6 +200,7 @@ justice_institutions:
   name: Crow Creek Sioux Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: South Dakota section, entry 'Crow Creek Sioux Tribe'
 gaming:
@@ -189,6 +211,7 @@ gaming:
     federal_register_citation: 79 FR 3242
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2014-01-17'
     locator: result page 33 (?page=33), row 24
     note: 'Listed as: "Crow Creek Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe
@@ -203,6 +226,7 @@ gaming:
     federal_register_citation: 66 FR 47239
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2001-09-11'
     locator: result page 33 (?page=33), row 25
     note: 'Listed as: "Crow Creek Sioux Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -215,6 +239,7 @@ gaming:
     approved: '1993-04-08'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '1993-04-08'
     locator: result page 34 (?page=34), row 1
     note: 'Listed as: "Crow Creek Sioux Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -226,6 +251,7 @@ gaming:
     federal_register_citation: 81 FR 58960
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2016-08-26'
     locator: result page 34 (?page=34), row 2
     note: 'Listed as: "Crow Creek Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe
@@ -240,6 +266,7 @@ gaming:
     federal_register_citation: 81 FR 7583
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2016-02-12'
     locator: result page 34 (?page=34), row 3
     note: 'Listed as: "Crow Creek Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe
@@ -254,6 +281,7 @@ gaming:
     federal_register_citation: 82 FR 35989
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2017-08-02'
     locator: result page 34 (?page=34), row 4
     note: 'Listed as: "Crow Creek Sioux Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -267,6 +295,7 @@ gaming:
     federal_register_citation: 82 FR 14910
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2017-03-23'
     locator: result page 34 (?page=34), row 5
     note: 'Listed as: "Crow Creek Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe
@@ -281,6 +310,7 @@ gaming:
     federal_register_citation: 80 FR 5781
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2015-02-03'
     locator: result page 34 (?page=34), row 6
     note: 'Listed as: "Crow Creek Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe
@@ -295,6 +325,7 @@ gaming:
     federal_register_citation: 80 FR 48558
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2015-08-13'
     locator: result page 34 (?page=34), row 7
     note: 'Listed as: "Crow Creek Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe
@@ -308,6 +339,7 @@ gaming:
     approved: '1992-04-15'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '1992-04-15'
     locator: result page 34 (?page=34), row 8
     note: 'Listed as: "Crow Creek Sioux Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -319,6 +351,7 @@ gaming:
     federal_register_citation: 87 FR 35994
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2022-06-14'
     locator: result page 34 (?page=34), row 9
     note: 'Listed as: "Crow Creek Sioux Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -336,6 +369,7 @@ gaming:
       procedure
     source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-trav-2019
     confidence: medium
+    verification: inferred
     as_of: '2019-04-01'
     locator: Section 13.1 or 14.1 (General Provisions) and Section 7 (Licensing) arbitration procedure
     note: state model compact; nation-specific text not checked. The same federal-court clause appears
@@ -347,6 +381,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9698&ind=9716
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1994-05-11'
     locator: table row 66, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 66 lists the nation
@@ -355,6 +390,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Crow Creek Sioux Tribe of
       the Crow Creek Reservation". Facilities as machine-extracted from the report text (verify): Lode
@@ -365,6 +401,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Crow Creek Sioux Tribe of the Crow Creek Reservation, South Dakota Confidence lowered
@@ -374,6 +411,7 @@ memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Crow Creek Sioux Tribe". Name matched to the roster entry.
 review:

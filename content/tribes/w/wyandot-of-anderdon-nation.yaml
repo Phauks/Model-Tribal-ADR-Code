@@ -7,6 +7,7 @@ recognition:
 - type: unrecognized
   source: usaspending-award-90na8457
   confidence: medium
+  verification: inferred
   as_of: '2022-09-30'
   locator: Award summary
   note: 'HHS Administration for Native Americans award 90NA8457 (Assistance Listing 93.612, Native American
@@ -20,6 +21,7 @@ recognition:
   petition_stage: Letter of Intent to Petition 1/21/2003
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   locator: 'Petitioner #267'
   note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
@@ -31,6 +33,7 @@ recognition:
     (2016-2017); no statute or executive order identified
   source: michigan-civil-rights-indian-directory-2016
   confidence: low
+  verification: bulk-import
   as_of: '2016-12-14'
   locator: Page 6
   note: Michigan has no formal state-recognition statute found; the 'State Historic Tribes' designation
@@ -40,6 +43,7 @@ states:
   presence: other
   source: usaspending-award-90na8457
   confidence: medium
+  verification: bulk-import
   as_of: '2022-09-30'
   locator: Place of performance state
   note: Place of performance state on the award record.
@@ -47,6 +51,7 @@ states:
   presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
@@ -54,6 +59,7 @@ states:
   presence: other
   source: michigan-civil-rights-indian-directory-2016
   confidence: low
+  verification: bulk-import
   as_of: '2016-12-14'
 review:
   status: drafted-from-public-sources

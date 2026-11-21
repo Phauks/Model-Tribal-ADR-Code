@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Winnemucca Indian Colony of Nevada
 - state: NV
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4635
   note: 'Census area with land in this state: Winnemucca Indian Colony (code 4635). Area matched to the
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4635
   note: Matched by name. Census class code D2.
@@ -41,6 +45,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4635, field POP100
   note: 'Census area: Winnemucca Indian Colony (code 4635). Everyone counted as living in the area in
@@ -49,6 +54,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3429 (Winnemucca Indian Colony of Nevada alone or in any combination),
     GEOID 0100000US (United States)
@@ -59,6 +65,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Winnemucca Indian Colony', PDF page 8, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -69,6 +76,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Winnemucca Indian Colony of Nevada
 - kind: physical-address
@@ -76,6 +84,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Winnemucca Indian Colony of Nevada
 - kind: mailing-address
@@ -83,6 +92,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Winnemucca Indian Colony of Nevada
 - kind: phone
@@ -90,6 +100,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Winnemucca Indian Colony of Nevada
 - kind: fax
@@ -97,6 +108,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Winnemucca Indian Colony of Nevada
 federal_administration:
@@ -104,6 +116,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Western Nevada Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Winnemucca Indian Colony of Nevada
 governing_documents:
@@ -113,6 +126,7 @@ governing_documents:
   link: https://narf.org/nill/codes/winnemucca/index.html
   source: national-indian-law-library-code-codes-winnemucca
   confidence: medium
+  verification: title-only
   as_of: '2012'
   locator: page heading
   note: 'Last updated: 2012. The National Indian Law Library page gives the table of contents (and may
@@ -123,6 +137,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/winnemucca/index.html
   source: national-indian-law-library-constitution-constitutions-winnemucca
   confidence: medium
+  verification: title-only
   as_of: '1970'
   locator: page heading
   note: 'Dated: 1970. The National Indian Law Library page gives the table of contents (and may link to
@@ -132,6 +147,7 @@ governing_documents:
   link: http://winnemuccaindiancolony.weebly.com/members.html
   source: national-indian-law-library-winnemucca
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -142,6 +158,7 @@ governing_documents:
   link: http://winnemuccaindiancolony.weebly.com/members.html
   source: national-indian-law-library-winnemucca
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -151,6 +168,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-winnemucca
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Review 2026-11-21: the link
@@ -190,12 +208,14 @@ jurisdiction:
     1975. (40 FR 27501)
   source: federal-register-1975-nevada-retrocession
   confidence: high
+  verification: read-in-full
   as_of: '1975-07-01'
 - topic: indian-child-welfare-act
   value: designated-agent-listed
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Winnemucca Indian Colony of Nevada Confidence lowered from high by the lead session:
@@ -205,6 +225,7 @@ memberships:
 - organization: Inter-Tribal Council of Nevada
   source: inter-tribal-council-of-nevada-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Winnemucca Colony Council". Name matched to the roster entry.
 review:

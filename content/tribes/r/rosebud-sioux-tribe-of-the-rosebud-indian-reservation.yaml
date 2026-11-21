@@ -7,6 +7,7 @@ names:
     language_tag: lkt
     source: rosebud-sioux-tribe-of-the-rosebud-india-history-culture
     confidence: high
+    verification: inferred
     as_of: '2026-11-21'
     note: '"The Rosebud Sioux Tribe, more properly known as Sicangu Lakota Oyate, or Burnt Thigh People"'
   official_source: bia-recognized-entities-2026
@@ -16,6 +17,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -23,12 +25,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Rosebud Sioux Tribe of the Rosebud Indian Reservation, South Dakota
 - state: SD
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3235
   note: 'Census area with land in this state: Rosebud Indian Reservation and Off-Reservation Trust Land
@@ -40,6 +44,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3235
   note: Matched by name. Census class code D1.
@@ -48,6 +53,7 @@ population:
   kind: resident-population
   source: rosebud-sioux-tribe-of-the-rosebud-india-history-culture
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"Enrolled members living on reservation: 21,245"; undated statement on the official site; as_of
     is the access date'
@@ -55,6 +61,7 @@ population:
   kind: citizens
   source: rosebud-sioux-tribe-of-the-rosebud-india-tribes-rosebud-sioux-tribe-aspx
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   note: '"Estimated Tribal Enrollment: 33,210"; South Dakota Department of Tribal Relations tribe profile
     (state agency); figure undated, page links a 2019 statistical profile'
@@ -62,6 +69,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3235, field POP100
   note: 'Census area: Rosebud Indian Reservation and Off-Reservation Trust Land (code 3235). Everyone
@@ -71,6 +79,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3270 (Rosebud Sioux Tribe of the Rosebud Indian Reservation, South
     Dakota alone or in any combination), GEOID 0100000US (United States)
@@ -82,6 +91,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Denver, row 'Rosebud Sioux Tribe', PDF page 5, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -90,6 +100,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: low
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 87, row T42900 'Rosebud Sioux Tribe of the Rosebud Indian Reservation'
   note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
@@ -102,6 +113,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Rosebud Sioux Tribe of the Rosebud Indian Reservation, South Dakota
 - kind: physical-address
@@ -109,6 +121,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Rosebud Sioux Tribe of the Rosebud Indian Reservation, South Dakota
 - kind: mailing-address
@@ -116,6 +129,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Rosebud Sioux Tribe of the Rosebud Indian Reservation, South Dakota
 - kind: phone
@@ -123,6 +137,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Rosebud Sioux Tribe of the Rosebud Indian Reservation, South Dakota
 - kind: fax
@@ -130,6 +145,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Rosebud Sioux Tribe of the Rosebud Indian Reservation, South Dakota
 languages:
@@ -137,6 +153,7 @@ languages:
   language_tag: lkt
   source: rosebud-sioux-tribe-of-the-rosebud-india-tribes-rosebud-sioux-tribe-aspx
   confidence: medium
+  verification: inferred
   as_of: '2026-11-21'
   note: '"Traditional Language: Lakota"; South Dakota Department of Tribal Relations tribe profile (state
     agency); figure undated, page links a 2019 statistical profile'
@@ -145,6 +162,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Rosebud Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Rosebud Sioux Tribe of the Rosebud Indian Reservation, South Dakota
 government_structure:
@@ -153,6 +171,7 @@ government_structure:
     by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -165,6 +184,7 @@ governing_documents:
   link: https://narf.org/nill/codes/rosebudcode/index.html
   source: national-indian-law-library-code-codes-rosebudcode
   confidence: medium
+  verification: title-only
   as_of: '2012'
   locator: page heading
   note: 'Updated: April 2012. Full text linked from the National Indian Law Library page.'
@@ -174,6 +194,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/rosebudconst/index.html
   source: national-indian-law-library-constitution-constitutions-rosebudconst
   confidence: medium
+  verification: title-only
   as_of: '2007'
   locator: page heading
   note: 'Amended: 2007. Full text linked from the National Indian Law Library page.'
@@ -182,6 +203,7 @@ governing_documents:
   link: https://www.rstcourt.org/law-order-code/
   source: national-indian-law-library-rosebud-sioux
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribal Court''s
@@ -191,6 +213,7 @@ governing_documents:
   link: https://www.rstcourt.org/documents/list/catid/7/
   source: national-indian-law-library-rosebud-sioux
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribal Court''s
@@ -200,6 +223,7 @@ governing_documents:
   link: https://www.rstcourt.org/rst-constitution/
   source: national-indian-law-library-rosebud-sioux
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribal Court''s
@@ -210,6 +234,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/sdrosechrtr.html
   source: university-of-oklahoma-indian-reorganization-act-sdrosechrtr
   confidence: medium
+  verification: title-only
   as_of: '1937'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -218,12 +243,14 @@ justice_institutions:
   link: https://www.rstcourt.org/
   source: national-indian-law-library-rosebud-sioux
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
 - kind: tribal-court
   name: Rosebud Sioux Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: South Dakota section, entry 'Rosebud Sioux Tribe of the Sicangu Oyate'
 dispute_resolution:
@@ -274,6 +301,7 @@ gaming:
     federal_register_citation: 87 FR 22573
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2022-04-15'
     locator: result page 35 (?page=35), row 6
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -288,6 +316,7 @@ gaming:
     federal_register_citation: 87 FR 67711
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2022-11-09'
     locator: result page 35 (?page=35), row 7
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -302,6 +331,7 @@ gaming:
     federal_register_citation: 86 FR 50153
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2021-09-07'
     locator: result page 35 (?page=35), row 8
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -316,6 +346,7 @@ gaming:
     federal_register_citation: 88 FR 23453
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2023-04-17'
     locator: result page 35 (?page=35), row 9
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -330,6 +361,7 @@ gaming:
     federal_register_citation: 89 FR 18963
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2024-03-15'
     locator: result page 35 (?page=35), row 10
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
@@ -342,6 +374,7 @@ gaming:
     approved: '1993-04-14'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '1993-04-14'
     locator: result page 35 (?page=35), row 11
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -353,6 +386,7 @@ gaming:
     federal_register_citation: 77 FR 43110
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2012-07-23'
     locator: result page 35 (?page=35), row 12
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -367,6 +401,7 @@ gaming:
     federal_register_citation: 77 FR 59641
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2012-09-28'
     locator: result page 35 (?page=35), row 13
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -381,6 +416,7 @@ gaming:
     federal_register_citation: 78 FR 15738
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2013-03-12'
     locator: result page 35 (?page=35), row 14
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -395,6 +431,7 @@ gaming:
     federal_register_citation: 85 FR 24004
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2020-04-30'
     locator: result page 35 (?page=35), row 15
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -409,6 +446,7 @@ gaming:
     federal_register_citation: 83 FR 6613
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2018-02-14'
     locator: result page 35 (?page=35), row 16
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -423,6 +461,7 @@ gaming:
     federal_register_citation: 83 FR 40549
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2018-08-15'
     locator: result page 35 (?page=35), row 17
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -437,6 +476,7 @@ gaming:
     federal_register_citation: 84 FR 15634
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2019-04-16'
     locator: result page 35 (?page=35), row 18
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -451,6 +491,7 @@ gaming:
     federal_register_citation: 85 FR 18268
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2020-04-01'
     locator: result page 35 (?page=35), row 19
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -465,6 +506,7 @@ gaming:
     federal_register_citation: 84 FR 38040
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2019-08-05'
     locator: result page 35 (?page=35), row 20
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -479,6 +521,7 @@ gaming:
     federal_register_citation: 85 FR 44546
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2020-07-23'
     locator: result page 35 (?page=35), row 21
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -493,6 +536,7 @@ gaming:
     federal_register_citation: 85 FR 44546
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2019-12-27'
     locator: result page 35 (?page=35), row 22
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -507,6 +551,7 @@ gaming:
     federal_register_citation: 82 FR 14912
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2017-03-23'
     locator: result page 35 (?page=35), row 23
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -521,6 +566,7 @@ gaming:
     federal_register_citation: 82 FR 34688
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2017-07-26'
     locator: result page 35 (?page=35), row 24
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -535,6 +581,7 @@ gaming:
     federal_register_citation: 81 FR 12746
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2016-03-10'
     locator: result page 35 (?page=35), row 25
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -549,6 +596,7 @@ gaming:
     federal_register_citation: 81 FR 66077
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2016-09-26'
     locator: result page 36 (?page=36), row 1
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -563,6 +611,7 @@ gaming:
     federal_register_citation: 75 FR 61511
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2010-10-05'
     locator: result page 36 (?page=36), row 2
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -577,6 +626,7 @@ gaming:
     federal_register_citation: 76 FR 33341
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2011-06-08'
     locator: result page 36 (?page=36), row 3
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -591,6 +641,7 @@ gaming:
     federal_register_citation: 66 FR 36589
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2001-07-12'
     locator: result page 36 (?page=36), row 4
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -604,6 +655,7 @@ gaming:
     federal_register_citation: 76 FR 52968
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2011-08-24'
     locator: result page 36 (?page=36), row 5
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -618,6 +670,7 @@ gaming:
     federal_register_citation: 79 FR 55011
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2014-09-15'
     locator: result page 36 (?page=36), row 6
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -632,6 +685,7 @@ gaming:
     federal_register_citation: 80 FR 22740
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2015-04-23'
     locator: result page 36 (?page=36), row 7
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -646,6 +700,7 @@ gaming:
     federal_register_citation: 86 FR 22701
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2021-04-29'
     locator: result page 36 (?page=36), row 8
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -660,6 +715,7 @@ gaming:
     federal_register_citation: 86 FR 4113
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2021-01-15'
     locator: result page 36 (?page=36), row 9
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -674,6 +730,7 @@ gaming:
     federal_register_citation: 85 FR 68360
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2020-10-28'
     locator: result page 36 (?page=36), row 10
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -688,6 +745,7 @@ gaming:
     federal_register_citation: 80 FR 60171
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2015-10-05'
     locator: result page 36 (?page=36), row 11
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -702,6 +760,7 @@ gaming:
     federal_register_citation: 78 FR 62650
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2013-10-22'
     locator: result page 36 (?page=36), row 12
     note: 'Listed as: "Rosebud Sioux Tribe Tribal State Gaming Compact," (Extensions); list''s Tribe column:
@@ -720,6 +779,7 @@ gaming:
       procedure
     source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-trav-2019
     confidence: medium
+    verification: inferred
     as_of: '2019-04-01'
     locator: Section 13.1 or 14.1 (General Provisions) and Section 7 (Licensing) arbitration procedure
     note: state model compact; nation-specific text not checked. The same federal-court clause appears
@@ -731,6 +791,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10918&ind=10936
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1994-04-11'
     locator: table row 232, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 232 lists the nation
@@ -739,6 +800,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10919&ind=10937
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2007-03-12'
     locator: table row 232, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 232 lists the nation
@@ -749,6 +811,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Rosebud Sioux Tribe of the Rosebud Indian Reservation, South Dakota Confidence lowered
@@ -758,11 +821,13 @@ memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Rosebud Sioux Tribe". Name matched to the roster entry.
 - organization: Coalition of Large Tribes
   source: coalition-of-large-tribes-home
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Rosebud Sioux Tribe". Name matched to the roster entry.
 review:

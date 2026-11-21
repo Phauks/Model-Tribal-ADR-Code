@@ -6,10 +6,12 @@ names:
   - name: Accohannock Tribe
     source: maryland-executive-order-01-01-2017-31
     confidence: high
+    verification: inferred
     as_of: '2017-12-19'
   - name: Accohannock Indian Tribal Association, Inc.
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     note: Name used for this group in the cited source; matched to this record by name and state.
   official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
@@ -17,6 +19,7 @@ recognition:
 - type: unrecognized
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1; Table 3
   note: 'GAO Table 1 lists "Accohannock Indian Tribe" among 26 non-federally recognized tribes that received
@@ -31,6 +34,7 @@ recognition:
   petition_stage: Letter of Intent to Petition 01/18/1995
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   locator: 'Petitioner #149'
   note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
@@ -42,6 +46,7 @@ recognition:
   since: '2017-12-19'
   source: maryland-executive-order-01-01-2017-31
   confidence: high
+  verification: read-in-full
   as_of: '2017-12-19'
   note: '''The State formally recognizes the Accohannock Tribes Maryland Indian status''.'
 - type: state
@@ -50,12 +55,14 @@ recognition:
     by the Maryland State Archives
   source: maryland-manual-indigenous-peoples-2025
   confidence: high
+  verification: inferred
   as_of: '2025'
 states:
 - state: MD
   presence: other
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1, State column
   note: State as listed by GAO.
@@ -63,6 +70,7 @@ states:
   presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
@@ -70,6 +78,7 @@ states:
   presence: other
   source: maryland-manual-indigenous-peoples-2025
   confidence: high
+  verification: inferred
   as_of: '2025'
 review:
   status: drafted-from-public-sources

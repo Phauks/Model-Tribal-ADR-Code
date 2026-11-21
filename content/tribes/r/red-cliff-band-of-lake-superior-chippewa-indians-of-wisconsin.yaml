@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin
 - state: WI
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3085
   note: 'Census area with land in this state: Red Cliff Reservation and Off-Reservation Trust Land (code
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3085
   note: Matched by name. Census class code D1.
@@ -41,6 +45,7 @@ population:
   kind: citizens
   source: red-cliff-band-of-lake-superior-chippewa-community-heritage-and-culture-index-php
   confidence: high
+  verification: read-in-full
   as_of: 2021-12
   note: '"As of December 2021, there are 7,636 living Red Cliff Tribal Members. 1,209 live on the Red
     Cliff Reservation"'
@@ -48,12 +53,14 @@ population:
   kind: resident-population
   source: red-cliff-band-of-lake-superior-chippewa-community-heritage-and-culture-index-php
   confidence: high
+  verification: read-in-full
   as_of: 2021-12
   note: '"1,209 live on the Red Cliff Reservation"'
 - count: 1403
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3085, field POP100
   note: 'Census area: Red Cliff Reservation and Off-Reservation Trust Land (code 3085). Everyone counted
@@ -63,6 +70,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3261 (Red Cliff Band of Lake Superior Chippewa alone or in any combination),
     GEOID 0100000US (United States)
@@ -73,6 +81,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Red Cliff Band of Lake Superior Chippewa', PDF page 5, Enrollment
     column
@@ -82,6 +91,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: low
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 86, row T42100 'Red Cliff Band of Lake Superior Chippewa Indians
     of Wisconsin'
@@ -95,6 +105,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin
 - kind: physical-address
@@ -102,6 +113,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin
 - kind: mailing-address
@@ -109,6 +121,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin
 - kind: phone
@@ -116,6 +129,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin
 - kind: fax
@@ -123,6 +137,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin
 federal_administration:
@@ -130,6 +145,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Great Lakes Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin
 government_structure:
@@ -139,6 +155,7 @@ government_structure:
     1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -149,6 +166,7 @@ government_structure:
     it was adopted under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-rccons
   confidence: medium
+  verification: read-in-full
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -159,6 +177,7 @@ governing_documents:
   link: https://narf.org/nill/codes/redcliffcode/index.html
   source: national-indian-law-library-code-codes-redcliffcode
   confidence: medium
+  verification: title-only
   as_of: '2017'
   locator: page heading
   note: 'Updated: 8/25/2017. The National Indian Law Library page gives the table of contents (and may
@@ -169,6 +188,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/red_cliff/index.html
   source: national-indian-law-library-constitution-constitutions-red-cliff
   confidence: medium
+  verification: title-only
   as_of: '1991'
   locator: page heading
   note: 'Amended: January 1991. The National Indian Law Library page gives the table of contents (and
@@ -178,6 +198,7 @@ governing_documents:
   link: https://www.redcliff-nsn.gov/government/tribal_government/code_of_laws.php
   source: national-indian-law-library-red-cliff-band
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -187,6 +208,7 @@ governing_documents:
   link: https://www.redcliff-nsn.gov/government/tribal_government/code_of_laws.php
   source: national-indian-law-library-red-cliff-band
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -195,6 +217,7 @@ governing_documents:
   title: Red Cliff Band of Lake Superior Chippewa Indians Constitution and Bylaws
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Wisconsin section, entry 'Red Cliff Band of Lake Superior Chippewa'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -204,6 +227,7 @@ governing_documents:
   title: Red Cliff Band of Lake Superior Chippewa Code of Laws
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Wisconsin section, entry 'Red Cliff Band of Lake Superior Chippewa'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -214,6 +238,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/amchipchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-amchipchrtr
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: corporate-charter
@@ -223,6 +248,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/rcchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-rcchrtr
   confidence: medium
+  verification: title-only
   as_of: '1936'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -231,6 +257,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/rccons.html
   source: university-of-oklahoma-indian-reorganization-act-rccons
   confidence: medium
+  verification: title-only
   as_of: '1936'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -238,6 +265,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-red-cliff-band
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
@@ -247,6 +275,7 @@ justice_institutions:
   name: Red Cliff Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Wisconsin section, entry 'Red Cliff Band of Lake Superior Chippewa'
   note: 'Link check 2026-11-21: the link the source gives (http://redcliff-nsn.gov/resources/popup/tribal_court.htm)
@@ -297,6 +326,7 @@ gaming:
     federal_register_citation: 63 FR 70792
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1998-12-22'
     locator: result page 46 (?page=46), row 23
     note: 'Listed as: "Red Cliff Band of Lake Superior Chippewa Indians Tribal State Gaming Compact" (Approve);
@@ -310,6 +340,7 @@ gaming:
     approved: '1992-03-10'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1992-03-10'
     locator: result page 46 (?page=46), row 24
     note: 'Listed as: "Red Cliff Band of Lake Superior Chippewa Indians Tribal State Gaming Compact" (Approve);
@@ -321,6 +352,7 @@ gaming:
     federal_register_citation: 64 FR 12176
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-03-11'
     locator: result page 46 (?page=46), row 25
     note: 'Listed as: "Red Cliff Band of Lake Superior Chippewa Indians Tribal State Gaming Compact" (Approve);
@@ -335,6 +367,7 @@ gaming:
     federal_register_citation: 75 FR 68618
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2010-11-08'
     locator: result page 47 (?page=47), row 1
     note: 'Listed as: "Red Cliff Band of Lake Superior Chippewa Indians Tribal State Gaming Compact" (Approve);
@@ -349,6 +382,7 @@ gaming:
     federal_register_citation: 68 FR 54243
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2003-09-16'
     locator: result page 47 (?page=47), row 2
     note: 'Listed as: "Red Cliff Band of Lake Superior Chippewa Indians Tribal State Gaming Compact" (Deemed
@@ -365,6 +399,7 @@ gaming:
     dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
     source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
     confidence: medium
+    verification: inferred
     as_of: '1992-08-10'
     locator: Section XXIII (Dispute Resolution) of the 1992 compact
     note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
@@ -377,6 +412,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10880&ind=10895
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1994-02-15'
     locator: table row 223, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 223 lists the nation
@@ -385,6 +421,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10881&ind=10896
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2012-07-03'
     locator: table row 223, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 223 lists the nation
@@ -393,6 +430,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10882&ind=10897
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2014-05-02'
     locator: table row 223, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 223 lists the nation
@@ -401,6 +439,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10883&ind=10898
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2001-02-05'
     locator: table row 224, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 224 lists the nation
@@ -415,6 +454,7 @@ jurisdiction:
     country within Wisconsin; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Wisconsin"
   note: Statute is primary; nation matched to Wisconsin by office state in the BIA Tribal Leaders Directory,
@@ -424,6 +464,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin Confidence lowered from
@@ -436,21 +477,25 @@ jurisdiction:
     Reservation. (61 FR 1778)
   source: federal-register-1996-red-cliff-icwa-reassumption
   confidence: high
+  verification: read-in-full
   as_of: '1996-01-23'
 memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes
   confidence: high
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Red Cliff Band of Lake Superior Chippewa Indians of Wisconsin".
 - organization: Great Lakes Inter-Tribal Council
   source: great-lakes-inter-tribal-council-tribes-served
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Red Cliff Band of Lake Superior Chippewa Indians". Name matched to the roster entry.
 - organization: Great Lakes Indian Fish and Wildlife Commission
   source: great-lakes-indian-fish-and-wildlife-commission-commission
   confidence: medium
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Gaa-miskwaabikaang" (link https://www.redcliff-nsn.gov/).
 review:

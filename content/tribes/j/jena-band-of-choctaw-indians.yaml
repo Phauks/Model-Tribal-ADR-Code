@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 - type: federal
@@ -18,6 +19,7 @@ recognition:
   since: '1995-08-29'
   source: federal-register-95-13171
   confidence: high
+  verification: bulk-import
   as_of: '1995-08-29'
   locator: 'Petitioner #45'
   note: 'Also see source(s): ofa-list-of-petitioners-by-state-2013.'
@@ -26,12 +28,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Jena Band of Choctaw Indians
 - state: LA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1690
   note: 'Census area with land in this state: Jena Band of Choctaw Reservation (code 1690). Area matched
@@ -43,6 +47,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1690
   note: Matched by name. Census class code D2.
@@ -51,12 +56,14 @@ population:
   kind: citizens
   source: jenachoctaw-culture-history-history
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'Page: ''a membership of 400+ individuals''. Undated; as_of is access date.'
 - count: 26
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1690, field POP100
   note: 'Census area: Jena Band of Choctaw Reservation (code 1690). Everyone counted as living in the
@@ -65,6 +72,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3042 (Jena Band of Choctaw Indians alone or in any combination), GEOID
     0100000US (United States)
@@ -75,6 +83,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Oklahoma, row 'Jena Band of Choctaw Indians', PDF page 6, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -83,6 +92,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 79, row T16100 'Jena Band of Choctaw Indians'
   note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
@@ -94,6 +104,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Jena Band of Choctaw Indians
 - kind: physical-address
@@ -101,6 +112,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Jena Band of Choctaw Indians
 - kind: mailing-address
@@ -108,6 +120,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Jena Band of Choctaw Indians
 - kind: phone
@@ -115,6 +128,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Jena Band of Choctaw Indians
 - kind: fax
@@ -122,6 +136,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Jena Band of Choctaw Indians
 languages:
@@ -129,6 +144,7 @@ languages:
   language_tag: cho
   source: jenachoctaw-culture-history-culture
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: Culture page lists 'Traditional Jena Chahta Language Classes'.
 federal_administration:
@@ -136,6 +152,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Eastern Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Jena Band of Choctaw Indians
 gaming:
@@ -145,6 +162,7 @@ gaming:
     approved: '2002-03-07'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2002-03-07'
     locator: result page 15 (?page=15), row 21
     note: 'Listed as: "Jena Band of Choctaw Indians Tribal State Gaming Compact" (Disapproved); list''s
@@ -156,6 +174,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9985&ind=10015
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2001-03-13'
     locator: table row 110, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 110 lists the nation
@@ -164,6 +183,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10000&ind=10016
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2008-06-25'
     locator: table row 110, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 110 lists the nation
@@ -172,6 +192,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10001&ind=10017
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2013-08-22'
     locator: table row 110, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 110 lists the nation
@@ -180,6 +201,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10002&ind=10018
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2014-01-17'
     locator: table row 110, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 110 lists the nation
@@ -188,6 +210,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Jena Band of Choctaw Indians".
       Facilities as machine-extracted from the report text (verify): Miko''s Gaming; Choctaw Pines Casino.
@@ -198,6 +221,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Jena Band of Choctaw Indians Confidence lowered from high by the lead session: the
@@ -206,6 +230,7 @@ memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations
   confidence: medium
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Jena Band of Choctaw Indians".
 review:

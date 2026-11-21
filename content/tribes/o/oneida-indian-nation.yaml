@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Oneida Indian Nation
 - state: NY
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2555
   note: 'Census area with land in this state: Oneida Nation Reservation (code 2555). Area matched to the
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2555
   note: Matched by name. Census class code D2.
@@ -41,6 +45,7 @@ population:
   kind: citizens
   source: oneida-indian-nation-mission-vision-and-goals
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"THE ONEIDA INDIAN NATION CONSISTS OF APPROXIMATELY 1,000 ENROLLED MEMBERS"; undated statement
     on the official site; as_of is the access date'
@@ -48,6 +53,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2555, field POP100
   note: 'Census area: Oneida Nation Reservation (code 2555). Everyone counted as living in the area in
@@ -56,6 +62,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3175 (Oneida Indian Nation alone or in any combination), GEOID 0100000US
     (United States)
@@ -66,6 +73,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Oneida Indian Nation of New York', PDF page 4, Enrollment
     column
@@ -75,6 +83,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: low
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 84, row T35100 'Oneida Nation of New York'
   note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
@@ -87,6 +96,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Oneida Indian Nation
 - kind: physical-address
@@ -94,6 +104,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Oneida Indian Nation
 - kind: mailing-address
@@ -101,6 +112,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Oneida Indian Nation
 - kind: phone
@@ -108,6 +120,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Oneida Indian Nation
 - kind: fax
@@ -115,6 +128,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Oneida Indian Nation
 languages:
@@ -122,6 +136,7 @@ languages:
   language_tag: one
   source: oneida-indian-nation-language-learning
   confidence: high
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"its indigenous language, Onyota’a:ká:"'
 federal_administration:
@@ -129,6 +144,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Eastern Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Oneida Indian Nation
 governing_documents:
@@ -136,6 +152,7 @@ governing_documents:
   title: Tribal code
   source: national-indian-law-library-oneida-newyork
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -146,6 +163,7 @@ governing_documents:
   link: http://www.narf.org/nill/codes/oneida_new_york/index.html
   source: national-indian-law-library-oneida-newyork
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website .".'
@@ -153,6 +171,7 @@ governing_documents:
   title: Oneida Indian Nation Codes, Ordinances and Regulations
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: New York section, entry 'Oneida Indian Nation'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -163,6 +182,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-oneida-newyork
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -171,6 +191,7 @@ justice_institutions:
   link: http://www.oneidaindiannation.com/court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: New York section, entry 'Oneida Indian Nation'
 dispute_resolution:
@@ -197,6 +218,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-NY-OneidaNationCourt.pdf
     source: oneida-indian-nation-ordinance-o-97-02
     confidence: medium
+    verification: read-in-full
     as_of: '1997-05-01'
     locator: Articles 8 and 12
     note: Peacemaking Rules read from OCR of a scanned copy dated 5/1/97 (source oneida-indian-nation-peacemaking-rules-1997);
@@ -312,6 +334,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Oneida-NY-rulesofpeacemaking-document.pdf
     source: narf-ipi-tribal-peacemaking-laws
     confidence: medium
+    verification: bulk-import
     as_of: '2025-09-29'
 gaming:
   compacts:
@@ -320,6 +343,7 @@ gaming:
     approved: '1993-06-04'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '1993-06-04'
     locator: result page 25 (?page=25), row 18
     note: 'Listed as: "Oneida Indian Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -333,6 +357,7 @@ gaming:
     dispute_resolution_locator: Section 14 (Party Dispute Resolution)
     source: compact-ny-seneca-nation-of-indians-2002
     confidence: medium
+    verification: inferred
     as_of: '2002-12-09'
     locator: Section 14 (Party Dispute Resolution)
     note: state model compact; nation-specific text not checked. Read from the 2002 Seneca Nation of Indians
@@ -345,6 +370,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Oneida Indian Nation Confidence lowered from high by the lead session: the notice
@@ -353,6 +379,7 @@ memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations
   confidence: medium
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Oneida Indian Nation".
 review:

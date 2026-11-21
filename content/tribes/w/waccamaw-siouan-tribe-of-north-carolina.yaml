@@ -6,6 +6,7 @@ names:
   - name: Waccamaw Siouan Indian Tribe
     source: census-2020-ddhca-popgroup-codes
     confidence: low
+    verification: inferred
     as_of: '2020'
     locator: POPGROUP code 2202
     note: Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting
@@ -13,11 +14,13 @@ names:
   - name: Waccamaw Siouan Tribe
     source: north-carolina-commission-of-indian-affairs-tribal-communities
     confidence: high
+    verification: bulk-import
     as_of: '2026'
   former:
   - name: Waccamassus
     source: north-carolina-commission-of-indian-affairs-tribal-communities
     confidence: medium
+    verification: inferred
     as_of: '2026'
     note: Source says the Waccamaw were historically known as the Waccamassus.
   official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
@@ -25,6 +28,7 @@ recognition:
 - type: unrecognized
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1; Table 3
   note: 'GAO Table 1 lists "Waccamaw Siouan Tribe of North Carolina" among 26 non-federally recognized
@@ -34,6 +38,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State Designated Tribal Statistical Area; area 9970
   note: The 2020 Census delineated "Waccamaw Siouan SDTSA" (State Designated Tribal Statistical Area).
@@ -44,6 +49,7 @@ recognition:
 - type: unrecognized
   source: hud-ihbg-fy2026-formula-allocations
   confidence: high
+  verification: bulk-import
   as_of: 2026-04
   locator: NC section, recipient "Waccamaw Siouan Tribe"
   note: HUD lists "Waccamaw Siouan Tribe" (Bolton, NC) as an FY2026 Indian Housing Block Grant formula
@@ -55,6 +61,7 @@ recognition:
   since: '1971-07-20'
   source: north-carolina-general-statutes-chapter-71a
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: Section 71A-4
   note: Statute says the tribe is designated and officially recognized 'from and after' this date.
@@ -64,12 +71,14 @@ recognition:
     Affairs
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 states:
 - state: NC
   presence: other
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1, State column
   note: State as listed by GAO.
@@ -77,6 +86,7 @@ states:
   presence: other
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9970
   note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
@@ -84,6 +94,7 @@ states:
   presence: other
   source: hud-ihbg-fy2026-formula-allocations
   confidence: high
+  verification: bulk-import
   as_of: 2026-04
   locator: NC section
   note: HUD gives recipient city Bolton.
@@ -91,6 +102,7 @@ states:
   presence: government-office
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: inferred
   as_of: '2026'
 census_areas:
 - geographic_identifier: '9970'
@@ -99,6 +111,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9970, GEOID 9970R
   note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
@@ -108,6 +121,7 @@ population:
   kind: citizens
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: low
+  verification: read-in-full
   as_of: '2026'
   note: 'Source: ''more than 2,000 citizens''; count is a floor.'
 contacts:
@@ -116,30 +130,35 @@ contacts:
   label: Tribal mailing address
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: physical-address
   value: 7239 Old Lake Rd Bolton, NC 28423
   label: Tribal physical address
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: phone
   value: 910-665-8778
   label: Tribal office phone
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: email-general
   value: siouan@aol.com
   label: Tribal email
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: website
   value: https://www.waccamaw-siouan.org
   label: Official website
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 review:
   status: drafted-from-public-sources

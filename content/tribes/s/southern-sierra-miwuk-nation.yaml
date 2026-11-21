@@ -6,12 +6,14 @@ names:
   - name: American Indian Council of Mariposa County
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     locator: 'Petitioner #82'
   alternate:
   - name: Yosemite
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     locator: 'Petitioner #82'
   official_source: ofa-petitions-in-process
@@ -22,6 +24,7 @@ recognition:
   petition_stage: Awaiting Supplement
   source: ofa-petitions-in-process
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Current Petitions Status table, row 82; detail page https://www.bia.gov/as-ia/ofa/petitions-in-process/southern-sierra-miwuk-nation
   note: 'Federal Register history: Proposed Finding Against Federal Acknowledgment of the Southern Sierra
@@ -33,6 +36,7 @@ states:
   presence: other
   source: ofa-petitions-in-process
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.

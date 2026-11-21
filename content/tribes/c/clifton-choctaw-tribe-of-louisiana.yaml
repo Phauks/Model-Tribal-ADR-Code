@@ -6,11 +6,13 @@ names:
   - name: Clifton Choctaw Reservation Inc.
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     locator: 'Petitioner #30'
   - name: Clifton-Choctaw Indians
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     note: Name used for this group in the cited source; matched to this record by name and state.
   official_source: census-aian-geography-definitions
@@ -18,6 +20,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State Designated Tribal Statistical Area; area 9630
   note: The 2020 Census delineated "Clifton Choctaw SDTSA" (State Designated Tribal Statistical Area).
@@ -31,6 +34,7 @@ recognition:
   petition_stage: Letter of Intent to Petition 03/22/1978
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   locator: 'Petitioner #30'
   note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
@@ -41,6 +45,7 @@ recognition:
   legal_basis: Listed as a state recognized tribe by the Louisiana Governor's Office of Indian Affairs
   source: louisiana-governor-federally-and-state-recognized-tribes
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   note: Louisiana recognized tribes by legislative concurrent resolutions; the individual resolutions
     were not retrieved.
@@ -50,6 +55,7 @@ recognition:
     membership, listed as 'Clifton Choctaw Tribe of Louisiana'
   source: louisiana-revised-statutes-46-2305
   confidence: high
+  verification: inferred
   as_of: '2018'
   locator: R.S. 46:2305(B)
   note: The statute gives the tribe a seat on the Native American Commission; it does not itself confer
@@ -59,6 +65,7 @@ states:
   presence: other
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9630
   note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
@@ -66,6 +73,7 @@ states:
   presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
@@ -73,6 +81,7 @@ states:
   presence: other
   source: louisiana-governor-indian-affairs
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   locator: Regional map
   note: Located in Rapides and Vernon Parishes per the Office of Indian Affairs regional map.
@@ -83,6 +92,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9630, GEOID 9630R
   note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
@@ -93,6 +103,7 @@ contacts:
   label: Contact address listed by the Louisiana Governor's Office of Indian Affairs
   source: louisiana-governor-federally-and-state-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: '2026'
   note: Listed under the leader's name; recorded as the tribe's contact address.
 - kind: website
@@ -100,6 +111,7 @@ contacts:
   label: Official website
   source: louisiana-governor-federally-and-state-recognized-tribes
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 review:
   status: drafted-from-public-sources

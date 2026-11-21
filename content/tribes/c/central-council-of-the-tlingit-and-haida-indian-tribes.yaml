@@ -6,6 +6,7 @@ names:
   - name: Central Council
     source: alaska-dcra-federally-recognized-tribes-contacts
     confidence: medium
+    verification: bulk-import
     as_of: '2026-04-02'
     locator: 'record "Central Council of the Tlingit & Haida Indian Tribes of Alaska" (community: Juneau,
       object 84)'
@@ -17,6 +18,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -24,6 +26,7 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Central Council of the Tlingit & Haida Indian Tribes
 population:
@@ -31,6 +34,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: ALASKA row "Central Council of the Tlingit and Haida Indian Tribes", Enrollment column
   note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
@@ -39,6 +43,7 @@ population:
   kind: citizens
   source: tlingit-and-haida-website
   confidence: medium
+  verification: read-in-full
   as_of: '2026'
   locator: '"Who We Are": "representing over 38,000 Tlingit and Haida citizens worldwide"'
   note: Stated as "over 38,000"; the page meta description says "over 37,000". The FY 2025 Indian Housing
@@ -47,6 +52,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2590 (Central Council of the Tlingit and Haida Indian Tribes alone
     or in any combination), GEOID 0100000US (United States)
@@ -59,6 +65,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Central Council of the Tlingit & Haida Indian Tribes
 - kind: physical-address
@@ -66,6 +73,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Central Council of the Tlingit & Haida Indian Tribes
 - kind: mailing-address
@@ -73,6 +81,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Central Council of the Tlingit & Haida Indian Tribes
 - kind: phone
@@ -80,6 +89,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Central Council of the Tlingit & Haida Indian Tribes
 - kind: fax
@@ -87,6 +97,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Central Council of the Tlingit & Haida Indian Tribes
 - kind: website
@@ -94,6 +105,7 @@ contacts:
   label: Tribal government website (State of Alaska tribal contacts list)
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: high
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Central Council of the Tlingit & Haida Indian Tribes of Alaska" (community: Juneau,
     object 84)'
@@ -102,6 +114,7 @@ contacts:
   label: Tribal office address listed by the State of Alaska
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: high
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Central Council of the Tlingit & Haida Indian Tribes of Alaska" (community: Juneau,
     object 84)'
@@ -110,6 +123,7 @@ contacts:
   label: Tribal office main phone
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: high
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Central Council of the Tlingit & Haida Indian Tribes of Alaska" (community: Juneau,
     object 84)'
@@ -118,6 +132,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Alaska Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Central Council of the Tlingit & Haida Indian Tribes
 governing_documents:
@@ -125,6 +140,7 @@ governing_documents:
   title: Tribal code
   source: national-indian-law-library-ccthita
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -134,6 +150,7 @@ governing_documents:
   title: Constitution
   source: national-indian-law-library-ccthita
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -145,6 +162,7 @@ governing_documents:
   link: https://narf.org/nill/codes/ccthitacode/index.html
   source: national-indian-law-library-code-codes-ccthitacode
   confidence: medium
+  verification: title-only
   as_of: '2016'
   locator: page heading
   note: 'Table of Contents Updated: December 2016. The National Indian Law Library page gives the table
@@ -155,6 +173,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/ccthitaconst/index.html
   source: national-indian-law-library-constitution-constitutions-ccthitaconst
   confidence: medium
+  verification: title-only
   as_of: '2014'
   locator: page heading
   note: 'Amended: April 2014. The National Indian Law Library page gives the table of contents (and may
@@ -164,6 +183,7 @@ governing_documents:
   link: http://www.ccthita.org/government/legislative/GoverningDocs/ConstitutionAmended_4.12.2014.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Alaska section, entry 'Central Council Tlingit & Haida Indian Tribes of Alaska'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -171,6 +191,7 @@ governing_documents:
   title: Central Council of Tlingit & Haida Indian Tribes of Alaska Statutes
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Alaska section, entry 'Central Council Tlingit & Haida Indian Tribes of Alaska'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -181,6 +202,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-ccthita
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
@@ -190,6 +212,7 @@ justice_institutions:
   name: Central Council Tlingit and Haida Judicial Branch
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Alaska section, entry 'Central Council Tlingit & Haida Indian Tribes of Alaska'
   note: 'Link check 2026-11-21: the link the source gives (http://www.ccthita.org/government/judicial/index.html)
@@ -206,6 +229,7 @@ dispute_resolution:
     link: http://www.ktoo.org/2016/08/31/tlingit-haida-tribal-youth-court-could-launch-in-a-few-weeks/
     source: ktoo-tlingit-haida-youth-court-2016
     confidence: low
+    verification: inferred
     as_of: '2016-08-31'
     note: News report of a program expected to launch within weeks; the launch is not confirmed in the
       source. Read through a fetch-and-summarize tool.
@@ -229,6 +253,7 @@ dispute_resolution:
     link: https://tlingitandhaida.gov/wp-content/uploads/Title-06-Tribal-Courts-Enacted-2022.03.01.pdf
     source: ccthita-title-06-tribal-courts-2022
     confidence: high
+    verification: read-in-full
     as_of: '2022-03-01'
     locator: Secs. 06.01.001, 06.01.003(I), 06.01.009(A)(4), 06.04.001-06.04.004
     note: Members are appointed by the President of Tlingit & Haida; no names recorded. Case types not
@@ -250,6 +275,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9455&ind=9467
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2016-05-13'
     locator: table row 35, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 35 lists the nation
@@ -259,6 +285,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11612&ind=12584
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2025-01-17'
     locator: table row 35, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 35 lists the nation
@@ -272,6 +299,7 @@ jurisdiction:
     within Alaska; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Alaska"
   note: Statute is primary; nation matched to Alaska by office state in the BIA Tribal Leaders Directory,
@@ -281,6 +309,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Central Council of the Tlingit & Haida Indian Tribes Confidence lowered from high
@@ -291,6 +320,7 @@ related_entities:
   relation: alaska-native-claims-settlement-act-regional-corporation
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Central Council of the Tlingit & Haida Indian Tribes
   note: Regional corporation for the area, as listed in the directory.
@@ -298,6 +328,7 @@ related_entities:
   relation: alaska-native-claims-settlement-act-regional-corporation
   source: alaska-dcra-community-regions-overview
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: community row "Juneau"
   note: State of Alaska lists this affiliation for the community where the nation is based (Juneau), not
@@ -306,6 +337,7 @@ related_entities:
   relation: native-regional-health-care-provider
   source: alaska-dcra-community-regions-overview
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: community row "Juneau"
   note: State of Alaska lists this affiliation for the community where the nation is based (Juneau), not
