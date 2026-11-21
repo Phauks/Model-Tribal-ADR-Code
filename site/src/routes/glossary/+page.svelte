@@ -1,5 +1,7 @@
 <script lang="ts">
-	import { usageLabels } from '#lib/glossary-labels.ts';
+	import GlossaryEntry from '#lib/components/GlossaryEntry.svelte';
+	import ReportLink from '#lib/components/ReportLink.svelte';
+	import SourceList from '#lib/components/SourceList.svelte';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -10,14 +12,24 @@
 
 <svelte:head>
 	<title>Glossary · Model Tribal ADR Code</title>
-	<meta name="description" content="Terms the Model Tribal ADR Code defines, with when to use them." />
+	<meta
+		name="description"
+		content="Terms the Model Tribal ADR Code defines, how it uses them, and what to write instead."
+	/>
 </svelte:head>
 
 <div class="reading">
 	<h1>Glossary</h1>
+	<ReportLink record="glossary" />
 	<p class="lead">
-		Words the project defines, how it uses them, and what to write instead where a word is best
-		avoided. Each entry cites its sources or says it is the project’s own choice.
+		The {data.count} words the project defines, how it uses them, and what to write instead where a
+		word is best avoided. Each entry cites its sources, listed together at the end of the page, or says
+		it is the project’s own choice.
+	</p>
+	<p class="small muted">
+		To point to a term from another page, link to <code>/glossary#</code> followed by the term’s address,
+		for example <a href="#native-nations"><code>/glossary#native-nations</code></a>, or to the term’s own
+		page, such as <a href="/glossary/native-nations"><code>/glossary/native-nations</code></a>.
 	</p>
 </div>
 
@@ -35,20 +47,18 @@
 	</ul>
 </nav>
 
-{#each data.groups as group (group.letter)}
-	<section aria-labelledby="letter-{group.letter}">
-		<h2 id="letter-{group.letter}">{group.letter}</h2>
-		<ul class="entries">
+<div class="reading">
+	{#each data.groups as group (group.letter)}
+		<section aria-labelledby="letter-{group.letter}" class="letter-group">
+			<h2 id="letter-{group.letter}">{group.letter}</h2>
 			{#each group.items as entry (entry.id)}
-				<li>
-					<a href="/glossary/{entry.id}">{entry.term}</a>
-					{#if entry.expansion}<span class="muted">({entry.expansion})</span>{/if}
-					<span class="chip">{usageLabels[entry.usage] ?? entry.usage}</span>
-				</li>
+				<GlossaryEntry {entry} headingLevel={3} onGlossaryPage />
 			{/each}
-		</ul>
-	</section>
-{/each}
+		</section>
+	{/each}
+
+	<SourceList sources={data.sources} introduction="Each source below is followed by the entries on this page that cite it." />
+</div>
 
 <style>
 	.letters ul {
@@ -68,17 +78,16 @@
 		font-weight: var(--font-weight-semibold);
 	}
 
-	.entries {
-		list-style: none;
-		padding: 0;
+	.letter-group {
+		scroll-margin-top: var(--space-6);
 	}
 
-	.entries li {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: baseline;
-		gap: var(--space-2);
-		padding: var(--space-2) 0;
+	.letter-group :global(.glossary-entry) {
+		padding-bottom: var(--space-4);
 		border-bottom: 1px solid var(--color-line);
+	}
+
+	.letter-group :global(.glossary-entry:last-child) {
+		border-bottom: none;
 	}
 </style>

@@ -152,7 +152,8 @@ published ([repository layout, identifiers](../docs/repository-layout.md#identif
 | Track landing | One column | What the track is, cited; its chapters; for peacemaking, a step-by-step outline of how a process unfolds |
 | Nation profile | Text and margin | One page for every nation; see [Nation pages](#nation-pages) below |
 | Nations directory | One column | Search and filters (group, state, review status); Map and Table tabs holding the same data; the map's "what this shows" notice; "Is your nation missing? Ask to be added", also shown when a search finds no nation |
-| Glossary entry | Entry rail, text, margin | Term, usage status, definition with sources, how the project uses it, where it appears, see also, "Suggest a change to this term" |
+| Glossary entry | Entry rail, text, margin | Term, usage status, "Report a problem" under the term, definition, how the project uses it, use instead, related terms, about this entry, other entries that use it, and a Sources section at the end |
+| Glossary | One column | "Report a problem" under the title; an A to Z index; every entry in full (term, usage, definition, how the project uses it, use instead, related terms), each with its own anchor such as `/glossary#native-nations`; one Sources section at the end |
 | Source record | Text and margin | Citation, original link, archived copies, change history, quotation basis, what cites it |
 | Changelog | One column with tabs | Content, Website, Print and Requests log; each version's entries; comparison of a section between versions |
 | Request | One question per page | Start page; what would you like to do; which material; how can we reply; details; credit (contribute only); check your request; request sent. Adding a missing nation branches to: which nation; which government source names it (kind, citation or upload); how can we reply; who is making this request (statement); check your request; request sent; and later a written decision with reasons and buttons to apply again or ask for reconsideration ([requests.md](../docs/requests.md#adding-a-nation-that-is-missing)) |
@@ -348,6 +349,16 @@ while the pointer is over it, and closes with Escape, as WCAG 1.4.13 requires
 for content on hover or focus.[^wcag-1413] The link itself goes to the full
 entry, so the card is never the only way to the content. A setting turns cards
 off.
+
+**Glossary pages.** The glossary page and each entry's page are built from
+one module, `src/lib/server/glossary-entries.ts`, and one component,
+`GlossaryEntry.svelte`. An entry's citation is a numbered marker in its text
+that leads to the page's Sources section, where each source is listed once,
+in the project's Indigo Book style (formatted at build time by citeproc-js
+with `pdf/styles/project-law-review.csl`, as the print edition is), followed
+by every entry that cites it, as on nation pages. `/glossary/terms.json`
+lists every entry's term, usage and a one or two sentence summary with no
+citations, for the hover cards and for saving offline.
 
 **Citations.** In prose, such as a section's commentary or a glossary entry,
 a numbered marker in the text; on wide screens the note sits in the margin

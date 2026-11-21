@@ -1,6 +1,8 @@
 <script lang="ts">
-	import NoteList from '#lib/components/NoteList.svelte';
-	import { basisLabels, statusLabels, usageLabels } from '#lib/glossary-labels.ts';
+	import GlossaryEntry from '#lib/components/GlossaryEntry.svelte';
+	import ReportLink from '#lib/components/ReportLink.svelte';
+	import SourceList from '#lib/components/SourceList.svelte';
+	import { basisLabels, statusLabels } from '#lib/glossary-labels.ts';
 	import type { PageProps } from './$types';
 
 	let { data }: PageProps = $props();
@@ -15,17 +17,13 @@
 	<a href="/glossary">Glossary</a> › {entry.term}
 </nav>
 
-<article class="reading">
-	<h1>
-		{entry.term}
-		{#if entry.expansion}<span class="expansion muted">({entry.expansion})</span>{/if}
-	</h1>
+<div class="reading">
+	<GlossaryEntry {entry} headingLevel={1}>
+		<ReportLink record="glossary/{entry.id}" />
+	</GlossaryEntry>
 
+	<h2>About this entry</h2>
 	<dl class="summary-list">
-		<div>
-			<dt>Usage</dt>
-			<dd>{usageLabels[entry.usage] ?? entry.usage}</dd>
-		</div>
 		{#if entry.basis}
 			<div>
 				<dt>Basis</dt>
@@ -42,45 +40,20 @@
 				<dd>{entry.aliases.join(', ')}</dd>
 			</div>
 		{/if}
+		<div>
+			<dt>On the glossary page</dt>
+			<dd><a href="/glossary#{entry.id}">/glossary#{entry.id}</a></dd>
+		</div>
 	</dl>
 
-	<h2>Definition</h2>
-	{@html data.definition}
-
-	{#if data.usageNote}
-		<h2>How the project uses it</h2>
-		{@html data.usageNote}
-	{/if}
-
-	{#if data.useInstead.length > 0}
-		<h2>Use instead</h2>
+	{#if data.linkedFrom.length > 0}
+		<h2>Other entries that use this term</h2>
 		<ul>
-			{#each data.useInstead as other (other.id)}
+			{#each data.linkedFrom as other (other.id)}
 				<li><a class="term-link" href="/glossary/{other.id}">{other.term}</a></li>
 			{/each}
 		</ul>
 	{/if}
 
-	{#if data.seeAlso.length > 0}
-		<h2>See also</h2>
-		<ul>
-			{#each data.seeAlso as other (other.id)}
-				<li><a class="term-link" href="/glossary/{other.id}">{other.term}</a></li>
-			{/each}
-		</ul>
-	{/if}
-
-	<p class="no-print">
-		<a href="/requests?record=glossary/{entry.id}">Suggest a change to this term</a>
-	</p>
-
-	<NoteList notes={data.notes} />
-</article>
-
-<style>
-	.expansion {
-		display: block;
-		font-size: var(--font-size-heading-3);
-		font-weight: var(--font-weight-regular);
-	}
-</style>
+	<SourceList sources={data.sources} introduction="Each source below is followed by the parts of this entry that cite it." />
+</div>

@@ -48,15 +48,21 @@ export function whereInSource(fact: Pick<CitedFact, 'locator' | 'as_of'>): strin
 
 export class SourceUses {
 	readonly #entries = new Map<string, Omit<SourceEntry, 'groups'> & { uses: SourceUse[] }>();
+	readonly #citation: (key: string) => string;
 
-	/** Records that the source with this key supports one fact on the page. */
-	add(key: string, use: SourceUse): void {
+	/** citation gives a source's citation as HTML; by default, the short form formatSource writes. */
+	constructor(citation: (key: string) => string = (key) => formatSource(sources().get(key), key)) {
+		this.#citation = citation;
+	}
+
+	/** Records that the source with this key supports one fact on the page, and returns the source's number. */
+	add(key: string, use: SourceUse): number {
 		let entry = this.#entries.get(key);
 		if (!entry) {
 			entry = {
 				number: this.#entries.size + 1,
 				key,
-				html: formatSource(sources().get(key), key),
+				html: this.#citation(key),
 				uses: []
 			};
 			this.#entries.set(key, entry);
@@ -68,6 +74,7 @@ export class SourceUses {
 				existing.where === use.where
 		);
 		if (!repeated) entry.uses.push(use);
+		return entry.number;
 	}
 
 	/** Records the source of a cited fact, if it names one. */
@@ -84,7 +91,12 @@ export class SourceUses {
 					(candidate) => candidate.section === use.section && candidate.where === use.where
 				);
 				if (group) group.facts.push(use.text);
-				else groups.push({ section: use.section, where: use.where, facts: [use.text] });
+				else
+					groups.push({
+						section: use.section,
+						where: use.where,
+						facts: [use.text]
+					});
 			}
 			return { ...entry, groups };
 		});
