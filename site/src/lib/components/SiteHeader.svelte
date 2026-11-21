@@ -2,6 +2,7 @@
 	import { page } from '$app/state';
 	import { siteName } from '#lib';
 	import AccountLink from './AccountLink.svelte';
+	import PrintOptions from './PrintOptions.svelte';
 	import SettingsPanel from './SettingsPanel.svelte';
 	import ThemeSetting from './ThemeSetting.svelte';
 
@@ -29,7 +30,7 @@
 			<a href="/">{siteName}</a>
 			<span class="edition">Draft, content {contentVersion}</span>
 		</p>
-		<nav aria-label="Main">
+		<nav aria-label="Main" class="no-print">
 			<ul>
 				{#each menu as item (item.link)}
 					<li>
@@ -41,9 +42,10 @@
 				<li><a class="button contribute" href="/requests?kind=contribute">Contribute</a></li>
 			</ul>
 		</nav>
-		<div class="masthead-tools">
+		<div class="masthead-tools no-print">
 			<AccountLink />
 			<ThemeSetting />
+			<PrintOptions />
 			<SettingsPanel />
 		</div>
 	</div>
@@ -132,5 +134,15 @@
 
 	nav a[aria-current='page'] {
 		border-bottom-color: var(--color-band-text);
+	}
+
+	/* On paper the band is not filled, so the site's name prints in ink. */
+	@media print {
+		.masthead,
+		.wordmark a,
+		.edition {
+			background: none;
+			color: var(--color-ink);
+		}
 	}
 </style>

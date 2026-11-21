@@ -90,7 +90,7 @@
 </script>
 
 {#if interactive && searchLabel}
-	<div class="table-tools">
+	<div class="table-tools no-print">
 		<div class="field">
 			<label for="{identifier}-search">{searchLabel}</label>
 			<input id="{identifier}-search" type="search" autocomplete="off" bind:value={query} />
@@ -99,7 +99,7 @@
 	</div>
 {/if}
 
-<div class="table-scroll" role="region" aria-label={label} {@attach keyboardScroll}>
+<div class="table-scroll" role="region" aria-label={label} data-print-part="tables" {@attach keyboardScroll}>
 	<table id={identifier}>
 		{#if caption}<caption>{caption}</caption>{/if}
 		<thead>
