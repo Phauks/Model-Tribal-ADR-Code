@@ -112,6 +112,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Lower Elwha Tribal Community
+official_images:
+- kind: logo
+  alternative_text: 'Lower Elwha Klallam Tribe - '
+  image_link: https://www.elwha.org/wp-content/uploads/2022/08/elwha-logo-94sq.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 7f072860f0c8b201f971014cca88450467b6f78beb28a92ea85af4f82b7fbc36
+  private_copy: nation-images/lower-elwha-tribal-community/logo-7f072860f0c8.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2022 Lower Elwha Klallam Tribe.
+      link: https://www.elwha.org/
+      source: elwha-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: elwha-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Klallam
   language_tag: clm

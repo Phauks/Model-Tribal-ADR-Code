@@ -141,6 +141,21 @@ contacts:
   verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Healy Lake Village" (community: Healy Lake, object 74)'
+official_images:
+- kind: logo
+  image_link: https://images.squarespace-cdn.com/content/v1/5f4708d785ed353c33eddd26/1602201545077-S556I0TXG8FQU59EL9G9/favicon.ico
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: d52cc6061ae0c676b6593deb70a08994431d89d0a440af1adf1115d30de3e6e5
+  private_copy: nation-images/healy-lake-village/logo-d52cc6061ae0.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: healylake-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Nee’aandeg’ (Tanacross)
   language_tag: tcb

@@ -154,6 +154,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ho-Chunk Nation of Wisconsin
+official_images:
+- kind: seal
+  alternative_text: Ho-Chunk Nation
+  image_link: https://ho-chunknation.com/wp-content/uploads/2019/10/HCN-SEAL-Stylized-white-background-400x401-300x300.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: e109534b3f9d1c55464c4071f776d042053a4e704a3c0d0828beb4424abf43af
+  private_copy: nation-images/ho-chunk-nation-of-wisconsin/seal-e109534b3f9d.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Ho-Chunk Nation | Atlanta Web Design by Double Up Digital
+      link: https://ho-chunknation.com/
+      source: ho-chunknation-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: ho-chunknation-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Hocak
   language_tag: win

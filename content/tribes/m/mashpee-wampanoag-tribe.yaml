@@ -159,6 +159,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mashpee Wampanoag Tribe
+official_images:
+- kind: logo
+  alternative_text: Mashpee Wampanoag Tribe
+  image_link: https://images.squarespace-cdn.com/content/v1/59ca33c0f09ca4a9c58455a9/1506426719908-CIHWSS24PILVJRYCHFRY/mwt_logo_white_new.png?format=1500w
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 3ed4553983c35d5152255a110031ec24fe45eb4e75810b6cf5bf97a7a3f038c8
+  private_copy: nation-images/mashpee-wampanoag-tribe/logo-3ed4553983c3.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: mashpee-wampanoag-tribe-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Wampanoag (Wôpanâak)
   language_tag: wam

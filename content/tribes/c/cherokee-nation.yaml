@@ -127,6 +127,22 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Directory URL still works but redirects to cherokee.gov.
+official_images:
+- kind: seal
+  alternative_text: Seal of the Cherokee Nation, September 6, 1839
+  image_link: https://www.cherokee.gov/media/10idszgp/seal.svg
+  retrieved: '2026-11-21'
+  media_type: image/svg+xml
+  sha256: c383ea689182d18e00d423f72c90aab4ffa4eea6ec45f465e2999e201f890c02
+  private_copy: nation-images/cherokee-nation/seal-c383ea689182.svg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: cherokee-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Cherokee
   language_tag: chr

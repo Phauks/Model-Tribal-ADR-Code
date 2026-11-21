@@ -138,6 +138,48 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Santa Ana, New Mexico
+official_images:
+- kind: seal
+  alternative_text: Santa Ana Pueblo
+  image_link: https://santaana-nsn.gov/wp-content/uploads/2019/08/cropped-Great-Seal-FINAL-trans-2.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 5b7d950a6a0d773409dc10e9f1208446467987a3f9267822152fa1efae83b319
+  private_copy: nation-images/pueblo-of-santa-ana/seal-5b7d950a6a0d.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 Santa Ana Pueblo |
+      link: https://santaana-nsn.gov/
+      source: pueblo-of-santa-ana-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89002983&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89002983'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2023-02-28).
+  source: pueblo-of-santa-ana-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89002983'
+  wordmark: THE GREAT SEAL OF THE PUEBLO OF SANTA ANA TAMAYA
+  filed: '2023-02-28'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89002983&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/pueblo-of-santa-ana/insignia-database-89002983.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89002983
 languages:
 - name: Keresan
   language_tag: kee

@@ -144,6 +144,40 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kickapoo Traditional Tribe of Texas
+official_images:
+- kind: logo
+  alternative_text: Kickapoo
+  image_link: https://kickapootexas.org/wp-content/uploads/2017/03/KTTT-Logo-New.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: a4a5ac45a042a5234d07802809558e52bbd3dfbe10edb31da7eed95178a60565
+  private_copy: nation-images/kickapoo-traditional-tribe-of-texas/logo-a4a5ac45a042.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: ©2026 - Kickapoo Traditional Tribe of Texas .
+      link: https://kickapootexas.org/
+      source: kickapootexas-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: kickapootexas-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89003005'
+  filed: '2023-05-02'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89003005&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: different-design
+  private_copy: nation-images/kickapoo-traditional-tribe-of-texas/insignia-database-89003005.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89003005
 federal_administration:
   bureau_of_indian_affairs_region: Southern Plains
   bureau_of_indian_affairs_agency: Southern Plains Regional Office

@@ -111,6 +111,29 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+official_images:
+- kind: logo
+  alternative_text: Chicken Ranch Rancheria Me-Wuk Indians of California
+  image_link: https://images.squarespace-cdn.com/content/v1/5d3733c4267d4600010acd8b/ff52ef6f-8336-40fe-ad67-0b8e0ec0d97b/Chicken-Ranch-Rancheria-600x240.png?format=1500w
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: c9d7c39da358d501d877211fc2ac566f8c9f30c21e2566eb0eded9f653373b12
+  private_copy: nation-images/chicken-ranch-rancheria-of-me-wuk-indians-of-california/logo-c9d7c39da358.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Chicken Rancheria Me-Wuk Indians | Privacy Policy
+      link: https://chickenranchrancheria.org/home
+      source: chickenranchrancheria-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: chickenranchrancheria-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

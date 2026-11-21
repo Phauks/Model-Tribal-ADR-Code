@@ -129,6 +129,32 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Iowa Tribe of Kansas and Nebraska
+official_images:
+- kind: logo
+  alternative_text: Logo of the Iowa Tribe of Kansas and Nebraska featuring a depiction of Chief White
+    Cloud wearing traditional regalia, surrounded by a circular black band with the text 'Iowa Tribe'
+    at the top and 'Kansas - Nebraska' at the bottom. The logo is adorned with five feathers hanging from
+    the bottom of the circle.
+  image_link: https://iowatribeofkansasandnebraska.com/wp-content/uploads/2020/04/tribenew-226x300.webp
+  retrieved: '2026-11-21'
+  media_type: image/webp
+  sha256: a656c732b392fa7c3eab0c71f51b99139960b7848270e97944173d5672a65956
+  private_copy: nation-images/iowa-tribe-of-kansas-and-nebraska/logo-a656c732b392.webp
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright Iowa Tribe of Kansas and Nebraska © 2026 .
+      link: https://iowatribeofkansasandnebraska.com/
+      source: iowatribeofkansasandnebraska-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: iowatribeofkansasandnebraska-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Southern Plains
   bureau_of_indian_affairs_agency: Horton Agency

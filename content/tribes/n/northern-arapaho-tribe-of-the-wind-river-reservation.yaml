@@ -114,6 +114,47 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Northern Arapaho Tribe of the Wind River Reservation, Wyoming
+official_images:
+- kind: logo
+  image_link: https://northernarapaho.com/wp-content/uploads/2026/07/cropped-cropped-NATLogo-2001-300x300-1-180x180.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: cb6c3dc9ed6a4e9d7d99a38ee694a2f45bc2b92324057e7bfd7162e20607989c
+  private_copy: nation-images/northern-arapaho-tribe-of-the-wind-river-reservation/logo-cb6c3dc9ed6a.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright Notices .
+      link: https://northernarapaho.com/
+      source: northernarapaho-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001052&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001052'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2005-04-12).
+  source: northernarapaho-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001052'
+  wordmark: NORTHERN ARAPAHO TRIBE
+  filed: '2005-04-12'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001052&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/northern-arapaho-tribe-of-the-wind-river-reservation/insignia-database-89001052.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001052
 federal_administration:
   bureau_of_indian_affairs_region: Rocky Mountain
   bureau_of_indian_affairs_agency: Wind River Agency

@@ -127,6 +127,21 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yurok Tribe of the Yurok Reservation, California
+official_images:
+- kind: logo
+  image_link: https://static.wixstatic.com/media/23c897_3128a1d364db47b19426eb7d828059e5%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/23c897_3128a1d364db47b19426eb7d828059e5%7Emv2.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 96862cf1e4fc617fdbb4aed11be30bae46b32fcd680497dbc5258dc35b52e2af
+  private_copy: nation-images/yurok-tribe-of-the-yurok-reservation/logo-96862cf1e4fc.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: yuroktribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Pacific Regional Office

@@ -150,6 +150,30 @@ contacts:
   locator: 'record "Nome Eskimo Community" (community: Nome, object 144)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+official_images:
+- kind: logo
+  alternative_text: Nome Eskimo Community logo
+  image_link: https://www.necalaska.org/wp-content/uploads/logo-1-300x126.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 0e9c9beb45fe06134c29a9041e602a2d91bb73286f448f64299ff0d7a43d47c4
+  private_copy: nation-images/nome-eskimo-community/logo-0e9c9beb45fe.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 • Nome Eskimo Community • All Rights Reserved • Privacy Policy • Cookie
+        Policy • Website by Sundog Media, LLC .
+      link: https://www.necalaska.org/
+      source: nome-eskimo-community-website
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: nome-eskimo-community-website
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Iñupiaq
   language_tag: ipk

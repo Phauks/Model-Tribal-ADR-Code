@@ -133,6 +133,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Shoshone-Bannock Tribes of the Fort Hall Reservation
+official_images:
+- kind: logo
+  alternative_text: Shoshone-Bannock Tribes
+  image_link: https://www.sbtribes.com/wp-content/uploads/2022/10/SBT-LOGO-300px.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: acd437181d5174f7c01bc416ff1e1865c60a5a20787394287479da7c64a07159
+  private_copy: nation-images/shoshone-bannock-tribes-of-the-fort-hall-reservation/logo-acd437181d51.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright 2026 by the Shoshone-Bannock Tribes .
+      link: https://www.sbtribes.com/
+      source: sbtribes-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: sbtribes-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Shoshone
   language_tag: shh

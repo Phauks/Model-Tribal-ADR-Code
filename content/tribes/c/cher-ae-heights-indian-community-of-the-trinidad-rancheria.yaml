@@ -113,6 +113,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Cher-Ae Heights Indian Community of the Trinidad Rancheria, California
+official_images:
+- kind: logo
+  alternative_text: Trinidad Rancheria
+  image_link: https://trinidad-rancheria.org/wp-content/uploads/2018/03/Website_TR_Logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 0a244bcc1776b2250af60187efe9eb9c9f426aa10fdce02b29ca62ed695b57a7
+  private_copy: nation-images/cher-ae-heights-indian-community-of-the-trinidad-rancheria/logo-0a244bcc1776.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Trinidad Rancheria © 2026..
+      link: https://trinidad-rancheria.org/
+      source: trinidad-rancheria-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: trinidad-rancheria-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Northern California Agency

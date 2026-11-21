@@ -162,6 +162,22 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+official_images:
+- kind: seal
+  alternative_text: Haliwa-Saponi Indian Tribe Seal
+  image_link: https://inter-cdn.com/images/120/4631222/haliwa-saponicopy.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 5b7e119a956cf5b155203e064cfaa6591e911ca9cba8caac39ed4fa7135fd8b3
+  private_copy: nation-images/haliwa-saponi-indian-tribe/seal-5b7e119a956c.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: haliwa-saponi-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

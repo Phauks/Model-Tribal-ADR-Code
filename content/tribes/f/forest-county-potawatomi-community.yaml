@@ -121,6 +121,35 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Forest County Potawatomi Community, Wisconsin
+official_images:
+- kind: logo
+  image_link: https://www.fcpotawatomi.com/wp-content/uploads/2017/12/fcp_login_logo-3.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 51b67492f79cffafb1ff1a0d0f91a91a5345f2a674e654965d6fd9c4540c7bc5
+  private_copy: nation-images/forest-county-potawatomi-community/logo-51b67492f79c.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: terms-of-use
+      effect: blocks-reuse
+      quote: IMAGES MAY NOT BE REDISPLAYED ON ANOTHER WEB SITE WITHOUT PERMISSION OF THE FOREST COUNTY
+        POTAWATOMI COMMUNITY.
+      link: https://www.fcpotawatomi.com/copyright/
+      source: fcpotawatomi-copyright
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright & Images .
+      link: https://www.fcpotawatomi.com/
+      source: fcpotawatomi-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: fcpotawatomi-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Great Lakes Agency

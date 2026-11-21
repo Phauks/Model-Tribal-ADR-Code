@@ -148,6 +148,29 @@ contacts:
   locator: 'record "Tangirnaq Native Village" (community: Woody Island, object 228)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+official_images:
+- kind: logo
+  image_link: https://www.woodyisland.com/wp-content/uploads/Tangirnaq_vertical-1024px-200x120.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 3b07f72fb29d579c6537df1615c28f618fd5c58e71c66844dd86dcc3b4cf153d
+  private_copy: nation-images/tangirnaq-native-village/logo-3b07f72fb29d.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Tangirnaq Native Village • All Rights Reserved • Privacy Policy • Cookie Policy •
+        Website by Sundog Media .
+      link: https://www.woodyisland.com/
+      source: woodyisland-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: woodyisland-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Alaska
   bureau_of_indian_affairs_agency: Alaska Regional Office

@@ -150,6 +150,21 @@ contacts:
   locator: 'record "Organized Village of Kasaan" (community: Kasaan, object 91)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+official_images:
+- kind: logo
+  image_link: https://static.wixstatic.com/media/6a3b4e_0d32a665c4634d9984ab0422ca0c9df2%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/6a3b4e_0d32a665c4634d9984ab0422ca0c9df2%7Emv2.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: cb69e992a9f2bd769a4abbd2d19d7d4e474a6f97f2b041bc49184b4f19a71cfb
+  private_copy: nation-images/organized-village-of-kasaan/logo-cb69e992a9f2.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: kasaan-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Xaat Kíl (Haida)
   language_tag: hai

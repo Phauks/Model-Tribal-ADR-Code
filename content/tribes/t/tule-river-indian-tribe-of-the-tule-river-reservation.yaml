@@ -131,6 +131,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Tule River Indian Tribe of the Tule River Reservation, California
+official_images:
+- kind: logo
+  alternative_text: Tule River Indian Tribe of California.
+  image_link: https://tulerivertribe-nsn.gov/wp-content/uploads/2017/11/Tule-River-Logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 7ecbf020f5e4da458e976aa5307e3826b297a4aa8ec93d75088d70ba80a67a07
+  private_copy: nation-images/tule-river-indian-tribe-of-the-tule-river-reservation/logo-7ecbf020f5e4.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2024 Tule River Tribe..
+      link: https://tulerivertribe-nsn.gov/
+      source: tulerivertribe-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: tulerivertribe-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Yowlumne (Yokuts)
   language_tag: yok

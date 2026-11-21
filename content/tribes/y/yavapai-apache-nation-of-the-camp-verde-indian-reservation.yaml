@@ -121,6 +121,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yavapai-Apache Nation of the Camp Verde Indian Reservation, Arizona
+official_images:
+- kind: seal
+  alternative_text: Yavapai-Apache Nation
+  image_link: https://yavapai-apache.org/wp-content/uploads/2021/01/7315904_105x102.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 51b595e76a541867d3fef4cb28ad170996bd05d2292912f5b633ec39d0cdb147
+  private_copy: nation-images/yavapai-apache-nation-of-the-camp-verde-indian-reservation/seal-51b595e76a54.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Yavapai-Apache Nation
+      link: https://yavapai-apache.org/
+      source: yavapai-apache-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: yavapai-apache-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Truxton Canon Agency

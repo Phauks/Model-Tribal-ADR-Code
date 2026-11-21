@@ -111,6 +111,41 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Quinault Indian Nation
+official_images:
+- kind: logo
+  alternative_text: Home Page
+  image_link: https://www.quinaultindiannation.com/ImageRepository/Document?documentID=65
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 7a42752164893181299fc2a96f61890a0cbe24cf3dfce68e82d56ffb231ca59b
+  private_copy: nation-images/quinault-indian-nation/logo-7a4275216489.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright Notices .
+      link: https://www.quinaultindiannation.com/
+      source: quinault-indian-nation-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: quinault-indian-nation-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89000633'
+  wordmark: QUINAULT INDIAN NATION
+  filed: '2002-08-23'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89000633&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: different-design
+  private_copy: nation-images/quinault-indian-nation/insignia-database-89000633.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89000633
 languages:
 - name: Quinault
   language_tag: qun

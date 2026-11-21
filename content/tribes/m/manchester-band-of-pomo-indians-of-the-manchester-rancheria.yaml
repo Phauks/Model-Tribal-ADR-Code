@@ -120,6 +120,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Manchester Band of Pomo Indians of the Manchester Rancheria, California
+official_images:
+- kind: logo
+  image_link: https://mpapomotribe.com/wp-content/uploads/2024/06/cropped-logo-082323-1-180x180.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 2087523d6797f21481a9e952da22a442c8e60d3fb47a6b67131b32be949314f0
+  private_copy: nation-images/manchester-band-of-pomo-indians-of-the-manchester-rancheria/logo-2087523d6797.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 All Rights Reserved.
+      link: https://mpapomotribe.com/tribal-council/
+      source: mpapomotribe-tribal-council
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: mpapomotribe-tribal-council
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

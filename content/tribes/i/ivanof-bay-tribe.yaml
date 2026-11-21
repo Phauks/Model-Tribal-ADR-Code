@@ -120,6 +120,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ivanof Bay Tribe
+official_images:
+- kind: logo
+  alternative_text: Ivanof Bay Tribe
+  image_link: https://images.squarespace-cdn.com/content/v1/6019663c39b6d67b861e3148/c620516d-7a4b-4ada-95e8-c6ca28f6b4a3/Logo.PNG?format=2500w
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 9f0cae2a4c6d7c22ba861b02b984779b79922bd23c43e65e810c17e3dd87e766
+  private_copy: nation-images/ivanof-bay-tribe/logo-9f0cae2a4c6d.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright 2021 Ivanof Bay tribal council | terms | privacy | site credit
+      link: https://www.ivanofbaytribe.org/
+      source: ivanofbaytribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: ivanofbaytribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Alaska
   bureau_of_indian_affairs_agency: Alaska Regional Office

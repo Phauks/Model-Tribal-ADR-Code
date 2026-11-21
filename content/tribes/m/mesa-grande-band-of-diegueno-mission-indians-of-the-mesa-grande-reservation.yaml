@@ -120,6 +120,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mesa Grande Band of Diegueno Mission Indians of the Mesa Grande Reservation, California
+official_images:
+- kind: logo
+  image_link: https://www.mesagrandeband-nsn.gov/wp-content/uploads/MesaGrande-FinalLogo-2048x2048.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: d4debbde2b042375671fa130e227b8576a37baa47f0fff6fb4fbce1e2b3e4976
+  private_copy: nation-images/mesa-grande-band-of-diegueno-mission-indians-of-the-mesa-grande-reservation/logo-d4debbde2b04.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 Mesa Grande | Privacy Policy .
+      link: https://www.mesagrandeband-nsn.gov/
+      source: mesagrandeband-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: mesagrandeband-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Southern California Agency

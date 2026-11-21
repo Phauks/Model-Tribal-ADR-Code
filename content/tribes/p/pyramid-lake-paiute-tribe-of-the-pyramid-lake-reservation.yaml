@@ -128,6 +128,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pyramid Lake Paiute Tribe of the Pyramid Lake Reservation, Nevada
+official_images:
+- kind: logo
+  image_link: https://plpt.nsn.us/wp-content/uploads/2021/04/cropped-PYRMID-TRIBE-SEAL3-200x200-1.gif
+  retrieved: '2026-11-21'
+  media_type: image/gif
+  sha256: 6daea31147b28a00e2f24bcba679d5f7a5838675f6197a02fc9c2265e9550e2d
+  private_copy: nation-images/pyramid-lake-paiute-tribe-of-the-pyramid-lake-reservation/logo-6daea31147b2.gif
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 Pyramid Lake Paiute Tribe | All Rights Reserved
+      link: https://plpt.nsn.us/
+      source: plpt-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: plpt-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Paiute
   language_tag: pao

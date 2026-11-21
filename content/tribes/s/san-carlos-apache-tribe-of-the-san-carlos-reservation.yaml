@@ -139,6 +139,30 @@ contacts:
   as_of: '2026-11-21'
   note: BIA directory lists an Inter Tribal Council of Arizona member page instead of the nation's own
     site; scat-nsn.gov is titled "SAN CARLOS APACHE TRIBE - OFFICIAL WEBSITE"
+official_images:
+- kind: logo
+  image_link: https://www.scat-nsn.gov/wp-content/uploads/2026/08/dddddddd.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: c79933a87001a51b66a2db076de34caccd3d265d711374d422cb837861f789af
+  private_copy: nation-images/san-carlos-apache-tribe-of-the-san-carlos-reservation/logo-c79933a87001.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: '2214 North Central Avenue, Phoenix, AZ 85004 Phone: 602-258-4822 Fax: 602-258-4825 , Copyright
+        © 2011 - 2026 Inter Tribal Council of Arizona, Inc.'
+      link: https://itcaonline.com/member-tribes/san-carlos-apache-tribe/
+      source: itcaonline-san-carlos-apache-tribe
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: scat-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+  note: Found by rendering the page in a browser; the page draws its logo with JavaScript.
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: San Carlos Agency

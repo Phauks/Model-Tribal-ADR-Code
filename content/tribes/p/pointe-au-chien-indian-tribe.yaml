@@ -123,6 +123,21 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+official_images:
+- kind: logo
+  image_link: https://static.wixstatic.com/media/91b344_c401037407ec472a9f10536f427610fd~mv2_d_3111_2935_s_4_2.jpg/v1/fill/w_2500,h_2358,al_c/91b344_c401037407ec472a9f10536f427610fd~mv2_d_3111_2935_s_4_2.jpg
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: 0f3bd65bfada7d83c823c5bf25cbaec44bd3d66af62ac6ae17f8efff757d0ef2
+  private_copy: nation-images/pointe-au-chien-indian-tribe/logo-0f3bd65bfada.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: pactribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

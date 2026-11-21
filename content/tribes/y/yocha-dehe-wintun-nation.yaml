@@ -131,6 +131,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yocha Dehe Wintun Nation, California
+official_images:
+- kind: logo
+  alternative_text: Yocha Dehe
+  image_link: https://yochadehe.gov/wp-content/uploads/2021/05/yocha_logo.svg
+  retrieved: '2026-11-21'
+  media_type: image/svg+xml
+  sha256: 94134429132fc907374387abb1b29151cd7a62ee5767e2e03a2644ac83968aa7
+  private_copy: nation-images/yocha-dehe-wintun-nation/logo-94134429132f.svg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Yocha Dehe Wintun Nation .
+      link: https://yochadehe.gov/
+      source: yocha-dehe-wintun-nation-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: yocha-dehe-wintun-nation-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Patwin
   language_tag: pwi

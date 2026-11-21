@@ -129,6 +129,47 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ottawa Tribe of Oklahoma
+official_images:
+- kind: seal
+  image_link: https://images.squarespace-cdn.com/content/v1/6569185859f7bc6e97c29dd8/406e196b-1508-490c-bc0e-771ad336d013/ottawa-tribe-ok-seal-300x300-1-300x300.png?format=1500w
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 0c38cbf60d2c91db24e9643115974aee8943a55debd7e2756fc8a7b245b211c3
+  private_copy: nation-images/ottawa-tribe-of-oklahoma/seal-0c38cbf60d2c.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright ©2026 Ottawa Tribe of Oklahoma.
+      link: https://www.ottawatribe.gov/
+      source: ottawa-tribe-of-oklahoma-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89003216&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89003216'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2025-07-31).
+  source: ottawa-tribe-of-oklahoma-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89003216'
+  wordmark: OTTAWA TRIBE OF OKLAHOMA UNITED WE STAND DIVIDED WE FALL
+  filed: '2025-07-31'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89003216&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/ottawa-tribe-of-oklahoma/insignia-database-89003216.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89003216
 federal_administration:
   bureau_of_indian_affairs_region: Eastern Oklahoma
   bureau_of_indian_affairs_agency: Miami Agency

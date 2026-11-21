@@ -132,6 +132,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Narragansett Indian Tribe
+official_images:
+- kind: logo
+  alternative_text: Narragansett Indian Tribe
+  image_link: https://narragansettindiannation.org/wp-content/uploads/2026/09/Narragansett-Tribe_LOGO_2026_L.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 404ca4ad636e7d6a65f2649446ac1c4302eebacd709a6109242422314597f554
+  private_copy: nation-images/narragansett-indian-tribe/logo-404ca4ad636e.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: narragansettindiannation-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office

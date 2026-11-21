@@ -119,6 +119,48 @@ contacts:
   as_of: '2026-11-20'
   locator: Cachil DeHe Band of Wintun Indians of the Colusa Indian Community of the Colusa Rancheria,
     California
+official_images:
+- kind: logo
+  alternative_text: 'Colusa Indian Community Council - '
+  image_link: https://www.colusa-nsn.gov/wp-content/themes/colusa/images/logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: bf4f4516b706f419f9a44a015518a2892c3c272511c07b9fb38626d646c34d13
+  private_copy: nation-images/cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria/logo-bf4f4516b706.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: --> © Copyright 2013 Colusa Indian Community Council.
+      link: https://www.colusa-nsn.gov/
+      source: colusa-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001056&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001056'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2005-11-08).
+  source: colusa-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001056'
+  wordmark: CACHIL DEHE WINTUN
+  filed: '2005-11-08'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001056&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/cachil-dehe-band-of-wintun-indians-of-the-colusa-indian-community-of-the-colusa-rancheria/insignia-database-89001056.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001056
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

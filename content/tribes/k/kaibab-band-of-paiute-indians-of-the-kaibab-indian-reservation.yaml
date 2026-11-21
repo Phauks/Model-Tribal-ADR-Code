@@ -111,6 +111,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kaibab Band of Paiute Indians of the Kaibab Indian Reservation, Arizona
+official_images:
+- kind: logo
+  alternative_text: navigation logo
+  image_link: https://cms2.revize.com/revize/kaibabaz/_assets_/images/logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: d6a9fd63224a0330ccc1a078a224f34c5ed9d5aed9a002c90c6220c63670c4ee
+  private_copy: nation-images/kaibab-band-of-paiute-indians-of-the-kaibab-indian-reservation/logo-d6a9fd63224a.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: kaibabpaiute-nsn-index
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Southern Paiute Agency

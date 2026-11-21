@@ -143,6 +143,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Pojoaque, New Mexico
+official_images:
+- kind: logo
+  alternative_text: Pueblo of Pojoaque
+  image_link: https://pojoaque.org/wp-content/uploads/2015/01/Pojoaque_LOGO_wide_redwhitetext100w.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: be8821880cf57b47b564ecd406b243efe19ba1e9cbaf8fb867105811034b74d8
+  private_copy: nation-images/pueblo-of-pojoaque/logo-be8821880cf5.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Copyright - Pueblo of Pojoaque .
+      link: https://pojoaque.org/
+      source: pueblo-of-pojoaque-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: pueblo-of-pojoaque-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Tewa
   language_tag: tew

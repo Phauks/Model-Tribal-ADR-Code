@@ -112,6 +112,30 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Redwood Valley or Little River Band of Pomo Indians of the Redwood Valley Rancheria California
+official_images:
+- kind: logo
+  alternative_text: RV Band_Ring3.jpg
+  image_link: https://static.wixstatic.com/media/4118ba_3cde6d06111e401793b2281a6f9665d1~mv2.jpg/v1/fill/w_120,h_120,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/RV%20Band_Ring3.jpg
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: 672253142bf15150022d7397cf29df8295d40a3a710438ffb19554115c99a85e
+  private_copy: nation-images/redwood-valley-or-little-river-band-of-pomo-indians-of-the-redwood-valley-rancheria-california/logo-672253142bf1.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: ©2026 by Redwood Valley Rancheria .
+      link: https://www.rvrpomo.net/
+      source: rvrpomo-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: rvrpomo-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+  note: Found by rendering the page in a browser; the page draws its logo with JavaScript.
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

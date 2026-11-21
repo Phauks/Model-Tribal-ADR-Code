@@ -140,6 +140,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Organized Village of Kake" (community: Kake, object 86)'
+official_images:
+- kind: logo
+  alternative_text: Organized Village of Kake
+  image_link: https://kake-nsn.gov/wp-content/uploads/2024/10/OVK_FullLogo_FullColor-600x181.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 46a1ff8ffa4e91523cdd61f39a6f4c403f90b764a1e3216529c84dcadf77b22c
+  private_copy: nation-images/organized-village-of-kake/logo-46a1ff8ffa4e.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: kake-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Tlingit
   language_tag: tli

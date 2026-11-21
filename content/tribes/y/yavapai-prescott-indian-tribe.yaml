@@ -129,6 +129,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yavapai-Prescott Indian Tribe
+official_images:
+- kind: flag
+  image_link: https://www.ypit.com/images/ypit-flag-larger.jpg
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: 350227bc59860d647ac32ed83b2e5c31d5d61e7e910093af88fcdb7731b78cf2
+  private_copy: nation-images/yavapai-prescott-indian-tribe/flag-350227bc5986.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2002, The Yavapai-Prescott Indian Tribe .
+      link: https://www.ypit.com/about_ypit.htm
+      source: yavapai-prescott-indian-tribe-about-ypit-htm
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: ypit-flag-popup
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Truxton Canon Agency

@@ -149,6 +149,30 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Directory URL redirects to bishoppaiute.net.
+official_images:
+- kind: logo
+  alternative_text: Bishop Paiute Tribe
+  image_link: https://bishoppaiute.net/wp-content/uploads/2026/09/BPT_Logo_Badge.svg
+  retrieved: '2026-11-21'
+  media_type: image/svg+xml
+  sha256: de5bd1026c08400c2d6a712044a9567c5d742a01f497029ef1d7dc387f73275e
+  private_copy: nation-images/bishop-paiute-tribe/logo-de5bd1026c08.svg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Bishop Paiute Tribe.
+      link: https://bishoppaiute.net/
+      source: bishoppaiute-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: bishoppaiute-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+  note: Found by rendering the page in a browser; the page draws its logo with JavaScript.
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

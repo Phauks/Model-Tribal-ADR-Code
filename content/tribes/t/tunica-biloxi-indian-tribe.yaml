@@ -139,6 +139,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Tunica-Biloxi Indian Tribe
+official_images:
+- kind: logo
+  image_link: https://www.tunicabiloxi.org/wp-content/uploads/Logo.jpg
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: 682cf5af25247bc3ee4e89dd0e3b69d2a6377683f261befaee7300af8d48060b
+  private_copy: nation-images/tunica-biloxi-indian-tribe/logo-682cf5af2524.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2018 Tunica-Biloxi Tribe of Louisiana.
+      link: https://www.tunicabiloxi.org/
+      source: tunica-biloxi-indian-tribe-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: tunica-biloxi-indian-tribe-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Tunica
   language_tag: tun

@@ -131,6 +131,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pascua Yaqui Tribe of Arizona
+official_images:
+- kind: logo
+  image_link: https://www.pascuayaqui-nsn.gov/wp-content/uploads/yootheme/cache/2c/pyt-logo-icon-small-2c341e6d.webp
+  retrieved: '2026-11-21'
+  media_type: image/webp
+  sha256: 42b35212014f2560d9c779ce2b66171e4027b8f55b7ef933c1fc36c2ac7f89de
+  private_copy: nation-images/pascua-yaqui-tribe-of-arizona/logo-42b35212014f.webp
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Pascua Yaqui Tribe.
+      link: https://www.pascuayaqui-nsn.gov/
+      source: pascuayaqui-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: pascuayaqui-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Salt River Agency

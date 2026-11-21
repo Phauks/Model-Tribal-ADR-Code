@@ -120,6 +120,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Santa Rosa Band of Cahuilla Indians, California
+official_images:
+- kind: logo
+  image_link: https://framerusercontent.com/images/UT8QnMzjNQNk7t77CiH7hgyIYY.png?width=400&height=400
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: d4886e063e94589436ba5e69d15baba3789116cd9ad52636cb7fb69fec53a56e
+  private_copy: nation-images/santa-rosa-band-of-cahuilla-indians/logo-d4886e063e94.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © All rights reserved.
+      link: https://santarosa-nsn.gov/
+      source: santarosa-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: santarosa-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+  note: Found by rendering the page in a browser; the page draws its logo with JavaScript.
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Southern California Agency

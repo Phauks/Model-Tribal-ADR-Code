@@ -127,6 +127,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Makah Indian Tribe of the Makah Indian Reservation
+official_images:
+- kind: logo
+  alternative_text: Makah Tribe Logo
+  image_link: https://makah.com/wp-content/uploads/2026/02/makahlogo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: e28a0bf6e3a5867f5b7e26eeae27c1669cbc56854922087d4b15562041a7d08d
+  private_copy: nation-images/makah-indian-tribe-of-the-makah-indian-reservation/logo-e28a0bf6e3a5.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: makah-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Northwest Regional Office

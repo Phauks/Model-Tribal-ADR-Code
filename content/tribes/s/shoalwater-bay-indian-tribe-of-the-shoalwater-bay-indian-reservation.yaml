@@ -125,6 +125,23 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation
+official_images:
+- kind: logo
+  alternative_text: Shoalwater Bay Tribe Logo
+  image_link: https://www.shoalwaterbay-nsn.gov/public/images/shoalwaterbaytribelogo.svg
+  retrieved: '2026-11-21'
+  media_type: image/svg+xml
+  sha256: 1dc471256d46b49e935228c5c5ee6e753db92239b0658c01183d0a19a3a51ce6
+  private_copy: nation-images/shoalwater-bay-indian-tribe-of-the-shoalwater-bay-indian-reservation/logo-1dc471256d46.svg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: shoalwaterbay-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+  note: Found by rendering the page in a browser; the page draws its logo with JavaScript.
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Olympic Peninsula Agency

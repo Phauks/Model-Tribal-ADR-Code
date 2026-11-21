@@ -112,6 +112,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Robinson Rancheria
+official_images:
+- kind: logo
+  alternative_text: Robinson Rancheria Citizens Business Council
+  image_link: https://images.squarespace-cdn.com/content/v1/68c320b669ed725da6606509/409872f6-7886-4b3b-9c4e-8bf70a52ff80/rrcbc_logo-finalcut_200.png?format=1500w
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 9d847d4027fed57e3e1c3efa664062fd2aed03acc8259bd79b500b1a407d8183
+  private_copy: nation-images/robinson-rancheria/logo-9d847d4027fe.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: rrcbc-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

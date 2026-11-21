@@ -121,6 +121,47 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Hoopa Valley Tribe, California
+official_images:
+- kind: seal
+  image_link: https://www.hoopa-nsn.gov/wp-content/uploads/2018/12/HoopaLogo-1.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: ca3e41886d94ebdab4a3a8bcc866fc65464afb2137e45fb8f01dd46d585806c5
+  private_copy: nation-images/hoopa-valley-tribe/seal-ca3e41886d94.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright 2003 - 2020 The Hoopa Valley Tribe .
+      link: https://www.hoopa-nsn.gov/
+      source: hoopa-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89002811&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89002811'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2022-03-02).
+  source: hoopa-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89002811'
+  wordmark: THE GREAT SEAL OF THE HOOPA VALLEY TRIBE
+  filed: '2022-03-02'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89002811&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/hoopa-valley-tribe/insignia-database-89002811.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89002811
 languages:
 - name: Hupa
   language_tag: hup

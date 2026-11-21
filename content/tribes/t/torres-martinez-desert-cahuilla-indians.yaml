@@ -112,6 +112,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Torres Martinez Desert Cahuilla Indians, California
+official_images:
+- kind: logo
+  alternative_text: Torres Martinez Desert Cahuilla Indians
+  image_link: https://torresmartinez.org/wp-content/uploads/2025/11/logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 25cee1a4e25fde2baa8bd38ab952cc611a0f07ab062bb75b25b097040e3dbe1b
+  private_copy: nation-images/torres-martinez-desert-cahuilla-indians/logo-25cee1a4e25f.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 Torres Martinez Desert Cahuilla Indians.
+      link: https://torresmartinez.org/
+      source: torres-martinez-desert-cahuilla-indians-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: torres-martinez-desert-cahuilla-indians-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Cahuilla
   language_tag: chl

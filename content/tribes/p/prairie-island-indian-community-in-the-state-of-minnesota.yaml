@@ -131,6 +131,58 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Prairie Island Indian Community in the State of Minnesota
+official_images:
+- kind: logo
+  alternative_text: Prairie Island Indian Community
+  image_link: https://prairieisland.org/assets/img/piic-logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 1d080f163af11bc7b76b22d2a091832e781576aef4aa98a82d4dc1a95a7eef7d
+  private_copy: nation-images/prairie-island-indian-community-in-the-state-of-minnesota/logo-1d080f163af1.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: terms-of-use
+      effect: blocks-reuse
+      quote: Except as explicitly provided herein, nothing in these Terms of Service shall be deemed to
+        create a license in or under any such intellectual property rights, and you agree not to sell,
+        license, rent, modify, distribute, copy, reproduce, transmit, publicly display, publicly perform,
+        publish, adapt, edit or create derivative works from any content we make available via the Service.
+      link: https://prairieisland.org/terms-and-conditions
+      source: prairieisland-terms-and-conditions
+      verification: read-in-full
+      note: The intellectual property rights the sentence refers to include "the trademarks and logos".
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Prairie Island Indian Community
+      link: https://prairieisland.org/
+      source: prairie-island-indian-community-in-the-s-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001054&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001054'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2006-05-01).
+  source: prairie-island-indian-community-in-the-s-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001054'
+  wordmark: PRAIRIE ISLAND INDIAN COMMUNITY IN THE STATE OF MINNESOTA
+  filed: '2006-05-01'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001054&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/prairie-island-indian-community-in-the-state-of-minnesota/insignia-database-89001054.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001054
 languages:
 - name: Dakota
   language_tag: dak

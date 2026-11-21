@@ -137,6 +137,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Lummi Tribe of the Lummi Reservation
+official_images:
+- kind: logo
+  alternative_text: Clickable Icon to the Lummi About Page
+  image_link: https://www.lummi-nsn.gov/lummilogo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: fc115d31a997faef080ae68dd122b0fd2dfe866b0f839784a40055b8fea48611
+  private_copy: nation-images/lummi-tribe-of-the-lummi-reservation/logo-fc115d31a997.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: lummi-nsn-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Puget Sound Agency

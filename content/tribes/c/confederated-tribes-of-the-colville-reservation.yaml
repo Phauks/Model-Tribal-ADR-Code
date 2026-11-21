@@ -120,6 +120,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Colville Reservation
+official_images:
+- kind: logo
+  alternative_text: Colville Tribes
+  image_link: https://images.squarespace-cdn.com/content/v1/56a24f7f841aba12ab7ecfa9/1536329572239-NMGXDK5PCLQK2MXNLW0A/Colville_TribalLogoSeal.png?format=1500w
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 01a57435e610256388cacc75fa147f7424de00fa0b192d0fea059eddeb3d1aa1
+  private_copy: nation-images/confederated-tribes-of-the-colville-reservation/logo-01a57435e610.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright ©
+      link: https://www.colvilletribes.com/
+      source: colvilletribes-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: colvilletribes-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: nsəlxcin (Colville-Okanagan Salish)
   language_tag: oka

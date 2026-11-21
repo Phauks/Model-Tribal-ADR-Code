@@ -123,6 +123,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Jicarilla Apache Nation, New Mexico
+official_images:
+- kind: seal
+  alternative_text: Great Seal of the Jicarilla Apache Nation
+  image_link: https://jicarillaoga.com/wp-content/uploads/2026/08/jan-great-seal.webp
+  retrieved: '2026-11-21'
+  media_type: image/webp
+  sha256: 125b06e2bd24ccb7978582b91e7bc74abd2cc32816b4885f696784904676c605
+  private_copy: nation-images/jicarilla-apache-nation/seal-125b06e2bd24.webp
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Jicarilla Oil & Gas Administration — Jicarilla Apache Nation.
+      link: https://jicarillaoga.com/
+      source: jicarillaoga-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: jicarillaoga-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Southwest
   bureau_of_indian_affairs_agency: Jicarilla Agency

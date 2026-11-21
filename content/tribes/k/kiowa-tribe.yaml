@@ -157,6 +157,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kiowa Tribe (previously listed as Kiowa Indian Tribe of Oklahoma)
+official_images:
+- kind: logo
+  alternative_text: Home
+  image_link: https://www.kiowatribe.org/sites/default/files/logo_0_0.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 691e13ba8861682915ceac418a6a6494b94ed2b2351f56e0605b7d3fef07b5c3
+  private_copy: nation-images/kiowa-tribe/logo-691e13ba8861.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 - Kiowa Tribe, All Rights Reserved.
+      link: https://www.kiowatribe.org/
+      source: kiowatribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: kiowatribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Kiowa
   language_tag: kio

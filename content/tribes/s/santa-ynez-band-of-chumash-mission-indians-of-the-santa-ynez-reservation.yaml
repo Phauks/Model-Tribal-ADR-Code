@@ -123,6 +123,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Santa Ynez Band of Chumash Mission Indians of the Santa Ynez Reservation, California
+official_images:
+- kind: logo
+  alternative_text: Santa Ynez Band of Chumash Indians
+  image_link: https://images.squarespace-cdn.com/content/v1/5ce1c6e64abe9e0001603b00/1558314978400-PKTODWMK9MFD4X89JTOM/Chumash-Logo.png?format=2500w
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: ac293cbe0dede50046d894ae30af9517e1bc311e2494e3c912736b727d8614a6
+  private_copy: nation-images/santa-ynez-band-of-chumash-mission-indians-of-the-santa-ynez-reservation/logo-ac293cbe0ded.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: chumash-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Samala
   language_tag: inz

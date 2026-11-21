@@ -119,6 +119,21 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Ely Shoshone Tribe of Nevada
+official_images:
+- kind: logo
+  image_link: https://images.squarespace-cdn.com/content/v1/5e5ed940e85ead40980fbd14/1626195476220-9Q6FG4BEOFR2QF92NW7H/ElyShoshoneTribeNevadalogoweb.png?format=2500w
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: b75f1562e45cde749405d09d691fe8777f8c10a73b6502bbb06589824de2d3cc
+  private_copy: nation-images/ely-shoshone-tribe-of-nevada/logo-b75f1562e45c.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: elyshoshonetribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Eastern Nevada Agency

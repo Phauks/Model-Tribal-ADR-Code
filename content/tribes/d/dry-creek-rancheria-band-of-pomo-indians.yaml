@@ -120,6 +120,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Dry Creek Rancheria Band of Pomo Indians, California
+official_images:
+- kind: logo
+  image_link: https://drycreekrancheria.com/wp-content/uploads/2023/07/logo-temp.jpeg
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: 72a1088b84d65b8745f7bb5a8877725e2248bdfe154e7decd2aafad882f1d189
+  private_copy: nation-images/dry-creek-rancheria-band-of-pomo-indians/logo-72a1088b84d6.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © All rights reserved.
+      link: https://drycreekrancheria.com/
+      source: drycreekrancheria-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: drycreekrancheria-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Southern Pomo
   language_tag: peq

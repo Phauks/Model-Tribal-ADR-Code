@@ -128,6 +128,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Soboba Band of Luiseno Indians, California
+official_images:
+- kind: logo
+  alternative_text: Soboba Band of Luiseno Indians
+  image_link: https://www.soboba-nsn.gov/sites/default/files/SobobaTribeLogo-small_0.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 95edc4353b82ee5ab37ed74a4eca8f6cdaa13960f98a90da0519db0c5ebd1157
+  private_copy: nation-images/soboba-band-of-luiseno-indians/logo-95edc4353b82.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: SOBOBA BAND OF LUISEÑO INDIANS © ALL RIGHTS RESERVED .
+      link: https://www.soboba-nsn.gov/
+      source: soboba-band-of-luiseno-indians-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: soboba-band-of-luiseno-indians-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Luiseño
   language_tag: lui

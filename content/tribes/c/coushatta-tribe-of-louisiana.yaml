@@ -129,6 +129,30 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Coushatta Tribe of Louisiana
+official_images:
+- kind: seal
+  alternative_text: Coushatta Tribe of Louisiana
+  image_link: https://www.coushatta.org/img/footer-logo-seal-2025.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 723706976d2e959860fa2de91beadd447f262c898f3bfe14e46e6805f9c9bf2d
+  private_copy: nation-images/coushatta-tribe-of-louisiana/seal-723706976d2e.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Coushatta Tribe of Louisiana, All Rights Reserved Sitemap Public Notices Cookie Settings
+        Privacy Policy .
+      link: https://www.coushatta.org/
+      source: coushatta-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: coushatta-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Koasati
   language_tag: cku

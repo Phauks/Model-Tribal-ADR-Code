@@ -138,6 +138,21 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yankton Sioux Tribe of South Dakota
+official_images:
+- kind: logo
+  image_link: https://images.squarespace-cdn.com/content/v1/536a55bce4b02107859b5875/923ff04d-6bbb-4f58-b4a9-36cd4f8a2926/YST_Logo2017.jpg?format=2500w
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: b439fc6fdec64d43e98f3119c5082c0156509387f6ff9f5f8fb7c42b66d7ddb8
+  private_copy: nation-images/yankton-sioux-tribe-of-south-dakota/logo-b439fc6fdec6.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: yanktonsiouxtribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Dakota
   language_tag: dak

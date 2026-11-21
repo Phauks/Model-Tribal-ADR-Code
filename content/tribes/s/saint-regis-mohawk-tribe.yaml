@@ -123,6 +123,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Saint Regis Mohawk Tribe
+official_images:
+- kind: logo
+  alternative_text: SRMT Logo
+  image_link: https://craft-srmt.transforms.svdcdn.com/production/_uploads/revamp-2022/logos/SRMT-Logo.png?w=260&q=80&fm=webp&fit=crop&crop=focalpoint&fp-x=0.5&fp-y=0.5&dm=1717693469&s=353320cf8f093dd5aa876d83cf0ff36b
+  retrieved: '2026-11-21'
+  media_type: image/webp
+  sha256: 3e1d0764336eef0124700d08b05b070104b94cc7b4bd21b9773b976a5a939e60
+  private_copy: nation-images/saint-regis-mohawk-tribe/logo-3e1d0764336e.webp
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: srmt-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office

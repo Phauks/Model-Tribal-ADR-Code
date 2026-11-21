@@ -142,6 +142,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mi'kmaq Nation (previously listed as Aroostook Band of Micmacs)
+official_images:
+- kind: logo
+  image_link: https://micmac-nsn.gov/files/2022/03/whitelog.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: cb6197e00c46e3b5f648c75b54890d3b75591f346d9568be4e1fcca581964f1c
+  private_copy: nation-images/mikmaq-nation/logo-cb6197e00c46.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 Mi'kmaq Nation, all rights reserved.
+      link: https://micmac-nsn.gov/
+      source: mikmaq-nation-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: mikmaq-nation-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Micmac
   language_tag: mic

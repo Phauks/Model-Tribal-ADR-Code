@@ -121,6 +121,36 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Utu Utu Gwaitu Paiute Tribe of the Benton Paiute Reservation, California
+official_images:
+- kind: logo
+  image_link: https://www.bentonpaiutereservation.org/images/logo_img.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 03644f9accc1f4c94c77cc31b4cbc2e5cfb44d00cbc986f0655544b1b1b2a9d0
+  private_copy: nation-images/utu-utu-gwaitu-paiute-tribe-of-the-benton-paiute-reservation/logo-03644f9accc1.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: terms-of-use
+      effect: blocks-reuse
+      quote: You are prohibited from using any of the trademarked or copyrighted content appearing on
+        this website without the express prior written consent of Benton Paiute Reservation, except as
+        permitted by applicable laws.
+      link: https://www.bentonpaiutereservation.org/legal-notice.htm
+      source: bentonpaiutereservation-legal-notice
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Benton Paiute Reservation.
+      link: https://www.bentonpaiutereservation.org/legal-notice.htm
+      source: bentonpaiutereservation-legal-notice
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: bentonpaiutereservation-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

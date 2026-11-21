@@ -132,6 +132,29 @@ contacts:
   verification: inferred
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+official_images:
+- kind: logo
+  alternative_text: Ione Band of Miwok Indians
+  image_link: https://ionemiwok.net/wp-content/uploads/2020/08/IBMI_Touch-Logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: a12317ba9512f86e7bf022254d5bbceed86e9eeb4072abec0f48595af513a5f6
+  private_copy: nation-images/ione-band-of-miwok-indians-of-california/logo-a12317ba9512.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright 2020 | All Rights Reserved | Ione Band of Miwok Indians.
+      link: https://ionemiwok.net/
+      source: ionemiwok-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: ionemiwok-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

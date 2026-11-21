@@ -112,6 +112,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: La Posta Band of Diegueno Mission Indians of the La Posta Indian Reservation, California
+official_images:
+- kind: logo
+  alternative_text: La Posta Band of Mission Indians
+  image_link: https://www.lptribe.net/wp-content/uploads/2017/10/LaPosta-black-sm.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: fe30e9db4b6d0cd6272edf4fb7c353115e4b93fb17603c25e82d4770dc6fd84b
+  private_copy: nation-images/la-posta-band-of-diegueno-mission-indians-of-the-la-posta-indian-reservation/logo-fe30e9db4b6d.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © La Posta Band of Mission Indians | All Rights Reserved
+      link: https://www.lptribe.net/
+      source: lptribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: lptribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Southern California Agency

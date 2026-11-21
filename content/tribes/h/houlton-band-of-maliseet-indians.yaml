@@ -120,6 +120,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Houlton Band of Maliseet Indians
+official_images:
+- kind: logo
+  image_link: https://maliseets.net/files/2021/01/houlton.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 87edc6c9f6219051453115753a7c40eaea679174d65713fcbd88086c78c4be09
+  private_copy: nation-images/houlton-band-of-maliseet-indians/logo-87edc6c9f621.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 Houlton Band of Maliseet Indians, all rights reserved.
+      link: https://maliseets.net/
+      source: maliseets-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: maliseets-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Maliseet/Wolastoqey Latuwewakon
   language_tag: pqm

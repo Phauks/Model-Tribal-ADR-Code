@@ -129,6 +129,62 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: The Chickasaw Nation
+official_images:
+- kind: seal
+  alternative_text: Chickasaw Nation Seal and Logo
+  image_link: https://www.chickasaw.net/cmspages/getfile.aspx?guid=44f99550-7b5a-4e0e-9fd4-803157896f15
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 7cf66905daa3add1b47884c67d65dd95f151cf5968422c33c6616fe6c91a8a45
+  private_copy: nation-images/the-chickasaw-nation/seal-7cf66905daa3.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: trademark-notice
+      effect: blocks-reuse
+      quote: The Chickasaw Nation retains all copyright, trademark and other intellectual property rights
+        to the materials contained in this website.
+      link: https://chickasaw.net/cn/Terms.aspx
+      source: chickasaw-terms
+      verification: read-in-full
+    - kind: terms-of-use
+      effect: blocks-reuse
+      quote: This information may not be copied or redistributed and is provided "AS IS" without warranty
+        of any kind.
+      link: https://chickasaw.net/cn/Terms.aspx
+      source: chickasaw-terms
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © the Chickasaw Nation.
+      link: https://www.chickasaw.net/
+      source: chickasaw-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89000957&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89000957'
+      note: The nation filed a closely similar design as its official insignia with the USPTO (filed 2001-10-31).
+  source: chickasaw-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89000957'
+  wordmark: THE GREAT SEAL OF THE CHICKASAW NATION
+  filed: '2001-10-31'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89000957&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: similar-design
+  private_copy: nation-images/the-chickasaw-nation/insignia-database-89000957.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89000957
 federal_administration:
   bureau_of_indian_affairs_region: Eastern Oklahoma
   bureau_of_indian_affairs_agency: Chickasaw Agency

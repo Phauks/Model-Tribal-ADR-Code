@@ -36,6 +36,28 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+official_images:
+- kind: logo
+  image_link: https://sumtercherawindians.org/wp-content/uploads/2025/12/Logo-Final-Color-w-blur-scaled.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 09506c3cabb94b4d699a5d558ba1d29ed4502d9ceafec8783b1eb250557e3933
+  private_copy: nation-images/sumter-tribe-of-cheraw-indians/logo-09506c3cabb9.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 Sumter Cheraw Indians Inspiro Theme by WPZOOM
+      link: https://sumtercherawindians.org/
+      source: sumtercherawindians-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: sumtercherawindians-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

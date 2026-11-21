@@ -133,6 +133,40 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Zia, New Mexico
+official_images:
+- kind: logo
+  alternative_text: Pueblo of Zia
+  image_link: https://images.squarespace-cdn.com/content/v1/5cd0597b0cf57d0b7478c56a/1575388207429-IQUF1I5D8INCXIMMB5FZ/Pueblo+of+Zia.png?format=2500w
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 7e8d79c7eb2763b53c0e3be4dbff0b57853703833ca700f77efcdc54f1fdb425
+  private_copy: nation-images/pueblo-of-zia/logo-7e8d79c7eb27.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89002171&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89002171'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2018-12-18).
+  source: pueblo-of-zia-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89002171'
+  filed: '2018-12-18'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89002171&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/pueblo-of-zia/insignia-database-89002171.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89002171
 languages:
 - name: Keresan
   language_tag: kee

@@ -129,6 +129,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Iowa Tribe of Oklahoma
+official_images:
+- kind: seal
+  alternative_text: Iowa Tribe Of Oklahoma
+  image_link: https://iowanation.org/wp-content/uploads/2024/01/Iowa_Tribe_seal-white-glow.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 620064bbc6af2bb0a24633df41d883f5bb11a13b446868ad14d8d002acb00a2a
+  private_copy: nation-images/iowa-tribe-of-oklahoma/seal-620064bbc6af.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Iowa Tribe of Oklahoma .
+      link: https://iowanation.org/
+      source: iowanation-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: iowanation-tribal-seal
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Iowa
   language_tag: iow

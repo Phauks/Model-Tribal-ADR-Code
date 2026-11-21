@@ -127,6 +127,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kalispel Indian Community of the Kalispel Reservation
+official_images:
+- kind: logo
+  image_link: https://sakteadevwus2web.blob.core.windows.net/files/assets/assets/Kalispel_Full-White-1.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 9d659d4e41d00890c8d2c11cf2469df3781711ec43f592a3df694f62623d1f09
+  private_copy: nation-images/kalispel-indian-community-of-the-kalispel-reservation/logo-9d659d4e41d0.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Kalispel Tribe of Indians.
+      link: https://kalispeltribe.com/
+      source: kalispeltribe-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: kalispeltribe-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Salish (Kalispel)
   language_tag: fla

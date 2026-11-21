@@ -120,6 +120,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pawnee Nation of Oklahoma
+official_images:
+- kind: seal
+  alternative_text: Approved Pawnee Nation Seal[1085]
+  image_link: https://b2131152.assetcdn.net/2.0/2131152/wp-content/uploads/2020/12/Approved-Pawnee-Nation-Seal1085-e1609779163393-100x100.png?lossy=1&strip=1&webp=1
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: f4a7246b6a433f4d567146400be527ecdaf6cc0a0b9f2c66684a2a5540cddacc
+  private_copy: nation-images/pawnee-nation-of-oklahoma/seal-f4a7246b6a43.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Pawnee Nation of Oklahoma .
+      link: https://pawneenation.org/
+      source: pawneenation-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: pawneenation-pawnee-nation-flag-and-seal
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Southern Plains
   bureau_of_indian_affairs_agency: Pawnee Agency

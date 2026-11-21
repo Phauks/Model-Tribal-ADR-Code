@@ -130,6 +130,30 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians
+official_images:
+- kind: logo
+  alternative_text: Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians
+  image_link: https://ctclusi.org/wp-content/uploads/2024/05/Conf.-Tribe-Logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 24579aa1106df63a26f2a814536f2e12af9f72c0fb01e6493822e7282271083f
+  private_copy: nation-images/confederated-tribes-of-the-coos-lower-umpqua-and-siuslaw-indians/logo-24579aa1106d.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2025 Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians | All Rights Reserved
+        | Privacy | Site by Dahotra | Report a Website Problem TOP
+      link: https://ctclusi.org/
+      source: ctclusi-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: ctclusi-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Hanis
   language_tag: csz

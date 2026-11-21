@@ -130,6 +130,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
+official_images:
+- kind: logo
+  alternative_text: Grand Traverse Band of Ottawa and Chippewa Indians Logo
+  image_link: https://www.gtbindians.org/media/pages/gtb_logo_web.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 19f69784382ebccb3db90b5aa972cbd835f3b5e189f6d94d2a4cff709756d32e
+  private_copy: nation-images/grand-traverse-band-of-ottawa-and-chippewa-indians/logo-19f69784382e.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © GTB | Editors | Powered by LIAA
+      link: https://www.gtbindians.org/
+      source: gtbindians-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: gtbindians-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Anishinaabemowin
   language_tag: oj

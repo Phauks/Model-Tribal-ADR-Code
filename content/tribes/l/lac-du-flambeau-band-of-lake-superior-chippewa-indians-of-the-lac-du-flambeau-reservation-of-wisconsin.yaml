@@ -127,6 +127,28 @@ contacts:
   as_of: '2026-11-20'
   locator: Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation of
     Wisconsin
+official_images:
+- kind: logo
+  image_link: https://ldftribe.com/wp-content/uploads/2026/04/LDF-Mobile-Logo-1-1536x506.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: ebb57fc1361c8af3cc39420a9c6d97ea6c45dcfd40a5ac07cde425b4fa7b1550
+  private_copy: nation-images/lac-du-flambeau-band-of-lake-superior-chippewa-indians-of-the-lac-du-flambeau-reservation-of-wisconsin/logo-ebb57fc1361c.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 Lac du Flambeau Band of Lake Superior Chippewa Indians, All rights reserved.
+      link: https://ldftribe.com/
+      source: ldftribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: ldftribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Ojibwe (Anishinaabemowin)
   language_tag: oj

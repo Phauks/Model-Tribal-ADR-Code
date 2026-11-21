@@ -122,6 +122,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Fort Yukon
+official_images:
+- kind: logo
+  image_link: https://images.squarespace-cdn.com/content/v1/649e4481c4e00064d2a44923/9edf66d1-36b6-4685-a2d2-9ad68c8e0cae/GZGTG-logo+Clean+copy.jpg?format=2500w
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: 48e647396ee3932bc753c5b76bcd81454517bf744d6df095a0023a439c1baae3
+  private_copy: nation-images/native-village-of-fort-yukon/logo-48e647396ee3.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2023.
+      link: https://www.fortyukon.org/
+      source: fortyukon-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: fortyukon-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Dinjii Zhuh K'yaa (Gwich'in)
   language_tag: gwi

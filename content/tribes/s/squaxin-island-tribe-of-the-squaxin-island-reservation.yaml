@@ -113,6 +113,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Squaxin Island Tribe of the Squaxin Island Reservation
+official_images:
+- kind: logo
+  image_link: https://squaxinisland.org/wp-content/uploads/2025/11/Official-SIT-Logo-solo-300x236.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 0e72010ae1787747b3f92ed7bbdceedc27eee66c9763e13cd5075f84e4280bde
+  private_copy: nation-images/squaxin-island-tribe-of-the-squaxin-island-reservation/logo-0e72010ae178.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 – All Rights Reserved – Squaxin Island Tribe .
+      link: https://squaxinisland.org/
+      source: squaxinisland-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: squaxinisland-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Olympic Peninsula Agency

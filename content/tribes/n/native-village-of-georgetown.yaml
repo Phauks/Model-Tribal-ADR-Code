@@ -130,6 +130,22 @@ contacts:
   locator: 'record "Native Village of Georgetown" (community: Georgetown, object 67)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+official_images:
+- kind: logo
+  alternative_text: Native Village of Georgetown
+  image_link: https://images.squarespace-cdn.com/content/v1/62225f749c47b5542f16521d/84324fa1-baf7-4ecf-8343-3220a7fc51cf/NVgeorgetownLG-2clr.jpg?format=1500w
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: b25870ca6154d1d4d4e57bf1b587127ab404681abe4404bf9f33a13dc4071f67
+  private_copy: nation-images/native-village-of-georgetown/logo-b25870ca6154.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: georgetowntc-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Alaska
   bureau_of_indian_affairs_agency: Alaska Regional Office

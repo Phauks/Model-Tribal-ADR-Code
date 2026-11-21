@@ -112,6 +112,32 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Muckleshoot Indian Tribe
+official_images:
+- kind: logo
+  image_link: https://cdn.prod.website-files.com/62b0cabba154134e7ea9df39/6ad34eae55561f07cdb819aa_MITLogo_Stroke_RGB-300px.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 897de06a1430f80ce07107ecd1a4927ad92825a182d2171f8ea1b8d708aac205
+  private_copy: nation-images/muckleshoot-indian-tribe/logo-897de06a1430.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: trademark-symbol
+      effect: blocks-reuse
+      quote: ®
+      note: The registered trademark symbol is printed on the image itself.
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Muckleshoot Indian Tribe 2026
+      link: https://www.muckleshoot.nsn.us/
+      source: muckleshoot-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: muckleshoot-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Lushootseed (Puget Salish)
   language_tag: lut

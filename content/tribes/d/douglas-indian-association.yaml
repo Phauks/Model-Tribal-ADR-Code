@@ -112,6 +112,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Douglas Indian Association
+official_images:
+- kind: logo
+  alternative_text: Douglas Indian Association – DIATaku Logo
+  image_link: https://diataku.storage.googleapis.com/wp-content/uploads/2018/10/22002353/logo_white-e1541023912488.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 5ab6dff23004c010b425e30a70961f75ea852a5beed51b543a431b69609d81a8
+  private_copy: nation-images/douglas-indian-association/logo-5ab6dff23004.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Copyright 2012 - | Designed and Developed by Hoke Designs | All Rights Reserved .
+      link: https://diataku.com/
+      source: diataku-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: diataku-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Tlingit
   language_tag: tli

@@ -134,6 +134,47 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Peoria Tribe of Indians of Oklahoma
+official_images:
+- kind: logo
+  alternative_text: Peoria Tribe of Indians of Oklahoma Homepage
+  image_link: https://www.peoriatribe.gov/ImageRepository/Document?documentId=107
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 14830dc4e55b5776944b33a6dc510cbac56e235d63641b9092cea36566f6ce70
+  private_copy: nation-images/peoria-tribe-of-indians-of-oklahoma/logo-14830dc4e55b.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright Notices .
+      link: https://www.peoriatribe.gov/
+      source: peoriatribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89000762&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89000762'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2003-08-27).
+  source: peoriatribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89000762'
+  filed: '2003-08-27'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89000762&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/peoria-tribe-of-indians-of-oklahoma/insignia-database-89000762.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89000762
 languages:
 - name: Peewaaliaataweenki (Peoria)
   language_tag: mia

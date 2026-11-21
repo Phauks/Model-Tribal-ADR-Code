@@ -137,6 +137,21 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+official_images:
+- kind: logo
+  image_link: https://images.squarespace-cdn.com/content/60341961c0b0f55d727d963c/1614045696490-UJSEAX34O18GIF19FR5J/Asset+110.png?content-type=image%2Fpng
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 5bad6810db8046350c09e9625424e5d187135cfd4cb221cfb8401ae6cb01b8f4
+  private_copy: nation-images/choctaw-apache-tribe-of-ebarb/logo-5bad6810db80.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: choctawapachetribeebarb-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -134,6 +134,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Lac Vieux Desert Band of Lake Superior Chippewa Indians of Michigan
+official_images:
+- kind: logo
+  alternative_text: LVD NSN
+  image_link: https://lvd-nsn.gov/media/images/Logo_LVD-NSN_Header.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 8f35374986aaedde65840c7926594dca0948e97c9a909a5405402cbb53f3ae61
+  private_copy: nation-images/lac-vieux-desert-band-of-lake-superior-chippewa-indians-of-michigan/logo-8f35374986aa.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 LVD NSN.
+      link: https://lvd-nsn.gov/
+      source: lvd-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: lvd-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Anishinaabe (Ojibwe)
   language_tag: oj

@@ -136,6 +136,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Spirit Lake Tribe, North Dakota
+official_images:
+- kind: logo
+  image_link: https://www.spiritlakenation.com/_elements/img/logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 3408a093af1c2fb9546db38d9a7409033841dc3f7e0c99fcbe50992ac716cfd8
+  private_copy: nation-images/spirit-lake-tribe/logo-3408a093af1c.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2014 Spirit Lake Tribe .
+      link: https://www.spiritlakenation.com/
+      source: spiritlakenation-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: spiritlakenation-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Great Plains
   bureau_of_indian_affairs_agency: Fort Totten Agency

@@ -121,6 +121,36 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+official_images:
+- kind: logo
+  alternative_text: Enterprise Rancheria Logo
+  image_link: https://enterpriserancheria.org/wp-content/uploads/2025/11/Rancheria-logo-1.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 0eaa47a243636b2e74622aff9671ebf9cb02f275441ca970c6c6f3828b95caa9
+  private_copy: nation-images/enterprise-rancheria-of-maidu-indians-of-california/logo-0eaa47a24363.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: terms-of-use
+      effect: blocks-reuse
+      quote: Except as allowed by these Terms or with our written permission, you may not reproduce, distribute,
+        modify, or create derivative works from Website content.
+      link: https://enterpriserancheria.org/terms-of-use/
+      source: enterpriserancheria-terms-of-use
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Enterprise Rancheria .
+      link: https://enterpriserancheria.org/
+      source: enterpriserancheria-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: enterpriserancheria-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

@@ -119,6 +119,30 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas
+official_images:
+- kind: logo
+  alternative_text: Banner logo upoper left.jpg
+  image_link: https://static.wixstatic.com/media/902730_d7dad1ac867443648928fc347515e5c1~mv2.jpg/v1/fill/w_320,h_126,al_c,lg_1,q_80,enc_avif,quality_auto/Banner%20logo%20upoper%20left.jpg
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: 8ffee9c43511ab5f9345dc1e7992ca4c8c852c5b5d6b8165278628a4cc1cb656
+  private_copy: nation-images/kickapoo-tribe-of-indians-of-the-kickapoo-reservation-in-kansas/logo-8ffee9c43511.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2023 Ktik-Nsn.gov.
+      link: https://www.ktik-nsn.gov/
+      source: ktik-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: ktik-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+  note: Found by rendering the page in a browser; the page draws its logo with JavaScript.
 federal_administration:
   bureau_of_indian_affairs_region: Southern Plains
   bureau_of_indian_affairs_agency: Southern Plains Regional Office

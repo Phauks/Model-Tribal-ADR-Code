@@ -139,6 +139,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Native Village of Eyak" (community: Eyak, object 61)'
+official_images:
+- kind: logo
+  image_link: https://www.eyak-nsn.gov/wp-content/uploads/2020/07/NVE-LOGO.jpg
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: 97b44e4f43d89f65e677e16d57a91d42ca2c7522755520921838eed20067ada2
+  private_copy: nation-images/native-village-of-eyak/logo-97b44e4f43d8.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © All rights reserved .
+      link: https://www.eyak-nsn.gov/
+      source: eyak-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: eyak-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Eyak
   language_tag: eya

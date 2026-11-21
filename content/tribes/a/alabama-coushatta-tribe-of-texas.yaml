@@ -131,6 +131,47 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Alabama-Coushatta Tribe of Texas
+official_images:
+- kind: logo
+  alternative_text: Alabama-Coushatta Tribe of Texas
+  image_link: https://www.alabama-coushatta.com/images/actribe-logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 8d074ded515f91016b9c233b039b86fad3a7dae4486254d516ce741559c8bc4b
+  private_copy: nation-images/alabama-coushatta-tribe-of-texas/logo-8d074ded515f.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: ©2026 Alabama-Coushatta Tribe of Texas.
+      link: https://www.alabama-coushatta.com/
+      source: alabama-coushatta-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001263&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001263'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2008-05-27).
+  source: alabama-coushatta-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001263'
+  filed: '2008-05-27'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001263&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/alabama-coushatta-tribe-of-texas/insignia-database-89001263.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001263
 languages:
 - name: Alabama
   language_tag: akz

@@ -152,6 +152,17 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Wichita and Affiliated Tribes (Wichita, Keechi, Waco, & Tawakonie), Oklahoma
+tribal_insignia_database_entries:
+- serial_number: '89003191'
+  wordmark: SEAL OF THE WICHITA AND AFFILIATED TRIBES
+  filed: '2024-07-19'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89003191&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: not-compared
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89003191
 languages:
 - name: Wichita
   language_tag: wic
