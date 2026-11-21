@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nations by state</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="map.css">
+</head>
+<body>
+<header class="page-header">
+  <h1>Native nations by state</h1>
+  <p class="mock-warning">Spike sample. Every nation named here is fictional mock data.</p>
+  <button type="button" id="theme-toggle" aria-pressed="false">Dark theme</button>
+</header>
+<main>
+  <figure class="map-figure">
+    <!-- map -->
+    <figcaption>
+      Shaded by the number of nations with a presence in each state, DC and territory.
+      No boundaries of nations are drawn. <a href="#presence-table">Skip to the table of the same data.</a>
+    </figcaption>
+  </figure>
+  <div id="map-tooltip" class="map-tooltip" role="status" hidden></div>
+  <section id="state-details" class="state-details" aria-live="polite" tabindex="-1">
+    <p>Select a shaded state to list the nations present there.</p>
+  </section>
+  <table id="presence-table" class="presence-table">
+    <caption>Nations with a presence, by state (same data as the map)</caption>
+    <thead><tr><th scope="col">State or territory</th><th scope="col">Nations</th><th scope="col">Names and kind of presence</th></tr></thead>
+    <tbody>
+<!-- table rows -->
+    </tbody>
+  </table>
+</main>
+<script src="map.js" defer></script>
+</body>
+</html>

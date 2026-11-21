@@ -1,0 +1,90 @@
+/* Design tokens: the only place colors are defined. Components use tokens only. */
+@font-face {
+  font-family: "Atkinson Hyperlegible Next";
+  src: url("AtkinsonHyperlegibleNext-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+:root {
+  --color-background: #ffffff;
+  --color-text: #1b1b1b;
+  --color-muted-text: #4d4d4d;
+  --color-border: #ffffff;
+  --color-focus: #0b57d0;
+  --map-count-none: #e9e7e2;
+  --map-count-one: #a9c9df;
+  --map-count-two: #4f8fbd;
+  --map-count-three-or-more: #1d4e7a;
+  --map-hover-outline: #1b1b1b;
+  --surface-raised: #f4f2ee;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --color-background: #141414;
+    --color-text: #ededed;
+    --color-muted-text: #b5b5b5;
+    --color-border: #141414;
+    --color-focus: #8ab4f8;
+    --map-count-none: #2c2c2c;
+    --map-count-one: #2f4f66;
+    --map-count-two: #4d86b3;
+    --map-count-three-or-more: #9cc8ec;
+    --map-hover-outline: #ffffff;
+    --surface-raised: #1f1f1f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --color-background: #141414;
+  --color-text: #ededed;
+  --color-muted-text: #b5b5b5;
+  --color-border: #141414;
+  --color-focus: #8ab4f8;
+  --map-count-none: #2c2c2c;
+  --map-count-one: #2f4f66;
+  --map-count-two: #4d86b3;
+  --map-count-three-or-more: #9cc8ec;
+  --map-hover-outline: #ffffff;
+  --surface-raised: #1f1f1f;
+  color-scheme: dark;
+}
+body {
+  margin: 0 auto;
+  max-width: 64rem;
+  padding: 0 16px 3rem;
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: "Atkinson Hyperlegible Next", "Noto Sans", sans-serif;
+  line-height: 1.5;
+}
+.page-header { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: baseline; }
+.mock-warning { color: var(--color-muted-text); margin: 0; }
+.presence-map { width: 100%; height: auto; display: block; }
+.presence-map .state { stroke: var(--color-border); stroke-width: 0.6; }
+.presence-map .borders { fill: none; stroke: var(--color-border); stroke-width: 0.8; pointer-events: none; }
+.presence-map .count-none { fill: var(--map-count-none); }
+.presence-map .count-one { fill: var(--map-count-one); }
+.presence-map .count-two { fill: var(--map-count-two); }
+.presence-map .count-three-or-more { fill: var(--map-count-three-or-more); }
+.presence-map .marker { stroke: var(--color-text); stroke-width: 0.8; }
+.presence-map .marker-line { stroke: var(--color-muted-text); stroke-width: 0.8; }
+.presence-map .marker-label, .presence-map .legend-label { fill: var(--color-text); font-size: 13px; }
+.presence-map .legend-swatch { stroke: var(--color-muted-text); stroke-width: 0.8; }
+.presence-map a .state { cursor: pointer; }
+.presence-map a:hover .state, .presence-map .state.is-active { stroke: var(--map-hover-outline); stroke-width: 2; }
+.presence-map a:focus { outline: none; }
+.presence-map a:focus-visible .state { stroke: var(--color-focus); stroke-width: 3; }
+.map-tooltip {
+  position: fixed; pointer-events: none; z-index: 1;
+  background: var(--surface-raised); color: var(--color-text);
+  border: 1px solid var(--color-muted-text); border-radius: 4px; padding: 0.25rem 0.5rem; max-width: 20rem;
+}
+.state-details { background: var(--surface-raised); padding: 0.75rem 1rem; border-radius: 6px; margin: 1rem 0; }
+.presence-table { border-collapse: collapse; width: 100%; }
+.presence-table th, .presence-table td { text-align: left; vertical-align: top; padding: 0.35rem 0.5rem; border-bottom: 1px solid var(--color-muted-text); }
+.presence-table ul { margin: 0; padding-left: 1.1rem; }
+.presence-table tr:target { background: var(--surface-raised); }
+.presence-kind { color: var(--color-muted-text); }
+a { color: var(--color-focus); }
+button { font: inherit; color: var(--color-text); background: var(--surface-raised); border: 1px solid var(--color-muted-text); border-radius: 4px; padding: 0.2rem 0.6rem; }
+:focus-visible { outline: 3px solid var(--color-focus); outline-offset: 2px; }

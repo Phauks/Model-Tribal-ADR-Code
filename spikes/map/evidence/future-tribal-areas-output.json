@@ -1,0 +1,84 @@
+{
+  "features": 704,
+  "field_names": [
+    "AIANNHCE",
+    "AIANNHNS",
+    "GEOIDFQ",
+    "GEOID",
+    "NAME",
+    "NAMELSAD",
+    "LSAD",
+    "MTFCC",
+    "ALAND",
+    "AWATER"
+  ],
+  "kinds_by_legal_statistical_area_description_code": {
+    "78": 74,
+    "79": 221,
+    "80": 7,
+    "81": 6,
+    "82": 8,
+    "83": 3,
+    "84": 16,
+    "85": 46,
+    "86": 205,
+    "87": 1,
+    "88": 25,
+    "89": 12,
+    "90": 4,
+    "91": 1,
+    "92": 35,
+    "93": 1,
+    "94": 2,
+    "95": 3,
+    "96": 19,
+    "97": 5,
+    "98": 5,
+    "99": 1,
+    "00": 2,
+    "9D": 1,
+    "9C": 1
+  },
+  "sizes": {
+    "topojson_full_detail_bytes": 1172532,
+    "topojson_full_detail_gzip_bytes": 272818,
+    "svg_path_data_bytes": 943535,
+    "svg_path_data_gzip_bytes": 294713
+  },
+  "timings": {
+    "read_shapefile_milliseconds": 94,
+    "topojson_and_simplify_milliseconds": 245,
+    "project_to_svg_milliseconds": 518,
+    "state_overlap_milliseconds": 8408
+  },
+  "unplaced_by_projection": 0,
+  "areas_in_more_than_one_state": 60,
+  "areas_with_no_state_found": 1,
+  "examples_of_multi_state_areas": [
+    "Fort Mojave Reservation and Off-Reservation Trust Land: AZ, CA, NV",
+    "Choctaw OTSA: AR, OK, TX",
+    "Chickasaw OTSA: OK, TX",
+    "Kaibab Indian Reservation: AZ, UT",
+    "Chemehuevi Reservation: AZ, CA",
+    "Wyandotte OTSA: MO, OK"
+  ],
+  "states_with_any_area": "AK AL AR AZ CA CO CT DE FL GA HI IA ID IL IN KS LA MA ME MI MN MO MS MT NC ND NE NJ NM NV NY OK OR RI SC SD TN TX UT VA WA WI WY",
+  "relationship_comparison": {
+    "relationship_file_areas": 704,
+    "relationship_file_areas_in_more_than_one_state": 28,
+    "relationship_file_states": 40,
+    "agree": 665,
+    "disagree": 35,
+    "disagree_examples": [
+      "Choctaw OTSA: relationship file OK; geometry test AR,OK,TX",
+      "Chickasaw OTSA: relationship file OK; geometry test OK,TX",
+      "Kaibab Indian Reservation: relationship file AZ; geometry test AZ,UT",
+      "Chemehuevi Reservation: relationship file CA; geometry test AZ,CA",
+      "Wyandotte OTSA: relationship file OK; geometry test MO,OK",
+      "Osage Reservation: relationship file OK; geometry test KS,OK",
+      "Coeur d'Alene Reservation: relationship file ID; geometry test ID,WA",
+      "Sappony SDTSA: relationship file NC; geometry test NC,VA"
+    ],
+    "areas_2025_not_in_2020_relationship_file": 4
+  }
+}
