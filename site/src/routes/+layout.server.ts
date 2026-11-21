@@ -1,4 +1,4 @@
-import { trackVersions } from '#lib/server/content.ts';
+import { trackVersions } from '#lib/server/versions.ts';
 import { colorsOf } from '#lib/server/design-tokens.ts';
 import type { LayoutServerLoad } from './$types';
 
