@@ -1,13 +1,29 @@
 /**
  * Who may do what in the co-author workspace (site/COLLABORATION.md).
  *
- * Roles are stored in the database, not in Auth0, so the lead author can
- * change them from the website and every change is recorded. Each permission
- * is checked on the server for every request; the page only hides controls
- * a person cannot use.
+ * Two layers decide it:
+ *
+ * 1. A role, for workspace-wide tasks such as managing people or handling
+ *    requests. The lead author is the administrator.
+ * 2. An access level for each document (decision record 0023): no access,
+ *    comment, contribute or full. A role gives a default level; the lead
+ *    author can raise or lower it for one document, or for every document
+ *    of a kind, with a grant.
+ *
+ * Roles and grants are stored in the database, not in Auth0, so the lead
+ * author can change them from the website and every change is recorded. Each
+ * check runs on the server for every request; the page only hides controls a
+ * person cannot use.
  */
 
-export const roles = ['lead-author', 'editor', 'co-author', 'advisor', 'nation-reviewer'] as const;
+export const roles = [
+	'lead-author',
+	'editor',
+	'co-author',
+	'advisor',
+	'contributor',
+	'nation-reviewer'
+] as const;
 export type Role = (typeof roles)[number];
 
 export const roleLabels: Record<Role, string> = {
@@ -15,17 +31,20 @@ export const roleLabels: Record<Role, string> = {
 	editor: 'Editor',
 	'co-author': 'Co-author',
 	advisor: 'Advisor',
+	contributor: 'Contributor',
 	'nation-reviewer': 'Nation reviewer'
 };
 
 export const roleDescriptions: Record<Role, string> = {
 	'lead-author':
-		'Everything editors can do, and adds, changes and removes people. Only the lead author manages access.',
+		'The administrator: full access to every document, and adds, changes and removes people, grants and restricts access, and sees the activity log. Only the lead author manages access.',
 	editor:
 		'Handles requests from nations (reads them, opens uploaded proof, changes their status and decides them) and signs off on content.',
 	'co-author':
-		'Reads the review list and comments on content. Changes to content are still made by pull request.',
+		'Comments on every document unless the lead author grants more or less. Changes to content are still made by pull request.',
 	advisor: 'Signs off on content or asks for changes, as a project advisor, and comments.',
+	contributor:
+		'Sees only the documents the lead author grants them, at the level granted: for example, writes and edits an assigned essay draft. Cannot sign off or publish.',
 	'nation-reviewer':
 		'Reviews the record of one nation, for that nation: approves it, asks for changes or comments. Sees nothing else.'
 };
@@ -51,6 +70,7 @@ const grants: Record<Role, readonly Permission[]> = {
 	editor: ['read-requests', 'handle-requests', 'read-reviews', 'comment', 'sign-off'],
 	'co-author': ['read-reviews', 'comment'],
 	advisor: ['read-reviews', 'comment', 'sign-off'],
+	contributor: ['comment'],
 	'nation-reviewer': ['review-for-nation']
 };
 
@@ -58,6 +78,11 @@ export interface Grantee {
 	role: Role;
 	/** Set only for a nation reviewer. */
 	nationIdentifier: string | null;
+}
+
+/** The administrator tier: the lead author. Cannot be restricted by a grant. */
+export function isAdministrator(person: Grantee): boolean {
+	return person.role === 'lead-author';
 }
 
 export function permissionsOf(role: Role): readonly Permission[] {
@@ -90,37 +115,141 @@ export const decisionLabels: Record<Decision, string> = {
 /** The capacity a review is recorded in: the person's role, or "nation" for a nation reviewer. */
 export type Capacity = Exclude<Role, 'nation-reviewer'> | 'nation';
 
+// ---------------------------------------------------------------------------
+// Access to each document (decision record 0023)
+// ---------------------------------------------------------------------------
+
+/**
+ * Levels, lowest first. There is no "view only" level on purpose: anyone who
+ * can open a document can comment on it, because the project wants their
+ * feedback (Trevor, 2026-11-21).
+ */
+export const accessLevels = ['no-access', 'comment', 'contribute', 'full'] as const;
+export type AccessLevel = (typeof accessLevels)[number];
+
+export const accessLevelLabels: Record<AccessLevel, string> = {
+	'no-access': 'No access',
+	comment: 'Comment',
+	contribute: 'Contribute',
+	full: 'Full'
+};
+
+export const accessLevelDescriptions: Record<AccessLevel, string> = {
+	'no-access': 'Cannot open the document or see that it is being worked on.',
+	comment: 'Reads the document and its drafts, and comments.',
+	contribute: 'Everything in Comment, and edits the draft and saves versions of it.',
+	full: 'Everything in Contribute, and restores an earlier version, resolves or hides others’ comments, and submits the draft for publishing.'
+};
+
+/** Whether a level is at least another. */
+export function atLeast(level: AccessLevel, minimum: AccessLevel): boolean {
+	return accessLevels.indexOf(level) >= accessLevels.indexOf(minimum);
+}
+
+/** The level each role starts with on every document, before any grant. */
+export const roleDefaultLevels: Record<Role, AccessLevel> = {
+	'lead-author': 'full',
+	editor: 'contribute',
+	advisor: 'comment',
+	'co-author': 'comment',
+	contributor: 'no-access',
+	// Except their own nation's record, which they comment on and approve.
+	'nation-reviewer': 'no-access'
+};
+
+/** A grant for "every document of this kind" uses this in place of an identifier. */
+export const everyDocument = '*';
+
 export interface Subject {
 	kind: SubjectKind;
 	identifier: string;
 }
 
+export interface AccessGrant {
+	subjectKind: SubjectKind;
+	/** A document's identifier, or everyDocument. */
+	subjectIdentifier: string;
+	level: AccessLevel;
+	/** ISO 8601 time after which the grant no longer counts, or null. */
+	expiresAt: string | null;
+}
+
+export type AccessSource = 'administrator' | 'document-grant' | 'kind-grant' | 'role';
+
+export interface DocumentAccess {
+	level: AccessLevel;
+	/** Where the level comes from, shown to the lead author on the Access page. */
+	source: AccessSource;
+}
+
 /**
- * Whether a person may see a piece of content in the review list and its
- * review history. A nation reviewer sees only their own nation's record.
+ * A person's level on one document. The most specific rule wins:
+ *
+ * 1. the lead author always has full access (it cannot be restricted, so the
+ *    project can never be locked out of its own work);
+ * 2. a current grant for this document;
+ * 3. a current grant for every document of its kind;
+ * 4. the role's default (a nation reviewer comments on their own nation).
+ *
+ * A grant of "no access" is how access is restricted; it beats the role's
+ * default, and a document grant beats a kind grant either way. Expired grants
+ * do not count. The grants passed in must be the person's own, current ones.
  */
-export function canSeeSubject(person: Grantee, subject: Subject): boolean {
-	if (can(person, 'read-reviews')) return true;
-	return (
-		can(person, 'review-for-nation') &&
+export function documentAccess(
+	person: Grantee,
+	subject: Subject,
+	grants: readonly AccessGrant[],
+	time: Date = new Date()
+): DocumentAccess {
+	if (isAdministrator(person)) return { level: 'full', source: 'administrator' };
+	const current = grants.filter(
+		(grant) =>
+			grant.subjectKind === subject.kind &&
+			(grant.expiresAt === null || new Date(grant.expiresAt) > time)
+	);
+	const forDocument = current.find((grant) => grant.subjectIdentifier === subject.identifier);
+	if (forDocument) return { level: forDocument.level, source: 'document-grant' };
+	const forKind = current.find((grant) => grant.subjectIdentifier === everyDocument);
+	if (forKind) return { level: forKind.level, source: 'kind-grant' };
+	if (
+		person.role === 'nation-reviewer' &&
 		subject.kind === 'nation' &&
 		subject.identifier === person.nationIdentifier
-	);
+	) {
+		return { level: 'comment', source: 'role' };
+	}
+	return { level: roleDefaultLevels[person.role], source: 'role' };
+}
+
+/**
+ * Whether a person may see a piece of content in the review list and its
+ * review history: anyone with at least comment access.
+ */
+export function canSeeSubject(
+	person: Grantee,
+	subject: Subject,
+	grants: readonly AccessGrant[] = []
+): boolean {
+	return atLeast(documentAccess(person, subject, grants).level, 'comment');
 }
 
 /**
  * The decisions a person may record on a piece of content, and the capacity
  * the review is recorded in. An empty list means they may not review it.
- * Only a nation reviewer can record a nation's approval; only the lead
- * author, editors and advisors can sign off for the project.
+ * Anyone with comment access may comment. Only a nation reviewer, on their
+ * own nation's record, can record a nation's approval; only the lead author,
+ * editors and advisors can sign off for the project.
  */
 export function allowedDecisions(
 	person: Grantee,
-	subject: Subject
+	subject: Subject,
+	grants: readonly AccessGrant[] = []
 ): { capacity: Capacity; decisions: readonly Decision[] } | undefined {
-	if (!canSeeSubject(person, subject)) return undefined;
-	if (person.role === 'nation-reviewer') return { capacity: 'nation', decisions };
+	if (!canSeeSubject(person, subject, grants)) return undefined;
+	if (person.role === 'nation-reviewer') {
+		const ownNation = subject.kind === 'nation' && subject.identifier === person.nationIdentifier;
+		return { capacity: 'nation', decisions: ownNation ? decisions : ['comment'] };
+	}
 	if (can(person, 'sign-off')) return { capacity: person.role, decisions };
-	if (can(person, 'comment')) return { capacity: person.role, decisions: ['comment'] };
-	return undefined;
+	return { capacity: person.role, decisions: ['comment'] };
 }

@@ -40,7 +40,10 @@ export function testDatabase(): D1Database {
 	database.exec('PRAGMA foreign_keys = ON');
 	const folder = path.resolve(import.meta.dirname, '../migrations');
 	for (const file of readdirSync(folder).filter((name) => name.endsWith('.sql')).sort()) {
+		// D1 runs each migration as one transaction.
+		database.exec('BEGIN');
 		database.exec(readFileSync(path.join(folder, file), 'utf8'));
+		database.exec('COMMIT');
 	}
 	const shim = {
 		prepare: (sql: string) => new Statement(database, sql),

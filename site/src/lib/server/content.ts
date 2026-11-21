@@ -288,6 +288,26 @@ export function glossaryForReview(): { id: string; term: string; file: string }[
 }
 
 /**
+ * Essays in content/essays, with the title from each file's front matter.
+ * The identifier is the file name without ".md". Used by vite.config.ts, so
+ * the lead author can grant access to one essay at a time.
+ */
+export function essaysForReview(): { id: string; title: string; file: string }[] {
+	const folder = 'content/essays';
+	if (!existsSync(path.join(repositoryRoot, folder))) return [];
+	return readdirSync(path.join(repositoryRoot, folder))
+		.filter((name) => name.endsWith('.md') && name !== 'README.md')
+		.sort()
+		.map((name) => {
+			const file = path.posix.join(folder, name);
+			const frontMatter = /^---\n([\s\S]*?)\n---/.exec(readText(file))?.[1];
+			const title = frontMatter ? (parse(frontMatter) as { title?: string }).title : undefined;
+			const id = name.replace(/\.md$/, '');
+			return { id, title: title?.trim() || id, file };
+		});
+}
+
+/**
  * The official images the Worker may serve: those of published records whose
  * reuse status allows showing them and that have a private copy. Bundled into
  * the Worker by vite.config.ts, because the Worker cannot read content/.

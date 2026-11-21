@@ -1,5 +1,16 @@
 import { describe, expect, it } from 'vitest';
-import { allowedDecisions, can, canSeeSubject, roles, type Grantee } from '#lib/permissions.ts';
+import {
+	accessLevels,
+	allowedDecisions,
+	atLeast,
+	can,
+	canSeeSubject,
+	documentAccess,
+	everyDocument,
+	roles,
+	type AccessGrant,
+	type Grantee
+} from '#lib/permissions.ts';
 
 const person = (role: Grantee['role'], nationIdentifier: string | null = null): Grantee => ({
 	role,
@@ -45,5 +56,83 @@ describe('permissions', () => {
 		expect(allowedDecisions(person('advisor'), subject)?.capacity).toBe('advisor');
 		expect(allowedDecisions(person('editor'), subject)?.capacity).toBe('editor');
 		expect(allowedDecisions(person('lead-author'), subject)?.decisions).toContain('approved');
+	});
+});
+
+describe('access to each document', () => {
+	const essay = { kind: 'essay', identifier: 'i-key-cases-digest' } as const;
+	const otherEssay = { kind: 'essay', identifier: 'i-legal-history-timeline' } as const;
+	const grant = (
+		subjectIdentifier: string,
+		level: AccessGrant['level'],
+		expiresAt: string | null = null
+	): AccessGrant => ({ subjectKind: 'essay', subjectIdentifier, level, expiresAt });
+
+	it('orders the levels and has no view-only level', () => {
+		expect(accessLevels).toEqual(['no-access', 'comment', 'contribute', 'full']);
+		expect(atLeast('full', 'contribute')).toBe(true);
+		expect(atLeast('comment', 'contribute')).toBe(false);
+	});
+
+	it('starts each role at its default', () => {
+		expect(documentAccess(person('co-author'), essay, [])).toEqual({ level: 'comment', source: 'role' });
+		expect(documentAccess(person('editor'), essay, []).level).toBe('contribute');
+		expect(documentAccess(person('contributor'), essay, []).level).toBe('no-access');
+		expect(documentAccess(person('nation-reviewer', 'a'), essay, []).level).toBe('no-access');
+	});
+
+	it('always gives the lead author full access, whatever the grants say', () => {
+		expect(documentAccess(person('lead-author'), essay, [grant(essay.identifier, 'no-access')])).toEqual({
+			level: 'full',
+			source: 'administrator'
+		});
+	});
+
+	it('lets a document grant beat a kind grant, and a kind grant beat the role', () => {
+		const grants = [grant(everyDocument, 'contribute'), grant(essay.identifier, 'no-access')];
+		expect(documentAccess(person('co-author'), essay, grants)).toEqual({
+			level: 'no-access',
+			source: 'document-grant'
+		});
+		expect(documentAccess(person('co-author'), otherEssay, grants)).toEqual({
+			level: 'contribute',
+			source: 'kind-grant'
+		});
+		// A kind grant covers drafts that have no file yet.
+		expect(documentAccess(person('co-author'), { kind: 'essay', identifier: 'ii-planned' }, grants).level).toBe(
+			'contribute'
+		);
+		// It covers only its own kind.
+		expect(documentAccess(person('co-author'), { kind: 'nation', identifier: 'x' }, grants).level).toBe('comment');
+	});
+
+	it('ignores expired grants', () => {
+		const time = new Date('2026-12-01T00:00:00Z');
+		const grants = [grant(essay.identifier, 'full', '2026-11-30T23:59:59.999Z')];
+		expect(documentAccess(person('contributor'), essay, grants, time).level).toBe('no-access');
+		expect(documentAccess(person('contributor'), essay, grants, new Date('2026-11-30T12:00:00Z')).level).toBe('full');
+	});
+
+	it('lets a lead author restrict a co-author from one essay, which hides it and stops comments', () => {
+		const grants = [grant(essay.identifier, 'no-access')];
+		expect(canSeeSubject(person('co-author'), essay, grants)).toBe(false);
+		expect(allowedDecisions(person('co-author'), essay, grants)).toBeUndefined();
+		expect(canSeeSubject(person('co-author'), otherEssay, grants)).toBe(true);
+	});
+
+	it('lets a contributor comment only where granted, never sign off', () => {
+		expect(allowedDecisions(person('contributor'), essay, [])).toBeUndefined();
+		expect(allowedDecisions(person('contributor'), essay, [grant(essay.identifier, 'full')])).toEqual({
+			capacity: 'contributor',
+			decisions: ['comment']
+		});
+	});
+
+	it('lets a nation reviewer given another document only comment on it', () => {
+		const reviewer = person('nation-reviewer', 'sample-nation');
+		expect(allowedDecisions(reviewer, essay, [grant(essay.identifier, 'comment')])).toEqual({
+			capacity: 'nation',
+			decisions: ['comment']
+		});
 	});
 });
