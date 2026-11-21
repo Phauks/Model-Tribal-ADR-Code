@@ -121,6 +121,29 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: 2026-10
+official_images:
+- kind: logo
+  alternative_text: United Cherokee AniYunWiYa Nation Logo
+  image_link: https://ucantribe.com/wp-content/uploads/2021/06/logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 65b14aea50a407de89c2e56f332b2a55b32226dd8fd714d6842befbc9efc2cfb
+  private_copy: nation-images/united-cherokee-ani-yun-wiya-nation/logo-65b14aea50a4.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 UCAN | Powered by Astra WordPress Theme .
+      link: https://ucantribe.com
+      source: ucantribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: ucantribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

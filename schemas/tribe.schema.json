@@ -7,7 +7,50 @@
   "additionalProperties": false,
   "required": ["id", "entity_type", "names", "recognition", "states", "review"],
   "$defs": {
-    "citedFact": { "$ref": "common.schema.json#/$defs/cited" }
+    "citedFact": { "$ref": "common.schema.json#/$defs/cited" },
+    "imageReuse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "checked"],
+      "description": "Whether the project may show an image, and why. Reuse is assumed until a signal says otherwise (docs/official-images.md). The validator checks that status follows from the signals.",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["no-restriction-found", "conditions-apply", "needs-checking", "restricted", "permission-granted", "permission-denied", "withdrawn-at-request"],
+          "description": "no-restriction-found: no signal limits reuse; the image may be shown with attribution and a way to ask for removal. conditions-apply: a signal allows reuse on conditions, given in its note; shown only where the conditions are met. needs-checking: a signal could not be read or confirmed; not shown until someone checks it. restricted: a signal limits reuse; not shown, the nation's page is linked instead. permission-granted: the nation gave permission (see permission); shown within its scope. permission-denied: the nation said no; not shown. withdrawn-at-request: the nation asked for removal; not shown, and the private copy is deleted."
+        },
+        "checked": { "$ref": "common.schema.json#/$defs/calendarDate", "description": "When the signals were last checked." },
+        "signals": {
+          "type": "array",
+          "description": "Every signal found about reusing the image, including ones that do not restrict it.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kind", "effect"],
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": ["terms-of-use", "copyright-notice", "trademark-notice", "trademark-symbol", "tribal-insignia-database", "tribal-law", "permission-required", "nation-request"],
+                "description": "terms-of-use: the website's terms limit copying or display. copyright-notice: a general copyright line. trademark-notice: the site says its logos or seal are trademarks or otherwise protected. trademark-symbol: a trademark symbol (® or ™) is printed on the image. tribal-insignia-database: the nation filed this design in the USPTO Native American Tribal Insignia database. tribal-law: a law of the nation governs use of its seal, emblem, flag or logo. permission-required: the nation asks to be contacted before use. nation-request: the nation asked the project directly (decision record 0009)."
+              },
+              "effect": {
+                "type": "string",
+                "enum": ["blocks-reuse", "allows-with-conditions", "does-not-block", "unverified"]
+              },
+              "quote": { "type": "string", "description": "The words that carry the signal, copied exactly." },
+              "link": { "$ref": "common.schema.json#/$defs/link" },
+              "source": { "$ref": "common.schema.json#/$defs/slug", "description": "Source record for the page or law, when there is one." },
+              "verification": { "$ref": "common.schema.json#/$defs/verification" },
+              "locator": { "type": "string" },
+              "serial_number": { "type": "string", "pattern": "^89[0-9]{6}$", "description": "For a tribal-insignia-database signal: the entry's serial number." },
+              "date": { "$ref": "common.schema.json#/$defs/calendarDate", "description": "For a nation-request signal: when the request arrived." },
+              "note": { "type": "string" }
+            }
+          }
+        },
+        "permission": { "$ref": "permission.schema.json", "description": "The trail of any permission request to the nation." }
+      }
+    }
   },
   "properties": {
     "id": { "$ref": "common.schema.json#/$defs/slug" },
@@ -165,7 +208,67 @@
         "properties": {
           "kind": { "type": "string", "enum": ["website", "physical-address", "mailing-address", "phone", "fax", "email-general"] },
           "value": { "type": "string" },
-          "label": { "type": "string", "description": "Which office, for example 'Tribal government headquarters'." }
+          "label": { "type": "string", "description": "Which office, for example 'Tribal government headquarters'." },
+          "link_status": {
+            "type": "string",
+            "enum": ["live", "lapsed"],
+            "description": "For a website: lapsed when the address no longer belongs to the nation, for example a lapsed domain now showing unrelated content. The website shows a lapsed address as text, never as a link, and research scripts skip it."
+          },
+          "link_checked": { "$ref": "common.schema.json#/$defs/calendarDate", "description": "When link_status was last checked." }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "official_images": {
+      "type": "array",
+      "description": "The nation's seal, emblem, flag or logo as the nation itself publishes it, found on its own website. The record holds where the image was found and a fingerprint of the copy kept privately; the image file is never stored in this repository. Whether the project may show the image is recorded in reuse (docs/official-images.md). Never filled with a drawn, generated or stock image.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["kind", "image_link", "retrieved", "sha256", "reuse"],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": ["seal", "emblem", "flag", "logo"],
+            "description": "seal: the nation's official seal. emblem: an official crest or emblem the nation's law names as distinct from its seal. flag: the nation's flag. logo: the mark the nation uses on its website, which may include the seal."
+          },
+          "alternative_text": { "type": "string", "description": "The image's alternative text, exactly as the page gives it." },
+          "image_link": { "$ref": "common.schema.json#/$defs/link", "description": "Where the nation's website serves the image." },
+          "retrieved": { "$ref": "common.schema.json#/$defs/calendarDate" },
+          "media_type": { "type": "string", "description": "As the server reported it, for example image/png." },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$", "description": "SHA-256 of the file as downloaded, so a later copy can be checked against it." },
+          "private_copy": {
+            "type": "string",
+            "pattern": "^nation-images/[a-z0-9-]+/[A-Za-z0-9._-]+$",
+            "description": "Path of the private copy under the project's private research captures (research/captures/ in the project files) and, once uploaded, under the same path in the private source documents bucket. Removing a nation's folder removes every copy."
+          },
+          "reuse": { "$ref": "#/$defs/imageReuse" }
+        },
+        "unevaluatedProperties": false
+      }
+    },
+    "tribal_insignia_database_entries": {
+      "type": "array",
+      "description": "The nation's entries in the USPTO Native American Tribal Insignia database, which lists insignia a federally or state-recognized tribe has asked the Office to consider when it examines trademark applications. An entry is not a trademark registration and grants no rights; the Office does not check that the insignia is official.",
+      "items": {
+        "type": "object",
+        "$ref": "#/$defs/citedFact",
+        "required": ["serial_number"],
+        "properties": {
+          "serial_number": { "type": "string", "pattern": "^89[0-9]{6}$", "description": "The entry's USPTO serial number (insignia entries use the 89 series)." },
+          "wordmark": { "type": "string", "description": "Words in the insignia, as the Office records them." },
+          "filed": { "$ref": "common.schema.json#/$defs/calendarDate" },
+          "record_link": { "$ref": "common.schema.json#/$defs/link", "description": "The entry's status page on the USPTO's Trademark Status and Document Retrieval system." },
+          "design_compared": {
+            "type": "string",
+            "enum": ["same-design", "similar-design", "different-design", "not-compared"],
+            "description": "How the filed design compares with the image in official_images, judged by eye."
+          },
+          "private_copy": {
+            "type": "string",
+            "pattern": "^nation-images/[a-z0-9-]+/[A-Za-z0-9._-]+$",
+            "description": "Path of the private copy of the Office's image of the insignia."
+          }
         },
         "unevaluatedProperties": false
       }

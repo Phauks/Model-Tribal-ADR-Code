@@ -141,6 +141,36 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+official_images:
+- kind: logo
+  image_link: https://www.cowlitz.org/themes/custom/cowlitz_bootstrap/images/cowlitz-seal.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 00ac2f7aecfcdad6e8a5da6546df981bfa2c1af3d9d4e798a84d78b36cdc45a0
+  private_copy: nation-images/cowlitz-indian-tribe/logo-00ac2f7aecfc.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: terms-of-use
+      effect: blocks-reuse
+      quote: You may not modify, copy, distribute, display, reproduce, publish, license, create derivative
+        works from, sell, or transfer information, products, services, images, designs, or logos obtained
+        from Cowlitz.org unless the law otherwise provides or the Tribe gives you prior written permission.
+      link: https://www.cowlitz.org/terms-use
+      source: cowlitz-terms-use
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Copyright Cowlitz Indian Tribe 2026.
+      link: https://www.cowlitz.org/
+      source: cowlitz-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: cowlitz-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Cowlitz Coast Salish
   language_tag: cow

@@ -129,6 +129,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Sandia, New Mexico
+official_images:
+- kind: logo
+  alternative_text: Pueblo Of Sandia
+  image_link: https://www.sandiapueblo.nsn.us/images/logo.jpg
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: 8a7527045b326ce92fbbec49fde85146a829277eff925490a0d3b55c64543d37
+  private_copy: nation-images/pueblo-of-sandia/logo-8a7527045b32.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: pueblo-of-sandia-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Tiwa
   language_tag: tix

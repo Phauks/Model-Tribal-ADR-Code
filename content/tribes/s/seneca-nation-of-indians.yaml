@@ -182,6 +182,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Seneca Nation of Indians
+official_images:
+- kind: logo
+  alternative_text: Transparent Seneca Nation Keeper of the Western Door Logo
+  image_link: https://sni.org/wp-content/uploads/2026/01/Seneca-Nation-Transparent-400x400-2.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: d1cb2534b803667e4ed83e72928baee259d8f04bb255ac939221325f2ded3a2b
+  private_copy: nation-images/seneca-nation-of-indians/logo-d1cb2534b803.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: 2026 © Seneca Nation of Indians.
+      link: https://sni.org/
+      source: sni-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: sni-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Seneca
   language_tag: see

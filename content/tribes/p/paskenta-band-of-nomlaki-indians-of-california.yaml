@@ -130,6 +130,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Paskenta Band of Nomlaki Indians of California
+official_images:
+- kind: logo
+  alternative_text: Paskenta Band of Nomlaki Indians
+  image_link: https://paskenta-nsn.gov/wp-content/uploads/2023/11/paskenta-band-of-nomlaki-indians-logo.png.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 8b67f2d5f38395488af9db2a1d69bee8eafd8873483e04e88fade1b3d9f7d566
+  private_copy: nation-images/paskenta-band-of-nomlaki-indians-of-california/logo-8b67f2d5f383.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Paskenta Band of Nomlaki Indians Copyright 2026.
+      link: https://paskenta-nsn.gov/
+      source: paskenta-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: paskenta-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Nomlaki
   source: paskenta-band-of-nomlaki-indians-of-cali-about-the-nation

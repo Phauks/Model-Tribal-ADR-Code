@@ -118,6 +118,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Tejon Indian Tribe
+official_images:
+- kind: logo
+  alternative_text: Tejon Indian Tribe
+  image_link: https://www.tejonindiantribe.com/wp-content/uploads/tejon-top-logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 5652029b97a57abd5e076dbf5d95ffdbcc2c12ac4ba005f65d8b11766bb19c7f
+  private_copy: nation-images/tejon-indian-tribe/logo-5652029b97a5.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: tejonindiantribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Kitanemuk (Kitanemuic)
   source: tejon-indian-tribe-who-we-are-today

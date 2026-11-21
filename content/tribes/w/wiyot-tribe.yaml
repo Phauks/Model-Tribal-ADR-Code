@@ -113,6 +113,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Wiyot Tribe, California
+official_images:
+- kind: seal
+  alternative_text: Wiyot Tribe Seal
+  image_link: https://www.wiyot.us/ImageRepository/Document?documentID=69
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 0b362478d5fd69d2b46805eef96aed77c516eff4eaf8dae6af8413865431a29e
+  private_copy: nation-images/wiyot-tribe/seal-0b362478d5fd.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright Notices .
+      link: https://www.wiyot.us/
+      source: wiyot-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: wiyot-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Northern California Agency

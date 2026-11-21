@@ -130,6 +130,30 @@ contacts:
   verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Native Village of Kotzebue" (community: Kotzebue, object 109)'
+official_images:
+- kind: logo
+  alternative_text: Kotzebue IRA logo
+  image_link: https://kotzebueira.b-cdn.net/wp-content/uploads/cropped-fav.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: f8600ddcb7c0e09d92431e078aecfcabc3cd5899e5cf38d4a324d4121bd2f4b5
+  private_copy: nation-images/native-village-of-kotzebue/logo-f8600ddcb7c0.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 • Native Village of Kotzebue IRA • All Rights Reserved • Privacy Policy
+        • Cookie Policy • Website by Sundog Media, LLC .
+      link: https://www.kotzebueira.org/
+      source: kotzebueira-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: kotzebueira-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Iñupiaq
   language_tag: ipk

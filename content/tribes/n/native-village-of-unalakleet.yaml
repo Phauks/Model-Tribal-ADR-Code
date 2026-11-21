@@ -148,6 +148,29 @@ contacts:
   locator: 'record "Native Village of Unalakleet" (community: Unalakleet, object 216)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+official_images:
+- kind: logo
+  alternative_text: Native Village of Unalakleet
+  image_link: https://www.nativevillageofunalakleet.org/assets/img/nvu-logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: ccfdfe20468d325863478249dca85306f59d6dbfbbf9230ce97d88a91968ada4
+  private_copy: nation-images/native-village-of-unalakleet/logo-ccfdfe20468d.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Native Village of Unalakleet.
+      link: https://www.nativevillageofunalakleet.org/
+      source: nativevillageofunalakleet-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: nativevillageofunalakleet-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Iñupiaq
   language_tag: ipk

@@ -112,11 +112,25 @@ contacts:
 - kind: website
   value: https://oglalalakotanation.net/
   label: Tribal government office
+  link_status: lapsed
+  link_checked: '2026-11-21'
   source: bia-tribal-leaders-directory-2026
   confidence: high
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Oglala Sioux Tribe
+  note: 'Checked 2026-11-21: the address now shows gambling advertising, not the Tribe''s website. The
+    South Dakota Department of Tribal Relations links https://www.oglala.gov/ as the Tribe''s website.'
+- kind: website
+  value: https://www.oglala.gov/
+  label: Tribal government website
+  link_status: live
+  link_checked: '2026-11-21'
+  source: oglala-sioux-tribe-tribes-oglala-sioux-tribe-aspx
+  confidence: high
+  verification: read-in-full
+  as_of: '2026-11-21'
+  locator: Oglala Sioux Tribe page, link to the Tribe's website
 - kind: physical-address
   value: 107 West Main Street, Pine Ridge, SD 57770
   label: Tribal government office

@@ -120,6 +120,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: La Jolla Band of Luiseno Indians, California
+official_images:
+- kind: logo
+  alternative_text: La Jolla Band of Luiseño Indians home page
+  image_link: https://lajolla-nsn.gov/wp-content/uploads/2025/06/Untitled-design-2025-07-31T095608.734.png_pp.webp
+  retrieved: '2026-11-21'
+  media_type: image/webp
+  sha256: 1768d12a156ea1df2c1e2f01d5ee4d39a1f967c6e81aad10d0113c96080daab6
+  private_copy: nation-images/la-jolla-band-of-luiseno-indians/logo-1768d12a156e.webp
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © La Jolla Band Luiseno Indians 2025.
+      link: https://lajolla-nsn.gov/
+      source: lajolla-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: lajolla-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Southern California Agency

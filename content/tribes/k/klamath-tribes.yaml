@@ -128,6 +128,35 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Klamath Tribes
+official_images:
+- kind: logo
+  image_link: https://klamathtribes.org/wp-content/uploads/2022/03/klamathtribes1200seal.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 67e6dd100cb4e24b0c5922dcb5f0bcba95850ee4a9ccce6fe8d7d30dfb114c42
+  private_copy: nation-images/klamath-tribes/logo-67e6dd100cb4.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: trademark-notice
+      effect: blocks-reuse
+      quote: No use of Klamath Tribe’s Website official seal or other artwork will be allowed for linking
+        absent a trademark license agreement.
+      link: https://klamathtribes.org/terms-and-condition/
+      source: klamathtribes-terms-and-condition
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 – The Klamath Tribes.
+      link: https://klamathtribes.org/
+      source: klamathtribes-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: klamathtribes-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Klamath
   language_tag: kla

@@ -139,6 +139,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Quechan Tribe of the Fort Yuma Indian Reservation, California & Arizona
+official_images:
+- kind: seal
+  alternative_text: Quechan Tribe Logo
+  image_link: https://res.cloudinary.com/mgmimgopt/image/upload/f_auto,q_auto/quechan2/img/quechan_logo-150.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: d7ecf36edaa279b1209e7171b09c775ec3eabb1a3331b9099b96de94d732d508
+  private_copy: nation-images/quechan-tribe-of-the-fort-yuma-indian-reservation/seal-d7ecf36edaa2.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Fort Yuma Quechan Indian Tribe | All Rights Reserved.
+      link: https://quechantribe.com/
+      source: quechantribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: quechantribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Fort Yuma Agency

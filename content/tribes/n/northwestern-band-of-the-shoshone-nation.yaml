@@ -128,6 +128,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Northwestern Band of the Shoshone Nation
+official_images:
+- kind: logo
+  alternative_text: NWBSN logo
+  image_link: https://nwbshoshone.com/wp-content/uploads/2023/08/NWBSN-logo-1.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 7bce1e9dcbccdf805d0100a2cab9def45d1d1e1a95be0918e87e48194e42bc9e
+  private_copy: nation-images/northwestern-band-of-the-shoshone-nation/logo-7bce1e9dcbcc.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Northwestern Band of the Shoshone Nation.
+      link: https://nwbshoshone.com/
+      source: nwbshoshone-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: nwbshoshone-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Fort Hall Agency

@@ -158,6 +158,41 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Comanche Nation, Oklahoma
+official_images:
+- kind: logo
+  alternative_text: Comanche Nation Lords of the Plains
+  image_link: https://www.comanchenation.com/sites/all/themes/aha_compass/logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 241a44fbe4959d6ea3dcab2e2d622193428ce42765e1ae186cc2478265802211
+  private_copy: nation-images/comanche-nation/logo-241a44fbe495.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89002546&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89002546'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2021-10-04).
+  source: comanchenation-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89002546'
+  wordmark: COMANCHE NATION LORDS OF THE PLAINS
+  filed: '2021-10-04'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89002546&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/comanche-nation/insignia-database-89002546.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89002546
 languages:
 - name: Comanche
   language_tag: com

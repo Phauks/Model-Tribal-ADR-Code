@@ -112,6 +112,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Taos, New Mexico
+official_images:
+- kind: logo
+  alternative_text: Taos Pueblo
+  image_link: https://taospueblo.com/wp-content/uploads/2024/03/133.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 12b763307adbc5cd0e5834a04db09948a6279f33d4759b1c0be2964c0e3b3f17
+  private_copy: nation-images/pueblo-of-taos/logo-12b763307adb.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Copyright 2026 Taos Pueblo | All Rights Reserved - Powered By WebWorm .
+      link: https://taospueblo.com/
+      source: taospueblo-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: taospueblo-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Southwest
   bureau_of_indian_affairs_agency: Northern Pueblos Agency

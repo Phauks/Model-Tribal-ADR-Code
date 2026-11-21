@@ -131,6 +131,35 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mescalero Apache Tribe of the Mescalero Reservation, New Mexico
+official_images:
+- kind: logo
+  image_link: https://mescaleroapachetribe.com/wp-content/uploads/cropped-Gahe-copy-180x180.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 55b0f8d72274c171479b7f7a29ab76e79555ce3d33066e5d3b162fd07228cb29
+  private_copy: nation-images/mescalero-apache-tribe-of-the-mescalero-reservation/logo-55b0f8d72274.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: terms-of-use
+      effect: blocks-reuse
+      quote: As such, information on this website cannot be reproduced cannot be reproduced without the
+        explicit written permission of the Mescalero Apache Tribe.
+      link: https://mescaleroapachetribe.com/disclaimer-and-terms-of-use/
+      source: mescaleroapachetribe-disclaimer-and-terms-of-use
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 · Parallax Pro Theme on Genesis Framework · WordPress · Log in .
+      link: https://mescaleroapachetribe.com/
+      source: mescaleroapachetribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: mescaleroapachetribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Southwest
   bureau_of_indian_affairs_agency: Mescalero Agency

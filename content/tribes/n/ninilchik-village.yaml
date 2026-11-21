@@ -142,6 +142,28 @@ contacts:
   locator: 'record "Ninilchik Village" (community: Ninilchik, object 142)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+official_images:
+- kind: logo
+  image_link: https://www.ninilchiktribe-nsn.gov/wp-content/uploads/2024/03/NTC-Logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: b55594c439462ea1539a03e424ceb4cf787e4a4c81bdd2705074edf726f84d6c
+  private_copy: nation-images/ninilchik-village/logo-b55594c43946.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 Ninilchik Traditional Council + Breeze Designs
+      link: https://www.ninilchiktribe-nsn.gov/
+      source: ninilchiktribe-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: ninilchiktribe-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Dena'ina
   language_tag: tfn

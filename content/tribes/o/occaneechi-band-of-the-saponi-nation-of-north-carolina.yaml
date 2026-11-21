@@ -153,6 +153,28 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+official_images:
+- kind: logo
+  image_link: https://obsn.org/wp-content/uploads/2023/03/cropped-OBSNlogo-2-1-180x180.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: cb7c13565f8439822f8a2e243b16040714025fbee9dd807bbf0b44734e4b6865
+  private_copy: nation-images/occaneechi-band-of-the-saponi-nation-of-north-carolina/logo-cb7c13565f84.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © OBSN .
+      link: https://obsn.org/
+      source: obsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: obsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

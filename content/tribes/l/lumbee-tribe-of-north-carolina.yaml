@@ -174,6 +174,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Lumbee Tribe of North Carolina
+official_images:
+- kind: logo
+  image_link: https://static.wixstatic.com/media/269399_fd1d07772bb044f5aea38660d4db1a3a.gif/v1/fit/w_2500,h_1330,al_c/269399_fd1d07772bb044f5aea38660d4db1a3a.gif
+  retrieved: '2026-11-21'
+  media_type: image/gif
+  sha256: 3e9131fc44f94765b4e62b5d3e943e864891ef014bc4cc2be1bd2339bccadf82
+  private_copy: nation-images/lumbee-tribe-of-north-carolina/logo-3e9131fc44f9.gif
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 LumbeeTribe.com ~ All rights reserved ~ The official website of the Lumbee Tribe of
+        North Carolina .
+      link: https://www.lumbeetribe.com/
+      source: lumbeetribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: lumbeetribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office

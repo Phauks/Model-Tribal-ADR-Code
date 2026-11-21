@@ -114,6 +114,21 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Keweenaw Bay Indian Community, Michigan
+official_images:
+- kind: logo
+  image_link: https://www.kbic-nsn.gov/wp-content/uploads/2023/07/KBIC_logo-no-vines.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 82821b4372e0d8fd615df16248f14741938d25bbd7f01211e4098fc719574f64
+  private_copy: nation-images/keweenaw-bay-indian-community/logo-82821b4372e0.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: kbic-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Michigan Agency

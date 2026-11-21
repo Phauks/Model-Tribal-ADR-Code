@@ -148,6 +148,31 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Kaw Nation, Oklahoma
+official_images:
+- kind: seal
+  alternative_text: www.kawnation.gov
+  image_link: https://www.kawnation.gov/wp-content/uploads/2022/05/kaw-nation-seal-300x300-1.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: d9835581c88c564ec6bc669916fb5a0ccf07918c776f53882fcde446c8155f23
+  private_copy: nation-images/kaw-nation/seal-d9835581c88c.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: 'Copyright © 2003 - 2023 All Rights Reserved - Welcome to the Kaw Nation Mailing Address:
+        Drawer 50 - Kaw City, OK 74641 | Physical Address: 698 Grandview Drive - Kaw City, OK 74641 T:
+        580-269-2552 | F: 580-269-2301 | Business Hours: M-F 8:00 am - 4:00 pm CST |'
+      link: https://www.kawnation.gov/
+      source: kawnation-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: kawnation-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Kanza (Kaáⁿze Íe)
   language_tag: ksk

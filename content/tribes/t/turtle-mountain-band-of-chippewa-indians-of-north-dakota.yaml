@@ -147,6 +147,40 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: page read through the WebFetch tool because the site blocked the plain HTTP client
+official_images:
+- kind: logo
+  alternative_text: Turtle Mountain Band of Chippewa Indians
+  image_link: https://tmchippewa.com/wp-content/uploads/FavIcon.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 5a6d39fab872d537669a3df5257dbb35d7e5256a654b84e19e418ce6fd635ea5
+  private_copy: nation-images/turtle-mountain-band-of-chippewa-indians-of-north-dakota/logo-5a6d39fab872.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001538&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001538'
+      note: The nation filed a closely similar design as its official insignia with the USPTO (filed 2011-10-17).
+  source: turtle-mountain-band-of-chippewa-indians-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001538'
+  filed: '2011-10-17'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001538&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: similar-design
+  private_copy: nation-images/turtle-mountain-band-of-chippewa-indians-of-north-dakota/insignia-database-89001538.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001538
 languages:
 - name: Ojibwe
   language_tag: ciw

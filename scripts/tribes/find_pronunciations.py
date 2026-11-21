@@ -108,7 +108,7 @@ def passages(address: str, page: str) -> list[dict]:
 def search(profile: dict) -> dict:
     result = {"id": profile["id"], "name": profile["names"]["official"], "unreachable": [], "passages": []}
     for contact in profile.get("contacts", []):
-        if contact.get("kind") != "website":
+        if contact.get("kind") != "website" or contact.get("link_status") == "lapsed":
             continue
         home = fetch(contact["value"])
         if not home:

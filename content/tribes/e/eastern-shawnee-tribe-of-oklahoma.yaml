@@ -112,6 +112,36 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Eastern Shawnee Tribe of Oklahoma
+tribal_insignia_database_entries:
+- serial_number: '89002202'
+  wordmark: EASTERN SHAWNEE TRIBE OF OKLAHOMA
+  filed: '2019-02-12'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89002202&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: not-compared
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89002202
+- serial_number: '89002200'
+  wordmark: EASTERN SHAWNEE TRIBE OF OKLAHOMA
+  filed: '2019-02-12'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89002200&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: not-compared
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89002200
+- serial_number: '89002201'
+  filed: '2019-02-12'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89002201&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: not-compared
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89002201
 languages:
 - name: Shawnee
   language_tag: sjw

@@ -122,6 +122,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Naknek Native Village
+official_images:
+- kind: logo
+  alternative_text: Naknek Native Village Council
+  image_link: https://www.nnvctribe.com/wp-content/uploads/2025/07/footer-logo-reverse.svg
+  retrieved: '2026-11-21'
+  media_type: image/svg+xml
+  sha256: 17d231b5f60634d31f271e6e0ef0d74fbbc4a9e9d75cf2f599b4b1f5e2744e4b
+  private_copy: nation-images/naknek-native-village/logo-17d231b5f606.svg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Naknek Native Village Council.
+      link: https://www.nnvctribe.com/
+      source: nnvctribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: nnvctribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Central Yup'ik
   language_tag: esu

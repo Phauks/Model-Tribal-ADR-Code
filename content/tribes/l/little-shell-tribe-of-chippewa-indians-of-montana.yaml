@@ -106,6 +106,40 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Little Shell Tribe of Chippewa Indians of Montana
+official_images:
+- kind: logo
+  image_link: https://montanalittleshelltribe.org/wp-content/uploads/2020/10/cropped-Little-Shell_Logo_Web-300x300.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 9ea5e02b9fb143455bcc7f5ba798047c72433716bf467501d68a29dac10d9b97
+  private_copy: nation-images/little-shell-tribe-of-chippewa-indians-of-montana/logo-9ea5e02b9fb1.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89002389&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89002389'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2021-04-14).
+  source: montanalittleshelltribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89002389'
+  wordmark: LITTLE SHELL CHIPPEWA TRIBE
+  filed: '2021-04-14'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89002389&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/little-shell-tribe-of-chippewa-indians-of-montana/insignia-database-89002389.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89002389
 federal_administration:
   bureau_of_indian_affairs_region: Rocky Mountain
   bureau_of_indian_affairs_agency: Rocky Mountain Regional Office

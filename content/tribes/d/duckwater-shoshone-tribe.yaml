@@ -125,6 +125,29 @@ contacts:
   as_of: '2026-11-20'
   locator: Duckwater Shoshone Tribe (previously listed as Duckwater Shoshone Tribe of the Duckwater Reservation,
     Nevada)
+official_images:
+- kind: logo
+  alternative_text: Duckwater Shoshone Tribe
+  image_link: https://duckwatertribe.org/wp-content/uploads/2022/10/cropped-Logo-Outlined-768x257.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 56b7c754ec8fcd822812797fcda9adacce5ea66141a49ef3c8a4b0cb65bf56a8
+  private_copy: nation-images/duckwater-shoshone-tribe/logo-56b7c754ec8f.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © All rights reserved Duckwater Shoshone Tribe
+      link: https://duckwatertribe.org/
+      source: duckwatertribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: duckwatertribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Eastern Nevada Agency

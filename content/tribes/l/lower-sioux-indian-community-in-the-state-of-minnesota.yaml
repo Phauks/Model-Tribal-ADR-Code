@@ -138,6 +138,30 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Lower Sioux Indian Community in the State of Minnesota
+official_images:
+- kind: logo
+  alternative_text: Lower Sioux Indian Community Logo
+  image_link: https://lowersioux.com/wp-content/uploads/2022/09/Lower-Sioux-Indian-Community-logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 3362b3f8f85d8942268c4e47780a0781de29e0ea3867247a739f7df0964cfba8
+  private_copy: nation-images/lower-sioux-indian-community-in-the-state-of-minnesota/logo-3362b3f8f85d.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Lower Sioux Indian Community © 2026 · Sitemap · Accessibility Statement · Privacy Policy
+        · Cookie Policy · All rights reserved · Website built by RVT Solutions .
+      link: https://lowersioux.com/
+      source: lowersioux-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: lowersioux-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Dakota
   language_tag: dak

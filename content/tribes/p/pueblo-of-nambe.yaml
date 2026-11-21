@@ -139,6 +139,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Nambe, New Mexico
+official_images:
+- kind: logo
+  alternative_text: Nambé Pueblo | Nambé Falls
+  image_link: http://www.nambepueblo.org/wp-content/uploads/2014/03/Nambe-Pueblo-Logo-22-150x128.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: a780e8a5942060663657723c348fbc3f113396c7c131b4d919d43cc8cf596f4d
+  private_copy: nation-images/pueblo-of-nambe/logo-a780e8a59420.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright 2014 | Nambé Pueblo | All Rights Reserved | Powered by WordPress | Theme Fusion
+      link: https://www.nambepueblo.org/about-nambe-pueblo/
+      source: pueblo-of-nambe-about-nambe-pueblo
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: pueblo-of-nambe-about-nambe-pueblo
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Southwest
   bureau_of_indian_affairs_agency: Northern Pueblos Agency

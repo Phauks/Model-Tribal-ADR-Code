@@ -128,6 +128,17 @@ census_areas:
     by name comparison with the state-recognized helper list. Linked by name comparison to the state-recognized
     helper entity; GAO (2012) lists the "Nanticoke Lenni-Lenape Indians of New Jersey" (id nanticoke-lenni-lenape-indians-of-new-jersey),
     which may be the same group.
+tribal_insignia_database_entries:
+- serial_number: '89000519'
+  wordmark: NANTICOKE LENNI-LENAPE INDIANS OF NEW JERSEY, INC.
+  filed: '2002-03-18'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89000519&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: not-compared
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89000519
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

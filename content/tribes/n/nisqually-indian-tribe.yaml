@@ -127,6 +127,43 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Nisqually Indian Tribe
+official_images:
+- kind: logo
+  alternative_text: Nisqually Indian Tribe Homepage
+  image_link: https://www.nisqually-nsn.gov/application/files/8916/6370/8211/nisquallylogo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: ed384d0f459161986415935878cd8aa4387e0dfc42901a9dae34fadf9851e6f4
+  private_copy: nation-images/nisqually-indian-tribe/logo-ed384d0f4591.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: trademark-notice
+      effect: blocks-reuse
+      quote: The Nisqually Indian Tribe logo is a Service Mark and is the intellectual property of the
+        Nisqually Indian Tribe.
+      link: https://www.nisqually-nsn.gov/terms-use
+      source: nisqually-nsn-terms-use
+      verification: read-in-full
+    - kind: terms-of-use
+      effect: blocks-reuse
+      quote: Do not duplicate, publish, modify or otherwise distribute the material on the sites unless
+        specifically authorized by the Nisqually Indian Tribe to do so.
+      link: https://www.nisqually-nsn.gov/terms-use
+      source: nisqually-nsn-terms-use
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: and international copyright law.
+      link: https://www.nisqually-nsn.gov/terms-use
+      source: nisqually-nsn-terms-use
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: nisqually-indian-tribe-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Puget Sound Agency

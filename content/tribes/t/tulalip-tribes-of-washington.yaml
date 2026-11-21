@@ -140,6 +140,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Tulalip Tribes of Washington
+official_images:
+- kind: logo
+  alternative_text: Tulalip Tribes Whale logo
+  image_link: https://www.tulaliptribes-nsn.gov/images/Tulalip-Tribes-Whale-logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 657b9f69e591afd63eaa2038cae00110438195171a6080ebfa6e2a22e21ea06a
+  private_copy: nation-images/tulalip-tribes-of-washington/logo-657b9f69e591.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2025 Tulalip Tribes.
+      link: https://www.tulaliptribes-nsn.gov/
+      source: tulalip-tribes-of-washington-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: tulalip-tribes-of-washington-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Puget Sound Agency

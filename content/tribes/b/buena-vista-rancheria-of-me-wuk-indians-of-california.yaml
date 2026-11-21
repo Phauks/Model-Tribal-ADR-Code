@@ -93,6 +93,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Buena Vista Rancheria of Me-Wuk Indians of California
+official_images:
+- kind: seal
+  alternative_text: Buena Vista Rancheria of Me-Wuk Indians seal
+  image_link: https://bvtribe.com/assets/images/logo/bvr-logo-for-signage-1502x1536.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: b664b246f4c370b3508e5d0d60bbcc9f1f80186b9e5752a9e289e2a6607e8a09
+  private_copy: nation-images/buena-vista-rancheria-of-me-wuk-indians-of-california/seal-b664b246f4c3.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2024 Buena Vista Rancheria of Me-Wuk Indians.
+      link: https://bvtribe.com/
+      source: bvtribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: bvtribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

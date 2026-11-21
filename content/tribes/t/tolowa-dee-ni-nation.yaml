@@ -115,6 +115,65 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Tolowa Dee-ni' Nation
+official_images:
+- kind: logo
+  image_link: https://www.tolowa.gov/images/favicon.ico
+  retrieved: '2026-11-21'
+  media_type: image/x-icon
+  sha256: 7743a149297a19c0c20871805da7302e3b9071c0683bbe8cd37132fc99486b6d
+  private_copy: nation-images/tolowa-dee-ni-nation/logo-7743a149297a.ico
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright Notices .
+      link: https://www.tolowa.gov/
+      source: tolowa-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89003036&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89003036'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2023-10-03).
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89003037&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89003037'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2023-10-03).
+  source: tolowa-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89003036'
+  wordmark: GREAT SEAL OF THE TOLOWA DEE-NI' NATION
+  filed: '2023-10-03'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89003036&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/tolowa-dee-ni-nation/insignia-database-89003036.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89003036
+- serial_number: '89003037'
+  wordmark: GREAT SEAL OF THE TOLOWA DEE-NI' NATION
+  filed: '2023-10-03'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89003037&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/tolowa-dee-ni-nation/insignia-database-89003037.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89003037
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Pacific Regional Office

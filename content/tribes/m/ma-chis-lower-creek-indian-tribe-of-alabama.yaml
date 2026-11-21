@@ -130,6 +130,22 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: 2026-10
+official_images:
+- kind: logo
+  alternative_text: 'Ma-Chis Tribe '
+  image_link: https://machistribe.com/wp-content/uploads/2024/04/logo1-768x203.jpg
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: 20e6dff6be75266cd2c2948ea314c86d95458c067f77587775cb3d2a5f4aef1b
+  private_copy: nation-images/ma-chis-lower-creek-indian-tribe-of-alabama/logo-20e6dff6be75.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: machistribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

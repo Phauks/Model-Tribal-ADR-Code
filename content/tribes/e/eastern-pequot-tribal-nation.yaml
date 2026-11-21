@@ -110,6 +110,30 @@ contacts:
   verification: title-only
   as_of: '2026'
   note: Linked by the state agency as the nation's site.
+official_images:
+- kind: logo
+  alternative_text: logo.png
+  image_link: https://static.wixstatic.com/media/1791aa_28a2a96e898742129618ea57841df84d~mv2.png/v1/fill/w_73,h_73,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 4993a8a114a759e5ab051d3ebd11ef577ace5dc5836f0833919f24747478bd1e
+  private_copy: nation-images/eastern-pequot-tribal-nation/logo-4993a8a114a7.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Copyright 2024 Eastern Pequot Tribal Nation .
+      link: https://www.easternpequottribalnation.org/
+      source: easternpequottribalnation-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: easternpequottribalnation-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+  note: Found by rendering the page in a browser; the page draws its logo with JavaScript.
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

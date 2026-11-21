@@ -151,6 +151,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Crow Tribe of Montana
+official_images:
+- kind: logo
+  alternative_text: Official Site of the Crow Tribe Executive Branch
+  image_link: http://www.crow-nsn.gov/uploads/1/5/6/0/15609006/ctseal2.jpg
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: 751e3172f80bdc198238ce2680f0e965c93173b763c9a88a63c21cb562d1fd69
+  private_copy: nation-images/crow-tribe-of-montana/logo-751e3172f80b.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: crow-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Crow
   language_tag: cro

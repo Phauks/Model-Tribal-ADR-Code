@@ -98,6 +98,27 @@ contacts:
   verification: inferred
   as_of: '2022'
   note: House Bill 43 (2024) revised the addresses in the statute; the updated address was not confirmed.
+tribal_insignia_database_entries:
+- serial_number: '89000711'
+  wordmark: THE GEORGIA TRIBE OF EASTERN CHEROKEE P.O. BOX 1993 DAHLONEGA,GA30533
+  filed: '2003-06-13'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89000711&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: not-compared
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89000711
+- serial_number: '89001082'
+  wordmark: GEORGIA TRIBE OF EASTERN CHEROKEE
+  filed: '2006-11-20'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001082&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: not-compared
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001082
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

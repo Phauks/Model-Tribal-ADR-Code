@@ -139,6 +139,22 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Omaha Tribe of Nebraska
+official_images:
+- kind: seal
+  alternative_text: Omaha Tribe Calls on Congress to Strike Title III from BAAJA
+  image_link: https://www.omahatribe.com/wp-content/uploads/2026/10/OTN-Seal-2024_Transparent-BG-410x280.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: c806b958bacd7e23f1a1f33436c73058308a28252c55fdff214f176f192111c1
+  private_copy: nation-images/omaha-tribe-of-nebraska/seal-c806b958bacd.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: omahatribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Great Plains
   bureau_of_indian_affairs_agency: Winnebago Agency

@@ -75,6 +75,29 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+official_images:
+- kind: logo
+  alternative_text: Waccamaw.org
+  image_link: https://waccamaw.org/logos/doug-2025/logo.svg
+  retrieved: '2026-11-21'
+  media_type: image/svg+xml
+  sha256: 8ff202c6bbcf926156e3cdd3af714704b773e9ba7eb64aa0d0d5b1d5aa4de7d0
+  private_copy: nation-images/waccamaw-indian-people/logo-8ff202c6bbcf.svg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Waccamaw.org.
+      link: https://waccamaw.org/
+      source: waccamaw-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: waccamaw-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

@@ -131,6 +131,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Santa Clara, New Mexico
+official_images:
+- kind: logo
+  alternative_text: Santa Clara Pueblo logo
+  image_link: https://www.santaclarapueblo.org/wp-content/uploads/2023/08/Header-Logo-150x150.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 0501426cd43f9918b3de619fa91882bd085734ca0ef429286c15ead2a79847e5
+  private_copy: nation-images/pueblo-of-santa-clara/logo-0501426cd43f.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2023 Pueblo of Santa Clara, All rights reserved.
+      link: https://www.santaclarapueblo.org/
+      source: pueblo-of-santa-clara-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: pueblo-of-santa-clara-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Tewa
   language_tag: tew

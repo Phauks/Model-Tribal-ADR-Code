@@ -119,6 +119,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Hannahville Indian Community, Michigan
+official_images:
+- kind: logo
+  alternative_text: Hannahville Indian Community
+  image_link: https://hannahville.net/wp-content/uploads/2023/02/hannahville-potawatomi-logo-2.jpg
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: ce5a68a48d6eefb6c758673ed2d2a006ddc8f62c7fcd6c353a5baee339698842
+  private_copy: nation-images/hannahville-indian-community/logo-ce5a68a48d6e.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Powered by Open-Meteo .
+      link: https://hannahville.net/
+      source: hannahville-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: hannahville-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Michigan Agency

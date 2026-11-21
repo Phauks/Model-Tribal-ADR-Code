@@ -122,6 +122,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Goshute Reservation, Nevada and Utah
+official_images:
+- kind: logo
+  image_link: https://ctgr.us/home/wp-content/uploads/2023/10/ctgr-logos-id2GDFUBvQ.png?x20022
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 80f2c41bcb0a57ec2317e1b4d20435058c1bf5fa00dc1cfe4a0a2505244e8d7f
+  private_copy: nation-images/confederated-tribes-of-the-goshute-reservation/logo-80f2c41bcb0a.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: CTGR © 2026 | All Rights Reserved .
+      link: https://ctgr.us/home/
+      source: ctgr-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: ctgr-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Eastern Nevada Agency

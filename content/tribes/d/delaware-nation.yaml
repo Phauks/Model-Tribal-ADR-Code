@@ -151,6 +151,21 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Delaware Nation, Oklahoma
+official_images:
+- kind: logo
+  image_link: https://www.delawarenation-nsn.gov/wp-content/uploads/2022/08/cropped-Delaware-Nation-Seal-Vector-Logo-Black-Text-180x180.gif
+  retrieved: '2026-11-21'
+  media_type: image/gif
+  sha256: 1f0822d1c13c384bfd159e7cc9fa541df10f32a3680e5ad5ed9f742b8eae142c
+  private_copy: nation-images/delaware-nation/logo-1f0822d1c13c.gif
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: delawarenation-nsn-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Lenape
   language_tag: del

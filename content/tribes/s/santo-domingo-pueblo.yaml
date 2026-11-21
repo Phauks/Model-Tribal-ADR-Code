@@ -140,6 +140,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Santo Domingo Pueblo
+official_images:
+- kind: seal
+  image_link: https://www.santodomingopueblo.com/wp-content/uploads/2023/09/SDSeal.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: c1453bcd9dda9eeb92a06a9e36421dc6abaafe12bc805ef99a6745aa45095f73
+  private_copy: nation-images/santo-domingo-pueblo/seal-c1453bcd9dda.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Santo Domingo Pueblo .
+      link: https://www.santodomingopueblo.com/
+      source: santo-domingo-pueblo-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: santo-domingo-pueblo-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Keres
   language_tag: kee

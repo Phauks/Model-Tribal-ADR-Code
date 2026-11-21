@@ -138,6 +138,47 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Sac & Fox Nation, Oklahoma
+official_images:
+- kind: logo
+  image_link: https://www.sacandfoxnation-nsn.gov/wp-content/uploads/2024/05/logo-trans-red.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: b016f22069db5b65e3f90f450e48b3b6a333799edd0b0efdeb5d1e99f477e441
+  private_copy: nation-images/sac-and-fox-nation/logo-b016f22069db.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: ©2026 sacandfoxnation-nsn.gov.
+      link: https://www.sacandfoxnation-nsn.gov/
+      source: sac-and-fox-nation-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89003104&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89003104'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2024-05-31).
+  source: sac-and-fox-nation-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89003104'
+  wordmark: SAC AND FOX MA-KA-TAI-ME-SHE-KIA-KIAK NATION
+  filed: '2024-05-31'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89003104&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/sac-and-fox-nation/insignia-database-89003104.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89003104
 languages:
 - name: Sauk
   language_tag: sac

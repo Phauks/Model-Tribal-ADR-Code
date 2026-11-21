@@ -111,6 +111,21 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pueblo of Picuris, New Mexico
+official_images:
+- kind: logo
+  image_link: https://cdn.prod.website-files.com/680942b8c276b52337ba073d/69fb73c864eb2e1d1386b634_Picuris%20LogoWeb.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 2ac1daa898ce0302b8b3598ab9bd2dd8b9f7710132170b06a72ab99ef377ff5f
+  private_copy: nation-images/pueblo-of-picuris/logo-2ac1daa898ce.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: picurispueblo-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Southwest
   bureau_of_indian_affairs_agency: Northern Pueblos Agency

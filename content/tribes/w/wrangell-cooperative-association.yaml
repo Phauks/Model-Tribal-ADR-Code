@@ -135,6 +135,28 @@ contacts:
   locator: 'record "Wrangell Cooperative Association" (community: Wrangell, object 229)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+official_images:
+- kind: logo
+  image_link: https://static.wixstatic.com/media/41a325_d1fc6514cb534e58ac289929d409f2b4%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/41a325_d1fc6514cb534e58ac289929d409f2b4%7Emv2.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 09eb3cefd6f4dc2efda0cdf1e3e66b8aac0f12138e3ce56f1a161f53e3c2d1b8
+  private_copy: nation-images/wrangell-cooperative-association/logo-09eb3cefd6f4.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2024 Wrangell Cooperative Association .
+      link: https://www.wcatribe.org/
+      source: wcatribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: wcatribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Tlingit
   language_tag: tli

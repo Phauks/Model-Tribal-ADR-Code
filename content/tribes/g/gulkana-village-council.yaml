@@ -140,6 +140,30 @@ contacts:
   locator: 'record "Gulkana Village" (community: Gulkana, object 71)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+official_images:
+- kind: logo
+  alternative_text: Gulkana Village Council
+  image_link: https://gulkanacouncil.org/wp-content/uploads/logo2-768x559.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 6c3741a285d37db6a415fcc0c6e8368eed4d5cc4359df4ba890e226cfcdeb7d0
+  private_copy: nation-images/gulkana-village-council/logo-6c3741a285d3.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Gulkana Village Council • All Rights Reserved • Privacy Policy • Cookie Policy • Website
+        by Sundog Media .
+      link: https://gulkanacouncil.org/
+      source: gulkanacouncil-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: gulkanacouncil-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Atnakenaege’ (Ahtna)
   language_tag: aht

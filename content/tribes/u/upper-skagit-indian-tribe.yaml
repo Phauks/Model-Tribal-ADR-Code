@@ -112,6 +112,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Upper Skagit Indian Tribe
+official_images:
+- kind: logo
+  image_link: https://upperskagittribe-nsn.gov/wp-content/uploads/2019/05/logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 5b19c7bf99e886da82ba3f0586feb9d0318f325c9983304f99c5e66b19f5febd
+  private_copy: nation-images/upper-skagit-indian-tribe/logo-5b19c7bf99e8.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright 2026 © Upper Skagit Indian Tribe .
+      link: https://upperskagittribe-nsn.gov/
+      source: upperskagittribe-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: upperskagittribe-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Puget Sound Agency

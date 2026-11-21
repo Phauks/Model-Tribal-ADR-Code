@@ -103,6 +103,39 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+official_images:
+- kind: logo
+  alternative_text: Federated Indians Graton Rancheria
+  image_link: https://gratonrancheria.com/wp-content/uploads/2018/06/Screen-Shot-2017-12-08-at-9.42.02-AM.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: f5995eae46ae483f378db98094d147d176f662ae9bd106aefaf6b520b2489cda
+  private_copy: nation-images/federated-indians-of-graton-rancheria/logo-f5995eae46ae.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: trademark-notice
+      effect: blocks-reuse
+      quote: Website, and all content and other materials on this Website, including, without limitation,
+        all logos, designs, text, graphics, pictures, information, data, software, sound files, other
+        files and the selection and arrangement thereof (collectively, “Content “) are the proprietary
+        property of Federated Indians of Graton Rancheria and are either registered trademarks or trademarks
+        of Federated Indians of Graton Rancheria in the U.S.
+      link: https://gratonrancheria.com/terms/
+      source: gratonrancheria-terms
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: ©Copyright 2026 Federated Indians of Graton Rancheria .
+      link: https://gratonrancheria.com/
+      source: gratonrancheria-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: gratonrancheria-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Coast Miwok
   language_tag: csi

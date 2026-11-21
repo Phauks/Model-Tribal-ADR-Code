@@ -133,6 +133,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Yakutat Tlingit Tribe
+official_images:
+- kind: logo
+  image_link: https://yakutattlingittribe.org/wp-content/uploads/2018/10/ytt-logo-756x1024.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 6100fae9deec766adb4c88776cf12c2ebce3df1646ed461761529845dcc5fa74
+  private_copy: nation-images/yakutat-tlingit-tribe/logo-6100fae9deec.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026.
+      link: https://yakutattlingittribe.org/
+      source: yakutattlingittribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: yakutattlingittribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Tlingit
   language_tag: tli

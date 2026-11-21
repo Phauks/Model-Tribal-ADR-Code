@@ -178,6 +178,22 @@ contacts:
   locator: 'record "Galena Village" (community: Galena, object 65)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+official_images:
+- kind: logo
+  alternative_text: Louden Tribe
+  image_link: https://images.squarespace-cdn.com/content/v1/620443bda3105336cd62da0f/5caeb459-5f36-4f1d-858f-812ba2867c5b/Logo+and+name.png?format=1500w
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: ba620a6e3006c2b978d71505fb150e2a272f509df1d66fcc54b2fe74e118f440
+  private_copy: nation-images/louden-tribe/logo-ba620a6e3006.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: loudentribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Denaakk'e (Koyukon)
   language_tag: koy

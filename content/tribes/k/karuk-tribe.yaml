@@ -120,6 +120,57 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Karuk Tribe
+official_images:
+- kind: logo
+  alternative_text: Untitled UI logomark
+  image_link: https://cdn.prod.website-files.com/6840684a84781283cd1b68e3/687012149e5340bcb616ab51_Karuk%20Seal.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: fb998c2b0f5f030e9e980a7591aa8ed95ac57a13ce1d227f1a19f33e0e1af88e
+  private_copy: nation-images/karuk-tribe/logo-fb998c2b0f5f.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: terms-of-use
+      effect: allows-with-conditions
+      quote: You may not reproduce, distribute, modify, republish, or exploit any Content for commercial
+        purposes without prior written consent from the Karuk Tribe.
+      link: https://www.karuk.us/terms-conditions
+      source: karuk-terms-conditions
+      verification: read-in-full
+      note: Forbids commercial use without consent. Showing the logo on the free website is not commercial;
+        the printed book is sold, so print needs the Tribe's consent.
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Karuk Tribe.
+      link: https://www.karuk.us/
+      source: karuk-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001954&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001954'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2017-03-08).
+  source: karuk-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001954'
+  wordmark: GREAT SEAL OF THE KARUK TRIBE
+  filed: '2017-03-08'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001954&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/karuk-tribe/insignia-database-89001954.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001954
 languages:
 - name: Karuk
   language_tag: kyh

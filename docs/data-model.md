@@ -173,6 +173,18 @@ field is left out when no such source is found. A nation can ask for an entry
 to be corrected or removed like any other fact
 ([charter, commitment 6](charter.md#6-the-right-to-correct-restrict-or-withdraw)).
 
+### Seals, emblems, flags and logos
+
+`official_images` records the nation's seal, emblem, flag or logo as its own
+website publishes it: the link, the retrieval date, a SHA-256 fingerprint and
+the path of a private copy that is never committed. Its `reuse` object lists
+every signal about reusing the image (terms of use, trademark notices and
+symbols, the nation's laws, the USPTO tribal insignia database, the nation's
+own requests) and a status that follows from them; only some statuses allow the
+image to be shown. `tribal_insignia_database_entries` lists the nation's
+entries in that database. How signals are detected and the display rule are in
+[official-images.md](official-images.md).
+
 ### Building profiles
 
 The first profiles were generated from cited facts in `research/raw/`

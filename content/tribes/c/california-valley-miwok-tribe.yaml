@@ -84,6 +84,41 @@ contacts:
   verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
+official_images:
+- kind: seal
+  alternative_text: California Valley Miwok Tribe seal
+  image_link: https://cvmt-nsn.gov/wp-content/uploads/2026/07/logo.webp
+  retrieved: '2026-11-21'
+  media_type: image/webp
+  sha256: 2a35dae1ffb0814362946bd56dbb99f85488973a78485fd5db726d8bfed10651
+  private_copy: nation-images/california-valley-miwok-tribe/seal-2a35dae1ffb0.webp
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 California Valley Miwok Tribe.
+      link: https://cvmt-nsn.gov/
+      source: cvmt-nsn-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: cvmt-nsn-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001112'
+  wordmark: OFFICIAL SEAL OF THE CALIFORNIA MIWOK TRIBE
+  filed: '2007-06-07'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001112&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: different-design
+  private_copy: nation-images/california-valley-miwok-tribe/insignia-database-89001112.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001112
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

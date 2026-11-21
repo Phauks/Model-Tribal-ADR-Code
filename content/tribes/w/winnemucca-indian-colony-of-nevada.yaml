@@ -111,6 +111,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Winnemucca Indian Colony of Nevada
+official_images:
+- kind: logo
+  image_link: https://winnemuccaindiancolony.org/wp-content/uploads/2022/03/WIC_Logo_NoBorder.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 427d6afb57ea9cf56c69de5840945dd580031a3a53282df5c9379f48433b8b36
+  private_copy: nation-images/winnemucca-indian-colony-of-nevada/logo-427d6afb57ea.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2022.
+      link: https://winnemuccaindiancolony.org/
+      source: winnemuccaindiancolony-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: winnemuccaindiancolony-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Western Nevada Agency

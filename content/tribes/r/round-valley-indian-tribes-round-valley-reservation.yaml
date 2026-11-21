@@ -112,6 +112,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Round Valley Indian Tribes, Round Valley Reservation, California
+official_images:
+- kind: logo
+  image_link: https://www.rvit.org/assets/logo_rvit_no_center.svg
+  retrieved: '2026-11-21'
+  media_type: image/svg+xml
+  sha256: 4d98ce2a3b88e0596b3ebb6bc5449d5d629ef6a227e521535e204d5bbe7bf07e
+  private_copy: nation-images/round-valley-indian-tribes-round-valley-reservation/logo-4d98ce2a3b88.svg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 RVIT --> .
+      link: https://www.rvit.org/
+      source: rvit-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: rvit-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

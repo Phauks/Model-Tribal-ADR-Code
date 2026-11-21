@@ -113,6 +113,48 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mooretown Rancheria of Maidu Indians of California
+official_images:
+- kind: logo
+  alternative_text: "\n                        Mooretown Rancheria logo"
+  image_link: https://schoolmanager.s3.amazonaws.com/uploads/pictures/fe52d9faf35b42c18d6c6d115af16eed.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 45ff293bda5d765cd5850da670e82690e9960bffd0ee6907315a99ead5dc251e
+  private_copy: nation-images/mooretown-rancheria-of-maidu-indians-of-california/logo-45ff293bda5d.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2022 Mooretown Rancheria of Maidu Indians .
+      link: https://www.mooretownrancheria-nsn.gov/
+      source: mooretownrancheria-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89002170&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89002170'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2018-10-22).
+  source: mooretownrancheria-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89002170'
+  wordmark: MOORETOWN RANCHERIA CONCOW MAIDU
+  filed: '2018-10-22'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89002170&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/mooretown-rancheria-of-maidu-indians-of-california/insignia-database-89002170.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89002170
 languages:
 - name: Concow-Maidu
   language_tag: mjd

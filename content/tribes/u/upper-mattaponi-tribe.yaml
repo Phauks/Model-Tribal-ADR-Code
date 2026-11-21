@@ -102,6 +102,42 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Upper Mattaponi Tribe
+official_images:
+- kind: seal
+  alternative_text: UMI Seal Full Color_Large.png
+  image_link: https://static.wixstatic.com/media/fc7954_ce9168ecd1204b11b8d13d473b89133c~mv2.png/v1/fill/w_112,h_93,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/UMI%20Seal%20Full%20Color_Large.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 2a7b19e1d502d6795c57e72c8923098913f1990fda90a304b71e154ac15e754f
+  private_copy: nation-images/upper-mattaponi-tribe/seal-2a7b19e1d502.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89003102&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89003102'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2024-05-06).
+  source: umitribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+  note: Found by rendering the page in a browser; the page draws its logo with JavaScript.
+tribal_insignia_database_entries:
+- serial_number: '89003102'
+  wordmark: UPPER MATTAPONI TRIBE
+  filed: '2024-05-06'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89003102&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/upper-mattaponi-tribe/insignia-database-89003102.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89003102
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office

@@ -112,6 +112,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Hopi Tribe of Arizona
+official_images:
+- kind: logo
+  image_link: https://www.hopi-nsn.gov/wp-content/themes/plus1-child-hopi/library/images/logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 67f4fdb1696cad6bcee3240312c4b9289a6de276e9c299b267840c38613332ea
+  private_copy: nation-images/hopi-tribe-of-arizona/logo-67f4fdb1696c.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 The Hopi Tribe.
+      link: https://www.hopi-nsn.gov/
+      source: hopi-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: hopi-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Hopi Agency

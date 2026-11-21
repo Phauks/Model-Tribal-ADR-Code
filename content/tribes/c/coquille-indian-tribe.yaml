@@ -128,6 +128,31 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Coquille Indian Tribe
+official_images:
+- kind: logo
+  alternative_text: Coquille Indian Tribe
+  image_link: https://www.coquilletribe.org/wp-content/uploads/2017/03/Homepage-Banner-1E-3.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: b93260c21d55432c8404c7e04ea0ed8813cd523d91f73cba14b331e175f33f4d
+  private_copy: nation-images/coquille-indian-tribe/logo-b93260c21d55.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: tribal-law
+      effect: blocks-reuse
+      quote: Any person or entity wishing to use the official Coquille Tribal seal must contact the Tribal
+        Council Chairperson in writing to request permission to use it.
+      source: coquille-tribal-seal
+      link: https://www.coquilletribe.org/wp-content/uploads/2018/09/196-Tribal-Seal-9_2018.pdf
+      verification: read-in-full
+      locator: § 196.160(1)
+      note: The banner image includes the Tribal seal.
+  source: coquilletribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Miluk
   source: coquilletribe-our-heritage-our-languages

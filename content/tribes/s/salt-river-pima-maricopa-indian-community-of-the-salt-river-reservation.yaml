@@ -193,6 +193,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona
+official_images:
+- kind: seal
+  image_link: https://srpmic-nsn.gov/wp-content/uploads/2017/04/Logo_test-1.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 25a048c885882d3e55cc77ff45633d2be4f62bddd42f29ba2c614a599d239ddd
+  private_copy: nation-images/salt-river-pima-maricopa-indian-community-of-the-salt-river-reservation/seal-25a048c88588.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: ©2026 Salt River Pima-Maricopa Indian Community .
+      link: https://srpmic-nsn.gov/
+      source: srpmic-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: srpmic-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: O’odham Ñiokĭ (Pima)
   language_tag: ood

@@ -111,6 +111,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Suquamish Indian Tribe of the Port Madison Reservation
+official_images:
+- kind: logo
+  alternative_text: The Suquamish Tribe
+  image_link: https://suquamish.nsn.us/wp-content/uploads/2015/07/Suquamish-Logo-Transparent-6.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 15802bbdbb2a90c03f9b5e0ac897ed849878a23fc4e81bb857574cd035608f39
+  private_copy: nation-images/suquamish-indian-tribe-of-the-port-madison-reservation/logo-15802bbdbb2a.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Copyright - 2026 Suquamish Tribe Scroll to top .
+      link: https://suquamish.nsn.us/
+      source: suquamish-indian-tribe-of-the-port-madis-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: suquamish-indian-tribe-of-the-port-madis-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Lushootseed
   language_tag: lut

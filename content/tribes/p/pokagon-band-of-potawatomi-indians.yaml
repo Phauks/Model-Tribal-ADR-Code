@@ -162,6 +162,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pokagon Band of Potawatomi Indians, Michigan and Indiana
+official_images:
+- kind: seal
+  image_link: https://www.pokagonband-nsn.gov/wp-content/uploads/Seal-vectorized-1.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 185f4e1040227bb14ad3ab09c9c3fb4ed909e7e0af17e88bed6ebb482962c6c9
+  private_copy: nation-images/pokagon-band-of-potawatomi-indians/seal-185f4e104022.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Pokagon Band of Potawatomi | Privacy Policy | Educational Release | Legal Aid .
+      link: https://www.pokagonband-nsn.gov/
+      source: pokagonband-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: pokagonband-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Bodwéwadmimwen (Potawatomi)
   language_tag: pot

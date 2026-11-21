@@ -140,6 +140,43 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mississippi Band of Choctaw Indians
+official_images:
+- kind: seal
+  image_link: https://www.choctaw.org/wp-content/uploads/2023/05/cropped-seal_favicon_512-180x180.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 82415e2b12da20b43c5b6cee76fa5248ef45e44b457df0b97df33ce89825d633
+  private_copy: nation-images/mississippi-band-of-choctaw-indians/seal-82415e2b12da.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: tribal-law
+      effect: blocks-reuse
+      quote: All copies, electronic or otherwise, of the Tribal Emblems for uses authorized in this chapter
+        must be obtained from the Director of MBCI’s Office of Public Information.
+      source: mississippi-band-of-choctaw-title-36
+      link: https://www.choctaw.org/wp-content/uploads/2024/04/Title-36-Tribal-Government.pdf
+      verification: read-in-full
+      locator: §§ 36-3-3, 36-3-5
+      note: Noncommercial use that does not suggest endorsement is authorized (§ 36-3-3(3)(c)), but copies
+        must come from the Office of Public Information, the emblem may not be altered, and black-and-white
+        reproduction needs a license (§ 36-3-5). Other uses need a license (§ 36-3-3(4)).
+    - kind: trademark-symbol
+      effect: blocks-reuse
+      quote: ®
+      note: The registered trademark symbol is printed on the image itself.
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: ©2026 Mississippi Band of Choctaw Indians .
+      link: https://www.choctaw.org/
+      source: mississippi-band-of-choctaw-indians-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: mississippi-band-of-choctaw-indians-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Choctaw Agency

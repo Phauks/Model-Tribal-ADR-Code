@@ -65,6 +65,29 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: '2026'
+official_images:
+- kind: seal
+  alternative_text: Nottoway Indian Tribe of Virginia seal
+  image_link: https://nottowayindians.org/__l5e/assets-v1/c276649a-0a21-4e6f-9002-d390e7ac990a/nottoway-seal.jpg
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: acd111b47dc04fa44c4e20a6fc7e44813ced209abffe706af0fb352a57adfb37
+  private_copy: nation-images/nottoway-indian-tribe-of-virginia/seal-acd111b47dc0.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Nottoway Indian Tribe of Virginia.
+      link: https://nottowayindians.org/
+      source: nottowayindians-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: nottowayindians-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

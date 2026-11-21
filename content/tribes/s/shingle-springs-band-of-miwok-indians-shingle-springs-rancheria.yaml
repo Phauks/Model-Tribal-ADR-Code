@@ -125,6 +125,65 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Shingle Springs Band of Miwok Indians, Shingle Springs Rancheria (Verona Tract), California
+official_images:
+- kind: logo
+  image_link: https://shinglespringsrancheria.com/wp-content/uploads/2025/08/cropped-Shingle-Springs-Band-of-Miwok-Indians-Tribal-Logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: f20a902dceb53725ee1a9da28894f59feb7eaeccda358b35dbe389fb21946c4a
+  private_copy: nation-images/shingle-springs-band-of-miwok-indians-shingle-springs-rancheria/logo-f20a902dceb5.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Shingle Springs Band of Miwok Indians | Accessibility Statement | Privacy Policy |
+        Sitemap | This Website is RAD .
+      link: https://shinglespringsrancheria.com/
+      source: shinglespringsrancheria-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001883&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001883'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2014-06-16).
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001884&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001884'
+      note: The nation filed a closely similar design as its official insignia with the USPTO (filed 2014-06-16).
+  source: shinglespringsrancheria-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001883'
+  wordmark: SHINGLE SPRINGS BAND OF MIWOK INDIANS
+  filed: '2014-06-16'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001883&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/shingle-springs-band-of-miwok-indians-shingle-springs-rancheria/insignia-database-89001883.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001883
+- serial_number: '89001884'
+  filed: '2014-06-16'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001884&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: similar-design
+  private_copy: nation-images/shingle-springs-band-of-miwok-indians-shingle-springs-rancheria/insignia-database-89001884.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001884
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

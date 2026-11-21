@@ -121,6 +121,49 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Mechoopda Indian Tribe of Chico Rancheria, California
+official_images:
+- kind: logo
+  alternative_text: Mechoopda
+  image_link: https://www.mechoopda-nsn.gov/public/uploads/logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: fafbd2a2a016540d05b65fddaa2a04c70b48610d09e45624b05d60bf767e7033
+  private_copy: nation-images/mechoopda-indian-tribe-of-chico-rancheria/logo-fafbd2a2a016.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: trademark-notice
+      effect: blocks-reuse
+      quote: Furthermore, MECHOOPDA, as well as other marks so indicated on the Site and other MECHOOPDA
+        graphics, logos, images, page headers and titles, button icons, scripts and trade and service
+        names, are trademarks and/or trade dress of MECHOOPDA in the U.S.
+      link: https://www.mechoopda-nsn.gov/terms-of-use
+      source: mechoopda-nsn-terms-of-use
+      verification: read-in-full
+    - kind: terms-of-use
+      effect: blocks-reuse
+      quote: 'Except as provided in the “License and Website Access” section above, and except as expressly
+        authorized, you may not: (1) copy, reproduce, publish, distribute, create derivative works of,
+        sell, transfer, display, transmit, compile or collect in a database, or in any manner commercially
+        exploit, any copyright-protected element of the Site, including the content and/or software on
+        the Site; (2) make any use of MECHOOPDA''s trademarks and/or trade dress; (3) frame or utilize
+        framing techniques to enclose any trademark, logo, or other proprietary information (including,
+        but not limited to, image.'
+      link: https://www.mechoopda-nsn.gov/terms-of-use
+      source: mechoopda-nsn-terms-of-use
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: and international copyright laws.
+      link: https://www.mechoopda-nsn.gov/terms-of-use
+      source: mechoopda-nsn-terms-of-use
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: mechoopda-indian-tribe-of-chico-rancheri-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Northwestern Maidu
   language_tag: mjd

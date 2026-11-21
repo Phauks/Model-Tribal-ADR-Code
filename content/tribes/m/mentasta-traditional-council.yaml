@@ -140,6 +140,30 @@ contacts:
   locator: 'record "Mentasta Traditional Council" (community: Mentasta Lake, object 124)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+official_images:
+- kind: logo
+  alternative_text: Mentasta Traditional Council Logo
+  image_link: https://www.mentastacouncil.org/wp-content/uploads/mentasta-logo5-768x272.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 039ccc81b3b4fa4ed3a9d3ea68ef24e505ba3ae883fa613f53651714303f0170
+  private_copy: nation-images/mentasta-traditional-council/logo-039ccc81b3b4.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Mentasta Traditional Council - Mentasta Lake, Alaska • All Rights Reserved • Privacy
+        Policy • Cookie Policy • Website by Sundog Media .
+      link: https://www.mentastacouncil.org/
+      source: mentastacouncil-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: mentastacouncil-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Atnakenaege’ (Ahtna)
   language_tag: aht

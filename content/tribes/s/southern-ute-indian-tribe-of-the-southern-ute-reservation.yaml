@@ -130,6 +130,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Southern Ute Indian Tribe of the Southern Ute Reservation, Colorado
+official_images:
+- kind: seal
+  alternative_text: Southern Ute Indian Tribe Logo
+  image_link: https://www.southernute-nsn.gov/wp-content/uploads/sites/15/2018/03/cropped-suit-tribal-seal.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 0773731a8de9e620b61de171aea2d735e90050011757db4f766167592191440d
+  private_copy: nation-images/southern-ute-indian-tribe-of-the-southern-ute-reservation/seal-0773731a8de9.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: remove any copyright or other proprietary notations from the materials; or .
+      link: https://www.southernute-nsn.gov/terms-of-use/
+      source: southernute-nsn-terms-of-use
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: southernute-nsn-tribal-seal
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Ute
   language_tag: ute

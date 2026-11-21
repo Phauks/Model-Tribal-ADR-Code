@@ -120,6 +120,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Big Sandy Rancheria of Western Mono Indians of California
+official_images:
+- kind: logo
+  image_link: https://static.wixstatic.com/media/b4d4b0_3c0f8857a5ab4ca596f0c10ccbd63542%7Emv2.png/v1/fill/w_180%2Ch_180%2Clg_1%2Cusm_0.66_1.00_0.01/b4d4b0_3c0f8857a5ab4ca596f0c10ccbd63542%7Emv2.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 90b947da080eb4ceec59df3b8a20a56c7546a1877983f32bf4176c2bec4db968
+  private_copy: nation-images/big-sandy-rancheria-of-western-mono-indians-of-california/logo-90b947da080e.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2023 by Big Sandy Rancheria .
+      link: https://www.bigsandyrancheria.com/
+      source: bigsandyrancheria-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: bigsandyrancheria-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

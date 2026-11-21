@@ -150,6 +150,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Paiute-Shoshone Tribe of the Fallon Reservation and Colony, Nevada
+official_images:
+- kind: logo
+  alternative_text: Fallon Paiute-Shoshone Tribe Home Page
+  image_link: https://www.fpst.org/ImageRepository/Document?documentID=229
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: aa45bf02771adfe917cc5b15c69e5e67206a54b5ad98564762e08d68d4d8741c
+  private_copy: nation-images/paiute-shoshone-tribe-of-the-fallon-reservation-and-colony/logo-aa45bf02771a.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright Notices .
+      link: https://www.fpst.org/
+      source: fpst-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: fpst-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Northern Paiute
   language_tag: pao

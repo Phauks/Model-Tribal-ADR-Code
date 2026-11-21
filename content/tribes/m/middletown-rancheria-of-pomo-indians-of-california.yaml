@@ -120,6 +120,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Middletown Rancheria of Pomo Indians of California
+official_images:
+- kind: logo
+  image_link: https://middletownrancheria-nsn.gov/wp-content/uploads/2022/05/cropped-poo1024_1-1-180x180.jpg
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: c77703c65336392cc19b41a1e6a1aebd1aad7740543f8a093fbed71e210dbb07
+  private_copy: nation-images/middletown-rancheria-of-pomo-indians-of-california/logo-c77703c65336.jpg
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2025 Middletown Rancheria of Pomo Indians of California.
+      link: https://middletownrancheria-nsn.gov/
+      source: middletownrancheria-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: middletownrancheria-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Lake Miwok
   language_tag: lmw

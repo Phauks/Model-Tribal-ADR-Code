@@ -142,6 +142,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Qawalangin Tribe of Unalaska" (community: Unalaska, object 217)'
+official_images:
+- kind: logo
+  image_link: https://static.wixstatic.com/media/3728a0_d1f24ecd63344dac89a91d9189c4f9bc%7Emv2.png/v1/fit/w_2500,h_1330,al_c/3728a0_d1f24ecd63344dac89a91d9189c4f9bc%7Emv2.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: ce8b7d775d71cca01f9856b29d7adf9dadfd82574975b407e4590dd9a40ca408
+  private_copy: nation-images/qawalangin-tribe-of-unalaska/logo-ce8b7d775d71.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 - The Qawalangin Tribe of Unalaska.
+      link: https://www.qawalangin.com/
+      source: qawalangin-tribe-website
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: qawalangin-tribe-website
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Unangan (Aleut)
   language_tag: ale

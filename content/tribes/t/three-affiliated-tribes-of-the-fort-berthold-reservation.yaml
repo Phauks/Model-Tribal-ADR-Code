@@ -128,6 +128,28 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Three Affiliated Tribes of the Fort Berthold Reservation, North Dakota
+official_images:
+- kind: logo
+  image_link: https://www.mhanation.com/wp-content/uploads/2024/02/MHA-Nation-3-Chiefs-Logo-Color_3SQ.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: dd09a3acfd65924b0233c5f74ae53c63506a54cf1f760517ea4aea26e2cb6def
+  private_copy: nation-images/three-affiliated-tribes-of-the-fort-berthold-reservation/logo-dd09a3acfd65.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: ©2026 MHA Nation
+      link: https://www.mhanation.com/
+      source: three-affiliated-tribes-of-the-fort-bert-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: three-affiliated-tribes-of-the-fort-bert-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Hidatsa
   language_tag: hid

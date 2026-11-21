@@ -90,6 +90,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Cloverdale Rancheria of Pomo Indians of California
+official_images:
+- kind: logo
+  alternative_text: Cloverdale Rancheria
+  image_link: https://cloverdalerancheria.com/wp-content/uploads/2022/04/CRPI_Logolight-300x79.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: e172b8574fe16ee85fb1dd6dc994064262049f5aaff157a4c56056183f942671
+  private_copy: nation-images/cloverdale-rancheria-of-pomo-indians-of-california/logo-e172b8574fe1.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2023 Cloverdale Rancheria of Pomo Indians.
+      link: https://cloverdalerancheria.com/
+      source: cloverdalerancheria-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: cloverdalerancheria-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

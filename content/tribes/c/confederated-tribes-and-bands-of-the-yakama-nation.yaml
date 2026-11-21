@@ -131,6 +131,50 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes and Bands of the Yakama Nation
+official_images:
+- kind: logo
+  alternative_text: Yakama Nation logo featuring an eagle, stars, and the text "Confederated Tribes and
+    Bands" and "Treaty of 1855," representing the Grants and Contracts Office's commitment to fiscal accountability
+    and funding opportunities.
+  image_link: https://yakama.com/wp-content/uploads/2021/09/Yakama-Logo-copy-3.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: ef8e34007a42594e4280bc4dc689f94c72287fdc2f8f87aafbf8a3b49f4c05b8
+  private_copy: nation-images/confederated-tribes-and-bands-of-the-yakama-nation/logo-ef8e34007a42.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: ©2021 Yakama Nation • All Rights Reserved .
+      link: https://yakama.com/
+      source: yakama-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001558&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001558'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2012-07-30).
+  source: yakama-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001558'
+  wordmark: CONFEDERATED TRIBES AND BANDS YAKAMA NATION TREATY OF 1855
+  filed: '2012-07-30'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001558&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/confederated-tribes-and-bands-of-the-yakama-nation/insignia-database-89001558.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001558
 languages:
 - name: Ichi Skiin Sinwit (Sahaptin)
   language_tag: yak

@@ -121,6 +121,47 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Morongo Band of Mission Indians, California
+official_images:
+- kind: logo
+  alternative_text: Morongo
+  image_link: https://morongo.sfo2.digitaloceanspaces.com/morongo.com/logo.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: eb46e2f40c47dc5d473200460740641e78fe3873255a9f830cf7915ab991f461
+  private_copy: nation-images/morongo-band-of-mission-indians/logo-eb46e2f40c47.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © Morongo Band of Mission Indians | All Rights Reserved.
+      link: https://morongonation.org/
+      source: morongonation-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001537&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001537'
+      note: The nation filed a closely similar design as its official insignia with the USPTO (filed 2011-08-29).
+  source: morongonation-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001537'
+  filed: '2011-08-29'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001537&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: similar-design
+  private_copy: nation-images/morongo-band-of-mission-indians/insignia-database-89001537.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001537
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Pacific Regional Office

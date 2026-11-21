@@ -119,6 +119,53 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Pala Band of Mission Indians
+official_images:
+- kind: logo
+  alternative_text: Pala Tribe
+  image_link: https://www.palatribe.com/wp-content/uploads/2025/06/cropped-Img-Pala-Band-Header-PBMI-Logo-400x300-1-1.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 8018cd5aac6900bf4ddeed2348fd1edb6aa81410c8e14b844712cb8ed2b5653e
+  private_copy: nation-images/pala-band-of-mission-indians/logo-8018cd5aac69.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Pala Band of Mission Indians .
+      link: https://www.palatribe.com/
+      source: palatribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: palatribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89002812'
+  wordmark: CHEMESH ATAXEM KUUPANGAX WARNER'S HOT SPRINGS PALA INDIAN RESERVATION WE ARE THE PEOPLE FROM
+    KUPA
+  filed: '2022-04-07'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89002812&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: different-design
+  private_copy: nation-images/pala-band-of-mission-indians/insignia-database-89002812.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89002812
+- serial_number: '89001897'
+  wordmark: PALA BAND OF MISSION INDIANS
+  filed: '2015-03-18'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001897&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: different-design
+  private_copy: nation-images/pala-band-of-mission-indians/insignia-database-89001897.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001897
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Southern California Agency

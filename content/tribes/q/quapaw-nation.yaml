@@ -112,6 +112,52 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Quapaw Nation
+official_images:
+- kind: logo
+  alternative_text: home page
+  image_link: https://www.quapawtribe.com/ImageRepository/Document?documentID=8006
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: c0126f79af84e5e2f218d48a75d1a5960e836198d7caeeff21a52db78799cb2c
+  private_copy: nation-images/quapaw-nation/logo-c0126f79af84.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright Notices .
+      link: https://www.quapawtribe.com/
+      source: quapawtribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: quapawtribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001399'
+  wordmark: QUAPAW TRIBE OF OKLAHOMA O-GAH-PAH
+  filed: '2008-10-27'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001399&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: different-design
+  private_copy: nation-images/quapaw-nation/insignia-database-89001399.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001399
+- serial_number: '89001400'
+  wordmark: O-GAH-PAH
+  filed: '2008-10-27'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001400&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: different-design
+  private_copy: nation-images/quapaw-nation/insignia-database-89001400.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001400
 federal_administration:
   bureau_of_indian_affairs_region: Eastern Oklahoma
   bureau_of_indian_affairs_agency: Miami Agency

@@ -46,6 +46,55 @@ contacts:
   confidence: high
   verification: bulk-import
   as_of: 2026-10
+official_images:
+- kind: seal
+  alternative_text: Piqua Shawnee Tribe seal
+  image_link: https://piquashawnee.gov/assets/tribal-seal-Bjpr4rwZ.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 9cc082df33e9d7321895bcf11deb6448442145672e067a6f9c3c890a4fb66c13
+  private_copy: nation-images/piqua-shawnee-tribe/seal-9cc082df33e9.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: terms-of-use
+      effect: blocks-reuse
+      quote: The Tribal Seal and the name “Piqua Shawnee Tribe of Alabama” may not be used without express
+        written permission.
+      link: https://piquashawnee.gov/terms
+      source: piquashawnee-terms
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Piqua Shawnee Tribe of Alabama.
+      link: https://piquashawnee.gov
+      source: piquashawnee-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89003185&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89003185'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2024-06-12).
+  source: piquashawnee-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89003185'
+  wordmark: PIQUA SHAWNEE TRIBE
+  filed: '2024-06-12'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89003185&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/piqua-shawnee-tribe/insignia-database-89003185.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89003185
 review:
   status: drafted-from-public-sources
   last_verified: '2026-11-21'

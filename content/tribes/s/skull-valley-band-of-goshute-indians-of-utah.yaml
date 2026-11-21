@@ -112,6 +112,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Skull Valley Band of Goshute Indians of Utah
+official_images:
+- kind: logo
+  alternative_text: goshute logo (2) (1)
+  image_link: https://skullvalleygoshutes.com/wp-content/uploads/2025/11/goshute-logo-2-1-300x94.webp
+  retrieved: '2026-11-21'
+  media_type: image/webp
+  sha256: 9008bd8ad164ca541a5979d42f3019a620b62701461f3bbbe965abcdd3c97524
+  private_copy: nation-images/skull-valley-band-of-goshute-indians-of-utah/logo-9008bd8ad164.webp
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Skull Valley Band of Goshutes.
+      link: https://skullvalleygoshutes.com/
+      source: skullvalleygoshutes-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: skullvalleygoshutes-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Uintah & Ouray Agency

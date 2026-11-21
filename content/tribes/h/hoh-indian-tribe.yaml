@@ -130,6 +130,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Hoh Indian Tribe
+official_images:
+- kind: logo
+  image_link: https://hohtribe-nsn.org/wp-content/uploads/2020/04/cropped-logo-180x180.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 5e311b375dd05ef5119e7b1e0c0ef0b0ecc6d820b455a8908aed2c5c150d3986
+  private_copy: nation-images/hoh-indian-tribe/logo-5e311b375dd0.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: All Contents Copyright © 2026 Hoh Tribe, All Rights Reserved | Designed & Implemented by
+        SÆPIENT | saepient.com
+      link: https://hohtribe-nsn.org/
+      source: hohtribe-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: hohtribe-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Olympic Peninsula Agency

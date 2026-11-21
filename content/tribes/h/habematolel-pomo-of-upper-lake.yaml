@@ -111,6 +111,36 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Habematolel Pomo of Upper Lake, California
+official_images:
+- kind: logo
+  alternative_text: Logo
+  image_link: https://www.hpultribe-nsn.gov/wp-content/themes/HPUL/img/HPUL-Logo-white.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 7b27d3605af067a8803ff9a6dd8bdbe1105fa094e562a79ee66d3066e1f8c68c
+  private_copy: nation-images/habematolel-pomo-of-upper-lake/logo-7b27d3605af0.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: trademark-notice
+      effect: blocks-reuse
+      quote: The content on this Site belongs to the Tribe and is protected by copyright, trademark, and
+        other intellectual property or proprietary rights laws.
+      link: https://www.hpultribe-nsn.gov/terms-of-use/
+      source: hpultribe-nsn-terms-of-use
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2026 Habematolel Pomo of Upper Lake.
+      link: https://www.hpultribe-nsn.gov/
+      source: hpultribe-nsn-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: hpultribe-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

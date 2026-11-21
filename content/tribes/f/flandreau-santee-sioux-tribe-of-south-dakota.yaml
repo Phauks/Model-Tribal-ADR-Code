@@ -129,6 +129,21 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Flandreau Santee Sioux Tribe of South Dakota
+official_images:
+- kind: logo
+  image_link: https://fsst-nsn.gov/hubfs/FSST%20Old%20Website%20-%20Full%20Media%20Export/Misc%20Files/cropped-santee-favicon.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 7161f4076f303dbe5bc89a06f49508e724c2ce721f18f515010191f69d5c68dd
+  private_copy: nation-images/flandreau-santee-sioux-tribe-of-south-dakota/logo-7161f4076f30.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals: []
+  source: fsst-nsn-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Dakota
   language_tag: dak

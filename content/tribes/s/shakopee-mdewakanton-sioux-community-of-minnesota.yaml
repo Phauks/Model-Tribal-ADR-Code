@@ -140,6 +140,47 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Shakopee Mdewakanton Sioux Community of Minnesota
+official_images:
+- kind: logo
+  image_link: https://shakopeedakota.org/wp-content/uploads/2024/06/SMSC-LOGO_COLOR-300x300.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: f91446f2ccb24acf79e40066c4f68785a18788236602c5dd71f06c96e7b3688e
+  private_copy: nation-images/shakopee-mdewakanton-sioux-community-of-minnesota/logo-f91446f2ccb2.png
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026.
+      link: https://shakopeedakota.org/
+      source: shakopee-mdewakanton-sioux-community-of-home
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89003031&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89003031'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2023-09-06).
+  source: shakopee-mdewakanton-sioux-community-of-home
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89003031'
+  wordmark: MDEWAKANTON
+  filed: '2023-09-06'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89003031&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/shakopee-mdewakanton-sioux-community-of-minnesota/insignia-database-89003031.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89003031
 languages:
 - name: Dakota
   language_tag: dak

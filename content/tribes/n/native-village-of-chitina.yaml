@@ -142,6 +142,29 @@ contacts:
   locator: 'record "Native Village of Chitina" (community: Chitina, object 37)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
     left out.
+official_images:
+- kind: logo
+  alternative_text: Image
+  image_link: https://tsedina.org/wp-content/uploads/2026/09/tsedina-logo-2026-09-12.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 99b8516a98a38aeac3add1822dc606ade28dda9a3d7c415a745697a41efa3bcd
+  private_copy: nation-images/native-village-of-chitina/logo-99b8516a98a3.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright © 2026 Native Village of Chitina .
+      link: https://tsedina.org/
+      source: tsedina-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: tsedina-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 languages:
 - name: Atnakenaege’ (Ahtna)
   language_tag: aht

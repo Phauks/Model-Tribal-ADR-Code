@@ -130,6 +130,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
+official_images:
+- kind: logo
+  alternative_text: Official Tribal Website Logo
+  image_link: https://www.fortmojaveindiantribe.com/wp-content/uploads/2018/05/fmit-logo2X.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: 366a477735ca974603d303db2416f897e60f12083c8d90a77223e268c269364c
+  private_copy: nation-images/fort-mojave-indian-tribe/logo-366a477735ca.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © Copyright - | Fort Mojave Indian Tribe | All Rights Reserved Page load link .
+      link: https://www.fortmojaveindiantribe.com/
+      source: fortmojaveindiantribe-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: fortmojaveindiantribe-home-page
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Colorado River Agency

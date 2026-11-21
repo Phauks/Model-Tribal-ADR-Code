@@ -133,6 +133,29 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Timbisha Shoshone Tribe
+official_images:
+- kind: logo
+  image_link: https://ml80zyedf1dv.i.optimole.com/w:180/h:180/q:mauto/ig:avif/https://timbisha.com/newsite/wp-content/uploads/2021/12/cropped-LogoIcon.png
+  retrieved: '2026-11-21'
+  media_type: image/png
+  sha256: cc45543ac87c37c2f593aa17f703163a8d18a7ed15d6e6c6676938707fa4c804
+  private_copy: nation-images/timbisha-shoshone-tribe/logo-cc45543ac87c.png
+  reuse:
+    status: no-restriction-found
+    checked: '2026-11-21'
+    signals:
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: Copyright Timbisha Shoshone Tribe 2026 | Theme by ThemeinProgress | Proudly powered by WordPress
+        .
+      link: https://timbisha.com/newsite/
+      source: timbisha-newsite
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+  source: timbisha-newsite
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency

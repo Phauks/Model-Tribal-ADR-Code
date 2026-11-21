@@ -148,6 +148,64 @@ contacts:
   verification: bulk-import
   as_of: '2026-11-20'
   locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
+official_images:
+- kind: seal
+  alternative_text: Media Box Image Image
+  image_link: https://www.gilariver.org/sysimg/media-box-image-about-tribal-seal-5681-5682-image.jpg
+  retrieved: '2026-11-21'
+  media_type: image/jpeg
+  sha256: 48d93a804a41f7fb5124264cc299c8c20cee586a5ebf5a3b60de558393937409
+  private_copy: nation-images/gila-river-indian-community-of-the-gila-river-indian-reservation/seal-48d93a804a41.jpg
+  reuse:
+    status: restricted
+    checked: '2026-11-21'
+    signals:
+    - kind: trademark-notice
+      effect: blocks-reuse
+      quote: The "Gila River Indian Community" and "GRIC" and other Government, Department, and/or Enterprise
+        names and logos are trademarks of Gild River Indian Community.
+      link: https://www.gilariver.org/index.php/misc/terms-of-use
+      source: gilariver-terms-of-use
+      verification: read-in-full
+    - kind: terms-of-use
+      effect: blocks-reuse
+      quote: Nothing contained on this Web site should be construed as granting, expressly or by implication,
+        estoppel, or otherwise, any license or right of use of any copyright, trademark or service mark
+        displayed on the Web site without the written permission of Gila River Indian Community or such
+        third party owners.
+      link: https://www.gilariver.org/index.php/misc/terms-of-use
+      source: gilariver-terms-of-use
+      verification: read-in-full
+    - kind: copyright-notice
+      effect: does-not-block
+      quote: © 2015 Gila River Indian Community.
+      link: https://www.gilariver.org/
+      source: gilariver-home-page
+      verification: read-in-full
+      note: A general copyright notice. It does not say the logo or seal may not be shown.
+    - kind: tribal-insignia-database
+      effect: blocks-reuse
+      link: https://tsdr.uspto.gov/#caseNumber=89001898&caseType=SERIAL_NO&searchType=statusSearch
+      source: uspto-native-american-tribal-insignia-database
+      verification: read-in-full
+      serial_number: '89001898'
+      note: The nation filed this design as its official insignia with the USPTO (filed 2015-11-05).
+  source: gilariver-tribal-seal
+  confidence: high
+  as_of: '2026-11-21'
+  verification: read-in-full
+tribal_insignia_database_entries:
+- serial_number: '89001898'
+  wordmark: GILA RIVER INDIAN COMMUNITY ARIZONA 1939
+  filed: '2015-11-05'
+  record_link: https://tsdr.uspto.gov/#caseNumber=89001898&caseType=SERIAL_NO&searchType=statusSearch
+  design_compared: same-design
+  private_copy: nation-images/gila-river-indian-community-of-the-gila-river-indian-reservation/insignia-database-89001898.png
+  source: uspto-native-american-tribal-insignia-database
+  confidence: high
+  as_of: '2026-11-21'
+  verification: bulk-import
+  locator: Serial number 89001898
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Pima Agency
