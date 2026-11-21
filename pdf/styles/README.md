@@ -16,7 +16,7 @@ style's original authors and contributors are credited in its `<info>` block.
 
 ## Changes from the original
 
-Every change is marked with a "Model Tribal ADR Code" comment in the file.
+Every change to the style file is marked with a "Model Tribal ADR Code" comment in the file.
 Rule numbers are from *The Indigo Book* (2d ed. 2023 updates), the citation
 manual the project follows.
 
@@ -42,7 +42,13 @@ manual the project follows.
    Page pinpoints still read "*Id.* at 52".
 5. **Section and paragraph pinpoints elsewhere.** Books, articles and cases
    print "§ 4" or "¶ 3" for non-page pinpoints instead of a bare number.
-6. **Comma after *supra*.** "Austin, *supra* note 2, at 14" (R6.2.3), where the
+6. **Several sections.** The build adds the section symbol before the style
+   sees the record: "§ 5130", or "§§ 654–658" and "§§ 471, 473" for several
+   sections (R16.1), because CSL cannot tell that "38.206–38.248" is plural. A
+   record may give its section with or without the symbol; after "§§" a hyphen
+   becomes an en dash, but a hyphen inside one section number, such as Hawaii's
+   "10H-1", is kept (`normalizeSection` in `../pipeline/citations.mjs`).
+7. **Comma after *supra*.** "Austin, *supra* note 2, at 14" (R6.2.3), where the
    original had no comma.
 
 The tests in [`../tests/citations.test.mjs`](../tests/citations.test.mjs)
@@ -56,9 +62,10 @@ full and a short form.
 citation:
   type: legislation
   title: Federally Recognized Indian Tribe List Act of 1994   # not printed
-  container-title: U.S.C.        # the code's abbreviation
+  container-title: United States Code
+  container-title-short: U.S.C.  # the code's abbreviation, which is printed
   volume: "25"                   # the title number, if the code has one
-  section: "5130"
+  section: "5130"                # or "654–658", or "471, 473"; no "§" needed
 ```
 
 ```yaml

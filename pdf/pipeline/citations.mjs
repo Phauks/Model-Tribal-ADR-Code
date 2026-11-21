@@ -59,6 +59,22 @@ export function parsePinpoint(text) {
   return { label: "page", locator: trimmed };
 }
 
+// A code section is recorded as its number, "5130", or numbers, "471, 473"
+// or "654–658", with or without its symbol. The build prints it as "§ 5130"
+// or "§§ 471, 473" (Indigo Book R16.1): several sections take "§§". A hyphen
+// is part of some section numbers, such as Hawaii's "10H-1", so a hyphen
+// marks a range, and becomes an en dash, only after "§§". The style prints
+// the section as given, because CSL cannot tell that "38.206–38.248" is plural.
+const SEVERAL_SECTIONS = /,|–|—|&|\band\b/;
+
+export function normalizeSection(section) {
+  if (typeof section !== "string" || !section.trim()) return section;
+  const [, symbol = "", numbers] = /^(§§?)?\s*(.*)$/s.exec(section.trim());
+  const several = symbol === "§§" || SEVERAL_SECTIONS.test(numbers);
+  if (!several) return `§\u00A0${numbers}`;
+  return `§§\u00A0${symbol === "§§" ? numbers.replace(/(\w)-(\w)/g, "$1–$2") : numbers}`;
+}
+
 // Source records (content/sources/*.yaml) to CSL-JSON items keyed by id.
 export function citationItems(sources) {
   const items = {};
@@ -69,7 +85,10 @@ export function citationItems(sources) {
 export class CitationEngine {
   constructor(items, { style = fs.readFileSync(STYLE_FILE, "utf8"), locale = fs.readFileSync(LOCALE_FILE, "utf8") } = {}) {
     registerTypstFormat();
-    this.items = items;
+    this.items = {};
+    for (const [key, item] of Object.entries(items)) {
+      this.items[key] = item.section === undefined ? item : { ...item, section: normalizeSection(item.section) };
+    }
     this.style = style;
     this.locale = locale;
     this.startChapter();

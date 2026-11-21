@@ -61,10 +61,15 @@ prints as `25 U.S.C. § 5130(2)`:
 ```yaml
 citation:
   type: legislation
-  container-title: U.S.C.
+  container-title: United States Code
+  container-title-short: U.S.C.
   volume: "25"
   section: "5130"
 ```
+
+The abbreviation in `container-title-short` is what prints. `section` holds
+only the number, or numbers for several sections ("654–658", "471, 473"); the
+build adds "§" or "§§".
 
 An act cited by name has no `section`, and prints as
 `Unif. Mediation Act § 4 (Unif. L. Comm'n 2001)`:
@@ -99,9 +104,9 @@ section as `[@key, § 4]`.
 ## Open tasks
 
 - Obtain and test the CSL-M IndigoBook style with citeproc-js on sample sources.
-- Update the U.S. Code source records (`usc-*.yaml`) to `container-title:
-  U.S.C.` with the title number in `volume`; they now print as "United States
-  Code § 5130" (measured in the print build, 2026-11-21).
+- Add `container-title-short` (such as `U.S.C.`) and the title number in
+  `volume` to the U.S. Code source records; without them they print as "United
+  States Code § 5130" (measured in the print build, 2026-11-21).
 - Done 2026-11-21: statute citations. `bluebook-law-review.csl` dropped a "§ 4"
   pinpoint from a statute and printed nothing for its short form (citeproc-js
   reported "reference with no printed form"); `project-law-review.csl` fixes

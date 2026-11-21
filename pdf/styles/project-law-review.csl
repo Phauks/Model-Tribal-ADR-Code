@@ -129,17 +129,17 @@
   </macro>
   <!-- Model Tribal ADR Code: a section of a code, "25 U.S.C. § 5130(2)".
        The pinpoint is a subdivision of the section and is joined to it
-       (Indigo Book R16.1, R16.2, R22.2). -->
+       (Indigo Book R16.1, R16.2, R22.2). The section variable arrives with its
+       symbol, "§ 5130" or "§§ 654–658": the build adds it, because CSL
+       cannot tell that "§§ 38.206–38.248" is plural (pdf/pipeline/citations.mjs).
+       The code's abbreviation is container-title-short when the record has one. -->
   <macro name="code-section">
     <group delimiter=" ">
       <text variable="volume"/>
       <text variable="container-title" form="short"/>
-      <group delimiter=" ">
-        <text value="§"/>
-        <group>
-          <text variable="section"/>
-          <text variable="locator"/>
-        </group>
+      <group>
+        <text variable="section"/>
+        <text variable="locator"/>
       </group>
     </group>
   </macro>
@@ -400,12 +400,9 @@
             <choose>
               <!-- Model Tribal ADR Code: "Id. § 5130(3)" (Indigo Book R22.2) -->
               <if type="legislation" variable="section" match="all">
-                <group delimiter=" ">
-                  <text value="§"/>
-                  <group>
-                    <text variable="section"/>
-                    <text variable="locator"/>
-                  </group>
+                <group>
+                  <text variable="section"/>
+                  <text variable="locator"/>
                 </group>
               </if>
               <else>

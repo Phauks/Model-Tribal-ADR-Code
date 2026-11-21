@@ -6,7 +6,7 @@
 import assert from "node:assert/strict";
 import path from "node:path";
 import { test } from "node:test";
-import { CitationEngine, citationItems, parsePinpoint } from "../pipeline/citations.mjs";
+import { CitationEngine, citationItems, normalizeSection, parsePinpoint } from "../pipeline/citations.mjs";
 import { REPOSITORY_DIRECTORY } from "../pipeline/configuration.mjs";
 import { loadContent } from "../pipeline/content.mjs";
 
@@ -49,6 +49,31 @@ const ITEMS = {
     status: "repealed",
     issued: { "date-parts": [[2015]] },
   },
+  "several-sections": {
+    id: "several-sections",
+    type: "legislation",
+    title: "28 U.S.C. §§ 654–658",
+    "container-title": "United States Code",
+    "container-title-short": "U.S.C.",
+    volume: "28",
+    section: "654–658",
+  },
+  "section-with-symbol": {
+    id: "section-with-symbol",
+    type: "legislation",
+    title: "Nev. Rev. Stat. §§ 38.206-38.248",
+    "container-title": "Nev. Rev. Stat.",
+    section: "§§ 38.206-38.248",
+    issued: { "date-parts": [[2025]] },
+  },
+  "single-section-with-symbol": {
+    id: "single-section-with-symbol",
+    type: "legislation",
+    title: "25 C.F.R. § 900.217",
+    "container-title": "C.F.R.",
+    volume: "25",
+    section: "§ 900.217",
+  },
   case: {
     id: "case",
     type: "legal_case",
@@ -70,10 +95,12 @@ const ITEMS = {
 
 // Cites each cluster in its own footnote and returns the footnote texts with
 // Typst escapes removed, so the expected values read like the printed note.
+// Unescapes the Typst output, and shows the no-break space after "§" as a
+// space so that the expected strings stay readable.
 function notes(clusters, items = ITEMS) {
   const engine = new CitationEngine(items);
   const ids = clusters.map((references, index) => engine.cite(references, index + 1));
-  return ids.map((id) => engine.text(id).replace(/\\(.)/g, "$1"));
+  return ids.map((id) => engine.text(id).replace(/\\(.)/g, "$1").replaceAll("\u00A0", " "));
 }
 
 test("a statute keeps its section pinpoint in the full citation", () => {
@@ -132,6 +159,26 @@ test("state code and repealed sections carry the year parenthetical (Indigo Book
   const printed = notes([[{ key: "state-code-section" }], [{ key: "repealed-section", pinpoint: "(a)(1)" }]]);
   assert.equal(printed[0], "Fla. Stat. § 90.506 (2020).");
   assert.equal(printed[1], "Ala. Code § 13A-12-5(a)(1) (repealed 2015).");
+});
+
+test("several sections print §§, and a section recorded with its symbol prints it once (Indigo Book R16.1)", () => {
+  const printed = notes([
+    [{ key: "several-sections" }],
+    [{ key: "section-with-symbol" }],
+    [{ key: "single-section-with-symbol" }],
+    [{ key: "single-section-with-symbol", pinpoint: "(b)" }],
+  ]);
+  assert.equal(printed[0], "28 U.S.C. §§ 654–658.");
+  assert.equal(printed[1], "Nev. Rev. Stat. §§ 38.206–38.248 (2025).");
+  assert.equal(printed[2], "25 C.F.R. § 900.217.");
+  assert.equal(printed[3], "#emph[Id.] § 900.217(b).");
+});
+
+test("a hyphen inside one section number is kept", () => {
+  assert.equal(normalizeSection("13A-12-5"), "§\u00A013A-12-5");
+  assert.equal(normalizeSection("10H-1"), "§\u00A010H-1");
+  assert.equal(normalizeSection("471, 473"), "§§\u00A0471, 473");
+  assert.equal(normalizeSection("§§ 3.475-3.500"), "§§\u00A03.475–3.500");
 });
 
 test("cases and books print as before, with a comma before 'at' after supra", () => {
