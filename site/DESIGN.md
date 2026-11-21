@@ -287,6 +287,9 @@ names are spelled out, like every identifier in the project
 
 ### Color
 
+The palette below is a first pass and will change; see
+[section 13](#13-open-questions-and-next-steps), item 5.
+
 Every text color passes WCAG's 4.5:1 minimum for text[^wcag-143] on the
 backgrounds it is used on, and control borders pass the 3:1 minimum for
 non-text contrast.[^wcag-1411] Ratios were computed with the WCAG relative
@@ -445,8 +448,15 @@ The interface follows the style guide's voice: plain verbs, sentence case,
 3. **Icon set:** to be chosen; it must not draw on Native motifs.
 4. **Art:** sizes for the cover, part openers and the home page space, to
    give to the art contest.
-5. **Track colors** are placeholders until the art is chosen; they may change
-   to sit well beside it.
+5. **Color needs another pass.** Trevor's review on Nov. 20, 2026: the
+   layout and the separation of information work, but the palette feels
+   stale and somewhat sad, and the community it serves is vibrant. The next
+   pass moves away from the black, white and blue scheme toward warmer, more
+   vivid color, once the site is built and can be judged in place. Guardrails
+   (project analysis): no stock "Native" palettes that stand in for any
+   nation's art; ideally the palette is set with the commissioned Native
+   artists or drawn from their work; every pair still meets the contrast rules
+   in section 7. Only `design-tokens.json` changes.
 6. **Template builder:** how placeholders and alternatives become a nation's
    draft ordinance.
 
