@@ -7,10 +7,7 @@
 	// shown without the facts it supports. The number stays a link to the
 	// note, so without scripts, or with the default setting, it jumps as before.
 	import { onMount } from 'svelte';
-
-	function noteBlock(marker: Element): Element | null {
-		return marker.closest('p, li, dd, blockquote, td');
-	}
+	import { noteBlock, noteCopy } from '#lib/note-copies.ts';
 
 	function toggle(marker: HTMLAnchorElement): void {
 		const openId = marker.getAttribute('aria-controls');
@@ -20,19 +17,9 @@
 			marker.setAttribute('aria-expanded', 'false');
 			return;
 		}
-		const number = marker.textContent?.trim() ?? '';
-		const entry = marker.hash ? document.getElementById(decodeURIComponent(marker.hash.slice(1))) : null;
 		const block = noteBlock(marker);
-		if (!entry || !block) return;
-		// The entry in the Sources section, without the list of facts it supports.
-		const note = entry.cloneNode(true) as Element;
-		note.querySelector('.source-uses')?.remove();
-		const shown = document.createElement('div');
-		shown.className = 'inline-note';
-		shown.id = `inline-note-${number}-${Math.random().toString(36).slice(2, 8)}`;
-		shown.setAttribute('role', 'note');
-		shown.setAttribute('aria-label', `Note ${number}`);
-		shown.innerHTML = `<p>${number}. ${note.innerHTML.trim()}</p>`;
+		const shown = noteCopy(marker, 'inline-note');
+		if (!shown || !block) return;
 		block.after(shown);
 		marker.setAttribute('aria-controls', shown.id);
 		marker.setAttribute('aria-expanded', 'true');

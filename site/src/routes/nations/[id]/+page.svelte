@@ -46,7 +46,7 @@
 		<!-- 1. Name, with the nation's seal or logo when it may be shown (docs/official-images.md) -->
 		<h1>{page.officialName}</h1>
 		{#if data.image && !imageFailed}
-			<figure class="nation-image">
+			<figure class="nation-image" data-print-part="officialImages">
 				<img
 					src={data.image.src}
 					alt="{data.image.kind} of {page.officialName}"
@@ -82,7 +82,7 @@
 		<ReportLink {record} />
 
 		<!-- 2. Review panel -->
-		<section class="panel panel-filled" aria-labelledby="review-heading">
+		<section class="panel panel-filled" aria-labelledby="review-heading" data-print-part="reviewStatus">
 			<h2 id="review-heading">Review status: {page.review.label}</h2>
 			<p>{page.review.meaning}</p>
 			{#if page.review.lastVerified}
@@ -145,12 +145,14 @@
 
 			<!-- 7. Document history: every recorded version, oldest first (decision record 0018) -->
 			{#if data.documents.length > 0}
-				<h2>Document history</h2>
-				<p class="small muted">
-					Each document below lists every version the project has found, what each version did to
-					the ones before it, and how its key clauses changed.
-				</p>
-				<DocumentHistoryList documents={data.documents} />
+				<div data-print-part="documentHistory">
+					<h2>Document history</h2>
+					<p class="small muted">
+						Each document below lists every version the project has found, what each version did to
+						the ones before it, and how its key clauses changed.
+					</p>
+					<DocumentHistoryList documents={data.documents} />
+				</div>
 			{/if}
 
 			<!-- 9. Sources -->

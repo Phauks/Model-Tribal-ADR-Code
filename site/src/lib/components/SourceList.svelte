@@ -12,7 +12,7 @@
 </script>
 
 {#if sources.length > 0}
-	<section class="notes" aria-labelledby="sources-heading">
+	<section class="notes" aria-labelledby="sources-heading" data-print-part="sources">
 		<h2 id="sources-heading">Sources</h2>
 		<p>{introduction}</p>
 		<ol>
