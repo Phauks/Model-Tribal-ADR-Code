@@ -104,9 +104,12 @@ section as `[@key, § 4]`.
 ## Open tasks
 
 - Obtain and test the CSL-M IndigoBook style with citeproc-js on sample sources.
-- Add `container-title-short` (such as `U.S.C.`) and the title number in
-  `volume` to the U.S. Code source records; without them they print as "United
-  States Code § 5130" (measured in the print build, 2026-11-21).
+- Done 2026-11-21: statute source records. U.S. Code, C.F.R., Nevada and
+  Hawaii records carry the printed abbreviation in `container-title-short`;
+  Guam, Northern Mariana Islands and American Samoa records use each code's
+  own form ("7 GCA § 42101", "8 CMC § 2904", "A.S.C.A. § 43.0302"), following
+  the rule above for citing a jurisdiction's law as it cites it (project
+  choice). Current U.S. Code sections carry no year (Indigo Book R16.1.2).
 - Done 2026-11-21: statute citations. `bluebook-law-review.csl` dropped a "§ 4"
   pinpoint from a statute and printed nothing for its short form (citeproc-js
   reported "reference with no printed form"); `project-law-review.csl` fixes
