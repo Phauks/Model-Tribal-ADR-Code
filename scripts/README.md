@@ -12,6 +12,12 @@ add a job to the workflow and list it under `all-checks.needs`.
 | `check_text.py` | Every text file is UTF-8 without a byte order mark, in Unicode Normalization Form C, with LF line endings and a final newline | Python 3 standard library |
 | `validate_records.py` | Every schema, example and content record is valid, and every citation key, glossary link and research session reference resolves | `pip install -r scripts/requirements.txt` |
 
+## Analysis
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `analysis/dispute_resolution_practice.py` | Counts the dispute resolution records in the profiles by kind, evidence tier, recognition and region, and lists data quality flags, as JSON for `research/analyses/` | `scripts/requirements.txt` |
+
 ## Native nations dataset
 
 Scripts that built the first profiles in `content/tribes/` from cited facts in
