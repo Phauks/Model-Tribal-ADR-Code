@@ -326,6 +326,11 @@ queries:
   Brazil "Court ADR 25 Years After Pound: Have We Found a Better Way?" Ohio State
   Journal on Dispute Resolution 18
 sources_added:
+- uniform-law-commission-mediation-act-enactment-status
+- uniform-law-commission-family-law-arbitration-act-enactment-status
+- uniform-law-commission-collaborative-law-act-enactment-status
+- uniform-law-commission-child-custody-jurisdiction-enforcement-act-enactment-status
+- uniform-law-commission-arbitration-act-2000-enactment-status
 - aaa-aba-2004-code-of-ethics-for-arbitrators
 - aba-aaa-acr-2005-model-standards-of-conduct-for-mediators
 - aba-model-rule-2-4
@@ -485,9 +490,7 @@ sources_added:
 - yazzie-1994-life-comes-from-it
 limits: >-
   Westlaw was not used; items that need it are flagged in each record's access field
-  and listed in the bibliography. Uniform Law Commission adoption counts could not
-  be read as text from uniformlaws.org (the enactment map is an embedded dashboard),
-  so counts come from the ULC's own act documents and a 2025 law-firm alert. americanbar.org,
+  and listed in the bibliography. Uniform Law Commission adoption counts could not be read as text from uniformlaws.org (the enactment map is an embedded dashboard); Trevor Goldsmith later saved each act page as a PDF, and the counts were read from those (see the follow-up below). americanbar.org,
   ali.org, Wiley, the Harvard journal site, adr.gov, leginfo.legislature.ca.gov and
   guamlegislature.com blocked direct downloads; pages from them were read through
   a summarizing fetch tool or not at all, and quotations from them need checking.
@@ -556,6 +559,28 @@ All method records are `proposed` until Trevor reviews them.
 - Guam has no Uniform Arbitration Act; its domestic and international
   arbitration chapter follows the UNCITRAL Model Law
   [@gca-7-ch-42a-guam-international-arbitration].
-- Nevada has not adopted the Uniform Mediation Act (inference from the
-  chapter 38 text and Nevada's older confidentiality statute
-  [@nevada-revised-statutes-48-109]; no source says so directly).
+- Nevada has not adopted the Uniform Mediation Act: the Uniform Law
+  Commission's enactment table lists no Nevada enactment
+  [@uniform-law-commission-mediation-act-enactment-status], and Nevada's
+  mediation confidentiality rule is an older statute
+  [@nevada-revised-statutes-48-109].
+
+## Follow-up: Uniform Law Commission enactment tables
+
+The act pages on uniformlaws.org show enactments only in an embedded map.
+Trevor Goldsmith opened the five act pages in a browser and saved each as a
+PDF (table data "as of" 11/21/2026 12:04 AM UTC); the counts were read from
+those PDFs and recorded as five new source records. The PDFs are kept in the
+project's shared files under `research/captures/uniform-law-commission/`.
+The act page links were found from the Commission's catalog pages. Results:
+Uniform Mediation Act 14 jurisdictions, Revised Uniform Arbitration Act 23,
+Collaborative Law Act 28, Family Law Arbitration Act 9, Uniform Child Custody
+Jurisdiction and Enforcement Act 51. The tables list the 50 states, the
+District of Columbia, Puerto Rico and the U.S. Virgin Islands only.
+
+## Follow-up: archived copies
+
+Save Page Now was slow from a browser and unreachable from the research
+environment, so `.github/workflows/archive-sources.yml` now asks it for
+captures from GitHub's servers, for the source records a pull request adds,
+and prints the capture links for a later commit.
