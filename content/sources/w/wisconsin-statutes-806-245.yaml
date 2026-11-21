@@ -5,6 +5,11 @@ citation:
   title: 'Indian tribal documents: full faith and credit'
   container-title: Wisconsin Statutes
   section: '806.245'
+  issued:
+    date-parts:
+    - - 2016
+      - 4
+      - 13
   author:
   - literal: Wisconsin Legislature
   URL: https://docs.legis.wisconsin.gov/statutes/statutes/806/245
@@ -26,11 +31,36 @@ rights:
     Official state statutes and court rules are not copyrightable under the government edicts doctrine
     (Georgia v. Public.Resource.Org, Inc., 590 U.S. 255 (2020)).
   redistribution: false
+citator:
+  service: keycite
+  result: no-negative-treatment
+  detail: >-
+    No KeyCite flag shown on W.S.A. 806.245; 8 notes of decisions and 57 citing references. Westlaw shows
+    the section current through 2025 Act 247 (published April 10, 2026).
+  checked: 2026-11-20
+access:
+  open: true
+  pull_from: [free-web, westlaw]
+  note: >-
+    Read on Westlaw (W.S.A. 806.245) from a copy the lead author pulled on 2026-11-20. The copy is kept
+    privately for the project and is not redistributed.
 found_in:
 - 2026-11-21-legal-history-and-key-cases
 notes: >-
-  Citations: Wis. Stat. § 806.245. Later history: History note not captured. NOT FULLY VERIFIED. The page
-  could not be fetched by curl. WebFetch returned only short fragments (the tool caps quote length), not
-  conditions (a)–(e) or the history note. The date field (1991) is a placeholder: enactment year NOT verified.
-  Treat as unverified until pulled on Westlaw. Westlaw: Pull and KeyCite Wis. Stat. § 806.245 for full
-  conditions and enactment history.
+  Citations: Wis. Stat. § 806.245 (current version effective April 13, 2016). History, from Westlaw's
+  Historical and Statutory Notes: enacted by L. 1981, c. 369, § 1, eff. May 7, 1982, for the Menominee
+  tribal court and legislature only (per the 1991 Legislative Council prefatory note); 1991 Act 43,
+  §§ 1–3, eff. Sept. 12, 1991, extended it to all tribal courts and legislative bodies in Wisconsin,
+  created conditions (1)(a)–(e), and made review of a judgment's validity discretionary; 1995 Act 224
+  amended (5); 1995 Act 306 created (6) (protection orders); 2009 Act 94 created (1m) (Indian child
+  custody proceedings); 2015 Act 352 amended (6). Conditions in (1): the tribe is organized under 25
+  USC 461 to 479; the documents are authenticated under (2); the tribal court is a court of record as
+  defined in (3); the judgment is valid; and the tribal court certifies that it gives full faith and
+  credit to Wisconsin courts' records, orders and judgments. Under (4) the circuit court "on its own
+  motion, or on the motion of a party, may examine" the record for jurisdiction, finality, a decision
+  on the merits, no fraud, duress or coercion, compliance with the tribal court's procedures, and
+  compliance with the Indian Civil Rights Act. Under (5) no lien attaches until a circuit court gives
+  the judgment full faith and credit. (project analysis) Condition (1)(a) still cites 25 U.S.C.
+  §§ 461–479, the Indian Reorganization Act, which was editorially moved to 25 U.S.C. § 5101 et seq.
+  in 2016. Write-up of the pull: research/pull-results/2026-11-21-wisconsin-806-245.md in the
+  project's working files.

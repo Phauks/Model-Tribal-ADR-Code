@@ -659,7 +659,7 @@ below were verified to the extent stated in each source record.
 | State | Rule | Model | Notable conditions |
 | --- | --- | --- | --- |
 | Washington | Superior Court Civil Rule 82.5 [@washington-superior-court-civil-rule-82-5] | Recognition with exceptions | Refused if the Tribal court lacked jurisdiction, "denied due process as provided by the Indian Civil Rights Act of 1968," or does not reciprocate; 2019 amendments let the two courts talk directly |
-| Wisconsin | Wis. Stat. § 806.245 [@wisconsin-statutes-806-245] | Full faith and credit by statute | Listed conditions; text only partly read |
+| Wisconsin | Wis. Stat. § 806.245 [@wisconsin-statutes-806-245] | Full faith and credit by statute | Five conditions, including that the Tribal court grants Wisconsin judgments full faith and credit; the court may review validity |
 | Michigan | Mich. Ct. R. 2.615 [@michigan-court-rule-2-615] | Reciprocity by filing | Applies only if the nation enacts a binding measure to enforce Michigan judgments and sends it to the state's court office |
 | South Dakota | S.D. Codified Laws § 1-1-25 [@south-dakota-codified-laws-1-1-25] | Restrictive comity | Proponent proves five conditions by clear and convincing evidence; limited case types |
 | Oklahoma | Okla. Stat. tit. 12, § 728 [@oklahoma-statutes-title-12-section-728] | Supreme Court standards, reciprocity | Includes Courts of Indian Offenses |
@@ -702,7 +702,7 @@ The threads below are project analysis.
   Tribe and have no federally recognized governing entity; the 1993 Apology
   Resolution is recorded in a separate pull request, and Rice v. Cayetano is
   in the case digest [@rice-v-cayetano].
-- Several state rules (Wisconsin, Arizona, Michigan's adoption date,
+- Several state rules (Arizona, Michigan's adoption date,
   California's sunset clause) need their official text confirmed.
 - Sample dispute clauses from gaming compacts and self-governance compacts
   have not yet been collected.
