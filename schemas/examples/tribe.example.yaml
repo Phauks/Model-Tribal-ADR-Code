@@ -12,6 +12,13 @@ names:
       source: example-nation-about-page
       confidence: high
       as_of: '2026'
+  pronunciation:
+    - name: Example Nation
+      respelling: ig-ZAM-pul NAY-shun
+      source: example-nation-about-page
+      confidence: high
+      as_of: '2026'
+      locator: About Us, first paragraph
   former:
     - name: Example Band of Examplestate Indians
       source: bia-recognized-entities-2026
