@@ -16,6 +16,8 @@ and makes each edition reproducible
 │   ├── tribes/              One profile per nation or community         CC BY
 │   ├── sources/             One record per cited source                 CC BY
 │   ├── glossary/            One entry per defined term or acronym       CC BY
+│   ├── methods/             One record per dispute resolution method    CC BY
+│   ├── bibliographies/      Annotated reading lists                     CC BY
 │   ├── variables/           Template placeholder definitions            CC0
 │   ├── version.txt
 │   └── CHANGELOG.md
@@ -65,6 +67,8 @@ or removed record leaves a redirect entry instead.
 | Tribe | `content/tribes/<letter>/<slug>.yaml` | `content/tribes/n/navajo-nation.yaml` |
 | Glossary entry | `content/glossary/<id>.yaml` | `content/glossary/native-nations.yaml` |
 | Source | `content/sources/<letter>/<key>.yaml` | `content/sources/n/narf-ipi-tribal-peacemaking-laws.yaml` |
+| Method | `content/methods/<id>.yaml` | `content/methods/mediation.yaml` |
+| Bibliography | `content/bibliographies/<slug>.md` | `content/bibliographies/united-states-dispute-resolution.md` |
 | Research session | `research/sessions/<yyyy>/<yyyy-mm-dd>-<topic>.md` | `research/sessions/2026/2026-11-20-foundational-scan.md` |
 
 Tribe profiles and source records sit in a subfolder named for the first
