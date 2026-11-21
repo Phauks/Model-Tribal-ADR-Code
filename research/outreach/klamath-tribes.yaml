@@ -1,0 +1,38 @@
+id: klamath-tribes
+name: Klamath Tribes
+category: native-nation
+tribe_profile: klamath-tribes
+location:
+  state: OR
+scope: local
+relevance:
+  text: 'Federally recognized Native nation whose government office the Bureau of Indian Affairs lists
+    in Oregon. Dispute resolution forums named in its law or court materials include: Klamath Tribes Peacemaker
+    Court.'
+  sources:
+  - bureau-of-indian-affairs-tribal-leaders-directory
+  - klamath-title-2-chapter-18-peacemaker-ordinance
+possible_roles:
+- consultation
+- reviewer
+- sources-and-data
+contacts: []
+sources:
+- id: bureau-of-indian-affairs-tribal-leaders-directory
+  title: Tribal Leaders Directory (data service)
+  publisher: Bureau of Indian Affairs
+  link: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: State of the nation's government office. The office contacts are in the Tribe profile, which
+    was built from this data service.
+- id: klamath-title-2-chapter-18-peacemaker-ordinance
+  title: Klamath Tribal Code, Title 2, Chapter 18 – The Klamath Peacemaker Ordinance
+  publisher: Indigenous Peacemaking Initiative (Native American Rights Fund) document library
+  link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Klamath-Title_2_Chapter_18_-_The_Klamath_Peacemaker_Ordinance.pdf
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Dispute resolution forum named in the nation's law or court materials.
+checked: '2026-11-21'
+notes: Government office contacts are in the nation's Tribe profile. Approach through the government office
+  and ask whether the court, peacemaking program or legal department is the right point of contact.

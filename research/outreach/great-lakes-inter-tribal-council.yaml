@@ -1,0 +1,47 @@
+id: great-lakes-inter-tribal-council
+name: Great Lakes Inter-Tribal Council, Inc.
+also_known_as:
+- GLITC
+category: intertribal-organization
+location:
+  city: Lac du Flambeau
+  state: WI
+scope: regional
+relevance:
+  text: The Great Lakes Inter-Tribal Council is a consortium of federally recognized tribes in Wisconsin
+    and Michigan's Upper Peninsula, founded in 1963 as the Wisconsin Tribal Chairman's Association. It
+    supports member tribes in expanding self-determination by providing services and assistance, and advocates
+    for unity of tribal governments. It is a route to the governments of its member tribes in Wisconsin
+    and Michigan.
+  sources:
+  - mission
+  - contact
+possible_roles:
+- distribution
+contacts:
+- kind: telephone
+  value: 715-588-3324
+  label: Main office
+  sources:
+  - contact
+- kind: mailing-address
+  value: P.O. Box 9, Lac du Flambeau, WI 54538
+  label: Main office mailing address
+  sources:
+  - contact
+sources:
+- id: mission
+  title: Mission and Vision
+  publisher: Great Lakes Inter-Tribal Council, Inc.
+  link: https://www.glitc.org/about-glitc/mission-vision/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Mission, history, membership area
+- id: contact
+  title: Contact Us, Staff, and Locations
+  publisher: Great Lakes Inter-Tribal Council, Inc.
+  link: https://www.glitc.org/contact-us-staff-and-locations/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Address, phone, 12 member tribes
+checked: '2026-11-21'

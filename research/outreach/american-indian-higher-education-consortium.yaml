@@ -1,0 +1,40 @@
+id: american-indian-higher-education-consortium
+name: American Indian Higher Education Consortium
+also_known_as:
+- AIHEC
+category: university-center
+location:
+  city: Alexandria
+  state: VA
+scope: national
+relevance:
+  text: The American Indian Higher Education Consortium was established in 1973 by the first six tribal
+    colleges to serve tribal colleges and universities, and now has 37 member institutions. Membership
+    is limited to tribal colleges and universities. It is a channel to tribal college faculty and students
+    in law, governance and Native studies who could use or review the code and commentary (project analysis).
+  sources:
+  - membership
+possible_roles:
+- distribution
+- student-assistance
+- art
+contacts:
+- kind: email
+  value: info@aihec.org
+  label: General inbox
+  sources:
+  - membership
+- kind: mailing-address
+  value: 121 Oronoco Street, Alexandria, VA 22314
+  label: Main office
+  sources:
+  - membership
+sources:
+- id: membership
+  title: Membership
+  publisher: American Indian Higher Education Consortium
+  link: https://www.aihec.org/tribal-colleges-universities/membership/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Founding, 37 member TCUs, membership rules, contact
+checked: '2026-11-21'

@@ -1,0 +1,61 @@
+id: te-moak-tribe-of-western-shoshone-indians-of-nevada
+name: Te-Moak Tribe of Western Shoshone Indians of Nevada
+category: native-nation
+tribe_profile: te-moak-tribe-of-western-shoshone-indians-of-nevada
+location:
+  state: NV
+scope: state
+relevance:
+  text: Federally recognized Native nation whose government office the Bureau of Indian Affairs lists
+    in Nevada. The Tribal Law and Policy Institute lists its court as the Te-Moak Judicial Court. The
+    Bureau of Indian Affairs lists the Western Region Court of Indian Offenses as serving the nation.
+    The National Indian Law Library keeps a tribal law page for the nation.
+  sources:
+  - bureau-of-indian-affairs-tribal-leaders-directory
+  - tribal-law-and-policy-institute-justice-systems
+  - bureau-of-indian-affairs-courts-of-indian-offenses
+  - national-indian-law-library-tribal-law-page
+possible_roles:
+- consultation
+- reviewer
+- sources-and-data
+contacts:
+- kind: web-page
+  value: http://www.temoaktribe.com/judicial.shtml
+  label: Tribal court page (linked by the National Indian Law Library; loaded on 2026-11-21)
+  sources:
+  - national-indian-law-library-tribal-law-page
+sources:
+- id: bureau-of-indian-affairs-tribal-leaders-directory
+  title: Tribal Leaders Directory (data service)
+  publisher: Bureau of Indian Affairs
+  link: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: State of the nation's government office. The office contacts are in the Tribe profile, which
+    was built from this data service.
+- id: national-indian-law-library-tribal-law-page
+  title: 'Te-Moak Tribe of Western Shoshone Indians of Nevada (Four constituent bands: Battle Mountain
+    Band, Elko Band, South Fork Band, and Wells Band) - Tribal Law'
+  publisher: National Indian Law Library, Native American Rights Fund
+  link: https://narf.org/nill/tribes/te-moak.html
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Tribal court contact and published law listed for the nation.
+- id: tribal-law-and-policy-institute-justice-systems
+  title: Justice Systems of Indian Nations
+  publisher: Tribal Law and Policy Institute
+  link: https://www.tribal-institute.org/lists/justice.htm
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Name of the nation's court.
+- id: bureau-of-indian-affairs-courts-of-indian-offenses
+  title: Court of Indian Offenses (List of CFR Courts and the Tribes they Serve)
+  publisher: Bureau of Indian Affairs
+  link: https://www.bia.gov/CFRCourts
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: A Court of Indian Offenses serves the nation.
+checked: '2026-11-21'
+notes: Government office contacts are in the nation's Tribe profile. Approach through the government office
+  and ask whether the court or legal department is the right point of contact.

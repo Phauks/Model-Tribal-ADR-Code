@@ -1,0 +1,46 @@
+id: global-indigenous-data-alliance
+name: Global Indigenous Data Alliance
+also_known_as:
+- GIDA
+category: data-governance-organization
+scope: national
+relevance:
+  text: The Global Indigenous Data Alliance is an international network advancing Indigenous data sovereignty
+    and governance, and its site presents the CARE Principles for Indigenous Data Governance. The Native
+    Nations Institute also publishes the CARE Principles.
+  sources:
+  - global-indigenous-data-alliance-home
+  - global-indigenous-data-alliance-purpose
+  - native-nations-institute-care
+possible_roles:
+- advice
+- sources-and-data
+contacts:
+- kind: web-page
+  value: https://gida-global.org/
+  label: GIDA website
+  sources:
+  - global-indigenous-data-alliance-home
+sources:
+- id: global-indigenous-data-alliance-home
+  title: An International Network (GIDA home)
+  publisher: Global Indigenous Data Alliance
+  link: https://gida-global.org/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: GIDA is an international network
+- id: global-indigenous-data-alliance-purpose
+  title: GIDA - the Global Indigenous Data Alliance (purpose)
+  publisher: Global Indigenous Data Alliance
+  link: https://www.gida-global.org/purpose
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Purpose page
+- id: native-nations-institute-care
+  title: CARE Principles for Indigenous Data Governance
+  publisher: Native Nations Institute
+  link: https://nni.arizona.edu/publications/care-principles-indigenous-data-governance
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: NNI publishes the CARE Principles
+checked: '2026-11-21'

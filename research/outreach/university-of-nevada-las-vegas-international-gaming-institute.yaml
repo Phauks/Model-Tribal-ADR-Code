@@ -1,0 +1,51 @@
+id: university-of-nevada-las-vegas-international-gaming-institute
+name: International Gaming Institute
+also_known_as:
+- IGI
+- UNLV International Gaming Institute
+category: university-center
+location:
+  city: Las Vegas
+  state: NV
+scope: national
+relevance:
+  text: UNLV's International Gaming Institute does gaming research, executive education and policy work
+    and has advised more than 50 jurisdictions. It houses the International Center for Gaming Regulation,
+    launched in 2016 with the Boyd School of Law.
+  sources:
+  - international-gaming-institute
+possible_roles:
+- advice
+- sources-and-data
+contacts:
+- kind: email
+  value: igi@unlv.edu
+  label: IGI general inbox
+  sources:
+  - international-gaming-institute-contact
+- kind: telephone
+  value: 702-895-2008
+  label: IGI office
+  sources:
+  - international-gaming-institute-contact
+- kind: web-page
+  value: https://www.unlv.edu/igi/contact
+  label: Contact page
+  sources:
+  - international-gaming-institute-contact
+sources:
+- id: international-gaming-institute
+  title: International Gaming Institute
+  publisher: UNLV
+  link: https://www.unlv.edu/igi
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Description, executive director, International Center for Gaming Regulation.
+- id: international-gaming-institute-contact
+  title: IGI Contact
+  publisher: UNLV
+  link: https://www.unlv.edu/igi/contact
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: igi@unlv.edu, 702-895-2008, Mail Stop 6037.
+checked: '2026-11-21'

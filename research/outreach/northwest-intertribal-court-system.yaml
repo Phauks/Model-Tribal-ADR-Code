@@ -1,0 +1,66 @@
+id: northwest-intertribal-court-system
+name: Northwest Intertribal Court System
+also_known_as:
+- NICS
+category: court
+location:
+  city: Lynnwood
+  state: WA
+scope: regional
+relevance:
+  text: The Northwest Intertribal Court System is a consortium-owned court system whose website lists
+    24 member tribes and departments for appellate, code, judicial and prosecution work, with mediation
+    and training among its services. A Honoring Nations profile describes it as helping tribes build tribal
+    courts and providing code writing and technical assistance so tribes can build their legal infrastructure.
+    Its code-writing and mediation work across many member tribes is directly relevant to a model tribal
+    alternative dispute resolution code (project analysis).
+  sources:
+  - home
+  - honoring-nations
+possible_roles:
+- reviewer
+- consultation
+- advice
+contacts:
+- kind: telephone
+  value: 425-774-5808
+  label: Main office
+  sources:
+  - home
+  - washington-directory
+- kind: mailing-address
+  value: 20818 44th Ave W., Suite 120, Lynnwood, WA 98036
+  label: Main office
+  sources:
+  - home
+  - washington-directory
+- kind: email
+  value: nics@nics.ws
+  label: General office (Washington court directory listing)
+  sources:
+  - washington-directory
+sources:
+- id: home
+  title: Northwest Intertribal Court System home page
+  publisher: Northwest Intertribal Court System
+  link: http://www.nics.ws/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Member tribes (24), departments (Administration, Appellate, Code, IT, Judicial, Prosecution),
+    services (internships, mediation, training), address and phone
+- id: washington-directory
+  title: 'Washington State Court Directory: Tribal Courts'
+  publisher: Washington Courts
+  link: https://www.courts.wa.gov/court_dir/orgs/134.html
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: NICS address, phone, email nics@nics.ws and website
+- id: honoring-nations
+  title: Northwest Intertribal Court System (Indigenous Governance Database)
+  publisher: Native Nations Institute, University of Arizona
+  link: https://nnigovernance.cals.arizona.edu/northwest-intertribal-court-system
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Consortium ownership; code writing and technical assistance to build tribal courts (2003 Honoring
+    Nations report)
+checked: '2026-11-21'

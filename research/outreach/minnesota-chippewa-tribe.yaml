@@ -1,0 +1,55 @@
+id: minnesota-chippewa-tribe
+name: Minnesota Chippewa Tribe, Minnesota
+category: native-nation
+tribe_profile: minnesota-chippewa-tribe
+location:
+  state: MN
+scope: local
+relevance:
+  text: 'Federally recognized Native nation whose government office the Bureau of Indian Affairs lists
+    in Minnesota. Dispute resolution forums named in its law or court materials include: Peacemaking Circle
+    (White Earth juvenile justice); Peacemaker Tribunal (Leech Lake Band of Ojibwe Tribal Court); Panel
+    of elders in cultural causes of action.'
+  sources:
+  - bureau-of-indian-affairs-tribal-leaders-directory
+  - white-earth-juvenile-justice-code
+  - leech-lake-judicial-code-title-2-rules
+  - mille-lacs-title-5-judicial-branch
+possible_roles:
+- consultation
+- reviewer
+- sources-and-data
+contacts: []
+sources:
+- id: bureau-of-indian-affairs-tribal-leaders-directory
+  title: Tribal Leaders Directory (data service)
+  publisher: Bureau of Indian Affairs
+  link: https://services1.arcgis.com/UxqqIfhng71wUT9x/arcgis/rest/services/TribalLeadership_Directory/FeatureServer/0
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: State of the nation's government office. The office contacts are in the Tribe profile, which
+    was built from this data service.
+- id: white-earth-juvenile-justice-code
+  title: White Earth Nation Juvenile Justice Code (Chapter 12A – Peacemaking Circle)
+  publisher: Indigenous Peacemaking Initiative (Native American Rights Fund) document library
+  link: https://peacemaking.narf.org/wp-content/uploads/2025/07/White-Earth-juvenile.justice.code_.pdf
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Dispute resolution forum named in the nation's law or court materials.
+- id: leech-lake-judicial-code-title-2-rules
+  title: 'Leech Lake Band of Ojibwe Judicial Code, Title 2: Rules of Procedure'
+  publisher: Indigenous Peacemaking Initiative (Native American Rights Fund) document library
+  link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Leech-Lake-tc_coTITLE02-RulesofProcedure.pdf
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Dispute resolution forum named in the nation's law or court materials.
+- id: mille-lacs-title-5-judicial-branch
+  title: Mille Lacs Band Statutes Annotated, Title 5 – Judicial Branch
+  publisher: Non-Removable Mille Lacs Band of Ojibwe
+  link: https://mlbo.dev/content/3-government/17-statutes-policies/mltitle05judbranch.pdf
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Dispute resolution forum named in the nation's law or court materials.
+checked: '2026-11-21'
+notes: Government office contacts are in the nation's Tribe profile. Approach through the government office
+  and ask whether the court, peacemaking program or legal department is the right point of contact.

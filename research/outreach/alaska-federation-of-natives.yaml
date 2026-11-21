@@ -1,0 +1,52 @@
+id: alaska-federation-of-natives
+name: Alaska Federation of Natives
+also_known_as:
+- AFN
+category: intertribal-organization
+location:
+  city: Anchorage
+  state: AK
+scope: regional
+relevance:
+  text: The Alaska Federation of Natives is the largest statewide Native organization in Alaska, with
+    membership including 192 federally recognized tribes, village and regional corporations, and regional
+    nonprofit and tribal consortiums. Its mission is to enhance and promote the cultural, economic and
+    political voice of the Alaska Native community, including advocacy on federal, state and local laws.
+    Its annual October convention reaches Alaska tribal governments and Native organizations statewide.
+  sources:
+  - about
+possible_roles:
+- distribution
+- event-or-presentation
+contacts:
+- kind: email
+  value: afninfo@NativeFederation.org
+  label: General inbox
+  sources:
+  - regional
+- kind: telephone
+  value: 907.274.3611
+  label: Main office
+  sources:
+  - regional
+- kind: mailing-address
+  value: 3000 A Street, Suite 210, Anchorage, AK 99503
+  label: Main office
+  sources:
+  - regional
+sources:
+- id: about
+  title: About AFN
+  publisher: Alaska Federation of Natives
+  link: https://nativefederation.org/about-afn/
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Membership, governance, mission and goals
+- id: regional
+  title: Regional Organizations
+  publisher: Alaska Federation of Natives
+  link: https://nativefederation.org/?p=239
+  accessed: '2026-11-21'
+  verification: page-read
+  supports: Address, phone, email
+checked: '2026-11-21'
