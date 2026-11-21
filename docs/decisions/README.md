@@ -30,5 +30,6 @@ and says so.
 | [0016](0016-component-bands-own-profiles.md) | Give component bands their own profiles | Accepted |
 | [0017](0017-serve-nation-images-from-the-private-bucket.md) | Serve nations' seals and logos from the private bucket | Accepted |
 | [0018](0018-document-version-history.md) | Record every version of a document, and how its key clauses changed | Accepted |
+| [0019](0019-file-every-contribution-from-a-person.md) | Keep a signed filing for every contribution that comes from a person | Proposed |
 
 Template: Status, Date, Context, Decision, Consequences, Sources.

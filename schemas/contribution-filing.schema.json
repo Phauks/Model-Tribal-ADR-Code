@@ -1,0 +1,159 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/contribution-filing.schema.json",
+  "title": "Contribution filing",
+  "description": "The record kept with every contribution that reached the project from a person rather than from a published source: what was received, which forms were signed and in what version, what the contributor permitted, and every step since. Filings hold personal details and unpublished material, so they live in the website's private database and file bucket, never in git; this schema fixes their shape and their export format (docs/contributions.md; decision record 0019). Public records carry only the filing id and the public-safe fields in common.schema.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["identifier", "received", "status", "channel", "contributor", "items", "forms"],
+  "properties": {
+    "identifier": { "$ref": "common.schema.json#/$defs/filingId" },
+    "received": { "$ref": "common.schema.json#/$defs/calendarDate" },
+    "status": {
+      "type": "string",
+      "enum": ["received", "consent-in-progress", "in-review", "accepted", "held", "withdrawn", "declined", "returned"],
+      "description": "received: material or an offer has arrived. consent-in-progress: forms are being explained or signed; nothing is used yet. in-review: the contributor is checking a transcript, or a nation's office or rights holder is being asked. accepted: forms complete; usable within the permissions. held: accepted but not usable now (embargo, nation review, restriction). withdrawn: the contributor or nation withdrew it. declined: the project chose not to use it, with reasons given to the contributor. returned: originals sent back or destroyed at the contributor's request."
+    },
+    "channel": {
+      "type": "string",
+      "enum": ["website-form", "interview", "mail", "in-person", "email", "other"]
+    },
+    "contributor": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["person", "capacity", "adult"],
+      "description": "Who gave the material. Names and contact details are kept in the private contacts table, linked by 'person', so a filing can be shared for review without them.",
+      "properties": {
+        "person": { "type": "string", "description": "Opaque identifier of the contributor's row in the private contacts table." },
+        "capacity": {
+          "type": "string",
+          "enum": ["self", "nation-government", "nation-office", "organization", "family-or-estate", "interviewer-for-the-project"],
+          "description": "Whose behalf the contributor acted on."
+        },
+        "nation": { "$ref": "common.schema.json#/$defs/slug", "description": "The contributor's nation, only if they chose to give it." },
+        "adult": { "type": "boolean", "description": "False when the contributor is under the age of majority where they live; a guardian consent and the young person's own assent are then required." }
+      }
+    },
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Each thing received: a recording, a transcript, a written story, a document, a photograph.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["identifier", "kind", "title"],
+        "properties": {
+          "identifier": { "$ref": "common.schema.json#/$defs/slug" },
+          "kind": {
+            "type": "string",
+            "enum": ["audio-recording", "video-recording", "transcript", "written-account", "document", "photograph", "artwork", "notes", "other"]
+          },
+          "title": { "type": "string" },
+          "description": { "type": "string", "description": "What it is, in the contributor's words where possible." },
+          "created": { "$ref": "common.schema.json#/$defs/partialDate" },
+          "languages": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/languageTag" }, "uniqueItems": true },
+          "made_by_contributor": { "type": "boolean", "description": "False when someone else made it; a rights holder permission is then needed unless the contributor holds the rights." },
+          "rights_holder": { "type": "string", "description": "Who holds rights in it, as a role or relationship (for example 'the narrator', 'the narrator's estate', 'a Tribal court'), when it is not the contributor." },
+          "names_other_people": { "type": "boolean", "description": "True when living people other than the contributor are named or identifiable." },
+          "community_held_knowledge": { "type": "boolean", "description": "True when it may hold ceremonial, restricted or community-held knowledge; a cultural authority permission is then needed before any use (charter, commitment 5)." },
+          "file": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["storage_key", "checksum", "media_type"],
+            "properties": {
+              "storage_key": { "type": "string", "description": "Object key in the private file bucket." },
+              "checksum": { "type": "string", "pattern": "^[a-f0-9]{64}$", "description": "SHA-256 of the file, so later copies can be shown to match." },
+              "media_type": { "type": "string" },
+              "bytes": { "type": "integer", "minimum": 0 }
+            }
+          }
+        }
+      }
+    },
+    "forms": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Every form signed or recorded for this filing, with the version of the form's wording, so the exact text the person agreed to can always be shown. A contributor statement is always required.",
+      "contains": { "type": "object", "properties": { "form": { "const": "contributor-statement" } }, "required": ["form"] },
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["form", "form_version", "signed", "signature_method"],
+        "properties": {
+          "form": {
+            "type": "string",
+            "enum": [
+              "contributor-statement", "interview-consent", "interview-release", "cultural-authority-permission",
+              "rights-holder-permission", "guardian-consent", "young-person-assent", "interviewer-agreement",
+              "change-or-withdrawal-request"
+            ],
+            "description": "One of the forms in docs/contributor-forms/."
+          },
+          "form_version": { "$ref": "common.schema.json#/$defs/version", "description": "The version printed at the top of the form that was signed." },
+          "language": { "$ref": "common.schema.json#/$defs/languageTag", "description": "The language the form was read or signed in, when not English." },
+          "signed": { "$ref": "common.schema.json#/$defs/calendarDate" },
+          "signature_method": {
+            "type": "string",
+            "enum": ["ink", "electronic", "recorded-verbal"],
+            "description": "recorded-verbal: the person heard the form read and agreed on a recording; the recording's item id goes in 'evidence_item'."
+          },
+          "signed_by_capacity": { "type": "string", "description": "The capacity the signer acted in, for example 'self', 'guardian', 'Tribal Historic Preservation Officer'." },
+          "evidence_item": { "$ref": "common.schema.json#/$defs/slug", "description": "Item id of a recorded verbal agreement." },
+          "storage_key": { "type": "string", "description": "Object key of the signed copy in the private file bucket." },
+          "checksum": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "copy_given_to_signer": { "type": "boolean" }
+        }
+      }
+    },
+    "permissions": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "What the signed forms allow, taken from them. Copied to public records only in the shapes from common.schema.json.",
+      "properties": {
+        "credit": { "$ref": "common.schema.json#/$defs/credit" },
+        "permitted_uses": { "$ref": "common.schema.json#/$defs/permittedUses" },
+        "access": { "$ref": "common.schema.json#/$defs/accessLevel" },
+        "license": {
+          "type": "string",
+          "enum": ["CC-BY-4.0", "CC-BY-NC-4.0", "permission-to-the-project-only"],
+          "description": "SPDX identifier of the open license the contributor chose, or a nonexclusive permission to the project alone. The contributor keeps their copyright in every case."
+        },
+        "cultural_authority": { "$ref": "common.schema.json#/$defs/culturalAuthority" },
+        "conditions": { "type": "string", "description": "Any other condition the contributor set, in their words." },
+        "originals": { "type": "string", "enum": ["keep", "return", "destroy-copies-after-use"], "description": "What the contributor asked the project to do with originals and copies." }
+      }
+    },
+    "related": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "tribes": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/slug" }, "uniqueItems": true },
+        "sources": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/slug" }, "uniqueItems": true, "description": "Source records whose 'contribution.filing' names this filing." },
+        "stories": { "type": "array", "items": { "$ref": "common.schema.json#/$defs/slug" }, "uniqueItems": true, "description": "Story records whose tellings name this filing." }
+      }
+    },
+    "log": {
+      "type": "array",
+      "description": "Every step, never deleted. Name roles, not private details.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["date", "event"],
+        "properties": {
+          "date": { "$ref": "common.schema.json#/$defs/calendarDate" },
+          "event": {
+            "type": "string",
+            "enum": [
+              "received", "acknowledged", "consent-explained", "form-signed", "recorded", "transcript-sent",
+              "transcript-approved", "authority-requested", "authority-granted", "authority-declined",
+              "rights-holder-asked", "accepted", "published", "change-requested", "changed", "restricted",
+              "withdrawn", "embargo-ended", "declined", "returned", "note"
+            ]
+          },
+          "by": { "type": "string", "description": "Role of whoever acted, such as 'lead author' or 'contributor'." },
+          "note": { "type": "string" }
+        }
+      }
+    }
+  }
+}

@@ -48,6 +48,8 @@ and makes each edition reproducible
 │   ├── terminology.md       How terms are chosen, defined and linked
 │   ├── style-guide.md       Tone and writing standards
 │   ├── requests.md          Correction, restriction, removal and contribution flow
+│   ├── contributions.md     Filings for material that comes from people, not publications
+│   ├── contributor-forms/   Consent, release and permission forms for those filings
 │   ├── roadmap.md           Order of work and review gates toward drafting
 │   ├── repository-layout.md This file
 │   └── decisions/           Numbered decision records

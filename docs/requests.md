@@ -55,7 +55,10 @@ Each link opens `/requests` with the page and record already filled in.
    citation).
 5. **Credit and permission** (Contribute only). How they want to be credited
    (name, nation, role, or not at all), and whether the material may be
-   published under the project's licenses or shared for review only.
+   published under the project's licenses or shared for review only. Material
+   that is not already published (an interview, a story, an unpublished
+   document) instead opens a filing with a signed contributor statement
+   ([contributions.md](contributions.md)).
 6. **Confirmation.** A reference number, the date, and what happens next, also
    sent by email if an address was given.
 

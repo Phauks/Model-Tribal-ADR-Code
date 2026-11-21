@@ -135,6 +135,75 @@
           "description": "True means never publish, export, cache offline, or serve through any API."
         }
       }
+    },
+    "filingId": {
+      "type": "string",
+      "pattern": "^filing-[0-9]{4}-[0-9]{4}$",
+      "description": "Identifier of a contribution filing: the private package of forms, files and decisions kept for material that reached the project from a person rather than from a published source, for example filing-2026-0001 (docs/contributions.md; decision record 0019). The filing itself is never in git."
+    },
+    "credit": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["form"],
+      "description": "How a contributor chose to be credited on the contributor statement. Only what the contributor approved appears here.",
+      "properties": {
+        "form": {
+          "type": "string",
+          "enum": ["name", "name-and-nation", "role", "pseudonym", "none"],
+          "description": "name: by name. name-and-nation: by name and nation. role: by a description only, such as 'a peacemaker of the nation'. pseudonym: by a name the contributor chose. none: not credited."
+        },
+        "name": { "type": "string" },
+        "nation": { "$ref": "#/$defs/slug", "description": "Id of a profile in content/tribes/, when the contributor chose to be credited with a nation." },
+        "role": { "type": "string" },
+        "pseudonym": { "type": "string" }
+      }
+    },
+    "permittedUses": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level"],
+      "description": "What the contributor permitted the project to do with the material.",
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": ["background-only", "reference-only", "quote", "publish-in-full"],
+          "description": "background-only: informs the work but is never named, described or quoted. reference-only: may be described or paraphrased with credit, never quoted. quote: excerpts may be quoted. publish-in-full: the whole may be published."
+        },
+        "scope": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["web", "print", "ebook", "offline-pack", "api"] },
+          "uniqueItems": true,
+          "description": "Where the permitted use applies; the same list as a permission record's scope."
+        }
+      }
+    },
+    "accessLevel": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level"],
+      "description": "Who may see the material.",
+      "properties": {
+        "level": {
+          "type": "string",
+          "enum": ["public", "nation-review-first", "embargoed", "restricted"],
+          "description": "public: may be published within the permitted uses. nation-review-first: held until the nation's office has reviewed it. embargoed: held until the date in 'until'. restricted: never published, exported, cached offline or served by an API (charter, commitment 5)."
+        },
+        "until": { "$ref": "#/$defs/calendarDate", "description": "For an embargo: the first day the material may be published." }
+      },
+      "if": { "properties": { "level": { "const": "embargoed" } }, "required": ["level"] },
+      "then": { "required": ["until"] }
+    },
+    "culturalAuthority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["granted_by", "nation"],
+      "description": "Who, for the community, approved the use of community-held knowledge (docs/contributor-forms/cultural-authority-permission.md).",
+      "properties": {
+        "granted_by": { "type": "string", "description": "Role or office, such as 'Tribal Historic Preservation Officer'. Never a private person's contact details." },
+        "nation": { "$ref": "#/$defs/slug" },
+        "date": { "$ref": "#/$defs/calendarDate" },
+        "filing": { "$ref": "#/$defs/filingId", "description": "The filing that holds the signed permission." }
+      }
     }
   }
 }

@@ -54,7 +54,8 @@ research session ──found──▶ source ◀──cites── provision / co
 | Research session | [research-session.schema.json](../schemas/research-session.schema.json) | `research/sessions/<yyyy>/<yyyy-mm-dd>-<topic>.md` | How research was done and what it produced |
 | Outreach organization | [outreach-organization.schema.json](../schemas/outreach-organization.schema.json) | `research/outreach/<id>.yaml` | An organization, office or nation the project may ask for help, why it matters, and its public contact path; not published on the website |
 | Outreach plan (private) | [outreach-plan.schema.json](../schemas/outreach-plan.schema.json) | Outside git ([decision record 0012](decisions/0012-outreach-list-split-public-and-private.md)) | Named people, suggested asks, priority and contact log, keyed to outreach records |
-| Shared types | [common.schema.json](../schemas/common.schema.json) | n/a | Slugs, dates, versions, state codes, review status, sensitivity flags |
+| Contribution filing (private) | [contribution-filing.schema.json](../schemas/contribution-filing.schema.json) | Outside git ([decision record 0019](decisions/0019-file-every-contribution-from-a-person.md)) | Signed forms, items, permissions and log for material that came from a person rather than from a published source ([contributions.md](contributions.md)) |
+| Shared types | [common.schema.json](../schemas/common.schema.json) | n/a | Slugs, dates, versions, state codes, review status, sensitivity flags, and the public-safe contribution fields (filing id, credit, permitted uses, access level, cultural authority) |
 
 ## Tribe profiles
 
