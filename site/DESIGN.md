@@ -72,8 +72,8 @@ Each mark encodes something about the text; none is decoration.
   The U.S. Web Design System itself says not to use its official banner on
   non-government domains.[^uswds-banner] The site borrows government design
   patterns, not their look (project choice).
-- **Custom icons.** An icon set will be chosen later. Until then, controls
-  use words.
+- **Custom icons.** The site and the book draw only from Lucide (see
+  [section 6, Icons](#6-components)). No icons are drawn for the project.
 
 ## 3. What the design borrows
 
@@ -179,7 +179,8 @@ its fixed sections on each nation's page:
 6. Published dispute resolution law: linked, not reproduced, until the nation
    permits more ([data model, permission statuses](../docs/data-model.md#permission-statuses)).
 7. Notices and Labels from Local Contexts.
-8. Sources, and the date the page was last checked.
+8. Sources, each followed by the facts on the page that come from it, and
+   the date the page was last checked.
 
 **What is distinctive here** has two parts:
 
@@ -187,7 +188,7 @@ its fixed sections on each nation's page:
   approves. Until then the space says so and offers a link to contribute;
   the project never writes it for the nation.
 - **Recorded features.** Short sentences generated from the record's cited
-  facts, each with its citation, for example: a peacemaking program beside the
+  facts, each listed under its sources in the Sources section, for example: a peacemaking program beside the
   Tribal court (`justice_institutions`, `dispute_resolution.forums`); a
   published peacemaking or mediation law (`dispute_resolution_law`); a court
   of appeals; presence in more than one state (`states`); a heritage language
@@ -197,12 +198,25 @@ its fixed sections on each nation's page:
   comparing it with others
   ([style guide, section 1](../docs/style-guide.md#1-voice-and-tone)).
 
-**Reporting a problem.** Every fact and every table row carries a small
-"Report a problem" link. It opens the request form with the record and the
-field already filled in, for example `/requests?record=tribes/<id>&field=states`,
-so a nation's staff can point at the exact fact without describing it. Each
-link has hidden text naming the fact, so screen reader users hear "Report a
-problem with states," not a list of identical links.
+**Reporting a problem.** One "Report a problem" link sits at the top of each
+nation page, under the names, and opens the request form with the record
+filled in, for example `/requests?kind=correct&record=tribes/<id>`. Trevor
+asked on 2026-11-21 for one link per page instead of one beside every fact,
+which repeated the same link down the page.
+
+**Sources.** The sources of a nation page's facts are listed together in a
+"Sources" section at the end of the page, not beside each fact (Trevor,
+2026-11-21). Each source appears once, numbered, followed by every fact on
+the page that comes from it, grouped by the heading the fact appears under,
+with the place in the source and the date the value was true. Every fact
+stays traceable to its source; the reader finds it by source rather than by
+a mark beside the fact.
+
+**Contacts.** An address links to a Google Maps search for it; a phone number
+is a `tel:` link that opens the device's dialer; an email address is a
+`mailto:` link. Fax numbers stay as text. A value that cannot be read
+reliably, such as a phone number that is not ten digits, stays as text
+(Trevor, 2026-11-21).
 
 **Missing information.** Empty fields are left out rather than shown as
 "unknown," so a page never suggests a nation lacks something it may simply
@@ -219,9 +233,27 @@ size, because the book's trim size is not yet decided (project choice).
 
 ## 6. Components
 
-**Masthead.** Wordmark and edition, main menu, theme setting, Contribute.
+**Masthead.** Wordmark and edition, main menu, theme button, Contribute.
 Menu items are at least 44 px tall. The current section is marked with
 `aria-current="page"` and a 3 px underline.
+
+**Icons.** All icons come from Lucide,[^lucide-license] chosen on Nov. 21,
+2026, after a comparison of six packs ([research session](../research/sessions/2026/2026-11-21-icon-pack-comparison.md)).
+The site imports single icons from `@lucide/svelte`, so only the icons used are
+bundled.[^lucide-svelte] The book and the ebook use the same drawings from
+`lucide-static`, at the same version number, which `site/package.json` pins
+exactly. Rules:
+
+- An icon sits beside words. The only icon-only control is the theme button,
+  and it carries an `aria-label` that names the action, because Lucide hides
+  icons from screen readers by default.[^lucide-a11y]
+- Beside 18 px body text, icons are 20 px with `strokeWidth` 1.75, which
+  matches the stem of Atkinson Hyperlegible Next Regular (about 1.5 px; project
+  measurement). Standalone controls use 24 px and the default 2 px stroke.
+- Never use icons that read as Native imagery, even where Lucide offers them:
+  `feather`, `tent`, `tent-tree` and `bow-arrow`.
+- In print, Typst draws `currentColor` as black, which suits the black-and-white
+  interior.
 
 **Notices.** One style for status: "This is a working draft" on the home
 page; "Model text, not law in force" with the version and last change on
@@ -248,9 +280,12 @@ for content on hover or focus.[^wcag-1413] The link itself goes to the full
 entry, so the card is never the only way to the content. A setting turns cards
 off.
 
-**Citations.** A numbered marker in the text; on wide screens the note sits
-in the margin beside the line, and on narrow screens it opens inline under
-the paragraph. Each note links to its source record and archived copy.
+**Citations.** In prose, such as a section's commentary or a glossary entry,
+a numbered marker in the text; on wide screens the note sits in the margin
+beside the line, and on narrow screens it opens inline under the paragraph.
+Each note links to its source record and archived copy. Data pages, such as
+a nation's facts, put no marker beside a fact; their sources are listed in a
+Sources section at the end (see [Nation pages](#nation-pages)).
 
 **Panels.** Outlined (`line`) or filled (`surface`). One panel per purpose;
 the design does not chop pages into rows of identical cards (project choice).
@@ -414,8 +449,11 @@ are in [design-tokens.json](design-tokens.json).
 
 ## 8. Themes
 
-- **Choices:** Automatic (follows the device's `prefers-color-scheme`
-  setting[^mdn-color-scheme]), Light and Dark. Automatic is the default.
+- **Choices:** Light and Dark, switched by one button in the masthead that
+  shows a sun in the light theme and a moon in the dark theme (Trevor, Nov. 21,
+  2026). Until the reader presses it, the device's `prefers-color-scheme`
+  setting decides.[^mdn-color-scheme] Once pressed, the choice stays on that
+  device; clearing the site's data returns to the device's setting.
 - **How:** the root element carries `data-theme="light"` or `"dark"` when the
   reader picks one; otherwise the `prefers-color-scheme` media query decides.
   A small inline script sets the attribute before the page paints, so there is
@@ -480,11 +518,18 @@ accessibility statement is published at `/about/accessibility`.
 - **Budgets (project choice):** under 100 KB of JavaScript compressed on a
   section page; no map library in the browser (the map is a static SVG, per
   the map spike); fonts subset to the characters used.
-- **Map:** drawn at build time with d3-geo as two SVG files, one themed by
-  tokens for the web and one grayscale for print, with a table holding the
-  same data (map tool spike, project files `spikes/map/REPORT.md`). The map
-  shows presence by state only
+- **Map:** drawn at build time with d3-geo, with a table holding the same
+  data (map tool spike, project files `spikes/map/REPORT.md`). The page
+  `/nations/map` has two maps. The first shades states by how many nations
+  have a recorded presence there, and draws no nation's land
   ([decision record 0007](../docs/decisions/0007-map-shows-state-presence.md)).
+  The second draws the twelve Bureau of Indian Affairs regions from the
+  Bureau's own boundary file (`geography/`), with a note that they are the
+  Bureau's administrative areas, not nations' lands; Trevor chose on
+  2026-11-21 to draw the official outlines even though the Navajo Region's
+  follows the Navajo Nation's land. `src/lib/map-geometry.ts` projects the
+  shapes once, in `vite.config.ts`, so the browser gets SVG paths and no map
+  library. The grayscale print version for the book is not built yet.
 
 ## 12. Words in the interface
 
@@ -505,7 +550,7 @@ The interface follows the style guide's voice: plain verbs, sentence case,
    a few people in each role, especially Tribal court staff and peacemakers,
    before the templates are built. Nothing here has been tested with them.
 2. **Advisor review** of the request flow and the nation profile wording.
-3. **Icon set:** to be chosen; it must not draw on Native motifs.
+3. **Icon set:** settled: Lucide ([section 6, Icons](#6-components)).
 4. **Art:** sizes for the cover, part openers and the home page space, to
    give to the art contest.
 5. **Color, second pass.** Trevor's review on Nov. 20, 2026 found the first
@@ -542,3 +587,6 @@ The interface follows the style guide's voice: plain verbs, sentence case,
 [^webdev-caching]: web.dev, *Learn PWA: Caching*, [web.dev/learn/pwa/caching](https://web.dev/learn/pwa/caching).
 [^mdn-caching]: MDN Web Docs, *Caching (Progressive web apps)*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Caching).
 [^cloudflare-sveltekit]: Cloudflare, *SvelteKit (Workers framework guide)*, [developers.cloudflare.com/workers/framework-guides/web-apps/sveltekit](https://developers.cloudflare.com/workers/framework-guides/web-apps/sveltekit/).
+[^lucide-license]: Lucide, *License*, [lucide.dev/license](https://lucide.dev/license) (accessed Nov. 21, 2026). ISC License, with the MIT License for icons drawn from Feather; full text in [`LICENSES/Lucide.txt`](../LICENSES/Lucide.txt).
+[^lucide-svelte]: Lucide, *Lucide for Svelte*, [lucide.dev/guide/svelte](https://lucide.dev/guide/svelte) (accessed Nov. 21, 2026).
+[^lucide-a11y]: Lucide, *Accessibility* (Svelte), [lucide.dev/guide/svelte/advanced/accessibility](https://lucide.dev/guide/svelte/advanced/accessibility) (accessed Nov. 21, 2026).

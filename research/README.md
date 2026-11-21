@@ -18,6 +18,17 @@ Organizations the project may ask for help are kept as records in
 The website will generate a browsable index of sessions by month, tool and
 topic.
 
+## Analyses
+
+`analyses/` holds dated analyses of the records, each with the script output
+it quotes, for example
+[`2026-11-21-dispute-resolution-practice.md`](analyses/2026-11-21-dispute-resolution-practice.md).
+An analysis describes what the sources document, never what a nation
+practices, and labels its own reasoning as project analysis. Re-run the script
+named in the analysis to reproduce its counts.
+
+## Reviews
+
 Reviews of the project's own data, done to help the lead author's review, are
 kept in [`reviews/`](reviews/README.md). They record findings and suggested
 actions; they never change a record by themselves.

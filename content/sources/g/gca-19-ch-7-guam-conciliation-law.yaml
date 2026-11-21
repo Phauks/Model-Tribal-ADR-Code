@@ -4,7 +4,9 @@ citation:
   type: legislation
   title: Guam Conciliation Law, 19 GCA ch. 7, §§ 7101-7111
   container-title: Guam Code Annotated (Justia 2019 compilation)
-  section: 19 GCA §§ 7101-7111
+  container-title-short: GCA
+  volume: '19'
+  section: '§§ 7101-7111'
   URL: >-
     https://statecodesfiles.justia.com/guam/2019/title-19/division-1/chapter-7/chapter-7.pdf
   accessed:
@@ -12,7 +14,11 @@ citation:
 original_link: >-
   https://statecodesfiles.justia.com/guam/2019/title-19/division-1/chapter-7/chapter-7.pdf
 retrieved: 2026-11-21
-archives: []
+archives:
+- service: wayback
+  link: >-
+    https://web.archive.org/web/20261121011707/https://statecodesfiles.justia.com/guam/2019/title-19/division-1/chapter-7/chapter-7.pdf
+  captured: 2026-11-21
 history:
   status: live
   last_checked: 2026-11-21
@@ -46,6 +52,4 @@ access:
 found_in:
 - 2026-11-21-united-states-dispute-resolution
 notes: >-
-  Read on the original page. Citator check not yet run. Wayback capture pending:
-  none found through the Internet Archive availability service on 2026-11-21; web.archive.org
-  was not reachable to make a new capture.
+  Read on the original page. Citator check not yet run. Wayback capture added from the archive workflow's report on 2026-11-21.

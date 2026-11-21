@@ -370,7 +370,7 @@ The tables below are generated from the JSON file; reasons are shortened.
 
 ## References
 
-[^analysis]: Project analysis, *Documented dispute resolution practice: provisional analysis* (Nov. 21, 2026), summary and section 9 (review queue), pull request #10, `research/analyses/2026-11-21-dispute-resolution-practice.md`.
+[^analysis]: Project analysis, [*Documented dispute resolution practice: provisional analysis*](../analyses/2026-11-21-dispute-resolution-practice.md) (Nov. 21, 2026), summary and section 9 (review queue), merged in pull request #10.
 [^ncorj]: National Center on Restorative Justice, *Restorative Justice Tribal Laws Database*, [ncorj.org/tribal-laws](https://ncorj.org/tribal-laws) (accessed Nov. 21, 2026). Source record: `national-center-on-restorative-justice-restorative-justice-tribal-laws-database`.
 [^counts-fetch]: Fetch log of `provision_pre_review.py gather`, Nov. 21, 2026 (project analysis). The cache itself is not committed; re-running `gather` fetches the current versions.
 [^counts]: [`2026-11-21-provision-pre-review-counts.json`](2026-11-21-provision-pre-review-counts.json) (project analysis).

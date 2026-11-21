@@ -35,6 +35,39 @@ jobs:
       - run: pip install -r scripts/requirements.txt
       - run: python3 scripts/validate_records.py
 
+  lint:
+    name: Record lint and coverage
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install -r scripts/requirements.txt
+      # Fails only on problems the pull request adds or changes; older ones
+      # are warnings (decision record 0014).
+      - name: Lint records
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+        run: python3 scripts/lint_records.py ${BASE:+--base "$BASE"}
+      - name: Coverage report
+        if: always()
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          python3 scripts/coverage_report.py ${BASE:+--base "$BASE"} --markdown coverage.md --json coverage.json
+          cat coverage.md >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: coverage-report
+          path: |
+            coverage.md
+            coverage.json
+          if-no-files-found: ignore
+
   site:
     name: Website build
     runs-on: ubuntu-latest
@@ -51,6 +84,8 @@ jobs:
       - run: npm ci
       - name: Type check
         run: npm run check
+      - name: Unit tests
+        run: npm test
       - name: Colors come only from design-tokens.json
         run: npm run check:colors
       - name: Build
@@ -103,7 +138,7 @@ jobs:
   all-checks:
     name: All checks
     if: always()
-    needs: [text, records, site, print]
+    needs: [text, records, lint, site, print]
     runs-on: ubuntu-latest
     steps:
       - name: Fail if any check failed or was cancelled

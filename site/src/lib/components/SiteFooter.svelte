@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { repositoryLink } from '#lib';
-	import type { TrackVersions } from '#lib/server/content.ts';
+	import type { TrackVersions } from '#lib/server/versions.ts';
 
 	let { versions }: { versions: TrackVersions } = $props();
 </script>
@@ -13,6 +13,7 @@
 			<li><a href="/changelog">Changelog</a></li>
 			<li><a href="{repositoryLink}/blob/main/LICENSE.md">Licenses by material</a></li>
 			<li><a href="{repositoryLink}">Source files</a></li>
+			<li><a href="/workspace" data-sveltekit-reload>Co-author sign-in</a></li>
 		</ul>
 		<p class="small muted">
 			Content {versions.content} · Website {versions.site} · Print edition {versions.print}
@@ -23,7 +24,8 @@
 		</p>
 		<p class="small muted">
 			The site’s colors are a design choice and carry no tribal symbolism. Set in Atkinson
-			Hyperlegible Next and Noto Sans, under the SIL Open Font License.
+			Hyperlegible Next and Noto Sans, under the SIL Open Font License. Icons from Lucide, under the
+			ISC License.
 		</p>
 	</div>
 </footer>

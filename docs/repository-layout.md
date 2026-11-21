@@ -36,6 +36,8 @@ and makes each edition reproducible
 │   └── examples/            One valid example per schema
 ├── research/
 │   ├── sessions/YYYY/       One dated file per research session         CC BY
+│   ├── raw/YYYY-MM-DD/      Cited facts before they become records      CC BY
+│   ├── analyses/            Dated analyses of the records               CC BY
 │   ├── outreach/            One record per organization to ask for help CC BY
 │   └── reviews/             Dated reviews of records against sources    CC BY
 ├── docs/
@@ -45,6 +47,7 @@ and makes each edition reproducible
 │   ├── terminology.md       How terms are chosen, defined and linked
 │   ├── style-guide.md       Tone and writing standards
 │   ├── requests.md          Correction, restriction, removal and contribution flow
+│   ├── roadmap.md           Order of work and review gates toward drafting
 │   ├── repository-layout.md This file
 │   └── decisions/           Numbered decision records
 ├── LICENSES/                Full license texts

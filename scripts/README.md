@@ -11,6 +11,16 @@ add a job to the workflow and list it under `all-checks.needs`.
 | --- | --- | --- |
 | `check_text.py` | Every text file is UTF-8 without a byte order mark, in Unicode Normalization Form C, with LF line endings and a final newline | Python 3 standard library |
 | `validate_records.py` | Every schema, example and content record is valid, and every citation key, glossary link and research session reference resolves | `pip install -r scripts/requirements.txt` |
+| `lint_records.py` | Catches unchecked data (decision record 0014): profile facts with no `verification` level, two source records at one address, forum kinds with no method record, sources still unarchived 30 days after retrieval, and sources cited by content headed for an edition that are unarchived, lack a citator result or are marked unverified. With `--base <ref>` it fails only on problems the pull request adds or changes; run it with `--edition` before exporting an edition | `scripts/requirements.txt` |
+| `coverage_report.py` | Counts how much of the dataset has been checked and how closely: facts by section and verification level, dispute resolution coverage by region, archives, citator checks, method and glossary status. With `--base <ref>` it shows each count beside the base's. In continuous integration the report goes to the job summary | `scripts/requirements.txt` |
+
+`record_facts.py` holds the helpers both share.
+
+## Analysis
+
+| Script | Does | Needs |
+| --- | --- | --- |
+| `analysis/dispute_resolution_practice.py` | Counts the dispute resolution records in the profiles by kind, evidence tier, recognition and region, and lists data quality flags, as JSON for `research/analyses/` | `scripts/requirements.txt` |
 
 ## Native nations dataset
 
@@ -24,6 +34,7 @@ by hand, add new facts by hand or in a new raw file and review the diff.
 | `tribes/federal_facts.py` | Parses the Federal Register list of recognized entities and the Bureau of Indian Affairs Tribal Leaders Directory into cited facts, keeping office contact points only | Python 3 standard library |
 | `tribes/build_profiles.py` | Merges every raw file into profiles and new source records, drops facts the schema rejects and writes a build report | `scripts/requirements.txt` |
 | `tribes/write_sessions.py` | Writes a research session log for each raw file that has none | `scripts/requirements.txt` |
+| `tribes/find_pronunciations.py` | Reads each nation's official website and lists passages that mention pronunciation, and linked audio, for review by hand; never writes to a profile | `scripts/requirements.txt` |
 
 ## Outreach
 

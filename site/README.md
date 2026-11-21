@@ -1,8 +1,11 @@
 # Website
 
 The website is built with SvelteKit (Svelte 5, TypeScript) and served by a
-Cloudflare Worker. Every page is built ahead of time from the plain-text
-files in `content/`, so the Worker mostly serves files. The design is in
+Cloudflare Worker. Every public page is built ahead of time from the
+plain-text files in `content/`, so the Worker mostly serves files. The
+request form, sign-in and the co-author workspace are answered by the Worker
+on request; [COLLABORATION.md](COLLABORATION.md) explains them and how to set
+up sign-in. The design is in
 [DESIGN.md](DESIGN.md), the colors and sizes are in
 [design-tokens.json](design-tokens.json), the version is in
 [version.txt](version.txt), and the history is in [CHANGELOG.md](CHANGELOG.md).
@@ -23,6 +26,7 @@ Checks that also run on every pull request (the "Website build" job in
 
 ```sh
 npm run check             # TypeScript and Svelte
+npm test                  # unit tests (Vitest), including the database code
 npm run check:colors      # no color is written anywhere but design-tokens.json
 npm run build
 npm run check:built-site  # every page has a language, a title, one h1 and a skip link
@@ -57,8 +61,14 @@ resource can be renamed or replaced by editing that file.
 
 | Binding | Resource | Use |
 | --- | --- | --- |
-| `database` | D1 database | Sign-in and collaboration. No tables yet. |
-| `sourceDocuments` | Private R2 bucket | Copies of source documents. Not served publicly. |
+| `database` | D1 database | People and roles, reviews, requests from nations. Tables come from `migrations/` ([COLLABORATION.md](COLLABORATION.md#database)). |
+| `sourceDocuments` | Private R2 bucket | Copies of source documents, and files sent with requests (under `requests/`). Not served publicly. |
+| `requestFormLimit` | Rate limit | At most five request-form submissions a minute from one connection. |
+
+Secrets (set in the Cloudflare dashboard, never in GitHub): `AUTH0_DOMAIN`,
+`AUTH0_CLIENT_ID`, `AUTH0_CLIENT_SECRET`, `SESSION_SECRET`,
+`LEAD_AUTHOR_EMAIL`. For trying sign-in on a computer, put them in
+`site/.dev.vars`, which git ignores.
 
 ## How the parts fit
 
@@ -80,6 +90,16 @@ resource can be renamed or replaced by editing that file.
   yet given, are left out. Until nation records are merged into
   `content/tribes/`, the nations section shows the fictitious example from
   `schemas/examples/tribe.example.yaml`, marked as an example.
+- **Map.** `/nations/map` shows nations by state and the Bureau of Indian
+  Affairs regions. `src/lib/map-geometry.ts` projects the shapes with d3-geo
+  when the site is built, through a small Vite plugin in `vite.config.ts`
+  (module `virtual:map-geometry`), so the browser gets plain SVG. The region
+  outlines are in `geography/`; see [geography/README.md](geography/README.md).
+- **Nation pages.** Facts carry no citation marks; their sources are listed
+  together at the end of the page (`src/lib/server/source-uses.ts`).
+  Addresses link to Google Maps, phone numbers to the dialer and email
+  addresses to a new message (`src/lib/contact-links.ts`). One "Report a
+  problem" link sits at the top of the page.
 - **Offline.** `src/service-worker/index.ts` saves the app shell, the fonts
   and the core pages when the site is first opened, saves other pages as
   they are read, and shows `/offline` for a page that was never saved.
