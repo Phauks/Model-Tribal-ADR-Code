@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
 - state: AZ
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1235
   note: 'Census area with land in this state: Fort Mojave Reservation and Off-Reservation Trust Land (code
@@ -30,6 +33,7 @@ states:
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1235
   note: 'Census area with land in this state: Fort Mojave Reservation and Off-Reservation Trust Land (code
@@ -38,6 +42,7 @@ states:
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1235
   note: 'Census area with land in this state: Fort Mojave Reservation and Off-Reservation Trust Land (code
@@ -49,6 +54,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1235
   note: Matched by name. Census class code D1.
@@ -57,6 +63,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1235, field POP100
   note: 'Census area: Fort Mojave Reservation and Off-Reservation Trust Land (code 1235). Everyone counted
@@ -66,6 +73,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2999 (Fort Mojave Indian Tribe of Arizona, California, and Nevada alone
     or in any combination), GEOID 0100000US (United States)
@@ -76,6 +84,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Fort Mojave Indian Tribe', PDF page 7, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -86,6 +95,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
 - kind: physical-address
@@ -93,6 +103,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
 - kind: mailing-address
@@ -100,6 +111,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
 - kind: phone
@@ -107,6 +119,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
 - kind: fax
@@ -114,6 +127,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
 federal_administration:
@@ -121,6 +135,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Colorado River Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Fort Mojave Indian Tribe of Arizona, California & Nevada
 governing_documents:
@@ -130,6 +145,7 @@ governing_documents:
   link: https://narf.org/nill/codes/ftmojave/index.html
   source: national-indian-law-library-code-codes-ftmojave
   confidence: medium
+  verification: title-only
   as_of: '2010'
   locator: page heading
   note: 'Dated: 1981-2010. The National Indian Law Library page gives the table of contents (and may link
@@ -140,6 +156,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/fort_mojave/index.html
   source: national-indian-law-library-constitution-constitutions-fort-mojave
   confidence: medium
+  verification: title-only
   as_of: '1977'
   locator: page heading
   note: 'Adopted: July 26, 1976 Approved: January 7, 1977. The National Indian Law Library page gives
@@ -150,6 +167,7 @@ justice_institutions:
   link: https://fortmojavetribalcourt.com/
   source: national-indian-law-library-fort-mojave
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -158,6 +176,7 @@ justice_institutions:
   link: http://mojaveindiantribe.com/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Fort Mojave Indian Tribe'
 gaming:
@@ -168,6 +187,7 @@ gaming:
     federal_register_citation: 74 FR 12889
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '2009-03-25'
     locator: result page 0 (?page=0), row 21
     note: 'Listed as: "Fort Mohave Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -181,6 +201,7 @@ gaming:
     federal_register_citation: 87 FR 35992
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '2022-06-14'
     locator: result page 0 (?page=0), row 22
     note: 'Listed as: "Fort Mohave Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -194,6 +215,7 @@ gaming:
     federal_register_citation: 68 FR 5912
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2003-02-05'
     locator: result page 0 (?page=0), row 23
     note: 'Listed as: "Fort Mojave Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -207,6 +229,7 @@ gaming:
     federal_register_citation: 86 FR 27889
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2021-05-24'
     locator: result page 0 (?page=0), row 24
     note: 'Listed as: "Fort Mojave Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -220,6 +243,7 @@ gaming:
     federal_register_citation: 69 FR 76004
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2004-12-20'
     locator: result page 7 (?page=7), row 11
     note: 'Listed as: "Fort Mojave Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -232,6 +256,7 @@ gaming:
     approved: '1990-04-02'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '1990-04-02'
     locator: result page 24 (?page=24), row 20
     note: 'Listed as: "Fort Mojave Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -247,6 +272,7 @@ gaming:
     dispute_resolution_locator: Section 15 (Dispute Resolution)
     source: compact-az-ak-chin-indian-community-2003
     confidence: medium
+    verification: inferred
     as_of: '2003-02-05'
     locator: Section 15 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
@@ -263,6 +289,7 @@ gaming:
     dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     source: compact-ca-cher-ae-heights-indian-community-of-the-2026
     confidence: medium
+    verification: inferred
     as_of: '2026-01-26'
     locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
@@ -280,6 +307,7 @@ gaming:
       of Sovereign Immunity)
     source: compact-nv-washoe-tribe-of-nevada-and-california-2018
     confidence: medium
+    verification: inferred
     as_of: '2018-01-18'
     locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver of Sovereign Immunity)
     note: state model compact; nation-specific text not checked. Read from the 2018 Washoe Tribe compact;
@@ -290,6 +318,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9847&ind=9859
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1994-02-22'
     locator: table row 88, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 88 lists the nation
@@ -298,6 +327,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9848&ind=9860
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1998-03-19'
     locator: table row 88, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 88 lists the nation
@@ -306,6 +336,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9849&ind=9861
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2002-03-25'
     locator: table row 88, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 88 lists the nation
@@ -314,6 +345,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9850&ind=9862
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2010-04-16'
     locator: table row 88, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 88 lists the nation
@@ -322,6 +354,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Fort Mojave Indian Tribe".
       Facilities as machine-extracted from the report text (verify): Avi Casino; Spirit Mountain Casino.
@@ -334,6 +367,7 @@ jurisdiction:
     country within California; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
   note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
@@ -343,6 +377,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Fort Mojave Indian Tribe of Arizona, California & Nevada Confidence lowered from high
@@ -352,11 +387,13 @@ memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Fort Mojave Indian Tribe". Name matched to the roster entry.
 - organization: Inter-Tribal Council of Nevada
   source: inter-tribal-council-of-nevada-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Ft. Mojave Indian Tribe". Name matched to the roster entry.
 review:

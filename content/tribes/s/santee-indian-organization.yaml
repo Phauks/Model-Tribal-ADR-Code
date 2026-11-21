@@ -6,18 +6,21 @@ names:
   - name: White Oak Indian Community
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     locator: 'Petitioner #53'
   alternate:
   - name: The Santee Indian Organization
     source: south-carolina-recognized-tribes-advance-sc
     confidence: high
+    verification: bulk-import
     as_of: '2026'
   official_source: census-aian-geography-definitions
 recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: low
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State Designated Tribal Statistical Area; area 9875
   note: The 2020 Census delineated "Santee SDTSA" (State Designated Tribal Statistical Area). The Census
@@ -31,6 +34,7 @@ recognition:
   petition_stage: Letter of Intent to Petition 06/04/1979
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   locator: 'Petitioner #53'
   note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
@@ -42,6 +46,7 @@ recognition:
     Chapter 139 (category: State Recognized Native American Indian Tribe)'
   source: south-carolina-recognized-tribes-advance-sc
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   note: Listed under 'State Recognized Tribes'.
 states:
@@ -49,6 +54,7 @@ states:
   presence: other
   source: census-aiannh-codes-by-state-2020
   confidence: low
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9875
   note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
@@ -56,6 +62,7 @@ states:
   presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
@@ -63,6 +70,7 @@ states:
   presence: other
   source: south-carolina-recognized-tribes-advance-sc
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   note: State-recognized entity with a South Carolina contact address.
 census_areas:
@@ -72,6 +80,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: low
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9875, GEOID 9875R
   note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
@@ -85,12 +94,14 @@ contacts:
   label: Tribal email listed by the South Carolina commission
   source: south-carolina-recognized-tribes-advance-sc
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: website
   value: https://www.facebook.com/profile.php?id=100075698375955
   label: Social media page listed by the state
   source: south-carolina-recognized-tribes-advance-sc
   confidence: medium
+  verification: bulk-import
   as_of: '2026'
 review:
   status: drafted-from-public-sources

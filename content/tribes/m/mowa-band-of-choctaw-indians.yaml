@@ -6,6 +6,7 @@ names:
   - name: Mowa Band of Choctaws of southwest Alabama
     source: alabama-code-41-9-708
     confidence: high
+    verification: read-in-full
     as_of: '2025'
     locator: Section 41-9-708(b)
   official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
@@ -13,6 +14,7 @@ recognition:
 - type: unrecognized
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1; Table 3
   note: 'GAO Table 1 lists "MOWA Band of Choctaw Indians" among 26 non-federally recognized tribes that
@@ -23,6 +25,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State American Indian reservation; area 9240
   note: The 2020 Census delineated "MOWA Choctaw (state) Reservation" (State American Indian reservation).
@@ -32,6 +35,7 @@ recognition:
 - type: unrecognized
   source: hud-ihbg-fy2026-formula-allocations
   confidence: high
+  verification: bulk-import
   as_of: 2026-04
   locator: AL section, recipient "MOWA Band of Choctaw Indians"
   note: HUD lists "MOWA Band of Choctaw Indians" (Mt. Vernon, AL) as an FY2026 Indian Housing Block Grant
@@ -43,6 +47,7 @@ recognition:
     1992, No. 92-134)
   source: alabama-code-41-9-708
   confidence: high
+  verification: read-in-full
   as_of: '2025'
   locator: Section 41-9-708(b)
   note: Statute names the group as 'the Mowa Band of Choctaws of southwest Alabama' among the Indian tribes,
@@ -53,6 +58,7 @@ recognition:
     2026-09-14)
   source: alabama-administrative-code-475-x-1-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-07-31'
   locator: Rule 475-X-1-.02 Members
 - type: state
@@ -60,12 +66,14 @@ recognition:
   legal_basis: Listed by the Alabama Indian Affairs Commission as a tribe recognized by the State of Alabama
   source: alabama-indian-affairs-commission-tribes-list-2026
   confidence: high
+  verification: bulk-import
   as_of: 2026-10
 states:
 - state: AL
   presence: other
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1, State column
   note: State as listed by GAO.
@@ -73,6 +81,7 @@ states:
   presence: land
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9240
   note: State reservation land.
@@ -80,6 +89,7 @@ states:
   presence: other
   source: hud-ihbg-fy2026-formula-allocations
   confidence: high
+  verification: bulk-import
   as_of: 2026-04
   locator: AL section
   note: HUD gives recipient city Mt. Vernon.
@@ -87,6 +97,7 @@ states:
   presence: other
   source: alabama-indian-affairs-commission-tribes-list-2026
   confidence: high
+  verification: bulk-import
   as_of: 2026-10
   note: State-recognized in Alabama; Alabama contact address listed.
 census_areas:
@@ -96,6 +107,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9240, GEOID 9240R
   note: Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched
@@ -106,12 +118,14 @@ contacts:
   label: Official website
   source: alabama-indian-affairs-commission-tribes-list-2026
   confidence: high
+  verification: bulk-import
   as_of: 2026-10
 - kind: physical-address
   value: 1080 Red Fox Road, Mount Vernon, AL 36560
   label: Contact address listed by the Alabama Indian Affairs Commission
   source: alabama-indian-affairs-commission-tribes-list-2026
   confidence: medium
+  verification: bulk-import
   as_of: 2026-10
   note: Listed beside the chief's name; recorded as the nation's contact address.
 review:

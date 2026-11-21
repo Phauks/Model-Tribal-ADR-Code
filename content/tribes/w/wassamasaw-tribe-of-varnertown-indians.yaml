@@ -6,12 +6,14 @@ names:
   - name: The Wassamasaw Tribe of Varnertown Indians
     source: south-carolina-recognized-tribes-advance-sc
     confidence: high
+    verification: bulk-import
     as_of: '2026'
   official_source: census-aian-geography-definitions
 recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State Designated Tribal Statistical Area; area 9975
   note: The 2020 Census delineated "Wassamasaw SDTSA" (State Designated Tribal Statistical Area). The
@@ -25,6 +27,7 @@ recognition:
     Chapter 139 (category: State Recognized Native American Indian Tribe)'
   source: south-carolina-recognized-tribes-advance-sc
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   note: Listed under 'State Recognized Tribes'.
 states:
@@ -32,6 +35,7 @@ states:
   presence: other
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9975
   note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
@@ -39,6 +43,7 @@ states:
   presence: other
   source: south-carolina-recognized-tribes-advance-sc
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   note: State-recognized entity with a South Carolina contact address.
 census_areas:
@@ -48,6 +53,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9975, GEOID 9975R
   note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
@@ -58,18 +64,21 @@ contacts:
   label: Mailing address listed by the South Carolina commission
   source: south-carolina-recognized-tribes-advance-sc
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: website
   value: http://www.wassamasawtribe.com/
   label: Official website
   source: south-carolina-recognized-tribes-advance-sc
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: email-general
   value: wassamasaw@hotmail.com
   label: Tribe Email
   source: south-carolina-recognized-tribes-advance-sc
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 review:
   status: drafted-from-public-sources

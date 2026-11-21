@@ -6,6 +6,7 @@ names:
   - name: Tigua
     source: ysleta-del-sur-pueblo-home
     confidence: high
+    verification: read-in-full
     as_of: '2026-11-21'
     note: '"The Tribal community known as ''Tigua''"'
   official_source: bia-recognized-entities-2026
@@ -15,6 +16,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -22,12 +24,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ysleta del Sur Pueblo
 - state: TX
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4755
   note: 'Census area with land in this state: Ysleta del Sur Pueblo and Off-Reservation Trust Land (code
@@ -39,6 +43,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4755
   note: Matched by name. Census class code D1.
@@ -47,6 +52,7 @@ population:
   kind: citizens
   source: ysleta-del-sur-pueblo-about-us
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'About page: "approximately 4,226 members nationwide"; home page: "Tribal enrollment is 5,000+
     citizens" (conflict)'
@@ -54,6 +60,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4755, field POP100
   note: 'Census area: Ysleta del Sur Pueblo and Off-Reservation Trust Land (code 4755). Everyone counted
@@ -63,6 +70,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3445 (Ysleta del Sur Pueblo of Texas alone or in any combination),
     GEOID 0100000US (United States)
@@ -73,6 +81,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Ysleta Del Sur Pueblo', PDF page 8, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -81,6 +90,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 91, row T56300 'Ysleta Del Sur Pueblo of Texas'
   note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
@@ -92,6 +102,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ysleta del Sur Pueblo
 - kind: physical-address
@@ -99,6 +110,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ysleta del Sur Pueblo
 - kind: mailing-address
@@ -106,6 +118,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ysleta del Sur Pueblo
 - kind: phone
@@ -113,6 +126,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ysleta del Sur Pueblo
 - kind: fax
@@ -120,6 +134,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ysleta del Sur Pueblo
 federal_administration:
@@ -127,6 +142,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Southern Pueblos Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Ysleta del Sur Pueblo
 governing_documents:
@@ -136,6 +152,7 @@ governing_documents:
   link: https://narf.org/nill/codes/ysletacode/index.html
   source: national-indian-law-library-code-codes-ysletacode
   confidence: medium
+  verification: title-only
   as_of: '2000'
   locator: page heading
   note: 'Last revised: 2000. Full text linked from the National Indian Law Library page.'
@@ -144,6 +161,7 @@ governing_documents:
   link: http://www.ysletadelsurpueblo.org/html_pages.sstg?id=14&amp;sub1=188&amp;sub2=192
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Texas section, entry 'Ysleta del Sur Pueblo'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -153,6 +171,7 @@ justice_institutions:
   link: http://www.ysletadelsurpueblo.org/html_pages.sstg?id=14&amp;sub1=80
   source: national-indian-law-library-ysleta-pueblo
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
 - kind: tribal-court
@@ -160,6 +179,7 @@ justice_institutions:
   link: http://www.ysletadelsurpueblo.org/html_pages.sstg?id=14&amp;sub1=188
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Texas section, entry 'Ysleta del Sur Pueblo'
 dispute_resolution:
@@ -207,6 +227,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11593&ind=11604
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-10-19'
     locator: table row 319, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 319 lists the nation
@@ -215,6 +236,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11599&ind=11605
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-10-05'
     locator: table row 319, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 319 lists the nation
@@ -223,6 +245,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=14544&ind=14545
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2026-09-04'
     locator: table row 319, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 319 lists the nation
@@ -233,6 +256,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Ysleta del Sur Pueblo Confidence lowered from high by the lead session: the notice
@@ -241,6 +265,7 @@ memberships:
 - organization: All Pueblo Council of Governors
   source: all-pueblo-council-of-governors-pueblo-nations
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Pueblo of Ysleta del Sur". Name matched to the roster entry.
 review:

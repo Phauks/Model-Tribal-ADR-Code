@@ -10,6 +10,7 @@ recognition:
   since: '2012-01-09'
   source: maryland-executive-order-01-01-2012-01
   confidence: high
+  verification: read-in-full
   as_of: '2012-01-09'
   note: '''The State formally recognizes the Piscataway Conoy Tribe''s Maryland Indian status''. Older
     than five years but still in force per the 2025 Maryland Manual.'
@@ -19,12 +20,14 @@ recognition:
     by the Maryland State Archives
   source: maryland-manual-indigenous-peoples-2025
   confidence: high
+  verification: inferred
   as_of: '2025'
 states:
 - state: MD
   presence: other
   source: maryland-manual-indigenous-peoples-2025
   confidence: high
+  verification: inferred
   as_of: '2025'
 review:
   status: drafted-from-public-sources

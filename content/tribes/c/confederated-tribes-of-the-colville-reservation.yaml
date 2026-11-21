@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Colville Reservation
 - state: WA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0760
   note: 'Census area with land in this state: Colville Reservation and Off-Reservation Trust Land (code
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0760
   note: Matched by name. Census class code D1.
@@ -41,12 +45,14 @@ population:
   kind: citizens
   source: colvilletribes-home
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'Homepage fact box: ''Tribal Enrollment Total: 9,045''. Undated; as_of is access date.'
 - count: 7807
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0760, field POP100
   note: 'Census area: Colville Reservation and Off-Reservation Trust Land (code 0760). Everyone counted
@@ -56,6 +62,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2946 (Confederated Tribes of the Colville Reservation alone or in any
     combination), GEOID 0100000US (United States)
@@ -66,6 +73,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Seattle, row 'Confederated Tribes of the Colville Reservation', PDF page
     9, Enrollment column
@@ -77,6 +85,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Colville Reservation
 - kind: physical-address
@@ -84,6 +93,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Colville Reservation
 - kind: mailing-address
@@ -91,6 +101,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Colville Reservation
 - kind: phone
@@ -98,6 +109,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Colville Reservation
 - kind: fax
@@ -105,6 +117,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Colville Reservation
 languages:
@@ -112,6 +125,7 @@ languages:
   language_tag: oka
   source: colvilletribes-colville-tribal-language
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: 'Colville Tribal Language page heading: ''nsəlxcin Okanogan, Methow, Nespelem, San Poil Lakes,
     Colville''.'
@@ -120,6 +134,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Colville Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Colville Reservation
 governing_documents:
@@ -129,6 +144,7 @@ governing_documents:
   link: https://narf.org/nill/codes/colvillecode/index.html
   source: national-indian-law-library-code-codes-colvillecode
   confidence: medium
+  verification: title-only
   as_of: '2017'
   locator: page heading
   note: 'Table of Contents Updated: January 2017. The National Indian Law Library page gives the table
@@ -138,6 +154,7 @@ governing_documents:
   link: https://www.cct-cbc.com/current-code/
   source: national-indian-law-library-confederated-colville
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -147,6 +164,7 @@ governing_documents:
   link: https://www.cct-cbc.com/current-code/
   source: national-indian-law-library-confederated-colville
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -157,6 +175,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/colvilleconst/index.html
   source: national-indian-law-library-constitution-constitutions-colvilleconst
   confidence: medium
+  verification: title-only
   as_of: '1990'
   locator: page heading
   note: 'Amended: October 20, 1990 (Typographical error corrected 11/21/14). The National Indian Law Library
@@ -167,6 +186,7 @@ governing_documents:
   link: https://static1.squarespace.com/static/57b33d10d1758eeaa57d6899/t/57be13d6b3db2ba07a783b91/1472074710812/2005+web+edition+CONSTITUTION+AND+BY.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Washington section, entry 'Confederated Tribes of the Colville Reservation'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -175,6 +195,7 @@ governing_documents:
   link: https://static1.squarespace.com/static/57b33d10d1758eeaa57d6899/t/57be1488197aeadebcd4b65c/1472074888785/CBC+PROCEDURAL+RULES.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Washington section, entry 'Confederated Tribes of the Colville Reservation'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -184,6 +205,7 @@ justice_institutions:
   link: https://www.cct-crt.com/
   source: national-indian-law-library-confederated-colville
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
 - kind: tribal-court
@@ -191,6 +213,7 @@ justice_institutions:
   link: https://www.cct-crt.com/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Confederated Tribes of the Colville Reservation'
 dispute_resolution:
@@ -209,6 +232,7 @@ dispute_resolution:
     relationship_to_court: Referral from juvenile proceedings is mandatory per NARF's summary.
     source: narf-ipi-youth-family-peacemaking-laws
     confidence: medium
+    verification: inferred
     as_of: '2025-08-25'
     note: NARF's linked PDF (Colville-Juvenile-Peacemaking-Circle-Code.pdf) returned 404 on 2026-11-21,
       so the code text was not read.
@@ -285,6 +309,7 @@ gaming:
     federal_register_citation: 86 FR 51373
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-09-15'
     locator: result page 38 (?page=38), row 5
     note: 'Listed as: "Confederated Tribes of the Colville Reservation Tribal State Gaming Compact" (Approve);
@@ -298,6 +323,7 @@ gaming:
     federal_register_citation: 68 FR 1068
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2003-01-08'
     locator: result page 38 (?page=38), row 6
     note: 'Listed as: "Confederated Tribes of the Colville Reservation Tribal State Gaming Compact" (Approve);
@@ -311,6 +337,7 @@ gaming:
     federal_register_citation: 80 FR 31918
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-06-04'
     locator: result page 38 (?page=38), row 7
     note: 'Listed as: "Confederated Tribes of the Colville Reservation Tribal State Gaming Compact" (Approve);
@@ -324,6 +351,7 @@ gaming:
     federal_register_citation: 72 FR 30392
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-05-31'
     locator: result page 38 (?page=38), row 8
     note: 'Listed as: "Confederated Tribes of the Colville Reservation Tribal State Gaming Compact" (Approve);
@@ -339,6 +367,7 @@ gaming:
     dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
     source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
     confidence: medium
+    verification: inferred
     as_of: '2021-09-01'
     locator: Section XIV (Dispute Resolution), subsection B
     note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
@@ -350,6 +379,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9621&ind=9633
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1995-07-21'
     locator: table row 56, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 56 lists the nation
@@ -358,6 +388,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9622&ind=9634
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2016-09-22'
     locator: table row 56, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 56 lists the nation
@@ -366,6 +397,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9623&ind=9635
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2018-02-14'
     locator: table row 56, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 56 lists the nation
@@ -374,6 +406,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9624&ind=9636
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2020-05-11'
     locator: table row 56, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 56 lists the nation
@@ -382,6 +415,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Confederated Tribes of the
       Colville Reservation, Washington". Facilities as machine-extracted from the report text (verify):
@@ -397,6 +431,7 @@ jurisdiction:
     jurisdiction under RCW 37.12.021.'
   source: revised-code-of-washington-37-12-010
   confidence: medium
+  verification: inferred
   as_of: '1963'
   locator: RCW 37.12.010
   note: Nation matched to Washington by office state. Check for later retrocession facts.
@@ -406,6 +441,7 @@ jurisdiction:
     this jurisdiction was later retroceded for several of these nations (see retrocession facts).
   source: department-of-justice-federally-recognized-indian-nations-under-state-jurisdiction-2016
   confidence: medium
+  verification: bulk-import
   as_of: '2016-06-29'
   locator: Washington section, footnote 4
   note: From a 2016 Office of Tribal Justice compilation hosted by the National Indian Justice Center.
@@ -415,12 +451,14 @@ jurisdiction:
     Colville Reservation, except as provided in RCW 37.12.010 and chapter 267, Laws of 1986. (52 FR 8372)
   source: federal-register-1987-colville-retrocession
   confidence: high
+  verification: read-in-full
   as_of: '1987-03-18'
 - topic: indian-child-welfare-act
   value: designated-agent-listed
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Confederated Tribes of the Colville Reservation Confidence lowered from high by the
@@ -430,6 +468,7 @@ memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes
   confidence: high
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Confederated Tribes of the Colville Reservation".
 review:

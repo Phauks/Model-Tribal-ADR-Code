@@ -6,6 +6,7 @@ names:
   - name: Caddo Adais Indians
     source: census-2020-ddhca-popgroup-codes
     confidence: low
+    verification: inferred
     as_of: '2020'
     locator: POPGROUP code 1682
     note: Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting
@@ -15,6 +16,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State Designated Tribal Statistical Area; area 9510
   note: The 2020 Census delineated "Adai Caddo SDTSA" (State Designated Tribal Statistical Area). The
@@ -27,6 +29,7 @@ recognition:
   legal_basis: Listed as a state recognized tribe by the Louisiana Governor's Office of Indian Affairs
   source: louisiana-governor-federally-and-state-recognized-tribes
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   note: Louisiana recognized tribes by legislative concurrent resolutions; the individual resolutions
     were not retrieved.
@@ -36,6 +39,7 @@ recognition:
     membership, listed as 'Adai Caddo Indians of Louisiana'
   source: louisiana-revised-statutes-46-2305
   confidence: high
+  verification: inferred
   as_of: '2018'
   locator: R.S. 46:2305(B)
   note: The statute gives the tribe a seat on the Native American Commission; it does not itself confer
@@ -45,6 +49,7 @@ states:
   presence: other
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9510
   note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
@@ -52,6 +57,7 @@ states:
   presence: other
   source: louisiana-governor-indian-affairs
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   locator: Regional map
   note: Located in Natchitoches Parish per the Office of Indian Affairs regional map.
@@ -62,6 +68,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9510, GEOID 9510R
   note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
@@ -72,6 +79,7 @@ contacts:
   label: Contact address listed by the Louisiana Governor's Office of Indian Affairs
   source: louisiana-governor-federally-and-state-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: '2026'
   note: Listed under the leader's name; recorded as the tribe's contact address.
 - kind: website
@@ -79,6 +87,7 @@ contacts:
   label: Official website
   source: louisiana-governor-federally-and-state-recognized-tribes
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 review:
   status: drafted-from-public-sources

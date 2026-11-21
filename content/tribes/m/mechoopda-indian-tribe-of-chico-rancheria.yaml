@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mechoopda Indian Tribe of Chico Rancheria, California
 - state: CA
   presence: other
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 8450
   note: 'Census area with land in this state: Mechoopda TDSA (code 8450). Statistical area only (not a
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US8450
   note: Matched by name. Census class code D6.
@@ -41,6 +45,7 @@ population:
   kind: citizens
   source: mechoopda-indian-tribe-of-chico-rancheri-home
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"comprised of 560 Tribal Members"; undated statement on the official site; as_of is the access
     date'
@@ -48,6 +53,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US8450, field POP100
   note: 'Census area: Mechoopda TDSA (code 8450). Everyone counted as living in the area in the 2020 Census,
@@ -57,6 +63,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3113 (Mechoopda Indian Tribe of Chico Rancheria alone or in any combination),
     GEOID 0100000US (United States)
@@ -67,6 +74,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Mechoopda Indian Tribe of Chico Rancheria', PDF page 7, Enrollment
     column
@@ -78,6 +86,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mechoopda Indian Tribe of Chico Rancheria, California
 - kind: physical-address
@@ -85,6 +94,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mechoopda Indian Tribe of Chico Rancheria, California
 - kind: mailing-address
@@ -92,6 +102,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mechoopda Indian Tribe of Chico Rancheria, California
 - kind: phone
@@ -99,6 +110,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mechoopda Indian Tribe of Chico Rancheria, California
 - kind: fax
@@ -106,6 +118,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mechoopda Indian Tribe of Chico Rancheria, California
 languages:
@@ -113,6 +126,7 @@ languages:
   language_tag: mjd
   source: mechoopda-indian-tribe-of-chico-rancheri-home
   confidence: medium
+  verification: inferred
   as_of: '2026-11-21'
   note: 'site: "spoke a language related to Maidu" and links a Northwestern Maidu language site; tag is
     Konkow/Northwest Maidu'
@@ -121,6 +135,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Central California Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mechoopda Indian Tribe of Chico Rancheria, California
 gaming:
@@ -131,6 +146,7 @@ gaming:
     federal_register_citation: 83 FR 66741
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2018-12-27'
     locator: result page 8 (?page=8), row 14
     note: 'Listed as: "Mechoopda Indian Tribe of Chico Rancheria Tribal State Gaming Compact" (Deemed
@@ -149,6 +165,7 @@ gaming:
     dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     source: compact-ca-cher-ae-heights-indian-community-of-the-2026
     confidence: medium
+    verification: inferred
     as_of: '2026-01-26'
     locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
@@ -161,6 +178,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10246&ind=10272
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2001-12-03'
     locator: table row 147, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 147 lists the nation
@@ -169,6 +187,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10239&ind=10273
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2002-01-10'
     locator: table row 147, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 147 lists the nation
@@ -177,6 +196,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10258&ind=10274
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-02-08'
     locator: table row 147, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 147 lists the nation
@@ -185,6 +205,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10259&ind=10275
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-07-22'
     locator: table row 147, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 147 lists the nation
@@ -193,6 +214,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Mechoopda Indian Tribe of Chico
       Rancheria". Name extracted from the PDF by the page-fetch tool and matched to the roster.
@@ -204,6 +226,7 @@ jurisdiction:
     country within California; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
   note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
@@ -213,6 +236,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Mechoopda Indian Tribe of Chico Rancheria, California Confidence lowered from high

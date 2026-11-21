@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 - type: federal
@@ -18,6 +19,7 @@ recognition:
   since: '1994-09-21'
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '1994-09-21'
   locator: 'Petitioner #125'
 states:
@@ -25,12 +27,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Little River Band of Ottawa Indians, Michigan
 - state: MI
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1960
   note: 'Census area with land in this state: Little River Reservation and Off-Reservation Trust Land
@@ -42,6 +46,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1960
   note: Matched by name. Census class code D1.
@@ -50,6 +55,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1960, field POP100
   note: 'Census area: Little River Reservation and Off-Reservation Trust Land (code 1960). Everyone counted
@@ -59,6 +65,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3082 (Little River Band of Ottawa Indians of Michigan alone or in any
     combination), GEOID 0100000US (United States)
@@ -69,6 +76,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Little River Band of Ottawa Indians', PDF page 4, Enrollment
     column
@@ -78,6 +86,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: low
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 80, row T19600 'Little River Band of Ottawa Indians'
   note: Column 3, American Indian and Alaska Native alone-or-in-combination population living in the counties
@@ -90,6 +99,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Little River Band of Ottawa Indians, Michigan
 - kind: physical-address
@@ -97,6 +107,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Little River Band of Ottawa Indians, Michigan
 - kind: mailing-address
@@ -104,6 +115,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Little River Band of Ottawa Indians, Michigan
 - kind: phone
@@ -111,6 +123,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Little River Band of Ottawa Indians, Michigan
 - kind: fax
@@ -118,6 +131,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Little River Band of Ottawa Indians, Michigan
 languages:
@@ -125,6 +139,7 @@ languages:
   language_tag: oj
   source: lrboi-nsn-home
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   note: Homepage menu lists an Anishinaabemowin program.
 federal_administration:
@@ -132,6 +147,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Michigan Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Little River Band of Ottawa Indians, Michigan
 governing_documents:
@@ -141,6 +157,7 @@ governing_documents:
   link: https://narf.org/nill/codes/little_river_band/index.html
   source: national-indian-law-library-code-codes-little-river-band
   confidence: medium
+  verification: title-only
   as_of: '2018'
   locator: page heading
   note: 'Table of Contents Updated: November 2018. The National Indian Law Library page gives the table
@@ -151,6 +168,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/little_river/index.html
   source: national-indian-law-library-constitution-constitutions-little-river
   confidence: medium
+  verification: title-only
   as_of: '2016'
   locator: page heading
   note: 'Amended: 2016. The National Indian Law Library page gives the table of contents (and may link
@@ -160,6 +178,7 @@ governing_documents:
   link: https://www.lrboi-nsn.gov/index.php/government/tribal-code
   source: national-indian-law-library-little-river-band-ottawa
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -169,6 +188,7 @@ governing_documents:
   link: https://www.lrboi-nsn.gov/index.php/government/tribal-code
   source: national-indian-law-library-little-river-band-ottawa
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -177,6 +197,7 @@ governing_documents:
   title: Little River Band of Ottawa Constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Michigan section, entry 'Little River Band of Ottawa Indians'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -187,6 +208,7 @@ governing_documents:
   link: https://lrboi-nsn.gov/government/tribal-code/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Michigan section, entry 'Little River Band of Ottawa Indians'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -195,6 +217,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-little-river-band-ottawa
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
@@ -204,6 +227,7 @@ justice_institutions:
   name: Little River Band of Ottawa Indians Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Michigan section, entry 'Little River Band of Ottawa Indians'
   note: 'Link check 2026-11-21: the link the source gives (https://www.lrboi-nsn.gov/index.php/government/tribal-court)
@@ -230,6 +254,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Title-900-02-Juvenile-Code-2011.pdf
     source: little-river-900-02-juvenile-code-2011
     confidence: medium
+    verification: inferred
     as_of: '2011-07-27'
     locator: Sections 4.01(b), 4.02(a)-(f), 6.01, 7.01, 8.01-8.02
     note: Language tag otw assigned because the Band is Odawa (Ottawa); the code does not name the language.
@@ -436,6 +461,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Peacemaking-Guidelines-2008.pdf
     source: narf-ipi-tribal-peacemaking-laws
     confidence: medium
+    verification: bulk-import
     as_of: '2008'
     note: NARF says the guidelines provide authorization, philosophical background, referral standards
       (including an option for traditional request), procedure, qualifications, standards of conduct,
@@ -447,6 +473,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Peacemaking-Guidelines-2008.pdf
     source: little-river-peacemaking-guidelines-2008
     confidence: medium
+    verification: title-only
     as_of: '2008'
     locator: Table of contents, appendices
   training_programs:
@@ -456,6 +483,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-River-Peacemaking-Guidelines-2008.pdf
     source: little-river-peacemaking-guidelines-2008
     confidence: medium
+    verification: read-in-full
     as_of: '2008'
     locator: Section 12.04
   clauses:
@@ -468,6 +496,7 @@ dispute_resolution:
     link: https://lrboi-nsn.gov/sites/default/files/pages/Title-300-02.pdf
     source: little-river-arbitration-code-01-300-02
     confidence: medium
+    verification: read-in-full
     as_of: '2001-06-18'
     locator: Sections 1.01, 4.01-4.02, 9.01, 10.03
   - context: commercial-code
@@ -479,6 +508,7 @@ dispute_resolution:
     link: https://lrboi-nsn.gov/sites/default/files/pages/Title-300-02.pdf
     source: little-river-arbitration-code-01-300-02
     confidence: medium
+    verification: read-in-full
     as_of: '2001-06-18'
     locator: Sections 4.03(a)-(c), 10.02
 gaming:
@@ -489,6 +519,7 @@ gaming:
     federal_register_citation: 73 FR 21361
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2008-04-21'
     locator: result page 16 (?page=16), row 13
     note: 'Listed as: "Little River Band of Ottawa Indians Tribal State Gaming Compact" (Deemed Approved);
@@ -502,6 +533,7 @@ gaming:
     federal_register_citation: 64 FR 8111
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-02-18'
     locator: result page 16 (?page=16), row 14
     note: 'Listed as: "Little River Band of Ottawa Indians Tribal State Gaming Compact" (Approve); list''s
@@ -520,6 +552,7 @@ gaming:
     dispute_resolution_locator: Section 7 (Dispute Resolution)
     source: compact-mi-little-river-band-of-ottawa-indians-1999
     confidence: medium
+    verification: read-in-full
     as_of: '1999-02-18'
     locator: Section 7 (Dispute Resolution)
     note: Dispute-resolution clause read from this nation's own compact document. Document is older than
@@ -531,6 +564,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10146&ind=10166
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1997-01-28'
     locator: table row 134, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 134 lists the nation
@@ -539,6 +573,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10147&ind=10167
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-06-22'
     locator: table row 134, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
@@ -547,6 +582,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10148&ind=10169
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-08-12'
     locator: table row 134, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
@@ -555,6 +591,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10149&ind=10170
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2001-03-15'
     locator: table row 134, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
@@ -563,6 +600,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10150&ind=10171
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2002-01-15'
     locator: table row 134, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
@@ -571,6 +609,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10151&ind=10172
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2002-08-12'
     locator: table row 134, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
@@ -579,6 +618,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10152&ind=10173
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2005-07-05'
     locator: table row 134, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
@@ -587,6 +627,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10153&ind=10174
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2011-01-05'
     locator: table row 134, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
@@ -595,6 +636,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10154&ind=10175
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2012-11-20'
     locator: table row 134, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
@@ -603,6 +645,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10155&ind=10176
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2014-12-05'
     locator: table row 134, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
@@ -611,6 +654,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10156&ind=10177
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2018-04-03'
     locator: table row 134, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
@@ -619,6 +663,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10157&ind=10178
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2024-05-29'
     locator: table row 134, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
@@ -627,6 +672,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Little River Band of Ottawa Indians".
       Name extracted from the PDF by the page-fetch tool and matched to the roster.
@@ -636,6 +682,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Little River Band of Ottawa Indians, Michigan Confidence lowered from high by the
@@ -645,6 +692,7 @@ memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Little River Band of Ottawa Indians". Name matched to the roster entry.
 review:

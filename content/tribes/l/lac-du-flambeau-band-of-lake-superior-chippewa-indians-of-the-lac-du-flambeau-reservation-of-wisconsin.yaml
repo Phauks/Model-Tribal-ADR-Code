@@ -10,6 +10,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -17,6 +18,7 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation of
     Wisconsin
@@ -24,6 +26,7 @@ states:
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1825
   note: 'Census area with land in this state: Lac du Flambeau Reservation (code 1825). Area matched to
@@ -35,6 +38,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1825
   note: Matched by name. Census class code D2.
@@ -43,6 +47,7 @@ population:
   kind: citizens
   source: wisconsin-dpi-tribal-nations-lac-du-flambeau
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'State page, Tribal Statistics: ''There are currently 3415 Lac du Flambeau tribal members.'' Undated;
     as_of is access date.'
@@ -50,6 +55,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1825, field POP100
   note: 'Census area: Lac du Flambeau Reservation (code 1825). Everyone counted as living in the area
@@ -58,6 +64,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3074 (Lac du Flambeau Band of Lake Superior Chippewa Indians alone
     or in any combination), GEOID 0100000US (United States)
@@ -68,6 +75,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Lac Du Flambeau Band of Lake Superior Chippewa', PDF page
     4, Enrollment column
@@ -79,6 +87,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation of
     Wisconsin
@@ -87,6 +96,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation of
     Wisconsin
@@ -95,6 +105,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation of
     Wisconsin
@@ -103,6 +114,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation of
     Wisconsin
@@ -111,6 +123,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation of
     Wisconsin
@@ -119,6 +132,7 @@ languages:
   language_tag: oj
   source: ldftribe-education-ojibwe-language
   confidence: high
+  verification: title-only
   as_of: '2026-11-21'
   note: Ojibwe Language program page.
 federal_administration:
@@ -126,6 +140,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Great Lakes Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation of
     Wisconsin
@@ -136,6 +151,7 @@ government_structure:
     1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -146,6 +162,7 @@ government_structure:
     was adopted under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-lacduflamcons
   confidence: medium
+  verification: read-in-full
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -156,6 +173,7 @@ governing_documents:
   link: https://narf.org/nill/codes/lac_du_flambeau_chippewa/index.html
   source: national-indian-law-library-code-codes-lac-du-flambeau-chippewa
   confidence: medium
+  verification: title-only
   as_of: '2015'
   locator: page heading
   note: 'Table of Contents Updated: October 2015. The National Indian Law Library page gives the table
@@ -166,6 +184,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/lac_flambeau/index.html
   source: national-indian-law-library-constitution-constitutions-lac-flambeau
   confidence: medium
+  verification: title-only
   as_of: '2005'
   locator: page heading
   note: 'Amended: September 2005. Full text linked from the National Indian Law Library page.'
@@ -173,6 +192,7 @@ governing_documents:
   title: Tribal code
   source: national-indian-law-library-lac-du-flambeau-chippewa
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -182,6 +202,7 @@ governing_documents:
   title: Constitution
   source: national-indian-law-library-lac-du-flambeau-chippewa
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -191,6 +212,7 @@ governing_documents:
   title: Lac du Flambeau Band of Lake Superior Chippewa Indians Constitution and Bylaws
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Wisconsin section, entry 'Lac du Flambeau Band of Lake Superior Chippewa Indians'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -200,6 +222,7 @@ governing_documents:
   title: Lac du Flambeau Tribal Ordinances
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Wisconsin section, entry 'Lac du Flambeau Band of Lake Superior Chippewa Indians'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -211,6 +234,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/lacduflamchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-lacduflamchrtr
   confidence: medium
+  verification: title-only
   as_of: '1937'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -219,6 +243,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/lacduflamcons.html
   source: university-of-oklahoma-indian-reorganization-act-lacduflamcons
   confidence: medium
+  verification: title-only
   as_of: '1936'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -226,6 +251,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-lac-du-flambeau-chippewa
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
@@ -235,6 +261,7 @@ justice_institutions:
   name: Lac du Flambeau Tribal Courts
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Wisconsin section, entry 'Lac du Flambeau Band of Lake Superior Chippewa Indians'
   note: 'Link check 2026-11-21: the link the source gives (http://www.ldftribe.com/departments/43/Tribal_Operations/Tribal_Courts.html)
@@ -286,6 +313,7 @@ gaming:
     federal_register_citation: 89 FR 24853
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '2024-04-09'
     locator: result page 46 (?page=46), row 2
     note: 'Listed as: "Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation
@@ -301,6 +329,7 @@ gaming:
     federal_register_citation: 91 FR 11560
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2026-03-10'
     locator: result page 46 (?page=46), row 3
     note: 'Listed as: "Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac Du Flambeau Reservation
@@ -314,6 +343,7 @@ gaming:
     approved: '1992-07-01'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '1992-07-01'
     locator: result page 46 (?page=46), row 4
     note: 'Listed as: "Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation
@@ -326,6 +356,7 @@ gaming:
     federal_register_citation: 64 FR 14746
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '1999-03-26'
     locator: result page 46 (?page=46), row 5
     note: 'Listed as: "Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation
@@ -341,6 +372,7 @@ gaming:
     federal_register_citation: 74 FR 28723
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '2009-06-17'
     locator: result page 46 (?page=46), row 6
     note: 'Listed as: "Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation
@@ -356,6 +388,7 @@ gaming:
     federal_register_citation: 82 FR 32866
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '2017-07-18'
     locator: result page 46 (?page=46), row 7
     note: 'Listed as: "Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation
@@ -371,6 +404,7 @@ gaming:
     federal_register_citation: 85 FR 44545
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '2020-07-23'
     locator: result page 46 (?page=46), row 8
     note: 'Listed as: "Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac Du Flambeau Reservation
@@ -388,6 +422,7 @@ gaming:
     dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
     source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
     confidence: medium
+    verification: inferred
     as_of: '1992-08-10'
     locator: Section XXIII (Dispute Resolution) of the 1992 compact
     note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
@@ -400,6 +435,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10125&ind=10137
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1993-11-29'
     locator: table row 130, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 130 lists the nation
@@ -409,6 +445,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10126&ind=10138
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2002-01-14'
     locator: table row 130, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 130 lists the nation
@@ -418,6 +455,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10127&ind=10139
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2004-05-03'
     locator: table row 130, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 130 lists the nation
@@ -427,6 +465,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10128&ind=10140
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2004-10-22'
     locator: table row 130, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 130 lists the nation
@@ -436,6 +475,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10129&ind=10141
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2012-08-06'
     locator: table row 130, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 130 lists the nation
@@ -445,6 +485,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Lac du Flambeau Band of Lake
       Superior Chippewa Indians". Facilities as machine-extracted from the report text (verify): Lake
@@ -458,6 +499,7 @@ jurisdiction:
     country within Wisconsin; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Wisconsin"
   note: Statute is primary; nation matched to Wisconsin by office state in the BIA Tribal Leaders Directory,
@@ -467,6 +509,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation
@@ -476,18 +519,21 @@ memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Lac du Flambeau Band of Lake Superior Chippewa Indians of Wisconsin". Name matched
     to the roster entry.
 - organization: Great Lakes Inter-Tribal Council
   source: great-lakes-inter-tribal-council-tribes-served
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Lac du Flambeau Band of Lake Superior Chippewa Indians". Name matched to the roster
     entry.
 - organization: Great Lakes Indian Fish and Wildlife Commission
   source: great-lakes-indian-fish-and-wildlife-commission-commission
   confidence: medium
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Waaswaaganing" (link https://www.ldftribe.com/).
 review:

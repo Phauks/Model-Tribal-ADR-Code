@@ -6,6 +6,7 @@ names:
   - name: United Houma Nation, Inc.
     source: ofa-petitions-in-process
     confidence: medium
+    verification: bulk-import
     as_of: '2026-11-21'
     note: Name used for this group in the cited source; matched to this record by name and state.
   official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
@@ -13,6 +14,7 @@ recognition:
 - type: unrecognized
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1; Table 3
   note: 'GAO Table 1 lists "United Houma Nation" among 26 non-federally recognized tribes that received
@@ -23,6 +25,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State Designated Tribal Statistical Area; area 9960
   note: The 2020 Census delineated "United Houma Nation SDTSA" (State Designated Tribal Statistical Area).
@@ -33,6 +36,7 @@ recognition:
 - type: unrecognized
   source: usaspending-award-90xn0159
   confidence: medium
+  verification: inferred
   as_of: '2021-09-01'
   locator: Award summary
   note: HHS Administration for Native Americans award 90XN0159 (Assistance Listing 93.587, Promote the
@@ -46,6 +50,7 @@ recognition:
   petition_stage: Awaiting Supplement
   source: ofa-petitions-in-process
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Current Petitions Status table, row 56; detail page https://www.bia.gov/as-ia/ofa/petitions-in-process/united-houma-nation-inc
   note: 'Office of Federal Acknowledgment list entry #56 (2013 edition): United Houma Nation, Inc. - Letter
@@ -55,6 +60,7 @@ recognition:
   legal_basis: Listed as a state recognized tribe by the Louisiana Governor's Office of Indian Affairs
   source: louisiana-governor-federally-and-state-recognized-tribes
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   note: Louisiana recognized tribes by legislative concurrent resolutions; the individual resolutions
     were not retrieved.
@@ -64,6 +70,7 @@ recognition:
     membership, listed as 'United Houma Nation'
   source: louisiana-revised-statutes-46-2305
   confidence: high
+  verification: inferred
   as_of: '2018'
   locator: R.S. 46:2305(B)
   note: The statute gives the tribe a seat on the Native American Commission; it does not itself confer
@@ -73,6 +80,7 @@ states:
   presence: other
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1, State column
   note: State as listed by GAO.
@@ -80,6 +88,7 @@ states:
   presence: other
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9960
   note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
@@ -87,6 +96,7 @@ states:
   presence: other
   source: usaspending-award-90xn0159
   confidence: medium
+  verification: bulk-import
   as_of: '2021-09-01'
   locator: Place of performance state
   note: Place of performance state on the award record.
@@ -94,6 +104,7 @@ states:
   presence: other
   source: ofa-petitions-in-process
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
@@ -101,6 +112,7 @@ states:
   presence: other
   source: louisiana-governor-indian-affairs
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   locator: Regional map
   note: Located in Terrebonne, Lafourche, Jefferson, St. Mary, Plaquemines, and St. Bernard Parishes per
@@ -112,6 +124,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9960, GEOID 9960R
   note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
@@ -122,6 +135,7 @@ contacts:
   label: Contact address listed by the Louisiana Governor's Office of Indian Affairs
   source: louisiana-governor-federally-and-state-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: '2026'
   note: Listed under the leader's name; recorded as the tribe's contact address.
 - kind: website
@@ -129,6 +143,7 @@ contacts:
   label: Official website
   source: louisiana-governor-federally-and-state-recognized-tribes
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 review:
   status: drafted-from-public-sources

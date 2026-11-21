@@ -10,6 +10,7 @@ recognition:
   petition_stage: Awaiting Petitioner Response to Phase I TA Review
   source: ofa-petitions-in-process
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Current Petitions Status table, row 404; detail page https://www.bia.gov/as-ia/ofa/petitions-in-process/chihene-nde-nation-new-mexico
   note: 'Federal Register history: Receipt of Documented Petition for Federal Acknowledgment as an American
@@ -19,6 +20,7 @@ states:
   presence: other
   source: ofa-petitions-in-process
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.

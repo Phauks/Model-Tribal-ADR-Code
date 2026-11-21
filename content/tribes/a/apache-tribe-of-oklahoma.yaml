@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Apache Tribe of Oklahoma
 - state: OK
   presence: other
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5720, 5955
   note: 'Census area with land in this state: Kiowa-Comanche-Apache-Fort Sill Apache OTSA (code 5720);
@@ -34,6 +37,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5720
   note: 'Matched by name. Shared with: Kiowa Tribe; Comanche Nation, Oklahoma; Fort Sill--Chiricahua--Warm
@@ -44,6 +48,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5955
   note: 'Matched by name. Shared with: Kiowa Tribe; Comanche Nation, Oklahoma; Fort Sill--Chiricahua--Warm
@@ -54,6 +59,7 @@ population:
   kind: other
   source: oklahoma-education-tribal-guide-apache
   confidence: low
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'State education guide: ''Total tribal enrollment: N/A''; ''Tribal enrollment in Oklahoma: 1,700''.
     Count covers Oklahoma residents only. Undated content.'
@@ -61,6 +67,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5720, field POP100
   note: 'Census area: Kiowa-Comanche-Apache-Fort Sill Apache OTSA (code 5720). Everyone counted as living
@@ -72,6 +79,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5955, field POP100
   note: 'Census area: Kiowa-Comanche-Apache-Ft Sill Apache/Caddo-Wichita-Delaware joint-use OTSA (code
@@ -84,6 +92,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2849 (Apache Tribe of Oklahoma alone or in any combination), GEOID
     0100000US (United States)
@@ -94,6 +103,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Oklahoma, row 'Apache Tribe', PDF page 5, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -104,6 +114,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Apache Tribe of Oklahoma
 - kind: physical-address
@@ -111,6 +122,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Apache Tribe of Oklahoma
 - kind: mailing-address
@@ -118,6 +130,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Apache Tribe of Oklahoma
 - kind: phone
@@ -125,6 +138,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Apache Tribe of Oklahoma
 - kind: fax
@@ -132,6 +146,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Apache Tribe of Oklahoma
 federal_administration:
@@ -139,6 +154,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Anadarko Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Apache Tribe of Oklahoma
 governing_documents:
@@ -147,6 +163,7 @@ governing_documents:
   link: https://apachetribe.org/apache-tribe-constitution/
   source: national-indian-law-library-apache
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
@@ -156,6 +173,7 @@ governing_documents:
   link: https://narf.org/nill/codes/apache_ok/index.html
   source: national-indian-law-library-code-codes-apache-ok
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: page heading
   note: Full text linked from the National Indian Law Library page.
@@ -164,6 +182,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/apache_ok/index.html
   source: national-indian-law-library-constitution-constitutions-apache-ok
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: page heading
   note: The National Indian Law Library page gives the table of contents (and may link to the nation's
@@ -174,6 +193,7 @@ justice_institutions:
   link: https://www.bia.gov/CFRCourts
   source: bia-courts-of-indian-offenses
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: List of CFR Courts and the Tribes they Serve
   note: Courts of Indian Offenses are governed by 25 C.F.R. part 11; § 11.100 points to this Bureau of
@@ -182,6 +202,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-apache
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -193,6 +214,7 @@ gaming:
     federal_register_citation: 70 FR 36407
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2005-06-23'
     locator: result page 26 (?page=26), row 6
     note: 'Listed as: "Apache Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Apache
@@ -209,6 +231,7 @@ gaming:
     dispute_resolution_locator: Part 12 (Dispute Resolution)
     source: compact-ok-cherokee-nation-2005
     confidence: medium
+    verification: inferred
     as_of: '2005-01-27'
     locator: Part 12 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
@@ -221,6 +244,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=3294&ind=3295
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-11-04'
     locator: table row 7, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 7 lists the nation
@@ -229,6 +253,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=3296&ind=3298
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2006-03-08'
     locator: table row 7, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 7 lists the nation
@@ -237,6 +262,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=3297&ind=3299
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2016-12-01'
     locator: table row 7, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 7 lists the nation
@@ -245,6 +271,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Apache Tribe of Oklahoma".
       Facilities as machine-extracted from the report text (verify): Golden Eagle Casino; Apache Lonestar
@@ -255,6 +282,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Apache Tribe of Oklahoma Confidence lowered from high by the lead session: the notice

@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Suquamish Indian Tribe of the Port Madison Reservation
 - state: WA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2925
   note: 'Census area with land in this state: Port Madison Reservation (code 2925). Area matched to the
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2925
   note: Matched by name. Census class code D2.
@@ -41,6 +45,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2925, field POP100
   note: 'Census area: Port Madison Reservation (code 2925). Everyone counted as living in the area in
@@ -49,6 +54,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3347 (The Suquamish Tribe alone or in any combination), GEOID 0100000US
     (United States)
@@ -59,6 +65,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Seattle, row 'Suquamish Indian Tribe', PDF page 9, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -69,6 +76,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Suquamish Indian Tribe of the Port Madison Reservation
 - kind: physical-address
@@ -76,6 +84,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Suquamish Indian Tribe of the Port Madison Reservation
 - kind: mailing-address
@@ -83,6 +92,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Suquamish Indian Tribe of the Port Madison Reservation
 - kind: phone
@@ -90,6 +100,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Suquamish Indian Tribe of the Port Madison Reservation
 - kind: fax
@@ -97,6 +108,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Suquamish Indian Tribe of the Port Madison Reservation
 languages:
@@ -104,6 +116,7 @@ languages:
   language_tag: lut
   source: suquamish-indian-tribe-of-the-port-madis-home
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: '"The traditional language of the Suquamish People is Lushootseed"'
 federal_administration:
@@ -111,6 +124,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Puget Sound Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Suquamish Indian Tribe of the Port Madison Reservation
 governing_documents:
@@ -119,6 +133,7 @@ governing_documents:
   link: https://narf.org/nill/codes/suquamish/index.html
   source: national-indian-law-library-code-codes-suquamish
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: page heading
   note: The National Indian Law Library page gives the table of contents (and may link to the nation's
@@ -128,6 +143,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/suquamish/index.html
   source: national-indian-law-library-constitution-constitutions-suquamish
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: page heading
   note: The National Indian Law Library page gives the table of contents (and may link to the nation's
@@ -137,6 +153,7 @@ governing_documents:
   link: https://suquamish.nsn.us/home/government/suquamish-tribal-code/
   source: national-indian-law-library-suquamish
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -146,6 +163,7 @@ governing_documents:
   link: https://suquamish.nsn.us/home/government/suquamish-tribal-code/#toggle-id-2
   source: national-indian-law-library-suquamish
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -155,6 +173,7 @@ governing_documents:
   link: http://dev.suquamishmuseum.org/wp-content/uploads/2016/11/Suquamish-Tribe-Constitution.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Washington section, entry 'Suquamish Tribe'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -164,6 +183,7 @@ governing_documents:
   link: https://suquamish.nsn.us/home/government/tribal-code/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Washington section, entry 'Suquamish Tribe'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -173,6 +193,7 @@ justice_institutions:
   link: https://suquamish.nsn.us/home/departments/police-courts/courts/
   source: national-indian-law-library-suquamish
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
 - kind: tribal-court
@@ -180,6 +201,7 @@ justice_institutions:
   link: https://suquamish.nsn.us/home/departments/police-courts/courts/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Suquamish Tribe'
 dispute_resolution:
@@ -280,6 +302,7 @@ gaming:
     federal_register_citation: 64 FR 4460
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-01-28'
     locator: result page 43 (?page=43), row 20
     note: 'Listed as: "Suquamish Indian Tribe of the Port Madison Reservation Tribal State Gaming Compact"
@@ -294,6 +317,7 @@ gaming:
     federal_register_citation: 60 FR 16764
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1995-03-31'
     locator: result page 43 (?page=43), row 21
     note: 'Listed as: "Suquamish Indian Tribe of the Port Madison Reservation Tribal State Gaming Compact"
@@ -308,6 +332,7 @@ gaming:
     federal_register_citation: 72 FR 30392
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-05-31'
     locator: result page 43 (?page=43), row 22
     note: 'Listed as: "Suquamish Indian Tribe of the Port Madison Reservation Tribal State Gaming Compact"
@@ -322,6 +347,7 @@ gaming:
     federal_register_citation: 80 FR 31918
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-06-04'
     locator: result page 43 (?page=43), row 23
     note: 'Listed as: "Suquamish Indian Tribe of the Port Madison Reservation Tribal State Gaming Compact"
@@ -336,6 +362,7 @@ gaming:
     federal_register_citation: 86 FR 49049
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-09-01'
     locator: result page 43 (?page=43), row 24
     note: 'Listed as: "Suquamish Indian Tribe of the Port Madison Reservation Tribal State Gaming Compact"
@@ -350,6 +377,7 @@ gaming:
     federal_register_citation: 88 FR 66499
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2023-09-27'
     locator: result page 43 (?page=43), row 25
     note: 'Listed as: "Suquamish Indian Tribe of the Port Madison Reservation Tribal State Gaming Compact"
@@ -364,6 +392,7 @@ gaming:
     federal_register_citation: 89 FR 30389
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2024-04-23'
     locator: result page 44 (?page=44), row 1
     note: 'Listed as: "Suquamish Indian Tribe of the Port Madison Reservation Tribal State Gaming Compact"
@@ -380,6 +409,7 @@ gaming:
     dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
     source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
     confidence: medium
+    verification: inferred
     as_of: '2021-09-01'
     locator: Section XIV (Dispute Resolution), subsection B
     note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
@@ -391,6 +421,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11270&ind=11311
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1996-01-05'
     locator: table row 277, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 277 lists the nation
@@ -399,6 +430,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11292&ind=11312
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2006-01-04'
     locator: table row 277, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 277 lists the nation
@@ -407,6 +439,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11293&ind=11313
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2009-05-14'
     locator: table row 277, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 277 lists the nation
@@ -421,6 +454,7 @@ jurisdiction:
     jurisdiction under RCW 37.12.021.'
   source: revised-code-of-washington-37-12-010
   confidence: medium
+  verification: inferred
   as_of: '1963'
   locator: RCW 37.12.010
   note: Nation matched to Washington by office state. Check for later retrocession facts.
@@ -430,6 +464,7 @@ jurisdiction:
     this jurisdiction was later retroceded for several of these nations (see retrocession facts).
   source: department-of-justice-federally-recognized-indian-nations-under-state-jurisdiction-2016
   confidence: medium
+  verification: bulk-import
   as_of: '2016-06-29'
   locator: Washington section, footnote 4
   note: From a 2016 Office of Tribal Justice compilation hosted by the National Indian Justice Center.
@@ -439,12 +474,14 @@ jurisdiction:
     Indian Reservation, except as provided under RCW 37.12.010-.060. (37 FR 7353)
   source: federal-register-1972-port-madison-retrocession
   confidence: high
+  verification: read-in-full
   as_of: '1972-04-13'
 - topic: indian-child-welfare-act
   value: designated-agent-listed
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Suquamish Indian Tribe of the Port Madison Reservation Confidence lowered from high
@@ -457,6 +494,7 @@ jurisdiction:
     (list updated May 2022).
   source: national-congress-of-american-indians-implementing-tribe-profile-suquamish-indian-tribe-of-the-port-madison-reservation
   confidence: medium
+  verification: bulk-import
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Suquamish Tribe". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
@@ -464,11 +502,13 @@ memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Suquamish Tribe". Name matched to the roster entry.
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Suquamish Tribe". Name matched to the roster entry.
 review:

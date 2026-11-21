@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation
 - state: WA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3780
   note: 'Census area with land in this state: Shoalwater Bay Indian Reservation and Off-Reservation Trust
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3780
   note: Matched by name. Census class code D1.
@@ -41,6 +45,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3780, field POP100
   note: 'Census area: Shoalwater Bay Indian Reservation and Off-Reservation Trust Land (code 3780). Everyone
@@ -50,6 +55,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3317 (Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation
     alone or in any combination), GEOID 0100000US (United States)
@@ -61,6 +67,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Seattle, row 'Shoalwater Bay Indian Tribe', PDF page 9, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -69,6 +76,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: low
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 88, row T46000 'Shoalwater Bay Tribe of the Shoalwater Bay Indian
     Reservation'
@@ -82,6 +90,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation
 - kind: physical-address
@@ -89,6 +98,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation
 - kind: mailing-address
@@ -96,6 +106,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation
 - kind: phone
@@ -103,6 +114,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation
 - kind: fax
@@ -110,6 +122,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation
 federal_administration:
@@ -117,6 +130,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Olympic Peninsula Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation
 governing_documents:
@@ -126,6 +140,7 @@ governing_documents:
   link: https://narf.org/nill/codes/shoalwater_bay/index.html
   source: national-indian-law-library-code-codes-shoalwater-bay
   confidence: medium
+  verification: title-only
   as_of: '2016'
   locator: page heading
   note: 'Table of Contents Updated: October 2016. The National Indian Law Library page gives the table
@@ -136,6 +151,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/shoalwater_bay/index.html
   source: national-indian-law-library-constitution-constitutions-shoalwater-bay
   confidence: medium
+  verification: title-only
   as_of: '2015'
   locator: page heading
   note: 'Table of Contents Updated: February 2015. The National Indian Law Library page gives the table
@@ -145,6 +161,7 @@ governing_documents:
   link: https://www.shoalwaterbay-nsn.gov/tribal-court/shoalwater-bay-tribal-court/
   source: national-indian-law-library-shoalwater-bay
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
@@ -154,6 +171,7 @@ governing_documents:
   link: https://www.shoalwaterbay-nsn.gov/tribal-court/shoalwater-bay-tribal-court/
   source: national-indian-law-library-shoalwater-bay
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
@@ -162,6 +180,7 @@ governing_documents:
   title: Shoalwater Bay Indian Tribe Constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Washington section, entry 'Shoalwater Bay Tribe'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -171,6 +190,7 @@ governing_documents:
   title: Shoalwater Bay Code of Laws
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Washington section, entry 'Shoalwater Bay Tribe'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -182,6 +202,7 @@ justice_institutions:
   link: https://www.shoalwaterbay-nsn.gov/tribal-court/shoalwater-bay-tribal-court/
   source: national-indian-law-library-shoalwater-bay
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -189,6 +210,7 @@ justice_institutions:
   name: Shoalwater Bay Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Shoalwater Bay Tribe'
   note: 'Link check 2026-11-21: the link the source gives (http://www.shoalwaterbay-nsn.gov/home/tribal-government/tribal-court/)
@@ -242,6 +264,7 @@ gaming:
     federal_register_citation: 86 FR 51373
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-09-15'
     locator: result page 42 (?page=42), row 7
     note: 'Listed as: "Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation Tribal State
@@ -256,6 +279,7 @@ gaming:
     federal_register_citation: 72 FR 30392
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-05-31'
     locator: result page 42 (?page=42), row 8
     note: 'Listed as: "Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation Tribal State
@@ -270,6 +294,7 @@ gaming:
     federal_register_citation: 67 FR 68152
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2002-11-08'
     locator: result page 42 (?page=42), row 9
     note: 'Listed as: "Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation Tribal State
@@ -284,6 +309,7 @@ gaming:
     federal_register_citation: 80 FR 31918
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-06-04'
     locator: result page 42 (?page=42), row 10
     note: 'Listed as: "Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation Tribal State
@@ -300,6 +326,7 @@ gaming:
     dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
     source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
     confidence: medium
+    verification: inferred
     as_of: '2021-09-01'
     locator: Section XIV (Dispute Resolution), subsection B
     note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
@@ -311,6 +338,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11120&ind=11158
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1998-02-06'
     locator: table row 259, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 259 lists the nation
@@ -319,6 +347,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11145&ind=11159
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2001-12-03'
     locator: table row 259, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 259 lists the nation
@@ -327,6 +356,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11146&ind=11160
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2012-08-01'
     locator: table row 259, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 259 lists the nation
@@ -335,6 +365,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11147&ind=11161
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2019-08-30'
     locator: table row 259, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 259 lists the nation
@@ -349,6 +380,7 @@ jurisdiction:
     jurisdiction under RCW 37.12.021.'
   source: revised-code-of-washington-37-12-010
   confidence: medium
+  verification: inferred
   as_of: '1963'
   locator: RCW 37.12.010
   note: Nation matched to Washington by office state. Check for later retrocession facts.
@@ -357,6 +389,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Shoalwater Bay Indian Tribe of the Shoalwater Bay Indian Reservation Confidence lowered
@@ -366,6 +399,7 @@ memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Shoalwater Bay Indian Tribe". Name matched to the roster entry.
 review:

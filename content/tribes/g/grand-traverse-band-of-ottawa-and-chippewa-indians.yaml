@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 - type: federal
@@ -18,6 +19,7 @@ recognition:
   since: '1980-05-27'
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '1980-05-27'
   locator: 'Petitioner #3'
 states:
@@ -25,12 +27,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
 - state: MI
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1370
   note: 'Census area with land in this state: Grand Traverse Reservation and Off-Reservation Trust Land
@@ -42,6 +46,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1370
   note: Matched by name. Census class code D1.
@@ -50,12 +55,14 @@ population:
   kind: citizens
   source: grand-traverse-band-media-kit-2019
   confidence: medium
+  verification: read-in-full
   as_of: 2019-09
   note: 'Media kit: ''The Grand Traverse Band Currently has 4,189 Tribal members.'' Dated 2019 (PDF metadata).'
 - count: 595
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1370, field POP100
   note: 'Census area: Grand Traverse Reservation and Off-Reservation Trust Land (code 1370). Everyone
@@ -65,6 +72,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3009 (Grand Traverse Band of Ottawa and Chippewa Indians alone or in
     any combination), GEOID 0100000US (United States)
@@ -75,6 +83,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Grand Traverse Band of Ottawa and Chippewa Indians', PDF page
     4, Enrollment column
@@ -86,6 +95,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
 - kind: physical-address
@@ -93,6 +103,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
 - kind: mailing-address
@@ -100,6 +111,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
 - kind: phone
@@ -107,6 +119,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
 - kind: fax
@@ -114,6 +127,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
 languages:
@@ -121,6 +135,7 @@ languages:
   language_tag: oj
   source: gtbindians-tribal-council-asp
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: 'Page: ''Increase Anishinaabemowin (original people''s language) being spoken in the communities''.'
 federal_administration:
@@ -128,6 +143,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Michigan Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Grand Traverse Band of Ottawa and Chippewa Indians, Michigan
 governing_documents:
@@ -137,6 +153,7 @@ governing_documents:
   link: https://narf.org/nill/codes/grand_traverse/index.html
   source: national-indian-law-library-code-codes-grand-traverse
   confidence: medium
+  verification: title-only
   as_of: '2020'
   locator: page heading
   note: 'Most Recent Update Received : July 2020. Full text linked from the National Indian Law Library
@@ -147,6 +164,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/grandtraverseconst/index.html
   source: national-indian-law-library-constitution-constitutions-grandtraverseconst
   confidence: medium
+  verification: title-only
   as_of: '2007'
   locator: page heading
   note: 'Confirmed Current: May 2007. The National Indian Law Library page gives the table of contents
@@ -156,6 +174,7 @@ governing_documents:
   link: http://www.gtbindians.org/rules_advice.asp
   source: national-indian-law-library-grand-traverse
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -165,6 +184,7 @@ governing_documents:
   link: http://www.gtbindians.org/legal_department.asp
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Michigan section, entry 'Grand Traverse Band of Ottawa and Chippewa Indians'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -174,6 +194,7 @@ justice_institutions:
   link: http://www.gtbindians.org/tribal_court.asp
   source: national-indian-law-library-grand-traverse
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -182,6 +203,7 @@ justice_institutions:
   link: http://www.gtbindians.org/tribal_court.asp
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Michigan section, entry 'Grand Traverse Band of Ottawa and Chippewa Indians'
 dispute_resolution:
@@ -204,6 +226,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/GTB-Juvenile-Code-Diversion.pdf
     source: grand-traverse-band-title-10-juvenile-code-415
     confidence: medium
+    verification: read-in-full
     as_of: '1999-10-01'
     locator: Title 10, Sec. 415(a)-(g)
     note: Parents or guardians must voluntarily consent after an explanation of rights; the prosecutor
@@ -218,6 +241,7 @@ dispute_resolution:
     link: https://nnigovernance.arizona.edu/grand-traverse-band-tribal-court
     source: nni-honoring-nations-gtb-tribal-court
     confidence: medium
+    verification: inferred
     as_of: '2000'
     note: Secondary source (Honoring Nations 1999 report). The staff position is from the Band's Tribal
       Court web page (https://gtbindians.org/tribal_court.asp, read 2026-11-21); no staff names recorded.
@@ -421,6 +445,7 @@ gaming:
     approved: '1993-11-30'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-11-30'
     locator: result page 16 (?page=16), row 9
     note: 'Listed as: "Grand Traverse Band of Ottawa and Chippewa Indians Tribal State Gaming Compact"
@@ -436,6 +461,7 @@ gaming:
     dispute_resolution_locator: Section 7 (Dispute Resolution)
     source: compact-mi-bay-mills-indian-community-1993
     confidence: medium
+    verification: inferred
     as_of: '1993-11-30'
     locator: Section 7 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. The same Section 7 text appears in the
@@ -448,6 +474,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9874&ind=9890
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1994-06-13'
     locator: table row 92, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 92 lists the nation
@@ -456,6 +483,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9875&ind=9891
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1995-12-15'
     locator: table row 92, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 92 lists the nation
@@ -464,6 +492,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9876&ind=9892
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1997-07-28'
     locator: table row 92, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 92 lists the nation
@@ -472,6 +501,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9877&ind=9893
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2018-06-28'
     locator: table row 92, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 92 lists the nation
@@ -480,6 +510,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Grand Traverse Band of Ottawa
       and Chippewa Indians, Michigan". Facilities as machine-extracted from the report text (verify):
@@ -491,6 +522,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Grand Traverse Band of Ottawa & Chippewa Indians, Michigan Confidence lowered from
@@ -503,6 +535,7 @@ jurisdiction:
     (list updated May 2022).
   source: national-congress-of-american-indians-implementing-tribe-profile-grand-traverse-band-of-ottawa-and-chippewa-indians
   confidence: medium
+  verification: bulk-import
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Grand Traverse Band of Ottawa and Chippewa Indians". Also on the NCAI implementing
@@ -511,6 +544,7 @@ memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Grand Traverse Band of Ottawa and Chippewa Indians". Name matched to the roster entry.
 review:

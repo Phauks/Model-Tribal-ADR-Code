@@ -11,6 +11,7 @@ recognition:
     Acknowledgment effective 10/14/2005 70 FR 60099
   source: federal-register-05-20720
   confidence: high
+  verification: bulk-import
   as_of: '2005-10-14'
   locator: 'Petitioner #35'
   note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
@@ -23,6 +24,7 @@ states:
   presence: other
   source: ofa-petitions-resolved
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.

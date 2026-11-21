@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pawnee Nation of Oklahoma
 - state: OK
   presence: other
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5780
   note: 'Census area with land in this state: Pawnee OTSA (code 5780). Statistical area only (not a land
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5780
   note: Matched by name. Census class code D6.
@@ -41,6 +45,7 @@ population:
   kind: citizens
   source: pawnee-nation-of-oklahoma-pawnee-history
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"the number of Tribal enrolled members is over 3,500"; undated statement on the official site;
     as_of is the access date'
@@ -48,6 +53,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5780, field POP100
   note: 'Census area: Pawnee OTSA (code 5780). Everyone counted as living in the area in the 2020 Census,
@@ -57,6 +63,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3195 (Pawnee Nation of Oklahoma alone or in any combination), GEOID
     0100000US (United States)
@@ -67,6 +74,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Oklahoma, row 'Pawnee Nation', PDF page 6, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -77,6 +85,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pawnee Nation of Oklahoma
 - kind: physical-address
@@ -84,6 +93,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pawnee Nation of Oklahoma
 - kind: mailing-address
@@ -91,6 +101,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pawnee Nation of Oklahoma
 - kind: phone
@@ -98,6 +109,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pawnee Nation of Oklahoma
 - kind: fax
@@ -105,6 +117,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pawnee Nation of Oklahoma
 federal_administration:
@@ -112,6 +125,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Pawnee Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pawnee Nation of Oklahoma
 government_structure:
@@ -120,6 +134,7 @@ government_structure:
     by the Secretary of the Interior (Oklahoma Indian Welfare Act of June 26, 1936), as of 1947
   source: haas-1947-table-b-oklahoma
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, Oklahoma Tribes, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -130,6 +145,7 @@ government_structure:
     June 26, 1936 (49 Stat. 1967)
   source: university-of-oklahoma-indian-reorganization-act-pawcons
   confidence: medium
+  verification: read-in-full
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -140,6 +156,7 @@ governing_documents:
   link: https://narf.org/nill/codes/pawneecode/index.html
   source: national-indian-law-library-code-codes-pawneecode
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: page heading
   note: 'Updated: Code received in 2005; additional updates received in 2022. Full text linked from the
@@ -150,6 +167,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/pawneeconstitution/index.html
   source: national-indian-law-library-constitution-constitutions-pawneeconstitution
   confidence: medium
+  verification: title-only
   as_of: '2003'
   locator: page heading
   note: 'Last amended: 2003; copyright: 2005. The National Indian Law Library page gives the table of
@@ -159,6 +177,7 @@ governing_documents:
   link: https://pawneenation.org/pawnee-nation-court/
   source: national-indian-law-library-pawnee-oklahoma
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
@@ -168,6 +187,7 @@ governing_documents:
   link: https://pawneenation.org/government/constitution-convention/
   source: national-indian-law-library-pawnee-oklahoma
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
@@ -176,6 +196,7 @@ governing_documents:
   title: Pawnee Nation of Oklahoma Constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Oklahoma section, entry 'Pawnee Nation of Oklahoma'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -187,6 +208,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/pawchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-pawchrtr
   confidence: medium
+  verification: title-only
   as_of: '1938'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -195,6 +217,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/pawcons.html
   source: university-of-oklahoma-indian-reorganization-act-pawcons
   confidence: medium
+  verification: title-only
   as_of: '1938'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -203,6 +226,7 @@ justice_institutions:
   link: https://pawneenation.org/pawnee-nation-court/
   source: national-indian-law-library-pawnee-oklahoma
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -210,6 +234,7 @@ justice_institutions:
   name: Pawnee Nation Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Oklahoma section, entry 'Pawnee Nation of Oklahoma'
   note: 'Link check 2026-11-21: the link the source gives (http://www.pawneenation.org/page/home/government/pawnee-nation-court)
@@ -222,6 +247,7 @@ gaming:
     federal_register_citation: 70 FR 13535
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2005-03-21'
     locator: result page 28 (?page=28), row 18
     note: 'Listed as: "Pawnee Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Pawnee
@@ -238,6 +264,7 @@ gaming:
     dispute_resolution_locator: Part 12 (Dispute Resolution)
     source: compact-ok-cherokee-nation-2005
     confidence: medium
+    verification: inferred
     as_of: '2005-01-27'
     locator: Part 12 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
@@ -250,6 +277,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10594&ind=10611
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-02-19'
     locator: table row 188, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 188 lists the nation
@@ -258,6 +286,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10595&ind=10612
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2006-05-09'
     locator: table row 188, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 188 lists the nation
@@ -266,6 +295,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10596&ind=10613
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2008-02-25'
     locator: table row 188, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 188 lists the nation
@@ -274,6 +304,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10597&ind=10616
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2009-12-17'
     locator: table row 188, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 188 lists the nation
@@ -282,6 +313,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10598&ind=10617
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2013-04-02'
     locator: table row 188, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 188 lists the nation
@@ -290,6 +322,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10599&ind=10618
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2013-09-27'
     locator: table row 188, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 188 lists the nation
@@ -298,6 +331,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10600&ind=10619
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2017-02-09'
     locator: table row 188, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 188 lists the nation
@@ -306,6 +340,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10601&ind=10620
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2022-11-22'
     locator: table row 188, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 188 lists the nation
@@ -316,6 +351,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Pawnee Nation of Oklahoma Confidence lowered from high by the lead session: the notice

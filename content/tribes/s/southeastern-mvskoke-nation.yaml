@@ -6,12 +6,14 @@ names:
   - name: Southeastern Mvskoke Nation, Inc.
     source: alabama-administrative-code-475-x-1-2026
     confidence: high
+    verification: bulk-import
     as_of: '2026-07-31'
     locator: Rule 475-X-1-.02
   former:
   - name: Star Clan of Muscogee Creeks of Pike County
     source: alabama-administrative-code-475-x-1-2026
     confidence: high
+    verification: read-in-full
     as_of: '2026-07-31'
     locator: Rule 475-X-1-.02
   official_source: census-aian-geography-definitions
@@ -19,6 +21,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State Designated Tribal Statistical Area; area 9880
   note: The 2020 Census delineated "Southeastern Mvskoke Nation SDTSA" (State Designated Tribal Statistical
@@ -32,6 +35,7 @@ recognition:
     1992, No. 92-134)
   source: alabama-code-41-9-708
   confidence: high
+  verification: read-in-full
   as_of: '2025'
   locator: Section 41-9-708(b)
   note: Statute names the group as 'the Star Clan of Muscogee Creeks of Pike County' among the Indian
@@ -42,6 +46,7 @@ recognition:
     2026-09-14)
   source: alabama-administrative-code-475-x-1-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-07-31'
   locator: Rule 475-X-1-.02 Members
 - type: state
@@ -49,12 +54,14 @@ recognition:
   legal_basis: Listed by the Alabama Indian Affairs Commission as a tribe recognized by the State of Alabama
   source: alabama-indian-affairs-commission-tribes-list-2026
   confidence: high
+  verification: bulk-import
   as_of: 2026-10
 states:
 - state: AL
   presence: other
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9880
   note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
@@ -62,6 +69,7 @@ states:
   presence: other
   source: alabama-indian-affairs-commission-tribes-list-2026
   confidence: high
+  verification: bulk-import
   as_of: 2026-10
   note: State-recognized in Alabama; Alabama contact address listed.
 census_areas:
@@ -71,6 +79,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9880, GEOID 9880R
   note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
@@ -81,12 +90,14 @@ contacts:
   label: Official website
   source: alabama-indian-affairs-commission-tribes-list-2026
   confidence: high
+  verification: bulk-import
   as_of: 2026-10
 - kind: email-general
   value: administration@southeasternmvskokenation.org
   label: Nation administration email listed by the Alabama Indian Affairs Commission
   source: alabama-indian-affairs-commission-tribes-list-2026
   confidence: high
+  verification: bulk-import
   as_of: 2026-10
 review:
   status: drafted-from-public-sources

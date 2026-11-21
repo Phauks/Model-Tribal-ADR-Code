@@ -6,6 +6,7 @@ names:
   - name: Saktuliq
     source: alaska-dcra-native-place-names
     confidence: medium
+    verification: bulk-import
     as_of: '2018-10-15'
     locator: community row "Shaktoolik"
     note: Native place name for the community of Shaktoolik in Iñupiaq (State of Alaska, from the Alaska
@@ -18,6 +19,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4106
 states:
@@ -25,12 +27,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Shaktoolik
 - state: AK
   presence: other
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 7450
   note: 'Census area with land in this state: Shaktoolik ANVSA (code 7450). Statistical area only (not
@@ -42,6 +46,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US7450
   note: Matched by name. Census class code E1.
@@ -50,6 +55,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: ALASKA row "Shaktoolik", Enrollment column
   note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
@@ -58,6 +64,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US7450, field POP100
   note: 'Census area: Shaktoolik ANVSA (code 7450). Everyone counted as living in the area in the 2020
@@ -67,6 +74,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2729 (Native Village of Shaktoolik alone or in any combination), GEOID
     0100000US (United States)
@@ -77,6 +85,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 83, row T30900 'Native Village of Shaktoolik'
   note: 'Column 1, service area population from the 2010 Indian Affairs survey: the nation''s own estimate
@@ -88,6 +97,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Shaktoolik
 - kind: physical-address
@@ -95,6 +105,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Shaktoolik
 - kind: mailing-address
@@ -102,6 +113,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Shaktoolik
 - kind: phone
@@ -109,6 +121,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Shaktoolik
 - kind: fax
@@ -116,6 +129,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Shaktoolik
 - kind: mailing-address
@@ -123,6 +137,7 @@ contacts:
   label: Tribal office address listed by the State of Alaska
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: high
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Native Village of Shaktoolik" (community: Shaktoolik, object 185)'
 languages:
@@ -130,6 +145,7 @@ languages:
   language_tag: ipk
   source: alaska-dcra-native-place-names
   confidence: medium
+  verification: inferred
   as_of: '2018-10-15'
   locator: community row "Shaktoolik"
   note: Language of the Native place name for the community (Shaktoolik), as listed by the State of Alaska
@@ -139,6 +155,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Alaska Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Shaktoolik
 government_structure:
@@ -148,6 +165,7 @@ government_structure:
     1, 1936), as of 1947
   source: haas-1947-table-b-alaska
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, Alaska Native Communities and Cooperatives, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -158,6 +176,7 @@ government_structure:
     Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-shakcons
   confidence: medium
+  verification: read-in-full
   as_of: '1940'
   locator: preamble / approval and certification of adoption
   note: The text cites the Act of June 18, 1934; the Indian Reorganization Act reached Alaska through
@@ -170,6 +189,7 @@ governing_documents:
   link: https://narf.org/nill/codes/native_shaktoolik/index.html
   source: national-indian-law-library-code-codes-native-shaktoolik
   confidence: medium
+  verification: title-only
   as_of: '2007'
   locator: page heading
   note: 'Dated: 1986-88, 2007. The National Indian Law Library page gives the table of contents (and may
@@ -179,6 +199,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/shakcons.html
   source: national-indian-law-library-native-shaktoolik
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
@@ -188,6 +209,7 @@ governing_documents:
   link: https://www.loc.gov/item/40029065/
   source: national-indian-law-library-native-shaktoolik
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
@@ -198,6 +220,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/shakchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-shakchrtr
   confidence: medium
+  verification: title-only
   as_of: '1940'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -206,6 +229,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/shakcons.html
   source: university-of-oklahoma-indian-reorganization-act-shakcons
   confidence: medium
+  verification: title-only
   as_of: '1940'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 jurisdiction:
@@ -216,6 +240,7 @@ jurisdiction:
     within Alaska; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Alaska"
   note: Statute is primary; nation matched to Alaska by office state in the BIA Tribal Leaders Directory,
@@ -225,6 +250,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Native Village of Shaktoolik Confidence lowered from high by the lead session: the
@@ -234,6 +260,7 @@ related_entities:
   relation: alaska-native-claims-settlement-act-regional-corporation
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Native Village of Shaktoolik
   note: Regional corporation for the area, as listed in the directory.
@@ -241,6 +268,7 @@ related_entities:
   relation: alaska-native-claims-settlement-act-regional-corporation
   source: alaska-dcra-community-regions-overview
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: community row "Shaktoolik"
   note: State of Alaska lists this affiliation for the community where the nation is based (Shaktoolik),
@@ -249,6 +277,7 @@ related_entities:
   relation: alaska-native-claims-settlement-act-regional-nonprofit
   source: alaska-dcra-community-regions-overview
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: community row "Shaktoolik"
   note: State of Alaska lists this affiliation for the community where the nation is based (Shaktoolik),
@@ -257,6 +286,7 @@ related_entities:
   relation: native-regional-health-care-provider
   source: alaska-dcra-community-regions-overview
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: community row "Shaktoolik"
   note: State of Alaska lists this affiliation for the community where the nation is based (Shaktoolik),

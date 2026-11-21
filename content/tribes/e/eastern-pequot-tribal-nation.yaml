@@ -6,6 +6,7 @@ names:
   - name: Paucatuck Eastern Pequot
     source: census-2020-ddhca-popgroup-codes
     confidence: low
+    verification: inferred
     as_of: '2020'
     locator: POPGROUP code 1990
     note: Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting
@@ -14,24 +15,28 @@ names:
   - name: Eastern Pequot Indians of Connecticut
     source: connecticut-deep-tribal-affairs
     confidence: high
+    verification: read-in-full
     as_of: '2026'
     note: 'Source: ''Prior to being known as the Eastern Pequot Tribal Nation, they were also known by
       other names''.'
   - name: Paucatuck Eastern Pequot
     source: connecticut-deep-tribal-affairs
     confidence: high
+    verification: read-in-full
     as_of: '2026'
     note: 'Source: ''Prior to being known as the Eastern Pequot Tribal Nation, they were also known by
       other names''.'
   - name: North Stonington Pequots
     source: connecticut-deep-tribal-affairs
     confidence: high
+    verification: read-in-full
     as_of: '2026'
     note: 'Source: ''Prior to being known as the Eastern Pequot Tribal Nation, they were also known by
       other names''.'
   - name: Eastern Pequot
     source: connecticut-olr-report-2026-r-0029
     confidence: medium
+    verification: read-in-full
     as_of: '2026'
     note: Name in 1973 legislation; renamed Paucatuck Pequot (1981) and Paucatuck Eastern Pequot (1989)
       per the report.
@@ -40,6 +45,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: low
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State American Indian reservation; area 9280
   note: The 2020 Census delineated "Paucatuck Eastern Pequot (state) Reservation" (State American Indian
@@ -52,6 +58,7 @@ recognition:
     Eastern Pequot'
   source: connecticut-general-statutes-47-59a
   confidence: high
+  verification: inferred
   as_of: '2020'
   locator: Section 47-59a(b)
   note: Statute recognizes the named indigenous tribes as self-governing entities possessing powers and
@@ -62,12 +69,14 @@ recognition:
     Protection
   source: connecticut-deep-tribal-affairs
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 states:
 - state: CT
   presence: land
   source: census-aiannh-codes-by-state-2020
   confidence: low
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9280
   note: State reservation land.
@@ -75,6 +84,7 @@ states:
   presence: land
   source: connecticut-deep-tribal-affairs
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   note: Reservation in North Stonington.
 census_areas:
@@ -84,6 +94,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: low
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9280, GEOID 9280R
   note: Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched
@@ -96,6 +107,7 @@ contacts:
   label: Official website
   source: connecticut-deep-tribal-affairs
   confidence: high
+  verification: title-only
   as_of: '2026'
   note: Linked by the state agency as the nation's site.
 review:

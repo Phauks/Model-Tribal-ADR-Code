@@ -6,6 +6,7 @@ names:
   - name: Schaghticoke Indian Tribe
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     locator: 'Petitioner #79'
   official_source: federal-register-05-20719
@@ -17,6 +18,7 @@ recognition:
     Acknowledgment effective 10/14/2005 70 FR 60101
   source: federal-register-05-20719
   confidence: high
+  verification: bulk-import
   as_of: '2005-10-14'
   locator: 'Petitioner #79'
   note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
@@ -30,6 +32,7 @@ recognition:
   petition_stage: 'Re-petition request: Awaiting Active Consideration'
   source: ofa-re-petition-requests
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Current Re-Petition Requests, row R003
   note: 'Request for authorization to re-petition; Federal Register notice Receipt of Request for Authorization
@@ -40,6 +43,7 @@ states:
   presence: other
   source: ofa-petitions-resolved
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.

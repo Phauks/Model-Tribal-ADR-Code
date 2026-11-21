@@ -6,15 +6,18 @@ names:
   - name: Occaneechi Band of the Saponi Nation
     source: north-carolina-commission-of-indian-affairs-tribal-communities
     confidence: high
+    verification: bulk-import
     as_of: '2026'
   - name: Occaneechi Band of Saponi Nation in North Carolina
     source: north-carolina-general-statutes-chapter-71a
     confidence: high
+    verification: title-only
     as_of: '2026'
     locator: Section 71A-7.2 heading
   - name: Occaneechi Band of Saponi Nation
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     note: Name used for this group in the cited source; matched to this record by name and state.
   official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
@@ -22,6 +25,7 @@ recognition:
 - type: unrecognized
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1; Table 3
   note: 'GAO Table 1 lists "Occaneechi Band of Saponi Nation of North Carolina" among 26 non-federally
@@ -31,6 +35,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State Designated Tribal Statistical Area; area 9838
   note: The 2020 Census delineated "Occaneechi-Saponi SDTSA" (State Designated Tribal Statistical Area).
@@ -44,6 +49,7 @@ recognition:
   petition_stage: Letter of Intent to Petition 01/06/1995
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   locator: 'Petitioner #148'
   note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
@@ -55,6 +61,7 @@ recognition:
   since: '1971-07-20'
   source: north-carolina-general-statutes-chapter-71a
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: Section 71A-7.2
   note: Statute says the tribe is designated and officially recognized 'from and after' this date.
@@ -64,12 +71,14 @@ recognition:
     Affairs
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 states:
 - state: NC
   presence: other
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1, State column
   note: State as listed by GAO.
@@ -77,6 +86,7 @@ states:
   presence: other
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9838
   note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
@@ -84,6 +94,7 @@ states:
   presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
@@ -91,6 +102,7 @@ states:
   presence: government-office
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: inferred
   as_of: '2026'
 census_areas:
 - geographic_identifier: '9838'
@@ -99,6 +111,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9838, GEOID 9838R
   note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
@@ -108,6 +121,7 @@ population:
   kind: citizens
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: medium
+  verification: read-in-full
   as_of: '2026'
   note: 'Source: ''1100+ members''; count is a floor.'
 contacts:
@@ -116,24 +130,28 @@ contacts:
   label: Tribal mailing address
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: phone
   value: 336-421-1317
   label: Tribal phone
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: email-general
   value: obsntribe@gmail.com
   label: Tribal email
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: website
   value: https://obsn.org/
   label: Official website
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 review:
   status: drafted-from-public-sources

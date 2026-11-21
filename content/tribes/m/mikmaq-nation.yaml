@@ -6,6 +6,7 @@ names:
   - name: Aroostook Band of Micmacs
     source: bia-recognized-entities-2026
     confidence: high
+    verification: bulk-import
     as_of: '2026-01-30'
     locator: 91 Fed. Reg. 4104
     note: Listed in the notice as a previous name.
@@ -16,6 +17,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 - type: federal
@@ -25,6 +27,7 @@ recognition:
   since: '1991-11-26'
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '1991-11-26'
   locator: 'Petitioner #103'
   note: 'Petitioner name: Aroostook Band of Micmacs; the roster lists Mi''kmaq Nation as previously listed
@@ -34,12 +37,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mi'kmaq Nation (previously listed as Aroostook Band of Micmacs)
 - state: ME
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0115
   note: 'Census area with land in this state: Aroostook Band of Micmac Trust Land (code 0115). Area matched
@@ -51,6 +56,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0115
   note: Matched by name. Census area keeps the former name Aroostook Band of Micmacs; the 2026 list gives
@@ -60,6 +66,7 @@ population:
   kind: citizens
   source: mikmaq-nation-home
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"The majority of the 1,500 + members of the Mi''kmaq Nation live within Aroostook County"; undated
     statement on the official site; as_of is the access date'
@@ -67,6 +74,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0115, field POP100
   note: 'Census area: Aroostook Band of Micmac Trust Land (code 0115). Everyone counted as living in the
@@ -77,6 +85,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2852 (Aroostook Band of Micmacs alone or in any combination), GEOID
     0100000US (United States)
@@ -87,6 +96,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Mi'Kmaq Nation (Aroostook)', PDF page 4, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -97,6 +107,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mi'kmaq Nation (previously listed as Aroostook Band of Micmacs)
 - kind: physical-address
@@ -104,6 +115,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mi'kmaq Nation (previously listed as Aroostook Band of Micmacs)
 - kind: mailing-address
@@ -111,6 +123,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mi'kmaq Nation (previously listed as Aroostook Band of Micmacs)
 - kind: phone
@@ -118,6 +131,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mi'kmaq Nation (previously listed as Aroostook Band of Micmacs)
 - kind: fax
@@ -125,6 +139,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mi'kmaq Nation (previously listed as Aroostook Band of Micmacs)
 languages:
@@ -132,6 +147,7 @@ languages:
   language_tag: mic
   source: mikmaq-nation-home
   confidence: high
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"The Micmac language is an Algonquin one"'
 federal_administration:
@@ -139,6 +155,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Eastern Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Mi'kmaq Nation (previously listed as Aroostook Band of Micmacs)
 governing_documents:
@@ -148,6 +165,7 @@ governing_documents:
   link: http://www.micmac-nsn.gov/Election_Ordinance.pdf
   source: national-indian-law-library-aroostook-micmac
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -157,6 +175,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-aroostook-micmac
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -166,6 +185,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Mi''kmaq Nation Confidence lowered from high by the lead session: the notice prints
@@ -174,6 +194,7 @@ memberships:
 - organization: United South and Eastern Tribes
   source: united-south-and-eastern-tribes-member-tribal-nations
   confidence: medium
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Mi'kmaq Nation".
 review:

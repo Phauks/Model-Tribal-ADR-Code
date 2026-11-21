@@ -6,6 +6,7 @@ names:
   - name: Hassanamisco Band of the Nipmuc Nation
     source: census-2020-ddhca-popgroup-codes
     confidence: low
+    verification: inferred
     as_of: '2020'
     locator: POPGROUP code 1816
     note: Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting
@@ -13,16 +14,19 @@ names:
   - name: Nipmuc Tribe
     source: massachusetts-executive-order-126
     confidence: medium
+    verification: inferred
     as_of: '1976-07-08'
   - name: Hassanamisco Tribe of Nipmuc Indians
     source: alabama-indian-affairs-commission-state-recognized-tribes-compilation
     confidence: low
+    verification: bulk-import
     as_of: '2001'
   official_source: census-aian-geography-definitions
 recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State American Indian reservation; area 9150
   note: The 2020 Census delineated "Hassanamisco (state) Reservation" (State American Indian reservation).
@@ -35,6 +39,7 @@ recognition:
   since: '1976-07-08'
   source: massachusetts-executive-order-126
   confidence: medium
+  verification: read-in-full
   as_of: '1976-07-08'
   note: Directs state agencies to deal directly 'with the Hassanamisco Nipmuc Tribal council on matters
     affecting the Nipmuc Tribe'; recitals call the Nipmuc Tribal Council a recognized governing body.
@@ -44,6 +49,7 @@ recognition:
   legal_basis: Massachusetts Executive Order No. 637 (2024), recital and Section 1
   source: massachusetts-executive-order-637
   confidence: high
+  verification: read-in-full
   as_of: '2024-11-19'
   note: 'Section 1: ''Like the Mashpee Wampanoag Tribe, the Wampanoag Tribe of Gay Head, and the Hassanamisco
     Nipmuc Tribe, the Herring Pond Wampanoag Tribe is recognized by the Commonwealth''.'
@@ -52,6 +58,7 @@ states:
   presence: land
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9150
   note: State reservation land.
@@ -59,6 +66,7 @@ states:
   presence: other
   source: massachusetts-executive-order-126
   confidence: medium
+  verification: inferred
   as_of: '1976-07-08'
 census_areas:
 - geographic_identifier: '9150'
@@ -67,6 +75,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9150, GEOID 9150R
   note: Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched

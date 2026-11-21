@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Goshute Reservation, Nevada and Utah
 - state: NV
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1340
   note: 'Census area with land in this state: Goshute Reservation (code 1340). Area matched to the nation
@@ -30,6 +33,7 @@ states:
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1340
   note: 'Census area with land in this state: Goshute Reservation (code 1340). Area matched to the nation
@@ -41,6 +45,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1340
   note: Matched by name. Census names the area Goshute Reservation. Census class code D2.
@@ -49,6 +54,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1340, field POP100
   note: 'Census area: Goshute Reservation (code 1340). Everyone counted as living in the area in the 2020
@@ -58,6 +64,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2948 (Confederated Tribes of the Goshute Reservation alone or in any
     combination), GEOID 0100000US (United States)
@@ -68,6 +75,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Denver, row 'Confederated Tribes of the Goshute Reservation', PDF page 5,
     Enrollment column
@@ -79,6 +87,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Goshute Reservation, Nevada and Utah
 - kind: physical-address
@@ -86,6 +95,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Goshute Reservation, Nevada and Utah
 - kind: mailing-address
@@ -93,6 +103,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Goshute Reservation, Nevada and Utah
 - kind: phone
@@ -100,6 +111,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Goshute Reservation, Nevada and Utah
 - kind: fax
@@ -107,6 +119,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Goshute Reservation, Nevada and Utah
 federal_administration:
@@ -114,6 +127,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Eastern Nevada Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Goshute Reservation, Nevada and Utah
 government_structure:
@@ -123,6 +137,7 @@ government_structure:
     as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -133,6 +148,7 @@ government_structure:
     was adopted under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-goshcons
   confidence: medium
+  verification: read-in-full
   as_of: '1940'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -144,6 +160,7 @@ governing_documents:
   link: https://narf.org/nill/codes/goshute/index.html
   source: national-indian-law-library-code-codes-goshute
   confidence: medium
+  verification: title-only
   as_of: '2006'
   locator: page heading
   note: 'Undated; Received: December 2006. Full text linked from the National Indian Law Library page.'
@@ -152,6 +169,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/goshcons.html
   source: national-indian-law-library-confederated-goshute
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
@@ -161,6 +179,7 @@ governing_documents:
   link: https://www.loc.gov/item/41050933/
   source: national-indian-law-library-confederated-goshute
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
@@ -171,6 +190,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/goshchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-goshchrtr
   confidence: medium
+  verification: title-only
   as_of: '1941'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -179,6 +199,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/goshcons.html
   source: university-of-oklahoma-indian-reorganization-act-goshcons
   confidence: medium
+  verification: title-only
   as_of: '1940'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -186,6 +207,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-confederated-goshute
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
@@ -194,6 +216,7 @@ justice_institutions:
   name: Confederated Tribes of the Goshute Reservation Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Utah section, entry 'Confederated Tribes of the Goshute Reservation'
 jurisdiction:
@@ -204,12 +227,14 @@ jurisdiction:
     1975. (40 FR 27501)
   source: federal-register-1975-nevada-retrocession
   confidence: medium
+  verification: read-in-full
   as_of: '1975-07-01'
 - topic: indian-child-welfare-act
   value: designated-agent-listed
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Confederated Tribes of the Goshute Reservation, Nevada and Utah Confidence lowered
@@ -219,6 +244,7 @@ memberships:
 - organization: Inter-Tribal Council of Nevada
   source: inter-tribal-council-of-nevada-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Confederated Tribes of Goshute". Name matched to the roster entry.
 review:

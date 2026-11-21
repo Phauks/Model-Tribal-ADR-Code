@@ -9,6 +9,7 @@ recognition:
     390 (1964); termination notice 35 Fed. Reg. 11272, 11273
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Appendix II, Table 6
   note: GAO Table 6 lists "Mission Creek Reservation" among nine California tribes whose recognition was
@@ -19,6 +20,7 @@ recognition:
   legal_basis: Pub. L. 88-419, 78 Stat. 390 (1964), amending Pub. L. 85-671
   source: public-law-88-419-california-rancheria-act-amendment
   confidence: low
+  verification: inferred
   as_of: '1964-08-11'
   locator: Section 1(a)
   note: The 1964 amendment extended the 1958 Act to any rancheria or reservation wholly within California
@@ -29,6 +31,7 @@ states:
   presence: other
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Appendix II, Table 6
   note: Former rancheria or reservation in California named by GAO.

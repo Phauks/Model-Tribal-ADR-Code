@@ -6,6 +6,7 @@ names:
   - name: Burt Lake Band of Ottawa and Chippewa Indians, Inc.
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     locator: 'Petitioner #101'
     note: Name as printed on the Office of Federal Acknowledgment list by state.
@@ -14,6 +15,7 @@ recognition:
 - type: unrecognized
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1; Table 3
   note: 'GAO Table 1 lists "Burt Lake Band of Ottawa and Chippewa Indians, Inc." among 26 non-federally
@@ -27,6 +29,7 @@ recognition:
     Acknowledgment effective 1/23/2007 71 FR 57995
   source: federal-register-e6-16191
   confidence: high
+  verification: bulk-import
   as_of: '2006-10-02'
   locator: 'Petitioner #101'
   note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
@@ -39,6 +42,7 @@ recognition:
   petition_stage: 'Re-petition request: Awaiting Active Consideration'
   source: ofa-re-petition-requests
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Current Re-Petition Requests, row R002
   note: 'Request for authorization to re-petition; Federal Register notice Receipt of Request for Authorization
@@ -50,6 +54,7 @@ recognition:
     (2016-2017); no statute or executive order identified
   source: michigan-civil-rights-indian-directory-2016
   confidence: low
+  verification: bulk-import
   as_of: '2016-12-14'
   locator: Page 6
   note: Michigan has no formal state-recognition statute found; the 'State Historic Tribes' designation
@@ -59,6 +64,7 @@ states:
   presence: other
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1, State column
   note: State as listed by GAO.
@@ -66,6 +72,7 @@ states:
   presence: other
   source: ofa-petitions-resolved
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
@@ -73,6 +80,7 @@ states:
   presence: other
   source: michigan-civil-rights-indian-directory-2016
   confidence: low
+  verification: bulk-import
   as_of: '2016-12-14'
 review:
   status: drafted-from-public-sources

@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Karuk Tribe
 - state: CA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1750
   note: 'Census area with land in this state: Karuk Reservation and Off-Reservation Trust Land (code 1750).
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1750
   note: Matched by name. Census class code D1.
@@ -41,6 +45,7 @@ population:
   kind: citizens
   source: karuk-home
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'Homepage figures: ''3627 Tribal Members'', ''6222 Tribal Descendants''. Undated; as_of is access
     date.'
@@ -48,6 +53,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1750, field POP100
   note: 'Census area: Karuk Reservation and Off-Reservation Trust Land (code 1750). Everyone counted as
@@ -57,6 +63,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3048 (Karuk Tribe alone or in any combination), GEOID 0100000US (United
     States)
@@ -67,6 +74,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Karuk Tribe', PDF page 7, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -77,6 +85,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Karuk Tribe
 - kind: physical-address
@@ -84,6 +93,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Karuk Tribe
 - kind: mailing-address
@@ -91,6 +101,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Karuk Tribe
 - kind: phone
@@ -98,6 +109,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Karuk Tribe
 - kind: fax
@@ -105,6 +117,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Karuk Tribe
 languages:
@@ -112,6 +125,7 @@ languages:
   language_tag: kyh
   source: karuk-departments-language-program
   confidence: high
+  verification: title-only
   as_of: '2026-11-21'
   note: Language Program page.
 federal_administration:
@@ -119,6 +133,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Pacific Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Karuk Tribe
 governing_documents:
@@ -127,6 +142,7 @@ governing_documents:
   link: https://narf.org/nill/codes/karuk/index.html
   source: national-indian-law-library-code-codes-karuk
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: page heading
   note: The National Indian Law Library page gives the table of contents (and may link to the nation's
@@ -137,6 +153,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/karukconst/index.html
   source: national-indian-law-library-constitution-constitutions-karukconst
   confidence: medium
+  verification: title-only
   as_of: '2008'
   locator: page heading
   note: 'Amended: 2008. The National Indian Law Library page gives the table of contents (and may link
@@ -146,6 +163,7 @@ governing_documents:
   link: https://karuk.tribal.codes/
   source: national-indian-law-library-karuk
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -154,6 +172,7 @@ governing_documents:
   title: Constitution
   source: national-indian-law-library-karuk
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -164,6 +183,7 @@ governing_documents:
   link: https://karuk.tribal.codes/
   source: national-indian-law-library-karuk
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -172,6 +192,7 @@ governing_documents:
   title: Karuk Tribe Constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: California section, entry 'Karuk Tribe'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -181,6 +202,7 @@ governing_documents:
   title: Karuk Tribal Court Ordinances, Codes & Rules of Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: California section, entry 'Karuk Tribe'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -191,6 +213,7 @@ justice_institutions:
   name: Peacemaker Mediation Forum
   source: narf-ipi-tribal-peacemaking-laws
   confidence: medium
+  verification: title-only
   as_of: '2025-09-29'
   note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
     whether it currently operates was not checked.
@@ -198,6 +221,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-karuk
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
@@ -207,6 +231,7 @@ justice_institutions:
   name: Karuk Judicial System
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'Karuk Tribe'
   note: 'Link check 2026-11-21: the link the source gives (http://www.karuk.us/index.php/departments/judicial-system)
@@ -228,6 +253,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Karuk-Chapter-3.05-KTC.pdf
     source: karuk-tribal-code-chapter-3-05
     confidence: high
+    verification: inferred
     as_of: '2024-09-26'
     locator: Sections 3.05.010(E), 3.05.100
     note: Participation recorded as 'required' because the code says the forum shall be used before a
@@ -438,6 +464,7 @@ gaming:
     federal_register_citation: 83 FR 66741
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2018-12-27'
     locator: result page 8 (?page=8), row 3
     note: 'Listed as: "Karuk Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
@@ -451,6 +478,7 @@ gaming:
     federal_register_citation: 79 FR 68910
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2014-11-19'
     locator: result page 8 (?page=8), row 4
     note: 'Listed as: "Karuk Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
@@ -468,6 +496,7 @@ gaming:
     dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     source: compact-ca-cher-ae-heights-indian-community-of-the-2026
     confidence: medium
+    verification: inferred
     as_of: '2026-01-26'
     locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
@@ -480,6 +509,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10014&ind=10043
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2003-06-11'
     locator: table row 114, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 114 lists the nation
@@ -488,6 +518,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10031&ind=10044
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2012-04-09'
     locator: table row 114, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 114 lists the nation
@@ -496,6 +527,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Karuk Tribe". Facilities as
       machine-extracted from the report text (verify): Rain Rock Casino. Name extracted from the PDF by
@@ -508,6 +540,7 @@ jurisdiction:
     country within California; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
   note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
@@ -517,6 +550,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Karuk Tribe Confidence lowered from high by the lead session: the notice prints its

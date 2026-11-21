@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4106
   note: 'The notice adds in parentheses: St. George Island and Saint Paul Island.'
@@ -17,6 +18,7 @@ states:
   presence: other
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 7340, 7390
   note: 'Census area with land in this state: St. George ANVSA (code 7340); St. Paul ANVSA (code 7390).
@@ -29,6 +31,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US7340
   note: Matched by name. The 2026 list entry for the Pribilof Islands Aleut Communities names St. George
@@ -39,6 +42,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US7390
   note: Matched by name. The 2026 list entry for the Pribilof Islands Aleut Communities names St. George
@@ -48,6 +52,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US7340, field POP100
   note: 'Census area: St. George ANVSA (code 7340). Everyone counted as living in the area in the 2020
@@ -58,6 +63,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US7390, field POP100
   note: 'Census area: St. Paul ANVSA (code 7390). Everyone counted as living in the area in the 2020 Census,
@@ -70,6 +76,7 @@ contacts:
   label: 'Saint George Island tribal office: Tribal office address listed by the State of Alaska'
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: high
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Saint George Island" (community: Saint George Island, object 176)'
 - kind: phone
@@ -77,6 +84,7 @@ contacts:
   label: 'Saint George Island tribal office: Tribal office main phone'
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: high
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Saint George Island" (community: Saint George Island, object 176)'
 - kind: email-general
@@ -84,6 +92,7 @@ contacts:
   label: 'Saint George Island tribal office: Tribal office email listed by the State of Alaska'
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: medium
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Saint George Island" (community: Saint George Island, object 176)'
   note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
@@ -93,6 +102,7 @@ contacts:
   label: 'St. Paul Island tribal office: Tribal office address listed by the State of Alaska'
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: high
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Saint Paul Island" (community: St. Paul Island, object 195)'
 - kind: phone
@@ -100,6 +110,7 @@ contacts:
   label: 'St. Paul Island tribal office: Tribal office main phone'
   source: alaska-dcra-federally-recognized-tribes-contacts
   confidence: high
+  verification: bulk-import
   as_of: '2026-04-02'
   locator: 'record "Saint Paul Island" (community: St. Paul Island, object 195)'
 federal_administration:
@@ -107,6 +118,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Alaska Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Pribilof Islands Aleut Communities of St. Paul & St. George Islands (St. George Island and
     Saint Paul Island)
@@ -116,6 +128,7 @@ government_structure:
     under Act of June 18, 1934 (48 Stat. 984); Act of May 1, 1936 (49 Stat. 1250)
   source: university-of-oklahoma-indian-reorganization-act-aleutcons
   confidence: medium
+  verification: read-in-full
   as_of: '1950'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -126,6 +139,7 @@ governing_documents:
   link: https://narf.org/nill/triballaw/climate/index.html
   source: national-indian-law-library-pribilof-islands
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website . Climate
@@ -136,6 +150,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/aleutcons.html
   source: national-indian-law-library-pribilof-islands
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
@@ -146,6 +161,7 @@ governing_documents:
   link: https://www.loc.gov/item/51061562/
   source: national-indian-law-library-pribilof-islands
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
@@ -156,6 +172,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/aleutchrtr.html
   source: national-indian-law-library-pribilof-islands
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
@@ -166,6 +183,7 @@ governing_documents:
   link: https://www.loc.gov/item/51061511/
   source: national-indian-law-library-pribilof-islands
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
@@ -176,6 +194,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/aleutchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-aleutchrtr
   confidence: medium
+  verification: title-only
   as_of: '1950'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -184,6 +203,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/aleutcons.html
   source: university-of-oklahoma-indian-reorganization-act-aleutcons
   confidence: medium
+  verification: title-only
   as_of: '1950'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -191,6 +211,7 @@ justice_institutions:
   name: Aleut Community of St. Paul Island Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Alaska section, entry 'Saint Paul Island (Pribilof Islands Aleut Communities of St. Paul &
     St. George Islands)'
@@ -202,6 +223,7 @@ jurisdiction:
     within Alaska; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Alaska"
   note: Statute is primary; nation matched to Alaska by office state in the BIA Tribal Leaders Directory,
@@ -211,6 +233,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: bulk-import
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Aleut Community of St. George Island; Aleut Community of St. Paul Island'
@@ -219,6 +242,7 @@ related_entities:
   relation: alaska-native-claims-settlement-act-regional-corporation
   source: alaska-dcra-community-regions-overview
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: community row "Saint George"
   note: State of Alaska lists this affiliation for the community where the nation is based (Saint George),
@@ -227,6 +251,7 @@ related_entities:
   relation: alaska-native-claims-settlement-act-regional-nonprofit
   source: alaska-dcra-community-regions-overview
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: community row "Saint George"
   note: State of Alaska lists this affiliation for the community where the nation is based (Saint George),
@@ -235,6 +260,7 @@ related_entities:
   relation: native-regional-health-care-provider
   source: alaska-dcra-community-regions-overview
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: community row "Saint George"
   note: State of Alaska lists this affiliation for the community where the nation is based (Saint George),

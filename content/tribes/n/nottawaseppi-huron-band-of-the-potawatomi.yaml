@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 - type: federal
@@ -18,6 +19,7 @@ recognition:
   since: '1996-03-17'
   source: federal-register-95-31075
   confidence: high
+  verification: bulk-import
   as_of: '1996-03-17'
   locator: 'Petitioner #9'
   note: 'Petitioner name: Huron Potawatomi, Inc. (aka Nottawaseppi Huron Potawatomi Band). Also see source(s):
@@ -27,12 +29,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Nottawaseppi Huron Band of the Potawatomi, Michigan
 - state: MI
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1550
   note: 'Census area with land in this state: Huron Potawatomi Reservation and Off-Reservation Trust Land
@@ -44,6 +48,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1550
   note: Matched by name. Census class code D1.
@@ -52,6 +57,7 @@ population:
   kind: citizens
   source: nottawaseppi-huron-band-of-the-potawatom-about
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'About page: "more than 1,700 enrolled Tribal Members"; home page says "over 1,500"; undated statement
     on the official site; as_of is the access date'
@@ -59,6 +65,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1550, field POP100
   note: 'Census area: Huron Potawatomi Reservation and Off-Reservation Trust Land (code 1550). Everyone
@@ -68,6 +75,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3167 (Nottawaseppi Huron Band of the Potawatomi, Michigan alone or
     in any combination), GEOID 0100000US (United States)
@@ -78,6 +86,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Nottawaseppi Huron Band of Potawatomi', PDF page 4, Enrollment
     column
@@ -89,6 +98,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Nottawaseppi Huron Band of the Potawatomi, Michigan
 - kind: physical-address
@@ -96,6 +106,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Nottawaseppi Huron Band of the Potawatomi, Michigan
 - kind: mailing-address
@@ -103,6 +114,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Nottawaseppi Huron Band of the Potawatomi, Michigan
 - kind: phone
@@ -110,6 +122,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Nottawaseppi Huron Band of the Potawatomi, Michigan
 - kind: fax
@@ -117,6 +130,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Nottawaseppi Huron Band of the Potawatomi, Michigan
 languages:
@@ -124,6 +138,7 @@ languages:
   language_tag: pot
   source: nottawaseppi-huron-band-of-the-potawatom-culture
   confidence: high
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"Bodéwadmi language classes"'
 federal_administration:
@@ -131,6 +146,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Michigan Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Nottawaseppi Huron Band of the Potawatomi, Michigan
 governing_documents:
@@ -140,6 +156,7 @@ governing_documents:
   link: https://narf.org/nill/codes/nottawaseppi/index.html
   source: national-indian-law-library-code-codes-nottawaseppi
   confidence: medium
+  verification: title-only
   as_of: '2014'
   locator: page heading
   note: 'Table of Contents Updated: October 2014. The National Indian Law Library page gives the table
@@ -150,6 +167,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/nottawaseppi/index.html
   source: national-indian-law-library-constitution-constitutions-nottawaseppi
   confidence: medium
+  verification: title-only
   as_of: '2013'
   locator: page heading
   note: 'Last amended: 2013. Full text linked from the National Indian Law Library page.'
@@ -157,6 +175,7 @@ governing_documents:
   title: Tribal code
   source: national-indian-law-library-nottawaseppi-huron-potawatomi
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -166,6 +185,7 @@ governing_documents:
   title: Constitution
   source: national-indian-law-library-nottawaseppi-huron-potawatomi
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -175,6 +195,7 @@ governing_documents:
   title: Nottawaseppi Huron Band of the Potawatomi Tribe Constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Michigan section, entry 'Nottawaseppi Huron Band of Potawatomi'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -184,6 +205,7 @@ governing_documents:
   title: Nottawaseppi Huron Band of the Potawatomi Tribal Code
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Michigan section, entry 'Nottawaseppi Huron Band of Potawatomi'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -194,6 +216,7 @@ justice_institutions:
   name: tribal-court
   source: national-indian-law-library-nottawaseppi-huron-potawatomi
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'Link check 2026-11-21: the link the source gives (http://nhbpi.com/sovereignty/tribal-court/)
@@ -202,6 +225,7 @@ justice_institutions:
   name: Nottawaseppi Huron Band of Potawatomi Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Michigan section, entry 'Nottawaseppi Huron Band of Potawatomi'
   note: 'Link check 2026-11-21: the link the source gives (http://nhbpi.com/sovereignty/tribal-court/)
@@ -412,6 +436,7 @@ gaming:
     federal_register_citation: 81 FR 89504
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2016-12-12'
     locator: result page 16 (?page=16), row 19
     note: 'Listed as: "Nottawaseppi Huron Band of Potawatomi Tribal State Gaming Compact" (Approve); list''s
@@ -425,6 +450,7 @@ gaming:
     federal_register_citation: 64 FR 8111
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '1999-02-18'
     locator: result page 16 (?page=16), row 20
     note: 'Listed as: "Nottawaseppi Huron Band of Potawatomi Tribal State Gaming Compact" (Approve); list''s
@@ -438,6 +464,7 @@ gaming:
     federal_register_citation: 74 FR 51875
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2009-10-08'
     locator: result page 16 (?page=16), row 21
     note: 'Listed as: "Nottawaseppi Huron Band of Potawatomi Tribal State Gaming Compact" (Approve); list''s
@@ -455,6 +482,7 @@ gaming:
     dispute_resolution_locator: Section 7 (Dispute Resolution)
     source: compact-mi-bay-mills-indian-community-1993
     confidence: medium
+    verification: inferred
     as_of: '1993-11-30'
     locator: Section 7 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. The same Section 7 text appears in the
@@ -467,6 +495,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9930&ind=9945
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2000-08-07'
     locator: table row 102, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 102 lists the nation
@@ -475,6 +504,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10460&ind=10475
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2000-08-07'
     locator: table row 172, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 172 lists the nation
@@ -483,6 +513,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10461&ind=10476
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2009-08-26'
     locator: table row 172, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 172 lists the nation
@@ -491,6 +522,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10462&ind=10477
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2011-02-10'
     locator: table row 172, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 172 lists the nation
@@ -499,6 +531,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10463&ind=10478
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2012-09-13'
     locator: table row 172, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 172 lists the nation
@@ -507,6 +540,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10464&ind=10480
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2021-09-16'
     locator: table row 172, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 172 lists the nation
@@ -515,6 +549,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=13303&ind=13304
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2025-10-29'
     locator: table row 172, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 172 lists the nation
@@ -523,6 +558,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Nottawaseppi Huron Band of Potawatomi,
       Michigan". Name extracted from the PDF by the page-fetch tool and matched to the roster.
@@ -532,6 +568,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Nottawaseppi Huron Band of the Potawatomi, Michigan Confidence lowered from high by
@@ -544,6 +581,7 @@ jurisdiction:
     (list updated May 2022).
   source: national-congress-of-american-indians-implementing-tribe-profile-nottawaseppi-huron-band-of-the-potawatomi
   confidence: medium
+  verification: bulk-import
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Nottawaseppi Huron Band of Potawatomi". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
@@ -551,6 +589,7 @@ memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Huron Potawatomi, Inc.". Name matched to the roster entry.
 review:

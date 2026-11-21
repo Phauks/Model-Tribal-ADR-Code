@@ -6,12 +6,14 @@ names:
   - name: Yuchi
     source: gao-12-348-federal-funding-non-federally-recognized-tribes
     confidence: medium
+    verification: bulk-import
     as_of: 2012-04
     locator: Table 1
     note: GAO writes "Euchee (Yuchi) Tribe of Indians".
   - name: Yuchi
     source: census-2020-ddhca-popgroup-codes
     confidence: low
+    verification: inferred
     as_of: '2020'
     locator: POPGROUP code 2244
     note: Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting
@@ -21,6 +23,7 @@ recognition:
 - type: unrecognized
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1; Table 3
   note: 'GAO Table 1 lists "Euchee (Yuchi) Tribe of Indians" among 26 non-federally recognized tribes
@@ -32,6 +35,7 @@ states:
   presence: other
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1, State column
   note: State as listed by GAO.

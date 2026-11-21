@@ -7,6 +7,7 @@ names:
     language_tag: shh
     source: northwestern-band-of-the-shoshone-nation-about
     confidence: medium
+    verification: inferred
     as_of: '2026-11-21'
     note: '"The Shoshone, Paiute, Bannock and Ute people are related, and call themselves Newe or Neme
       (the People)"; general statement about Shoshone peoples'
@@ -17,6 +18,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -24,12 +26,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Northwestern Band of the Shoshone Nation
 - state: UT
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2505
   note: 'Census area with land in this state: Northwestern Shoshone Reservation (code 2505). Area matched
@@ -41,6 +45,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2505
   note: Matched by name. Census class code D2.
@@ -49,12 +54,14 @@ population:
   kind: citizens
   source: northwestern-band-of-the-shoshone-nation-about-history
   confidence: medium
+  verification: read-in-full
   as_of: 1995-01
   note: '"In January 1995, tribal enrollment ... numbered 454 members"; old figure'
 - count: 0
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2505, field POP100
   note: 'Census area: Northwestern Shoshone Reservation (code 2505). Everyone counted as living in the
@@ -63,6 +70,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3166 (Northwestern Band of the Shoshone Nation alone or in any combination),
     GEOID 0100000US (United States)
@@ -73,6 +81,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Denver, row 'Northwestern Band of the Shoshone Nation', PDF page 5, Enrollment
     column
@@ -84,6 +93,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Northwestern Band of the Shoshone Nation
 - kind: physical-address
@@ -91,6 +101,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Northwestern Band of the Shoshone Nation
 - kind: mailing-address
@@ -98,6 +109,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Northwestern Band of the Shoshone Nation
 - kind: phone
@@ -105,6 +117,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Northwestern Band of the Shoshone Nation
 - kind: fax
@@ -112,6 +125,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Northwestern Band of the Shoshone Nation
 federal_administration:
@@ -119,6 +133,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Fort Hall Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Northwestern Band of the Shoshone Nation
 governing_documents:
@@ -128,6 +143,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/northwest_shoshone/index.html
   source: national-indian-law-library-constitution-constitutions-northwest-shoshone
   confidence: medium
+  verification: title-only
   as_of: '2012'
   locator: page heading
   note: Received August 2012; Amendments through 2006. The National Indian Law Library page gives the
@@ -138,6 +154,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Northwestern Band of the Shoshone Nation Confidence lowered from high by the lead
@@ -147,6 +164,7 @@ memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes
   confidence: high
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Northwestern Band of the Shoshone Nation".
 review:

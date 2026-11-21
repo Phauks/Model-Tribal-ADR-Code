@@ -6,17 +6,20 @@ names:
   - name: Grand Caillou/Dulac Band
     source: louisiana-revised-statutes-46-2305
     confidence: high
+    verification: bulk-import
     as_of: '2018'
     locator: R.S. 46:2305(B)
   - name: Grand Caillou/Dulac Band of Biloxi Chitimacha Choctaw
     source: louisiana-governor-federally-and-state-recognized-tribes
     confidence: high
+    verification: bulk-import
     as_of: '2026'
   official_source: census-aian-geography-definitions
 recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State Designated Tribal Statistical Area; area 9735
   note: The 2020 Census delineated "Grand Caillou/Dulac SDTSA" (State Designated Tribal Statistical Area).
@@ -29,6 +32,7 @@ recognition:
   legal_basis: Listed as a state recognized tribe by the Louisiana Governor's Office of Indian Affairs
   source: louisiana-governor-federally-and-state-recognized-tribes
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   note: Louisiana recognized tribes by legislative concurrent resolutions; the individual resolutions
     were not retrieved.
@@ -38,6 +42,7 @@ recognition:
     membership, listed as 'Grand Caillou/Dulac Band'
   source: louisiana-revised-statutes-46-2305
   confidence: high
+  verification: inferred
   as_of: '2018'
   locator: R.S. 46:2305(B)
   note: The statute gives the tribe a seat on the Native American Commission; it does not itself confer
@@ -48,6 +53,7 @@ recognition:
     Resolution No. 124 (1990) as members of the United Houma Nation
   source: louisiana-senate-concurrent-resolution-105-2004
   confidence: medium
+  verification: inferred
   as_of: '2004'
   note: Enrolled text only 'reacknowledges the Indian ancestry' of members for education and health benefit
     purposes, narrower than the introduced 'formally recognizes' wording. A 2022 resolution to reaffirm
@@ -57,6 +63,7 @@ states:
   presence: other
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9735
   note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
@@ -64,6 +71,7 @@ states:
   presence: other
   source: louisiana-governor-indian-affairs
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   locator: Regional map
   note: Located in Terrebonne Parish per the Office of Indian Affairs regional map.
@@ -74,6 +82,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9735, GEOID 9735R
   note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
@@ -84,6 +93,7 @@ contacts:
   label: Contact address listed by the Louisiana Governor's Office of Indian Affairs
   source: louisiana-governor-federally-and-state-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: '2026'
   note: Listed under the leader's name; recorded as the tribe's contact address.
 - kind: website
@@ -91,6 +101,7 @@ contacts:
   label: Official website
   source: louisiana-governor-federally-and-state-recognized-tribes
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 review:
   status: drafted-from-public-sources

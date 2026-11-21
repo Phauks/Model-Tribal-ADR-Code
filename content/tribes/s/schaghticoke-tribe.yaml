@@ -6,11 +6,13 @@ names:
   - name: Schaghticoke Tribal Nation
     source: connecticut-deep-tribal-affairs
     confidence: high
+    verification: title-only
     as_of: '2026'
     note: One of two factions the state agency names; the other is the Schaghticoke Indian Tribe.
   - name: Schaghticoke Indian Tribe
     source: connecticut-deep-tribal-affairs
     confidence: high
+    verification: title-only
     as_of: '2026'
     note: One of two factions the state agency names; the agency says this faction has an active federal
       acknowledgment petition.
@@ -19,6 +21,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: low
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State American Indian reservation; area 9350
   note: The 2020 Census delineated "Schaghticoke (state) Reservation" (State American Indian reservation).
@@ -31,6 +34,7 @@ recognition:
   petition_stage: Letter of Intent to Petition 9/27/2001
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   locator: 'Petitioner #245'
   note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
@@ -41,6 +45,7 @@ recognition:
   legal_basis: Connecticut General Statutes Section 47-59a(b) (Public Act 89-368), naming 'the Schaghticoke'
   source: connecticut-general-statutes-47-59a
   confidence: high
+  verification: inferred
   as_of: '2020'
   locator: Section 47-59a(b)
 - type: state
@@ -49,12 +54,14 @@ recognition:
     Protection
   source: connecticut-deep-tribal-affairs
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 states:
 - state: CT
   presence: land
   source: census-aiannh-codes-by-state-2020
   confidence: low
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9350
   note: State reservation land.
@@ -62,6 +69,7 @@ states:
   presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
@@ -69,6 +77,7 @@ states:
   presence: land
   source: connecticut-deep-tribal-affairs
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   note: Reservation of about 300 acres in Kent, west of the Housatonic River.
 census_areas:
@@ -78,6 +87,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: low
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9350, GEOID 9350R
   note: Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched

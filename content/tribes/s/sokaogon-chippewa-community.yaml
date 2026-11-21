@@ -6,11 +6,13 @@ names:
   - name: Mole Lake Band
     source: sokaogon-chippewa-community-our-history-about-us
     confidence: high
+    verification: read-in-full
     as_of: '2026-11-21'
     note: '"also known as the Post Lake Band, Lakes, Band, Pelican Lake Band and Mole Lake Band"'
   - name: Lost Tribe
     source: sokaogon-chippewa-community-our-history-history
     confidence: high
+    verification: read-in-full
     as_of: '2026-11-21'
     note: '"also known as the Lost Tribe"'
   official_source: bia-recognized-entities-2026
@@ -20,6 +22,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -27,12 +30,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sokaogon Chippewa Community, Wisconsin
 - state: WI
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3885
   note: 'Census area with land in this state: Sokaogon Chippewa Community and Off-Reservation Trust Land
@@ -44,6 +49,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3885
   note: Matched by name. Census class code D1.
@@ -52,6 +58,7 @@ population:
   kind: citizens
   source: sokaogon-chippewa-community-our-history-about-us
   confidence: medium
+  verification: inferred
   as_of: '2026-11-21'
   note: '"Approximately 500 Tribal Members live on the reservation, with an additional 1,000 Members living
     off the reservation" (sum 1,500); undated statement on the official site; as_of is the access date'
@@ -59,6 +66,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3885, field POP100
   note: 'Census area: Sokaogon Chippewa Community and Off-Reservation Trust Land (code 3885). Everyone
@@ -68,6 +76,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3331 (Sokaogon Chippewa Community alone or in any combination), GEOID
     0100000US (United States)
@@ -78,6 +87,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Sokaogon Chippewa Community', PDF page 5, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -88,6 +98,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sokaogon Chippewa Community, Wisconsin
 - kind: physical-address
@@ -95,6 +106,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sokaogon Chippewa Community, Wisconsin
 - kind: mailing-address
@@ -102,6 +114,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sokaogon Chippewa Community, Wisconsin
 - kind: phone
@@ -109,6 +122,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sokaogon Chippewa Community, Wisconsin
 - kind: fax
@@ -116,6 +130,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sokaogon Chippewa Community, Wisconsin
 federal_administration:
@@ -123,6 +138,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Great Lakes Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sokaogon Chippewa Community, Wisconsin
 government_structure:
@@ -131,6 +147,7 @@ government_structure:
     approved by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -142,6 +159,7 @@ governing_documents:
   link: http://water.epa.gov/scitech/swguidance/standards/wqslibrary/tribes.cfm
   source: national-indian-law-library-sokaogon
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "See NILL catalog record
@@ -152,6 +170,7 @@ justice_institutions:
   link: http://www.wtja.org/tribal-courts/Sokaogon/index.php
   source: national-indian-law-library-sokaogon
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -159,6 +178,7 @@ justice_institutions:
   name: Sokaogon Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Wisconsin section, entry 'Sokaogon Chippewa (Mole Lake) Community'
 dispute_resolution:
@@ -186,6 +206,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Sokaogon-Chippewa-Community-Chapter-1-Tribal-Governance-Final-8-30-2011.pdf
     source: sokaogon-chapter-1-tribal-governance-2011
     confidence: medium
+    verification: read-in-full
     as_of: '2011-08-30'
     locator: Sections 1.1.8(A)-(J), 1.1.9, 1.1.10(A)-(G)
     note: Requesting parties pay $25 each ($50 total) to the clerk for the Peacemaking Court. Proceedings
@@ -219,6 +240,7 @@ gaming:
     federal_register_citation: 63 FR 19508
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1998-04-20'
     locator: result page 47 (?page=47), row 3
     note: 'Listed as: "Sokaogon Chippewa Community Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -232,6 +254,7 @@ gaming:
     federal_register_citation: 68 FR 39964
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2003-07-03'
     locator: result page 47 (?page=47), row 4
     note: 'Listed as: "Sokaogon Chippewa Community Tribal State Gaming Compact" (Deemed Approved); list''s
@@ -244,6 +267,7 @@ gaming:
     approved: '1992-02-13'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1992-02-13'
     locator: result page 47 (?page=47), row 5
     note: 'Listed as: "Sokaogon Chippewa Community Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -254,6 +278,7 @@ gaming:
     federal_register_citation: 79 FR 32975
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2014-06-09'
     locator: result page 47 (?page=47), row 6
     note: 'Listed as: "Sokaogon Chippewa Community Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -267,6 +292,7 @@ gaming:
     federal_register_citation: 87 FR 69040
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2022-11-17'
     locator: result page 47 (?page=47), row 7
     note: 'Listed as: "Sokaogon Chippewa Community Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -282,6 +308,7 @@ gaming:
     dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
     source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
     confidence: medium
+    verification: inferred
     as_of: '1992-08-10'
     locator: Section XXIII (Dispute Resolution) of the 1992 compact
     note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
@@ -294,6 +321,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10883&ind=10898
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2001-02-05'
     locator: table row 224, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 224 lists the nation
@@ -304,6 +332,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11189&ind=11209
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-11-08'
     locator: table row 267, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 267 lists the nation
@@ -312,6 +341,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=13223&ind=13224
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2025-10-20'
     locator: table row 267, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 267 lists the nation
@@ -324,6 +354,7 @@ jurisdiction:
     country within Wisconsin; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Wisconsin"
   note: Statute is primary; nation matched to Wisconsin by office state in the BIA Tribal Leaders Directory,
@@ -333,6 +364,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Sokaogon Chippewa Community, Wisconsin Confidence lowered from high by the lead session:
@@ -342,16 +374,19 @@ memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Sokaogon Chippewa Community". Name matched to the roster entry.
 - organization: Great Lakes Inter-Tribal Council
   source: great-lakes-inter-tribal-council-tribes-served
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Sokaogon Chippewa Community". Name matched to the roster entry.
 - organization: Great Lakes Indian Fish and Wildlife Commission
   source: great-lakes-indian-fish-and-wildlife-commission-commission
   confidence: medium
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Zaka'aaganing" (link https://sokaogonchippewa.com/).
 review:

@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Chehalis Reservation
 - state: WA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0575
   note: 'Census area with land in this state: Chehalis Reservation and Off-Reservation Trust Land (code
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0575
   note: Matched by name. Census class code D1.
@@ -41,6 +45,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0575, field POP100
   note: 'Census area: Chehalis Reservation and Off-Reservation Trust Land (code 0575). Everyone counted
@@ -50,6 +55,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2945 (Confederated Tribes of the Chehalis Reservation alone or in any
     combination), GEOID 0100000US (United States)
@@ -60,6 +66,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Seattle, row 'Confederated Tribes of the Chehalis Reservation', PDF page
     8, Enrollment column
@@ -71,6 +78,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Chehalis Reservation
 - kind: physical-address
@@ -78,6 +86,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Chehalis Reservation
 - kind: mailing-address
@@ -85,6 +94,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Chehalis Reservation
 - kind: phone
@@ -92,6 +102,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Chehalis Reservation
 - kind: fax
@@ -99,6 +110,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Chehalis Reservation
 - kind: email-general
@@ -106,6 +118,7 @@ contacts:
   label: General office email shown on the nation's website
   source: chehalistribe-home
   confidence: high
+  verification: read-in-full
   as_of: '2026-11-21'
   note: Generic office address as shown on the page; undated.
 languages:
@@ -113,6 +126,7 @@ languages:
   language_tag: cjh
   source: chehalistribe-about
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: 'About page: ''Upper Chehalis and Lower Chehalis were the predominant languages of the region
     pre-contact.'''
@@ -120,6 +134,7 @@ languages:
   language_tag: cea
   source: chehalistribe-about
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: 'About page: ''Upper Chehalis and Lower Chehalis were the predominant languages of the region
     pre-contact.'''
@@ -128,6 +143,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Olympic Peninsula Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Chehalis Reservation
 governing_documents:
@@ -136,6 +152,7 @@ governing_documents:
   link: https://narf.org/nill/codes/confederated_chehalis/index.html
   source: national-indian-law-library-code-codes-confederated-chehalis
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: page heading
   note: The National Indian Law Library page gives the table of contents (and may link to the nation's
@@ -145,6 +162,7 @@ governing_documents:
   link: https://www.chehalistribe.org/departments/office-of-the-tribal-attorney/
   source: national-indian-law-library-confederated-chehalis
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -154,6 +172,7 @@ governing_documents:
   link: http://www.codepublishing.com/WA/ChehalisTribe/
   source: national-indian-law-library-confederated-chehalis
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -163,6 +182,7 @@ governing_documents:
   link: http://www.codepublishing.com/WA/ChehalisTribe/#!/ChehalisTribeCB.html
   source: national-indian-law-library-confederated-chehalis
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Code Publishing
@@ -172,6 +192,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/confederated_chehalis/index.html
   source: national-indian-law-library-constitution-constitutions-confederated-chehalis
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: page heading
   note: The National Indian Law Library page gives the table of contents (and may link to the nation's
@@ -181,6 +202,7 @@ governing_documents:
   link: http://www.codepublishing.com/WA/ChehalisTribe/#!/ChehalisTribeCB.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Washington section, entry 'Chehalis Tribe'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -189,6 +211,7 @@ governing_documents:
   link: http://www.codepublishing.com/WA/ChehalisTribe/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Washington section, entry 'Chehalis Tribe'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -197,6 +220,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-confederated-chehalis
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
@@ -206,6 +230,7 @@ justice_institutions:
   name: Chehalis Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Chehalis Tribe'
   note: 'Link check 2026-11-21: the link the source gives (https://www.chehalistribe.org/departments/public-safety/tribal-court/)
@@ -297,6 +322,7 @@ gaming:
     federal_register_citation: 64 FR 4458
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-01-28'
     locator: result page 37 (?page=37), row 23
     note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
@@ -310,6 +336,7 @@ gaming:
     federal_register_citation: 60 FR 19822
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1995-04-20'
     locator: result page 37 (?page=37), row 24
     note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
@@ -323,6 +350,7 @@ gaming:
     federal_register_citation: 80 FR 37293
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-06-04'
     locator: result page 37 (?page=37), row 25
     note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
@@ -335,6 +363,7 @@ gaming:
     approved: '1993-03-04'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-03-04'
     locator: result page 38 (?page=38), row 1
     note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
@@ -345,6 +374,7 @@ gaming:
     federal_register_citation: 72 FR 30392
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-05-31'
     locator: result page 38 (?page=38), row 2
     note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
@@ -358,6 +388,7 @@ gaming:
     federal_register_citation: 87 FR 48494
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2022-08-09'
     locator: result page 38 (?page=38), row 3
     note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
@@ -371,6 +402,7 @@ gaming:
     federal_register_citation: 89 FR 11312
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2024-02-14'
     locator: result page 38 (?page=38), row 4
     note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
@@ -386,6 +418,7 @@ gaming:
     dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
     source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
     confidence: medium
+    verification: inferred
     as_of: '2021-09-01'
     locator: Section XIV (Dispute Resolution), subsection B
     note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
@@ -397,6 +430,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9607&ind=9631
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-12-21'
     locator: table row 55, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 55 lists the nation
@@ -405,6 +439,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9620&ind=9632
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2017-12-01'
     locator: table row 55, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 55 lists the nation
@@ -413,6 +448,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Confederated Tribes of Chehalis
       Reservation, Washington". Facilities as machine-extracted from the report text (verify): Lucky Eagle
@@ -427,6 +463,7 @@ jurisdiction:
     jurisdiction under RCW 37.12.021.'
   source: revised-code-of-washington-37-12-010
   confidence: medium
+  verification: inferred
   as_of: '1963'
   locator: RCW 37.12.010
   note: Nation matched to Washington by office state. Check for later retrocession facts.
@@ -436,6 +473,7 @@ jurisdiction:
     this jurisdiction was later retroceded for several of these nations (see retrocession facts).
   source: department-of-justice-federally-recognized-indian-nations-under-state-jurisdiction-2016
   confidence: medium
+  verification: bulk-import
   as_of: '2016-06-29'
   locator: Washington section, footnote 4
   note: From a 2016 Office of Tribal Justice compilation hosted by the National Indian Justice Center.
@@ -446,12 +484,14 @@ jurisdiction:
     in RCW 37.12.010 and related 1986 and 1988 Washington laws. (54 FR 19959)
   source: federal-register-1989-chehalis-quileute-swinomish-retrocession
   confidence: high
+  verification: read-in-full
   as_of: '1989-05-10'
 - topic: indian-child-welfare-act
   value: designated-agent-listed
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Confederated Tribes of the Chehalis Reservation Confidence lowered from high by the
@@ -464,6 +504,7 @@ jurisdiction:
     (list updated May 2022).
   source: national-congress-of-american-indians-implementing-tribe-profile-confederated-tribes-of-the-chehalis-reservation
   confidence: medium
+  verification: bulk-import
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Confederated Tribes of the Chehalis Reservation". Also on the NCAI implementing tribes
@@ -472,6 +513,7 @@ memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes
   confidence: high
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Confederated Tribes of the Chehalis Reservation".
 review:

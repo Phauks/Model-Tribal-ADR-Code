@@ -6,6 +6,7 @@ names:
   - name: Coharie Indian Tribe
     source: census-2020-ddhca-popgroup-codes
     confidence: low
+    verification: inferred
     as_of: '2020'
     locator: POPGROUP code 1734
     note: Census 2020 detailed tribal group name; matched to this group by name comparison only. Supporting
@@ -13,16 +14,19 @@ names:
   - name: Coharie Indian Tribe
     source: north-carolina-commission-of-indian-affairs-tribal-communities
     confidence: high
+    verification: bulk-import
     as_of: '2026'
   - name: Coharie Tribe
     source: north-carolina-commission-of-indian-affairs-tribal-communities
     confidence: high
+    verification: bulk-import
     as_of: '2026'
   official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
 recognition:
 - type: unrecognized
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1; Table 3
   note: 'GAO Table 1 lists "Coharie Tribe of North Carolina" among 26 non-federally recognized tribes
@@ -32,6 +36,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State Designated Tribal Statistical Area; area 9635
   note: The 2020 Census delineated "Coharie SDTSA" (State Designated Tribal Statistical Area). The Census
@@ -42,6 +47,7 @@ recognition:
 - type: unrecognized
   source: hud-ihbg-fy2026-formula-allocations
   confidence: high
+  verification: bulk-import
   as_of: 2026-04
   locator: NC section, recipient "Coharie Tribe"
   note: HUD lists "Coharie Tribe" (Clinton, NC) as an FY2026 Indian Housing Block Grant formula recipient
@@ -53,6 +59,7 @@ recognition:
   since: '1971-07-20'
   source: north-carolina-general-statutes-chapter-71a
   confidence: high
+  verification: inferred
   as_of: '2026'
   locator: Section 71A-6
   note: Statute says the tribe is designated and officially recognized 'from and after' this date.
@@ -62,12 +69,14 @@ recognition:
     Affairs
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 states:
 - state: NC
   presence: other
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1, State column
   note: State as listed by GAO.
@@ -75,6 +84,7 @@ states:
   presence: other
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9635
   note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
@@ -82,6 +92,7 @@ states:
   presence: other
   source: hud-ihbg-fy2026-formula-allocations
   confidence: high
+  verification: bulk-import
   as_of: 2026-04
   locator: NC section
   note: HUD gives recipient city Clinton.
@@ -89,6 +100,7 @@ states:
   presence: government-office
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: inferred
   as_of: '2026'
 census_areas:
 - geographic_identifier: '9635'
@@ -97,6 +109,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9635, GEOID 9635R
   note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
@@ -106,6 +119,7 @@ population:
   kind: citizens
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: medium
+  verification: read-in-full
   as_of: '2026'
   note: 'Source: ''approximately 2,700 members''.'
 contacts:
@@ -114,18 +128,21 @@ contacts:
   label: Tribal address
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: phone
   value: 910-564-6909
   label: Tribal office phone
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: website
   value: https://www.coharietribe.org
   label: Official website
   source: north-carolina-commission-of-indian-affairs-tribal-communities
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 review:
   status: drafted-from-public-sources

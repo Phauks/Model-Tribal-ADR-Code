@@ -8,6 +8,7 @@ names:
     romanized: len-NAH-pay
     source: delawaretribe-home
     confidence: high
+    verification: inferred
     as_of: '2026-11-21'
     note: 'Homepage: ''In our language ... we call ourselves LENAPE (len-NAH-pay) which means something
       like “The People.”'' Source capitalizes it as LENAPE.'
@@ -18,6 +19,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -25,6 +27,7 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Delaware Tribe of Indians
 population:
@@ -32,6 +35,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2968 (Delaware Tribe of Indians, Oklahoma  alone or in any combination),
     GEOID 0100000US (United States)
@@ -42,6 +46,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Oklahoma, row 'Delaware Tribe of Indians (Eastern)', PDF page 6, Enrollment
     column
@@ -53,6 +58,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Delaware Tribe of Indians
 - kind: physical-address
@@ -60,6 +66,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Delaware Tribe of Indians
 - kind: mailing-address
@@ -67,6 +74,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Delaware Tribe of Indians
 - kind: phone
@@ -74,6 +82,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Delaware Tribe of Indians
 - kind: fax
@@ -81,6 +90,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Delaware Tribe of Indians
 languages:
@@ -88,6 +98,7 @@ languages:
   language_tag: del
   source: delawaretribe-language-revitalization
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: Language Revitalization page.
 federal_administration:
@@ -95,6 +106,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Miami Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Delaware Tribe of Indians
 governing_documents:
@@ -103,6 +115,7 @@ governing_documents:
   link: https://narf.org/nill/codes/delaware_tribe/index.html
   source: national-indian-law-library-code-codes-delaware-tribe
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: page heading
   note: The National Indian Law Library page gives the table of contents (and may link to the nation's
@@ -112,6 +125,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/delaware_tribe/index.html
   source: national-indian-law-library-constitution-constitutions-delaware-tribe
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: page heading
   note: The National Indian Law Library page gives the table of contents (and may link to the nation's
@@ -121,6 +135,7 @@ governing_documents:
   link: https://delawaretribe.org/tribal-documents/
   source: national-indian-law-library-delaware-tribe
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -130,6 +145,7 @@ governing_documents:
   link: https://delawaretribe.org/tribal-government/tribal-court/
   source: national-indian-law-library-delaware-tribe
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal court''s
@@ -139,6 +155,7 @@ governing_documents:
   link: https://tribaldomicile.com/downloads/
   source: national-indian-law-library-delaware-tribe
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribal domicile
@@ -148,6 +165,7 @@ governing_documents:
   link: https://delawaretribe.org/tribal-documents/
   source: national-indian-law-library-delaware-tribe
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -156,6 +174,7 @@ governing_documents:
   title: Delaware Tribe of Indians Constitution and Bylaws
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Oklahoma section, entry 'Delaware Tribe of Indians'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -166,6 +185,7 @@ governing_documents:
   link: http://delawaretribe.org/tribal-documents/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Oklahoma section, entry 'Delaware Tribe of Indians'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -175,6 +195,7 @@ justice_institutions:
   link: https://delawaretribe.org/tribal-government/tribal-court/
   source: national-indian-law-library-delaware-tribe
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
 - kind: tribal-court
@@ -182,6 +203,7 @@ justice_institutions:
   link: http://delawaretribe.org/tribalsite/tribal-government/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Oklahoma section, entry 'Delaware Tribe of Indians'
 gaming:
@@ -190,6 +212,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9726&ind=9743
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-08-19'
     locator: table row 69, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 69 lists the nation
@@ -198,6 +221,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9727&ind=9744
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2001-10-03'
     locator: table row 69, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 69 lists the nation
@@ -208,6 +232,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Delaware Tribe of Indians Confidence lowered from high by the lead session: the notice

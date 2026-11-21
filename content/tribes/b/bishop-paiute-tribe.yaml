@@ -7,6 +7,7 @@ names:
     language_tag: mnr
     source: bishoppaiute-about-us
     confidence: low
+    verification: inferred
     as_of: '2026-11-21'
     note: About page describes the Nu-Mu as 'the original people of the Owens Valley'. Tag mnr (Mono)
       assigned by researcher; the page does not name the language. Read via the WebFetch tool because
@@ -18,6 +19,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -25,12 +27,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Bishop Paiute Tribe
 - state: CA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 0290
   note: 'Census area with land in this state: Bishop Reservation (code 0290). Area matched to the nation
@@ -42,6 +46,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0290
   note: Matched by name. Census class code D2.
@@ -50,6 +55,7 @@ population:
   kind: citizens
   source: bishoppaiute-home
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'Homepage: ''the fifth largest tribe in California with over 2,000 enrolled members''; the About
     page says ''2,000 members''. Undated. Read via the WebFetch tool because plain fetching was refused
@@ -58,6 +64,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0290, field POP100
   note: 'Census area: Bishop Reservation (code 0290). Everyone counted as living in the area in the 2020
@@ -66,6 +73,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2872 (Bishop Paiute Tribe alone or in any combination), GEOID 0100000US
     (United States)
@@ -76,6 +84,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Bishop Paiute Tribe', PDF page 6, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -84,6 +93,7 @@ population:
   kind: service-area-population
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 85, row T36500 'Paiute-Shoshone Indians of the Bishop Community
     of the Bishop Colony'
@@ -96,6 +106,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Bishop Paiute Tribe
 - kind: physical-address
@@ -103,6 +114,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Bishop Paiute Tribe
 - kind: mailing-address
@@ -110,6 +122,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Bishop Paiute Tribe
 - kind: phone
@@ -117,6 +130,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Bishop Paiute Tribe
 - kind: fax
@@ -124,6 +138,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Bishop Paiute Tribe
 - kind: website
@@ -131,6 +146,7 @@ contacts:
   label: Official website (the directory address https://www.bishoppaiutetribe.com/ redirects here)
   source: bishoppaiute-home
   confidence: high
+  verification: read-in-full
   as_of: '2026-11-21'
   note: Directory URL redirects to bishoppaiute.net.
 federal_administration:
@@ -138,6 +154,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Central California Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Bishop Paiute Tribe
 governing_documents:
@@ -146,6 +163,7 @@ governing_documents:
   link: https://www.bishoppaiutetribe.com/tribal-ordinances/
   source: national-indian-law-library-bishop-paiute
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -156,6 +174,7 @@ governing_documents:
   link: https://narf.org/nill/codes/bishop_paiute/index.html
   source: national-indian-law-library-code-codes-bishop-paiute
   confidence: medium
+  verification: title-only
   as_of: '2018'
   locator: page heading
   note: 'Table of Contents Updated: September 2018. The National Indian Law Library page gives the table
@@ -165,6 +184,7 @@ governing_documents:
   link: http://www.bishoppaiutetribe.com/tribal-ordinances.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: California section, entry 'Bishop Paiute Tribe'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -174,6 +194,7 @@ justice_institutions:
   link: https://www.bishoppaiutetribe.com/tribal-court/
   source: national-indian-law-library-bishop-paiute
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -182,6 +203,7 @@ justice_institutions:
   link: http://www.bishoppaiutetribe.com/tribal-court.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'Bishop Paiute Tribe'
 dispute_resolution:
@@ -262,6 +284,7 @@ gaming:
     approved: '2024-12-20'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2024-12-20'
     locator: result page 4 (?page=4), row 25
     note: 'Listed as: "Bishop Paiute Tribe Secretarial Procedures" (Secretarial Procedures); list''s Tribe
@@ -274,6 +297,7 @@ gaming:
     federal_register_citation: 87 FR 39115
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2022-06-30'
     locator: result page 5 (?page=5), row 1
     note: 'Listed as: "Bishop Paiute Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -288,6 +312,7 @@ gaming:
     federal_register_citation: 89 FR 944
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2024-01-08'
     locator: result page 5 (?page=5), row 2
     note: 'Listed as: "Bishop Paiute Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
@@ -302,6 +327,7 @@ gaming:
     federal_register_citation: 65 FR 31189
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-05-16'
     locator: result page 5 (?page=5), row 3
     note: 'Listed as: "Bishop Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -319,6 +345,7 @@ gaming:
     dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     source: compact-ca-cher-ae-heights-indian-community-of-the-2026
     confidence: medium
+    verification: inferred
     as_of: '2026-01-26'
     locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
@@ -331,6 +358,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=3413&ind=3417
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1995-07-31'
     locator: table row 19, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 19 lists the nation
@@ -339,6 +367,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=3414&ind=3418
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-04-02'
     locator: table row 19, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 19 lists the nation
@@ -347,6 +376,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=3415&ind=3419
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-04-19'
     locator: table row 19, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 19 lists the nation
@@ -355,6 +385,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=3416&ind=3420
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2012-08-20'
     locator: table row 19, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 19 lists the nation
@@ -363,6 +394,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10533&ind=10555
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1995-07-31'
     locator: table row 182, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 182 lists the nation
@@ -371,6 +403,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Bishop Paiute Tribe". Facilities
       as machine-extracted from the report text (verify): Wanaaha Casino fka Paiute Palace. Name extracted
@@ -383,6 +416,7 @@ jurisdiction:
     country within California; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
   note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
@@ -392,6 +426,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Bishop Paiute Tribe Confidence lowered from high by the lead session: the notice prints

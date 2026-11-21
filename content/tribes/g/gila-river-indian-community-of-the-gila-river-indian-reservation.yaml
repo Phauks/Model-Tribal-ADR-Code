@@ -7,12 +7,14 @@ names:
     language_tag: ood
     source: gilariver-index-php-about-history
     confidence: medium
+    verification: inferred
     as_of: '2026-11-21'
     note: History page refers to the Akimel O’otham (Pima) people of the Community.
   - name: Pee Posh
     language_tag: mrc
     source: gilariver-index-php-about-history
     confidence: medium
+    verification: inferred
     as_of: '2026-11-21'
     note: 'History page: ''The Maricopa, who called themselves the “Pee Posh,” settled in with the Akimel
       O’otham''.'
@@ -23,6 +25,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -30,12 +33,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
 - state: AZ
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1310
   note: 'Census area with land in this state: Gila River Indian Reservation (code 1310). Area matched
@@ -47,6 +52,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1310
   note: Matched by name. Census class code D2.
@@ -55,6 +61,7 @@ population:
   kind: resident-population
   source: itca-gila-river-indian-community
   confidence: low
+  verification: inferred
   as_of: '2026-11-21'
   note: 'Inter Tribal Council of Arizona profile: ''The Community is home to 14,000 people.'' Refers to
     people living in the Community, not enrollment. Undated secondary source.'
@@ -62,6 +69,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1310, field POP100
   note: 'Census area: Gila River Indian Reservation (code 1310). Everyone counted as living in the area
@@ -70,6 +78,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3005 (Gila River Indian Community of the Gila River Indian Reservation
     alone or in any combination), GEOID 0100000US (United States)
@@ -81,6 +90,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Gila River Indian Community', PDF page 7, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -89,6 +99,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 78, row T12700 'Gila River Indian Community of the Gila River Indian
     Reservation'
@@ -102,6 +113,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
 - kind: physical-address
@@ -109,6 +121,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
 - kind: mailing-address
@@ -116,6 +129,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
 - kind: phone
@@ -123,6 +137,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
 - kind: fax
@@ -130,6 +145,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
 federal_administration:
@@ -137,6 +153,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Pima Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
 government_structure:
@@ -145,6 +162,7 @@ government_structure:
     Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-gilacons
   confidence: medium
+  verification: read-in-full
   as_of: '1960'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -153,6 +171,7 @@ government_structure:
     was adopted under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-gilapmcons
   confidence: medium
+  verification: read-in-full
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -163,6 +182,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/gila_river/index.html
   source: national-indian-law-library-constitution-constitutions-gila-river
   confidence: medium
+  verification: title-only
   as_of: '2013'
   locator: page heading
   note: 'Last Amended: July 9, 2013. The National Indian Law Library page gives the table of contents
@@ -172,6 +192,7 @@ governing_documents:
   link: https://www.gilariver.org/index.php/government/judical-branch
   source: national-indian-law-library-gila-river
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -181,6 +202,7 @@ governing_documents:
   link: http://www.gilariver.org/index.php/government/judical-branch
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Arizona section, entry 'Gila River Indian Community'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -190,6 +212,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/gilacons.html
   source: university-of-oklahoma-indian-reorganization-act-gilacons
   confidence: medium
+  verification: title-only
   as_of: '1960'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: corporate-charter
@@ -198,6 +221,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/gilapmchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-gilapmchrtr
   confidence: medium
+  verification: title-only
   as_of: '1938'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -206,6 +230,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/gilapmcons.html
   source: university-of-oklahoma-indian-reorganization-act-gilapmcons
   confidence: medium
+  verification: title-only
   as_of: '1936'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -213,12 +238,14 @@ justice_institutions:
   name: Gila River Indian Community Court
   source: national-indian-law-library-gila-river
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
 - kind: tribal-court
   name: Westend Judicial Center
   source: national-indian-law-library-gila-river
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
 - kind: tribal-court
@@ -226,6 +253,7 @@ justice_institutions:
   link: http://www.gilariver.org/index.php/government/judical-branch
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Gila River Indian Community'
 dispute_resolution:
@@ -286,6 +314,7 @@ gaming:
     federal_register_citation: 87 FR 35992
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2022-06-14'
     locator: result page 0 (?page=0), row 25
     note: 'Listed as: "Gila River Indian Community Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -299,6 +328,7 @@ gaming:
     federal_register_citation: 86 FR 27889
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2021-05-24'
     locator: result page 1 (?page=1), row 1
     note: 'Listed as: "Gila River Indian Community Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -316,6 +346,7 @@ gaming:
     dispute_resolution_locator: Section 15 (Dispute Resolution)
     source: compact-az-ak-chin-indian-community-2003
     confidence: medium
+    verification: inferred
     as_of: '2003-02-05'
     locator: Section 15 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
@@ -327,6 +358,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9866&ind=9882
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1994-03-30'
     locator: table row 90, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 90 lists the nation
@@ -335,6 +367,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9867&ind=9883
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1995-03-27'
     locator: table row 90, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 90 lists the nation
@@ -343,6 +376,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9868&ind=9884
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1997-06-27'
     locator: table row 90, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 90 lists the nation
@@ -351,6 +385,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9869&ind=9885
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2003-12-17'
     locator: table row 90, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 90 lists the nation
@@ -359,6 +394,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9870&ind=9886
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2009-09-28'
     locator: table row 90, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 90 lists the nation
@@ -367,6 +403,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9871&ind=9887
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2016-12-16'
     locator: table row 90, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 90 lists the nation
@@ -375,6 +412,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9872&ind=9888
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2017-04-24'
     locator: table row 90, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 90 lists the nation
@@ -383,6 +421,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Gila River Indian Community
       of the Gila River Indian Reservation, Arizona". Facilities as machine-extracted from the report
@@ -394,6 +433,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Gila River Indian Community of the Gila River Indian Reservation, Arizona Confidence
@@ -406,6 +446,7 @@ jurisdiction:
     (list updated May 2022).
   source: national-congress-of-american-indians-implementing-tribe-profile-gila-river-indian-community-of-the-gila-river-indian-reservation
   confidence: medium
+  verification: bulk-import
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Gila River Indian Community". Also on the NCAI implementing tribes list (national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction).
@@ -413,6 +454,7 @@ memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Gila River Indian Community". Name matched to the roster entry.
 review:

@@ -10,6 +10,7 @@ recognition:
   since: '1967-07-01'
   source: revised-constitution-american-samoa-1967
   confidence: high
+  verification: read-in-full
   as_of: '1967-07-01'
   locator: art. I § 3
   note: '''It shall be the policy of the Government of American Samoa to protect persons of Samoan ancestry
@@ -25,6 +26,7 @@ recognition:
   since: '1967-07-01'
   source: revised-constitution-american-samoa-1967
   confidence: high
+  verification: read-in-full
   as_of: '1967-07-01'
   locator: art. II §§ 3(d), 4
   note: A Senator must 'be the registered matai of a Samoan family who fulfills his obligations as required
@@ -35,6 +37,7 @@ recognition:
   legal_basis: A.S.C.A. § 37.0204 (restrictions on alienation of land)
   source: american-samoa-code-37-0204
   confidence: medium
+  verification: read-in-full
   locator: § 37.0204(a)-(b)
   note: Prohibits a matai from alienating communal family lands without the Governor's written approval,
     and prohibits alienating any lands except freehold lands to a person with 'less than one-half native
@@ -44,6 +47,7 @@ states:
   presence: land
   source: american-samoa-code-37-0204
   confidence: medium
+  verification: read-in-full
   locator: § 37.0204
   note: Communal family lands controlled by matai.
 population:
@@ -51,6 +55,7 @@ population:
   kind: census-samoan-alone
   source: census-2020-island-areas-american-samoa-profile-release
   confidence: high
+  verification: inferred
   as_of: '2020-04-01'
   locator: American Samoa; DECENNIALDPAS2020.DP1 row DP1_0081C
   note: A detailed Native Hawaiian and Other Pacific Islander group, not American Indian or Alaska Native.
@@ -59,6 +64,7 @@ population:
   kind: census-samoan-alone-or-in-any-combination
   source: census-2020-island-areas-american-samoa-profile-release
   confidence: high
+  verification: inferred
   as_of: '2020-04-01'
   locator: American Samoa; DECENNIALDPAS2020.DP1 row DP1_0101C
   note: Kind value is new.
@@ -67,6 +73,7 @@ languages:
   language_tag: sm
   source: revised-constitution-american-samoa-1967
   confidence: high
+  verification: inferred
   as_of: '1967-07-01'
   locator: art. I § 3
   note: The section protects 'the Samoan way of life and language'. Tag sm is the ISO 639-1 equivalent

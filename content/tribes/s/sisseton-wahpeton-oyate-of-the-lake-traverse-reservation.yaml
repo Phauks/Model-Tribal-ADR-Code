@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South Dakota
 - state: ND
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1860
   note: 'Census area with land in this state: Lake Traverse Reservation and Off-Reservation Trust Land
@@ -30,6 +33,7 @@ states:
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1860
   note: 'Census area with land in this state: Lake Traverse Reservation and Off-Reservation Trust Land
@@ -41,6 +45,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1860
   note: Matched by name. Census class code D1.
@@ -49,6 +54,7 @@ population:
   kind: citizens
   source: sisseton-wahpeton-oyate-of-the-lake-trav-home
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"We have 14,000+ tribal members"; undated statement on the official site; as_of is the access
     date'
@@ -56,6 +62,7 @@ population:
   kind: citizens
   source: sisseton-wahpeton-oyate-of-the-lake-trav-tribes-sisseton-wahpeton-oyate-aspx
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   note: '"Estimated Tribal Enrollment: 12,389"; the nation''s own site says 14,000+; South Dakota Department
     of Tribal Relations tribe profile (state agency); figure undated, page links a 2019 statistical profile'
@@ -63,6 +70,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1860, field POP100
   note: 'Census area: Lake Traverse Reservation and Off-Reservation Trust Land (code 1860). Everyone counted
@@ -72,6 +80,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3323 (Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South
     Dakota alone or in any combination), GEOID 0100000US (United States)
@@ -83,6 +92,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Denver, row 'Sisseton-Wahpeton Oyate', PDF page 5, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -93,6 +103,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South Dakota
 - kind: physical-address
@@ -100,6 +111,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South Dakota
 - kind: mailing-address
@@ -107,6 +119,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South Dakota
 - kind: phone
@@ -114,6 +127,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South Dakota
 - kind: fax
@@ -121,6 +135,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South Dakota
 languages:
@@ -128,6 +143,7 @@ languages:
   language_tag: dak
   source: sisseton-wahpeton-oyate-of-the-lake-trav-tribes-sisseton-wahpeton-oyate-aspx
   confidence: medium
+  verification: inferred
   as_of: '2026-11-21'
   note: '"Traditional Language: Dakota"; South Dakota Department of Tribal Relations tribe profile (state
     agency); figure undated, page links a 2019 statistical profile'
@@ -136,6 +152,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Sisseton Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South Dakota
 governing_documents:
@@ -145,6 +162,7 @@ governing_documents:
   link: https://narf.org/nill/codes/sisseton_wahpeton/index.html
   source: national-indian-law-library-code-codes-sisseton-wahpeton
   confidence: medium
+  verification: title-only
   as_of: '2014'
   locator: page heading
   note: 'Updated: July 2014. Full text linked from the National Indian Law Library page.'
@@ -154,6 +172,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/sisseton-wahpeton/index.html
   source: national-indian-law-library-constitution-constitutions-sisseton-wahpeton
   confidence: medium
+  verification: title-only
   as_of: '2006'
   locator: page heading
   note: 'Approved: 11/15/2006. Full text linked from the National Indian Law Library page.'
@@ -162,6 +181,7 @@ governing_documents:
   link: http://www.swo-nsn.gov/departments/justice-department/legal-department/
   source: national-indian-law-library-sisseton-wahpeton
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
@@ -171,6 +191,7 @@ governing_documents:
   link: https://www.swo-nsn.gov/government/
   source: national-indian-law-library-sisseton-wahpeton
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
@@ -180,6 +201,7 @@ governing_documents:
   link: http://www.swo-nsn.gov/departments/justice-department/legal-department/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: North Dakota section, entry 'Sisseton Wahpeton Oyate of the Lake Traverse Reservation'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -189,6 +211,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/siscons.html
   source: university-of-oklahoma-indian-reorganization-act-siscons
   confidence: low
+  verification: inferred
   as_of: '1946'
   note: Matched by former name (Sisseton-Wahpeton Sioux Tribe); confirm. Historical text as originally
     approved; the nation may have amended or replaced it since.
@@ -198,6 +221,7 @@ justice_institutions:
   link: https://swo-nsn.gov/departments/justice-department/tribal-court/
   source: national-indian-law-library-sisseton-wahpeton
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -206,6 +230,7 @@ justice_institutions:
   link: http://www.swo-nsn.gov/departments/justice-department/tribal-court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: North Dakota section, entry 'Sisseton Wahpeton Oyate of the Lake Traverse Reservation'
 gaming:
@@ -215,6 +240,7 @@ gaming:
     approved: '1993-02-03'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-02-03'
     locator: result page 20 (?page=20), row 24
     note: 'Listed as: "Sisseton-Wahpeton Oyate of the Lake Traverse Reservation Tribal State Gaming Compact"
@@ -225,6 +251,7 @@ gaming:
     approved: '1994-07-13'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1994-07-13'
     locator: result page 20 (?page=20), row 25
     note: 'Listed as: "Sisseton-Wahpeton Oyate of the Lake Traverse Reservation Tribal State Gaming Compact"
@@ -236,6 +263,7 @@ gaming:
     federal_register_citation: 62 FR 39859
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1997-07-24'
     locator: result page 21 (?page=21), row 1
     note: 'Listed as: "Sisseton-Wahpeton Oyate of the Lake Traverse Reservation Tribal State Gaming Compact"
@@ -250,6 +278,7 @@ gaming:
     federal_register_citation: 78 FR 17427
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2013-03-21'
     locator: result page 21 (?page=21), row 2
     note: 'Listed as: "Sisseton-Wahpeton Oyate of the Lake Traverse Reservation Tribal State Gaming Compact"
@@ -264,6 +293,7 @@ gaming:
     federal_register_citation: 64 FR 65722
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-11-23'
     locator: result page 21 (?page=21), row 3
     note: 'Listed as: "Sisseton-Wahpeton Oyate of the Lake Traverse Reservation Tribal State Gaming Compact"
@@ -278,6 +308,7 @@ gaming:
     federal_register_citation: 87 FR 77633
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2022-12-19'
     locator: result page 21 (?page=21), row 4
     note: 'Listed as: "Sisseton-Wahpeton Oyate of the Lake Traverse Reservation Tribal State Gaming Compact"
@@ -292,6 +323,7 @@ gaming:
     federal_register_citation: 86 FR 36765
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-07-13'
     locator: result page 36 (?page=36), row 13
     note: 'Listed as: "Sisseton Wahpeton Oyate of the Lake Traverse Reservation Tribal State Gaming Compact"
@@ -306,6 +338,7 @@ gaming:
     federal_register_citation: 86 FR 68682
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-12-03'
     locator: result page 36 (?page=36), row 14
     note: 'Listed as: "Sisseton Wahpeton Oyate of the Lake Traverse Reservation Tribal State Gaming Compact"
@@ -320,6 +353,7 @@ gaming:
     federal_register_citation: 60 FR 9258
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '1995-02-16'
     locator: result page 36 (?page=36), row 15
     note: 'Listed as: "Sisseton-Wahpeton Oyate of the Lake Traverse Reservation Tribal State Gaming Compact"
@@ -332,6 +366,7 @@ gaming:
     approved: '1991-04-01'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1991-04-01'
     locator: result page 36 (?page=36), row 16
     note: 'Listed as: "Sisseton-Wahpeton Oyate of the Lake Traverse Reservation Tribal State Gaming Compact"
@@ -343,6 +378,7 @@ gaming:
     federal_register_citation: 77 FR 76513
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2012-12-28'
     locator: result page 36 (?page=36), row 17
     note: 'Listed as: "Sisseton-Wahpeton Oyate of the Lake Traverse Reservation Tribal State Gaming Compact"
@@ -356,6 +392,7 @@ gaming:
     approved: '1991-12-04'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1991-12-04'
     locator: result page 36 (?page=36), row 18
     note: 'Listed as: "Sisseton-Wahpeton Oyate of the Lake Traverse Reservation Tribal State Gaming Compact"
@@ -367,6 +404,7 @@ gaming:
     federal_register_citation: 63 FR 25519
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1998-05-08'
     locator: result page 36 (?page=36), row 19
     note: 'Listed as: "Sisseton-Wahpeton Oyate of the Lake Traverse Reservation Tribal State Gaming Compact"
@@ -381,6 +419,7 @@ gaming:
     federal_register_citation: 65 FR 67016
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-11-08'
     locator: result page 36 (?page=36), row 20
     note: 'Listed as: "Sisseton-Wahpeton Oyate of the Lake Traverse Reservation Tribal State Gaming Compact"
@@ -394,6 +433,7 @@ gaming:
     approved: '1993-10-07'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-10-07'
     locator: result page 36 (?page=36), row 21
     note: 'Listed as: "Sisseton-Wahpeton Oyate of the Lake Traverse Reservation Tribal State Gaming Compact"
@@ -405,6 +445,7 @@ gaming:
     federal_register_citation: 84 FR 12273
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2019-04-01'
     locator: result page 36 (?page=36), row 22
     note: 'Listed as: "Sisseton-Wahpeton Oyate of the Lake Traverse Reservation Tribal State Gaming Compact"
@@ -423,6 +464,7 @@ gaming:
     dispute_resolution_locator: Section XXVIII (Dispute Resolution)
     source: compact-nd-spirit-lake-tribe-2022
     confidence: medium
+    verification: inferred
     as_of: '2022-12-19'
     locator: Section XXVIII (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Read from the 2022 Spirit Lake Tribe
@@ -440,6 +482,7 @@ gaming:
       procedure
     source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-trav-2019
     confidence: medium
+    verification: read-in-full
     as_of: '2019-04-01'
     locator: Section 13.1 or 14.1 (General Provisions) and Section 7 (Licensing) arbitration procedure
     note: Dispute-resolution clause read from this nation's own compact document. Document is older than
@@ -451,6 +494,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11154&ind=11168
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1995-02-03'
     locator: table row 263, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 263 lists the nation
@@ -459,6 +503,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11155&ind=11169
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2004-10-26'
     locator: table row 263, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 263 lists the nation
@@ -467,6 +512,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11156&ind=11170
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2008-12-09'
     locator: table row 263, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 263 lists the nation
@@ -477,6 +523,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Sisseton-Wahpeton Oyate of the Lake Traverse Reservation, South Dakota Confidence
@@ -489,6 +536,7 @@ jurisdiction:
     (list updated May 2022).
   source: national-congress-of-american-indians-implementing-tribe-profile-sisseton-wahpeton-oyate-of-the-lake-traverse-reservation
   confidence: medium
+  verification: bulk-import
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Sisseton-Wahpeton Oyate of the Lake Traverse Reservation". Also on the NCAI implementing
@@ -499,6 +547,7 @@ jurisdiction:
     approved March 6, 2015 (pilot project).
   source: department-of-justice-violence-against-women-act-2013-pilot-project
   confidence: medium
+  verification: bulk-import
   as_of: '2015-03-06'
   locator: List of granted Pilot Project applications
   note: Primary source but describes the 2014-2015 pilot period; page updated April 7, 2023.
@@ -506,11 +555,13 @@ memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Sisseton-Wahpeton Oyate". Name matched to the roster entry.
 - organization: Coalition of Large Tribes
   source: coalition-of-large-tribes-home
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Sisseton Wahpeton Sioux Tribe". Name matched to the roster entry.
 review:

@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Navajo Nation, Arizona, New Mexico, & Utah
 - state: AZ
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2430
   note: 'Census area with land in this state: Navajo Nation Reservation and Off-Reservation Trust Land
@@ -30,6 +33,7 @@ states:
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2430
   note: 'Census area with land in this state: Navajo Nation Reservation and Off-Reservation Trust Land
@@ -38,6 +42,7 @@ states:
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2430
   note: 'Census area with land in this state: Navajo Nation Reservation and Off-Reservation Trust Land
@@ -49,6 +54,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2430
   note: Matched by name. Census class code D1.
@@ -57,6 +63,7 @@ population:
   kind: citizens
   source: navajo-nation-arizona-new-mexico-and-uta-260608-navajo-nation-enrollment-continue
   confidence: high
+  verification: read-in-full
   as_of: '2026-06-01'
   note: 'Office of the President and Vice President news release dated 2026-06-08: "reaching 427,414 enrolled
     citizens as of June 1, 2026"; page read through the WebFetch tool because the site blocked the plain
@@ -65,6 +72,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2430, field POP100
   note: 'Census area: Navajo Nation Reservation and Off-Reservation Trust Land (code 2430). Everyone counted
@@ -74,6 +82,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3152 (Navajo Nation alone or in any combination), GEOID 0100000US (United
     States)
@@ -84,6 +93,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Navajo Nation', PDF page 7, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -94,6 +104,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Navajo Nation, Arizona, New Mexico, & Utah
 - kind: physical-address
@@ -101,6 +112,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Navajo Nation, Arizona, New Mexico, & Utah
 - kind: mailing-address
@@ -108,6 +120,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Navajo Nation, Arizona, New Mexico, & Utah
 - kind: phone
@@ -115,6 +128,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Navajo Nation, Arizona, New Mexico, & Utah
 - kind: fax
@@ -122,6 +136,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Navajo Nation, Arizona, New Mexico, & Utah
 federal_administration:
@@ -129,6 +144,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Navajo Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Navajo Nation, Arizona, New Mexico, & Utah
 governing_documents:
@@ -137,6 +153,7 @@ governing_documents:
   link: https://www.nnols.org/navajo-nation-code/
   source: national-indian-law-library-navajo-nation
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At the Navajo Nation
@@ -146,6 +163,7 @@ governing_documents:
   link: http://dibb.nnols.org/PublicReporting.aspx
   source: national-indian-law-library-navajo-nation
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "See also Navajo Nation
@@ -154,6 +172,7 @@ governing_documents:
   title: Navajo Nation Code
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Arizona section, entry 'Navajo Nation'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -164,6 +183,7 @@ justice_institutions:
   name: Navajo Nation Peacemaking Program (Hózhóójí Naat’áanii)
   source: narf-ipi-tribal-peacemaking-laws
   confidence: medium
+  verification: title-only
   as_of: '2025-09-29'
   note: Forum named in the title of a published tribal law listed by the Native American Rights Fund;
     whether it currently operates was not checked.
@@ -172,6 +192,7 @@ justice_institutions:
   link: http://www.courts.navajo-nsn.gov/
   source: national-indian-law-library-navajo-nation
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -180,6 +201,7 @@ justice_institutions:
   link: http://www.navajocourts.org/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Navajo Nation'
 - kind: court-of-appeals
@@ -187,6 +209,7 @@ justice_institutions:
   link: http://www.navajocourts.org/indexsuct.htm
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Navajo Nation'
 - kind: tribal-court
@@ -194,6 +217,7 @@ justice_institutions:
   link: http://www.navajocourts.org/indexdistct.htm
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Navajo Nation'
 dispute_resolution:
@@ -226,6 +250,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Navajo-Title-7-Courts-and-Procedure.pdf
     source: navajo-title-7-courts-and-procedures
     confidence: medium
+    verification: read-in-full
     as_of: '2003-10-24'
     locator: 7 N.N.C. §§ 409-413; Title 7 annotation citing In the Matter of the Estate of Kindle (Nav.
       Sup. Ct. 2001)
@@ -260,6 +285,7 @@ dispute_resolution:
     link: https://courts.navajo-nsn.gov/Peacemaking/Plan/peace.html
     source: navajo-peacemaking-plan-of-operations
     confidence: medium
+    verification: read-in-full
     as_of: '2026-11-21'
     locator: Plan of Operations, Part I
     note: Terms copied as displayed on the Judicial Branch page, which uses a legacy Navajo font conversion.
@@ -447,6 +473,7 @@ dispute_resolution:
     link: https://courts.navajo-nsn.gov/Peacemaking/Plan/peace.html
     source: navajo-peacemaking-plan-of-operations
     confidence: high
+    verification: title-only
     as_of: '2026-11-21'
   - kind: forms
     title: Peacemaking Referral Form (Form 1)
@@ -483,6 +510,7 @@ gaming:
     federal_register_citation: 87 FR 35992
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2022-06-14'
     locator: result page 1 (?page=1), row 17
     note: 'Listed as: "Navajo Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Navajo
@@ -496,6 +524,7 @@ gaming:
     federal_register_citation: 68 FR 5912
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2003-02-05'
     locator: result page 1 (?page=1), row 18
     note: 'Listed as: "Navajo Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Navajo
@@ -509,6 +538,7 @@ gaming:
     federal_register_citation: 74 FR 12889
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2009-03-25'
     locator: result page 1 (?page=1), row 19
     note: 'Listed as: "Navajo Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Navajo
@@ -522,6 +552,7 @@ gaming:
     federal_register_citation: 86 FR 27889
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2021-05-24'
     locator: result page 1 (?page=1), row 20
     note: 'Listed as: "Navajo Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Navajo
@@ -535,6 +566,7 @@ gaming:
     federal_register_citation: 80 FR 35668
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2015-06-22'
     locator: result page 22 (?page=22), row 8
     note: 'Listed as: "Navajo Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
@@ -548,6 +580,7 @@ gaming:
     federal_register_citation: 69 FR 2617
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2004-01-16'
     locator: result page 22 (?page=22), row 9
     note: 'Listed as: "Navajo Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Navajo
@@ -565,6 +598,7 @@ gaming:
     dispute_resolution_locator: Section 15 (Dispute Resolution)
     source: compact-az-ak-chin-indian-community-2003
     confidence: medium
+    verification: inferred
     as_of: '2003-02-05'
     locator: Section 15 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
@@ -580,6 +614,7 @@ gaming:
     dispute_resolution_locator: Section 7 (Dispute Resolution)
     source: compact-nm-pueblo-of-santa-ana-2016
     confidence: medium
+    verification: inferred
     as_of: '2016-12-30'
     locator: Section 7 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
@@ -591,6 +626,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10399&ind=10414
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2003-12-09'
     locator: table row 165, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 165 lists the nation
@@ -599,6 +635,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10400&ind=10415
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2019-06-24'
     locator: table row 165, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 165 lists the nation
@@ -607,6 +644,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Navajo Nation". Name extracted
       from the PDF by the page-fetch tool and matched to the roster.
@@ -616,6 +654,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Navajo Nation, Arizona, New Mexico & Utah Confidence lowered from high by the lead
@@ -625,6 +664,7 @@ memberships:
 - organization: Coalition of Large Tribes
   source: coalition-of-large-tribes-home
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Navajo Nation". Name matched to the roster entry.
 review:

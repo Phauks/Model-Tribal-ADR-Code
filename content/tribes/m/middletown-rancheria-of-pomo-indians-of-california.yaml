@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Middletown Rancheria of Pomo Indians of California
 - state: CA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 2255
   note: 'Census area with land in this state: Middletown Rancheria (code 2255). Area matched to the nation
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2255
   note: Matched by name. Census class code D2.
@@ -41,6 +45,7 @@ population:
   kind: citizens
   source: middletown-rancheria-of-pomo-indians-of-history-culture
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"entire membership is two hundred sixty-six (266) Tribal Members" (149 adults, 117 minors); undated
     statement on the official site; as_of is the access date'
@@ -48,6 +53,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2255, field POP100
   note: 'Census area: Middletown Rancheria (code 2255). Everyone counted as living in the area in the
@@ -56,6 +62,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3123 (Middletown Rancheria of Pomo Indians alone or in any combination),
     GEOID 0100000US (United States)
@@ -66,6 +73,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Middletown Rancheria of Pomo Indians', PDF page 7, Enrollment
     column
@@ -77,6 +85,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Middletown Rancheria of Pomo Indians of California
 - kind: physical-address
@@ -84,6 +93,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Middletown Rancheria of Pomo Indians of California
 - kind: mailing-address
@@ -91,6 +101,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Middletown Rancheria of Pomo Indians of California
 - kind: phone
@@ -98,6 +109,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Middletown Rancheria of Pomo Indians of California
 - kind: fax
@@ -105,6 +117,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Middletown Rancheria of Pomo Indians of California
 languages:
@@ -112,11 +125,13 @@ languages:
   language_tag: lmw
   source: middletown-rancheria-of-pomo-indians-of-history-culture
   confidence: high
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"The native language of the Tribe is Lake Miwok and Pomo."'
 - name: Pomo
   source: middletown-rancheria-of-pomo-indians-of-history-culture
   confidence: high
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"The native language of the Tribe is Lake Miwok and Pomo." Site does not name which Pomo language'
 federal_administration:
@@ -124,6 +139,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Central California Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Middletown Rancheria of Pomo Indians of California
 gaming:
@@ -133,6 +149,7 @@ gaming:
     approved: '2021-11-23'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-11-23'
     locator: result page 8 (?page=8), row 15
     note: 'Listed as: "Middletown Rancheria of Pomo Indians Tribal State Gaming Compact" (Disapproved);
@@ -144,6 +161,7 @@ gaming:
     approved: '2022-07-22'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2022-07-22'
     locator: result page 8 (?page=8), row 16
     note: 'Listed as: "Middletown Rancheria of Pomo Indians Tribal State Gaming Compact" (Disapproved);
@@ -156,6 +174,7 @@ gaming:
     federal_register_citation: 88 FR 42386
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2022-06-30'
     locator: result page 8 (?page=8), row 17
     note: 'Listed as: "Middletown Rancheria of Pomo Indians Tribal State Gaming Compact" (Extensions);
@@ -170,6 +189,7 @@ gaming:
     federal_register_citation: 88 FR 42386
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2023-06-30'
     locator: result page 8 (?page=8), row 18
     note: 'Listed as: "Middletown Rancheria of Pomo Indians Tribal State Gaming Compact" (Extensions);
@@ -184,6 +204,7 @@ gaming:
     federal_register_citation: 65 FR 31189
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '2000-05-16'
     locator: result page 8 (?page=8), row 19
     note: 'Listed as: "Middletown Rancheria of Pomo lndians Tribal State Gaming Compact" (Approve); list''s
@@ -201,6 +222,7 @@ gaming:
     dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     source: compact-ca-cher-ae-heights-indian-community-of-the-2026
     confidence: medium
+    verification: inferred
     as_of: '2026-01-26'
     locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
@@ -213,6 +235,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10291&ind=10306
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1995-05-15'
     locator: table row 153, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 153 lists the nation
@@ -221,6 +244,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10292&ind=10307
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1997-07-23'
     locator: table row 153, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 153 lists the nation
@@ -229,6 +253,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10293&ind=10308
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1998-12-07'
     locator: table row 153, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 153 lists the nation
@@ -237,6 +262,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10294&ind=10309
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-05-12'
     locator: table row 153, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 153 lists the nation
@@ -245,6 +271,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10295&ind=10310
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2001-02-05'
     locator: table row 153, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 153 lists the nation
@@ -253,6 +280,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Middletown Rancheria of Pomo Indians
       of California". Name extracted from the PDF by the page-fetch tool and matched to the roster.
@@ -264,6 +292,7 @@ jurisdiction:
     country within California; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
   note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
@@ -273,6 +302,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Middletown Rancheria of Pomo Indians of California Confidence lowered from high by

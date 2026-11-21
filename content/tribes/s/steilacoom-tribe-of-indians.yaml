@@ -6,6 +6,7 @@ names:
   - name: Steilacoom Tribe
     source: ofa-list-of-petitioners-by-state-2008
     confidence: medium
+    verification: bulk-import
     as_of: '2008-09-22'
     locator: 'Petitioner #11'
     note: Name as printed on the Office of Federal Acknowledgment list by state.
@@ -17,6 +18,7 @@ recognition:
   petition_stage: Denied (Petitions Resolved page); Denied acknowledgment through 25 CFR 83 (eff. 6/17/08)
   source: federal-register-e8-5551
   confidence: high
+  verification: bulk-import
   as_of: '2008-03-19'
   locator: 'Petitioner #11'
   note: 'Petitions Resolved page lists decision: Denied. Office of Federal Acknowledgment list status:
@@ -27,6 +29,7 @@ states:
   presence: other
   source: ofa-petitions-resolved
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.

@@ -6,6 +6,7 @@ names:
   - name: Louisiana Band of Choctaw Indian
     source: louisiana-governor-federally-and-state-recognized-tribes
     confidence: high
+    verification: bulk-import
     as_of: '2026'
   official_source: louisiana-governor-federally-and-state-recognized-tribes
 recognition:
@@ -14,6 +15,7 @@ recognition:
   legal_basis: Listed as a state recognized tribe by the Louisiana Governor's Office of Indian Affairs
   source: louisiana-governor-federally-and-state-recognized-tribes
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   note: Louisiana recognized tribes by legislative concurrent resolutions; the individual resolutions
     were not retrieved.
@@ -23,6 +25,7 @@ recognition:
     membership, listed as 'Louisiana Band of Choctaw Indians'
   source: louisiana-revised-statutes-46-2305
   confidence: high
+  verification: inferred
   as_of: '2018'
   locator: R.S. 46:2305(B)
   note: The statute gives the tribe a seat on the Native American Commission; it does not itself confer
@@ -32,6 +35,7 @@ states:
   presence: other
   source: louisiana-governor-indian-affairs
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   locator: Regional map
   note: Located in Concordia Parish per the Office of Indian Affairs regional map.
@@ -41,6 +45,7 @@ contacts:
   label: Contact address listed by the Louisiana Governor's Office of Indian Affairs
   source: louisiana-governor-federally-and-state-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: '2026'
   note: Listed under the leader's name; recorded as the tribe's contact address.
 review:

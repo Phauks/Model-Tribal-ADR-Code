@@ -6,6 +6,7 @@ names:
   - name: United Cherokee Intertribal
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     locator: 'Petitioner #246'
   official_source: gao-12-348-federal-funding-non-federally-recognized-tribes
@@ -13,6 +14,7 @@ recognition:
 - type: unrecognized
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1; Table 3
   note: 'GAO Table 1 lists "United Cherokee Ani-Yun-Wiya Nation" among 26 non-federally recognized tribes
@@ -21,6 +23,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State Designated Tribal Statistical Area; area 9950
   note: The 2020 Census delineated "United Cherokee Ani-Yun-Wiya Nation SDTSA" (State Designated Tribal
@@ -34,6 +37,7 @@ recognition:
   petition_stage: Letter of Intent to Petition 11/08/2001
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   locator: 'Petitioner #246'
   note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
@@ -45,6 +49,7 @@ recognition:
     2026-09-14)
   source: alabama-administrative-code-475-x-1-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-07-31'
   locator: Rule 475-X-1-.02 Members
 - type: state
@@ -52,6 +57,7 @@ recognition:
   legal_basis: Listed by the Alabama Indian Affairs Commission as a tribe recognized by the State of Alabama
   source: alabama-indian-affairs-commission-tribes-list-2026
   confidence: high
+  verification: bulk-import
   as_of: 2026-10
 - type: state
   state: AL
@@ -59,6 +65,7 @@ recognition:
     Administrative Code Chapter 475-X-3); not named in Code of Alabama Section 41-9-708
   source: alabama-indian-affairs-commission-state-recognized-tribes-compilation
   confidence: medium
+  verification: inferred
   as_of: '2001'
   note: Compilation says the last two tribes were recognized in 2001 under commission criteria; it does
     not name which two. Rule 475-X-1-.02 calls both 'previously recognized by the Commission'.
@@ -67,6 +74,7 @@ states:
   presence: other
   source: gao-12-348-federal-funding-non-federally-recognized-tribes
   confidence: medium
+  verification: bulk-import
   as_of: 2012-04
   locator: Table 1, State column
   note: State as listed by GAO.
@@ -74,6 +82,7 @@ states:
   presence: other
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9950
   note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
@@ -81,6 +90,7 @@ states:
   presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
@@ -88,6 +98,7 @@ states:
   presence: other
   source: alabama-indian-affairs-commission-tribes-list-2026
   confidence: high
+  verification: bulk-import
   as_of: 2026-10
   note: State-recognized in Alabama; Alabama contact address listed.
 census_areas:
@@ -97,6 +108,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9950, GEOID 9950R
   note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched
@@ -107,6 +119,7 @@ contacts:
   label: Official website
   source: alabama-indian-affairs-commission-tribes-list-2026
   confidence: high
+  verification: bulk-import
   as_of: 2026-10
 review:
   status: drafted-from-public-sources

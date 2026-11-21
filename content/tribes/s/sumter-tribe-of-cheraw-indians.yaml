@@ -10,6 +10,7 @@ recognition:
     Chapter 139 (category: State Recognized Native American Indian Tribe)'
   source: south-carolina-recognized-tribes-advance-sc
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   note: Listed under 'State Recognized Tribes'.
 states:
@@ -17,6 +18,7 @@ states:
   presence: other
   source: south-carolina-recognized-tribes-advance-sc
   confidence: high
+  verification: bulk-import
   as_of: '2026'
   note: State-recognized entity with a South Carolina contact address.
 contacts:
@@ -25,12 +27,14 @@ contacts:
   label: Official website
   source: south-carolina-recognized-tribes-advance-sc
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 - kind: email-general
   value: Cherawindians@gmail.com
   label: Sumter Tribe Email
   source: south-carolina-recognized-tribes-advance-sc
   confidence: high
+  verification: bulk-import
   as_of: '2026'
 review:
   status: drafted-from-public-sources

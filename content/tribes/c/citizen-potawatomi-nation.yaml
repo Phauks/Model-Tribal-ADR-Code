@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Citizen Potawatomi Nation, Oklahoma
 - state: OK
   presence: other
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 5600
   note: 'Census area with land in this state: Citizen Potawatomi Nation-Absentee Shawnee OTSA (code 5600).
@@ -34,6 +37,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5600
   note: 'Matched by name. Shared with: Absentee-Shawnee Tribe of Indians of Oklahoma. Census class code
@@ -43,12 +47,14 @@ population:
   kind: citizens
   source: potawatomi-government
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'Page: ''more than 38,000 Tribal citizens around the world''. Undated page; as_of is access date.'
 - count: 126987
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5600, field POP100
   note: 'Census area: Citizen Potawatomi Nation-Absentee Shawnee OTSA (code 5600). Everyone counted as
@@ -59,6 +65,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2929 (Citizen Potawatomi Nation, Oklahoma alone or in any combination),
     GEOID 0100000US (United States)
@@ -69,6 +76,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Oklahoma, row 'Citizen Potawatomi Nation', PDF page 6, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -79,6 +87,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Citizen Potawatomi Nation, Oklahoma
 - kind: physical-address
@@ -86,6 +95,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Citizen Potawatomi Nation, Oklahoma
 - kind: mailing-address
@@ -93,6 +103,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Citizen Potawatomi Nation, Oklahoma
 - kind: phone
@@ -100,6 +111,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Citizen Potawatomi Nation, Oklahoma
 - kind: fax
@@ -107,6 +119,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Citizen Potawatomi Nation, Oklahoma
 federal_administration:
@@ -114,6 +127,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Southern Plains Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Citizen Potawatomi Nation, Oklahoma
 government_structure:
@@ -122,6 +136,7 @@ government_structure:
     approved by the Secretary of the Interior (Oklahoma Indian Welfare Act of June 26, 1936), as of 1947
   source: haas-1947-table-b-oklahoma
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, Oklahoma Tribes, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -132,6 +147,7 @@ government_structure:
     under Act of June 26, 1936 (49 Stat. 1967)
   source: university-of-oklahoma-indian-reorganization-act-opotcons
   confidence: medium
+  verification: read-in-full
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -141,6 +157,7 @@ governing_documents:
   link: http://www.potawatomi.org/government/judicial-branch/
   source: national-indian-law-library-citizen-potawatomi
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -150,6 +167,7 @@ governing_documents:
   link: http://www.cpnelectioncentral.com/wp-content/uploads/2016/12/electionordinance.pdf
   source: national-indian-law-library-citizen-potawatomi
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -159,6 +177,7 @@ governing_documents:
   link: https://www.potawatomi.org/wp-content/uploads/cpn-constitution.pdf
   source: national-indian-law-library-citizen-potawatomi
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -169,6 +188,7 @@ governing_documents:
   link: https://narf.org/nill/codes/citizen_potawatomi_ok/index.html
   source: national-indian-law-library-code-codes-citizen-potawatomi-ok
   confidence: medium
+  verification: title-only
   as_of: '2018'
   locator: page heading
   note: 'Table of Contents Updated: March 2018. The National Indian Law Library page gives the table of
@@ -179,6 +199,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/citizen_potawatomi_ok/index.html
   source: national-indian-law-library-constitution-constitutions-citizen-potawatomi-ok
   confidence: medium
+  verification: title-only
   as_of: '2007'
   locator: page heading
   note: 'Amended: August 16, 2007. The National Indian Law Library page gives the table of contents (and
@@ -187,6 +208,7 @@ governing_documents:
   title: Citizen Potawatomi Nation Constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Oklahoma section, entry 'Citizen Potawatomi Nation'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -197,6 +219,7 @@ governing_documents:
   link: http://www.potawatomi.org/government/judicial-branch/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Oklahoma section, entry 'Citizen Potawatomi Nation'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -206,6 +229,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/opotcons.html
   source: university-of-oklahoma-indian-reorganization-act-opotcons
   confidence: medium
+  verification: title-only
   as_of: '1938'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: corporate-charter
@@ -213,6 +237,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/potawatchart.html
   source: university-of-oklahoma-indian-reorganization-act-potawatchart
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -221,6 +246,7 @@ justice_institutions:
   link: http://www.potawatomi.org/government/judicial-branch/
   source: national-indian-law-library-citizen-potawatomi
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -229,6 +255,7 @@ justice_institutions:
   link: http://www.potawatomi.org/government/judicial-branch/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Oklahoma section, entry 'Citizen Potawatomi Nation'
 dispute_resolution:
@@ -304,6 +331,7 @@ gaming:
     federal_register_citation: 62 FR 5033
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1997-02-03'
     locator: result page 27 (?page=27), row 1
     note: 'Listed as: "Citizen Potawatomi Nation Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -317,6 +345,7 @@ gaming:
     federal_register_citation: 70 FR 6903
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2005-02-09'
     locator: result page 27 (?page=27), row 2
     note: 'Listed as: "Citizen Potawatomi Nation Tribal State Gaming Compact" (Deemed Approved); list''s
@@ -329,6 +358,7 @@ gaming:
     approved: '1992-10-23'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1992-10-23'
     locator: result page 27 (?page=27), row 3
     note: 'Listed as: "Citizen Potawatomi Nation Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -339,6 +369,7 @@ gaming:
     federal_register_citation: 83 FR 41101
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2018-08-17'
     locator: result page 27 (?page=27), row 4
     note: 'Listed as: "Citizen Potawatomi Nation Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -355,6 +386,7 @@ gaming:
     dispute_resolution_locator: Part 12 (Dispute Resolution)
     source: compact-ok-cherokee-nation-2005
     confidence: medium
+    verification: inferred
     as_of: '2005-01-27'
     locator: Part 12 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
@@ -367,6 +399,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9514&ind=9526
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1995-06-27'
     locator: table row 46, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 46 lists the nation
@@ -375,6 +408,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9515&ind=9527
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2006-12-11'
     locator: table row 46, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 46 lists the nation
@@ -383,6 +417,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9516&ind=9528
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2016-02-24'
     locator: table row 46, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 46 lists the nation
@@ -391,6 +426,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Citizen Potawatomi Nation,
       Oklahoma". Facilities as machine-extracted from the report text (verify): Firelake Travel Plaza;
@@ -402,6 +438,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Citizen Potawatomi Nation, Oklahoma Confidence lowered from high by the lead session:

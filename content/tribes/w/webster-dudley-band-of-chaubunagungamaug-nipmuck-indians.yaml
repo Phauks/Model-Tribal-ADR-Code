@@ -6,6 +6,7 @@ names:
   - name: Chaubunagungamaug Band of the Nipmuck Nation, Webster/Dudley
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     locator: 'Petitioner #69B'
     note: Name as printed on the Office of Federal Acknowledgment list by state.
@@ -18,6 +19,7 @@ recognition:
     letter of intent 5/31/1996; Declined Acknowledgment effective 1/28/2008 69 FR 35664
   source: federal-register-04-14393
   confidence: high
+  verification: bulk-import
   as_of: '2004-06-25'
   locator: 'Petitioner #69B'
   note: 'Source remark: Formerly part of 069 Nipmuc Nation. Petitions Resolved page lists decision: Denied.
@@ -30,6 +32,7 @@ states:
   presence: other
   source: ofa-petitions-resolved
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.

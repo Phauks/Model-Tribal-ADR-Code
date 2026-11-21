@@ -6,11 +6,13 @@ names:
   - name: the Moors
     source: delaware-code-title-29-chapter-1
     confidence: high
+    verification: inferred
     as_of: '2026'
     note: 'Statute finding: ''The Tribe was formerly known as "the Moors"'' (a term applied in state records).'
   - name: Moors of Kent County, Delaware
     source: delaware-code-title-29-chapter-1
     confidence: high
+    verification: inferred
     as_of: '2026'
     note: Name used in a 1948 Smithsonian Institution report cited in the statute findings.
   official_source: census-aian-geography-definitions
@@ -18,6 +20,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State Designated Tribal Statistical Area; area 9800
   note: The 2020 Census delineated "Lenape Indian Tribe of Delaware SDTSA" (State Designated Tribal Statistical
@@ -30,6 +33,7 @@ recognition:
   legal_basis: Delaware Code Title 29, Section 106 (80 Del. Laws, c. 367, Section 1)
   source: delaware-code-title-29-chapter-1
   confidence: high
+  verification: read-in-full
   as_of: '2026'
   locator: 29 Del. C. Section 106(b)
   note: Designated and recognized as an American Indian Tribe with a recognized tribal governing body;
@@ -40,6 +44,7 @@ states:
   presence: other
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9800
   note: State Designated Tribal Statistical Area (statistical area, not land held by the group).
@@ -47,6 +52,7 @@ states:
   presence: other
   source: delaware-code-title-29-chapter-1
   confidence: high
+  verification: inferred
   as_of: '2026'
   note: 'Statute findings: settlement and residency in the vicinity of the Town of Cheswold, Kent County.'
 census_areas:
@@ -56,6 +62,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9800, GEOID 9800R
   note: Census class code D9; AIANNHR = S (state). Census gives only the area name; the group was matched

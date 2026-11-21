@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: St. Croix Chippewa Indians of Wisconsin
 - state: WI
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3305
   note: 'Census area with land in this state: St. Croix Reservation and Off-Reservation Trust Land (code
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3305
   note: Matched by name. Census class code D1.
@@ -41,6 +45,7 @@ population:
   kind: citizens
   source: st-croix-chippewa-indians-of-wisconsin-amind-tribalnationswi-saintcroix
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   note: '"There are currently 1,054 St. Croix tribal members"; Wisconsin Department of Public Instruction
     tribal nation profile (state agency); undated'
@@ -48,6 +53,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3305, field POP100
   note: 'Census area: St. Croix Reservation and Off-Reservation Trust Land (code 3305). Everyone counted
@@ -57,6 +63,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3340 (St. Croix Chippewa Indians of Wisconsin alone or in any combination),
     GEOID 0100000US (United States)
@@ -67,6 +74,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'St. Croix Chippewa Indians', PDF page 5, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -77,6 +85,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: St. Croix Chippewa Indians of Wisconsin
 - kind: physical-address
@@ -84,6 +93,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: St. Croix Chippewa Indians of Wisconsin
 - kind: mailing-address
@@ -91,6 +101,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: St. Croix Chippewa Indians of Wisconsin
 - kind: phone
@@ -98,6 +109,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: St. Croix Chippewa Indians of Wisconsin
 - kind: fax
@@ -105,6 +117,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: St. Croix Chippewa Indians of Wisconsin
 federal_administration:
@@ -112,6 +125,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Great Lakes Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: St. Croix Chippewa Indians of Wisconsin
 government_structure:
@@ -120,6 +134,7 @@ government_structure:
     by the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -130,6 +145,7 @@ government_structure:
     under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-croixcons
   confidence: medium
+  verification: read-in-full
   as_of: '1942'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -138,6 +154,7 @@ governing_documents:
   title: Tribal code
   source: national-indian-law-library-st-croix-chippewa
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At Tribe''s website
@@ -148,6 +165,7 @@ governing_documents:
   link: https://stcroixojibwe-nsn.gov/government/constitution/
   source: national-indian-law-library-st-croix-chippewa
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
@@ -157,6 +175,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/croixcons.html
   source: national-indian-law-library-st-croix-chippewa
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
@@ -166,6 +185,7 @@ governing_documents:
   link: https://www.loc.gov/item/43050812/
   source: national-indian-law-library-st-croix-chippewa
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
@@ -175,6 +195,7 @@ governing_documents:
   link: http://www.stcciw.com/tribal-constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Wisconsin section, entry 'St. Croix Chippewa Indians of Wisconsin'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -184,6 +205,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/croixcons.html
   source: university-of-oklahoma-indian-reorganization-act-croixcons
   confidence: medium
+  verification: title-only
   as_of: '1942'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -191,6 +213,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-st-croix-chippewa
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: 'The page gives a contact for a tribal court without a fuller name. Link check 2026-11-21: the
@@ -201,6 +224,7 @@ justice_institutions:
   link: http://www.stcciw.com/tribal-court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Wisconsin section, entry 'St. Croix Chippewa Indians of Wisconsin'
 gaming:
@@ -211,6 +235,7 @@ gaming:
     federal_register_citation: 87 FR 24339
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2022-04-25'
     locator: result page 47 (?page=47), row 8
     note: 'Listed as: "St Croix Chippewa Indians Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -224,6 +249,7 @@ gaming:
     federal_register_citation: 68 FR 54243
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2003-09-16'
     locator: result page 47 (?page=47), row 9
     note: 'Listed as: "St. Croix Chippewa Indians Tribal State Gaming Compact" (Deemed Approved); list''s
@@ -237,6 +263,7 @@ gaming:
     federal_register_citation: 63 FR 44921
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1998-08-21'
     locator: result page 47 (?page=47), row 10
     note: 'Listed as: "St. Croix Chippewa Indians Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -249,6 +276,7 @@ gaming:
     approved: '1992-03-10'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1992-03-10'
     locator: result page 47 (?page=47), row 11
     note: 'Listed as: "St. Croix Chippewa Indians Tribal State Gaming Compact" (Approve); list''s Tribe
@@ -261,6 +289,7 @@ gaming:
     dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
     source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
     confidence: medium
+    verification: inferred
     as_of: '1992-08-10'
     locator: Section XXIII (Dispute Resolution) of the 1992 compact
     note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
@@ -273,6 +302,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11221&ind=11243
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1995-03-23'
     locator: table row 272, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 272 lists the nation
@@ -281,6 +311,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11222&ind=11244
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2006-10-27'
     locator: table row 272, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 272 lists the nation
@@ -289,6 +320,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11223&ind=11245
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-09-27'
     locator: table row 272, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 272 lists the nation
@@ -301,6 +333,7 @@ jurisdiction:
     country within Wisconsin; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Wisconsin"
   note: Statute is primary; nation matched to Wisconsin by office state in the BIA Tribal Leaders Directory,
@@ -310,6 +343,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: St. Croix Chippewa Indians of Wisconsin Confidence lowered from high by the lead session:
@@ -319,16 +353,19 @@ memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes
   confidence: high
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "St. Croix Chippewa Indians of Wisconsin".
 - organization: Great Lakes Inter-Tribal Council
   source: great-lakes-inter-tribal-council-tribes-served
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Saint Croix Chippewa Indians of Wisconsin". Name matched to the roster entry.
 - organization: Great Lakes Indian Fish and Wildlife Commission
   source: great-lakes-indian-fish-and-wildlife-commission-commission
   confidence: medium
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Bikoganoogan" (link https://stcroixojibwe-nsn.gov/).
 review:

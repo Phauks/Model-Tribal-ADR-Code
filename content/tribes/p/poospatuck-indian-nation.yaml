@@ -6,10 +6,12 @@ names:
   - name: Poospatuck
     source: alabama-indian-affairs-commission-state-recognized-tribes-compilation
     confidence: low
+    verification: bulk-import
     as_of: '2001'
   - name: Unkechauge Indian Nation
     source: new-york-indian-law
     confidence: high
+    verification: read-in-full
     as_of: '2026'
     note: Name in the statute's article heading without the parenthetical.
   official_source: census-aian-geography-definitions
@@ -17,6 +19,7 @@ recognition:
 - type: unrecognized
   source: census-aian-geography-definitions
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: Definition of State American Indian reservation; area 9300
   note: The 2020 Census delineated "Poospatuck (state) Reservation" (State American Indian reservation).
@@ -28,6 +31,7 @@ recognition:
   legal_basis: New York Indian Law Article 10, The Poospatuck (Unkechauge) Indian Nation (sections 150-153)
   source: new-york-indian-law
   confidence: high
+  verification: read-in-full
   as_of: '2026'
   locator: Article 10
 states:
@@ -35,6 +39,7 @@ states:
   presence: land
   source: census-aiannh-codes-by-state-2020
   confidence: medium
+  verification: bulk-import
   as_of: '2020'
   locator: AIANNHCE 9300
   note: State reservation land.
@@ -42,6 +47,7 @@ states:
   presence: other
   source: new-york-indian-law
   confidence: high
+  verification: inferred
   as_of: '2026'
 census_areas:
 - geographic_identifier: '9300'
@@ -50,6 +56,7 @@ census_areas:
   vintage: '2020'
   source: census-tiger-2020-aiannh
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: AIANNHCE 9300, GEOID 9300R
   note: Census class code D4; AIANNHR = S (state). Census gives only the area name; the group was matched

@@ -7,12 +7,14 @@ names:
     language_tag: ood
     source: salt-river-pima-maricopa-indian-communit-about
     confidence: high
+    verification: inferred
     as_of: '2026-11-21'
     note: '"Onk Akimel O’odham (Salt River People), also known as Pima"'
   - name: Xalychidom Piipaash
     language_tag: mrc
     source: salt-river-pima-maricopa-indian-communit-about
     confidence: high
+    verification: inferred
     as_of: '2026-11-21'
     note: '"Xalychidom Piipaash (Upriver People), and more commonly known as Maricopa"'
   official_source: bia-recognized-entities-2026
@@ -68,6 +70,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -75,12 +78,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona
 - state: AZ
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3340
   note: 'Census area with land in this state: Salt River Reservation (code 3340). Area matched to the
@@ -92,6 +97,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3340
   note: Matched by name. Census class code D2.
@@ -100,6 +106,7 @@ population:
   kind: citizens
   source: salt-river-pima-maricopa-indian-communit-about
   confidence: high
+  verification: read-in-full
   as_of: 2021-09
   note: '"Population Over 10,800 enrolled members (as of September 2021)"; same page also says "more than
     11,000 enrolled tribal members" (undated)'
@@ -107,6 +114,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3340, field POP100
   note: 'Census area: Salt River Reservation (code 3340). Everyone counted as living in the area in the
@@ -115,6 +123,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3281 (Salt River Pima-Maricopa Indian Community alone or in any combination),
     GEOID 0100000US (United States)
@@ -125,6 +134,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Salt River Pima-Maricopa Indian Community', PDF page 8, Enrollment
     column
@@ -134,6 +144,7 @@ population:
   kind: other
   source: bia-american-indian-population-and-labor-force-report-2013
   confidence: medium
+  verification: inferred
   as_of: '2010'
   locator: Appendix Table 2, PDF page 87, row T43600 'Salt River Pima-Maricopa Indian Community of the
     Salt River Reservation'
@@ -147,6 +158,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona
 - kind: physical-address
@@ -154,6 +166,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona
 - kind: mailing-address
@@ -161,6 +174,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona
 - kind: phone
@@ -168,6 +182,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona
 - kind: fax
@@ -175,6 +190,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona
 languages:
@@ -182,6 +198,7 @@ languages:
   language_tag: ood
   source: salt-river-pima-maricopa-indian-communit-about-languages
   confidence: high
+  verification: inferred
   as_of: '2026-11-21'
   note: '"Background and Status of the O’odham Ñiokĭ (Pima Language)"'
 federal_administration:
@@ -189,6 +206,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Salt River Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona
 government_structure:
@@ -198,6 +216,7 @@ government_structure:
     Act of June 18, 1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -208,6 +227,7 @@ government_structure:
     was adopted under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-pimacons
   confidence: medium
+  verification: read-in-full
   as_of: '1940'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -218,6 +238,7 @@ governing_documents:
   link: https://narf.org/nill/codes/salt-river/index.html
   source: national-indian-law-library-code-codes-salt-river
   confidence: medium
+  verification: title-only
   as_of: '2019'
   locator: page heading
   note: 'Table of Contents Updated: April 2019. The National Indian Law Library page gives the table of
@@ -228,6 +249,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/salt-river/index.html
   source: national-indian-law-library-constitution-constitutions-salt-river
   confidence: medium
+  verification: title-only
   as_of: '2018'
   locator: page heading
   note: 'Adopted: March 16, 2018 (Approved April 2, 2018). The National Indian Law Library page gives
@@ -237,6 +259,7 @@ governing_documents:
   link: https://www.srpmic-nsn.gov/government/ordinances/
   source: national-indian-law-library-salt-river-community
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -246,6 +269,7 @@ governing_documents:
   link: https://www.srpmic-nsn.gov/government/ordinances/
   source: national-indian-law-library-salt-river-community
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -254,6 +278,7 @@ governing_documents:
   title: Salt River Pima-Maricopa Indian Community Constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Arizona section, entry 'Salt River Pima-Maricopa Indian Community'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -264,6 +289,7 @@ governing_documents:
   link: http://www.srpmic-nsn.gov/government/ordinances/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Arizona section, entry 'Salt River Pima-Maricopa Indian Community'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -273,6 +299,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/pimacons.html
   source: university-of-oklahoma-indian-reorganization-act-pimacons
   confidence: medium
+  verification: title-only
   as_of: '1940'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -281,6 +308,7 @@ justice_institutions:
   link: https://www.srpmic-nsn.gov/government/court/
   source: national-indian-law-library-salt-river-community
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -289,6 +317,7 @@ justice_institutions:
   link: http://www.srpmic-nsn.gov/government/court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Salt River Pima-Maricopa Indian Community'
 dispute_resolution:
@@ -309,6 +338,7 @@ dispute_resolution:
     link: https://srpmic-nsn.gov/government/ordinances/
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/family-group-conferencing-peacemaking-juvenile-justice/
   provisions:
@@ -379,6 +409,7 @@ gaming:
     federal_register_citation: 87 FR 35992
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2022-06-14'
     locator: result page 2 (?page=2), row 4
     note: 'Listed as: "Salt River Pima-Maricopa Indian Community Tribal State Gaming Compact" (Approve);
@@ -393,6 +424,7 @@ gaming:
     federal_register_citation: 63 FR 49923
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '1998-09-18'
     locator: result page 2 (?page=2), row 5
     note: 'Listed as: "Salt River Pima-Maricopa Indian Community Tribal State Gaming Compact" (Approve);
@@ -407,6 +439,7 @@ gaming:
     federal_register_citation: 86 FR 27889
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2021-05-24'
     locator: result page 2 (?page=2), row 6
     note: 'Listed as: "Salt River Pima-Maricopa Indian Community Tribal State Gaming Compact" (Approve);
@@ -421,6 +454,7 @@ gaming:
     federal_register_citation: 68 FR 5912
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2003-02-05'
     locator: result page 2 (?page=2), row 7
     note: 'Listed as: "Salt River Pima-Maricopa Indian Community Tribal State Gaming Compact" (Approve);
@@ -435,6 +469,7 @@ gaming:
     federal_register_citation: 78 FR 33435
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2013-06-04'
     locator: result page 2 (?page=2), row 8
     note: 'Listed as: "Salt River Pima-Maricopa Indian Community Tribal State Gaming Compact" (Approve);
@@ -453,6 +488,7 @@ gaming:
     dispute_resolution_locator: Section 15 (Dispute Resolution)
     source: compact-az-ak-chin-indian-community-2003
     confidence: medium
+    verification: inferred
     as_of: '2003-02-05'
     locator: Section 15 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
@@ -464,6 +500,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10955&ind=10985
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1996-08-23'
     locator: table row 238, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 238 lists the nation
@@ -472,6 +509,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10956&ind=10986
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1998-08-14'
     locator: table row 238, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 238 lists the nation
@@ -480,6 +518,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10957&ind=10987
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1999-07-02'
     locator: table row 238, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 238 lists the nation
@@ -488,6 +527,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10958&ind=10988
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2010-04-27'
     locator: table row 238, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 238 lists the nation
@@ -496,6 +536,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10977&ind=10989
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2016-10-18'
     locator: table row 238, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 238 lists the nation
@@ -504,6 +545,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10978&ind=10990
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2024-08-06'
     locator: table row 238, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 238 lists the nation
@@ -512,6 +554,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Salt River Pima-Maricopa Indian
       Community". Name extracted from the PDF by the page-fetch tool and matched to the roster.
@@ -521,6 +564,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Salt River Pima-Maricopa Indian Community of the Salt River Reservation, Arizona Confidence
@@ -531,6 +575,7 @@ jurisdiction:
   detail: Listed by NCAI as implementing special Tribal criminal jurisdiction (list updated May 2022).
   source: national-congress-of-american-indians-implementing-tribes-special-tribal-criminal-jurisdiction
   confidence: medium
+  verification: bulk-import
   as_of: 2022-05
   locator: Implementing Tribes list
   note: Listed as "Salt River Pima Maricopa Indian Community".
@@ -540,6 +585,7 @@ jurisdiction:
     Law and Order Act (as of 2013 interviews).
   source: bureau-of-justice-assistance-enhanced-sentencing-in-tribal-courts-2015
   confidence: medium
+  verification: bulk-import
   as_of: '2013'
   locator: p. 3, list of tribes exercising enhanced sentencing
   note: Listed as "Salt River Pima Maricopa Indian Community".
@@ -547,6 +593,7 @@ memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Salt River Pima-Maricopa Indian Community". Name matched to the roster entry.
 review:

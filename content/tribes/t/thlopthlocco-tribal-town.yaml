@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -16,6 +17,7 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Thlopthlocco Tribal Town
 population:
@@ -23,6 +25,7 @@ population:
   kind: citizens
   source: thlopthlocco-tribal-town-home
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"a federally recognized Native American tribe with over 1,200 members"; undated statement on
     the official site; as_of is the access date'
@@ -30,6 +33,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3364 (Thlopthlocco Tribal Town  alone or in any combination), GEOID
     0100000US (United States)
@@ -40,6 +44,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Oklahoma, row 'Thlopthlocco Tribal Town', PDF page 6, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -50,6 +55,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Thlopthlocco Tribal Town
 - kind: physical-address
@@ -57,6 +63,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Thlopthlocco Tribal Town
 - kind: mailing-address
@@ -64,6 +71,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Thlopthlocco Tribal Town
 - kind: phone
@@ -71,6 +79,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Thlopthlocco Tribal Town
 - kind: fax
@@ -78,6 +87,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Thlopthlocco Tribal Town
 federal_administration:
@@ -85,6 +95,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Okmulgee Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Thlopthlocco Tribal Town
 government_structure:
@@ -93,6 +104,7 @@ government_structure:
     the Secretary of the Interior (Oklahoma Indian Welfare Act of June 26, 1936), as of 1947
   source: haas-1947-table-b-oklahoma
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, Oklahoma Tribes, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -103,6 +115,7 @@ government_structure:
     Act of June 18, 1934 (48 Stat. 984); Act of June 26, 1936 (49 Stat. 1967)
   source: university-of-oklahoma-indian-reorganization-act-thlopcons
   confidence: medium
+  verification: read-in-full
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -112,6 +125,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/thlopcons.html
   source: national-indian-law-library-thlopthlocco
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At University
@@ -121,6 +135,7 @@ governing_documents:
   link: https://www.loc.gov/item/39026608/
   source: national-indian-law-library-thlopthlocco
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Library
@@ -131,6 +146,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/thlopchrtr.html
   source: university-of-oklahoma-indian-reorganization-act-thlopchrtr
   confidence: medium
+  verification: title-only
   as_of: '1939'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 - kind: constitution
@@ -139,6 +155,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/thlopcons.html
   source: university-of-oklahoma-indian-reorganization-act-thlopcons
   confidence: medium
+  verification: title-only
   as_of: '1938'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 gaming:
@@ -149,6 +166,7 @@ gaming:
     federal_register_citation: 70 FR 57617
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2005-10-03'
     locator: result page 29 (?page=29), row 12
     note: 'Listed as: "Thlopthlocco Tribal Town Tribal State Gaming Compact" (Deemed Approved); list''s
@@ -166,6 +184,7 @@ gaming:
     dispute_resolution_locator: Part 12 (Dispute Resolution)
     source: compact-ok-cherokee-nation-2005
     confidence: medium
+    verification: inferred
     as_of: '2005-01-27'
     locator: Part 12 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
@@ -178,6 +197,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11337&ind=11358
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1998-02-06'
     locator: table row 284, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 284 lists the nation
@@ -186,6 +206,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11338&ind=11359
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2008-06-25'
     locator: table row 284, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 284 lists the nation
@@ -196,6 +217,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Thlopthlocco Tribal Town Confidence lowered from high by the lead session: the notice

@@ -10,6 +10,7 @@ recognition:
   petition_stage: Awaiting Supplement
   source: ofa-petitions-in-process
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Current Petitions Status table, row 56A; detail page https://www.bia.gov/as-ia/ofa/petitions-in-process/biloxi-chitimacha-confederation-muskogees-inc
   note: 'Federal Register history: Amended Proposed Finding Against Acknowledgment of the Biloxi, Chitimacha
@@ -21,6 +22,7 @@ states:
   presence: other
   source: ofa-petitions-in-process
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.

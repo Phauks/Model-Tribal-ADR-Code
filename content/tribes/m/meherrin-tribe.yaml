@@ -6,6 +6,7 @@ names:
   - name: Meherrin Indian Tribe
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     locator: 'Petitioner #119B'
     note: Name as printed on the older Office of Federal Acknowledgment list.
@@ -17,6 +18,7 @@ recognition:
   petition_stage: Awaiting Supplement
   source: ofa-petitions-in-process
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Current Petitions Status table, row 119B; detail page https://www.bia.gov/as-ia/ofa/petitions-in-process/meherrin-tribe
   note: 'Federal Register history: Proposed Finding Against Acknowledgment of the Meherrin Indian Tribe,
@@ -27,6 +29,7 @@ states:
   presence: other
   source: ofa-petitions-in-process
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-21'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.

@@ -19,6 +19,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 states:
@@ -26,12 +27,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Quechan Tribe of the Fort Yuma Indian Reservation, California & Arizona
 - state: AZ
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1280
   note: 'Census area with land in this state: Fort Yuma Indian Reservation (code 1280). Area matched to
@@ -40,6 +43,7 @@ states:
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1280
   note: 'Census area with land in this state: Fort Yuma Indian Reservation (code 1280). Area matched to
@@ -51,6 +55,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1280
   note: Matched by name. Census class code D2.
@@ -59,6 +64,7 @@ population:
   kind: citizens
   source: quechan-tribe-of-the-fort-yuma-indian-re-about-us-html
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: '"According to the most recent data from the Tribal Enrollment Office, the Quechan population
     totals over 4,000 members"; undated statement on the official site; as_of is the access date'
@@ -66,6 +72,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1280, field POP100
   note: 'Census area: Fort Yuma Indian Reservation (code 1280). Everyone counted as living in the area
@@ -74,6 +81,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3255 (Quechan Tribe of the Fort Yuma Indian Reservation, California
     and Arizona alone or in any combination), GEOID 0100000US (United States)
@@ -85,6 +93,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Quechan Tribe', PDF page 8, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -95,6 +104,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Quechan Tribe of the Fort Yuma Indian Reservation, California & Arizona
 - kind: physical-address
@@ -102,6 +112,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Quechan Tribe of the Fort Yuma Indian Reservation, California & Arizona
 - kind: mailing-address
@@ -109,6 +120,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Quechan Tribe of the Fort Yuma Indian Reservation, California & Arizona
 - kind: phone
@@ -116,6 +128,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Quechan Tribe of the Fort Yuma Indian Reservation, California & Arizona
 - kind: fax
@@ -123,6 +136,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Quechan Tribe of the Fort Yuma Indian Reservation, California & Arizona
 federal_administration:
@@ -130,6 +144,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Fort Yuma Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Quechan Tribe of the Fort Yuma Indian Reservation, California & Arizona
 government_structure:
@@ -138,6 +153,7 @@ government_structure:
     the Secretary of the Interior (Indian Reorganization Act of June 18, 1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -148,6 +164,7 @@ government_structure:
     it was adopted under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-quecons
   confidence: medium
+  verification: read-in-full
   as_of: '1936'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -157,6 +174,7 @@ governing_documents:
   link: https://quechantribe.com/documents/download/1
   source: national-indian-law-library-quechan-tribe
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At Tribe''s
@@ -166,6 +184,7 @@ governing_documents:
   link: http://quechantribalcourt.info/uploads/Constitution_and_By-Laws.pdf
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Arizona section, entry 'Quechan Indian Tribe'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -175,6 +194,7 @@ governing_documents:
   link: http://quechantribalcourt.info/Quechan_Law_and_Order_Co.html
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Arizona section, entry 'Quechan Indian Tribe'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -185,6 +205,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/quecons.html
   source: university-of-oklahoma-indian-reorganization-act-quecons
   confidence: medium
+  verification: title-only
   as_of: '1936'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -193,6 +214,7 @@ justice_institutions:
   link: https://www.quechantribe.com/departments-court.html
   source: national-indian-law-library-quechan-tribe
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -201,6 +223,7 @@ justice_institutions:
   link: http://quechantribalcourt.info/Home_Page.php
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Arizona section, entry 'Quechan Indian Tribe'
   note: 'Link check 2026-11-21: the site did not respond.'
@@ -212,6 +235,7 @@ gaming:
     federal_register_citation: 87 FR 35992
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2022-06-14'
     locator: result page 1 (?page=1), row 25
     note: 'Listed as: "Quechan Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Quechan
@@ -225,6 +249,7 @@ gaming:
     federal_register_citation: 68 FR 5912
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2003-02-05'
     locator: result page 2 (?page=2), row 1
     note: 'Listed as: "Quechan Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Quechan
@@ -238,6 +263,7 @@ gaming:
     federal_register_citation: 86 FR 27889
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2021-05-24'
     locator: result page 2 (?page=2), row 2
     note: 'Listed as: "Quechan Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Quechan
@@ -250,6 +276,7 @@ gaming:
     approved: '1994-01-14'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '1994-01-14'
     locator: result page 2 (?page=2), row 3
     note: 'Listed as: "Quechan Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Quechan
@@ -263,6 +290,7 @@ gaming:
     federal_register_citation: 72 FR 2007
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2007-01-17'
     locator: result page 10 (?page=10), row 5
     note: 'Listed as: "Quechan Tribe of the Fort Yuma Indian Reservation Tribal State Gaming Compact"
@@ -277,6 +305,7 @@ gaming:
     federal_register_citation: 65 FR 31189
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2000-05-16'
     locator: result page 10 (?page=10), row 6
     note: 'Listed as: "Quechan Tribe of the Fort Yuma Indian Reservation Tribal State Gaming Compact"
@@ -291,6 +320,7 @@ gaming:
     federal_register_citation: 83 FR 3015
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: inferred
     as_of: '2018-01-22'
     locator: result page 10 (?page=10), row 7
     note: 'Listed as: "Quechan Tribe of the Fort Yuma Indian Reservation Tribal State Gaming Compact"
@@ -309,6 +339,7 @@ gaming:
     dispute_resolution_locator: Section 15 (Dispute Resolution)
     source: compact-az-ak-chin-indian-community-2003
     confidence: medium
+    verification: inferred
     as_of: '2003-02-05'
     locator: Section 15 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
@@ -325,6 +356,7 @@ gaming:
     dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     source: compact-ca-cher-ae-heights-indian-community-of-the-2026
     confidence: medium
+    verification: inferred
     as_of: '2026-01-26'
     locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
@@ -337,6 +369,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10859&ind=10889
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1995-04-12'
     locator: table row 220, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 220 lists the nation
@@ -345,6 +378,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10875&ind=10890
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2003-01-27'
     locator: table row 220, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 220 lists the nation
@@ -353,6 +387,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10876&ind=10891
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2008-01-22'
     locator: table row 220, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 220 lists the nation
@@ -361,6 +396,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=13121&ind=13122
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2025-10-02'
     locator: table row 220, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 220 lists the nation
@@ -369,6 +405,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Quechan Tribe of the Fort Yuma
       Indian Reservation, CA and AZ". Name extracted from the PDF by the page-fetch tool and matched to
@@ -381,6 +418,7 @@ jurisdiction:
     country within California; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
   note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
@@ -390,6 +428,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Quechan Tribe of the Fort Yuma Indian Reservation, California & Arizona Confidence
@@ -399,6 +438,7 @@ memberships:
 - organization: Inter Tribal Council of Arizona
   source: inter-tribal-council-of-arizona-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Quechan Tribe". Name matched to the roster entry.
 review:

@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4104
 - type: federal
@@ -18,6 +19,7 @@ recognition:
   since: '1994-09-21'
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '1994-09-21'
   locator: 'Petitioner #115'
 states:
@@ -25,12 +27,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Little Traverse Bay Bands of Odawa Indians, Michigan
 - state: MI
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 1963
   note: 'Census area with land in this state: Little Traverse Bay Reservation and Off-Reservation Trust
@@ -42,6 +46,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1963
   note: Matched by name. Census class code D1.
@@ -50,12 +55,14 @@ population:
   kind: citizens
   source: ltbbodawa-nsn-home
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: 'Homepage: ''The Tribe has over 4,000 members''. Undated; as_of is access date.'
 - count: 92
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1963, field POP100
   note: 'Census area: Little Traverse Bay Reservation and Off-Reservation Trust Land (code 1963). Everyone
@@ -65,6 +72,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3084 (Little Traverse Bay Bands of Odawa Indians alone or in any combination),
     GEOID 0100000US (United States)
@@ -75,6 +83,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Chicago, row 'Little Traverse Bay Band of Odawa Indians', PDF page 4, Enrollment
     column
@@ -86,6 +95,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Little Traverse Bay Bands of Odawa Indians, Michigan
 - kind: physical-address
@@ -93,6 +103,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Little Traverse Bay Bands of Odawa Indians, Michigan
 - kind: mailing-address
@@ -100,6 +111,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Little Traverse Bay Bands of Odawa Indians, Michigan
 - kind: phone
@@ -107,6 +119,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Little Traverse Bay Bands of Odawa Indians, Michigan
 - kind: fax
@@ -114,6 +127,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Little Traverse Bay Bands of Odawa Indians, Michigan
 languages:
@@ -121,6 +135,7 @@ languages:
   language_tag: oj
   source: ltbbodawa-nsn-tribal-council-and-legislative-office-le
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   note: Legislation history lists 'Gijigowi Anishinaabemowin' statutes.
 federal_administration:
@@ -128,6 +143,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Michigan Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Little Traverse Bay Bands of Odawa Indians, Michigan
 governing_documents:
@@ -137,6 +153,7 @@ governing_documents:
   link: https://narf.org/nill/codes/ltraverse/index.html
   source: national-indian-law-library-code-codes-ltraverse
   confidence: medium
+  verification: title-only
   as_of: '2024'
   locator: page heading
   note: 'Table of Contents Updated: March 2024. The National Indian Law Library page gives the table of
@@ -147,6 +164,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/little_traverse/index.html
   source: national-indian-law-library-constitution-constitutions-little-traverse
   confidence: medium
+  verification: title-only
   as_of: '2005'
   locator: page heading
   note: 'Adopted: February 1, 2005. The National Indian Law Library page gives the table of contents (and
@@ -156,6 +174,7 @@ governing_documents:
   link: https://ltbbodawa-nsn.gov/tribal-code/
   source: national-indian-law-library-little-traverse
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -165,6 +184,7 @@ governing_documents:
   link: https://ltbbodawa-nsn.gov/
   source: national-indian-law-library-little-traverse
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "See also the Government
@@ -176,6 +196,7 @@ governing_documents:
   link: https://ltbbodawa-nsn.gov/
   source: national-indian-law-library-little-traverse
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -186,6 +207,7 @@ governing_documents:
   link: https://ltbbodawa-nsn.gov/
   source: national-indian-law-library-little-traverse
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -195,6 +217,7 @@ governing_documents:
   title: Little Traverse Bay Bands of Odawa Indians Constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Michigan section, entry 'Little Traverse Bay Band of Odawa Indians'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -204,6 +227,7 @@ governing_documents:
   title: Little Traverse Bay Bands of Odawa Indians Waganakising Odawak Tribal Code
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Michigan section, entry 'Little Traverse Bay Band of Odawa Indians'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -215,6 +239,7 @@ justice_institutions:
   link: https://ltbbodawa-nsn.gov/judicial-branch/
   source: national-indian-law-library-little-traverse
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -222,6 +247,7 @@ justice_institutions:
   name: Little Traverse Bay Band of Odawa Indians Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Michigan section, entry 'Little Traverse Bay Band of Odawa Indians'
   note: 'Link check 2026-11-21: the link the source gives (http://www.ltbbodawa-nsn.gov/Tribal%20Court/TribaCourtStart.html)
@@ -246,6 +272,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Little-Traverse-Civil-Rules-of-Procedure-Amended-August-2015.pdf
     source: little-traverse-civil-rules-2015
     confidence: medium
+    verification: inferred
     as_of: 2015-08
     locator: Rule XXIX
     note: Language tag otw (Ottawa/Odawa) assigned because the rule glosses the term as Odawa peacemaking.
@@ -262,6 +289,7 @@ dispute_resolution:
     link: https://ltbbodawa-nsn.gov/tribal-code/
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/court-ordered-mediation-in-child-protection/
   - kind: peacemaking
@@ -278,6 +306,7 @@ dispute_resolution:
     link: https://ltbbodawa-nsn.gov/tribal-code/
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026'
     locator: https://ncorj.org/tribal-law/peacemaking-in-child-protection-cases/
   - kind: circle-process
@@ -436,6 +465,7 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/ltraverse/index.html
     source: national-indian-law-library-code-codes-ltraverse
     confidence: medium
+    verification: title-only
     as_of: 2024-03
     note: 'From the statute title in the National Indian Law Library table of contents; the statute text
       was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.278 AUTHORIZING
@@ -451,6 +481,7 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/ltraverse/index.html
     source: national-indian-law-library-code-codes-ltraverse
     confidence: medium
+    verification: title-only
     as_of: 2024-03
     note: 'From the statute title in the National Indian Law Library table of contents; the statute text
       was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.400(7.20)(a)
@@ -465,6 +496,7 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/ltraverse/index.html
     source: national-indian-law-library-code-codes-ltraverse
     confidence: medium
+    verification: title-only
     as_of: 2024-03
     note: 'From the statute title in the National Indian Law Library table of contents; the statute text
       was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.400(6.23)(a)
@@ -478,6 +510,7 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/ltraverse/index.html
     source: national-indian-law-library-code-codes-ltraverse
     confidence: medium
+    verification: title-only
     as_of: 2024-03
     note: 'From the statute title in the National Indian Law Library table of contents; the statute text
       was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.507 AUTHORIZING
@@ -492,6 +525,7 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/ltraverse/index.html
     source: national-indian-law-library-code-codes-ltraverse
     confidence: medium
+    verification: title-only
     as_of: 2024-03
     note: 'From the statute title in the National Indian Law Library table of contents; the statute text
       was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.511(3.17)(a)
@@ -507,6 +541,7 @@ dispute_resolution:
     link: https://www.narf.org/nill/codes/ltraverse/index.html
     source: national-indian-law-library-code-codes-ltraverse
     confidence: medium
+    verification: title-only
     as_of: 2024-03
     note: 'From the statute title in the National Indian Law Library table of contents; the statute text
       was not read. Context: Tribal statute authorizing a loan or contract. Title as listed: 18.528(1.22)(a)
@@ -522,6 +557,7 @@ gaming:
     federal_register_citation: 73 FR 21361
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2008-04-21'
     locator: result page 16 (?page=16), row 15
     note: 'Listed as: "Little Traverse Bay Bands of Odawa Indians Tribal State Gaming Compact" (Deemed
@@ -536,6 +572,7 @@ gaming:
     federal_register_citation: 64 FR 8111
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-02-18'
     locator: result page 16 (?page=16), row 16
     note: 'Listed as: "Little Traverse Bay Bands of Odawa Indians Tribal State Gaming Compact" (Approve);
@@ -549,6 +586,7 @@ gaming:
     federal_register_citation: 68 FR 68944
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2003-12-10'
     locator: result page 16 (?page=16), row 17
     note: 'Listed as: "Little Traverse Bay Bands of Odawa Indians Tribal State Gaming Compact" (Deemed
@@ -567,6 +605,7 @@ gaming:
     dispute_resolution_locator: Section 7 (Dispute Resolution)
     source: compact-mi-bay-mills-indian-community-1993
     confidence: medium
+    verification: inferred
     as_of: '1993-11-30'
     locator: Section 7 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. The same Section 7 text appears in the
@@ -579,6 +618,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10159&ind=10194
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1996-04-30'
     locator: table row 135, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 135 lists the nation
@@ -587,6 +627,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10180&ind=10195
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2001-05-18'
     locator: table row 135, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 135 lists the nation
@@ -595,6 +636,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10181&ind=10196
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2005-07-25'
     locator: table row 135, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 135 lists the nation
@@ -603,6 +645,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=10182&ind=10197
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2011-03-28'
     locator: table row 135, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 135 lists the nation
@@ -611,6 +654,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Little Traverse Bay Band of Odawa
       Indians". Name extracted from the PDF by the page-fetch tool and matched to the roster.
@@ -620,6 +664,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Little Traverse Bay Bands of Odawa Indians, Michigan Confidence lowered from high
@@ -632,6 +677,7 @@ jurisdiction:
     (list updated May 2022).
   source: national-congress-of-american-indians-implementing-tribe-profile-little-traverse-bay-bands-of-odawa-indians
   confidence: medium
+  verification: bulk-import
   as_of: 2022-05
   locator: '"Exercising jurisdiction since" line'
   note: Listed as "Little Traverse Bay Band of Odawa Indians". Also on the NCAI implementing tribes list
@@ -640,6 +686,7 @@ memberships:
 - organization: Midwest Alliance of Sovereign Tribes
   source: midwest-alliance-of-sovereign-tribes-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Little Traverse Bay Bands of Odawa Indians". Name matched to the roster entry.
 review:

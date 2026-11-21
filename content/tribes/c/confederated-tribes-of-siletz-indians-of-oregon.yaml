@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of Siletz Indians of Oregon
 - state: OR
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3795
   note: 'Census area with land in this state: Siletz Reservation and Off-Reservation Trust Land (code
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3795
   note: Matched by name. Census class code D1.
@@ -41,12 +45,14 @@ population:
   kind: citizens
   source: oregon-department-of-education-native-americans-in-oregon-by-the-numbers-2020
   confidence: medium
+  verification: bulk-import
   as_of: 2020-02
   note: Oregon Department of Education table 'Number of tribal members'; PDF dated February 2020.
 - count: 685
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3795, field POP100
   note: 'Census area: Siletz Reservation and Off-Reservation Trust Land (code 3795). Everyone counted
@@ -56,6 +62,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 2944 (Confederated Tribes of Siletz Indians of Oregon alone or in any
     combination), GEOID 0100000US (United States)
@@ -66,6 +73,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Seattle, row 'Confederated Tribes of Siletz Indians', PDF page 8, Enrollment
     column
@@ -77,6 +85,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of Siletz Indians of Oregon
 - kind: physical-address
@@ -84,6 +93,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of Siletz Indians of Oregon
 - kind: mailing-address
@@ -91,6 +101,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of Siletz Indians of Oregon
 - kind: phone
@@ -98,6 +109,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of Siletz Indians of Oregon
 - kind: fax
@@ -105,6 +117,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of Siletz Indians of Oregon
 federal_administration:
@@ -112,6 +125,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Northwest Regional Office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Confederated Tribes of Siletz Indians of Oregon
 governing_documents:
@@ -121,6 +135,7 @@ governing_documents:
   link: https://narf.org/nill/codes/confederated_siletz/index.html
   source: national-indian-law-library-code-codes-confederated-siletz
   confidence: medium
+  verification: title-only
   as_of: '2015'
   locator: page heading
   note: 'Table of Contents Updated: March 2015. The National Indian Law Library page gives the table of
@@ -130,6 +145,7 @@ governing_documents:
   link: http://www.ctsi.nsn.us/warm-springs-umpqua-tillamook-siletz-government/tribal-ordinances#content
   source: national-indian-law-library-confederated-siletz
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -138,6 +154,7 @@ governing_documents:
   title: Constitution
   source: national-indian-law-library-confederated-siletz
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -149,6 +166,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/confederated_siletz/index.html
   source: national-indian-law-library-constitution-constitutions-confederated-siletz
   confidence: medium
+  verification: title-only
   as_of: '2008'
   locator: page heading
   note: 'Amended: May 16, 2008. The National Indian Law Library page gives the table of contents (and
@@ -157,6 +175,7 @@ governing_documents:
   title: Confederated Tribes of Siletz Indians of Oregon Constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Oregon section, entry 'Confederated Tribes of Siletz Indians'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -167,6 +186,7 @@ governing_documents:
   link: http://www.ctsi.nsn.us/warm-springs-umpqua-tillamook-siletz-government/tribal-ordinances#content
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Oregon section, entry 'Confederated Tribes of Siletz Indians'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -176,6 +196,7 @@ justice_institutions:
   link: http://www.ctsi.nsn.us/warm-springs-umpqua-tillamook-siletz-government/court-and-justice/judges
   source: national-indian-law-library-confederated-siletz
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -184,6 +205,7 @@ justice_institutions:
   link: http://www.ctsi.nsn.us/warm-springs-umpqua-tillamook-siletz-government/court-and-justice/judges
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Oregon section, entry 'Confederated Tribes of Siletz Indians'
 dispute_resolution:
@@ -213,6 +235,7 @@ dispute_resolution:
     link: https://ctsi.nsn.us/wp-content/uploads/2025/06/Siletz-Community-Law-Court-06-20-2025.pdf
     source: siletz-code-3-300-community-law-court-2025
     confidence: high
+    verification: read-in-full
     as_of: '2025-06-20'
     locator: § 3.300, 3.301, 3.302, 3.319, 3.320, 3.325-3.326
     note: Language of the term is not named in the source, so language_tag is 'und'. Listed matters include
@@ -237,6 +260,7 @@ dispute_resolution:
     link: https://ctsi.nsn.us/wp-content/uploads/2025/06/Siletz-Community-Law-Court-06-20-2025.pdf
     source: siletz-code-3-300-community-law-court-2025
     confidence: high
+    verification: read-in-full
     as_of: '2025-06-20'
     locator: § 3.305
   provisions:
@@ -337,6 +361,7 @@ gaming:
     federal_register_citation: 65 FR 76278
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-12-06'
     locator: result page 30 (?page=30), row 10
     note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
@@ -350,6 +375,7 @@ gaming:
     federal_register_citation: 63 FR 10035
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1998-02-27'
     locator: result page 30 (?page=30), row 11
     note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
@@ -363,6 +389,7 @@ gaming:
     federal_register_citation: 61 FR 4477
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1996-02-06'
     locator: result page 30 (?page=30), row 12
     note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
@@ -376,6 +403,7 @@ gaming:
     federal_register_citation: 64 FR 36713
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-07-07'
     locator: result page 30 (?page=30), row 13
     note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
@@ -389,6 +417,7 @@ gaming:
     federal_register_citation: 64 FR 29333
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-06-01'
     locator: result page 30 (?page=30), row 14
     note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
@@ -402,6 +431,7 @@ gaming:
     federal_register_citation: 73 FR 14267
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2008-03-17'
     locator: result page 30 (?page=30), row 15
     note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
@@ -415,6 +445,7 @@ gaming:
     federal_register_citation: 60 FR 15194
     source: office-of-indian-gaming-compacts-list-2026
     confidence: medium
+    verification: bulk-import
     as_of: '1995-03-22'
     locator: result page 30 (?page=30), row 16
     note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
@@ -427,6 +458,7 @@ gaming:
     federal_register_citation: 63 FR 27585
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1998-05-19'
     locator: result page 30 (?page=30), row 17
     note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
@@ -440,6 +472,7 @@ gaming:
     federal_register_citation: 64 FR 61658
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-11-12'
     locator: result page 30 (?page=30), row 18
     note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
@@ -453,6 +486,7 @@ gaming:
     federal_register_citation: 75 FR 68823
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2010-11-09'
     locator: result page 30 (?page=30), row 19
     note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
@@ -466,6 +500,7 @@ gaming:
     federal_register_citation: 61 FR 46662
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1996-09-04'
     locator: result page 30 (?page=30), row 20
     note: 'Listed as: "Confederated Tribes of Siletz Indians Tribal State Gaming Compact" (Approve); list''s
@@ -482,6 +517,7 @@ gaming:
     dispute_resolution_locator: Section 17 (Dispute Resolution)
     source: compact-or-confederated-tribes-of-the-grand-ronde-c-2023
     confidence: medium
+    verification: inferred
     as_of: '2023-02-08'
     locator: Section 17 (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Read from the 2023 Confederated Tribes
@@ -493,6 +529,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9630&ind=9654
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1994-12-15'
     locator: table row 58, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 58 lists the nation
@@ -501,6 +538,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9643&ind=9655
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1999-09-13'
     locator: table row 58, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 58 lists the nation
@@ -509,6 +547,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9644&ind=9656
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2016-06-03'
     locator: table row 58, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 58 lists the nation
@@ -517,6 +556,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9645&ind=9657
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2023-07-10'
     locator: table row 58, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 58 lists the nation
@@ -525,6 +565,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=9646&ind=9658
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2024-09-24'
     locator: table row 58, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 58 lists the nation
@@ -533,6 +574,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=14546&ind=14547
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2026-09-15'
     locator: table row 58, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 58 lists the nation
@@ -541,6 +583,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-alphabetical-2025-06-17
     confidence: medium
+    verification: inferred
     as_of: '2025-06-17'
     note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Confederated Tribes of Siletz
       Indians of Oregon". Facilities as machine-extracted from the report text (verify): Chinook Winds
@@ -553,6 +596,7 @@ jurisdiction:
     within Oregon; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "Oregon"
   note: Statute is primary; nation matched to Oregon by office state in the BIA Tribal Leaders Directory,
@@ -562,6 +606,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Confederated Tribes of Siletz Indians of Oregon Confidence lowered from high by the
@@ -571,6 +616,7 @@ memberships:
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Confederated Tribes of Siletz Indians". Name matched to the roster entry.
 review:

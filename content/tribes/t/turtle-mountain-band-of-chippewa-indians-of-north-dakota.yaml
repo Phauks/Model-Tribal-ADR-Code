@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Turtle Mountain Band of Chippewa Indians of North Dakota
 - state: MT
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4345
   note: 'Census area with land in this state: Turtle Mountain Reservation and Off-Reservation Trust Land
@@ -30,6 +33,7 @@ states:
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4345
   note: 'Census area with land in this state: Turtle Mountain Reservation and Off-Reservation Trust Land
@@ -38,6 +42,7 @@ states:
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4345
   note: 'Census area with land in this state: Turtle Mountain Reservation and Off-Reservation Trust Land
@@ -49,6 +54,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4345
   note: Matched by name. Census class code D1.
@@ -57,6 +63,7 @@ population:
   kind: citizens
   source: turtle-mountain-band-of-chippewa-indians-turtle-mountain-band-chippewa-0
   confidence: high
+  verification: bulk-import
   as_of: '2024-07-10'
   note: 'North Dakota Indian Affairs Commission: "a total estimate of 33,276 members enrolled (7/10/24),
     and there are approximately 14,500 tribal members living on or near the reservation"'
@@ -64,6 +71,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4345, field POP100
   note: 'Census area: Turtle Mountain Reservation and Off-Reservation Trust Land (code 4345). Everyone
@@ -73,6 +81,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3385 (Turtle Mountain Band of Chippewa Indians of North Dakota alone
     or in any combination), GEOID 0100000US (United States)
@@ -83,6 +92,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Denver, row 'Turtle Mountain Band of Chippewa Indians', PDF page 5, Enrollment
     column
@@ -94,6 +104,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Turtle Mountain Band of Chippewa Indians of North Dakota
 - kind: physical-address
@@ -101,6 +112,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Turtle Mountain Band of Chippewa Indians of North Dakota
 - kind: mailing-address
@@ -108,6 +120,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Turtle Mountain Band of Chippewa Indians of North Dakota
 - kind: phone
@@ -115,6 +128,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Turtle Mountain Band of Chippewa Indians of North Dakota
 - kind: fax
@@ -122,6 +136,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Turtle Mountain Band of Chippewa Indians of North Dakota
 - kind: email-general
@@ -129,6 +144,7 @@ contacts:
   label: General information
   source: turtle-mountain-band-of-chippewa-indians-home
   confidence: medium
+  verification: read-in-full
   as_of: '2026-11-21'
   note: page read through the WebFetch tool because the site blocked the plain HTTP client
 languages:
@@ -136,12 +152,14 @@ languages:
   language_tag: ciw
   source: turtle-mountain-band-of-chippewa-indians-turtle-mountain-band-chippewa-0
   confidence: medium
+  verification: inferred
   as_of: '2026-11-21'
   note: 'North Dakota Indian Affairs Commission: "Languages: English, Ojibwe, and Michif"'
 - name: Michif
   language_tag: crg
   source: turtle-mountain-band-of-chippewa-indians-turtle-mountain-band-chippewa-0
   confidence: medium
+  verification: inferred
   as_of: '2026-11-21'
   note: 'North Dakota Indian Affairs Commission: "Michif (language is a mix of French, Ojibwe, & Cree)"'
 federal_administration:
@@ -149,6 +167,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Turtle Mountain Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Turtle Mountain Band of Chippewa Indians of North Dakota
 governing_documents:
@@ -158,6 +177,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/turtle_mountain/index.html
   source: national-indian-law-library-constitution-constitutions-turtle-mountain
   confidence: medium
+  verification: title-only
   as_of: '2015'
   locator: page heading
   note: 'Amended: 2015. The National Indian Law Library page gives the table of contents (and may link
@@ -167,6 +187,7 @@ governing_documents:
   link: https://law.tmchippewa.com/
   source: national-indian-law-library-turtle-mountain
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -176,6 +197,7 @@ governing_documents:
   link: https://www.narf.org/nill/triballaw/us/nsn/tmchippewa/council/index.html
   source: national-indian-law-library-turtle-mountain
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At NILL website.".'
@@ -184,6 +206,7 @@ governing_documents:
   link: https://law.tmchippewa.com/us/nsn/tmchippewa/council/constitution
   source: national-indian-law-library-turtle-mountain
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -193,6 +216,7 @@ governing_documents:
   link: http://tmbci.kkbold.com/government/?page_id=479
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: North Dakota section, entry 'Turtle Mountain Band of Chippewa Indians'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -202,6 +226,7 @@ governing_documents:
   link: http://tmbci.kkbold.com/government/?page_id=197
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: North Dakota section, entry 'Turtle Mountain Band of Chippewa Indians'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -211,6 +236,7 @@ justice_institutions:
   name: Tribal Court
   source: national-indian-law-library-turtle-mountain
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -218,6 +244,7 @@ justice_institutions:
   name: Turtle Mountain Chippewa Tribal Court
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: North Dakota section, entry 'Turtle Mountain Band of Chippewa Indians'
 dispute_resolution:
@@ -230,6 +257,7 @@ dispute_resolution:
     link: https://law.tmchippewa.com/us/nsn/tmchippewa/council/code/7.07.070
     source: turtle-mountain-7-07-070
     confidence: medium
+    verification: read-in-full
     as_of: '2014'
     locator: 7.07.070
     note: Codified in Title 7 (Contracts), Chapter 7.07 (Unlawful Contract Provisions). The published
@@ -354,6 +382,7 @@ gaming:
     federal_register_citation: 64 FR 61658
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-11-12'
     locator: result page 21 (?page=21), row 19
     note: 'Listed as: "Turtle Mountain Band of Chippewa Indians Tribal State Gaming Compact" (Approve);
@@ -366,6 +395,7 @@ gaming:
     approved: '1993-07-29'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1993-07-29'
     locator: result page 21 (?page=21), row 20
     note: 'Listed as: "Turtle Mountain Band of Chippewa Indians Tribal State Gaming Compact" (Approve);
@@ -375,6 +405,7 @@ gaming:
     approved: '1992-12-03'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1992-12-03'
     locator: result page 21 (?page=21), row 21
     note: 'Listed as: "Turtle Mountain Band of Chippewa Indians Tribal State Gaming Compact" (Approve);
@@ -385,6 +416,7 @@ gaming:
     federal_register_citation: 87 FR 77633
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2022-12-19'
     locator: result page 21 (?page=21), row 22
     note: 'Listed as: "Turtle Mountain Band of Chippewa Indians Tribal State Gaming Compact" (Approve);
@@ -398,6 +430,7 @@ gaming:
     federal_register_citation: 78 FR 17427
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2013-03-21'
     locator: result page 21 (?page=21), row 23
     note: 'Listed as: "Turtle Mountain Band of Chippewa Indians Tribal State Gaming Compact" (Approve);
@@ -415,6 +448,7 @@ gaming:
     dispute_resolution_locator: Section XXVIII (Dispute Resolution)
     source: compact-nd-spirit-lake-tribe-2022
     confidence: medium
+    verification: inferred
     as_of: '2022-12-19'
     locator: Section XXVIII (Dispute Resolution)
     note: state model compact; nation-specific text not checked. Read from the 2022 Spirit Lake Tribe
@@ -426,6 +460,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11464&ind=11487
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1994-04-25'
     locator: table row 296, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 296 lists the nation
@@ -434,6 +469,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11465&ind=11488
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2018-09-24'
     locator: table row 296, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 296 lists the nation
@@ -442,6 +478,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11466&ind=11489
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-07-26'
     locator: table row 296, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 296 lists the nation
@@ -452,6 +489,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Turtle Mountain Band of Chippewa Indians of North Dakota Confidence lowered from high
@@ -461,6 +499,7 @@ memberships:
 - organization: Great Plains Tribal Leaders Health Board
   source: great-plains-tribal-leaders-health-board-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Turtle Mountain Band of Chippewa Indians". Name matched to the roster entry.
 review:

@@ -6,6 +6,7 @@ names:
   - name: Lipan Apache Band of Texas, Inc.
     source: ofa-list-of-petitioners-by-state-2013
     confidence: medium
+    verification: bulk-import
     as_of: '2013-11-12'
     note: Name used for this group in the cited source; matched to this record by name and state.
   official_source: ofa-list-of-petitioners-by-state-2013
@@ -16,6 +17,7 @@ recognition:
   petition_stage: Letter of Intent to Petition 5/26/1999
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   locator: 'Petitioner #211'
   note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
@@ -27,6 +29,7 @@ recognition:
   petition_stage: Letter of Intent to Petition 2/22/2011
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   locator: 'Petitioner #333'
   note: Not on the Office of Federal Acknowledgment Petitions in Process list read 2026-11-21; the bia.gov
@@ -37,6 +40,7 @@ recognition:
   legal_basis: Texas House Concurrent Resolution No. 171, 86th Legislature (2019)
   source: texas-house-concurrent-resolution-171-2019
   confidence: medium
+  verification: read-in-full
   as_of: '2019'
   note: 'Resolved: ''the 86th Legislature of the State of Texas hereby recognize the Lipan Apache Tribe
     of Texas and commend it on its many valuable contributions to this state''. Texas has no statutory
@@ -46,6 +50,7 @@ recognition:
   legal_basis: Texas Senate Resolution No. 438 and House Resolution No. 812, 81st Legislature (2009)
   source: texas-senate-resolution-438-2009
   confidence: medium
+  verification: read-in-full
   as_of: '2009'
   note: Each chamber resolved to 'recognize the Lipan Apache Tribe of Texas and commend it'. Single-chamber
     commemorative resolutions.
@@ -54,6 +59,7 @@ states:
   presence: other
   source: ofa-list-of-petitioners-by-state-2013
   confidence: medium
+  verification: bulk-import
   as_of: '2013-11-12'
   note: State under which the Office of Federal Acknowledgment lists the petitioner (petitioner location);
     not a statement about land or offices.
@@ -61,6 +67,7 @@ states:
   presence: other
   source: texas-house-concurrent-resolution-171-2019
   confidence: medium
+  verification: inferred
   as_of: '2019'
 review:
   status: drafted-from-public-sources

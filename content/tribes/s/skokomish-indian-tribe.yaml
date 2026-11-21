@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4105
 states:
@@ -16,12 +17,14 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Skokomish Indian Tribe
 - state: WA
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 3825
   note: 'Census area with land in this state: Skokomish Reservation and Off-Reservation Trust Land (code
@@ -33,6 +36,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3825
   note: Matched by name. Census class code D1.
@@ -41,6 +45,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3825, field POP100
   note: 'Census area: Skokomish Reservation and Off-Reservation Trust Land (code 3825). Everyone counted
@@ -50,6 +55,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3325 (Skokomish Indian Tribe alone or in any combination), GEOID 0100000US
     (United States)
@@ -60,6 +66,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Seattle, row 'Skokomish Indian Tribe', PDF page 9, Enrollment column
   note: Enrollment figure used in the FY 2025 Indian Housing Block Grant formula (as reported to HUD),
@@ -70,6 +77,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Skokomish Indian Tribe
 - kind: physical-address
@@ -77,6 +85,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Skokomish Indian Tribe
 - kind: mailing-address
@@ -84,6 +93,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Skokomish Indian Tribe
 - kind: phone
@@ -91,6 +101,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Skokomish Indian Tribe
 - kind: fax
@@ -98,6 +109,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Skokomish Indian Tribe
 federal_administration:
@@ -105,6 +117,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Puget Sound Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: Skokomish Indian Tribe
 government_structure:
@@ -114,6 +127,7 @@ government_structure:
     1934), as of 1947
   source: haas-1947-table-b
   confidence: medium
+  verification: inferred
   as_of: '1947'
   locator: Table B, column Official Name of Organization
   note: 'Historical status in 1947; the nation may since have adopted a different constitution. The act
@@ -124,6 +138,7 @@ government_structure:
     states it was adopted under Act of June 18, 1934 (48 Stat. 984)
   source: university-of-oklahoma-indian-reorganization-act-skokcons
   confidence: medium
+  verification: read-in-full
   as_of: '1938'
   locator: preamble / approval and certification of adoption
   note: Historical constitution; a later constitution may have replaced it.
@@ -134,6 +149,7 @@ governing_documents:
   link: https://narf.org/nill/codes/skokomish/index.html
   source: national-indian-law-library-code-codes-skokomish
   confidence: medium
+  verification: title-only
   as_of: '2018'
   locator: page heading
   note: 'Table of Contents Updated: October 2018. The National Indian Law Library page gives the table
@@ -144,6 +160,7 @@ governing_documents:
   link: https://narf.org/nill/constitutions/skokomish/index.html
   source: national-indian-law-library-constitution-constitutions-skokomish
   confidence: medium
+  verification: title-only
   as_of: '1980'
   locator: page heading
   note: 'Amended: March 17, 1980. Full text linked from the National Indian Law Library page.'
@@ -152,6 +169,7 @@ governing_documents:
   link: http://www.skokomish.org/skokomish-codes-and-ordinances/
   source: national-indian-law-library-skokomish
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Code section
   note: 'Listed on the National Indian Law Library page under ''Tribal Code'' as: "At tribe''s website
@@ -161,6 +179,7 @@ governing_documents:
   link: http://www.skokomish.org/skokomish-codes-and-ordinances/
   source: national-indian-law-library-skokomish
   confidence: medium
+  verification: title-only
   as_of: '2026-11-21'
   locator: Tribal Constitution section
   note: 'Listed on the National Indian Law Library page under ''Tribal Constitution'' as: "At tribe''s
@@ -169,6 +188,7 @@ governing_documents:
   title: Skokomish Indian Tribe Constitution
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Washington section, entry 'Skokomish Indian Tribe'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -179,6 +199,7 @@ governing_documents:
   link: http://www.skokomish.org/skokomish-codes-and-ordinances/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: Washington section, entry 'Skokomish Indian Tribe'
   note: Title is the link text in the directory; link not re-checked and may be out of date.
@@ -188,6 +209,7 @@ governing_documents:
   link: https://thorpe.law.ou.edu/IRA/skokcons.html
   source: university-of-oklahoma-indian-reorganization-act-skokcons
   confidence: medium
+  verification: title-only
   as_of: '1938'
   note: Historical text as originally approved; the nation may have amended or replaced it since.
 justice_institutions:
@@ -196,6 +218,7 @@ justice_institutions:
   link: http://www.skokomish.org/court/
   source: national-indian-law-library-skokomish
   confidence: medium
+  verification: bulk-import
   as_of: '2026-11-21'
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
@@ -204,6 +227,7 @@ justice_institutions:
   link: http://www.skokomish.org/court/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: Washington section, entry 'Skokomish Indian Tribe'
 dispute_resolution:
@@ -224,6 +248,7 @@ dispute_resolution:
     link: https://peacemaking.narf.org/wp-content/uploads/2025/07/Skokomish-STC-9.11.pdf
     source: skokomish-stc-9-11-sentencing
     confidence: medium
+    verification: read-in-full
     as_of: '2017-07-05'
     locator: S.T.C. 9.11.030
     note: Sentencing policy (9.11.010) favors restitution to the victim and community.
@@ -363,6 +388,7 @@ gaming:
     federal_register_citation: 81 FR 46700
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2016-07-18'
     locator: result page 42 (?page=42), row 11
     note: 'Listed as: "Skokomish Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -376,6 +402,7 @@ gaming:
     federal_register_citation: 72 FR 30392
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-05-31'
     locator: result page 42 (?page=42), row 12
     note: 'Listed as: "Skokomish Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -389,6 +416,7 @@ gaming:
     federal_register_citation: 60 FR 46490
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1995-09-06'
     locator: result page 42 (?page=42), row 13
     note: 'Listed as: "Skokomish Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -402,6 +430,7 @@ gaming:
     federal_register_citation: 64 FR 26435
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1999-05-14'
     locator: result page 42 (?page=42), row 14
     note: 'Listed as: "Skokomish Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -415,6 +444,7 @@ gaming:
     federal_register_citation: 80 FR 31918
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-06-04'
     locator: result page 42 (?page=42), row 15
     note: 'Listed as: "Skokomish Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
@@ -428,6 +458,7 @@ gaming:
     federal_register_citation: 85 FR 80139
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2020-12-11'
     locator: result page 42 (?page=42), row 16
     note: 'Listed as: "Skokomish Indian Tribe Tribal State Gaming Compact" (Deemed Approved); list''s
@@ -443,6 +474,7 @@ gaming:
     dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
     source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
     confidence: medium
+    verification: inferred
     as_of: '2021-09-01'
     locator: Section XIV (Dispute Resolution), subsection B
     note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
@@ -454,6 +486,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11157&ind=11191
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '1996-04-30'
     locator: table row 264, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 264 lists the nation
@@ -462,6 +495,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11172&ind=11192
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-07-07'
     locator: table row 264, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
@@ -470,6 +504,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11173&ind=11193
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2001-03-14'
     locator: table row 264, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
@@ -478,6 +513,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11174&ind=11194
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2001-07-03'
     locator: table row 264, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
@@ -486,6 +522,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11177&ind=11195
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2003-04-30'
     locator: table row 264, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
@@ -494,6 +531,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11176&ind=11196
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2004-10-26'
     locator: table row 264, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
@@ -502,6 +540,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11175&ind=11197
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2005-05-25'
     locator: table row 264, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
@@ -510,6 +549,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11178&ind=11198
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2007-04-11'
     locator: table row 264, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
@@ -518,6 +558,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11179&ind=11199
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2008-02-26'
     locator: table row 264, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
@@ -526,6 +567,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11180&ind=11200
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2009-09-25'
     locator: table row 264, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
@@ -534,6 +576,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11181&ind=11201
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2012-06-05'
     locator: table row 264, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
@@ -542,6 +585,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11185&ind=11202
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2015-09-08'
     locator: table row 264, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
@@ -550,6 +594,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11184&ind=11203
     source: nigc-gaming-ordinances-table-2026
     confidence: high
+    verification: bulk-import
     as_of: '2021-01-07'
     locator: table row 264, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 264 lists the nation
@@ -564,6 +609,7 @@ jurisdiction:
     jurisdiction under RCW 37.12.021.'
   source: revised-code-of-washington-37-12-010
   confidence: medium
+  verification: inferred
   as_of: '1963'
   locator: RCW 37.12.010
   note: Nation matched to Washington by office state. Check for later retrocession facts.
@@ -573,6 +619,7 @@ jurisdiction:
     this jurisdiction was later retroceded for several of these nations (see retrocession facts).
   source: department-of-justice-federally-recognized-indian-nations-under-state-jurisdiction-2016
   confidence: medium
+  verification: bulk-import
   as_of: '2016-06-29'
   locator: Washington section, footnote 4
   note: From a 2016 Office of Tribal Justice compilation hosted by the National Indian Justice Center.
@@ -582,12 +629,14 @@ jurisdiction:
     Public Law 280 and RCW 37.12; accepted November 20, 2024, fully effective May 27, 2025. (89 FR 93336)
   source: federal-register-2024-skokomish-retrocession
   confidence: high
+  verification: read-in-full
   as_of: '2025-05-27'
 - topic: indian-child-welfare-act
   value: designated-agent-listed
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: inferred
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Skokomish Indian Tribe Confidence lowered from high by the lead session: the notice
@@ -596,11 +645,13 @@ memberships:
 - organization: Northwest Indian Fisheries Commission
   source: northwest-indian-fisheries-commission-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Skokomish Tribe". Name matched to the roster entry.
 - organization: Northwest Portland Area Indian Health Board
   source: northwest-portland-area-indian-health-board-member-tribes
   confidence: high
+  verification: bulk-import
   as_of: 2026-11
   note: Listed as "Skokomish Indian Tribe".
 review:

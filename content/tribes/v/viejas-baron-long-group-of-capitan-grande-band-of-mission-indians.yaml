@@ -9,6 +9,7 @@ recognition:
     4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
   source: bia-recognized-entities-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-01-30'
   locator: 91 Fed. Reg. 4103
   note: Listed as a group within the entry for Capitan Grande Band of Diegueno Mission Indians of California.
@@ -17,6 +18,7 @@ states:
   presence: government-office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: 'Capitan Grande Band of Diegueno Mission Indians of California: Viejas (Baron Long) Group of
     Capitan Grande Band of Mission Indians of the Viejas Reservation, California'
@@ -24,6 +26,7 @@ states:
   presence: land
   source: census-2020-tribal-area-to-county-relationship-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: tab20_aiannh20_county20_natl.txt rows for GEOID_AIANNH_20 4500
   note: 'Census area with land in this state: Viejas Reservation and Off-Reservation Trust Land (code
@@ -35,6 +38,7 @@ census_areas:
   vintage: '2020'
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: inferred
   as_of: '2020'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4500
   note: Matched by name. Census class code D1.
@@ -43,6 +47,7 @@ population:
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
   confidence: medium
+  verification: bulk-import
   as_of: '2020-04-01'
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4500, field POP100
   note: 'Census area: Viejas Reservation and Off-Reservation Trust Land (code 4500). Everyone counted
@@ -52,6 +57,7 @@ population:
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
   confidence: medium
+  verification: inferred
   as_of: '2020-04-01'
   locator: Table T01001, iteration 3403 (Viejas (Baron Long) Group of Capitan Grande Band alone or in
     any combination), GEOID 0100000US (United States)
@@ -62,6 +68,7 @@ population:
   kind: citizens
   source: hud-indian-housing-block-grant-fy2025-final-allocation
   confidence: medium
+  verification: inferred
   as_of: '2025'
   locator: HUD office section Phoenix, row 'Viejas Group of Capitan Grande Band', PDF page 8, Enrollment
     column
@@ -73,6 +80,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: 'Capitan Grande Band of Diegueno Mission Indians of California: Viejas (Baron Long) Group of
     Capitan Grande Band of Mission Indians of the Viejas Reservation, California'
@@ -81,6 +89,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: 'Capitan Grande Band of Diegueno Mission Indians of California: Viejas (Baron Long) Group of
     Capitan Grande Band of Mission Indians of the Viejas Reservation, California'
@@ -89,6 +98,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: 'Capitan Grande Band of Diegueno Mission Indians of California: Viejas (Baron Long) Group of
     Capitan Grande Band of Mission Indians of the Viejas Reservation, California'
@@ -97,6 +107,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: 'Capitan Grande Band of Diegueno Mission Indians of California: Viejas (Baron Long) Group of
     Capitan Grande Band of Mission Indians of the Viejas Reservation, California'
@@ -105,6 +116,7 @@ contacts:
   label: Tribal government office
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: 'Capitan Grande Band of Diegueno Mission Indians of California: Viejas (Baron Long) Group of
     Capitan Grande Band of Mission Indians of the Viejas Reservation, California'
@@ -113,6 +125,7 @@ federal_administration:
   bureau_of_indian_affairs_agency: Southern California Agency
   source: bia-tribal-leaders-directory-2026
   confidence: high
+  verification: bulk-import
   as_of: '2026-11-20'
   locator: 'Capitan Grande Band of Diegueno Mission Indians of California: Viejas (Baron Long) Group of
     Capitan Grande Band of Mission Indians of the Viejas Reservation, California'
@@ -121,6 +134,7 @@ governing_documents:
   title: Viejas Band of Kumeyaay Indians Ordinances
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: title-only
   as_of: '2022'
   locator: California section, entry 'Viejas Band of Kumeyaay Indians'
   note: 'Title is the link text in the directory; link not re-checked and may be out of date. Link check
@@ -132,6 +146,7 @@ justice_institutions:
   link: http://www.sciljc.org/
   source: tribal-law-policy-institute-justice-systems
   confidence: medium
+  verification: bulk-import
   as_of: '2022'
   locator: California section, entry 'Viejas Band of Kumeyaay Indians'
 gaming:
@@ -142,6 +157,7 @@ gaming:
     federal_register_citation: 81 FR 75426
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2016-10-31'
     locator: result page 13 (?page=13), row 4
     note: 'Listed as: "Viejas (Baron Long) Group of Capitan Grande Band of Mission Indians of the Viejas
@@ -156,6 +172,7 @@ gaming:
     approved: '1990-06-29'
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1990-06-29'
     locator: result page 13 (?page=13), row 5
     note: 'Listed as: "Viejas (Baron Long) Group of Capitan Grande Band of Mission Indians of the Viejas
@@ -168,6 +185,7 @@ gaming:
     federal_register_citation: 69 FR 53733
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2004-09-02'
     locator: result page 13 (?page=13), row 6
     note: 'Listed as: "Viejas (Baron Long) Group of Capitan Grande Band of Mission Indians of the Viejas
@@ -183,6 +201,7 @@ gaming:
     federal_register_citation: 79 FR 72200
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2014-12-05'
     locator: result page 13 (?page=13), row 7
     note: 'Listed as: "Viejas (Baron Long) Group of Capitan Grande Band of Mission Indians of the Viejas
@@ -198,6 +217,7 @@ gaming:
     federal_register_citation: 65 FR 31189
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '2000-05-16'
     locator: result page 13 (?page=13), row 8
     note: 'Listed as: "Viejas (Baron Long) Group of Capitan Grande Band of Mission Indians of the Viejas
@@ -213,6 +233,7 @@ gaming:
     federal_register_citation: 63 FR 60016
     source: office-of-indian-gaming-compacts-list-2026
     confidence: high
+    verification: bulk-import
     as_of: '1998-11-06'
     locator: result page 13 (?page=13), row 9
     note: 'Listed as: "Viejas (Baron Long)Group of Capitan Grande Band of Mission Indians of the Viejas
@@ -232,6 +253,7 @@ gaming:
     dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     source: compact-ca-cher-ae-heights-indian-community-of-the-2026
     confidence: medium
+    verification: inferred
     as_of: '2026-01-26'
     locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
     note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
@@ -244,6 +266,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11505&ind=11529
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1993-08-05'
     locator: table row 304, Ordinance Date column
     note: Original ordinance date as listed (Ordinance Date column). NIGC table row 304 lists the nation
@@ -252,6 +275,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11506&ind=11530
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '1998-11-10'
     locator: table row 304, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 304 lists the nation
@@ -260,6 +284,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11507&ind=11531
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2008-03-11'
     locator: table row 304, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 304 lists the nation
@@ -268,6 +293,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11511&ind=11532
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2013-01-25'
     locator: table row 304, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 304 lists the nation
@@ -276,6 +302,7 @@ gaming:
     link: https://www.nigc.gov?wpdmdl=11510&ind=11533
     source: nigc-gaming-ordinances-table-2026
     confidence: medium
+    verification: inferred
     as_of: '2018-08-17'
     locator: table row 304, Amendment Date column
     note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 304 lists the nation
@@ -284,6 +311,7 @@ gaming:
     value: true
     source: nigc-gaming-tribe-report-by-state-2024-12-10
     confidence: medium
+    verification: inferred
     as_of: '2024-12-10'
     note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Viejas Band of Kumeyaay Indians".
       Name extracted from the PDF by the page-fetch tool and matched to the roster.
@@ -295,6 +323,7 @@ jurisdiction:
     country within California; the statute itself does not identify which lands are Indian country.'
   source: us-code-title-18-section-1162
   confidence: medium
+  verification: inferred
   as_of: '2010-07-29'
   locator: 18 U.S.C. § 1162(a) and 28 U.S.C. § 1360(a), entry "California"
   note: Statute is primary; nation matched to California by office state in the BIA Tribal Leaders Directory,
@@ -304,6 +333,7 @@ jurisdiction:
   detail: Listed with a designated Tribal agent for service of notice under 25 CFR 23.12.
   source: federal-register-2026-indian-child-welfare-act-designated-tribal-agents
   confidence: medium
+  verification: bulk-import
   as_of: '2026-05-26'
   locator: 91 FR 30667-30722, list by Bureau of Indian Affairs region
   note: 'Listed as: Capitan Grande Band of Diegueno Mission Indians of California (Barona Group of Capitan
@@ -314,6 +344,7 @@ memberships:
 - organization: Southern California Tribal Chairmen's Association
   source: southern-california-tribal-chairmens-association-member-tribes
   confidence: medium
+  verification: inferred
   as_of: 2026-11
   note: Listed as "Viejas Band of Kumeyaay Indians". Name matched to the roster entry.
 review:
