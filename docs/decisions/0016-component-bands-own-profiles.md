@@ -40,6 +40,10 @@ linked to the Tribe's profile, and to move band records to them.
   22 to Leech Lake, 21 to Mille Lacs and 40 to White Earth. The Tribe's
   profile keeps its own constitution, contacts, the shared trust land and the
   records that name every band.
+- The 11 moved provisions that had no `verification` level were given one
+  from their notes, as decision record 0014 requires of changed facts: a
+  written summary as `read-in-full`, section headings as `title-only`, and a
+  list's description with the provision not read as `bulk-import`.
 - The band profiles have no self-designation yet. Each band's own name for
   itself (for example "White Earth Nation" or "Mille Lacs Band of Ojibwe")
   should be added from the band's own publications, with a citation.
