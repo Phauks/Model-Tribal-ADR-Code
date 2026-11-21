@@ -107,6 +107,151 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Table Mountain Rancheria
+gaming:
+  compacts:
+  - state: CA
+    status: approved
+    approved: '1998-12-22'
+    federal_register_citation: 63 FR 70792
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-12-22'
+    locator: result page 12 (?page=12), row 5
+    note: 'Listed as: "Table Mountain Rancheria Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Table Mountain Rancheria". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1998.12.22_table_mountain_rancheria_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/12/22/98-33798/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-16'
+    locator: result page 12 (?page=12), row 6
+    note: 'Listed as: "Table Mountain Rancheria Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Table Mountain Rancheria". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.05.16%20Table%20Mountain%20Rancheria%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: disapproved
+    approved: '1998-10-07'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-10-07'
+    locator: result page 12 (?page=12), row 7
+    note: 'Listed as: "Table Mountain Rancheria Tribal State Gaming Compact" (Disapproved); list''s Tribe
+      column: "Table Mountain Rancheria". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.10.07%20Table%20Mountain%20Rancheria%20Disapproval.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: CA
+    status: approved
+    approved: '2022-06-30'
+    federal_register_citation: 87 FR 39115
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-06-30'
+    locator: result page 12 (?page=12), row 8
+    note: 'Listed as: "Table Mountain Rancheria Tribal State Gaming Compact" (Extensions); list''s Tribe
+      column: "Table Mountain Rancheria". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.30_table_mountain_rancheria_tribal_state_gaming_comapct.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/30/2022-14054/indian-gaming-extension-of-tribal-state-class-iii-gaming-compacts-in-california.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2024-07-01'
+    federal_register_citation: 89 FR 54496
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-07-01'
+    locator: result page 12 (?page=12), row 9
+    note: 'Listed as: "Table Mountain Rancheria Tribal State Gaming Compact" (Extensions); list''s Tribe
+      column: "Table Mountain Rancheria". Document: https://www.bia.gov/sites/default/files/media_document/508_compliant_2024.07.01_table_mountain_rancheria_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/07/01/2024-14350/indian-gaming-extension-of-tribal-state-class-iii-gaming-compact-in-california.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    approved: '2024-12-26'
+    federal_register_citation: 89 FR 105090
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-12-26'
+    locator: result page 12 (?page=12), row 10
+    note: 'Listed as: "Table Mountain Rancheria Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "Table Mountain Rancheria". Document: https://www.bia.gov/sites/default/files/media_document/508_compliant_2024.12.26_table_mountain_rancheria_tribal_state_gaming_compact_redacted.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/12/26/2024-30744/indian-gaming-approval-by-operation-of-law-tribal-state-class-iii-gaming-compacts-in-the-state-of.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2024-12-26).
+  ordinances:
+  - approved: '1994-01-03'
+    link: https://www.nigc.gov?wpdmdl=11310&ind=11351
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-01-03'
+    locator: table row 281, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 281 lists the nation
+      as "Table Mountain Rancheria".
+  - approved: '1998-12-18'
+    link: https://www.nigc.gov?wpdmdl=11331&ind=11352
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1998-12-18'
+    locator: table row 281, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 281 lists the nation
+      as "Table Mountain Rancheria".
+  - approved: '2000-10-19'
+    link: https://www.nigc.gov?wpdmdl=11332&ind=11353
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-10-19'
+    locator: table row 281, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 281 lists the nation
+      as "Table Mountain Rancheria".
+  - approved: '2006-10-31'
+    link: https://www.nigc.gov?wpdmdl=11336&ind=11354
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2006-10-31'
+    locator: table row 281, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 281 lists the nation
+      as "Table Mountain Rancheria".
+  - approved: '2023-05-22'
+    link: https://www.nigc.gov?wpdmdl=11335&ind=11355
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2023-05-22'
+    locator: table row 281, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 281 lists the nation
+      as "Table Mountain Rancheria".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Table Mountain Rancheria". Name
+      extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

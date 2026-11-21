@@ -2,6 +2,15 @@ id: delaware-tribe-of-indians
 entity_type: native-nation
 names:
   official: Delaware Tribe of Indians
+  self_designation:
+  - name: Lenape
+    language_tag: del
+    romanized: len-NAH-pay
+    source: delawaretribe-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Homepage: ''In our language ... we call ourselves LENAPE (len-NAH-pay) which means something
+      like “The People.”'' Source capitalizes it as LENAPE.'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -74,6 +83,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Delaware Tribe of Indians
+languages:
+- name: Lenape
+  language_tag: del
+  source: delawaretribe-language-revitalization
+  confidence: high
+  as_of: '2026-11-21'
+  note: Language Revitalization page.
 federal_administration:
   bureau_of_indian_affairs_region: Eastern Oklahoma
   bureau_of_indian_affairs_agency: Miami Agency
@@ -81,6 +97,24 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Delaware Tribe of Indians
+gaming:
+  ordinances:
+  - approved: '1999-08-19'
+    link: https://www.nigc.gov?wpdmdl=9726&ind=9743
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1999-08-19'
+    locator: table row 69, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 69 lists the nation
+      as "Delaware Tribe of Indians".
+  - approved: '2001-10-03'
+    link: https://www.nigc.gov?wpdmdl=9727&ind=9744
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-10-03'
+    locator: table row 69, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 69 lists the nation
+      as "Delaware Tribe of Indians".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

@@ -2,6 +2,15 @@ id: coyote-valley-band-of-pomo-indians-of-california
 entity_type: native-nation
 names:
   official: Coyote Valley Band of Pomo Indians of California
+  self_designation:
+  - name: Sho:daxay
+    language_tag: pej
+    romanized: Shodakai
+    source: coyotevalleytribe-coyotevalleyhistory
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Page: ''The Sho:daxay (Shodakai) Pomo, our people, originate in the northern territory alongside
+      the Russian river''.'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -37,6 +46,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0825
   note: Matched by name. Census class code D2.
 population:
+- count: 300
+  kind: citizens
+  source: coyotevalleytribe-about-us
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''The Tribe is comprised of over 300 members''. Undated; as_of is access date.'
 - count: 126
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -100,6 +115,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Coyote Valley Band of Pomo Indians of California
+languages:
+- name: Northern Pomo
+  language_tag: pej
+  source: coyotevalleytribe-coyotevalleyculture
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Culture page: ''Our Language yaʔ jano The Northern Pomo language''.'
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency
@@ -107,6 +129,84 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Coyote Valley Band of Pomo Indians of California
+gaming:
+  compacts:
+  - state: CA
+    status: deemed-approved
+    approved: '2004-12-20'
+    federal_register_citation: 69 FR 76004
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2004-12-20'
+    locator: result page 6 (?page=6), row 15
+    note: 'Listed as: "Coyote Valley Band of Pomo Indians Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Coyote Valley Band of Pomo Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_12.20.2004_coyote_valley_band_of_pomo_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2004/12/20/04-27712/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    approved: '2012-12-28'
+    federal_register_citation: 77 FR 76514
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2012-12-28'
+    locator: result page 6 (?page=6), row 16
+    note: 'Listed as: "Coyote Valley Band of Pomo Indians Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Coyote Valley Band of Pomo Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2012.12.28_coyote_valley_band_of_pomo_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2012/12/28/2012-31181/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2012-12-28).
+  ordinances:
+  - approved: '1995-02-15'
+    link: https://www.nigc.gov?wpdmdl=9695&ind=9713
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-02-15'
+    locator: table row 65, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 65 lists the nation
+      as "Coyote Valley Band of Pomo Indians".
+  - approved: '2001-11-26'
+    link: https://www.nigc.gov?wpdmdl=9696&ind=9714
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-11-26'
+    locator: table row 65, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 65 lists the nation
+      as "Coyote Valley Band of Pomo Indians".
+  - approved: '2016-06-15'
+    link: https://www.nigc.gov?wpdmdl=9697&ind=9715
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2016-06-15'
+    locator: table row 65, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 65 lists the nation
+      as "Coyote Valley Band of Pomo Indians".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Coyote Valley Band of Pomo
+      Indians". Facilities as machine-extracted from the report text (verify): Coyote Valley Mini Casino;
+      Coyote Valley Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

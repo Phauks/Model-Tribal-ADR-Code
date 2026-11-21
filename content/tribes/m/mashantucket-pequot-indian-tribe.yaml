@@ -126,6 +126,59 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Mashantucket Pequot Indian Tribe
+gaming:
+  compacts:
+  - state: CT
+    status: secretarial-procedures
+    approved: '1991-05-31'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1991-05-31'
+    locator: result page 13 (?page=13), row 23
+    note: 'Listed as: "Mashantucket Pequot Indian Tribe Secretarial Procedures" (Secretarial Procedures);
+      list''s Tribe column: "Lumbee Tribe of North Carolina". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1991.05.31_mashantucket_pequot_secretarial_procedures.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact. The Tribe column and the compact title disagree; the
+      nation named in the title was used.'
+  - state: CT
+    status: secretarial-procedures
+    approved: '2021-09-10'
+    federal_register_citation: 86 FR 53340
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2021-09-10'
+    locator: result page 13 (?page=13), row 24
+    note: 'Listed as: "Mashantucket Pequot Indian Tribe Secretarial Procedures" (Secretarial Procedures);
+      list''s Tribe column: "Lumbee Tribe of North Carolina". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202021.09.10%20Mashantucket%20Pequot%20Tribe%20Secretarial%20Procedures_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/09/27/2021-20933/indian-gaming-approval-of-tribal-state-agreement-to-amend-secretarial-procedures.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact. The Tribe column and the compact title disagree; the
+      nation named in the title was used. Federal Register citation converted from the linked document
+      number through the Federal Register API (source federal-register-api-gaming-notices).'
+  ordinances:
+  - approved: '1995-02-07'
+    link: https://www.nigc.gov?wpdmdl=10218&ind=10232
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-02-07'
+    locator: table row 144, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 144 lists the nation
+      as "Mashantucket Pequot Tribe". Name matched to roster by spelling variant.
+  - approved: '2021-09-14'
+    link: https://www.nigc.gov?wpdmdl=10219&ind=10233
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2021-09-14'
+    locator: table row 144, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 144 lists the nation
+      as "Mashantucket Pequot Tribe". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Mashantucket Pequot Indian Tribe".
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

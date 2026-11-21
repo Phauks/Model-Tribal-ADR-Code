@@ -87,6 +87,55 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Thlopthlocco Tribal Town
+gaming:
+  compacts:
+  - state: OK
+    status: deemed-approved
+    approved: '2005-10-03'
+    federal_register_citation: 70 FR 57617
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2005-10-03'
+    locator: result page 29 (?page=29), row 12
+    note: 'Listed as: "Thlopthlocco Tribal Town Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "The Seminole Nation of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.10.03%20Thlopthlocco%20Tribal%20Town%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/10/03/05-19733/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Name matched
+      to roster by spelling variant. Federal Register citation converted from the linked document number
+      through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2005-10-03).
+  ordinances:
+  - approved: '1998-02-06'
+    link: https://www.nigc.gov?wpdmdl=11337&ind=11358
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1998-02-06'
+    locator: table row 284, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 284 lists the nation
+      as "Thlopthlocco Tribal Town".
+  - approved: '2008-06-25'
+    link: https://www.nigc.gov?wpdmdl=11338&ind=11359
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-06-25'
+    locator: table row 284, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 284 lists the nation
+      as "Thlopthlocco Tribal Town".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

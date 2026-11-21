@@ -37,6 +37,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1410
   note: Matched by name. Census class code D1.
 population:
+- count: 1008
+  kind: citizens
+  source: hannahville-about-us
+  confidence: high
+  as_of: '2023-03-10'
+  note: 'Page: ''As of March 10, 2023, our current enrolled Tribal Membership is 1008.'''
 - count: 720
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -107,6 +113,59 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Hannahville Indian Community, Michigan
+gaming:
+  compacts:
+  - state: MI
+    status: approved
+    approved: '1993-11-30'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-11-30'
+    locator: result page 16 (?page=16), row 10
+    note: 'Listed as: "Hannahville Indian Community Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Hannahville Indian Community, Michigan". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.11.30_hannahville_indian_community_tribal_state_gaming_compact.pdf.'
+  - state: MI
+    status: approved
+    dispute_resolution_summary: After written notice the parties meet within 30 days; if a State allegation
+      is unresolved after 90 days the State may serve a notice to cease the disputed games and the tribe
+      may either stop them or invoke arbitration under American Arbitration Association commercial rules
+      before three attorney arbitrators while play continues, and a tribe may likewise invoke arbitration
+      on its own unresolved allegations.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-mi-bay-mills-indian-community-1993
+    confidence: medium
+    as_of: '1993-11-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The same Section 7 text appears in the
+      1993 Bay Mills Indian Community compact and the 1999 Little River Band compact (both read); other
+      Michigan nations signed the 1993 or 1998 forms, and later amendments were not checked. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (1993-11-30).
+  ordinances:
+  - approved: '1994-02-24'
+    link: https://www.nigc.gov?wpdmdl=9900&ind=9914
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-02-24'
+    locator: table row 97, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 97 lists the nation
+      as "Hannahville Indian Community".
+  - approved: '2000-08-14'
+    link: https://www.nigc.gov?wpdmdl=9901&ind=9915
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-08-14'
+    locator: table row 97, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 97 lists the nation
+      as "Hannahville Indian Community".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Hannahville Indian Community".
+      Facilities as machine-extracted from the report text (verify): Island Resort & Casino. Name extracted
+      from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

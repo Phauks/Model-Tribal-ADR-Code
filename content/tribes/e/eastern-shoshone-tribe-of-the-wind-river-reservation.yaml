@@ -113,6 +113,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Eastern Shoshone Tribe of the Wind River Reservation, Wyoming
+- kind: email-general
+  value: receptionist@easternshoshone.org
+  label: General office email shown on the nation's website
+  source: easternshoshone-contact
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
 federal_administration:
   bureau_of_indian_affairs_region: Rocky Mountain
   bureau_of_indian_affairs_agency: Wind River Agency
@@ -120,6 +127,68 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Eastern Shoshone Tribe of the Wind River Reservation, Wyoming
+gaming:
+  compacts:
+  - state: WY
+    status: deemed-approved
+    approved: '2016-08-22'
+    federal_register_citation: 81 FR 56693
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2016-08-22'
+    locator: result page 47 (?page=47), row 20
+    note: 'Listed as: "Eastern Shoshone Tribe of the Wind River Reservation Tribal State Gaming Compact"
+      (Deemed Approved); list''s Tribe column: "Eastern Shoshone Tribe of the Wind River Reservation,
+      Wyoming". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202016.08.22%20Eastern%20Shoshone%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2016/08/22/2016-19877/indian-gaming-approval-of-amendment-to-tribal-state-class-iii-gaming-compact-in-the-state-of-wyoming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WY
+    status: approved
+    approved: '2006-07-14'
+    federal_register_citation: 71 FR 40147
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2006-07-14'
+    locator: result page 47 (?page=47), row 21
+    note: 'Listed as: "Eastern Shoshone Tribe of the Wind River Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Eastern Shoshone Tribe of the Wind River Reservation, Wyoming".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202006.07.14%20Eastern%20Shoshone%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2006/07/14/E6-11138/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WY
+    status: deemed-approved
+    approved: '2016-08-22'
+    dispute_resolution_summary: If either party commits a substantial breach, the other may give written
+      notice by certified mail and, unless the breach is corrected within 30 days, may terminate the compact
+      (the State must instead suspend a severable activity pending resolution); the compact has no arbitration
+      or mediation clause and preserves judicial remedies under the Indian Gaming Regulatory Act.
+    dispute_resolution_locator: Section VII (Term)
+    source: compact-wy-eastern-shoshone-tribe-of-the-wind-river-2016
+    confidence: medium
+    as_of: '2016-08-22'
+    locator: Section VII (Term)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the 2016 Eastern Shoshone Tribe
+      compact; the Northern Arapaho Tribe compact was not checked.
+  ordinances:
+  - approved: '2004-03-10'
+    link: https://www.nigc.gov?wpdmdl=9761&ind=9776
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2004-03-10'
+    locator: table row 73, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 73 lists the nation
+      as "Eastern Shoshone Tribe of the Windriver Reservation". Name matched to roster by spelling variant.
+  - approved: '2004-03-10'
+    link: https://www.nigc.gov?wpdmdl=11148&ind=11162
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2004-03-10'
+    locator: table row 260, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 260 lists the nation
+      as "Shoshone Tribe of the Wind River Reservation". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

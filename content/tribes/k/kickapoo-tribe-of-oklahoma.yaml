@@ -116,6 +116,78 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Kickapoo Tribe of Oklahoma
+gaming:
+  compacts:
+  - state: OK
+    status: deemed-approved
+    approved: '2005-03-11'
+    federal_register_citation: 70 FR 12230
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-03-11'
+    locator: result page 28 (?page=28), row 1
+    note: 'Listed as: "Kickapoo Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Kickapoo Tribe of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.03.11%20Kickapoo%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/03/11/05-4885/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2005-03-11).
+  ordinances:
+  - approved: '2001-07-03'
+    link: https://www.nigc.gov?wpdmdl=10068&ind=10098
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-07-03'
+    locator: table row 121, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 121 lists the nation
+      as "Kickapoo Tribe of Oklahoma".
+  - approved: '2006-06-07'
+    link: https://www.nigc.gov?wpdmdl=10083&ind=10099
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2006-06-07'
+    locator: table row 121, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 121 lists the nation
+      as "Kickapoo Tribe of Oklahoma".
+  - approved: '2014-09-17'
+    link: https://www.nigc.gov?wpdmdl=10084&ind=10100
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2014-09-17'
+    locator: table row 121, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 121 lists the nation
+      as "Kickapoo Tribe of Oklahoma".
+  - approved: '2018-01-18'
+    link: https://www.nigc.gov?wpdmdl=10085&ind=10101
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2018-01-18'
+    locator: table row 121, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 121 lists the nation
+      as "Kickapoo Tribe of Oklahoma".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Kickapoo Tribe of Oklahoma".
+      Facilities as machine-extracted from the report text (verify): Kickapoo Casino - Shawnee; Kickapoo
+      Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

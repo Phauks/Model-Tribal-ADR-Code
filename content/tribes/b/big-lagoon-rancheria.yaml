@@ -106,6 +106,28 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Big Lagoon Rancheria, California
+gaming:
+  compacts:
+  - state: CA
+    status: secretarial-procedures
+    approved: '2018-08-24'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-08-24'
+    locator: result page 4 (?page=4), row 16
+    note: 'Listed as: "Big Lagoon Rancheria Secretarial Procedures" (Secretarial Procedures); list''s
+      Tribe column: "Big Lagoon Rancheria, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.24%20Big%20Lagoon%20Procedures.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  ordinances:
+  - approved: '1994-08-10'
+    link: https://www.nigc.gov?wpdmdl=3390&ind=3392
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-08-10'
+    locator: table row 15, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 15 lists the nation
+      as "Big Lagoon Rancheria".
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

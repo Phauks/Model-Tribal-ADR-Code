@@ -129,6 +129,32 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Ysleta del Sur Pueblo
+gaming:
+  ordinances:
+  - approved: '1993-10-19'
+    link: https://www.nigc.gov?wpdmdl=11593&ind=11604
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-10-19'
+    locator: table row 319, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 319 lists the nation
+      as "Ysleta del Sur Pueblo of Texas".
+  - approved: '2015-10-05'
+    link: https://www.nigc.gov?wpdmdl=11599&ind=11605
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2015-10-05'
+    locator: table row 319, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 319 lists the nation
+      as "Ysleta del Sur Pueblo of Texas".
+  - approved: '2026-09-04'
+    link: https://www.nigc.gov?wpdmdl=14544&ind=14545
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2026-09-04'
+    locator: table row 319, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 319 lists the nation
+      as "Ysleta del Sur Pueblo of Texas".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

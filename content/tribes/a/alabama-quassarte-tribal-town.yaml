@@ -19,6 +19,12 @@ states:
   as_of: '2026-11-20'
   locator: Alabama-Quassarte Tribal Town
 population:
+- count: 350
+  kind: citizens
+  source: alabama-quassarte-about-us
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''certified enrollment of 350 members''. Undated page; as_of is access date.'
 - count: 179
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
@@ -73,6 +79,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Alabama-Quassarte Tribal Town
+- kind: email-general
+  value: info@alabama-quassarte.org
+  label: General office email shown on the nation's website
+  source: alabama-quassarte-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
 federal_administration:
   bureau_of_indian_affairs_region: Eastern Oklahoma
   bureau_of_indian_affairs_agency: Okmulgee Agency
@@ -80,6 +93,16 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Alabama-Quassarte Tribal Town
+gaming:
+  ordinances:
+  - approved: '2008-01-25'
+    link: https://www.nigc.gov?wpdmdl=3282&ind=3283
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-01-25'
+    locator: table row 5, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 5 lists the nation
+      as "Alabama-Quassarte Tribal Town".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

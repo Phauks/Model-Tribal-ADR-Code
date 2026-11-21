@@ -38,6 +38,13 @@ census_areas:
   note: Matched by name. Census names the area Maricopa (Ak Chin) Indian Reservation. Census class code
     D1.
 population:
+- count: 1100
+  kind: citizens
+  source: ak-chin-about
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Page says 'just over 1,100 tribal members'; homepage says 'enrollment of more than 1,100'. Undated
+    page; as_of is access date.
 - count: 1070
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -105,6 +112,20 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Ak-Chin Indian Community
+- kind: email-general
+  value: info@ak-chin.nsn.us
+  label: General office email shown on the nation's website
+  source: ak-chin-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
+languages:
+- name: O’odham
+  language_tag: ood
+  source: ak-chin-about
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Page: ''The Native American language for Ak-Chin Indian Community is O’odham.'''
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Pima Agency
@@ -112,6 +133,144 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Ak-Chin Indian Community
+gaming:
+  compacts:
+  - state: AZ
+    status: approved
+    approved: '2022-06-14'
+    federal_register_citation: 87 FR 35992
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-06-14'
+    locator: result page 0 (?page=0), row 1
+    note: 'Listed as: "Ak-Chin Indian Community Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Ak-Chin Indian Community". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.14_ak-chin_indian_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/14/2022-12743/indian-gaming-approval-of-20-tribal-state-class-iii-gaming-compact-amendments-with-the-state-of.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '1993-03-31'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-03-31'
+    locator: result page 0 (?page=0), row 2
+    note: 'Listed as: "Ak-Chin Indian Community Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Ak-Chin Indian Community". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.03.31_ak-chin_indian_community_tribal_state_gaming_compact.pdf.'
+  - state: AZ
+    status: approved
+    approved: '2003-02-05'
+    federal_register_citation: 68 FR 5912
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-02-05'
+    locator: result page 0 (?page=0), row 3
+    note: 'Listed as: "Ak-Chin Indian Community Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Ak-Chin Indian Community". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2003.02.05_ak_chin_indian_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/02/05/03-2787/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2021-05-24'
+    federal_register_citation: 86 FR 27889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-05-24'
+    locator: result page 0 (?page=0), row 4
+    note: 'Listed as: "Ak-Chin Indian Community Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Ak-Chin Indian Community". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202021.05.24%20Ak-Chin%20Indian%20Community%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/05/24/2021-10877/indian-gaming-approval-of-tribal-state-class-iii-gaming-compacts-in-the-state-of-arizona.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2009-03-25'
+    federal_register_citation: 74 FR 12889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2009-03-25'
+    locator: result page 0 (?page=0), row 5
+    note: 'Listed as: "Ak-Chin Indian Community Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Ak-Chin Indian Community". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20C%202009%20Ak-Chin%20Agreement%20to%20Amend.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2009/03/25/E9-6585/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2003-02-05'
+    dispute_resolution_summary: Either party may serve written notice of non-compliance or an interpretation
+      dispute, after which agency heads and then designated tribal and gubernatorial representatives negotiate;
+      if unresolved within 30 days, either party may request non-binding mediation under CPR Institute
+      for Dispute Resolution procedures and may then demand binding arbitration under CPR rules before
+      three arbitrators unless both agree to one.
+    dispute_resolution_locator: Section 15 (Dispute Resolution)
+    source: compact-az-ak-chin-indian-community-2003
+    confidence: medium
+    as_of: '2003-02-05'
+    locator: Section 15 (Dispute Resolution)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Arizona nations signed a standard-form
+      compact approved in 2003; this text is the Ak-Chin Indian Community copy of that form, and the 2021-2022
+      amendments in the list refer back to Section 15.
+  ordinances:
+  - approved: '1993-12-07'
+    link: https://www.nigc.gov?wpdmdl=3268&ind=3273
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-12-07'
+    locator: table row 3, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 3 lists the nation
+      as "Ak Chin Indian Community".
+  - approved: '2000-03-27'
+    link: https://www.nigc.gov?wpdmdl=3269&ind=3274
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-03-27'
+    locator: table row 3, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 3 lists the nation
+      as "Ak Chin Indian Community".
+  - approved: '2003-02-11'
+    link: https://www.nigc.gov?wpdmdl=3270&ind=3275
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-02-11'
+    locator: table row 3, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 3 lists the nation
+      as "Ak Chin Indian Community".
+  - approved: '2003-07-31'
+    link: https://www.nigc.gov?wpdmdl=3271&ind=3276
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-07-31'
+    locator: table row 3, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 3 lists the nation
+      as "Ak Chin Indian Community".
+  - approved: '2008-07-28'
+    link: https://www.nigc.gov?wpdmdl=3272&ind=3277
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-07-28'
+    locator: table row 3, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 3 lists the nation
+      as "Ak Chin Indian Community".
+  - approved: '2026-01-12'
+    link: https://www.nigc.gov?wpdmdl=13737&ind=13738
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2026-01-12'
+    locator: table row 3, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 3 lists the nation
+      as "Ak Chin Indian Community".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Ak-Chin Indian Community of
+      the Maricopa Indian Reservation". Facilities as machine-extracted from the report text (verify):
+      Harrah''s Ak-Chin Casino Resort. Name extracted from the PDF by the page-fetch tool and matched
+      to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

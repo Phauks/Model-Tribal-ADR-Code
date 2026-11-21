@@ -114,6 +114,96 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: St. Croix Chippewa Indians of Wisconsin
+gaming:
+  compacts:
+  - state: WI
+    status: approved
+    approved: '2022-04-25'
+    federal_register_citation: 87 FR 24339
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-04-25'
+    locator: result page 47 (?page=47), row 8
+    note: 'Listed as: "St Croix Chippewa Indians Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "St. Croix Chippewa Indians of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.04.25_st._croix_chippewa_indians_tribal_state_gamign_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/04/25/2022-08736/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-wisconsin.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: deemed-approved
+    approved: '2003-09-16'
+    federal_register_citation: 68 FR 54243
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-09-16'
+    locator: result page 47 (?page=47), row 9
+    note: 'Listed as: "St. Croix Chippewa Indians Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "St. Croix Chippewa Indians of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%20%202003.09.16%20St%20Croix%20Deemed%20Approved%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/09/16/03-23578/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1998-08-21'
+    federal_register_citation: 63 FR 44921
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-08-21'
+    locator: result page 47 (?page=47), row 10
+    note: 'Listed as: "St. Croix Chippewa Indians Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "St. Croix Chippewa Indians of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.08.21%20St%20Croix%20Gaming%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/08/21/98-22494/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1992-03-10'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-03-10'
+    locator: result page 47 (?page=47), row 11
+    note: 'Listed as: "St. Croix Chippewa Indians Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "St. Croix Chippewa Indians of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201992.03.10%20St%20Croix%20Chippewa%20Tribal%20State%20Gaming%20Compact%20Compact.pdf.'
+  - state: WI
+    status: approved
+    dispute_resolution_summary: After written notice the State and Tribe meet within 30 days, and if the
+      dispute is unresolved after 90 days either party may pursue any otherwise available remedy, with
+      mediation or arbitration only by mutual agreement.
+    dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
+    confidence: medium
+    as_of: '1992-08-10'
+    locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
+      compact; later amendments renumbered this section XXIV and revised it for at least some nations
+      (for example the Ho-Chunk Nation fourth amendment), so the current text may differ. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2022-04-25).
+  ordinances:
+  - approved: '1995-03-23'
+    link: https://www.nigc.gov?wpdmdl=11221&ind=11243
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-03-23'
+    locator: table row 272, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 272 lists the nation
+      as "St. Croix Chippewa Indians of Wisconsin".
+  - approved: '2006-10-27'
+    link: https://www.nigc.gov?wpdmdl=11222&ind=11244
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2006-10-27'
+    locator: table row 272, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 272 lists the nation
+      as "St. Croix Chippewa Indians of Wisconsin".
+  - approved: '2021-09-27'
+    link: https://www.nigc.gov?wpdmdl=11223&ind=11245
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2021-09-27'
+    locator: table row 272, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 272 lists the nation
+      as "St. Croix Chippewa Indians of Wisconsin".
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

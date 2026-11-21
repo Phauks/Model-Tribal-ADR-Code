@@ -241,6 +241,111 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Seminole Tribe of Florida
+gaming:
+  compacts:
+  - state: FL
+    status: deemed-approved
+    approved: '2021-08-11'
+    federal_register_citation: 86 FR 44037
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-08-11'
+    locator: result page 14 (?page=14), row 2
+    note: 'Listed as: "Seminole Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Seminole Tribe of Florida". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202021.08.11%20Seminole%20Tribe%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/08/11/2021-17055/indian-gaming-approval-by-operation-of-law-of-tribal-state-class-iii-gaming-compact-in-the-state-of.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: FL
+    status: deemed-approved
+    approved: '2008-01-07'
+    federal_register_citation: 73 FR 1229
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2008-01-07'
+    locator: result page 14 (?page=14), row 3
+    note: 'Listed as: "Seminole Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Seminole Tribe of Florida". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2008.01.07_seminole_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/01/07/E7-25628/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: FL
+    status: approved
+    approved: '2010-07-06'
+    federal_register_citation: 75 FR 38833
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2010-07-06'
+    locator: result page 14 (?page=14), row 4
+    note: 'Listed as: "Seminole Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Seminole
+      Tribe of Florida". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2010.07.06_seminole_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2010/07/06/2010-16213/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: FL
+    status: deemed-approved
+    approved: '2021-08-11'
+    dispute_resolution_summary: A party gives written notice and representatives meet within 30 days;
+      either party may then call for mediation under American Arbitration Association commercial mediation
+      procedures (limited to 60 days unless extended), and if the dispute remains either party may sue
+      in United States District Court, or in the Seventeenth Judicial Circuit court in Broward County
+      if the federal court lacks jurisdiction.
+    dispute_resolution_locator: Part XIII (Dispute Resolution), sections A-D
+    source: compact-fl-seminole-tribe-of-florida-2021
+    confidence: medium
+    as_of: '2021-08-11'
+    locator: Part XIII (Dispute Resolution), sections A-D
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the 2021 Seminole Tribe of Florida
+      compact, the only Florida compact in the list.
+  ordinances:
+  - approved: '1993-12-07'
+    link: https://www.nigc.gov?wpdmdl=11073&ind=11094
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-12-07'
+    locator: table row 251, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 251 lists the nation
+      as "Seminole Tribe of Florida".
+  - approved: '1998-01-26'
+    link: https://www.nigc.gov?wpdmdl=11072&ind=11095
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1998-01-26'
+    locator: table row 251, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 251 lists the nation
+      as "Seminole Tribe of Florida".
+  - approved: '2002-01-04'
+    link: https://www.nigc.gov?wpdmdl=11076&ind=11096
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-01-04'
+    locator: table row 251, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 251 lists the nation
+      as "Seminole Tribe of Florida".
+  - approved: '2005-12-08'
+    link: https://www.nigc.gov?wpdmdl=11077&ind=11097
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2005-12-08'
+    locator: table row 251, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 251 lists the nation
+      as "Seminole Tribe of Florida".
+  - approved: '2006-07-10'
+    link: https://www.nigc.gov?wpdmdl=11078&ind=11098
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2006-07-10'
+    locator: table row 251, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 251 lists the nation
+      as "Seminole Tribe of Florida".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Seminole Tribe of Florida". Name
+      extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: public-law-280
   value: optional-state

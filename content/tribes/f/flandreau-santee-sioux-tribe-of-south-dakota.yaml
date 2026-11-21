@@ -37,6 +37,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1100
   note: Matched by name. Census class code D2.
 population:
+- count: 736
+  kind: citizens
+  source: sd-tribal-relations-flandreau-santee-sioux-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'State profile page: ''Total Population: 444 Estimated Tribal Enrollment: 736''. ''Estimated''
+    per the page; undated (page links a 2019 statistical profile); as_of is access date.'
 - count: 415
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -108,6 +115,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Flandreau Santee Sioux Tribe of South Dakota
+languages:
+- name: Dakota
+  language_tag: dak
+  source: sd-tribal-relations-flandreau-santee-sioux-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'State profile page: ''Traditional Language: Dakota''.'
 federal_administration:
   bureau_of_indian_affairs_region: Great Plains
   bureau_of_indian_affairs_agency: Great Plains Regional Office
@@ -115,6 +129,170 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Flandreau Santee Sioux Tribe of South Dakota
+gaming:
+  compacts:
+  - state: SD
+    status: approved
+    approved: '2026-10-21'
+    federal_register_citation: 91 FR 66580
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2026-10-21'
+    locator: result page 34 (?page=34), row 10
+    note: 'Listed as: "Flandreau Santee Sioux Tribal State Gaming Compact" (Extensions); list''s Tribe
+      column: "Flandreau Santee Sioux Tribe of South Dakota". Document: https://www.bia.gov/sites/default/files/media_document/flandreau_compact_508.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2026/10/21/2026-21475/indian-gaming-extension-of-tribal-state-class-iii-gaming-compact-between-the-flandreau-santee-sioux.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Name
+      matched to roster by spelling variant. Federal Register citation converted from the linked document
+      number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: SD
+    status: approved
+    approved: '2004-12-20'
+    federal_register_citation: 69 FR 76005
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2004-12-20'
+    locator: result page 34 (?page=34), row 11
+    note: 'Listed as: "Flandreau Santee Sioux Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Flandreau Santee Sioux Tribe of South Dakota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202004.12.20%20Flandreau%20Santee%20Sioux%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2004/12/20/04-27711/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: SD
+    status: approved
+    approved: '2000-03-13'
+    federal_register_citation: 65 FR 13303
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-03-13'
+    locator: result page 34 (?page=34), row 12
+    note: 'Listed as: "Flandreau Santee Sioux Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Flandreau Santee Sioux Tribe of South Dakota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.03.13%20Flandreau%20Santee%20Sioux%20Tribe%20Tribal%20State%20Gaming%20Compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/03/13/00-6009/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: SD
+    status: approved
+    approved: '1990-08-02'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1990-08-02'
+    locator: result page 34 (?page=34), row 13
+    note: 'Listed as: "Flandreau Santee Sioux Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Flandreau Santee Sioux Tribe of South Dakota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201990.08.02%20Flandreau%20Santee%20Sioux%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.'
+  - state: SD
+    status: approved
+    approved: '2011-09-13'
+    federal_register_citation: 76 FR 56466
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2011-09-13'
+    locator: result page 34 (?page=34), row 14
+    note: 'Listed as: "Flandreau Santee Sioux Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Flandreau Santee Sioux Tribe of South Dakota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202011.09.13%20Flandreau%20Santee%20Sioux%20Tribe%20Tribal%20State%20Gaming%20Compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2011/09/13/2011-23389/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: SD
+    status: approved
+    approved: '2016-09-21'
+    federal_register_citation: 81 FR 64935
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2016-09-21'
+    locator: result page 34 (?page=34), row 15
+    note: 'Listed as: "Flandreau Santee Sioux Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Flandreau Santee Sioux Tribe of South Dakota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202016.09.21%20Flandreau%20Santee%20Sioux.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2016/09/21/2016-22649/indian-gaming-approval-of-a-tribal-state-class-iii-gaming-compact-in-the-state-of-south-dakota.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: SD
+    status: approved
+    approved: '2016-04-04'
+    federal_register_citation: 81 FR 19236
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2016-04-04'
+    locator: result page 34 (?page=34), row 16
+    note: 'Listed as: "Flandreau Santee Sioux Tribe Tribal State Gaming Compact" (Extensions); list''s
+      Tribe column: "Flandreau Santee Sioux Tribe of South Dakota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202016.04.04%20%20Flandreau%20Santee%20Sioux%20Ext.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2016/04/04/2016-07632/indian-gaming-extension-of-tribal-state-class-iii-gaming-compact-flandreau-santee-sioux-tribe-and.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: SD
+    status: approved
+    dispute_resolution_summary: Either party may bring a dispute over interpretation of the compact in
+      federal district court, while a separate three-person binding Arbitration Board that includes the
+      chairs of the state and tribal gaming commissions decides contested license-suitability and slot
+      machine compliance findings.
+    dispute_resolution_locator: Section 13.1 or 14.1 (General Provisions) and Section 7 (Licensing) arbitration
+      procedure
+    source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-trav-2019
+    confidence: medium
+    as_of: '2019-04-01'
+    locator: Section 13.1 or 14.1 (General Provisions) and Section 7 (Licensing) arbitration procedure
+    note: state model compact; nation-specific text not checked. The same federal-court clause appears
+      in the 2019 Sisseton-Wahpeton Oyate compact (Section 13.1) and the 2016 Yankton Sioux Tribe compact
+      (Section 14.1); other South Dakota compacts were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2026-10-21).
+  ordinances:
+  - approved: '1994-08-17'
+    link: https://www.nigc.gov?wpdmdl=9793&ind=9809
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-08-17'
+    locator: table row 81, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 81 lists the nation
+      as "Flandreau Santee Sioux Tribe".
+  - approved: '1996-07-24'
+    link: https://www.nigc.gov?wpdmdl=9794&ind=9810
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-07-24'
+    locator: table row 81, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 81 lists the nation
+      as "Flandreau Santee Sioux Tribe".
+  - approved: '1999-06-15'
+    link: https://www.nigc.gov?wpdmdl=9795&ind=9811
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1999-06-15'
+    locator: table row 81, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 81 lists the nation
+      as "Flandreau Santee Sioux Tribe".
+  - approved: '1999-08-19'
+    link: https://www.nigc.gov?wpdmdl=9796&ind=9812
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1999-08-19'
+    locator: table row 81, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 81 lists the nation
+      as "Flandreau Santee Sioux Tribe".
+  - approved: '2004-06-21'
+    link: https://www.nigc.gov?wpdmdl=9797&ind=9813
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-06-21'
+    locator: table row 81, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 81 lists the nation
+      as "Flandreau Santee Sioux Tribe".
+  - approved: '2017-01-13'
+    link: https://www.nigc.gov?wpdmdl=9798&ind=9814
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2017-01-13'
+    locator: table row 81, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 81 lists the nation
+      as "Flandreau Santee Sioux Tribe".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Flandreau Santee Sioux Tribe".
+      Facilities as machine-extracted from the report text (verify): First American Mart; Royal River
+      Casino and Hotel. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

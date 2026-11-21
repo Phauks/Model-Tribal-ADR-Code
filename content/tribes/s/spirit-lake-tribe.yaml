@@ -128,6 +128,90 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Spirit Lake Tribe, North Dakota
+gaming:
+  compacts:
+  - state: ND
+    status: approved
+    approved: '2022-12-19'
+    federal_register_citation: 87 FR 77633
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-12-19'
+    locator: result page 21 (?page=21), row 5
+    note: 'Listed as: "Spirit Lake Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Spirit Lake Tribe, North Dakota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.12.19_spirit_lake_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/12/19/2022-27471/indian-gaming-approval-of-tribal-state-class-iii-gaming-compacts-in-the-state-of-north-dakota.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: ND
+    status: approved
+    approved: '1993-08-18'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-08-18'
+    locator: result page 21 (?page=21), row 6
+    note: 'Listed as: "Spirit Lake Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Spirit Lake Tribe, North Dakota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.08.18_spirit_lake_tribe_tribal_gaming_compact.pdf.'
+  - state: ND
+    status: approved
+    approved: '1992-12-30'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-12-30'
+    locator: result page 21 (?page=21), row 7
+    note: 'Listed as: "Spirit Lake Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Spirit Lake Tribe, North Dakota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1992.12.30_spirit_lake_tribe_tribal_state_gaming_compact.pdf.'
+  - state: ND
+    status: approved
+    approved: '2013-03-21'
+    federal_register_citation: 78 FR 17427
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2013-03-21'
+    locator: result page 21 (?page=21), row 8
+    note: 'Listed as: "Spirit Lake Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Spirit Lake Tribe, North Dakota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2013.03.21_spirit_lake_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2013/03/21/2013-06446/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: ND
+    status: approved
+    approved: '1999-11-26'
+    federal_register_citation: 64 FR 66488
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-11-26'
+    locator: result page 21 (?page=21), row 9
+    note: 'Listed as: "Spirit Lake Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Spirit Lake Tribe, North Dakota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1999.11.26_spirit_lake_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/11/26/99-30727/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: ND
+    status: approved
+    approved: '2022-12-19'
+    dispute_resolution_summary: After written notice the parties meet within 30 days; if unresolved after
+      90 days they must first try mediation (by an agreed mediator or under American Arbitration Association
+      commercial mediation procedures in Bismarck), and once mediation fails or 180 days pass either party
+      may sue in the United States District Court for the District of North Dakota under limited waivers
+      of immunity.
+    dispute_resolution_locator: Section XXVIII (Dispute Resolution)
+    source: compact-nd-spirit-lake-tribe-2022
+    confidence: high
+    as_of: '2022-12-19'
+    locator: Section XXVIII (Dispute Resolution)
+    note: Dispute-resolution clause read from this nation's own compact document. Read from the 2022 Spirit
+      Lake Tribe compact; the other North Dakota nations' 2022 compacts were approved the same day but
+      were not checked.
+  ordinances:
+  - approved: '1994-06-24'
+    link: https://www.nigc.gov?wpdmdl=11213&ind=11237
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-06-24'
+    locator: table row 269, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 269 lists the nation
+      as "Spirit Lake Tribe".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

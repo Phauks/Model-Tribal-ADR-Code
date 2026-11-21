@@ -47,6 +47,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1690
   note: Matched by name. Census class code D2.
 population:
+- count: 400
+  kind: citizens
+  source: jenachoctaw-culture-history-history
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''a membership of 400+ individuals''. Undated; as_of is access date.'
 - count: 26
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -118,6 +124,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Jena Band of Choctaw Indians
+languages:
+- name: Choctaw (Jena Chahta)
+  language_tag: cho
+  source: jenachoctaw-culture-history-culture
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Culture page lists 'Traditional Jena Chahta Language Classes'.
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office
@@ -125,6 +138,60 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Jena Band of Choctaw Indians
+gaming:
+  compacts:
+  - state: LA
+    status: disapproved
+    approved: '2002-03-07'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2002-03-07'
+    locator: result page 15 (?page=15), row 21
+    note: 'Listed as: "Jena Band of Choctaw Indians Tribal State Gaming Compact" (Disapproved); list''s
+      Tribe column: "Jena Band of Choctaw Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2002.03.07_jena_band_of_choctaw_indians_disapproval_letter.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  ordinances:
+  - approved: '2001-03-13'
+    link: https://www.nigc.gov?wpdmdl=9985&ind=10015
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-03-13'
+    locator: table row 110, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 110 lists the nation
+      as "Jena Band of Choctaw Indians".
+  - approved: '2008-06-25'
+    link: https://www.nigc.gov?wpdmdl=10000&ind=10016
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-06-25'
+    locator: table row 110, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 110 lists the nation
+      as "Jena Band of Choctaw Indians".
+  - approved: '2013-08-22'
+    link: https://www.nigc.gov?wpdmdl=10001&ind=10017
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2013-08-22'
+    locator: table row 110, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 110 lists the nation
+      as "Jena Band of Choctaw Indians".
+  - approved: '2014-01-17'
+    link: https://www.nigc.gov?wpdmdl=10002&ind=10018
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2014-01-17'
+    locator: table row 110, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 110 lists the nation
+      as "Jena Band of Choctaw Indians".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Jena Band of Choctaw Indians".
+      Facilities as machine-extracted from the report text (verify): Miko''s Gaming; Choctaw Pines Casino.
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

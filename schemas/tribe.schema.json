@@ -377,7 +377,7 @@
             "required": ["state", "status"],
             "properties": {
               "state": { "$ref": "common.schema.json#/$defs/stateCode" },
-              "status": { "type": "string", "enum": ["in-effect", "approved", "deemed-approved", "expired", "none"] },
+              "status": { "type": "string", "enum": ["in-effect", "approved", "deemed-approved", "disapproved", "secretarial-procedures", "expired", "none"], "description": "The federal action on the compact. approved and deemed-approved follow 25 U.S.C. § 2710(d)(8); disapproved is a disapproval under § 2710(d)(8)(B); secretarial-procedures are Class III procedures issued by the Secretary of the Interior under § 2710(d)(7)(B)(vii) and 25 C.F.R. part 291 in place of a compact." },
               "approved": { "$ref": "common.schema.json#/$defs/partialDate" },
               "federal_register_citation": { "type": "string" },
               "dispute_resolution_summary": { "type": "string", "description": "One neutral sentence on how the compact resolves disputes between the nation and the state." },

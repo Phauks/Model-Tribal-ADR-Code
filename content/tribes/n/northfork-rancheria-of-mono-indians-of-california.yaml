@@ -122,6 +122,59 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Northfork Rancheria of Mono Indians of California
+gaming:
+  compacts:
+  - state: CA
+    status: secretarial-procedures
+    approved: '2016-07-29'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2016-07-29'
+    locator: result page 8 (?page=8), row 25
+    note: 'Listed as: "Northfork Rancheria of Mono Indians of California Secretarial Procedures" (Secretarial
+      Procedures); list''s Tribe column: "Northfork Rancheria of Mono Indians of California". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202016.07.29%20Northfork%20Rancheria%20of%20Mono%20Indians%20Secretarial%20Procedures.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: CA
+    status: deemed-approved
+    approved: '2013-10-22'
+    federal_register_citation: 78 FR 62649
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2013-10-22'
+    locator: result page 9 (?page=9), row 1
+    note: 'Listed as: "Northfork Rancheria of Mono Indians Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Northfork Rancheria of Mono Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202013.10.22%20Northfork%20Rancheria%20of%20Mono%20Indians%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2013/10/22/2013-24350/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2013-10-22).
+  ordinances:
+  - approved: '2017-01-13'
+    link: https://www.nigc.gov?wpdmdl=10430&ind=10446
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2017-01-13'
+    locator: table row 169, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 169 lists the nation
+      as "North Fork Rancheria of Mono Indians of California". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

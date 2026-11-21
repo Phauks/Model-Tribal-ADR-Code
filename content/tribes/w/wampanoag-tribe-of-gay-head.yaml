@@ -157,6 +157,32 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Wampanoag Tribe of Gay Head (Aquinnah)
+gaming:
+  ordinances:
+  - approved: '2012-02-21'
+    link: https://www.nigc.gov?wpdmdl=11509&ind=11534
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2012-02-21'
+    locator: table row 305, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 305 lists the nation
+      as "Wampanoag Tribe of Gay Head".
+  - approved: '2013-08-29'
+    link: https://www.nigc.gov?wpdmdl=11508&ind=11535
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2013-08-29'
+    locator: table row 305, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 305 lists the nation
+      as "Wampanoag Tribe of Gay Head".
+  - approved: '2018-08-14'
+    link: https://www.nigc.gov?wpdmdl=11512&ind=11536
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2018-08-14'
+    locator: table row 305, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 305 lists the nation
+      as "Wampanoag Tribe of Gay Head".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

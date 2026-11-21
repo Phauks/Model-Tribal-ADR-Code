@@ -114,6 +114,153 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Stockbridge Munsee Community, Wisconsin
+gaming:
+  compacts:
+  - state: NY
+    status: disapproved
+    approved: '2011-02-18'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2011-02-18'
+    locator: result page 26 (?page=26), row 2
+    note: 'Listed as: "Stockbridge-Munsee Band of Mohicans Tribal State Gaming Compact" (Disapproved);
+      list''s Tribe column: "Stockbridge Munsee Community, Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202011.02.18%20Stockbridge%20Munsee%20DISAPPROVED%20Gaming%20Compact.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact. Matched on the Tribe column because the title spelling
+      did not match the roster.'
+  - state: WI
+    status: deemed-approved
+    approved: '2024-10-16'
+    federal_register_citation: 89 FR 83514
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-10-16'
+    locator: result page 47 (?page=47), row 12
+    note: 'Listed as: "Stockbridge Munsee Community Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "Stockbridge Munsee Community, Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.10.16_stockbridge-munsee_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/10/16/2024-23787/indian-gaming-approval-by-operation-of-law-tribal-state-class-iii-gaming-compact-amendment-between.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1992-04-23'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-04-23'
+    locator: result page 47 (?page=47), row 13
+    note: 'Listed as: "Stockbridge-Munsee Community Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Stockbridge Munsee Community, Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%2004.23.1992%20Stockbridge%20Munsee%20Community%20Tribal%20State%20Gaming%20Compact.pdf.'
+  - state: WI
+    status: approved
+    approved: '2009-08-19'
+    federal_register_citation: 74 FR 41930
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2009-08-19'
+    locator: result page 47 (?page=47), row 14
+    note: 'Listed as: "Stockbridge-Munsee Community Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Stockbridge Munsee Community, Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202009.08.19%20Stockbridge%20Munsee%20Community%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2009/08/19/E9-19887/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: deemed-approved
+    approved: '2003-12-09'
+    federal_register_citation: 68 FR 68649
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-12-09'
+    locator: result page 47 (?page=47), row 15
+    note: 'Listed as: "Stockbridge-Munsee Community Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "Stockbridge Munsee Community, Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202003.12.09%20Stockbridge%20Munsee%20Community%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/12/09/03-30504/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1998-10-02'
+    federal_register_citation: 63 FR 53093
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-10-02'
+    locator: result page 47 (?page=47), row 16
+    note: 'Listed as: "Stockbridge-Munsee Community Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Stockbridge Munsee Community, Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.10.02%20Stockbridge%20Munsee%20Community%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/10/02/98-26492/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: deemed-approved
+    dispute_resolution_summary: After written notice the State and Tribe meet within 30 days, and if the
+      dispute is unresolved after 90 days either party may pursue any otherwise available remedy, with
+      mediation or arbitration only by mutual agreement.
+    dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
+    confidence: medium
+    as_of: '1992-08-10'
+    locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
+      compact; later amendments renumbered this section XXIV and revised it for at least some nations
+      (for example the Ho-Chunk Nation fourth amendment), so the current text may differ. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2024-10-16).
+  ordinances:
+  - approved: '1993-10-20'
+    link: https://www.nigc.gov?wpdmdl=11263&ind=11284
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-10-20'
+    locator: table row 276, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 276 lists the nation
+      as "Stockbridge Munsee Community".
+  - approved: '1995-07-14'
+    link: https://www.nigc.gov?wpdmdl=11264&ind=11285
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-07-14'
+    locator: table row 276, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 276 lists the nation
+      as "Stockbridge Munsee Community".
+  - approved: '2003-12-11'
+    link: https://www.nigc.gov?wpdmdl=11267&ind=11286
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-12-11'
+    locator: table row 276, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 276 lists the nation
+      as "Stockbridge Munsee Community".
+  - approved: '2009-06-12'
+    link: https://www.nigc.gov?wpdmdl=11266&ind=11287
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2009-06-12'
+    locator: table row 276, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 276 lists the nation
+      as "Stockbridge Munsee Community".
+  - approved: '2012-03-05'
+    link: https://www.nigc.gov?wpdmdl=11265&ind=11288
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2012-03-05'
+    locator: table row 276, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 276 lists the nation
+      as "Stockbridge Munsee Community".
+  - approved: '2016-05-06'
+    link: https://www.nigc.gov?wpdmdl=11268&ind=11289
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2016-05-06'
+    locator: table row 276, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 276 lists the nation
+      as "Stockbridge Munsee Community".
+  - approved: '2021-06-24'
+    link: https://www.nigc.gov?wpdmdl=11269&ind=11290
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2021-06-24'
+    locator: table row 276, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 276 lists the nation
+      as "Stockbridge Munsee Community".
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

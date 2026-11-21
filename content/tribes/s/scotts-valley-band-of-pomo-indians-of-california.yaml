@@ -81,6 +81,24 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Scotts Valley Band of Pomo Indians of California
+gaming:
+  ordinances:
+  - approved: '1999-02-16'
+    link: https://www.nigc.gov?wpdmdl=11049&ind=11060
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1999-02-16'
+    locator: table row 249, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 249 lists the nation
+      as "Scotts Valley Band of Pomo Indians".
+  - approved: '2025-03-25'
+    link: https://www.nigc.gov?wpdmdl=13532&ind=13533
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2025-03-25'
+    locator: table row 249, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 249 lists the nation
+      as "Scotts Valley Band of Pomo Indians".
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

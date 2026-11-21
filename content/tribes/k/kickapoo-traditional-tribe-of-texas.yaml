@@ -49,6 +49,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1775
   note: Matched by name. Census class code D1.
 population:
+- count: 1148
+  kind: citizens
+  source: kickapootexas-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Homepage: ''a current population of 1148 enrolled members''. Undated; as_of is access date.'
 - count: 377
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -130,6 +136,40 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Kickapoo Traditional Tribe of Texas
+gaming:
+  ordinances:
+  - approved: '1994-04-29'
+    link: https://www.nigc.gov?wpdmdl=10059&ind=10073
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-04-29'
+    locator: table row 119, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 119 lists the nation
+      as "Kickapoo Traditional Tribe of Texas".
+  - approved: '2006-12-18'
+    link: https://www.nigc.gov?wpdmdl=10060&ind=10074
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2006-12-18'
+    locator: table row 119, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 119 lists the nation
+      as "Kickapoo Traditional Tribe of Texas".
+  - approved: '2017-03-17'
+    link: https://www.nigc.gov?wpdmdl=10061&ind=10075
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2017-03-17'
+    locator: table row 119, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 119 lists the nation
+      as "Kickapoo Traditional Tribe of Texas".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Kickapoo Traditional Tribe
+      of Texas". Facilities as machine-extracted from the report text (verify): Kickapoo Lucky Eagle Casino.
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

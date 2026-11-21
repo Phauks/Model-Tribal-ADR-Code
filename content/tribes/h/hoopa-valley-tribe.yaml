@@ -108,6 +108,14 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Hoopa Valley Tribe, California
+languages:
+- name: Hupa
+  language_tag: hup
+  source: hoopa-nsn-babies-learn-hupa-language-through-immer
+  confidence: medium
+  as_of: '2023-03-02'
+  note: 'Article on the nation''s site (reprinted from Two Rivers Tribune, 2023-03-02): ''Babies Learn
+    Hupa Language Through Immersion''.'
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Pacific Regional Office
@@ -115,6 +123,100 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Hoopa Valley Tribe, California
+gaming:
+  compacts:
+  - state: CA
+    status: deemed-approved
+    approved: '2019-12-27'
+    federal_register_citation: 84 FR 71451
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2019-12-27'
+    locator: result page 7 (?page=7), row 15
+    note: 'Listed as: "Hoopa Valley Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
+      column: "Hoopa Valley Tribe, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2019.12.27_hoopa_valley_tribe_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2019/12/27/2019-27994/indian-gaming-tribal-state-class-iii-gaming-compact-taking-effect-in-the-state-of-california.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-16'
+    locator: result page 7 (?page=7), row 16
+    note: 'Listed as: "Hoopa Valley Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Hoopa Valley Tribe, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.05.16_hoopa_valley_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2019-12-27).
+  ordinances:
+  - approved: '1993-11-05'
+    link: https://www.nigc.gov?wpdmdl=9907&ind=9936
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-11-05'
+    locator: table row 99, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 99 lists the nation
+      as "Hoopa Valley Tribe".
+  - approved: '1998-05-29'
+    link: https://www.nigc.gov?wpdmdl=9922&ind=9937
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1998-05-29'
+    locator: table row 99, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 99 lists the nation
+      as "Hoopa Valley Tribe".
+  - approved: '2001-09-07'
+    link: https://www.nigc.gov?wpdmdl=9923&ind=9938
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-09-07'
+    locator: table row 99, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 99 lists the nation
+      as "Hoopa Valley Tribe".
+  - approved: '2002-08-06'
+    link: https://www.nigc.gov?wpdmdl=9924&ind=9939
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-08-06'
+    locator: table row 99, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 99 lists the nation
+      as "Hoopa Valley Tribe".
+  - approved: '2021-10-15'
+    link: https://www.nigc.gov?wpdmdl=9925&ind=9940
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2021-10-15'
+    locator: table row 99, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 99 lists the nation
+      as "Hoopa Valley Tribe".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Hoopa Valley Tribe". Facilities
+      as machine-extracted from the report text (verify): Lucky Bear Casino. Name extracted from the PDF
+      by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

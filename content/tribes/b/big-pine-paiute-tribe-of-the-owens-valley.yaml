@@ -101,6 +101,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Big Pine Paiute Tribe of the Owens Valley
+- kind: email-general
+  value: reception@bigpinepaiute.org
+  label: General office email shown on the nation's website
+  source: bigpinepaiute-contact-us
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency
@@ -108,6 +115,16 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Big Pine Paiute Tribe of the Owens Valley
+gaming:
+  ordinances:
+  - approved: '1996-04-10'
+    link: https://www.nigc.gov?wpdmdl=3391&ind=3393
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1996-04-10'
+    locator: table row 16, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 16 lists the nation
+      as "Big Pine Band of Owens Valley Paiute Shoshone Indians". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

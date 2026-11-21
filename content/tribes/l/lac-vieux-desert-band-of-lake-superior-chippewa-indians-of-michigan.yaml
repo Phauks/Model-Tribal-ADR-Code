@@ -120,6 +120,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Lac Vieux Desert Band of Lake Superior Chippewa Indians of Michigan
+languages:
+- name: Anishinaabe (Ojibwe)
+  language_tag: oj
+  source: lvd-nsn-content-history-cfm
+  confidence: medium
+  as_of: '2026-11-21'
+  note: History page cites a place name 'in the Anishinaabe language'.
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Michigan Agency
@@ -127,6 +134,59 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Lac Vieux Desert Band of Lake Superior Chippewa Indians of Michigan
+gaming:
+  compacts:
+  - state: MI
+    status: approved
+    approved: '1993-11-30'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-11-30'
+    locator: result page 16 (?page=16), row 12
+    note: 'Listed as: "Lac Vieux Desert Band of Lake Superior Chippewa Indians Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Lac Vieux Desert Band of Lake Superior Chippewa Indians of Michigan".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.11.30_lac_vieux_desert_band_tribal_state_gaming_compact.pdf.'
+  - state: MI
+    status: approved
+    dispute_resolution_summary: After written notice the parties meet within 30 days; if a State allegation
+      is unresolved after 90 days the State may serve a notice to cease the disputed games and the tribe
+      may either stop them or invoke arbitration under American Arbitration Association commercial rules
+      before three attorney arbitrators while play continues, and a tribe may likewise invoke arbitration
+      on its own unresolved allegations.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-mi-bay-mills-indian-community-1993
+    confidence: medium
+    as_of: '1993-11-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The same Section 7 text appears in the
+      1993 Bay Mills Indian Community compact and the 1999 Little River Band compact (both read); other
+      Michigan nations signed the 1993 or 1998 forms, and later amendments were not checked. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (1993-11-30).
+  ordinances:
+  - approved: '1994-04-15'
+    link: https://www.nigc.gov?wpdmdl=10130&ind=10160
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-04-15'
+    locator: table row 131, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 131 lists the nation
+      as "Lac Vieux Desert Band of Lake Superior Chippewa Indians".
+  - approved: '2003-08-05'
+    link: https://www.nigc.gov?wpdmdl=10122&ind=10161
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-08-05'
+    locator: table row 131, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 131 lists the nation
+      as "Lac Vieux Desert Band of Lake Superior Chippewa Indians".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Lac Vieux Desert Tribe". Name extracted
+      from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

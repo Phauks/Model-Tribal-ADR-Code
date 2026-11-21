@@ -126,6 +126,136 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Middletown Rancheria of Pomo Indians of California
+gaming:
+  compacts:
+  - state: CA
+    status: disapproved
+    approved: '2021-11-23'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-11-23'
+    locator: result page 8 (?page=8), row 15
+    note: 'Listed as: "Middletown Rancheria of Pomo Indians Tribal State Gaming Compact" (Disapproved);
+      list''s Tribe column: "Middletown Rancheria of Pomo Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202021.10.14%20Middleton%20Rancheria%20Tribal%20State%20Gaming%20Compact.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: CA
+    status: disapproved
+    approved: '2022-07-22'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-07-22'
+    locator: result page 8 (?page=8), row 16
+    note: 'Listed as: "Middletown Rancheria of Pomo Indians Tribal State Gaming Compact" (Disapproved);
+      list''s Tribe column: "Middletown Rancheria of Pomo Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.07.22_middletown_rancheria_disapproval_letter_tribe.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: CA
+    status: approved
+    approved: '2022-06-30'
+    federal_register_citation: 88 FR 42386
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-06-30'
+    locator: result page 8 (?page=8), row 17
+    note: 'Listed as: "Middletown Rancheria of Pomo Indians Tribal State Gaming Compact" (Extensions);
+      list''s Tribe column: "Middletown Rancheria of Pomo Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.30_middletown_rancheria_of_pomo_indians_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2023/06/30/2023-14084/indian-gaming-extension-of-tribal-state-class-iii-gaming-compact-middletown-rancheria-of-pomo.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2023-06-30'
+    federal_register_citation: 88 FR 42386
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2023-06-30'
+    locator: result page 8 (?page=8), row 18
+    note: 'Listed as: "Middletown Rancheria of Pomo Indians Tribal State Gaming Compact" (Extensions);
+      list''s Tribe column: "Middletown Rancheria of Pomo Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2023.06.30_middletown_rancheria_of_pomo_indians_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2023/06/30/2023-14084/indian-gaming-extension-of-tribal-state-class-iii-gaming-compact-middletown-rancheria-of-pomo.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2000-05-16'
+    locator: result page 8 (?page=8), row 19
+    note: 'Listed as: "Middletown Rancheria of Pomo lndians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Middletown Rancheria of Pomo Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.05.16%20Middletown%20Rancheria%20of%20Pomo%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2023-06-30).
+  ordinances:
+  - approved: '1995-05-15'
+    link: https://www.nigc.gov?wpdmdl=10291&ind=10306
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-05-15'
+    locator: table row 153, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 153 lists the nation
+      as "Middletown Rancheria of Pomo Indians of California".
+  - approved: '1997-07-23'
+    link: https://www.nigc.gov?wpdmdl=10292&ind=10307
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-07-23'
+    locator: table row 153, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 153 lists the nation
+      as "Middletown Rancheria of Pomo Indians of California".
+  - approved: '1998-12-07'
+    link: https://www.nigc.gov?wpdmdl=10293&ind=10308
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1998-12-07'
+    locator: table row 153, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 153 lists the nation
+      as "Middletown Rancheria of Pomo Indians of California".
+  - approved: '2000-05-12'
+    link: https://www.nigc.gov?wpdmdl=10294&ind=10309
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-05-12'
+    locator: table row 153, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 153 lists the nation
+      as "Middletown Rancheria of Pomo Indians of California".
+  - approved: '2001-02-05'
+    link: https://www.nigc.gov?wpdmdl=10295&ind=10310
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-02-05'
+    locator: table row 153, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 153 lists the nation
+      as "Middletown Rancheria of Pomo Indians of California".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Middletown Rancheria of Pomo Indians
+      of California". Name extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

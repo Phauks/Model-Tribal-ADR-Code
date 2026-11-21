@@ -141,6 +141,16 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Organized Village of Kake
+gaming:
+  ordinances:
+  - approved: '2000-04-18'
+    link: https://www.nigc.gov?wpdmdl=10520&ind=10538
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-04-18'
+    locator: table row 178, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 178 lists the nation
+      as "Organized Village of Kake".
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

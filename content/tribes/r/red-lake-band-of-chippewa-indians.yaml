@@ -114,6 +114,87 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Red Lake Band of Chippewa Indians, Minnesota
+gaming:
+  compacts:
+  - state: MN
+    status: approved
+    approved: '2009-04-22'
+    federal_register_citation: 74 FR 18397
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2009-04-22'
+    locator: result page 18 (?page=18), row 7
+    note: 'Listed as: "Red Lake Band of Chippewa Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Red Lake Band of Chippewa Indians, Minnesota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2009.04.22_red_lake_band_of_chippewa_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2009/04/22/E9-9263/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MN
+    status: approved
+    approved: '1991-10-03'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1991-10-03'
+    locator: result page 18 (?page=18), row 8
+    note: 'Listed as: "Red Lake Band of Chippewa Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Red Lake Band of Chippewa Indians, Minnesota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1991.10.03_red_lake_band_of_chippewa_indians_tribal_state_gaming_compact.pdf.'
+  - state: MN
+    status: approved
+    approved: '1992-09-16'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-09-16'
+    locator: result page 18 (?page=18), row 9
+    note: 'Listed as: "Red Lake Band of Chippewa Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Red Lake Band of Chippewa Indians, Minnesota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1992.09.16_red_lake_tribal_state_gaming_compact.pdf.'
+  - state: MN
+    status: approved
+    dispute_resolution_summary: The video games of chance compact has no general arbitration or mediation
+      clause; when the State designates a machine as non-compliant, the nation may accept the finding,
+      submit the device to an independent gaming test laboratory, or contest the finding in federal district
+      court (or before the National Indian Gaming Commission or another court if jurisdiction is declined).
+    dispute_resolution_locator: Section 4.6 (Demand for Remedies for Non-Complying Video Games of Chance)
+    source: compact-mn-prairie-island-indian-community-in-the-s-1990
+    confidence: medium
+    as_of: '1990-04-02'
+    locator: Section 4.6 (Demand for Remedies for Non-Complying Video Games of Chance)
+    note: state model compact; nation-specific text not checked. Read from the 1990 Prairie Island Indian
+      Community video games of chance compact; Minnesota nations also hold separate blackjack compacts,
+      which were not summarized. Status copied from this nation's most recent approved or deemed-approved
+      entry for this state in the Office of Indian Gaming list (2009-04-22).
+  ordinances:
+  - approved: '1994-01-25'
+    link: https://www.nigc.gov?wpdmdl=10884&ind=10899
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-01-25'
+    locator: table row 225, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 225 lists the nation
+      as "Red Lake Band of Chippewa Indians".
+  - approved: '1999-09-16'
+    link: https://www.nigc.gov?wpdmdl=10885&ind=10900
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1999-09-16'
+    locator: table row 225, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 225 lists the nation
+      as "Red Lake Band of Chippewa Indians".
+  - approved: '2000-10-23'
+    link: https://www.nigc.gov?wpdmdl=10886&ind=10901
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-10-23'
+    locator: table row 225, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 225 lists the nation
+      as "Red Lake Band of Chippewa Indians".
+  - approved: '2001-12-20'
+    link: https://www.nigc.gov?wpdmdl=10887&ind=10902
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-12-20'
+    locator: table row 225, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 225 lists the nation
+      as "Red Lake Band of Chippewa Indians".
 jurisdiction:
 - topic: public-law-280
   value: excepted

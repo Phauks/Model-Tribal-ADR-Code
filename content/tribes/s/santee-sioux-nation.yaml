@@ -114,6 +114,16 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Santee Sioux Nation, Nebraska
+gaming:
+  ordinances:
+  - approved: '1996-02-22'
+    link: https://www.nigc.gov?wpdmdl=11016&ind=11038
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-02-22'
+    locator: table row 246, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 246 lists the nation
+      as "Santee Sioux Nation".
 jurisdiction:
 - topic: public-law-280
   value: retroceded

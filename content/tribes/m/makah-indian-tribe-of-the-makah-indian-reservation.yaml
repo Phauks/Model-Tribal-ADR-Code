@@ -120,6 +120,73 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Makah Indian Tribe of the Makah Indian Reservation
+gaming:
+  compacts:
+  - state: WA
+    status: approved
+    approved: '2015-06-04'
+    federal_register_citation: 80 FR 31918
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-04'
+    locator: result page 39 (?page=39), row 21
+    note: 'Listed as: "Makah Indian Tribe of the Makah Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Makah Indian Tribe of the Makah Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202015.06.04%20Makah%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/04/2015-13712/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2007-05-31'
+    federal_register_citation: 72 FR 30392
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2007-05-31'
+    locator: result page 39 (?page=39), row 22
+    note: 'Listed as: "Makah lndian Tribe of the Makah Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Makah Indian Tribe of the Makah Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.05.31_makah_indian_tribe_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/05/31/E7-10397/indian-gaming.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2000-07-28'
+    federal_register_citation: 65 FR 46492
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2000-07-28'
+    locator: result page 39 (?page=39), row 23
+    note: 'Listed as: "Makah lndian Tribe of the Makah Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Makah Indian Tribe of the Makah Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.07.28_makah_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/07/28/00-19061/indian-gaming.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2015-06-04).
+  ordinances:
+  - approved: '1996-12-03'
+    link: https://www.nigc.gov?wpdmdl=10214&ind=10228
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-12-03'
+    locator: table row 141, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 141 lists the nation
+      as "Makah Indian Tribe of the Makah Indian Reservation".
 jurisdiction:
 - topic: public-law-280
   value: optional-state

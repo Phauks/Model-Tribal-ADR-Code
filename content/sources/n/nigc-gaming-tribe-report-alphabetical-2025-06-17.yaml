@@ -1,0 +1,34 @@
+key: nigc-gaming-tribe-report-alphabetical-2025-06-17
+kind: report
+citation:
+  type: report
+  title: Gaming Tribe Report (Sorted Alphabetically), updated 6/17/2025
+  author:
+  - literal: National Indian Gaming Commission
+  URL: https://www.nigc.gov/images/uploads/06172025TribesByABCList.pdf
+  issued:
+    date-parts:
+    - - 2025
+      - 6
+      - 17
+  accessed:
+    date-parts:
+    - - 2026
+      - 11
+      - 21
+original_link: https://www.nigc.gov/images/uploads/06172025TribesByABCList.pdf
+retrieved: '2026-11-21'
+archives: []
+history:
+  status: live
+  last_checked: '2026-11-21'
+rights:
+  status: no-permission-needed
+  basis: fact-only
+  basis_note: Only facts are recorded from this source; it is cited and linked, not quoted or reproduced.
+  redistribution: false
+found_in:
+- 2026-11-21-gaming
+notes: The URL returns a 404 page to curl on 2026-11-21, but the page-fetch tool returned the PDF text
+  (probably a cached copy). Only the first part of the text (tribes A through Leech Lake) was returned;
+  tribe and facility names were machine-extracted by the fetch tool, so facility groupings should be verified.

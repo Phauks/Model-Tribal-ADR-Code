@@ -120,6 +120,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Little River Band of Ottawa Indians, Michigan
+languages:
+- name: Anishinaabemowin
+  language_tag: oj
+  source: lrboi-nsn-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Homepage menu lists an Anishinaabemowin program.
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Michigan Agency
@@ -127,6 +134,155 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Little River Band of Ottawa Indians, Michigan
+gaming:
+  compacts:
+  - state: MI
+    status: deemed-approved
+    approved: '2008-04-21'
+    federal_register_citation: 73 FR 21361
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2008-04-21'
+    locator: result page 16 (?page=16), row 13
+    note: 'Listed as: "Little River Band of Ottawa Indians Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Little River Band of Ottawa Indians, Michigan". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2008.04.21_little_river_band_of_ottawa_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/04/21/E8-8494/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MI
+    status: approved
+    approved: '1999-02-18'
+    federal_register_citation: 64 FR 8111
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-02-18'
+    locator: result page 16 (?page=16), row 14
+    note: 'Listed as: "Little River Band of Ottawa Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Little River Band of Ottawa Indians, Michigan". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1999.02.18_little_river_band_of_ottawa_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/02/18/99-4005/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MI
+    status: approved
+    approved: '1999-02-18'
+    dispute_resolution_summary: After written notice the parties meet within 30 days; if a State allegation
+      is unresolved after 90 days the State may serve a notice to cease the disputed games and the tribe
+      may either stop them or invoke arbitration under American Arbitration Association commercial rules
+      before three attorney arbitrators while play continues, and a tribe may likewise invoke arbitration
+      on its own unresolved allegations.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-mi-little-river-band-of-ottawa-indians-1999
+    confidence: medium
+    as_of: '1999-02-18'
+    locator: Section 7 (Dispute Resolution)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. The same Section 7 text appears in the
+      1993 Bay Mills Indian Community compact and the 1999 Little River Band compact (both read); other
+      Michigan nations signed the 1993 or 1998 forms, and later amendments were not checked.
+  ordinances:
+  - approved: '1997-01-28'
+    link: https://www.nigc.gov?wpdmdl=10146&ind=10166
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-01-28'
+    locator: table row 134, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 134 lists the nation
+      as "Little River Band of Ottawa Indians".
+  - approved: '1999-06-22'
+    link: https://www.nigc.gov?wpdmdl=10147&ind=10167
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1999-06-22'
+    locator: table row 134, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
+      as "Little River Band of Ottawa Indians".
+  - approved: '1999-08-12'
+    link: https://www.nigc.gov?wpdmdl=10148&ind=10169
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1999-08-12'
+    locator: table row 134, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
+      as "Little River Band of Ottawa Indians".
+  - approved: '2001-03-15'
+    link: https://www.nigc.gov?wpdmdl=10149&ind=10170
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-03-15'
+    locator: table row 134, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
+      as "Little River Band of Ottawa Indians".
+  - approved: '2002-01-15'
+    link: https://www.nigc.gov?wpdmdl=10150&ind=10171
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-01-15'
+    locator: table row 134, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
+      as "Little River Band of Ottawa Indians".
+  - approved: '2002-08-12'
+    link: https://www.nigc.gov?wpdmdl=10151&ind=10172
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-08-12'
+    locator: table row 134, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
+      as "Little River Band of Ottawa Indians".
+  - approved: '2005-07-05'
+    link: https://www.nigc.gov?wpdmdl=10152&ind=10173
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2005-07-05'
+    locator: table row 134, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
+      as "Little River Band of Ottawa Indians".
+  - approved: '2011-01-05'
+    link: https://www.nigc.gov?wpdmdl=10153&ind=10174
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2011-01-05'
+    locator: table row 134, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
+      as "Little River Band of Ottawa Indians".
+  - approved: '2012-11-20'
+    link: https://www.nigc.gov?wpdmdl=10154&ind=10175
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2012-11-20'
+    locator: table row 134, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
+      as "Little River Band of Ottawa Indians".
+  - approved: '2014-12-05'
+    link: https://www.nigc.gov?wpdmdl=10155&ind=10176
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2014-12-05'
+    locator: table row 134, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
+      as "Little River Band of Ottawa Indians".
+  - approved: '2018-04-03'
+    link: https://www.nigc.gov?wpdmdl=10156&ind=10177
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2018-04-03'
+    locator: table row 134, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
+      as "Little River Band of Ottawa Indians".
+  - approved: '2024-05-29'
+    link: https://www.nigc.gov?wpdmdl=10157&ind=10178
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2024-05-29'
+    locator: table row 134, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 134 lists the nation
+      as "Little River Band of Ottawa Indians".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Little River Band of Ottawa Indians".
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

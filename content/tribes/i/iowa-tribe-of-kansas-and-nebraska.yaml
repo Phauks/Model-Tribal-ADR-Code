@@ -2,6 +2,12 @@ id: iowa-tribe-of-kansas-and-nebraska
 entity_type: native-nation
 names:
   official: Iowa Tribe of Kansas and Nebraska
+  alternate:
+  - name: Ioway
+    source: iowatribeofkansasandnebraska-about-us
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Page: ''Tribal members use both Iowa and Ioway, although the legal name used today is “Iowa.”'''
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -116,6 +122,104 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Iowa Tribe of Kansas and Nebraska
+gaming:
+  compacts:
+  - state: KS
+    status: deemed-approved
+    approved: '2026-02-06'
+    federal_register_citation: 91 FR 5509
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2026-02-06'
+    locator: result page 14 (?page=14), row 24
+    note: 'Listed as: "Iowa Tribe of Kansas and Nebraska - Kansas Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "Iowa Tribe of Kansas and Nebraska". Document: https://www.bia.gov/sites/default/files/media_document/iowa_tribe_of_kansas_and_nebraska-kansas_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2026/02/06/2026-02379/indian-gaming-approval-by-operation-of-law-of-the-amendment-to-the-iowa-tribe-of-kansas-and.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: KS
+    status: approved
+    approved: '1995-07-06'
+    federal_register_citation: 60 FR 35320
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-07-06'
+    locator: result page 14 (?page=14), row 25
+    note: 'Listed as: "Iowa Tribe of Kansas and Nebraska Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Iowa Tribe of Kansas and Nebraska". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1995.07.06_iowa_tribe_of_kansas_nebraska_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/07/06/95-16599/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: KS
+    status: deemed-approved
+    dispute_resolution_summary: The parties must use best efforts to negotiate for at least 14 days, after
+      which either party may refer the dispute to binding arbitration before a sole agreed arbitrator
+      or a three-member panel, with judicial enforcement in the United States District Court for Kansas.
+    dispute_resolution_locator: Section 29 (Dispute Resolution)
+    source: compact-ks-wyandotte-nation-2026
+    confidence: medium
+    as_of: '2026-07-14'
+    locator: Section 29 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2026 Wyandotte Nation compact;
+      other Kansas compacts were not checked. Status copied from this nation's most recent approved or
+      deemed-approved entry for this state in the Office of Indian Gaming list (2026-02-06).
+  ordinances:
+  - approved: '1994-06-21'
+    link: https://www.nigc.gov?wpdmdl=9935&ind=9962
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-06-21'
+    locator: table row 105, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 105 lists the nation
+      as "Iowa Tribe of Kansas and Nebraska".
+  - approved: '1996-12-24'
+    link: https://www.nigc.gov?wpdmdl=9951&ind=9963
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-12-24'
+    locator: table row 105, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 105 lists the nation
+      as "Iowa Tribe of Kansas and Nebraska".
+  - approved: '1997-08-20'
+    link: https://www.nigc.gov?wpdmdl=9952&ind=9964
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-08-20'
+    locator: table row 105, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 105 lists the nation
+      as "Iowa Tribe of Kansas and Nebraska".
+  - approved: '1999-08-18'
+    link: https://www.nigc.gov?wpdmdl=9953&ind=9965
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1999-08-18'
+    locator: table row 105, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 105 lists the nation
+      as "Iowa Tribe of Kansas and Nebraska".
+  - approved: '2000-04-25'
+    link: https://www.nigc.gov?wpdmdl=9954&ind=9966
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-04-25'
+    locator: table row 105, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 105 lists the nation
+      as "Iowa Tribe of Kansas and Nebraska".
+  - approved: '2014-11-26'
+    link: https://www.nigc.gov?wpdmdl=9955&ind=9967
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2014-11-26'
+    locator: table row 105, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 105 lists the nation
+      as "Iowa Tribe of Kansas and Nebraska".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Iowa Tribe of Kansas and Nebraska".
+      Facilities as machine-extracted from the report text (verify): Casino White Cloud. Name extracted
+      from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

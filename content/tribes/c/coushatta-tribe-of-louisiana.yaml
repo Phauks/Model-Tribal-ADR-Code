@@ -37,6 +37,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0795
   note: Matched by name. Census class code D1.
 population:
+- count: 960
+  kind: citizens
+  source: coushatta-our-story
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''approximately 960 members''. Undated; as_of is access date.'
 - count: 94
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -109,6 +115,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Coushatta Tribe of Louisiana
+languages:
+- name: Koasati
+  language_tag: cku
+  source: coushatta-our-language
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Page: ''Koasati is a living language spoken by members of the Coushatta Tribe''.'
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office
@@ -116,6 +129,158 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Coushatta Tribe of Louisiana
+gaming:
+  compacts:
+  - state: LA
+    status: approved
+    approved: '1992-11-04'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-11-04'
+    locator: result page 15 (?page=15), row 13
+    note: 'Listed as: "Coushatta Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Coushatta
+      Tribe of Louisiana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1992.11.04_coushatta_tribe_tribal_state_gaming_compact.pdf.'
+  - state: LA
+    status: approved
+    approved: '1999-11-26'
+    federal_register_citation: 64 FR 66488
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-11-26'
+    locator: result page 15 (?page=15), row 14
+    note: 'Listed as: "Coushatta Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Coushatta
+      Tribe of Louisiana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1999.11.26_coushatta_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/11/26/99-30726/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: LA
+    status: approved
+    approved: '2000-12-08'
+    federal_register_citation: 65 FR 77038
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-12-08'
+    locator: result page 15 (?page=15), row 15
+    note: 'Listed as: "Coushatta Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
+      "Coushatta Tribe of Louisiana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.12.08_coushatta_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/12/08/00-31305/indian-gaming.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: LA
+    status: approved
+    approved: '2001-02-12'
+    federal_register_citation: 66 FR 9878
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-02-12'
+    locator: result page 15 (?page=15), row 16
+    note: 'Listed as: "Coushatta Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Coushatta
+      Tribe of Louisiana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2001.02.12_coushatta_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/02/12/01-3611/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: LA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-16'
+    locator: result page 15 (?page=15), row 17
+    note: 'Listed as: "Coushatta Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
+      "Coushatta Tribe of Louisiana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.05.16_coushatta_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12321/indian-gaming.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: LA
+    status: approved
+    approved: '2001-09-25'
+    federal_register_citation: 66 FR 49039
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-09-25'
+    locator: result page 15 (?page=15), row 18
+    note: 'Listed as: "Coushatta Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Coushatta
+      Tribe of Louisiana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2001.09.25_coushatta_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/09/25/01-23969/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: LA
+    status: approved
+    approved: '2021-07-28'
+    federal_register_citation: 86 FR 40617
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-07-28'
+    locator: result page 15 (?page=15), row 19
+    note: 'Listed as: "Coushatta Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Coushatta
+      Tribe of Louisiana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2021.07.28_coushatta_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/07/28/2021-16042/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-louisiana.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: LA
+    status: approved
+    approved: '2024-01-29'
+    federal_register_citation: 89 FR 5572
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-01-29'
+    locator: result page 15 (?page=15), row 20
+    note: 'Listed as: "Coushatta Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Coushatta
+      Tribe of Louisiana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.01_coushatta_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/01/29/2024-01701/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-in-the-state-of-louisiana.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: LA
+    status: approved
+    dispute_resolution_summary: Disputes not resolved informally go through written notice and a negotiation
+      period with a meeting within 10 days (45 days in all unless extended), then mandatory mediation
+      under American Arbitration Association commercial mediation rules, and then binding arbitration
+      under American Arbitration Association rules limited to the issues in the mediator's summary report.
+    dispute_resolution_locator: Section 14(D) (Dispute Resolution)
+    source: compact-la-tunica-biloxi-indian-tribe-2019
+    confidence: medium
+    as_of: '2019-12-27'
+    locator: Section 14(D) (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2019 Tunica-Biloxi Indian
+      Tribe compact; the Coushatta, Chitimacha and Jena Band compacts were not checked. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2024-01-29).
+  ordinances:
+  - approved: '1994-11-08'
+    link: https://www.nigc.gov?wpdmdl=9671&ind=9683
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-11-08'
+    locator: table row 62, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 62 lists the nation
+      as "Coushatta Tribe of Louisiana".
+  - approved: '2012-07-03'
+    link: https://www.nigc.gov?wpdmdl=9672&ind=9684
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2012-07-03'
+    locator: table row 62, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 62 lists the nation
+      as "Coushatta Tribe of Louisiana".
+  - approved: '2024-10-24'
+    link: https://www.nigc.gov?wpdmdl=13557&ind=13558
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2024-10-24'
+    locator: table row 62, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 62 lists the nation
+      as "Coushatta Tribe of Louisiana".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Coushatta Tribe of Louisiana".
+      Facilities as machine-extracted from the report text (verify): Coushatta Casino Resort. Name extracted
+      from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

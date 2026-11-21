@@ -2,6 +2,20 @@ id: cheyenne-and-arapaho-tribes
 entity_type: native-nation
 names:
   official: Cheyenne and Arapaho Tribes, Oklahoma
+  self_designation:
+  - name: Tsistsistas
+    language_tag: chy
+    source: cheyenneandarapaho-nsn-language-culture
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Page: ''Tsistsistas, is the Cheyenne word meaning “Human Beings” or “The People.”'' Refers
+      to the Cheyenne people of the nation.'
+  - name: Hinono’ei
+    language_tag: arp
+    source: cheyenneandarapaho-nsn-language-culture
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Page: ''being Tsistsistas and Hinono’ei''. Refers to the Arapaho people of the nation.'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -37,6 +51,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5560
   note: Matched by name. Census class code D6.
 population:
+- count: 12000
+  kind: citizens
+  source: oklahoma-education-tribal-guide-cheyenne-and-arapaho
+  confidence: low
+  as_of: '2026-11-21'
+  note: 'State education guide: ''Total tribal enrollment – 12, 000 approximate enrolled members''. Content
+    appears older (it cites the former c-a-tribes.org enrollment URL); undated.'
 - count: 186628
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -109,6 +130,26 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Cheyenne and Arapaho Tribes, Oklahoma
+- kind: email-general
+  value: info@cheyenneandarapaho-nsn.gov
+  label: General office email shown on the nation's website
+  source: cheyenneandarapaho-nsn-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
+languages:
+- name: Cheyenne
+  language_tag: chy
+  source: cheyenneandarapaho-nsn-language-culture
+  confidence: high
+  as_of: '2026-11-21'
+  note: Language Program teaches Cheyenne and Arapaho.
+- name: Arapaho
+  language_tag: arp
+  source: cheyenneandarapaho-nsn-language-culture
+  confidence: high
+  as_of: '2026-11-21'
+  note: Language Program teaches Cheyenne and Arapaho.
 federal_administration:
   bureau_of_indian_affairs_region: Southern Plains
   bureau_of_indian_affairs_agency: Concho Agency
@@ -116,6 +157,99 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Cheyenne and Arapaho Tribes, Oklahoma
+gaming:
+  compacts:
+  - state: OK
+    status: disapproved
+    approved: '2013-08-01'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2013-08-01'
+    locator: result page 26 (?page=26), row 11
+    note: 'Listed as: "Cheyenne and Arapaho Tribes Tribal State Gaming Compact" (Disapproved); list''s
+      Tribe column: "Cheyenne and Arapaho Tribes, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202013.08.01.Cheyenne%20and%20Arapaho%20Tribes%20Disapproval%20Letter.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: OK
+    status: disapproved
+    approved: '2013-11-06'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2013-11-06'
+    locator: result page 26 (?page=26), row 12
+    note: 'Listed as: "Cheyenne and Arapaho Tribes Tribal State Gaming Compact" (Disapproved); list''s
+      Tribe column: "Cheyenne and Arapaho Tribes, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202013.11.06%20Cheyenne%20and%20Arapaho%20Tribes%20Arapaho%20Disapproval%20letter.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: OK
+    status: approved
+    approved: '2018-11-02'
+    federal_register_citation: 83 FR 55199
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-11-02'
+    locator: result page 26 (?page=26), row 13
+    note: 'Listed as: "Cheyenne and Arapaho Tribes Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Cheyenne and Arapaho Tribes, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.11.02%20Cheyenne%20and%20Arapaho%202018%20compact%20amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/11/02/2018-23920/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-in-the-state-of-oklahoma.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2005-04-08'
+    federal_register_citation: 70 FR 18041
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-04-08'
+    locator: result page 26 (?page=26), row 14
+    note: 'Listed as: "Cheyenne and Arapaho Tribes Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Cheyenne and Arapaho Tribes, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.04.08%20Cheyenne%20and%20Arapaho%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/04/08/05-6986/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-11-02).
+  ordinances:
+  - approved: '1994-02-22'
+    link: https://www.nigc.gov?wpdmdl=9476&ind=9487
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-02-22'
+    locator: table row 39, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 39 lists the nation
+      as "Cheyenne and Arapaho Tribes of Oklahoma".
+  - approved: '2008-02-28'
+    link: https://www.nigc.gov?wpdmdl=9477&ind=9488
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-02-28'
+    locator: table row 39, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 39 lists the nation
+      as "Cheyenne and Arapaho Tribes of Oklahoma".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Cheyenne and Arapaho Tribes,
+      Oklahoma". Facilities as machine-extracted from the report text (verify): Lucky Star Casino #108;
+      Lucky Star Travel Center Casino - Hammon; Lucky Star Travel Center Casino - Concho; Lucky Star Casino
+      - Concho; Lucky Star Casino - Canton; Lucky Star Casino Clinton; Lucky Star Casino - Watonga. Name
+      extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

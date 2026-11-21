@@ -109,6 +109,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Lytton Rancheria of California
+- kind: email-general
+  value: info@lyttonrancheria.com
+  label: General office email shown on the nation's website
+  source: lyttonrancheria-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency
@@ -116,6 +123,39 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Lytton Rancheria of California
+gaming:
+  ordinances:
+  - approved: '1999-07-13'
+    link: https://www.nigc.gov?wpdmdl=10211&ind=10225
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1999-07-13'
+    locator: table row 140, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 140 lists the nation
+      as "Lytton Rancheria".
+  - approved: '2003-12-19'
+    link: https://www.nigc.gov?wpdmdl=10212&ind=10226
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-12-19'
+    locator: table row 140, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 140 lists the nation
+      as "Lytton Rancheria".
+  - approved: '2008-05-22'
+    link: https://www.nigc.gov?wpdmdl=10213&ind=10227
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-05-22'
+    locator: table row 140, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 140 lists the nation
+      as "Lytton Rancheria".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Lytton Rancheria of California".
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

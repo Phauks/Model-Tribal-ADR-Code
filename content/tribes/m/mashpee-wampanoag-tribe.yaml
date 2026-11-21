@@ -156,6 +156,58 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Mashpee Wampanoag Tribe
+gaming:
+  compacts:
+  - state: MA
+    status: deemed-approved
+    approved: '2014-02-03'
+    federal_register_citation: 79 FR 6213
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2014-02-03'
+    locator: result page 16 (?page=16), row 6
+    note: 'Listed as: "Mashpee Wampanoag Tribe Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "Mashantucket Pequot Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2014.02.03_mashpee_wampanoag_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2014/02/03/2014-02183/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: MA
+    status: disapproved
+    approved: '2012-10-12'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2012-10-12'
+    locator: result page 16 (?page=16), row 7
+    note: 'Listed as: "Mashpee Wampanoag Tribe Tribal State Gaming Compact" (Disapproved); list''s Tribe
+      column: "Mashantucket Pequot Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2012.10.12_mashpee_wampanoag_tribe_disapproval_letter.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact. The Tribe column and the compact title disagree; the
+      nation named in the title was used.'
+  - state: MA
+    status: deemed-approved
+    approved: '2014-02-03'
+    dispute_resolution_summary: After written notice, representatives meet within 30 days, and if the
+      dispute is unresolved 30 days after that meeting either party may require arbitration under American
+      Arbitration Association rules before three arbitrators experienced in Indian law, with court action
+      available to compel arbitration.
+    dispute_resolution_locator: Part 21 (Dispute Resolution)
+    source: compact-ma-mashpee-wampanoag-tribe-2014
+    confidence: medium
+    as_of: '2014-02-03'
+    locator: Part 21 (Dispute Resolution)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the Mashpee Wampanoag Tribe
+      compact, the only Massachusetts compact in the list.
+  ordinances:
+  - approved: '2012-06-05'
+    link: https://www.nigc.gov?wpdmdl=10220&ind=10234
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2012-06-05'
+    locator: table row 145, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 145 lists the nation
+      as "Mashpee Wampanoag Tribe".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

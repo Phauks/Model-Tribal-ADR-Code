@@ -50,6 +50,13 @@ census_areas:
     Springs--Apache Tribe; Caddo Nation of Oklahoma; Wichita and Affiliated Tribes , Oklahoma; Delaware
     Nation, Oklahoma. Census class code D0.'
 population:
+- count: 1700
+  kind: other
+  source: oklahoma-education-tribal-guide-apache
+  confidence: low
+  as_of: '2026-11-21'
+  note: 'State education guide: ''Total tribal enrollment: N/A''; ''Tribal enrollment in Oklahoma: 1,700''.
+    Count covers Oklahoma residents only. Undated content.'
 - count: 187646
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -134,6 +141,70 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Apache Tribe of Oklahoma
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '2005-06-23'
+    federal_register_citation: 70 FR 36407
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-06-23'
+    locator: result page 26 (?page=26), row 6
+    note: 'Listed as: "Apache Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Apache
+      Tribe of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.06.23%20Apache%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/06/23/05-12395/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2005-06-23).
+  ordinances:
+  - approved: '1993-11-04'
+    link: https://www.nigc.gov?wpdmdl=3294&ind=3295
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-11-04'
+    locator: table row 7, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 7 lists the nation
+      as "Apache Tribe of Oklahoma".
+  - approved: '2006-03-08'
+    link: https://www.nigc.gov?wpdmdl=3296&ind=3298
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2006-03-08'
+    locator: table row 7, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 7 lists the nation
+      as "Apache Tribe of Oklahoma".
+  - approved: '2016-12-01'
+    link: https://www.nigc.gov?wpdmdl=3297&ind=3299
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2016-12-01'
+    locator: table row 7, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 7 lists the nation
+      as "Apache Tribe of Oklahoma".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Apache Tribe of Oklahoma".
+      Facilities as machine-extracted from the report text (verify): Golden Eagle Casino; Apache Lonestar
+      Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

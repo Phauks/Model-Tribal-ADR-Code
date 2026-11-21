@@ -2,6 +2,14 @@ id: crow-tribe-of-montana
 entity_type: native-nation
 names:
   official: Crow Tribe of Montana
+  self_designation:
+  - name: Apsaalooke
+    language_tag: cro
+    source: mt-tribal-nations-crow
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'State page: ''This tribe was called "Apsaalooke," which means "children of the large-beaked
+      bird."'' Secondary (state) source.'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -37,6 +45,14 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0845
   note: Matched by name. Census class code D1.
 population:
+- count: 11000
+  kind: citizens
+  source: mt-tribal-nations-crow
+  confidence: low
+  as_of: '2026-11-21'
+  note: 'State page Fast Facts: ''The Crow Tribe has a membership of 11,000, of whom 7,900 reside on the
+    Crow Indian Reservation.'' The same page elsewhere says ''approximately 10,000 or more enrolled members''.
+    Undated.'
 - count: 6974
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -109,6 +125,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Crow Tribe of Montana
+languages:
+- name: Crow
+  language_tag: cro
+  source: mt-tribal-nations-crow
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'State page: ''Eighty-five percent speak Crow as their first language.'''
 federal_administration:
   bureau_of_indian_affairs_region: Rocky Mountain
   bureau_of_indian_affairs_agency: Crow Agency
@@ -116,6 +139,142 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Crow Tribe of Montana
+gaming:
+  compacts:
+  - state: MT
+    status: approved
+    approved: '2009-04-22'
+    federal_register_citation: 74 FR 18398
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2009-04-22'
+    locator: result page 19 (?page=19), row 21
+    note: 'Listed as: "Crow Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Crow
+      Tribe of Montana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2009.04.22_crow_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2009/04/22/E9-9258/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: approved
+    approved: '2004-04-30'
+    federal_register_citation: 69 FR 23809
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2004-04-30'
+    locator: result page 19 (?page=19), row 22
+    note: 'Listed as: "Crow Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column: "Crow
+      Tribe of Montana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2004.04.30_crow_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2004/04/30/04-9886/indian-gaming.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: MT
+    status: approved
+    approved: '2003-02-27'
+    federal_register_citation: 68 FR 9095
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-02-27'
+    locator: result page 19 (?page=19), row 23
+    note: 'Listed as: "Crow Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Crow
+      Tribe of Montana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2003.02.27_crow_tribetribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/02/27/03-4657/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: approved
+    approved: '2014-02-07'
+    federal_register_citation: 79 FR 7474
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2014-02-07'
+    locator: result page 19 (?page=19), row 24
+    note: 'Listed as: "Crow Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Crow
+      Tribe of Montana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2014.02.07_crow_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2014/02/07/2014-02594/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: approved
+    approved: '1998-06-12'
+    federal_register_citation: 63 FR 32240
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-06-12'
+    locator: result page 19 (?page=19), row 25
+    note: 'Listed as: "Crow Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Crow
+      Tribe of Montana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1998.06.12_crow_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/06/12/98-15717/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: approved
+    approved: '2008-09-09'
+    federal_register_citation: 73 FR 52409
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2008-09-09'
+    locator: result page 20 (?page=20), row 1
+    note: 'Listed as: "Crow Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Crow
+      Tribe of Montana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2008.09.09_crow_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/09/09/E8-20923/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: approved
+    dispute_resolution_summary: The compact has no arbitration or mediation clause; disputes over the
+      scope of jurisdiction may be resolved by mutual consent, and for substantial and continuing default
+      either party may terminate after giving 90 days' written notice and an opportunity to cure.
+    dispute_resolution_locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
+    source: compact-mt-confederated-salish-and-kootenai-tribes-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
+    note: state model compact; nation-specific text not checked. Read from the 2026 Confederated Salish
+      and Kootenai Tribes compact; other Montana compacts were not checked. Status copied from this nation's
+      most recent approved or deemed-approved entry for this state in the Office of Indian Gaming list
+      (2014-02-07).
+  ordinances:
+  - approved: '1994-02-08'
+    link: https://www.nigc.gov?wpdmdl=9699&ind=9717
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-02-08'
+    locator: table row 67, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 67 lists the nation
+      as "Crow Tribe of Montana".
+  - approved: '2009-11-18'
+    link: https://www.nigc.gov?wpdmdl=9700&ind=9718
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2009-11-18'
+    locator: table row 67, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 67 lists the nation
+      as "Crow Tribe of Montana".
+  - approved: '2013-12-18'
+    link: https://www.nigc.gov?wpdmdl=9701&ind=9719
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2013-12-18'
+    locator: table row 67, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 67 lists the nation
+      as "Crow Tribe of Montana".
+  - approved: '2015-11-10'
+    link: https://www.nigc.gov?wpdmdl=9702&ind=9720
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2015-11-10'
+    locator: table row 67, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 67 lists the nation
+      as "Crow Tribe of Montana".
+  - approved: '2015-06-09'
+    link: https://www.nigc.gov?wpdmdl=9703&ind=9721
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2015-06-09'
+    locator: table row 67, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 67 lists the nation
+      as "Crow Tribe of Montana".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

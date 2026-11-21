@@ -101,6 +101,28 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Chehalis Reservation
+- kind: email-general
+  value: info@chehalistribe.org
+  label: General office email shown on the nation's website
+  source: chehalistribe-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
+languages:
+- name: Upper Chehalis
+  language_tag: cjh
+  source: chehalistribe-about
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'About page: ''Upper Chehalis and Lower Chehalis were the predominant languages of the region
+    pre-contact.'''
+- name: Lower Chehalis
+  language_tag: cea
+  source: chehalistribe-about
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'About page: ''Upper Chehalis and Lower Chehalis were the predominant languages of the region
+    pre-contact.'''
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Olympic Peninsula Agency
@@ -108,6 +130,134 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Chehalis Reservation
+gaming:
+  compacts:
+  - state: WA
+    status: approved
+    approved: '1999-01-28'
+    federal_register_citation: 64 FR 4458
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-01-28'
+    locator: result page 37 (?page=37), row 23
+    note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Chehalis Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1999.01.28_confederated_tribes_of_the_chehalis_reservation_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/01/28/99-1926/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1995-04-20'
+    federal_register_citation: 60 FR 19822
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-04-20'
+    locator: result page 37 (?page=37), row 24
+    note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Chehalis Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201995.04.20%20Confederated%20Tribes%20of%20the%20Chehalis%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/04/20/95-9818/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2015-06-04'
+    federal_register_citation: 80 FR 37293
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-04'
+    locator: result page 37 (?page=37), row 25
+    note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Chehalis Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202015.06.04%20Confederated%20Tribes%20of%20the%20Chehalis%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/30/2015-16035/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1993-03-04'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-03-04'
+    locator: result page 38 (?page=38), row 1
+    note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Chehalis Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201993.03.04%20Confederated%20Tribes%20of%20the%20Chehalis%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.'
+  - state: WA
+    status: approved
+    approved: '2007-05-31'
+    federal_register_citation: 72 FR 30392
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-05-31'
+    locator: result page 38 (?page=38), row 2
+    note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Chehalis Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202007.05.31%20Confederated%20Tribes%20of%20the%20Chehalis%20Reservation%20Tribal%20State%20Gaming%20Compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/05/31/E7-10397/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2022-08-09'
+    federal_register_citation: 87 FR 48494
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-08-09'
+    locator: result page 38 (?page=38), row 3
+    note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Chehalis Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.08.09_confederated_tribes_of_chehalis_reservation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/08/09/2022-17028/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-between-the-confederated.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2024-02-14'
+    federal_register_citation: 89 FR 11312
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-02-14'
+    locator: result page 38 (?page=38), row 4
+    note: 'Listed as: "Confederated Tribes of the Chehalis Reservation Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Chehalis Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.02.14_confederated_tribes_of_the_chehalis_reservation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/02/14/2024-03014/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-between-the-confederated.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2024-02-14).
+  ordinances:
+  - approved: '1993-12-21'
+    link: https://www.nigc.gov?wpdmdl=9607&ind=9631
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-12-21'
+    locator: table row 55, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 55 lists the nation
+      as "Confederated Tribes of the Chehalis Reservation".
+  - approved: '2017-12-01'
+    link: https://www.nigc.gov?wpdmdl=9620&ind=9632
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2017-12-01'
+    locator: table row 55, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 55 lists the nation
+      as "Confederated Tribes of the Chehalis Reservation".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Confederated Tribes of Chehalis
+      Reservation, Washington". Facilities as machine-extracted from the report text (verify): Lucky Eagle
+      Casino and Hotel. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: optional-state

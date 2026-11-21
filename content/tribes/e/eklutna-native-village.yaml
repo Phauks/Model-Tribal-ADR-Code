@@ -157,6 +157,24 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Eklutna Native Village
+gaming:
+  ordinances:
+  - approved: '2024-07-18'
+    link: https://www.nigc.gov?wpdmdl=10398&ind=10413
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2024-07-18'
+    locator: table row 164, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 164 lists the nation
+      as "Native Village of Eklutna". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Eklutna Native Village". Facilities
+      as machine-extracted from the report text (verify): Chin''an Gaming Hall. Name extracted from the
+      PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

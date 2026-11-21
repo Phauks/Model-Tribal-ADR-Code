@@ -107,6 +107,13 @@ contacts:
   as_of: '2026-11-20'
   locator: Fort Independence Indian Community of Paiute Indians of the Fort Independence Reservation,
     California
+- kind: email-general
+  value: info@fortindependence.com
+  label: General office email shown on the nation's website
+  source: fortindependence-contact
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency
@@ -115,6 +122,65 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Fort Independence Indian Community of Paiute Indians of the Fort Independence Reservation,
     California
+gaming:
+  compacts:
+  - state: CA
+    status: deemed-approved
+    approved: '2014-01-17'
+    federal_register_citation: 79 FR 3241
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2014-01-17'
+    locator: result page 7 (?page=7), row 10
+    note: 'Listed as: "Fort Independence Indian Community of Paiute Indians of the Fort Independence Reservation
+      Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column: "Fort Independence Indian
+      Community of Paiute Indians of the Fort Independence Reservation, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2014.01.17_fort_independence_indian_community_of_the_paiute_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2014/01/17/2014-00898/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2014-01-17).
+  ordinances:
+  - approved: '2008-01-11'
+    link: https://www.nigc.gov?wpdmdl=9824&ind=9837
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2008-01-11'
+    locator: table row 85, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 85 lists the nation
+      as "Fort Independence Indian Reservation". Name matched to roster by spelling variant.
+  - approved: '2016-11-22'
+    link: https://www.nigc.gov?wpdmdl=9825&ind=9838
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2016-11-22'
+    locator: table row 85, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 85 lists the nation
+      as "Fort Independence Indian Reservation". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Fort Independence Indian Community
+      of Paiute Indians of Fort Independence Reservation". Facilities as machine-extracted from the report
+      text (verify): Oak Creek Casino. Name extracted from the PDF by the page-fetch tool and matched
+      to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

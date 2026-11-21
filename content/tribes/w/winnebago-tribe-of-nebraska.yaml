@@ -139,6 +139,93 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Winnebago Tribe of Nebraska
+gaming:
+  compacts:
+  - state: IA
+    status: approved
+    approved: '2005-02-22'
+    federal_register_citation: 70 FR 8608
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-02-22'
+    locator: result page 14 (?page=14), row 12
+    note: 'Listed as: "Winnebago Tribe of Nebraska Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Winnebago Tribe of Nebraska". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2005.02.22_winnebago_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/02/22/05-3227/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: IA
+    status: approved
+    approved: '1995-12-18'
+    federal_register_citation: 60 FR 65064
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-12-18'
+    locator: result page 14 (?page=14), row 13
+    note: 'Listed as: "Winnebago Tribe of Nebraska Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Winnebago Tribe of Nebraska". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1995.12.18_winnebago_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/12/18/95-30655/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: IA
+    status: approved
+    approved: '1998-10-19'
+    federal_register_citation: 63 FR 55888
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-10-19'
+    locator: result page 14 (?page=14), row 14
+    note: 'Listed as: "Winnebago Tribe of Nebraska Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Winnebago Tribe of Nebraska". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1998.10.19_winnebago_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/10/19/98-27935/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: IA
+    status: approved
+    dispute_resolution_summary: For a non-material breach the parties meet and confer within 15 days of
+      written notice, the complaining party may then make a written demand, a refused demand goes to mediation
+      under American Arbitration Association commercial mediation rules, and issues left in the mediator's
+      summary report go to binding arbitration under American Arbitration Association rules.
+    dispute_resolution_locator: Section 20 (Binding Dispute Resolution for Non-Material Breach)
+    source: compact-ia-ponca-tribe-of-nebraska-2021
+    confidence: medium
+    as_of: '2021-03-05'
+    locator: Section 20 (Binding Dispute Resolution for Non-Material Breach)
+    note: state model compact; nation-specific text not checked. Read from the 2021 Ponca Tribe of Nebraska
+      compact with Iowa; other Iowa compacts were not checked. Status copied from this nation's most recent
+      approved or deemed-approved entry for this state in the Office of Indian Gaming list (2005-02-22).
+  ordinances:
+  - approved: '1994-03-23'
+    link: https://www.nigc.gov?wpdmdl=11526&ind=11571
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-03-23'
+    locator: table row 311, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 311 lists the nation
+      as "Winnebago Tribe of Nebraska".
+  - approved: '1997-01-13'
+    link: https://www.nigc.gov?wpdmdl=11551&ind=11572
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-01-13'
+    locator: table row 311, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 311 lists the nation
+      as "Winnebago Tribe of Nebraska".
+  - approved: '2009-01-27'
+    link: https://www.nigc.gov?wpdmdl=11554&ind=11573
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2009-01-27'
+    locator: table row 311, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 311 lists the nation
+      as "Winnebago Tribe of Nebraska".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Winnebago Tribe of Nebraska". Name
+      extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

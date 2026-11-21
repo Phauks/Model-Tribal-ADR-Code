@@ -137,6 +137,99 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Sac & Fox Nation, Oklahoma
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '2018-08-27'
+    federal_register_citation: 83 FR 43703
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-08-27'
+    locator: result page 29 (?page=29), row 3
+    note: 'Listed as: "Sac and Fox Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Sac & Fox Nation, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.27%20Sac%20and%20Fox%20Nation%202018%20Compact%20Amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/08/27/2018-18425/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of-oklahoma.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    approved: '2005-06-01'
+    federal_register_citation: 70 FR 31499
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-06-01'
+    locator: result page 29 (?page=29), row 4
+    note: 'Listed as: "Sac and Fox Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
+      column: "Sac & Fox Nation, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.06.01%20Sac%20and%20Fox%20Nation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/06/01/05-10877/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-08-27).
+  ordinances:
+  - approved: '1994-04-01'
+    link: https://www.nigc.gov?wpdmdl=10944&ind=10963
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-04-01'
+    locator: table row 234, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 234 lists the nation
+      as "Sac & Fox Nation of Oklahoma".
+  - approved: '2004-08-31'
+    link: https://www.nigc.gov?wpdmdl=10943&ind=10964
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-08-31'
+    locator: table row 234, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 234 lists the nation
+      as "Sac & Fox Nation of Oklahoma".
+  - approved: '2008-11-20'
+    link: https://www.nigc.gov?wpdmdl=10942&ind=10965
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-11-20'
+    locator: table row 234, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 234 lists the nation
+      as "Sac & Fox Nation of Oklahoma".
+  - approved: '2010-12-14'
+    link: https://www.nigc.gov?wpdmdl=10945&ind=10966
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2010-12-14'
+    locator: table row 234, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 234 lists the nation
+      as "Sac & Fox Nation of Oklahoma".
+  - approved: '2012-02-27'
+    link: https://www.nigc.gov?wpdmdl=10946&ind=10967
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2012-02-27'
+    locator: table row 234, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 234 lists the nation
+      as "Sac & Fox Nation of Oklahoma".
+  - approved: '2018-09-26'
+    link: https://www.nigc.gov?wpdmdl=10947&ind=10968
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2018-09-26'
+    locator: table row 234, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 234 lists the nation
+      as "Sac & Fox Nation of Oklahoma".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

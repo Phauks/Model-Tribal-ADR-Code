@@ -2,6 +2,12 @@ id: kalispel-indian-community-of-the-kalispel-reservation
 entity_type: native-nation
 names:
   official: Kalispel Indian Community of the Kalispel Reservation
+  alternate:
+  - name: The People of the Oreille
+    source: kalispeltribe-home
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'Homepage: ''Even today we are known as “The People of the Oreille,”''.'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -37,6 +43,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1735
   note: Matched by name. Census class code D1.
 population:
+- count: 470
+  kind: citizens
+  source: kalispeltribe-our-story
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page, ''Current Demographics'': ''470 Kalispel Tribal Members. 34 percent of current Tribal membership
+    is under age 18''. Undated; as_of is access date.'
 - count: 753
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -100,6 +113,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Kalispel Indian Community of the Kalispel Reservation
+languages:
+- name: Salish (Kalispel)
+  language_tag: fla
+  source: kalispeltribe-our-language
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Page: Kalispel Language Program to ''reclaim and preserve our Salish Language''.'
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Spokane Agency
@@ -107,6 +127,186 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Kalispel Indian Community of the Kalispel Reservation
+gaming:
+  compacts:
+  - state: WA
+    status: approved
+    approved: '2021-09-15'
+    federal_register_citation: 86 FR 51374
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-09-15'
+    locator: result page 39 (?page=39), row 1
+    note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Kalispel Indian Community of the Kalispel Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2021.09.15_kalispel_indian_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/09/15/2021-19843/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-washington.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2023-06-14'
+    federal_register_citation: 88 FR 38889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2023-06-14'
+    locator: result page 39 (?page=39), row 2
+    note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Kalispel Indian Community of the Kalispel Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2023.06.14_kalispel_indian_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2023/06/14/2023-12681/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-washington.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2024-02-14'
+    federal_register_citation: 89 FR 11311
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-02-14'
+    locator: result page 39 (?page=39), row 3
+    note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Kalispel Indian Community of the Kalispel Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.02.14_kalispel_indian_coimmunity_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/02/14/2024-03012/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-between-the-kalispel.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1999-06-03'
+    federal_register_citation: 64 FR 29874
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-06-03'
+    locator: result page 39 (?page=39), row 4
+    note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Kalispel Indian Community of the Kalispel Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.06.03%20Kalispel%20Indian%20Community%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/06/03/99-13999/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2007-05-31'
+    federal_register_citation: 72 FR 30392
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-05-31'
+    locator: result page 39 (?page=39), row 5
+    note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Kalispel Indian Community of the Kalispel Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.05.31_kalispel_indian_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/05/31/E7-10397/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '1998-12-14'
+    federal_register_citation: 63 FR 68787
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-12-14'
+    locator: result page 39 (?page=39), row 6
+    note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Kalispel Indian Community of the Kalispel Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1998.12.14_kalispel_indian_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/12/14/98-33045/bureau-of-indian-affairs-indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2015-06-04'
+    federal_register_citation: 80 FR 31918
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-04'
+    locator: result page 39 (?page=39), row 7
+    note: 'Listed as: "Kalispel Indian Community of the Kalispel Reservation Tribal-State Gaming Compact"
+      (Approve); list''s Tribe column: "Kalispel Indian Community of the Kalispel Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202015.06.04%20Kalispel%20Indian%20Community%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/04/2015-13712/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2024-02-14).
+  ordinances:
+  - approved: '1997-09-26'
+    link: https://www.nigc.gov?wpdmdl=10008&ind=10024
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1997-09-26'
+    locator: table row 113, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 113 lists the nation
+      as "Kalispel Tribe of Indians". Name matched to roster by spelling variant.
+  - approved: '2001-02-13'
+    link: https://www.nigc.gov?wpdmdl=10009&ind=10025
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2001-02-13'
+    locator: table row 113, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 113 lists the nation
+      as "Kalispel Tribe of Indians". Name matched to roster by spelling variant.
+  - approved: '2002-11-04'
+    link: https://www.nigc.gov?wpdmdl=10010&ind=10026
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2002-11-04'
+    locator: table row 113, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 113 lists the nation
+      as "Kalispel Tribe of Indians". Name matched to roster by spelling variant.
+  - approved: '2008-08-15'
+    link: https://www.nigc.gov?wpdmdl=10011&ind=10027
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2008-08-15'
+    locator: table row 113, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 113 lists the nation
+      as "Kalispel Tribe of Indians". Name matched to roster by spelling variant.
+  - approved: '2019-05-08'
+    link: https://www.nigc.gov?wpdmdl=10012&ind=10028
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2019-05-08'
+    locator: table row 113, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 113 lists the nation
+      as "Kalispel Tribe of Indians". Name matched to roster by spelling variant.
+  - approved: '2022-06-02'
+    link: https://www.nigc.gov?wpdmdl=10013&ind=10029
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2022-06-02'
+    locator: table row 113, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 113 lists the nation
+      as "Kalispel Tribe of Indians". Name matched to roster by spelling variant.
+  - approved: '2026-09-17'
+    link: https://www.nigc.gov?wpdmdl=14550&ind=14551
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2026-09-17'
+    locator: table row 113, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 113 lists the nation
+      as "Kalispel Tribe of Indians". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Kalispel Indian Community
+      of the Kalispel Reservation". Facilities as machine-extracted from the report text (verify): Kalispel
+      Casino; Northern Quest Resort & Casino. Name extracted from the PDF by the page-fetch tool and matched
+      to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: optional-state

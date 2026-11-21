@@ -108,6 +108,21 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Chitimacha Tribe of Louisiana
+- kind: email-general
+  value: info@chitimacha.gov
+  label: General office email shown on the nation's website
+  source: chitimacha-about-us-contact-us
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
+languages:
+- name: Chitimacha
+  language_tag: ctm
+  source: chitimacha-about-us-faq
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'FAQ: ''the Chitimacha people have their own unique language, which is an isolate, unrelated to
+    any other language.'''
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office
@@ -115,6 +130,121 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Chitimacha Tribe of Louisiana
+gaming:
+  compacts:
+  - state: LA
+    status: deemed-approved
+    approved: '2025-03-20'
+    federal_register_citation: 90 FR 13192
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2025-03-20'
+    locator: result page 15 (?page=15), row 8
+    note: 'Listed as: "Chitimacha Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
+      column: "Chitimacha Tribe of Louisiana". Document: https://www.bia.gov/sites/default/files/media_document/508_compliant_2025.03.13_signed_approval_by_operation_of_law_to_chitimacha_chairman_melissa_darden.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2025/03/20/2025-04735/indian-gaming-approval-by-operation-of-law-tribal-state-class-iii-gaming-compact-amendment-between.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: LA
+    status: approved
+    approved: '2008-04-18'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2008-04-18'
+    locator: result page 15 (?page=15), row 9
+    note: 'Listed as: "Chitimacha Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
+      "Chitimacha Tribe of Louisiana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2008.04.18_chitimacha_tribe_tribal_state_gaming_compact_2.pdf.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term).'
+  - state: LA
+    status: approved
+    approved: '2001-04-20'
+    federal_register_citation: 66 FR 20324
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-04-20'
+    locator: result page 15 (?page=15), row 10
+    note: 'Listed as: "Chitimacha Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Chitimacha Tribe of Louisiana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2001.04.20_chitimacha_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/04/20/01-9801/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: LA
+    status: approved
+    approved: '1993-07-06'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-07-06'
+    locator: result page 15 (?page=15), row 11
+    note: 'Listed as: "Chitimacha Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Chitimacha Tribe of Louisiana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.07.06_chitimacha_tribe_tribal_state_gaming_compact.pdf.'
+  - state: LA
+    status: approved
+    approved: '2000-09-11'
+    federal_register_citation: 65 FR 54859
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-09-11'
+    locator: result page 15 (?page=15), row 12
+    note: 'Listed as: "Chitimacha Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Chitimacha Tribe of Louisiana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.09.11_chitimacha_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/09/11/00-23229/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: LA
+    status: deemed-approved
+    dispute_resolution_summary: Disputes not resolved informally go through written notice and a negotiation
+      period with a meeting within 10 days (45 days in all unless extended), then mandatory mediation
+      under American Arbitration Association commercial mediation rules, and then binding arbitration
+      under American Arbitration Association rules limited to the issues in the mediator's summary report.
+    dispute_resolution_locator: Section 14(D) (Dispute Resolution)
+    source: compact-la-tunica-biloxi-indian-tribe-2019
+    confidence: medium
+    as_of: '2019-12-27'
+    locator: Section 14(D) (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2019 Tunica-Biloxi Indian
+      Tribe compact; the Coushatta, Chitimacha and Jena Band compacts were not checked. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2025-03-20).
+  ordinances:
+  - approved: '1993-09-24'
+    link: https://www.nigc.gov?wpdmdl=9496&ind=9508
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-09-24'
+    locator: table row 44, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 44 lists the nation
+      as "Chitimacha Tribe of Louisiana".
+  - approved: '1996-06-21'
+    link: https://www.nigc.gov?wpdmdl=9497&ind=9509
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-06-21'
+    locator: table row 44, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 44 lists the nation
+      as "Chitimacha Tribe of Louisiana".
+  - approved: '2000-07-13'
+    link: https://www.nigc.gov?wpdmdl=9498&ind=9510
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-07-13'
+    locator: table row 44, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 44 lists the nation
+      as "Chitimacha Tribe of Louisiana".
+  - approved: '2002-05-24'
+    link: https://www.nigc.gov?wpdmdl=9499&ind=9511
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-05-24'
+    locator: table row 44, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 44 lists the nation
+      as "Chitimacha Tribe of Louisiana".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Chitimacha Tribe of Louisiana".
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

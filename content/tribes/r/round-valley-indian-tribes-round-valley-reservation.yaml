@@ -107,6 +107,48 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Round Valley Indian Tribes, Round Valley Reservation, California
+gaming:
+  ordinances:
+  - approved: '1996-07-25'
+    link: https://www.nigc.gov?wpdmdl=10920&ind=10959
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1996-07-25'
+    locator: table row 233, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 233 lists the nation
+      as "Round Valley Indian Tribes". Name matched to roster by spelling variant.
+  - approved: '2006-08-01'
+    link: https://www.nigc.gov?wpdmdl=10939&ind=10960
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2006-08-01'
+    locator: table row 233, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 233 lists the nation
+      as "Round Valley Indian Tribes". Name matched to roster by spelling variant.
+  - approved: '2009-04-13'
+    link: https://www.nigc.gov?wpdmdl=10940&ind=10961
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2009-04-13'
+    locator: table row 233, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 233 lists the nation
+      as "Round Valley Indian Tribes". Name matched to roster by spelling variant.
+  - approved: '2012-02-08'
+    link: https://www.nigc.gov?wpdmdl=10941&ind=10962
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2012-02-08'
+    locator: table row 233, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 233 lists the nation
+      as "Round Valley Indian Tribes". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Round Valley Indian Tribes, Round
+      Valley Reservation, California". Name extracted from the PDF by the page-fetch tool and matched
+      to the roster.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

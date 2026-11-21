@@ -37,6 +37,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1815
   note: Matched by name. Census class code D1.
 population:
+- count: 7275
+  kind: citizens
+  source: wisconsin-dpi-tribal-nations-lac-courte-oreilles
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'State page, Tribal Statistics: ''There are currently 7,275 Lac Courte Oreilles(LCO) tribal members.''
+    Undated; as_of is access date.'
 - count: 2968
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -108,6 +115,116 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Lac Courte Oreilles Band of Lake Superior Chippewa Indians of Wisconsin
+gaming:
+  compacts:
+  - state: WI
+    status: deemed-approved
+    approved: '1992-04-20'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-04-20'
+    locator: result page 45 (?page=45), row 22
+    note: 'Listed as: "Lac Courte Oreilles Band of Lake Superior Chippewa Indians Tribal State Gaming
+      Compact" (Deemed Approved); list''s Tribe column: "Lac Courte Oreilles Band of Lake Superior Chippewa
+      Indians of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201992.04.20%20Lac%20Courte%20Oreilles%20Gaming%20Compact.pdf.'
+  - state: WI
+    status: approved
+    approved: '2003-04-08'
+    federal_register_citation: 68 FR 17072
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-04-08'
+    locator: result page 45 (?page=45), row 23
+    note: 'Listed as: "Lac Courte Oreilles Band of Lake Superior Chippewa Indians Tribal State Gaming
+      Compact" (Approve); list''s Tribe column: "Lac Courte Oreilles Band of Lake Superior Chippewa Indians
+      of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202003.04.08%20Lac%20Courte%20Oreilles%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/04/08/03-8561/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1998-04-20'
+    federal_register_citation: 63 FR 19508
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-04-20'
+    locator: result page 45 (?page=45), row 24
+    note: 'Listed as: "Lac Courte Oreilles Band of Lake Superior Chippewa Indians Tribal State Gaming
+      Compact" (Approve); list''s Tribe column: "Lac Courte Oreilles Band of Lake Superior Chippewa Indians
+      of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1998.04.20_lac_courte_oreilles_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/04/20/98-10261/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '2022-09-20'
+    federal_register_citation: 87 FR 57507
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-09-20'
+    locator: result page 45 (?page=45), row 25
+    note: 'Listed as: "Lac Courte Oreilles Band of Lake Superior Chippewa Indians Tribal State Gaming
+      Compact" (Approve); list''s Tribe column: "Lac Courte Oreilles Band of Lake Superior Chippewa Indians
+      of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_comp_liant_2022.09.20_lac_courte_oreilles_band_fo_lake_superior_chippewa_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/09/20/2022-20319/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-wisconsin.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: deemed-approved
+    approved: '2003-07-22'
+    federal_register_citation: 68 FR 43366
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-07-22'
+    locator: result page 46 (?page=46), row 1
+    note: 'Listed as: "Lac Courte Oreilles Band of Lake Superior Chippewa Indians Tribal State Gaming
+      Compact" (Deemed Approved); list''s Tribe column: "Lac Courte Oreilles Band of Lake Superior Chippewa
+      Indians of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2003.07.22_lac_courte_oreilles_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/07/22/03-18631/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    dispute_resolution_summary: After written notice the State and Tribe meet within 30 days, and if the
+      dispute is unresolved after 90 days either party may pursue any otherwise available remedy, with
+      mediation or arbitration only by mutual agreement.
+    dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
+    confidence: medium
+    as_of: '1992-08-10'
+    locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
+      compact; later amendments renumbered this section XXIV and revised it for at least some nations
+      (for example the Ho-Chunk Nation fourth amendment), so the current text may differ. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2022-09-20).
+  ordinances:
+  - approved: '1995-09-19'
+    link: https://www.nigc.gov?wpdmdl=10123&ind=10135
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-09-19'
+    locator: table row 129, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 129 lists the nation
+      as "Lac Courte Oreilles Band of Lake Superior Chippewas". Name matched to roster by spelling variant.
+  - approved: '2011-08-22'
+    link: https://www.nigc.gov?wpdmdl=10124&ind=10136
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2011-08-22'
+    locator: table row 129, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 129 lists the nation
+      as "Lac Courte Oreilles Band of Lake Superior Chippewas". Name matched to roster by spelling variant.
+  - approved: '2001-02-05'
+    link: https://www.nigc.gov?wpdmdl=10883&ind=10898
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2001-02-05'
+    locator: table row 224, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 224 lists the nation
+      as "Red Cliff, Sokogon, Chippewa Lac Court Orielles Band Tribe". Name matched to roster by spelling
+      variant. This row names three nations jointly (Red Cliff, Sokaogon and Lac Courte Oreilles); the
+      fact is repeated for each.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

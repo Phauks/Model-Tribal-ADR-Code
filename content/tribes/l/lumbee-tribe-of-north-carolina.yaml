@@ -67,6 +67,14 @@ census_areas:
   note: Matched by name. Lumbee State Designated Tribal Statistical Area, defined for the state-recognized
     Lumbee before federal recognition; it is a statistical area, not land. Census class code D9.
 population:
+- count: 55000
+  kind: citizens
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'State page: ''The more than 55,000 members of the Lumbee Tribe reside primarily in Robeson, Hoke,
+    Cumberland and Scotland counties.'' Undated (mentions the 2025 Lumbee Fairness Act); as_of is access
+    date.'
 - count: 510711
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file

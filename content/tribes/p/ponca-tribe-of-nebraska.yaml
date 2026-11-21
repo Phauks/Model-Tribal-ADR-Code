@@ -136,6 +136,77 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Ponca Tribe of Nebraska
+gaming:
+  compacts:
+  - state: IA
+    status: deemed-approved
+    approved: '2021-03-05'
+    federal_register_citation: 86 FR 12965
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-03-05'
+    locator: result page 14 (?page=14), row 8
+    note: 'Listed as: "Ponca Tribe of Nebraska Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "Ponca Tribe of Nebraska". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202021.03.05%20Ponca%20Tribe%20Tribal%20State%20Gaming%20Compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/03/05/2021-04499/indian-gaming-tribal-state-class-iii-gaming-compact-taking-effect-in-the-state-of-iowa.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: IA
+    status: deemed-approved
+    approved: '2021-03-05'
+    dispute_resolution_summary: For a non-material breach the parties meet and confer within 15 days of
+      written notice, the complaining party may then make a written demand, a refused demand goes to mediation
+      under American Arbitration Association commercial mediation rules, and issues left in the mediator's
+      summary report go to binding arbitration under American Arbitration Association rules.
+    dispute_resolution_locator: Section 20 (Binding Dispute Resolution for Non-Material Breach)
+    source: compact-ia-ponca-tribe-of-nebraska-2021
+    confidence: medium
+    as_of: '2021-03-05'
+    locator: Section 20 (Binding Dispute Resolution for Non-Material Breach)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the 2021 Ponca Tribe of Nebraska
+      compact with Iowa; other Iowa compacts were not checked.
+  ordinances:
+  - approved: '1994-08-10'
+    link: https://www.nigc.gov?wpdmdl=10663&ind=10680
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-08-10'
+    locator: table row 197, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 197 lists the nation
+      as "Ponca Tribe of Nebraska".
+  - approved: '2002-09-03'
+    link: https://www.nigc.gov?wpdmdl=10664&ind=10681
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-09-03'
+    locator: table row 197, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 197 lists the nation
+      as "Ponca Tribe of Nebraska".
+  - approved: '2004-03-10'
+    link: https://www.nigc.gov?wpdmdl=10665&ind=10682
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-03-10'
+    locator: table row 197, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 197 lists the nation
+      as "Ponca Tribe of Nebraska".
+  - approved: '2007-07-23'
+    link: https://www.nigc.gov?wpdmdl=10666&ind=10683
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2007-07-23'
+    locator: table row 197, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 197 lists the nation
+      as "Ponca Tribe of Nebraska".
+  - approved: '2018-11-16'
+    link: https://www.nigc.gov?wpdmdl=10667&ind=10684
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2018-11-16'
+    locator: table row 197, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 197 lists the nation
+      as "Ponca Tribe of Nebraska".
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

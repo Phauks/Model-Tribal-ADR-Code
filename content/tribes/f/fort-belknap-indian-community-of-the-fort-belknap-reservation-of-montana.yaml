@@ -2,6 +2,20 @@ id: fort-belknap-indian-community-of-the-fort-belknap-reservation-of-montana
 entity_type: native-nation
 names:
   official: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana
+  self_designation:
+  - name: Aaniiih
+    language_tag: ats
+    source: ftbelknap-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Homepage: ''Home of the Nakoda and Aaniiih Nations''; ''Gros Ventre (Aaniiih)''. History page
+      spells it ''AH-AH-NE-NIN'', meaning the White Clay People.'
+  - name: Nakoda
+    language_tag: asb
+    source: ftbelknap-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Homepage: ''Assiniboine (Nakoda)''. History page: Nakoda means ''the generous ones''.'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -37,6 +51,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1150
   note: Matched by name. Census class code D1.
 population:
+- count: 7000
+  kind: citizens
+  source: ftbelknap-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Homepage: ''a tribal membership of 7,000 enrolled members''. Undated; as_of is access date.'
 - count: 3382
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -107,6 +127,70 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Fort Belknap Indian Community of the Fort Belknap Reservation of Montana
+gaming:
+  compacts:
+  - state: MT
+    status: deemed-approved
+    approved: '2007-12-10'
+    federal_register_citation: 72 FR 69706
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-12-10'
+    locator: result page 20 (?page=20), row 2
+    note: 'Listed as: "Fort Belknap Indian Community of the Fort Belknap Reservation Tribal State Gaming
+      Compact" (Deemed Approved); list''s Tribe column: "Fort Belknap Indian Community of the Fort Belknap
+      Reservation of Montana". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.12.10_fort_belknap_indian_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/12/10/E7-23885/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: deemed-approved
+    dispute_resolution_summary: The compact has no arbitration or mediation clause; disputes over the
+      scope of jurisdiction may be resolved by mutual consent, and for substantial and continuing default
+      either party may terminate after giving 90 days' written notice and an opportunity to cure.
+    dispute_resolution_locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
+    source: compact-mt-confederated-salish-and-kootenai-tribes-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
+    note: state model compact; nation-specific text not checked. Read from the 2026 Confederated Salish
+      and Kootenai Tribes compact; other Montana compacts were not checked. Status copied from this nation's
+      most recent approved or deemed-approved entry for this state in the Office of Indian Gaming list
+      (2007-12-10).
+  ordinances:
+  - approved: '2002-09-05'
+    link: https://www.nigc.gov?wpdmdl=9822&ind=9835
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2002-09-05'
+    locator: table row 84, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 84 lists the nation
+      as "Fort Belknap Indian Community". Name matched to roster by spelling variant.
+  - approved: '2009-12-01'
+    link: https://www.nigc.gov?wpdmdl=9823&ind=9836
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2009-12-01'
+    locator: table row 84, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 84 lists the nation
+      as "Fort Belknap Indian Community". Name matched to roster by spelling variant.
+  - approved: '2026-08-17'
+    link: https://www.nigc.gov?wpdmdl=14513&ind=14514
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2026-08-17'
+    locator: table row 84, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 84 lists the nation
+      as "Fort Belknap Indian Community". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Fort Belknap Indian Community
+      of the Fort Belknap Reservation, Montana". Facilities as machine-extracted from the report text
+      (verify): Fort Belknap Casino. Name extracted from the PDF by the page-fetch tool and matched to
+      the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

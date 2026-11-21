@@ -153,6 +153,23 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Metlakatla Indian Community, Annette Island Reserve
+gaming:
+  ordinances:
+  - approved: '1997-06-27'
+    link: https://www.nigc.gov?wpdmdl=10269&ind=10285
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1997-06-27'
+    locator: table row 150, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 150 lists the nation
+      as "Metlakatla Indian Community". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Metlakatla Indian Community, Annette
+      Island Reservation". Name extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: public-law-280
   value: excepted

@@ -134,6 +134,16 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Passamaquoddy Tribe
+gaming:
+  ordinances:
+  - approved: '1995-07-19'
+    link: https://www.nigc.gov?wpdmdl=10571&ind=10585
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-07-19'
+    locator: table row 186, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 186 lists the nation
+      as "Passamaquoddy Tribe".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

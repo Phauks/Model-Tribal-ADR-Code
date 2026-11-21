@@ -37,6 +37,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3220
   note: Matched by name. Census class code D3.
 population:
+- count: 706
+  kind: citizens
+  source: bearriverrancheria-about-1
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''There are 706 enrolled Tribal Members''. Undated page; as_of is access date.'
 - count: 208
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -100,6 +106,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Bear River Band of the Rohnerville Rancheria, California
+- kind: email-general
+  value: communications@brb-nsn.gov
+  label: General office email shown on the nation's website
+  source: bearriverrancheria-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Northern California Agency
@@ -107,6 +120,106 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Bear River Band of the Rohnerville Rancheria, California
+gaming:
+  compacts:
+  - state: CA
+    status: secretarial-procedures
+    approved: '2024-05-10'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-05-10'
+    locator: result page 4 (?page=4), row 9
+    note: 'Listed as: "Bear River Band of the Rohnerville Rancheria Secretarial Procedures" (Secretarial
+      Procedures); list''s Tribe column: "Bear River Band of the Rohnerville Rancheria, California". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.05.10_bear_river_band_of_the_rohnerville_rancheria_secretarial_procedures.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: CA
+    status: approved
+    approved: '2022-06-30'
+    federal_register_citation: 87 FR 39115
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-06-30'
+    locator: result page 4 (?page=4), row 10
+    note: 'Listed as: "Bear River Band of the Rohnerville Rancheria Tribal State Gaming Compact" (Extensions);
+      list''s Tribe column: "Bear River Band of the Rohnerville Rancheria, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.30_bear_river_band_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/30/2022-14054/indian-gaming-extension-of-tribal-state-class-iii-gaming-compacts-in-california.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-16'
+    locator: result page 4 (?page=4), row 11
+    note: 'Listed as: "Bear River Band of the Rohnerville Rancheria Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Bear River Band of the Rohnerville Rancheria, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.05.16_bear_river_band_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2022-06-30).
+  ordinances:
+  - approved: '1996-02-05'
+    link: https://www.nigc.gov?wpdmdl=3376&ind=3380
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-02-05'
+    locator: table row 13, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 13 lists the nation
+      as "Bear River Band of the Rohnerville Rancheria".
+  - approved: '2000-10-19'
+    link: https://www.nigc.gov?wpdmdl=3377&ind=3381
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-10-19'
+    locator: table row 13, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 13 lists the nation
+      as "Bear River Band of the Rohnerville Rancheria".
+  - approved: '2001-06-01'
+    link: https://www.nigc.gov?wpdmdl=3378&ind=3382
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-06-01'
+    locator: table row 13, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 13 lists the nation
+      as "Bear River Band of the Rohnerville Rancheria".
+  - approved: '2002-08-09'
+    link: https://www.nigc.gov?wpdmdl=3379&ind=3383
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-08-09'
+    locator: table row 13, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 13 lists the nation
+      as "Bear River Band of the Rohnerville Rancheria".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Bear River Band of the Rohnerville
+      Rancheria". Facilities as machine-extracted from the report text (verify): Bear River Casino Resort;
+      Bear River Pump and Play. Name extracted from the PDF by the page-fetch tool and matched to the
+      roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

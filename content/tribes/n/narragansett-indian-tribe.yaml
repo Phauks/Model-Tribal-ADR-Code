@@ -125,6 +125,45 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Narragansett Indian Tribe
+gaming:
+  compacts:
+  - state: RI
+    status: approved
+    approved: '1994-12-16'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1994-12-16'
+    locator: result page 33 (?page=33), row 22
+    note: 'Listed as: "Narragansett Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Nansemond Indian Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201994.12.16%20Narragansett%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1994/12/16/94-30880/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: RI
+    status: approved
+    approved: '1994-12-16'
+    dispute_resolution_summary: If either gaming agency finds a non-monetary compliance problem it delivers
+      a notice of non-compliance, and if the problem is not cured within 30 business days (with a possible
+      15-business-day extension for good-faith efforts) the requesting agency may sue in United States
+      District Court; the compact contains no arbitration or mediation clause.
+    dispute_resolution_locator: Section 12(c) (Enforcement by parties)
+    source: compact-ri-narragansett-indian-tribe-1994
+    confidence: medium
+    as_of: '1994-12-16'
+    locator: Section 12(c) (Enforcement by parties)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the 1994 Narragansett Indian
+      Tribe compact, the only Rhode Island compact in the list.
+  ordinances:
+  - approved: '1995-11-20'
+    link: https://www.nigc.gov?wpdmdl=10381&ind=10412
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-11-20'
+    locator: table row 163, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 163 lists the nation
+      as "Narragansett Indian Tribe".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

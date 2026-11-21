@@ -62,6 +62,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US8150
   note: Matched by name. Tribal Designated Statistical Area named Chickahominy. Census class code D6.
 population:
+- count: 1000
+  kind: citizens
+  source: chickahominytribe-culture-community
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''Over 1,000 people are enrolled in the Chickahominy Tribe''. Undated page; as_of is access
+    date.'
 - count: 3239
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -118,6 +125,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Chickahominy Indian Tribe
+- kind: email-general
+  value: info@chickahominytribe.org
+  label: General office email shown on the nation's website
+  source: chickahominytribe-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office

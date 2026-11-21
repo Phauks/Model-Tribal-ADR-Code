@@ -114,6 +114,90 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Sault Ste. Marie Tribe of Chippewa Indians, Michigan
+gaming:
+  compacts:
+  - state: MI
+    status: approved
+    approved: '1993-11-30'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-11-30'
+    locator: result page 16 (?page=16), row 25
+    note: 'Listed as: "Sault Ste. Marie Tribe of Chippewa Indians Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Sault Ste. Marie Tribe of Chippewa Indians, Michigan". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.11.30_sault_ste_marie_tribe_of_chippewa_indians_tribal_state_gaming_compact.pdf.'
+  - state: MI
+    status: approved
+    dispute_resolution_summary: After written notice the parties meet within 30 days; if a State allegation
+      is unresolved after 90 days the State may serve a notice to cease the disputed games and the tribe
+      may either stop them or invoke arbitration under American Arbitration Association commercial rules
+      before three attorney arbitrators while play continues, and a tribe may likewise invoke arbitration
+      on its own unresolved allegations.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-mi-bay-mills-indian-community-1993
+    confidence: medium
+    as_of: '1993-11-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The same Section 7 text appears in the
+      1993 Bay Mills Indian Community compact and the 1999 Little River Band compact (both read); other
+      Michigan nations signed the 1993 or 1998 forms, and later amendments were not checked. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (1993-11-30).
+  ordinances:
+  - approved: '1994-12-09'
+    link: https://www.nigc.gov?wpdmdl=11043&ind=11054
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-12-09'
+    locator: table row 248, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 248 lists the nation
+      as "Sault Ste. Marie Tribe of Chippewa Indians".
+  - approved: '1999-07-29'
+    link: https://www.nigc.gov?wpdmdl=11044&ind=11055
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1999-07-29'
+    locator: table row 248, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 248 lists the nation
+      as "Sault Ste. Marie Tribe of Chippewa Indians".
+  - approved: '2005-03-24'
+    link: https://www.nigc.gov?wpdmdl=11045&ind=11056
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2005-03-24'
+    locator: table row 248, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 248 lists the nation
+      as "Sault Ste. Marie Tribe of Chippewa Indians".
+  - approved: '2008-10-07'
+    link: https://www.nigc.gov?wpdmdl=11046&ind=11057
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-10-07'
+    locator: table row 248, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 248 lists the nation
+      as "Sault Ste. Marie Tribe of Chippewa Indians".
+  - approved: '2010-03-30'
+    link: https://www.nigc.gov?wpdmdl=11047&ind=11058
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2010-03-30'
+    locator: table row 248, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 248 lists the nation
+      as "Sault Ste. Marie Tribe of Chippewa Indians".
+  - approved: '2017-02-16'
+    link: https://www.nigc.gov?wpdmdl=11048&ind=11059
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2017-02-16'
+    locator: table row 248, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 248 lists the nation
+      as "Sault Ste. Marie Tribe of Chippewa Indians".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Sault Ste. Marie Tribe of Chippewa
+      Indians of Michigan". Name extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

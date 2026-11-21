@@ -2,6 +2,15 @@ id: iowa-tribe-of-oklahoma
 entity_type: native-nation
 names:
   official: Iowa Tribe of Oklahoma
+  self_designation:
+  - name: Baxoje
+    language_tag: iow
+    romanized: Bah Kho-je
+    source: iowanation-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Homepage: ''In the Iowa language, we call ourselves Baxoje (Bah Kho-je), meaning, “People of
+      the Grey Snow.”'''
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -37,6 +46,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5670
   note: Matched by name. Census class code D6.
 population:
+- count: 800
+  kind: citizens
+  source: iowanation-about-us
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''over 800 members enrolled within the tribe''. Undated; as_of is access date.'
 - count: 6602
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -100,6 +115,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Iowa Tribe of Oklahoma
+languages:
+- name: Iowa
+  language_tag: iow
+  source: iowanation-about-us-language
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Site has a language page with lessons.
 federal_administration:
   bureau_of_indian_affairs_region: Southern Plains
   bureau_of_indian_affairs_agency: Southern Plains Regional Office
@@ -107,6 +129,120 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Iowa Tribe of Oklahoma
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '2018-08-17'
+    federal_register_citation: 83 FR 41101
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-08-17'
+    locator: result page 27 (?page=27), row 17
+    note: 'Listed as: "Iowa Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Iowa
+      Tribe of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.17%20Iowa%20Tribe%20compact%20amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/08/17/2018-17729/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of-oklahoma.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '1997-02-05'
+    federal_register_citation: 62 FR 5483
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1997-02-05'
+    locator: result page 27 (?page=27), row 18
+    note: 'Listed as: "Iowa Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Iowa
+      Tribe of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201997.02.05%20Iowa%20Tribe%20Off%20Track%20Wagering%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1997/02/05/97-2824/bureau-of-indian-affairs.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    approved: '2005-06-01'
+    federal_register_citation: 70 FR 31499
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-06-01'
+    locator: result page 27 (?page=27), row 19
+    note: 'Listed as: "Iowa Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Iowa Tribe of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.06.01%20Iowa%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/06/01/05-10877/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-08-17).
+  ordinances:
+  - approved: '1995-12-18'
+    link: https://www.nigc.gov?wpdmdl=9961&ind=9968
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-12-18'
+    locator: table row 106, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 106 lists the nation
+      as "Iowa Tribe of Oklahoma".
+  - approved: '2003-03-06'
+    link: https://www.nigc.gov?wpdmdl=9960&ind=9969
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-03-06'
+    locator: table row 106, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 106 lists the nation
+      as "Iowa Tribe of Oklahoma".
+  - approved: '2005-11-29'
+    link: https://www.nigc.gov?wpdmdl=9959&ind=9970
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2005-11-29'
+    locator: table row 106, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 106 lists the nation
+      as "Iowa Tribe of Oklahoma".
+  - approved: '2002-11-06'
+    link: https://www.nigc.gov?wpdmdl=9958&ind=9971
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-11-06'
+    locator: table row 106, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 106 lists the nation
+      as "Iowa Tribe of Oklahoma".
+  - approved: '2006-11-20'
+    link: https://www.nigc.gov?wpdmdl=9957&ind=9972
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2006-11-20'
+    locator: table row 106, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 106 lists the nation
+      as "Iowa Tribe of Oklahoma".
+  - approved: '2025-10-24'
+    link: https://www.nigc.gov?wpdmdl=14501&ind=14502
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2025-10-24'
+    locator: table row 106, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 106 lists the nation
+      as "Iowa Tribe of Oklahoma".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Iowa Tribe of Oklahoma". Facilities
+      as machine-extracted from the report text (verify): Cimarron Casino; Ioway Travel Plaza Casino;
+      Ioway Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

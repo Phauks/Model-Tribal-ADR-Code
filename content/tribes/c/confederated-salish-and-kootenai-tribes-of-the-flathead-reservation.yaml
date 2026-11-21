@@ -2,6 +2,39 @@ id: confederated-salish-and-kootenai-tribes-of-the-flathead-reservation
 entity_type: native-nation
 names:
   official: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+  self_designation:
+  - name: Ql̓ispé
+    language_tag: fla
+    source: cskt-our-story
+    confidence: high
+    as_of: '2026-11-21'
+    note: Page names 'the Upper Pend d’Oreille (Ql̓ispé)'. One of the three constituent peoples.
+  - name: Ksanka
+    language_tag: kut
+    source: cskt-our-story
+    confidence: high
+    as_of: '2026-11-21'
+    note: Page names 'the Kootenai (Ksanka) people'. One of the three constituent peoples.
+  - name: Séliš
+    language_tag: fla
+    source: cskt-home
+    confidence: medium
+    as_of: '2026-11-21'
+    note: Used in the name of the nation's Séliš-Ql̓ispé Culture Committee for the Salish people.
+  - name: Ktunaxa
+    language_tag: kut
+    source: mt-tribal-nations-cskt
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'State page: ''the Kootenai call themselves "Ktunaxa"''. Refers to the Kootenai constituent
+      people. Secondary (state) source.'
+  alternate:
+  - name: the Tribes
+    source: cskt-our-story
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Page: ''“Flathead” ... is not a tribal name, we prefer to be called by our actual tribal identities
+      or simply “the Tribes” when referring to us collectively.'''
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -37,6 +70,14 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1110
   note: Matched by name. Census class code D2.
 population:
+- count: 7753
+  kind: citizens
+  source: mt-tribal-nations-cskt
+  confidence: low
+  as_of: '2026-11-21'
+  note: 'State page: ''Of the approximately 7,753 enrolled tribal members, about 5,000 live on or near
+    the reservation.'' The same page''s Fast Facts gives 7,443 enrolled members, so the page conflicts.
+    Undated.'
 - count: 30849
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -110,6 +151,26 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+- kind: email-general
+  value: info@cskt.org
+  label: General office email shown on the nation's website
+  source: cskt-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
+languages:
+- name: Salish
+  language_tag: fla
+  source: cskt-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Homepage greets in Salish ('Lemlmtš u kʷ cxʷuy').
+- name: Ksanka (Kootenai)
+  language_tag: kut
+  source: cskt-ksanka-culture-committee
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Ksanka Culture Committee page refers to the Ksanka language.
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Flathead Agency
@@ -117,6 +178,145 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+gaming:
+  compacts:
+  - state: MT
+    status: approved
+    approved: '2001-12-14'
+    federal_register_citation: 66 FR 64855
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2001-12-14'
+    locator: result page 20 (?page=20), row 3
+    note: 'Listed as: "Kootenai Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Confederated
+      Salish and Kootenai Tribes of the Flathead Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2001.12.14_kootenai_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/12/14/01-30906/indian-gaming.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: approved
+    approved: '2000-05-12'
+    federal_register_citation: 65 FR 30605
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2000-05-12'
+    locator: result page 20 (?page=20), row 4
+    note: 'Listed as: "Kootenai Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Confederated
+      Salish and Kootenai Tribes of the Flathead Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.05.12_kootenai_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/12/00-11943/indian-gaming.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: approved
+    approved: '1997-05-16'
+    federal_register_citation: 62 FR 27065
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1997-05-16'
+    locator: result page 20 (?page=20), row 5
+    note: 'Listed as: "Kootenai Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Confederated
+      Salish and Kootenai Tribes of the Flathead Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1997.05.16_kootenai_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1997/05/16/97-12821/indian-gaming-notice-of-approved-tribal-state-compact.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: approved
+    approved: '2000-11-24'
+    federal_register_citation: 65 FR 70609
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2000-11-24'
+    locator: result page 20 (?page=20), row 6
+    note: 'Listed as: "Kootenai Tribes Tribal State Gaming Compact" (Extensions); list''s Tribe column:
+      "Confederated Salish and Kootenai Tribes of the Flathead Reservation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.11.24_kootenai_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/11/24/00-30036/indian-gaming.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Matched
+      on the Tribe column because the title spelling did not match the roster. Federal Register citation
+      converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: deemed-approved
+    approved: '2026-01-26'
+    federal_register_citation: 91 FR 3214
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: result page 20 (?page=20), row 16
+    note: 'Listed as: "Salish & Kootenai Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
+      column: "Confederated Salish and Kootenai Tribes of the Flathead Reservation". Document: https://www.bia.gov/sites/default/files/media_document/2025.10.09_salish_%26_kootenai_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2026/01/26/2026-01390/indian-gaming-approval-by-operation-of-law-of-the-class-iii-tribal-state-gaming-compact-between-the?utm_campaign=subscription+mailing+list&amp;utm_medium=email&amp;utm_source=federalregister.gov.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: deemed-approved
+    approved: '2026-01-26'
+    dispute_resolution_summary: The compact has no arbitration or mediation clause; disputes over the
+      scope of jurisdiction may be resolved by mutual consent, and for substantial and continuing default
+      either party may terminate after giving 90 days' written notice and an opportunity to cure.
+    dispute_resolution_locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
+    source: compact-mt-confederated-salish-and-kootenai-tribes-2026
+    confidence: high
+    as_of: '2026-01-26'
+    locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
+    note: Dispute-resolution clause read from this nation's own compact document. Read from the 2026 Confederated
+      Salish and Kootenai Tribes compact; other Montana compacts were not checked.
+  ordinances:
+  - approved: '1997-06-04'
+    link: https://www.nigc.gov?wpdmdl=9581&ind=9608
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1997-06-04'
+    locator: table row 52, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 52 lists the nation
+      as "Confederated Salish & Kootenai Tribes". Name matched to roster by spelling variant.
+  - approved: '1999-05-12'
+    link: https://www.nigc.gov?wpdmdl=9574&ind=9609
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1999-05-12'
+    locator: table row 52, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 52 lists the nation
+      as "Confederated Salish & Kootenai Tribes". Name matched to roster by spelling variant.
+  - approved: '2001-01-24'
+    link: https://www.nigc.gov?wpdmdl=9598&ind=9610
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2001-01-24'
+    locator: table row 52, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 52 lists the nation
+      as "Confederated Salish & Kootenai Tribes". Name matched to roster by spelling variant.
+  - approved: '2003-06-18'
+    link: https://www.nigc.gov?wpdmdl=9599&ind=9611
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2003-06-18'
+    locator: table row 52, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 52 lists the nation
+      as "Confederated Salish & Kootenai Tribes". Name matched to roster by spelling variant.
+  - approved: '2004-04-29'
+    link: https://www.nigc.gov?wpdmdl=9600&ind=9612
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2004-04-29'
+    locator: table row 52, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 52 lists the nation
+      as "Confederated Salish & Kootenai Tribes". Name matched to roster by spelling variant.
+  - approved: '2009-04-01'
+    link: https://www.nigc.gov?wpdmdl=9601&ind=9613
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2009-04-01'
+    locator: table row 52, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 52 lists the nation
+      as "Confederated Salish & Kootenai Tribes". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Confederated Salish and Kootenai
+      Tribes of the Flathead Reservation". Facilities as machine-extracted from the report text (verify):
+      Gray Wolf Peak Casino; Big Arm Marina Casino; KwaTaqNuk Resort. Name extracted from the PDF by the
+      page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: optional-state

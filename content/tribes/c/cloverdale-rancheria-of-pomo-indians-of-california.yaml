@@ -19,6 +19,12 @@ states:
   as_of: '2026-11-20'
   locator: Cloverdale Rancheria of Pomo Indians of California
 population:
+- count: 600
+  kind: citizens
+  source: cloverdalerancheria-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Homepage: ''includes nearly 600 members''. Undated; as_of is access date.'
 - count: 229
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a
@@ -81,6 +87,24 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Cloverdale Rancheria of Pomo Indians of California
+gaming:
+  ordinances:
+  - approved: '2002-06-24'
+    link: https://www.nigc.gov?wpdmdl=9517&ind=9529
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-06-24'
+    locator: table row 47, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 47 lists the nation
+      as "Cloverdale Rancheria of Pomo Indians of California".
+  - approved: '2005-03-04'
+    link: https://www.nigc.gov?wpdmdl=9518&ind=9530
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2005-03-04'
+    locator: table row 47, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 47 lists the nation
+      as "Cloverdale Rancheria of Pomo Indians of California".
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

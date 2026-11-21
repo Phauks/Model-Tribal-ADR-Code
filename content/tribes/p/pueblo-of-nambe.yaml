@@ -131,6 +131,113 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Pueblo of Nambe, New Mexico
+gaming:
+  compacts:
+  - state: NM
+    status: deemed-approved
+    approved: '2015-12-29'
+    federal_register_citation: 80 FR 81352
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-12-29'
+    locator: result page 23 (?page=23), row 4
+    note: 'Listed as: "Pueblo of Nambe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Pueblo of Nambe, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2015.12.29_pueblo_of_nambe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/12/29/2015-32741/indian-gaming-tribal-state-class-iii-gaming-compacts-taking-effect-in-the-state-of-new-mexico.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: approved
+    approved: '2007-07-05'
+    federal_register_citation: 72 FR 36717
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-07-05'
+    locator: result page 23 (?page=23), row 5
+    note: 'Listed as: "Pueblo of Nambe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Pueblo
+      of Nambe, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.07.05_pueblo_of_nambe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/07/05/E7-12904/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: approved
+    approved: '1995-05-15'
+    federal_register_citation: 60 FR 25978
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-05-15'
+    locator: result page 23 (?page=23), row 6
+    note: 'Listed as: "Pueblo of Nambe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Pueblo
+      of Nambe, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1995.05.15_pueblo_of_nambe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/05/15/95-11759/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: deemed-approved
+    approved: '1997-11-05'
+    federal_register_citation: 62 FR 59878
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1997-11-05'
+    locator: result page 23 (?page=23), row 7
+    note: 'Listed as: "Pueblo of Nambe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Pueblo of Nambe, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1997.11.05_pueblo_of_nambe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1997/11/05/97-29300/notice-of-tribal-state-gaming-compact-taking-effect.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: approved
+    approved: '2002-02-08'
+    federal_register_citation: 67 FR 6050
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2002-02-08'
+    locator: result page 23 (?page=23), row 8
+    note: 'Listed as: "Pueblo of Nambe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Pueblo
+      of Nambe, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2002.02.08_pueblo_of_nambe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2002/02/08/02-3040/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: deemed-approved
+    dispute_resolution_summary: Within two years of a discovered violation a party serves written notice,
+      may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
+      binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
+      Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-nm-pueblo-of-santa-ana-2016
+    confidence: medium
+    as_of: '2016-12-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
+      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
+      Status copied from this nation's most recent approved or deemed-approved entry for this state in
+      the Office of Indian Gaming list (2015-12-29).
+  ordinances:
+  - approved: '2005-07-06'
+    link: https://www.nigc.gov?wpdmdl=10751&ind=10771
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2005-07-06'
+    locator: table row 205, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 205 lists the nation
+      as "Pueblo of Nambe".
+  - approved: '2008-09-19'
+    link: https://www.nigc.gov?wpdmdl=10752&ind=10772
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-09-19'
+    locator: table row 205, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 205 lists the nation
+      as "Pueblo of Nambe".
+  - approved: '2016-09-23'
+    link: https://www.nigc.gov?wpdmdl=10753&ind=10773
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2016-09-23'
+    locator: table row 205, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 205 lists the nation
+      as "Pueblo of Nambe".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

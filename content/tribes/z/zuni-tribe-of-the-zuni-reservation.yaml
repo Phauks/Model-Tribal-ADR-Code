@@ -146,6 +146,116 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Zuni Tribe of the Zuni Reservation, New Mexico
+gaming:
+  compacts:
+  - state: AZ
+    status: approved
+    approved: '2021-05-24'
+    federal_register_citation: 86 FR 27889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2021-05-24'
+    locator: result page 3 (?page=3), row 14
+    note: 'Listed as: "Zuni Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Zuni
+      Tribe of the Zuni Reservation, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202021.05.24%20Zuni%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/05/24/2021-10877/indian-gaming-approval-of-tribal-state-class-iii-gaming-compacts-in-the-state-of-arizona.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2003-07-03'
+    federal_register_citation: 68 FR 39964
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2003-07-03'
+    locator: result page 3 (?page=3), row 15
+    note: 'Listed as: "Zuni Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Zuni
+      Tribe of the Zuni Reservation, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2003.07.03_zuni_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/07/03/03-16826/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2009-03-25'
+    federal_register_citation: 74 FR 12889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2009-03-25'
+    locator: result page 3 (?page=3), row 16
+    note: 'Listed as: "Zuni Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Zuni
+      Tribe of the Zuni Reservation, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2009.03.25_zuni_tribe_tribal_state_gaming_compact_1.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2009/03/25/E9-6585/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2022-06-14'
+    federal_register_citation: 87 FR 35992
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2022-06-14'
+    locator: result page 3 (?page=3), row 17
+    note: 'Listed as: "Zuni Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Zuni
+      Tribe of the Zuni Reservation, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.14_zuni_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/14/2022-12743/indian-gaming-approval-of-20-tribal-state-class-iii-gaming-compact-amendments-with-the-state-of.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: disapproved
+    approved: '2014-09-10'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2014-09-10'
+    locator: result page 24 (?page=24), row 18
+    note: 'Listed as: "Pueblo of Zuni Tribal State Gaming Compact" (Disapproved); list''s Tribe column:
+      "Zuni Tribe of the Zuni Reservation, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2014.09.10_pueblo_of_zuni_tribal_state_gaming_compact.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact. Matched on the Tribe column because the title spelling
+      did not match the roster.'
+  - state: NM
+    status: deemed-approved
+    approved: '2015-08-14'
+    federal_register_citation: 80 FR 48910
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2015-08-14'
+    locator: result page 24 (?page=24), row 19
+    note: 'Listed as: "Zuni Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Zuni Tribe of the Zuni Reservation, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2015.08.14_pueblo_of_zuni_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/08/14/2015-19969/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance or an interpretation
+      dispute, after which agency heads and then designated tribal and gubernatorial representatives negotiate;
+      if unresolved within 30 days, either party may request non-binding mediation under CPR Institute
+      for Dispute Resolution procedures and may then demand binding arbitration under CPR rules before
+      three arbitrators unless both agree to one.
+    dispute_resolution_locator: Section 15 (Dispute Resolution)
+    source: compact-az-ak-chin-indian-community-2003
+    confidence: medium
+    as_of: '2003-02-05'
+    locator: Section 15 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
+      compact approved in 2003; this text is the Ak-Chin Indian Community copy of that form, and the 2021-2022
+      amendments in the list refer back to Section 15. Status copied from this nation's most recent approved
+      or deemed-approved entry for this state in the Office of Indian Gaming list (2022-06-14).
+  - state: NM
+    status: deemed-approved
+    dispute_resolution_summary: Within two years of a discovered violation a party serves written notice,
+      may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
+      binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
+      Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-nm-pueblo-of-santa-ana-2016
+    confidence: medium
+    as_of: '2016-12-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
+      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
+      Status copied from this nation's most recent approved or deemed-approved entry for this state in
+      the Office of Indian Gaming list (2015-08-14).
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

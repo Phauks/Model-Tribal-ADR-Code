@@ -122,6 +122,23 @@ contacts:
   as_of: '2026-11-20'
   locator: Ewiiaapaayp Band of Kumeyaay Indians (previously listed as Ewiiaapaayp Band of Kumeyaay Indians,
     California)
+- kind: website
+  value: https://leaningrock.org/
+  label: Official tribal government website (found by web search)
+  source: leaningrock-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: The directory lists a page on sctca.net (Southern California Tribal Chairmen's Association), not
+    the nation's own site. leaningrock.org is titled 'Tribal Government | Ewiiaapaayp Band of Kumeyaay
+    Indians' and gives the same Alpine office address.
+- kind: email-general
+  value: tribe@leaningrock.org
+  label: General office email shown on the nation's website
+  source: leaningrock-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Footer address line: ''Ewiiaapaayp Band of Kumeyaay Indians 4054 Willows Road, Alpine, CA, 91901-1620
+    USA tribe@leaningrock.org''.'
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Pacific Regional Office
@@ -130,6 +147,104 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Ewiiaapaayp Band of Kumeyaay Indians (previously listed as Ewiiaapaayp Band of Kumeyaay Indians,
     California)
+gaming:
+  compacts:
+  - state: CA
+    status: disapproved
+    approved: '2008-03-18'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2008-03-18'
+    locator: result page 7 (?page=7), row 2
+    note: 'Listed as: "Ewiiaapaayp Band of Kumeyaay Indians Tribal State Gaming Compact" (Disapproved);
+      list''s Tribe column: "Ewiiaapaayp Band of Kumeyaay Indians (previously listed as Ewiiaapaayp Band
+      of Kumeyaay Indians, California)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202008.03.18%20Ewiiaapaayp%20%20Compact.DISAPPROVED.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-16'
+    locator: result page 7 (?page=7), row 3
+    note: 'Listed as: "Ewiiaapaayp Band of Kumeyaay Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Ewiiaapaayp Band of Kumeyaay Indians (previously listed as Ewiiaapaayp Band of Kumeyaay
+      Indians, California)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.05.16_ewiiaapaayp_cuyapaipe_band_of_kumeyaay_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2022-06-30'
+    federal_register_citation: 87 FR 39115
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-06-30'
+    locator: result page 7 (?page=7), row 4
+    note: 'Listed as: "Ewiiaapaayp Band of Kumeyaay Indians Tribal State Gaming Compact" (Extensions);
+      list''s Tribe column: "Ewiiaapaayp Band of Kumeyaay Indians (previously listed as Ewiiaapaayp Band
+      of Kumeyaay Indians, California)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.30_ewiiaapaayp_band_of_kumeyaay_indians_tribal_state_gamign_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/30/2022-14054/indian-gaming-extension-of-tribal-state-class-iii-gaming-compacts-in-california.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2023-12-15'
+    federal_register_citation: 88 FR 86924
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2023-12-15'
+    locator: result page 7 (?page=7), row 5
+    note: 'Listed as: "Ewiiaapaayp Band of Kumeyaay Indians Tribal State Gaming Compact" (Extensions);
+      list''s Tribe column: "Ewiiaapaayp Band of Kumeyaay Indians (previously listed as Ewiiaapaayp Band
+      of Kumeyaay Indians, California)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2023.12.15_ewiiaapaayp_band_of_kumeyaay_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2023/12/15/2023-27539/indian-gaming-extension-of-tribal-state-class-iii-gaming-compacts-in-california.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    approved: '2024-01-12'
+    federal_register_citation: 89 FR 2237
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-01-12'
+    locator: result page 7 (?page=7), row 6
+    note: 'Listed as: "Ewiiaapaayp Band of Kumeyaay Indians Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Ewiiaapaayp Band of Kumeyaay Indians (previously listed as Ewiiaapaayp Band
+      of Kumeyaay Indians, California)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.01.12_ewiiaapaayp_band_of_kumeyaay_indians_tribal_state_gamign_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/01/12/2024-00543/indian-gaming-approval-by-operation-of-law-of-amendment-to-class-iii-tribal-state-gaming-compact.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2024-01-12).
+  ordinances:
+  - approved: '2001-03-19'
+    link: https://www.nigc.gov?wpdmdl=9789&ind=9804
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-03-19'
+    locator: table row 78, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 78 lists the nation
+      as "Ewiiaapaayp Band of Kumeyaay Indians".
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

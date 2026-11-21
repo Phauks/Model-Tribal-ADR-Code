@@ -46,6 +46,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0770
   note: Matched by name. Census class code D1.
 population:
+- count: 1198
+  kind: citizens
+  source: oregon-department-of-education-native-americans-in-oregon-by-the-numbers-2020
+  confidence: medium
+  as_of: 2020-02
+  note: Oregon Department of Education table 'Number of tribal members'; PDF dated February 2020.
 - count: 77
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -110,6 +116,25 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians
+languages:
+- name: Hanis
+  language_tag: csz
+  source: ctclusi-languagepublic
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Page: ''We are the living descendants of the Miluk, Hanis, Siuslaw and Lower Umpqua people.''
+    History page notes Hanis- and Miluk-speaking Coos. Tag csz (Coos) assigned by researcher.'
+- name: Miluk
+  source: ctclusi-history
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'History page: ''the Miluk speaking Coos lived on the South Slough''.'
+- name: Siuslaw
+  language_tag: sis
+  source: ctclusi-history
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'History page: Lower Umpqua and Siuslaw bands shared ''the Siuslaw language''.'
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Northwest Regional Office
@@ -117,6 +142,119 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians
+gaming:
+  compacts:
+  - state: OR
+    status: approved
+    approved: '2003-03-07'
+    federal_register_citation: 68 FR 11123
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2003-03-07'
+    locator: result page 30 (?page=30), row 7
+    note: 'Listed as: "Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians Tribal State Gaming
+      Compact" (Approve); list''s Tribe column: "Confederated Tribes of the Coos, Lower Umpqua and Siuslaw
+      Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202003.03.07%20Confederated%20Tribes%20of%20Coos%2C%20Lower%20Umpqua%20%26%20Siuslaw%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/03/07/03-5342/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2021-08-20'
+    federal_register_citation: 86 FR 46867
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2021-08-20'
+    locator: result page 30 (?page=30), row 8
+    note: 'Listed as: "Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians Tribal State Gaming
+      Compact" (Approve); list''s Tribe column: "Confederated Tribes of the Coos, Lower Umpqua and Siuslaw
+      Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2021.07.13_confederated_tribes_of_the_coos_lower_umpqua_siuslaw_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/08/20/2021-17860/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-oregon.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: deemed-approved
+    approved: '2019-04-16'
+    federal_register_citation: 84 FR 15629
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2019-04-16'
+    locator: result page 30 (?page=30), row 9
+    note: 'Listed as: "Confederated Tribes of Coos, Lower Umpqua and Siuslaw Indians Tribal State Gaming
+      Compact" (Deemed Approved); list''s Tribe column: "Confederated Tribes of the Coos, Lower Umpqua
+      and Siuslaw Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202019.04.16%20Confederated%20Tribes%20of%20Coos%2C%20Lower%20Umpqua%20and%20Siuslaw%20Indians%20Tribal%20State%20Gaming%20%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2019/04/16/2019-07472/indian-gaming-tribal-state-class-iii-gaming-compacts-taking-effect-in-the-state-of-oregon.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1995-02-16'
+    federal_register_citation: 60 FR 9258
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-02-16'
+    locator: result page 30 (?page=30), row 21
+    note: 'Listed as: "Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians Tribal State
+      Gaming Compact" (Approve); list''s Tribe column: "Confederated Tribes of the Coos, Lower Umpqua
+      and Siuslaw Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201995.02.16%20Confederated%20Tribes%20of%20the%20Coos%2C%20Lower%20Umpqua%20and%20Siuslaw%20Indians%201995.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/02/16/95-3840/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2008-03-17'
+    federal_register_citation: 73 FR 14267
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2008-03-17'
+    locator: result page 30 (?page=30), row 22
+    note: 'Listed as: "Confederated Tribes of the Coos, Lower Umpqua and Siuslaw Indians Tribal State
+      Gaming Compact" (Approve); list''s Tribe column: "Confederated Tribes of the Coos, Lower Umpqua
+      and Siuslaw Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2008.03.17_confederated_tribes_of_the_coos%2C_lower_umpqua_and_siuslaw_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/03/17/E8-5198/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance and the parties
+      meet within 30 days; if unresolved within 90 days either party may sue in the United States District
+      Court for the District of Oregon (or a state court if federal jurisdiction is declined), and other
+      dispute resolution methods remain available by mutual agreement.
+    dispute_resolution_locator: Section 17 (Dispute Resolution)
+    source: compact-or-confederated-tribes-of-the-grand-ronde-c-2023
+    confidence: medium
+    as_of: '2023-02-08'
+    locator: Section 17 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2023 Confederated Tribes
+      of the Grand Ronde Community compact; other Oregon compacts were not checked. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2021-08-20).
+  ordinances:
+  - approved: '2004-01-05'
+    link: https://www.nigc.gov?wpdmdl=9605&ind=9617
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2004-01-05'
+    locator: table row 54, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 54 lists the nation
+      as "Confederated Tribes of Coos, Lower Umpqua & Siuslaw". Name matched to roster by spelling variant.
+  - approved: '2016-06-15'
+    link: https://www.nigc.gov?wpdmdl=9606&ind=9618
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2016-06-15'
+    locator: table row 54, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 54 lists the nation
+      as "Confederated Tribes of Coos, Lower Umpqua & Siuslaw". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Confederated Tribes of Coos,
+      Lower Umpqua & Siuslaw Indians of Oregon". Facilities as machine-extracted from the report text
+      (verify): Three Rivers Casino - Coos Bay; Three Rivers Casino - Florence. Name extracted from the
+      PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

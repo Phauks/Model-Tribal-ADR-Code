@@ -122,6 +122,126 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Oneida Nation
+gaming:
+  compacts:
+  - state: WI
+    status: deemed-approved
+    approved: '2025-06-30'
+    federal_register_citation: 90 FR 27874
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2025-06-30'
+    locator: result page 46 (?page=46), row 18
+    note: 'Listed as: "Oneida Nation and State of Wisconsin Gaming Compact of 1991 Fourth Amendment" (Deemed
+      Approved); list''s Tribe column: "Oneida Nation". Document: https://www.bia.gov/sites/default/files/media_document/508_compliant_4th_amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2025/06/30/2025-12057/indian-gaming-approval-by-operation-of-law-of-the-fourth-amendment-to-the-oneida-nation-and-the.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '2021-08-20'
+    federal_register_citation: 86 FR 46866
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-08-20'
+    locator: result page 46 (?page=46), row 19
+    note: 'Listed as: "Oneida Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Oneida
+      Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202021.08.20%20Oneida%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/08/20/2021-17858/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-wisconsin.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1998-08-21'
+    federal_register_citation: 63 FR 44920
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1998-08-21'
+    locator: result page 46 (?page=46), row 20
+    note: 'Listed as: "Oneida Tribe of Indians Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Oneida Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.08.21%20Oneida%20Nation%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/08/21/98-22495/indian-gaming.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1992-01-30'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1992-01-30'
+    locator: result page 46 (?page=46), row 21
+    note: 'Listed as: "Oneida Tribe of Indians Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Oneida Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201992.01.30%20Oneida%20Nation%20Gaming%20Compact.pdf.
+      Matched on the Tribe column because the title spelling did not match the roster.'
+  - state: WI
+    status: deemed-approved
+    approved: '2003-07-22'
+    federal_register_citation: 68 FR 43366
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2003-07-22'
+    locator: result page 46 (?page=46), row 22
+    note: 'Listed as: "Oneida Tribe of Indians Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "Oneida Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202003.07.22%20Oneida%20Nation%20Gaming%20Compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/07/22/03-18631/indian-gaming.
+      Matched on the Tribe column because the title spelling did not match the roster. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: deemed-approved
+    dispute_resolution_summary: After written notice the State and Tribe meet within 30 days, and if the
+      dispute is unresolved after 90 days either party may pursue any otherwise available remedy, with
+      mediation or arbitration only by mutual agreement.
+    dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
+    confidence: medium
+    as_of: '1992-08-10'
+    locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
+      compact; later amendments renumbered this section XXIV and revised it for at least some nations
+      (for example the Ho-Chunk Nation fourth amendment), so the current text may differ. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2025-06-30).
+  ordinances:
+  - approved: '1994-05-11'
+    link: https://www.nigc.gov?wpdmdl=10499&ind=10515
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-05-11'
+    locator: table row 176, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 176 lists the nation
+      as "Oneida Nation".
+  - approved: '2004-10-15'
+    link: https://www.nigc.gov?wpdmdl=10500&ind=10516
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-10-15'
+    locator: table row 176, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 176 lists the nation
+      as "Oneida Nation".
+  - approved: '2009-12-09'
+    link: https://www.nigc.gov?wpdmdl=10501&ind=10517
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2009-12-09'
+    locator: table row 176, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 176 lists the nation
+      as "Oneida Nation".
+  - approved: '2015-12-22'
+    link: https://www.nigc.gov?wpdmdl=10502&ind=10518
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2015-12-22'
+    locator: table row 176, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 176 lists the nation
+      as "Oneida Nation".
+  - approved: '1994-01-03'
+    link: https://www.nigc.gov?wpdmdl=10503&ind=10537
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-01-03'
+    locator: table row 177, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 177 lists the nation
+      as "Oneida Nation of New York".
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

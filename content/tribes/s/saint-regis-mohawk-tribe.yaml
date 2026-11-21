@@ -117,6 +117,133 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Saint Regis Mohawk Tribe
+gaming:
+  compacts:
+  - state: NY
+    status: deemed-approved
+    approved: '1999-08-13'
+    federal_register_citation: 64 FR 44234
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-08-13'
+    locator: result page 25 (?page=25), row 19
+    note: 'Listed as: "Saint Regis Mohawk Tribe Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "Saint Regis Mohawk Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20compliant%201999.08.13%20Saint%20Regis%20Mohawk%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/08/13/99-20931/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NY
+    status: deemed-approved
+    approved: '2005-03-07'
+    federal_register_citation: 70 FR 11027
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-03-07'
+    locator: result page 25 (?page=25), row 20
+    note: 'Listed as: "Saint Regis Mohawk Tribe Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "Saint Regis Mohawk Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.03.07%20St%20Regis%20Mohawk%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/03/07/05-4365/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NY
+    status: approved
+    approved: '1993-12-04'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-12-04'
+    locator: result page 25 (?page=25), row 21
+    note: 'Listed as: "Saint Regis Mohawk Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Saint Regis Mohawk Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.12.13_saint_regis_mohawk_tribe_tribal_state_gaming_compact_0.pdf.'
+  - state: NY
+    status: approved
+    approved: '1995-01-30'
+    federal_register_citation: 60 FR 5814
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-01-30'
+    locator: result page 25 (?page=25), row 22
+    note: 'Listed as: "Saint Regis Mohawk Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Saint Regis Mohawk Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201995.01.30%20Saint%20Regis%20Mohawk%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/01/30/95-2193/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NY
+    status: disapproved
+    approved: '2000-07-26'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-07-26'
+    locator: result page 25 (?page=25), row 23
+    note: 'Listed as: "Saint Regis Mohawk Tribe Tribal State Gaming Compact" (Disapproved); list''s Tribe
+      column: "Saint Regis Mohawk Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.07.26%20St%20Regis%20Mohawk%20Tribe%20Tribal%20State%20Gaming%20Compact%20Disapproval%20Letter.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: NY
+    status: disapproved
+    approved: '2000-12-07'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-12-07'
+    locator: result page 25 (?page=25), row 24
+    note: 'Listed as: "Saint Regis Mohawk Tribe Tribal State Gaming Compact" (Disapproved); list''s Tribe
+      column: "Saint Regis Mohawk Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.12.07%20St%20Regis%20Mohawk%20Tribe%20Tribal%20State%20Gaming%20Compact%20Disapproval%20letter.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: NY
+    status: deemed-approved
+    dispute_resolution_summary: After written notice the parties meet within 14 days to negotiate, and
+      if no solution is reached within 30 days either party may submit the dispute to binding arbitration
+      under American Arbitration Association rules before three arbitrators, without monetary damages.
+    dispute_resolution_locator: Section 14 (Party Dispute Resolution)
+    source: compact-ny-seneca-nation-of-indians-2002
+    confidence: medium
+    as_of: '2002-12-09'
+    locator: Section 14 (Party Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2002 Seneca Nation of Indians
+      compact; the Saint Regis Mohawk Tribe and Oneida Indian Nation compacts were not checked. Status
+      copied from this nation's most recent approved or deemed-approved entry for this state in the Office
+      of Indian Gaming list (2005-03-07).
+  ordinances:
+  - approved: '1994-01-21'
+    link: https://www.nigc.gov?wpdmdl=11224&ind=11246
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-01-21'
+    locator: table row 273, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 273 lists the nation
+      as "St. Regis Band of Mohawk Indians". Name matched to roster by spelling variant.
+  - approved: '1995-06-21'
+    link: https://www.nigc.gov?wpdmdl=11230&ind=11247
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-06-21'
+    locator: table row 273, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 273 lists the nation
+      as "St. Regis Band of Mohawk Indians". Name matched to roster by spelling variant.
+  - approved: '2001-06-14'
+    link: https://www.nigc.gov?wpdmdl=11229&ind=11248
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2001-06-14'
+    locator: table row 273, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 273 lists the nation
+      as "St. Regis Band of Mohawk Indians". Name matched to roster by spelling variant.
+  - approved: '2002-07-25'
+    link: https://www.nigc.gov?wpdmdl=11228&ind=11249
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2002-07-25'
+    locator: table row 273, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 273 lists the nation
+      as "St. Regis Band of Mohawk Indians". Name matched to roster by spelling variant.
+  - approved: '2022-07-11'
+    link: https://www.nigc.gov?wpdmdl=11227&ind=11250
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2022-07-11'
+    locator: table row 273, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 273 lists the nation
+      as "St. Regis Band of Mohawk Indians". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

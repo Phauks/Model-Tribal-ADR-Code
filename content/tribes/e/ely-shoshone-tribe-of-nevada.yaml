@@ -37,6 +37,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1040
   note: Matched by name. Census class code D2.
 population:
+- count: 763
+  kind: citizens
+  source: elyshoshonetribe-about
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''Total membership is 763. Of those members, 319 live in the service area which is White
+    Pine County.'' Undated; as_of is access date.'
 - count: 240
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -106,6 +113,16 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Ely Shoshone Tribe of Nevada
+gaming:
+  ordinances:
+  - approved: '2004-10-22'
+    link: https://www.nigc.gov?wpdmdl=9769&ind=9800
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-10-22'
+    locator: table row 76, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 76 lists the nation
+      as "Ely Shoshone Tribe".
 jurisdiction:
 - topic: public-law-280
   value: retroceded

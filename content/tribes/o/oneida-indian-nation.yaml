@@ -131,6 +131,32 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Oneida Indian Nation
+gaming:
+  compacts:
+  - state: NY
+    status: approved
+    approved: '1993-06-04'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1993-06-04'
+    locator: result page 25 (?page=25), row 18
+    note: 'Listed as: "Oneida Indian Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Narragansett Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.06.04_oneida_indian_nation_tribal_state_gaming_compact.pdf.
+      The Tribe column and the compact title disagree; the nation named in the title was used.'
+  - state: NY
+    status: approved
+    dispute_resolution_summary: After written notice the parties meet within 14 days to negotiate, and
+      if no solution is reached within 30 days either party may submit the dispute to binding arbitration
+      under American Arbitration Association rules before three arbitrators, without monetary damages.
+    dispute_resolution_locator: Section 14 (Party Dispute Resolution)
+    source: compact-ny-seneca-nation-of-indians-2002
+    confidence: medium
+    as_of: '2002-12-09'
+    locator: Section 14 (Party Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2002 Seneca Nation of Indians
+      compact; the Saint Regis Mohawk Tribe and Oneida Indian Nation compacts were not checked. Status
+      copied from this nation's most recent approved or deemed-approved entry for this state in the Office
+      of Indian Gaming list (1993-06-04).
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

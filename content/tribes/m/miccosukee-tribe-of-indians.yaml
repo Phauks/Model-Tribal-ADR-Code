@@ -132,6 +132,23 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Miccosukee Tribe of Indians
+gaming:
+  ordinances:
+  - approved: '1994-01-21'
+    link: https://www.nigc.gov?wpdmdl=10290&ind=10305
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-01-21'
+    locator: table row 152, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 152 lists the nation
+      as "Miccosukee Tribe of Indians of Florida".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Miccosukee Tribe of Indians of
+      Florida". Name extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: public-law-280
   value: optional-state

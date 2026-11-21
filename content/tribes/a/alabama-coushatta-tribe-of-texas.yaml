@@ -37,6 +37,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0050
   note: Matched by name. Census class code D1.
 population:
+- count: 1400
+  kind: citizens
+  source: alabama-coushatta-about-us-our-history
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Page says 'more than 1,400 members, about half of whom live on the reservation'. Undated page;
+    as_of is access date.
 - count: 679
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -110,6 +117,15 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Alabama-Coushatta Tribe of Texas
+languages:
+- name: Alabama
+  language_tag: akz
+  source: alabama-coushatta-about-us-chief-history
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Chief history page: the Alabamas and Coushattas are ''Both of Muskogean language stock'' and
+    ''Their languages are mutually understandable''; it names the Alabama language. The Coushatta (Koasati)
+    language is not named on this page.'
 federal_administration:
   bureau_of_indian_affairs_region: Southern Plains
   bureau_of_indian_affairs_agency: Southern Plains Regional Office
@@ -117,6 +133,32 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Alabama-Coushatta Tribe of Texas
+gaming:
+  ordinances:
+  - approved: '2015-10-08'
+    link: https://www.nigc.gov?wpdmdl=3279&ind=3280
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2015-10-08'
+    locator: table row 4, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 4 lists the nation
+      as "Alabama-Coushatta Tribe of Texas".
+  - approved: '2025-02-14'
+    link: https://www.nigc.gov?wpdmdl=12855&ind=12856
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2025-02-14'
+    locator: table row 4, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 4 lists the nation
+      as "Alabama-Coushatta Tribe of Texas".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Alabama-Coushatta Tribe of
+      Texas". Facilities as machine-extracted from the report text (verify): Ischoopa Travel Center; Naskila
+      Gaming. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

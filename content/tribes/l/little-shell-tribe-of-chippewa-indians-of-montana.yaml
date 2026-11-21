@@ -31,6 +31,12 @@ states:
   as_of: '2026-11-20'
   locator: Little Shell Tribe of Chippewa Indians of Montana
 population:
+- count: 5400
+  kind: citizens
+  source: montanalittleshelltribe-government
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''on behalf of the tribe''s 5400 members''. Undated; as_of is access date.'
 - count: 3576
   kind: census-american-indian-alaska-native-alone-or-in-combination
   source: census-2020-detailed-demographic-and-housing-characteristics-file-a

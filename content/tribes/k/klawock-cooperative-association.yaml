@@ -141,6 +141,32 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Klawock Cooperative Association
+gaming:
+  ordinances:
+  - approved: '1993-11-16'
+    link: https://www.nigc.gov?wpdmdl=10095&ind=10111
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-11-16'
+    locator: table row 124, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 124 lists the nation
+      as "Klawock Cooperative Association".
+  - approved: '2022-12-08'
+    link: https://www.nigc.gov?wpdmdl=10096&ind=10112
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2022-12-08'
+    locator: table row 124, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 124 lists the nation
+      as "Klawock Cooperative Association".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Klawock Cooperative Association".
+      Facilities as machine-extracted from the report text (verify): Klawock Casino. Name extracted from
+      the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

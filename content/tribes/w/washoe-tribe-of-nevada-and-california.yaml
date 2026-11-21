@@ -212,6 +212,69 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Washoe Tribe of Nevada & California (Carson Colony, Dresslerville Colony, Woodfords Community,
     Stewart Community, & Washoe Ranches)
+gaming:
+  compacts:
+  - state: NV
+    status: approved
+    approved: '2004-07-16'
+    federal_register_citation: 69 FR 42764
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2004-07-16'
+    locator: result page 25 (?page=25), row 15
+    note: 'Listed as: "Washoe Tribe of Nevada & California Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Washoe Tribe of Nevada & California (Carson Colony, Dresslerville Colony, Woodfords
+      Community, Stewart Community, & Washoe Ranches)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2004.07.16_washoe_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2004/07/16/04-16199/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NV
+    status: approved
+    approved: '2018-01-18'
+    federal_register_citation: 83 FR 2667
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-01-18'
+    locator: result page 25 (?page=25), row 16
+    note: 'Listed as: "Washoe Tribe of Nevada & California Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Washoe Tribe of Nevada & California (Carson Colony, Dresslerville Colony, Woodfords
+      Community, Stewart Community, & Washoe Ranches)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.01.18%20Washoe%20Tribal%20State%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/01/18/2018-00793/indian-gaming-approval-of-an-amendment-to-a-tribal-state-class-iii-gaming-compact-in-the-state-of.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NV
+    status: approved
+    approved: '2018-01-18'
+    dispute_resolution_summary: A party alleging substantial default gives written notice with 90 days
+      to cure, the parties then meet within 30 days, and unresolved disputes may be brought in federal
+      court with venue in Washoe County for declaratory or injunctive relief only under a limited waiver
+      of sovereign immunity, with mediation or arbitration available by mutual written agreement.
+    dispute_resolution_locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver
+      of Sovereign Immunity)
+    source: compact-nv-washoe-tribe-of-nevada-and-california-2018
+    confidence: medium
+    as_of: '2018-01-18'
+    locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver of Sovereign Immunity)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the 2018 Washoe Tribe compact;
+      other Nevada compacts were not checked.
+  ordinances:
+  - approved: '1998-01-29'
+    link: https://www.nigc.gov?wpdmdl=11513&ind=11537
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1998-01-29'
+    locator: table row 306, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 306 lists the nation
+      as "Washoe Tribe of Nevada and California".
+  - approved: '2015-01-09'
+    link: https://www.nigc.gov?wpdmdl=11514&ind=11538
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2015-01-09'
+    locator: table row 306, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 306 lists the nation
+      as "Washoe Tribe of Nevada and California".
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

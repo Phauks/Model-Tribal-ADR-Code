@@ -106,6 +106,91 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: The Osage Nation
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '2005-03-21'
+    federal_register_citation: 70 FR 13535
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2005-03-21'
+    locator: result page 28 (?page=28), row 11
+    note: 'Listed as: "Osage Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "The
+      Osage Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.03.21%20The%20Osage%20Nation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/03/21/05-5483/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2018-12-04'
+    federal_register_citation: 83 FR 62601
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2018-12-04'
+    locator: result page 28 (?page=28), row 12
+    note: 'Listed as: "Osage Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "The
+      Osage Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.12.04%20Osage%20Nation%20Gaming%20Compact%20Amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/12/04/2018-26298/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-in-the-state-of-oklahoma.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-12-04).
+  ordinances:
+  - approved: '1998-04-16'
+    link: https://www.nigc.gov?wpdmdl=10521&ind=10539
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1998-04-16'
+    locator: table row 179, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 179 lists the nation
+      as "Osage Tribe". Name matched to roster by spelling variant.
+  - approved: '2003-07-07'
+    link: https://www.nigc.gov?wpdmdl=10522&ind=10540
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2003-07-07'
+    locator: table row 179, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 179 lists the nation
+      as "Osage Tribe". Name matched to roster by spelling variant.
+  - approved: '2005-05-27'
+    link: https://www.nigc.gov?wpdmdl=10523&ind=10541
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2005-05-27'
+    locator: table row 179, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 179 lists the nation
+      as "Osage Tribe". Name matched to roster by spelling variant.
+  - approved: '2007-02-27'
+    link: https://www.nigc.gov?wpdmdl=10524&ind=10542
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2007-02-27'
+    locator: table row 179, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 179 lists the nation
+      as "Osage Tribe". Name matched to roster by spelling variant.
+  - approved: '2011-01-18'
+    link: https://www.nigc.gov?wpdmdl=10525&ind=10543
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2011-01-18'
+    locator: table row 179, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 179 lists the nation
+      as "Osage Tribe". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

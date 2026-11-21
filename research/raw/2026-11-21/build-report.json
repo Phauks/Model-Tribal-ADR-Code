@@ -7,6 +7,12 @@
    "sources": 0
   },
   {
+   "file": "gaming.json",
+   "session": "2026-11-21-gaming",
+   "facts": 2822,
+   "sources": 35
+  },
+  {
    "file": "hawaiian-and-territorial.json",
    "session": "2026-11-21-hawaiian-and-territorial",
    "facts": 78,
@@ -23,6 +29,12 @@
    "session": "2026-11-21-nations-alaska",
    "facts": 2047,
    "sources": 11
+  },
+  {
+   "file": "nations-contiguous-a-l.json",
+   "session": "2026-11-21-nations-contiguous-a-l",
+   "facts": 235,
+   "sources": 177
   },
   {
    "file": "nations-contiguous-m-z.json",
@@ -78,8 +90,8 @@
  "counts": {
   "profiles_written": 933,
   "profiles_skipped": 0,
-  "new_sources": 80,
-  "facts_read": 12868,
+  "new_sources": 211,
+  "facts_read": 15925,
   "facts_dropped": 0,
   "sources_missing": 0
  }

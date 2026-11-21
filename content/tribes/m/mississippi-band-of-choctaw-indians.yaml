@@ -132,6 +132,106 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Mississippi Band of Choctaw Indians
+gaming:
+  compacts:
+  - state: MS
+    status: approved
+    approved: '1993-01-29'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-01-29'
+    locator: result page 18 (?page=18), row 25
+    note: 'Listed as: "Mississippi Band of Choctaw Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Mississippi Band of Choctaw Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.01.29_mississippi_choctaw_band_of_indians_tribal_state_gaming_compact.pdf.'
+  - state: MS
+    status: approved
+    approved: '1996-07-15'
+    federal_register_citation: 61 FR 36892
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-07-15'
+    locator: result page 19 (?page=19), row 1
+    note: 'Listed as: "Mississippi Band of Choctaw Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Mississippi Band of Choctaw Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1996.07.15_mississippi_choctaw_band_of_choctaw_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/07/15/96-17944/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MS
+    status: approved
+    approved: '1994-11-09'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1994-11-09'
+    locator: result page 19 (?page=19), row 2
+    note: 'Listed as: "Mississippi Band of Choctaw Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Mississippi Band of Choctaw Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1994.11.09_mississippi_band_of_choctaw_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1994/11/09/94-27729/indian-gaming-notice-department-of-the-interior.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MS
+    status: approved
+    approved: '1993-01-29'
+    dispute_resolution_summary: After written notice the Governor and Tribal Chief or their designees
+      meet within 30 days, and a dispute unresolved after 90 days goes to arbitration before one agreed
+      arbitrator or a three-member panel, with the American Arbitration Association appointing the third
+      arbitrator if needed.
+    dispute_resolution_locator: Section 10 (Dispute Resolution)
+    source: compact-ms-mississippi-band-of-choctaw-indians-1993
+    confidence: medium
+    as_of: '1993-01-29'
+    locator: Section 10 (Dispute Resolution)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the 1993 Mississippi Band of
+      Choctaw Indians compact, the only Mississippi compact in the list; later amendments were not checked.
+  ordinances:
+  - approved: '1993-11-18'
+    link: https://www.nigc.gov?wpdmdl=10299&ind=10339
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-11-18'
+    locator: table row 155, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 155 lists the nation
+      as "Mississippi Band of Choctaw Indians".
+  - approved: '2009-07-10'
+    link: https://www.nigc.gov?wpdmdl=10315&ind=10340
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2009-07-10'
+    locator: table row 155, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 155 lists the nation
+      as "Mississippi Band of Choctaw Indians".
+  - approved: '2010-06-21'
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2010-06-21'
+    locator: table row 155, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). Date text is split by markup on
+      the page (2010-06-2 1); read as 2010-06-21. NIGC table row 155 lists the nation as "Mississippi
+      Band of Choctaw Indians".
+  - approved: '2016-06-15'
+    link: https://www.nigc.gov?wpdmdl=10317&ind=10342
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2016-06-15'
+    locator: table row 155, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 155 lists the nation
+      as "Mississippi Band of Choctaw Indians".
+  - approved: '2021-04-20'
+    link: https://www.nigc.gov?wpdmdl=10318&ind=10343
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2021-04-20'
+    locator: table row 155, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 155 lists the nation
+      as "Mississippi Band of Choctaw Indians".
+  - approved: '2025-04-22'
+    link: https://www.nigc.gov?wpdmdl=13562&ind=13563
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2025-04-22'
+    locator: table row 155, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 155 lists the nation
+      as "Mississippi Band of Choctaw Indians".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

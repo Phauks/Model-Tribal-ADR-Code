@@ -45,6 +45,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0780
   note: Matched by name. Census class code D2.
 population:
+- count: 297
+  kind: citizens
+  source: kletseldehe-tribal-history
+  confidence: low
+  as_of: '2026-11-21'
+  note: Tribal history page says '297 enrolled tribal citizens'; the homepage of the same site says '249
+    tribal citizens'. Conflicting; undated.
 - count: 8
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file

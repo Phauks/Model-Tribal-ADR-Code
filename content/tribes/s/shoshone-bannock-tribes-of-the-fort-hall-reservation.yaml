@@ -139,6 +139,69 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Shoshone-Bannock Tribes of the Fort Hall Reservation
+gaming:
+  compacts:
+  - state: ID
+    status: approved
+    approved: '2000-09-08'
+    federal_register_citation: 65 FR 54541
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-09-08'
+    locator: result page 14 (?page=14), row 22
+    note: 'Listed as: "Shoshone-Bannock Tribes of the Fort Hall Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Shoshone-Bannock Tribes of the Fort Hall Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.09.08_shoshone_bannock_tribes_of_the_fort_hall_reservation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/09/08/00-23091/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: ID
+    status: approved
+    dispute_resolution_summary: After written notice the parties meet within 10 working days, and if the
+      dispute is not resolved within 60 days either party may pursue binding arbitration before a three-member
+      panel selected by the American Arbitration Association, with no judicial review of the decision
+      (disputes under Article 6 follow that article's own procedure).
+    dispute_resolution_locator: Article 21 (Dispute Resolution)
+    source: compact-id-coeur-dalene-tribe-1993
+    confidence: medium
+    as_of: '1993-02-12'
+    locator: Article 21 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 1993 Coeur d'Alene Tribe
+      compact; later Idaho compacts and amendments (2003, 2008) were not checked. Status copied from this
+      nation's most recent approved or deemed-approved entry for this state in the Office of Indian Gaming
+      list (2000-09-08).
+  ordinances:
+  - approved: '1994-10-18'
+    link: https://www.nigc.gov?wpdmdl=11149&ind=11163
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-10-18'
+    locator: table row 261, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 261 lists the nation
+      as "Shoshone-Bannock Tribes". Name matched to roster by spelling variant.
+  - approved: '2006-10-16'
+    link: https://www.nigc.gov?wpdmdl=11150&ind=11164
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2006-10-16'
+    locator: table row 261, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 261 lists the nation
+      as "Shoshone-Bannock Tribes". Name matched to roster by spelling variant.
+  - approved: '2010-02-16'
+    link: https://www.nigc.gov?wpdmdl=11151&ind=11165
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2010-02-16'
+    locator: table row 261, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 261 lists the nation
+      as "Shoshone-Bannock Tribes". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Shoshone-Bannock Tribes, Idaho".
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: public-law-280
   value: optional-state

@@ -115,6 +115,16 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Utu Utu Gwaitu Paiute Tribe of the Benton Paiute Reservation, California
+gaming:
+  ordinances:
+  - approved: '1996-04-10'
+    link: https://www.nigc.gov?wpdmdl=11471&ind=11494
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1996-04-10'
+    locator: table row 298, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 298 lists the nation
+      as "U-tu Utu Gwaitu Paiute Tribe". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

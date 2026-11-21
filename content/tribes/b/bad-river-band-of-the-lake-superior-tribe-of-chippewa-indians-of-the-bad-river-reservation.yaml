@@ -39,6 +39,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0140
   note: Matched by name. Census class code D2.
 population:
+- count: 6945
+  kind: citizens
+  source: wisconsin-dpi-tribal-nations-bad-river
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'State page, Tribal Statistics: ''There are currently 6,945 Bad River tribal members''. Undated;
+    as_of is access date.'
 - count: 1545
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -107,6 +114,13 @@ contacts:
   as_of: '2026-11-20'
   locator: Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation,
     Wisconsin
+languages:
+- name: Ojibwe Anishinaabemowin
+  language_tag: oj
+  source: badriver-nsn-history
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'History page: ''the native language is known as Ojibwe Anishinaabemowin.'''
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Great Lakes Agency
@@ -115,6 +129,89 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation,
     Wisconsin
+gaming:
+  compacts:
+  - state: WI
+    status: approved
+    approved: '1998-08-21'
+    federal_register_citation: 63 FR 44920
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-08-21'
+    locator: result page 45 (?page=45), row 5
+    note: 'Listed as: "Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River
+      Reservation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Bad River Band of the
+      Lake Superior Tribe of Chippewa Indians of the Bad River Reservation, Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.08.21%20Bad%20River%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/08/21/98-22493/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: deemed-approved
+    approved: '2003-07-22'
+    federal_register_citation: 68 FR 43366
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-07-22'
+    locator: result page 45 (?page=45), row 6
+    note: 'Listed as: "Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River
+      Reservation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column: "Bad River Band
+      of the Lake Superior Tribe of Chippewa Indians of the Bad River Reservation, Wisconsin". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202003.07.22%20Bad%20River%20DEEMED%20APPROVED%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/07/22/03-18631/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1992-04-03'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-04-03'
+    locator: result page 45 (?page=45), row 7
+    note: 'Listed as: "Bad River Band of the Lake Superior Tribe of Chippewa Indians of the Bad River
+      Reservation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Bad River Band of the
+      Lake Superior Tribe of Chippewa Indians of the Bad River Reservation, Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201992.04.03%20%20Bad%20River%20Band%20of%20Lake%20Superior%20Chippewa%20Indians%20Gaming%20Compact.pdf.'
+  - state: WI
+    status: deemed-approved
+    dispute_resolution_summary: After written notice the State and Tribe meet within 30 days, and if the
+      dispute is unresolved after 90 days either party may pursue any otherwise available remedy, with
+      mediation or arbitration only by mutual agreement.
+    dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
+    confidence: medium
+    as_of: '1992-08-10'
+    locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
+      compact; later amendments renumbered this section XXIV and revised it for at least some nations
+      (for example the Ho-Chunk Nation fourth amendment), so the current text may differ. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2003-07-22).
+  ordinances:
+  - approved: '1993-11-10'
+    link: https://www.nigc.gov?wpdmdl=3319&ind=3321
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1993-11-10'
+    locator: table row 10, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 10 lists the nation
+      as "Bad River Band of Lake Superior Tribe of Chippewa Indians". Name matched to roster by spelling
+      variant.
+  - approved: '2019-01-08'
+    link: https://www.nigc.gov?wpdmdl=3320&ind=3322
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2019-01-08'
+    locator: table row 10, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 10 lists the nation
+      as "Bad River Band of Lake Superior Tribe of Chippewa Indians". Name matched to roster by spelling
+      variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Bad River Band of Lake Superior
+      Tribe of Chippewa Indians". Facilities as machine-extracted from the report text (verify): Bad River
+      Lodge & Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

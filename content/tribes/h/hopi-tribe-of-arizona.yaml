@@ -107,6 +107,37 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Hopi Tribe of Arizona
+gaming:
+  compacts:
+  - state: AZ
+    status: deemed-approved
+    approved: '2018-05-08'
+    federal_register_citation: 83 FR 20852
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-05-08'
+    locator: result page 1 (?page=1), row 6
+    note: 'Listed as: "Hopi Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Hopi Tribe of Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202019.05.08%20Hopi%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/05/08/2018-09800/indian-gaming-tribal-state-class-iii-gaming-compact-taking-effect-in-the-state-of-arizona.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: deemed-approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance or an interpretation
+      dispute, after which agency heads and then designated tribal and gubernatorial representatives negotiate;
+      if unresolved within 30 days, either party may request non-binding mediation under CPR Institute
+      for Dispute Resolution procedures and may then demand binding arbitration under CPR rules before
+      three arbitrators unless both agree to one.
+    dispute_resolution_locator: Section 15 (Dispute Resolution)
+    source: compact-az-ak-chin-indian-community-2003
+    confidence: medium
+    as_of: '2003-02-05'
+    locator: Section 15 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
+      compact approved in 2003; this text is the Ak-Chin Indian Community copy of that form, and the 2021-2022
+      amendments in the list refer back to Section 15. Status copied from this nation's most recent approved
+      or deemed-approved entry for this state in the Office of Indian Gaming list (2018-05-08).
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

@@ -131,6 +131,129 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Omaha Tribe of Nebraska
+gaming:
+  compacts:
+  - state: IA
+    status: approved
+    approved: '1992-02-28'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-02-28'
+    locator: result page 14 (?page=14), row 5
+    note: 'Listed as: "Omaha Tribe of Nebraska Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Omaha Tribe of Nebraska". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1992.02.28_omaha_tribe_tribal_state_gaming_compact.pdf.'
+  - state: IA
+    status: approved
+    approved: '2007-03-19'
+    federal_register_citation: 72 FR 12813
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-03-19'
+    locator: result page 14 (?page=14), row 6
+    note: 'Listed as: "Omaha Tribe of Nebraska Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Omaha Tribe of Nebraska". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.03.19_omaha_tribe_tribal_state_gaming_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/03/19/E7-4904/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: IA
+    status: approved
+    approved: '1999-02-08'
+    federal_register_citation: 64 FR 6112
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-02-08'
+    locator: result page 14 (?page=14), row 7
+    note: 'Listed as: "Omaha Tribe of Nebraska, Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Omaha Tribe of Nebraska". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1999.02.08_omaha_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/02/08/99-2912/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NE
+    status: approved
+    approved: '1991-01-08'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1991-01-08'
+    locator: result page 21 (?page=21), row 24
+    note: 'Listed as: "Omaha Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Omaha
+      Tribe of Nebraska". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1991.01.08_omaha_tribe_tribal_state_gaming_compact.pdf.'
+  - state: IA
+    status: approved
+    dispute_resolution_summary: For a non-material breach the parties meet and confer within 15 days of
+      written notice, the complaining party may then make a written demand, a refused demand goes to mediation
+      under American Arbitration Association commercial mediation rules, and issues left in the mediator's
+      summary report go to binding arbitration under American Arbitration Association rules.
+    dispute_resolution_locator: Section 20 (Binding Dispute Resolution for Non-Material Breach)
+    source: compact-ia-ponca-tribe-of-nebraska-2021
+    confidence: medium
+    as_of: '2021-03-05'
+    locator: Section 20 (Binding Dispute Resolution for Non-Material Breach)
+    note: state model compact; nation-specific text not checked. Read from the 2021 Ponca Tribe of Nebraska
+      compact with Iowa; other Iowa compacts were not checked. Status copied from this nation's most recent
+      approved or deemed-approved entry for this state in the Office of Indian Gaming list (2007-03-19).
+  - state: NE
+    status: approved
+    approved: '1991-01-08'
+    dispute_resolution_summary: After written notice the parties meet within 7 days to negotiate, and
+      if the dispute is unresolved within 30 days they may elect a binding or non-binding non-judicial
+      process such as arbitration before three attorney arbitrators experienced in Indian gaming, mediation,
+      or a private judicial-resolution service.
+    dispute_resolution_locator: Section 33(A) (Remedies for Breach of Compact; Dispute Resolution)
+    source: compact-ne-omaha-tribe-of-nebraska-1991
+    confidence: medium
+    as_of: '1991-01-08'
+    locator: Section 33(A) (Remedies for Breach of Compact; Dispute Resolution)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the 1991 Omaha Tribe compact,
+      the only Nebraska compact in the list.
+  ordinances:
+  - approved: '1995-08-25'
+    link: https://www.nigc.gov?wpdmdl=10494&ind=10510
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-08-25'
+    locator: table row 175, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 175 lists the nation
+      as "Omaha Tribe of Nebraska".
+  - approved: '1997-04-07'
+    link: https://www.nigc.gov?wpdmdl=10495&ind=10511
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-04-07'
+    locator: table row 175, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 175 lists the nation
+      as "Omaha Tribe of Nebraska".
+  - approved: '1997-07-24'
+    link: https://www.nigc.gov?wpdmdl=10496&ind=10512
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-07-24'
+    locator: table row 175, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 175 lists the nation
+      as "Omaha Tribe of Nebraska".
+  - approved: '2005-08-08'
+    link: https://www.nigc.gov?wpdmdl=10497&ind=10513
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2005-08-08'
+    locator: table row 175, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 175 lists the nation
+      as "Omaha Tribe of Nebraska".
+  - approved: '2013-07-23'
+    link: https://www.nigc.gov?wpdmdl=10498&ind=10514
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2013-07-23'
+    locator: table row 175, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 175 lists the nation
+      as "Omaha Tribe of Nebraska".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Omaha Tribe of Nebraska". Name
+      extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

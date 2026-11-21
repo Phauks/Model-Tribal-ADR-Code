@@ -114,6 +114,16 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Santa Rosa Band of Cahuilla Indians, California
+gaming:
+  ordinances:
+  - approved: '2023-04-06'
+    link: https://www.nigc.gov?wpdmdl=11008&ind=11030
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2023-04-06'
+    locator: table row 242, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 242 lists the nation
+      as "Santa Rosa Band of Cahuilla Indians".
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

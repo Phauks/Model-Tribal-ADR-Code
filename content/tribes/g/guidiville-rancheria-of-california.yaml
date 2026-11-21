@@ -107,6 +107,24 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Guidiville Rancheria of California
+gaming:
+  ordinances:
+  - approved: '2004-08-10'
+    link: https://www.nigc.gov?wpdmdl=9896&ind=9910
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2004-08-10'
+    locator: table row 95, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 95 lists the nation
+      as "Guidiville Indian Rancheria". Name matched to roster by spelling variant.
+  - approved: '2005-05-12'
+    link: https://www.nigc.gov?wpdmdl=9897&ind=9911
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2005-05-12'
+    locator: table row 95, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 95 lists the nation
+      as "Guidiville Indian Rancheria". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

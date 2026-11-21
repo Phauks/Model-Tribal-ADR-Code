@@ -130,6 +130,94 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Southern Ute Indian Tribe of the Southern Ute Reservation, Colorado
+gaming:
+  compacts:
+  - state: CO
+    status: approved
+    approved: '1995-08-21'
+    federal_register_citation: 60 FR 43512
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1995-08-21'
+    locator: result page 13 (?page=13), row 19
+    note: 'Listed as: "Southern Ute Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Southern Ute Indian Tribe of the Southern Ute Reservation, Colorado". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1995.08.21_southern_ute_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/08/21/95-20651/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: CO
+    status: approved
+    approved: '1992-10-08'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1992-10-08'
+    locator: result page 13 (?page=13), row 20
+    note: 'Listed as: "Southern Ute Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Southern Ute Indian Tribe of the Southern Ute Reservation, Colorado". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1992.10.08_southern_ute_indian_tribe_tribal_state_gaming_compact.pdf.
+      Name matched to roster by spelling variant.'
+  - state: CO
+    status: approved
+    approved: '1995-08-21'
+    dispute_resolution_summary: A complaining party gives written notice and the parties have 20 days
+      to resolve the matter informally, after which the complaining party may invoke arbitration under
+      American Arbitration Association commercial rules before one agreed arbitrator or a three-member
+      panel experienced in Indian gaming law, which may declare rights and enjoin violating conduct.
+    dispute_resolution_locator: Section 12 (Remedies for Breach of Compact Provisions)
+    source: compact-co-southern-ute-indian-tribe-of-the-souther-1995
+    confidence: medium
+    as_of: '1995-08-21'
+    locator: Section 12 (Remedies for Breach of Compact Provisions)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the 1995 Southern Ute Indian
+      Tribe compact; the Ute Mountain Ute compact was not checked.
+  ordinances:
+  - approved: '1993-10-13'
+    link: https://www.nigc.gov?wpdmdl=11190&ind=11232
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1993-10-13'
+    locator: table row 268, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 268 lists the nation
+      as "Southern Ute Indian Tribe". Name matched to roster by spelling variant.
+  - approved: '1994-03-14'
+    link: https://www.nigc.gov?wpdmdl=11211&ind=11233
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-03-14'
+    locator: table row 268, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 268 lists the nation
+      as "Southern Ute Indian Tribe". Name matched to roster by spelling variant.
+  - approved: '1998-04-28'
+    link: https://www.nigc.gov?wpdmdl=11212&ind=11234
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1998-04-28'
+    locator: table row 268, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 268 lists the nation
+      as "Southern Ute Indian Tribe". Name matched to roster by spelling variant.
+  - approved: '2001-06-25'
+    link: https://www.nigc.gov?wpdmdl=11215&ind=11235
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2001-06-25'
+    locator: table row 268, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 268 lists the nation
+      as "Southern Ute Indian Tribe". Name matched to roster by spelling variant.
+  - approved: '2018-10-22'
+    link: https://www.nigc.gov?wpdmdl=11214&ind=11236
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2018-10-22'
+    locator: table row 268, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 268 lists the nation
+      as "Southern Ute Indian Tribe". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Southern Ute Indian Tribe". Name
+      extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

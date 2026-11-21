@@ -113,6 +113,86 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Cabazon Band of Cahuilla Indians (previously listed as Cabazon Band of Mission Indians, California)
+gaming:
+  compacts:
+  - state: CA
+    status: deemed-approved
+    approved: '2019-12-27'
+    federal_register_citation: 84 FR 71448
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2019-12-27'
+    locator: result page 5 (?page=5), row 10
+    note: 'Listed as: "Cabazon Band of Mission Indians Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Cabazon Band of Cahuilla Indians (previously listed as Cabazon Band of Mission
+      Indians, California)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2019.12.27_cabazon_band_of_mission_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2019/12/27/2019-27989/indian-gaming-tribal-state-class-iii-gaming-compact-taking-effect-in-the-state-of-california.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 84 FR 71448
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2000-05-16'
+    locator: result page 5 (?page=5), row 11
+    note: 'Listed as: "Cabazon Band of Mission Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Cabazon Band of Cahuilla Indians (previously listed as Cabazon Band of Mission Indians,
+      California)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.05.16_cabazon_band_of_cahuilla_mission_indians_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2019/12/27/2019-27989/indian-gaming-tribal-state-class-iii-gaming-compact-taking-effect-in-the-state-of-california.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2019-12-27).
+  ordinances:
+  - approved: '1994-03-04'
+    link: https://www.nigc.gov?wpdmdl=9387&ind=9428
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-03-04'
+    locator: table row 26, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 26 lists the nation
+      as "Cabazon Band of Cahuilla Indians (Formally “Cabazon Band of Mission Indians”)".
+  - approved: '2008-02-28'
+    link: https://www.nigc.gov?wpdmdl=9418&ind=9429
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-02-28'
+    locator: table row 26, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 26 lists the nation
+      as "Cabazon Band of Cahuilla Indians (Formally “Cabazon Band of Mission Indians”)".
+  - approved: '2021-05-18'
+    link: https://www.nigc.gov?wpdmdl=9419&ind=9430
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2021-05-18'
+    locator: table row 26, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 26 lists the nation
+      as "Cabazon Band of Cahuilla Indians (Formally “Cabazon Band of Mission Indians”)".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Cabazon Band of Mission Indians".
+      Facilities as machine-extracted from the report text (verify): Fantasy Springs Resort Casino. Name
+      extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

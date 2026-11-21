@@ -37,6 +37,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1785
   note: Matched by name. Census class code D2.
 population:
+- count: 5800
+  kind: citizens
+  source: klamathtribes-tribal-council
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''representing more than 5,800 enrolled members''. Undated; as_of is access date.'
 - count: 25
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -108,6 +114,26 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Klamath Tribes
+languages:
+- name: Klamath
+  language_tag: kla
+  source: klamathtribes-language
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Language page: ''our Paiute, Modoc, and Klamath languages''.'
+- name: Modoc
+  language_tag: kla
+  source: klamathtribes-language
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Language page: ''our Paiute, Modoc, and Klamath languages''. Tag kla covers Klamath-Modoc.'
+- name: Paiute (Yahooskin)
+  language_tag: pao
+  source: klamathtribes-language
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Language page: ''our Paiute, Modoc, and Klamath languages''. Tag pao (Northern Paiute) assigned
+    by researcher.'
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Northwest Regional Office
@@ -115,6 +141,217 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Klamath Tribes
+gaming:
+  compacts:
+  - state: OR
+    status: approved
+    approved: '2008-03-17'
+    federal_register_citation: 73 FR 14267
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2008-03-17'
+    locator: result page 33 (?page=33), row 9
+    note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
+      Tribes". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202008.03.17%20Klamath%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/03/17/E8-5198/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1997-01-07'
+    federal_register_citation: 62 FR 996
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1997-01-07'
+    locator: result page 33 (?page=33), row 10
+    note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
+      Tribes". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201997.01.07%20Klamath%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1997/01/07/97-245/indian-gaming-notice-of-amendment-to-approved-tribal-state-compact.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1998-02-27'
+    federal_register_citation: 63 FR 10036
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-02-27'
+    locator: result page 33 (?page=33), row 11
+    note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
+      Tribes". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant1998.02.27%20Klamath%20Tribes%20Tribal%20State%20Gaming%20Compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/02/27/98-5070/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1995-02-24'
+    federal_register_citation: 60 FR 10472
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-02-24'
+    locator: result page 33 (?page=33), row 12
+    note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
+      Tribes". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201995.02.24%20Klamath%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/02/24/95-4587/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2002-02-19'
+    federal_register_citation: 67 FR 7393
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2002-02-19'
+    locator: result page 33 (?page=33), row 13
+    note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
+      Tribes". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202002.02.19%20Klamath%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2002/02/19/02-3861/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2016-07-06'
+    federal_register_citation: 81 FR 44039
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2016-07-06'
+    locator: result page 33 (?page=33), row 14
+    note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
+      Tribes". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202016.07.06%20Klamath%20Tribes%20Amended%20%26%20Restated%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2016/07/06/2016-15976/indian-gaming-approval-of-amendment-to-tribal-state-class-iii-gaming-compact-in-the-state-of-oregon.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1999-06-01'
+    federal_register_citation: 64 FR 29334
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-06-01'
+    locator: result page 33 (?page=33), row 15
+    note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
+      Tribes". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.06.01%20Klamath%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/06/01/99-13729/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1996-06-17'
+    federal_register_citation: 61 FR 30635
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-06-17'
+    locator: result page 33 (?page=33), row 16
+    note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
+      Tribes". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201996.06.17%20Klamath%20Tribes%20Tribal%20State%20Gaming%20Compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/06/17/96-15295/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1997-05-20'
+    federal_register_citation: 62 FR 27619
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1997-05-20'
+    locator: result page 33 (?page=33), row 17
+    note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
+      Tribes". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201997.05.20%20Klamath%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1997/05/20/97-13201/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2000-05-31'
+    federal_register_citation: 65 FR 34727
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-31'
+    locator: result page 33 (?page=33), row 18
+    note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
+      Tribes". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.05.31%20Klamath%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/31/00-13496/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1998-06-01'
+    federal_register_citation: 63 FR 29746
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-06-01'
+    locator: result page 33 (?page=33), row 19
+    note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
+      Tribes". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.06.01%20Klamath%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/06/01/98-14384/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2002-09-17'
+    federal_register_citation: 67 FR 58633
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2002-09-17'
+    locator: result page 33 (?page=33), row 20
+    note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Approve); list''s Tribe column: "Klamath
+      Tribes". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202002.09.17%20Klamath%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2002/09/17/02-23596/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: deemed-approved
+    approved: '2019-04-16'
+    federal_register_citation: 84 FR 15629
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2019-04-16'
+    locator: result page 33 (?page=33), row 21
+    note: 'Listed as: "Klamath Tribes Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Klamath Tribes". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant.2019.04.16%20Klamath%20Tribes%20Deemed%20Approved%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2019/04/16/2019-07472/indian-gaming-tribal-state-class-iii-gaming-compacts-taking-effect-in-the-state-of-oregon.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: deemed-approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance and the parties
+      meet within 30 days; if unresolved within 90 days either party may sue in the United States District
+      Court for the District of Oregon (or a state court if federal jurisdiction is declined), and other
+      dispute resolution methods remain available by mutual agreement.
+    dispute_resolution_locator: Section 17 (Dispute Resolution)
+    source: compact-or-confederated-tribes-of-the-grand-ronde-c-2023
+    confidence: medium
+    as_of: '2023-02-08'
+    locator: Section 17 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2023 Confederated Tribes
+      of the Grand Ronde Community compact; other Oregon compacts were not checked. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2019-04-16).
+  ordinances:
+  - approved: '1995-05-31'
+    link: https://www.nigc.gov?wpdmdl=10093&ind=10109
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-05-31'
+    locator: table row 123, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 123 lists the nation
+      as "Klamath Tribes".
+  - approved: '2006-04-24'
+    link: https://www.nigc.gov?wpdmdl=10094&ind=10110
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2006-04-24'
+    locator: table row 123, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 123 lists the nation
+      as "Klamath Tribes".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Klamath Tribes, Oregon". Facilities
+      as machine-extracted from the report text (verify): Kla-Mo-Ya Casino. Name extracted from the PDF
+      by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

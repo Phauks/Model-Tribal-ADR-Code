@@ -82,6 +82,16 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Koi Nation of Northern California
+gaming:
+  ordinances:
+  - approved: '2024-08-20'
+    link: https://www.nigc.gov?wpdmdl=10097&ind=10116
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2024-08-20'
+    locator: table row 125, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 125 lists the nation
+      as "Koi Nation of Northern California".
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

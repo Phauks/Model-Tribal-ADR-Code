@@ -155,6 +155,107 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Miami Tribe of Oklahoma
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '1996-02-06'
+    federal_register_citation: 61 FR 4478
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1996-02-06'
+    locator: result page 28 (?page=28), row 4
+    note: 'Listed as: "Miami Tribe and Modoc Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Kialegee Tribal Town". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201996.02.06%20Miami%20and%20Modoc%20Tribes%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/02/06/96-2449/indian-gaming-oklahoma.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Name matched
+      to roster by spelling variant. One compact listed jointly for more than one nation. Federal Register
+      citation converted from the linked document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '1995-04-20'
+    federal_register_citation: 60 FR 19822
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1995-04-20'
+    locator: result page 28 (?page=28), row 5
+    note: 'Listed as: "Miami Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Kialegee
+      Tribal Town". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201995.04.20%20Miami%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/04/20/95-9821/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2005-01-27'
+    federal_register_citation: 70 FR 3942
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: result page 28 (?page=28), row 6
+    note: 'Listed as: "Miami Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Kialegee
+      Tribal Town". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.01.27%20Miami%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/01/27/05-1468/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2005-01-27).
+  ordinances:
+  - approved: '1993-10-27'
+    link: https://www.nigc.gov?wpdmdl=10270&ind=10300
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-10-27'
+    locator: table row 151, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 151 lists the nation
+      as "Miami Tribe of Oklahoma".
+  - approved: '1994-12-15'
+    link: https://www.nigc.gov?wpdmdl=10271&ind=10301
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-12-15'
+    locator: table row 151, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 151 lists the nation
+      as "Miami Tribe of Oklahoma".
+  - approved: '1999-04-07'
+    link: https://www.nigc.gov?wpdmdl=10287&ind=10302
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1999-04-07'
+    locator: table row 151, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 151 lists the nation
+      as "Miami Tribe of Oklahoma".
+  - approved: '2012-12-03'
+    link: https://www.nigc.gov?wpdmdl=10288&ind=10303
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2012-12-03'
+    locator: table row 151, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 151 lists the nation
+      as "Miami Tribe of Oklahoma".
+  - approved: '2021-07-22'
+    link: https://www.nigc.gov?wpdmdl=10289&ind=10304
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2021-07-22'
+    locator: table row 151, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 151 lists the nation
+      as "Miami Tribe of Oklahoma".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

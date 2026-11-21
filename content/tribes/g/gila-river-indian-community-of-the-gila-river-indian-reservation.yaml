@@ -2,6 +2,20 @@ id: gila-river-indian-community-of-the-gila-river-indian-reservation
 entity_type: native-nation
 names:
   official: Gila River Indian Community of the Gila River Indian Reservation, Arizona
+  self_designation:
+  - name: Akimel O’otham
+    language_tag: ood
+    source: gilariver-index-php-about-history
+    confidence: medium
+    as_of: '2026-11-21'
+    note: History page refers to the Akimel O’otham (Pima) people of the Community.
+  - name: Pee Posh
+    language_tag: mrc
+    source: gilariver-index-php-about-history
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'History page: ''The Maricopa, who called themselves the “Pee Posh,” settled in with the Akimel
+      O’otham''.'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -37,6 +51,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1310
   note: Matched by name. Census class code D2.
 population:
+- count: 14000
+  kind: resident-population
+  source: itca-gila-river-indian-community
+  confidence: low
+  as_of: '2026-11-21'
+  note: 'Inter Tribal Council of Arizona profile: ''The Community is home to 14,000 people.'' Refers to
+    people living in the Community, not enrollment. Undated secondary source.'
 - count: 14053
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -118,6 +139,116 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Gila River Indian Community of the Gila River Indian Reservation, Arizona
+gaming:
+  compacts:
+  - state: AZ
+    status: approved
+    approved: '2022-06-14'
+    federal_register_citation: 87 FR 35992
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2022-06-14'
+    locator: result page 0 (?page=0), row 25
+    note: 'Listed as: "Gila River Indian Community Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Gila River Indian Community of the Gila River Indian Reservation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.14_gila_river_indian_community_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/14/2022-12743/indian-gaming-approval-of-20-tribal-state-class-iii-gaming-compact-amendments-with-the-state-of.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2021-05-24'
+    federal_register_citation: 86 FR 27889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2021-05-24'
+    locator: result page 1 (?page=1), row 1
+    note: 'Listed as: "Gila River Indian Community Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Gila River Indian Community of the Gila River Indian Reservation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2021.05.24_gila_river_indian_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/05/24/2021-10877/indian-gaming-approval-of-tribal-state-class-iii-gaming-compacts-in-the-state-of-arizona.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance or an interpretation
+      dispute, after which agency heads and then designated tribal and gubernatorial representatives negotiate;
+      if unresolved within 30 days, either party may request non-binding mediation under CPR Institute
+      for Dispute Resolution procedures and may then demand binding arbitration under CPR rules before
+      three arbitrators unless both agree to one.
+    dispute_resolution_locator: Section 15 (Dispute Resolution)
+    source: compact-az-ak-chin-indian-community-2003
+    confidence: medium
+    as_of: '2003-02-05'
+    locator: Section 15 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
+      compact approved in 2003; this text is the Ak-Chin Indian Community copy of that form, and the 2021-2022
+      amendments in the list refer back to Section 15. Status copied from this nation's most recent approved
+      or deemed-approved entry for this state in the Office of Indian Gaming list (2022-06-14).
+  ordinances:
+  - approved: '1994-03-30'
+    link: https://www.nigc.gov?wpdmdl=9866&ind=9882
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-03-30'
+    locator: table row 90, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 90 lists the nation
+      as "Gila River Indian Community". Name matched to roster by spelling variant.
+  - approved: '1995-03-27'
+    link: https://www.nigc.gov?wpdmdl=9867&ind=9883
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-03-27'
+    locator: table row 90, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 90 lists the nation
+      as "Gila River Indian Community". Name matched to roster by spelling variant.
+  - approved: '1997-06-27'
+    link: https://www.nigc.gov?wpdmdl=9868&ind=9884
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1997-06-27'
+    locator: table row 90, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 90 lists the nation
+      as "Gila River Indian Community". Name matched to roster by spelling variant.
+  - approved: '2003-12-17'
+    link: https://www.nigc.gov?wpdmdl=9869&ind=9885
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2003-12-17'
+    locator: table row 90, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 90 lists the nation
+      as "Gila River Indian Community". Name matched to roster by spelling variant.
+  - approved: '2009-09-28'
+    link: https://www.nigc.gov?wpdmdl=9870&ind=9886
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2009-09-28'
+    locator: table row 90, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 90 lists the nation
+      as "Gila River Indian Community". Name matched to roster by spelling variant.
+  - approved: '2016-12-16'
+    link: https://www.nigc.gov?wpdmdl=9871&ind=9887
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2016-12-16'
+    locator: table row 90, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 90 lists the nation
+      as "Gila River Indian Community". Name matched to roster by spelling variant.
+  - approved: '2017-04-24'
+    link: https://www.nigc.gov?wpdmdl=9872&ind=9888
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2017-04-24'
+    locator: table row 90, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 90 lists the nation
+      as "Gila River Indian Community". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Gila River Indian Community
+      of the Gila River Indian Reservation, Arizona". Facilities as machine-extracted from the report
+      text (verify): San Tan Mountain Casino; Vee Quiva Casino; Wild Horse Pass Casino; Lone Butte Casino.
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

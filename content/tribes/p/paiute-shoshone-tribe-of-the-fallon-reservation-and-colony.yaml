@@ -154,6 +154,16 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Paiute-Shoshone Tribe of the Fallon Reservation and Colony, Nevada
+gaming:
+  ordinances:
+  - approved: '1995-05-03'
+    link: https://www.nigc.gov?wpdmdl=9790&ind=9805
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-05-03'
+    locator: table row 79, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 79 lists the nation
+      as "Fallon Paiute-Shoshone Tribes". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

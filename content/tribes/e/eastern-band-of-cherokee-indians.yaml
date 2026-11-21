@@ -37,6 +37,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0990
   note: Matched by name. Census class code D2.
 population:
+- count: 16000
+  kind: citizens
+  source: north-carolina-commission-of-indian-affairs-tribal-communities
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'State page: ''There are more than 16,000 enrolled members with over 60% living on the Boundary.''
+    Undated; as_of is access date.'
 - count: 9233
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -109,6 +116,20 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Eastern Band of Cherokee Indians
+- kind: email-general
+  value: info@ebci.gov
+  label: General office email shown on the nation's website
+  source: ebci-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
+languages:
+- name: Cherokee
+  language_tag: chr
+  source: ebci-department-of-education
+  confidence: high
+  as_of: '2026-11-21'
+  note: New Kituwah Academy is the 'Cherokee language campus' of the Eastern Band.
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Cherokee Agency
@@ -116,6 +137,154 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Eastern Band of Cherokee Indians
+gaming:
+  compacts:
+  - state: NC
+    status: approved
+    approved: '2021-03-02'
+    federal_register_citation: 86 FR 12204
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-03-02'
+    locator: result page 20 (?page=20), row 19
+    note: 'Listed as: "Eastern Band of Cherokee Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Eastern Band of Cherokee Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202021.03.02%20Eastern%20Band%20Cherokee%20Tribal%20State%20Gaming%20Compact%20Amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/03/02/2021-04254/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-north-carolina.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NC
+    status: approved
+    approved: '2012-08-13'
+    federal_register_citation: 77 FR 48167
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2012-08-13'
+    locator: result page 20 (?page=20), row 20
+    note: 'Listed as: "Eastern Band of Cherokee Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Eastern Band of Cherokee Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2012.08.13_eastern_band_of_cherokee_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2012/08/13/2012-19726/approved-tribal-state-class-iii-gaming-compact-indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NC
+    status: approved
+    approved: '2001-01-17'
+    federal_register_citation: 66 FR 4038
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-01-17'
+    locator: result page 20 (?page=20), row 21
+    note: 'Listed as: "Eastern Band of Cherokee Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Eastern Band of Cherokee Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2001.01.17_eastern_band_of_cherokee_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/01/17/01-1260/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NC
+    status: approved
+    approved: '1996-07-09'
+    federal_register_citation: 61 FR 36078
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-07-09'
+    locator: result page 20 (?page=20), row 22
+    note: 'Listed as: "Eastern Band of Cherokee Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Eastern Band of Cherokee Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1996.07.09_eastern_band_of_cherokee_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/07/09/96-17429/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NC
+    status: approved
+    approved: '1994-10-03'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1994-10-03'
+    locator: result page 20 (?page=20), row 23
+    note: 'Listed as: "Eastern Band of Cherokee Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Eastern Band of Cherokee Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1994.10.03_eastern_band_of_cherokee_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1994/10/03/94-24337/indian-gaming-notice-department-of-the-interior.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NC
+    status: approved
+    dispute_resolution_summary: After written notice the parties meet within 30 days, and if the dispute
+      is unresolved within 90 days either party may pursue any remedy otherwise available under federal
+      or state law, with mediation or arbitration only by mutual agreement; a separate procedure lets
+      the State notify the Tribe to cease an activity it considers non-compliant, with a written response
+      due within 20 days.
+    dispute_resolution_locator: Section 13 (Dispute Resolution)
+    source: compact-nc-catawba-indian-nation-2021
+    confidence: medium
+    as_of: '2021-03-25'
+    locator: Section 13 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2021 Catawba Indian Nation
+      compact with North Carolina; the Eastern Band of Cherokee Indians compact was not checked. Status
+      copied from this nation's most recent approved or deemed-approved entry for this state in the Office
+      of Indian Gaming list (2021-03-02).
+  ordinances:
+  - approved: '1994-05-31'
+    link: https://www.nigc.gov?wpdmdl=9731&ind=9748
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-05-31'
+    locator: table row 71, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 71 lists the nation
+      as "Eastern Band of Cherokee Indians".
+  - approved: '1995-08-16'
+    link: https://www.nigc.gov?wpdmdl=9732&ind=9749
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-08-16'
+    locator: table row 71, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 71 lists the nation
+      as "Eastern Band of Cherokee Indians".
+  - approved: '1996-10-24'
+    link: https://www.nigc.gov?wpdmdl=9733&ind=9750
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-10-24'
+    locator: table row 71, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 71 lists the nation
+      as "Eastern Band of Cherokee Indians".
+  - approved: '2001-07-03'
+    link: https://www.nigc.gov?wpdmdl=9734&ind=9751
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-07-03'
+    locator: table row 71, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 71 lists the nation
+      as "Eastern Band of Cherokee Indians".
+  - approved: '2006-07-11'
+    link: https://www.nigc.gov?wpdmdl=9735&ind=9752
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2006-07-11'
+    locator: table row 71, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 71 lists the nation
+      as "Eastern Band of Cherokee Indians".
+  - approved: '2012-10-31'
+    link: https://www.nigc.gov?wpdmdl=9736&ind=9753
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2012-10-31'
+    locator: table row 71, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 71 lists the nation
+      as "Eastern Band of Cherokee Indians".
+  - approved: '2015-04-20'
+    link: https://www.nigc.gov?wpdmdl=9737&ind=9754
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2015-04-20'
+    locator: table row 71, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 71 lists the nation
+      as "Eastern Band of Cherokee Indians".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Eastern Band of Cherokee Indians
+      of North Carolina". Facilities as machine-extracted from the report text (verify): Harrah''s Cherokee
+      Casino; Harrah''s Cherokee Valley River Casino. Name extracted from the PDF by the page-fetch tool
+      and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

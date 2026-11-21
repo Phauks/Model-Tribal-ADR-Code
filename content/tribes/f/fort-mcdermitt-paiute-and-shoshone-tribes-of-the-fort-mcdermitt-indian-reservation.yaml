@@ -3,6 +3,27 @@ entity_type: native-nation
 names:
   official: Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation, Nevada
     and Oregon
+  self_designation:
+  - name: Numu
+    language_tag: pao
+    source: fmpst-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Homepage: ''We refer to ourselves as “Numu” (Paiute) and “Newe” (Shoshone), which roughly translates
+      to “The People”.'''
+  - name: Newe
+    language_tag: shh
+    source: fmpst-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Homepage: ''We refer to ourselves as “Numu” (Paiute) and “Newe” (Shoshone)''.'
+  alternate:
+  - name: Atsakudokwa Tuviwa ga yu
+    source: fmpst-history
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'History page: ''Our Northern Paiute Band was known as Atsakudokwa Tuviwa ga yu (ITCN 1976a),
+      or People of the Red Mountain.'' Band name.'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -116,6 +137,20 @@ contacts:
   as_of: '2026-11-20'
   locator: Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation, Nevada
     and Oregon
+- kind: email-general
+  value: Info@fmpst.org
+  label: General office email shown on the nation's website
+  source: fmpst-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
+languages:
+- name: Northern Paiute
+  language_tag: pao
+  source: fmpst-history
+  confidence: medium
+  as_of: '2026-11-21'
+  note: History page discusses the Northern Paiute language.
 federal_administration:
   bureau_of_indian_affairs_region: Western
   bureau_of_indian_affairs_agency: Western Nevada Agency
@@ -124,6 +159,16 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Fort McDermitt Paiute and Shoshone Tribes of the Fort McDermitt Indian Reservation, Nevada
     and Oregon
+gaming:
+  ordinances:
+  - approved: '1994-12-21'
+    link: https://www.nigc.gov?wpdmdl=9826&ind=9839
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-12-21'
+    locator: table row 86, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 86 lists the nation
+      as "Fort McDermitt Paiute and Shoshone Tribes". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

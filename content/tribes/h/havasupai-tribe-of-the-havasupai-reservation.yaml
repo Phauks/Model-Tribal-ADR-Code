@@ -2,6 +2,15 @@ id: havasupai-tribe-of-the-havasupai-reservation
 entity_type: native-nation
 names:
   official: Havasupai Tribe of the Havasupai Reservation, Arizona
+  self_designation:
+  - name: Havasuw `Baaja
+    language_tag: yuf
+    source: itca-havasupai-tribe
+    confidence: low
+    as_of: '2026-11-21'
+    note: 'Inter Tribal Council of Arizona profile: ''The Havasuw `Baaja, draw their strength from the
+      land''. Spelling (including the backtick) as given by the secondary source; tag yuf assigned by
+      researcher.'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -37,6 +46,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1440
   note: Matched by name. Census class code D2.
 population:
+- count: 639
+  kind: tribal-population-estimate
+  source: itca-havasupai-tribe
+  confidence: low
+  as_of: '2026-11-21'
+  note: 'Inter Tribal Council of Arizona profile: ''The population for the Havasupai Tribe is 639 with
+    a median age of 24.8 years.'' Unclear whether enrolled or resident; undated secondary source.'
 - count: 214
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -106,6 +122,76 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Havasupai Tribe of the Havasupai Reservation, Arizona
+gaming:
+  compacts:
+  - state: AZ
+    status: approved
+    approved: '2003-02-05'
+    federal_register_citation: 68 FR 5912
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2003-02-05'
+    locator: result page 1 (?page=1), row 2
+    note: 'Listed as: "Havasupai Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Havasupai
+      Tribe of the Havasupai Reservation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2003.02.05_havasupai_indian_tribal_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/02/05/03-2787/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2009-03-25'
+    federal_register_citation: 74 FR 12889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2009-03-25'
+    locator: result page 1 (?page=1), row 3
+    note: 'Listed as: "Havasupai Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Havasupai
+      Tribe of the Havasupai Reservation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_03.25.2009_havasupai_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2009/03/25/E9-6585/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2021-05-24'
+    federal_register_citation: 86 FR 27889
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2021-05-24'
+    locator: result page 1 (?page=1), row 4
+    note: 'Listed as: "Havasupai Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Havasupai
+      Tribe of the Havasupai Reservation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202021.05.24%20Havasupai%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/05/24/2021-10877/indian-gaming-approval-of-tribal-state-class-iii-gaming-compacts-in-the-state-of-arizona.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    approved: '2022-06-14'
+    federal_register_citation: 87 FR 35992
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2022-06-14'
+    locator: result page 1 (?page=1), row 5
+    note: 'Listed as: "Havasupai Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column: "Havasupai
+      Tribe of the Havasupai Reservation, Arizona". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.14_havasupai_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/14/2022-12743/indian-gaming-approval-of-20-tribal-state-class-iii-gaming-compact-amendments-with-the-state-of.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: AZ
+    status: approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance or an interpretation
+      dispute, after which agency heads and then designated tribal and gubernatorial representatives negotiate;
+      if unresolved within 30 days, either party may request non-binding mediation under CPR Institute
+      for Dispute Resolution procedures and may then demand binding arbitration under CPR rules before
+      three arbitrators unless both agree to one.
+    dispute_resolution_locator: Section 15 (Dispute Resolution)
+    source: compact-az-ak-chin-indian-community-2003
+    confidence: medium
+    as_of: '2003-02-05'
+    locator: Section 15 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Arizona nations signed a standard-form
+      compact approved in 2003; this text is the Ak-Chin Indian Community copy of that form, and the 2021-2022
+      amendments in the list refer back to Section 15. Status copied from this nation's most recent approved
+      or deemed-approved entry for this state in the Office of Indian Gaming list (2022-06-14).
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

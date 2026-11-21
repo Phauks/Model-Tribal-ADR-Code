@@ -2,6 +2,14 @@ id: coeur-dalene-tribe
 entity_type: native-nation
 names:
   official: Coeur D'Alene Tribe
+  self_designation:
+  - name: Schitsu’umsh
+    language_tag: crd
+    source: cdatribe-nsn-home
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Homepage: ''In the tribe’s own ancient language, it is called Schitsu’umsh, meaning “Those
+      who were found here” or “The discovered people”.'''
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -37,6 +45,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0705
   note: Matched by name. Census class code D2.
 population:
+- count: 2190
+  kind: citizens
+  source: cdatribe-nsn-our-tribe-history
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''current enrollment of over 2,190 members''. Undated page; as_of is access date.'
 - count: 7567
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -108,6 +122,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Coeur D'Alene Tribe
+languages:
+- name: Coeur d’Alene (snchitsu’umshtsn)
+  language_tag: crd
+  source: cdatribe-nsn-our-tribe-language
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Page: ''The Coeur d’Alene Language (snchitsu’umshtsn) is a southern interior Salishan language.'''
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Coeur d'Alene Agency
@@ -115,6 +136,103 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Coeur D'Alene Tribe
+gaming:
+  compacts:
+  - state: ID
+    status: approved
+    approved: '2003-01-08'
+    federal_register_citation: 68 FR 1068
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-01-08'
+    locator: result page 14 (?page=14), row 15
+    note: 'Listed as: "Coeur d''Alene Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coeur D''Alene Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2003.01.08._coeur_d_alene_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/01/08/03-338/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: ID
+    status: approved
+    approved: '1993-02-12'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-02-12'
+    locator: result page 14 (?page=14), row 16
+    note: 'Listed as: "Coeur d''Alene Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coeur D''Alene Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.02.12_coeur_d_alene_tribe_tribal_state_gaming_comapct.pdf.'
+  - state: ID
+    status: approved
+    approved: '1993-02-12'
+    dispute_resolution_summary: After written notice the parties meet within 10 working days, and if the
+      dispute is not resolved within 60 days either party may pursue binding arbitration before a three-member
+      panel selected by the American Arbitration Association, with no judicial review of the decision
+      (disputes under Article 6 follow that article's own procedure).
+    dispute_resolution_locator: Article 21 (Dispute Resolution)
+    source: compact-id-coeur-dalene-tribe-1993
+    confidence: medium
+    as_of: '1993-02-12'
+    locator: Article 21 (Dispute Resolution)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the 1993 Coeur d'Alene Tribe
+      compact; later Idaho compacts and amendments (2003, 2008) were not checked.
+  ordinances:
+  - approved: '1994-07-20'
+    link: https://www.nigc.gov?wpdmdl=9523&ind=9550
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-07-20'
+    locator: table row 49, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 49 lists the nation
+      as "Coeur d’Alene Tribe".
+  - approved: '1995-12-20'
+    link: https://www.nigc.gov?wpdmdl=9536&ind=9551
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-12-20'
+    locator: table row 49, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 49 lists the nation
+      as "Coeur d’Alene Tribe".
+  - approved: '1997-01-13'
+    link: https://www.nigc.gov?wpdmdl=9537&ind=9552
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-01-13'
+    locator: table row 49, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 49 lists the nation
+      as "Coeur d’Alene Tribe".
+  - approved: '1999-12-01'
+    link: https://www.nigc.gov?wpdmdl=9538&ind=9553
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1999-12-01'
+    locator: table row 49, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 49 lists the nation
+      as "Coeur d’Alene Tribe".
+  - approved: '2008-01-11'
+    link: https://www.nigc.gov?wpdmdl=9539&ind=9554
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-01-11'
+    locator: table row 49, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 49 lists the nation
+      as "Coeur d’Alene Tribe".
+  - approved: '2010-02-04'
+    link: https://www.nigc.gov?wpdmdl=9540&ind=9555
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2010-02-04'
+    locator: table row 49, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 49 lists the nation
+      as "Coeur d’Alene Tribe".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Coeur d''Alene Tribe". Facilities
+      as machine-extracted from the report text (verify): Benewah Market; Benewah Automotive Center; Coeur
+      d''Alene Casino Resort/Hotel. Name extracted from the PDF by the page-fetch tool and matched to
+      the roster.'
 jurisdiction:
 - topic: public-law-280
   value: optional-state

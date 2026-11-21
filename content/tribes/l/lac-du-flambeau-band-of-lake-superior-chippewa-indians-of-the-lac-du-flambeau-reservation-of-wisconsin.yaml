@@ -39,6 +39,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1825
   note: Matched by name. Census class code D2.
 population:
+- count: 3415
+  kind: citizens
+  source: wisconsin-dpi-tribal-nations-lac-du-flambeau
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'State page, Tribal Statistics: ''There are currently 3415 Lac du Flambeau tribal members.'' Undated;
+    as_of is access date.'
 - count: 3518
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -107,6 +114,13 @@ contacts:
   as_of: '2026-11-20'
   locator: Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation of
     Wisconsin
+languages:
+- name: Ojibwe (Anishinaabemowin)
+  language_tag: oj
+  source: ldftribe-education-ojibwe-language
+  confidence: high
+  as_of: '2026-11-21'
+  note: Ojibwe Language program page.
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Great Lakes Agency
@@ -115,6 +129,178 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation of
     Wisconsin
+gaming:
+  compacts:
+  - state: WI
+    status: approved
+    approved: '2024-04-09'
+    federal_register_citation: 89 FR 24853
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2024-04-09'
+    locator: result page 46 (?page=46), row 2
+    note: 'Listed as: "Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation
+      Tribal State Gaming Compact" (Approve); list''s Tribe column: "Lac Courte Oreilles Band of Lake
+      Superior Chippewa Indians of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.04.09_lac_du_flambeau_band_fo_lake_superior_chippewa_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/04/09/2024-07507/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-between-the-lac-du.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: WI
+    status: deemed-approved
+    approved: '2026-03-10'
+    federal_register_citation: 91 FR 11560
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2026-03-10'
+    locator: result page 46 (?page=46), row 3
+    note: 'Listed as: "Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac Du Flambeau Reservation
+      Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column: "Lac du Flambeau Band of Lake
+      Superior Chippewa Indians of the Lac du Flambeau Reservation of Wisconsin". Document: https://www.bia.gov/sites/default/files/media_document/lac_du_flambeau_and_wisconsin_compact_amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2026/03/10/2026-04667/indian-gaming-approval-by-operation-of-law-of-the-lac-du-flambeau-band-of-lake-superior-chippewa.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1992-07-01'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1992-07-01'
+    locator: result page 46 (?page=46), row 4
+    note: 'Listed as: "Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation
+      Tribal State Gaming Compact" (Approve); list''s Tribe column: "Lac Courte Oreilles Band of Lake
+      Superior Chippewa Indians of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1992.07.01_lac_du_flambeau_band_of_lake_superior_chippewa_indians_mediated_gaming_compact.pdf.
+      The Tribe column and the compact title disagree; the nation named in the title was used.'
+  - state: WI
+    status: approved
+    approved: '1999-03-26'
+    federal_register_citation: 64 FR 14746
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1999-03-26'
+    locator: result page 46 (?page=46), row 5
+    note: 'Listed as: "Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation
+      Tribal State Gaming Compact" (Approve); list''s Tribe column: "Lac Courte Oreilles Band of Lake
+      Superior Chippewa Indians of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.03.26%20%20Lac%20du%20Flambeau%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/03/26/99-7514/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '2009-06-17'
+    federal_register_citation: 74 FR 28723
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2009-06-17'
+    locator: result page 46 (?page=46), row 6
+    note: 'Listed as: "Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation
+      Tribal State Gaming Compact" (Approve); list''s Tribe column: "Lac Courte Oreilles Band of Lake
+      Superior Chippewa Indians of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202009.06.17%20%20Lac%20du%20Flambeau%20Gaming%20Compact%20Amendments.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2009/06/17/E9-14260/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '2017-07-18'
+    federal_register_citation: 82 FR 32866
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2017-07-18'
+    locator: result page 46 (?page=46), row 7
+    note: 'Listed as: "Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac du Flambeau Reservation
+      Tribal State Gaming Compact" (Approve); list''s Tribe column: "Lac Courte Oreilles Band of Lake
+      Superior Chippewa Indians of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202017.07.18%20Lac%20du%20Flambeau%20Compact%20Amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2017/07/18/2017-15010/indian-gaming-tribal-state-class-iii-gaming-compact-amendment-taking-effect-in-the-state-of.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '2020-07-23'
+    federal_register_citation: 85 FR 44545
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2020-07-23'
+    locator: result page 46 (?page=46), row 8
+    note: 'Listed as: "Lac du Flambeau Band of Lake Superior Chippewa Indians of the Lac Du Flambeau Reservation
+      Tribal State Gaming Compact" (Approve); list''s Tribe column: "Lac Courte Oreilles Band of Lake
+      Superior Chippewa Indians of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202020.07.23%20Lac%20Du%20Flambeau%20Tribal%20State%20Compact%20Amendment_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2020/07/23/2020-15974/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-in-the-state-of-wisconsin.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: WI
+    status: deemed-approved
+    dispute_resolution_summary: After written notice the State and Tribe meet within 30 days, and if the
+      dispute is unresolved after 90 days either party may pursue any otherwise available remedy, with
+      mediation or arbitration only by mutual agreement.
+    dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
+    confidence: medium
+    as_of: '1992-08-10'
+    locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
+      compact; later amendments renumbered this section XXIV and revised it for at least some nations
+      (for example the Ho-Chunk Nation fourth amendment), so the current text may differ. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2026-03-10).
+  ordinances:
+  - approved: '1993-11-29'
+    link: https://www.nigc.gov?wpdmdl=10125&ind=10137
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1993-11-29'
+    locator: table row 130, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 130 lists the nation
+      as "Lac du Flambeau Band of Lake Superior Chippewa Indians". Name matched to roster by spelling
+      variant.
+  - approved: '2002-01-14'
+    link: https://www.nigc.gov?wpdmdl=10126&ind=10138
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2002-01-14'
+    locator: table row 130, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 130 lists the nation
+      as "Lac du Flambeau Band of Lake Superior Chippewa Indians". Name matched to roster by spelling
+      variant.
+  - approved: '2004-05-03'
+    link: https://www.nigc.gov?wpdmdl=10127&ind=10139
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2004-05-03'
+    locator: table row 130, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 130 lists the nation
+      as "Lac du Flambeau Band of Lake Superior Chippewa Indians". Name matched to roster by spelling
+      variant.
+  - approved: '2004-10-22'
+    link: https://www.nigc.gov?wpdmdl=10128&ind=10140
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2004-10-22'
+    locator: table row 130, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 130 lists the nation
+      as "Lac du Flambeau Band of Lake Superior Chippewa Indians". Name matched to roster by spelling
+      variant.
+  - approved: '2012-08-06'
+    link: https://www.nigc.gov?wpdmdl=10129&ind=10141
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2012-08-06'
+    locator: table row 130, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 130 lists the nation
+      as "Lac du Flambeau Band of Lake Superior Chippewa Indians". Name matched to roster by spelling
+      variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Lac du Flambeau Band of Lake
+      Superior Chippewa Indians". Facilities as machine-extracted from the report text (verify): Lake
+      of the Torches Resort Casino. Name extracted from the PDF by the page-fetch tool and matched to
+      the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

@@ -2,6 +2,14 @@ id: caddo-nation-of-oklahoma
 entity_type: native-nation
 names:
   official: Caddo Nation of Oklahoma
+  alternate:
+  - name: Hasinai
+    source: mycaddonation-language-preservation
+    confidence: low
+    as_of: '2026-11-21'
+    note: The page gives Hasinai as the name of the Caddo language among its native speakers ('Caddo people
+      typically refer to their own people and language as Caddo when speaking English'). Recorded as an
+      alternate name with care.
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -51,6 +59,12 @@ census_areas:
     Fort Sill--Chiricahua--Warm Springs--Apache Tribe; Wichita and Affiliated Tribes , Oklahoma; Delaware
     Nation, Oklahoma. Census class code D0.'
 population:
+- count: 4909
+  kind: citizens
+  source: oklahoma-education-tribal-guide-caddo
+  confidence: medium
+  as_of: 2010-10
+  note: 'State education guide: ''around 4909 enrolled members as of October 2010.'' Old figure.'
 - count: 15107
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -129,6 +143,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Caddo Nation of Oklahoma
+languages:
+- name: Caddo
+  language_tag: cad
+  source: mycaddonation-language-preservation
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Page: ''The Caddo language is known as Hasinai (ha-SEE-nay) to its native speakers.'''
 federal_administration:
   bureau_of_indian_affairs_region: Southern Plains
   bureau_of_indian_affairs_agency: Anadarko Agency
@@ -136,6 +157,86 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Caddo Nation of Oklahoma
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '2006-09-12'
+    federal_register_citation: 71 FR 53706
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2006-09-12'
+    locator: result page 26 (?page=26), row 7
+    note: 'Listed as: "Caddo Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Caddo
+      Nation of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202006.09.12%20Caddo%20Nation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2006/09/12/E6-15031/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2006-09-12).
+  ordinances:
+  - approved: '2001-10-23'
+    link: https://www.nigc.gov?wpdmdl=9423&ind=9440
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-10-23'
+    locator: table row 28, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 28 lists the nation
+      as "Caddo Nation of Oklahoma".
+  - approved: '2003-05-12'
+    link: https://www.nigc.gov?wpdmdl=9422&ind=9441
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-05-12'
+    locator: table row 28, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 28 lists the nation
+      as "Caddo Nation of Oklahoma".
+  - approved: '2006-05-17'
+    link: https://www.nigc.gov?wpdmdl=9427&ind=9442
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2006-05-17'
+    locator: table row 28, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 28 lists the nation
+      as "Caddo Nation of Oklahoma".
+  - approved: '2008-12-16'
+    link: https://www.nigc.gov?wpdmdl=9426&ind=9443
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-12-16'
+    locator: table row 28, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 28 lists the nation
+      as "Caddo Nation of Oklahoma".
+  - approved: '2016-06-15'
+    link: https://www.nigc.gov?wpdmdl=9438&ind=9444
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2016-06-15'
+    locator: table row 28, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 28 lists the nation
+      as "Caddo Nation of Oklahoma".
+  - approved: '2026-10-02'
+    link: https://www.nigc.gov?wpdmdl=14651&ind=1791383933277
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2026-10-02'
+    locator: table row 28, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 28 lists the nation
+      as "Caddo Nation of Oklahoma".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

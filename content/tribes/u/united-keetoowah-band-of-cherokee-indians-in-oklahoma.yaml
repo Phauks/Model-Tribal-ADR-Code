@@ -117,6 +117,61 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: United Keetoowah Band of Cherokee Indians in Oklahoma
+gaming:
+  compacts:
+  - state: OK
+    status: deemed-approved
+    approved: '2020-09-08'
+    federal_register_citation: 85 FR 55472
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2020-09-08'
+    locator: result page 29 (?page=29), row 16
+    note: 'Listed as: "United Keetoowah Band of Cherokee Indians Tribal State Gaming Compact" (Deemed
+      Approved); list''s Tribe column: "United Keetoowah Band of Cherokee Indians in Oklahoma". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%20%20United%20Keetoowah%20Band%20Compact%20July%201%2C%202020.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2020/09/08/2020-19707/indian-gaming-tribal-state-class-iii-gaming-compacts-taking-effect-in-the-state-of-oklahoma.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2020-06-17'
+    federal_register_citation: 85 FR 36609
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2020-06-17'
+    locator: result page 29 (?page=29), row 17
+    note: 'Listed as: "United Keetoowah Band of Cherokee Indians Tribal State Gaming Compact" (Extensions);
+      list''s Tribe column: "United Keetoowah Band of Cherokee Indians in Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2020.06.17_united_keetoowah_band_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2020/06/17/2020-13062/indian-gaming-tribal-state-class-iii-gaming-compact-taking-effect-in-the-state-of-oklahoma.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Name
+      matched to roster by spelling variant. Federal Register citation converted from the linked document
+      number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2020-09-08).
+  ordinances:
+  - approved: '1995-03-22'
+    link: https://www.nigc.gov?wpdmdl=11477&ind=11497
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-03-22'
+    locator: table row 300, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 300 lists the nation
+      as "United Keetoowah Band of Cherokee Indians". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

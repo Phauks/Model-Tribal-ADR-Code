@@ -37,6 +37,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1530
   note: Matched by name. Census class code D1.
 population:
+- count: 1700
+  kind: citizens
+  source: maliseets-about
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''comprised of some 1700 members''. Undated; as_of is access date.'
 - count: 226
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -101,6 +107,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Houlton Band of Maliseet Indians
+languages:
+- name: Maliseet/Wolastoqey Latuwewakon
+  language_tag: pqm
+  source: maliseets-language
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Language page: grant ''targeted Maliseet/Wolastoqey Latuwewakon preservation''.'
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office

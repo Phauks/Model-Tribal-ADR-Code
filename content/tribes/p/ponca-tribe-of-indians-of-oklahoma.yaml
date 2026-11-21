@@ -135,6 +135,83 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Ponca Tribe of Indians of Oklahoma
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '2002-02-08'
+    federal_register_citation: 67 FR 6050
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2002-02-08'
+    locator: result page 28 (?page=28), row 22
+    note: 'Listed as: "Ponca Tribe of Indians Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Ponca Tribe of Indians of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2002.02.08_ponca_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2002/02/08/02-3041/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    approved: '2005-10-03'
+    federal_register_citation: 70 FR 57617
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-10-03'
+    locator: result page 28 (?page=28), row 23
+    note: 'Listed as: "Ponca Tribe of Indians Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "Ponca Tribe of Indians of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.10.03%20Ponca%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/10/03/05-19733/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2005-10-03).
+  ordinances:
+  - approved: '1995-05-03'
+    link: https://www.nigc.gov?wpdmdl=10659&ind=10676
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-05-03'
+    locator: table row 196, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 196 lists the nation
+      as "Ponca Tribe of Indians of Oklahoma".
+  - approved: '2008-12-15'
+    link: https://www.nigc.gov?wpdmdl=10660&ind=10677
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-12-15'
+    locator: table row 196, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 196 lists the nation
+      as "Ponca Tribe of Indians of Oklahoma".
+  - approved: '2010-10-25'
+    link: https://www.nigc.gov?wpdmdl=10661&ind=10678
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2010-10-25'
+    locator: table row 196, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 196 lists the nation
+      as "Ponca Tribe of Indians of Oklahoma".
+  - approved: '2017-06-21'
+    link: https://www.nigc.gov?wpdmdl=10662&ind=10679
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2017-06-21'
+    locator: table row 196, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 196 lists the nation
+      as "Ponca Tribe of Indians of Oklahoma".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

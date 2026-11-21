@@ -100,6 +100,14 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Eastern Shawnee Tribe of Oklahoma
+languages:
+- name: Shawnee
+  language_tag: sjw
+  source: estoo-nsn-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Homepage: ''In the Shawnee language this means hello.'' Read via the WebFetch tool because plain
+    fetching was refused (HTTP 403); quote is as extracted by that tool.'
 federal_administration:
   bureau_of_indian_affairs_region: Eastern Oklahoma
   bureau_of_indian_affairs_agency: Miami Agency
@@ -107,6 +115,120 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Eastern Shawnee Tribe of Oklahoma
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '2018-08-17'
+    federal_register_citation: 83 FR 41101
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-08-17'
+    locator: result page 27 (?page=27), row 12
+    note: 'Listed as: "Eastern Shawnee Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Eastern Shawnee Tribe of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.17%20Eastern%20Shawnee%20compact%20amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/08/17/2018-17729/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of-oklahoma.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2002-02-08'
+    federal_register_citation: 67 FR 6049
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2002-02-08'
+    locator: result page 27 (?page=27), row 13
+    note: 'Listed as: "Eastern Shawnee Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Eastern Shawnee Tribe of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202002.02.08%20Eastern%20Shawnee%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2002/02/08/02-3039/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    approved: '2005-02-09'
+    federal_register_citation: 70 FR 6903
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-02-09'
+    locator: result page 27 (?page=27), row 14
+    note: 'Listed as: "Eastern Shawnee Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
+      column: "Eastern Shawnee Tribe of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2005.02.09_eastern_shawnee_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/02/09/05-2462/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-08-17).
+  ordinances:
+  - approved: '1995-04-07'
+    link: https://www.nigc.gov?wpdmdl=9738&ind=9770
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-04-07'
+    locator: table row 72, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 72 lists the nation
+      as "Eastern Shawnee Tribe of Oklahoma".
+  - approved: '1996-10-09'
+    link: https://www.nigc.gov?wpdmdl=9756&ind=9771
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-10-09'
+    locator: table row 72, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 72 lists the nation
+      as "Eastern Shawnee Tribe of Oklahoma".
+  - approved: '2009-01-26'
+    link: https://www.nigc.gov?wpdmdl=9757&ind=9772
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2009-01-26'
+    locator: table row 72, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 72 lists the nation
+      as "Eastern Shawnee Tribe of Oklahoma".
+  - approved: '2010-02-22'
+    link: https://www.nigc.gov?wpdmdl=9758&ind=9773
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2010-02-22'
+    locator: table row 72, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 72 lists the nation
+      as "Eastern Shawnee Tribe of Oklahoma".
+  - approved: '2012-07-26'
+    link: https://www.nigc.gov?wpdmdl=9759&ind=9774
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2012-07-26'
+    locator: table row 72, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 72 lists the nation
+      as "Eastern Shawnee Tribe of Oklahoma".
+  - approved: '2015-06-09'
+    link: https://www.nigc.gov?wpdmdl=9760&ind=9775
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2015-06-09'
+    locator: table row 72, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 72 lists the nation
+      as "Eastern Shawnee Tribe of Oklahoma".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Eastern Shawnee Tribe of Oklahoma".
+      Facilities as machine-extracted from the report text (verify): Bordertown Outpost Casino; Indigo
+      Sky Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

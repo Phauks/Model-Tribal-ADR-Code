@@ -106,6 +106,66 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Pueblo of Picuris, New Mexico
+gaming:
+  compacts:
+  - state: NM
+    status: approved
+    approved: '2007-07-05'
+    federal_register_citation: 72 FR 36717
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-07-05'
+    locator: result page 23 (?page=23), row 9
+    note: 'Listed as: "Pueblo of Picuris Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Pueblo of Picuris, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.07.05_pueblo_of_picuris_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/07/05/E7-12904/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: deemed-approved
+    approved: '1997-11-05'
+    federal_register_citation: 62 FR 59878
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1997-11-05'
+    locator: result page 23 (?page=23), row 10
+    note: 'Listed as: "Pueblo of Picuris Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
+      column: "Pueblo of Picuris, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1997.11.05_pueblo_of_picuris_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1997/11/05/97-29300/notice-of-tribal-state-gaming-compact-taking-effect.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: approved
+    dispute_resolution_summary: Within two years of a discovered violation a party serves written notice,
+      may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
+      binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
+      Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-nm-pueblo-of-santa-ana-2016
+    confidence: medium
+    as_of: '2016-12-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
+      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
+      Status copied from this nation's most recent approved or deemed-approved entry for this state in
+      the Office of Indian Gaming list (2007-07-05).
+  ordinances:
+  - approved: '2009-02-12'
+    link: https://www.nigc.gov?wpdmdl=10754&ind=10774
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2009-02-12'
+    locator: table row 206, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 206 lists the nation
+      as "Pueblo of Picuris".
+  - approved: '2012-09-02'
+    link: https://www.nigc.gov?wpdmdl=10755&ind=10775
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2012-09-02'
+    locator: table row 206, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 206 lists the nation
+      as "Pueblo of Picuris".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

@@ -149,6 +149,47 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Poarch Band of Creek Indians
+gaming:
+  ordinances:
+  - approved: '1993-08-02'
+    link: https://www.nigc.gov?wpdmdl=10636&ind=10669
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-08-02'
+    locator: table row 194, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 194 lists the nation
+      as "Poarch Band of Creek Indians".
+  - approved: '2010-07-30'
+    link: https://www.nigc.gov?wpdmdl=10653&ind=10670
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2010-07-30'
+    locator: table row 194, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 194 lists the nation
+      as "Poarch Band of Creek Indians".
+  - approved: '2013-08-22'
+    link: https://www.nigc.gov?wpdmdl=10654&ind=10671
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2013-08-22'
+    locator: table row 194, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 194 lists the nation
+      as "Poarch Band of Creek Indians".
+  - approved: '2015-08-11'
+    link: https://www.nigc.gov?wpdmdl=10655&ind=10672
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2015-08-11'
+    locator: table row 194, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 194 lists the nation
+      as "Poarch Band of Creek Indians".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Poarch Band of Creek Indians".
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

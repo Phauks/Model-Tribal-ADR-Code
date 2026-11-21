@@ -2,6 +2,20 @@ id: ho-chunk-nation-of-wisconsin
 entity_type: native-nation
 names:
   official: Ho-Chunk Nation of Wisconsin
+  alternate:
+  - name: People of the Big Voice
+    source: ho-chunknation-home
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'Homepage: ''the nation reclaimed their original name: Ho-Chunk or “People of the Big Voice.”''
+      Page header also says ''People of the Sacred Voice''.'
+  former:
+  - name: Wisconsin Winnebago Tribe
+    source: ho-chunknation-home
+    confidence: high
+    as_of: '1994'
+    note: 'Homepage: ''were first recorded as the Wisconsin Winnebago Tribe. This name was given to them
+      by early European explorers. In 1994 ... the nation reclaimed their original name: Ho-Chunk''.'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -45,6 +59,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1450
   note: Matched by name. Census class code D1.
 population:
+- count: 7752
+  kind: citizens
+  source: ho-chunknation-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Homepage: ''this group of 7,752 citizens''. Undated; as_of is access date.'
 - count: 1577
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -117,6 +137,14 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Ho-Chunk Nation of Wisconsin
+languages:
+- name: Hocak
+  language_tag: win
+  source: ho-chunknation-home
+  confidence: low
+  as_of: '2026-11-21'
+  note: Homepage directory lists 'Hocak Wazija Haci Language Programs' and several Language Offices; the
+    language name is inferred from that program name.
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Great Lakes Agency
@@ -124,6 +152,135 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Ho-Chunk Nation of Wisconsin
+gaming:
+  compacts:
+  - state: WI
+    status: deemed-approved
+    approved: '2025-01-08'
+    federal_register_citation: 90 FR 1539
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2025-01-08'
+    locator: result page 45 (?page=45), row 17
+    note: 'Listed as: "Ho-Chunk Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Ho-Chunk Nation of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2025.01.08_ho-chunk_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2025/01/08/2025-00121/indian-gaming-approval-by-operation-of-law-tribal-state-class-iii-gaming-compact-amendment-between.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: deemed-approved
+    approved: '2003-07-03'
+    federal_register_citation: 68 FR 39964
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-07-03'
+    locator: result page 45 (?page=45), row 18
+    note: 'Listed as: "Ho-Chunk Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Ho-Chunk Nation of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202003.07.03%20Ho%20Chunk%20Nation%20Gaming%20Compact.DEEMED%20APPROVED.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/07/03/03-16824/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1992-08-05'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-08-05'
+    locator: result page 45 (?page=45), row 19
+    note: 'Listed as: "Ho-Chunk Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Ho-Chunk
+      Nation of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201992.08.05%20Wisconsin%20Winnebago%20Tribe%20Gaming%20Compact%201992.pdf.'
+  - state: WI
+    status: approved
+    approved: '2008-12-12'
+    federal_register_citation: 73 FR 75764
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2008-12-12'
+    locator: result page 45 (?page=45), row 20
+    note: 'Listed as: "Ho-Chunk Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Ho-Chunk
+      Nation of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2008.12.12_ho_chunk_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/12/12/E8-29420/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: approved
+    approved: '1999-02-01'
+    federal_register_citation: 64 FR 4890
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-02-01'
+    locator: result page 45 (?page=45), row 21
+    note: 'Listed as: "Ho-Chunk Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Ho-Chunk
+      Nation of Wisconsin". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.02.01%20Ho%20Chunk%20Nation%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/02/01/99-2278/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WI
+    status: deemed-approved
+    dispute_resolution_summary: After written notice the State and Tribe meet within 30 days, and if the
+      dispute is unresolved after 90 days either party may pursue any otherwise available remedy, with
+      mediation or arbitration only by mutual agreement.
+    dispute_resolution_locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    source: compact-wi-menominee-indian-tribe-of-wisconsin-1992
+    confidence: medium
+    as_of: '1992-08-10'
+    locator: Section XXIII (Dispute Resolution) of the 1992 compact
+    note: state model compact; nation-specific text not checked. Read from the 1992 Menominee Indian Tribe
+      compact; later amendments renumbered this section XXIV and revised it for at least some nations
+      (for example the Ho-Chunk Nation fourth amendment), so the current text may differ. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2025-01-08).
+  ordinances:
+  - approved: '1994-05-19'
+    link: https://www.nigc.gov?wpdmdl=9902&ind=9916
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-05-19'
+    locator: table row 98, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 98 lists the nation
+      as "Ho-Chunk Nation".
+  - approved: '1996-12-17'
+    link: https://www.nigc.gov?wpdmdl=9903&ind=9917
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-12-17'
+    locator: table row 98, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 98 lists the nation
+      as "Ho-Chunk Nation".
+  - approved: '1999-09-07'
+    link: https://www.nigc.gov?wpdmdl=9904&ind=9918
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1999-09-07'
+    locator: table row 98, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 98 lists the nation
+      as "Ho-Chunk Nation".
+  - approved: '2000-02-14'
+    link: https://www.nigc.gov?wpdmdl=9905&ind=9919
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-02-14'
+    locator: table row 98, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 98 lists the nation
+      as "Ho-Chunk Nation".
+  - approved: '2008-02-07'
+    link: https://www.nigc.gov?wpdmdl=9906&ind=9920
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-02-07'
+    locator: table row 98, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 98 lists the nation
+      as "Ho-Chunk Nation".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Ho-Chunk Nation of Wisconsin".
+      Facilities as machine-extracted from the report text (verify): Ho-Chunk Gaming - Madison; Ho-Chunk
+      Gaming - Wittenberg; Ho-Chunk Gaming - Tomah; Ho-Chunk Gaming - Nekoosa; Ho-Chunk Gaming - Black
+      River Falls; Ho-Chunk Gaming - Wisconsin Dells. Name extracted from the PDF by the page-fetch tool
+      and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

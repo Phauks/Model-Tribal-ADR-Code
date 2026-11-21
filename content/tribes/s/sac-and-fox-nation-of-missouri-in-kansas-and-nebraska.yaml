@@ -115,6 +115,93 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Sac & Fox Nation of Missouri in Kansas and Nebraska
+gaming:
+  compacts:
+  - state: KS
+    status: deemed-approved
+    approved: '2025-11-24'
+    federal_register_citation: 90 FR 52995
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2025-11-24'
+    locator: result page 15 (?page=15), row 4
+    note: 'Listed as: "Sac and Fox Nation of Missouri in Kansas and Nebraska Tribal State Gaming Compact"
+      (Deemed Approved); list''s Tribe column: "Sac & Fox Nation of Missouri in Kansas and Nebraska".
+      Document: https://www.bia.gov/sites/default/files/media_document/sac_and_fox_nation_of_missouri_in_kansas_and_nebraska_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2025/11/24/2025-20696/indian-gaming-approval-by-operation-of-law-of-the-amendment-to-the-sac-and-fox-nation-of-missouri-in.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: KS
+    status: disapproved
+    approved: '1992-07-10'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-07-10'
+    locator: result page 15 (?page=15), row 5
+    note: 'Listed as: "Sac and Fox Nation of Missouri in Kansas and Nebraska Tribal State Gaming Compact"
+      (Disapproved); list''s Tribe column: "Sac & Fox Nation of Missouri in Kansas and Nebraska". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1992.07.10_sac_and_fox_nation_of_missouri_in_kansas_and_nebraska_tribal_state_gaming_compact.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: KS
+    status: approved
+    approved: '1995-11-14'
+    federal_register_citation: 60 FR 57246
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-11-14'
+    locator: result page 15 (?page=15), row 6
+    note: 'Listed as: "Sac and Fox Nation of Missouri in Kansas and Nebraska Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Sac & Fox Nation of Missouri in Kansas and Nebraska". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1995.11.14_sac_fox_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/11/14/95-28035/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: KS
+    status: deemed-approved
+    dispute_resolution_summary: The parties must use best efforts to negotiate for at least 14 days, after
+      which either party may refer the dispute to binding arbitration before a sole agreed arbitrator
+      or a three-member panel, with judicial enforcement in the United States District Court for Kansas.
+    dispute_resolution_locator: Section 29 (Dispute Resolution)
+    source: compact-ks-wyandotte-nation-2026
+    confidence: medium
+    as_of: '2026-07-14'
+    locator: Section 29 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2026 Wyandotte Nation compact;
+      other Kansas compacts were not checked. Status copied from this nation's most recent approved or
+      deemed-approved entry for this state in the Office of Indian Gaming list (2025-11-24).
+  ordinances:
+  - approved: '1995-08-09'
+    link: https://www.nigc.gov?wpdmdl=10953&ind=10971
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-08-09'
+    locator: table row 236, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 236 lists the nation
+      as "Sac and Fox Nation of Missouri in Kansas & Nebraska".
+  - approved: '1998-01-23'
+    link: https://www.nigc.gov?wpdmdl=10952&ind=10972
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1998-01-23'
+    locator: table row 236, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 236 lists the nation
+      as "Sac and Fox Nation of Missouri in Kansas & Nebraska".
+  - approved: '1999-08-12'
+    link: https://www.nigc.gov?wpdmdl=10951&ind=10973
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1999-08-12'
+    locator: table row 236, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 236 lists the nation
+      as "Sac and Fox Nation of Missouri in Kansas & Nebraska".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Sac and Fox Nation of Missouri
+      in Kansas & Nebraska". Name extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

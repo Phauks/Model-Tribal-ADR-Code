@@ -145,6 +145,16 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Shinnecock Indian Nation
+gaming:
+  ordinances:
+  - approved: '2020-07-17'
+    link: https://www.nigc.gov?wpdmdl=11119&ind=11142
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2020-07-17'
+    locator: table row 258, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 258 lists the nation
+      as "Shinnecock Indian Nation".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

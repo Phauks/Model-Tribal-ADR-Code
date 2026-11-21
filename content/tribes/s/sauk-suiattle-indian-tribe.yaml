@@ -106,6 +106,99 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Sauk-Suiattle Indian Tribe
+gaming:
+  compacts:
+  - state: WA
+    status: approved
+    approved: '2000-09-22'
+    federal_register_citation: 65 FR 57368
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-09-22'
+    locator: result page 42 (?page=42), row 3
+    note: 'Listed as: "Sauk Suiattle Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Sauk-Suiattle Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.09.22%20Sauk-Suiattle%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/09/22/00-24357/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2007-05-31'
+    federal_register_citation: 72 FR 30392
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-05-31'
+    locator: result page 42 (?page=42), row 4
+    note: 'Listed as: "Sauk Suiattle Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Sauk-Suiattle Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.05.31_sauk-suiattle_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/05/31/E7-10397/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2015-06-04'
+    federal_register_citation: 80 FR 31918
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-04'
+    locator: result page 42 (?page=42), row 5
+    note: 'Listed as: "Sauk Suiattle Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Sauk-Suiattle Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%20%202015.06.04%20Sauk-Suiattle%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/04/2015-13712/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2022-06-14'
+    federal_register_citation: 87 FR 35992
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-06-14'
+    locator: result page 42 (?page=42), row 6
+    note: 'Listed as: "Sauk Suiattle Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Sauk-Suiattle Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.14_sauk-suiattle_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/14/2022-12740/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-between-sauk-suiattle.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2022-06-14).
+  ordinances:
+  - approved: '2000-04-27'
+    link: https://www.nigc.gov?wpdmdl=11017&ind=11051
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-04-27'
+    locator: table row 247, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 247 lists the nation
+      as "Sauk-Suiattle Indian Tribe".
+  - approved: '2019-09-03'
+    link: https://www.nigc.gov?wpdmdl=11041&ind=11052
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2019-09-03'
+    locator: table row 247, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 247 lists the nation
+      as "Sauk-Suiattle Indian Tribe".
+  - approved: '2023-12-13'
+    link: https://www.nigc.gov?wpdmdl=11042&ind=11053
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2023-12-13'
+    locator: table row 247, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 247 lists the nation
+      as "Sauk-Suiattle Indian Tribe".
 jurisdiction:
 - topic: public-law-280
   value: optional-state

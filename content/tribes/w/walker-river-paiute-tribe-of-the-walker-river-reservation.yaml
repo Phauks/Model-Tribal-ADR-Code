@@ -120,6 +120,37 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Walker River Paiute Tribe of the Walker River Reservation, Nevada
+gaming:
+  compacts:
+  - state: NV
+    status: approved
+    approved: '1996-08-02'
+    federal_register_citation: 61 FR 40429
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-08-02'
+    locator: result page 25 (?page=25), row 14
+    note: 'Listed as: "Walker River Paiute Tribe of the Walker River Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Walker River Paiute Tribe of the Walker River Reservation, Nevada".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1996.08.02_walker_river_paiute_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/08/02/X96-20802/indian-gaming-walker-river-paiute-tribe.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NV
+    status: approved
+    dispute_resolution_summary: A party alleging substantial default gives written notice with 90 days
+      to cure, the parties then meet within 30 days, and unresolved disputes may be brought in federal
+      court with venue in Washoe County for declaratory or injunctive relief only under a limited waiver
+      of sovereign immunity, with mediation or arbitration available by mutual written agreement.
+    dispute_resolution_locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver
+      of Sovereign Immunity)
+    source: compact-nv-washoe-tribe-of-nevada-and-california-2018
+    confidence: medium
+    as_of: '2018-01-18'
+    locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver of Sovereign Immunity)
+    note: state model compact; nation-specific text not checked. Read from the 2018 Washoe Tribe compact;
+      other Nevada compacts were not checked. Status copied from this nation's most recent approved or
+      deemed-approved entry for this state in the Office of Indian Gaming list (1996-08-02).
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

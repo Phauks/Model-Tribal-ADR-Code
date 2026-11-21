@@ -37,6 +37,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1770
   note: Matched by name. Census class code D2.
 population:
+- count: 1600
+  kind: citizens
+  source: ktik-nsn-history-and-language-resource
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''approximately 1,600 enrolled members''. Undated; as_of is access date.'
 - count: 3849
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -107,6 +113,92 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas
+gaming:
+  compacts:
+  - state: KS
+    status: approved
+    approved: '1995-08-21'
+    federal_register_citation: 60 FR 43512
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-08-21'
+    locator: result page 15 (?page=15), row 1
+    note: 'Listed as: "Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas Tribal State Gaming
+      Compact" (Approve); list''s Tribe column: "Kickapoo Tribe of Indians of the Kickapoo Reservation
+      in Kansas". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1995.08.21_kickapoo_tribe_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/08/21/95-20653/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: KS
+    status: approved
+    dispute_resolution_summary: The parties must use best efforts to negotiate for at least 14 days, after
+      which either party may refer the dispute to binding arbitration before a sole agreed arbitrator
+      or a three-member panel, with judicial enforcement in the United States District Court for Kansas.
+    dispute_resolution_locator: Section 29 (Dispute Resolution)
+    source: compact-ks-wyandotte-nation-2026
+    confidence: medium
+    as_of: '2026-07-14'
+    locator: Section 29 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2026 Wyandotte Nation compact;
+      other Kansas compacts were not checked. Status copied from this nation's most recent approved or
+      deemed-approved entry for this state in the Office of Indian Gaming list (1995-08-21).
+  ordinances:
+  - approved: '1994-07-15'
+    link: https://www.nigc.gov?wpdmdl=10062&ind=10076
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-07-15'
+    locator: table row 120, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 120 lists the nation
+      as "Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas".
+  - approved: '1995-07-31'
+    link: https://www.nigc.gov?wpdmdl=10063&ind=10077
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-07-31'
+    locator: table row 120, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 120 lists the nation
+      as "Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas".
+  - approved: '1996-08-01'
+    link: https://www.nigc.gov?wpdmdl=10064&ind=10078
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-08-01'
+    locator: table row 120, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 120 lists the nation
+      as "Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas".
+  - approved: '1997-02-20'
+    link: https://www.nigc.gov?wpdmdl=10065&ind=10079
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-02-20'
+    locator: table row 120, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 120 lists the nation
+      as "Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas".
+  - approved: '2007-06-01'
+    link: https://www.nigc.gov?wpdmdl=10066&ind=10080
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2007-06-01'
+    locator: table row 120, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 120 lists the nation
+      as "Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas".
+  - approved: '2010-11-24'
+    link: https://www.nigc.gov?wpdmdl=10067&ind=10081
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2010-11-24'
+    locator: table row 120, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 120 lists the nation
+      as "Kickapoo Tribe of Indians of the Kickapoo Reservation in Kansas".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Kickapoo Tribe of Indians
+      of the Kickapoo Reservation in Kansas". Facilities as machine-extracted from the report text (verify):
+      Golden Eagle Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

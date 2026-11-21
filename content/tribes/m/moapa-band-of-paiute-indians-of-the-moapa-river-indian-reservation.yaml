@@ -117,6 +117,67 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Moapa Band of Paiute Indians of the Moapa River Indian Reservation, Nevada
+gaming:
+  compacts:
+  - state: NV
+    status: approved
+    approved: '1994-12-22'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1994-12-22'
+    locator: result page 24 (?page=24), row 22
+    note: 'Listed as: "Moapa Band of Paiute Indians of the Moapa River Indian Reservation Tribal State
+      Gaming Compact" (Approve); list''s Tribe column: "Moapa Band of Paiute Indians of the Moapa River
+      Indian Reservation, Nevada". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1994.12.22_moapa_band_of_paiute_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1994/12/22/94-31375/indian-gaming-notice-department-of-the-interior.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NV
+    status: approved
+    approved: '2000-01-07'
+    federal_register_citation: 65 FR 1167
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-01-07'
+    locator: result page 24 (?page=24), row 23
+    note: 'Listed as: "Moapa Band of Paiute Indians of the Moapa River Indian Reservation Tribal State
+      Gaming Compact" (Approve); list''s Tribe column: "Moapa Band of Paiute Indians of the Moapa River
+      Indian Reservation, Nevada". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.01.07_moapa_band_of_paiute_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/01/07/00-324/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NV
+    status: approved
+    dispute_resolution_summary: A party alleging substantial default gives written notice with 90 days
+      to cure, the parties then meet within 30 days, and unresolved disputes may be brought in federal
+      court with venue in Washoe County for declaratory or injunctive relief only under a limited waiver
+      of sovereign immunity, with mediation or arbitration available by mutual written agreement.
+    dispute_resolution_locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver
+      of Sovereign Immunity)
+    source: compact-nv-washoe-tribe-of-nevada-and-california-2018
+    confidence: medium
+    as_of: '2018-01-18'
+    locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver of Sovereign Immunity)
+    note: state model compact; nation-specific text not checked. Read from the 2018 Washoe Tribe compact;
+      other Nevada compacts were not checked. Status copied from this nation's most recent approved or
+      deemed-approved entry for this state in the Office of Indian Gaming list (2000-01-07).
+  ordinances:
+  - approved: '1994-04-26'
+    link: https://www.nigc.gov?wpdmdl=10319&ind=10344
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-04-26'
+    locator: table row 156, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 156 lists the nation
+      as "Moapa Band of Paiute Indians". Name matched to roster by spelling variant.
+  - approved: '2023-07-24'
+    link: https://www.nigc.gov?wpdmdl=10320&ind=10345
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2023-07-24'
+    locator: table row 156, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 156 lists the nation
+      as "Moapa Band of Paiute Indians". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

@@ -37,6 +37,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1850
   note: Matched by name. Census class code D2.
 population:
+- count: 700
+  kind: citizens
+  source: lajolla-nsn-reservation-info
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''around 700 enrolled members, with approximately 390 living on the reservation''. Undated;
+    as_of is access date.'
 - count: 145
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -107,6 +114,68 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: La Jolla Band of Luiseno Indians, California
+gaming:
+  compacts:
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-16'
+    locator: result page 8 (?page=8), row 5
+    note: 'Listed as: "La Jolla Band of Luiseno Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "La Jolla Band of Luiseno Indians, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.05.16_la_jolla_band_of_luiseno_mission_indians_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    approved: '2018-12-27'
+    federal_register_citation: 83 FR 66741
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-12-27'
+    locator: result page 8 (?page=8), row 6
+    note: 'Listed as: "La Jolla Band of Luiseno Indians Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "La Jolla Band of Luiseno Indians, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2018.12.27_la_jolla_band_of_luiseno_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/12/27/2018-28135/indian-gaming-tribal-state-class-iii-gaming-compacts-taking-effect-in-the-state-of-california.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2018-12-27).
+  ordinances:
+  - approved: '2000-04-27'
+    link: https://www.nigc.gov?wpdmdl=10114&ind=10131
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2000-04-27'
+    locator: table row 127, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 127 lists the nation
+      as "La Jolla Band of Luiseno Mission Indians". Name matched to roster by spelling variant.
+  - approved: '2005-05-26'
+    link: https://www.nigc.gov?wpdmdl=10119&ind=10132
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2005-05-26'
+    locator: table row 127, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 127 lists the nation
+      as "La Jolla Band of Luiseno Mission Indians". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

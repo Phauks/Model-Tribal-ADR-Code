@@ -109,6 +109,14 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Cayuga Nation
+languages:
+- name: Cayuga
+  language_tag: cay
+  source: cayuganation-nsn-history-culture
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Page: ''Our Native language is Cayuga, a vital part of our cultural heritage.'' The page adds
+    that many citizens are also familiar with Seneca.'
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office
@@ -116,6 +124,33 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Cayuga Nation
+gaming:
+  ordinances:
+  - approved: '2003-11-18'
+    link: https://www.nigc.gov?wpdmdl=9453&ind=9465
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-11-18'
+    locator: table row 34, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 34 lists the nation
+      as "Cayuga Nation of New York".
+  - approved: '2018-07-31'
+    link: https://www.nigc.gov?wpdmdl=9454&ind=9466
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2018-07-31'
+    locator: table row 34, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 34 lists the nation
+      as "Cayuga Nation of New York".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Cayuga Nation". Facilities
+      as machine-extracted from the report text (verify): Lakeside Entertainment I; Lakeside Entertainment
+      II; Lakeside Entertainment III (E3); Lakeside Entertainment IV. Name extracted from the PDF by the
+      page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

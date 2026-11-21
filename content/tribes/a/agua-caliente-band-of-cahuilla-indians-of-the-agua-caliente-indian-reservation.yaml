@@ -108,6 +108,109 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation, California
+gaming:
+  compacts:
+  - state: CA
+    status: deemed-approved
+    approved: '2007-12-19'
+    federal_register_citation: 72 FR 71939
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-12-19'
+    locator: result page 3 (?page=3), row 18
+    note: 'Listed as: "Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation
+      Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column: "Agua Caliente Band of Cahuilla
+      Indians of the Agua Caliente Indian Reservation, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.12.19_agua_caliente_band_of_cahuilla_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/12/19/E7-24563/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-16'
+    locator: result page 3 (?page=3), row 19
+    note: 'Listed as: "Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation
+      Tribal State Gaming Compact" (Approve); list''s Tribe column: "Agua Caliente Band of Cahuilla Indians
+      of the Agua Caliente Indian Reservation, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.05.16_agua_caliente_band_of_cahuilla_indians_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    approved: '2016-10-31'
+    federal_register_citation: 81 FR 75427
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2016-10-31'
+    locator: result page 3 (?page=3), row 20
+    note: 'Listed as: "Agua Caliente Band of Cahuilla Indians of the Agua Caliente Indian Reservation
+      Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column: "Agua Caliente Band of Cahuilla
+      Indians of the Agua Caliente Indian Reservation, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2016.10.31_agua_caliente_band_of_cahuilla_indians_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2016/10/31/2016-26256/indian-gaming-tribal-state-class-iii-gaming-compact-taking-effect-in-the-state-of-california.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2016-10-31).
+  ordinances:
+  - approved: '1993-11-15'
+    link: https://www.nigc.gov?wpdmdl=3257&ind=3258
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1993-11-15'
+    locator: table row 2, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 2 lists the nation
+      as "Agua Caliente Band of Cahuilla Indians". Name matched to roster by spelling variant.
+  - approved: '2017-03-17'
+    link: https://www.nigc.gov?wpdmdl=3261&ind=3262
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2017-03-17'
+    locator: table row 2, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 2 lists the nation
+      as "Agua Caliente Band of Cahuilla Indians". Name matched to roster by spelling variant.
+  - approved: '2018-04-02'
+    link: https://www.nigc.gov?wpdmdl=3263&ind=3264
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2018-04-02'
+    locator: table row 2, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 2 lists the nation
+      as "Agua Caliente Band of Cahuilla Indians". Name matched to roster by spelling variant.
+  - approved: '2020-06-08'
+    link: https://www.nigc.gov?wpdmdl=3265&ind=3266
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2020-06-08'
+    locator: table row 2, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 2 lists the nation
+      as "Agua Caliente Band of Cahuilla Indians". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Agua Caliente Band of Cahuilla
+      Indians". Facilities as machine-extracted from the report text (verify): Agua Caliente Casino Rancho
+      Mirage; Agua Caliente Fuel; Agua Caliente Casino Cathedral City; Agua Caliente Casino Palm Springs.
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

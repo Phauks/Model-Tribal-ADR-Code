@@ -68,6 +68,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: California Valley Miwok Tribe, California
+- kind: email-general
+  value: Office@cvmt-nsn.gov
+  label: General office email shown on the nation's website
+  source: cvmt-nsn-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency
@@ -75,6 +82,16 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: California Valley Miwok Tribe, California
+gaming:
+  ordinances:
+  - approved: '2000-05-03'
+    link: https://www.nigc.gov?wpdmdl=9449&ind=9461
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-05-03'
+    locator: table row 31, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 31 lists the nation
+      as "California Valley Miwok Tribe".
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

@@ -101,6 +101,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Enterprise Rancheria of Maidu Indians of California
+- kind: email-general
+  value: info@enterpriserancheria.org
+  label: General office email shown on the nation's website
+  source: enterpriserancheria-contact-us
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency
@@ -108,6 +115,66 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Enterprise Rancheria of Maidu Indians of California
+gaming:
+  compacts:
+  - state: CA
+    status: secretarial-procedures
+    approved: '2026-04-02'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2026-04-02'
+    locator: result page 6 (?page=6), row 25
+    note: 'Listed as: "Enterprise Rancheria of Maidu Indians of California Secretarial Procedures Amendment"
+      (Secretarial Procedures); list''s Tribe column: "Enterprise Rancheria of Maidu Indians of California".
+      Document: https://www.bia.gov/sites/default/files/media_document/04.02.26_enterprise_rancheria_secretarial_procedures_amendment_508.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: CA
+    status: secretarial-procedures
+    approved: '2016-08-12'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2016-08-12'
+    locator: result page 7 (?page=7), row 1
+    note: 'Listed as: "Enterprise Rancheria of Maidu Indians of California Secretarial Procedures" (Secretarial
+      Procedures); list''s Tribe column: "Enterprise Rancheria of Maidu Indians of California". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2016.08.12_enterprise_secretarial_procedures_2016.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  ordinances:
+  - approved: '2004-09-28'
+    link: https://www.nigc.gov?wpdmdl=9786&ind=9801
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-09-28'
+    locator: table row 77, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 77 lists the nation
+      as "Enterprise Rancheria of Maidu Indians".
+  - approved: '2013-08-13'
+    link: https://www.nigc.gov?wpdmdl=9787&ind=9802
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2013-08-13'
+    locator: table row 77, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 77 lists the nation
+      as "Enterprise Rancheria of Maidu Indians".
+  - approved: '2023-04-28'
+    link: https://www.nigc.gov?wpdmdl=9788&ind=9803
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2023-04-28'
+    locator: table row 77, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 77 lists the nation
+      as "Enterprise Rancheria of Maidu Indians".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Enterprise Rancheria of the
+      Maidu Indians of California". Facilities as machine-extracted from the report text (verify): Rocktane
+      Slots & Casino at Fire Mountain; Hard Rock Hotel & Casino Sacramento at Fire Mountain. Name extracted
+      from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

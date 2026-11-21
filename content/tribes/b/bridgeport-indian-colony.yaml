@@ -107,6 +107,16 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Bridgeport Indian Colony
+gaming:
+  ordinances:
+  - approved: '1995-11-20'
+    link: https://www.nigc.gov?wpdmdl=3437&ind=3438
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-11-20'
+    locator: table row 23, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 23 lists the nation
+      as "Bridgeport Paiute Indian Colony". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

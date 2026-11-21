@@ -2,6 +2,15 @@ id: cheyenne-river-sioux-tribe-of-the-cheyenne-river-reservation
 entity_type: native-nation
 names:
   official: Cheyenne River Sioux Tribe of the Cheyenne River Reservation, South Dakota
+  self_designation:
+  - name: Titunwan
+    language_tag: lkt
+    source: cheyenneriversioux-history
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'History page: the bands are ''of the Titunwan (People of the Plains) one of the Oceti Sakowin
+      (Seven Council Fires)''. Reservation is home to four bands: Mnicoujou, Oohenumpa, Itazipco, Siha
+      Sapa.'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -37,6 +46,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0605
   note: Matched by name. Census class code D1.
 population:
+- count: 15993
+  kind: citizens
+  source: sd-tribal-relations-cheyenne-river-sioux-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'State profile page: ''Total Population: 8,594 Estimated Tribal Enrollment: 15,993''. ''Estimated''
+    per the page; undated (page links a 2019 statistical profile); as_of is access date.'
 - count: 7639
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -101,6 +117,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Cheyenne River Sioux Tribe of the Cheyenne River Reservation, South Dakota
+languages:
+- name: Lakota
+  language_tag: lkt
+  source: sd-tribal-relations-cheyenne-river-sioux-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'State profile page: ''Traditional Language: Lakota''.'
 federal_administration:
   bureau_of_indian_affairs_region: Great Plains
   bureau_of_indian_affairs_agency: Cheyenne River Agency
@@ -108,6 +131,52 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Cheyenne River Sioux Tribe of the Cheyenne River Reservation, South Dakota
+gaming:
+  compacts:
+  - state: SD
+    status: approved
+    approved: '1993-12-03'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1993-12-03'
+    locator: result page 33 (?page=33), row 23
+    note: 'Listed as: "Cheyenne River Sioux Tribe Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Cheyenne River Sioux Tribe of the Cheyenne River Reservation, South Dakota". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201993.12.03%20Cheyenne%20River%20Sioux%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Name matched to roster by spelling variant.'
+  - state: SD
+    status: approved
+    dispute_resolution_summary: Either party may bring a dispute over interpretation of the compact in
+      federal district court, while a separate three-person binding Arbitration Board that includes the
+      chairs of the state and tribal gaming commissions decides contested license-suitability and slot
+      machine compliance findings.
+    dispute_resolution_locator: Section 13.1 or 14.1 (General Provisions) and Section 7 (Licensing) arbitration
+      procedure
+    source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-trav-2019
+    confidence: medium
+    as_of: '2019-04-01'
+    locator: Section 13.1 or 14.1 (General Provisions) and Section 7 (Licensing) arbitration procedure
+    note: state model compact; nation-specific text not checked. The same federal-court clause appears
+      in the 2019 Sisseton-Wahpeton Oyate compact (Section 13.1) and the 2016 Yankton Sioux Tribe compact
+      (Section 14.1); other South Dakota compacts were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (1993-12-03).
+  ordinances:
+  - approved: '1995-05-04'
+    link: https://www.nigc.gov?wpdmdl=9478&ind=9501
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-05-04'
+    locator: table row 40, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 40 lists the nation
+      as "Cheyenne River Sioux Tribe". Name matched to roster by spelling variant.
+  - approved: '2018-04-10'
+    link: https://www.nigc.gov?wpdmdl=9490&ind=9502
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2018-04-10'
+    locator: table row 40, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 40 lists the nation
+      as "Cheyenne River Sioux Tribe". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

@@ -2,6 +2,21 @@ id: lower-brule-sioux-tribe-of-the-lower-brule-reservation
 entity_type: native-nation
 names:
   official: Lower Brule Sioux Tribe of the Lower Brule Reservation, South Dakota
+  self_designation:
+  - name: Kul Wicasa Oyate
+    language_tag: lkt
+    source: lowerbrulesiouxtribe-about-us
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'About page: ''...within the Tetonwan (Lakota) Nation who identify as Sicangu (burnt thighs).
+      Long ago the Sicangu divided into the Kul Wicasa Oyate (lower people) and the Heyata Wicasa Oyate
+      (uplands people). Our Kul Wicasa ancestors...'''
+  - name: Sicangu
+    language_tag: lkt
+    source: lowerbrulesiouxtribe-about-us
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'About page: ''...within the Tetonwan (Lakota) Nation who identify as Sicangu (burnt thighs).'''
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -37,6 +52,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US2030
   note: Matched by name. Census class code D1.
 population:
+- count: 3410
+  kind: citizens
+  source: sd-tribal-relations-lower-brule-sioux-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'State profile page: ''Total Population: 1,689 Enrolled Tribal Enrollment: 3,410''. ''Estimated''
+    per the page; undated (page links a 2019 statistical profile); as_of is access date.'
 - count: 1630
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -110,6 +132,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Lower Brule Sioux Tribe of the Lower Brule Reservation, South Dakota
+languages:
+- name: Lakota
+  language_tag: lkt
+  source: sd-tribal-relations-lower-brule-sioux-tribe
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'State profile page: ''Traditional Language: Lakota''.'
 federal_administration:
   bureau_of_indian_affairs_region: Great Plains
   bureau_of_indian_affairs_agency: Lower Brule Agency
@@ -117,6 +146,79 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Lower Brule Sioux Tribe of the Lower Brule Reservation, South Dakota
+gaming:
+  compacts:
+  - state: SD
+    status: approved
+    approved: '1992-04-14'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1992-04-14'
+    locator: result page 34 (?page=34), row 17
+    note: 'Listed as: "Lower Brule Sioux Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Lower Brule Sioux Tribe of the Lower Brule Reservation, South Dakota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201992.04.14%20Lower%20Brule%20Sioux%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Name matched to roster by spelling variant.'
+  - state: SD
+    status: approved
+    approved: '2001-01-17'
+    federal_register_citation: 66 FR 4038
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2001-01-17'
+    locator: result page 34 (?page=34), row 18
+    note: 'Listed as: "Lower Brule Sioux Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Lower Brule Sioux Tribe of the Lower Brule Reservation, South Dakota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202001.01.17%20Lower%20Brule%20Sioux%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/01/17/01-1261/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: SD
+    status: approved
+    approved: '2002-05-31'
+    federal_register_citation: 67 FR 38144
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2002-05-31'
+    locator: result page 34 (?page=34), row 19
+    note: 'Listed as: "Lower Brule Sioux Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Lower Brule Sioux Tribe of the Lower Brule Reservation, South Dakota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202002.05.31%20Lower%20Brule%20Sioux%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2002/05/31/02-13651/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: SD
+    status: approved
+    approved: '1991-09-17'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1991-09-17'
+    locator: result page 34 (?page=34), row 20
+    note: 'Listed as: "Lower Brule Sioux Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Lower Brule Sioux Tribe of the Lower Brule Reservation, South Dakota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201991.09.17%20Lower%20Brule%20Sioux%20Tribe%20Tribal%20State%20Gaming%20Compact..pdf.
+      Name matched to roster by spelling variant.'
+  - state: SD
+    status: approved
+    dispute_resolution_summary: Either party may bring a dispute over interpretation of the compact in
+      federal district court, while a separate three-person binding Arbitration Board that includes the
+      chairs of the state and tribal gaming commissions decides contested license-suitability and slot
+      machine compliance findings.
+    dispute_resolution_locator: Section 13.1 or 14.1 (General Provisions) and Section 7 (Licensing) arbitration
+      procedure
+    source: compact-sd-sisseton-wahpeton-oyate-of-the-lake-trav-2019
+    confidence: medium
+    as_of: '2019-04-01'
+    locator: Section 13.1 or 14.1 (General Provisions) and Section 7 (Licensing) arbitration procedure
+    note: state model compact; nation-specific text not checked. The same federal-court clause appears
+      in the 2019 Sisseton-Wahpeton Oyate compact (Section 13.1) and the 2016 Yankton Sioux Tribe compact
+      (Section 14.1); other South Dakota compacts were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2002-05-31).
+  ordinances:
+  - approved: '1995-08-25'
+    link: https://www.nigc.gov?wpdmdl=10183&ind=10198
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-08-25'
+    locator: table row 136, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 136 lists the nation
+      as "Lower Brule Sioux Tribe". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

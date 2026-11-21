@@ -37,6 +37,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4545
   note: Matched by name. Census class code D1.
 population:
+- count: 5292
+  kind: citizens
+  source: oregon-department-of-education-native-americans-in-oregon-by-the-numbers-2020
+  confidence: medium
+  as_of: 2020-02
+  note: Oregon Department of Education table 'Number of tribal members'; PDF dated February 2020.
 - count: 3403
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -108,6 +114,319 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Warm Springs Reservation of Oregon
+gaming:
+  compacts:
+  - state: OR
+    status: approved
+    approved: '2024-12-13'
+    federal_register_citation: 89 FR 101036
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2024-12-13'
+    locator: result page 31 (?page=31), row 21
+    note: 'Listed as: "Confederated Tribes of the Warm Spring Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Warm Springs Reservation of Oregon".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.12.13_confederated_tribes_of_the_warm_springs_reservation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/12/13/2024-29450/indian-gaming-approval-of-the-tribal-state-class-iii-gaming-compact-amendment-between-the.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2019-04-16'
+    federal_register_citation: 84 FR 15629
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2019-04-16'
+    locator: result page 31 (?page=31), row 22
+    note: 'Listed as: "Confederated Tribes of the Warm Springs Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Warm Springs Reservation of Oregon".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant.2019.04.16%20Confederated%20Tribes%20Warm%20Springs%20and%20State%20of%20Oregon%20Tribal%20State%20Compact.%20Amdt%20I.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2019/04/16/2019-07488/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-in-the-state-of-oregon.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1996-09-04'
+    federal_register_citation: 61 FR 46662
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-09-04'
+    locator: result page 31 (?page=31), row 23
+    note: 'Listed as: "Confederated Tribes of the Warm Springs Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Warm Springs Reservation of Oregon".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1996.09.04_confederated_tribes_of_the_warm_springs_reservation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/09/04/96-22439/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2003-02-27'
+    federal_register_citation: 68 FR 9095
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-02-27'
+    locator: result page 31 (?page=31), row 24
+    note: 'Listed as: "Confederated Tribes of the Warm Springs Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Warm Springs Reservation of Oregon".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202003.02.27%20Confederated%20Tribes%20of%20the%20Warm%20Spring%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/02/27/03-4655/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1998-02-27'
+    federal_register_citation: 63 FR 10035
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-02-27'
+    locator: result page 31 (?page=31), row 25
+    note: 'Listed as: "Confederated Tribes of the Warm Springs Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Warm Springs Reservation of Oregon".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.02.27%20Confederated%20Tribes%20of%20the%20Warm%20Springs%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/02/27/98-5073/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2002-02-19'
+    federal_register_citation: 67 FR 7393
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2002-02-19'
+    locator: result page 32 (?page=32), row 1
+    note: 'Listed as: "Confederated Tribes of the Warm Springs Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Warm Springs Reservation of Oregon".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202002.02.19%20Confederated%20Tribes%20of%20the%20Warm%20Springs%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2002/02/19/02-3859/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2005-06-01'
+    federal_register_citation: 70 FR 31499
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-06-01'
+    locator: result page 32 (?page=32), row 2
+    note: 'Listed as: "Confederated Tribes of the Warm Springs Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Warm Springs Reservation of Oregon".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.06.01%20Confederated%20Tribes%20of%20the%20Warm%20Springs%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/06/01/05-10878/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2001-06-28'
+    federal_register_citation: 66 FR 34458
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-06-28'
+    locator: result page 32 (?page=32), row 3
+    note: 'Listed as: "Confederated Tribes of the Warm Springs Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Warm Springs Reservation of Oregon".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202001.06.28%20Confederated%20Tribes%20of%20the%20Warm%20Springs%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/06/28/01-16214/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: deemed-approved
+    approved: '2011-03-01'
+    federal_register_citation: 76 FR 11258
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2011-03-01'
+    locator: result page 32 (?page=32), row 4
+    note: 'Listed as: "Confederated Tribes of the Warm Springs Reservation Tribal State Gaming Compact"
+      (Deemed Approved); list''s Tribe column: "Confederated Tribes of the Warm Springs Reservation of
+      Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202011.03.01%20Confederated%20Tribes%20of%20the%20Warm%20Springs%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2011/03/01/2011-4522/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2001-04-20'
+    federal_register_citation: 66 FR 20324
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-04-20'
+    locator: result page 32 (?page=32), row 5
+    note: 'Listed as: "Confederated Tribes of the Warm Springs Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Warm Springs Reservation of Oregon".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202001.04.20%20Confederated%20Tribes%20of%20the%20Warm%20Springs%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/04/20/01-9802/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1995-03-13'
+    federal_register_citation: 60 FR 13568
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-03-13'
+    locator: result page 32 (?page=32), row 6
+    note: 'Listed as: "Confederated Tribes of the Warm Springs Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Warm Springs Reservation of Oregon".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201995.03.13%20Confederated%20Tribes%20of%20Warm%20Springs%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/03/13/95-6412/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1998-05-19'
+    federal_register_citation: 63 FR 27585
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-05-19'
+    locator: result page 32 (?page=32), row 7
+    note: 'Listed as: "Confederated Tribes of the Warm Springs Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Warm Springs Reservation of Oregon".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.05.19%20Confederated%20Tribes%20of%20the%20Warm%20Springs%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/05/19/98-13220/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1999-06-01'
+    federal_register_citation: 64 FR 29333
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-06-01'
+    locator: result page 32 (?page=32), row 8
+    note: 'Listed as: "Confederated Tribes of the Warm Springs Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Warm Springs Reservation of Oregon".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.06.01%20Confederated%20Tribes%20of%20the%20Warm%20Springs%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/06/01/99-13728/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: disapproved
+    approved: '2005-05-20'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-05-20'
+    locator: result page 32 (?page=32), row 9
+    note: 'Listed as: "Confederated Tribes of the Warm Springs Reservation Tribal State Gaming Compact"
+      (Disapproved); list''s Tribe column: "Confederated Tribes of the Warm Springs Reservation of Oregon".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.05.20%20Confederated%20Tribes%20of%20the%20Warm%20Springs%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: OR
+    status: approved
+    approved: '2000-05-31'
+    federal_register_citation: 65 FR 34726
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-31'
+    locator: result page 32 (?page=32), row 10
+    note: 'Listed as: "Confederated Tribes of the Warm Springs Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Warm Springs Reservation of Oregon".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.05.31%20Confederated%20Tribes%20of%20the%20Warm%20Springs%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/31/00-13497/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2000-11-24'
+    federal_register_citation: 65 FR 70609
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-11-24'
+    locator: result page 32 (?page=32), row 11
+    note: 'Listed as: "Confederated Tribes of the Warm Springs Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Warm Springs Reservation of Oregon".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.11.24%20Confederated%20Tribes%20of%20the%20Warm%20Springs%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/11/24/00-30037/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2011-10-20'
+    federal_register_citation: 76 FR 65208
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2011-10-20'
+    locator: result page 32 (?page=32), row 12
+    note: 'Listed as: "Confederated Tribes of the Warm Springs Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Warm Springs Reservation of Oregon".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202011.10.20%20Confederated%20Tribe%20of%20the%20%20Warm%20Springs%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2011/10/20/2011-27233/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1996-02-06'
+    federal_register_citation: 61 FR 4478
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-02-06'
+    locator: result page 32 (?page=32), row 13
+    note: 'Listed as: "Confederated Tribes of the Warm Springs Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Warm Springs Reservation of Oregon".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201996.02.06%20Confederated%20Tribes%20of%20Warm%20Springs%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/02/06/96-2447/indian-gaming-oregon.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance and the parties
+      meet within 30 days; if unresolved within 90 days either party may sue in the United States District
+      Court for the District of Oregon (or a state court if federal jurisdiction is declined), and other
+      dispute resolution methods remain available by mutual agreement.
+    dispute_resolution_locator: Section 17 (Dispute Resolution)
+    source: compact-or-confederated-tribes-of-the-grand-ronde-c-2023
+    confidence: medium
+    as_of: '2023-02-08'
+    locator: Section 17 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2023 Confederated Tribes
+      of the Grand Ronde Community compact; other Oregon compacts were not checked. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2024-12-13).
+  ordinances:
+  - approved: '1995-04-26'
+    link: https://www.nigc.gov?wpdmdl=9653&ind=9677
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-04-26'
+    locator: table row 60, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 60 lists the nation
+      as "Confederated Tribes of the Warm Springs Reservation of Or". Name matched to roster by spelling
+      variant.
+  - approved: '2005-12-27'
+    link: https://www.nigc.gov?wpdmdl=9666&ind=9678
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2005-12-27'
+    locator: table row 60, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 60 lists the nation
+      as "Confederated Tribes of the Warm Springs Reservation of Or". Name matched to roster by spelling
+      variant.
+  - approved: '2014-09-26'
+    link: https://www.nigc.gov?wpdmdl=9667&ind=9679
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2014-09-26'
+    locator: table row 60, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 60 lists the nation
+      as "Confederated Tribes of the Warm Springs Reservation of Or". Name matched to roster by spelling
+      variant.
+  - approved: '2017-03-01'
+    link: https://www.nigc.gov?wpdmdl=9668&ind=9680
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2017-03-01'
+    locator: table row 60, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 60 lists the nation
+      as "Confederated Tribes of the Warm Springs Reservation of Or". Name matched to roster by spelling
+      variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Confederated Tribes of the
+      Warm Springs Reservation of OR". Facilities as machine-extracted from the report text (verify):
+      Plateau Travel Plaza; Indian Head Casino. Name extracted from the PDF by the page-fetch tool and
+      matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: excepted

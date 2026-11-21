@@ -120,6 +120,71 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Pinoleville Pomo Nation, California
+gaming:
+  compacts:
+  - state: CA
+    status: disapproved
+    approved: '2011-02-25'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2011-02-25'
+    locator: result page 9 (?page=9), row 23
+    note: 'Listed as: "Pinoleville Pomo Nation Tribal State Gaming Compact" (Disapproved); list''s Tribe
+      column: "Pinoleville Pomo Nation, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2011.02.25_pinoleville_pomo_nation_tribal_state_gaming_compact_disapproval_letter_0.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: CA
+    status: deemed-approved
+    approved: '2026-01-26'
+    federal_register_citation: 91 FR 3214
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2026-01-26'
+    locator: result page 9 (?page=9), row 24
+    note: 'Listed as: "Pinoleville Pomo Nation Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "Pinoleville Pomo Nation, California". Document: https://www.bia.gov/sites/default/files/media_document/pinoleville_pomo_nation_tribal_state_compact_amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2026/01/26/2026-01395/indian-gaming-approval-by-operation-of-law-of-the-first-amendment-to-the-tribal-state-compact?utm_campaign=subscription+mailing+list&amp;utm_medium=email&amp;utm_source=federalregister.gov.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    approved: '2012-02-03'
+    federal_register_citation: 77 FR 5566
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2012-02-03'
+    locator: result page 9 (?page=9), row 25
+    note: 'Listed as: "Pinoleville Pomo Nation Tribal-State Compact" (Deemed Approved); list''s Tribe
+      column: "Pinoleville Pomo Nation, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2012.02.03_pinoleville_pomo_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2012/02/03/2012-2441/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2026-01-26).
+  ordinances:
+  - approved: '2004-08-24'
+    link: https://www.nigc.gov?wpdmdl=10633&ind=10649
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2004-08-24'
+    locator: table row 192, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 192 lists the nation
+      as "Pinoleville Rancheria of Pomo Indians". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

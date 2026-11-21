@@ -2,6 +2,14 @@ id: hoh-indian-tribe
 entity_type: native-nation
 names:
   official: Hoh Indian Tribe
+  self_designation:
+  - name: Chalat’
+    language_tag: qui
+    source: hohtribe-nsn-culture
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'Culture page: ''Those-Who-Live-on-the-Hoh (Chalat’, as the Hoh call themselves)''. Tag qui
+      (Quileute) assigned by researcher.'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -37,6 +45,14 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1460
   note: Matched by name. Census class code D1.
 population:
+- count: 230
+  kind: citizens
+  source: hohtribe-nsn-culture-hoh-indian-tribe-safe-homelands
+  confidence: low
+  as_of: '2026-11-21'
+  note: 'Page about the Hoh Indian Tribe Safe Homelands Act: ''our 230 tribal members''; ''130 tribal
+    members who reside on the Reservation''. The text appears to date from the Act''s passage (around
+    2010), so the figure is likely old.'
 - count: 93
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -107,6 +123,61 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Hoh Indian Tribe
+gaming:
+  compacts:
+  - state: WA
+    status: approved
+    approved: '2001-01-17'
+    federal_register_citation: 66 FR 4038
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-01-17'
+    locator: result page 38 (?page=38), row 15
+    note: 'Listed as: "Hoh Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Hoh Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2001.01.17_hoh_indian_tribe_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/01/17/01-1263/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2007-05-31'
+    federal_register_citation: 72 FR 30392
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-05-31'
+    locator: result page 38 (?page=38), row 16
+    note: 'Listed as: "Hoh Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Hoh Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.05.31_hoh_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/05/31/E7-10397/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    approved: '2015-06-04'
+    federal_register_citation: 80 FR 31918
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-04'
+    locator: result page 38 (?page=38), row 17
+    note: 'Listed as: "Hoh Indian Tribe Tribal-State Gaming Compact" (Approve); list''s Tribe column:
+      "Hoh Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2015.06.04_hoh_indian_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/04/2015-13712/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: WA
+    status: approved
+    dispute_resolution_summary: Disputes start with written notice and a meet-and-confer within 20 business
+      days; if unresolved, the parties may by agreement use formal mediation, may by mutual agreement
+      use arbitration, and a party dissatisfied with mediation may seek judicial resolution.
+    dispute_resolution_locator: Section XIV (Dispute Resolution), subsection B
+    source: compact-wa-stillaguamish-tribe-of-indians-of-washin-2021
+    confidence: medium
+    as_of: '2021-09-01'
+    locator: Section XIV (Dispute Resolution), subsection B
+    note: state model compact; nation-specific text not checked. Read from the 2021 Stillaguamish Tribe
+      compact (a 2021 amendment that replaced the whole compact); most Washington nations adopted full
+      replacement compacts in 2021, but their text was not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2015-06-04).
 jurisdiction:
 - topic: public-law-280
   value: optional-state

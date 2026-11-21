@@ -37,6 +37,14 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1365
   note: Matched by name. Census class code D1.
 population:
+- count: 5400
+  kind: citizens
+  source: grandronde-culture-history-our-homelands
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''approximately 5,400 enrolled members''. Another page on the same site (termination-restoration)
+    says ''approximately 5,100 members''; the higher figure is likely newer. Undated; as_of is access
+    date.'
 - count: 604
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -101,6 +109,20 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Grand Ronde Community of Oregon
+- kind: email-general
+  value: info@grandronde.org
+  label: General office email shown on the nation's website
+  source: grandronde-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
+languages:
+- name: Chinuk Wawa
+  language_tag: chn
+  source: grandronde-culture-history-chinuk-wawa-language
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Page: Chinuk Wawa ''is being actively taught'' within the Confederated Tribes of Grand Ronde.'
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Northwest Regional Office
@@ -108,6 +130,201 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Grand Ronde Community of Oregon
+gaming:
+  compacts:
+  - state: OR
+    status: approved
+    approved: '1996-08-20'
+    federal_register_citation: 61 FR 43067
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-08-20'
+    locator: result page 30 (?page=30), row 23
+    note: 'Listed as: "Confederated Tribes of the Grand Ronde Community Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Grand Ronde Community of Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201996.08.20%20Confederated%20Tribes%20of%20Grand%20Ronde%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/08/20/96-21213/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1995-12-14'
+    federal_register_citation: 60 FR 64175
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-12-14'
+    locator: result page 30 (?page=30), row 24
+    note: 'Listed as: "Confederated Tribes of the Grand Ronde Community Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Grand Ronde Community of Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201995.12.14%20Confederated%20Tribes%20of%20the%20Grand%20Ronde%20Community%20Tribal%20State%20Gaming%20Compact%201995.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/12/14/95-30466/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2012-12-28'
+    federal_register_citation: 77 FR 76514
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2012-12-28'
+    locator: result page 30 (?page=30), row 25
+    note: 'Listed as: "Confederated Tribes of the Grand Ronde Community Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Grand Ronde Community of Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202012.12.28%20Confederated%20Tribes%20of%20the%20Grand%20Ronde%20Community%20Tribal%20State%20Gaming%20Compact%202012.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2012/12/28/2012-31177/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1994-06-17'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1994-06-17'
+    locator: result page 31 (?page=31), row 1
+    note: 'Listed as: "Confederated Tribes of the Grand Ronde Community Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Grand Ronde Community of Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201994.06.17%20Confederated%20Tribes%20of%20the%20Grand%20Ronde%20Tribal%20State%20Gaming%20Compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1994/06/17/94-14788/indian-gaming-confederated-tribes-of-the-grand-ronde-community-of-oregon-notice-department-of-the.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1997-03-11'
+    federal_register_citation: 62 FR 11219
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1997-03-11'
+    locator: result page 31 (?page=31), row 2
+    note: 'Listed as: "Confederated Tribes of the Grand Ronde Community Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Grand Ronde Community of Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201997.03.11%20Confederated%20Tribes%20of%20the%20%20Grande%20Ronde%20Community%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1997/03/11/97-5886/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2001-10-09'
+    federal_register_citation: 66 FR 51453
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-10-09'
+    locator: result page 31 (?page=31), row 3
+    note: 'Listed as: "Confederated Tribes of the Grand Ronde Community Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Grand Ronde Community of Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202001.10.09%20Confederated%20Tribes%20of%20Grand%20Ronde%20Community%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/10/09/01-25131/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2019-12-27'
+    federal_register_citation: 84 FR 71448
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2019-12-27'
+    locator: result page 31 (?page=31), row 4
+    note: 'Listed as: "Confederated Tribes of the Grand Ronde Community Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Grand Ronde Community of Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant.%202019.12.27%20Grande%20Ronde%20-%20Oregon%20Class%20III%20Gaming%20Compact%20Amendment%20III.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2019/12/27/2019-27986/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-in-the-state-of-oregon.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2017-12-13'
+    federal_register_citation: 82 FR 58651
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2017-12-13'
+    locator: result page 31 (?page=31), row 5
+    note: 'Listed as: "Confederated Tribes of the Grand Ronde Community Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Grand Ronde Community of Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202017.12.13%20%20Grand%20Ronde%20Compact%20Amendment%20II.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2017/12/13/2017-26816/indian-gaming-approval-of-an-amendment-to-a-tribal-state-class-iii-gaming-compact-in-the-state-of.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2023-02-08'
+    federal_register_citation: 88 FR 8306
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2023-02-08'
+    locator: result page 31 (?page=31), row 6
+    note: 'Listed as: "Confederated Tribes of the Grand Ronde Community Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Confederated Tribes of the Grand Ronde Community of Oregon". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2023.02.08_confederated_tribes_of_the_grand_ronde_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2023/02/08/2023-02624/indian-gaming-approval-of-tribal-state-class-iii-gaming-compacts-in-the-state-of-oregon.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2006-07-14'
+    federal_register_citation: 71 FR 40147
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2006-07-14'
+    locator: result page 31 (?page=31), row 7
+    note: 'Listed as: "Confederated Tribes of the Grande Ronde Community Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Grand Ronde Community of Oregon". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202006.07.14%20Confederated%20Tribes%20of%20the%20Grand%20Ronde%20Community%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2006/07/14/E6-11139/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2023-02-08'
+    dispute_resolution_summary: Either party may serve written notice of non-compliance and the parties
+      meet within 30 days; if unresolved within 90 days either party may sue in the United States District
+      Court for the District of Oregon (or a state court if federal jurisdiction is declined), and other
+      dispute resolution methods remain available by mutual agreement.
+    dispute_resolution_locator: Section 17 (Dispute Resolution)
+    source: compact-or-confederated-tribes-of-the-grand-ronde-c-2023
+    confidence: high
+    as_of: '2023-02-08'
+    locator: Section 17 (Dispute Resolution)
+    note: Dispute-resolution clause read from this nation's own compact document. Read from the 2023 Confederated
+      Tribes of the Grand Ronde Community compact; other Oregon compacts were not checked.
+  ordinances:
+  - approved: '1993-08-12'
+    link: https://www.nigc.gov?wpdmdl=9625&ind=9637
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-08-12'
+    locator: table row 57, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 57 lists the nation
+      as "Confederated Tribes of the Grand Ronde Community".
+  - approved: '1995-03-23'
+    link: https://www.nigc.gov?wpdmdl=9626&ind=9638
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-03-23'
+    locator: table row 57, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 57 lists the nation
+      as "Confederated Tribes of the Grand Ronde Community".
+  - approved: '2002-04-19'
+    link: https://www.nigc.gov?wpdmdl=9627&ind=9639
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-04-19'
+    locator: table row 57, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 57 lists the nation
+      as "Confederated Tribes of the Grand Ronde Community".
+  - approved: '2006-09-18'
+    link: https://www.nigc.gov?wpdmdl=9628&ind=9640
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2006-09-18'
+    locator: table row 57, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 57 lists the nation
+      as "Confederated Tribes of the Grand Ronde Community".
+  - approved: '2025-03-10'
+    link: https://www.nigc.gov?wpdmdl=9629&ind=9641
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2025-03-10'
+    locator: table row 57, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 57 lists the nation
+      as "Confederated Tribes of the Grand Ronde Community".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Confederated Tribes of the
+      Grand Ronde Community of Oregon". Facilities as machine-extracted from the report text (verify):
+      Spirit Mountain Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

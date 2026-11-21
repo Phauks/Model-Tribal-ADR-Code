@@ -2,6 +2,14 @@ id: burns-paiute-tribe
 entity_type: native-nation
 names:
   official: Burns Paiute Tribe
+  self_designation:
+  - name: Wadatika
+    language_tag: pao
+    source: burnspaiute-nsn-about-bpt
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'About page: ''primarily comprised of the descendants of the Wadatika Band of Northern Paiutes''.
+      Band name.'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -37,6 +45,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0400
   note: Matched by name. Census class code D1.
 population:
+- count: 402
+  kind: citizens
+  source: burnspaiute-nsn-about-bpt
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''currently has 402 enrolled members of which 142 people call the Reservation their home''.
+    The homepage separately describes ''a community of 210 people''. Undated page; as_of is access date.'
 - count: 133
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -110,6 +125,20 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Burns Paiute Tribe
+- kind: email-general
+  value: info@burnspaiute-nsn.gov
+  label: General office email shown on the nation's website
+  source: burnspaiute-nsn-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
+languages:
+- name: Northern Paiute (Wadatika)
+  language_tag: pao
+  source: burnspaiute-nsn-language-traditional-culture-program
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Language & Traditional Culture Program page refers to the Wadatika Paiute language.
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Warm Springs Agency
@@ -117,6 +146,179 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Burns Paiute Tribe
+gaming:
+  compacts:
+  - state: OR
+    status: approved
+    approved: '2002-09-17'
+    federal_register_citation: 67 FR 58633
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2002-09-17'
+    locator: result page 29 (?page=29), row 22
+    note: 'Listed as: "Burns Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico & Utah". Federal Register link: https://www.federalregister.gov/documents/2002/09/17/02-23597/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1999-09-01'
+    federal_register_citation: 64 FR 47857
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1999-09-01'
+    locator: result page 29 (?page=29), row 23
+    note: 'Listed as: "Burns Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.09.01%20Burns%20Paiute%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/09/01/99-22706/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1997-02-25'
+    federal_register_citation: 62 FR 8456
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1997-02-25'
+    locator: result page 29 (?page=29), row 24
+    note: 'Listed as: "Burns Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201997.02.12%20Burns%20Paiute%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1997/02/25/97-4597/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2003-03-18'
+    federal_register_citation: 68 FR 12931
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2003-03-18'
+    locator: result page 29 (?page=29), row 25
+    note: 'Listed as: "Burns Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202003.03.18%20Burns%20Paiute%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/03/18/03-6350/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2002-02-19'
+    federal_register_citation: 67 FR 7393
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2002-02-19'
+    locator: result page 30 (?page=30), row 1
+    note: 'Listed as: "Burns Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202002.02.19%20Burns%20Paiute%20Tribe%20Tribal%20State%20GamingCompact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2002/02/19/02-3860/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2008-03-17'
+    federal_register_citation: 73 FR 14267
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2008-03-17'
+    locator: result page 30 (?page=30), row 2
+    note: 'Listed as: "Burns Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202008.03.17%20Burns%20Paiute%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/03/17/E8-5198/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2000-05-31'
+    federal_register_citation: 65 FR 34726
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2000-05-31'
+    locator: result page 30 (?page=30), row 3
+    note: 'Listed as: "Burns Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.05.31%20Burns%20Paiute%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/31/00-13494/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1998-11-24'
+    federal_register_citation: 63 FR 64968
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1998-11-24'
+    locator: result page 30 (?page=30), row 4
+    note: 'Listed as: "Burns Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.11.24%20Burns%20Paiute%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/11/24/98-31405/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2002-12-18'
+    federal_register_citation: 67 FR 77509
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2002-12-18'
+    locator: result page 30 (?page=30), row 5
+    note: 'Listed as: "Burns Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202002.12.18%20Burns%20Paiute%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2002/12/18/02-31874/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1998-10-19'
+    federal_register_citation: 63 FR 55887
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1998-10-19'
+    locator: result page 30 (?page=30), row 6
+    note: 'Listed as: "Burns Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Navajo Nation, Arizona, New Mexico & Utah". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.10.19%20Burns%20Paiute%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/10/19/98-27932/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance and the parties
+      meet within 30 days; if unresolved within 90 days either party may sue in the United States District
+      Court for the District of Oregon (or a state court if federal jurisdiction is declined), and other
+      dispute resolution methods remain available by mutual agreement.
+    dispute_resolution_locator: Section 17 (Dispute Resolution)
+    source: compact-or-confederated-tribes-of-the-grand-ronde-c-2023
+    confidence: medium
+    as_of: '2023-02-08'
+    locator: Section 17 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2023 Confederated Tribes
+      of the Grand Ronde Community compact; other Oregon compacts were not checked. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2008-03-17).
+  ordinances:
+  - approved: '1997-09-12'
+    link: https://www.nigc.gov?wpdmdl=3449&ind=3451
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-09-12'
+    locator: table row 25, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 25 lists the nation
+      as "Burns Paiute Tribe".
+  - approved: '2004-11-03'
+    link: https://www.nigc.gov?wpdmdl=14494&ind=14495
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-11-03'
+    locator: table row 25, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 25 lists the nation
+      as "Burns Paiute Tribe".
 jurisdiction:
 - topic: public-law-280
   value: retroceded

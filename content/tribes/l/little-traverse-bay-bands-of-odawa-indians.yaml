@@ -46,6 +46,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1963
   note: Matched by name. Census class code D1.
 population:
+- count: 4000
+  kind: citizens
+  source: ltbbodawa-nsn-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Homepage: ''The Tribe has over 4,000 members''. Undated; as_of is access date.'
 - count: 92
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -110,6 +116,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Little Traverse Bay Bands of Odawa Indians, Michigan
+languages:
+- name: Anishinaabemowin
+  language_tag: oj
+  source: ltbbodawa-nsn-tribal-council-and-legislative-office-le
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Legislation history lists 'Gijigowi Anishinaabemowin' statutes.
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Michigan Agency
@@ -117,6 +130,106 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Little Traverse Bay Bands of Odawa Indians, Michigan
+gaming:
+  compacts:
+  - state: MI
+    status: deemed-approved
+    approved: '2008-04-21'
+    federal_register_citation: 73 FR 21361
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2008-04-21'
+    locator: result page 16 (?page=16), row 15
+    note: 'Listed as: "Little Traverse Bay Bands of Odawa Indians Tribal State Gaming Compact" (Deemed
+      Approved); list''s Tribe column: "Little Traverse Bay Bands of Odawa Indians, Michigan". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2008.04.21_little_traverse_bay_bands_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/04/21/E8-8494/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MI
+    status: approved
+    approved: '1999-02-18'
+    federal_register_citation: 64 FR 8111
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-02-18'
+    locator: result page 16 (?page=16), row 16
+    note: 'Listed as: "Little Traverse Bay Bands of Odawa Indians Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Little Traverse Bay Bands of Odawa Indians, Michigan". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1999.02.18_little_traverse_bay_bands_of_odawa_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/02/18/99-4005/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MI
+    status: deemed-approved
+    approved: '2003-12-10'
+    federal_register_citation: 68 FR 68944
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2003-12-10'
+    locator: result page 16 (?page=16), row 17
+    note: 'Listed as: "Little Traverse Bay Bands of Odawa Indians Tribal State Gaming Compact" (Deemed
+      Approved); list''s Tribe column: "Little Traverse Bay Bands of Odawa Indians, Michigan". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2003.12.10_little_traverse_bay_bands_of_odawa_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2003/12/10/03-30634/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MI
+    status: deemed-approved
+    dispute_resolution_summary: After written notice the parties meet within 30 days; if a State allegation
+      is unresolved after 90 days the State may serve a notice to cease the disputed games and the tribe
+      may either stop them or invoke arbitration under American Arbitration Association commercial rules
+      before three attorney arbitrators while play continues, and a tribe may likewise invoke arbitration
+      on its own unresolved allegations.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-mi-bay-mills-indian-community-1993
+    confidence: medium
+    as_of: '1993-11-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The same Section 7 text appears in the
+      1993 Bay Mills Indian Community compact and the 1999 Little River Band compact (both read); other
+      Michigan nations signed the 1993 or 1998 forms, and later amendments were not checked. Status copied
+      from this nation's most recent approved or deemed-approved entry for this state in the Office of
+      Indian Gaming list (2008-04-21).
+  ordinances:
+  - approved: '1996-04-30'
+    link: https://www.nigc.gov?wpdmdl=10159&ind=10194
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-04-30'
+    locator: table row 135, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 135 lists the nation
+      as "Little Traverse Bay Bands of Odawa Indians".
+  - approved: '2001-05-18'
+    link: https://www.nigc.gov?wpdmdl=10180&ind=10195
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-05-18'
+    locator: table row 135, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 135 lists the nation
+      as "Little Traverse Bay Bands of Odawa Indians".
+  - approved: '2005-07-25'
+    link: https://www.nigc.gov?wpdmdl=10181&ind=10196
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2005-07-25'
+    locator: table row 135, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 135 lists the nation
+      as "Little Traverse Bay Bands of Odawa Indians".
+  - approved: '2011-03-28'
+    link: https://www.nigc.gov?wpdmdl=10182&ind=10197
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2011-03-28'
+    locator: table row 135, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 135 lists the nation
+      as "Little Traverse Bay Bands of Odawa Indians".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Little Traverse Bay Band of Odawa
+      Indians". Name extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

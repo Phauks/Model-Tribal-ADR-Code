@@ -120,6 +120,81 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Yurok Tribe of the Yurok Reservation, California
+gaming:
+  compacts:
+  - state: CA
+    status: deemed-approved
+    approved: '2007-11-02'
+    federal_register_citation: 72 FR 62264
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-11-02'
+    locator: result page 13 (?page=13), row 16
+    note: 'Listed as: "Yurok Tribe of the Yurok Reservation Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Yurok Tribe of the Yurok Reservation, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.11.02_yurok_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/11/02/E7-21624/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2016-10-31'
+    federal_register_citation: 81 FR 75427
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2016-10-31'
+    locator: result page 13 (?page=13), row 17
+    note: 'Listed as: "Yurok Tribe of the Yurok Reservation Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Yurok Tribe of the Yurok Reservation, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202016.10.31%20Yurok%20Tribe%202016%20Compact%20Packet.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2016/10/31/2016-26251/indian-gaming-approval-of-amendment-to-tribal-state-class-iii-gaming-compact-in-the-state-of.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2026-07-07'
+    federal_register_citation: 91 FR 41655
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2026-07-07'
+    locator: result page 13 (?page=13), row 18
+    note: 'Listed as: "Yurok Tribe of the Yurok Reservation Tribal State Gaming Compact Extension" (Extensions);
+      list''s Tribe column: "Yurok Tribe of the Yurok Reservation, California". Document: https://www.bia.gov/sites/default/files/media_document/2026.06.04_yurok_compact_extension_508_compliant.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2026/07/07/2026-13701/indian-gaming-extension-of-tribal-state-class-iii-gaming-compact-between-the-yurok-tribe-of-the.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2026-07-07).
+  ordinances:
+  - approved: '2000-07-07'
+    link: https://www.nigc.gov?wpdmdl=11598&ind=11606
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2000-07-07'
+    locator: table row 321, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 321 lists the nation
+      as "Yurok Tribe". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Yurok Tribe of the Yurok Reservation".
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

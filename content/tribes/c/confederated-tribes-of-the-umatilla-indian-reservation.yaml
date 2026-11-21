@@ -2,6 +2,14 @@ id: confederated-tribes-of-the-umatilla-indian-reservation
 entity_type: native-nation
 names:
   official: Confederated Tribes of the Umatilla Indian Reservation
+  self_designation:
+  - name: Weyíiletpuu
+    language_tag: nez
+    source: ctuir-about-language
+    confidence: medium
+    as_of: '2026-11-21'
+    note: Name given for the Cayuse on the language page ('Weyíiletpuu (Cayuse)'). One of the three constituent
+      peoples.
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -45,6 +53,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US4405
   note: Matched by name. Census class code D1.
 population:
+- count: 3100
+  kind: citizens
+  source: ctuir-about
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''over 3,100 tribal members. Nearly half of those tribal members live on or near the Umatilla
+    Reservation''. Undated; as_of is access date.'
 - count: 2861
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -119,6 +134,25 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Umatilla Indian Reservation
+languages:
+- name: Umatilla (Sahaptin)
+  language_tag: uma
+  source: ctuir-about-language
+  confidence: high
+  as_of: '2026-11-21'
+  note: Page teaches 'the languages of Umatilla, Walla Walla and Weyíiletpuu (Cayuse)'.
+- name: Walla Walla (Sahaptin)
+  language_tag: waa
+  source: ctuir-about-language
+  confidence: high
+  as_of: '2026-11-21'
+  note: Page teaches 'the languages of Umatilla, Walla Walla and Weyíiletpuu (Cayuse)'.
+- name: Weyíiletpuu (Cayuse dialect of Nez Perce)
+  language_tag: nez
+  source: ctuir-about-language
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Page: ''Weyíiletpuu is a dialect of the Nez Perce language as used by the Cayuse''.'
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Umatilla Agency
@@ -126,6 +160,261 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Confederated Tribes of the Umatilla Indian Reservation
+gaming:
+  compacts:
+  - state: OR
+    status: approved
+    approved: '1999-06-01'
+    federal_register_citation: 64 FR 29333
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-06-01'
+    locator: result page 31 (?page=31), row 8
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.06.01Confederated%20Tribes%20of%20the%20%20Umatilla%20Indian%20Reservation%20and%20State%20of%20Oregon%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/06/01/99-13730/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1996-09-09'
+    federal_register_citation: 61 FR 47525
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-09-09'
+    locator: result page 31 (?page=31), row 9
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201996.09.09%20Confederated%20Tribes%20of%20the%20Umatilla%20Reservation%20Tribal%20State%20Gaming%20%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/09/09/96-22950/indian-gaming-bureau-of-indian-affairs-interior.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1995-12-14'
+    federal_register_citation: 60 FR 64176
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-12-14'
+    locator: result page 31 (?page=31), row 10
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201995.12.14%20Confederated%20Tribes%20of%20the%20Umatilla%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/12/14/95-30467/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1994-02-15'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1994-02-15'
+    locator: result page 31 (?page=31), row 11
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201994.02.15%20Confederated%20Tribes%20of%20Umatilla%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1994/02/15/94-3397/indian-gaming-notice-department-of-the-interior.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1998-02-27'
+    federal_register_citation: 63 FR 10035
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-02-27'
+    locator: result page 31 (?page=31), row 12
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.02.27%20Confederated%20Tribes%20of%20the%20Umatilla%20Indian%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/02/27/98-5071/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2009-02-19'
+    federal_register_citation: 74 FR 7699
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2009-02-19'
+    locator: result page 31 (?page=31), row 13
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202009.02.19%20Confederated%20Tribes%20of%20the%20Umatilla%20Indian%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2009/02/19/E9-3501/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2008-03-04'
+    federal_register_citation: 73 FR 11661
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2008-03-04'
+    locator: result page 31 (?page=31), row 14
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202008.03.04Confederated%20Tribes%20of%20the%20Umatilla%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/03/04/E8-4059/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1994-10-18'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1994-10-18'
+    locator: result page 31 (?page=31), row 15
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201994.10.18%20Confederated%20Tribes%20of%20the%20Umatilla%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1994/10/18/94-25705/indian-gaming-notice.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1997-12-05'
+    federal_register_citation: 62 FR 64397
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1997-12-05'
+    locator: result page 31 (?page=31), row 16
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201997.12.05%20Confederated%20Tribes%20of%20the%20Umatilla%20%20Indian%20Reservation%20Tribal%20State%20%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1997/12/05/97-31918/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2014-06-11'
+    federal_register_citation: 79 FR 33592
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2014-06-11'
+    locator: result page 31 (?page=31), row 17
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202014.06.11%20Confederated%20Tribes%20of%20%20the%20Umatilla%20Indian%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2014/06/11/2014-13645/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2007-03-19'
+    federal_register_citation: 72 FR 12813
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2007-03-19'
+    locator: result page 31 (?page=31), row 18
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202007.03.19%20Confederated%20Tribes%20of%20the%20Umatilla%20Indian%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/03/19/E7-4905/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2020-09-09'
+    federal_register_citation: 85 FR 55686
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2020-09-09'
+    locator: result page 31 (?page=31), row 19
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202020.09.09%20Umatilla%20Compact%20Amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2020/09/09/2020-19928/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-in-the-state-of-oregon.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2000-04-03'
+    federal_register_citation: 65 FR 17527
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-04-03'
+    locator: result page 31 (?page=31), row 20
+    note: 'Listed as: "Confederated Tribes of the Umatilla Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Confederated Tribes of the Umatilla Indian Reservation". Document:
+      https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.04.03%20Confederated%20Tribes%20of%20the%20Umatilla%20Indian%20Reservation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/04/03/00-8067/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance and the parties
+      meet within 30 days; if unresolved within 90 days either party may sue in the United States District
+      Court for the District of Oregon (or a state court if federal jurisdiction is declined), and other
+      dispute resolution methods remain available by mutual agreement.
+    dispute_resolution_locator: Section 17 (Dispute Resolution)
+    source: compact-or-confederated-tribes-of-the-grand-ronde-c-2023
+    confidence: medium
+    as_of: '2023-02-08'
+    locator: Section 17 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2023 Confederated Tribes
+      of the Grand Ronde Community compact; other Oregon compacts were not checked. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2020-09-09).
+  ordinances:
+  - approved: '1994-04-07'
+    link: https://www.nigc.gov?wpdmdl=9647&ind=9659
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-04-07'
+    locator: table row 59, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 59 lists the nation
+      as "Confederated Tribes of the Umatilla Indian Reservation".
+  - approved: '2000-09-08'
+    link: https://www.nigc.gov?wpdmdl=9648&ind=9660
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-09-08'
+    locator: table row 59, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 59 lists the nation
+      as "Confederated Tribes of the Umatilla Indian Reservation".
+  - approved: '2002-01-02'
+    link: https://www.nigc.gov?wpdmdl=9649&ind=9661
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-01-02'
+    locator: table row 59, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 59 lists the nation
+      as "Confederated Tribes of the Umatilla Indian Reservation".
+  - approved: '2004-09-28'
+    link: https://www.nigc.gov?wpdmdl=9650&ind=9662
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-09-28'
+    locator: table row 59, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 59 lists the nation
+      as "Confederated Tribes of the Umatilla Indian Reservation".
+  - approved: '2008-04-18'
+    link: https://www.nigc.gov?wpdmdl=9651&ind=9663
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-04-18'
+    locator: table row 59, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 59 lists the nation
+      as "Confederated Tribes of the Umatilla Indian Reservation".
+  - approved: '2011-08-09'
+    link: https://www.nigc.gov?wpdmdl=9652&ind=9664
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2011-08-09'
+    locator: table row 59, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 59 lists the nation
+      as "Confederated Tribes of the Umatilla Indian Reservation".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Confederated Tribes of the
+      Umatilla Indian Reservation". Facilities as machine-extracted from the report text (verify): Wildhorse
+      Gaming Resort and Casino. Name extracted from the PDF by the page-fetch tool and matched to the
+      roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

@@ -38,6 +38,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5600
   note: 'Matched by name. Shared with: Citizen Potawatomi Nation, Oklahoma. Census class code D6.'
 population:
+- count: 4775
+  kind: citizens
+  source: astribe-about-us
+  confidence: high
+  as_of: '2026-06-30'
+  note: 'Page: ''The current membership is 4,775 as of June 30, 2026.'''
 - count: 126987
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -102,6 +108,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Absentee-Shawnee Tribe of Indians of Oklahoma
+languages:
+- name: Shawnee
+  language_tag: sjw
+  source: astribe-about-us
+  confidence: high
+  as_of: '2026-11-21'
+  note: Page mentions 'continuous rejuvenation of the Shawnee language'; site has a Language/Culture Department.
 federal_administration:
   bureau_of_indian_affairs_region: Southern Plains
   bureau_of_indian_affairs_agency: Southern Plains Regional Office
@@ -109,6 +122,129 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Absentee-Shawnee Tribe of Indians of Oklahoma
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '2005-01-27'
+    federal_register_citation: 70 FR 3942
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-01-27'
+    locator: result page 26 (?page=26), row 3
+    note: 'Listed as: "Absentee Shawnee Tribe of Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Absentee-Shawnee Tribe of Indians of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2005.01.27_absentee_shawnee_tribe_of_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/01/27/05-1468/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2001-05-04'
+    federal_register_citation: 66 FR 22593
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-05-04'
+    locator: result page 26 (?page=26), row 4
+    note: 'Listed as: "Absentee Shawnee Tribe of Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Absentee-Shawnee Tribe of Indians of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%20%202001.05.04%20Absentee%20Shawnee%20Tribe%20of%20Indians%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/05/04/01-11418/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2018-08-17'
+    federal_register_citation: 83 FR 41101
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-08-17'
+    locator: result page 26 (?page=26), row 5
+    note: 'Listed as: "Absentee Shawnee Tribe of Indians Tribal State Gaming Compact" (Approve); list''s
+      Tribe column: "Absentee-Shawnee Tribe of Indians of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.17%20Absentee%20%20Shawnee%20Compact%20Amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/08/17/2018-17729/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of-oklahoma.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-08-17).
+  ordinances:
+  - approved: '1995-01-10'
+    link: https://www.nigc.gov?wpdmdl=3252&ind=3246
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-01-10'
+    locator: table row 1, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 1 lists the nation
+      as "Absentee Shawnee Tribe of Indians of Oklahoma".
+  - approved: '2000-03-27'
+    link: https://www.nigc.gov?wpdmdl=3243&ind=3248
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-03-27'
+    locator: table row 1, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 1 lists the nation
+      as "Absentee Shawnee Tribe of Indians of Oklahoma".
+  - approved: '2003-10-03'
+    link: https://www.nigc.gov?wpdmdl=3250&ind=3244
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-10-03'
+    locator: table row 1, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 1 lists the nation
+      as "Absentee Shawnee Tribe of Indians of Oklahoma".
+  - approved: '2005-04-19'
+    link: https://www.nigc.gov?wpdmdl=3251&ind=3245
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2005-04-19'
+    locator: table row 1, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 1 lists the nation
+      as "Absentee Shawnee Tribe of Indians of Oklahoma".
+  - approved: '2008-03-25'
+    link: https://www.nigc.gov?wpdmdl=3252&ind=3246
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-03-25'
+    locator: table row 1, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 1 lists the nation
+      as "Absentee Shawnee Tribe of Indians of Oklahoma".
+  - approved: '2010-04-13'
+    link: https://www.nigc.gov?wpdmdl=3253&ind=3247
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2010-04-13'
+    locator: table row 1, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 1 lists the nation
+      as "Absentee Shawnee Tribe of Indians of Oklahoma".
+  - approved: '2023-05-15'
+    link: https://www.nigc.gov?wpdmdl=3254&ind=3255
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2023-05-15'
+    locator: table row 1, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 1 lists the nation
+      as "Absentee Shawnee Tribe of Indians of Oklahoma".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Absentee Shawnee Tribe of
+      Oklahoma". Facilities as machine-extracted from the report text (verify): Thunderbird Casino - Shawnee;
+      Thunderbird Entertainment Center. Name extracted from the PDF by the page-fetch tool and matched
+      to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

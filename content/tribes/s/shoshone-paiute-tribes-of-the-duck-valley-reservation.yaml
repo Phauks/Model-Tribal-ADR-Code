@@ -122,6 +122,54 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Shoshone-Paiute Tribes of the Duck Valley Reservation, Nevada
+gaming:
+  compacts:
+  - state: NV
+    status: deemed-approved
+    approved: '2010-07-06'
+    federal_register_citation: 75 FR 38834
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2010-07-06'
+    locator: result page 25 (?page=25), row 12
+    note: 'Listed as: "Shoshone-Paiute Tribes of the Duck Valley Reservation Tribal State Gaming Compact"
+      (Deemed Approved); list''s Tribe column: "Shoshone-Paiute Tribes of the Duck Valley Reservation,
+      Nevada". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2010.07.06_shoshone-pauite_tribes_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2010/07/06/2010-16214/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NV
+    status: deemed-approved
+    dispute_resolution_summary: A party alleging substantial default gives written notice with 90 days
+      to cure, the parties then meet within 30 days, and unresolved disputes may be brought in federal
+      court with venue in Washoe County for declaratory or injunctive relief only under a limited waiver
+      of sovereign immunity, with mediation or arbitration available by mutual written agreement.
+    dispute_resolution_locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver
+      of Sovereign Immunity)
+    source: compact-nv-washoe-tribe-of-nevada-and-california-2018
+    confidence: medium
+    as_of: '2018-01-18'
+    locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver of Sovereign Immunity)
+    note: state model compact; nation-specific text not checked. Read from the 2018 Washoe Tribe compact;
+      other Nevada compacts were not checked. Status copied from this nation's most recent approved or
+      deemed-approved entry for this state in the Office of Indian Gaming list (2010-07-06).
+  ordinances:
+  - approved: '2012-07-16'
+    link: https://www.nigc.gov?wpdmdl=11152&ind=11166
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2012-07-16'
+    locator: table row 262, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 262 lists the nation
+      as "Shoshone-Paiute Tribes". Name matched to roster by spelling variant.
+  - approved: '2012-07-16'
+    link: https://www.nigc.gov?wpdmdl=11153&ind=11167
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2012-07-16'
+    locator: table row 262, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 262 lists the nation
+      as "Shoshone-Paiute Tribes". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

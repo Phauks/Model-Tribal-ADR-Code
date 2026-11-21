@@ -124,6 +124,46 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Yerington Paiute Tribe of the Yerington Colony & Campbell Ranch, Nevada
+gaming:
+  compacts:
+  - state: NV
+    status: approved
+    approved: '2014-10-23'
+    federal_register_citation: 79 FR 63436
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2014-10-23'
+    locator: result page 25 (?page=25), row 17
+    note: 'Listed as: "Yerington Paiute Tribe of the Yerington Colony & Campbell Ranch Tribal State Gaming
+      Compact" (Approve); list''s Tribe column: "Yerington Paiute Tribe of the Yerington Colony & Campbell
+      Ranch, Nevada". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2014.10.23_yerington_paiute_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2014/10/23/2014-25297/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NV
+    status: approved
+    dispute_resolution_summary: A party alleging substantial default gives written notice with 90 days
+      to cure, the parties then meet within 30 days, and unresolved disputes may be brought in federal
+      court with venue in Washoe County for declaratory or injunctive relief only under a limited waiver
+      of sovereign immunity, with mediation or arbitration available by mutual written agreement.
+    dispute_resolution_locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver
+      of Sovereign Immunity)
+    source: compact-nv-washoe-tribe-of-nevada-and-california-2018
+    confidence: medium
+    as_of: '2018-01-18'
+    locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver of Sovereign Immunity)
+    note: state model compact; nation-specific text not checked. Read from the 2018 Washoe Tribe compact;
+      other Nevada compacts were not checked. Status copied from this nation's most recent approved or
+      deemed-approved entry for this state in the Office of Indian Gaming list (2014-10-23).
+  ordinances:
+  - approved: '2015-12-09'
+    link: https://www.nigc.gov?wpdmdl=11570&ind=11600
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2015-12-09'
+    locator: table row 317, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 317 lists the nation
+      as "Yerington Paiute Tribe". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

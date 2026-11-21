@@ -107,6 +107,45 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Las Vegas Tribe of Paiute Indians of the Las Vegas Indian Colony, Nevada
+gaming:
+  compacts:
+  - state: NV
+    status: approved
+    approved: '1994-09-21'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1994-09-21'
+    locator: result page 24 (?page=24), row 21
+    note: 'Listed as: "Las Vegas Tribe of Paiute Indians of the Las Vegas Indian Colony Tribal State Gaming
+      Compact" (Approve); list''s Tribe column: "Las Vegas Tribe of Paiute Indians of the Las Vegas Indian
+      Colony, Nevada". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1994.09.21_las_vegas_tribe_of_paiute_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1994/09/21/94-23272/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NV
+    status: approved
+    dispute_resolution_summary: A party alleging substantial default gives written notice with 90 days
+      to cure, the parties then meet within 30 days, and unresolved disputes may be brought in federal
+      court with venue in Washoe County for declaratory or injunctive relief only under a limited waiver
+      of sovereign immunity, with mediation or arbitration available by mutual written agreement.
+    dispute_resolution_locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver
+      of Sovereign Immunity)
+    source: compact-nv-washoe-tribe-of-nevada-and-california-2018
+    confidence: medium
+    as_of: '2018-01-18'
+    locator: Articles XIII(1) (Default) and XV (Dispute Resolution and Limited Waiver of Sovereign Immunity)
+    note: state model compact; nation-specific text not checked. Read from the 2018 Washoe Tribe compact;
+      other Nevada compacts were not checked. Status copied from this nation's most recent approved or
+      deemed-approved entry for this state in the Office of Indian Gaming list (1994-09-21).
+  ordinances:
+  - approved: '1994-09-20'
+    link: https://www.nigc.gov?wpdmdl=10143&ind=10162
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-09-20'
+    locator: table row 132, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 132 lists the nation
+      as "Las Vegas Paiute Tribe". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

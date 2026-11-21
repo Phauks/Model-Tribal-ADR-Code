@@ -107,6 +107,16 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Redwood Valley or Little River Band of Pomo Indians of the Redwood Valley Rancheria California
+gaming:
+  ordinances:
+  - approved: '1995-07-31'
+    link: https://www.nigc.gov?wpdmdl=10907&ind=10925
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-07-31'
+    locator: table row 227, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 227 lists the nation
+      as "Redwood Valley Rancheria". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

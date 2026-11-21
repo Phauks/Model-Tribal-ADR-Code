@@ -106,6 +106,38 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Ramona Band of Cahuilla, California
+gaming:
+  compacts:
+  - state: CA
+    status: deemed-approved
+    approved: '2014-01-17'
+    federal_register_citation: 79 FR 3241
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2014-01-17'
+    locator: result page 10 (?page=10), row 8
+    note: 'Listed as: "Ramona Band of Cahuilla Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "Ramona Band of Cahuilla, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202014.01.17%20Ramona%20Band%20of%20Cahuilla%20Tribal%20State%20Gaming%20Compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2014/01/17/2014-00887/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2014-01-17).
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

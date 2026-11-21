@@ -37,6 +37,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5550
   note: Matched by name. Census class code D6.
 population:
+- count: 470000
+  kind: citizens
+  source: cherokee-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Homepage: ''more than 470,000 citizens worldwide''. Rounded figure; as_of is access date.'
 - count: 513178
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -100,6 +106,20 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Cherokee Nation
+- kind: website
+  value: https://www.cherokee.gov/
+  label: Official website (the directory address https://www.cherokee.org/ redirects here)
+  source: cherokee-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Directory URL still works but redirects to cherokee.gov.
+languages:
+- name: Cherokee
+  language_tag: chr
+  source: cherokee-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Homepage links a Cherokee Language Hub and Cherokee language classes.
 federal_administration:
   bureau_of_indian_affairs_region: Eastern Oklahoma
   bureau_of_indian_affairs_agency: Eastern Oklahoma Regional Office
@@ -107,6 +127,99 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Cherokee Nation
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '2010-10-05'
+    federal_register_citation: 75 FR 61511
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2010-10-05'
+    locator: result page 26 (?page=26), row 8
+    note: 'Listed as: "Cherokee Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Cherokee
+      Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2010.10.05_cherokee_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2010/10/05/2010-25005/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2018-08-17'
+    federal_register_citation: 83 FR 41101
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-08-17'
+    locator: result page 26 (?page=26), row 9
+    note: 'Listed as: "Cherokee Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Cherokee
+      Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.17%20Cherokee%20%20compact%20amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/08/17/2018-17729/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of-oklahoma.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2005-01-27'
+    federal_register_citation: 70 FR 3942
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-01-27'
+    locator: result page 26 (?page=26), row 10
+    note: 'Listed as: "Cherokee Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Cherokee
+      Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.01.27%20Cherokee%20Nation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/01/27/05-1468/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2005-01-27'
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked.
+  ordinances:
+  - approved: '1994-06-02'
+    link: https://www.nigc.gov?wpdmdl=9473&ind=9484
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-06-02'
+    locator: table row 38, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 38 lists the nation
+      as "Cherokee Nation, Oklahoma".
+  - approved: '2008-01-22'
+    link: https://www.nigc.gov?wpdmdl=9474&ind=9485
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-01-22'
+    locator: table row 38, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 38 lists the nation
+      as "Cherokee Nation, Oklahoma".
+  - approved: '2014-10-27'
+    link: https://www.nigc.gov?wpdmdl=9475&ind=9486
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2014-10-27'
+    locator: table row 38, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 38 lists the nation
+      as "Cherokee Nation, Oklahoma".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Cherokee Nation, Oklahoma".
+      Facilities as machine-extracted from the report text (verify): Cherokee Casino - Fort Gibson; Cherokee
+      Casino - Roland; Cherokee Casino - Sallisaw; Roland Travel Plaza; Cherokee Casino - Tahlequah; Cherokee
+      Casino - West Siloam Springs; Cherokee Nation Grove Casino; Cherokee Casino Ramona; Cherokee Casino
+      - South Coffeyville. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

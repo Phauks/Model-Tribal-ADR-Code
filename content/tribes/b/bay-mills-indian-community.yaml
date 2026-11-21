@@ -37,6 +37,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0170
   note: Matched by name. Census class code D1.
 population:
+- count: 2258
+  kind: citizens
+  source: baymills-enrollment
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''currently has 2,258 tribal citizens with 1,657 over the age of 18''. Undated page; as_of
+    is access date.'
 - count: 1032
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -100,6 +107,14 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Bay Mills Indian Community, Michigan
+languages:
+- name: Anishinaabe (Ojibwe)
+  language_tag: oj
+  source: baymills-about-3
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: cultural department is responsible for ''protecting, preserving, and revitalizing our Anishinaabe
+    (Ojibwe) culture, history, and language.'''
 federal_administration:
   bureau_of_indian_affairs_region: Midwest
   bureau_of_indian_affairs_agency: Michigan Agency
@@ -107,6 +122,203 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Bay Mills Indian Community, Michigan
+gaming:
+  compacts:
+  - state: MI
+    status: approved
+    approved: '1993-11-30'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-11-30'
+    locator: result page 16 (?page=16), row 8
+    note: 'Listed as: "Bay Mills Indian Community Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Bay Mills Indian Community, Michigan". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.11.30_bay_mills_indian_community_tribal_state_gaming_compact.pdf.'
+  - state: MI
+    status: approved
+    approved: '1993-11-30'
+    dispute_resolution_summary: After written notice the parties meet within 30 days; if a State allegation
+      is unresolved after 90 days the State may serve a notice to cease the disputed games and the tribe
+      may either stop them or invoke arbitration under American Arbitration Association commercial rules
+      before three attorney arbitrators while play continues, and a tribe may likewise invoke arbitration
+      on its own unresolved allegations.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-mi-bay-mills-indian-community-1993
+    confidence: medium
+    as_of: '1993-11-30'
+    locator: Section 7 (Dispute Resolution)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. The same Section 7 text appears in the
+      1993 Bay Mills Indian Community compact and the 1999 Little River Band compact (both read); other
+      Michigan nations signed the 1993 or 1998 forms, and later amendments were not checked.
+  ordinances:
+  - approved: '1993-08-31'
+    link: https://www.nigc.gov?wpdmdl=3325&ind=3327
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-08-31'
+    locator: table row 12, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 12 lists the nation
+      as "Bay Mills Indian Community".
+  - approved: '1996-02-05'
+    link: https://www.nigc.gov?wpdmdl=3329&ind=3330
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-02-05'
+    locator: table row 12, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 12 lists the nation
+      as "Bay Mills Indian Community".
+  - approved: '1996-04-10'
+    link: https://www.nigc.gov?wpdmdl=3334&ind=3335
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-04-10'
+    locator: table row 12, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 12 lists the nation
+      as "Bay Mills Indian Community".
+  - approved: '1997-05-30'
+    link: https://www.nigc.gov?wpdmdl=3338&ind=3339
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-05-30'
+    locator: table row 12, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 12 lists the nation
+      as "Bay Mills Indian Community".
+  - approved: '1997-07-24'
+    link: https://www.nigc.gov?wpdmdl=3341&ind=3343
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-07-24'
+    locator: table row 12, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 12 lists the nation
+      as "Bay Mills Indian Community".
+  - approved: '1999-09-15'
+    link: https://www.nigc.gov?wpdmdl=3345&ind=3346
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1999-09-15'
+    locator: table row 12, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 12 lists the nation
+      as "Bay Mills Indian Community".
+  - approved: '1999-11-12'
+    link: https://www.nigc.gov?wpdmdl=3347&ind=3348
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1999-11-12'
+    locator: table row 12, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 12 lists the nation
+      as "Bay Mills Indian Community".
+  - approved: '2000-02-03'
+    link: https://www.nigc.gov?wpdmdl=3349&ind=3350
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-02-03'
+    locator: table row 12, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 12 lists the nation
+      as "Bay Mills Indian Community".
+  - approved: '2001-03-14'
+    link: https://www.nigc.gov?wpdmdl=3351&ind=3352
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-03-14'
+    locator: table row 12, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 12 lists the nation
+      as "Bay Mills Indian Community".
+  - approved: '2001-05-22'
+    link: https://www.nigc.gov?wpdmdl=3353&ind=3354
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-05-22'
+    locator: table row 12, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 12 lists the nation
+      as "Bay Mills Indian Community".
+  - approved: '2002-09-03'
+    link: https://www.nigc.gov?wpdmdl=3356&ind=3357
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-09-03'
+    locator: table row 12, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 12 lists the nation
+      as "Bay Mills Indian Community".
+  - approved: '2004-08-11'
+    link: https://www.nigc.gov?wpdmdl=3355&ind=3358
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-08-11'
+    locator: table row 12, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 12 lists the nation
+      as "Bay Mills Indian Community".
+  - approved: '2005-05-27'
+    link: https://www.nigc.gov?wpdmdl=3359&ind=3360
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2005-05-27'
+    locator: table row 12, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 12 lists the nation
+      as "Bay Mills Indian Community".
+  - approved: '2005-11-17'
+    link: https://www.nigc.gov?wpdmdl=3361&ind=3362
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2005-11-17'
+    locator: table row 12, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 12 lists the nation
+      as "Bay Mills Indian Community".
+  - approved: '2006-02-01'
+    link: https://www.nigc.gov?wpdmdl=3363&ind=3364
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2006-02-01'
+    locator: table row 12, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 12 lists the nation
+      as "Bay Mills Indian Community".
+  - approved: '2007-09-12'
+    link: https://www.nigc.gov?wpdmdl=3365&ind=3366
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2007-09-12'
+    locator: table row 12, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 12 lists the nation
+      as "Bay Mills Indian Community".
+  - approved: '2010-09-15'
+    link: https://www.nigc.gov?wpdmdl=3367&ind=3368
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2010-09-15'
+    locator: table row 12, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 12 lists the nation
+      as "Bay Mills Indian Community".
+  - approved: '2011-11-30'
+    link: https://www.nigc.gov?wpdmdl=3369&ind=3370
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2011-11-30'
+    locator: table row 12, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 12 lists the nation
+      as "Bay Mills Indian Community".
+  - approved: '2013-01-25'
+    link: https://www.nigc.gov?wpdmdl=3371&ind=3372
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2013-01-25'
+    locator: table row 12, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 12 lists the nation
+      as "Bay Mills Indian Community".
+  - approved: '2014-04-24'
+    link: https://www.nigc.gov?wpdmdl=3373&ind=3374
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2014-04-24'
+    locator: table row 12, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 12 lists the nation
+      as "Bay Mills Indian Community".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Bay Mills Indian Community".
+      Facilities as machine-extracted from the report text (verify): Bay Mills Resort & Casino. Name extracted
+      from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

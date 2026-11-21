@@ -114,6 +114,107 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Torres Martinez Desert Cahuilla Indians, California
+gaming:
+  compacts:
+  - state: CA
+    status: deemed-approved
+    approved: '2018-12-27'
+    federal_register_citation: 83 FR 66741
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-12-27'
+    locator: result page 12 (?page=12), row 15
+    note: 'Listed as: "Torres Martinez Desert Cahuilla Indians Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Torres Martinez Desert Cahuilla Indians, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2018.12.27_torres_martinz_desert_cahuilla_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/12/27/2018-28135/indian-gaming-tribal-state-class-iii-gaming-compacts-taking-effect-in-the-state-of-california.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2004-01-16'
+    federal_register_citation: 69 FR 2618
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2004-01-16'
+    locator: result page 12 (?page=12), row 16
+    note: 'Listed as: "Torres-Martinez Desert Cahuilla Indians Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Torres Martinez Desert Cahuilla Indians, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202004.01.16%20Torres%20Martinez%20Desert%20Cahuilla%20Indians%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2004/01/16/04-1024/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2018-12-27).
+  ordinances:
+  - approved: '2000-03-06'
+    link: https://www.nigc.gov?wpdmdl=11389&ind=11411
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2000-03-06'
+    locator: table row 291, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 291 lists the nation
+      as "Torres Martinez Desert Cahuilla Indians".
+  - approved: '2006-12-12'
+    link: https://www.nigc.gov?wpdmdl=11388&ind=11412
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2006-12-12'
+    locator: table row 291, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 291 lists the nation
+      as "Torres Martinez Desert Cahuilla Indians".
+  - approved: '2008-04-09'
+    link: https://www.nigc.gov?wpdmdl=11387&ind=11413
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-04-09'
+    locator: table row 291, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 291 lists the nation
+      as "Torres Martinez Desert Cahuilla Indians".
+  - approved: '2008-07-25'
+    link: https://www.nigc.gov?wpdmdl=11391&ind=11414
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-07-25'
+    locator: table row 291, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 291 lists the nation
+      as "Torres Martinez Desert Cahuilla Indians".
+  - approved: '2008-09-22'
+    link: https://www.nigc.gov?wpdmdl=11392&ind=11415
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-09-22'
+    locator: table row 291, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 291 lists the nation
+      as "Torres Martinez Desert Cahuilla Indians".
+  - approved: '2020-01-08'
+    link: https://www.nigc.gov?wpdmdl=11393&ind=11416
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2020-01-08'
+    locator: table row 291, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 291 lists the nation
+      as "Torres Martinez Desert Cahuilla Indians".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Torres Martinez Desert Cahuilla
+      Indians, California". Name extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

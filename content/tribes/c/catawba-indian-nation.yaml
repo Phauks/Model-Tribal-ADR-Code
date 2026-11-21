@@ -2,6 +2,14 @@ id: catawba-indian-nation
 entity_type: native-nation
 names:
   official: Catawba Indian Nation
+  self_designation:
+  - name: yeh is-WAH h’reh
+    language_tag: chc
+    source: catawba-about-the-nation
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'Page: ''The tribal people called themselves yeh is-WAH h’reh, meaning “people of the river.”''
+      Spelling as given (pronunciation-style).'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -46,6 +54,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0525
   note: Matched by name. Census class code D1.
 population:
+- count: 3300
+  kind: citizens
+  source: catawba-about-the-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Page says 'over 3300 enrolled members' and elsewhere on the same page 'over 3000 enrolled tribal
+    citizens'. Undated page; as_of is access date.
 - count: 849
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -118,6 +133,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Catawba Indian Nation
+- kind: email-general
+  value: info@catawba.com
+  label: General office email shown on the nation's website
+  source: catawba-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Generic office address as shown on the page; undated.
 federal_administration:
   bureau_of_indian_affairs_region: Eastern
   bureau_of_indian_affairs_agency: Eastern Regional Office
@@ -125,6 +147,67 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Catawba Indian Nation
+gaming:
+  compacts:
+  - state: NC
+    status: deemed-approved
+    approved: '2025-12-15'
+    federal_register_citation: 90 FR 58049
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2025-12-15'
+    locator: result page 20 (?page=20), row 17
+    note: 'Listed as: "Catawba Indian Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
+      column: "Catawba Indian Nation (aka Catawba Indian Tribe of South Carolina)". Document: https://www.bia.gov/sites/default/files/media_document/catawba_tribal_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2025/12/15/2025-22803/indian-gaming-approval-by-operation-of-law-of-the-tribal-state-compact-amendment-between-the-catawba.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NC
+    status: approved
+    approved: '2021-03-25'
+    federal_register_citation: 86 FR 15958
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2021-03-25'
+    locator: result page 20 (?page=20), row 18
+    note: 'Listed as: "Catawba Indian Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Catawba Indian Nation (aka Catawba Indian Tribe of South Carolina)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202021.03.25%20Catawba%20Indian%20Nation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/03/25/2021-06111/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-north-carolina.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NC
+    status: approved
+    approved: '2021-03-25'
+    dispute_resolution_summary: After written notice the parties meet within 30 days, and if the dispute
+      is unresolved within 90 days either party may pursue any remedy otherwise available under federal
+      or state law, with mediation or arbitration only by mutual agreement; a separate procedure lets
+      the State notify the Tribe to cease an activity it considers non-compliant, with a written response
+      due within 20 days.
+    dispute_resolution_locator: Section 13 (Dispute Resolution)
+    source: compact-nc-catawba-indian-nation-2021
+    confidence: medium
+    as_of: '2021-03-25'
+    locator: Section 13 (Dispute Resolution)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the 2021 Catawba Indian Nation
+      compact with North Carolina; the Eastern Band of Cherokee Indians compact was not checked.
+  ordinances:
+  - approved: '2020-05-22'
+    link: https://www.nigc.gov?wpdmdl=9452&ind=9464
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2020-05-22'
+    locator: table row 33, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 33 lists the nation
+      as "Catawba Indian Nation".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Catawba Indian Nation". Facilities
+      as machine-extracted from the report text (verify): Catawba Two Kings Casino. Name extracted from
+      the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

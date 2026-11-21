@@ -108,6 +108,102 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Berry Creek Rancheria of Maidu Indians of California
+gaming:
+  compacts:
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-16'
+    locator: result page 4 (?page=4), row 12
+    note: 'Listed as: "Berry Creek Rancheria of Maidu Indians Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Berry Creek Rancheria of Maidu Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.05.16_berry_creek_rancheria_of_maidu_indians_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2022-06-30'
+    federal_register_citation: 87 FR 39115
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-06-30'
+    locator: result page 4 (?page=4), row 13
+    note: 'Listed as: "Berry Creek Rancheria of Maidu Indians Tribal State Gaming Compact" (Extensions);
+      list''s Tribe column: "Berry Creek Rancheria of Maidu Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.30_berry_creek_rancheria_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/30/2022-14054/indian-gaming-extension-of-tribal-state-class-iii-gaming-compacts-in-california.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2023-12-28'
+    federal_register_citation: 88 FR 89723
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2023-12-28'
+    locator: result page 4 (?page=4), row 14
+    note: 'Listed as: "Berry Creek Rancheria of Maidu Indians Tribal State Gaming Compact" (Extensions);
+      list''s Tribe column: "Berry Creek Rancheria of Maidu Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_cpmpliant_2023.12.28_berry_creek_rancheria_of_maidu_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2023/12/28/2023-28711/indian-gaming-extension-of-tribal-state-class-iii-gaming-compacts-in-california.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: secretarial-procedures
+    approved: '2025-07-08'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2025-07-08'
+    locator: result page 4 (?page=4), row 15
+    note: 'Listed as: "Berry Creek Rancheria Secretarial Procedures" (Secretarial Procedures); list''s
+      Tribe column: "Berry Creek Rancheria of Maidu Indians of California". Document: https://www.bia.gov/sites/default/files/media_document/508_compliant_07.08.25_secretarial_procedures_berry_creek_rancheria.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact. Name matched to roster by spelling variant.'
+  - state: CA
+    status: approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2023-12-28).
+  ordinances:
+  - approved: '1994-04-11'
+    link: https://www.nigc.gov?wpdmdl=3385&ind=3387
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-04-11'
+    locator: table row 14, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 14 lists the nation
+      as "Berry Creek Rancheria of Maidu Indians".
+  - approved: '1996-01-19'
+    link: https://www.nigc.gov?wpdmdl=3386&ind=3388
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-01-19'
+    locator: table row 14, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 14 lists the nation
+      as "Berry Creek Rancheria of Maidu Indians".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Berry Creek Rancheria of Maidu
+      Indians of California". Facilities as machine-extracted from the report text (verify): Gold Country
+      Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

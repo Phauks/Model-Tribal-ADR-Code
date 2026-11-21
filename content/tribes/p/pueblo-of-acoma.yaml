@@ -116,6 +116,103 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Pueblo of Acoma, New Mexico
+gaming:
+  compacts:
+  - state: NM
+    status: approved
+    approved: '1995-05-15'
+    federal_register_citation: 60 FR 25978
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-05-15'
+    locator: result page 22 (?page=22), row 15
+    note: 'Listed as: "Pueblo of Acoma Tribal State Gaming Compact" (Approve); list''s Tribe column: "Pueblo
+      of Acoma, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1995.05.15_pueblo_of_acoma_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/05/15/95-11760/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: approved
+    approved: '2001-12-14'
+    federal_register_citation: 66 FR 64856
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-12-14'
+    locator: result page 22 (?page=22), row 16
+    note: 'Listed as: "Pueblo of Acoma Tribal State Gaming Compact" (Approve); list''s Tribe column: "Pueblo
+      of Acoma, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2001.12.14_pueblo_of_acoma_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/12/14/01-30908/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: deemed-approved
+    approved: '2015-06-22'
+    federal_register_citation: 80 FR 35668
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-06-22'
+    locator: result page 22 (?page=22), row 17
+    note: 'Listed as: "Pueblo of Acoma Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Pueblo of Acoma, New Mexico". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2015.06.22_pueblo_of_acoma_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/06/22/2015-15207/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: NM
+    status: deemed-approved
+    dispute_resolution_summary: Within two years of a discovered violation a party serves written notice,
+      may serve a notice to cease the challenged activity after 20 days, and either side may then invoke
+      binding arbitration before three attorney arbitrators (the third chosen by the American Arbitration
+      Association if needed), with awards enforceable by injunctive relief in any court of competent jurisdiction.
+    dispute_resolution_locator: Section 7 (Dispute Resolution)
+    source: compact-nm-pueblo-of-santa-ana-2016
+    confidence: medium
+    as_of: '2016-12-30'
+    locator: Section 7 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the Pueblo of Santa Ana copy
+      of the 2015 New Mexico compact form; nations still under the 2001 or 2007 compacts were not checked.
+      Status copied from this nation's most recent approved or deemed-approved entry for this state in
+      the Office of Indian Gaming list (2015-06-22).
+  ordinances:
+  - approved: '1994-11-03'
+    link: https://www.nigc.gov?wpdmdl=10721&ind=10736
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-11-03'
+    locator: table row 201, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 201 lists the nation
+      as "Pueblo of Acoma".
+  - approved: '1998-01-20'
+    link: https://www.nigc.gov?wpdmdl=10722&ind=10737
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1998-01-20'
+    locator: table row 201, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 201 lists the nation
+      as "Pueblo of Acoma".
+  - approved: '2008-12-18'
+    link: https://www.nigc.gov?wpdmdl=10723&ind=10738
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2008-12-18'
+    locator: table row 201, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 201 lists the nation
+      as "Pueblo of Acoma".
+  - approved: '2011-01-31'
+    link: https://www.nigc.gov?wpdmdl=10724&ind=10739
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2011-01-31'
+    locator: table row 201, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 201 lists the nation
+      as "Pueblo of Acoma".
+  - approved: '2016-07-15'
+    link: https://www.nigc.gov?wpdmdl=10725&ind=10740
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2016-07-15'
+    locator: table row 201, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 201 lists the nation
+      as "Pueblo of Acoma".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

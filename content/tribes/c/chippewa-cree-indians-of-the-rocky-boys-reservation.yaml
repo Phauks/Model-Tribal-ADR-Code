@@ -2,6 +2,14 @@ id: chippewa-cree-indians-of-the-rocky-boys-reservation
 entity_type: native-nation
 names:
   official: Chippewa Cree Indians of the Rocky Boy's Reservation, Montana
+  self_designation:
+  - name: Ne Hiyawak
+    language_tag: cr
+    source: mt-tribal-nations-chippewa-cree
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'State page: ''The tribe call themselves "Ne Hiyawak" which means "those who speak the same
+      language".'' Secondary (state) source; spelling as given.'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -37,6 +45,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US3205
   note: Matched by name. Census class code D1.
 population:
+- count: 6177
+  kind: citizens
+  source: mt-tribal-nations-chippewa-cree
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'State page Fast Facts: ''The reservation is home to 55% of the 6,177 enrolled Chippewa & Cree
+    tribal members.'' Another line says Rocky Boy''s ''provides a home for about 2,500 members''. Undated.'
 - count: 3639
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -108,6 +123,92 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Chippewa Cree Indians of the Rocky Boy's Reservation, Montana
+gaming:
+  compacts:
+  - state: MT
+    status: approved
+    approved: '2013-02-13'
+    federal_register_citation: 78 FR 10203
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2013-02-13'
+    locator: result page 19 (?page=19), row 17
+    note: 'Listed as: "Chippewa-Cree Indians of Rocky Boy''s Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Chippewa Cree Indians of the Rocky Boy''s Reservation, Montana".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2013.02.13_chippewa_cree_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2013/02/13/2013-03326/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: approved
+    approved: '2006-06-07'
+    federal_register_citation: 71 FR 33000
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2006-06-07'
+    locator: result page 19 (?page=19), row 18
+    note: 'Listed as: "Chippewa-Cree Indians of the Rocky Boy''s Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Chippewa Cree Indians of the Rocky Boy''s Reservation, Montana".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2006.06.07_chippewa_cree_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2006/06/07/E6-8811/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: approved
+    approved: '2008-04-03'
+    federal_register_citation: 73 FR 18297
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2008-04-03'
+    locator: result page 19 (?page=19), row 19
+    note: 'Listed as: "Chippewa-Cree Indians of the Rocky Boy''s Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Chippewa Cree Indians of the Rocky Boy''s Reservation, Montana".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2008.04.03_chippewa_cree_tribal_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/04/03/E8-6884/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: approved
+    approved: '1993-10-20'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1993-10-20'
+    locator: result page 19 (?page=19), row 20
+    note: 'Listed as: "Chippewa-Cree Indians of the Rocky Boy''s Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Chippewa Cree Indians of the Rocky Boy''s Reservation, Montana".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1993.10.20_chippewa_cree_indians_tribal_state_gaming_compact.pdf.'
+  - state: MT
+    status: approved
+    dispute_resolution_summary: The compact has no arbitration or mediation clause; disputes over the
+      scope of jurisdiction may be resolved by mutual consent, and for substantial and continuing default
+      either party may terminate after giving 90 days' written notice and an opportunity to cure.
+    dispute_resolution_locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
+    source: compact-mt-confederated-salish-and-kootenai-tribes-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
+    note: state model compact; nation-specific text not checked. Read from the 2026 Confederated Salish
+      and Kootenai Tribes compact; other Montana compacts were not checked. Status copied from this nation's
+      most recent approved or deemed-approved entry for this state in the Office of Indian Gaming list
+      (2013-02-13).
+  ordinances:
+  - approved: '1993-11-08'
+    link: https://www.nigc.gov?wpdmdl=9495&ind=9507
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-11-08'
+    locator: table row 43, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 43 lists the nation
+      as "Chippewa Cree Indians of the Rocky Boy’s Reservation".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Chippewa Cree Indians of the
+      Rocky Boy''s Reservation, Montana". Facilities as machine-extracted from the report text (verify):
+      Northern Winz Casino II; Northern Winz Hotel and Casino. Name extracted from the PDF by the page-fetch
+      tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

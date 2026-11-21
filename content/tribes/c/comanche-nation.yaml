@@ -2,6 +2,14 @@ id: comanche-nation
 entity_type: native-nation
 names:
   official: Comanche Nation, Oklahoma
+  self_designation:
+  - name: Nʉmʉnʉʉ
+    language_tag: com
+    romanized: NUH-MUH-NUH
+    source: comanchenation-about-page-history
+    confidence: high
+    as_of: '2026-11-21'
+    note: 'Page: ''in our native language, “Nʉmʉnʉʉ” (NUH-MUH-NUH), which means “The People”''.'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -50,6 +58,13 @@ census_areas:
     Springs--Apache Tribe; Caddo Nation of Oklahoma; Wichita and Affiliated Tribes , Oklahoma; Delaware
     Nation, Oklahoma. Census class code D0.'
 population:
+- count: 17000
+  kind: citizens
+  source: comanchenation-about-page-history
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''approximately 17,000 enrolled tribal members, with around 7,000 residing in the tribal
+    jurisdiction area''. Undated page; as_of is access date.'
 - count: 187646
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -127,6 +142,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Comanche Nation, Oklahoma
+languages:
+- name: Comanche
+  language_tag: com
+  source: comanchenation-culture-page-language
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Site has a Comanche language page.
 federal_administration:
   bureau_of_indian_affairs_region: Southern Plains
   bureau_of_indian_affairs_agency: Anadarko Agency
@@ -134,6 +156,233 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Comanche Nation, Oklahoma
+gaming:
+  compacts:
+  - state: OK
+    status: disapproved
+    approved: '1999-04-02'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-04-02'
+    locator: result page 27 (?page=27), row 5
+    note: 'Listed as: "Comanche Nation Tribal State Gaming Compact" (Disapproved); list''s Tribe column:
+      "Comanche Nation, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.04.02%20Comanche%20Disapproval%20Letter.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: OK
+    status: approved
+    approved: '2018-09-18'
+    federal_register_citation: 83 FR 47187
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-09-18'
+    locator: result page 27 (?page=27), row 6
+    note: 'Listed as: "Comanche Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Comanche
+      Nation, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.09.18%20Comanche%20Compact%20amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/09/18/2018-20187/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of-oklahoma.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    approved: '2020-06-29'
+    federal_register_citation: 85 FR 38919
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2020-06-29'
+    locator: result page 27 (?page=27), row 7
+    note: 'Listed as: "Comanche Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Comanche Nation, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202020.06.29%20Comanche%20Nation%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2020/06/29/2020-13886/indian-gaming-tribal-state-class-iii-gaming-compacts-taking-effect-in-the-state-of-oklahoma.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2005-01-27'
+    federal_register_citation: 70 FR 3942
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-01-27'
+    locator: result page 27 (?page=27), row 8
+    note: 'Listed as: "Comanche Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Comanche
+      Nation, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2005.01.27_comanche_nation_tribal_state_gaming_comapct.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/01/27/05-1468/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '1999-07-07'
+    federal_register_citation: 64 FR 36713
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-07-07'
+    locator: result page 27 (?page=27), row 9
+    note: 'Listed as: "Comanche Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Comanche
+      Nation, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.07.07%20Comanche%20Nation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/07/07/99-17116/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2020-06-29).
+  ordinances:
+  - approved: '1996-04-10'
+    link: https://www.nigc.gov?wpdmdl=9549&ind=9582
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1996-04-10'
+    locator: table row 51, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 51 lists the nation
+      as "Comanche Nation".
+  - approved: '2001-02-05'
+    link: https://www.nigc.gov?wpdmdl=9566&ind=9583
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2001-02-05'
+    locator: table row 51, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
+      as "Comanche Nation".
+  - approved: '2002-02-27'
+    link: https://www.nigc.gov?wpdmdl=9567&ind=9584
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-02-27'
+    locator: table row 51, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
+      as "Comanche Nation".
+  - approved: '2005-12-19'
+    link: https://www.nigc.gov?wpdmdl=9568&ind=9585
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2005-12-19'
+    locator: table row 51, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
+      as "Comanche Nation".
+  - approved: '2006-09-08'
+    link: https://www.nigc.gov?wpdmdl=9569&ind=9586
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2006-09-08'
+    locator: table row 51, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
+      as "Comanche Nation".
+  - approved: '2007-01-08'
+    link: https://www.nigc.gov?wpdmdl=9570&ind=9587
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2007-01-08'
+    locator: table row 51, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
+      as "Comanche Nation".
+  - approved: '2007-02-15'
+    link: https://www.nigc.gov?wpdmdl=9571&ind=9588
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2007-02-15'
+    locator: table row 51, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
+      as "Comanche Nation".
+  - approved: '2007-07-30'
+    link: https://www.nigc.gov?wpdmdl=9572&ind=9589
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2007-07-30'
+    locator: table row 51, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
+      as "Comanche Nation".
+  - approved: '2009-09-21'
+    link: https://www.nigc.gov?wpdmdl=9573&ind=9590
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2009-09-21'
+    locator: table row 51, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
+      as "Comanche Nation".
+  - approved: '2009-05-18'
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2009-05-18'
+    locator: table row 51, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
+      as "Comanche Nation".
+  - approved: '2015-01-09'
+    link: https://www.nigc.gov?wpdmdl=9575&ind=9591
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2015-01-09'
+    locator: table row 51, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
+      as "Comanche Nation".
+  - approved: '2017-10-05'
+    link: https://www.nigc.gov?wpdmdl=9576&ind=9592
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2017-10-05'
+    locator: table row 51, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
+      as "Comanche Nation".
+  - approved: '2018-10-19'
+    link: https://www.nigc.gov?wpdmdl=9577&ind=9593
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2018-10-19'
+    locator: table row 51, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
+      as "Comanche Nation".
+  - approved: '2019-05-07'
+    link: https://www.nigc.gov?wpdmdl=9578&ind=9594
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2019-05-07'
+    locator: table row 51, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
+      as "Comanche Nation".
+  - approved: '2019-10-16'
+    link: https://www.nigc.gov?wpdmdl=9579&ind=9595
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2019-10-16'
+    locator: table row 51, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
+      as "Comanche Nation".
+  - approved: '2022-01-31'
+    link: https://www.nigc.gov?wpdmdl=9580&ind=9596
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2022-01-31'
+    locator: table row 51, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
+      as "Comanche Nation".
+  - approved: '2024-12-10'
+    link: https://www.nigc.gov?wpdmdl=13530&ind=13531
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2024-12-10'
+    locator: table row 51, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 51 lists the nation
+      as "Comanche Nation".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Comanche Nation, Oklahoma".
+      Facilities as machine-extracted from the report text (verify): Comanche Spur Casino; Comanche Star
+      Casino; Comanche Cache Casino; War Pony Casino; Comanche Nation Travel Plaza; Comanche Nation Casino;
+      Comanche Red River Casino. Name extracted from the PDF by the page-fetch tool and matched to the
+      roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

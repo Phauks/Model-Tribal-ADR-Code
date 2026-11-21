@@ -2,6 +2,15 @@ id: blackfeet-tribe-of-the-blackfeet-indian-reservation-of-montana
 entity_type: native-nation
 names:
   official: Blackfeet Tribe of the Blackfeet Indian Reservation of Montana
+  self_designation:
+  - name: Niitsitapi
+    language_tag: bla
+    romanized: nee-itsee-TAH-peh
+    source: mt-tribal-nations-blackfeet
+    confidence: medium
+    as_of: '2026-11-21'
+    note: 'State page: ''The tribe call themselves "Niitsitapi" (nee-itsee-TAH-peh) meaning "the real
+      people."'' Secondary (state) source.'
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -37,6 +46,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0305
   note: Matched by name. Census class code D1.
 population:
+- count: 15560
+  kind: citizens
+  source: mt-tribal-nations-blackfeet
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'State page: ''Of the approximately 15,560 enrolled tribal members, there are about 7,000 living
+    on or near the reservation.'' Undated state page; as_of is access date.'
 - count: 10764
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -118,6 +134,62 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Blackfeet Tribe of the Blackfeet Indian Reservation of Montana
+gaming:
+  compacts:
+  - state: MT
+    status: approved
+    approved: '1996-10-25'
+    federal_register_citation: 61 FR 55312
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-10-25'
+    locator: result page 19 (?page=19), row 16
+    note: 'Listed as: "Blackfeet Tribe of the Blackfeet Indian Reservation Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Blackfeet Tribe of the Blackfeet Indian Reservation of Montana".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1996.10.25_blackfeet_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/10/25/96-27424/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MT
+    status: approved
+    dispute_resolution_summary: The compact has no arbitration or mediation clause; disputes over the
+      scope of jurisdiction may be resolved by mutual consent, and for substantial and continuing default
+      either party may terminate after giving 90 days' written notice and an opportunity to cure.
+    dispute_resolution_locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
+    source: compact-mt-confederated-salish-and-kootenai-tribes-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Sections IV.D (Resolving Jurisdictional Disputes) and X (Default and Termination)
+    note: state model compact; nation-specific text not checked. Read from the 2026 Confederated Salish
+      and Kootenai Tribes compact; other Montana compacts were not checked. Status copied from this nation's
+      most recent approved or deemed-approved entry for this state in the Office of Indian Gaming list
+      (1996-10-25).
+  ordinances:
+  - approved: '1997-12-01'
+    link: https://www.nigc.gov?wpdmdl=3422&ind=3425
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-12-01'
+    locator: table row 20, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 20 lists the nation
+      as "Blackfeet Tribe of the Blackfeet Indian Reservation".
+  - approved: '2002-04-05'
+    link: https://www.nigc.gov?wpdmdl=3423&ind=3426
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-04-05'
+    locator: table row 20, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 20 lists the nation
+      as "Blackfeet Tribe of the Blackfeet Indian Reservation".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Blackfeet Tribe of the Blackfeet
+      Indian Reservation of Montana". Facilities as machine-extracted from the report text (verify): The
+      Peak; Glacier Lil Peaks Casino; Glacier Peaks Casino. Name extracted from the PDF by the page-fetch
+      tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

@@ -2,6 +2,15 @@ id: bishop-paiute-tribe
 entity_type: native-nation
 names:
   official: Bishop Paiute Tribe
+  self_designation:
+  - name: Nu-Mu
+    language_tag: mnr
+    source: bishoppaiute-about-us
+    confidence: low
+    as_of: '2026-11-21'
+    note: About page describes the Nu-Mu as 'the original people of the Owens Valley'. Tag mnr (Mono)
+      assigned by researcher; the page does not name the language. Read via the WebFetch tool because
+      plain fetching was refused (HTTP 403); quote is as extracted by that tool.
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -37,6 +46,14 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0290
   note: Matched by name. Census class code D2.
 population:
+- count: 2000
+  kind: citizens
+  source: bishoppaiute-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Homepage: ''the fifth largest tribe in California with over 2,000 enrolled members''; the About
+    page says ''2,000 members''. Undated. Read via the WebFetch tool because plain fetching was refused
+    (HTTP 403); quote is as extracted by that tool.'
 - count: 1907
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -109,6 +126,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Bishop Paiute Tribe
+- kind: website
+  value: https://bishoppaiute.net/
+  label: Official website (the directory address https://www.bishoppaiutetribe.com/ redirects here)
+  source: bishoppaiute-home
+  confidence: high
+  as_of: '2026-11-21'
+  note: Directory URL redirects to bishoppaiute.net.
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency
@@ -116,6 +140,126 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Bishop Paiute Tribe
+gaming:
+  compacts:
+  - state: CA
+    status: secretarial-procedures
+    approved: '2024-12-20'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-12-20'
+    locator: result page 4 (?page=4), row 25
+    note: 'Listed as: "Bishop Paiute Tribe Secretarial Procedures" (Secretarial Procedures); list''s Tribe
+      column: "Bishop Paiute Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.12.20_bishop_paiute_tribe_secretarial_procedures.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: CA
+    status: approved
+    approved: '2022-06-30'
+    federal_register_citation: 87 FR 39115
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-06-30'
+    locator: result page 5 (?page=5), row 1
+    note: 'Listed as: "Bishop Paiute Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
+      "Bishop Paiute Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.30_bishop_paiute_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/30/2022-14054/indian-gaming-extension-of-tribal-state-class-iii-gaming-compacts-in-california.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2024-01-08'
+    federal_register_citation: 89 FR 944
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-01-08'
+    locator: result page 5 (?page=5), row 2
+    note: 'Listed as: "Bishop Paiute Tribe Tribal State Gaming Compact" (Extensions); list''s Tribe column:
+      "Bishop Paiute Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.01.08_bishop_paiute_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/01/08/2024-00107/indian-gaming-extension-of-tribal-state-class-iii-gaming-compacts-in-california.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-16'
+    locator: result page 5 (?page=5), row 3
+    note: 'Listed as: "Bishop Paiute Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Bishop Paiute Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.05.16_bishop_paiute_tribetribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2024-01-08).
+  ordinances:
+  - approved: '1995-07-31'
+    link: https://www.nigc.gov?wpdmdl=3413&ind=3417
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-07-31'
+    locator: table row 19, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 19 lists the nation
+      as "Bishop Paiute Tribe".
+  - approved: '2007-04-02'
+    link: https://www.nigc.gov?wpdmdl=3414&ind=3418
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2007-04-02'
+    locator: table row 19, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 19 lists the nation
+      as "Bishop Paiute Tribe".
+  - approved: '2007-04-19'
+    link: https://www.nigc.gov?wpdmdl=3415&ind=3419
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2007-04-19'
+    locator: table row 19, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 19 lists the nation
+      as "Bishop Paiute Tribe".
+  - approved: '2012-08-20'
+    link: https://www.nigc.gov?wpdmdl=3416&ind=3420
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2012-08-20'
+    locator: table row 19, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 19 lists the nation
+      as "Bishop Paiute Tribe".
+  - approved: '1995-07-31'
+    link: https://www.nigc.gov?wpdmdl=10533&ind=10555
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-07-31'
+    locator: table row 182, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 182 lists the nation
+      as "Paiute-Shoshone Indians of the Bishop Community". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Bishop Paiute Tribe". Facilities
+      as machine-extracted from the report text (verify): Wanaaha Casino fka Paiute Palace. Name extracted
+      from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

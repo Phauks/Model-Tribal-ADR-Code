@@ -107,6 +107,88 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Seneca-Cayuga Nation
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '2002-02-08'
+    federal_register_citation: 67 FR 6050
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2002-02-08'
+    locator: result page 29 (?page=29), row 7
+    note: 'Listed as: "Seneca-Cayuga Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Seneca-Cayuga Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2002.02.08_seneca-cayuga_nation_tribal_state_gaming_comapct.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2002/02/08/02-3038/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    approved: '2005-03-07'
+    federal_register_citation: 70 FR 11027
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-03-07'
+    locator: result page 29 (?page=29), row 8
+    note: 'Listed as: "Seneca-Cayuga Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
+      column: "Seneca-Cayuga Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/oig/pdf/idc1-025212.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/03/07/05-4366/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2018-08-17'
+    federal_register_citation: 83 FR 41101
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-08-17'
+    locator: result page 29 (?page=29), row 9
+    note: 'Listed as: "Seneca-Cayuga Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Seneca-Cayuga Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.17%20Seneca%20Cayuga%20compact%20amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/08/17/2018-17729/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of-oklahoma.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-08-17).
+  ordinances:
+  - approved: '1993-11-19'
+    link: https://www.nigc.gov?wpdmdl=11106&ind=11129
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1993-11-19'
+    locator: table row 253, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 253 lists the nation
+      as "Seneca-Cayuga Tribe of Oklahoma". Name matched to roster by spelling variant.
+  - approved: '2005-12-07'
+    link: https://www.nigc.gov?wpdmdl=11107&ind=11130
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2005-12-07'
+    locator: table row 253, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 253 lists the nation
+      as "Seneca-Cayuga Tribe of Oklahoma". Name matched to roster by spelling variant.
+  - approved: '2013-12-18'
+    link: https://www.nigc.gov?wpdmdl=11108&ind=11131
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2013-12-18'
+    locator: table row 253, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 253 lists the nation
+      as "Seneca-Cayuga Tribe of Oklahoma". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

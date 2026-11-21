@@ -116,6 +116,16 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Greenville Rancheria
+gaming:
+  ordinances:
+  - approved: '2004-08-24'
+    link: https://www.nigc.gov?wpdmdl=9878&ind=9908
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2004-08-24'
+    locator: table row 93, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 93 lists the nation
+      as "Greenville Rancheria of Maidu Indians". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

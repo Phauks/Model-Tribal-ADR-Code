@@ -120,6 +120,96 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Upper Sioux Community, Minnesota
+gaming:
+  compacts:
+  - state: MN
+    status: approved
+    approved: '1991-04-30'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1991-04-30'
+    locator: result page 18 (?page=18), row 18
+    note: 'Listed as: "Upper Sioux Community Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Upper Sioux Community, Minnesota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1991.04.30_upper_sioux_community_tribal_state_gaming_compact.pdf.'
+  - state: MN
+    status: approved
+    approved: '1991-10-03'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1991-10-03'
+    locator: result page 18 (?page=18), row 19
+    note: 'Listed as: "Upper Sioux Community Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Upper Sioux Community, Minnesota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1991.10.03_upper_sioux_community_tribal_state_gaming_compact.pdf.'
+  - state: MN
+    status: approved
+    approved: '1990-11-26'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1990-11-26'
+    locator: result page 18 (?page=18), row 20
+    note: 'Listed as: "Upper Sioux Community Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Upper Sioux Community, Minnesota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1990.11.26_upper_sioux_community_tribal_state_gaming_compact.pdf.'
+  - state: MN
+    status: approved
+    approved: '2024-09-05'
+    federal_register_citation: 89 FR 72419
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-09-05'
+    locator: result page 18 (?page=18), row 21
+    note: 'Listed as: "Upper Sioux Community Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Upper Sioux Community, Minnesota". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.09.05_upper_sioux_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2024/09/05/2024-19946/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-between-the-upper-sioux-community.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: MN
+    status: approved
+    dispute_resolution_summary: The video games of chance compact has no general arbitration or mediation
+      clause; when the State designates a machine as non-compliant, the nation may accept the finding,
+      submit the device to an independent gaming test laboratory, or contest the finding in federal district
+      court (or before the National Indian Gaming Commission or another court if jurisdiction is declined).
+    dispute_resolution_locator: Section 4.6 (Demand for Remedies for Non-Complying Video Games of Chance)
+    source: compact-mn-prairie-island-indian-community-in-the-s-1990
+    confidence: medium
+    as_of: '1990-04-02'
+    locator: Section 4.6 (Demand for Remedies for Non-Complying Video Games of Chance)
+    note: state model compact; nation-specific text not checked. Read from the 1990 Prairie Island Indian
+      Community video games of chance compact; Minnesota nations also hold separate blackjack compacts,
+      which were not summarized. Status copied from this nation's most recent approved or deemed-approved
+      entry for this state in the Office of Indian Gaming list (2024-09-05).
+  ordinances:
+  - approved: '1995-01-10'
+    link: https://www.nigc.gov?wpdmdl=11476&ind=11498
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-01-10'
+    locator: table row 301, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 301 lists the nation
+      as "Upper Sioux Community".
+  - approved: '1997-07-22'
+    link: https://www.nigc.gov?wpdmdl=11475&ind=11499
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1997-07-22'
+    locator: table row 301, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 301 lists the nation
+      as "Upper Sioux Community".
+  - approved: '2003-11-12'
+    link: https://www.nigc.gov?wpdmdl=11474&ind=11500
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-11-12'
+    locator: table row 301, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 301 lists the nation
+      as "Upper Sioux Community".
+  - approved: '2013-05-20'
+    link: https://www.nigc.gov?wpdmdl=11478&ind=11501
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2013-05-20'
+    locator: table row 301, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 301 lists the nation
+      as "Upper Sioux Community".
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

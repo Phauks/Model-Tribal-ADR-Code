@@ -37,6 +37,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0955
   note: Matched by name. Census class code D1.
 population:
+- count: 900
+  kind: citizens
+  source: drycreekrancheria-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Homepage: ''more than 900 members''. Undated; as_of is access date.'
 - count: 0
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -101,6 +107,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Dry Creek Rancheria Band of Pomo Indians, California
+languages:
+- name: Southern Pomo
+  language_tag: peq
+  source: drycreekrancheria-language-revitalization
+  confidence: high
+  as_of: '2026-11-21'
+  note: Language Revitalization Program page on the Southern Pomo language.
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Central California Agency
@@ -108,6 +121,97 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Dry Creek Rancheria Band of Pomo Indians, California
+gaming:
+  compacts:
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-16'
+    locator: result page 6 (?page=6), row 17
+    note: 'Listed as: "Dry Creek Rancheria Band of Pomo Indians Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Dry Creek Rancheria Band of Pomo Indians, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.05.16_dry_creek_rancheria_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    approved: '2018-12-27'
+    federal_register_citation: 83 FR 66741
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-12-27'
+    locator: result page 6 (?page=6), row 18
+    note: 'Listed as: "Dry Creek Rancheria Band of Pomo Indians Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Dry Creek Rancheria Band of Pomo Indians, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2018.12.27_dry_creek_rancheria_band_of_pomo_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/12/27/2018-28135/indian-gaming-tribal-state-class-iii-gaming-compacts-taking-effect-in-the-state-of-california.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    approved: '2018-01-22'
+    federal_register_citation: 83 FR 3015
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-01-22'
+    locator: result page 6 (?page=6), row 19
+    note: 'Listed as: "Dry Creek Rancheria Band of Pomo Indians Tribal State Gaming Compact" (Deemed Approved);
+      list''s Tribe column: "Dry Creek Rancheria Band of Pomo Indians, California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2018.01.22_dry_creek_rancheria_band_of_pomo_indians_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/01/22/2018-01058/indian-gaming-tribal-state-class-iii-gaming-compacts-taking-effect-in-the-state-of-california.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2018-12-27).
+  ordinances:
+  - approved: '1997-09-05'
+    link: https://www.nigc.gov?wpdmdl=9728&ind=9745
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1997-09-05'
+    locator: table row 70, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 70 lists the nation
+      as "Dry Creek Rancheria of Pomo Indians". Name matched to roster by spelling variant.
+  - approved: '2010-04-16'
+    link: https://www.nigc.gov?wpdmdl=9729&ind=9746
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2010-04-16'
+    locator: table row 70, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 70 lists the nation
+      as "Dry Creek Rancheria of Pomo Indians". Name matched to roster by spelling variant.
+  - approved: '2019-08-20'
+    link: https://www.nigc.gov?wpdmdl=9730&ind=9747
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2019-08-20'
+    locator: table row 70, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 70 lists the nation
+      as "Dry Creek Rancheria of Pomo Indians". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Dry Creek Rancheria Band of
+      Pomo Indians, California". Facilities as machine-extracted from the report text (verify): River
+      Rock Casino. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

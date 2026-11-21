@@ -37,6 +37,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0265
   note: Matched by name. Census class code D1.
 population:
+- count: 615
+  kind: citizens
+  source: bigsandyrancheria-membership
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''a total of 615 tribal members 389 older than 18''. Undated page; as_of is access date.'
 - count: 175
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -108,6 +114,149 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Big Sandy Rancheria of Western Mono Indians of California
+gaming:
+  compacts:
+  - state: CA
+    status: approved
+    approved: '1998-10-22'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-10-22'
+    locator: result page 4 (?page=4), row 17
+    note: 'Listed as: "Big Sandy Rancheria of Western Mono Indians Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Big Sandy Rancheria of Western Mono Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1998.10.22_big_sandy_rancheria_of_western_mono_indians_tribal_state_gaming_compact.pdf.'
+  - state: CA
+    status: disapproved
+    approved: '2024-11-15'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2024-11-15'
+    locator: result page 4 (?page=4), row 18
+    note: 'Listed as: "Big Sandy Rancheria of Western Mono Indians Tribal State Gaming Compact" (Disapproved);
+      list''s Tribe column: "Big Sandy Rancheria of Western Mono Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2024.11.15_big_sandy_racheria_tribal_state_gaming_compact.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact.'
+  - state: CA
+    status: approved
+    approved: '2022-06-30'
+    federal_register_citation: 87 FR 39115
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2022-06-30'
+    locator: result page 4 (?page=4), row 19
+    note: 'Listed as: "Big Sandy Rancheria of Western Mono Indians Tribal State Gaming Compact" (Extensions);
+      list''s Tribe column: "Big Sandy Rancheria of Western Mono Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2022.06.30_big_sandy_rancheria_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2022/06/30/2022-14054/indian-gaming-extension-of-tribal-state-class-iii-gaming-compacts-in-california.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2023-12-22'
+    federal_register_citation: 88 FR 88640
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2023-12-22'
+    locator: result page 4 (?page=4), row 20
+    note: 'Listed as: "Big Sandy Rancheria of Western Mono Indians Tribal State Gaming Compact" (Extensions);
+      list''s Tribe column: "Big Sandy Rancheria of Western Mono Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2023.12.22_big_sandy_rancheria_of_western_mono_indians_tribal_state_gamign_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2023/12/22/2023-28198/indian-gaming-extension-of-tribal-state-class-iii-gaming-compacts-in-california.
+      The Office of Indian Gaming lists this action under Extensions (extension of compact term). Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    approved: '2025-09-22'
+    federal_register_citation: 90 FR 45407
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2025-09-22'
+    locator: result page 4 (?page=4), row 21
+    note: 'Listed as: "Big Sandy Rancheria of Western Mono Indians Tribal State Gaming Compact" (Deemed
+      Approved); list''s Tribe column: "Big Sandy Rancheria of Western Mono Indians of California". Document:
+      https://www.bia.gov/sites/default/files/media_document/1_big_sandy_rancheria_gaming_compact_2025_compressed.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2025/09/22/2025-18304/indian-gaming-approval-by-operation-of-law-of-the-tribal-state-compact-between-the-state-of.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-16'
+    locator: result page 4 (?page=4), row 22
+    note: 'Listed as: "Big Sandy Rancheria of Western Mono Indians Tribal State Gaming Compact" (Approve);
+      list''s Tribe column: "Big Sandy Rancheria of Western Mono Indians of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2000.05.16_big_sandy_rancheria_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2025-09-22).
+  ordinances:
+  - approved: '1995-06-21'
+    link: https://www.nigc.gov?wpdmdl=3395&ind=3400
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-06-21'
+    locator: table row 17, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 17 lists the nation
+      as "Big Sandy Rancheria of Mono Indians". Name matched to roster by spelling variant.
+  - approved: '1997-07-28'
+    link: https://www.nigc.gov?wpdmdl=3396&ind=3401
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1997-07-28'
+    locator: table row 17, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 17 lists the nation
+      as "Big Sandy Rancheria of Mono Indians". Name matched to roster by spelling variant.
+  - approved: '1999-07-02'
+    link: https://www.nigc.gov?wpdmdl=3397&ind=3402
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1999-07-02'
+    locator: table row 17, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 17 lists the nation
+      as "Big Sandy Rancheria of Mono Indians". Name matched to roster by spelling variant.
+  - approved: '2002-11-27'
+    link: https://www.nigc.gov?wpdmdl=3398&ind=3403
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2002-11-27'
+    locator: table row 17, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 17 lists the nation
+      as "Big Sandy Rancheria of Mono Indians". Name matched to roster by spelling variant.
+  - approved: '2022-06-22'
+    link: https://www.nigc.gov?wpdmdl=3399&ind=3404
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2022-06-22'
+    locator: table row 17, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 17 lists the nation
+      as "Big Sandy Rancheria of Mono Indians". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Big Sandy Band of Western
+      Mono Indians". Facilities as machine-extracted from the report text (verify): Mono Wind Casino.
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

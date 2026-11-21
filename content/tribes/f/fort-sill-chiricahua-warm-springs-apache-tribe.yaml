@@ -75,6 +75,12 @@ census_areas:
     Caddo Nation of Oklahoma; Wichita and Affiliated Tribes , Oklahoma; Delaware Nation, Oklahoma. Census
     class code D0.'
 population:
+- count: 813
+  kind: citizens
+  source: fortsillapache-nsn-about
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''approximately 813 tribal members''. Undated; as_of is access date.'
 - count: 0
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -164,6 +170,13 @@ contacts:
   as_of: '2026-11-20'
   locator: Fort Sill—Chiricahua—Warm Springs—Apache Tribe (previously listed as Fort Sill Apache Tribe
     of Oklahoma)
+languages:
+- name: Chiricahua
+  language_tag: apm
+  source: fortsillapache-nsn-programs-cultural-language-program
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Page: Language Program ''designed to preserve and teach our traditional Chiricahua language''.'
 federal_administration:
   bureau_of_indian_affairs_region: Southern Plains
   bureau_of_indian_affairs_agency: Southern Plains Regional Office
@@ -172,6 +185,90 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Fort Sill—Chiricahua—Warm Springs—Apache Tribe (previously listed as Fort Sill Apache Tribe
     of Oklahoma)
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '2007-04-02'
+    federal_register_citation: 72 FR 15720
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2007-04-02'
+    locator: result page 27 (?page=27), row 15
+    note: 'Listed as: "Fort Sill Apache Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Fort Sill—Chiricahua—Warm Springs—Apache Tribe (previously listed as Fort Sill Apache Tribe of
+      Oklahoma)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2007.04.02_fort_sill_apache_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2007/04/02/E7-5955/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Name matched
+      to roster by spelling variant. Federal Register citation converted from the linked document number
+      through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2018-08-17'
+    federal_register_citation: 83 FR 41102
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2018-08-17'
+    locator: result page 27 (?page=27), row 16
+    note: 'Listed as: "Fort Sill Apache Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Fort Sill—Chiricahua—Warm Springs—Apache Tribe (previously listed as Fort Sill Apache Tribe of
+      Oklahoma)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.17%20Fort%20Sill%20Compact%20amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/08/17/2018-17728/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of-oklahoma.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Name matched
+      to roster by spelling variant. Federal Register citation converted from the linked document number
+      through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-08-17).
+  ordinances:
+  - approved: '1999-09-09'
+    link: https://www.nigc.gov?wpdmdl=9851&ind=9879
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1999-09-09'
+    locator: table row 89, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 89 lists the nation
+      as "Fort Sill-Chiricahua-Warm Springs-Apache Tribe fka Fort Sill Apache Tribe of Oklahoma". Name
+      matched to roster by spelling variant.
+  - approved: '2003-06-18'
+    link: https://www.nigc.gov?wpdmdl=9864&ind=9880
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2003-06-18'
+    locator: table row 89, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 89 lists the nation
+      as "Fort Sill-Chiricahua-Warm Springs-Apache Tribe fka Fort Sill Apache Tribe of Oklahoma". Name
+      matched to roster by spelling variant.
+  - approved: '2011-04-20'
+    link: https://www.nigc.gov?wpdmdl=9865&ind=9881
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2011-04-20'
+    locator: table row 89, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 89 lists the nation
+      as "Fort Sill-Chiricahua-Warm Springs-Apache Tribe fka Fort Sill Apache Tribe of Oklahoma". Name
+      matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Fort Sill Apache Tribe of
+      Oklahoma". Facilities as machine-extracted from the report text (verify): Warm Springs Casino; Apache
+      Casino Hotel. Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

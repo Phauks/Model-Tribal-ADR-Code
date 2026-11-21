@@ -37,6 +37,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US0775
   note: Matched by name. Census class code D2.
 population:
+- count: 1200
+  kind: citizens
+  source: coquilletribe-our-people
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''Today we number over 1,200 members''. Undated; as_of is access date.'
 - count: 343
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -99,6 +105,18 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Coquille Indian Tribe
+languages:
+- name: Miluk
+  source: coquilletribe-our-heritage-our-languages
+  confidence: high
+  as_of: '2026-11-21'
+  note: 'Page: Miluk was spoken by Coquille ancestors; Athabaskan dialects were also spoken. Tribe runs
+    Miluk workshops.'
+- name: Upper Coquille (Athabaskan)
+  source: coquilletribe-our-heritage-our-living-culture
+  confidence: medium
+  as_of: '2026-11-21'
+  note: Page cites the Upper Coquille greeting 'Jii-la!' alongside Miluk 'Dai s’la!'.
 federal_administration:
   bureau_of_indian_affairs_region: Northwest
   bureau_of_indian_affairs_agency: Northwest Regional Office
@@ -106,6 +124,191 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Coquille Indian Tribe
+gaming:
+  compacts:
+  - state: OR
+    status: approved
+    approved: '2000-12-06'
+    federal_register_citation: 65 FR 76278
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-12-06'
+    locator: result page 32 (?page=32), row 14
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.12.06%20Coquille%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/12/06/00-31026/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2008-03-17'
+    federal_register_citation: 73 FR 14267
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2008-03-17'
+    locator: result page 32 (?page=32), row 15
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202008.03.17%20Coquille%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2008/03/17/E8-5198/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2016-10-31'
+    federal_register_citation: 81 FR 75428
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2016-10-31'
+    locator: result page 32 (?page=32), row 16
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202016.10.31%20Coquille%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2016/10/31/2016-26252/indian-gaming-approval-of-amendment-to-tribal-state-class-iii-gaming-compact-in-the-state-of-oregon.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: deemed-approved
+    approved: '1996-02-06'
+    federal_register_citation: 61 FR 4477
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-02-06'
+    locator: result page 32 (?page=32), row 17
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
+      column: "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201996.02.06%20Coquille%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/02/06/96-2452/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1995-02-16'
+    federal_register_citation: 60 FR 9258
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1995-02-16'
+    locator: result page 32 (?page=32), row 18
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201995.02.16%20Coquille%20Indian%20Tribe%20Tribal%20State%20GamingCompact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1995/02/16/95-3841/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1998-05-19'
+    federal_register_citation: 63 FR 27585
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-05-19'
+    locator: result page 32 (?page=32), row 19
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.05.19%20Coquille%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/05/19/98-13219/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1996-09-04'
+    federal_register_citation: 61 FR 46662
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1996-09-04'
+    locator: result page 32 (?page=32), row 20
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201996.09.04%20Coquille%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1996/09/04/96-22438/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1998-02-27'
+    federal_register_citation: 63 FR 10035
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1998-02-27'
+    locator: result page 32 (?page=32), row 21
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201998.02.27%20Coquille%20Indina%20Tribe%20Tribal%20State%20Gaming%20Compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1998/02/27/98-5074/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2000-05-31'
+    federal_register_citation: 65 FR 34727
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-31'
+    locator: result page 32 (?page=32), row 22
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.05.31%20Coquille%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/31/00-13495/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '1999-06-01'
+    federal_register_citation: 64 FR 29334
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1999-06-01'
+    locator: result page 32 (?page=32), row 23
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.06.01%20Coquille%20Indian%20Tribe%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1999/06/01/99-13726/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    approved: '2020-05-20'
+    federal_register_citation: 85 FR 30732
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2020-05-20'
+    locator: result page 32 (?page=32), row 24
+    note: 'Listed as: "Coquille Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Coquille Indian Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202020.05.20%20Coquille%20Tribe%20and%20State%20of%20Oregon%20Compact%20Amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2020/05/20/2020-10823/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-in-the-state-of-oregon.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OR
+    status: approved
+    dispute_resolution_summary: Either party may serve written notice of non-compliance and the parties
+      meet within 30 days; if unresolved within 90 days either party may sue in the United States District
+      Court for the District of Oregon (or a state court if federal jurisdiction is declined), and other
+      dispute resolution methods remain available by mutual agreement.
+    dispute_resolution_locator: Section 17 (Dispute Resolution)
+    source: compact-or-confederated-tribes-of-the-grand-ronde-c-2023
+    confidence: medium
+    as_of: '2023-02-08'
+    locator: Section 17 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. Read from the 2023 Confederated Tribes
+      of the Grand Ronde Community compact; other Oregon compacts were not checked. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2020-05-20).
+  ordinances:
+  - approved: '1995-04-28'
+    link: https://www.nigc.gov?wpdmdl=9669&ind=9681
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-04-28'
+    locator: table row 61, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 61 lists the nation
+      as "Coquille Tribe of Oregon". Name matched to roster by spelling variant.
+  - approved: '2020-01-30'
+    link: https://www.nigc.gov?wpdmdl=9670&ind=9682
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2020-01-30'
+    locator: table row 61, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 61 lists the nation
+      as "Coquille Tribe of Oregon". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Coquille Indian Tribe". Facilities
+      as machine-extracted from the report text (verify): Ko-Kwell Casino Resort Medford; The Mill Casino.
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

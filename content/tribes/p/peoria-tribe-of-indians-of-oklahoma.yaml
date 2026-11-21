@@ -134,6 +134,83 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Peoria Tribe of Indians of Oklahoma
+gaming:
+  compacts:
+  - state: OK
+    status: deemed-approved
+    approved: '2005-03-11'
+    federal_register_citation: 70 FR 12230
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2005-03-11'
+    locator: result page 28 (?page=28), row 19
+    note: 'Listed as: "Peoria Tribe of Indians Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "Ottawa Tribe of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.03.11%20Peoria%20Tribe%20of%20Indians%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/03/11/05-4885/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2005-01-05'
+    federal_register_citation: 70 FR 916
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2005-01-05'
+    locator: result page 28 (?page=28), row 20
+    note: 'Listed as: "Peoria Tribe of Indians Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Ottawa Tribe of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.01.05%20Peoria%20Tribe%20of%20Indians%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/01/05/05-189/indian-gaming.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2018-08-27'
+    federal_register_citation: 83 FR 43704
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2018-08-27'
+    locator: result page 28 (?page=28), row 21
+    note: 'Listed as: "Peoria Tribe of Indians Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Ottawa Tribe of Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.27%20Peoria%20Tribe%202018%20Compact%20Amendments.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/08/27/2018-18424/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of-oklahoma.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Federal
+      Register citation converted from the linked document number through the Federal Register API (source
+      federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-08-27).
+  ordinances:
+  - approved: '2004-01-06'
+    link: https://www.nigc.gov?wpdmdl=10622&ind=10638
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-01-06'
+    locator: table row 190, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 190 lists the nation
+      as "Peoria Tribe of Indians of Oklahoma".
+  - approved: '2015-06-09'
+    link: https://www.nigc.gov?wpdmdl=10623&ind=10639
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2015-06-09'
+    locator: table row 190, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 190 lists the nation
+      as "Peoria Tribe of Indians of Oklahoma".
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

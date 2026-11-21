@@ -118,6 +118,106 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: United Auburn Indian Community of the Auburn Rancheria of California
+gaming:
+  compacts:
+  - state: CA
+    status: deemed-approved
+    approved: '2018-01-22'
+    federal_register_citation: 83 FR 3015
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-01-22'
+    locator: result page 12 (?page=12), row 25
+    note: 'Listed as: "United Auburn Indian Community of the Auburn Rancheria Tribal State Gaming Compact"
+      (Deemed Approved); list''s Tribe column: "United Auburn Indian Community of the Auburn Rancheria
+      of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2018.01.22_united_auburn_indian_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/01/22/2018-01058/indian-gaming-tribal-state-class-iii-gaming-compacts-taking-effect-in-the-state-of-california.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2000-05-16'
+    locator: result page 13 (?page=13), row 1
+    note: 'Listed as: "United Auburn Indian Community of the Auburn Rancheria Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "United Auburn Indian Community of the Auburn Rancheria of California".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.05.16%20United%20Auburn%20Indian%20Community%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: approved
+    approved: '2004-09-02'
+    federal_register_citation: 69 FR 53733
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2004-09-02'
+    locator: result page 13 (?page=13), row 2
+    note: 'Listed as: "United Auburn Indian Community of the Auburn Rancheria Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "United Auburn Indian Community of the Auburn Rancheria of California".
+      Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2004.09.02_united_auburn_indian_community_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2004/09/02/04-20000/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    approved: '2015-12-23'
+    federal_register_citation: 80 FR 79926
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2015-12-23'
+    locator: result page 13 (?page=13), row 3
+    note: 'Listed as: "United Auburn Indian Community of the Auburn Rancheria Tribal State Gaming Compact"
+      (Deemed Approved); list''s Tribe column: "United Auburn Indian Community of the Auburn Rancheria
+      of California". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2015.12.23_united_auburn_indian_community_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2015/12/23/2015-32347/indian-gaming-three-tribal-state-class-iii-gaming-compacts-taking-effect-in-the-state-of-california.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2018-01-22).
+  ordinances:
+  - approved: '2000-02-24'
+    link: https://www.nigc.gov?wpdmdl=11472&ind=11495
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2000-02-24'
+    locator: table row 299, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 299 lists the nation
+      as "United Auburn Indian Community of Auburn Rancheria". Name matched to roster by spelling variant.
+  - approved: '2008-01-11'
+    link: https://www.nigc.gov?wpdmdl=11473&ind=11496
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2008-01-11'
+    locator: table row 299, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 299 lists the nation
+      as "United Auburn Indian Community of Auburn Rancheria". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "United Auburn Indian Community
+      of the Auburn Rancheria". Name extracted from the PDF by the page-fetch tool and matched to the
+      roster.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

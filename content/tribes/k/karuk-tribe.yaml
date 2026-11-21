@@ -37,6 +37,13 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US1750
   note: Matched by name. Census class code D1.
 population:
+- count: 3627
+  kind: citizens
+  source: karuk-home
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Homepage figures: ''3627 Tribal Members'', ''6222 Tribal Descendants''. Undated; as_of is access
+    date.'
 - count: 578
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -100,6 +107,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Karuk Tribe
+languages:
+- name: Karuk
+  language_tag: kyh
+  source: karuk-departments-language-program
+  confidence: high
+  as_of: '2026-11-21'
+  note: Language Program page.
 federal_administration:
   bureau_of_indian_affairs_region: Pacific
   bureau_of_indian_affairs_agency: Pacific Regional Office
@@ -107,6 +121,76 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Karuk Tribe
+gaming:
+  compacts:
+  - state: CA
+    status: deemed-approved
+    approved: '2018-12-27'
+    federal_register_citation: 83 FR 66741
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-12-27'
+    locator: result page 8 (?page=8), row 3
+    note: 'Listed as: "Karuk Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Karuk Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.12.27%20Karuk%20Deemed%20approved%20compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/12/27/2018-28135/indian-gaming-tribal-state-class-iii-gaming-compacts-taking-effect-in-the-state-of-california.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    approved: '2014-11-19'
+    federal_register_citation: 79 FR 68910
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2014-11-19'
+    locator: result page 8 (?page=8), row 4
+    note: 'Listed as: "Karuk Tribe Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Karuk Tribe". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2014.11.19_karuk_tribe_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2014/11/19/2014-27377/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: deemed-approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2018-12-27).
+  ordinances:
+  - approved: '2003-06-11'
+    link: https://www.nigc.gov?wpdmdl=10014&ind=10043
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2003-06-11'
+    locator: table row 114, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 114 lists the nation
+      as "Karuk Tribe of California".
+  - approved: '2012-04-09'
+    link: https://www.nigc.gov?wpdmdl=10031&ind=10044
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2012-04-09'
+    locator: table row 114, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 114 lists the nation
+      as "Karuk Tribe of California".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Karuk Tribe". Facilities as
+      machine-extracted from the report text (verify): Rain Rock Casino. Name extracted from the PDF by
+      the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

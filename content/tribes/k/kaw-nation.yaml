@@ -2,6 +2,12 @@ id: kaw-nation
 entity_type: native-nation
 names:
   official: Kaw Nation, Oklahoma
+  alternate:
+  - name: People of The Southwind
+    source: kawnation-home
+    confidence: medium
+    as_of: '2026-11-21'
+    note: Homepage tagline 'Kaw Nation People of The Southwind'.
   official_source: bia-recognized-entities-2026
 recognition:
 - type: federal
@@ -47,6 +53,12 @@ census_areas:
   locator: usgeo2020.npl, summary level 250, GEOID 2500000US5950
   note: 'Matched by name. Shared with: Ponca Tribe of Indians of Oklahoma. Census class code D0.'
 population:
+- count: 3376
+  kind: citizens
+  source: kawnation-history-of-kaw-nation
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''The tribe currently consists of 3,376 enrolled members''. Undated; as_of is access date.'
 - count: 5692
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -120,6 +132,13 @@ contacts:
   confidence: high
   as_of: '2026-11-20'
   locator: Kaw Nation, Oklahoma
+languages:
+- name: Kanza (Kaáⁿze Íe)
+  language_tag: ksk
+  source: kawnation-language
+  confidence: high
+  as_of: '2026-11-21'
+  note: Page heading 'Kaáⁿze Íe KANZA LANGUAGE'; 'Kanza (also known as Kaw, Kansa, Konze, or Kansas)'.
 federal_administration:
   bureau_of_indian_affairs_region: Southern Plains
   bureau_of_indian_affairs_agency: Southern Plains Regional Office
@@ -127,6 +146,133 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Kaw Nation, Oklahoma
+gaming:
+  compacts:
+  - state: OK
+    status: deemed-approved
+    approved: '2005-03-11'
+    federal_register_citation: 70 FR 12230
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-03-11'
+    locator: result page 27 (?page=27), row 20
+    note: 'Listed as: "Kaw Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Kaw Nation, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.03.11%20Kaw%20Nation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/03/11/05-4885/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2001-06-07'
+    federal_register_citation: 66 FR 30748
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2001-06-07'
+    locator: result page 27 (?page=27), row 21
+    note: 'Listed as: "Kaw Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Kaw Nation,
+      Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202001.06.07%20Kaw%20Nation%20Tribal%20State%20Gaming%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2001/06/07/01-14307/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2018-08-17'
+    federal_register_citation: 83 FR 41101
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-08-17'
+    locator: result page 27 (?page=27), row 22
+    note: 'Listed as: "Kaw Nation Tribal State Gaming Compact" (Approve); list''s Tribe column: "Kaw Nation,
+      Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.17%20Kaw%20Nation%20Compact%20Amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/08/17/2018-17729/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of-oklahoma.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    approved: '2018-12-27'
+    federal_register_citation: 83 FR 66742
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-12-27'
+    locator: result page 27 (?page=27), row 23
+    note: 'Listed as: "Kaw Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe column:
+      "Kaw Nation, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.12.27%20Kaw%20signed%20deemed%20approved%20compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/12/27/2018-28134/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendment-in-the-state-of-oklahoma.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-12-27).
+  ordinances:
+  - approved: '1993-12-27'
+    link: https://www.nigc.gov?wpdmdl=10033&ind=10046
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1993-12-27'
+    locator: table row 116, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 116 lists the nation
+      as "Kaw Nation, Oklahoma".
+  - approved: '2002-08-21'
+    link: https://www.nigc.gov?wpdmdl=10034&ind=10047
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2002-08-21'
+    locator: table row 116, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 116 lists the nation
+      as "Kaw Nation, Oklahoma".
+  - approved: '2004-04-13'
+    link: https://www.nigc.gov?wpdmdl=10035&ind=10048
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-04-13'
+    locator: table row 116, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 116 lists the nation
+      as "Kaw Nation, Oklahoma".
+  - approved: '2004-06-18'
+    link: https://www.nigc.gov?wpdmdl=10036&ind=10049
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2004-06-18'
+    locator: table row 116, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 116 lists the nation
+      as "Kaw Nation, Oklahoma".
+  - approved: '2016-12-01'
+    link: https://www.nigc.gov?wpdmdl=10037&ind=10050
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2016-12-01'
+    locator: table row 116, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 116 lists the nation
+      as "Kaw Nation, Oklahoma".
+  - approved: '2022-01-12'
+    link: https://www.nigc.gov?wpdmdl=10038&ind=10051
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2022-01-12'
+    locator: table row 116, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 116 lists the nation
+      as "Kaw Nation, Oklahoma".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Kaw Nation, Oklahoma". Facilities
+      as machine-extracted from the report text (verify): Rock and Brews Casino; Kanza Casino. Name extracted
+      from the PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

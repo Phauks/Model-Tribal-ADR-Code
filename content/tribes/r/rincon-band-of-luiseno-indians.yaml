@@ -136,6 +136,135 @@ federal_administration:
   as_of: '2026-11-20'
   locator: Rincon Band of Luiseno Indians (previously listed as Rincon Band of Luiseno Mission Indians
     of Rincon Reservation, California)
+gaming:
+  compacts:
+  - state: CA
+    status: secretarial-procedures
+    approved: '2013-02-08'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2013-02-08'
+    locator: result page 10 (?page=10), row 17
+    note: 'Listed as: "Rincon Band Luiseno Mission Indians of the Rincon Reservation Secretarial Procedures"
+      (Secretarial Procedures); list''s Tribe column: "Rincon Band of Luiseno Indians (previously listed
+      as Rincon Band of Luiseno Mission Indians of Rincon Reservation, California)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202013.02.08%20Rincon%20Secretarial%20Procedures_0.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact. Name matched to roster by spelling variant.'
+  - state: CA
+    status: approved
+    approved: '2000-05-16'
+    federal_register_citation: 65 FR 31189
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2000-05-16'
+    locator: result page 10 (?page=10), row 18
+    note: 'Listed as: "Rincon Band Luiseno Mission Indians of the Rincon Reservation Tribal State Gaming
+      Compact" (Approve); list''s Tribe column: "Rincon Band of Luiseno Indians (previously listed as
+      Rincon Band of Luiseno Mission Indians of Rincon Reservation, California)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202000.05.16%20Rincon%20Band%20fo%20Luiseno%20Mission%20Indians%20Tribal%20State%20Gaming%20Compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2000/05/16/00-12322/indian-gaming.
+      Name matched to roster by spelling variant. Federal Register citation converted from the linked
+      document number through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: CA
+    status: secretarial-procedures
+    approved: '2025-01-08'
+    federal_register_citation: 90 FR 1539
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2025-01-08'
+    locator: result page 10 (?page=10), row 19
+    note: 'Listed as: "Rincon Band of Luiseno Mission Indians of the Rincon Reservation Secretarial Procedures"
+      (Secretarial Procedures); list''s Tribe column: "Rincon Band of Luiseno Indians (previously listed
+      as Rincon Band of Luiseno Mission Indians of Rincon Reservation, California)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2025.01.08_rincon_band_band_of_lusieno_indians_amended_and_restated_secretarial_procedures.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact. Name matched to roster by spelling variant. (Source
+      federal-register-api-gaming-notices.) Federal Register citation found by matching the listed date
+      to the only Indian Gaming notice published that day (not linked in the list).'
+  - state: CA
+    status: disapproved
+    approved: '1999-01-22'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1999-01-22'
+    locator: result page 10 (?page=10), row 20
+    note: 'Listed as: "Rincon Band of Luiseno Mission Indians of the Rincon Reservation Tribal State Gaming
+      Compact" (Disapproved); list''s Tribe column: "Rincon Band of Luiseno Indians (previously listed
+      as Rincon Band of Luiseno Mission Indians of Rincon Reservation, California)". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201999.01.22%20Rincon%20Band%20of%20Luiseno%20Mission%20Indians%20DISAPPROVAL%20LETTER_0.pdf.
+      Status value is outside the contract enum because the list records a disapproval or secretarial
+      procedures rather than an approved compact. Name matched to roster by spelling variant.'
+  - state: CA
+    status: approved
+    dispute_resolution_summary: The parties exchange written notice and a written response within 15 days
+      and must meet and confer within 30 days; disputes still unresolved may be taken to the United States
+      District Court (or a state court if federal jurisdiction is lacking) for injunctive, declaratory
+      or specific-performance relief only, under a limited waiver of sovereign immunity, and mediation
+      or other methods may be used by mutual agreement.
+    dispute_resolution_locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    source: compact-ca-cher-ae-heights-indian-community-of-the-2026
+    confidence: medium
+    as_of: '2026-01-26'
+    locator: Section 13.0 (Dispute Resolution Provisions), sections 13.1-13.3
+    note: state model compact; nation-specific text not checked. Read from the 2026 Cher-Ae Heights Indian
+      Community compact, which follows the form California has used in its recent compacts; many California
+      nations still operate under 1999-era compacts with a different dispute section. Status copied from
+      this nation's most recent approved or deemed-approved entry for this state in the Office of Indian
+      Gaming list (2000-05-16).
+  ordinances:
+  - approved: '1995-07-11'
+    link: https://www.nigc.gov?wpdmdl=10910&ind=10928
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1995-07-11'
+    locator: table row 230, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 230 lists the nation
+      as "Rincon Band of Luiseno Mission Indians". Name matched to roster by spelling variant.
+  - approved: '2001-02-14'
+    link: https://www.nigc.gov?wpdmdl=10911&ind=10929
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2001-02-14'
+    locator: table row 230, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 230 lists the nation
+      as "Rincon Band of Luiseno Mission Indians". Name matched to roster by spelling variant.
+  - approved: '2011-04-28'
+    link: https://www.nigc.gov?wpdmdl=10912&ind=10930
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2011-04-28'
+    locator: table row 230, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 230 lists the nation
+      as "Rincon Band of Luiseno Mission Indians". Name matched to roster by spelling variant.
+  - approved: '2011-09-28'
+    link: https://www.nigc.gov?wpdmdl=10913&ind=10931
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2011-09-28'
+    locator: table row 230, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 230 lists the nation
+      as "Rincon Band of Luiseno Mission Indians". Name matched to roster by spelling variant.
+  - approved: '2015-01-09'
+    link: https://www.nigc.gov?wpdmdl=10914&ind=10932
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2015-01-09'
+    locator: table row 230, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 230 lists the nation
+      as "Rincon Band of Luiseno Mission Indians". Name matched to roster by spelling variant.
+  - approved: '2024-08-09'
+    link: https://www.nigc.gov?wpdmdl=10915&ind=10933
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2024-08-09'
+    locator: table row 230, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 230 lists the nation
+      as "Rincon Band of Luiseno Mission Indians". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Rincon Band of Luiseno Mission
+      Indians of the Rincon Reservation". Name extracted from the PDF by the page-fetch tool and matched
+      to the roster.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

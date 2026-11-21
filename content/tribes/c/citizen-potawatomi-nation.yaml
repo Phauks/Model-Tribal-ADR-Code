@@ -39,6 +39,12 @@ census_areas:
   note: 'Matched by name. Shared with: Absentee-Shawnee Tribe of Indians of Oklahoma. Census class code
     D6.'
 population:
+- count: 38000
+  kind: citizens
+  source: potawatomi-government
+  confidence: medium
+  as_of: '2026-11-21'
+  note: 'Page: ''more than 38,000 Tribal citizens around the world''. Undated page; as_of is access date.'
 - count: 126987
   kind: resident-population
   source: census-2020-redistricting-data-national-summary-file
@@ -110,6 +116,106 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Citizen Potawatomi Nation, Oklahoma
+gaming:
+  compacts:
+  - state: OK
+    status: approved
+    approved: '1997-02-03'
+    federal_register_citation: 62 FR 5033
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1997-02-03'
+    locator: result page 27 (?page=27), row 1
+    note: 'Listed as: "Citizen Potawatomi Nation Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Citizen Potawatomi Nation, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%201997.02.03%20Citizen%20Potawatomi%20Off%20Track%20Wagering%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1997/02/03/97-2551/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    approved: '2005-02-09'
+    federal_register_citation: 70 FR 6903
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-02-09'
+    locator: result page 27 (?page=27), row 2
+    note: 'Listed as: "Citizen Potawatomi Nation Tribal State Gaming Compact" (Deemed Approved); list''s
+      Tribe column: "Citizen Potawatomi Nation, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202005.02.09%20Citizen%20Potowatomi%20Deemed%20Approved%20Compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/02/09/05-2462/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '1992-10-23'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '1992-10-23'
+    locator: result page 27 (?page=27), row 3
+    note: 'Listed as: "Citizen Potawatomi Nation Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Citizen Potawatomi Nation, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1992.10.23_citizen_potawatomi_nation_tribal_state_gaming_compact.pdf.'
+  - state: OK
+    status: approved
+    approved: '2018-08-17'
+    federal_register_citation: 83 FR 41101
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-08-17'
+    locator: result page 27 (?page=27), row 4
+    note: 'Listed as: "Citizen Potawatomi Nation Tribal State Gaming Compact" (Approve); list''s Tribe
+      column: "Citizen Potawatomi Nation, Oklahoma". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.17%20Citizen%20Potawatomi%20%20compact%20amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/08/17/2018-17729/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of-oklahoma.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-08-17).
+  ordinances:
+  - approved: '1995-06-27'
+    link: https://www.nigc.gov?wpdmdl=9514&ind=9526
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1995-06-27'
+    locator: table row 46, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 46 lists the nation
+      as "Citizen Potawatomi Nation".
+  - approved: '2006-12-11'
+    link: https://www.nigc.gov?wpdmdl=9515&ind=9527
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2006-12-11'
+    locator: table row 46, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 46 lists the nation
+      as "Citizen Potawatomi Nation".
+  - approved: '2016-02-24'
+    link: https://www.nigc.gov?wpdmdl=9516&ind=9528
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2016-02-24'
+    locator: table row 46, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 46 lists the nation
+      as "Citizen Potawatomi Nation".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-alphabetical-2025-06-17
+    confidence: medium
+    as_of: '2025-06-17'
+    note: 'Listed in the NIGC Gaming Tribe Report (alphabetical report) as "Citizen Potawatomi Nation,
+      Oklahoma". Facilities as machine-extracted from the report text (verify): Firelake Travel Plaza;
+      Golf Clubhouse; Firelake Entertainment Center; Grand Casino Hotel Resort. Name extracted from the
+      PDF by the page-fetch tool and matched to the roster.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

@@ -128,6 +128,108 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Wyandotte Nation
+gaming:
+  compacts:
+  - state: KS
+    status: deemed-approved
+    approved: '2026-07-14'
+    federal_register_citation: 91 FR 43109
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2026-07-14'
+    locator: result page 15 (?page=15), row 7
+    note: 'Listed as: "Wyandotte Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
+      column: "Wyandotte Nation". Document: https://www.bia.gov/sites/default/files/media_document/508_wyandotte_nation_compact_and_appendices_signed_3.31.2026.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2026/07/14/2026-14130/indian-gaming-approval-by-operation-of-law-of-the-wyandotte-nation-and-state-of-kansas-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: deemed-approved
+    approved: '2005-12-22'
+    federal_register_citation: 70 FR 76067
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2005-12-22'
+    locator: result page 29 (?page=29), row 20
+    note: 'Listed as: "Wyandotte Nation Tribal State Gaming Compact" (Deemed Approved); list''s Tribe
+      column: "Wyandotte Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_2005.12.22_wyandotte_nation_tribal_state_gaming_compact.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2005/12/22/E5-7698/indian-gaming.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: OK
+    status: approved
+    approved: '2018-08-17'
+    federal_register_citation: 83 FR 41101
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: high
+    as_of: '2018-08-17'
+    locator: result page 29 (?page=29), row 21
+    note: 'Listed as: "Wyandotte Nation Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Wyandotte Nation". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202018.08.17%20Wyandotte%20compact%20amendment.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2018/08/17/2018-17729/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-amendments-in-the-state-of-oklahoma.
+      Federal Register citation converted from the linked document number through the Federal Register
+      API (source federal-register-api-gaming-notices).'
+  - state: KS
+    status: deemed-approved
+    approved: '2026-07-14'
+    dispute_resolution_summary: The parties must use best efforts to negotiate for at least 14 days, after
+      which either party may refer the dispute to binding arbitration before a sole agreed arbitrator
+      or a three-member panel, with judicial enforcement in the United States District Court for Kansas.
+    dispute_resolution_locator: Section 29 (Dispute Resolution)
+    source: compact-ks-wyandotte-nation-2026
+    confidence: high
+    as_of: '2026-07-14'
+    locator: Section 29 (Dispute Resolution)
+    note: Dispute-resolution clause read from this nation's own compact document. Read from the 2026 Wyandotte
+      Nation compact; other Kansas compacts were not checked.
+  - state: OK
+    status: approved
+    dispute_resolution_summary: After written notice, tribal and state representatives meet within 30
+      days, and either party may then refer the dispute to arbitration under American Arbitration Association
+      rules before a single arbitrator, with de novo review of the award available in federal district
+      court under limited waivers of immunity.
+    dispute_resolution_locator: Part 12 (Dispute Resolution)
+    source: compact-ok-cherokee-nation-2005
+    confidence: medium
+    as_of: '2005-01-27'
+    locator: Part 12 (Dispute Resolution)
+    note: state model compact; nation-specific text not checked. The Cherokee Nation 2005 compact describes
+      itself as the Model Tribal Gaming Compact set out in Oklahoma's State-Tribal Gaming Act, which other
+      Oklahoma nations also accepted; this text is the Cherokee Nation copy. Some nations later negotiated
+      separate compacts (2020 and later), which were not checked. Status copied from this nation's most
+      recent approved or deemed-approved entry for this state in the Office of Indian Gaming list (2018-08-17).
+  ordinances:
+  - approved: '1994-06-29'
+    link: https://www.nigc.gov?wpdmdl=11552&ind=11575
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '1994-06-29'
+    locator: table row 313, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 313 lists the nation
+      as "Wyandotte Nation, Oklahoma".
+  - approved: '2007-09-28'
+    link: https://www.nigc.gov?wpdmdl=11555&ind=11576
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2007-09-28'
+    locator: table row 313, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 313 lists the nation
+      as "Wyandotte Nation, Oklahoma".
+  - approved: '2009-06-19'
+    link: https://www.nigc.gov?wpdmdl=11556&ind=11577
+    source: nigc-gaming-ordinances-table-2026
+    confidence: high
+    as_of: '2009-06-19'
+    locator: table row 313, Amendment Date column
+    note: Ordinance amendment date as listed (Amendment Date column). NIGC table row 313 lists the nation
+      as "Wyandotte Nation, Oklahoma".
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Wyandotte Nation, Oklahoma". Name
+      extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

@@ -107,6 +107,16 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Quartz Valley Indian Community of the Quartz Valley Reservation of California
+gaming:
+  ordinances:
+  - approved: '2008-10-17'
+    link: https://www.nigc.gov?wpdmdl=10858&ind=10873
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '2008-10-17'
+    locator: table row 219, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 219 lists the nation
+      as "Quartz Valley Indian Community". Name matched to roster by spelling variant.
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state

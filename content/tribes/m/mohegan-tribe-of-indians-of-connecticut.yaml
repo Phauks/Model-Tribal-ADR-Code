@@ -124,6 +124,68 @@ federal_administration:
   confidence: high
   as_of: '2026-11-20'
   locator: Mohegan Tribe of Indians of Connecticut
+gaming:
+  compacts:
+  - state: CT
+    status: approved
+    approved: '1994-12-16'
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '1994-12-16'
+    locator: result page 13 (?page=13), row 25
+    note: 'Listed as: "Mohegan Indian Tribe Tribal State Gaming Compact" (Approve); list''s Tribe column:
+      "Mississippi Band of Choctaw Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508_compliant_1994.12.16_mohegan_tribe_of_indians_tribal_state_gaming_compact_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/1994/12/16/94-30879/indian-gaming-notices-department-of-the-interior.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Name matched
+      to roster by spelling variant. Federal Register citation converted from the linked document number
+      through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: CT
+    status: approved
+    approved: '2021-09-15'
+    federal_register_citation: 86 FR 51369
+    source: office-of-indian-gaming-compacts-list-2026
+    confidence: medium
+    as_of: '2021-09-15'
+    locator: result page 14 (?page=14), row 1
+    note: 'Listed as: "Mohegan Tribe of Indians and State of Connecticut Tribal State Gaming Compact"
+      (Approve); list''s Tribe column: "Mississippi Band of Choctaw Indians". Document: https://www.bia.gov/sites/default/files/dup/assets/as-ia/oig/pdf/508%20Compliant%202021.09.15%20Mohegan%20Compact%20Amendment_0.pdf.
+      Federal Register link: https://www.federalregister.gov/documents/2021/09/15/2021-19839/indian-gaming-approval-of-tribal-state-class-iii-gaming-compact-in-the-state-of-connecticut.
+      The Tribe column and the compact title disagree; the nation named in the title was used. Name matched
+      to roster by spelling variant. Federal Register citation converted from the linked document number
+      through the Federal Register API (source federal-register-api-gaming-notices).'
+  - state: CT
+    status: approved
+    approved: '1994-12-16'
+    dispute_resolution_summary: 'The compact has no general arbitration or mediation clause: if the state
+      gaming agency finds non-compliance and the tribal operation does not correct it after notice, the
+      State may sue in United States District Court to enjoin the activity under a tribal waiver of immunity,
+      while certain operational disagreements, such as table-game supervisory staffing, go to binding
+      American Arbitration Association arbitration.'
+    dispute_resolution_locator: Section 13(c) (Enforcement of Compact provisions); Section 7 (table-game
+      staffing arbitration)
+    source: compact-ct-mohegan-tribe-of-indians-of-connecticut-1994
+    confidence: medium
+    as_of: '1994-12-16'
+    locator: Section 13(c) (Enforcement of Compact provisions); Section 7 (table-game staffing arbitration)
+    note: Dispute-resolution clause read from this nation's own compact document. Document is older than
+      five years; later amendments may have changed the clause. Read from the 1994 Mohegan Tribe compact;
+      the Mashantucket Pequot Indian Tribe operates under secretarial procedures, not a compact.
+  ordinances:
+  - approved: '1994-11-08'
+    link: https://www.nigc.gov?wpdmdl=10323&ind=10348
+    source: nigc-gaming-ordinances-table-2026
+    confidence: medium
+    as_of: '1994-11-08'
+    locator: table row 158, Ordinance Date column
+    note: Original ordinance date as listed (Ordinance Date column). NIGC table row 158 lists the nation
+      as "Mohegan Indian Tribe of Connecticut". Name matched to roster by spelling variant.
+  operates_gaming:
+    value: true
+    source: nigc-gaming-tribe-report-by-state-2024-12-10
+    confidence: medium
+    as_of: '2024-12-10'
+    note: Listed in the NIGC Gaming Tribe Report (by-state report) as "Mohegan Tribe of Indians of Connecticut".
+      Name extracted from the PDF by the page-fetch tool and matched to the roster.
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed
