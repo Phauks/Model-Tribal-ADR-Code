@@ -1,6 +1,6 @@
 # Project charter
 
-**Status:** draft, adopted by the lead author on 2026-11-20 for review by the
+**Status:** draft, adopted by the lead author, Trevor Goldsmith, on 2026-11-20 for review by the
 project's faculty advisors. Changes to this charter are made by pull request
 and recorded in git history.
 
@@ -97,10 +97,46 @@ heritage."[^undrip-31] Therefore:
 
 ### 6. The right to correct, restrict or withdraw
 
-A nation may ask that material about it be corrected, restricted or removed.
-The request wins. The record is updated or withdrawn in the next release, and
-the change is logged without repeating the withdrawn content. This is the
+A Native nation may ask that material about it be corrected, restricted or
+removed, and may contribute to it. The nation's request wins. This is the
 project's implementation of CARE's "Authority to control" (project analysis).
+
+**Who may ask.** A nation speaks through its own government or an office it
+designates, such as its Tribal court, legal department or cultural
+preservation office (see commitment 4). Anyone may raise a concern, but a
+request to change or withdraw material about a nation is confirmed with that
+nation's office before it is final. A person may always ask about their own
+name, words or contribution.
+
+**What may be asked.**
+
+| Request | What the project does |
+| --- | --- |
+| Correct | Fixes a fact, name, spelling or citation, and records the source of the correction. |
+| Restrict | Hides the material from the website, exports, offline copies and any API while the request is reviewed, or permanently marks it restricted (commitment 5). |
+| Remove | Withdraws the record, sets its review status to "withdrawn at request", and leaves a notice that says only that material was withdrawn at the nation's request. |
+| Contribute | Adds the nation's sources, review comments, preferred terms or authored text, credited as the contributor chooses (commitment 7). |
+
+**How the project responds.**
+
+- Any request to restrict or remove takes the material out of public view
+  first and reviews it second. Erring toward protection follows CARE's
+  principle that Indigenous "rights and wellbeing should be the primary
+  concern."[^care-gida]
+- Requests are received privately, not in public issue threads, and the
+  requester's details are never published.
+- The change is made in the next release, or sooner as a correction release.
+  The public log records the date, the record and the action taken, without
+  repeating the withdrawn content and without naming the requester.
+- If withdrawn material is restricted or sacred, the project also removes it
+  from the repository's history and asks archive services to remove copies,
+  where they allow it. Printed copies already sold cannot be recalled; the
+  next printing omits the material.
+- A nation's preferred names and terms are added to the project dictionary
+  ([terminology.md](terminology.md)) and apply from then on.
+
+The website's request page and the steps behind it are specified in
+[requests.md](requests.md).
 
 ### 7. Credit, authorship and art
 
@@ -136,7 +172,7 @@ analysis, not legal advice).
 
 ### 10. Positionality and transparency
 
-The lead author is a law student who is not Native American. A short
+The lead author, Trevor Goldsmith, is a law student who is not Native American. A short
 positionality statement appears in the book's preface or foreword. The project
 does not present itself as an Indigenous voice; it presents published practice,
 credits Indigenous sources, and invites correction.
