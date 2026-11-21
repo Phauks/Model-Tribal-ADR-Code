@@ -32,8 +32,8 @@ the alternative dispute resolution code ([charter, commitment 3](charter.md#3-pe
 These steps do not depend on reviewed data and can proceed in parallel with
 Trevor's review:
 
-- **Methods vocabulary.** Merge the open list of methods (pull request #5),
-  then rename profile forum kinds to method ids in one pull request. The
+- **Methods vocabulary.** The open list of methods (pull request #5) has
+  merged. Rename profile forum kinds to method ids in one pull request. The
   methods thread has proposed a mapping, for example mediation-program to
   mediation and employment-tribunal to administrative-adjudication; it is not
   yet applied (review queue item 6 in the analysis).
@@ -81,8 +81,9 @@ Gate 1 is passed when Trevor has:
    to 5).
 5. **Decided how bands inside one profile are counted**, starting with the
    Minnesota Chippewa Tribe profile (review queue item 7).
-6. **Accepted or set aside the 26 proposed method records**, so every forum
-   kind maps to a method or stays "other" for a stated reason.
+6. **Accepted or set aside the proposed method records** (32 at the merge of
+   pull request #5), so every forum kind maps to a method or stays "other" for
+   a stated reason.
 
 A review session log records what was checked and decided, as for any
 research session ([research/README.md](../research/README.md)).
