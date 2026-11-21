@@ -18,6 +18,7 @@
 		saveSettings,
 		saveTheme,
 		textSizeChoices,
+		textAlignmentChoices,
 		textSpacingChoices,
 		themeChoices,
 		type Choice,
@@ -129,6 +130,13 @@
 			textSpacingChoices,
 			settings.textSpacing,
 			(value) => change('textSpacing', value)
+		)}
+		{@render choiceGroup(
+			'Text alignment',
+			'text-alignment',
+			textAlignmentChoices,
+			settings.textAlignment,
+			(value) => change('textAlignment', value)
 		)}
 		{@render choiceGroup('Theme', 'theme', themeChoices, theme, changeTheme)}
 		{@render choiceGroup('Contrast', 'contrast', contrastChoices, settings.contrast, (value) =>
