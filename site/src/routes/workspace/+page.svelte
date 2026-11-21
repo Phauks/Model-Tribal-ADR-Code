@@ -24,6 +24,17 @@
 	{roleLabels[data.person.role]}: {roleDescriptions[data.person.role]}
 </p>
 
+{#if data.profileState !== 'confirmed'}
+	<div class="notice" role="note">
+		<p>
+			{data.profileState === 'missing'
+				? 'You have not set up your contributor profile yet. It records how you want to be credited in the book and on the website.'
+				: 'Your contributor profile has changes you have not confirmed yet.'}
+			<a href="/profile">{data.profileState === 'missing' ? 'Set up your profile' : 'Check and confirm'}</a>
+		</p>
+	</div>
+{/if}
+
 {#if data.ownNation}
 	<section class="panel">
 		<h2>Your nation’s record</h2>

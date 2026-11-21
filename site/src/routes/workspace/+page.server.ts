@@ -3,6 +3,7 @@ import { can, canSeeSubject } from '#lib/permissions.ts';
 import { grantsOf } from '#lib/server/access.ts';
 import { administrationSummary } from '#lib/server/administration.ts';
 import { deadlinesOf } from '#lib/requests.ts';
+import { profileOfPerson } from '#lib/server/contributor-profiles.ts';
 import { listRequests } from '#lib/server/request-store.ts';
 import { latestReviews } from '#lib/server/reviews.ts';
 import { requirePerson, storage } from '#lib/server/workspace.ts';
@@ -53,11 +54,16 @@ export const load: PageServerLoad = async (event) => {
 
 	const administration = can(person, 'manage-people') ? await administrationSummary(database) : undefined;
 
+	// Co-authors and reviewers keep a contributor profile too, so their credit is their own choice.
+	const profile = await profileOfPerson(database, person.identifier);
+	const profileState = !profile ? 'missing' : profile.hasUnconfirmedChanges ? 'unconfirmed' : 'confirmed';
+
 	return {
 		openRequests,
 		recentReviews,
 		ownNation,
 		granted: can(person, 'read-reviews') ? [] : granted.slice(0, 50),
-		administration
+		administration,
+		profileState
 	};
 };

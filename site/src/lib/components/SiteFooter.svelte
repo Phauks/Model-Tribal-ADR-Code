@@ -13,6 +13,7 @@
 			<li><a href="/changelog">Changelog</a></li>
 			<li><a href="{repositoryLink}/blob/main/LICENSE.md">Licenses by material</a></li>
 			<li><a href="{repositoryLink}">Source files</a></li>
+			<li><a href="/join">Help with the project</a></li>
 			<li><a href="/workspace" data-sveltekit-reload>Co-author sign-in</a></li>
 		</ul>
 		<p class="small muted">

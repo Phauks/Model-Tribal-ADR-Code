@@ -8,6 +8,7 @@ import { error, redirect } from '@sveltejs/kit';
 import type { D1Database, R2Bucket } from '@cloudflare/workers-types/index.ts';
 import { can, type Permission } from '#lib/permissions.ts';
 import { workerEnvironment } from './environment.ts';
+import type { SignedInAccount } from './contributor-profiles.ts';
 import type { SignedInPerson } from './people.ts';
 
 interface WorkspaceEvent {
@@ -15,13 +16,27 @@ interface WorkspaceEvent {
 	url: URL;
 }
 
-/** The signed-in person, or a redirect to sign in and come back. */
+/**
+ * The signed-in person, or a redirect to sign in and come back. Someone who
+ * is signed in but has no workspace access goes to their contributor
+ * profile instead.
+ */
 export function requirePerson(event: WorkspaceEvent): SignedInPerson {
 	if (!event.locals.person) {
+		if (event.locals.account) redirect(303, '/profile');
 		const returnTo = `${event.url.pathname}${event.url.search}`;
 		redirect(303, `/sign-in?returnTo=${encodeURIComponent(returnTo)}`);
 	}
 	return event.locals.person;
+}
+
+/** Whoever is signed in with a verified email address, or a redirect to sign in and come back. */
+export function requireAccount(event: WorkspaceEvent): SignedInAccount {
+	if (!event.locals.account) {
+		const returnTo = `${event.url.pathname}${event.url.search}`;
+		redirect(303, `/sign-in?returnTo=${encodeURIComponent(returnTo)}`);
+	}
+	return event.locals.account;
 }
 
 /**

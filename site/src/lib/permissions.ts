@@ -37,9 +37,9 @@ export const roleLabels: Record<Role, string> = {
 
 export const roleDescriptions: Record<Role, string> = {
 	'lead-author':
-		'The administrator: full access to every document, and adds, changes and removes people, grants and restricts access, and sees the activity log. Only the lead author manages access.',
+		'The administrator: full access to every document, and adds, changes and removes people, grants and restricts access, and sees the activity log; welcomes people who register to help. Only the lead author manages access.',
 	editor:
-		'Handles requests from nations (reads them, opens uploaded proof, changes their status and decides them) and signs off on content.',
+		'Handles requests from nations (reads them, opens uploaded proof, changes their status and decides them), reads registrations from people who want to help, and signs off on content.',
 	'co-author':
 		'Comments on every document unless the lead author grants more or less. Changes to content are still made by pull request.',
 	advisor: 'Signs off on content or asks for changes, as a project advisor, and comments.',
@@ -51,6 +51,8 @@ export const roleDescriptions: Record<Role, string> = {
 
 export type Permission =
 	| 'manage-people'
+	| 'read-contributors'
+	| 'manage-contributors'
 	| 'read-requests'
 	| 'handle-requests'
 	| 'read-reviews'
@@ -61,13 +63,15 @@ export type Permission =
 const grants: Record<Role, readonly Permission[]> = {
 	'lead-author': [
 		'manage-people',
+		'read-contributors',
+		'manage-contributors',
 		'read-requests',
 		'handle-requests',
 		'read-reviews',
 		'comment',
 		'sign-off'
 	],
-	editor: ['read-requests', 'handle-requests', 'read-reviews', 'comment', 'sign-off'],
+	editor: ['read-contributors', 'read-requests', 'handle-requests', 'read-reviews', 'comment', 'sign-off'],
 	'co-author': ['read-reviews', 'comment'],
 	advisor: ['read-reviews', 'comment', 'sign-off'],
 	contributor: ['comment'],

@@ -11,6 +11,11 @@
 			{ label: 'Requests', link: '/workspace/requests', shown: data.permissions.includes('read-requests') },
 			// Everyone sees the documents they can open, by role or by grant.
 			{ label: 'Reviews', link: '/workspace/reviews', shown: true },
+			{
+				label: 'Contributors',
+				link: '/workspace/contributors',
+				shown: data.permissions.includes('read-contributors')
+			},
 			{ label: 'People', link: '/workspace/people', shown: data.permissions.includes('manage-people') },
 			{ label: 'Access', link: '/workspace/access', shown: data.permissions.includes('manage-people') },
 			{ label: 'Activity log', link: '/workspace/activity', shown: data.permissions.includes('manage-people') }
@@ -41,6 +46,7 @@
 		<span class="small">
 			Signed in as <strong>{data.person.displayName}</strong>, {roleLabels[data.person.role].toLocaleLowerCase('en-US')}
 		</span>
+		<a href="/profile">Your profile</a>
 		<form method="post" action="/sign-out">
 			<button class="button button-quiet" type="submit">Sign out</button>
 		</form>

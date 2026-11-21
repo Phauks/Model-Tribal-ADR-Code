@@ -1,7 +1,7 @@
 /**
  * Runs for every page the Worker renders on request: the co-author
- * workspace, sign-in and the request form. Prerendered pages are served as
- * files and never reach this code.
+ * workspace, contributor profiles, sign-in and the request form.
+ * Prerendered pages are served as files and never reach this code.
  */
 import { building, dev } from '$app/env';
 import type { Handle } from '@sveltejs/kit/hooks';
@@ -14,10 +14,14 @@ import { signInClient, signInSettings } from '#lib/server/sign-in.ts';
 import { clearSignedIn, markSignedIn } from '#lib/server/signed-in-hint.ts';
 
 /** Pages that show private information and must never be cached or framed. */
-const privatePrefixes = ['/workspace', '/sign-in', '/sign-out', '/requests'];
+const privatePrefixes = ['/workspace', '/profile', '/sign-in', '/sign-out', '/requests'];
+
+/** Pages that need to know who is signed in. */
+const signedInPrefixes = ['/workspace', '/profile'];
 
 export const handle: Handle = async ({ event, resolve }) => {
 	event.locals.person = undefined;
+	event.locals.account = undefined;
 	event.locals.refused = undefined;
 	const path = event.url.pathname;
 	const changing = changesSomething(event.request.method);
@@ -34,7 +38,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 
 	// While the site is built, links to the workspace are followed but there is
 	// no Worker and nobody is signed in.
-	if (!building && (path === '/workspace' || path.startsWith('/workspace/'))) {
+	if (!building && signedInPrefixes.some((prefix) => path === prefix || path.startsWith(`${prefix}/`))) {
 		const environment = workerEnvironment();
 		const configured = signInSettings(environment);
 		if ('settings' in configured && environment.database) {
@@ -42,10 +46,18 @@ export const handle: Handle = async ({ event, resolve }) => {
 			const user = await client.getUser({ cookies: event.cookies }).catch(() => undefined);
 			if (user?.sub) {
 				event.locals.person = await activePersonBySubject(environment.database, user.sub);
+				// Registration needs an address Auth0 has verified (docs/contributor-profiles.md).
+				if (typeof user.email === 'string' && user.email_verified === true) {
+					event.locals.account = {
+						subject: user.sub,
+						email: user.email,
+						name: typeof user.name === 'string' ? user.name : null
+					};
+				}
 			}
 		}
 		// Keep the masthead's "Workspace" or "Sign in" link in step with the session.
-		if (event.locals.person) markSignedIn(event.cookies);
+		if (event.locals.person || event.locals.account) markSignedIn(event.cookies);
 		else clearSignedIn(event.cookies);
 
 		// Each person may make a limited number of changes a minute, so a
