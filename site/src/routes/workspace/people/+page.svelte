@@ -53,6 +53,9 @@
 		{:else if column.key === 'added'}
 			{date(listed.addedAt)}{#if listed.addedByName}<br /><span class="small muted">by {listed.addedByName}</span>{/if}
 		{:else}
+			{#if listed.role !== 'lead-author'}
+				<a class="small" href="/workspace/access?person={listed.identifier}">Document access</a>
+			{/if}
 			<form method="post" action="?/access" class="row-form">
 				<input type="hidden" name="identifier" value={listed.identifier} />
 				{#if listed.status === 'removed'}
@@ -147,7 +150,7 @@
 	</div>
 	<div class="field">
 		<label for="invite-nation">Nation (nation reviewers only)</label>
-		<p class="hint">A nation reviewer sees and reviews only this nation’s record, and nothing else.</p>
+		<p class="hint">A nation reviewer sees and reviews only this nation’s record, unless you open more to them on the Access page.</p>
 		<select id="invite-nation" name="nationIdentifier">
 			<option value="">Choose…</option>
 			{#each data.nations as nation (nation.identifier)}

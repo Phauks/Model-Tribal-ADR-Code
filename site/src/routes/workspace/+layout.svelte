@@ -9,12 +9,11 @@
 		[
 			{ label: 'Overview', link: '/workspace', shown: true },
 			{ label: 'Requests', link: '/workspace/requests', shown: data.permissions.includes('read-requests') },
-			{
-				label: 'Reviews',
-				link: '/workspace/reviews',
-				shown: data.permissions.includes('read-reviews') || data.permissions.includes('review-for-nation')
-			},
-			{ label: 'People', link: '/workspace/people', shown: data.permissions.includes('manage-people') }
+			// Everyone sees the documents they can open, by role or by grant.
+			{ label: 'Reviews', link: '/workspace/reviews', shown: true },
+			{ label: 'People', link: '/workspace/people', shown: data.permissions.includes('manage-people') },
+			{ label: 'Access', link: '/workspace/access', shown: data.permissions.includes('manage-people') },
+			{ label: 'Activity log', link: '/workspace/activity', shown: data.permissions.includes('manage-people') }
 		].filter((item) => item.shown)
 	);
 

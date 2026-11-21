@@ -28,7 +28,7 @@ export const load: PageServerLoad = async (event) => {
 			 LEFT JOIN people AS actor ON actor.identifier = events.person_identifier
 			 LEFT JOIN people AS target ON target.identifier = events.target_identifier
 			 WHERE events.target_kind = 'person'
-			 ORDER BY events.created_at DESC LIMIT 50`
+			 ORDER BY events.sequence DESC LIMIT 50`
 		)
 		.all<{
 			identifier: string;
