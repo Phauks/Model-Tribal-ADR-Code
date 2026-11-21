@@ -1,7 +1,9 @@
 # Requests from Native nations and contributors
 
-**Status:** specification for the website, not yet built. Until it is, use the
-[interim route](#until-the-website-is-live).
+**Status:** specification for the website. The form and the maintainer's view
+are built ([site/COLLABORATION.md](../site/COLLABORATION.md)); email
+notification and the public log are not yet. Until the form is live on the
+site, use the [interim route](#until-the-website-is-live).
 
 This page specifies how a Native nation, or anyone connected to one, asks the
 project to correct, restrict or remove material, asks to add a nation that is
@@ -233,13 +235,16 @@ all secrets in Cloudflare
 ([decision record 0006](decisions/0006-secrets-only-in-cloudflare.md)).
 
 - **Form:** a server-rendered SvelteKit page that works without JavaScript,
-  protected from spam by a bot check that does not require an account.
+  protected from spam without asking for an account or a puzzle: a hidden
+  field that bots fill in, and a limit of five submissions a minute from one
+  connection.
 - **Storage:** requests in a D1 table, never in git. Uploaded files in a
   private R2 bucket. Neither is exposed through any public API.
 - **Notification:** the maintainer is emailed a link to the request, not its
   contents.
-- **Maintainer view:** a `/admin/requests` page behind Cloudflare's access
-  control, listing requests by status.
+- **Maintainer view:** `/workspace/requests`, for editors who sign in with
+  Auth0 ([decision record 0013](decisions/0013-sign-in-with-auth0.md)),
+  listing requests by status with the targets above.
 - **Retention:** personal details are deleted 12 months after a request is
   resolved, unless the person is credited as a contributor (project choice).
 - **Changes to content** are still made by pull request, with a commit message

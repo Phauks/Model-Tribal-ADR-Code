@@ -17,7 +17,6 @@ const required = [
 	'changelog.html',
 	'nations.html',
 	'offline.html',
-	'requests.html',
 	'manifest.webmanifest',
 	'icon.svg',
 	'service-worker.js'
