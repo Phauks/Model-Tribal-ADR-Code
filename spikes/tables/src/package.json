@@ -1,0 +1,32 @@
+{
+  "name": "table-library-spike",
+  "private": true,
+  "type": "module",
+  "description": "Spike: one table definition rendered as a prerendered website table, a Typst table and an EPUB table, with candidate sorting and filtering libraries (mock data).",
+  "license": "MIT",
+  "scripts": {
+    "data": "node data/generate-mock-nations.mjs && node tables/build-nations-directory.mjs",
+    "build:site": "node tools/bundle-enhancers.mjs && vite build",
+    "build:print": "node print/build-print.mjs",
+    "build:ebook": "node epub/build-epub.mjs",
+    "check:site": "node tools/check-site.cjs"
+  },
+  "imports": {
+    "#lib/*": "./site/lib/*",
+    "#tables/*": "./tables/*"
+  },
+  "dependencies": {
+    "@svar-ui/svelte-grid": "2.7.6",
+    "@sveltejs/adapter-static": "4.0.1",
+    "@sveltejs/kit": "3.4.0",
+    "@sveltejs/vite-plugin-svelte": "7.3.1",
+    "@tanstack/svelte-table": "9.3.2",
+    "axe-core": "4.11.0",
+    "datatables.net-dt": "3.1.5",
+    "esbuild": "0.28.2",
+    "simple-datatables": "10.3.0",
+    "svelte": "5.59.1",
+    "typescript": "6.0.3",
+    "vite": "8.3.8"
+  }
+}
