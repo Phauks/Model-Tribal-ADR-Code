@@ -1,0 +1,22 @@
+d3-geo build (node build-d3.mjs), whole process, 5 runs:
+305 ms
+274 ms
+280 ms
+277 ms
+279 ms
+Observable Plot build (node build-plot.mjs), whole process, 5 runs:
+707 ms
+714 ms
+685 ms
+702 ms
+754 ms
+Typst map page compile, 5 runs:
+49 ms
+48 ms
+52 ms
+47 ms
+51 ms
+npm install (cold cache not measured; warm):
+node_modules: 32M, 74 top-level entries
+v22.23.5
+typst 0.15.1 (9dfd3a08)
