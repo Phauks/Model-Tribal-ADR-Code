@@ -576,7 +576,6 @@ what to pull.
 - [@usc-9-201-301]: Free on LII. Pull 9 U.S.C.A. §§ 201–208, 301–307 on Westlaw for annotations.
 - [@usc-9-401-402]: Free on LII. Pull 9 U.S.C.A. §§ 401–402 and Pub. L. 117-90 on Westlaw.
 - [@southland-corp-v-keating-1984]: LII text lacks U.S. page breaks; pull Southland Corp. v. Keating, 465 U.S. 1 (1984) on Westlaw for pinpoints.
-- [@att-mobility-v-concepcion-2011]: Pull AT&T Mobility LLC v. Concepcion, 563 U.S. 333 (2011) on Westlaw for opinion pinpoints.
 - [@hall-street-associates-v-mattel-2008]: Pull Hall Street Assocs., L.L.C. v. Mattel, Inc., 552 U.S. 576 (2008) on Westlaw for pinpoints.
 - [@epic-systems-v-lewis-2018]: U.S. Reports page not verified here (LII shows slip opinion). Confirm the final U.S. Reports cite (believed 584 U.S. 497) and S. Ct. cite on Westlaw before publishing.
 - [@smith-v-spizzirri-2024]: Confirm 601 U.S. 472 (2024) on Westlaw; LII and supremecourt.gov show slip-opinion form.
@@ -612,7 +611,7 @@ what to pull.
 - [@wilson-v-marchington-1997]: Full opinion text read from the Caselaw Access Project (static.case.law/f3d/127/cases/0805-01.json); leagle shows the opening only. Page pinpoints were not available in the open text, so pull 127 F.3d 805 on Westlaw for star paging.
 - [@ali-2022-restatement-law-of-american-indians]: ali.org blocked automated access. Pull the Restatement of the Law of American Indians on Westlaw (Restatements database) and search 'tribal court judgment' to find the recognition section; do not rely on any section number from memory.
 - [@jones-1998-welcoming-tribal-courts-judicial-fraternity]: Repository record opened; PDF (viewcontent.cgi?article=1950&context=wmlr) blocked to automated download. Pull on HeinOnline for the starting page.
-- [@c-and-l-enterprises-v-citizen-band-potawatomi-2001]: Opinion text also at https://www.law.cornell.edu/supremecourt/text/532/411. Pull C & L Enters., Inc. v. Citizen Band Potawatomi Indian Tribe of Okla., 532 U.S. 411 (2001) on Westlaw for pinpoints; KeyCite for later tribal-arbitration-waiver cases.
+- [@c-and-l-enterprises-v-citizen-band-potawatomi-2001]: Pinpoints checked on Westlaw 2026-11-20. Still to do: KeyCite for later cases on Tribal arbitration waivers.
 - [@usc-25-2710]: Also at uscode.house.gov and NIGC's IGRA PDF. Pull 25 U.S.C.A. § 2710 on Westlaw for post-Seminole case law on (d)(7).
 - [@usc-25-5329-c-model-agreement-disputes]: Free on LII. Pull 25 U.S.C.A. § 5329 on Westlaw (formerly 25 U.S.C. § 450l).
 - [@usc-25-5331]: Free on LII. Pull 25 U.S.C.A. § 5331 (formerly § 450m-1) on Westlaw with annotations.
