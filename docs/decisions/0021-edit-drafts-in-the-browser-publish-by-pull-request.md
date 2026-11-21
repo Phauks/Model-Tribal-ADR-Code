@@ -35,6 +35,11 @@ an orderly, public history.
   git commits.
 - **Writing back** copies every block that did not change exactly as it was,
   so pull requests show only real edits.
+- **Not chosen: keeping the finished text in D1 or R2** instead of git. It
+  would remove the pull request step but means rebuilding the checks, the
+  public change history and edition snapshots, and giving GitHub a Cloudflare
+  credential for the print build (comparison in docs/editing.md, "Why the
+  finished text stays in git").
 - Not chosen: Collabora Online (a separate server, word-processor files),
   Tiptap's paid platform (comments and history need its cloud), Lexical
   (collaboration documented mainly for React). One writer at a time remains

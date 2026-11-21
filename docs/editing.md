@@ -15,6 +15,9 @@ Nov. 21, 2026.
 
 ## In short
 
+- **Work in progress lives in Cloudflare; finished text lives in git.**
+  Drafts, comments, versions and images never touch GitHub (see
+  [Why the finished text stays in git](#why-the-finished-text-stays-in-git-not-in-d1-or-r2)).
 - **The Markdown files in git stay the published text**
   ([decision record 0004](decisions/0004-content-as-plain-files.md)). The
   website gets a drafting room, not a second copy of the book. When a draft is
@@ -91,6 +94,43 @@ a person also carries the filing id and the shared consent fields from the
 contributions work (pull request #57, `docs/contributions.md`); a draft that
 uses contributed material without a filing cannot be submitted. The website,
 print and ebook builds read the file from the bucket by that path.
+
+## Why the finished text stays in git, not in D1 or R2
+
+The lead author asked (Nov. 21, 2026) why the text should go to GitHub at all,
+rather than living in the site's D1 database or R2 bucket. Three ways were
+compared (project analysis):
+
+| | Git holds the finished text (proposed) | D1 or R2 holds everything | Both, kept in sync |
+| --- | --- | --- | --- |
+| Drafts, comments, named versions, images | Cloudflare (Durable Object, D1, R2) | Cloudflare | Cloudflare |
+| Finished, approved text | Markdown in git | Rows in D1 or files in R2 | Both, with one copied to the other |
+| Public record of every change | Git history, readable by anyone, as the charter's legislative-style history expects ([decision record 0004](decisions/0004-content-as-plain-files.md)) | Would have to be built: a public change log page and diff viewer | Git, if the copy never fails |
+| Checks before publishing | The existing ones: record lint, schema validation, site and print builds on every pull request | Would have to be rebuilt inside the Worker | Run twice, or only on one side |
+| Website build | Unchanged: the site is built ahead of time from the files (about 981 pages) | The build would read D1 or R2. Workers Builds' automatic token has no D1 permission ([site/COLLABORATION.md](../site/COLLABORATION.md), "Database"), so it needs a new Cloudflare token | Unchanged |
+| Print and ebook build | Unchanged: GitHub Actions reads the files | Needs a Cloudflare token inside GitHub, which [decision record 0006](decisions/0006-secrets-only-in-cloudflare.md) rules out, or moving the print build to Cloudflare | Unchanged |
+| Rebuilding an exact edition later | Check out the commit or tag | Needs dated snapshots kept for good. D1's own point-in-time recovery reaches back 30 days on the Paid plan and 7 on Free (Cloudflare, "D1 limits"); R2's bucket documentation lists lifecycle rules and bucket locks but no object versioning (Cloudflare, "R2 buckets," as read Nov. 21, 2026) | Check out the commit |
+| Research threads and Claude | Work on the files as now (about 5,900 files under `content/`, measured) | Would need tools to read and write the database | Two places to edit, so changes can collide |
+| Copies kept elsewhere | Every clone of the repository and GitHub itself | Only Cloudflare, unless exports are scheduled | Both |
+| Private material | Never enters git; restricted or contributed material stays in R2 under the consent rules | Same | Same |
+| Cost | Nothing new | D1 and R2 free allowances are ample at this size | Same as git |
+| What it adds | A GitHub App, or a person, to open the pull request | Instant publishing from the website, no GitHub step | The most moving parts |
+
+**Recommendation (project analysis):** keep the split the proposal already
+makes. Everything still being worked on lives in Cloudflare and never touches
+GitHub: the draft text, every live change, named versions, comments, uploads
+and images. Only the text that is approved for the book goes into git, once
+per submission, where the checks, the public history and the print build
+already are. Moving the finished text to D1 or R2 would save the pull request
+step, but the project would then have to rebuild its checks, its public change
+history and its edition snapshots, and give GitHub a Cloudflare credential for
+the print build. Keeping both in sync would leave two places that can
+disagree.
+
+If the pull request step turns out to slow writers down, the website can
+publish an essay to the live site straight from D1 as a "preview" and still
+send it to git for the book; that can be added later without changing this
+design.
 
 ## Working on the same draft at the same time
 
@@ -352,6 +392,12 @@ shared files at `spikes/editing/`, like the ebook test build (decision record
   [developers.cloudflare.com/durable-objects/platform/limits/](https://developers.cloudflare.com/durable-objects/platform/limits/).
 - Cloudflare, "Use WebSockets," *Durable Objects*,
   [developers.cloudflare.com/durable-objects/best-practices/websockets/](https://developers.cloudflare.com/durable-objects/best-practices/websockets/).
+- Cloudflare, "Limits," *D1* (Time Travel duration),
+  [developers.cloudflare.com/d1/platform/limits/](https://developers.cloudflare.com/d1/platform/limits/),
+  and "Time Travel and backups" (last updated Nov. 6, 2026),
+  [developers.cloudflare.com/d1/reference/time-travel/](https://developers.cloudflare.com/d1/reference/time-travel/).
+- Cloudflare, "Buckets," *R2* (last updated Apr. 21, 2026),
+  [developers.cloudflare.com/r2/buckets/](https://developers.cloudflare.com/r2/buckets/).
 - Cloudflare, "Durable Object class exports" (last updated Sept. 28, 2026),
   [developers.cloudflare.com/durable-objects/reference/durable-objects-migrations/](https://developers.cloudflare.com/durable-objects/reference/durable-objects-migrations/).
 - Cloudflare, PartyKit repository and `y-partyserver` README,
