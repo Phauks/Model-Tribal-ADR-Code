@@ -1,0 +1,136 @@
+id: rampart-village
+entity_type: native-nation
+names:
+  official: Rampart Village
+  alternate:
+  - name: Dleł Taaneets
+    source: alaska-dcra-native-place-names
+    confidence: medium
+    as_of: '2018-10-15'
+    locator: community row "Rampart"
+    note: Native place name for the community of Rampart in Denaakk'e (Koyukon) (State of Alaska, from
+      the Alaska Native Language Center); it names the place, and the source does not state it is the
+      tribal government's self-designation.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4106
+states:
+- state: AK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Rampart Village
+population:
+- count: 322
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: ALASKA row "Rampart", Enrollment column
+  note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
+    tribe to the Department of Housing and Urban Development); row name matched to the roster by the researcher.
+contacts:
+- kind: website
+  value: https://www.tananachiefs.org/about/communities/rampart/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Rampart Village
+- kind: physical-address
+  value: '#15 Wiehl Way, Rampart, AK 99767'
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Rampart Village
+- kind: mailing-address
+  value: P.O. Box 29, Rampart, AK 99767
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Rampart Village
+- kind: phone
+  value: (907) 358-3312
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Rampart Village
+- kind: fax
+  value: (907) 358-3115
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Rampart Village
+- kind: mailing-address
+  value: PO Box 67029, Rampart, AK 99767
+  label: Tribal office address listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Rampart Village" (community: Rampart, object 172)'
+languages:
+- name: Denaakk'e (Koyukon)
+  language_tag: koy
+  source: alaska-dcra-native-place-names
+  confidence: medium
+  as_of: '2018-10-15'
+  locator: community row "Rampart"
+  note: Language of the Native place name for the community (Rampart), as listed by the State of Alaska
+    from the Alaska Native Language Center place-names map; ISO 639-3 tag assigned by the researcher.
+federal_administration:
+  bureau_of_indian_affairs_region: Alaska
+  bureau_of_indian_affairs_agency: Fairbanks Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Rampart Village
+related_entities:
+- name: Doyon Ltd.
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Rampart Village
+  note: Regional corporation for the area, as listed in the directory.
+- name: Doyon, Limited
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Rampart"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Rampart),
+    not for the tribal government by name.
+- name: Tanana Chiefs Conference
+  relation: alaska-native-claims-settlement-act-regional-nonprofit
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Rampart"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Rampart),
+    not for the tribal government by name.
+- name: Tanana Chiefs Conference, Department of Health Services
+  relation: native-regional-health-care-provider
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Rampart"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Rampart),
+    not for the tribal government by name.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

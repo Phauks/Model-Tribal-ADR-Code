@@ -1,0 +1,145 @@
+id: chevak-native-village
+entity_type: native-nation
+names:
+  official: Chevak Native Village
+  alternate:
+  - name: Cev'aq
+    source: alaska-dcra-native-place-names
+    confidence: medium
+    as_of: '2018-10-15'
+    locator: community row "Chevak"
+    note: Native place name for the community of Chevak in Central Yup'ik (Cup'ik) (State of Alaska, from
+      the Alaska Native Language Center); it names the place, and the source does not state it is the
+      tribal government's self-designation.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: AK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Chevak Native Village
+population:
+- count: 1582
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: ALASKA row "Chevak", Enrollment column
+  note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
+    tribe to the Department of Housing and Urban Development); row name matched to the roster by the researcher.
+contacts:
+- kind: physical-address
+  value: 140 Aurora Street, Chevak, AK 99563
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Chevak Native Village
+- kind: mailing-address
+  value: P.O. Box 140, Chevak, AK 99563
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Chevak Native Village
+- kind: phone
+  value: (907) 858-7428
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Chevak Native Village
+- kind: fax
+  value: (907) 858-7812
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Chevak Native Village
+- kind: mailing-address
+  value: PO Box 140, Chevak, AK 99563-0140
+  label: Tribal office address listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Chevak Native Village" (community: Chevak, object 31)'
+- kind: phone
+  value: +1 (907) 858-7421
+  label: Tribal office main phone
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Chevak Native Village" (community: Chevak, object 31)'
+- kind: email-general
+  value: admin@chevactc.gov
+  label: Tribal office email listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: medium
+  as_of: '2026-04-02'
+  locator: 'record "Chevak Native Village" (community: Chevak, object 31)'
+  note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
+    left out.
+languages:
+- name: Central Yup'ik (Cup'ik)
+  language_tag: esu
+  source: alaska-dcra-native-place-names
+  confidence: medium
+  as_of: '2018-10-15'
+  locator: community row "Chevak"
+  note: Language of the Native place name for the community (Chevak), as listed by the State of Alaska
+    from the Alaska Native Language Center place-names map; ISO 639-3 tag assigned by the researcher.
+federal_administration:
+  bureau_of_indian_affairs_region: Alaska
+  bureau_of_indian_affairs_agency: Alaska Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Chevak Native Village
+related_entities:
+- name: Calista Corp.
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Chevak Native Village
+  note: Regional corporation for the area, as listed in the directory.
+- name: Calista Corporation
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Chevak"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Chevak), not
+    for the tribal government by name.
+- name: Association of Village Council Presidents
+  relation: alaska-native-claims-settlement-act-regional-nonprofit
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Chevak"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Chevak), not
+    for the tribal government by name.
+- name: Yukon-Kuskokwim Health Corporation
+  relation: native-regional-health-care-provider
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Chevak"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Chevak), not
+    for the tribal government by name.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

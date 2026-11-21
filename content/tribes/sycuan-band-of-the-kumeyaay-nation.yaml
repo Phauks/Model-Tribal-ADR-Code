@@ -1,0 +1,70 @@
+id: sycuan-band-of-the-kumeyaay-nation
+entity_type: native-nation
+names:
+  official: Sycuan Band of the Kumeyaay Nation
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sycuan Band of the Kumeyaay Nation
+contacts:
+- kind: website
+  value: https://sycuantribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sycuan Band of the Kumeyaay Nation
+- kind: physical-address
+  value: 1 Kwaaypaay Court, El Cajon, CA 92019
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sycuan Band of the Kumeyaay Nation
+- kind: mailing-address
+  value: 1 Kwaaypaay Court, El Cajon, CA 92019
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sycuan Band of the Kumeyaay Nation
+- kind: phone
+  value: (619) 445-2613
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sycuan Band of the Kumeyaay Nation
+- kind: fax
+  value: (619) 445-1927
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sycuan Band of the Kumeyaay Nation
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Southern California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sycuan Band of the Kumeyaay Nation
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

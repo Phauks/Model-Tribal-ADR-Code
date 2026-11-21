@@ -1,0 +1,70 @@
+id: oglala-sioux-tribe
+entity_type: native-nation
+names:
+  official: Oglala Sioux Tribe
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: SD
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oglala Sioux Tribe
+contacts:
+- kind: website
+  value: https://oglalalakotanation.net/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oglala Sioux Tribe
+- kind: physical-address
+  value: 107 West Main Street, Pine Ridge, SD 57770
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oglala Sioux Tribe
+- kind: mailing-address
+  value: P.O. Box 2070 (107 West Main Street), Pine Ridge, SD 57770
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oglala Sioux Tribe
+- kind: phone
+  value: (605) 867-5821
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oglala Sioux Tribe
+- kind: fax
+  value: (605) 867-6076
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oglala Sioux Tribe
+federal_administration:
+  bureau_of_indian_affairs_region: Great Plains
+  bureau_of_indian_affairs_agency: Pine Ridge Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Oglala Sioux Tribe
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

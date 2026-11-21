@@ -1,0 +1,129 @@
+id: nenana-native-association
+entity_type: native-nation
+names:
+  official: Nenana Native Association
+  alternate:
+  - name: Toghotili
+    source: alaska-dcra-native-place-names
+    confidence: medium
+    as_of: '2018-10-15'
+    locator: community row "Nenana"
+    note: Native place name for the community of Nenana in Lower Tanana (State of Alaska, from the Alaska
+      Native Language Center); it names the place, and the source does not state it is the tribal government's
+      self-designation.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4106
+states:
+- state: AK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nenana Native Association
+population:
+- count: 717
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: ALASKA row "Nenana", Enrollment column
+  note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
+    tribe to the Department of Housing and Urban Development); row name matched to the roster by the researcher.
+contacts:
+- kind: website
+  value: https://www.nenananativeassociation.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nenana Native Association
+- kind: physical-address
+  value: 806 G Street, Nenana, AK 99760
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nenana Native Association
+- kind: mailing-address
+  value: P.O. Box 369, Nenana, AK 99760
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nenana Native Association
+- kind: phone
+  value: (907) 832-5461
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nenana Native Association
+- kind: fax
+  value: (907) 832-1077
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nenana Native Association
+languages:
+- name: Lower Tanana
+  language_tag: taa
+  source: alaska-dcra-native-place-names
+  confidence: medium
+  as_of: '2018-10-15'
+  locator: community row "Nenana"
+  note: Language of the Native place name for the community (Nenana), as listed by the State of Alaska
+    from the Alaska Native Language Center place-names map; ISO 639-3 tag assigned by the researcher.
+federal_administration:
+  bureau_of_indian_affairs_region: Alaska
+  bureau_of_indian_affairs_agency: Fairbanks Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nenana Native Association
+related_entities:
+- name: Doyon Ltd.
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nenana Native Association
+  note: Regional corporation for the area, as listed in the directory.
+- name: Doyon, Limited
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Nenana"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Nenana), not
+    for the tribal government by name.
+- name: Tanana Chiefs Conference
+  relation: alaska-native-claims-settlement-act-regional-nonprofit
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Nenana"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Nenana), not
+    for the tribal government by name.
+- name: Tanana Chiefs Conference, Department of Health Services
+  relation: native-regional-health-care-provider
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Nenana"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Nenana), not
+    for the tribal government by name.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

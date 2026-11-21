@@ -1,0 +1,84 @@
+id: pechanga-band-of-indians
+entity_type: native-nation
+names:
+  official: Pechanga Band of Indians
+  former:
+  - name: Pechanga Band of Luiseno Mission Indians of the Pechanga Reservation, California
+    source: bia-recognized-entities-2026
+    confidence: high
+    as_of: '2026-01-30'
+    locator: 91 Fed. Reg. 4104
+    note: Listed in the notice as a previous name.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pechanga Band of Indians (previously listed as Pechanga Band of Luiseno Mission Indians of
+    the Pechanga Reservation, California)
+contacts:
+- kind: website
+  value: https://www.pechanga-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pechanga Band of Indians (previously listed as Pechanga Band of Luiseno Mission Indians of
+    the Pechanga Reservation, California)
+- kind: physical-address
+  value: 12705 Pechanga Road, Temecula, CA 92392
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pechanga Band of Indians (previously listed as Pechanga Band of Luiseno Mission Indians of
+    the Pechanga Reservation, California)
+- kind: mailing-address
+  value: P.O.Box 1477, Temecula, CA 92593
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pechanga Band of Indians (previously listed as Pechanga Band of Luiseno Mission Indians of
+    the Pechanga Reservation, California)
+- kind: phone
+  value: (951) 676-2768
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pechanga Band of Indians (previously listed as Pechanga Band of Luiseno Mission Indians of
+    the Pechanga Reservation, California)
+- kind: fax
+  value: (951) 695-1778
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pechanga Band of Indians (previously listed as Pechanga Band of Luiseno Mission Indians of
+    the Pechanga Reservation, California)
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Southern California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pechanga Band of Indians (previously listed as Pechanga Band of Luiseno Mission Indians of
+    the Pechanga Reservation, California)
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

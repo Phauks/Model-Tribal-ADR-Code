@@ -1,0 +1,146 @@
+id: native-village-of-false-pass
+entity_type: native-nation
+names:
+  official: Native Village of False Pass
+  alternate:
+  - name: IsanaX
+    source: alaska-dcra-native-place-names
+    confidence: medium
+    as_of: '2018-10-15'
+    locator: community row "False Pass"
+    note: Native place name for the community of False Pass in Unangan Aleut (State of Alaska, from the
+      Alaska Native Language Center); it names the place, and the source does not state it is the tribal
+      government's self-designation.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4106
+states:
+- state: AK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of False Pass
+population:
+- count: 96
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: ALASKA row "False Pass", Enrollment column
+  note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
+    tribe to the Department of Housing and Urban Development); row name matched to the roster by the researcher.
+contacts:
+- kind: website
+  value: https://www.falsepasstribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of False Pass
+- kind: physical-address
+  value: 180 Unimak Drive, False Pass, AK 99583
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of False Pass
+- kind: mailing-address
+  value: P.O. Box 29, False Pass, AK 99583
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of False Pass
+- kind: phone
+  value: (907) 548-2227
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of False Pass
+- kind: fax
+  value: (844) 206-9004
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of False Pass
+- kind: website
+  value: http://www.apiai.org/tribes/false-pass
+  label: Regional consortium website or page listed by the State of Alaska as the tribe's website
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: medium
+  as_of: '2026-04-02'
+  locator: 'record "Native Village of False Pass" (community: False Pass, object 62)'
+  note: Points to the regional nonprofit, not a site run by the tribe itself.
+- kind: email-general
+  value: fptribaloffice@gmail.com
+  label: Tribal office email listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: medium
+  as_of: '2026-04-02'
+  locator: 'record "Native Village of False Pass" (community: False Pass, object 62)'
+  note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
+    left out.
+languages:
+- name: Unangan (Aleut)
+  language_tag: ale
+  source: alaska-dcra-native-place-names
+  confidence: medium
+  as_of: '2018-10-15'
+  locator: community row "False Pass"
+  note: Language of the Native place name for the community (False Pass), as listed by the State of Alaska
+    from the Alaska Native Language Center place-names map; ISO 639-3 tag assigned by the researcher.
+federal_administration:
+  bureau_of_indian_affairs_region: Alaska
+  bureau_of_indian_affairs_agency: Alaska Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of False Pass
+related_entities:
+- name: The Aleut Corp.
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of False Pass
+  note: Regional corporation for the area, as listed in the directory.
+- name: Aleut Corporation
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "False Pass"
+  note: State of Alaska lists this affiliation for the community where the nation is based (False Pass),
+    not for the tribal government by name.
+- name: Aleutian Pribilof Islands Association, Incorporated
+  relation: alaska-native-claims-settlement-act-regional-nonprofit
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "False Pass"
+  note: State of Alaska lists this affiliation for the community where the nation is based (False Pass),
+    not for the tribal government by name.
+- name: Eastern Aleutian Tribes, Incorporated
+  relation: native-regional-health-care-provider
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "False Pass"
+  note: State of Alaska lists this affiliation for the community where the nation is based (False Pass),
+    not for the tribal government by name.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,148 @@
+id: kenaitze-indian-tribe
+entity_type: native-nation
+names:
+  official: Kenaitze Indian Tribe
+  alternate:
+  - name: Shk'ituk't
+    source: alaska-dcra-native-place-names
+    confidence: medium
+    as_of: '2018-10-15'
+    locator: community row "Kenai"
+    note: Native place name for the community of Kenai in Dena'ina (State of Alaska, from the Alaska Native
+      Language Center); it names the place, and the source does not state it is the tribal government's
+      self-designation.
+  self_designation:
+  - name: Kahtnuht’ana Dena’ina
+    language_tag: tfn
+    source: kenaitze-indian-tribe-website
+    confidence: high
+    as_of: '2026'
+    locator: page header under the English name
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: AK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kenaitze Indian Tribe
+population:
+- count: 1803
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: ALASKA row "Kenaitze", Enrollment column
+  note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
+    tribe to the Department of Housing and Urban Development); row name matched to the roster by the researcher.
+contacts:
+- kind: website
+  value: https://www.kenaitze.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kenaitze Indian Tribe
+- kind: physical-address
+  value: 150 N. Willow Street, Kenai, AK 99611
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kenaitze Indian Tribe
+- kind: mailing-address
+  value: P.O. Box 988, Kenai, AK 99611
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kenaitze Indian Tribe
+- kind: phone
+  value: (907) 335-7200
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kenaitze Indian Tribe
+- kind: fax
+  value: (907) 335-7239
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kenaitze Indian Tribe
+- kind: website
+  value: http://www.kenaize.org
+  label: Tribal government website (State of Alaska tribal contacts list)
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Kenaitze Indian Tribe" (community: Kenai, object 93)'
+- kind: mailing-address
+  value: PO Box 988, Kenai, AK 99611-0988
+  label: Tribal office address listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Kenaitze Indian Tribe" (community: Kenai, object 93)'
+languages:
+- name: Dena'ina
+  language_tag: tfn
+  source: alaska-dcra-native-place-names
+  confidence: medium
+  as_of: '2018-10-15'
+  locator: community row "Kenai"
+  note: Language of the Native place name for the community (Kenai), as listed by the State of Alaska
+    from the Alaska Native Language Center place-names map; ISO 639-3 tag assigned by the researcher.
+- name: Dena’ina
+  language_tag: tfn
+  source: kenaitze-indian-tribe-website
+  confidence: high
+  as_of: '2026'
+  locator: '"Our language" section; Dena’ina Language Institute'
+federal_administration:
+  bureau_of_indian_affairs_region: Alaska
+  bureau_of_indian_affairs_agency: Alaska Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kenaitze Indian Tribe
+related_entities:
+- name: Cook Inlet Region Inc.
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Kenaitze Indian Tribe
+  note: Regional corporation for the area, as listed in the directory.
+- name: Cook Inlet Region, Incorporated
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Kenai"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Kenai), not
+    for the tribal government by name.
+- name: Cook Inlet Tribal Council, Incorporated
+  relation: alaska-native-claims-settlement-act-regional-nonprofit
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Kenai"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Kenai), not
+    for the tribal government by name.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

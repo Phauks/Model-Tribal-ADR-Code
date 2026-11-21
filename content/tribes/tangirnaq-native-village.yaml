@@ -1,0 +1,141 @@
+id: tangirnaq-native-village
+entity_type: native-nation
+names:
+  official: Tangirnaq Native Village
+  alternate:
+  - name: Lesnoi Village
+    source: alaska-dcra-federally-recognized-tribes-contacts
+    confidence: medium
+    as_of: '2026-04-02'
+    locator: 'record "Tangirnaq Native Village" (community: Woody Island, object 228)'
+    note: Listed in the "Also Known As" field of the State of Alaska tribal contacts list.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4106
+states:
+- state: AK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tangirnaq Native Village
+population:
+- count: 432
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: ALASKA row "Tangirnaq (Lesnoi)", Enrollment column
+  note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
+    tribe to the Department of Housing and Urban Development); row name matched to the roster by the researcher.
+contacts:
+- kind: website
+  value: https://www.woodyisland.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tangirnaq Native Village
+- kind: physical-address
+  value: 218 Center Avenue, Suite C, Kodiak, AK 99615
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tangirnaq Native Village
+- kind: mailing-address
+  value: 218 Center Avenue, Suite C, Kodiak, AK 99615
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tangirnaq Native Village
+- kind: phone
+  value: (907) 290-8826
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tangirnaq Native Village
+- kind: fax
+  value: (907) 486-4829
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tangirnaq Native Village
+- kind: mailing-address
+  value: 3449 East Rezanof Drive, Kodiak, AK 99615
+  label: Tribal office address listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Tangirnaq Native Village" (community: Woody Island, object 228)'
+- kind: phone
+  value: +1 (907) 486-9872
+  label: Tribal office main phone
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Tangirnaq Native Village" (community: Woody Island, object 228)'
+- kind: email-general
+  value: info@woodyisland.com
+  label: Tribal office email listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: medium
+  as_of: '2026-04-02'
+  locator: 'record "Tangirnaq Native Village" (community: Woody Island, object 228)'
+  note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
+    left out.
+federal_administration:
+  bureau_of_indian_affairs_region: Alaska
+  bureau_of_indian_affairs_agency: Alaska Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tangirnaq Native Village
+related_entities:
+- name: Koniag Inc.
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Tangirnaq Native Village
+  note: Regional corporation for the area, as listed in the directory.
+- name: Koniag, Incorporated
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Woody Island"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Woody Island),
+    not for the tribal government by name.
+- name: Kodiak Area Native Association
+  relation: alaska-native-claims-settlement-act-regional-nonprofit
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Woody Island"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Woody Island),
+    not for the tribal government by name.
+- name: Kodiak Area Native Association
+  relation: native-regional-health-care-provider
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Woody Island"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Woody Island),
+    not for the tribal government by name.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,76 @@
+id: colorado-river-indian-tribes-of-the-colorado-river-indian-reservation
+entity_type: native-nation
+names:
+  official: Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: CA
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+  note: State named in the listed name.
+- state: AZ
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California
+contacts:
+- kind: website
+  value: https://www.crit-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California
+- kind: physical-address
+  value: 26600 Mohave Road, Parker, AZ 85344
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California
+- kind: mailing-address
+  value: 26600 Mohave Road, Parker, AZ 85344
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California
+- kind: phone
+  value: (928) 669-9211
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California
+- kind: fax
+  value: (928) 669-1216
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California
+federal_administration:
+  bureau_of_indian_affairs_region: Western
+  bureau_of_indian_affairs_agency: Colorado River Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Colorado River Indian Tribes of the Colorado River Indian Reservation, Arizona and California
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

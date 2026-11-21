@@ -1,0 +1,74 @@
+id: lumbee-tribe-of-north-carolina
+entity_type: native-nation
+names:
+  official: Lumbee Tribe of North Carolina
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a); National Defense Authorization Act for Fiscal
+    Year 2026, Pub. L. No. 119-60, § 8803
+  since: '2025-12-18'
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+  note: The notice states that the Act sets conditions on eligibility for federal services, including
+    verification of the roll and a delay in services until the third fiscal year after enactment.
+states:
+- state: NC
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lumbee Tribe of North Carolina
+contacts:
+- kind: website
+  value: https://www.lumbeetribe.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lumbee Tribe of North Carolina
+- kind: physical-address
+  value: 6984 NC Highway 711, Pembroke, NC 28372
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lumbee Tribe of North Carolina
+- kind: mailing-address
+  value: 6984 NC Highway 711, Pembroke, NC 28372
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lumbee Tribe of North Carolina
+- kind: phone
+  value: (910) 521-7861
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lumbee Tribe of North Carolina
+- kind: fax
+  value: (910) 521-2278
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lumbee Tribe of North Carolina
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern
+  bureau_of_indian_affairs_agency: Eastern Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Lumbee Tribe of North Carolina
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

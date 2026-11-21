@@ -1,0 +1,142 @@
+id: native-village-of-chenega
+entity_type: native-nation
+names:
+  official: Native Village of Chenega
+  alternate:
+  - name: Chanega
+    source: alaska-dcra-federally-recognized-tribes-contacts
+    confidence: medium
+    as_of: '2026-04-02'
+    locator: 'record "Native Village of Chenega" (community: Chenega, object 30)'
+    note: Listed in the "Also Known As" field of the State of Alaska tribal contacts list.
+  - name: Caniqaq
+    source: alaska-dcra-native-place-names
+    confidence: medium
+    as_of: '2018-10-15'
+    locator: community row "Chenega"
+    note: Native place name for the community of Chenega in Sugt'stun (State of Alaska, from the Alaska
+      Native Language Center); it names the place, and the source does not state it is the tribal government's
+      self-designation.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4106
+states:
+- state: AK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of Chenega
+population:
+- count: 65
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: ALASKA row "Chenega (Chanega)", Enrollment column
+  note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
+    tribe to the Department of Housing and Urban Development); row name matched to the roster by the researcher.
+contacts:
+- kind: website
+  value: https://www.chenega.com/about/the-chenega-story/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of Chenega
+- kind: physical-address
+  value: 3000 C Street, Suite 301, Anchorage, AK 99503
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of Chenega
+- kind: mailing-address
+  value: 3000 C St. Ste. 301, Anchorage, AK 99503
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of Chenega
+- kind: phone
+  value: 907-600-9036
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of Chenega
+- kind: mailing-address
+  value: PO Box 8079, Chenega Bay, AK 99574-8079
+  label: Tribal office address listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Native Village of Chenega" (community: Chenega, object 30)'
+- kind: phone
+  value: +1 (907) 569-5688
+  label: Tribal office main phone
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Native Village of Chenega" (community: Chenega, object 30)'
+languages:
+- name: Sugt'stun (Alutiiq)
+  language_tag: ems
+  source: alaska-dcra-native-place-names
+  confidence: medium
+  as_of: '2018-10-15'
+  locator: community row "Chenega"
+  note: Language of the Native place name for the community (Chenega), as listed by the State of Alaska
+    from the Alaska Native Language Center place-names map; ISO 639-3 tag assigned by the researcher.
+federal_administration:
+  bureau_of_indian_affairs_region: Alaska
+  bureau_of_indian_affairs_agency: Alaska Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of Chenega
+related_entities:
+- name: Chugach Alaska Corp.
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Native Village of Chenega
+  note: Regional corporation for the area, as listed in the directory.
+- name: Chugach Alaska Corporation
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Chenega"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Chenega),
+    not for the tribal government by name.
+- name: Chugachmiut
+  relation: alaska-native-claims-settlement-act-regional-nonprofit
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Chenega"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Chenega),
+    not for the tribal government by name.
+- name: Chugachmiut
+  relation: native-regional-health-care-provider
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Chenega"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Chenega),
+    not for the tribal government by name.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

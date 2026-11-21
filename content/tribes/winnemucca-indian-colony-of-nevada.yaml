@@ -1,0 +1,70 @@
+id: winnemucca-indian-colony-of-nevada
+entity_type: native-nation
+names:
+  official: Winnemucca Indian Colony of Nevada
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: NV
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Winnemucca Indian Colony of Nevada
+contacts:
+- kind: website
+  value: https://winnemuccaindiancolony.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Winnemucca Indian Colony of Nevada
+- kind: physical-address
+  value: 433 West Plumb Ln, Reno, NV 89509
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Winnemucca Indian Colony of Nevada
+- kind: mailing-address
+  value: 433 West Plumb Lane, Reno, NV 89509
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Winnemucca Indian Colony of Nevada
+- kind: phone
+  value: (775) 329-5800
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Winnemucca Indian Colony of Nevada
+- kind: fax
+  value: Not Available
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Winnemucca Indian Colony of Nevada
+federal_administration:
+  bureau_of_indian_affairs_region: Western
+  bureau_of_indian_affairs_agency: Western Nevada Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Winnemucca Indian Colony of Nevada
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

@@ -1,0 +1,70 @@
+id: sac-and-fox-nation
+entity_type: native-nation
+names:
+  official: Sac & Fox Nation, Oklahoma
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: OK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sac & Fox Nation, Oklahoma
+contacts:
+- kind: website
+  value: https://www.sacandfoxnation-nsn.gov/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sac & Fox Nation, Oklahoma
+- kind: physical-address
+  value: 920963 S. Hwy 99, Stroud, OK 74079
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sac & Fox Nation, Oklahoma
+- kind: mailing-address
+  value: 920883 S. Highway 99 Building A, Stroud, OK 74079
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sac & Fox Nation, Oklahoma
+- kind: phone
+  value: (918) 968-3526
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sac & Fox Nation, Oklahoma
+- kind: fax
+  value: (918) 968-1142
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sac & Fox Nation, Oklahoma
+federal_administration:
+  bureau_of_indian_affairs_region: Southern Plains
+  bureau_of_indian_affairs_agency: Southern Plains Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Sac & Fox Nation, Oklahoma
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

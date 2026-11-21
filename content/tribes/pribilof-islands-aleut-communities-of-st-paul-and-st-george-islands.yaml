@@ -1,0 +1,99 @@
+id: pribilof-islands-aleut-communities-of-st-paul-and-st-george-islands
+entity_type: native-nation
+names:
+  official: Pribilof Islands Aleut Communities of St. Paul & St. George Islands
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4106
+  note: 'The notice adds in parentheses: St. George Island and Saint Paul Island.'
+states:
+- state: AK
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4106
+  note: Listed among Native entities within the State of Alaska.
+contacts:
+- kind: mailing-address
+  value: PO Box 940, St. George Island, AK 99591-0940
+  label: 'Saint George Island tribal office: Tribal office address listed by the State of Alaska'
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Saint George Island" (community: Saint George Island, object 176)'
+- kind: phone
+  value: +1 (907) 859-2205
+  label: 'Saint George Island tribal office: Tribal office main phone'
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Saint George Island" (community: Saint George Island, object 176)'
+- kind: email-general
+  value: stgtribe@gci.net
+  label: 'Saint George Island tribal office: Tribal office email listed by the State of Alaska'
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: medium
+  as_of: '2026-04-02'
+  locator: 'record "Saint George Island" (community: Saint George Island, object 176)'
+  note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
+    left out.
+- kind: mailing-address
+  value: PO Box 86, St. Paul Island, AK 99660
+  label: 'St. Paul Island tribal office: Tribal office address listed by the State of Alaska'
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Saint Paul Island" (community: St. Paul Island, object 195)'
+- kind: phone
+  value: +1 (907) 546-3200
+  label: 'St. Paul Island tribal office: Tribal office main phone'
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Saint Paul Island" (community: St. Paul Island, object 195)'
+federal_administration:
+  bureau_of_indian_affairs_region: Alaska
+  bureau_of_indian_affairs_agency: Alaska Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pribilof Islands Aleut Communities of St. Paul & St. George Islands (St. George Island and
+    Saint Paul Island)
+related_entities:
+- name: Aleut Corporation
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Saint George"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Saint George),
+    not for the tribal government by name.
+- name: Aleutian Pribilof Islands Association, Incorporated
+  relation: alaska-native-claims-settlement-act-regional-nonprofit
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Saint George"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Saint George),
+    not for the tribal government by name.
+- name: Aleutian Pribilof Islands Association, Incorporated
+  relation: native-regional-health-care-provider
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Saint George"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Saint George),
+    not for the tribal government by name.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

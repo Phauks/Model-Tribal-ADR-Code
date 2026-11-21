@@ -1,0 +1,145 @@
+id: nondalton-tribe
+entity_type: native-nation
+names:
+  official: Nondalton Tribe
+  former:
+  - name: Nondalton Village
+    source: bia-recognized-entities-2026
+    confidence: high
+    as_of: '2026-01-30'
+    locator: 91 Fed. Reg. 4106
+    note: Listed in the notice as a previous name.
+  alternate:
+  - name: Nundaltin
+    source: alaska-dcra-native-place-names
+    confidence: medium
+    as_of: '2018-10-15'
+    locator: community row "Nondalton"
+    note: Native place name for the community of Nondalton in Dena'ina (State of Alaska, from the Alaska
+      Native Language Center); it names the place, and the source does not state it is the tribal government's
+      self-designation.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4106
+states:
+- state: AK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nondalton Tribe (previously listed as Nondalton Village)
+population:
+- count: 445
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: ALASKA row "Nondalton", Enrollment column
+  note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
+    tribe to the Department of Housing and Urban Development); row name matched to the roster by the researcher.
+contacts:
+- kind: website
+  value: https://lakeandpen.com/nondalton
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nondalton Tribe (previously listed as Nondalton Village)
+- kind: physical-address
+  value: 49 Main Street, Nondalton, AK 99640
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nondalton Tribe (previously listed as Nondalton Village)
+- kind: mailing-address
+  value: P.O. Box 49, Nondalton, AK 99640
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nondalton Tribe (previously listed as Nondalton Village)
+- kind: phone
+  value: (907) 294-2257
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nondalton Tribe (previously listed as Nondalton Village)
+- kind: fax
+  value: (907) 294-2271
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nondalton Tribe (previously listed as Nondalton Village)
+- kind: email-general
+  value: nondaltontribe@yahoo.com
+  label: Tribal office email listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: medium
+  as_of: '2026-04-02'
+  locator: 'record "Nondalton Village" (community: Nondalton, object 145)'
+  note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
+    left out.
+languages:
+- name: Dena'ina
+  language_tag: tfn
+  source: alaska-dcra-native-place-names
+  confidence: medium
+  as_of: '2018-10-15'
+  locator: community row "Nondalton"
+  note: Language of the Native place name for the community (Nondalton), as listed by the State of Alaska
+    from the Alaska Native Language Center place-names map; ISO 639-3 tag assigned by the researcher.
+federal_administration:
+  bureau_of_indian_affairs_region: Alaska
+  bureau_of_indian_affairs_agency: Alaska Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nondalton Tribe (previously listed as Nondalton Village)
+related_entities:
+- name: Bristol Bay Native Corp.
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Nondalton Tribe (previously listed as Nondalton Village)
+  note: Regional corporation for the area, as listed in the directory.
+- name: Bristol Bay Native Corporation
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Nondalton"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Nondalton),
+    not for the tribal government by name.
+- name: Bristol Bay Native Association, Incorporated
+  relation: alaska-native-claims-settlement-act-regional-nonprofit
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Nondalton"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Nondalton),
+    not for the tribal government by name.
+- name: Bristol Bay Area Health Corporation
+  relation: native-regional-health-care-provider
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Nondalton"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Nondalton),
+    not for the tribal government by name.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

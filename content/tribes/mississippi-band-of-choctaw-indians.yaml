@@ -1,0 +1,70 @@
+id: mississippi-band-of-choctaw-indians
+entity_type: native-nation
+names:
+  official: Mississippi Band of Choctaw Indians
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: MS
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mississippi Band of Choctaw Indians
+contacts:
+- kind: website
+  value: https://www.choctaw.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mississippi Band of Choctaw Indians
+- kind: physical-address
+  value: 101 Industrial Road, Choctaw, MS 39350
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mississippi Band of Choctaw Indians
+- kind: mailing-address
+  value: P.O. Box 6010 Choctaw Branch, Choctaw, MS 39350
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mississippi Band of Choctaw Indians
+- kind: phone
+  value: (601) 656-5251
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mississippi Band of Choctaw Indians
+- kind: fax
+  value: (601) 650-1606
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mississippi Band of Choctaw Indians
+federal_administration:
+  bureau_of_indian_affairs_region: Eastern
+  bureau_of_indian_affairs_agency: Choctaw Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Mississippi Band of Choctaw Indians
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

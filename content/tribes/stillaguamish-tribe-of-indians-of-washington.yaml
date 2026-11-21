@@ -1,0 +1,70 @@
+id: stillaguamish-tribe-of-indians-of-washington
+entity_type: native-nation
+names:
+  official: Stillaguamish Tribe of Indians of Washington
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: WA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Stillaguamish Tribe of Indians of Washington
+contacts:
+- kind: website
+  value: https://www.stillaguamish.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Stillaguamish Tribe of Indians of Washington
+- kind: physical-address
+  value: 3322 236th Street NE, Arlington, WA 98223
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Stillaguamish Tribe of Indians of Washington
+- kind: mailing-address
+  value: P.O. Box 277, Arlington, WA 98223
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Stillaguamish Tribe of Indians of Washington
+- kind: phone
+  value: (360) 652-7362
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Stillaguamish Tribe of Indians of Washington
+- kind: fax
+  value: (360) 659-3113
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Stillaguamish Tribe of Indians of Washington
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Puget Sound Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Stillaguamish Tribe of Indians of Washington
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

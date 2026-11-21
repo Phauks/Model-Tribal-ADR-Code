@@ -1,0 +1,142 @@
+id: metlakatla-indian-community-annette-island-reserve
+entity_type: native-nation
+names:
+  official: Metlakatla Indian Community, Annette Island Reserve
+  alternate:
+  - name: Maxłakxaała
+    source: alaska-dcra-native-place-names
+    confidence: medium
+    as_of: '2018-10-15'
+    locator: community row "Metlakatla"
+    note: Native place name for the community of Metlakatla in Tsimshian (State of Alaska, from the Alaska
+      Native Language Center); it names the place, and the source does not state it is the tribal government's
+      self-designation.
+  - name: Maxłaxaała
+    source: metlakatla-indian-community-website
+    confidence: medium
+    as_of: '2026'
+    locator: 'home page: "Metlakatla" or Maxłaxaała'
+    note: Name of the community given on the site; not explicitly labeled as the tribal government's self-designation.
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4105
+states:
+- state: AK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Metlakatla Indian Community, Annette Island Reserve
+population:
+- count: 2292
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: ALASKA row "Metlakatla (Annette Island)", Enrollment column
+  note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
+    tribe to the Department of Housing and Urban Development); row name matched to the roster by the researcher.
+contacts:
+- kind: website
+  value: https://www.metlakatla.com/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Metlakatla Indian Community, Annette Island Reserve
+- kind: physical-address
+  value: 8th & Milton, Metlakatla, AK 99926
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Metlakatla Indian Community, Annette Island Reserve
+- kind: mailing-address
+  value: P.O. Box 8, Metlakatla, AK 99926
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Metlakatla Indian Community, Annette Island Reserve
+- kind: phone
+  value: (907) 886-4441
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Metlakatla Indian Community, Annette Island Reserve
+- kind: fax
+  value: (907) 886-3338
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Metlakatla Indian Community, Annette Island Reserve
+- kind: mailing-address
+  value: PO Box 8, Metlakatla, AK 99926-0008
+  label: Tribal office address listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Metlakatla Indian Community Annette Island Reserve" (community: Metlakatla, object
+    126)'
+languages:
+- name: Sm’algyax (Tsimshian)
+  language_tag: tsi
+  source: alaska-dcra-native-place-names
+  confidence: medium
+  as_of: '2018-10-15'
+  locator: community row "Metlakatla"
+  note: Language of the Native place name for the community (Metlakatla), as listed by the State of Alaska
+    from the Alaska Native Language Center place-names map; ISO 639-3 tag assigned by the researcher.
+- name: Sm’algyax
+  language_tag: tsi
+  source: metlakatla-indian-community-website
+  confidence: high
+  as_of: '2026'
+  locator: home page (Hyaak Foundation)
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Metlakatla Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Metlakatla Indian Community, Annette Island Reserve
+related_entities:
+- name: Sealaska Corporation
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Metlakatla"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Metlakatla),
+    not for the tribal government by name.
+- name: Central Council of the Tlingit and Haida Indian Tribes of Alaska
+  relation: alaska-native-claims-settlement-act-regional-nonprofit
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Metlakatla"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Metlakatla),
+    not for the tribal government by name.
+- name: Metlakatla Indian Community
+  relation: native-regional-health-care-provider
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Metlakatla"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Metlakatla),
+    not for the tribal government by name.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

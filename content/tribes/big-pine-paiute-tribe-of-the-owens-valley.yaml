@@ -1,0 +1,70 @@
+id: big-pine-paiute-tribe-of-the-owens-valley
+entity_type: native-nation
+names:
+  official: Big Pine Paiute Tribe of the Owens Valley
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: CA
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Pine Paiute Tribe of the Owens Valley
+contacts:
+- kind: website
+  value: https://bigpinepaiute.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Pine Paiute Tribe of the Owens Valley
+- kind: physical-address
+  value: 825 South Main Street, Big Pine, CA 93513
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Pine Paiute Tribe of the Owens Valley
+- kind: mailing-address
+  value: P.O. Box 700, Big Pine, CA 93513
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Pine Paiute Tribe of the Owens Valley
+- kind: phone
+  value: (760) 938-2003
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Pine Paiute Tribe of the Owens Valley
+- kind: fax
+  value: (760) 938-2942
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Pine Paiute Tribe of the Owens Valley
+federal_administration:
+  bureau_of_indian_affairs_region: Pacific
+  bureau_of_indian_affairs_agency: Central California Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Big Pine Paiute Tribe of the Owens Valley
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

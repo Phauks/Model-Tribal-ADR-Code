@@ -1,0 +1,70 @@
+id: reno-sparks-indian-colony
+entity_type: native-nation
+names:
+  official: Reno-Sparks Indian Colony, Nevada
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4104
+states:
+- state: NV
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Reno-Sparks Indian Colony, Nevada
+contacts:
+- kind: website
+  value: https://www.rsic.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Reno-Sparks Indian Colony, Nevada
+- kind: physical-address
+  value: 34 Reservation Road, Reno, NV 89502
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Reno-Sparks Indian Colony, Nevada
+- kind: mailing-address
+  value: 34 Reservation Road, Reno, NV 89502
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Reno-Sparks Indian Colony, Nevada
+- kind: phone
+  value: (775) 329-2936
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Reno-Sparks Indian Colony, Nevada
+- kind: fax
+  value: (775) 329-8710
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Reno-Sparks Indian Colony, Nevada
+federal_administration:
+  bureau_of_indian_affairs_region: Western
+  bureau_of_indian_affairs_agency: Western Nevada Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Reno-Sparks Indian Colony, Nevada
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

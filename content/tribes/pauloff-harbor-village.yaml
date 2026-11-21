@@ -1,0 +1,120 @@
+id: pauloff-harbor-village
+entity_type: native-nation
+names:
+  official: Pauloff Harbor Village
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4106
+states:
+- state: AK
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pauloff Harbor Village
+population:
+- count: 51
+  kind: citizens
+  source: hud-indian-housing-block-grant-fy2025-final-allocation
+  confidence: medium
+  as_of: '2025'
+  locator: ALASKA row "Pauloff Harbor Village", Enrollment column
+  note: Tribal enrollment figure used in the Indian Housing Block Grant formula (reported by or for the
+    tribe to the Department of Housing and Urban Development); row name matched to the roster by the researcher.
+contacts:
+- kind: physical-address
+  value: 1 Main Street Room 7 & 8, Sand Point, AK 99661
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pauloff Harbor Village
+- kind: mailing-address
+  value: P.O. Box 97, Sand Point, AK 99661
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pauloff Harbor Village
+- kind: phone
+  value: (907) 383-6075
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pauloff Harbor Village
+- kind: fax
+  value: (907) 383-6094
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pauloff Harbor Village
+- kind: website
+  value: http://www.pauloffharbortribe.org
+  label: Tribal government website (State of Alaska tribal contacts list)
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: high
+  as_of: '2026-04-02'
+  locator: 'record "Pauloff Harbor Village" (community: Pauloff Harbor, object 157)'
+- kind: email-general
+  value: pauloffadmn@outlook.com
+  label: Tribal office email listed by the State of Alaska
+  source: alaska-dcra-federally-recognized-tribes-contacts
+  confidence: medium
+  as_of: '2026-04-02'
+  locator: 'record "Pauloff Harbor Village" (community: Pauloff Harbor, object 157)'
+  note: Office mailbox from the state contacts list; personal-looking addresses in the same record were
+    left out.
+federal_administration:
+  bureau_of_indian_affairs_region: Alaska
+  bureau_of_indian_affairs_agency: Alaska Regional Office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pauloff Harbor Village
+related_entities:
+- name: The Aleut Corp.
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Pauloff Harbor Village
+  note: Regional corporation for the area, as listed in the directory.
+- name: Aleut Corporation
+  relation: alaska-native-claims-settlement-act-regional-corporation
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Pauloff Harbor"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Pauloff Harbor),
+    not for the tribal government by name.
+- name: Aleutian Pribilof Islands Association, Incorporated
+  relation: alaska-native-claims-settlement-act-regional-nonprofit
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Pauloff Harbor"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Pauloff Harbor),
+    not for the tribal government by name.
+- name: Aleutian Pribilof Islands Association, Incorporated
+  relation: native-regional-health-care-provider
+  source: alaska-dcra-community-regions-overview
+  confidence: high
+  as_of: '2026'
+  locator: community row "Pauloff Harbor"
+  note: State of Alaska lists this affiliation for the community where the nation is based (Pauloff Harbor),
+    not for the tribal government by name.
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

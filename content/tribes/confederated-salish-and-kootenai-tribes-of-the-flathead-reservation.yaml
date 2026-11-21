@@ -1,0 +1,70 @@
+id: confederated-salish-and-kootenai-tribes-of-the-flathead-reservation
+entity_type: native-nation
+names:
+  official: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+  official_source: bia-recognized-entities-2026
+recognition:
+- type: federal
+  legal_basis: Federally Recognized Indian Tribe List Act of 1994, Pub. L. No. 103-454, § 104, 108 Stat.
+    4791, 4792 (25 U.S.C. § 5131); 25 C.F.R. § 83.6(a)
+  source: bia-recognized-entities-2026
+  confidence: high
+  as_of: '2026-01-30'
+  locator: 91 Fed. Reg. 4103
+states:
+- state: MT
+  presence: government-office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+contacts:
+- kind: website
+  value: https://cskt.org/
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+- kind: physical-address
+  value: 42487 Complex Boulevard, Pablo, MT 59855
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+- kind: mailing-address
+  value: P.O. Box 278, Pablo, MT 59855
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+- kind: phone
+  value: (406) 675-2700
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+- kind: fax
+  value: (406) 675-2806
+  label: Tribal government office
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+federal_administration:
+  bureau_of_indian_affairs_region: Northwest
+  bureau_of_indian_affairs_agency: Flathead Agency
+  source: bia-tribal-leaders-directory-2026
+  confidence: high
+  as_of: '2026-11-20'
+  locator: Confederated Salish and Kootenai Tribes of the Flathead Reservation
+review:
+  status: drafted-from-public-sources
+  last_verified: '2026-11-21'
+  note: Drafted from public sources on 2026-11-21 and not yet sent to the nation for review.
+sensitivity:
+  tribal_review_required: false
+  restricted: false

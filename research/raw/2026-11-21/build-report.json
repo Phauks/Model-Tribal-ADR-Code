@@ -1,0 +1,31 @@
+{
+ "raw_files": [
+  {
+   "file": "federal-list-and-directory.json",
+   "session": "2026-11-21-federal-list-import",
+   "facts": 5071,
+   "sources": 0
+  },
+  {
+   "file": "nations-alaska.json",
+   "session": "2026-11-21-nations-alaska",
+   "facts": 2047,
+   "sources": 11
+  }
+ ],
+ "dropped_facts": [],
+ "unknown_nations": {},
+ "renamed_sources": [],
+ "merged_entities": [],
+ "skipped_profiles": [],
+ "invalid_sources": [],
+ "missing_sources": {},
+ "counts": {
+  "profiles_written": 575,
+  "profiles_skipped": 0,
+  "new_sources": 0,
+  "facts_read": 7118,
+  "facts_dropped": 0,
+  "sources_missing": 0
+ }
+}
