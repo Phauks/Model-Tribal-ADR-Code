@@ -274,212 +274,184 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (https://miamination.com/node/19) returned HTTP
     404, so it is not recorded.'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Admissibility of Information in Examination or Treatment
+  database_listings:
+  - title: Admissibility of Information in Examination or Treatment
     citation: Miami Tribe of Oklahoma Criminal Procedure Code Section 435
     link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/admissibility-of-information-in-examination-or-treatment/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Alternative Types of Hearings for Juvenile Cases
+  - title: Alternative Types of Hearings for Juvenile Cases
     citation: Miami Tribe of Oklahoma Juvenile Code Section 106
     link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/alternative-types-of-hearings-for-juvenile-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice; Restorative practice.'
-  - kind: other
-    title: Court Discretionary Dismissal in Juvenile Court
+  - title: Court Discretionary Dismissal in Juvenile Court
     citation: Miami Tribe of Oklahoma Juvenile Code Section 705
     link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/court-discretionary-dismissal-in-juvenile-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Detention and its Limitations in Juvenile Cases
+  - title: Detention and its Limitations in Juvenile Cases
     citation: Miami Tribe of Oklahoma Juvenile Code Section 404; Section 405; and, Section 907
     link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/detention-and-its-limitations-in-juvenile-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Diversion Agreements and Conditions in Juvenile Court
+  - title: Diversion Agreements and Conditions in Juvenile Court
     citation: Miami Tribe of Oklahoma Juvenile Code Section 508
     link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/diversion-agreements-and-conditions-in-juvenile-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Diversion in Youth Cases
+  - title: Diversion in Youth Cases
     citation: Miami Tribe of Oklahoma Child Welfare Code Section 21 & Section 26
     link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/diversion-in-youth-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative justice; Restorative practice.'
-  - kind: other
-    title: Informal Conference in Juvenile Court
+  - title: Informal Conference in Juvenile Court
     citation: Miami Tribe of Oklahoma Juvenile Code Section 501 & Section 503 & Section 504 & Section
       505
     link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-conference-in-juvenile-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Informal Dispositional Hearing for Neglected Children Cases
+  - title: Informal Dispositional Hearing for Neglected Children Cases
     citation: Miami Tribe of Oklahoma Child Welfare Code Section 28
     link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-dispositional-hearing-for-neglected-children-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Mandated Facility for Treatment for Intoxication Cases
+  - title: Mandated Facility for Treatment for Intoxication Cases
     citation: Miami Tribe of Oklahoma Criminal Offense Code Section 536
     link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/mandated-facility-for-treatment-for-intoxication-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Mandatory Treatment Plan for every Child Welfare Case
+  - title: Mandatory Treatment Plan for every Child Welfare Case
     citation: Miami Tribe of Oklahoma Child Welfare Code Section 31 and Section 30.
     link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/mandatory-treatment-plan-for-every-child-welfare-case/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative justice; Restorative practice.'
-  - kind: other
-    title: Predisposition and Dispositonal Reports for Juvenile Deliquency Cases
+  - title: Predisposition and Dispositonal Reports for Juvenile Deliquency Cases
     citation: Miami Tribe of Oklahoma Juvenile Code Section 901 & Section 904
     link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/predisposition-and-dispositonal-reports-for-juvenile-deliquency-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Pretrial Diversion in Criminal Court
+  - title: Pretrial Diversion in Criminal Court
     citation: Miami Tribe of Oklahoma Criminal Procedure Code Section 424 & 425
     link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/pretrial-diversion-in-criminal-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Purpose and Goals of Juvenile Court
+  - title: Purpose and Goals of Juvenile Court
     citation: Miami Tribe of Oklahoma Juvenile Code Section 2 & Section 10
     link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/purpose-and-goals-of-juvenile-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice; Restorative practice.'
-  - kind: other
-    title: Rehabilitative Approach of the Court when Sentencing
+  - title: Rehabilitative Approach of the Court when Sentencing
     citation: Miami Tribe of Oklahoma Criminal Offense Code Section 8
     link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/rehabilitative-approach-of-the-court-when-sentencing/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Specific Requirments with an Order of Protection for Rehabilitation
+  - title: Specific Requirments with an Order of Protection for Rehabilitation
     citation: Miami Tribe of Oklahoma Child Welfare Code Section 33
     link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice; Restorative practice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/specific-requirments-with-an-order-of-protection-for-rehabilitation/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
-      form of practice: Restorative justice; Restorative practice.'
-  - kind: other
-    title: Supervised Work Programs for Child in Need of Supervision
+  - title: Supervised Work Programs for Child in Need of Supervision
     citation: Miami Tribe of Oklahoma Child Welfare Code Section 36
     link: https://miamination.com/miami-tribe-of-oklahoma-court/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/supervised-work-programs-for-child-in-need-of-supervision/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
 gaming:
   compacts:
   - state: OK

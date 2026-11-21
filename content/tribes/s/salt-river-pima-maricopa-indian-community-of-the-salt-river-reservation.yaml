@@ -343,45 +343,6 @@ dispute_resolution:
     locator: https://ncorj.org/tribal-law/family-group-conferencing-peacemaking-juvenile-justice/
   provisions:
   - kind: other
-    title: Diversion/Informal Adjustment – Juvenile Offenses
-    citation: STBC 11-130
-    link: https://srpmic-nsn.gov/government/ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-informal-adjustment-juvenile-offenses/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-Adjudication Diversion. Database form of practice:
-      Alternative to Prosecution; Deferred Prosecution; Diversion; Informal hearing.'
-  - kind: peacemaking
-    title: Family Group Conferencing/Peacemaking – Juvenile Justice
-    citation: STBC 11-31
-    link: https://srpmic-nsn.gov/government/ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/family-group-conferencing-peacemaking-juvenile-justice/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: . Database form of practice: Alternative; Circle;
-      Family conferencing; Peacemaking.'
-  - kind: other
-    title: Probation with Rehabilitative Conditions
-    citation: STBC 8-6(b)
-    link: https://srpmic-nsn.gov/government/ordinances/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/probation-with-rehabilitative-conditions/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-Conviction Sentencing. Database form of practice: Counseling;
-      Probation; Rehabilitation.'
-  - kind: other
     title: DIVISION 2. DISPUTE RESOLUTION; APPEAL AND SETTLEMENT
     citation: DIVISION 2. DISPUTE RESOLUTION; APPEAL AND SETTLEMENT
     link: https://www.narf.org/nill/codes/salt-river/index.html
@@ -401,6 +362,39 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: April 2019); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Diversion/Informal Adjustment – Juvenile Offenses
+    citation: STBC 11-130
+    link: https://srpmic-nsn.gov/government/ordinances/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-Adjudication Diversion
+    form_of_practice: Alternative to Prosecution; Deferred Prosecution; Diversion; Informal hearing
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-informal-adjustment-juvenile-offenses/
+  - title: Family Group Conferencing/Peacemaking – Juvenile Justice
+    citation: STBC 11-31
+    link: https://srpmic-nsn.gov/government/ordinances/
+    practice_area: Tribal Juvenile/Youth Justice
+    form_of_practice: Alternative; Circle; Family conferencing; Peacemaking
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-group-conferencing-peacemaking-juvenile-justice/
+  - title: Probation with Rehabilitative Conditions
+    citation: STBC 8-6(b)
+    link: https://srpmic-nsn.gov/government/ordinances/
+    practice_area: Tribal Justice
+    phase: Post-Conviction Sentencing
+    form_of_practice: Counseling; Probation; Rehabilitation
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/probation-with-rehabilitative-conditions/
 gaming:
   compacts:
   - state: AZ

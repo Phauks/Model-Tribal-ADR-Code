@@ -142,33 +142,29 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Community Service as Alternative to Incarceration
+  database_listings:
+  - title: Community Service as Alternative to Incarceration
     citation: Shawnee Tribe Code § 16.04.160(A)(3)
     link: https://shawnee.municipalcodeonline.com/book?type=Laws#name=CONSTITUTION_(Rev_2022)
+    practice_area: Tribal Criminal Justice
+    phase: Post-Conviction Sentencing
+    form_of_practice: Alternative to incarceration; Community service
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/community-service-as-alternative-to-incarceration/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Criminal Justice. Database phase: Post-Conviction Sentencing. Database form of practice:
-      Alternative to incarceration; Community service.'
-  - kind: other
-    title: Restitution to Victim as Alternative to Punishment
+  - title: Restitution to Victim as Alternative to Punishment
     citation: Shawnee Tribe Code § 16.04.160(B)
     link: https://shawnee.municipalcodeonline.com/book?type=Laws#name=CONSTITUTION_(Rev_2022)
+    practice_area: Tribal Criminal Justice
+    phase: Post-Conviction Sentencing
+    form_of_practice: Alternative to incarceration; Restitution; Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/restitution-to-victim-as-alternative-to-punishment/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Criminal Justice. Database phase: Post-Conviction Sentencing. Database form of practice:
-      Alternative to incarceration; Restitution; Restorative justice.'
 gaming:
   compacts:
   - state: OK

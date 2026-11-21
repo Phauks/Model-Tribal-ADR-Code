@@ -180,20 +180,6 @@ justice_institutions:
 dispute_resolution:
   provisions:
   - kind: other
-    title: Indian Child Welfare Committee Informal Conference
-    citation: Dry Creek Rancheria Band of Pomo Indians Judicial Code Title 3. Section 11. Indian Child
-      Welfare Committee AND Section 16. Infian Child Welfare Committee; Informal Conference
-    link: https://drycreekrancheria.com/tribal-law/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/indian-child-welfare-committee-informal-conference/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: alternatives;
-      informal conference; Restorative practice.'
-  - kind: other
     title: d. Tribal Dispute Resolution
     citation: d. Tribal Dispute Resolution
     link: https://www.narf.org/nill/codes/dry_creek/index.html
@@ -224,6 +210,19 @@ dispute_resolution:
     locator: Table of Contents, under 'RULE G - 1. SCOPE AND CONSTRUCTION OF RULES'
     note: Identified from section headings in the National Indian Law Library table of contents; the provision
       itself was not read. The heading it falls under is taken from the page layout and may be imprecise.
+  database_listings:
+  - title: Indian Child Welfare Committee Informal Conference
+    citation: Dry Creek Rancheria Band of Pomo Indians Judicial Code Title 3. Section 11. Indian Child
+      Welfare Committee AND Section 16. Infian Child Welfare Committee; Informal Conference
+    link: https://drycreekrancheria.com/tribal-law/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: alternatives; informal conference; Restorative practice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/indian-child-welfare-committee-informal-conference/
 gaming:
   compacts:
   - state: CA

@@ -237,44 +237,6 @@ justice_institutions:
 dispute_resolution:
   provisions:
   - kind: other
-    title: Community Court – Deferred and Alternative Adjudication
-    citation: SNC Title 5, Sections 5-3-301 through 5-3-306
-    link: https://seminolenationofoklahoma.municipalcodeonline.com/book?type=ordinances#name=CONSTITUTION_OF_THE_SEMINOLE_NATION_OF_OKLAHOMA
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/community-court-deferred-and-alternative-adjudication/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Alternative to conviction; Pre-adjudication. Database form of practice:
-      Alternative adjudication; Deferred adjudication.'
-  - kind: other
-    title: Juvenile Health and Wellness Court
-    citation: SNC Title 19, Chapter 19-4A
-    link: https://seminolenationofoklahoma.municipalcodeonline.com/book?type=ordinances#name=CONSTITUTION_OF_THE_SEMINOLE_NATION_OF_OKLAHOMA
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/juvenile-health-and-wellness-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: .'
-  - kind: other
-    title: Pre-Filing Juvenile Diversion Contract (For Parents/Guardians)
-    citation: SNC Title 19, Section 19-3-303
-    link: https://seminolenationofoklahoma.municipalcodeonline.com/book?type=ordinances#name=CONSTITUTION_OF_THE_SEMINOLE_NATION_OF_OKLAHOMA
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/pre-filing-juvenile-diversion-contract-for-parents-guardians/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication; Pre-filing. Database form of practice:
-      Diversion.'
-  - kind: other
     title: Section 809. Internal Dispute Resolution Policy
     citation: Section 809. Internal Dispute Resolution Policy
     link: https://narf.org/nill/codes/seminole_nation_ok/index.html
@@ -286,6 +248,39 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: February 2017); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Community Court – Deferred and Alternative Adjudication
+    citation: SNC Title 5, Sections 5-3-301 through 5-3-306
+    link: https://seminolenationofoklahoma.municipalcodeonline.com/book?type=ordinances#name=CONSTITUTION_OF_THE_SEMINOLE_NATION_OF_OKLAHOMA
+    practice_area: Tribal Justice
+    phase: Alternative to conviction; Pre-adjudication
+    form_of_practice: Alternative adjudication; Deferred adjudication
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-court-deferred-and-alternative-adjudication/
+  - title: Juvenile Health and Wellness Court
+    citation: SNC Title 19, Chapter 19-4A
+    link: https://seminolenationofoklahoma.municipalcodeonline.com/book?type=ordinances#name=CONSTITUTION_OF_THE_SEMINOLE_NATION_OF_OKLAHOMA
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/juvenile-health-and-wellness-court/
+  - title: Pre-Filing Juvenile Diversion Contract (For Parents/Guardians)
+    citation: SNC Title 19, Section 19-3-303
+    link: https://seminolenationofoklahoma.municipalcodeonline.com/book?type=ordinances#name=CONSTITUTION_OF_THE_SEMINOLE_NATION_OF_OKLAHOMA
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication; Pre-filing
+    form_of_practice: Diversion
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/pre-filing-juvenile-diversion-contract-for-parents-guardians/
 gaming:
   compacts:
   - state: OK

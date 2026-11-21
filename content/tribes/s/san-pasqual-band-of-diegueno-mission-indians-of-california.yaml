@@ -169,33 +169,31 @@ justice_institutions:
   as_of: '2022'
   locator: California section, entry 'San Pasqual Band of Indians'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Referral for Treatment
+  database_listings:
+  - title: Referral for Treatment
     citation: San Pasqual Band of Mission Indians Peace and Security Ordinance. Chapter 6 Penalties. Section
       6.04 Referral for Treatment.
     link: https://www.intertribalcourt.org/_files/ugd/f5e5d2_4da97ecd29b4461799f0725a8e9ca412.pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/referral-for-treatment-4/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Treatment as Penalty Alternative
+  - title: Treatment as Penalty Alternative
     citation: San Pasqual Band of Mission Indians Peace and Security Ordinance. Chapter 6 Penalties. Section
       6.01 General Penalty Provisions.
     link: https://www.intertribalcourt.org/_files/ugd/f5e5d2_4da97ecd29b4461799f0725a8e9ca412.pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-as-penalty-alternative/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
 gaming:
   compacts:
   - state: CA

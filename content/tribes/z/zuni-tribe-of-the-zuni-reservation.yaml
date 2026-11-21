@@ -245,45 +245,6 @@ justice_institutions:
   locator: New Mexico section, entry 'Pueblo of Zuni'
 dispute_resolution:
   provisions:
-  - kind: other
-    title: Disposition Options for Juvenile Offenders
-    citation: Zuni Tribal Code §9-7-12
-    link: https://www.ashiwi.org/Courts.html
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/disposition-options-for-juvenile-offenders-2/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Informal Hearings for Juvenile Cases
-    citation: Zuni Tribal Code §9-5-10
-    link: https://www.ashiwi.org/Courts.html
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-hearings-for-juvenile-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Pre-Adjudication Hearing for Juveniles
-    citation: Zuni Tribal Code §9-7-8 and §9-7-8
-    link: https://www.ashiwi.org/Courts.html
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/pre-adjudication-hearing-for-juveniles/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative justice.'
   - kind: mediation
     title: Mediation.
     citation: Mediation.
@@ -295,6 +256,40 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Updated:
       1988 and 2015); the provision itself was not read. The heading it falls under is taken from the
       page layout and may be imprecise.'
+  database_listings:
+  - title: Disposition Options for Juvenile Offenders
+    citation: Zuni Tribal Code §9-7-12
+    link: https://www.ashiwi.org/Courts.html
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-options-for-juvenile-offenders-2/
+  - title: Informal Hearings for Juvenile Cases
+    citation: Zuni Tribal Code §9-5-10
+    link: https://www.ashiwi.org/Courts.html
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-hearings-for-juvenile-cases/
+  - title: Pre-Adjudication Hearing for Juveniles
+    citation: Zuni Tribal Code §9-7-8 and §9-7-8
+    link: https://www.ashiwi.org/Courts.html
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/pre-adjudication-hearing-for-juveniles/
 gaming:
   compacts:
   - state: AZ

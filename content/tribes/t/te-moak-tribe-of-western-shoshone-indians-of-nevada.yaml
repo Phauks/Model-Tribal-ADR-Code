@@ -315,20 +315,18 @@ justice_institutions:
   as_of: '2022'
   locator: Nevada section, entry 'Te-Moak Tribe of Western Shoshone Indians of Nevada'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Treatment with Protective Order
+  database_listings:
+  - title: Treatment with Protective Order
     citation: APPROVED ORDINANCES FOR THE TE-MOAK TRIBE OF WESTERN SHOSHONE. TITLE 17 - DOMESTIC VIOLENCE.
       Section 17-1-5. Order for Protection.
     link: https://www.narf.org/nill/codes/temoakcode/index.html
+    practice_area: Tribal Justice
+    phase: Post-adjudication
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-with-protective-order/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
 gaming:
   compacts:
   - state: NV

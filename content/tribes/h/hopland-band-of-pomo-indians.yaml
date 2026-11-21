@@ -311,42 +311,6 @@ dispute_resolution:
     confidence: medium
     as_of: '2025'
     locator: Sections 12-3.10 to 12-3.160
-  - kind: other
-    title: Community Service for Elders in Lieu of Fines
-    citation: Hopland Tribe Law and Order Ordinance, Chapter 11 Penalties
-    link: https://ncorj.org/tribal-law/community-service-for-elders-in-lieu-of-fines/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/community-service-for-elders-in-lieu-of-fines/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Community Service or Treatment in Lieu of Fines
-    citation: Hopland Tribe Law and Order Ordinance, Chapter 11 Penalties
-    link: https://ncorj.org/tribal-law/community-service-or-treatment-in-lieu-of-fines/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/community-service-or-treatment-in-lieu-of-fines/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative.'
-  - kind: other
-    title: Referral for Treatment in Lieu of Fines
-    citation: Hopland Tribe Law and Order Ordinance, Chapter 11 Penalties
-    link: https://ncorj.org/tribal-law/referral-for-treatment-in-lieu-of-fines/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/referral-for-treatment-in-lieu-of-fines/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
   - kind: peacemaking
     title: Title 12, Chapter 12-1 – Tribal Court Ordinance
     citation: Title 12, Chapter 12-1 – Tribal Court Ordinance
@@ -357,6 +321,40 @@ dispute_resolution:
     locator: Hopland Band of Pomo Indians, California
     note: 'Native American Rights Fund description (provision itself not read): Provides authorization,
       procedures, qualifications, and authority to lead community-related peace activities.'
+  database_listings:
+  - title: Community Service for Elders in Lieu of Fines
+    citation: Hopland Tribe Law and Order Ordinance, Chapter 11 Penalties
+    link: https://ncorj.org/tribal-law/community-service-for-elders-in-lieu-of-fines/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-service-for-elders-in-lieu-of-fines/
+  - title: Community Service or Treatment in Lieu of Fines
+    citation: Hopland Tribe Law and Order Ordinance, Chapter 11 Penalties
+    link: https://ncorj.org/tribal-law/community-service-or-treatment-in-lieu-of-fines/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Alternative
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-service-or-treatment-in-lieu-of-fines/
+  - title: Referral for Treatment in Lieu of Fines
+    citation: Hopland Tribe Law and Order Ordinance, Chapter 11 Penalties
+    link: https://ncorj.org/tribal-law/referral-for-treatment-in-lieu-of-fines/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/referral-for-treatment-in-lieu-of-fines/
 gaming:
   compacts:
   - state: CA

@@ -296,42 +296,38 @@ dispute_resolution:
     source: hopi-constitution-nill
     confidence: medium
     as_of: '1993-12-07'
-  - kind: other
-    title: Alcohol Rehabilitation Program in Lieu of Jail Sentence for Intoxication
+  database_listings:
+  - title: Alcohol Rehabilitation Program in Lieu of Jail Sentence for Intoxication
     citation: 3.15.4 INTOXICATION.
     link: https://ncorj.org/tribal-law/alcohol-rehabilitation-program-in-lieu-of-jail-sentence-for-intoxication/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/alcohol-rehabilitation-program-in-lieu-of-jail-sentence-for-intoxication/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
-  - kind: other
-    title: Alcohol Rehabilitation Program in Lieu of Jail Sentence for Possession
+  - title: Alcohol Rehabilitation Program in Lieu of Jail Sentence for Possession
     citation: 3.15.1 USE OR POSSESSION OFFENSES.
     link: https://ncorj.org/tribal-law/alcohol-rehabilitation-program-in-lieu-of-jail-sentence-for-possession/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/alcohol-rehabilitation-program-in-lieu-of-jail-sentence-for-possession/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
-  - kind: other
-    title: Possibility of Diversion as Penalty
+  - title: Possibility of Diversion as Penalty
     citation: 3.4.4 OTHER CRIMINAL PENALTIES.
     link: https://ncorj.org/tribal-law/possibility-of-diversion-as-penalty/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Alternative; Diversion
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/possibility-of-diversion-as-penalty/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Alternative; Diversion.'
 gaming:
   compacts:
   - state: AZ

@@ -259,70 +259,61 @@ justice_institutions:
   as_of: '2022'
   locator: Oklahoma section, entry 'Citizen Potawatomi Nation'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Diversion for Delinquency & Child Welfare
+  database_listings:
+  - title: Diversion for Delinquency & Child Welfare
     citation: Title 17, Juvenile Code and Indian Child Welfare. Chapter 3, Diversion.
     link: https://www.potawatomi.org/wp-content/uploads/2023-CPN-Codes.pdf
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Diversion
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/diversion-for-delinquency-child-welfare/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Diversion.'
-  - kind: other
-    title: Healing to Wellness Court Administration and Procedure
+  - title: Healing to Wellness Court Administration and Procedure
     citation: Title 15, Healing to Wellness Court Administration and Procedure
     link: https://www.potawatomi.org/wp-content/uploads/2023-CPN-Codes.pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Healing to Wellness Court
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/healing-to-wellness-court-administration-and-procedure/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Healing to Wellness
-      Court.'
-  - kind: other
-    title: Restorative Sentencing Guidelines
+  - title: Restorative Sentencing Guidelines
     citation: Title 11, Criminal Procedure. Section 11-4-103 General Sentencing Provisions
     link: https://www.potawatomi.org/wp-content/uploads/2023-CPN-Codes.pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/restorative-sentencing-guidelines/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Treatment for Domestic Violence, Stalking, Harassment
+  - title: Treatment for Domestic Violence, Stalking, Harassment
     citation: Title 14, Domestic Violence and Prevention of Domestic Abuse. Section 14-1-122 Hearing,
       Service of Process, Protective Orders, Period of Relief, Title to Real Property.
     link: https://ncorj.org/tribal-law/treatment-for-domestic-violence-stalking-harassment/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-for-domestic-violence-stalking-harassment/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: .'
-  - kind: other
-    title: Treatment Plan for Child Welfare Cases
+  - title: Treatment Plan for Child Welfare Cases
     citation: Title 17, Juvenile Code and Indian Child Welfare. Section 17-5-103 Treatment Plan.
     link: https://www.potawatomi.org/wp-content/uploads/2023-CPN-Codes.pdf
+    practice_area: Tribal Child Welfare/Family
+    phase: Post-adjudication
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/treatment-plan-for-child-welfare-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: .'
 gaming:
   compacts:
   - state: OK

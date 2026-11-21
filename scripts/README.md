@@ -34,6 +34,7 @@ by hand, add new facts by hand or in a new raw file and review the diff.
 | `tribes/federal_facts.py` | Parses the Federal Register list of recognized entities and the Bureau of Indian Affairs Tribal Leaders Directory into cited facts, keeping office contact points only | Python 3 standard library |
 | `tribes/build_profiles.py` | Merges every raw file into profiles and new source records, drops facts the schema rejects and writes a build report | `scripts/requirements.txt` |
 | `tribes/write_sessions.py` | Writes a research session log for each raw file that has none | `scripts/requirements.txt` |
+| `tribes/move_database_listings.py` | Moves provision records copied in bulk from the National Center on Restorative Justice database into `dispute_resolution.database_listings`, with the database's tags as fields (decision record 0015); `--check` counts without writing | `scripts/requirements.txt` |
 | `tribes/find_pronunciations.py` | Reads each nation's official website and lists passages that mention pronunciation, and linked audio, for review by hand; never writes to a profile | `scripts/requirements.txt` |
 
 ## Outreach

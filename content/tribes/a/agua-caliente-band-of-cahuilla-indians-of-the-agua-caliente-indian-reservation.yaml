@@ -183,33 +183,29 @@ justice_institutions:
   locator: Contact Info, Tribal Court
   note: The page gives a contact for a tribal court without a fuller name.
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Informal Conference and Voluntary Family Maintenance Plan Resolution
+  database_listings:
+  - title: Informal Conference and Voluntary Family Maintenance Plan Resolution
     citation: Code of Ordinances, Title 10-Membership and Family Services, Sec. 10.14.170
     link: https://library.municode.com/tribes_and_tribal_nations/agua_caliente_band_of_cahuilla_indians/codes/code_of_ordinances?nodeId=PTIICOOR_TIT10MEFASE_CH10.14CHPR_S10.14.170INCOVOFAMAPLRE
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Family conference, Family group conference
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-conference-and-voluntary-family-maintenance-plan-resolution/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Family
-      conference, Family group conference.'
-  - kind: other
-    title: Substance Use Treatment for Pregnant Women
+  - title: Substance Use Treatment for Pregnant Women
     citation: Code of Ordinances, Title 10-Membership and Family Services, Sec. 10.14.110-10.14.120
     link: https://library.municode.com/tribes_and_tribal_nations/agua_caliente_band_of_cahuilla_indians/codes/code_of_ordinances?nodeId=PTIICOOR_TIT10MEFASE_CH10.14CHPR_S10.14.110TRFASEADCA
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative court
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/substance-use-treatment-for-pregnant-women/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      court.'
 gaming:
   compacts:
   - state: CA

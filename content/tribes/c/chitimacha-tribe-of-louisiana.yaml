@@ -292,55 +292,6 @@ dispute_resolution:
     source: chitimacha-title-1a-peacemaker-court
     confidence: medium
     as_of: '1990-08-14'
-  - kind: peacemaking
-    title: Chitimacha Peacemaker Court
-    citation: TITLE I-A – CHITIMACHA PEACEMAKER COURT
-    link: https://www.chitimacha.gov/sites/default/files/CCCJ%20Title%20IA%20-%20Chitimacha%20Peacemaker%20Court.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/chitimacha-peacemaker-court/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Peacemaking.'
-  - kind: other
-    title: Diversion Before Trial
-    citation: Chitimacha Comprehensive Codes of Justice TITLE II - CRIMINAL PROCEDURE
-    link: https://www.chitimacha.gov/sites/default/files/Title%20II%20-%20Criminal%20Procedure.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-before-trial/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Diversion.'
-  - kind: other
-    title: Diversion for Deliquent Children
-    citation: Chitimacha Comprehensive Codes of Justice TITLE V - CHILD WELFARE CODE
-    link: https://www.chitimacha.gov/sites/default/files/Title%20V%20-%20Child%20Welfare%20Code.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-for-deliquent-children/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Diversion.'
-  - kind: other
-    title: Informal Resolution in Child Welfare Cases
-    citation: Chitimacha Comprehensive Codes of Justice TITLE V - CHILD WELFARE CODE
-    link: https://www.chitimacha.gov/sites/default/files/Title%20V%20-%20Child%20Welfare%20Code.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/informal-resolution-in-child-welfare-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Alternative;
-      Restorative.'
   - kind: mediation
     title: Sec. 625. Mediation and Alternative Justice Prohibited
     citation: Sec. 625. Mediation and Alternative Justice Prohibited
@@ -374,6 +325,51 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: June 2022); the provision itself was not read. The heading it falls under is
       taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Chitimacha Peacemaker Court
+    citation: TITLE I-A – CHITIMACHA PEACEMAKER COURT
+    link: https://www.chitimacha.gov/sites/default/files/CCCJ%20Title%20IA%20-%20Chitimacha%20Peacemaker%20Court.pdf
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Peacemaking
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/chitimacha-peacemaker-court/
+  - title: Diversion Before Trial
+    citation: Chitimacha Comprehensive Codes of Justice TITLE II - CRIMINAL PROCEDURE
+    link: https://www.chitimacha.gov/sites/default/files/Title%20II%20-%20Criminal%20Procedure.pdf
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Diversion
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-before-trial/
+  - title: Diversion for Deliquent Children
+    citation: Chitimacha Comprehensive Codes of Justice TITLE V - CHILD WELFARE CODE
+    link: https://www.chitimacha.gov/sites/default/files/Title%20V%20-%20Child%20Welfare%20Code.pdf
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Diversion
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-for-deliquent-children/
+  - title: Informal Resolution in Child Welfare Cases
+    citation: Chitimacha Comprehensive Codes of Justice TITLE V - CHILD WELFARE CODE
+    link: https://www.chitimacha.gov/sites/default/files/Title%20V%20-%20Child%20Welfare%20Code.pdf
+    practice_area: Tribal Child Welfare/Family
+    phase: Post-adjudication
+    form_of_practice: Alternative; Restorative
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/informal-resolution-in-child-welfare-cases/
 gaming:
   compacts:
   - state: LA

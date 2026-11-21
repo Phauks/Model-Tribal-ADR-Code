@@ -315,58 +315,6 @@ justice_institutions:
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
   provisions:
-  - kind: other
-    title: DUI Treatment and Community Service Requirements
-    citation: TAT Criminal Code § 3-26 (DUI provisions)
-    link: https://www.mhanation.com/tribal-code
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/dui-treatment-and-community-service-requirements/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication/Sentencing. Database form of practice: Community
-      service; Diversion.'
-  - kind: other
-    title: Restitution and Reparation (Victim Compensation)
-    citation: TAT Criminal Code §§ 3-9-4.1(e), 3-9-8.1, 3-9-8.2
-    link: https://www.mhanation.com/tribal-code
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restitution-and-reparation-victim-compensation/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication/Sentencing. Database form of practice: Making
-      amends; Restitution.'
-  - kind: other
-    title: Sentencing Factor – Making Restitution to Victim
-    citation: TAT Criminal Code § 3-9-3.1(e)
-    link: https://www.mhanation.com/tribal-code
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/sentencing-factor-making-restitution-to-victim/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication/Sentencing. Database form of practice: Making
-      amends; Restitution.'
-  - kind: other
-    title: Treatment in Lieu of Prosecution/Sentence (Diversion)
-    citation: TAT Criminal Code §§ 3-9-7.1, 3-9-7.2
-    link: https://www.mhanation.com/tribal-code
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-prosecution-sentence-diversion/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre or post-adjudication. Database form of practice: Diversion;
-      Rehabilitation.'
   - kind: arbitration
     title: Dispute resolution.
     citation: Dispute resolution.; Controversies to be arbitrated - arbitrators - how named.; Condition
@@ -381,6 +329,51 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Received:
       2004 (no longer current)); the provision itself was not read. The heading it falls under is taken
       from the page layout and may be imprecise.'
+  database_listings:
+  - title: DUI Treatment and Community Service Requirements
+    citation: TAT Criminal Code § 3-26 (DUI provisions)
+    link: https://www.mhanation.com/tribal-code
+    practice_area: Tribal Justice
+    phase: Post-adjudication/Sentencing
+    form_of_practice: Community service; Diversion
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/dui-treatment-and-community-service-requirements/
+  - title: Restitution and Reparation (Victim Compensation)
+    citation: TAT Criminal Code §§ 3-9-4.1(e), 3-9-8.1, 3-9-8.2
+    link: https://www.mhanation.com/tribal-code
+    practice_area: Tribal Justice
+    phase: Post-adjudication/Sentencing
+    form_of_practice: Making amends; Restitution
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restitution-and-reparation-victim-compensation/
+  - title: Sentencing Factor – Making Restitution to Victim
+    citation: TAT Criminal Code § 3-9-3.1(e)
+    link: https://www.mhanation.com/tribal-code
+    practice_area: Tribal Justice
+    phase: Post-adjudication/Sentencing
+    form_of_practice: Making amends; Restitution
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-factor-making-restitution-to-victim/
+  - title: Treatment in Lieu of Prosecution/Sentence (Diversion)
+    citation: TAT Criminal Code §§ 3-9-7.1, 3-9-7.2
+    link: https://www.mhanation.com/tribal-code
+    practice_area: Tribal Justice
+    phase: Pre or post-adjudication
+    form_of_practice: Diversion; Rehabilitation
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/treatment-in-lieu-of-prosecution-sentence-diversion/
 gaming:
   compacts:
   - state: ND

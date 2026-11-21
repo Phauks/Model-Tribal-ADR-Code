@@ -234,78 +234,6 @@ dispute_resolution:
     source: oneida-indian-nation-ordinance-o-97-02
     confidence: medium
     as_of: '1997-05-01'
-  - kind: other
-    title: Disposition Alternatives for Juveniles
-    citation: 'Onedia Indian Nation Juvenile Justice Code: Rule 401'
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/disposition-alternatives-for-juveniles/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Diversion Program for Alcohol and Drug Related Offenses
-    citation: 'Onedia Indian Nation Rules of Criminal Procedure: Rule 803'
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-program-for-alcohol-and-drug-related-offenses/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Diversion to Peacemaker Process (Juveniles)
-    citation: 'Onedia Indian Nation Juvenile Justice Code: Rule 301'
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/diversion-to-peacemaker-process-juveniles/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Drug Education or Training Program Disposition Option
-    citation: 'Onedia Indian Nation Rules of Criminal Procedure: Rule 704'
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/drug-education-or-training-program-disposition-option/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Factors to Consider when Granting Diversion
-    citation: 'Onedia Indian Nation Rules of Criminal Procedure: Rule 804'
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/factors-to-consider-when-granting-diversion/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Sentencing Goal is to Restore the Victim and the Nation
-    citation: 'Onedia Indian Nation Rules of Criminal Procedure: Rule 702'
-    link: https://www.oneidaindiannation.com/ordinances-regulations/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/sentencing-goal-is-to-restore-the-victim-and-the-nation/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
   - kind: peacemaking
     title: Oneida Indian Nation Peacemaking Rules
     citation: Oneida Indian Nation Peacemaking Rules
@@ -336,6 +264,73 @@ dispute_resolution:
     confidence: medium
     verification: bulk-import
     as_of: '2025-09-29'
+  database_listings:
+  - title: Disposition Alternatives for Juveniles
+    citation: 'Onedia Indian Nation Juvenile Justice Code: Rule 401'
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-alternatives-for-juveniles/
+  - title: Diversion Program for Alcohol and Drug Related Offenses
+    citation: 'Onedia Indian Nation Rules of Criminal Procedure: Rule 803'
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-program-for-alcohol-and-drug-related-offenses/
+  - title: Diversion to Peacemaker Process (Juveniles)
+    citation: 'Onedia Indian Nation Juvenile Justice Code: Rule 301'
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/diversion-to-peacemaker-process-juveniles/
+  - title: Drug Education or Training Program Disposition Option
+    citation: 'Onedia Indian Nation Rules of Criminal Procedure: Rule 704'
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/drug-education-or-training-program-disposition-option/
+  - title: Factors to Consider when Granting Diversion
+    citation: 'Onedia Indian Nation Rules of Criminal Procedure: Rule 804'
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/factors-to-consider-when-granting-diversion/
+  - title: Sentencing Goal is to Restore the Victim and the Nation
+    citation: 'Onedia Indian Nation Rules of Criminal Procedure: Rule 702'
+    link: https://www.oneidaindiannation.com/ordinances-regulations/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-goal-is-to-restore-the-victim-and-the-nation/
 gaming:
   compacts:
   - state: NY

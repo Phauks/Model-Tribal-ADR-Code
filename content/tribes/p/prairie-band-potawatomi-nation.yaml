@@ -293,56 +293,6 @@ dispute_resolution:
     source: prairie-band-potawatomi-constitution-2007
     confidence: medium
     as_of: '2007-12-06'
-  - kind: other
-    title: Disposition Options for Juvenile Offenders
-    citation: Potawatomi Law and Order Code 27-6-13 and 27-6-15
-    link: https://www.codepublishing.com/KS/Potawatomi/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/disposition-options-for-juvenile-offenders/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Peacemaker Circles
-    citation: Potawatomi Law and Order Code 2-1-1 and 2-5-1
-    link: https://www.codepublishing.com/KS/Potawatomi/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/peacemaker-circles/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative practice,
-      Restorative process.'
-  - kind: other
-    title: Sentencing Policy of the Nation
-    citation: Potawatomi Law and Order Code 16-4-3
-    link: https://www.codepublishing.com/KS/Potawatomi/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/sentencing-policy-of-the-nation/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Sex Offender Treatment Program for Sentence Reduction
-    citation: Potawatomi Law and Order Code 15-11-21
-    link: https://www.codepublishing.com/KS/Potawatomi/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/sex-offender-treatment-program-for-sentence-reduction/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
   - kind: mediation
     title: 3-3 MEDIATION
     citation: 3-3 MEDIATION
@@ -392,6 +342,51 @@ dispute_resolution:
     note: Identified from section headings in the National Indian Law Library table of contents (Approved
       December 6, 2007); the provision itself was not read. The heading it falls under is taken from the
       page layout and may be imprecise.
+  database_listings:
+  - title: Disposition Options for Juvenile Offenders
+    citation: Potawatomi Law and Order Code 27-6-13 and 27-6-15
+    link: https://www.codepublishing.com/KS/Potawatomi/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/disposition-options-for-juvenile-offenders/
+  - title: Peacemaker Circles
+    citation: Potawatomi Law and Order Code 2-1-1 and 2-5-1
+    link: https://www.codepublishing.com/KS/Potawatomi/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative practice, Restorative process
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/peacemaker-circles/
+  - title: Sentencing Policy of the Nation
+    citation: Potawatomi Law and Order Code 16-4-3
+    link: https://www.codepublishing.com/KS/Potawatomi/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sentencing-policy-of-the-nation/
+  - title: Sex Offender Treatment Program for Sentence Reduction
+    citation: Potawatomi Law and Order Code 15-11-21
+    link: https://www.codepublishing.com/KS/Potawatomi/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/sex-offender-treatment-program-for-sentence-reduction/
 gaming:
   compacts:
   - state: KS

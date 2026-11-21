@@ -173,20 +173,18 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.penobscotnation.org/departments/tribal-court)
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Early Intervention Program with Resiliency Plan
+  database_listings:
+  - title: Early Intervention Program with Resiliency Plan
     citation: Penobscot Nation Child Welfare Code, Subchapter 3, §2 Early Intervention Program
     link: https://www.narf.org/nill/codes/penobscot/index.html
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Alternative; Program; Restorative practice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/early-intervention-program-with-resiliency-plan/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Alternative;
-      Program; Restorative practice.'
 jurisdiction:
 - topic: indian-child-welfare-act
   value: designated-agent-listed

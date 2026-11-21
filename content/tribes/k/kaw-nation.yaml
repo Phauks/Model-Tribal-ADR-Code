@@ -215,67 +215,57 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://kawnation.com/?page_id=2820) returned
     HTTP 404, so it is not recorded.'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Counseling, Therapy, and Services as Disposition Condition
+  database_listings:
+  - title: Counseling, Therapy, and Services as Disposition Condition
     citation: 30 KNTC § 3-105(A)(1)
     link: https://kawnation.tribal.codes
+    practice_area: Tribal Child Welfare/Family
+    form_of_practice: Alternative
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/counseling-therapy-and-services-as-disposition-condition/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: . Database form of practice: Alternative.'
-  - kind: other
-    title: Probation as Alternative to Incarceration
+  - title: Probation as Alternative to Incarceration
     citation: 8 KNTC § 9-113
     link: https://kawnation.tribal.codes
+    practice_area: Tribal Justice
+    form_of_practice: Alternative to incarceration; Program
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/probation-as-alternative-to-incarceration/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: . Database form of practice: Alternative to incarceration; Program.'
-  - kind: other
-    title: Restitution
+  - title: Restitution
     citation: 8 KNTC § 9-107
     link: https://kawnation.tribal.codes
+    practice_area: Tribal Justice
+    form_of_practice: Restitution; Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/restitution/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: . Database form of practice: Restitution; Restorative justice.'
-  - kind: other
-    title: Sentencing Considerations Including Rehabilitation
+  - title: Sentencing Considerations Including Rehabilitation
     citation: 8 KNTC § 9-102
     link: https://kawnation.tribal.codes
+    practice_area: Tribal Justice
+    form_of_practice: Alternative to incarceration; Rehabilitation
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/sentencing-considerations-including-rehabilitation/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: . Database form of practice: Alternative to incarceration; Rehabilitation.'
-  - kind: other
-    title: Traditional Punishment as Sentencing Alternative
+  - title: Traditional Punishment as Sentencing Alternative
     citation: 8 KNTC § 9-101
     link: https://kawnation.tribal.codes
+    practice_area: Tribal Justice
+    form_of_practice: Alternative
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/traditional-punishment-as-sentencing-alternative/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: . Database form of practice: Alternative.'
 gaming:
   compacts:
   - state: OK

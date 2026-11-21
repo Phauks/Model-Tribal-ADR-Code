@@ -214,58 +214,6 @@ justice_institutions:
 dispute_resolution:
   provisions:
   - kind: other
-    title: Community Council/Conference
-    citation: Hoopa Valley Tribe Code. Title 14 Child/Family Assistance Code. Title 14D Protective Order
-      Code. Chapter 3 Community Council. Sections 14D.3.01-14D.3.03.
-    link: https://www.hoopa-nsn.gov/wp-content/uploads/2015/06/Title14D_Protective_Order_Code.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/community-council-conference/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication; Pre-adjudication. Database form of practice:
-      Community conference.'
-  - kind: other
-    title: Family Healing to Wellness Court Code
-    citation: '[The people''s get well place] Court Code.'
-    link: https://ncorj.org/tribal-law/family-healing-to-wellness-court-code/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/family-healing-to-wellness-court-code/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Restorative Remedies for Protection Orders in Domestic Violence
-    citation: Section 14D.5.09 Remedies Available in an Order for Protection After Noticed Hearing.
-    link: https://ncorj.org/tribal-law/restorative-remedies-for-protection-orders-in-domestic-violence/
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restorative-remedies-for-protection-orders-in-domestic-violence/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Restorative Remedies for Protection Orders in Elder and Dependant Adult Abuse
-    citation: Hoopa Valley Tribe Code. Title 14 Child/Family Assistance Code. Title 14D Protective Order
-      Code. Chapter 6 Tribal Elder and Dependant Adult Protective Orders.
-    link: https://www.hoopa-nsn.gov/wp-content/uploads/2015/06/Title14D_Protective_Order_Code.pdf
-    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
-    confidence: medium
-    as_of: '2026-07-22'
-    locator: https://ncorj.org/tribal-law/restorative-remedies-for-protection-orders-in-elder-and-dependant-adult-abuse/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
     title: RULE 42 INFORMAL DISPUTE RESOLUTION
     citation: RULE 42 INFORMAL DISPUTE RESOLUTION
     link: https://narf.org/nill/codes/hoopacode/index.html
@@ -364,6 +312,53 @@ dispute_resolution:
     note: 'Identified from section headings in the National Indian Law Library table of contents (Table
       of Contents Updated: February 2017); the provision itself was not read. The heading it falls under
       is taken from the page layout and may be imprecise.'
+  database_listings:
+  - title: Community Council/Conference
+    citation: Hoopa Valley Tribe Code. Title 14 Child/Family Assistance Code. Title 14D Protective Order
+      Code. Chapter 3 Community Council. Sections 14D.3.01-14D.3.03.
+    link: https://www.hoopa-nsn.gov/wp-content/uploads/2015/06/Title14D_Protective_Order_Code.pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication; Pre-adjudication
+    form_of_practice: Community conference
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/community-council-conference/
+  - title: Family Healing to Wellness Court Code
+    citation: '[The people''s get well place] Court Code.'
+    link: https://ncorj.org/tribal-law/family-healing-to-wellness-court-code/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/family-healing-to-wellness-court-code/
+  - title: Restorative Remedies for Protection Orders in Domestic Violence
+    citation: Section 14D.5.09 Remedies Available in an Order for Protection After Noticed Hearing.
+    link: https://ncorj.org/tribal-law/restorative-remedies-for-protection-orders-in-domestic-violence/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-remedies-for-protection-orders-in-domestic-violence/
+  - title: Restorative Remedies for Protection Orders in Elder and Dependant Adult Abuse
+    citation: Hoopa Valley Tribe Code. Title 14 Child/Family Assistance Code. Title 14D Protective Order
+      Code. Chapter 6 Tribal Elder and Dependant Adult Protective Orders.
+    link: https://www.hoopa-nsn.gov/wp-content/uploads/2015/06/Title14D_Protective_Order_Code.pdf
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
+    source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
+    confidence: medium
+    verification: bulk-import
+    as_of: '2026-07-22'
+    locator: https://ncorj.org/tribal-law/restorative-remedies-for-protection-orders-in-elder-and-dependant-adult-abuse/
 gaming:
   compacts:
   - state: CA

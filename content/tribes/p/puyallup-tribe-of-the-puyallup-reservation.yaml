@@ -248,70 +248,62 @@ justice_institutions:
   note: The listed link (http://www.puyallup-tribe.com/ourtribe/) no longer reached the court on 2026-11-21;
     the link is the court's page on the nation's own site, found in the data gap review (research/reviews/2026-11-21-court-listings.json).
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Deferred Prosecution and Treatment Plan
+  database_listings:
+  - title: Deferred Prosecution and Treatment Plan
     citation: Puyallup Tribal Codes 4.04.260
     link: https://www.codepublishing.com/WA/PuyallupTribe/
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/deferred-prosecution-and-treatment-plan/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Dispositional Alternatives for Child in need of services
+  - title: Dispositional Alternatives for Child in need of services
     citation: Puyallup Tribal Codes 7.20.400
     link: https://www.codepublishing.com/WA/PuyallupTribe/
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/dispositional-alternatives-for-child-in-need-of-services/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Informal Diversion Conference for Juveniles
+  - title: Informal Diversion Conference for Juveniles
     citation: Puyallup Tribal Codes 7.20.190
     link: https://www.codepublishing.com/WA/PuyallupTribe/
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-diversion-conference-for-juveniles/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Opportunity for Family Conference for Vulnerable Adult
+  - title: Opportunity for Family Conference for Vulnerable Adult
     citation: Puyallup Tribal Codes 7.28.170
     link: https://www.codepublishing.com/WA/PuyallupTribe/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative practice, Restorative process
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/opportunity-for-family-conference-for-vulnerable-adult/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative practice,
-      Restorative process.'
-  - kind: other
-    title: Ordered Treatment for Domestic Violence
+  - title: Ordered Treatment for Domestic Violence
     citation: Puyallup Tribal Codes 7.16.090
     link: https://www.codepublishing.com/WA/PuyallupTribe/
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/ordered-treatment-for-domestic-violence/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
 gaming:
   compacts:
   - state: WA

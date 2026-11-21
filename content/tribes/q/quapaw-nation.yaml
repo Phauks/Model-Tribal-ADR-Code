@@ -180,158 +180,139 @@ justice_institutions:
   as_of: '2022'
   locator: Oklahoma section, entry 'Quapaw Tribe of Oklahoma'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: Authorized Sanctions for Criminal Crimes
+  database_listings:
+  - title: Authorized Sanctions for Criminal Crimes
     citation: Quapaw Nation Criminal Code §6
     link: https://www.quapawtribe.com/588/Codes
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/authorized-sanctions-for-criminal-crimes/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Court Conditions in a Protective Order for Adult
+  - title: Court Conditions in a Protective Order for Adult
     citation: Quapaw Nation Victim Protective Order Act §11
     link: https://www.quapawtribe.com/588/Codes
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/court-conditions-in-a-protective-order-for-adult/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Deferral of Proceedings for Juvenile Delinquency
+  - title: Deferral of Proceedings for Juvenile Delinquency
     citation: Quapaw Nation Children's Code §43
     link: https://www.quapawtribe.com/588/Codes
+    practice_area: Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/deferral-of-proceedings-for-juvenile-delinquency/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Deferred and Suspended Sentencing for Criminal Offenses
+  - title: Deferred and Suspended Sentencing for Criminal Offenses
     citation: Quapaw Nation Victim Protective Order Act §51
     link: https://www.quapawtribe.com/588/Codes
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/deferred-and-suspended-sentencing-for-criminal-offenses/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Dispositional Orders for Juveniles and Minor in Need of Care
+  - title: Dispositional Orders for Juveniles and Minor in Need of Care
     citation: Quapaw Nation Children's Code §46
     link: https://www.quapawtribe.com/588/Codes
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/dispositional-orders-for-juveniles-and-minor-in-need-of-care/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Diversion by Consent Decree for Welfare Cases
+  - title: Diversion by Consent Decree for Welfare Cases
     citation: Quapaw Nation Children's Code §23
     link: https://www.quapawtribe.com/588/Codes
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/diversion-by-consent-decree-for-welfare-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Diversion by Contract for Welfare Cases
+  - title: Diversion by Contract for Welfare Cases
     citation: Quapaw Nation Children's Code §19
     link: https://www.quapawtribe.com/588/Codes
+    practice_area: Tribal Child Welfare/Family
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/diversion-by-contract-for-welfare-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Pre-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Juvenile Healing to Wellness Court
+  - title: Juvenile Healing to Wellness Court
     citation: Quapaw Nation Children's Code §35
     link: https://www.quapawtribe.com/588/Codes
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Healing to Wellness Court; Restorative court
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/juvenile-healing-to-wellness-court-2/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Healing to Wellness Court; Restorative court.'
-  - kind: other
-    title: Mandated Rehabilitation Process for Parents
+  - title: Mandated Rehabilitation Process for Parents
     citation: Quapaw Nation Children's Code §49
     link: https://www.quapawtribe.com/588/Codes
+    practice_area: Tribal Child Welfare/Family
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/mandated-rehabilitation-process-for-parents/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family. Database phase: Post-adjudication. Database form of practice: Restorative
-      justice.'
-  - kind: other
-    title: Preliminary Inquiry and Informal Adjustment
+  - title: Preliminary Inquiry and Informal Adjustment
     citation: Quapaw Nation Children's Code §34
     link: https://www.quapawtribe.com/588/Codes
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/preliminary-inquiry-and-informal-adjustment/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative justice.'
-  - kind: other
-    title: Sentencing Provisions for Criminal Offenses
+  - title: Sentencing Provisions for Criminal Offenses
     citation: Quapaw Nation Victim Protective Order Act §48
     link: https://www.quapawtribe.com/588/Codes
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/sentencing-provisions-for-criminal-offenses/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Violation of a Protective Order
+  - title: Violation of a Protective Order
     citation: Quapaw Nation Victim Protective Order Act §20
     link: https://www.quapawtribe.com/588/Codes
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/violation-of-a-protective-order/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
 gaming:
   compacts:
   - state: OK

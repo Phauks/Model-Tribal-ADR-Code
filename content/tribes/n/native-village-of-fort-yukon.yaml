@@ -223,97 +223,84 @@ justice_institutions:
   note: 'Link check 2026-11-21: the link the source gives (http://www.fortyukon.org/wordpress/tribal-court/)
     returned HTTP 404, so it is not recorded.'
 dispute_resolution:
-  provisions:
-  - kind: other
-    title: A Social Study for Child Welfare Cases
+  database_listings:
+  - title: A Social Study for Child Welfare Cases
     citation: GZGTG Ordinance Section 3.06.09
     link: https://www.fortyukon.org/tribal-governance
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative practice, Restorative process
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/a-social-study-for-child-welfare-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative practice, Restorative process.'
-  - kind: other
-    title: Counseling, Treatment, and Community Service Sentencing
+  - title: Counseling, Treatment, and Community Service Sentencing
     citation: GZGTG Ordinance Section 2.02.03
     link: https://www.fortyukon.org/tribal-governance
+    practice_area: Tribal Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/counseling-treatment-and-community-service-sentencing/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Post-adjudication. Database form of practice: Restorative justice.'
-  - kind: other
-    title: Family Conferences/ Justice Circles in Child Welfare Cases
+  - title: Family Conferences/ Justice Circles in Child Welfare Cases
     citation: GZGTG Ordinance Section 3.10.06; 3.11.01; 3.11.02; and 3.11.03
     link: https://www.fortyukon.org/tribal-governance
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative practice, Restorative process
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/family-conferences-justice-circles-in-child-welfare-cases/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative practice, Restorative process.'
-  - kind: other
-    title: Informal Hearings for Custody/Removal of Children
+  - title: Informal Hearings for Custody/Removal of Children
     citation: GZGTG Ordinance Section 3.06.03
     link: https://www.fortyukon.org/tribal-governance
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative justice; Restorative practice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/informal-hearings-for-custody-removal-of-children/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Pre-adjudication. Database
-      form of practice: Restorative justice; Restorative practice.'
-  - kind: other
-    title: Intervention and Appropriate Steps for Reunification of a Family
+  - title: Intervention and Appropriate Steps for Reunification of a Family
     citation: GZGTG Ordinance Section 3.06.05; and, 3.06.08
     link: https://www.fortyukon.org/tribal-governance
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative justice; Restorative practice
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/intervention-and-appropriate-steps-for-reunification-of-a-family/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
-      form of practice: Restorative justice; Restorative practice.'
-  - kind: other
-    title: Tribe’s Counseling and Supportive Services for Families
+  - title: Tribe’s Counseling and Supportive Services for Families
     citation: GZGTG Ordinance Section 3.12.01
     link: https://www.fortyukon.org/tribal-governance
+    practice_area: Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice
+    phase: Post-adjudication
+    form_of_practice: Restorative practice, Restorative process
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/tribes-counseling-and-supportive-services-for-families/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Child Welfare/Family; Tribal Juvenile/Youth Justice. Database phase: Post-adjudication. Database
-      form of practice: Restorative practice, Restorative process.'
-  - kind: other
-    title: Use of Sentencing Circles and the Procedures
+  - title: Use of Sentencing Circles and the Procedures
     citation: GZGTG Ordinance Section 2.01.06; Section 2.01.12; and, Section 2.02.07
     link: https://www.fortyukon.org/tribal-governance
+    practice_area: Tribal Justice
+    phase: Pre-adjudication
+    form_of_practice: Restorative practice, Restorative process
     source: national-center-on-restorative-justice-restorative-justice-tribal-laws-database
     confidence: medium
+    verification: bulk-import
     as_of: '2026-07-22'
     locator: https://ncorj.org/tribal-law/use-of-sentencing-circles-and-the-procedures/
-    note: 'Bulk record from the NCORJ Restorative Justice Tribal Laws Database; kind assigned from NCORJ''s
-      form-of-practice tags (peacemaking, mediation, circle/elder/cultural as traditional-dispute-resolution,
-      everything else as other). Not individually reviewed; no summary written. Database practice area:
-      Tribal Justice. Database phase: Pre-adjudication. Database form of practice: Restorative practice,
-      Restorative process.'
 jurisdiction:
 - topic: public-law-280
   value: mandatory-state
