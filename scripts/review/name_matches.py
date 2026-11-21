@@ -112,7 +112,7 @@ def gather(root="."):
         names = nation_names(profile)
         normal_names = {normalized(n) for n in names}
         for number, (path, fact) in enumerate(record_facts.profile_facts(profile)):
-            if fact.get("verification") or fact["source"] in LEFT_OUT_SOURCES:
+            if fact["source"] in LEFT_OUT_SOURCES:
                 continue
             if record_facts.level_from_note(fact, bulk) != "inferred":
                 continue
