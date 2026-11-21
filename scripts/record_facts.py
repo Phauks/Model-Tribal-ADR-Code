@@ -151,6 +151,7 @@ class Tree:
         self.root = pathlib.Path(root)
         self._profiles = None
         self._sources = None
+        self._documents = None
 
     def files(self, pattern):
         return sorted(self.root.glob(pattern))
@@ -177,6 +178,18 @@ class Tree:
                 record["_file"] = self.relative(path)
                 self._sources[record.get("key", path.stem)] = record
         return self._sources
+
+    @property
+    def documents(self):
+        """Document history records (content/documents/) by id, each with its
+        file path under `_file` (decision record 0018)."""
+        if self._documents is None:
+            self._documents = {}
+            for path in self.files("content/documents/*/*.yaml"):
+                record = load_yaml(path.read_text(encoding="utf-8")) or {}
+                record["_file"] = self.relative(path)
+                self._documents[record.get("id", path.stem)] = record
+        return self._documents
 
     def yaml_records(self, pattern):
         return [(self.relative(path), load_yaml(path.read_text(encoding="utf-8")) or {})
@@ -226,6 +239,57 @@ def changed_files(base, pathspecs):
         check=True, capture_output=True, text=True,
     ).stdout
     return [line for line in output.splitlines() if line]
+
+
+# Version statuses that mean a version no longer states the law (decision record 0018).
+ENDED_STATUSES = {"superseded", "expired", "repealed", "terminated", "disapproved", "withdrawn"}
+
+# Dates a version may carry, and the order events normally happen in. A version
+# is placed in time by the first of KEY_DATE_ORDER it has.
+KEY_DATE_ORDER = ("effective", "published", "approved", "adopted", "signed", "submitted", "listed")
+DATE_SEQUENCE = [("signed", "submitted"), ("signed", "approved"), ("adopted", "approved"),
+                 ("submitted", "approved"), ("approved", "published")]
+
+
+def compare_partial_dates(first, second):
+    """-1, 0 or 1 comparing two partial dates (YYYY, YYYY-MM or YYYY-MM-DD) at
+    the precision they share, so '2003' equals '2003-02-05'."""
+    first, second = str(first), str(second)
+    length = min(len(first), len(second))
+    a, b = first[:length], second[:length]
+    return (a > b) - (a < b)
+
+
+def key_date(version):
+    dates = version.get("dates") or {}
+    for field in KEY_DATE_ORDER:
+        if dates.get(field):
+            return str(dates[field])
+    return None
+
+
+def version_sources(documents):
+    """Source key -> list of (document id, version) for every version that cites it."""
+    found = {}
+    for document_id, record in documents.items():
+        for version in record.get("versions") or []:
+            if version.get("source"):
+                found.setdefault(version["source"], []).append((document_id, version))
+    return found
+
+
+def clause_change_gaps(version, versions_by_id):
+    """Topics this version should compare with an earlier version but does not:
+    every topic in its own clauses or in the clauses of a version it amends or
+    supersedes needs a `changes` entry against one of those versions."""
+    earlier = list(version.get("amends") or []) + list(version.get("supersedes") or [])
+    if not earlier:
+        return []
+    topics = {clause.get("topic") for clause in version.get("clauses") or []}
+    for identifier in earlier:
+        topics |= {clause.get("topic") for clause in (versions_by_id.get(identifier) or {}).get("clauses") or []}
+    compared = {change.get("topic") for change in version.get("changes") or [] if change.get("compared_with") in earlier}
+    return sorted(topic for topic in topics - compared if topic)
 
 
 def file_at(base, path):

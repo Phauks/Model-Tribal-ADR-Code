@@ -59,7 +59,21 @@
         "verification": { "$ref": "#/$defs/verification" },
         "as_of": { "$ref": "#/$defs/partialDate", "description": "When the value was true or published, as the source states it." },
         "locator": { "type": "string", "description": "Where in the source: page, section, table or row." },
-        "note": { "type": "string" }
+        "note": { "type": "string" },
+        "document_version": {
+          "$ref": "#/$defs/documentVersion",
+          "description": "The version of a document this fact describes, when its source is one version of a document with a history in content/documents/. Naming the version says the fact describes it on purpose, even after a later version replaces it (decision record 0018)."
+        }
+      }
+    },
+    "documentVersion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["document", "version"],
+      "description": "One version of a document that has a history: the id of a record in content/documents/ and the id of one of its versions (schemas/document-history.schema.json).",
+      "properties": {
+        "document": { "$ref": "#/$defs/slug", "description": "Id of a document history record in content/documents/." },
+        "version": { "$ref": "#/$defs/slug", "description": "Id of a version listed in that record." }
       }
     },
     "jurisdiction": {

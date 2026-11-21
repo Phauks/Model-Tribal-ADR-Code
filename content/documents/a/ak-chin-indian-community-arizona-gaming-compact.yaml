@@ -1,0 +1,270 @@
+id: ak-chin-indian-community-arizona-gaming-compact
+kind: gaming-compact
+title: Ak-Chin Indian Community–State of Arizona Gaming Compact
+nations: [ak-chin-indian-community]
+states: [AZ]
+jurisdictions:
+  - level: multiple
+    note: Class III gaming compact between the Ak-Chin Indian Community and the State of Arizona under 25 U.S.C. § 2710(d).
+summary: >-
+  The Class III gaming compact between the Ak-Chin Indian Community and the
+  State of Arizona: the 1993 compact, the compact approved in 2003 that
+  replaced it, a 2008 agreement amending the 2003 compact, the 2021 amended
+  and restated compact that replaced both, and a 2022 agreement amending the
+  2021 compact. Every version on the Office of Indian Gaming list as of
+  Nov. 21, 2026 is recorded; extensions of the 1993 compact before 2003, if
+  any, are not on that list.
+versions:
+  - id: 1993-original
+    label: 1993 compact
+    event: original
+    status: superseded
+    dates:
+      signed: '1993-02-05'
+      submitted: '1993-02-11'
+      approved: '1993-03-19'
+      effective: '1993-03-31'
+    approval:
+      authority: secretary-of-the-interior
+      action: approved
+      locator: Approval letter of Mar. 19, 1993, and Federal Register notice FR Doc. 93-7388, at the front of the posted file
+    source: compact-az-ak-chin-indian-community-1993
+    confidence: medium
+    verification: read-in-full
+    locator: Section 15; Section 23
+    note: >-
+      The dates come from the approval letter and the Federal Register notice
+      printed at the front of the posted file ("enacted on February 5, 1993";
+      received Feb. 11, 1993; "This action is effective March 31", filed
+      Mar. 30, 1993). The notice's volume and page are not in the file and are
+      in the project's Westlaw list. Section 23(b) set a term until June 30,
+      2000, which the parties could extend by mutual agreement.
+    capture:
+      path: research/captures/gaming/compacts/arizona/508_compliant_1993.03.31_ak-chin_indian_community_tribal_state_gaming_compact.pdf
+      sha256: f439918f99908e0c5cf2e971fa21d34d8752dea2cfda6af4273873d88218ef14
+      pages: 97
+    clauses:
+      - topic: dispute-resolution
+        locator: Section 15
+        summary: >-
+          A party that believes the other has not complied serves written
+          notice, and the parties' representatives meet within 10 days. A
+          dispute unresolved 30 days after notice goes to arbitration before
+          one agreed arbitrator or, failing agreement, three (one chosen by
+          each party and a third by those two or by the American Arbitration
+          Association). The majority's decision is final, binding and
+          unappealable, and the parties split the arbitration costs. Section
+          15(e) recognizes federal district court jurisdiction to enjoin Class
+          III gaming conducted in violation of the compact.
+        methods: [negotiation, arbitration]
+        verification: read-in-full
+        reviewer: project author (AI assistant)
+  - id: 2003-replacement
+    label: 2003 compact
+    event: replacement
+    status: superseded
+    supersedes: [1993-original]
+    dates:
+      approved: '2003-01-24'
+      published: '2003-02-05'
+    approval:
+      authority: secretary-of-the-interior
+      action: approved
+      locator: Signature page (page 54), "Approved ... Jan 24, 2003"
+    source: compact-az-ak-chin-indian-community-2003
+    confidence: medium
+    verification: read-in-full
+    locator: Section 15; Section 23(a)
+    note: >-
+      Section 23(a) provides that on its Effective Date the compact replaces
+      and supersedes any other tribal-state gaming compact between the State
+      and the Community. The publication date is that of the Federal Register
+      notice, 68 Fed. Reg. 5912 (Feb. 5, 2003), as the Office of Indian Gaming
+      list links it; the notice itself was not read here. The cover reads
+      "2002"; the Community's signature date is illegible in the extracted
+      text.
+    capture:
+      path: research/captures/gaming/compacts/arizona/508_compliant_2003.02.05_ak_chin_indian_community_tribal_state_gaming_compact.pdf
+      sha256: feb9686c3fd8255f9fab281a439db143aac23be3734ae41fa83590a55a066ae8
+      pages: 61
+    clauses:
+      - topic: dispute-resolution
+        locator: Section 15
+        summary: >-
+          Covers disputes over compliance with the compact and over its
+          interpretation. After written notice, the heads of the Tribal Gaming
+          Office and the State Gaming Agency negotiate, then representatives
+          of the Governor and the Community's Chairman. If the dispute is not
+          resolved within 30 days, either party may request non-binding
+          mediation under CPR procedures and may demand binding arbitration
+          under CPR rules, before three arbitrators unless both agree to one,
+          using a "last, best offer" format unless a party opts out. The award
+          is final and binding, open to challenge only on the grounds in 9
+          U.S.C. § 10, and the tribunal may not award money damages. Section
+          15(d) preserves suits for injunctive relief under 25 U.S.C. §
+          2710(d)(7)(A)(ii) and names the Arizona Superior Court and the U.S.
+          District Court for the District of Arizona as courts of competent
+          jurisdiction.
+        methods: [negotiation, mediation, arbitration, final-offer-selection]
+        verification: read-in-full
+        reviewer: project author (AI assistant)
+    changes:
+      - topic: dispute-resolution
+        compared_with: 1993-original
+        change: changed
+        summary: >-
+          Extends the process to disputes over interpretation; adds a second
+          round of negotiation and optional non-binding mediation before
+          arbitration; moves arbitration to CPR rules with three arbitrators by
+          default, a "last, best offer" format, review limited to 9 U.S.C. §
+          10 grounds and no money damages; and names courts for injunctive
+          relief and enforcement.
+        locator_before: Section 15
+        locator_after: Section 15
+        verification: read-in-full
+        reviewer: project author (AI assistant)
+  - id: 2009-amendment
+    label: Agreement to Amend Compact (2008)
+    event: amendment
+    status: superseded
+    amends: [2003-replacement]
+    dates:
+      signed: '2008-12-19'
+      submitted: '2009-01-21'
+      approved: '2009-02-23'
+      published: '2009-03-25'
+    approval:
+      authority: secretary-of-the-interior
+      action: approved
+      locator: Approval letter of Feb. 23, 2009, at the front of the posted file
+    source: compact-az-ak-chin-indian-community-2009-amendment
+    confidence: high
+    verification: read-in-full
+    locator: Paragraphs 1-4
+    note: >-
+      Amends nine listed provisions (definitions, licensing, wager limits,
+      transfer pools, contributions, compliance review, transfer audits and
+      reporting) and states that no other provision is amended. The approval
+      letter says the amendment takes effect when notice of approval is
+      published in the Federal Register; the publication date is that of 74
+      Fed. Reg. 12889 (Mar. 25, 2009) as the Office of Indian Gaming list
+      links it, and the notice itself was not read here. Superseded with the
+      2003 compact by the 2021 amended and restated compact.
+    capture:
+      path: research/captures/gaming/compacts/arizona/508 C 2009 Ak-Chin Agreement to Amend.pdf
+      sha256: ed8b5890a6f96d8fcb64731eb20e368efd02d6f23ef815b1ca3fff0a795727d0
+      pages: 15
+    changes:
+      - topic: dispute-resolution
+        compared_with: 2003-replacement
+        change: unchanged
+        summary: Section 15 is not among the provisions amended, and paragraph 4 states that no other provision is amended.
+        verification: read-in-full
+        reviewer: project author (AI assistant)
+  - id: 2021-restatement
+    label: 2021 amended and restated compact
+    event: restatement
+    status: in-effect
+    supersedes: [2003-replacement, 2009-amendment]
+    dates:
+      submitted: '2021-04-16'
+      approved: '2021-05-21'
+      published: '2021-05-24'
+    approval:
+      authority: secretary-of-the-interior
+      action: approved
+      locator: Approval letter of May 21, 2021, at the front of the posted file
+    source: compact-az-ak-chin-indian-community-2021
+    confidence: high
+    verification: read-in-full
+    locator: Section 1; Section 15; Section 23(a)
+    note: >-
+      The recitals call it "an amended and restated version of the 2003
+      Compact," and Section 23(a) provides that on its Effective Date it
+      replaces and supersedes any other tribal-state gaming compact between
+      the State and the Tribe. The publication date is that of 86 Fed. Reg.
+      27889 (May 24, 2021) as the Office of Indian Gaming list links it; the
+      notice itself was not read here.
+    capture:
+      path: research/captures/gaming/compacts/arizona/508 Compliant 2021.05.24 Ak-Chin Indian Community Tribal State Gaming Compact.pdf
+      sha256: c2bbe7a8f12a6c41b3709001984d6b946d77f95667692f12d154c1fdb1c11e84
+      pages: 80
+    clauses:
+      - topic: dispute-resolution
+        locator: Section 15
+        summary: >-
+          The same process as Section 15 of the 2003 compact: negotiation in
+          two rounds, optional non-binding mediation under CPR procedures, and
+          binding arbitration under CPR rules with a "last, best offer" format
+          unless a party opts out, review only on 9 U.S.C. § 10 grounds, no
+          money damages, and suits for injunctive relief preserved in named
+          courts.
+        methods: [negotiation, mediation, arbitration, final-offer-selection]
+        verification: read-in-full
+        reviewer: project author (AI assistant)
+    changes:
+      - topic: dispute-resolution
+        compared_with: 2003-replacement
+        change: reworded
+        summary: >-
+          Section 15 was compared sentence by sentence with the 2003 text. It
+          calls the nation "the Tribe" instead of "the Community"; the second
+          round of negotiation is to resolve the dispute "voluntarily and
+          informally," with representatives of the "Chair, President, or
+          Governor of the Tribe"; and the parties now "expressly agree" to
+          binding arbitration (15(c)) and to the injunctive relief clause
+          (15(d)), where the 2003 text said the dispute "shall be settled" and
+          that the parties "acknowledge." The steps, rules, deadlines and
+          courts are the same.
+        locator_before: Section 15
+        locator_after: Section 15
+        verification: read-in-full
+        reviewer: project author (AI assistant)
+        note: >-
+          Whether the added words of express agreement change how a court
+          would read either party's consent to arbitration has not been
+          assessed (project analysis).
+  - id: 2022-amendment
+    label: Agreement to Amend Compact (2022)
+    event: amendment
+    status: in-effect
+    amends: [2021-restatement]
+    dates:
+      submitted: '2022-05-05'
+      approved: '2022-06-09'
+      published: '2022-06-14'
+      effective: '2022-06-14'
+    approval:
+      authority: secretary-of-the-interior
+      action: approved
+      locator: Approval letter of June 9, 2022, at the front of the posted file
+    source: compact-az-ak-chin-indian-community-2022-amendment
+    confidence: high
+    verification: read-in-full
+    locator: Paragraphs 1-12
+    note: >-
+      Amends thirteen listed provisions (definitions, authorized games,
+      gaming devices and facilities, location and operator) and states that
+      no other provision is amended. Under paragraph 7 and the approval
+      letter it takes effect when notice of approval is published in the
+      Federal Register; the publication date is that of 87 Fed. Reg. 35992
+      (June 14, 2022) as the Office of Indian Gaming list links it, and the
+      notice itself was not read here.
+    capture:
+      path: research/captures/gaming/compacts/arizona/508_compliant_2022.06.14_ak-chin_indian_community_tribal_state_gaming_compact.pdf
+      sha256: b2b84d497d1d97ddc12a7c2458d08c75fdf3b923c5f39fcc9c8f5b9d0bbf701d
+      pages: 20
+    clauses:
+      - topic: dispute-resolution
+        locator: Paragraph 12
+        summary: Disputes under the agreement go to the dispute resolution provisions in Section 15 of the compact.
+        verification: read-in-full
+        reviewer: project author (AI assistant)
+    changes:
+      - topic: dispute-resolution
+        compared_with: 2021-restatement
+        change: unchanged
+        summary: Section 15 is not among the provisions amended, and paragraph 4 states that no other provision is amended.
+        verification: read-in-full
+        reviewer: project author (AI assistant)
+found_in: [2026-11-21-document-version-history]

@@ -166,6 +166,65 @@ export interface NationRecord {
 	example?: boolean;
 }
 
+/* Document histories ------------------------------------------------------ */
+
+/** One version of a document (schemas/document-history.schema.json). */
+export interface DocumentVersion extends CitedFact {
+	id: string;
+	label?: string;
+	event: string;
+	status: string;
+	dates: Partial<
+		Record<
+			'signed' | 'adopted' | 'submitted' | 'approved' | 'published' | 'effective' | 'listed' | 'ended',
+			string
+		>
+	>;
+	approval?: { authority: string; action: string; source?: string; locator?: string };
+	amends?: string[];
+	supersedes?: string[];
+	clauses?: { topic: string; locator?: string; summary: string }[];
+	changes?: {
+		topic: string;
+		compared_with: string;
+		change: string;
+		summary?: string;
+		locator_before?: string;
+		locator_after?: string;
+	}[];
+}
+
+/** A document over time and every version of it (decision record 0018). */
+export interface DocumentHistoryRecord {
+	id: string;
+	kind: string;
+	title: string;
+	nations?: string[];
+	states?: string[];
+	summary?: string;
+	versions: DocumentVersion[];
+	sensitivity?: { restricted?: boolean; tribal_review_required?: boolean };
+}
+
+let documentCache: DocumentHistoryRecord[] | undefined;
+
+/**
+ * Every document history in content/documents/ that may be published. A
+ * restricted history, or one held for the nation's approval, is left out, as
+ * nation records are.
+ */
+export function documentHistories(): DocumentHistoryRecord[] {
+	if (!documentCache) {
+		documentCache = yamlFilesUnder('content/documents')
+			.map((file) => readYaml<DocumentHistoryRecord>(file))
+			.filter(
+				(record) => !record.sensitivity?.restricted && !record.sensitivity?.tribal_review_required
+			)
+			.sort((first, second) => first.title.localeCompare(second.title, 'en', { sensitivity: 'base' }));
+	}
+	return documentCache;
+}
+
 /**
  * Whether a record may appear on the website. A restricted record is never
  * published (data-model.md, sensitivity flags). A record that needs the

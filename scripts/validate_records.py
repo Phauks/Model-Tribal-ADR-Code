@@ -19,6 +19,11 @@ Checks:
   - each official image's reuse status follows from its signals (docs/official-images.md),
     its private copy sits in the nation's own folder, and each tribal insignia database
     signal names an entry listed in the profile
+  - each document history's versions have unique ids; 'amends', 'supersedes' and
+    'compared_with' name versions in the same record; every version, approval and
+    'related' entry names an existing source record or document history; and every
+    'document_version' (on a source record or a profile fact) names an existing
+    document history and one of its versions (decision record 0018)
   - (warning only) every tribe profile forum 'kind' names a method record
 
 Run from the repository root:  python3 scripts/validate_records.py
@@ -52,12 +57,14 @@ EXAMPLES = {
     "outreach-organization.example.yaml": "outreach-organization.schema.json",
     "outreach-plan.example.yaml": "outreach-plan.schema.json",
     "method.example.yaml": "method.schema.json",
+    "document-history.example.yaml": "document-history.schema.json",
 }
 RECORD_FOLDERS = [
     ("content/sources/*/*.yaml", "source.schema.json"),
     ("content/glossary/*.yaml", "glossary.schema.json"),
     ("content/tribes/*/*.yaml", "tribe.schema.json"),
     ("content/methods/*.yaml", "method.schema.json"),
+    ("content/documents/*/*.yaml", "document-history.schema.json"),
     ("content/variables/*.yaml", "variable.schema.json"),
     ("content/provisions/*.md", "provision.schema.json"),
     ("content/commentary/*.md", "commentary.schema.json"),
@@ -156,6 +163,69 @@ def check_official_images(path: pathlib.Path, record: dict, errors: list[str]) -
                 )
 
 
+def document_version_links(value):
+    """Every 'document_version' link in a record, with where it sits."""
+    if isinstance(value, dict):
+        for field, item in value.items():
+            if field == "document_version" and isinstance(item, dict):
+                yield item
+            else:
+                yield from document_version_links(item)
+    elif isinstance(value, list):
+        for item in value:
+            yield from document_version_links(item)
+
+
+def check_documents(documents: list, sources: set, tribe_ids: set, sessions: set, methods: dict,
+                    linked: list, errors: list[str]) -> None:
+    """Links inside and out of document histories (content/documents/, decision record 0018).
+    `linked` holds (path, record) for every record that may carry a document_version link."""
+    versions_by_document = {}
+    for path, record in documents:
+        versions_by_document[record.get("id")] = [version.get("id") for version in record.get("versions", [])]
+    for path, record in documents:
+        if record.get("id") != path.stem:
+            errors.append(f"{path}: id does not match the file name")
+        for session in record.get("found_in", []):
+            if session not in sessions:
+                errors.append(f"{path}: found_in names a missing research session '{session}'")
+        for nation in record.get("nations", []):
+            if nation not in tribe_ids:
+                errors.append(f"{path}: nations names a missing Tribe profile '{nation}'")
+        for entry in record.get("related", []):
+            if entry.get("document") not in versions_by_document:
+                errors.append(f"{path}: related names a missing document history '{entry.get('document')}'")
+        identifiers = versions_by_document[record.get("id")]
+        for identifier in {i for i in identifiers if identifiers.count(i) > 1}:
+            errors.append(f"{path}: version id '{identifier}' is used more than once")
+        for version in record.get("versions", []):
+            name = f"{path}: version '{version.get('id')}'"
+            keys = [version.get("source"), (version.get("approval") or {}).get("source")]
+            for key in filter(None, keys):
+                if key not in sources:
+                    errors.append(f"{name} cites a missing source record '{key}'")
+            for field in ("amends", "supersedes"):
+                for other in version.get(field, []):
+                    if other not in identifiers:
+                        errors.append(f"{name}: {field} names a version '{other}' this record does not list")
+                    elif other == version.get("id"):
+                        errors.append(f"{name}: {field} names the version itself")
+            for change in version.get("changes", []):
+                if change.get("compared_with") not in identifiers:
+                    errors.append(f"{name}: a change is compared with a version '{change.get('compared_with')}' this record does not list")
+            for clause in version.get("clauses", []):
+                for method in clause.get("methods", []):
+                    if method not in methods:
+                        errors.append(f"{name}: a clause names a missing method record '{method}'")
+    for path, record in linked:
+        for link in document_version_links(record):
+            document, version = link.get("document"), link.get("version")
+            if document not in versions_by_document:
+                errors.append(f"{path}: document_version names a missing document history '{document}'")
+            elif version not in versions_by_document[document]:
+                errors.append(f"{path}: document_version names a version '{version}' that {document} does not list")
+
+
 def check_outreach(outreach: list, errors: list[str]) -> None:
     """Links inside and between outreach records (research/outreach/)."""
     outreach_ids = {path.stem for path, _ in outreach}
@@ -227,7 +297,8 @@ def main() -> int:
             if identifier not in methods:
                 errors.append(f"{path}: {field} names a missing method record '{identifier}'")
 
-    for path, record in records.get("source.schema.json", []) + records.get("tribe.schema.json", []):
+    for path, record in (records.get("source.schema.json", []) + records.get("tribe.schema.json", [])
+                         + records.get("document-history.schema.json", [])):
         if path.parent.name != letter_folder(path.stem):
             errors.append(f"{path}: belongs in the folder '{letter_folder(path.stem)}/'")
 
@@ -292,6 +363,11 @@ def main() -> int:
     for path, record in records.get("tribe.schema.json", []):
         if record.get("part_of") and record["part_of"] not in tribe_ids:
             errors.append(f"{path}: part_of names a missing profile '{record['part_of']}'")
+
+    check_documents(
+        records.get("document-history.schema.json", []), sources, tribe_ids, sessions, methods,
+        records.get("source.schema.json", []) + records.get("tribe.schema.json", []), errors,
+    )
 
     unmatched_kinds: dict[str, int] = {}
     for path, record in records.get("tribe.schema.json", []):

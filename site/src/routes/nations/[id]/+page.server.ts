@@ -8,6 +8,7 @@ import {
 	type CitedFact,
 	type NationRecord
 } from '#lib/server/content.ts';
+import { documentHistoriesFor } from '#lib/server/document-history.ts';
 import { SourceUses } from '#lib/server/source-uses.ts';
 import { humanize, regionAnchor, reviewStatusLabels, stateName } from '#lib/nation-labels.ts';
 import type { EntryGenerator, PageServerLoad } from './$types';
@@ -304,6 +305,7 @@ export const load: PageServerLoad = ({ params }) => {
 			glance: [],
 			courts: [],
 			law: [],
+			documents: [],
 			map: undefined,
 			sources: []
 		};
@@ -365,6 +367,7 @@ export const load: PageServerLoad = ({ params }) => {
 		map: presenceMap(record, sources),
 		courts: courtsAndDisputeResolution(record, sources),
 		law: publishedLaw(record, sources),
+		documents: documentHistoriesFor(record.id, sources),
 		sources: sources.list
 	};
 };

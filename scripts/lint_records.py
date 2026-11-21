@@ -11,14 +11,32 @@ Checks:
                     in content/methods/ (or is 'other')
   archive           every source with a web address has an archived copy once
                     the grace period after `retrieved` has passed
+  version-dates     each version of a document history has its dates in
+                    order: signed or adopted before approved, approved before
+                    published, and nothing after it ended (decision record 0018)
+  version-order     versions are listed oldest first, and none amends or
+                    supersedes a version dated after it
+  version-status    a version that a later version took the place of, or one
+                    with an end date, is not in effect; a version marked superseded is
+                    superseded by some version (or the record names what
+                    replaced it under `related`)
+  clause-change     every key clause topic recorded for a version, or for a
+                    version it amends or supersedes, has a `changes` entry saying
+                    how it changed (or that it was not compared yet)
+  version-link      a source record's `document_version` names the version
+                    that cites it
+  superseded-citation
+                    a profile fact that cites a version no longer in effect
+                    names that version in `document_version`, so the page can
+                    say so; otherwise it should cite the version in effect
   edition-citation  every source cited by content headed for an edition
                     (essays, provisions, commentary, glossary) is archived,
                     has a citator result if it is a case, statute, regulation
                     or court rule, and is not marked unverified in its notes
 
 Which problems fail the run:
-  - With --base REF (pull requests): problems in facts and source records
-    that the pull request adds or changes. Older problems are counted as
+  - With --base REF (pull requests): problems in facts, source records and
+    document histories that the pull request adds or changes. Older problems are counted as
     warnings, so they show up without blocking unrelated work; the coverage
     report (scripts/coverage_report.py) tracks them until they are fixed.
   - Edition citations fail when the citing file is stable, adopted or final,
@@ -39,11 +57,14 @@ import datetime
 import sys
 
 from record_facts import (
-    CITATOR_KINDS, UNVERIFIED, Tree, changed_files, fact_identity, file_at, load_yaml,
-    profile_facts, source_links,
+    CITATOR_KINDS, DATE_SEQUENCE, ENDED_STATUSES, UNVERIFIED, Tree, changed_files,
+    clause_change_gaps, compare_partial_dates, fact_identity, file_at, key_date, load_yaml,
+    profile_facts, source_links, version_sources,
 )
 
 GRACE_DAYS = 30
+# Statuses of a version that never took effect, so it supersedes nothing.
+NEVER_IN_EFFECT = {"proposed", "disapproved", "withdrawn", "unknown"}
 STRICT_STATUSES = {"stable", "adopted", "final"}
 SHOWN_PER_CHECK = 15
 
@@ -126,6 +147,93 @@ def check_sources(tree, report, changed_sources, today, grace_days):
         report.add("archive", f"{source['_file']}: no archived copy {(today - retrieved).days} days after retrieval (grace period {grace_days} days)", new)
 
 
+def check_documents(tree, report, changed_documents, changed_sources):
+    """Version histories (content/documents/, decision record 0018)."""
+    for document_id, record in tree.documents.items():
+        file = record["_file"]
+        new = file in changed_documents
+        versions = record.get("versions") or []
+        by_id = {version.get("id"): version for version in versions}
+        replaced_elsewhere = any(entry.get("relation") == "replaced-by" for entry in record.get("related") or [])
+        superseded_by = {}
+        for version in versions:
+            for other in version.get("supersedes") or []:
+                superseded_by.setdefault(other, []).append(version)
+
+        previous = None
+        for version in versions:
+            name = f"{file}: version {version.get('id')}"
+            dates = version.get("dates") or {}
+            for earlier, later in DATE_SEQUENCE:
+                if dates.get(earlier) and dates.get(later) and compare_partial_dates(dates[earlier], dates[later]) > 0:
+                    report.add("version-dates", f"{name} is {later} ({dates[later]}) before it was {earlier} ({dates[earlier]})", new)
+            if dates.get("ended"):
+                for field, value in dates.items():
+                    if field != "ended" and compare_partial_dates(value, dates["ended"]) > 0:
+                        report.add("version-dates", f"{name} ended ({dates['ended']}) before it was {field} ({value})", new)
+
+            when = key_date(version)
+            if previous and when and compare_partial_dates(previous[1], when) > 0:
+                report.add("version-order", f"{name} ({when}) is listed after {previous[0]} ({previous[1]}); list versions oldest first", new)
+            if when:
+                previous = (version.get("id"), when)
+            for field in ("amends", "supersedes"):
+                for other in version.get(field) or []:
+                    other_when = key_date(by_id.get(other) or {})
+                    if when and other_when and compare_partial_dates(other_when, when) > 0:
+                        report.add("version-order", f"{name} ({when}) {field} {other}, which is dated later ({other_when})", new)
+
+            status = version.get("status")
+            if status == "in-effect" and dates.get("ended"):
+                report.add("version-status", f"{name} is in effect but has an end date ({dates['ended']})", new)
+            if status == "in-effect":
+                replacing = [v.get("id") for v in superseded_by.get(version.get("id"), []) if v.get("status") not in NEVER_IN_EFFECT]
+                if replacing:
+                    report.add("version-status", f"{name} is in effect but {', '.join(replacing)} superseded it", new)
+            if status == "superseded" and version.get("id") not in superseded_by and not replaced_elsewhere:
+                report.add("version-status", f"{name} is superseded, but no version lists it in supersedes and `related` names no replacement", new)
+
+            for topic in clause_change_gaps(version, by_id):
+                earlier = ", ".join(list(version.get("amends") or []) + list(version.get("supersedes") or []))
+                report.add("clause-change", f"{name} records no change for '{topic}' against {earlier}; add a changes entry (use not-compared if the comparison is still to do)", new)
+
+            source = tree.sources.get(version.get("source"))
+            link = (source or {}).get("document_version")
+            if link and (link.get("document"), link.get("version")) != (document_id, version.get("id")):
+                report.add("version-link", f"{name} cites {version['source']}, whose document_version names {link.get('document')} / {link.get('version')}", new or source["_file"] in changed_sources)
+
+    for key, source in tree.sources.items():
+        link = source.get("document_version")
+        if not link:
+            continue
+        version = next((v for v in (tree.documents.get(link.get("document")) or {}).get("versions") or []
+                        if v.get("id") == link.get("version")), None)
+        if version is not None and version.get("source") != key:
+            report.add("version-link", f"{source['_file']}: document_version names {link['document']} / {link['version']}, which cites {version.get('source')} instead", source["_file"] in changed_sources)
+
+
+def check_superseded_citations(tree, report, new_facts):
+    """Profile facts that cite a version no longer in effect without saying so."""
+    by_source = version_sources(tree.documents)
+    for file, profile in tree.profiles.items():
+        for path, fact in profile_facts(profile):
+            if fact.get("document_version"):
+                continue
+            for document_id, version in by_source.get(fact["source"], []):
+                if version.get("status") not in ENDED_STATUSES:
+                    continue
+                current = [v.get("label") or v.get("id") for v in tree.documents[document_id].get("versions") or []
+                           if v.get("status") == "in-effect"]
+                instead = f"cite the version in effect ({'; '.join(current)})" if current else "cite a version in effect"
+                report.add(
+                    "superseded-citation",
+                    f"{file}: {path} cites {fact['source']}, the {version.get('label') or version.get('id')} of "
+                    f"{document_id}, which is {version.get('status')}; {instead}, or name the version in "
+                    "document_version if the fact describes it on purpose",
+                    is_new(new_facts, file, path, fact),
+                )
+
+
 def source_problems(source):
     problems = []
     if source_links(source) and not source.get("archives"):
@@ -169,9 +277,12 @@ def main():
     report = Report()
     new_facts = new_fact_identities(tree, arguments.base)
     changed_sources = set(changed_files(arguments.base, ["content/sources"])) if arguments.base else set()
+    changed_documents = set(changed_files(arguments.base, ["content/documents"])) if arguments.base else set()
 
     check_profiles(tree, report, new_facts, tree.method_ids())
     check_sources(tree, report, changed_sources, arguments.today, arguments.grace_days)
+    check_documents(tree, report, changed_documents, changed_sources)
+    check_superseded_citations(tree, report, new_facts)
     check_edition(tree, report, arguments.edition)
     report.print()
     return 1 if report.errors else 0

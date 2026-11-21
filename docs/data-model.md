@@ -29,6 +29,10 @@ research session ──found──▶ source ◀──cites── provision / co
   state presence.
 - A **glossary entry** defines a term or acronym and cites its sources. Any
   text links to it as `[[id]]` (see [terminology.md](terminology.md)).
+- A **document history** lists every version of a document that changes
+  over time (a compact and its amendments, a constitution and its revisions,
+  a code and its editions). Each version cites its own source record, which
+  names the version back (see below).
 - A **method** record describes one way of resolving a dispute, from any
   tradition. Sources and provisions name the methods they concern in a
   `methods` list. The list of methods is open
@@ -39,6 +43,7 @@ research session ──found──▶ source ◀──cites── provision / co
 | Record | Schema | Stored as | Purpose |
 | --- | --- | --- | --- |
 | Source | [source.schema.json](../schemas/source.schema.json) | `content/sources/<letter>/<key>.yaml` | Citation data (CSL-JSON), original URL, archives, change history, citator check, rights |
+| Document history | [document-history.schema.json](../schemas/document-history.schema.json) | `content/documents/<letter>/<id>.yaml` | One document over time: every version with its dates, status, approval, what it amends or supersedes, a private capture, key clauses and how they changed |
 | Rights | [permission.schema.json](../schemas/permission.schema.json) | the `rights` field of a source | Permission status, legal basis, redistribution, request log |
 | Tribe profile | [tribe.schema.json](../schemas/tribe.schema.json) | `content/tribes/<letter>/<id>.yaml` | One Native nation or community: names, legal status, state presence, population, official contacts, government, justice institutions, dispute resolution practice, gaming, jurisdiction, consultation history; every fact cited with a confidence level |
 | Provision | [provision.schema.json](../schemas/provision.schema.json) | `content/provisions/<chapter>-<section>.md` | Model text with alternatives and placeholders |
@@ -203,6 +208,46 @@ entries in that database. How signals are detected and the display rule are in
 The first profiles were generated from cited facts in `research/raw/`
 (see its README) by `scripts/tribes/build_profiles.py`. After that, profiles
 are edited by hand like any other record.
+
+## Document histories
+
+A source record describes one text at one moment. Where a document has
+several versions, a document history in `content/documents/` ties them
+together ([decision record 0018](decisions/0018-document-version-history.md)).
+Use one for any document whose versions matter: gaming compacts and their
+amendments, extensions and replacements; Secretarial Procedures; gaming
+ordinances; constitutions and their amendments; codes, code titles and court
+rules and their revisions or editions; and any other source that changes.
+
+| Field | Meaning |
+| --- | --- |
+| `kind` | Open list: constitution, law-code, code-title, ordinance, gaming-compact, gaming-ordinance, secretarial-procedures, court-rules, statute, regulation and others |
+| `nations`, `states` | The parties |
+| `versions` | Every known version, oldest first |
+| `related` | Other histories this one depends on, such as the gaming ordinance a compact requires, or Secretarial Procedures that replaced a compact |
+
+Each version is a cited fact (its `source` is the source record of that
+version's text, with the Indigo Book citation and archived copies) plus:
+
+| Field | Meaning |
+| --- | --- |
+| `id`, `label` | A stable id such as `2003-replacement`, and the name readers know |
+| `event` | `original`, `amendment` (changes some provisions; the earlier text stays in effect as amended), `revision` (a new full text by the same process), `restatement` (an "amended and restated" text), `replacement` (a new instrument in place of the old), `extension`, `renewal`, `edition` (a recodification or reissue), `repeal`, `expiration`, `disapproval`, `withdrawal`, `other` |
+| `status` | `in-effect`, `superseded`, `expired`, `repealed`, `terminated`, `disapproved`, `withdrawn`, `proposed` or `unknown` |
+| `dates` | Only the dates a source states: `signed`, `adopted`, `submitted`, `approved`, `published`, `effective`, `ended`, and `listed` for a date a list gives without saying what it marks |
+| `approval` | The approving authority, its action (`approved`, `deemed-approved`, `disapproved`, `not-required`, `pending`) and the source of the approval or its notice |
+| `amends`, `supersedes` | Ids of earlier versions in the same record |
+| `capture` | The project's private copy: path in the working files, SHA-256 and pages; never committed |
+| `clauses` | Key clauses by topic (open list led by `dispute-resolution`), with locator, a neutral summary and a verification level |
+| `changes` | For each tracked topic, how it differs from an earlier version: `added`, `removed`, `changed`, `reworded` (different words, same process), `renumbered`, `unchanged` or `not-compared` |
+
+The source record of a version names it in `document_version`, and any
+cited fact may name the version it describes in the same field. A fact that
+cites a version no longer in effect without naming it is reported by the
+record lint (`superseded-citation`), so a summary taken from an old edition
+cannot pass for the current text. A source's own `history` field is
+different: it tracks changes to the web page or file at the source's
+address, not versions of the law.
 
 ## Source fields for bibliographies
 

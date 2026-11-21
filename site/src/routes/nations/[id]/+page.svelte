@@ -1,4 +1,5 @@
 <script lang="ts">
+	import DocumentHistoryList from '#lib/components/DocumentHistoryList.svelte';
 	import FactGroups from '#lib/components/FactGroups.svelte';
 	import ReportLink from '#lib/components/ReportLink.svelte';
 	import SourceList from '#lib/components/SourceList.svelte';
@@ -142,7 +143,17 @@
 				<FactGroups groups={data.law} />
 			{/if}
 
-			<!-- 8. Sources -->
+			<!-- 7. Document history: every recorded version, oldest first (decision record 0018) -->
+			{#if data.documents.length > 0}
+				<h2>Document history</h2>
+				<p class="small muted">
+					Each document below lists every version the project has found, what each version did to
+					the ones before it, and how its key clauses changed.
+				</p>
+				<DocumentHistoryList documents={data.documents} />
+			{/if}
+
+			<!-- 9. Sources -->
 			<p class="no-print">
 				Know of a published source we have missed?
 				<a href="/requests?kind=contribute&record={record}">Add it</a>.

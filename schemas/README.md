@@ -10,6 +10,7 @@ uses a fictitious nation on purpose.
 | `common.schema.json` | Shared types used by the others |
 | `source.schema.json` | `content/sources/<letter>/*.yaml` |
 | `permission.schema.json` | The `rights` field of a source |
+| `document-history.schema.json` | `content/documents/<letter>/*.yaml` (decision record 0018) |
 | `tribe.schema.json` | `content/tribes/<letter>/*.yaml` |
 | `provision.schema.json` | Front matter of `content/provisions/*.md` |
 | `commentary.schema.json` | Front matter of `content/commentary/*.md` |

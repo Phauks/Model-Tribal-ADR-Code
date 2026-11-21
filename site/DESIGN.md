@@ -186,8 +186,15 @@ its fixed sections on each nation's page:
 5. Courts and dispute resolution: each forum with its kind, source and date.
 6. Published dispute resolution law: linked, not reproduced, until the nation
    permits more ([data model, permission statuses](../docs/data-model.md#permission-statuses)).
-7. Notices and Labels from Local Contexts.
-8. Sources, each followed by the facts on the page that come from it, and
+7. Document history: each of the nation's documents that has recorded
+   versions, such as a gaming compact or a constitution, with every version
+   oldest first, its dates, what it did to earlier versions (amended,
+   replaced), whether it is in effect, and how its key clauses changed
+   ([decision record 0018](../docs/decisions/0018-document-version-history.md)).
+   A line under each title names the versions in effect. Each version's
+   source is listed under the document's title in Sources.
+8. Notices and Labels from Local Contexts.
+9. Sources, each followed by the facts on the page that come from it, and
    the date the page was last checked.
 
 **What is distinctive here** has two parts:

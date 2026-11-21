@@ -31,8 +31,8 @@ import io
 
 from lint_records import GRACE_DAYS, parse_date, source_problems
 from record_facts import (
-    CITATOR_KINDS, UNVERIFIED, VERIFICATION_LEVELS, Tree, level_from_note, profile_facts,
-    section_of, source_links,
+    CITATOR_KINDS, ENDED_STATUSES, UNVERIFIED, VERIFICATION_LEVELS, Tree, clause_change_gaps,
+    level_from_note, profile_facts, section_of, source_links, version_sources,
 )
 
 GUESSED = ("inferred", "title-only", "bulk-import", "unstated")
@@ -124,6 +124,38 @@ def measure(tree, today):
         1 for keys in by_link.values() if len(keys) > 1 and not all(
             b in (sources[a].get("shares_link_with") or []) or a in (sources[b].get("shares_link_with") or [])
             for a in keys for b in keys if a < b))
+
+    # Document histories (decision record 0018).
+    documents = tree.documents
+    versions = [v for record in documents.values() for v in record.get("versions") or []]
+    m["document histories"] = len(documents)
+    kinds = collections.Counter(str(record.get("kind")) for record in documents.values())
+    for kind, count in sorted(kinds.items()):
+        m[f"  of kind {kind}"] = count
+    m["document versions"] = len(versions)
+    m["  in effect"] = sum(1 for v in versions if v.get("status") == "in-effect")
+    m["  no longer in effect"] = sum(1 for v in versions if v.get("status") in ENDED_STATUSES)
+    m["  whose source names the version back"] = sum(
+        1 for v in versions if (sources.get(v.get("source")) or {}).get("document_version"))
+    m["  with a private capture"] = sum(1 for v in versions if v.get("capture"))
+    m["  with an approval source"] = sum(1 for v in versions if (v.get("approval") or {}).get("source"))
+    for level in VERIFICATION_LEVELS:
+        m[f"  stating {level}"] = sum(1 for v in versions if v.get("verification") == level)
+    clauses = [c for v in versions for c in v.get("clauses") or []]
+    changes = [c for v in versions for c in v.get("changes") or []]
+    m["key clauses recorded"] = len(clauses)
+    m["  dispute resolution clauses"] = sum(1 for c in clauses if c.get("topic") == "dispute-resolution")
+    m["clause changes recorded"] = len(changes)
+    for kind in ("changed", "reworded", "unchanged", "not-compared"):
+        m[f"  {kind}"] = sum(1 for c in changes if c.get("change") == kind)
+    m["clause topics with no recorded change"] = sum(
+        len(clause_change_gaps(v, {x.get("id"): x for x in record.get("versions") or []}))
+        for record in documents.values() for v in record.get("versions") or [])
+    by_source = version_sources(documents)
+    m["profile facts citing a version no longer in effect without naming it"] = sum(
+        1 for profile in tree.profiles.values() for _, fact in profile_facts(profile)
+        if not fact.get("document_version")
+        and any(v.get("status") in ENDED_STATUSES for _, v in by_source.get(fact["source"], [])))
 
     # Methods, glossary, outreach.
     for kind, pattern in (("methods", "content/methods/*.yaml"), ("glossary entries", "content/glossary/*.yaml")):
