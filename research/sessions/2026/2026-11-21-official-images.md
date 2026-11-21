@@ -354,10 +354,12 @@ How each signal is detected and what it does is set out in docs/official-images.
   Twenty-eight nations' notices limit reuse of logos or site images, or ask to be contacted first.
 - Trademark symbols: a registered trademark symbol is printed on two chosen images (Muckleshoot Indian
   Tribe; Mississippi Band of Choctaw Indians).
-- USPTO Native American Tribal Insignia database: 183 of the 185 entries were matched to 92 profiles.
-  Two were not: 89000952 (Fond du Lac Band of Lake Superior Chippewa, a component band of the Minnesota
-  Chippewa Tribe without its own profile) and 89003098 (a Gabrieleno San Gabriel Band filing, with no
-  profile). For the 74 nations with both a chosen image and entries, each entry was compared by eye: 60
+- USPTO Native American Tribal Insignia database: 184 of the 185 entries were matched to 93 profiles.
+  89000952 (Fond du Lac Band of Lake Superior Chippewa) was added once the band got its own profile; it
+  has no chosen image yet, so its design was not compared. The other five Minnesota Chippewa Tribe bands
+  (Bois Forte, Grand Portage, Leech Lake, Mille Lacs, White Earth) have no entries of their own; the
+  tribe's own filing, 89001051, stays on its profile. 89003098 (a Gabrieleno San Gabriel Band filing)
+  still has no profile. For the 74 nations with both a chosen image and entries, each entry was compared by eye: 60
   show the same design, 10 a similar design and 17 a different one.
 - Tribal laws: five laws were read and are cited (Jamestown S'Klallam Title 41; Little River Band
   Ordinance 96-0107-01; Little Traverse Bay Bands WOS 2016-004; Coquille ch. 196; Mississippi Band of
