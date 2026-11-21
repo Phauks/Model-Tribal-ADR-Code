@@ -566,15 +566,77 @@ sup {
 	}
 }
 
+/* Parts that exist only on paper, such as the page details line. */
+.print-only {
+	display: none;
+}
+
 @media print {
 	.no-print,
 	.skip-link {
 		display: none !important;
 	}
 
+	.print-only {
+		display: block;
+	}
+
 	a[href^='http']::after {
 		content: ' (' attr(href) ')';
 		font-size: 0.85em;
 		word-break: break-all;
+	}
+
+	/* A map search link's text is already the street address it searches for. */
+	a[href^='https://www.google.com/maps/search/']::after {
+		content: none;
+	}
+
+	/*
+	 * Print options (DESIGN.md, section 6, "Print"; src/lib/print-options.ts).
+	 * Each part a reader turned off in the Print dialog is left out. The
+	 * attributes are set only for choices that differ from the defaults.
+	 */
+	:root[data-print-page-details='off'] [data-print-part='pageDetails'],
+	:root[data-print-review-status='off'] [data-print-part='reviewStatus'],
+	:root[data-print-official-images='off'] [data-print-part='officialImages'],
+	:root[data-print-maps='off'] [data-print-part='maps'],
+	:root[data-print-tables='off'] [data-print-part='tables'],
+	:root[data-print-document-history='off'] [data-print-part='documentHistory'],
+	:root[data-print-sources='off'] [data-print-part='sources'] {
+		display: none !important;
+	}
+
+	/* Without the Sources list, note numbers would point to nothing. */
+	:root[data-print-notes='none'] sup:has(> a.note-marker),
+	:root[data-print-sources='off']:not([data-print-notes='inline']) sup:has(> a.note-marker) {
+		display: none;
+	}
+
+	/* Notes printed under their paragraphs, added just before printing. */
+	.print-note {
+		break-inside: avoid;
+	}
+
+	:root[data-print-link-addresses='off'] a[href^='http']::after {
+		content: none;
+	}
+
+	:root[data-print-term-marks='off'] a.term-link {
+		color: inherit;
+		text-decoration: none;
+	}
+
+	/* Headings stay with the text that follows them. */
+	h1,
+	h2,
+	h3,
+	h4 {
+		break-after: avoid;
+	}
+
+	figure,
+	tr {
+		break-inside: avoid;
 	}
 }

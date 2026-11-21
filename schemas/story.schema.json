@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Phauks/Model-Tribal-ADR-Code/schemas/story.schema.json",
+  "title": "Story",
+  "description": "One story, account or teaching about resolving disputes, making peace or restoring relationships, as a Native nation or its people tell it, with every known telling. A telling cites its own published source record directly, or a private contributor filing. The record never holds the story's text: it describes, credits and points. Stored as content/stories/<first letter of id, or _other>/<id>.yaml (decision record 0019).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "nations", "kind", "tellings", "access", "found_in"],
+  "properties": {
+    "id": {
+      "$ref": "common.schema.json#/$defs/slug",
+      "description": "Must equal the file name. Name the nation and the story, e.g. onondaga-nation-two-row-wampum."
+    },
+    "title": {
+      "type": "string",
+      "description": "The title the nation or publisher gives the story. Where none is given, a plain description in brackets, e.g. '[Account of the peace between the two clans]'."
+    },
+    "titles_in_language": {
+      "type": "array",
+      "description": "Titles or names in the nation's language, exactly as the source spells them.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["text", "language"],
+        "properties": {
+          "text": { "type": "string" },
+          "language": { "$ref": "common.schema.json#/$defs/languageTag" },
+          "source": { "$ref": "common.schema.json#/$defs/slug" }
+        }
+      }
+    },
+    "nations": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Tribe profile ids of the nations whose story this is. A story shared by several nations (such as a confederacy) lists each nation whose own telling is cited. Native Hawaiian stories use the native-hawaiian-community profile; Native Hawaiians are not a tribe.",
+      "items": { "$ref": "common.schema.json#/$defs/slug" },
+      "uniqueItems": true
+    },
+    "community": {
+      "type": "string",
+      "description": "A band, clan, town, village or other community within the nation, where the source names one."
+    },
+    "kind": {
+      "$ref": "common.schema.json#/$defs/slug",
+      "description": "Open vocabulary. Suggested: traditional-story, historical-account (a recorded event such as a treaty or peace between peoples), teaching (a statement of values or law), court-opinion (a Tribal court opinion that tells or relies on a story), oral-history, essay, program-story (a story a peacemaking program tells about itself), other."
+    },
+    "length": {
+      "type": "string",
+      "enum": ["paragraph", "short", "long", "book", "audio-video"],
+      "description": "Of the longest telling cited. short: under about 1,500 words."
+    },
+    "summary": {
+      "type": "string",
+      "description": "One or two neutral sentences, in the project's own words, on what the story concerns and how it bears on resolving disputes. Never a retelling. Leave out when a protocol bars describing the content."
+    },
+    "methods": { "$ref": "common.schema.json#/$defs/methodIds" },
+    "topics": {
+      "type": "array",
+      "items": { "$ref": "common.schema.json#/$defs/slug" },
+      "uniqueItems": true,
+      "description": "Free tags, e.g. peace-between-nations, making-amends, family-dispute, role-of-elders, origin-of-a-court."
+    },
+    "tellings": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Every known telling, the nation's own first. Each cites one published source record (`source`) or one private contributor filing (`filing`), never both.",
+      "items": { "$ref": "#/$defs/telling" }
+    },
+    "protocols": {
+      "type": "array",
+      "description": "Cultural protocols that govern the story, stated by the nation or its people. Record only what a source says; never infer a protocol.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "statement", "source"],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "enum": ["seasonal", "setting", "teller", "clan-owned", "family-owned", "ceremonial", "sacred", "name-avoidance", "permission-required", "other"],
+            "description": "seasonal: told only in a season. setting: told only in a place or setting. teller: only certain people may tell it. clan-owned or family-owned: the story is the property of a clan or family. name-avoidance: a name is not spoken outside ceremony or at all. permission-required: the source asks to be contacted before reuse."
+          },
+          "statement": { "type": "string", "description": "What the source says, in the project's words or a short quotation." },
+          "source": { "$ref": "common.schema.json#/$defs/slug", "description": "Source record that states the protocol." },
+          "locator": { "type": "string" },
+          "how_the_project_follows_it": { "type": "string", "description": "e.g. 'shown only from November to February', 'personal name not used'." }
+        }
+      }
+    },
+    "access": {
+      "$ref": "common.schema.json#/$defs/accessLevel",
+      "description": "Access for the story as a whole: the most restrictive level among its tellings and protocols."
+    },
+    "anthology": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["candidate"],
+      "description": "Whether the story could appear in full in a book or anthology, and whose permission that would take.",
+      "properties": {
+        "candidate": { "type": "boolean" },
+        "reason": { "type": "string", "description": "Why it is or is not a candidate (project analysis)." },
+        "telling": { "type": "string", "description": "Id of the telling that would be reprinted." },
+        "permission_from": {
+          "type": "array",
+          "description": "Each permission a reprint needs. Copyright and cultural authority are asked separately even when one office holds both.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["holder", "for"],
+            "properties": {
+              "holder": { "type": "string", "description": "Role, office or publisher, never a private person's contact details." },
+              "for": { "type": "string", "enum": ["copyright", "cultural-authority", "both"] },
+              "nation": { "$ref": "common.schema.json#/$defs/slug" },
+              "where_to_ask": { "$ref": "common.schema.json#/$defs/link", "description": "Public permissions or contact page." }
+            }
+          }
+        },
+        "status": {
+          "type": "string",
+          "enum": ["not-asked", "asked", "granted", "declined", "not-applicable"],
+          "default": "not-asked",
+          "description": "The request's trail is kept in the cited source's rights log, or in the contributor filing."
+        }
+      }
+    },
+    "sensitivity": { "$ref": "common.schema.json#/$defs/sensitivity" },
+    "review_status": { "$ref": "common.schema.json#/$defs/reviewStatus" },
+    "found_in": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9-]+$" }
+    },
+    "notes": { "type": "string" }
+  },
+  "$defs": {
+    "telling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "authority", "permitted_uses", "access"],
+      "oneOf": [
+        { "required": ["source"], "not": { "required": ["filing"] } },
+        { "required": ["filing"], "not": { "required": ["source"] } }
+      ],
+      "properties": {
+        "id": { "$ref": "common.schema.json#/$defs/slug", "description": "Unique within the record, e.g. nation-website-2024." },
+        "source": { "$ref": "common.schema.json#/$defs/slug", "description": "Key of the source record for this telling, cited directly: the page, opinion, book or recording where the nation or teller published it." },
+        "filing": { "$ref": "common.schema.json#/$defs/filingId", "description": "Private contributor filing, for a story that reached the project from a person rather than a publication." },
+        "locator": { "type": "string", "description": "Page, paragraph, timestamp or section." },
+        "as_of": { "$ref": "common.schema.json#/$defs/partialDate", "description": "When this telling was published or told." },
+        "teller": { "$ref": "common.schema.json#/$defs/credit", "description": "The teller or author, credited as the source or contributor gives it." },
+        "published_by": { "type": "string", "description": "Who published this telling, e.g. 'Onondaga Nation', 'Chickasaw Press'." },
+        "authority": {
+          "type": "string",
+          "enum": ["nation-government", "nation-court", "nation-cultural-office", "nation-press", "nation-newspaper", "native-organization", "co-published-with-nation", "member-author", "contributor", "outside-recorder"],
+          "description": "Whose voice this telling is. The nation's own channels come first. outside-recorder (an anthropologist, journalist or government writer) is kept only when important, and never as the only telling of a story the nation tells itself."
+        },
+        "language": { "$ref": "common.schema.json#/$defs/languageTag" },
+        "verification": { "$ref": "common.schema.json#/$defs/verification" },
+        "permitted_uses": { "$ref": "common.schema.json#/$defs/permittedUses" },
+        "access": { "$ref": "common.schema.json#/$defs/accessLevel" },
+        "cultural_authority": { "$ref": "common.schema.json#/$defs/culturalAuthority" },
+        "note": { "type": "string" }
+      }
+    }
+  }
+}

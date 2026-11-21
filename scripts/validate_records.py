@@ -24,6 +24,10 @@ Checks:
     'related' entry names an existing source record or document history; and every
     'document_version' (on a source record or a profile fact) names an existing
     document history and one of its versions (decision record 0018)
+  - each story's tellings have unique ids and name existing source records; its
+    nations, methods, protocol sources and anthology telling exist; and the
+    story's access is at least as restrictive as its most restrictive telling
+    (decision record 0019)
   - (warning only) every tribe profile forum 'kind' names a method record
 
 Run from the repository root:  python3 scripts/validate_records.py
@@ -58,6 +62,8 @@ EXAMPLES = {
     "outreach-plan.example.yaml": "outreach-plan.schema.json",
     "method.example.yaml": "method.schema.json",
     "document-history.example.yaml": "document-history.schema.json",
+    "story.example.yaml": "story.schema.json",
+    "contribution-filing.example.yaml": "contribution-filing.schema.json",
 }
 RECORD_FOLDERS = [
     ("content/sources/*/*.yaml", "source.schema.json"),
@@ -65,6 +71,7 @@ RECORD_FOLDERS = [
     ("content/tribes/*/*.yaml", "tribe.schema.json"),
     ("content/methods/*.yaml", "method.schema.json"),
     ("content/documents/*/*.yaml", "document-history.schema.json"),
+    ("content/stories/*/*.yaml", "story.schema.json"),
     ("content/variables/*.yaml", "variable.schema.json"),
     ("content/provisions/*.md", "provision.schema.json"),
     ("content/commentary/*.md", "commentary.schema.json"),
@@ -226,6 +233,45 @@ def check_documents(documents: list, sources: set, tribe_ids: set, sessions: set
                 errors.append(f"{path}: document_version names a version '{version}' that {document} does not list")
 
 
+ACCESS_ORDER = ["public", "nation-review-first", "embargoed", "restricted"]
+
+
+def check_stories(stories: list, sources: set, tribe_ids: set, sessions: set, methods: dict,
+                  errors: list[str]) -> None:
+    """Links inside and out of story records (content/stories/, decision record 0019)."""
+    for path, record in stories:
+        if record.get("id") != path.stem:
+            errors.append(f"{path}: id does not match the file name")
+        for session in record.get("found_in", []):
+            if session not in sessions:
+                errors.append(f"{path}: found_in names a missing research session '{session}'")
+        for nation in record.get("nations", []):
+            if nation not in tribe_ids:
+                errors.append(f"{path}: nations names a missing Tribe profile '{nation}'")
+        for method in record.get("methods", []):
+            if method not in methods:
+                errors.append(f"{path}: methods names a missing method record '{method}'")
+        identifiers = [telling.get("id") for telling in record.get("tellings", [])]
+        for identifier in {i for i in identifiers if identifiers.count(i) > 1}:
+            errors.append(f"{path}: telling id '{identifier}' is used more than once")
+        keys = [telling.get("source") for telling in record.get("tellings", [])]
+        keys += [protocol.get("source") for protocol in record.get("protocols", [])]
+        keys += [title.get("source") for title in record.get("titles_in_language", [])]
+        for key in filter(None, keys):
+            if key not in sources:
+                errors.append(f"{path}: cites a missing source record '{key}'")
+        chosen = (record.get("anthology") or {}).get("telling")
+        if chosen and chosen not in identifiers:
+            errors.append(f"{path}: anthology names a telling '{chosen}' this record does not list")
+        story_level = (record.get("access") or {}).get("level", "public")
+        for telling in record.get("tellings", []):
+            level = (telling.get("access") or {}).get("level", "public")
+            if ACCESS_ORDER.index(level) > ACCESS_ORDER.index(story_level):
+                errors.append(f"{path}: telling '{telling.get('id')}' is '{level}', more restricted than the story's access '{story_level}'")
+        if (record.get("sensitivity") or {}).get("restricted") and story_level != "restricted":
+            errors.append(f"{path}: sensitivity says restricted but access is '{story_level}'")
+
+
 def check_outreach(outreach: list, errors: list[str]) -> None:
     """Links inside and between outreach records (research/outreach/)."""
     outreach_ids = {path.stem for path, _ in outreach}
@@ -298,7 +344,8 @@ def main() -> int:
                 errors.append(f"{path}: {field} names a missing method record '{identifier}'")
 
     for path, record in (records.get("source.schema.json", []) + records.get("tribe.schema.json", [])
-                         + records.get("document-history.schema.json", [])):
+                         + records.get("document-history.schema.json", [])
+                         + records.get("story.schema.json", [])):
         if path.parent.name != letter_folder(path.stem):
             errors.append(f"{path}: belongs in the folder '{letter_folder(path.stem)}/'")
 
@@ -368,6 +415,8 @@ def main() -> int:
         records.get("document-history.schema.json", []), sources, tribe_ids, sessions, methods,
         records.get("source.schema.json", []) + records.get("tribe.schema.json", []), errors,
     )
+
+    check_stories(records.get("story.schema.json", []), sources, tribe_ids, sessions, methods, errors)
 
     unmatched_kinds: dict[str, int] = {}
     for path, record in records.get("tribe.schema.json", []):

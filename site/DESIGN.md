@@ -356,6 +356,46 @@ masthead as well as a choice in the dialog, because the button is the faster
 way for the most common change and Trevor chose it on Nov. 21, 2026; the
 dialog adds "Match this device," which the button lacks.
 
+**Print.** A "Print" button with Lucide's `printer` icon, beside Settings in
+the masthead, opens the Modal titled "Print this page" (asked for by Trevor on
+Nov. 21, 2026, after the delivery dialog of Westlaw, where a reader chooses
+what prints before printing). Westlaw splits its dialog into "Layout and
+Limits" (for example term highlighting, footnotes at the end or inline, and a
+cover page) and "Content to Append" (extra lists to add);[^westlaw-delivery]
+this dialog follows that split with two sections:
+
+- **What to print:** a checkbox for each part the current page has, found
+  when the dialog opens from the page's `data-print-part` markers: Page
+  details, Review status, Seal or logo, Maps, Tables, Document history and
+  Sources. All are on by default. The main text always prints; menus,
+  buttons, request links and the footer never do. "Page details" is a line
+  that exists only on paper, under the site's name and content version,
+  giving the page's address and the date printed, so a paper copy leads back
+  to the current version (Westlaw's cover page plays the same role).
+- **Layout:** where citations go (note numbers with the Sources list,
+  each note under its paragraph, or no note numbers), whether each outside
+  link prints its web address, and whether defined terms keep their dotted
+  underline. Each choice is offered only when the page has notes, outside
+  links or defined terms.
+
+"Print" at the bottom closes the dialog and opens the browser's print window,
+where the reader can also save a PDF and set paper size, margins and scale.
+Text size, font and spacing follow the reading settings. Choices are kept on
+the device in local storage (`print-options`, non-default values only) and
+become `data-print-*` attributes on the root element, set before paint by the
+same inline script as the reading settings; `global.css` reacts to them only
+inside `@media print`, so the screen never changes and the browser's own
+Print command follows the same choices. Notes under their paragraphs are
+copied in on the window's `beforeprint` event and removed on
+`afterprint`.[^mdn-beforeprint] Without scripts the button is hidden and
+pages print with every part.
+
+When the model code's provision pages are built, their parts join the list in
+`src/lib/print-options.ts` the same way: commentary, drafting notes,
+alternatives and version history are the expected ones. Leaving a part out
+of a print is a reader's choice; a page's notices (such as "This is a
+fictitious example") are never optional.
+
 **Notices.** One style for status: "This is a working draft" on the home
 page; "Model text, not law in force" with the version and last change on
 every section, following legislation.gov.uk's status box; "You are offline;
@@ -614,6 +654,7 @@ text uses the space; the `side-column` token (40 rem) caps it.
   no flash of the wrong theme. The choice is stored on the device only.
 - **Print:** a print stylesheet uses the light theme, drops the navigation and
   margin tools, and prints each note's full citation and each link's address.
+  Readers choose which parts print in the Print dialog (section 6, "Print").
 
 ## 9. Accessibility
 
@@ -825,6 +866,8 @@ The interface follows the style guide's voice: plain verbs, sentence case,
 [^mdn-skip-waiting]: MDN Web Docs, *ServiceWorkerGlobalScope: skipWaiting() method*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerGlobalScope/skipWaiting).
 [^mdn-storage]: MDN Web Docs, *Storage quotas and eviction criteria*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/API/Storage_API/Storage_quotas_and_eviction_criteria), and *StorageManager: persist() method*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/API/StorageManager/persist).
 [^mdn-dialog]: MDN Web Docs, *&lt;dialog&gt;: The Dialog element*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog).
+[^westlaw-delivery]: Thomson Reuters, *Westlaw Australia Guide: Document Delivery*, [support.thomsonreuters.com.au/node/10181](https://support.thomsonreuters.com.au/node/10181) (tabs "Layout and Limits," "Content to Append" and "The Basics"); Thomson Reuters, *Email, print, download, and share documents* (Westlaw Edge Canada), [thomsonreuters.com](https://www.thomsonreuters.com/en-ca/help/westlaw-edge/tools/other-tools/email-print-download-and-share-documents.html) (accessed Nov. 21, 2026). Trevor's screenshots of the U.S. Westlaw screens may refine this.
+[^mdn-beforeprint]: MDN Web Docs, *Window: beforeprint event*, [developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/API/Window/beforeprint_event).
 [^wery]: J. J. Wery and J. A. Diliberto, *The effect of a specialized dyslexia font, OpenDyslexic, on reading rate and accuracy*, 67 Annals of Dyslexia 114 (2017), [doi.org/10.1007/s11881-016-0127-1](https://doi.org/10.1007/s11881-016-0127-1).
 [^ofl-faq]: SIL International, *OFL-FAQ*, entries 2.2 and 2.6, [openfontlicense.org/ofl-faq](https://openfontlicense.org/ofl-faq/) (accessed Nov. 21, 2026).
 [^lucide-license]: Lucide, *License*, [lucide.dev/license](https://lucide.dev/license) (accessed Nov. 21, 2026). ISC License, with the MIT License for icons drawn from Feather; full text in [`LICENSES/Lucide.txt`](../LICENSES/Lucide.txt).

@@ -7,6 +7,7 @@ import { designTokensToCss } from './src/lib/design-tokens.ts';
 import { buildMapGeometry } from './src/lib/map-geometry.ts';
 import { fullCitations } from './src/lib/server/citations.ts';
 import {
+	essaysForReview,
 	glossary,
 	glossaryForReview,
 	nationsForReview,
@@ -67,12 +68,12 @@ const reviewSubjectsModule = 'virtual:review-subjects';
 const resolvedReviewSubjectsModule = `\0${reviewSubjectsModule}`;
 
 /**
- * Lists the content that co-authors review in the workspace (nation records
- * and glossary terms) as a small module bundled into the Worker, so the
+ * Lists the content that co-authors review in the workspace (nation records,
+ * glossary terms and essays) as a small module bundled into the Worker, so the
  * workspace, which the Worker renders on request, can show names without
  * reading the content files. Restricted records are left out, as they are
- * everywhere else on the site. Provisions and essays join the list when
- * their records exist.
+ * everywhere else on the site. Provisions join the list when their records
+ * exist. Essays have no public page yet.
  */
 function reviewSubjects(): Plugin {
 	return {
@@ -96,6 +97,13 @@ function reviewSubjects(): Plugin {
 					title: record.term,
 					file: record.file,
 					page: `/glossary/${record.id}`
+				})),
+				...essaysForReview().map((record) => ({
+					kind: 'essay',
+					identifier: record.id,
+					title: record.title,
+					file: record.file,
+					page: null
 				}))
 			];
 			return `export const reviewSubjects = ${JSON.stringify(subjects)};`;

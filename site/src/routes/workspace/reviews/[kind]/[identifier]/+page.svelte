@@ -10,6 +10,7 @@
 		editor: 'as editor',
 		'co-author': 'as co-author',
 		advisor: 'as advisor',
+		contributor: 'as contributor',
 		nation: 'for the nation'
 	};
 
@@ -31,8 +32,10 @@
 <ul>
 	{#if data.subject.page}
 		<li><a href={data.subject.page}>Read it on the site</a></li>
-	{:else}
+	{:else if data.subject.kind === 'nation'}
 		<li>Not on the public site yet: it is held back until the nation approves it.</li>
+	{:else}
+		<li>Not on the public site yet.</li>
 	{/if}
 	<li><a href="{repositoryLink}/blob/main/{data.subject.file}">Read the record’s file, with its sources</a></li>
 	<li><a href="{repositoryLink}/commits/main/{data.subject.file}">See every change to it</a></li>

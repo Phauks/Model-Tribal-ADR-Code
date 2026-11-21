@@ -1,0 +1,36 @@
+id: oneida-indian-nation-tree-of-peace
+title: Tree of Peace
+nations:
+- oneida-indian-nation
+kind: traditional-story
+length: short
+methods:
+- peacemaking
+topics:
+- peace-between-nations
+tellings:
+- id: oneida-stories-page
+  source: oneida-indian-nation-stories-and-heritage-page
+  published_by: Oneida Indian Nation
+  authority: nation-government
+  verification: title-only
+  permitted_uses:
+    level: reference-only
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: &id001
+    level: nation-review-first
+  note: Listed on the Nation's stories page; the story page itself was not reached.
+access: *id001
+anthology:
+  candidate: false
+  reason: Not yet read. Reassess once the Nation's page is read.
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories
+notes: Summary left out until the Nation's own page is read.

@@ -48,6 +48,18 @@
 			"name": "requestFormLimit",
 			"namespace_id": "1001",
 			"simple": { "limit": 5, "period": 60 }
+		},
+		// Limits how many changes one signed-in person can make in a minute
+		// in the workspace (keyed by the person, not the address), so a stolen
+		// session or a runaway script cannot rewrite much before someone
+		// notices. Thirty a minute is far more than a person clicking needs.
+		// Refused page views count against it too, so they cannot flood the
+		// activity log (COLLABORATION.md, "Protection against unauthorized
+		// changes").
+		{
+			"name": "workspaceChangeLimit",
+			"namespace_id": "1002",
+			"simple": { "limit": 30, "period": 60 }
 		}
 	]
 	// Secrets, set in the Cloudflare dashboard (Worker > Settings > Variables

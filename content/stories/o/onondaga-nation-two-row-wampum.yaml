@@ -1,0 +1,63 @@
+id: onondaga-nation-two-row-wampum
+title: Two Row Wampum
+titles_in_language:
+- text: Gaswéñdah
+  language: ono
+  source: onondaga-nation-two-row-wampum-page
+nations:
+- onondaga-nation
+kind: historical-account
+length: short
+summary: 'The Onondaga Nation''s account of the agreement the Haudenosaunee and the Dutch reached after long discussion:
+  a path of peace in which each people travels in its own vessel side by side down the river, neither steering the
+  other''s, recorded in the Two Row Wampum belt. It is a nation''s own account of settling how two peoples would
+  live together.'
+methods:
+- negotiation
+- customary-dispute-resolution
+topics:
+- peace-between-nations
+- treaties
+- records-of-agreements
+tellings:
+- id: onondaga-two-row-page
+  source: onondaga-nation-two-row-wampum-page
+  published_by: Onondaga Nation
+  authority: nation-government
+  verification: read-in-full
+  permitted_uses: &id001
+    level: reference-only
+    scope:
+    - web
+    - print
+    - ebook
+    - offline-pack
+  access: &id002
+    level: nation-review-first
+- id: onondaga-timeline
+  source: onondaga-nation-timeline-page
+  as_of: 2022-01
+  published_by: Onondaga Nation
+  authority: nation-government
+  verification: read-in-full
+  permitted_uses: *id001
+  access: *id002
+  note: States the Haudenosaunee position that the Two Row Wampum is a binding agreement between separate governments.
+access: *id002
+anthology:
+  candidate: true
+  reason: Short, complete and directly about how two peoples agreed to keep peace (project analysis).
+  telling: onondaga-two-row-page
+  permission_from:
+  - holder: Onondaga Nation (copyright holder of the website)
+    for: copyright
+    nation: onondaga-nation
+  - holder: Onondaga Nation Council of Chiefs
+    for: cultural-authority
+    nation: onondaga-nation
+  status: not-asked
+sensitivity:
+  tribal_review_required: true
+review_status: drafted-from-public-sources
+found_in:
+- 2026-11-21-peacemaking-stories

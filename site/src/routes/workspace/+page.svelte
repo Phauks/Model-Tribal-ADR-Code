@@ -34,6 +34,44 @@
 	</section>
 {/if}
 
+{#if data.administration}
+	<section class="panel">
+		<h2>Administration</h2>
+		<ul>
+			<li>
+				{data.administration.grants} access {data.administration.grants === 1 ? 'grant' : 'grants'} in force{#if data.administration.grantsExpiringSoon}, {data.administration.grantsExpiringSoon} ending within 14 days{/if}.
+				<a href="/workspace/access">Manage access</a>
+			</li>
+			<li>
+				{data.administration.refusedLastThirtyDays} refused {data.administration.refusedLastThirtyDays === 1 ? 'attempt' : 'attempts'} in the last 30 days.
+				<a href="/workspace/activity">See the activity log</a>
+			</li>
+			<li>
+				{#if data.administration.seals.intact}
+					Activity log intact ({data.administration.seals.checked} entries checked).
+				{:else}
+					<strong>Activity log check failed at entry {data.administration.seals.brokenAt}.</strong>
+					<a href="/workspace/activity">See why</a>
+				{/if}
+			</li>
+		</ul>
+	</section>
+{/if}
+
+{#if data.granted.length > 0}
+	<section>
+		<h2>Documents opened to you</h2>
+		<ul>
+			{#each data.granted as subject (`${subject.kind}/${subject.identifier}`)}
+				<li>
+					<a href="/workspace/reviews/{subject.kind}/{subject.identifier}">{subject.title}</a>
+					({subjectKindLabels[subject.kind].toLocaleLowerCase('en-US')})
+				</li>
+			{/each}
+		</ul>
+	</section>
+{/if}
+
 {#if data.openRequests}
 	<section>
 		<h2>Requests</h2>

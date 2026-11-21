@@ -115,6 +115,19 @@
       }
     },
     "rights": { "$ref": "permission.schema.json" },
+    "contribution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["filing", "credit", "permitted_uses", "access"],
+      "description": "For a source that reached the project from a person (an interview, a told story, a family document) rather than from publication: the public-safe summary of its contribution filing. Signed forms, recordings and contact details stay in the private filing (docs/contributions.md). When the contributor statement grants use, rights.status is 'granted' with basis 'permission'.",
+      "properties": {
+        "filing": { "$ref": "common.schema.json#/$defs/filingId" },
+        "credit": { "$ref": "common.schema.json#/$defs/credit" },
+        "permitted_uses": { "$ref": "common.schema.json#/$defs/permittedUses" },
+        "access": { "$ref": "common.schema.json#/$defs/accessLevel" },
+        "cultural_authority": { "$ref": "common.schema.json#/$defs/culturalAuthority" }
+      }
+    },
     "tribes": {
       "type": "array",
       "description": "Tribe profile ids this source concerns.",

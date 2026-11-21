@@ -24,10 +24,19 @@ export function requirePerson(event: WorkspaceEvent): SignedInPerson {
 	return event.locals.person;
 }
 
+/**
+ * Refuses the request with "403 Forbidden", noting why so that
+ * src/hooks.server.ts records the attempt in the activity log.
+ */
+export function refuse(event: WorkspaceEvent, reason: string, message = 'You do not have permission to see this page.'): never {
+	event.locals.refused = reason;
+	error(403, message);
+}
+
 /** The signed-in person, if they hold a permission; otherwise "403 Forbidden". */
 export function requirePermission(event: WorkspaceEvent, permission: Permission): SignedInPerson {
 	const person = requirePerson(event);
-	if (!can(person, permission)) error(403, 'You do not have permission to see this page.');
+	if (!can(person, permission)) refuse(event, `lacks the ${permission} permission`);
 	return person;
 }
 

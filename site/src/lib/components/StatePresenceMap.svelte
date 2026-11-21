@@ -21,7 +21,7 @@
 	);
 </script>
 
-<figure class="presence-map">
+<figure class="presence-map" data-print-part="maps">
 	<svg viewBox="0 0 {map.width} {map.height}" role="img" aria-labelledby="presence-map-title">
 		<title id="presence-map-title">{title}</title>
 		{#each map.states as state (state.code)}
